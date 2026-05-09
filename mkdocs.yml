@@ -14,8 +14,8 @@ copyright: >
 theme:
   name: material
   language: zh   # default, the i18n plugin overlays /en
-  # Add `custom_dir: overrides/` and `logo:` / `favicon:` here once
-  # those assets exist. Material's defaults are clean enough for v1.
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
   font:
     text: Inter
     code: JetBrains Mono

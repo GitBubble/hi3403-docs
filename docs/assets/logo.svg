@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" role="img" aria-label="Hispark">
+  <title>Hispark</title>
+  <defs>
+    <linearGradient id="hisparkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e2336a"/>
+      <stop offset="100%" stop-color="#c51a4a"/>
+    </linearGradient>
+  </defs>
+  <!-- Spark mark: a stylized 4-point spark / star -->
+  <g transform="translate(40 40)">
+    <circle r="28" fill="url(#hisparkGrad)"/>
+    <path d="M0 -16 L4 -4 L16 0 L4 4 L0 16 L-4 4 L-16 0 L-4 -4 Z"
+          fill="#ffffff"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="84" y="54"
+        font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+        font-size="42"
+        font-weight="700"
+        letter-spacing="-1"
+        fill="#ffffff">Hispark</text>
+</svg>
