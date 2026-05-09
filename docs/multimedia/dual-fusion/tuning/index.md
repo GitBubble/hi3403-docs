@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白彩色双路融合调试指南/黑白彩色双路融合调试指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/黑白彩色双路融合调试指南/黑白彩色双路融合调试指南.md
 ---
 
 # 前言

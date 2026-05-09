@@ -1,6 +1,6 @@
 ---
-title: Pegasus 文档
-description: HiSilicon SS928V100/SS927V100 Pegasus 平台社区文档
+title: Hi3403 文档
+description: HiSilicon SS928V100/SS927V100 Hi3403 平台社区文档
 hide:
   - toc
   - navigation
@@ -8,7 +8,7 @@ hide:
 
 <div class="hero" markdown>
 
-# Pegasus 文档
+# Hi3403 文档
 
 为 HiSilicon **SS928V100 / SS927V100** 平台编写、由社区维护的开发文档。
 覆盖芯片、Linux、多媒体、AI、开发板与构建工具。
@@ -27,7 +27,7 @@ hide:
 
     ---
 
-    第一次接触 Pegasus？跟着指引在半小时内点亮你的开发板。
+    第一次接触 Hi3403？跟着指引在半小时内点亮你的开发板。
 
     [:octicons-arrow-right-24: 进入](get-started/index.md)
 
@@ -103,7 +103,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :simple-gitee:{ .lg .middle } __Pegasus 主仓__
+-   :simple-gitee:{ .lg .middle } __Hi3403 主仓__
 
     ---
 
@@ -138,5 +138,5 @@ hide:
 提交 PR 之前，请先阅读
 [贡献指南](community/contributing.md)。
 
-文档版权 © 2026 Pegasus 社区贡献者，依据
+文档版权 © 2026 Hi3403 社区贡献者，依据
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 协议发布。

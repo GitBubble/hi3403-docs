@@ -5,17 +5,17 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/README.md
 
 # Hi3403V100 Ubuntu Image Builder
 
-Build Ubuntu 22.04 ARM64 images for Hi3403V100 (SS928V100) boards using the open-source [Pegasus](https://gitee.com/HiSpark/pegasus) repository.
+Build Ubuntu 22.04 ARM64 images for Hi3403V100 (SS928V100) boards using the open-source [Hi3403](https://gitee.com/HiSpark/pegasus) repository.
 
 ## Supported Boards
 
 - Topeet iTOP-Hi3403V100 (default)
-- Add other boards via vendor patches in `pegasus/vendor/`
+- Add other boards via vendor patches in `hi3403/vendor/`
 
 ## Prerequisites
 
 - **Docker** (required for cross-compilation)
-- **git** (to clone pegasus)
+- **git** (to clone hi3403)
 - **macOS / Linux** host
 
 ## Quick Start
@@ -130,7 +130,7 @@ hi3403-build/
 ├── README.md           # This file
 ├── docker/
 │   └── Dockerfile      # Ubuntu 22.04 build environment
-├── pegasus/            # HiSilicon Pegasus SDK (cloned from Gitee)
+├── hi3403/            # HiSilicon Hi3403 SDK (cloned from Gitee)
 ├── downloads/          # Source tarballs cache
 ├── scripts/            # Helper scripts
 └── output/             # Build artifacts

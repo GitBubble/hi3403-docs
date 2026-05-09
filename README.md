@@ -1,14 +1,14 @@
-# Pegasus Documentation
+# Hi3403 Documentation
 
 The community documentation site for the HiSilicon **SS928V100 / SS927V100
-Pegasus** platform, modeled on
+Hi3403** platform, modeled on
 [raspberrypi/documentation](https://github.com/raspberrypi/documentation).
 
 > Source for the site published at *(deploy URL TBD)*. Built with MkDocs +
 > the Material theme.
 
 ```
-pegasus-docs/
+hi3403-docs/
 ├── docs/                      # All documentation source (Markdown)
 │   ├── index.md               # Homepage card grid
 │   ├── get-started/           # 1. Get started
@@ -45,7 +45,7 @@ Edit any file under `docs/`, save it, and the preview reloads.
 | `make` (default) | Build the static site to `site/` |
 | `make serve` | Live-preview server at <http://127.0.0.1:8000/> |
 | `make serve_html` | Same as `serve` (matches RPi naming) |
-| `make migrate` | Re-run `scripts/migrate.py` to ingest source docs from `../pegasus/` |
+| `make migrate` | Re-run `scripts/migrate.py` to ingest source docs from `../hi3403/` |
 | `make linkcheck` | Offline link check |
 | `make lint` | Markdownlint pass |
 | `make clean` | Delete `site/` and build cache |
@@ -69,14 +69,14 @@ contribution guide, style guide, and license.
 
 ## Languages
 
-- **zh-CN** is the primary language (all upstream pegasus content is
+- **zh-CN** is the primary language (all upstream hi3403 content is
   Chinese). Default URL: `/`.
 - **English** scaffolding is in place (`docs/en/`). Pages exist as stubs
   and will be filled in as community contributors translate them.
 
-## Migration from upstream pegasus
+## Migration from upstream hi3403
 
-`scripts/migrate.py` ingests the existing `pegasus/` documentation
+`scripts/migrate.py` ingests the existing `hi3403/` documentation
 (95 files in `docs/zh-CN/`, plus per-vendor docs) into this repo:
 
 1. Maps each upstream path to a slug-friendly destination.
@@ -102,12 +102,12 @@ See [`LICENSE`](./LICENSE) for the full text.
 
 ## Note on repo location
 
-This repo currently lives inside `hi3403-build/pegasus-docs/` because
+This repo currently lives inside `hi3403-build/hi3403-docs/` because
 of the workspace layout it was created in. Once you're ready to publish
 it, move the directory to a sibling of `hi3403-build/`:
 
 ```bash
-mv hi3403-build/pegasus-docs ./pegasus-docs
-cd pegasus-docs
+mv hi3403-build/hi3403-docs ./hi3403-docs
+cd hi3403-docs
 git init && git add -A && git commit -m "Initial commit"
 ```

@@ -1,14 +1,14 @@
-site_name: Pegasus Documentation
+site_name: Hi3403 Documentation
 site_url: https://gitbubble.github.io/hi3403-docs/
-site_description: Documentation for the HiSilicon SS928V100 / SS927V100 Pegasus platform
-site_author: Pegasus community
+site_description: Documentation for the HiSilicon SS928V100 / SS927V100 Hi3403 platform
+site_author: Hi3403 community
 
 repo_name: GitBubble/hi3403-docs
 repo_url: https://github.com/GitBubble/hi3403-docs
 edit_uri: edit/main/docs/
 
 copyright: >
-  Documentation © 2026 Pegasus contributors —
+  Documentation © 2026 Hi3403 contributors —
   <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
 
 theme:
@@ -300,6 +300,6 @@ nav:
       - 许可: community/license.md
       - 发布说明:
           - 发布说明: community/release-notes/index.md
-          - Pegasus v1.1 Beta3: community/release-notes/pegasus-v11-beta3.md
-          - Pegasus v1.1 Beta2: community/release-notes/pegasus-v11-beta2.md
-          - Pegasus v1.0 Beta1: community/release-notes/pegasus-v10-beta1.md
+          - Hi3403 v1.1 Beta3: community/release-notes/hi3403-v11-beta3.md
+          - Hi3403 v1.1 Beta2: community/release-notes/hi3403-v11-beta2.md
+          - Hi3403 v1.0 Beta1: community/release-notes/hi3403-v10-beta1.md

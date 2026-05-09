@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OpenHarmony Small版本使用指南/OpenHarmony Small版本使用指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/OpenHarmony Small版本使用指南/OpenHarmony Small版本使用指南.md
 ---
 
 # 前言
@@ -231,19 +231,19 @@ ln -s /bin/bash /bin/sh
 
 OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
 
-1.  下载HiSpark社区Pegasus仓代码，由于ss928v100\_clang和ss928v100\_gcc为Pegasus的子仓，而OpenHarmony使用LLVM-Clang工具链的SDK，故此步骤下载得到Pegasus和ss928v100\_clang代码目录。
+1.  下载HiSpark社区Hi3403仓代码，由于ss928v100\_clang和ss928v100\_gcc为Hi3403的子仓，而OpenHarmony使用LLVM-Clang工具链的SDK，故此步骤下载得到Hi3403和ss928v100\_clang代码目录。
 
     ```
     git clone https://gitee.com/HiSpark/pegasus.git
-    cd pegasus
+    cd hi3403
     git submodule init
     git submodule update platform/ss928v100_clang
     ```
 
-    通过以上步骤操作，得到Pegasus项目文件目录如下。
+    通过以上步骤操作，得到Hi3403项目文件目录如下。
 
     ```
-    pegasus/
+    hi3403/
     ├── os/OpenHarmony
     │   ├── device
     │   │   └── soc/hisilicon/patches   # OpenHarmony源码补丁（按子系统分类，对原生代码的定制化修改）
@@ -259,7 +259,7 @@ OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
 
     -   `os/OpenHarmony`目录包含海思芯片适配OpenHarmony的补丁、配置和构建脚本。其中`manifest/devboard_hispark_aifly_5.1.0.xml`为repo清单文件，定义了OpenHarmony 5.1.0 Release版本需要同步的代码仓库列表，已针对Small型系统优化，剔除了非必要的代码仓，并将常用修改的代码仓（kernel_linux_config、kernel_linux_patches、device_soc_hisilicon、device_board_hisilicon、vendor_hisilicon）注释掉远程下载，直接使用本地子目录。
     -   `platform/ss928v100_clang`目录是SS928V100的SDK源码和二进制库，包含内核驱动源码、Sample源码及开源软件包。
-    -   `vendor`目录是生态伙伴（易百纳、野火、迅为、润开鸿、中山旷视等）基于Pegasus平台做的增量特性开发，包括板卡适配补丁、Demo示例、第三方开源软件编译指南等，与`os/OpenHarmony/vendor`（海思原厂产品配置）有所区别。
+    -   `vendor`目录是生态伙伴（易百纳、野火、迅为、润开鸿、中山旷视等）基于Hi3403平台做的增量特性开发，包括板卡适配补丁、Demo示例、第三方开源软件编译指南等，与`os/OpenHarmony/vendor`（海思原厂产品配置）有所区别。
 
     >![](public_sys-resources/icon-note.gif) **说明：**
     >由于SS927V100和SS928V100相似，因此SS927V100的SDK能复用SS928V100的SDK源码，共用`os/OpenHarmony/device/soc/hisilicon/ss928v100/sdk_linux`目录。
@@ -286,13 +286,13 @@ OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
     -   下载arm-trusted-firmware v2.2源码包（存放至`os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/trusted-firmware-a/`目录）
     -   调用`build/prebuilts_download.sh`下载OpenHarmony编译工具链（clang、gn、ninja、cmake、nodejs等）
     -   通过sparse-checkout从kernel_linux_patches仓库下载`prebuilts`目录
-    -   通过sparse-checkout从pegasus仓库下载`device/soc/hisilicon/common/platform`目录
+    -   通过sparse-checkout从hi3403仓库下载`device/soc/hisilicon/common/platform`目录
     -   配置SDK工具链环境变量，将`os/OpenHarmony/prebuilts/clang/ohos/linux-x86_64/llvm/bin`添加到PATH，执行`command -v clang`验证是否生效，并写入`~/.bashrc`持久化配置
 
 完成以上步骤后，项目目录结构如下。
 
 ```
-pegasus
+hi3403
 ├── os/OpenHarmony
 │   ├── applications
 │   ├── arkcompiler
@@ -459,8 +459,8 @@ insmod: failed to load xxx.ko:Key was rejected by service
     使用 `batch_sign_ko.sh` 脚本对目录下的所有 `.ko` 文件进行批量签名：
 
     ```bash
-    # 进入pegasus根目录
-    cd pegasus
+    # 进入hi3403根目录
+    cd hi3403
 
     # 执行签名（假设ko文件在 ./my_kos/ 目录下）
     ./os/OpenHarmony/device/board/hisilicon/hispark_aifly/kernel/batch_sign_ko.sh ./my_kos/
@@ -537,10 +537,10 @@ SDK包中提供内核驱动源码和Sample源码，可以通过源码进行编�
     >![](public_sys-resources/icon-note.gif) **说明：**
     >使用LLVM-Clang工具链来编译SDK sample时，会依赖OpenHarmony编译后的产物：os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot，因此需要提前进行OpenHarmony编译。
 
-2.  假设工具链的sysroot路径为`/path/to/pegasus/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot`，将工具链的sysroot设置到环境变量SYSROOT_PATH。
+2.  假设工具链的sysroot路径为`/path/to/hi3403/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot`，将工具链的sysroot设置到环境变量SYSROOT_PATH。
 
     ```
-    export SYSROOT_PATH=/path/to/pegasus/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot
+    export SYSROOT_PATH=/path/to/hi3403/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot
     ```
 
 3.  检查SYSROOT_PATH配置是否生效。

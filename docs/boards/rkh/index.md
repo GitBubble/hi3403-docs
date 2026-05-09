@@ -1,6 +1,6 @@
 ---
 title: "README_zh"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/rkh/README_zh.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/rkh/README_zh.md
 ---
 
 ## 开发板

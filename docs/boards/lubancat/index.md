@@ -1,6 +1,6 @@
 ---
 title: "README"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/LubanCat-Hi3403/README.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/LubanCat-Hi3403/README.md
 ---
 
 ## 产品概述
@@ -19,8 +19,8 @@ LubanCat-Hi3403使用了一颗包含四核Cortex-A55 CPU和高能效神经网络
 这使得LubanCat-Hi3403不仅能作为高性能单板电脑来使用，还可以作为嵌入式主板，用于图像采集、显示、控制、网络传输等多种场景。
 
 - 快速使用手册及板卡说明：[点击进入](https://doc.embedfire.com/linux/hi3403/quick_start) （基于野火发布固件进行介绍，建议阅读在线网页文档，实时更新中）
-- 基于Pegasus的Buildroot系统构建说明: [点击进入](./doc/基于Pegasus构建Buildroot系统镜像.md)
-- LubanCat-Hi3404功能验证说明: [点击进入](./doc/LubanCat-Hi3404功能验证说明.md) （基于使用Pegasus构建Buildroot镜像的功能验证说明）
+- 基于Hi3403的Buildroot系统构建说明: [点击进入](./doc/基于Hi3403构建Buildroot系统镜像.md)
+- LubanCat-Hi3404功能验证说明: [点击进入](./doc/LubanCat-Hi3404功能验证说明.md) （基于使用Hi3403构建Buildroot镜像的功能验证说明）
 
 ## 硬件资源
 

@@ -14,7 +14,7 @@ description: API 参考、配置、常见问题、术语表
 
     ---
 
-    Pegasus 提供的所有用户态 / 内核态 API 入口列表。
+    Hi3403 提供的所有用户态 / 内核态 API 入口列表。
 
     [:octicons-arrow-right-24: 进入](api/index.md)
 

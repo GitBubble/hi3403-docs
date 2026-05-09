@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 安全启动使用指南/SS928V100╱SS927V100 安全启动使用指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/SS928V100╱SS927V100 安全启动使用指南/SS928V100╱SS927V100 安全启动使用指南.md
 ---
 
 # 前言

@@ -30,7 +30,7 @@ flowchart LR
 ## 步骤 1 — 在主机准备 ONNX 模型
 
 ``` bash
-mkdir -p ~/yolo-pegasus && cd ~/yolo-pegasus
+mkdir -p ~/yolo-hi3403 && cd ~/yolo-hi3403
 
 # 从 ultralytics 拉一个轻量级 yolov5n
 wget https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5n.onnx
@@ -91,7 +91,7 @@ ssh hi@192.168.1.42
 用 SDK 自带的 `sample_svp` 推理：
 
 ``` bash
-cd /opt/pegasus/sample/svp
+cd /opt/hi3403/sample/svp
 ./sample_svp infer ~/yolov5n.om ~/bus.jpg
 ```
 

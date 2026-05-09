@@ -35,8 +35,8 @@ flowchart LR
 板子上：
 
 ``` bash
-sudo systemctl start pegasus-iqs-server
-sudo systemctl status pegasus-iqs-server
+sudo systemctl start hi3403-iqs-server
+sudo systemctl status hi3403-iqs-server
 # 应该显示 listening on 0.0.0.0:50000
 ```
 
@@ -112,17 +112,17 @@ zone_weight = "16,16,16,...,16"   # 17x17 zone weights
 
 ## 步骤 7 — 把配置烧到板子
 
-把 `imx415_awb.cfg` 拷到板子的 `/etc/pegasus/sys_config.d/` 目录：
+把 `imx415_awb.cfg` 拷到板子的 `/etc/hi3403/sys_config.d/` 目录：
 
 ``` bash
 scp imx415_awb.cfg hi@192.168.1.42:/tmp/
-ssh hi@192.168.1.42 "sudo mv /tmp/imx415_awb.cfg /etc/pegasus/sys_config.d/"
+ssh hi@192.168.1.42 "sudo mv /tmp/imx415_awb.cfg /etc/hi3403/sys_config.d/"
 ```
 
 让 ISP 重新加载：
 
 ``` bash
-sudo systemctl restart pegasus-mpp
+sudo systemctl restart hi3403-mpp
 ```
 
 下一次启动板子时就会自动加载这套 AWB 参数 —— 永久生效。

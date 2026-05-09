@@ -1,11 +1,11 @@
 ---
 title: 贡献指南
-description: 如何为 Pegasus 文档贡献内容
+description: 如何为 Hi3403 文档贡献内容
 ---
 
 # 贡献指南
 
-欢迎为 Pegasus 文档贡献。文档由社区维护，所有改动通过 Gitee Pull Request
+欢迎为 Hi3403 文档贡献。文档由社区维护，所有改动通过 Gitee Pull Request
 流程提交。本指南教你怎么发起一次 PR。
 
 ## 你能做的
@@ -26,8 +26,8 @@ description: 如何为 Pegasus 文档贡献内容
 ### 2. 克隆 + 创建分支
 
 ``` bash
-git clone https://gitee.com/<你的账号>/pegasus-docs.git
-cd pegasus-docs
+git clone https://gitee.com/<你的账号>/hi3403-docs.git
+cd hi3403-docs
 git checkout -b fix/typo-in-quickstart   # 描述性的分支名
 ```
 

@@ -11,7 +11,7 @@ LubanCat-Hi3403 的默认方案就是 Buildroot。
 > 本页是占位页 —— 详细的 Buildroot 移植与构建步骤还没有迁移到本站。
 > 在迁移完成前，请参考：
 >
-> - 上游 Pegasus SDK 的 [`os/`](https://gitee.com/HiSpark/pegasus/tree/master/os) 目录
+> - 上游 Hi3403 SDK 的 [`os/`](https://gitee.com/HiSpark/pegasus/tree/master/os) 目录
 > - 野火 LubanCat-Hi3403 的官方 Wiki
 > - [hi3403-build](../../tools/hi3403-build.md) — 一键构建脚本
 

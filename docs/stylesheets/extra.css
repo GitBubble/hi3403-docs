@@ -1,5 +1,5 @@
 /* ============================================================
- * Pegasus docs — RPi-inspired visual theme
+ * Hi3403 docs — RPi-inspired visual theme
  * Layered on top of Material for MkDocs.
  * Goal: clean white surface, raspberry accent, generous cards,
  * tight sidebar, ⌘K-style search bar.
@@ -26,15 +26,15 @@
   --md-default-fg-color--lightest: #ececec;
 
   /* Subtle warm gray sidebar tint, like RPi */
-  --pegasus-sidebar-bg:         #fafafa;
-  --pegasus-card-bg:            #ffffff;
-  --pegasus-card-border:        #e6e6e6;
-  --pegasus-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.04),
+  --hi3403-sidebar-bg:         #fafafa;
+  --hi3403-card-bg:            #ffffff;
+  --hi3403-card-border:        #e6e6e6;
+  --hi3403-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.04),
                                 0 4px 14px rgba(0, 0, 0, 0.05);
-  --pegasus-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.06),
+  --hi3403-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.06),
                                 0 12px 28px rgba(197, 26, 74, 0.12);
-  --pegasus-divider:            #ececec;
-  --pegasus-muted:              #6b6b6b;
+  --hi3403-divider:            #ececec;
+  --hi3403-muted:              #6b6b6b;
 }
 
 [data-md-color-scheme="slate"] {
@@ -44,15 +44,15 @@
   --md-accent-fg-color:         #ff5c8a;
   --md-accent-fg-color--transparent: rgba(255, 92, 138, 0.12);
 
-  --pegasus-sidebar-bg:         #16181d;
-  --pegasus-card-bg:            #1c1f26;
-  --pegasus-card-border:        #2b2f38;
-  --pegasus-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.4),
+  --hi3403-sidebar-bg:         #16181d;
+  --hi3403-card-bg:            #1c1f26;
+  --hi3403-card-border:        #2b2f38;
+  --hi3403-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.4),
                                 0 4px 14px rgba(0, 0, 0, 0.45);
-  --pegasus-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.5),
+  --hi3403-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.5),
                                 0 12px 28px rgba(226, 51, 106, 0.25);
-  --pegasus-divider:            #2b2f38;
-  --pegasus-muted:              #aab1bd;
+  --hi3403-divider:            #2b2f38;
+  --hi3403-muted:              #aab1bd;
 }
 
 /* ---------- 2. Typography ---------- */
@@ -97,11 +97,11 @@ body,
 .md-header {
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
-  box-shadow: 0 1px 0 var(--pegasus-divider);
+  box-shadow: 0 1px 0 var(--hi3403-divider);
   height: 3.4rem;
 }
 .md-header[data-md-state="shadow"] {
-  box-shadow: 0 1px 0 var(--pegasus-divider),
+  box-shadow: 0 1px 0 var(--hi3403-divider),
               0 4px 12px rgba(0, 0, 0, 0.04);
 }
 .md-header__title {
@@ -126,7 +126,7 @@ body,
 
 .md-tabs {
   background: var(--md-default-bg-color);
-  border-bottom: 1px solid var(--pegasus-divider);
+  border-bottom: 1px solid var(--hi3403-divider);
   color: var(--md-default-fg-color);
 }
 .md-tabs__link {
@@ -160,26 +160,26 @@ body,
 .md-search__form:hover,
 [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
   background: var(--md-default-bg-color);
-  box-shadow: 0 0 0 1px var(--pegasus-card-border),
+  box-shadow: 0 0 0 1px var(--hi3403-card-border),
               0 6px 24px rgba(0, 0, 0, 0.08);
 }
 .md-search__input {
   font-size: 0.78rem;
 }
 .md-search__input::placeholder {
-  color: var(--pegasus-muted);
+  color: var(--hi3403-muted);
 }
 
 /* ---------- 6. Sidebar ---------- */
 
 .md-sidebar--primary {
-  background: var(--pegasus-sidebar-bg);
+  background: var(--hi3403-sidebar-bg);
 }
 .md-sidebar--primary .md-sidebar__scrollwrap {
-  background: var(--pegasus-sidebar-bg);
+  background: var(--hi3403-sidebar-bg);
 }
 .md-nav__title {
-  color: var(--pegasus-muted);
+  color: var(--hi3403-muted);
   font-weight: 600;
   font-size: 0.7rem;
   letter-spacing: 0.06em;
@@ -207,7 +207,7 @@ body,
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 0.06em;
-  color: var(--pegasus-muted);
+  color: var(--hi3403-muted);
 }
 .md-sidebar--secondary .md-nav__link {
   font-size: 0.74rem;
@@ -225,12 +225,12 @@ body,
 }
 .md-typeset .grid.cards > ul > li,
 .md-typeset .grid.cards > .admonition {
-  background: var(--pegasus-card-bg);
-  border: 1px solid var(--pegasus-card-border);
+  background: var(--hi3403-card-bg);
+  border: 1px solid var(--hi3403-card-border);
   border-radius: 0.6rem;
   padding: 1.15rem 1.25rem 1.15rem;
   margin: 0;
-  box-shadow: var(--pegasus-card-shadow);
+  box-shadow: var(--hi3403-card-shadow);
   transition: transform 0.18s ease,
               box-shadow 0.18s ease,
               border-color 0.18s ease;
@@ -241,7 +241,7 @@ body,
 .md-typeset .grid.cards > ul > li:hover {
   transform: translateY(-2px);
   border-color: var(--md-primary-fg-color);
-  box-shadow: var(--pegasus-card-shadow-hover);
+  box-shadow: var(--hi3403-card-shadow-hover);
 }
 .md-typeset .grid.cards > ul > li:hover > p > strong {
   color: var(--md-primary-fg-color);
@@ -268,7 +268,7 @@ body,
 .md-typeset .grid.cards p {
   font-size: 0.8rem;
   line-height: 1.55;
-  color: var(--pegasus-muted);
+  color: var(--hi3403-muted);
   margin: 0 0 0.6rem 0;
 }
 /* Style the trailing arrow link inside each card */
@@ -299,14 +299,14 @@ body,
   padding: 3.2rem 2.4rem 3rem;
   border-radius: 0.8rem;
   margin: 0 0 2.5rem;
-  border: 1px solid var(--pegasus-card-border);
+  border: 1px solid var(--hi3403-card-border);
   position: relative;
   overflow: hidden;
 }
 [data-md-color-scheme="slate"] .md-typeset .hero {
   background: linear-gradient(135deg, #2a1820 0%, #3a1a2c 100%);
   color: #f5f5f7;
-  border-color: var(--pegasus-card-border);
+  border-color: var(--hi3403-card-border);
 }
 .md-typeset .hero::after {
   content: "";
@@ -353,7 +353,7 @@ body,
 .md-typeset .hero .md-button:not(.md-button--primary) {
   background: #ffffff;
   color: var(--md-primary-fg-color);
-  border: 1px solid var(--pegasus-card-border);
+  border: 1px solid var(--hi3403-card-border);
 }
 [data-md-color-scheme="slate"] .md-typeset .hero .md-button:not(.md-button--primary) {
   background: rgba(255, 255, 255, 0.06);
@@ -366,13 +366,13 @@ body,
 .md-typeset .related {
   margin-top: 3.5rem;
   padding-top: 1.8rem;
-  border-top: 1px solid var(--pegasus-divider);
+  border-top: 1px solid var(--hi3403-divider);
 }
 .md-typeset .related h2 {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--pegasus-muted);
+  color: var(--hi3403-muted);
   font-weight: 600;
   margin-top: 0;
 }
@@ -428,17 +428,17 @@ body,
 .md-typeset .highlight {
   border-radius: 0.45rem;
   overflow: hidden;
-  border: 1px solid var(--pegasus-divider);
+  border: 1px solid var(--hi3403-divider);
 }
 
 .md-typeset table:not([class]) {
   border-radius: 0.45rem;
   overflow: hidden;
-  border: 1px solid var(--pegasus-divider);
+  border: 1px solid var(--hi3403-divider);
   font-size: 0.82rem;
 }
 .md-typeset table:not([class]) th {
-  background: var(--pegasus-sidebar-bg);
+  background: var(--hi3403-sidebar-bg);
   font-weight: 600;
 }
 .md-typeset table:not([class]) tr:hover {
@@ -450,7 +450,7 @@ body,
   border-radius: 0.5rem;
   border-left-width: 3px;
   font-size: 0.84rem;
-  box-shadow: var(--pegasus-card-shadow);
+  box-shadow: var(--hi3403-card-shadow);
 }
 
 /* ---------- 12. Footer ---------- */
@@ -485,7 +485,7 @@ body,
 /* Edit-this-page bar at the top of the article */
 .md-source-file {
   font-size: 0.72rem;
-  color: var(--pegasus-muted);
+  color: var(--hi3403-muted);
 }
 
 /* Limit overall content width for readability */

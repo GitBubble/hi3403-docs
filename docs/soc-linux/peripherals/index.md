@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/外围设备驱动操作指南/外围设备驱动 操作指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/外围设备驱动操作指南/外围设备驱动 操作指南.md
 ---
 
 # 前言

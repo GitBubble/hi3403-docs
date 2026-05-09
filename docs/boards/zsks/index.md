@@ -1,6 +1,6 @@
 ---
 title: "README"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/zsks/README.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/zsks/README.md
 ---
 
 ## 1.项目介绍
@@ -20,10 +20,10 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/zsks/README.
 
 ### 步骤2：打入补丁
 
-* 在服务器的命令行，执行下面的命令，将vendor/zsks/patch/中的补丁打入Pegasus所对应的目录下。
+* 在服务器的命令行，执行下面的命令，将vendor/zsks/patch/中的补丁打入Hi3403所对应的目录下。
 
 ```sh
-cd pegasus/vendor/zsks
+cd hi3403/vendor/zsks
 
 ./patch_build.sh
 ```
@@ -33,7 +33,7 @@ cd pegasus/vendor/zsks
 * 在服务器的命令行，执行下面的命令，打入适配好的RKH的相关patch
 
 ```sh
-cd  pegasus/os/OpenHarmony
+cd  hi3403/os/OpenHarmony
 
 cp ../../vendor/rkh/rkh_patch*  .   -rf
 
@@ -55,7 +55,7 @@ chmod +x rkh_patch_build.sh
 * 在服务器的命令行，执行下面的命令，打入适配好的UVC和网卡的openharmony内核补丁
 
 ```
-cd  pegasus/os/OpenHarmony
+cd  hi3403/os/OpenHarmony
 
 cp ../../vendor/zsks/patch/0001-support-eulerpi-uvc-and-ethernet.patch   ohos/kernel/linux/patches/linux-6.6/hispark_ss928v100_patch/
 
@@ -66,7 +66,7 @@ cp ../../vendor/zsks/patch/hispark_ss928v100_small_defconfig ohos/kernel/linux/c
 
 ### 步骤3：修改cfg文件
 
-* 修改~/pegasus/os/OpenHarmony/ohos/vendor/hisilicon/
+* 修改~/hi3403/os/OpenHarmony/ohos/vendor/hisilicon/
 
   hispark_ss928v100_linux/init_configs/中的init_linux_openharmony.cfg
 
@@ -81,7 +81,7 @@ cp ../../vendor/zsks/patch/hispark_ss928v100_small_defconfig ohos/kernel/linux/c
 * 在服务器的命令行，执行下面的命令，整编OHOS代码
 
 ```sh
-cd  pegasus/os/OpenHarmony/ohos
+cd  hi3403/os/OpenHarmony/ohos
 
 rm out -rf
 
@@ -90,7 +90,7 @@ rm out -rf
 
 ![image-20260105095600039](pic/image-20260105095600039.png)
 
-* 编译成功后，会在 pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux目录下生成  boot_image_4GB.bin、uboot_env_4GB.bin、fip.bin、rootfs_ext4.img、userfs_ext4.img、userdata_ext4.img 、emmc_burn_table.xml这几个文件。
+* 编译成功后，会在 hi3403/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux目录下生成  boot_image_4GB.bin、uboot_env_4GB.bin、fip.bin、rootfs_ext4.img、userfs_ext4.img、userdata_ext4.img 、emmc_burn_table.xml这几个文件。
 
 ![image-20260105100514572](pic/image-20260105100514572.png)
 

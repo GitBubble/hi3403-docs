@@ -1,6 +1,6 @@
 ---
 title: API 索引
-description: Pegasus / Hi3403 提供的所有用户态 API 参考
+description: Hi3403 / Hi3403 提供的所有用户态 API 参考
 ---
 
 # API 索引

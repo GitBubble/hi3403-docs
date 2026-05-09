@@ -5,7 +5,7 @@ description: 发布说明、贡献指南、风格指南、许可
 
 # 社区
 
-Pegasus 文档由社区维护。所有改动通过 Gitee Pull Request 流程提交。
+Hi3403 文档由社区维护。所有改动通过 Gitee Pull Request 流程提交。
 
 <div class="grid cards" markdown>
 
@@ -57,7 +57,7 @@ Pegasus 文档由社区维护。所有改动通过 Gitee Pull Request 流程提�
 
 <div class="grid cards" markdown>
 
--   :simple-gitee:{ .lg .middle } __Pegasus 主仓__
+-   :simple-gitee:{ .lg .middle } __Hi3403 主仓__
 
     ---
 

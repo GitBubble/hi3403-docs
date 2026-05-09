@@ -1,11 +1,11 @@
 ---
 title: 开发板
-description: Pegasus 平台支持的开发板介绍与硬件资料
+description: Hi3403 平台支持的开发板介绍与硬件资料
 ---
 
 # 开发板
 
-Pegasus 平台目前支持以下几款 Hi3403V100 开发板。点击进入查看每块板子的
+Hi3403 平台目前支持以下几款 Hi3403V100 开发板。点击进入查看每块板子的
 **硬件特性、引脚图、原理图、官方资料、镜像下载** 等。
 
 <div class="grid cards" markdown>

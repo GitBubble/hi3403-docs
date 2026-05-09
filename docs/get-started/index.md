@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 第一次接触 Pegasus / Hi3403？从这里开始。
+description: 第一次接触 Hi3403 / Hi3403？从这里开始。
 ---
 
 # 快速开始
@@ -45,7 +45,7 @@ description: 第一次接触 Pegasus / Hi3403？从这里开始。
 
     ---
 
-    下载、解压、初始化 Pegasus SDK，运行第一次编译。
+    下载、解压、初始化 Hi3403 SDK，运行第一次编译。
 
     [:octicons-arrow-right-24: 进入](sdk-install/index.md)
 

@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0开发指南/SVP2.0 开发指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/SVP2.0开发指南/SVP2.0 开发指南.md
 ---
 
 # 前言

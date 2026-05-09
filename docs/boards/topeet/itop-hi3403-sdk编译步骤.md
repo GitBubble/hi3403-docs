@@ -1,6 +1,6 @@
 ---
 title: "iTOP-Hi3403 SDK编译步骤"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/topeet/docs/iTOP-Hi3403 SDK编译步骤.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/topeet/docs/iTOP-Hi3403 SDK编译步骤.md
 ---
 
 # iTOP-Hi3403 SDK编译步骤

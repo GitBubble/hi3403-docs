@@ -5,7 +5,7 @@ description: hi3403-build、BurnTool、MindCmd、ToolPlatform、性能分析
 
 # 工具
 
-围绕 Pegasus 的官方与社区工具。从一键构建镜像到烧录、调试、性能分析。
+围绕 Hi3403 的官方与社区工具。从一键构建镜像到烧录、调试、性能分析。
 
 <div class="grid cards" markdown>
 

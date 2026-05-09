@@ -1,6 +1,6 @@
 ---
 title: "数据类型和数据结构"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 参考/IVE API 参考（3--6）.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/IVE API 参考/IVE API 参考（3--6）.md
 ---
 
 # 数据类型和数据结构

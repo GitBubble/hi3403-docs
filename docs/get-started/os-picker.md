@@ -56,7 +56,7 @@ flowchart TD
 
 ### OpenHarmony Small
 
-- **镜像构建**：用 OpenHarmony 官方编译流程 + Pegasus 提供的补丁包。
+- **镜像构建**：用 OpenHarmony 官方编译流程 + Hi3403 提供的补丁包。
 - **优势**：原生 OpenHarmony 子系统、支持 XTS 认证、生态紧跟华为。
 - **劣势**：学习曲线陡；不熟 OpenHarmony 的人需要先看官方文档。
 
@@ -64,7 +64,7 @@ flowchart TD
 
 ### OpenEuler
 
-- **镜像构建**：参考 OpenEuler 官方 + Pegasus 移植指南。
+- **镜像构建**：参考 OpenEuler 官方 + Hi3403 移植指南。
 - **优势**：国产 Linux 发行版，等保合规友好；dnf/yum 包仓相对完整。
 - **劣势**：板载支持以海鸥派 Euler Pi 为主，其他板子需要更多移植工作。
 
@@ -76,14 +76,14 @@ flowchart TD
 - **优势**：镜像最小、可定制性最强、启动最快。适合做嵌入式产品。
 - **劣势**：没有包管理器；想加新软件得改 Buildroot 配置重编。
 
-→ [基于 Pegasus 构建 Buildroot 系统镜像](../os/buildroot/index.md)
+→ [基于 Hi3403 构建 Buildroot 系统镜像](../os/buildroot/index.md)
 
 ## 还有问题？
 
 | 问题 | 答案 |
 |---|---|
 | 我能在同一块板子上切换操作系统吗？ | 能。Hi3403V100 的启动从 eMMC/SD/SPI 来，重新烧录就换系统。 |
-| 哪个系统对 NPU/ISP/编解码支持最好？ | 都行 —— Pegasus SDK 是 OS 无关的。三个系统跑同样的 MPP/SVP 库。 |
+| 哪个系统对 NPU/ISP/编解码支持最好？ | 都行 —— Hi3403 SDK 是 OS 无关的。三个系统跑同样的 MPP/SVP 库。 |
 | Ubuntu 镜像 8 GB 是不是太大？ | 桌面版 8 GB；lite 版 1.5 GB；如果还想更小，用 Buildroot。|
 | 实时性要求高怎么办？ | Buildroot + PREEMPT_RT 内核补丁。Ubuntu/OpenEuler 不推荐做硬实时。|
 

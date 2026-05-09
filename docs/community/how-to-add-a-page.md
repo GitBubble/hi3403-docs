@@ -5,7 +5,7 @@ description: 一份手把手指南：克隆 → 写一页 → 本地预览 → �
 
 # 添加一个新页面
 
-本文是给第一次给 Pegasus 文档加页面的贡献者的逐步教程。
+本文是给第一次给 Hi3403 文档加页面的贡献者的逐步教程。
 跟着做大概 15 分钟。
 
 ## 决定页面去哪
@@ -30,7 +30,7 @@ description: 一份手把手指南：克隆 → 写一页 → 本地预览 → �
 ## 步骤 1 — 创建文件
 
 ``` bash
-cd pegasus-docs
+cd hi3403-docs
 $EDITOR docs/tutorials/gstreamer.md
 ```
 
@@ -41,7 +41,7 @@ $EDITOR docs/tutorials/gstreamer.md
 ``` markdown
 ---
 title: 在 Hi3403 上跑 GStreamer
-description: 编译 GStreamer + Pegasus 插件，跑一条 pipeline
+description: 编译 GStreamer + Hi3403 插件，跑一条 pipeline
 ---
 ```
 
@@ -55,7 +55,7 @@ description: 编译 GStreamer + Pegasus 插件，跑一条 pipeline
 ``` markdown
 # 在 Hi3403 上跑 GStreamer
 
-**目标**：编译 GStreamer 1.22 + Pegasus 视频插件，跑一条 pipeline 把
+**目标**：编译 GStreamer 1.22 + Hi3403 视频插件，跑一条 pipeline 把
 摄像头数据通过 GStreamer 的 H.264 编码器输出。
 
 **用时**：约 1 小时
@@ -82,7 +82,7 @@ description: 编译 GStreamer + Pegasus 插件，跑一条 pipeline
 
     ---
 
-    用 GStreamer 1.22 接 Pegasus 编码器。
+    用 GStreamer 1.22 接 Hi3403 编码器。
 
     [:octicons-arrow-right-24: 进入](gstreamer.md)
 

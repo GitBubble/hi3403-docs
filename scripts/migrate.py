@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Migrate upstream pegasus + hi3403-build docs into pegasus-docs/docs/.
+Migrate upstream hi3403 + hi3403-build docs into hi3403-docs/docs/.
 
 Pipeline (one-shot, idempotent):
 
-  1. Inventory: walk pegasus/docs/zh-CN/, pegasus/vendor/*/, pegasus/os/*/
+  1. Inventory: walk hi3403/docs/zh-CN/, hi3403/vendor/*/, hi3403/os/*/
      and (optionally) hi3403-build/ for .md files.
   2. Resolve destination: every source path → a slug-friendly path under
      docs/<section>/... using SLUG_MAP below (deterministic — no pinyin
@@ -20,7 +20,7 @@ Pipeline (one-shot, idempotent):
 
 Usage:
     python3 scripts/migrate.py \\
-        --pegasus       ../pegasus \\
+        --hi3403       ../hi3403 \\
         --hi3403-build  ../hi3403-build \\
         --out           docs/
 
@@ -44,7 +44,7 @@ from typing import Dict, List, Optional, Tuple
 # --------------------------------------------------------------------------
 # Slug mapping
 # --------------------------------------------------------------------------
-# Each key is the basename of a directory inside pegasus/docs/zh-CN/.
+# Each key is the basename of a directory inside hi3403/docs/zh-CN/.
 # Each value is its destination path under docs/, relative to --out.
 # Order doesn't matter; the longest-prefix-doesn't-apply because we
 # look up by exact basename.
@@ -141,7 +141,7 @@ SLUG_MAP: Dict[str, str] = {
     "release-notes":                        "community/release-notes",
 }
 
-# Per-vendor README.md mapping under pegasus/vendor/* → boards/<slug>/index.md
+# Per-vendor README.md mapping under hi3403/vendor/* → boards/<slug>/index.md
 VENDOR_MAP: Dict[str, str] = {
     "topeet":            "boards/topeet",
     "LubanCat-Hi3403":   "boards/lubancat",
@@ -151,7 +151,7 @@ VENDOR_MAP: Dict[str, str] = {
     # opensource/ is not a board; it's upstream tracking. Skip.
 }
 
-# OS-specific READMEs from pegasus/os/*/README*.md
+# OS-specific READMEs from hi3403/os/*/README*.md
 OS_MAP: Dict[str, str] = {
     "Ubuntu":       "os/ubuntu",
     "OpenHarmony":  "os/openharmony",
@@ -219,12 +219,12 @@ def inject_front_matter(text: str, title: str, source_rel: str) -> str:
 
 # --------------------------------------------------------------------------
 def discover_docs(args) -> List[Doc]:
-    pegasus = Path(args.pegasus).resolve()
+    hi3403 = Path(args.hi3403).resolve()
     out = Path(args.out).resolve()
     docs: List[Doc] = []
 
-    # --- pegasus/docs/zh-CN/<dir>/ ---------------------------------------
-    zh = pegasus / "docs" / "zh-CN"
+    # --- hi3403/docs/zh-CN/<dir>/ ---------------------------------------
+    zh = hi3403 / "docs" / "zh-CN"
     if zh.is_dir():
         for sub in sorted(zh.iterdir()):
             if not sub.is_dir():
@@ -236,10 +236,10 @@ def discover_docs(args) -> List[Doc]:
                       file=sys.stderr)
                 continue
             for md in sorted(sub.glob("*.md")):
-                docs.append(_make_doc(md, sub, slug, out, pegasus))
+                docs.append(_make_doc(md, sub, slug, out, hi3403))
 
-    # --- pegasus/vendor/<vendor>/README*.md + docs/ -----------------------
-    vendor_root = pegasus / "vendor"
+    # --- hi3403/vendor/<vendor>/README*.md + docs/ -----------------------
+    vendor_root = hi3403 / "vendor"
     if vendor_root.is_dir():
         for vendor in sorted(vendor_root.iterdir()):
             if not vendor.is_dir() or vendor.name not in VENDOR_MAP:
@@ -265,8 +265,8 @@ def discover_docs(args) -> List[Doc]:
                     )
                     docs.append(d)
 
-    # --- pegasus/os/<distro>/README*.md ----------------------------------
-    os_root = pegasus / "os"
+    # --- hi3403/os/<distro>/README*.md ----------------------------------
+    os_root = hi3403 / "os"
     if os_root.is_dir():
         for distro in sorted(os_root.iterdir()):
             if not distro.is_dir() or distro.name not in OS_MAP:
@@ -298,7 +298,7 @@ def discover_docs(args) -> List[Doc]:
 
 
 def _make_doc(md: Path, src_dir: Path, slug: str, out: Path,
-              pegasus: Path) -> Doc:
+              hi3403: Path) -> Doc:
     """Build a Doc from a single .md file inside a slug-mapped directory."""
     # If a directory maps to a single file, the .md inside is the index.
     # If multi-file (e.g. MPP 13-part), each becomes its own file.
@@ -392,8 +392,8 @@ def write_inventory(docs: List[Doc], out: Path) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--pegasus", default="../pegasus",
-                    help="Path to the upstream pegasus repo (default ../pegasus)")
+    ap.add_argument("--hi3403", default="../hi3403",
+                    help="Path to the upstream hi3403 repo (default ../hi3403)")
     ap.add_argument("--hi3403-build", default="../hi3403-build",
                     help="Path to hi3403-build repo (default ../hi3403-build)")
     ap.add_argument("--out", default="docs",
@@ -406,9 +406,9 @@ def main() -> int:
 
     out = Path(args.out).resolve()
     print(f"Migration target: {out}")
-    print(f"Pegasus source:   {Path(args.pegasus).resolve()}")
-    if not Path(args.pegasus).exists():
-        print(f"ERROR: pegasus source not found at {args.pegasus}", file=sys.stderr)
+    print(f"Hi3403 source:   {Path(args.hi3403).resolve()}")
+    if not Path(args.hi3403).exists():
+        print(f"ERROR: hi3403 source not found at {args.hi3403}", file=sys.stderr)
         return 2
 
     docs = discover_docs(args)

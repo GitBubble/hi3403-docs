@@ -32,7 +32,7 @@ flowchart LR
 ## 步骤 1 — 配置 sensor
 
 板子上的 sensor 接到哪一路 MIPI lane？看你板子的原理图。在
-`/etc/pegasus/sensor.conf` 里设置（这是 hi3403-build 镜像的默认路径）：
+`/etc/hi3403/sensor.conf` 里设置（这是 hi3403-build 镜像的默认路径）：
 
 ``` ini
 [sensor0]
@@ -45,15 +45,15 @@ resolution = 3840x2160
 让 MPP 重新加载：
 
 ``` bash
-sudo systemctl restart pegasus-mpp
+sudo systemctl restart hi3403-mpp
 ```
 
 ## 步骤 2 — 启动 MPP sample
 
-Pegasus SDK 自带一个完整的采集-编码-推流 sample：
+Hi3403 SDK 自带一个完整的采集-编码-推流 sample：
 
 ``` bash
-cd /opt/pegasus/sample/venc
+cd /opt/hi3403/sample/venc
 sudo ./sample_venc rtsp imx415 1080p
 ```
 

@@ -1,11 +1,11 @@
 ---
 title: 术语表
-description: Pegasus 平台中的缩写、专有名词与一句话解释
+description: Hi3403 平台中的缩写、专有名词与一句话解释
 ---
 
 # 术语表
 
-Pegasus / Hi3403 文档里到处都是缩写。这个表给每个名词一句话解释 ——
+Hi3403 / Hi3403 文档里到处都是缩写。这个表给每个名词一句话解释 ——
 为新接触这个平台的人做翻译。
 
 ## 芯片与子系统
@@ -129,16 +129,16 @@ Pegasus / Hi3403 文档里到处都是缩写。这个表给每个名词一句话
 
 `TBBR`
 :   Trusted Board Boot Requirements —— ARM 的可信启动规范。
-    Pegasus 的安全启动基于 TBBR。
+    Hi3403 的安全启动基于 TBBR。
 
 `TF-A` / `ATF`
 :   Trusted Firmware-A —— ARM 的安全启动固件，运行在 EL3。
-    Pegasus 用 v2.2。
+    Hi3403 用 v2.2。
 
 ## 系统启动
 
 `U-Boot`
-:   通用 Bootloader。Pegasus 用 v2020.01。
+:   通用 Bootloader。Hi3403 用 v2020.01。
     [参考](../soc-linux/uboot/index.md)
 
 `bl31`
@@ -171,7 +171,7 @@ Pegasus / Hi3403 文档里到处都是缩写。这个表给每个名词一句话
     [参考](../tools/toolplatform/index.md)
 
 `SDK`
-:   Software Development Kit —— Pegasus 的开发包，包含 MPP 库、
+:   Software Development Kit —— Hi3403 的开发包，包含 MPP 库、
     内核驱动、sample 代码。分 GCC-GLIBC 和 CLANG-MUSL 两个变体。
 
 ## 别的常见缩写

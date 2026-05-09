@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/AMCT使用指南（PyTorch）/AMCT使用指南（PyTorch）.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/AMCT使用指南（PyTorch）/AMCT使用指南（PyTorch）.md
 ---
 
 # 前言
