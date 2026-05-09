@@ -112,10 +112,17 @@ body,
 .md-header__button.md-logo {
   padding: 0.4rem;
 }
-/* Color the logo dot */
-.md-header__button.md-logo svg,
-.md-header__button.md-logo img {
-  fill: var(--md-primary-fg-color);
+/* Logo sizing — let the wordmark breathe */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.6rem;
+  width: auto;
+}
+/* In dark mode, invert the anthracite wordmark to ivory while preserving
+   the gold spark (hue-rotate brings it back to warm gold after invert). */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img,
+[data-md-color-scheme="slate"] .md-nav__title .md-logo img {
+  filter: invert(1) hue-rotate(180deg);
 }
 [data-md-color-scheme="default"] .md-header,
 [data-md-color-scheme="default"] .md-tabs {

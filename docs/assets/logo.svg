@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" role="img" aria-label="Hispark">
-  <title>Hispark</title>
+<!--
+  HiSpark wordmark
+  - Anthracite (#1a1a1a) text reads on white drawer/search AND on raspberry-red header.
+  - Gold spark accent (#ffc24c) pops on every background.
+  - Inspired by the original HiSpark mark (red star above 'i'), reimagined as
+    a 4-point gleam with soft halo and a tiny secondary sparkle for flourish.
+  - In dark mode the wordmark is recolored to ivory via extra.css.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 88"
+     role="img" aria-label="HiSpark">
+  <title>HiSpark</title>
+
   <defs>
-    <linearGradient id="hisparkGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e2336a"/>
-      <stop offset="100%" stop-color="#c51a4a"/>
-    </linearGradient>
+    <radialGradient id="hsSparkGrad" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0%"   stop-color="#fff3c2"/>
+      <stop offset="45%"  stop-color="#ffc24c"/>
+      <stop offset="100%" stop-color="#f08a1c"/>
+    </radialGradient>
+    <radialGradient id="hsSparkGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   stop-color="#ffc24c" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffc24c" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <!-- Spark mark: a stylized 4-point spark / star -->
-  <g transform="translate(40 40)">
-    <circle r="28" fill="url(#hisparkGrad)"/>
-    <path d="M0 -16 L4 -4 L16 0 L4 4 L0 16 L-4 4 L-16 0 L-4 -4 Z"
-          fill="#ffffff"/>
+
+  <g fill="#1a1a1a"
+     font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+     font-weight="800"
+     letter-spacing="-2">
+    <text x="0"  y="64" font-size="60">Hi</text>
+    <text x="68" y="64" font-size="60">Spark</text>
   </g>
-  <!-- Wordmark -->
-  <text x="84" y="54"
-        font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
-        font-size="42"
-        font-weight="700"
-        letter-spacing="-1"
-        fill="#ffffff">Hispark</text>
+
+  <g transform="translate(56 18)">
+    <circle r="16" fill="url(#hsSparkGlow)"/>
+    <path d="M0 -11 L2.5 -2.5 L11 0 L2.5 2.5 L0 11 L-2.5 2.5 L-11 0 L-2.5 -2.5 Z"
+          fill="url(#hsSparkGrad)"/>
+    <circle r="1.8" fill="#ffffff"/>
+    <g transform="translate(10 -9)">
+      <path d="M0 -2.5 L0.8 -0.8 L2.5 0 L0.8 0.8 L0 2.5 L-0.8 0.8 L-2.5 0 L-0.8 -0.8 Z"
+            fill="#ffe28a"/>
+    </g>
+  </g>
 </svg>
