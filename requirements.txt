@@ -1,0 +1,8 @@
+# Pegasus documentation build dependencies.
+#
+# Install with:  make install   (or  pip install -r requirements.txt )
+mkdocs>=1.6
+mkdocs-material>=9.5
+mkdocs-static-i18n>=1.2
+mkdocs-glightbox>=0.4
+pymdown-extensions>=10.7

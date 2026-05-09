@@ -1,0 +1,501 @@
+/* ============================================================
+ * Pegasus docs — RPi-inspired visual theme
+ * Layered on top of Material for MkDocs.
+ * Goal: clean white surface, raspberry accent, generous cards,
+ * tight sidebar, ⌘K-style search bar.
+ * ============================================================ */
+
+/* ---------- 1. Color tokens ---------- */
+
+:root,
+[data-md-color-scheme="default"] {
+  /* RPi raspberry red */
+  --md-primary-fg-color:        #c51a4a;
+  --md-primary-fg-color--light: #e2336a;
+  --md-primary-fg-color--dark:  #8e0e34;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: #ffffffe6;
+
+  --md-accent-fg-color:         #c51a4a;
+  --md-accent-fg-color--transparent: rgba(197, 26, 74, 0.08);
+  --md-accent-bg-color:         #ffffff;
+  --md-accent-bg-color--light:  #ffffffe6;
+
+  /* Surface tweaks */
+  --md-default-bg-color:        #ffffff;
+  --md-default-fg-color--lightest: #ececec;
+
+  /* Subtle warm gray sidebar tint, like RPi */
+  --pegasus-sidebar-bg:         #fafafa;
+  --pegasus-card-bg:            #ffffff;
+  --pegasus-card-border:        #e6e6e6;
+  --pegasus-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.04),
+                                0 4px 14px rgba(0, 0, 0, 0.05);
+  --pegasus-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.06),
+                                0 12px 28px rgba(197, 26, 74, 0.12);
+  --pegasus-divider:            #ececec;
+  --pegasus-muted:              #6b6b6b;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #e2336a;
+  --md-primary-fg-color--light: #ee5b89;
+  --md-primary-fg-color--dark:  #b81450;
+  --md-accent-fg-color:         #ff5c8a;
+  --md-accent-fg-color--transparent: rgba(255, 92, 138, 0.12);
+
+  --pegasus-sidebar-bg:         #16181d;
+  --pegasus-card-bg:            #1c1f26;
+  --pegasus-card-border:        #2b2f38;
+  --pegasus-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.4),
+                                0 4px 14px rgba(0, 0, 0, 0.45);
+  --pegasus-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.5),
+                                0 12px 28px rgba(226, 51, 106, 0.25);
+  --pegasus-divider:            #2b2f38;
+  --pegasus-muted:              #aab1bd;
+}
+
+/* ---------- 2. Typography ---------- */
+
+body,
+.md-typeset {
+  font-feature-settings: "ss01", "cv01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin: 0 0 1.2rem 0;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: 1.8rem;
+}
+
+.md-typeset p,
+.md-typeset li {
+  line-height: 1.7;
+}
+
+/* ---------- 3. Header ---------- */
+
+.md-header {
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  box-shadow: 0 1px 0 var(--pegasus-divider);
+  height: 3.4rem;
+}
+.md-header[data-md-state="shadow"] {
+  box-shadow: 0 1px 0 var(--pegasus-divider),
+              0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-left: 0.6rem;
+}
+.md-header__button.md-logo {
+  padding: 0.4rem;
+}
+/* Color the logo dot */
+.md-header__button.md-logo svg,
+.md-header__button.md-logo img {
+  fill: var(--md-primary-fg-color);
+}
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  color: #1a1a1a;
+}
+
+/* ---------- 4. Top tabs (RPi-style horizontal nav) ---------- */
+
+.md-tabs {
+  background: var(--md-default-bg-color);
+  border-bottom: 1px solid var(--pegasus-divider);
+  color: var(--md-default-fg-color);
+}
+.md-tabs__link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  opacity: 0.85;
+  letter-spacing: 0;
+}
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  color: var(--md-primary-fg-color);
+}
+.md-tabs__item {
+  height: 2.5rem;
+}
+
+/* ---------- 5. Search bar (⌘K vibe) ---------- */
+
+.md-search__form {
+  background: #f3f3f3;
+  border-radius: 0.4rem;
+  height: 2.1rem;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+[data-md-color-scheme="slate"] .md-search__form {
+  background: #2a2d35;
+}
+.md-search__form:hover,
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background: var(--md-default-bg-color);
+  box-shadow: 0 0 0 1px var(--pegasus-card-border),
+              0 6px 24px rgba(0, 0, 0, 0.08);
+}
+.md-search__input {
+  font-size: 0.78rem;
+}
+.md-search__input::placeholder {
+  color: var(--pegasus-muted);
+}
+
+/* ---------- 6. Sidebar ---------- */
+
+.md-sidebar--primary {
+  background: var(--pegasus-sidebar-bg);
+}
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  background: var(--pegasus-sidebar-bg);
+}
+.md-nav__title {
+  color: var(--pegasus-muted);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.md-nav__item .md-nav__link {
+  font-size: 0.78rem;
+  padding: 0.28rem 0;
+  transition: color 0.12s ease;
+}
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: var(--md-primary-fg-color);
+}
+.md-nav__link--active {
+  font-weight: 600;
+}
+/* Section headings in sidebar */
+.md-nav--primary .md-nav__title[for="__drawer"] {
+  background: var(--md-default-bg-color);
+}
+
+/* Right TOC */
+.md-sidebar--secondary .md-nav__title {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--pegasus-muted);
+}
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.74rem;
+}
+
+/* ---------- 7. Card grid (the RPi look) ---------- */
+
+.md-typeset .grid.cards {
+  margin: 1.4rem 0 2rem;
+}
+.md-typeset .grid.cards > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 1rem;
+}
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > .admonition {
+  background: var(--pegasus-card-bg);
+  border: 1px solid var(--pegasus-card-border);
+  border-radius: 0.6rem;
+  padding: 1.15rem 1.25rem 1.15rem;
+  margin: 0;
+  box-shadow: var(--pegasus-card-shadow);
+  transition: transform 0.18s ease,
+              box-shadow 0.18s ease,
+              border-color 0.18s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  border-color: var(--md-primary-fg-color);
+  box-shadow: var(--pegasus-card-shadow-hover);
+}
+.md-typeset .grid.cards > ul > li:hover > p > strong {
+  color: var(--md-primary-fg-color);
+}
+/* Card icon */
+.md-typeset .grid.cards .twemoji,
+.md-typeset .grid.cards .lg.middle {
+  color: var(--md-primary-fg-color);
+  font-size: 1.55rem;
+  margin-bottom: 0.6rem;
+  display: inline-block;
+}
+.md-typeset .grid.cards strong {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--md-default-fg-color);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.md-typeset .grid.cards hr {
+  display: none;
+}
+.md-typeset .grid.cards p {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--pegasus-muted);
+  margin: 0 0 0.6rem 0;
+}
+/* Style the trailing arrow link inside each card */
+.md-typeset .grid.cards > ul > li > p:last-child {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 0;
+}
+.md-typeset .grid.cards > ul > li > p:last-child a {
+  color: var(--md-primary-fg-color);
+  border-bottom: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.md-typeset .grid.cards > ul > li > p:last-child a:hover {
+  color: var(--md-primary-fg-color--dark);
+}
+
+/* ---------- 8. Hero on landing pages ---------- */
+
+.md-typeset .hero {
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe7ee 100%);
+  color: #1a1a1a;
+  padding: 3.2rem 2.4rem 3rem;
+  border-radius: 0.8rem;
+  margin: 0 0 2.5rem;
+  border: 1px solid var(--pegasus-card-border);
+  position: relative;
+  overflow: hidden;
+}
+[data-md-color-scheme="slate"] .md-typeset .hero {
+  background: linear-gradient(135deg, #2a1820 0%, #3a1a2c 100%);
+  color: #f5f5f7;
+  border-color: var(--pegasus-card-border);
+}
+.md-typeset .hero::after {
+  content: "";
+  position: absolute;
+  right: -4rem;
+  bottom: -4rem;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+              rgba(197, 26, 74, 0.12) 0%,
+              rgba(197, 26, 74, 0) 70%);
+  pointer-events: none;
+}
+.md-typeset .hero h1 {
+  font-size: 2.6rem;
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+[data-md-color-scheme="default"] .md-typeset .hero h1 {
+  color: #1a1a1a;
+}
+.md-typeset .hero p {
+  font-size: 1.05rem;
+  max-width: 38rem;
+  margin: 0 0 1.2rem;
+  color: inherit;
+  opacity: 0.85;
+}
+.md-typeset .hero .md-button {
+  margin-right: 0.6rem;
+  margin-top: 0.4rem;
+}
+.md-typeset .hero .md-button--primary {
+  background: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+  color: #fff;
+}
+.md-typeset .hero .md-button--primary:hover {
+  background: var(--md-primary-fg-color--dark);
+  border-color: var(--md-primary-fg-color--dark);
+}
+.md-typeset .hero .md-button:not(.md-button--primary) {
+  background: #ffffff;
+  color: var(--md-primary-fg-color);
+  border: 1px solid var(--pegasus-card-border);
+}
+[data-md-color-scheme="slate"] .md-typeset .hero .md-button:not(.md-button--primary) {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------- 9. Related-resources footer band ---------- */
+
+.md-typeset .related {
+  margin-top: 3.5rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--pegasus-divider);
+}
+.md-typeset .related h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pegasus-muted);
+  font-weight: 600;
+  margin-top: 0;
+}
+
+/* ---------- 10. Buttons & inline links ---------- */
+
+.md-typeset .md-button {
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.55rem 1.1rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(197, 26, 74, 0.2);
+}
+
+.md-typeset a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+.md-typeset p a,
+.md-typeset li a {
+  border-bottom: 1px solid var(--md-accent-fg-color--transparent);
+}
+.md-typeset p a:hover,
+.md-typeset li a:hover {
+  color: var(--md-primary-fg-color);
+  border-bottom-color: var(--md-primary-fg-color);
+}
+
+/* ---------- 11. Code, tables, admonitions ---------- */
+
+.md-typeset code {
+  background: rgba(197, 26, 74, 0.08);
+  color: var(--md-primary-fg-color--dark);
+  border-radius: 0.25rem;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.86em;
+}
+[data-md-color-scheme="slate"] .md-typeset code {
+  background: rgba(226, 51, 106, 0.18);
+  color: #ffb3c7;
+}
+.md-typeset pre > code {
+  background: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+  border-radius: 0.45rem;
+  padding: 1rem;
+}
+.md-typeset .highlight {
+  border-radius: 0.45rem;
+  overflow: hidden;
+  border: 1px solid var(--pegasus-divider);
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 0.45rem;
+  overflow: hidden;
+  border: 1px solid var(--pegasus-divider);
+  font-size: 0.82rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--pegasus-sidebar-bg);
+  font-weight: 600;
+}
+.md-typeset table:not([class]) tr:hover {
+  background: rgba(197, 26, 74, 0.03);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.5rem;
+  border-left-width: 3px;
+  font-size: 0.84rem;
+  box-shadow: var(--pegasus-card-shadow);
+}
+
+/* ---------- 12. Footer ---------- */
+
+.md-footer-meta {
+  background: #1a1a1a;
+}
+.md-copyright {
+  color: rgba(255, 255, 255, 0.7);
+}
+.md-footer-nav {
+  background: #232323;
+}
+
+/* ---------- 13. Misc polish ---------- */
+
+.md-content {
+  padding-bottom: 2rem;
+}
+.md-content__inner {
+  margin: 0 1rem 1.2rem;
+  padding-top: 1.4rem;
+}
+.md-content__button {
+  opacity: 0.55;
+  transition: opacity 0.12s ease;
+}
+.md-content__button:hover {
+  opacity: 1;
+}
+
+/* Edit-this-page bar at the top of the article */
+.md-source-file {
+  font-size: 0.72rem;
+  color: var(--pegasus-muted);
+}
+
+/* Limit overall content width for readability */
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 75rem;
+  }
+}
+
+/* Hide the "Made with Material" badge if any leaks through */
+.md-source__icon + .md-source__repository::after {
+  display: none;
+}

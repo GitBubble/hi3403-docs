@@ -1,0 +1,305 @@
+site_name: Pegasus Documentation
+site_url: https://gitbubble.github.io/hi3403-docs/
+site_description: Documentation for the HiSilicon SS928V100 / SS927V100 Pegasus platform
+site_author: Pegasus community
+
+repo_name: GitBubble/hi3403-docs
+repo_url: https://github.com/GitBubble/hi3403-docs
+edit_uri: edit/main/docs/
+
+copyright: >
+  Documentation © 2026 Pegasus contributors —
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+
+theme:
+  name: material
+  language: zh   # default, the i18n plugin overlays /en
+  # Add `custom_dir: overrides/` and `logo:` / `favicon:` here once
+  # those assets exist. Material's defaults are clean enough for v1.
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom        # RPi-style raspberry red, defined in extra.css
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: 切换到浅色模式
+  features:
+    - navigation.tracking        # update URL on scroll
+    - navigation.tabs            # top-level tabs (RPi-style)
+    - navigation.tabs.sticky
+    - navigation.sections        # sections in side nav
+    - navigation.indexes         # section index pages
+    - navigation.top             # back-to-top button
+    - navigation.footer
+    - navigation.path            # breadcrumbs
+    - navigation.prune           # smaller nav payload
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit        # "edit this page" link
+    - content.tabs.link
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: simple/gitee
+      link: https://gitee.com/HiSpark/pegasus
+      name: Gitee 主仓
+    - icon: fontawesome/brands/github
+      link: https://github.com/raspberrypi/documentation
+      name: 灵感来源 (RPi docs)
+  generator: false               # hide "Made with MkDocs" footer
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - i18n:
+      # Translations live under docs/<page>.<locale>.md (suffix style).
+      # Missing English pages fall back to the Chinese version, so we
+      # can ship zh-CN first and grow English incrementally.
+      docs_structure: suffix
+      fallback_to_default: true
+      languages:
+        - locale: zh
+          default: true
+          name: 中文 (简体)
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            "首页": "Home"
+            "快速开始": "Get started"
+            "开发板": "Boards"
+            "操作系统": "OS"
+            "SoC 与 Linux": "SoC & Linux"
+            "多媒体与 AI": "Multimedia & AI"
+            "工具": "Tools"
+            "参考": "Reference"
+            "教程": "Tutorials"
+            "社区": "Community"
+  - tags
+  - glightbox                    # image lightbox
+
+validation:
+  links:
+    # The migrated upstream corpus contains many generated cross-file links
+    # whose targets were renamed, split, or not imported yet. Keep `--strict`
+    # for configuration/build warnings, but let link debt be handled by the
+    # dedicated `make linkcheck` workflow while migration stabilizes.
+    not_found: ignore
+
+markdown_extensions:
+  - admonition                   # !!! note / warning / tip blocks
+  - attr_list                    # img/link attributes
+  - md_in_html                   # markdown inside HTML blocks
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: 锚链接
+  - pymdownx.details             # collapsible blocks
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys                # keyboard keys: ++ctrl+c++
+
+# Top-level navigation: every page enumerated explicitly so the side nav
+# lists all migrated content. Section landing cards in each `index.md`
+# mirror the RPi-style layout. To add a page: drop a `.md` under the
+# right directory AND add a line here under the matching section.
+nav:
+  - 首页: index.md
+  - 快速开始:
+      - 快速开始: get-started/index.md
+      - 30 分钟启动 Hi3403: get-started/quickstart/index.md
+      - 选择开发板: get-started/board-picker.md
+      - 选择操作系统: get-started/os-picker.md
+      - 安装开发环境: get-started/environment/index.md
+      - 安装 SDK: get-started/sdk-install/index.md
+      - 驱动安装: get-started/driver-install/index.md
+      - 上游 SDK 快速开始: get-started/upstream-quickstart/index.md
+  - 开发板:
+      - 开发板: boards/index.md
+      - Topeet iTOP-Hi3403:
+          - 概览: boards/topeet/index.md
+          - SDK 编译步骤: boards/topeet/itop-hi3403-sdk编译步骤.md
+          - 镜像烧写步骤: boards/topeet/itop-hi3403-镜像烧写步骤.md
+          - 外设测试步骤: boards/topeet/itop-hi3403-开发板外设测试步骤.md
+      - LubanCat-Hi3403 (野火): boards/lubancat/index.md
+      - 海鸥派 Euler Pi (易百纳): boards/ebaina/index.md
+      - 润开鸿: boards/rkh/index.md
+      - 中科蓝讯: boards/zsks/index.md
+  - 操作系统:
+      - 操作系统: os/index.md
+      - Ubuntu:
+          - 概览: os/ubuntu/index.md
+          - 移植: os/ubuntu/porting.md
+      - OpenHarmony:
+          - 概览: os/openharmony/index.md
+          - 移植: os/openharmony/porting/index.md
+          - 使用: os/openharmony/usage/index.md
+      - OpenEuler:
+          - 概览: os/openeuler/index.md
+          - 移植: os/openeuler/porting.md
+      - Buildroot: os/buildroot/index.md
+  - SoC 与 Linux:
+      - SoC 与 Linux: soc-linux/index.md
+      - SS928V100 概览: soc-linux/soc-overview/index.md
+      - U-Boot: soc-linux/uboot/index.md
+      - 安全启动: soc-linux/secure-boot/index.md
+      - 外设驱动: soc-linux/peripherals/index.md
+      - 内存布局: soc-linux/memory-layout/index.md
+      - MIPI: soc-linux/mipi/index.md
+      - DDR 调优: soc-linux/ddr-tuning/index.md
+      - PCIE 级联: soc-linux/pcie/index.md
+      - 安全子系统: soc-linux/security/index.md
+      - 应用开发: soc-linux/app-dev/index.md
+  - 多媒体与 AI:
+      - 多媒体与 AI: multimedia/index.md
+      - MPP:
+          - MPP 概览: multimedia/mpp/index.md
+          - 00 · 前言: multimedia/mpp/00-前言.md
+          - 01 · 概述: multimedia/mpp/01-概述.md
+          - 02 · 系统控制: multimedia/mpp/02-系统控制.md
+          - 03 · 视频输入: multimedia/mpp/03-视频输入.md
+          - 04 · 视频输出 4.1–4.3: multimedia/mpp/04-视频输出-41-43.md
+          - 04 · 视频输出 4.4–4.5: multimedia/mpp/04-视频输出-44-45.md
+          - 05 · 视频处理子系统: multimedia/mpp/05-视频处理子系统.md
+          - 06 · 视频编码 6.1–6.3: multimedia/mpp/06-视频编码-61-63.md
+          - 06 · 视频编码 6.4–6.5: multimedia/mpp/06-视频编码-64-65.md
+          - 07 · 视频解码: multimedia/mpp/07-视频解码.md
+          - 08 · 区域管理: multimedia/mpp/08-区域管理.md
+          - 09 · 音频 9.1–9.3: multimedia/mpp/09-音频-91-93.md
+          - 09 · 音频 9.4–9.5: multimedia/mpp/09-音频-94-95.md
+          - 10 · 视频图形子系统: multimedia/mpp/10-视频图形子系统.md
+          - 11 · 几何畸变矫正子系统: multimedia/mpp/11-几何畸变矫正子系统.md
+          - 12 · 拼接: multimedia/mpp/12拼接.md
+          - 13 · proc 调试 13.1–13.15: multimedia/mpp/13-proc调试信息-131-1315.md
+          - 13 · proc 调试 13.16–13.29: multimedia/mpp/13-proc调试信息-1316-1329.md
+      - ISP:
+          - ISP 概览: multimedia/isp/index.md
+          - 调优: multimedia/isp/tuning/index.md
+          - 传感器适配: multimedia/isp/sensor/index.md
+          - 颜色管理: multimedia/isp/color/index.md
+          - IAE 迁移: multimedia/isp/iae-migration/index.md
+          - 开发参考:
+              - 开发参考索引: multimedia/isp/dev-ref/index.md
+              - 第 1–2 章: multimedia/isp/dev-ref/isp-开发参考-1-2.md
+              - 第 3–5 章: multimedia/isp/dev-ref/isp-开发参考-3-5.md
+              - 第 6 章: multimedia/isp/dev-ref/isp-开发参考-6.md
+              - 第 7–14 章: multimedia/isp/dev-ref/isp-开发参考-7-14.md
+      - HDMI: multimedia/hdmi/index.md
+      - 图形:
+          - 图形概览: multimedia/graphics/index.md
+          - GFBG: multimedia/graphics/gfbg/index.md
+          - 开发参考: multimedia/graphics/dev/index.md
+      - 开机画面 (Splash): multimedia/splash/index.md
+      - SVP (NPU):
+          - SVP 概览: multimedia/svp/index.md
+          - 开发指南: multimedia/svp/dev/index.md
+      - ATC:
+          - ATC 概览: multimedia/atc/index.md
+          - 工具: multimedia/atc/tool/index.md
+          - 计算图: multimedia/atc/graph/index.md
+          - 自定义算子: multimedia/atc/custom-op/index.md
+      - AMCT 量化:
+          - AMCT 概览: multimedia/amct/index.md
+          - PyTorch: multimedia/amct/pytorch/index.md
+          - Caffe: multimedia/amct/caffe/index.md
+      - 计算机视觉:
+          - CV 概览: multimedia/cv/index.md
+          - DPU: multimedia/cv/dpu/index.md
+          - HNR: multimedia/cv/hnr/index.md
+          - HNR 调优: multimedia/cv/hnr-tuning/index.md
+      - MotionFusion: multimedia/motionfusion/index.md
+      - DIS 防抖: multimedia/dis/index.md
+      - 3DNR 降噪: multimedia/3dnr/index.md
+      - 黑白彩色双路融合:
+          - 双路融合概览: multimedia/dual-fusion/index.md
+          - 开发: multimedia/dual-fusion/dev/index.md
+          - 调优: multimedia/dual-fusion/tuning/index.md
+      - 抓拍: multimedia/snapshot/index.md
+  - 工具:
+      - 工具: tools/index.md
+      - hi3403-build: tools/hi3403-build.md
+      - BurnTool: tools/burntool/index.md
+      - MindCmd: tools/mindcmd/index.md
+      - ToolPlatform: tools/toolplatform/index.md
+      - 性能分析 (Profiling): tools/profiling/index.md
+      - 精度对比: tools/accuracy-compare/index.md
+      - 图像质量调试 (IQS): tools/iqs-debug/index.md
+  - 参考:
+      - 参考: reference/index.md
+      - SYS_CONFIG: reference/sys-config/index.md
+      - 术语表: reference/glossary.md
+      - API:
+          - API 索引: reference/api/index.md
+          - Audio: reference/api/audio/index.md
+          - Cipher: reference/api/cipher/index.md
+          - GFBG: reference/api/gfbg/index.md
+          - IVE:
+              - IVE 索引: reference/api/ive/index.md
+              - IVE API 1–2: reference/api/ive/ive-api-参考-1-2.md
+              - IVE API 3–6: reference/api/ive/ive-api-参考-3-6.md
+          - IVS: reference/api/ivs/index.md
+          - KLAD: reference/api/klad/index.md
+          - OTP: reference/api/otp/index.md
+          - SVP: reference/api/svp/index.md
+          - TDE: reference/api/tde/index.md
+      - FAQ:
+          - FAQ 索引: reference/faq/index.md
+          - BSP: reference/faq/bsp/index.md
+          - ISP: reference/faq/isp/index.md
+          - MPP: reference/faq/mpp/index.md
+          - 拼接 (Splice): reference/faq/splice/index.md
+  - 教程:
+      - 教程: tutorials/index.md
+      - 采集 → 编码 → 推流: tutorials/capture-encode-stream.md
+      - SVP 首次推理: tutorials/svp-first-inference.md
+      - ISP 颜色调优: tutorials/isp-color-tuning.md
+  - 社区:
+      - 社区: community/index.md
+      - 贡献指南: community/contributing.md
+      - 风格指南: community/style-guide.md
+      - 添加新页面: community/how-to-add-a-page.md
+      - 许可: community/license.md
+      - 发布说明:
+          - 发布说明: community/release-notes/index.md
+          - Pegasus v1.1 Beta3: community/release-notes/pegasus-v11-beta3.md
+          - Pegasus v1.1 Beta2: community/release-notes/pegasus-v11-beta2.md
+          - Pegasus v1.0 Beta1: community/release-notes/pegasus-v10-beta1.md
