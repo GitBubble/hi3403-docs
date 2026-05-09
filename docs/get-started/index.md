@@ -9,11 +9,11 @@ description: 第一次接触 Hi3403 / Hi3403？从这里开始。
 
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __在 30 分钟内启动 Hi3403__
+-   :material-clock-fast:{ .lg .middle } __快速启动__
 
     ---
 
-    最短路径：选板子 → 烧录预编译镜像 → 接串口/HDMI → 看到登录界面。
+    选板子 → 烧镜像 → 接串口 → 登录。一页走完整个流程。
 
     [:octicons-arrow-right-24: 进入](quickstart/index.md)
 
