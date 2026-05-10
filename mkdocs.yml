@@ -55,6 +55,7 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/logo.css
 
 extra:
   social:

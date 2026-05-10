@@ -1,0 +1,23 @@
+/* Keep the HiSpark wordmark visible at widths where Material hides it by default. */
+@media screen and (max-width: 76.234375em) {
+  .md-header__button.md-logo {
+    align-items: center;
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .md-header__title {
+    margin-left: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 44.984375em) {
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    height: 1.35rem;
+  }
+
+  .md-header__title {
+    display: none;
+  }
+}
