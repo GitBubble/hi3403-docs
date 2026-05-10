@@ -117,8 +117,9 @@ docs/tutorials/
 make serve
 ```
 
-浏览器打开 <http://127.0.0.1:8000/tutorials/gstreamer/> —— 你的新页面应该
-就在那。试试改一行、保存 —— 浏览器会自动刷新。
+浏览器打开 `http://127.0.0.1:8000/tutorials/gstreamer/` —— 你的新页面应该
+就在那（`make serve` 会启动 MkDocs 开发服务器在 8000 端口）。试试改一行、
+保存 —— 浏览器会自动刷新。
 
 ## 步骤 7 — 链接检查
 

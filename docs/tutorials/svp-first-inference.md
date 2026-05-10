@@ -1,6 +1,6 @@
 ---
 title: 在板上跑一个 AI 模型
-description: 把 ONNX 模型转成 SVP 可执行格式，在 Hi3403 上推理
+description: 把模型转成 SVP 可执行格式，在 Hi3403 上推理
 ---
 
 # 教程：在板上跑一个 AI 模型
@@ -10,11 +10,18 @@ description: 把 ONNX 模型转成 SVP 可执行格式，在 Hi3403 上推理
 
 **用时**：约 45 分钟
 
+!!! info "前提"
+
+    本教程假设你已经在 PC 主机装好了 [ATC 工具](../multimedia/atc/tool/index.md)
+    （Pegasus SDK 的一部分）。ATC 不在板子上跑，只在 PC 上做模型转换。
+    板端运行环境用 [`hi3403-build`](../tools/hi3403-build.md) 产出的 Ubuntu
+    镜像，里面 SVP 推理库（`libacl*.so`）已经装在 `/usr/lib/`。
+
 **前置条件**：
 
-- 已经按 [quickstart](../get-started/quickstart.md) 启动了 Hi3403
-- 主机上装好了 [ATC 工具](../multimedia/atc/tool/index.md)（PC 端工具）
-- 网络通畅（要下载 YOLOv5n.onnx）
+- PC 主机：装好 ATC 与 Python 3.10+
+- 板子：通过 [quickstart](../get-started/quickstart.md) 启动起来了
+- 网络：PC ↔ 板子在同一局域网
 
 ## 整体流程
 
@@ -30,7 +37,7 @@ flowchart LR
 ## 步骤 1 — 在主机准备 ONNX 模型
 
 ``` bash
-mkdir -p ~/yolo-hi3403 && cd ~/yolo-hi3403
+mkdir -p ~/yolo-pegasus && cd ~/yolo-pegasus
 
 # 从 ultralytics 拉一个轻量级 yolov5n
 wget https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5n.onnx
@@ -41,7 +48,9 @@ wget https://ultralytics.com/images/bus.jpg
 
 ## 步骤 2 — 用 ATC 转换为 .om
 
-ATC 把 ONNX 转成 SVP 能执行的 `.om` 格式：
+ATC 把 ONNX 转成 SVP 能执行的 `.om` 格式。**ATC 命令的精确参数随
+SDK 版本变化** —— 下面是常见的 SS928V100 用法，请以
+[ATC 工具使用指南](../multimedia/atc/tool/index.md) 为准：
 
 ``` bash
 atc \
@@ -49,7 +58,7 @@ atc \
     --framework=5 \
     --output=yolov5n \
     --input_shape="images:1,3,640,640" \
-    --soc_version=Hi3403V100 \
+    --soc_version=SS928V100 \
     --log=info
 ```
 
@@ -57,45 +66,35 @@ atc \
 
 | 参数 | 含义 |
 |---|---|
-| `--framework=5` | 5 = ONNX（1=Caffe，3=TensorFlow，5=ONNX） |
+| `--framework` | `1`=Caffe，`3`=TensorFlow，`5`=ONNX |
 | `--input_shape` | 模型输入张量形状 |
-| `--soc_version` | 目标芯片 |
-
-期望输出：
-
-```
-ATC start working now, please wait for a moment.
-ATC run success, welcome to the next use.
-```
+| `--soc_version` | 目标芯片（部分 SDK 写 `Hi3403V100`，部分写 `SS928V100`）|
 
 成功后会得到 `yolov5n.om`，约 8 MB。
 
 !!! tip "ATC 跑得慢？"
 
-    第一次跑会编译算子库，5–10 分钟很正常。后续转换同结构的模型秒级。
+    第一次跑会编译算子库，5–10 分钟正常。后续转换同结构的模型秒级。
 
 ## 步骤 3 — 拷到板子
 
 ``` bash
-scp yolov5n.om bus.jpg hi@192.168.1.42:~/
+scp yolov5n.om bus.jpg hi@<板子IP>:~/
 ```
 
 ## 步骤 4 — 在板子上推理
 
-SSH 到板子：
+SDK 在 `pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/` 下面提供
+若干 SVP / ACL 相关 sample（名字随 SDK 版本不同；常见 `nnie_sample`、
+`acl_sample`、`svp_sample`）。把对应 sample 编出来，拷到板子上跑：
 
 ``` bash
-ssh hi@192.168.1.42
+ssh hi@<板子IP>
+chmod +x sample_acl
+./sample_acl ~/yolov5n.om ~/bus.jpg
 ```
 
-用 SDK 自带的 `sample_svp` 推理：
-
-``` bash
-cd /opt/hi3403/sample/svp
-./sample_svp infer ~/yolov5n.om ~/bus.jpg
-```
-
-期望输出：
+期望输出形式（具体格式取决于你跑的 sample，以下示意）：
 
 ```
 [INFO] Loading yolov5n.om ...
@@ -110,33 +109,35 @@ cd /opt/hi3403/sample/svp
 
 ## 步骤 5 — 提速：量化
 
-FP16 的 yolov5n 推理 6.8 ms。用 [AMCT](../multimedia/amct/index.md) 量化到
-INT8 之后，能压到 ~3 ms：
+FP16 的 yolov5n 在 SS928V100 上推理 ~7 ms。用
+[AMCT](../multimedia/amct/index.md) 量化到 INT8 之后，能压到 ~3 ms：
 
 ``` bash
-# 在主机上
+# 在主机上 —— 命令名按你装的 AMCT 版本可能是 amct_onnx 或 amct
 amct_onnx calibration \
     --model=yolov5n.onnx \
     --save_path=yolov5n_int8.onnx \
     --input_shape="images:1,3,640,640" \
-    --data_dir=./calibration_images/ \
-    --calibration_config=config.json
+    --data_dir=./calibration_images/
 ```
 
-然后再跑一遍 `atc` 把量化后的 ONNX 转 `.om`。
+然后再跑一遍 `atc` 把量化后的 ONNX 转成 `.om`。
 
-## 步骤 6 — 写自己的推理代码
+## 步骤 6 — 自己写推理代码
 
-调 SVP 的核心 API：
+调 SVP 的核心 API（基于 ACL 接口）：
 
 ``` c
 #include "acl/acl.h"
 
 int main(void) {
+    aclrtContext ctx;
+    aclrtStream stream;
+
     // 1. 初始化
     aclInit(NULL);
     aclrtSetDevice(0);
-    aclrtCreateContext(&context, 0);
+    aclrtCreateContext(&ctx, 0);
     aclrtCreateStream(&stream);
 
     // 2. 加载模型
@@ -151,26 +152,21 @@ int main(void) {
     // 4. 推理
     aclmdlExecute(model_id, input, output);
 
-    // 5. 取出结果
-    /* ... post-process bbox / NMS ... */
+    // 5. 后处理 bbox / NMS
+    /* ... */
 
     // 6. 清理
     aclmdlUnload(model_id);
     aclrtDestroyStream(stream);
-    aclrtDestroyContext(context);
+    aclrtDestroyContext(ctx);
     aclrtResetDevice(0);
     aclFinalize();
     return 0;
 }
 ```
 
-完整代码见 SDK 的 `sample/svp/sample_svp_yolo.c`。
-
-## 把 AI 接到视频流
-
-下一步：把这个推理接到 VENC 之前，对每帧检测物体并画框。
-
-→ 见 [采集 → 编码 → 推流](capture-encode-stream.md)
+完整代码模板见 SDK 的 SVP / ACL sample 目录。
+ACL 的完整 API 见 [SVP API 参考](../reference/api/svp/index.md)。
 
 ## 接下来
 

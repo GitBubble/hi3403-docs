@@ -1,6 +1,6 @@
 ---
 title: "第1章 ToolPlatform固件烧录"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/topeet/docs/iTOP-Hi3403 开发板外设测试步骤.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/topeet/docs/iTOP-Hi3403 开发板外设测试步骤.md
 ---
 
 # 第1章 ToolPlatform固件烧录

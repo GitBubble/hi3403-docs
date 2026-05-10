@@ -10,7 +10,7 @@ Build Ubuntu 22.04 ARM64 images for Hi3403V100 (SS928V100) boards using the open
 ## Supported Boards
 
 - Topeet iTOP-Hi3403V100 (default)
-- Add other boards via vendor patches in `hi3403/vendor/`
+- Add other boards via vendor patches in `pegasus/vendor/`
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 ---
 title: "第一章 Ubuntu系统功能测试"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/topeet/docs/iTOP-Hi3403 镜像烧写步骤.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/topeet/docs/iTOP-Hi3403 镜像烧写步骤.md
 ---
 
 # 第一章 Ubuntu系统功能测试

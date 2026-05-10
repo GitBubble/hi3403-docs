@@ -1,6 +1,6 @@
 ---
 title: "README"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/topeet/README.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/topeet/README.md
 ---
 
 ### 产品介绍链接

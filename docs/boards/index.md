@@ -68,7 +68,7 @@ Hi3403 平台目前支持以下几款 Hi3403V100 开发板。点击进入查看�
 
     芯片本身的能力 —— 不取决于板子。
 
-    [:octicons-arrow-right-24: 进入](../soc-linux/soc-overview.md)
+    [:octicons-arrow-right-24: 进入](../soc-linux/soc-overview/index.md)
 
 -   :material-disc-player:{ .lg .middle } __操作系统__
 

@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/图像分析引擎2与图像分析引擎1使用差异说明/图像分析引擎2与图像分析引擎1使用差异说明.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像分析引擎2与图像分析引擎1使用差异说明/图像分析引擎2与图像分析引擎1使用差异说明.md
 ---
 
 # 前言

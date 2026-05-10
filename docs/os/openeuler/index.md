@@ -1,6 +1,6 @@
 ---
 title: "Hi3403V100 OpenEuler移植指南"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/os/OpenEuler/README_zh.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/os/OpenEuler/README_zh.md
 ---
 
 # Hi3403V100 OpenEuler移植指南

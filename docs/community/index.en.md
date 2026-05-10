@@ -1,0 +1,80 @@
+---
+description: Release Notes, Contribution Guidelines, Style Guide, License
+title: Community
+---
+
+# Community
+
+Hi3403 documentation is maintained by the community. All changes are submitted through the Gitee Pull Request process.
+
+<div class="grid cards" markdown>
+
+-   :material-tag-multiple:{ .lg .middle } __Release Notes__
+
+    ---
+
+Update instructions, known issues, and change points for each version.
+
+    [:octicons-arrow-right-24: Enter](release-notes/index.md)
+
+-   :material-account-edit:{ .lg .middle } __Contribution Guide__
+
+    ---
+
+How to fork, modify, and submit PR. Issue template, PR template.
+
+    [:octicons-arrow-right-24: Enter](contributing.md)
+
+-   :material-format-paint:{ .lg .middle } __style guide__
+
+    ---
+
+Conventions on punctuation, terminology, code block format, link writing, etc.
+
+    [:octicons-arrow-right-24: Enter](style-guide.md)
+
+-   :material-file-document-plus:{ .lg .middle } __Add new page__
+
+    ---
+
+A step-by-step guide: Clone → Write a new document → Preview locally → Submit a PR.
+
+    [:octicons-arrow-right-24: Enter](how-to-add-a-page.md)
+
+-   :material-license:{ .lg .middle } __License__
+
+    ---
+
+The documentation is under CC BY-SA 4.0 and the tools are under BSD-3.
+
+    [:octicons-arrow-right-24: Enter](license.md)
+
+</div>
+
+<div class="related" markdown>
+
+## Related resources
+
+<div class="grid cards" markdown>
+
+-   :simple-gitee:{ .lg .middle } __Hi3403 main warehouse__
+
+    ---
+
+    [:octicons-arrow-right-24: gitee.com/HiSpark/pegasus](https://gitee.com/HiSpark/pegasus)
+
+-   :simple-gitee:{ .lg .middle } __Problem Feedback__
+
+    ---
+
+    [:octicons-arrow-right-24: Issues](https://gitee.com/HiSpark/pegasus/issues)
+
+-   :material-package-variant:{ .lg .middle } __hi3403-build__
+
+    ---
+
+    [:octicons-arrow-right-24: Enter](../tools/hi3403-build.md)
+
+</div>
+
+</div>

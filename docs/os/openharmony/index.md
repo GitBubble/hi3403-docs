@@ -1,6 +1,6 @@
 ---
 title: "OpenHarmony 海思芯片适配"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/os/OpenHarmony/README_zh.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/os/OpenHarmony/README_zh.md
 ---
 
 # OpenHarmony 海思芯片适配
@@ -19,7 +19,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/os/OpenHarmony/READM
 ## 目录结构
 
 ```
-hi3403/
+pegasus/
 ├── os/OpenHarmony
 │   ├── device
 │   │   └── soc/hisilicon/patches   # OpenHarmony源码补丁（按子系统分类，对原生代码的定制化修改）

@@ -1,6 +1,6 @@
 ---
 title: "README"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/LubanCat-Hi3403/README.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/LubanCat-Hi3403/README.md
 ---
 
 ## 产品概述

@@ -52,7 +52,7 @@ hi3403-ubuntu-lite-ss928v100.img    # 1.5 GB，纯命令行
 
     BurnTool 是海思提供的图形化烧录工具，跨平台。
 
-    1. 下载 BurnTool（详见 [BurnTool 工具使用指南](../tools/burntool.md)）。
+    1. 下载 BurnTool（详见 [BurnTool 工具使用指南](../tools/burntool/index.md)）。
     2. 把开发板进入烧录模式（一般是按住 BOOT 键再上电；具体看你板子的文档）。
     3. 用 USB 数据线连接电脑和开发板。
     4. 在 BurnTool 里选择 `.img` 文件，点 "Burn"。
@@ -89,18 +89,19 @@ hi3403-ubuntu-lite-ss928v100.img    # 1.5 GB，纯命令行
 
     - 串口波特率 115200 8N1
     - HDMI 没信号 → 检查 DTB 是否对应你的板子（大部分镜像默认 Topeet）
-    - 详见 [外围设备驱动](../soc-linux/peripherals.md) 里的常见排错
+    - 详见 [外围设备驱动](../soc-linux/peripherals/index.md) 里的常见排错
 
 ## 步骤 4 — 登录
 
-XFCE 镜像自带的默认账户：
+`hi3403-build` 产出的镜像自带的默认账户：
 
-| 用户名 | 密码 |
-|---|---|
-| `hi` | `hi` |
-| `root` | `hi` |
+| 用户名 | 密码 | 备注 |
+|---|---|---|
+| `hi` | `hi` | 已加入 `sudo` 组 |
+| `root` | （锁定） | 默认禁登录，需先 `sudo passwd root` 设置 |
 
-第一次登录后请马上 `passwd` 改密码。
+第一次登录后请马上 `sudo passwd hi` 改密码。其他厂商的镜像（OpenHarmony、
+OpenEuler、各家 Buildroot）默认账户不同 —— 看你下载页面的说明。
 
 ## 你做到了 ✓
 

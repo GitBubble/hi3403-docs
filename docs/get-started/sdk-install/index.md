@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/SS928V100╱SS927V100 SDK 安装以及升级使用说明/SS928V100╱SS927V100 SDK 安装以及升级使用说明.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 SDK 安装以及升级使用说明/SS928V100╱SS927V100 SDK 安装以及升级使用说明.md
 ---
 
 # 前言

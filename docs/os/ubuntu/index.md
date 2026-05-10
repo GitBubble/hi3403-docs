@@ -69,7 +69,7 @@ flowchart TB
 |---|---|
 | 用户名 | `hi` |
 | 密码 | `hi` |
-| Root | `sudo -i`（同密码） |
+| Root | `root` 默认锁定；`hi` 用户已加入 `sudo` 组，用 `sudo -i` 切 |
 | SSH | 默认开启，端口 22 |
 
 ## 已知特性 / 限制
@@ -77,7 +77,7 @@ flowchart TB
 ??? success "✅ 已经能用的"
     - eMMC 启动、Flash 启动两种 DTB 都已构建
     - apt / dpkg 完整可用（已配 USTC 镜像）
-    - MPP 视频采集、编解码、ISP 调优在 `/opt/hi3403/sample/` 下有完整示例
+    - MPP 视频采集、编解码、ISP 调优 —— 在 SDK 的 `mpp/sample/` 下交叉编译后部署到板上跑
     - SVP NPU 推理（YOLO 系列开箱可跑，参见 [SVP 首次推理](../../tutorials/svp-first-inference.md)）
     - HDMI 输出（XFCE 变体）
     - USB Host / Gadget
@@ -97,15 +97,22 @@ flowchart TB
 
 ## 文件路径速查
 
+`hi3403-build` 产出的镜像里的关键位置：
+
 | 路径 | 内容 |
 |---|---|
-| `/boot/Image.gz` | 内核 |
+| `/boot/Image.gz` | 内核（板子的 `/boot` 分区，由 U-Boot 引导） |
 | `/boot/*.dtb` | 设备树（启动时由 U-Boot 选择） |
-| `/lib/modules/$(uname -r)/extra/` | MPP `.ko` 模块 |
-| `/opt/hi3403/sample/` | MPP 官方示例（venc / vdec / svp …） |
-| `/opt/hi3403/lib/` | MPP 用户态共享库 |
-| `/etc/hi3403/` | 传感器配置、ISP 参数 |
-| `/etc/systemd/system/hi3403-mpp.service` | 开机自动加载 MPP 模块 |
+| `/ko/*.ko` | MPP 内核模块（8 个） |
+| `/ko/load_ss928v100_ubuntu` | MPP 加载脚本 |
+| `/usr/lib/lib*.so*` | MPP 用户态共享库（约 89 个） |
+| `/etc/init.d/topeet-start.sh` | 开机执行脚本（加载 .ko、起 ISP 等） |
+| `/etc/systemd/system/topeet-start.service` | 把上面的 init 脚本接到 systemd |
+
+MPP **示例代码在 SDK 里**（不在板子上）：
+`pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/` —— 具体 sample 名
+（hnr / snap / dis / composite 等）以你 SDK 版本为准。需要时在 PC 主机交叉编译，
+再 `scp` 到板子。
 
 ## 我该读哪一篇？
 

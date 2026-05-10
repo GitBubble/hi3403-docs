@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/AMCT使用指南（Caffe）/AMCT使用指南（Caffe）.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/AMCT使用指南（Caffe）/AMCT使用指南（Caffe）.md
 ---
 
 # 前言

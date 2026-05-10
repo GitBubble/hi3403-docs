@@ -1,6 +1,6 @@
 ---
 title: "SPI0_SCLK"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/ebaina/README.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/ebaina/README.md
 ---
 
 ## 海鸥派介绍：
@@ -19,10 +19,10 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/vendor/ebaina/README
 
 ### 1、应用补丁
 
-进入hi3403/vendor/ebaina/patch目录，运行patch_build.sh脚本，可按需执行下面指令打补丁。
+进入pegasus/vendor/ebaina/patch目录，运行patch_build.sh脚本，可按需执行下面指令打补丁。
 
 ```
-cd hi3403/vendor/ebaina/patch
+cd pegasus/vendor/ebaina/patch
 
 ./patch_build.sh -h 	#脚本使用说明
 ./patch_build.sh -clang #单独打ss928v100_clang补丁
@@ -37,11 +37,11 @@ cd hi3403/vendor/ebaina/patch
 
 ```
 #编译CLANG SDK
-cd ~/hi3403/platform/ss928v100_clang/osdrv
+cd ~/pegasus/platform/ss928v100_clang/osdrv
 make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all
 
 #编译GCC SDK
-cd ~/hi3403/platform/ss928v100_gcc/osdrv
+cd ~/pegasus/platform/ss928v100_gcc/osdrv
 make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
 ```
 

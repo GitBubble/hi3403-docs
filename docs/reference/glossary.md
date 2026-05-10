@@ -5,7 +5,7 @@ description: Hi3403 平台中的缩写、专有名词与一句话解释
 
 # 术语表
 
-Hi3403 / Hi3403 文档里到处都是缩写。这个表给每个名词一句话解释 ——
+Hi3403 / Pegasus 文档里到处都是缩写。这个表给每个名词一句话解释 ——
 为新接触这个平台的人做翻译。
 
 ## 芯片与子系统
@@ -67,7 +67,7 @@ Hi3403 / Hi3403 文档里到处都是缩写。这个表给每个名词一句话�
 
 `TDE`
 :   Two-Dimensional Engine —— 2D 图形硬件加速器。
-    [参考](../reference/api/tde.md)
+    [参考](api/tde/index.md)
 
 `GFBG`
 :   Graphics FrameBuffer Group —— 图形帧缓冲管理。
@@ -92,7 +92,7 @@ Hi3403 / Hi3403 文档里到处都是缩写。这个表给每个名词一句话�
 `IVE`
 :   Intelligent Video Engine —— 传统计算机视觉硬件加速器
     （直方图、Canny、形态学、光流……）。
-    [参考](../reference/api/ive.md)
+    [参考](api/ive/index.md)
 
 `IVS`
 :   Intelligent Video System —— 视频结构化框架。
@@ -116,16 +116,16 @@ Hi3403 / Hi3403 文档里到处都是缩写。这个表给每个名词一句话�
 
 `KLAD`
 :   Key Ladder —— 密钥派生硬件单元。
-    [参考](../reference/api/klad.md)
+    [参考](api/klad/index.md)
 
 `CIPHER`
 :   通用加解密硬件加速器（AES、SM4、SHA、RSA…）。
-    [参考](../reference/api/cipher.md)
+    [参考](api/cipher/index.md)
 
 `OTP`
 :   One-Time Programmable memory —— 一次性可编程存储器，存放设备
     密钥、Boot 配置等。
-    [参考](../reference/api/otp.md)
+    [参考](api/otp/index.md)
 
 `TBBR`
 :   Trusted Board Boot Requirements —— ARM 的可信启动规范。

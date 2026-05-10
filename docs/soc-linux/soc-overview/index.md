@@ -1,6 +1,6 @@
 ---
 title: "总体介绍"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/SS928V100 超高清智能网络录像机 SoC 产品简介/SS928V100 超高清智能网络录像机 SoC 产品简介.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100 超高清智能网络录像机 SoC 产品简介/SS928V100 超高清智能网络录像机 SoC 产品简介.md
 ---
 
 # 总体介绍

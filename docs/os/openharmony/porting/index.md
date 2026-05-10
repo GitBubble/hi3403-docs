@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/OpenHarmony Small系统集成Hi3403V100移植案例/OpenHarmony Small系统集成Hi3403V100移植案例.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OpenHarmony Small系统集成Hi3403V100移植案例/OpenHarmony Small系统集成Hi3403V100移植案例.md
 ---
 
 # 前言

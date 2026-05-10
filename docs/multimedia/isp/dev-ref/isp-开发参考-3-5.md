@@ -1,6 +1,6 @@
 ---
 title: "AE"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/ISP 开发参考/ISP 开发参考（3--5）.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开发参考/ISP 开发参考（3--5）.md
 ---
 
 # AE

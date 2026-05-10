@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/hi3403/docs/zh-CN/OpenHarmony Small版本使用指南/OpenHarmony Small版本使用指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OpenHarmony Small版本使用指南/OpenHarmony Small版本使用指南.md
 ---
 
 # 前言
@@ -235,7 +235,7 @@ OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
 
     ```
     git clone https://gitee.com/HiSpark/pegasus.git
-    cd hi3403
+    cd pegasus
     git submodule init
     git submodule update platform/ss928v100_clang
     ```
@@ -292,7 +292,7 @@ OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
 完成以上步骤后，项目目录结构如下。
 
 ```
-hi3403
+pegasus
 ├── os/OpenHarmony
 │   ├── applications
 │   ├── arkcompiler
@@ -459,8 +459,8 @@ insmod: failed to load xxx.ko:Key was rejected by service
     使用 `batch_sign_ko.sh` 脚本对目录下的所有 `.ko` 文件进行批量签名：
 
     ```bash
-    # 进入hi3403根目录
-    cd hi3403
+    # 进入pegasus 根目录
+    cd pegasus
 
     # 执行签名（假设ko文件在 ./my_kos/ 目录下）
     ./os/OpenHarmony/device/board/hisilicon/hispark_aifly/kernel/batch_sign_ko.sh ./my_kos/
@@ -537,10 +537,10 @@ SDK包中提供内核驱动源码和Sample源码，可以通过源码进行编�
     >![](public_sys-resources/icon-note.gif) **说明：**
     >使用LLVM-Clang工具链来编译SDK sample时，会依赖OpenHarmony编译后的产物：os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot，因此需要提前进行OpenHarmony编译。
 
-2.  假设工具链的sysroot路径为`/path/to/hi3403/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot`，将工具链的sysroot设置到环境变量SYSROOT_PATH。
+2.  假设工具链的sysroot路径为`/path/to/pegasus/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot`，将工具链的sysroot设置到环境变量SYSROOT_PATH。
 
     ```
-    export SYSROOT_PATH=/path/to/hi3403/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot
+    export SYSROOT_PATH=/path/to/pegasus/os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/sysroot
     ```
 
 3.  检查SYSROOT_PATH配置是否生效。
