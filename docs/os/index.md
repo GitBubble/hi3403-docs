@@ -28,7 +28,7 @@ Hi3403V100 可以运行多种操作系统。每种系统都有各自的取舍 �
 
     [:octicons-arrow-right-24: 进入](openharmony/index.md)
 
--   :material-linux:{ .lg .middle } __OpenEuler__
+-   :material-open-source-initiative:{ .lg .middle } __OpenEuler__
 
     ---
 

@@ -28,7 +28,7 @@ Number of software packages, real-time performance, and image size. Below are th
 
     [:octicons-arrow-right-24: Enter](openharmony/index.md)
 
--   :material-linux:{ .lg .middle } __OpenEuler__
+-   :material-open-source-initiative:{ .lg .middle } __OpenEuler__
 
     ---
 
