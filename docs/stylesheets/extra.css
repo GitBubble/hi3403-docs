@@ -5,6 +5,24 @@
  * tight sidebar, ⌘K-style search bar.
  * ============================================================ */
 
+/* ---------- 0. Keyframe animations ---------- */
+
+@keyframes hero-gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 15px rgba(197, 26, 74, 0.30); }
+  50%       { box-shadow: 0 4px 28px rgba(197, 26, 74, 0.60); }
+}
+
+@keyframes card-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ---------- 1. Color tokens ---------- */
 
 :root,
@@ -238,15 +256,46 @@ body,
   padding: 1.15rem 1.25rem 1.15rem;
   margin: 0;
   box-shadow: var(--hi3403-card-shadow);
-  transition: transform 0.18s ease,
-              box-shadow 0.18s ease,
-              border-color 0.18s ease;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.22s ease,
+              border-color 0.22s ease;
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  animation: card-rise 0.45s ease both;
 }
+/* Stagger the animation for each card */
+.md-typeset .grid.cards > ul > li:nth-child(1)  { animation-delay: 0.04s; }
+.md-typeset .grid.cards > ul > li:nth-child(2)  { animation-delay: 0.09s; }
+.md-typeset .grid.cards > ul > li:nth-child(3)  { animation-delay: 0.14s; }
+.md-typeset .grid.cards > ul > li:nth-child(4)  { animation-delay: 0.19s; }
+.md-typeset .grid.cards > ul > li:nth-child(5)  { animation-delay: 0.24s; }
+.md-typeset .grid.cards > ul > li:nth-child(6)  { animation-delay: 0.29s; }
+.md-typeset .grid.cards > ul > li:nth-child(7)  { animation-delay: 0.34s; }
+.md-typeset .grid.cards > ul > li:nth-child(8)  { animation-delay: 0.39s; }
+.md-typeset .grid.cards > ul > li:nth-child(9)  { animation-delay: 0.44s; }
+
+/* Colourful top accent bar revealed on hover */
+.md-typeset .grid.cards > ul > li::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--md-primary-fg-color) 0%,
+    var(--md-accent-fg-color) 60%,
+    #ff8fb0 100%);
+  border-radius: 0.6rem 0.6rem 0 0;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+.md-typeset .grid.cards > ul > li:hover::before {
+  opacity: 1;
+}
+
 .md-typeset .grid.cards > ul > li:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.012);
   border-color: var(--md-primary-fg-color);
   box-shadow: var(--hi3403-card-shadow-hover);
 }
@@ -298,10 +347,10 @@ body,
   color: var(--md-primary-fg-color--dark);
 }
 
-/* ---------- 8. Hero on landing pages ---------- */
-
 .md-typeset .hero {
-  background: linear-gradient(135deg, #fff5f7 0%, #ffe7ee 100%);
+  background: linear-gradient(135deg, #fff5f7 0%, #ffd6e7 40%, #ffe7ee 100%);
+  background-size: 300% 300%;
+  animation: hero-gradient-shift 10s ease infinite;
   color: #1a1a1a;
   padding: 3.2rem 2.4rem 3rem;
   border-radius: 0.8rem;
@@ -311,7 +360,9 @@ body,
   overflow: hidden;
 }
 [data-md-color-scheme="slate"] .md-typeset .hero {
-  background: linear-gradient(135deg, #2a1820 0%, #3a1a2c 100%);
+  background: linear-gradient(135deg, #2a1820 0%, #3d1a30 50%, #3a1a2c 100%);
+  background-size: 300% 300%;
+  animation: hero-gradient-shift 10s ease infinite;
   color: #f5f5f7;
   border-color: var(--hi3403-card-border);
 }
@@ -328,14 +379,36 @@ body,
               rgba(197, 26, 74, 0) 70%);
   pointer-events: none;
 }
+/* Second decorative circle — upper-left */
+.md-typeset .hero::before {
+  content: "";
+  position: absolute;
+  left: -3rem;
+  top: -3rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+              rgba(255, 92, 138, 0.10) 0%,
+              rgba(255, 92, 138, 0) 70%);
+  pointer-events: none;
+}
 .md-typeset .hero h1 {
   font-size: 2.6rem;
   margin: 0 0 0.8rem;
   letter-spacing: -0.025em;
   font-weight: 800;
+  background: linear-gradient(90deg, #c51a4a 0%, #e2336a 50%, #ff5c8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
-[data-md-color-scheme="default"] .md-typeset .hero h1 {
-  color: #1a1a1a;
+[data-md-color-scheme="slate"] .md-typeset .hero h1 {
+  background: linear-gradient(90deg, #ff8fb0 0%, #ff5c8a 50%, #e2336a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .md-typeset .hero p {
   font-size: 1.05rem;
@@ -352,10 +425,12 @@ body,
   background: var(--md-primary-fg-color);
   border-color: var(--md-primary-fg-color);
   color: #fff;
+  animation: pulse-glow 2.8s ease-in-out infinite;
 }
 .md-typeset .hero .md-button--primary:hover {
   background: var(--md-primary-fg-color--dark);
   border-color: var(--md-primary-fg-color--dark);
+  animation: none;
 }
 .md-typeset .hero .md-button:not(.md-button--primary) {
   background: #ffffff;
@@ -391,11 +466,12 @@ body,
   font-weight: 600;
   font-size: 0.82rem;
   padding: 0.55rem 1.1rem;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.18s ease;
 }
 .md-typeset .md-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(197, 26, 74, 0.2);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(197, 26, 74, 0.25);
 }
 
 .md-typeset a {
@@ -505,4 +581,63 @@ body,
 /* Hide the "Made with Material" badge if any leaks through */
 .md-source__icon + .md-source__repository::after {
   display: none;
+}
+
+/* ---------- 14. Fun extras ---------- */
+
+/* Card icon — make it pop with a little scale on hover */
+.md-typeset .grid.cards > ul > li:hover .twemoji,
+.md-typeset .grid.cards > ul > li:hover .lg.middle {
+  transform: scale(1.18) rotate(-3deg);
+}
+.md-typeset .grid.cards .twemoji,
+.md-typeset .grid.cards .lg.middle {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Highlight/mark tag — cheerful yellow */
+.md-typeset mark {
+  background: linear-gradient(120deg,
+    rgba(255, 220, 50, 0.5) 0%,
+    rgba(255, 200, 0, 0.35) 100%);
+  border-radius: 0.15em;
+  padding: 0 0.15em;
+}
+
+/* Admonition title — a tiny left glow matching accent */
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  filter: drop-shadow(0 0 3px currentColor);
+}
+
+/* Active nav link — subtle left highlight bar */
+.md-nav__link--active::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  background: var(--md-primary-fg-color);
+  border-radius: 2px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  animation: card-rise 0.3s ease both;
+}
+
+/* ---------- 15. Accessibility: respect prefers-reduced-motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .hero {
+    animation: none;
+    background-position: 0% 50%;
+  }
+  .md-typeset .hero .md-button--primary {
+    animation: none;
+  }
+  .md-typeset .grid.cards > ul > li {
+    animation: none;
+  }
+  .md-typeset .md-button,
+  .md-typeset .grid.cards > ul > li {
+    transition: none;
+  }
 }
