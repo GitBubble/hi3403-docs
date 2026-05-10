@@ -29,6 +29,8 @@
 [data-md-color-scheme="default"] {
   /* RPi raspberry red */
   --md-primary-fg-color:        #c51a4a;
+  /* Spring easing reused for cards, icons and buttons */
+  --hi3403-spring:              cubic-bezier(0.34, 1.56, 0.64, 1);
   --md-primary-fg-color--light: #e2336a;
   --md-primary-fg-color--dark:  #8e0e34;
   --md-primary-bg-color:        #ffffff;
@@ -256,12 +258,13 @@ body,
   padding: 1.15rem 1.25rem 1.15rem;
   margin: 0;
   box-shadow: var(--hi3403-card-shadow);
-  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+  transition: transform 0.22s var(--hi3403-spring),
               box-shadow 0.22s ease,
               border-color 0.22s ease;
   position: relative;
   display: flex;
   flex-direction: column;
+  /* overflow: hidden clips the decorative ::before accent bar to the card's border-radius */
   overflow: hidden;
   animation: card-rise 0.45s ease both;
 }
@@ -276,7 +279,7 @@ body,
 .md-typeset .grid.cards > ul > li:nth-child(8)  { animation-delay: 0.39s; }
 .md-typeset .grid.cards > ul > li:nth-child(9)  { animation-delay: 0.44s; }
 
-/* Colourful top accent bar revealed on hover */
+/* Colorful top accent bar revealed on hover */
 .md-typeset .grid.cards > ul > li::before {
   content: "";
   position: absolute;
@@ -466,7 +469,7 @@ body,
   font-weight: 600;
   font-size: 0.82rem;
   padding: 0.55rem 1.1rem;
-  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1),
+  transition: transform 0.18s var(--hi3403-spring),
               box-shadow 0.18s ease;
 }
 .md-typeset .md-button:hover {
@@ -592,7 +595,7 @@ body,
 }
 .md-typeset .grid.cards .twemoji,
 .md-typeset .grid.cards .lg.middle {
-  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.22s var(--hi3403-spring);
 }
 
 /* Highlight/mark tag — cheerful yellow */
@@ -635,9 +638,9 @@ body,
   }
   .md-typeset .grid.cards > ul > li {
     animation: none;
+    transition: none;
   }
-  .md-typeset .md-button,
-  .md-typeset .grid.cards > ul > li {
+  .md-typeset .md-button {
     transition: none;
   }
 }
