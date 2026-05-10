@@ -106,7 +106,7 @@ plugins:
             "LubanCat-Hi3403 (野火)": "LubanCat-Hi3403 (Wildfire)"
             "海鸥派 Euler Pi (易百纳)": "Euler Pi"
             "润开鸿": "Run Kaihong"
-            "中科蓝讯": "Zhongke Lanxun"
+            "中山旷视": "Zhongshan Kuangshi"
             "操作系统": "OS"
             "Ubuntu": "Ubuntu"
             "移植": "Porting"
@@ -294,7 +294,7 @@ nav:
       - LubanCat-Hi3403 (野火): boards/lubancat/index.md
       - 海鸥派 Euler Pi (易百纳): boards/ebaina/index.md
       - 润开鸿: boards/rkh/index.md
-      - 中科蓝讯: boards/zsks/index.md
+      - 中山旷视: boards/zsks/index.md
   - 操作系统:
       - 操作系统: os/index.md
       - Ubuntu:

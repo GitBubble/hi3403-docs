@@ -17,7 +17,7 @@ Hi3403 平台目前有这几款主流的 Hi3403V100 开发板。每家板子的�
 | [LubanCat-Hi3403](../boards/lubancat/index.md) | 野火 | 中 | 中等 | 完整（Buildroot 友好）| Buildroot 用户、定制系统 |
 | [海鸥派 Euler Pi](../boards/ebaina/index.md) | 易百纳 | 中 | 中等 | OpenEuler 适配好 | OpenEuler 开发者 |
 | [润开鸿](../boards/rkh/index.md) | 润开鸿 | — | — | OpenHarmony 桌面适配 | OpenHarmony 设备开发 |
-| [中科蓝讯 (zsks)](../boards/zsks/index.md) | 中科蓝讯 | — | 含丰富 AI demo | 偏 AI 示例 | 用现成 AI demo 起步 |
+| [中山旷视 (zsks)](../boards/zsks/index.md) | 中山旷视 | — | 含丰富 AI demo | 偏 AI 示例 | 用现成 AI demo 起步 |
 
 !!! note "硬件特性都基于 Hi3403V100 SoC"
 
@@ -35,7 +35,7 @@ flowchart TD
     B -- OpenHarmony 设备 --> RKH[润开鸿]
     B -- OpenEuler --> Ebaina[海鸥派 Euler Pi]
     B -- Buildroot --> LubanCat[LubanCat-Hi3403]
-    B -- AI 应用 demo --> ZSKS[中科蓝讯 zsks]
+    B -- AI 应用 demo --> ZSKS[中山旷视 zsks]
     B -- Ubuntu 桌面 --> Topeet
 
     style Topeet stroke:#7c4dff,stroke-width:3px
@@ -54,7 +54,7 @@ flowchart TD
 - **量产工程 / 定制 Linux** → LubanCat-Hi3403。Buildroot 工程链路成熟。
 - **OpenHarmony 应用** → 润开鸿。桌面系统适配做得最好。
 - **OpenEuler 国产化** → 海鸥派 Euler Pi。
-- **AI 算法验证** → 中科蓝讯。带的 demo 直接能跑（face_detection、
+- **AI 算法验证** → 中山旷视。带的 demo 直接能跑（face_detection、
   kcf_track、fruit_identify、opencv_dnn、hnr_auto），适合不写代码先看效果。
 
 ### 都不是？

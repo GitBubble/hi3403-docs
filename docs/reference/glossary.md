@@ -179,7 +179,7 @@ Hi3403 / Pegasus 文档里到处都是缩写。这个表给每个名词一句话
 `SS928V100` ↔ `Hi3403V100` —— 见上面"芯片与子系统"。
 
 `Topeet` / `LubanCat` / `ebaina` / `rkh` / `zsks`
-:   开发板 OEM。分别是迅为、野火、易百纳、润开鸿、中科蓝讯。
+:   开发板 OEM。分别是迅为、野火、易百纳、润开鸿、中山旷视。
     [开发板对比](../get-started/board-picker.md)
 
 ---

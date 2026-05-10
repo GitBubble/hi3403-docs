@@ -18,7 +18,7 @@ Decision tree helps you choose in 30 seconds.
 | [LubanCat-Hi3403](../boards/lubancat/index.md) | wildfire | middle | medium | Complete (Buildroot friendly) | Buildroot user, custom system |
 | [Euler Pi](../boards/ebaina/index.md) | Yibaina | middle | medium | OpenEuler is well adapted | OpenEuler Developer |
 | [Run Kaihong](../boards/rkh/index.md) | Run Kaihong | — | — | OpenHarmony Desktop Adaptation | OpenHarmony device development |
-| [Zhongke Lanxun (zsks)](../boards/zsks/index.md) | Zhongke Lanxun | — | Contains rich AI demos | Partial AI Example | Get started with a ready-made AI demo |
+| [Zhongshan Kuangshi (zsks)](../boards/zsks/index.md) | Zhongshan Kuangshi | — | Contains rich AI demos | Partial AI Example | Get started with a ready-made AI demo |
 
 !!! note "Hardware features are based on Hi3403V100 SoC"
 
@@ -36,7 +36,7 @@ flowchart TD
     B -- OpenHarmony 设备 --> RKH[Run Kaihong]
     B -- OpenEuler --> Ebaina[Euler Pi]
     B -- Buildroot --> LubanCat[LubanCat-Hi3403]
-    B -- AI 应用 demo --> ZSKS[zsks]
+    B -- AI 应用 demo --> ZSKS[Zhongshan Kuangshi zsks]
     B -- Ubuntu 桌面 --> Topeet
 
     style Topeet stroke:#7c4dff,stroke-width:3px
@@ -55,7 +55,7 @@ You have the highest probability of finding the answer by digging into the pits.
 - **Volume Production Engineering/Customized Linux** → LubanCat-Hi3403. The Buildroot project link is mature.
 - **OpenHarmony App** → Runkaihong. Desktop system adaptation is the best.
 - **OpenEuler localization** → Euler Pi.
-- **AI algorithm verification** → Zhongke Lanxun. The demo provided can be run directly (face_detection,
+- **AI algorithm verification** → Zhongshan Kuangshi. The demo provided can be run directly (face_detection,
 kcf_track, fruit_identify, opencv_dnn, hnr_auto), suitable for seeing the effect without writing code.
 
 ### None?

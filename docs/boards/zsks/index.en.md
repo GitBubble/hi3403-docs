@@ -1,5 +1,5 @@
 ---
-title: "ZSKS (中山旷视) — README"
+title: "ZSKS (Zhongshan Kuangshi) — README"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/zsks/README.md
 ---
 

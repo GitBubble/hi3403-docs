@@ -42,7 +42,7 @@ Hi3403 平台目前支持以下几款 Hi3403V100 开发板。点击进入查看�
 
     [:octicons-arrow-right-24: 进入](rkh/index.md)
 
--   :material-developer-board:{ .lg .middle } __中科蓝讯 (zsks)__
+-   :material-developer-board:{ .lg .middle } __中山旷视 (zsks)__
 
     ---
 

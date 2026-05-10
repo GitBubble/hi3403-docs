@@ -43,7 +43,7 @@ The Hi3403 platform currently supports the following Hi3403V100 development boar
 
     [:octicons-arrow-right-24: Enter](rkh/index.md)
 
--   :material-developer-board:{ .lg .middle } __Zhongke Lanxun (zsks)__
+-   :material-developer-board:{ .lg .middle } __Zhongshan Kuangshi (zsks)__
 
     ---
 
