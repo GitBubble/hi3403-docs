@@ -1,5 +1,5 @@
 ---
-title: Hi3403 文档
+title: Hi3403 开发者中心
 description: HiSilicon SS928V100/SS927V100 Hi3403 平台社区文档
 hide:
   - toc

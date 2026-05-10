@@ -1,4 +1,5 @@
 ---
+title: Hi3403 Developer Center
 description: HiSilicon SS928V100/SS927V100 Hi3403 Platform Community Documentation
 hide:
 - toc

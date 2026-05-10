@@ -1,8 +1,8 @@
-# Hi3403 Documentation
+# Hi3403 Developer Center
 
 The community documentation site for the HiSilicon **SS928V100 / SS927V100
-Hi3403** platform, modeled on
-[raspberrypi/documentation](https://github.com/raspberrypi/documentation).
+Hi3403** platform
+
 
 > Source for the site published at *(deploy URL TBD)*. Built with MkDocs +
 > the Material theme.
