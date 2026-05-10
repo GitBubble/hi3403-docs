@@ -19,7 +19,7 @@ Number of software packages, real-time performance, and image size. Below are th
 
     [:octicons-arrow-right-24: Enter](ubuntu/index.md)
 
--   :material-harmonia:{ .lg .middle } __OpenHarmony Small__
+-   :simple-harmonyos:{ .lg .middle } __OpenHarmony Small__
 
     ---
 
@@ -28,7 +28,7 @@ Number of software packages, real-time performance, and image size. Below are th
 
     [:octicons-arrow-right-24: Enter](openharmony/index.md)
 
--   :simple-openeuler:{ .lg .middle } __OpenEuler__
+-   :material-open-source-initiative:{ .lg .middle } __OpenEuler__
 
     ---
 
