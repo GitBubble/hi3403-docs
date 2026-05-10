@@ -15,7 +15,7 @@ description: 第一次接触 Hi3403 / Hi3403？从这里开始。
 
     选板子 → 烧镜像 → 接串口 → 登录。一页走完整个流程。
 
-    [:octicons-arrow-right-24: 进入](quickstart/index.md)
+    [:octicons-arrow-right-24: 进入](quickstart.md)
 
 -   :material-help-circle-outline:{ .lg .middle } __选择开发板__
 

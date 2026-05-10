@@ -13,7 +13,7 @@ Hi3403 documentation is maintained by the community. All changes are submitted t
 
     ---
 
-Update instructions, known issues, and change points for each version.
+    Update instructions, known issues, and change points for each version.
 
     [:octicons-arrow-right-24: Enter](release-notes/index.md)
 
@@ -21,7 +21,7 @@ Update instructions, known issues, and change points for each version.
 
     ---
 
-How to fork, modify, and submit PR. Issue template, PR template.
+    How to fork, modify, and submit PR. Issue template, PR template.
 
     [:octicons-arrow-right-24: Enter](contributing.md)
 
@@ -29,7 +29,7 @@ How to fork, modify, and submit PR. Issue template, PR template.
 
     ---
 
-Conventions on punctuation, terminology, code block format, link writing, etc.
+    Conventions on punctuation, terminology, code block format, link writing, etc.
 
     [:octicons-arrow-right-24: Enter](style-guide.md)
 
@@ -37,7 +37,7 @@ Conventions on punctuation, terminology, code block format, link writing, etc.
 
     ---
 
-A step-by-step guide: Clone → Write a new document → Preview locally → Submit a PR.
+    A step-by-step guide: Clone → Write a new document → Preview locally → Submit a PR.
 
     [:octicons-arrow-right-24: Enter](how-to-add-a-page.md)
 
@@ -45,7 +45,7 @@ A step-by-step guide: Clone → Write a new document → Preview locally → Sub
 
     ---
 
-The documentation is under CC BY-SA 4.0 and the tools are under BSD-3.
+    The documentation is under CC BY-SA 4.0 and the tools are under BSD-3.
 
     [:octicons-arrow-right-24: Enter](license.md)
 

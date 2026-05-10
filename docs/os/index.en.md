@@ -14,8 +14,8 @@ Number of software packages, real-time performance, and image size. Below are th
 
     ---
 
-XFCE4 desktop, apt package ecology is complete, and the development experience is closest to that of an ordinary PC.
-Use `hi3403-build` to generate a burnable image with one command.
+    XFCE4 desktop, apt package ecology is complete, and the development experience is closest to that of an ordinary PC.
+    Use `hi3403-build` to generate a burnable image with one command.
 
     [:octicons-arrow-right-24: Enter](ubuntu/index.md)
 
@@ -23,8 +23,8 @@ Use `hi3403-build` to generate a burnable image with one command.
 
     ---
 
-OpenHarmony 5.1.0 Release version, small system.
-Supports XTS certification and is suitable for OpenHarmony devices.
+    OpenHarmony 5.1.0 Release version, small system.
+    Supports XTS certification and is suitable for OpenHarmony devices.
 
     [:octicons-arrow-right-24: Enter](openharmony/index.md)
 
@@ -32,7 +32,7 @@ Supports XTS certification and is suitable for OpenHarmony devices.
 
     ---
 
-Domestic Linux distribution, the default configuration of Euler Pi.
+    Domestic Linux distribution, the default configuration of Euler Pi.
 
     [:octicons-arrow-right-24: Enter](openeuler/index.md)
 
@@ -40,7 +40,7 @@ Domestic Linux distribution, the default configuration of Euler Pi.
 
     ---
 
-Minimalist system image, the most customizable and smallest, the default solution of Wildfire LubanCat.
+    Minimalist system image, the most customizable and smallest, the default solution of Wildfire LubanCat.
 
     [:octicons-arrow-right-24: Enter](buildroot/index.md)
 
@@ -61,7 +61,7 @@ Follow the decision tree in [Choose an operating system](../get-started/os-picke
 
     ---
 
-The easiest way to build an Ubuntu image.
+    The easiest way to build an Ubuntu image.
 
     [:octicons-arrow-right-24: Enter](../tools/hi3403-build.md)
 
@@ -69,7 +69,7 @@ The easiest way to build an Ubuntu image.
 
     ---
 
-Kernel configuration, U-Boot, peripheral drivers - independent of the specific distribution.
+    Kernel configuration, U-Boot, peripheral drivers - independent of the specific distribution.
 
     [:octicons-arrow-right-24: Enter](../soc-linux/index.md)
 

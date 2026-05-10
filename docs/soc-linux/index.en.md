@@ -15,7 +15,7 @@ Boot link (U-Boot → ATF → Kernel), various peripherals, memory layout, and s
 
     ---
 
-Chip architecture, capabilities, and typical application scenarios.
+    Chip architecture, capabilities, and typical application scenarios.
 
     [:octicons-arrow-right-24: Enter](soc-overview/index.md)
 
@@ -23,7 +23,7 @@ Chip architecture, capabilities, and typical application scenarios.
 
     ---
 
-Porting and customization guide starting with U-Boot 2020.01.
+    Porting and customization guide starting with U-Boot 2020.01.
 
     [:octicons-arrow-right-24: Enter](uboot/index.md)
 
@@ -31,7 +31,7 @@ Porting and customization guide starting with U-Boot 2020.01.
 
     ---
 
-SS928V100/SS927V100 secure boot key, signature, and burning process.
+    SS928V100/SS927V100 secure boot key, signature, and burning process.
 
     [:octicons-arrow-right-24: Enter](secure-boot/index.md)
 
@@ -39,7 +39,7 @@ SS928V100/SS927V100 secure boot key, signature, and burning process.
 
     ---
 
-Operation guide for UART, SPI, I2C, GPIO, USB, network port, SD/eMMC and other peripherals.
+    Operation guide for UART, SPI, I2C, GPIO, USB, network port, SD/eMMC and other peripherals.
 
     [:octicons-arrow-right-24: Enter](peripherals/index.md)
 
@@ -47,7 +47,7 @@ Operation guide for UART, SPI, I2C, GPIO, USB, network port, SD/eMMC and other p
 
     ---
 
-DDR allocation, MMZ media memory zone, NMA, secure/non-secure zone partitioning.
+    DDR allocation, MMZ media memory zone, NMA, secure/non-secure zone partitioning.
 
     [:octicons-arrow-right-24: Enter](memory-layout/index.md)
 
@@ -55,7 +55,7 @@ DDR allocation, MMZ media memory zone, NMA, secure/non-secure zone partitioning.
 
     ---
 
-Hardware wiring and software configuration of MIPI CSI/DSI interface.
+    Hardware wiring and software configuration of MIPI CSI/DSI interface.
 
     [:octicons-arrow-right-24: Enter](mipi/index.md)
 
@@ -63,7 +63,7 @@ Hardware wiring and software configuration of MIPI CSI/DSI interface.
 
     ---
 
-DDR miniaturization, timing, power consumption and stability tuning.
+    DDR miniaturization, timing, power consumption and stability tuning.
 
     [:octicons-arrow-right-24: Enter](ddr-tuning/index.md)
 
@@ -71,7 +71,7 @@ DDR miniaturization, timing, power consumption and stability tuning.
 
     ---
 
-Multi-chip SS928V100 PCIE cascade networking application.
+    Multi-chip SS928V100 PCIE cascade networking application.
 
     [:octicons-arrow-right-24: Enter](pcie/index.md)
 
@@ -79,7 +79,7 @@ Multi-chip SS928V100 PCIE cascade networking application.
 
     ---
 
-Collaborative use of the three subsystems KLAD, CIPHER and OTP.
+    Collaborative use of the three subsystems KLAD, CIPHER and OTP.
 
     [:octicons-arrow-right-24: Enter](security/index.md)
 
@@ -87,7 +87,7 @@ Collaborative use of the three subsystems KLAD, CIPHER and OTP.
 
     ---
 
-Write a Linux user mode program on Hi3403: construction, debugging, and performance analysis.
+    Write a Linux user mode program on Hi3403: construction, debugging, and performance analysis.
 
     [:octicons-arrow-right-24: Enter](app-dev/index.md)
 
@@ -103,7 +103,7 @@ Write a Linux user mode program on Hi3403: construction, debugging, and performa
 
     ---
 
-Hi3403 system-level configuration file format and all configurable items.
+    Hi3403 system-level configuration file format and all configurable items.
 
     [:octicons-arrow-right-24: Enter](../reference/sys-config/index.md)
 
@@ -111,7 +111,7 @@ Hi3403 system-level configuration file format and all configurable items.
 
     ---
 
-FAQs about BSP.
+    FAQs about BSP.
 
     [:octicons-arrow-right-24: Enter](../reference/faq/bsp/index.md)
 

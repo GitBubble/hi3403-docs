@@ -185,11 +185,18 @@ def translate_inline(text: str, tr: Translator) -> str:
     if not has_chinese(text):
         return text
 
-    stripped = text.strip()
-    if stripped in EXACT_OVERRIDES:
-        start = len(text) - len(text.lstrip())
-        end = len(text.rstrip())
-        return text[:start] + EXACT_OVERRIDES[stripped] + text[end:]
+    leading_len = len(text) - len(text.lstrip())
+    leading = text[:leading_len]
+    body = text[leading_len:]
+    trailing_len = len(body) - len(body.rstrip())
+    if trailing_len:
+        trailing = body[-trailing_len:]
+        body = body[:-trailing_len]
+    else:
+        trailing = ""
+
+    if body in EXACT_OVERRIDES:
+        return leading + EXACT_OVERRIDES[body] + trailing
 
     placeholders: dict[str, str] = {}
 
@@ -200,15 +207,15 @@ def translate_inline(text: str, tr: Translator) -> str:
         placeholders[token] = f"{bang}[{translated_label}]({url})"
         return token
 
-    text = LINK_RE.sub(repl_link, text)
-    text = mask_pattern(text, INLINE_CODE_RE, placeholders)
-    text = mask_pattern(text, RAW_URL_RE, placeholders)
-    text = mask_pattern(text, HTML_TAG_RE, placeholders)
+    body = LINK_RE.sub(repl_link, body)
+    body = mask_pattern(body, INLINE_CODE_RE, placeholders)
+    body = mask_pattern(body, RAW_URL_RE, placeholders)
+    body = mask_pattern(body, HTML_TAG_RE, placeholders)
 
-    if has_chinese(text):
-        text = tr.translate(text)
+    if has_chinese(body):
+        body = tr.translate(body)
 
-    return restore_tokens(text, placeholders)
+    return leading + restore_tokens(body, placeholders) + trailing
 
 
 def translate_table_line(line: str, tr: Translator) -> str:

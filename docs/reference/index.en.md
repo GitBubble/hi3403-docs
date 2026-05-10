@@ -14,7 +14,7 @@ The full name of the abbreviation - it's all here.
 
     ---
 
-List of all user mode/kernel mode API entries provided by Hi3403.
+    List of all user mode/kernel mode API entries provided by Hi3403.
 
     [:octicons-arrow-right-24: Enter](api/index.md)
 
@@ -22,7 +22,7 @@ List of all user mode/kernel mode API entries provided by Hi3403.
 
     ---
 
-Hi3403 system-level configuration file format and all configurable items.
+    Hi3403 system-level configuration file format and all configurable items.
 
     [:octicons-arrow-right-24: Enter](sys-config/index.md)
 
@@ -30,7 +30,7 @@ Hi3403 system-level configuration file format and all configurable items.
 
     ---
 
-BSP/ISP/MPP/Splicing Index of several FAQ documents.
+    BSP/ISP/MPP/Splicing Index of several FAQ documents.
 
     [:octicons-arrow-right-24: Enter](faq/index.md)
 
@@ -38,7 +38,7 @@ BSP/ISP/MPP/Splicing Index of several FAQ documents.
 
     ---
 
-MPP/ISP/KLAD/IVS/SVP/ATC…Abbreviations explained.
+    MPP/ISP/KLAD/IVS/SVP/ATC…Abbreviations explained.
 
     [:octicons-arrow-right-24: Enter](glossary.md)
 
@@ -84,7 +84,7 @@ MPP/ISP/KLAD/IVS/SVP/ATC…Abbreviations explained.
 
     ---
 
-Found an error or need to add something? PRs are welcome.
+    Found an error or need to add something? PRs are welcome.
 
     [:octicons-arrow-right-24: Enter](../community/contributing.md)
 

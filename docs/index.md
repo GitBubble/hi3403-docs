@@ -15,7 +15,7 @@ hide:
 
 [现在开始 :octicons-arrow-right-24:](get-started/index.md){ .md-button .md-button--primary }
 &nbsp;
-[在 30 分钟内启动开发板 :material-clock-fast:](get-started/quickstart/index.md){ .md-button }
+[在 30 分钟内启动开发板 :material-clock-fast:](get-started/quickstart.md){ .md-button }
 
 </div>
 

@@ -13,8 +13,8 @@ Official and community tools around Hi3403. From one-click image building to bur
 
     ---
 
-Community script: One command to produce a burnable Ubuntu 22.04 ARM64 image.
-Contains Dockerized cross-compilation environment, breakpoint resume, and SHA-256 verification.
+    Community script: One command to produce a burnable Ubuntu 22.04 ARM64 image.
+    Contains Dockerized cross-compilation environment, breakpoint resume, and SHA-256 verification.
 
     [:octicons-arrow-right-24: Enter](hi3403-build.md)
 
@@ -22,7 +22,7 @@ Contains Dockerized cross-compilation environment, breakpoint resume, and SHA-25
 
     ---
 
-HiSilicon official burning tool usage guide.
+    HiSilicon official burning tool usage guide.
 
     [:octicons-arrow-right-24: Enter](burntool/index.md)
 
@@ -30,7 +30,7 @@ HiSilicon official burning tool usage guide.
 
     ---
 
-Board-side command line debugging tool.
+    Board-side command line debugging tool.
 
     [:octicons-arrow-right-24: Enter](mindcmd/index.md)
 
@@ -38,7 +38,7 @@ Board-side command line debugging tool.
 
     ---
 
-HiSilicon visual debugging platform.
+    HiSilicon visual debugging platform.
 
     [:octicons-arrow-right-24: Enter](toolplatform/index.md)
 
@@ -46,7 +46,7 @@ HiSilicon visual debugging platform.
 
     ---
 
-Capture board-end performance data and locate bottlenecks.
+    Capture board-end performance data and locate bottlenecks.
 
     [:octicons-arrow-right-24: Enter](profiling/index.md)
 
@@ -54,7 +54,7 @@ Capture board-end performance data and locate bottlenecks.
 
     ---
 
-Compare the accuracy difference between PC inference and board-side inference.
+    Compare the accuracy difference between PC inference and board-side inference.
 
     [:octicons-arrow-right-24: Enter](accuracy-compare/index.md)
 
@@ -62,7 +62,7 @@ Compare the accuracy difference between PC inference and board-side inference.
 
     ---
 
-Adjust ISP parameters in real time and observe changes in image quality.
+    Adjust ISP parameters in real time and observe changes in image quality.
 
     [:octicons-arrow-right-24: Enter](iqs-debug/index.md)
 
@@ -78,7 +78,7 @@ Adjust ISP parameters in real time and observe changes in image quality.
 
     ---
 
-First time using these tools? Start here.
+    First time using these tools? Start here.
 
     [:octicons-arrow-right-24: Enter](../get-started/index.md)
 
@@ -86,7 +86,7 @@ First time using these tools? Start here.
 
     ---
 
-Interface manuals for programmatic access to these tools.
+    Interface manuals for programmatic access to these tools.
 
     [:octicons-arrow-right-24: Enter](../reference/api/index.md)
 

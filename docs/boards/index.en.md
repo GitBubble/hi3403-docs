@@ -15,7 +15,7 @@ The Hi3403 platform currently supports the following Hi3403V100 development boar
 
     ---
 
-Produced by Xunwei. The official default target board of the SDK has the richest peripherals and the most complete documentation - it is recommended for novices to get started.
+    Produced by Xunwei. The official default target board of the SDK has the richest peripherals and the most complete documentation - it is recommended for novices to get started.
 
     [:octicons-arrow-right-24: Enter](topeet/index.md)
 
@@ -23,7 +23,7 @@ Produced by Xunwei. The official default target board of the SDK has the richest
 
     ---
 
-Produced by Wildfire, it comes with pre-installed Buildroot system and an active community ecosystem.
+    Produced by Wildfire, it comes with pre-installed Buildroot system and an active community ecosystem.
 
     [:octicons-arrow-right-24: Enter](lubancat/index.md)
 
@@ -31,7 +31,7 @@ Produced by Wildfire, it comes with pre-installed Buildroot system and an active
 
     ---
 
-Produced by Ebina. OpenEuler adapts better.
+    Produced by Ebina. OpenEuler adapts better.
 
     [:octicons-arrow-right-24: Enter](ebaina/index.md)
 
@@ -39,7 +39,7 @@ Produced by Ebina. OpenEuler adapts better.
 
     ---
 
-OpenHarmony desktop system optimization, suitable for OpenHarmony development.
+    OpenHarmony desktop system optimization, suitable for OpenHarmony development.
 
     [:octicons-arrow-right-24: Enter](rkh/index.md)
 
@@ -47,7 +47,7 @@ OpenHarmony desktop system optimization, suitable for OpenHarmony development.
 
     ---
 
-Contains a complete demo (AI examples such as face_detection, kcf_track, fruit_identify, etc.).
+    Contains a complete demo (AI examples such as face_detection, kcf_track, fruit_identify, etc.).
 
     [:octicons-arrow-right-24: Enter](zsks/index.md)
 
@@ -67,7 +67,7 @@ Don't know which piece to choose? See the comparison table in [Choose a developm
 
     ---
 
-The capabilities of the chip itself - not dependent on the board.
+    The capabilities of the chip itself - not dependent on the board.
 
     [:octicons-arrow-right-24: Enter](../soc-linux/soc-overview.md)
 
@@ -75,7 +75,7 @@ The capabilities of the chip itself - not dependent on the board.
 
     ---
 
-Any supported board can run Ubuntu / OpenHarmony / OpenEuler.
+    Any supported board can run Ubuntu / OpenHarmony / OpenEuler.
 
     [:octicons-arrow-right-24: Enter](../os/index.md)
 

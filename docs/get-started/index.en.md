@@ -13,15 +13,15 @@ Novice-friendly entry path - from selecting a development board to lighting up t
 
     ---
 
-Select the board → Burn the image → Connect the serial port → Log in. Go through the entire process in one page.
+    Select the board → Burn the image → Connect the serial port → Log in. Go through the entire process in one page.
 
-    [:octicons-arrow-right-24: Enter](quickstart/index.md)
+    [:octicons-arrow-right-24: Enter](quickstart.md)
 
 -   :material-help-circle-outline:{ .lg .middle } __Select development board__
 
     ---
 
-Xunwei, Yehuo, Yibaina, Runkaihong... the differences, price points, and applicable scenarios of each board are clear at a glance.
+    Xunwei, Yehuo, Yibaina, Runkaihong... the differences, price points, and applicable scenarios of each board are clear at a glance.
 
     [:octicons-arrow-right-24: Enter](board-picker.md)
 
@@ -29,7 +29,7 @@ Xunwei, Yehuo, Yibaina, Runkaihong... the differences, price points, and applica
 
     ---
 
-Ubuntu / OpenHarmony / OpenEuler / Buildroot - Decision tree helps you choose.
+    Ubuntu / OpenHarmony / OpenEuler / Buildroot - Decision tree helps you choose.
 
     [:octicons-arrow-right-24: Enter](os-picker.md)
 
@@ -37,7 +37,7 @@ Ubuntu / OpenHarmony / OpenEuler / Buildroot - Decision tree helps you choose.
 
     ---
 
-What packages should be installed on the Linux/macOS host? How to configure the cross-compilation tool chain?
+    What packages should be installed on the Linux/macOS host? How to configure the cross-compilation tool chain?
 
     [:octicons-arrow-right-24: Enter](environment/index.md)
 
@@ -45,7 +45,7 @@ What packages should be installed on the Linux/macOS host? How to configure the 
 
     ---
 
-Download, decompress, initialize Hi3403 SDK, and run the first compilation.
+    Download, decompress, initialize Hi3403 SDK, and run the first compilation.
 
     [:octicons-arrow-right-24: Enter](sdk-install/index.md)
 
@@ -53,7 +53,7 @@ Download, decompress, initialize Hi3403 SDK, and run the first compilation.
 
     ---
 
-USB serial port, JTAG, writer driver and editor/IDE configuration.
+    USB serial port, JTAG, writer driver and editor/IDE configuration.
 
     [:octicons-arrow-right-24: Enter](driver-install/index.md)
 
@@ -61,7 +61,7 @@ USB serial port, JTAG, writer driver and editor/IDE configuration.
 
     ---
 
-A quickstart from the original upstream SDK (closer to the official documentation).
+    A quickstart from the original upstream SDK (closer to the official documentation).
 
     [:octicons-arrow-right-24: Enter](upstream-quickstart/index.md)
 
@@ -77,7 +77,7 @@ A quickstart from the original upstream SDK (closer to the official documentatio
 
     ---
 
-Don’t want to run dozens of make manually? Use this script to generate an 8GB Ubuntu image with one command.
+    Don’t want to run dozens of make manually? Use this script to generate an 8GB Ubuntu image with one command.
 
     [:octicons-arrow-right-24: Enter](../tools/hi3403-build.md)
 
@@ -85,7 +85,7 @@ Don’t want to run dozens of make manually? Use this script to generate an 8GB 
 
     ---
 
-Have you encountered abbreviations such as MPP / ISP / KLAD / IVS / SVP / ATC and don’t know what they mean? Check here.
+    Have you encountered abbreviations such as MPP / ISP / KLAD / IVS / SVP / ATC and don’t know what they mean? Check here.
 
     [:octicons-arrow-right-24: Enter](../reference/glossary.md)
 

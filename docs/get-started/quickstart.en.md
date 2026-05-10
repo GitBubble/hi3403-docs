@@ -51,7 +51,7 @@ hi3403-ubuntu-lite-ss928v100.img # 1.5 GB, pure command line
 
 === "Use BurnTool (recommended, HiSilicon official tool)"
 
-BurnTool is a graphical burning tool provided by HiSilicon and is cross-platform.
+    BurnTool is a graphical burning tool provided by HiSilicon and is cross-platform.
 
     1. Download BurnTool (see [the BurnTool user guide](../tools/burntool/index.md)).
     2. Put the development board into programming mode (usually press and hold the BOOT key before powering on; see your board's documentation for details).
@@ -60,7 +60,7 @@ BurnTool is a graphical burning tool provided by HiSilicon and is cross-platform
 
 === "Write to SD card using dd (macOS/Linux)"
 
-Some development boards support booting from the SD card. Write `.img` to SD card:
+    Some development boards support booting from the SD card. Write `.img` to SD card:
 
     ``` bash
     # ⚠️ First make sure /dev/sdX is an SD card, not your hard drive!
@@ -68,7 +68,7 @@ Some development boards support booting from the SD card. Write `.img` to SD car
     sudo sync
     ```
 
-The device path on macOS looks like `/dev/rdiskN` (prefixed with `r` is faster).
+    The device path on macOS looks like `/dev/rdiskN` (prefixed with `r` is faster).
 
 === "Use Etcher (GUI, best for newbies)"
 
@@ -115,7 +115,7 @@ Congratulations! Next steps can be:
 
     ---
 
-Use `hi3403-build` one-click script to customize kernel configuration or pre-installed software packages.
+    Use `hi3403-build` one-click script to customize kernel configuration or pre-installed software packages.
 
     [:octicons-arrow-right-24: hi3403-build](../tools/hi3403-build.md)
 
@@ -123,7 +123,7 @@ Use `hi3403-build` one-click script to customize kernel configuration or pre-ins
 
     ---
 
-Cross-compilation, debugging, performance analysis.
+    Cross-compilation, debugging, performance analysis.
 
     [:octicons-arrow-right-24: Application Development Guide](../soc-linux/app-dev/index.md)
 
@@ -131,7 +131,7 @@ Cross-compilation, debugging, performance analysis.
 
     ---
 
-Run MPP sample to verify the camera, codec, and ISP link.
+    Run MPP sample to verify the camera, codec, and ISP link.
 
     [:octicons-arrow-right-24: MPP Overview](../multimedia/mpp/index.md)
 
@@ -139,7 +139,7 @@ Run MPP sample to verify the camera, codec, and ISP link.
 
     ---
 
-Use ATC to convert PyTorch/Caffe models into SVP executable format for board-side inference.
+    Use ATC to convert PyTorch/Caffe models into SVP executable format for board-side inference.
 
     [:octicons-arrow-right-24: SVP Development](../multimedia/svp/index.md)
 

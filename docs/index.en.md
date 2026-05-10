@@ -15,7 +15,7 @@ Covering chips, Linux, multimedia, AI, development boards and construction tools
 
 [Start now :octicons-arrow-right-24:](get-started/index.md){ .md-button .md-button--primary }
 &nbsp;
-[Boot the board in 30 minutes :material-clock-fast:](get-started/quickstart/index.md){ .md-button }
+[Boot the board in 30 minutes :material-clock-fast:](get-started/quickstart.md){ .md-button }
 
 </div>
 
@@ -27,7 +27,7 @@ Covering chips, Linux, multimedia, AI, development boards and construction tools
 
     ---
 
-First time contacting Hi3403? Follow the guide to light up your development board in half an hour.
+    First time contacting Hi3403? Follow the guide to light up your development board in half an hour.
 
     [:octicons-arrow-right-24: Enter](get-started/index.md)
 
@@ -35,7 +35,7 @@ First time contacting Hi3403? Follow the guide to light up your development boar
 
     ---
 
-Development board introductions, pin diagrams and purchasing information of various manufacturers: Xunwei, Yehuo, Yibeina, Runkaihong...
+    Development board introductions, pin diagrams and purchasing information of various manufacturers: Xunwei, Yehuo, Yibeina, Runkaihong...
 
     [:octicons-arrow-right-24: Enter](boards/index.md)
 
@@ -43,7 +43,7 @@ Development board introductions, pin diagrams and purchasing information of vari
 
     ---
 
-Run Ubuntu, OpenHarmony, OpenEuler or Buildroot on Hi3403.
+    Run Ubuntu, OpenHarmony, OpenEuler or Buildroot on Hi3403.
 
     [:octicons-arrow-right-24: Enter](os/index.md)
 
@@ -51,7 +51,7 @@ Run Ubuntu, OpenHarmony, OpenEuler or Buildroot on Hi3403.
 
     ---
 
-Chip overview, U-Boot, Linux kernel, peripheral drivers, secure boot, memory layout.
+    Chip overview, U-Boot, Linux kernel, peripheral drivers, secure boot, memory layout.
 
     [:octicons-arrow-right-24: Enter](soc-linux/index.md)
 
@@ -59,7 +59,7 @@ Chip overview, U-Boot, Linux kernel, peripheral drivers, secure boot, memory lay
 
     ---
 
-MPP media processing, ISP, codec, SVP NPU, ATC, IVE/IVS.
+    MPP media processing, ISP, codec, SVP NPU, ATC, IVE/IVS.
 
     [:octicons-arrow-right-24: Enter](multimedia/index.md)
 
@@ -67,7 +67,7 @@ MPP media processing, ISP, codec, SVP NPU, ATC, IVE/IVS.
 
     ---
 
-`hi3403-build` one-click build script, BurnTool burning tool, MindCmd, ToolPlatform.
+    `hi3403-build` one-click build script, BurnTool burning tool, MindCmd, ToolPlatform.
 
     [:octicons-arrow-right-24: Enter](tools/index.md)
 
@@ -75,7 +75,7 @@ MPP media processing, ISP, codec, SVP NPU, ATC, IVE/IVS.
 
     ---
 
-API reference, SYS_CONFIG configuration, FAQ, glossary.
+    API reference, SYS_CONFIG configuration, FAQ, glossary.
 
     [:octicons-arrow-right-24: Enter](reference/index.md)
 
@@ -83,7 +83,7 @@ API reference, SYS_CONFIG configuration, FAQ, glossary.
 
     ---
 
-End-to-end practical tutorial: frame capture, encoding, AI inference, ISP tuning.
+    End-to-end practical tutorial: frame capture, encoding, AI inference, ISP tuning.
 
     [:octicons-arrow-right-24: Enter](tutorials/index.md)
 
@@ -91,7 +91,7 @@ End-to-end practical tutorial: frame capture, encoding, AI inference, ISP tuning
 
     ---
 
-Release Notes, Contribution Guidelines, Style Guide, License.
+    Release Notes, Contribution Guidelines, Style Guide, License.
 
     [:octicons-arrow-right-24: Enter](community/index.md)
 
@@ -107,7 +107,7 @@ Release Notes, Contribution Guidelines, Style Guide, License.
 
     ---
 
-Upstream SDK source code, patches, release-notes.
+    Upstream SDK source code, patches, release-notes.
 
     [:octicons-arrow-right-24: gitee.com/HiSpark/pegasus](https://gitee.com/HiSpark/pegasus)
 
@@ -115,7 +115,7 @@ Upstream SDK source code, patches, release-notes.
 
     ---
 
-Script to build Ubuntu image with one click and get burnable `.img` file in 30 minutes.
+    Script to build Ubuntu image with one click and get burnable `.img` file in 30 minutes.
 
     [:octicons-arrow-right-24: Enter](tools/hi3403-build.md)
 
@@ -123,7 +123,7 @@ Script to build Ubuntu image with one click and get burnable `.img` file in 30 m
 
     ---
 
-Submit bugs or issues in Gitee Issues.
+    Submit bugs or issues in Gitee Issues.
 
     [:octicons-arrow-right-24: gitee.com/HiSpark/pegasus/issues](https://gitee.com/HiSpark/pegasus/issues)
 

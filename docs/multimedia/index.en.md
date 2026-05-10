@@ -17,7 +17,7 @@ and computer vision middleware IVE/IVS/DPU/HNR.
 
     ---
 
-The overall architecture, subsystem division, and data flow of MPP V5.0.
+    The overall architecture, subsystem division, and data flow of MPP V5.0.
 
     [:octicons-arrow-right-24: Enter](mpp/index.md)
 
@@ -25,7 +25,7 @@ The overall architecture, subsystem division, and data flow of MPP V5.0.
 
     ---
 
-Image Signal Processor: RAW to YUV workflow, plus tuning guide.
+    Image Signal Processor: RAW to YUV workflow, plus tuning guide.
 
     [:octicons-arrow-right-24: Enter](isp/index.md)
 
@@ -33,7 +33,7 @@ Image Signal Processor: RAW to YUV workflow, plus tuning guide.
 
     ---
 
-Development reference for HDMI output.
+    Development reference for HDMI output.
 
     [:octicons-arrow-right-24: Enter](hdmi/index.md)
 
@@ -41,7 +41,7 @@ Development reference for HDMI output.
 
     ---
 
-GPU, TDE 2D graphics acceleration, GFBG frame buffer.
+    GPU, TDE 2D graphics acceleration, GFBG frame buffer.
 
     [:octicons-arrow-right-24: Enter](graphics/index.md)
 
@@ -49,7 +49,7 @@ GPU, TDE 2D graphics acceleration, GFBG frame buffer.
 
     ---
 
-The process of making and displaying the boot logo.
+    The process of making and displaying the boot logo.
 
     [:octicons-arrow-right-24: Enter](splash/index.md)
 
@@ -63,7 +63,7 @@ The process of making and displaying the boot logo.
 
     ---
 
-Hi3403 built-in NPU. Development Guide + API Reference.
+    Hi3403 built-in NPU. Development Guide + API Reference.
 
     [:octicons-arrow-right-24: Enter](svp/index.md)
 
@@ -71,7 +71,7 @@ Hi3403 built-in NPU. Development Guide + API Reference.
 
     ---
 
-Convert Caffe / PyTorch / ONNX models to SVP executable format.
+    Convert Caffe / PyTorch / ONNX models to SVP executable format.
 
     [:octicons-arrow-right-24: Enter](atc/index.md)
 
@@ -79,7 +79,7 @@ Convert Caffe / PyTorch / ONNX models to SVP executable format.
 
     ---
 
-Model quantization tool: Convert FP32 models to INT8/INT16 to improve throughput.
+    Model quantization tool: Convert FP32 models to INT8/INT16 to improve throughput.
 
     [:octicons-arrow-right-24: Enter](amct/index.md)
 
@@ -87,7 +87,7 @@ Model quantization tool: Convert FP32 models to INT8/INT16 to improve throughput
 
     ---
 
-Traditional CV accelerator: image processing, video structuring, depth perception, noise reduction.
+    Traditional CV accelerator: image processing, video structuring, depth perception, noise reduction.
 
     [:octicons-arrow-right-24: Enter](cv/index.md)
 
@@ -95,7 +95,7 @@ Traditional CV accelerator: image processing, video structuring, depth perceptio
 
     ---
 
-Development reference for fusion of motion information and image information.
+    Development reference for fusion of motion information and image information.
 
     [:octicons-arrow-right-24: Enter](motionfusion/index.md)
 
@@ -103,7 +103,7 @@ Development reference for fusion of motion information and image information.
 
     ---
 
-Commissioning guide for the Digital Image Stabilization (anti-shake) module.
+    Commissioning guide for the Digital Image Stabilization (anti-shake) module.
 
     [:octicons-arrow-right-24: Enter](dis/index.md)
 
@@ -111,7 +111,7 @@ Commissioning guide for the Digital Image Stabilization (anti-shake) module.
 
     ---
 
-Development reference and optimization of 3D noise reduction module.
+    Development reference and optimization of 3D noise reduction module.
 
     [:octicons-arrow-right-24: Enter](3dnr/index.md)
 
@@ -119,7 +119,7 @@ Development reference and optimization of 3D noise reduction module.
 
     ---
 
-Use mono+color dual-channel sensor for high dynamic imaging.
+    Use mono+color dual-channel sensor for high dynamic imaging.
 
     [:octicons-arrow-right-24: Enter](dual-fusion/index.md)
 
@@ -127,7 +127,7 @@ Use mono+color dual-channel sensor for high dynamic imaging.
 
     ---
 
-User guide for high-speed capture.
+    User guide for high-speed capture.
 
     [:octicons-arrow-right-24: Enter](snapshot/index.md)
 
@@ -143,7 +143,7 @@ User guide for high-speed capture.
 
     ---
 
-Interface manual for all MPP/SVP/IVE/IVS/TDE/GFBG.
+    Interface manual for all MPP/SVP/IVE/IVS/TDE/GFBG.
 
     [:octicons-arrow-right-24: Enter](../reference/api/index.md)
 
@@ -151,7 +151,7 @@ Interface manual for all MPP/SVP/IVE/IVS/TDE/GFBG.
 
     ---
 
-MPP V5.0 FAQ.
+    MPP V5.0 FAQ.
 
     [:octicons-arrow-right-24: Enter](../reference/faq/mpp/index.md)
 

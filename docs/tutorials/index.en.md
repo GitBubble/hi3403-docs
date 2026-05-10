@@ -16,8 +16,8 @@ Follow up and it will take about 30–60 minutes for results.
 
     ---
 
-Capture frames with MIPI camera, encode in H.264, and push to LAN via RTSP.
-*~45 minutes*
+    Capture frames with MIPI camera, encode in H.264, and push to LAN via RTSP.
+    *~45 minutes*
 
     [:octicons-arrow-right-24: Enter](capture-encode-stream.md)
 
@@ -25,8 +25,8 @@ Capture frames with MIPI camera, encode in H.264, and push to LAN via RTSP.
 
     ---
 
-Convert the ONNX model to SVP `.om`, perform board-side inference and see the output.
-*~45 minutes*
+    Convert the ONNX model to SVP `.om`, perform board-side inference and see the output.
+    *~45 minutes*
 
     [:octicons-arrow-right-24: Enter](svp-first-inference.md)
 
@@ -34,9 +34,9 @@ Convert the ONNX model to SVP `.om`, perform board-side inference and see the ou
 
     ---
 
-The color temperature when photographed with the board is rather cold. Open IQS (Image Quality Debugging Tool) and change the AWB parameters.
-Save to SYS_CONFIG.
-*~30 minutes*
+    The color temperature when photographed with the board is rather cold. Open IQS (Image Quality Debugging Tool) and change the AWB parameters.
+    Save to SYS_CONFIG.
+    *~30 minutes*
 
     [:octicons-arrow-right-24: Enter](isp-color-tuning.md)
 

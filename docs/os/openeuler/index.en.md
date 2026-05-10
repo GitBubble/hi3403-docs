@@ -62,7 +62,7 @@ image.
 ## 3. Flash the image
 
 Use the same flashing procedure described in
-[Quickstart — Step 2](../../get-started/quickstart.md#step-2-flash-the-image)
+[Quickstart — Step 2](../../get-started/quickstart.md#step-2-burn-the-image)
 (BurnTool / `dd` / Etcher), pointing at the `.img` files you just
 obtained.
 
