@@ -107,7 +107,7 @@ docs/tutorials/
 Quote:
 
 ``` markdown
-![GStreamer pipeline 示意图](images/pipeline.png)
+![GStreamer pipeline 示意图](images/pipeline.svg)
 ```
 
 Remember to alt text (what’s in square brackets) – Accessibility + SEO.
@@ -153,10 +153,10 @@ Check the filename/path for typos - MkDocs is strictly case-sensitive.
 The relative path of the link is incorrect. Calculate the path from the perspective of the current page:
 
 ``` markdown
-<!-- docs/tutorials/gstreamer.md 引用 docs/tutorials/images/pipeline.png -->
-![](images/pipeline.png)        ✓ 对
-![](./images/pipeline.png)      ✓ 对
-![](/images/pipeline.png)       ✗ 错（站根，不是同目录）
+<!-- docs/tutorials/gstreamer.md 引用 docs/tutorials/images/pipeline.svg -->
+![](images/pipeline.svg)        ✓ 对
+![](./images/pipeline.svg)      ✓ 对
+![](/images/pipeline.svg)       ✗ 错（站根，不是同目录）
 ```
 
 ### "build --strict failed"

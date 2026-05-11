@@ -170,7 +170,7 @@ docs/
             └── awb-flow.png
 ```
 
-引用：`![AWB 收敛流程](images/awb-flow.png)`
+引用：`![AWB 收敛流程](images/awb-flow.svg)`
 
 加 `alt` 文本（无障碍访问 + SEO）。
 

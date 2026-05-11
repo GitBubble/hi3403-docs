@@ -106,7 +106,7 @@ docs/tutorials/
 引用：
 
 ``` markdown
-![GStreamer pipeline 示意图](images/pipeline.png)
+![GStreamer pipeline 示意图](images/pipeline.svg)
 ```
 
 记得给 alt 文本（方括号里的内容）—— 无障碍 + SEO。
@@ -153,10 +153,10 @@ git push origin add/gstreamer-tutorial
 链接的相对路径写错。从当前页面的角度算路径：
 
 ``` markdown
-<!-- docs/tutorials/gstreamer.md 引用 docs/tutorials/images/pipeline.png -->
-![](images/pipeline.png)        ✓ 对
-![](./images/pipeline.png)      ✓ 对
-![](/images/pipeline.png)       ✗ 错（站根，不是同目录）
+<!-- docs/tutorials/gstreamer.md 引用 docs/tutorials/images/pipeline.svg -->
+![](images/pipeline.svg)        ✓ 对
+![](./images/pipeline.svg)      ✓ 对
+![](/images/pipeline.svg)       ✗ 错（站根，不是同目录）
 ```
 
 ### "build --strict 失败"
