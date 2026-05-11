@@ -1,508 +1,1065 @@
 /* ============================================================
- * Hi3403 docs — RPi-inspired visual theme
- * Layered on top of Material for MkDocs.
- * Goal: clean white surface, raspberry accent, generous cards,
- * tight sidebar, ⌘K-style search bar.
+ * Hi3403 docs — Professional RPi-inspired theme
+ * Built on Material for MkDocs.
  * ============================================================ */
 
-/* ---------- 1. Color tokens ---------- */
+/* ---------- 1. Design tokens ---------- */
 
 :root,
 [data-md-color-scheme="default"] {
-  /* RPi raspberry red */
+  /* Primary — raspberry red, used sparingly */
   --md-primary-fg-color:        #c51a4a;
-  --md-primary-fg-color--light: #e2336a;
-  --md-primary-fg-color--dark:  #8e0e34;
+  --md-primary-fg-color--light: #d94466;
+  --md-primary-fg-color--dark:  #9b0f36;
   --md-primary-bg-color:        #ffffff;
-  --md-primary-bg-color--light: #ffffffe6;
+  --md-primary-bg-color--light: #ffffff;
 
-  --md-accent-fg-color:         #c51a4a;
-  --md-accent-fg-color--transparent: rgba(197, 26, 74, 0.08);
-  --md-accent-bg-color:         #ffffff;
-  --md-accent-bg-color--light:  #ffffffe6;
+  --md-accent-fg-color:                #c51a4a;
+  --md-accent-fg-color--transparent:   rgba(197, 26, 74, 0.07);
 
-  /* Surface tweaks */
-  --md-default-bg-color:        #ffffff;
-  --md-default-fg-color--lightest: #ececec;
+  /* Surface */
+  --md-default-bg-color:         #ffffff;
+  --md-default-fg-color:         #1a1a1a;
+  --md-default-fg-color--light:  #5c5c5c;
+  --md-default-fg-color--lighter:#8a8a8a;
+  --md-default-fg-color--lightest:#e8e8e8;
 
-  /* Subtle warm gray sidebar tint, like RPi */
-  --hi3403-sidebar-bg:         #fafafa;
-  --hi3403-card-bg:            #ffffff;
-  --hi3403-card-border:        #e6e6e6;
-  --hi3403-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.04),
-                                0 4px 14px rgba(0, 0, 0, 0.05);
-  --hi3403-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.06),
-                                0 12px 28px rgba(197, 26, 74, 0.12);
-  --hi3403-divider:            #ececec;
-  --hi3403-muted:              #6b6b6b;
+  /* Hi3403 custom tokens */
+  --hi3403-sidebar-bg:           #f8f8f9;
+  --hi3403-card-bg:              #ffffff;
+  --hi3403-card-bg-alt:          #fafafa;
+  --hi3403-card-border:          #e4e4e7;
+  --hi3403-card-shadow:          0 1px 2px rgba(0,0,0,0.03), 0 3px 10px rgba(0,0,0,0.04);
+  --hi3403-card-shadow-hover:    0 2px 4px rgba(0,0,0,0.04), 0 8px 24px rgba(197,26,74,0.10);
+  --hi3403-divider:              #eaeaec;
+  --hi3403-muted:                #6a6a72;
+  --hi3403-highlight:            rgba(197,26,74,0.06);
+  --hi3403-code-bg:              rgba(197,26,74,0.055);
 }
 
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color:        #e2336a;
-  --md-primary-fg-color--light: #ee5b89;
-  --md-primary-fg-color--dark:  #b81450;
-  --md-accent-fg-color:         #ff5c8a;
-  --md-accent-fg-color--transparent: rgba(255, 92, 138, 0.12);
+  --md-primary-fg-color:        #e85478;
+  --md-primary-fg-color--light: #ed7a96;
+  --md-primary-fg-color--dark:  #c51a4a;
+  --md-accent-fg-color:         #f06486;
+  --md-accent-fg-color--transparent: rgba(240,100,134,0.12);
 
-  --hi3403-sidebar-bg:         #16181d;
-  --hi3403-card-bg:            #1c1f26;
-  --hi3403-card-border:        #2b2f38;
-  --hi3403-card-shadow:        0 1px 2px rgba(0, 0, 0, 0.4),
-                                0 4px 14px rgba(0, 0, 0, 0.45);
-  --hi3403-card-shadow-hover:  0 2px 4px rgba(0, 0, 0, 0.5),
-                                0 12px 28px rgba(226, 51, 106, 0.25);
-  --hi3403-divider:            #2b2f38;
-  --hi3403-muted:              #aab1bd;
+  --hi3403-sidebar-bg:           #121318;
+  --hi3403-card-bg:              #1a1c23;
+  --hi3403-card-bg-alt:          #16181e;
+  --hi3403-card-border:          #2a2d36;
+  --hi3403-card-shadow:          0 1px 2px rgba(0,0,0,0.3), 0 3px 10px rgba(0,0,0,0.35);
+  --hi3403-card-shadow-hover:    0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(232,84,120,0.20);
+  --hi3403-divider:              #2a2d36;
+  --hi3403-muted:                #9298a4;
+  --hi3403-highlight:            rgba(232,84,120,0.10);
+  --hi3403-code-bg:              rgba(232,84,120,0.14);
 }
 
-/* ---------- 2. Typography ---------- */
+/* ---------- 2. Base & typography ---------- */
 
 body,
 .md-typeset {
-  font-feature-settings: "ss01", "cv01", "cv11";
+  font-feature-settings: "ss01", "cv01", "cv11", "kern";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(197,26,74,0.16);
+  color: var(--md-default-fg-color);
+}
+[data-md-color-scheme="slate"] ::selection {
+  background: rgba(232,84,120,0.30);
+  color: #fff;
+}
+
+/* Smooth scrolling for the whole document */
+html {
+  scroll-behavior: smooth;
+}
+
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.72;
+  color: var(--md-default-fg-color);
 }
 
 .md-typeset h1 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: 2.2rem;
-  line-height: 1.2;
-  margin: 0 0 1.2rem 0;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0 0 1.2rem;
+  color: var(--md-default-fg-color);
 }
 
 .md-typeset h2 {
   font-weight: 700;
-  letter-spacing: -0.01em;
-  font-size: 1.5rem;
-  margin-top: 2.5rem;
-  padding-top: 0;
-  border-top: none;
+  letter-spacing: -0.015em;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin-top: 2.6rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--hi3403-divider);
+  color: var(--md-default-fg-color);
 }
 
 .md-typeset h3 {
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-weight: 650;
+  font-size: 1.08rem;
+  line-height: 1.35;
   margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  color: var(--md-default-fg-color);
 }
 
-.md-typeset p,
+.md-typeset h4 {
+  font-weight: 600;
+  font-size: 0.94rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--hi3403-muted);
+  margin-top: 1.4rem;
+}
+
+.md-typeset p {
+  line-height: 1.72;
+  margin: 0 0 1rem;
+}
+
 .md-typeset li {
-  line-height: 1.7;
+  line-height: 1.68;
 }
 
-/* ---------- 3. Header ---------- */
+.md-typeset p + ul,
+.md-typeset p + ol {
+  margin-top: -0.3rem;
+}
+
+/* ---------- 3. Header — clean and minimal ---------- */
 
 .md-header {
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
   box-shadow: 0 1px 0 var(--hi3403-divider);
   height: 3.4rem;
+  transition: box-shadow 0.2s ease;
 }
+
 .md-header[data-md-state="shadow"] {
   box-shadow: 0 1px 0 var(--hi3403-divider),
-              0 4px 12px rgba(0, 0, 0, 0.04);
+              0 6px 16px rgba(0,0,0,0.05);
 }
+
 .md-header__title {
   font-weight: 700;
   letter-spacing: -0.01em;
-  margin-left: 0.6rem;
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
 }
+
 .md-header__button.md-logo {
-  padding: 0.4rem;
+  padding: 0.35rem 0.5rem;
 }
-/* Logo sizing — let the wordmark breathe */
+
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 1.6rem;
+  height: 1.55rem;
   width: auto;
 }
-/* In dark mode, invert the anthracite wordmark to ivory while preserving
-   the gold spark (hue-rotate brings it back to warm gold after invert). */
+
 [data-md-color-scheme="slate"] .md-header__button.md-logo img,
 [data-md-color-scheme="slate"] .md-nav__title .md-logo img {
   filter: invert(1) hue-rotate(180deg);
 }
-[data-md-color-scheme="default"] .md-header,
-[data-md-color-scheme="default"] .md-tabs {
-  color: #1a1a1a;
+
+/* ---------- 4. Search bar — refined ---------- */
+
+.md-search__form {
+  background: #f3f3f5;
+  border-radius: 0.45rem;
+  height: 2rem;
+  border: 1px solid transparent;
+  transition: background 0.15s ease,
+              box-shadow 0.15s ease,
+              border-color 0.15s ease;
 }
 
-/* ---------- 4. Top tabs (RPi-style horizontal nav) ---------- */
+[data-md-color-scheme="slate"] .md-search__form {
+  background: #22242d;
+}
+
+.md-search__form:hover {
+  background: var(--md-default-bg-color);
+  border-color: var(--hi3403-card-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.md-search__input {
+  font-size: 0.77rem;
+}
+
+.md-search__input::placeholder {
+  color: var(--hi3403-muted);
+  opacity: 0.85;
+}
+
+.md-search__icon {
+  color: var(--hi3403-muted);
+}
+
+/* Search results */
+.md-search__output {
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border: 1px solid var(--hi3403-card-border);
+}
+
+[data-md-color-scheme="slate"] .md-search__output {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.md-search-result__more {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+/* ---------- 5. Tabs — top navigation ---------- */
 
 .md-tabs {
   background: var(--md-default-bg-color);
   border-bottom: 1px solid var(--hi3403-divider);
   color: var(--md-default-fg-color);
 }
+
 .md-tabs__link {
-  font-size: 0.78rem;
-  font-weight: 500;
-  margin-top: 0.7rem;
-  margin-bottom: 0.7rem;
-  opacity: 0.85;
+  font-size: 0.76rem;
+  font-weight: 530;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  opacity: 0.80;
   letter-spacing: 0;
+  transition: opacity 0.12s ease, color 0.12s ease;
 }
-.md-tabs__link:hover,
+
+.md-tabs__link:hover {
+  opacity: 1;
+  color: var(--md-default-fg-color);
+}
+
 .md-tabs__link--active {
   opacity: 1;
   color: var(--md-primary-fg-color);
+  font-weight: 600;
 }
+
 .md-tabs__item {
-  height: 2.5rem;
+  height: 2.4rem;
 }
 
-/* ---------- 5. Search bar (⌘K vibe) ---------- */
-
-.md-search__form {
-  background: #f3f3f3;
-  border-radius: 0.4rem;
-  height: 2.1rem;
-  transition: background 0.15s ease, box-shadow 0.15s ease;
-}
-[data-md-color-scheme="slate"] .md-search__form {
-  background: #2a2d35;
-}
-.md-search__form:hover,
-[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
-  background: var(--md-default-bg-color);
-  box-shadow: 0 0 0 1px var(--hi3403-card-border),
-              0 6px 24px rgba(0, 0, 0, 0.08);
-}
-.md-search__input {
-  font-size: 0.78rem;
-}
-.md-search__input::placeholder {
-  color: var(--hi3403-muted);
-}
-
-/* ---------- 6. Sidebar ---------- */
+/* ---------- 6. Sidebar — refined ---------- */
 
 .md-sidebar--primary {
   background: var(--hi3403-sidebar-bg);
 }
+
 .md-sidebar--primary .md-sidebar__scrollwrap {
   background: var(--hi3403-sidebar-bg);
 }
+
 .md-nav__title {
   color: var(--hi3403-muted);
   font-weight: 600;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  padding: 0.5rem 0.6rem 0.3rem;
 }
+
 .md-nav__item .md-nav__link {
-  font-size: 0.78rem;
-  padding: 0.28rem 0;
-  transition: color 0.12s ease;
+  font-size: 0.77rem;
+  padding: 0.26rem 1rem 0.26rem 0.6rem;
+  border-radius: 0 0.35rem 0.35rem 0;
+  margin-right: 0.4rem;
+  transition: color 0.12s ease,
+              background 0.12s ease;
 }
-.md-nav__link:hover,
-.md-nav__link--active {
+
+.md-nav__link:hover {
   color: var(--md-primary-fg-color);
 }
+
 .md-nav__link--active {
+  color: var(--md-primary-fg-color);
   font-weight: 600;
+  background: var(--hi3403-highlight);
+  border-left: 2px solid var(--md-primary-fg-color);
+  padding-left: calc(0.6rem - 2px);
 }
-/* Section headings in sidebar */
+
+.md-nav__link--active::before {
+  display: none; /* we handle active state ourselves */
+}
+
+/* Section headings in drawer */
 .md-nav--primary .md-nav__title[for="__drawer"] {
   background: var(--md-default-bg-color);
+  border-bottom: 1px solid var(--hi3403-divider);
 }
 
-/* Right TOC */
+/* TOC sidebar */
 .md-sidebar--secondary .md-nav__title {
   text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
   color: var(--hi3403-muted);
-}
-.md-sidebar--secondary .md-nav__link {
-  font-size: 0.74rem;
+  font-weight: 600;
 }
 
-/* ---------- 7. Card grid (the RPi look) ---------- */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.73rem;
+  padding: 0.18rem 0;
+}
+
+/* Sidebar scrollbar */
+.md-sidebar__scrollwrap {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.md-sidebar__scrollwrap:hover {
+  scrollbar-color: var(--hi3403-card-border) transparent;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 4px;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb {
+  background: var(--hi3403-card-border);
+}
+
+/* ---------- 7. Content area ---------- */
+
+.md-content {
+  padding-bottom: 3rem;
+}
+
+.md-content__inner {
+  margin: 0 1.5rem 1.2rem;
+  padding-top: 1.6rem;
+}
+
+.md-content__inner > :first-child {
+  margin-top: 0;
+}
+
+.md-content__button {
+  opacity: 0.40;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.md-content__button:hover {
+  opacity: 1;
+  color: var(--md-primary-fg-color);
+}
+
+/* Edit-this-page source info */
+.md-source-file {
+  font-size: 0.70rem;
+  color: var(--hi3403-muted);
+  margin-bottom: 0.6rem;
+}
+
+/* ---------- 8. Card grid — the RPi signature look ---------- */
 
 .md-typeset .grid.cards {
-  margin: 1.4rem 0 2rem;
+  margin: 1.2rem 0 2rem;
 }
+
 .md-typeset .grid.cards > ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.9rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
+
 .md-typeset .grid.cards > ul > li,
 .md-typeset .grid.cards > .admonition {
   background: var(--hi3403-card-bg);
   border: 1px solid var(--hi3403-card-border);
   border-radius: 0.6rem;
-  padding: 1.15rem 1.25rem 1.15rem;
+  padding: 1.15rem 1.3rem 1.15rem;
   margin: 0;
   box-shadow: var(--hi3403-card-shadow);
-  transition: transform 0.18s ease,
-              box-shadow 0.18s ease,
-              border-color 0.18s ease;
-  position: relative;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1.2),
+              box-shadow 0.2s ease,
+              border-color 0.2s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
+
 .md-typeset .grid.cards > ul > li:hover {
-  transform: translateY(-2px);
-  border-color: var(--md-primary-fg-color);
+  transform: translateY(-3px);
+  border-color: var(--md-primary-fg-color--light);
   box-shadow: var(--hi3403-card-shadow-hover);
 }
+
 .md-typeset .grid.cards > ul > li:hover > p > strong {
   color: var(--md-primary-fg-color);
 }
+
 /* Card icon */
 .md-typeset .grid.cards .twemoji,
 .md-typeset .grid.cards .lg.middle {
   color: var(--md-primary-fg-color);
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   margin-bottom: 0.6rem;
   display: inline-block;
+  opacity: 0.90;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
+.md-typeset .grid.cards > ul > li:hover .twemoji,
+.md-typeset .grid.cards > ul > li:hover .lg.middle {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* Card title */
 .md-typeset .grid.cards strong {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.96rem;
+  font-weight: 650;
   letter-spacing: -0.005em;
   color: var(--md-default-fg-color);
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
+  transition: color 0.15s ease;
 }
+
 .md-typeset .grid.cards hr {
   display: none;
 }
+
+/* Card body text */
 .md-typeset .grid.cards p {
-  font-size: 0.8rem;
-  line-height: 1.55;
+  font-size: 0.78rem;
+  line-height: 1.58;
   color: var(--hi3403-muted);
-  margin: 0 0 0.6rem 0;
+  margin: 0 0 0.5rem;
 }
-/* Style the trailing arrow link inside each card */
+
+/* Card trailing link */
 .md-typeset .grid.cards > ul > li > p:last-child {
   margin-top: auto;
-  padding-top: 0.5rem;
-  font-size: 0.78rem;
+  padding-top: 0.6rem;
+  font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   margin-bottom: 0;
 }
+
 .md-typeset .grid.cards > ul > li > p:last-child a {
   color: var(--md-primary-fg-color);
   border-bottom: none;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
+  transition: gap 0.2s ease, color 0.15s ease;
 }
+
 .md-typeset .grid.cards > ul > li > p:last-child a:hover {
   color: var(--md-primary-fg-color--dark);
+  gap: 0.45rem;
 }
 
-/* ---------- 8. Hero on landing pages ---------- */
+/* ---------- 9. Hero banner ---------- */
 
 .md-typeset .hero {
-  background: linear-gradient(135deg, #fff5f7 0%, #ffe7ee 100%);
+  background: linear-gradient(160deg, #fef5f7 0%, #fde8ed 40%, #fdf2f4 100%);
   color: #1a1a1a;
-  padding: 3.2rem 2.4rem 3rem;
-  border-radius: 0.8rem;
+  padding: 3.4rem 2.8rem 3rem;
+  border-radius: 0.85rem;
   margin: 0 0 2.5rem;
-  border: 1px solid var(--hi3403-card-border);
+  border: 1px solid #f0d6dd;
   position: relative;
   overflow: hidden;
 }
+
 [data-md-color-scheme="slate"] .md-typeset .hero {
-  background: linear-gradient(135deg, #2a1820 0%, #3a1a2c 100%);
-  color: #f5f5f7;
-  border-color: var(--hi3403-card-border);
+  background: linear-gradient(160deg, #261b21 0%, #2e1a26 40%, #281d24 100%);
+  color: #f0f0f3;
+  border-color: #3a2835;
 }
+
+.md-typeset .hero::before {
+  content: "";
+  position: absolute;
+  right: -3rem;
+  top: -3rem;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+              rgba(197,26,74,0.10) 0%,
+              rgba(197,26,74,0.04) 40%,
+              transparent 70%);
+  pointer-events: none;
+}
+
 .md-typeset .hero::after {
   content: "";
   position: absolute;
-  right: -4rem;
-  bottom: -4rem;
-  width: 16rem;
-  height: 16rem;
+  right: -5rem;
+  bottom: -5rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 50%;
   background: radial-gradient(circle,
-              rgba(197, 26, 74, 0.12) 0%,
-              rgba(197, 26, 74, 0) 70%);
+              rgba(197,26,74,0.08) 0%,
+              rgba(197,26,74,0.02) 50%,
+              transparent 65%);
   pointer-events: none;
 }
+
 .md-typeset .hero h1 {
-  font-size: 2.6rem;
-  margin: 0 0 0.8rem;
-  letter-spacing: -0.025em;
+  font-size: 2.5rem;
+  margin: 0 0 0.7rem;
+  letter-spacing: -0.03em;
   font-weight: 800;
+  position: relative;
+  z-index: 1;
 }
-[data-md-color-scheme="default"] .md-typeset .hero h1 {
-  color: #1a1a1a;
-}
+
 .md-typeset .hero p {
-  font-size: 1.05rem;
-  max-width: 38rem;
-  margin: 0 0 1.2rem;
+  font-size: 1.02rem;
+  max-width: 36rem;
+  margin: 0 0 1.3rem;
   color: inherit;
-  opacity: 0.85;
+  opacity: 0.82;
+  position: relative;
+  z-index: 1;
+  line-height: 1.65;
 }
+
 .md-typeset .hero .md-button {
-  margin-right: 0.6rem;
-  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  margin-top: 0.3rem;
+  position: relative;
+  z-index: 1;
 }
+
 .md-typeset .hero .md-button--primary {
   background: var(--md-primary-fg-color);
   border-color: var(--md-primary-fg-color);
   color: #fff;
+  box-shadow: 0 2px 8px rgba(197,26,74,0.25);
 }
+
 .md-typeset .hero .md-button--primary:hover {
   background: var(--md-primary-fg-color--dark);
   border-color: var(--md-primary-fg-color--dark);
-}
-.md-typeset .hero .md-button:not(.md-button--primary) {
-  background: #ffffff;
-  color: var(--md-primary-fg-color);
-  border: 1px solid var(--hi3403-card-border);
-}
-[data-md-color-scheme="slate"] .md-typeset .hero .md-button:not(.md-button--primary) {
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(197,26,74,0.35);
+  transform: translateY(-1px);
 }
 
-/* ---------- 9. Related-resources footer band ---------- */
+.md-typeset .hero .md-button:not(.md-button--primary) {
+  background: rgba(255,255,255,0.85);
+  color: var(--md-primary-fg-color);
+  border: 1px solid rgba(197,26,74,0.25);
+  backdrop-filter: blur(8px);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .hero .md-button:not(.md-button--primary) {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* ---------- 10. Buttons ---------- */
+
+.md-typeset .md-button {
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 0.80rem;
+  padding: 0.55rem 1.15rem;
+  transition: transform 0.15s cubic-bezier(0.25, 0.8, 0.25, 1.2),
+              box-shadow 0.15s ease,
+              background 0.15s ease,
+              border-color 0.15s ease;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+}
+
+.md-typeset .md-button--primary {
+  box-shadow: 0 1px 4px rgba(197,26,74,0.2);
+}
+
+.md-typeset .md-button--primary:hover {
+  box-shadow: 0 4px 14px rgba(197,26,74,0.30);
+}
+
+/* ---------- 11. Links ---------- */
+
+.md-typeset a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease,
+              color 0.15s ease;
+  font-weight: 500;
+}
+
+.md-typeset p a,
+.md-typeset li a,
+.md-typeset td a {
+  border-bottom: 1px solid var(--md-accent-fg-color--transparent);
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset p a:hover,
+.md-typeset li a:hover,
+.md-typeset td a:hover {
+  color: var(--md-primary-fg-color--dark);
+  border-bottom-color: var(--md-primary-fg-color);
+}
+
+.md-typeset a:focus-visible {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- 12. Code ---------- */
+
+.md-typeset code {
+  background: var(--hi3403-code-bg);
+  color: var(--md-primary-fg-color--dark);
+  border-radius: 0.25rem;
+  padding: 0.08rem 0.4rem;
+  font-size: 0.86em;
+  font-weight: 480;
+  border: 1px solid rgba(197,26,74,0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  color: #f0a6bc;
+  border-color: rgba(232,84,120,0.12);
+}
+
+.md-typeset pre > code {
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  font-weight: 400;
+}
+
+.md-typeset .highlight {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--hi3403-divider);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.md-typeset .highlight .filename {
+  font-size: 0.72rem;
+  color: var(--hi3403-muted);
+  border-bottom: 1px solid var(--hi3403-divider);
+  background: var(--hi3403-card-bg-alt);
+  padding: 0.35rem 0.9rem;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.md-typeset .highlighttable {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--hi3403-divider);
+}
+
+.md-typeset .highlighttable .linenos {
+  background: var(--hi3403-card-bg-alt);
+  color: var(--hi3403-muted);
+  border-right: 1px solid var(--hi3403-divider);
+}
+
+/* Inline keyboard keys */
+.md-typeset kbd {
+  background: var(--hi3403-card-bg-alt);
+  border: 1px solid var(--hi3403-card-border);
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 0 var(--hi3403-card-border);
+  padding: 0.05rem 0.4rem;
+  font-size: 0.78em;
+  font-family: inherit;
+  color: var(--md-default-fg-color);
+}
+
+/* ---------- 13. Tables ---------- */
+
+.md-typeset table:not([class]) {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--hi3403-divider);
+  font-size: 0.80rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  width: 100%;
+  border-collapse: separate;
+}
+
+.md-typeset table:not([class]) thead {
+  background: var(--hi3403-card-bg-alt);
+}
+
+.md-typeset table:not([class]) th {
+  font-weight: 650;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--hi3403-muted);
+  border-bottom: 2px solid var(--hi3403-divider);
+  padding: 0.65rem 0.9rem;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--hi3403-divider);
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tbody tr {
+  transition: background 0.12s ease;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--hi3403-highlight);
+}
+
+/* ---------- 14. Admonitions ---------- */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.55rem;
+  border-left-width: 3px;
+  font-size: 0.82rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  border: 1px solid var(--hi3403-card-border);
+  border-left-width: 3px;
+  transition: box-shadow 0.15s ease;
+}
+
+.md-typeset .admonition:hover,
+.md-typeset details:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.md-typeset .admonition .admonition-title,
+.md-typeset details .admonition-title,
+.md-typeset details summary {
+  font-weight: 600;
+  font-size: 0.80rem;
+  letter-spacing: 0;
+}
+
+.md-typeset .admonition > p,
+.md-typeset details > p {
+  margin: 0.6rem 0;
+}
+
+/* Specific admonition colors */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-left-color: #448aff;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-left-color: #ff9100;
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger,
+.md-typeset .admonition.failure,
+.md-typeset details.failure {
+  border-left-color: #ff1744;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: #00bfa5;
+}
+
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-left-color: #00b8d4;
+}
+
+.md-typeset .admonition.success,
+.md-typeset details.success,
+.md-typeset .admonition.check,
+.md-typeset details.check {
+  border-left-color: #00c853;
+}
+
+/* ---------- 15. Blockquotes ---------- */
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--hi3403-card-border);
+  border-radius: 0 0.4rem 0.4rem 0;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  color: var(--hi3403-muted);
+  background: var(--hi3403-card-bg-alt);
+  font-size: 0.92em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background: var(--hi3403-card-bg-alt);
+}
+
+/* ---------- 16. Horizontal rules ---------- */
+
+.md-typeset hr {
+  border: none;
+  height: 1px;
+  background: var(--hi3403-divider);
+  margin: 2rem 0;
+}
+
+/* ---------- 17. Images ---------- */
+
+.md-typeset img {
+  border-radius: 0.45rem;
+}
+
+.md-typeset img[src$=".png"],
+.md-typeset img[src$=".jpg"],
+.md-typeset img[src$=".jpeg"],
+.md-typeset img[src$=".webp"] {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid var(--hi3403-card-border);
+}
+
+[data-md-color-scheme="slate"] .md-typeset img[src$=".png"],
+[data-md-color-scheme="slate"] .md-typeset img[src$=".jpg"],
+[data-md-color-scheme="slate"] .md-typeset img[src$=".jpeg"] {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+/* ---------- 18. Footer ---------- */
+
+.md-footer-meta {
+  background: #121214;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.md-copyright {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.72rem;
+}
+
+.md-footer-nav {
+  background: #18181b;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.md-footer-nav__link {
+  font-size: 0.78rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  transition: background 0.15s ease;
+}
+
+.md-footer-nav__link:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ---------- 19. Related-resources footer band ---------- */
 
 .md-typeset .related {
   margin-top: 3.5rem;
   padding-top: 1.8rem;
   border-top: 1px solid var(--hi3403-divider);
 }
+
 .md-typeset .related h2 {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   color: var(--hi3403-muted);
   font-weight: 600;
   margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-/* ---------- 10. Buttons & inline links ---------- */
+/* ---------- 20. Content tabs ---------- */
 
-.md-typeset .md-button {
-  border-radius: 0.4rem;
-  font-weight: 600;
-  font-size: 0.82rem;
-  padding: 0.55rem 1.1rem;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-.md-typeset .md-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(197, 26, 74, 0.2);
+.md-typeset .tabbed-labels > label {
+  font-size: 0.78rem;
+  font-weight: 540;
+  padding: 0.45rem 1rem;
+  transition: color 0.12s ease;
 }
 
-.md-typeset a {
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.12s ease, color 0.12s ease;
-}
-.md-typeset p a,
-.md-typeset li a {
-  border-bottom: 1px solid var(--md-accent-fg-color--transparent);
-}
-.md-typeset p a:hover,
-.md-typeset li a:hover {
+.md-typeset .tabbed-labels > label:hover {
   color: var(--md-primary-fg-color);
-  border-bottom-color: var(--md-primary-fg-color);
 }
 
-/* ---------- 11. Code, tables, admonitions ---------- */
-
-.md-typeset code {
-  background: rgba(197, 26, 74, 0.08);
-  color: var(--md-primary-fg-color--dark);
-  border-radius: 0.25rem;
-  padding: 0.05rem 0.35rem;
-  font-size: 0.86em;
-}
-[data-md-color-scheme="slate"] .md-typeset code {
-  background: rgba(226, 51, 106, 0.18);
-  color: #ffb3c7;
-}
-.md-typeset pre > code {
-  background: var(--md-code-bg-color);
-  color: var(--md-code-fg-color);
-  border-radius: 0.45rem;
-  padding: 1rem;
-}
-.md-typeset .highlight {
-  border-radius: 0.45rem;
-  overflow: hidden;
+.md-typeset .tabbed-content {
+  border-radius: 0 0 0.5rem 0.5rem;
   border: 1px solid var(--hi3403-divider);
+  border-top: none;
 }
 
-.md-typeset table:not([class]) {
-  border-radius: 0.45rem;
-  overflow: hidden;
-  border: 1px solid var(--hi3403-divider);
-  font-size: 0.82rem;
+/* ---------- 21. Task lists ---------- */
+
+.md-typeset .task-list-item {
+  list-style-type: none;
 }
-.md-typeset table:not([class]) th {
-  background: var(--hi3403-sidebar-bg);
+
+.md-typeset .task-list-indicator {
+  border-radius: 0.15rem;
+}
+
+/* ---------- 22. Tooltips ---------- */
+
+.md-tooltip {
+  border-radius: 0.35rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border: 1px solid var(--hi3403-card-border);
+  font-size: 0.74rem;
+  padding: 0.35rem 0.7rem;
+}
+
+[data-md-color-scheme="slate"] .md-tooltip {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+/* ---------- 23. Scroll-to-top button ---------- */
+
+.md-top {
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: var(--md-primary-fg-color);
+  color: #fff;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1.2),
+              box-shadow 0.2s ease;
+}
+
+.md-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(197,26,74,0.35);
+}
+
+/* ---------- 24. Progress bar (instant loading) ---------- */
+
+.md-progress {
+  background: var(--md-primary-fg-color);
+}
+
+/* ---------- 25. Misc polish ---------- */
+
+/* Definition lists */
+.md-typeset dl dt {
   font-weight: 600;
 }
-.md-typeset table:not([class]) tr:hover {
-  background: rgba(197, 26, 74, 0.03);
-}
 
-.md-typeset .admonition,
-.md-typeset details {
-  border-radius: 0.5rem;
-  border-left-width: 3px;
-  font-size: 0.84rem;
-  box-shadow: var(--hi3403-card-shadow);
-}
-
-/* ---------- 12. Footer ---------- */
-
-.md-footer-meta {
-  background: #1a1a1a;
-}
-.md-copyright {
-  color: rgba(255, 255, 255, 0.7);
-}
-.md-footer-nav {
-  background: #232323;
-}
-
-/* ---------- 13. Misc polish ---------- */
-
-.md-content {
-  padding-bottom: 2rem;
-}
-.md-content__inner {
-  margin: 0 1rem 1.2rem;
-  padding-top: 1.4rem;
-}
-.md-content__button {
-  opacity: 0.55;
-  transition: opacity 0.12s ease;
-}
-.md-content__button:hover {
-  opacity: 1;
-}
-
-/* Edit-this-page bar at the top of the article */
-.md-source-file {
-  font-size: 0.72rem;
+.md-typeset dl dd {
+  margin-left: 1.2rem;
   color: var(--hi3403-muted);
 }
 
-/* Limit overall content width for readability */
+/* Footnotes */
+.md-typeset .footnote {
+  font-size: 0.80rem;
+  color: var(--hi3403-muted);
+}
+
+.md-typeset .footnote-ref {
+  font-size: 0.80em;
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+/* Mermaid diagrams */
+.md-typeset .mermaid {
+  border-radius: 0.5rem;
+  border: 1px solid var(--hi3403-divider);
+  padding: 0.5rem;
+  background: var(--hi3403-card-bg);
+}
+
+/* TOC permalink */
+.md-typeset .headerlink {
+  color: var(--hi3403-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink,
+.md-typeset h4:hover .headerlink,
+.md-typeset h5:hover .headerlink,
+.md-typeset h6:hover .headerlink {
+  opacity: 0.5;
+}
+
+.md-typeset h2:hover .headerlink:hover,
+.md-typeset h3:hover .headerlink:hover,
+.md-typeset h4:hover .headerlink:hover,
+.md-typeset h5:hover .headerlink:hover,
+.md-typeset h6:hover .headerlink:hover {
+  opacity: 1;
+  color: var(--md-primary-fg-color);
+}
+
+/* ---------- 26. Layout constraints ---------- */
+
 @media screen and (min-width: 76.25em) {
   .md-grid {
-    max-width: 75rem;
+    max-width: 76rem;
   }
 }
 
-/* Hide the "Made with Material" badge if any leaks through */
-.md-source__icon + .md-source__repository::after {
-  display: none;
+/* ---------- 27. Print styles ---------- */
+
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer,
+  .md-top {
+    display: none;
+  }
+
+  .md-content {
+    max-width: 100%;
+  }
 }

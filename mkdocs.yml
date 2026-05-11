@@ -35,22 +35,25 @@ theme:
         icon: material/weather-night
         name: 切换到浅色模式
   features:
-    - navigation.tracking        # update URL on scroll
-    - navigation.tabs            # top-level tabs (RPi-style)
+    - navigation.tracking         # update URL on scroll
+    - navigation.tabs             # top-level tabs (RPi-style)
     - navigation.tabs.sticky
-    - navigation.sections        # sections in side nav
-    - navigation.indexes         # section index pages
-    - navigation.top             # back-to-top button
+    - navigation.sections         # sections in side nav
+    - navigation.expand           # expand sidebar sections
+    - navigation.indexes          # section index pages
+    - navigation.top              # back-to-top button
     - navigation.footer
-    - navigation.path            # breadcrumbs
-    - navigation.prune           # smaller nav payload
+    - navigation.path             # breadcrumbs
+    - navigation.prune            # smaller nav payload
     - search.highlight
     - search.suggest
     - search.share
     - content.code.copy
     - content.code.annotate
-    - content.action.edit        # "edit this page" link
+    - content.code.line_numbers   # line numbers in code blocks
+    - content.action.edit         # "edit this page" link
     - content.tabs.link
+    - content.tooltips            # glossary tooltips
     - toc.follow
 
 extra_css:
