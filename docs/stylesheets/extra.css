@@ -965,16 +965,16 @@ html {
 /* ---------- 23. Scroll-to-top button ---------- */
 
 .md-top {
-  border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   background: var(--md-primary-fg-color);
   color: #fff;
-  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1.2),
-              box-shadow 0.2s ease;
+  box-shadow: 0 2px 10px rgba(197,26,74,0.25);
+  top: 100px !important;
 }
 
-.md-top:hover {
-  transform: translateY(-2px);
+.md-top:hover,
+.md-top:focus {
+  background: var(--md-primary-fg-color--dark);
+  color: #fff;
   box-shadow: 0 4px 16px rgba(197,26,74,0.35);
 }
 
