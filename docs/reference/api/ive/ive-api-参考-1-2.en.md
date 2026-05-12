@@ -1,6 +1,6 @@
 ---
 title: "Preface"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 参考/IVE API 参考（1--2）.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API Reference/IVE API Reference (1-2).md
 ---
 
 # Preface
@@ -121,7 +121,7 @@ IVE (Identification Video Engine) is a hardware acceleration module in the media
     ot_svp_img can be viewed as an image where one "pixel" is represented by 8bit, so stride is uniformly expressed as the number of units calculated as "pixels" per row of the image or two-dimensional data.
 
 **Figure 1** Stride Diagram<a name="fig1615616519207"></a>  
-![](figures/跨度（stride）示意图.png "Stride Diagram")
+![](figures/Stride Diagram "Stride Diagram")
 
 - Alignment: To quickly access memory start addresses or cross-row data, the hardware requires that memory addresses or memory strides must be multiples of the alignment coefficient.
     - Data memory start address alignment: Current IVE operators have requirements for 1-byte alignment, 2-byte alignment, and 16-byte alignment for their inputs and outputs. Refer to the parameter requirements in each operator's API reference.

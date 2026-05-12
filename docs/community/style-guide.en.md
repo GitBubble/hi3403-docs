@@ -176,7 +176,7 @@ Add `alt` text (Accessibility + SEO).
 
 ## Chinese and English
 
-- **Add spaces when mixing Chinese and English**: `使用 ATC 工具`, not `使用ATC工具`
+- **Add spaces between CJK and Latin characters**: `Uses ATC 工具`, not `UsesATC工具` (for Chinese-language pages)
 - **Numbers, units, English punctuation**: use half-width, add spaces before and after - `8 GB`, `30 fps`, `5.5 V`
 - **Use Chinese punctuation in Chinese**: `，。：；！？` - not `,.;!?`
 - Use backticks when quoting code, file names, and variables: \`isp_awb.cfg\`

@@ -1,6 +1,6 @@
 ---
 title: "IMP"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开发参考/ISP 开发参考（6）.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP Dev Reference/ISP Dev Reference (6).md
 ---
 
 # IMP
@@ -343,7 +343,7 @@ The DRC algorithm is used to perform Dynamic Range Compression on data after WDR
 The purpose of the DRC algorithm is to ensure that both the observer of the real scene and the observer of the display device have the same visual experience. The DRC algorithm compresses high dynamic range images into the dynamic range of the display device while preserving as much of the original image's details and contrast as possible.
 
 **Figure 1** Dynamic Range Compression<a name="fig040711214316"></a>  
-![](figures/动态范围压缩.png "Dynamic Range Compression")
+![](figures/Dynamic Range Compression "Dynamic Range Compression")
 
 ### API Reference<a name="ZH-CN_TOPIC_0000002503965163"></a>
 
@@ -461,7 +461,7 @@ The Demosaic module converts input Bayer data into RGB data. In the Bayer data o
 This module can output higher image resolution, significantly improving weak details and sharpness.
 
 **Figure 1** Demosaic Principle Diagram<a name="fig15860155811308"></a>  
-![](figures/Demosaic原理图.png "Demosaic Principle Diagram")
+![](figures/Demosaic Principle Diagram "Demosaic Principle Diagram")
 
 ### API Reference<a name="ZH-CN_TOPIC_0000002504084755"></a>
 
@@ -539,7 +539,7 @@ Since traditional image sensors have a relatively low dynamic range, capturing h
 The purpose of the WDR algorithm is to synthesize the long and short frame data output from the sensor into one frame of 20-bit data. Long and short frame data is first buffered in DDR and then simultaneously sent to the WDR module for synthesis. The synthesis principle is optimal selection: for brighter areas, short frame data is used; for darker areas, long frame data is used.
 
 **Figure 1** WDR Synthesis Diagram<a name="_Ref498504952"></a>  
-![](figures/WDR合成图.png "WDR Synthesis Diagram")
+![](figures/WDR Synthesis Diagram "WDR Synthesis Diagram")
 
 ### API Reference<a name="ZH-CN_TOPIC_0000002471084902"></a>
 

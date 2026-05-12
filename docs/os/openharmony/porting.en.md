@@ -307,14 +307,14 @@ Contains product definition configuration, HDF configuration, filesystem configu
 
 ## Quick Start
 
-See the [OpenHarmony Small System User Guide](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md) to get started quickly.
+See the OpenHarmony Small System User Guide to get started quickly.
 
 ### Related Documents
 
-| **Document Path** | **Description** |
+| **Document** | **Description** |
 |-------------|-------------|
-| [OpenHarmony Small System User Guide](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md) | Running OpenHarmony Small system on Hi3403V100/Hi3519AV200: rootfs filesystem packaging, development environment setup, compilation, flashing; OpenHarmony kernel option changes; XTS test instructions; media feature usage; graphics feature usage |
-| [OpenHarmony Small System Integration Hi3403V100 Porting Case](../../docs/zh-CN/OpenHarmony%20Small系统集成Hi3403V100移植案例/OpenHarmony%20Small系统集成Hi3403V100移植案例.md) | Hi3403V100 chip solution integration case: product configuration, kernel porting and adaptation, compilation, XTS certification, graphics enhanced features, media enhanced features |
+| OpenHarmony Small System User Guide | Running OpenHarmony Small system on Hi3403V100/Hi3519AV200: rootfs filesystem packaging, development environment setup, compilation, flashing; OpenHarmony kernel option changes; XTS test instructions; media feature usage; graphics feature usage |
+| OpenHarmony Small System Integration Hi3403V100 Porting Case | Hi3403V100 chip solution integration case: product configuration, kernel porting and adaptation, compilation, XTS certification, graphics enhanced features, media enhanced features |
 
 ## License
 

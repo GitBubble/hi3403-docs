@@ -1,6 +1,6 @@
 ---
 title: "AE"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开发参考/ISP 开发参考（3--5）.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP Dev Reference/ISP Dev Reference (3-5).md
 ---
 
 # AE
@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开�
 The ISP AE module implements the following functionality: based on the automatic metering system, it obtains the current image exposure and automatically configures the lens aperture, sensor shutter, and gain to achieve optimal image quality. The auto exposure algorithm is mainly divided into aperture priority, shutter priority, and gain priority. In aperture priority mode, the algorithm prioritizes adjusting the aperture to a suitable position before allocating exposure time and gain. This is only suitable for P-Iris lenses, and it balances noise and depth of field. In shutter priority mode, the algorithm prioritizes allocating exposure time before allocating sensor gain and ISP gain, resulting in less noise in the captured image. In gain priority mode, the algorithm prioritizes allocating sensor gain and ISP gain before allocating exposure time, suitable for scenes with moving objects. The current AE algorithm also supports customers setting more flexible exposure allocation strategies. The workflow of the AE module is shown in [Figure 1](#fig78111144161318).
 
 **Figure 1** AE Module Workflow Diagram<a name="fig78111144161318"></a>  
-![](figures/AE模块工作流程图.png "AE Module Workflow Diagram")
+![](figures/AE Module Workflow Diagram "AE Module Workflow Diagram")
 ## Important Concepts<a name="ZH-CN_TOPIC_0000002471084834"></a>
 
 - Exposure Time: The time during which the sensor accumulates charge, from the start of exposure of the sensor pixel to the readout of the charge.
@@ -22,12 +22,12 @@ The ISP AE module implements the following functionality: based on the automatic
 The AE module consists of two parts: the ISP AE statistics information module and the AE algorithm Firmware for AE control strategy. The ISP AE statistics information module mainly provides brightness information statistics of the sensor input data. The statistics information provided includes histograms and average values, which can simultaneously provide 1024-bin histograms of the entire image and R/Gr/Gb/B four-component average statistics, as well as R/Gr/Gb/B four-component average statistics for each block when the entire image is divided into MxN blocks, as shown in [Figure 1](#fig1568813224314).
 
 **Figure 1** AE 1024-bin Statistics Histogram<a name="fig1568813224314"></a>  
-![](figures/AE-1024段统计信息直方图.png "AE 1024-bin Statistics Histogram")
+![](figures/AE 1024-bin Statistics Histogram "AE 1024-bin Statistics Histogram")
 
 The main working principle of the AE algorithm is to obtain the statistical information of the input image in real time, compare it with the set target brightness, and dynamically adjust the sensor's exposure time, gain, and lens aperture size so that the actual brightness approaches the set target brightness. Its working principle is shown in [Figure 2](#fig85992506321).
 
 **Figure 2** AE Working Principle Diagram<a name="fig85992506321"></a>  
-![](figures/AE工作原理图.png "AE Working Principle Diagram")
+![](figures/AE Working Principle Diagram "AE Working Principle Diagram")
 ## API Reference<a name="ZH-CN_TOPIC_0000002504084819"></a>
 
 ### AE Library Interfaces<a name="ZH-CN_TOPIC_0000002471084986"></a>
@@ -301,7 +301,7 @@ td_s32 ss_mpi_ae_sensor_reg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_l
 - This interface does not support multi-process operations.
 
 **Figure 1** Interface between the AE library and the sensor library<a name="fig192824551518"></a>  
-![](figures/AE库与sensor库间的接口.png "Interface between the AE library and the sensor library")
+![](figures/Interface between the AE library and the sensor library "Interface between the AE library and the sensor library")
 
 【Example】
 
@@ -1396,7 +1396,7 @@ td_s32 ss_mpi_isp_set_ae_route_attr(ot_vi_pipe vi_pipe, const ot_isp_ae_route *a
     - In cases where the actually effective AE route may differ from the MPI setting, use [ss_mpi_isp_query_exposure_info](#ZH-CN_TOPIC_0000002503964993) to get the actually effective AE route.
 
 **Figure 1** AE Allocation Route Diagram<a name="_Ref376180242"></a>  
-![](figures/AE分配路线示意图.png "AE Allocation Route Diagram")
+![](figures/AE Allocation Route Diagram "AE Allocation Route Diagram")
 
 【Example】
 

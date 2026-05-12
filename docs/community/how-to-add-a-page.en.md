@@ -153,7 +153,7 @@ Check the filename/path for typos - MkDocs is strictly case-sensitive.
 The relative path of the link is incorrect. Calculate the path from the perspective of the current page:
 
 ``` markdown
-<!-- docs/tutorials/gstreamer.md 引用 docs/tutorials/images/pipeline.svg -->
+<!-- docs/tutorials/gstreamer.md references docs/tutorials/images/pipeline.svg -->
 ![](../community/images/pipeline.svg)        ✓ correct
 ![](../community/images/pipeline.svg)      ✓ correct
 ![](../images/pipeline.svg)       ✗ wrong (site root, not same directory)
