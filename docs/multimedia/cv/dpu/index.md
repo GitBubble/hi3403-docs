@@ -19,12 +19,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DPU2.0 å
 </th>
 </tr>
 </thead>
-<tbody><tr id="row138431571086"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p11843137589"><a name="p11843137589"></a><a name="p11843137589"></a>SS928</p>
+<tbody><tr id="row138431571086"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p11843137589"><a name="p11843137589"></a><a name="p11843137589"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p584367389"><a name="p584367389"></a><a name="p584367389"></a>V100</p>
 </td>
 </tr>
-<tr id="row1763104317574"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p669464615720"><a name="p669464615720"></a><a name="p669464615720"></a>SS927</p>
+<tr id="row1763104317574"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p669464615720"><a name="p669464615720"></a><a name="p669464615720"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p16694246125715"><a name="p16694246125715"></a><a name="p16694246125715"></a>V100</p>
 </td>

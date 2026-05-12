@@ -1,18 +1,18 @@
 ---
-title: "SS928V100 Ultra-HD Intelligent NVR SoC Product Overview"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100 超高清智能网络录像机 SoC 产品简介/SS928V100 超高清智能网络录像机 SoC 产品简介.md
+title: "Hi3403V100 Ultra-HD Intelligent NVR SoC Product Overview"
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100 超高清智能网络录像机 SoC 产品简介/Hi3403V100 超高清智能网络录像机 SoC 产品简介.md
 ---
 
 # General Introduction
-SS928V100 is a professional ultra-HD intelligent network video recorder (NVR) SoC. The chip supports up to four sensor inputs and up to 4K60 ISP image processing, along with 3-frame WDR, multi-level noise reduction, 6-axis electronic image stabilization, hardware stitching, and other image enhancement algorithms, delivering exceptional image processing capability.
+Hi3403V100 is a professional ultra-HD intelligent network video recorder (NVR) SoC. The chip supports up to four sensor inputs and up to 4K60 ISP image processing, along with 3-frame WDR, multi-level noise reduction, 6-axis electronic image stabilization, hardware stitching, and other image enhancement algorithms, delivering exceptional image processing capability.
 
-SS928V100 integrates a quad-core A55 processor, providing efficient and flexible CPU resources for compute and control requirements. An embedded single-core MCU meets the needs of low-latency scenarios.
+Hi3403V100 integrates a quad-core A55 processor, providing efficient and flexible CPU resources for compute and control requirements. An embedded single-core MCU meets the needs of low-latency scenarios.
 
-SS928V100 integrates a high-efficiency AI inference engine with up to 10.4 TOPS INT8, supporting mainstream AI frameworks. Dual-core Vision DSP is embedded to address differentiated CV compute requirements.
+Hi3403V100 integrates a high-efficiency AI inference engine with up to 10.4 TOPS INT8, supporting mainstream AI frameworks. Dual-core Vision DSP is embedded to address differentiated CV compute requirements.
 
-SS928V100 is manufactured on an advanced 12 nm low-power process with a 0.65 mm pitch package, and supports LPDDR4/LPDDR4x/DDR4 memory, enabling compact product designs and rapid mass production.
+Hi3403V100 is manufactured on an advanced 12 nm low-power process with a 0.65 mm pitch package, and supports LPDDR4/LPDDR4x/DDR4 memory, enabling compact product designs and rapid mass production.
 
-SS928V100 comes with a stable, easy-to-use SDK to support rapid customer product deployment.
+Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer product deployment.
 
 # Key Features
 -   AI Acceleration
@@ -218,7 +218,7 @@ SS928V100 comes with a stable, easy-to-use SDK to support rapid customer product
 # Block Diagram
 ![](figures/zh-cn_image_0000002495024793.png)
 
-# SS928V100 Professional Intelligent IP Camera Solution
+# Hi3403V100 Professional Intelligent IP Camera Solution
 ![](figures/zh-cn_image_0000002462025394.png)
 
 # Acronyms and Abbreviations

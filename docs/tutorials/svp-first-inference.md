@@ -49,7 +49,7 @@ wget https://ultralytics.com/images/bus.jpg
 ## 步骤 2 — 用 ATC 转换为 .om
 
 ATC 把 ONNX 转成 SVP 能执行的 `.om` 格式。**ATC 命令的精确参数随
-SDK 版本变化** —— 下面是常见的 SS928V100 用法，请以
+SDK 版本变化** —— 下面是常见的 Hi3403V100 用法，请以
 [ATC 工具使用指南](../multimedia/atc/tool/index.md) 为准：
 
 ``` bash
@@ -58,7 +58,7 @@ atc \
     --framework=5 \
     --output=yolov5n \
     --input_shape="images:1,3,640,640" \
-    --soc_version=SS928V100 \
+    --soc_version=Hi3403V100 \
     --log=info
 ```
 
@@ -68,7 +68,7 @@ atc \
 |---|---|
 | `--framework` | `1`=Caffe，`3`=TensorFlow，`5`=ONNX |
 | `--input_shape` | 模型输入张量形状 |
-| `--soc_version` | 目标芯片（部分 SDK 写 `Hi3403V100`，部分写 `SS928V100`）|
+| `--soc_version` | 目标芯片（部分 SDK 写 `Hi3403V100`，部分写 `Hi3403V100`）|
 
 成功后会得到 `yolov5n.om`，约 8 MB。
 
@@ -84,7 +84,7 @@ scp yolov5n.om bus.jpg hi@<板子IP>:~/
 
 ## 步骤 4 — 在板子上推理
 
-SDK 在 `pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/` 下面提供
+SDK 在 `pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/` 下面提供
 若干 SVP / ACL 相关 sample（名字随 SDK 版本不同；常见 `nnie_sample`、
 `acl_sample`、`svp_sample`）。把对应 sample 编出来，拷到板子上跑：
 
@@ -109,7 +109,7 @@ chmod +x sample_acl
 
 ## 步骤 5 — 提速：量化
 
-FP16 的 yolov5n 在 SS928V100 上推理 ~7 ms。用
+FP16 的 yolov5n 在 Hi3403V100 上推理 ~7 ms。用
 [AMCT](../multimedia/amct/index.md) 量化到 INT8 之后，能压到 ~3 ms：
 
 ``` bash

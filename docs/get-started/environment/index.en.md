@@ -364,14 +364,14 @@ sudo service smbd restart
 ## 2. Setting Up the SDK Environment
 
 - Some content in this section overlaps with the OpenHarmony Small system build environment setup. For details, refer to the development environment chapter of the *OpenHarmony Small Version User Guide*.
-- Hi3403V100 has two SDKs supporting `clang` and `gcc` toolchains, corresponding to `ss928v100_clang` and `ss928v100_gcc` respectively.<a id="section1"></a>
+- Hi3403V100 has two SDKs supporting `clang` and `gcc` toolchains, corresponding to `Hi3403V100_clang` and `Hi3403V100_gcc` respectively.<a id="section1"></a>
 
 |                   | Compiler     | Runtime Library   |
 | ----------------- | ------------ | ----------------- |
-| `ss928v100_clang` | `llvm 15.04` | `musl libc 1.2.5` |
-| `ss928v100_gcc`   | `gcc 12.3.0` | `glibc 2.38`      |
+| `Hi3403V100_clang` | `llvm 15.04` | `musl libc 1.2.5` |
+| `Hi3403V100_gcc`   | `gcc 12.3.0` | `glibc 2.38`      |
 
-- The u-boot for both `ss928v100_clang` and `ss928v100_gcc` is compiled with `gcc`. Therefore, a full `ss928v100_clang` build depends on both `clang` and `gcc` toolchains, while a full `ss928v100_gcc` build depends only on `gcc`. It is recommended to install both toolchains.
+- The u-boot for both `Hi3403V100_clang` and `Hi3403V100_gcc` is compiled with `gcc`. Therefore, a full `Hi3403V100_clang` build depends on both `clang` and `gcc` toolchains, while a full `Hi3403V100_gcc` build depends only on `gcc`. It is recommended to install both toolchains.
 
 ### 2.1. Setting Up the Base Environment
 
@@ -436,12 +436,12 @@ git clone https://gitee.com/HiSpark/pegasus.git
 
 ![image-20251028155152278](figures/image-20251028155152278.png)
 
-- Initialize and update the `ss928v100_clang` and `ss928v100_gcc` submodules.
+- Initialize and update the `Hi3403V100_clang` and `Hi3403V100_gcc` submodules.
 
 ```
 cd pegasus
 git submodule init
-git submodule update platform/ss928v100_clang platform/ss928v100_gcc
+git submodule update platform/Hi3403V100_clang platform/Hi3403V100_gcc
 ```
 
 ![image-20251028155334937](figures/image-20251028155334937.png)
@@ -453,10 +453,10 @@ git submodule update platform/ss928v100_clang platform/ss928v100_gcc
 
 | Official Source                                              | Mirror Source                                                | Copy Path                                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [linux](https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.86.tar.gz) | [Alibaba Cloud](https://mirrors.aliyun.com/linux-kernel/v6.x/linux-6.6.86.tar.gz) | 1. ~/pegasus/platform/ss928v100_clang/open_source/linux<br />2. ~/pegasus/platform/ss928v100_gcc/open_source/linux |
-| [mbedtls](https://github.com/ARMmbed/mbedtls/archive/refs/tags/v2.16.10.tar.gz) | \                                                            | 1. ~/pegasus/platform/ss928v100_clang/open_source/mbedtls<br />2. ~/pegasus/platform/ss928v100_gcc/open_source/mbedtls |
-| [trusted-firmware-a](https://github.com/ARM-software/arm-trusted-firmware/archive/v2.2.tar.gz) | \                                                            | 1. ~/pegasus/platform/ss928v100_clang/open_source/trusted-firmware-a<br />2. ~/pegasus/platform/ss928v100_gcc/open_source/trusted-firmware-a |
-| [u-boot](https://ftp.denx.de/pub/u-boot/u-boot-2020.01.tar.bz2) | \                                                            | 1. ~/pegasus/platform/ss928v100_clang/open_source/u-boot<br />2. ~/pegasus/platform/ss928v100_gcc/open_source/u-boot |
+| [linux](https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.86.tar.gz) | [Alibaba Cloud](https://mirrors.aliyun.com/linux-kernel/v6.x/linux-6.6.86.tar.gz) | 1. ~/pegasus/platform/Hi3403V100_clang/open_source/linux<br />2. ~/pegasus/platform/Hi3403V100_gcc/open_source/linux |
+| [mbedtls](https://github.com/ARMmbed/mbedtls/archive/refs/tags/v2.16.10.tar.gz) | \                                                            | 1. ~/pegasus/platform/Hi3403V100_clang/open_source/mbedtls<br />2. ~/pegasus/platform/Hi3403V100_gcc/open_source/mbedtls |
+| [trusted-firmware-a](https://github.com/ARM-software/arm-trusted-firmware/archive/v2.2.tar.gz) | \                                                            | 1. ~/pegasus/platform/Hi3403V100_clang/open_source/trusted-firmware-a<br />2. ~/pegasus/platform/Hi3403V100_gcc/open_source/trusted-firmware-a |
+| [u-boot](https://ftp.denx.de/pub/u-boot/u-boot-2020.01.tar.bz2) | \                                                            | 1. ~/pegasus/platform/Hi3403V100_clang/open_source/u-boot<br />2. ~/pegasus/platform/Hi3403V100_gcc/open_source/u-boot |
 
 ![image-20251028161831427](figures/image-20251028161831427.png)
 
@@ -479,7 +479,7 @@ After these steps, you will have the Hi3403V100 and Hi3519AV200 chip integrated 
 
 - Run the `os/OpenHarmony/manifest/prebuilts_setup.sh` script to prepare the prebuilt environment. This script performs the following tasks:
     - Fixes known issues in `system_util.py` and `patch_process.py`
-    - Copies the `platform/ss928v100_clang` directory to the SDK target path
+    - Copies the `platform/Hi3403V100_clang` directory to the SDK target path
     - Downloads the mbedtls v2.16.10 source package (stored in `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/mbedtls/`)
     - Downloads the arm-trusted-firmware v2.2 source package (stored in `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/trusted-firmware-a/`)
     - Calls `build/prebuilts_download.sh` to download the OpenHarmony build toolchain (clang, gn, ninja, cmake, nodejs, etc.)
@@ -491,7 +491,7 @@ After these steps, you will have the Hi3403V100 and Hi3519AV200 chip integrated 
 ./os/OpenHarmony/manifest/prebuilts_setup.sh
 ```
 
-- The `ss928v100_clang` SDK sample build depends on the sysroot generated by the OpenHarmony build, so the OpenHarmony build must be run first.
+- The `Hi3403V100_clang` SDK sample build depends on the sysroot generated by the OpenHarmony build, so the OpenHarmony build must be run first.
 
 #### First-Time Build
 
@@ -589,33 +589,33 @@ aarch64-openeuler-linux-gnu-gcc -v
 
 ## 3. Building
 
-- The `ss928v100_clang` and `ss928v100_gcc` builds follow essentially the same process, differing mainly in the LLVM flag. For detailed full-build and component-build instructions, see `~/pegasus/platform/ss928v100_clang/osdrv/readme_cn.txt` or `~/pegasus/platform/ss928v100_gcc/osdrv/readme_cn.txt`.
+- The `Hi3403V100_clang` and `Hi3403V100_gcc` builds follow essentially the same process, differing mainly in the LLVM flag. For detailed full-build and component-build instructions, see `~/pegasus/platform/Hi3403V100_clang/osdrv/readme_cn.txt` or `~/pegasus/platform/Hi3403V100_gcc/osdrv/readme_cn.txt`.
 
-### 3.1. Building ss928v100_clang
+### 3.1. Building Hi3403V100_clang
 
 - This build mode depends on both the clang and gcc cross-compilers. See [section 2.4](#2.4、安装交叉编译器) for installation instructions.
 
 #### 3.1.1. Full Build
 
-- Enter `~/pegasus/platform/ss928v100_clang/osdrv` and run the build command.
+- Enter `~/pegasus/platform/Hi3403V100_clang/osdrv` and run the build command.
 
 ```
-cd ~/pegasus/platform/ss928v100_clang/osdrv
-make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_clang/osdrv
+make LLVM=1 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 ```
 
 ![image-20251103195510322](figures/image-20251103195510322.png)
 
 - Build output images are located in the `osdrv/pub/xxx` directory, including:
   - `boot_image.bin` — bootloader image
-  - `u-boot-ss928v100.bin` — u-boot image (used when OTP fast boot is enabled)
-  - `uImage_ss928v100` — Linux kernel image
+  - `u-boot-Hi3403V100.bin` — u-boot image (used when OTP fast boot is enabled)
+  - `uImage_Hi3403V100` — Linux kernel image
 
 #### 3.1.2. Component Build
 
 ##### 3.1.2.1. Build u-boot
 
-- Enter `~/pegasus/platform/ss928v100_clang/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
+- Enter `~/pegasus/platform/Hi3403V100_clang/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
 
 ```
 make BOOT_MEDIA=emmc gslboot_build -j 20
@@ -625,7 +625,7 @@ make BOOT_MEDIA=emmc gslboot_build -j 20
 
 ##### 3.1.2.2. Build kernel
 
-- Enter `~/pegasus/platform/ss928v100_clang/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
+- Enter `~/pegasus/platform/Hi3403V100_clang/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
 
 ```
 make LLVM=1 BOOT_MEDIA=emmc atf -j 20
@@ -635,10 +635,10 @@ make LLVM=1 BOOT_MEDIA=emmc atf -j 20
 
 #### 3.1.3. Build Samples
 
-- Enter `~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample` and run the build command. Executables are generated in each sample's subdirectory.
+- Enter `~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample` and run the build command. Executables are generated in each sample's subdirectory.
 
 ```shell
-cd ~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample
+cd ~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample
 make
 ```
 
@@ -646,40 +646,40 @@ make
 
 #### 3.1.4. Build ko Modules
 
-- Enter `~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/out/obj` and run the build command. Generated ko files are located in `~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/out/ko`.
+- Enter `~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/out/obj` and run the build command. Generated ko files are located in `~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/out/ko`.
 
 ```shell
-cd ~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/out/obj
+cd ~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/out/obj
 make
 ```
 
 ![image-20251104151107767](figures/image-20251104151107767.png)
 
-### 3.2. Building ss928v100_gcc
+### 3.2. Building Hi3403V100_gcc
 
 - This build mode depends only on the gcc cross-compiler. See [section 2.4.2](#2.4.2、安装gcc交叉编译器) for installation instructions.
 
 #### 3.2.1. Full Build
 
-- Enter `~/pegasus/platform/ss928v100_gcc/osdrv` and run the build command.
+- Enter `~/pegasus/platform/Hi3403V100_gcc/osdrv` and run the build command.
 
 ```
-cd ~/pegasus/platform/ss928v100_gcc/osdrv
-make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_gcc/osdrv
+make LLVM=0 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 ```
 
 ![image-20251028191255408](figures/image-20251028191255408.png)
 
 - Build output images are located in the `osdrv/pub/xxx` directory, including:
   - `boot_image.bin` — bootloader image
-  - `u-boot-ss928v100.bin` — u-boot image (used when OTP fast boot is enabled)
-  - `uImage_ss928v100` — Linux kernel image
+  - `u-boot-Hi3403V100.bin` — u-boot image (used when OTP fast boot is enabled)
+  - `uImage_Hi3403V100` — Linux kernel image
 
 #### 3.2.2. Component Build
 
 ##### 3.2.2.1. Build u-boot
 
-- Enter `~/pegasus/platform/ss928v100_gcc/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
+- Enter `~/pegasus/platform/Hi3403V100_gcc/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
 
 ```
 make BOOT_MEDIA=emmc gslboot_build -j 20
@@ -689,7 +689,7 @@ make BOOT_MEDIA=emmc gslboot_build -j 20
 
 ##### 3.2.2.2. Build kernel
 
-- Enter `~/pegasus/platform/ss928v100_gcc/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
+- Enter `~/pegasus/platform/Hi3403V100_gcc/osdrv` and run the build command. Output images are located in `osdrv/pub/xxx`.
 
 ```
 make LLVM=0 BOOT_MEDIA=emmc atf -j 20
@@ -699,10 +699,10 @@ make LLVM=0 BOOT_MEDIA=emmc atf -j 20
 
 #### 3.2.3. Build Samples
 
-- Enter `~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample` and run the build command. Executables are generated in each sample's subdirectory.
+- Enter `~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample` and run the build command. Executables are generated in each sample's subdirectory.
 
 ```shell
-cd ~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample
+cd ~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample
 make
 ```
 
@@ -710,10 +710,10 @@ make
 
 #### 3.2.4. Build ko Modules
 
-- Enter `~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/out/obj` and run the build command. Generated ko files are located in `~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/out/ko`.
+- Enter `~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/obj` and run the build command. Generated ko files are located in `~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/ko`.
 
 ```shell
-cd ~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/out/obj
+cd ~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/obj
 make
 ```
 

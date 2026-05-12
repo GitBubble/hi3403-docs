@@ -81,7 +81,7 @@ Buildroot是一款集成的编译集合包，解决了软件包移植和交叉�
 
 ![image-20260326171605701](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716750.png)
 
- 编译完成后的镜像文件uImage_ss928v100会放到output目录，如下图所示
+ 编译完成后的镜像文件uImage_Hi3403V100会放到output目录，如下图所示
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716987.png)
 
@@ -150,7 +150,7 @@ Buildroot是一款集成的编译集合包，解决了软件包移植和交叉�
 
 ![image-20260326171605701](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716750.png)
 
- 编译完成后的镜像文件uImage_ss928v100会放到output目录，如下图所示
+ 编译完成后的镜像文件uImage_Hi3403V100会放到output目录，如下图所示
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716987.png)
 
@@ -263,7 +263,7 @@ Buildroot是一款集成的编译集合包，解决了软件包移植和交叉�
 
 ![image-20260326175431735](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261754781.png)
 
- 编译完成后的镜像文件uImage_ss928v100会放到output目录，如下图所示
+ 编译完成后的镜像文件uImage_Hi3403V100会放到output目录，如下图所示
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261754696.png)
 
@@ -324,7 +324,7 @@ Buildroot是一款集成的编译集合包，解决了软件包移植和交叉�
 
 ![image-20260326180002420](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261800457.png)
 
- 编译完成后的镜像文件uImage_ss928v100会放到output目录，如下图所示
+ 编译完成后的镜像文件uImage_Hi3403V100会放到output目录，如下图所示
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261800423.png)
 

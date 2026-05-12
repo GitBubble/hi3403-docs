@@ -43,8 +43,8 @@ Download the pre-made image. The download location of each board is different, s
 The naming of precompiled images is generally:
 
 ```
-hi3403-ubuntu-xfce-ss928v100.img # 8 GB with XFCE desktop
-hi3403-ubuntu-lite-ss928v100.img # 1.5 GB, pure command line
+hi3403-ubuntu-xfce-Hi3403V100.img # 8 GB with XFCE desktop
+hi3403-ubuntu-lite-Hi3403V100.img # 1.5 GB, pure command line
 ```
 
 ## Step 2 — Burn the image
@@ -64,7 +64,7 @@ hi3403-ubuntu-lite-ss928v100.img # 1.5 GB, pure command line
 
     ``` bash
     # ⚠️ First make sure /dev/sdX is an SD card, not your hard drive!
-    sudo dd if=hi3403-ubuntu-xfce-ss928v100.img of=/dev/sdX bs=4M status=progress
+    sudo dd if=hi3403-ubuntu-xfce-Hi3403V100.img of=/dev/sdX bs=4M status=progress
     sudo sync
     ```
 

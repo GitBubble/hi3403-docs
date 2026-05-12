@@ -19,12 +19,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>SS928</p>
+<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>SS927</p>
+<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
 </td>
@@ -309,9 +309,9 @@ SVP ACL为了支持紧密排布的RAW数据，如输入为12bit或14bit紧密排
 
 ### 板端环境安装差异<a name="ZH-CN_TOPIC_0000002408581158"></a>
 
-图像分析引擎1需要配置两个环境变量LD\_LIBRARY\_PATH以及ASCEND\_AACPU\_KERNEL\_PATH，以SS928V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/nnn，其他解决方案类似，需要强调的是ASCEND\_AACPU\_KERNEL\_PATH不支持路径拼接，因此在设定时需注意不能使用拼接路径。
+图像分析引擎1需要配置两个环境变量LD\_LIBRARY\_PATH以及ASCEND\_AACPU\_KERNEL\_PATH，以Hi3403V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/nnn，其他解决方案类似，需要强调的是ASCEND\_AACPU\_KERNEL\_PATH不支持路径拼接，因此在设定时需注意不能使用拼接路径。
 
-图像分析引擎2只需要配置环境变量LD\_LIBRARY\_PATH，以SS928V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/svp\_nnn，其他解决方案类似。
+图像分析引擎2只需要配置环境变量LD\_LIBRARY\_PATH，以Hi3403V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/svp\_nnn，其他解决方案类似。
 
 ### Recurrent网络执行<a name="ZH-CN_TOPIC_0000002442020373"></a>
 

@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 This document is written for developers working with Mono-Color Fusion (MCF) tuning. It introduces the basic principles, operating procedures, and optimization methods for MCF.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses the SS928V100 as an example. Unless otherwise specified, SS927V100 and SS928V100 content is identical.
+>This document uses the Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 and Hi3403V100 content is identical.
 
 **Product Versions<a name="section146mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>SS928</p>
+<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row10658134621312"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p812864918138"><a name="p812864918138"></a><a name="p812864918138"></a>SS927</p>
+<tr id="row10658134621312"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p812864918138"><a name="p812864918138"></a><a name="p812864918138"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p41282499138"><a name="p41282499138"></a><a name="p41282499138"></a>V100</p>
 </td>

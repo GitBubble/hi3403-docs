@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 颜�
 本文为AWB，CCM，CLUT算法调试、问题定位而写，详细介绍了标定、参数调优等使用说明，目的是为用户在开发过程中遇到的问题提供解决办法和帮助。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section306mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 颜�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row320mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>SS928</p>
+<tbody><tr id="row320mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p324mcpsimp"><a name="p324mcpsimp"></a><a name="p324mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row650476102011"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16117171192015"><a name="p16117171192015"></a><a name="p16117171192015"></a>SS927</p>
+<tr id="row650476102011"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16117171192015"><a name="p16117171192015"></a><a name="p16117171192015"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1711771112016"><a name="p1711771112016"></a><a name="p1711771112016"></a>V100</p>
 </td>
@@ -243,7 +243,7 @@ WB仅统计灰点的RGB三通道均值，准确地配置灰点条件，可提高
 </th>
 </tr>
 </thead>
-<tbody><tr id="row492mcpsimp"><td class="cellrowborder" valign="top" width="20.792079207920793%" headers="mcps1.2.5.1.1 "><p id="p494mcpsimp"><a name="p494mcpsimp"></a><a name="p494mcpsimp"></a>SS919V100/SS918V100/SS812V100/SS928V100</p>
+<tbody><tr id="row492mcpsimp"><td class="cellrowborder" valign="top" width="20.792079207920793%" headers="mcps1.2.5.1.1 "><p id="p494mcpsimp"><a name="p494mcpsimp"></a><a name="p494mcpsimp"></a>SS919V100/SS918V100/SS812V100/Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.762376237623766%" headers="mcps1.2.5.1.2 "><p id="p496mcpsimp"><a name="p496mcpsimp"></a><a name="p496mcpsimp"></a>16bit，不带黑电平；WDR模式和Linear模式一致</p>
 </td>
@@ -351,7 +351,7 @@ WB仅统计灰点的RGB三通道均值，准确地配置灰点条件，可提高
 </th>
 </tr>
 </thead>
-<tbody><tr id="row601mcpsimp"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.4.1.1 "><p id="p603mcpsimp"><a name="p603mcpsimp"></a><a name="p603mcpsimp"></a>SS919V100/SS918V100/SS812V100/SS928V100</p>
+<tbody><tr id="row601mcpsimp"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.4.1.1 "><p id="p603mcpsimp"><a name="p603mcpsimp"></a><a name="p603mcpsimp"></a>SS919V100/SS918V100/SS812V100/Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="51%" headers="mcps1.2.4.1.2 "><p id="p605mcpsimp"><a name="p605mcpsimp"></a><a name="p605mcpsimp"></a>统计输出RGB均值数据位宽是16bit，取值范围：[0, 0xFFFF]</p>
 <p id="p606mcpsimp"><a name="p606mcpsimp"></a><a name="p606mcpsimp"></a>其中16bit整数位，无小数位。</p>

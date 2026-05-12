@@ -1,6 +1,6 @@
 ---
 title: SoC 与 Linux
-description: SS928V100 芯片硬件、U-Boot、Linux 内核、外设驱动、安全启动
+description: Hi3403V100 芯片硬件、U-Boot、Linux 内核、外设驱动、安全启动
 ---
 
 # SoC 与 Linux
@@ -10,7 +10,7 @@ description: SS928V100 芯片硬件、U-Boot、Linux 内核、外设驱动、安
 
 <div class="grid cards" markdown>
 
--   :material-chip:{ .lg .middle } __SS928V100 概览__
+-   :material-chip:{ .lg .middle } __Hi3403V100 概览__
 
     ---
 
@@ -30,7 +30,7 @@ description: SS928V100 芯片硬件、U-Boot、Linux 内核、外设驱动、安
 
     ---
 
-    SS928V100/SS927V100 安全启动的密钥、签名、烧录流程。
+    Hi3403V100/Hi3519AV200 安全启动的密钥、签名、烧录流程。
 
     [:octicons-arrow-right-24: 进入](secure-boot/index.md)
 
@@ -70,7 +70,7 @@ description: SS928V100 芯片硬件、U-Boot、Linux 内核、外设驱动、安
 
     ---
 
-    多片 SS928V100 PCIE 级联组网应用。
+    多片 Hi3403V100 PCIE 级联组网应用。
 
     [:octicons-arrow-right-24: 进入](pcie/index.md)
 

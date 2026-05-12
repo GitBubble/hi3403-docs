@@ -1,12 +1,12 @@
 ---
 title: Ubuntu 移植与构建指南
-description: 使用 hi3403-build 一键构建 Hi3403V100 (SS928V100) 的 Ubuntu 22.04 ARM64 镜像
+description: 使用 hi3403-build 一键构建 Hi3403V100 (Hi3403V100) 的 Ubuntu 22.04 ARM64 镜像
 ---
 
 # Ubuntu 移植与构建指南
 
 本指南介绍如何使用 [`hi3403-build`](https://github.com/GitBubble/hi3403-build) 项目，
-基于开源 [Pegasus](https://gitee.com/HiSpark/pegasus) 仓库为 Hi3403V100 (SS928V100) 开发板
+基于开源 [Pegasus](https://gitee.com/HiSpark/pegasus) 仓库为 Hi3403V100 (Hi3403V100) 开发板
 构建 Ubuntu 22.04 ARM64 镜像（含 boot、内核、MPP 与 rootfs）。
 
 !!! tip "源码仓库"
@@ -85,7 +85,7 @@ description: 使用 hi3403-build 一键构建 Hi3403V100 (SS928V100) 的 Ubuntu 
 ```bash
 ./build.sh ubuntu_xfce_all -j 8                # 使用 8 个并行任务
 ./build.sh rootfs ROOTFS_TYPE=lite             # 构建精简 rootfs
-./build.sh all BOOT_MEDIA=spi CHIP=ss928v100   # 自定义构建参数
+./build.sh all BOOT_MEDIA=spi CHIP=Hi3403V100   # 自定义构建参数
 ```
 
 | 选项 | 说明 | 默认值 |
@@ -93,19 +93,19 @@ description: 使用 hi3403-build 一键构建 Hi3403V100 (SS928V100) 的 Ubuntu 
 | `-j N` | 并行 make 任务数 | `nproc` |
 | `ROOTFS_TYPE=` | `xfce` 或 `lite` | `xfce` |
 | `BOOT_MEDIA=` | `emmc`、`spi`、`nand` | `emmc` |
-| `CHIP=` | `ss928v100` 或 `ss927v100` | `ss928v100` |
+| `CHIP=` | `Hi3403V100` 或 `Hi3519AV200` | `Hi3403V100` |
 
 ## 输出产物
 
 ```text
 output/
-├── hi3403-ubuntu-xfce-ss928v100.img    # Rootfs ext4 镜像
+├── hi3403-ubuntu-xfce-Hi3403V100.img    # Rootfs ext4 镜像
 ├── boot/
 │   ├── u-boot.bin                      # U-Boot 2020.01
 │   ├── bl31.bin                        # ATF BL31
 │   ├── Image.gz                        # Linux 6.6.86 ARM64
-│   ├── ss928v100-demb-emmc.dtb         # eMMC 变体 DTB
-│   └── ss928v100-demb-flash.dtb        # Flash 变体 DTB
+│   ├── Hi3403V100-demb-emmc.dtb         # eMMC 变体 DTB
+│   └── Hi3403V100-demb-flash.dtb        # Flash 变体 DTB
 └── mpp/
     ├── ko/                              # 内核模块
     └── lib/                             # MPP 用户态库

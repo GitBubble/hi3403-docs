@@ -6,9 +6,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/zsks/README.
 ## 1.项目介绍
 
 * 本目录是由中山旷视微电子科技有限责任公司与海思深度合作的生态开源项目，旨在为广大开发者提供便利、高效、好用的第三方软件及工具。助力海思生态更上一个台阶。
-* demo目录是我们基于SS928平台开发的实用案例，包括：基于OpenCV的人脸检测案例、基于HNR的夜间超微光案例、基于YoloV8的水果识别及语音播报案例、基于KCF的目标跟踪案例、基于YoloV8的强逆光下的人脸检测案例，同时我们还基于IVE实现了OpenCV的硬件加速，帮助熟悉OpenCV的开发者，以最小的学习成本，就能够很好的使用海思SS928平台的硬件加速模块。
-* 我们基于SS928平台移植的常见第三方软件，包括：python、numpy、OpenCV、libv4l2、alsa-lib、ffmpeg、libacamera第三方软件，doc目录就是我们提供的相关移植文档和开发文档，旨在帮助开发者快速移植场见的第三方软件。同时我们还对海思SS928的MPP模块进行了python化的封装，让开发者只需要使用几行python代码，就能够很好的完成一个海思案例的开发。
-* patch目录，是我们基于SS928的SDK包，提供的一些补丁代码，方便开发者更好的使用我们的参考案例。
+* demo目录是我们基于Hi3403V100平台开发的实用案例，包括：基于OpenCV的人脸检测案例、基于HNR的夜间超微光案例、基于YoloV8的水果识别及语音播报案例、基于KCF的目标跟踪案例、基于YoloV8的强逆光下的人脸检测案例，同时我们还基于IVE实现了OpenCV的硬件加速，帮助熟悉OpenCV的开发者，以最小的学习成本，就能够很好的使用海思Hi3403V100平台的硬件加速模块。
+* 我们基于Hi3403V100平台移植的常见第三方软件，包括：python、numpy、OpenCV、libv4l2、alsa-lib、ffmpeg、libacamera第三方软件，doc目录就是我们提供的相关移植文档和开发文档，旨在帮助开发者快速移植场见的第三方软件。同时我们还对海思Hi3403V100的MPP模块进行了python化的封装，让开发者只需要使用几行python代码，就能够很好的完成一个海思案例的开发。
+* patch目录，是我们基于Hi3403V100的SDK包，提供的一些补丁代码，方便开发者更好的使用我们的参考案例。
 
 
 
@@ -43,9 +43,9 @@ sudo apt-get install dos2unix
 
 dos2unix ohos/foundation/systemabilitymgr/samgr_lite/samgr/source/service.c
 
-dos2unix ohos/vendor/hisilicon/hispark_ss928v100_linux/config.json
+dos2unix ohos/vendor/hisilicon/hispark_Hi3403V100_linux/config.json
 
-dos2unix ohos/vendor/hisilicon/hispark_ss928v100_linux/init_configs/init_linux_openharmony.cfg
+dos2unix ohos/vendor/hisilicon/hispark_Hi3403V100_linux/init_configs/init_linux_openharmony.cfg
 
 chmod +x rkh_patch_build.sh
 
@@ -57,18 +57,18 @@ chmod +x rkh_patch_build.sh
 ```
 cd  pegasus/os/OpenHarmony
 
-cp ../../vendor/zsks/patch/0001-support-eulerpi-uvc-and-ethernet.patch   ohos/kernel/linux/patches/linux-6.6/hispark_ss928v100_patch/
+cp ../../vendor/zsks/patch/0001-support-eulerpi-uvc-and-ethernet.patch   ohos/kernel/linux/patches/linux-6.6/hispark_Hi3403V100_patch/
 
-cp ../../vendor/zsks/patch/patch_ss928v100.sh  ohos/kernel/linux/patches/linux-6.6/hispark_ss928v100_patch/
+cp ../../vendor/zsks/patch/patch_Hi3403V100.sh  ohos/kernel/linux/patches/linux-6.6/hispark_Hi3403V100_patch/
 
-cp ../../vendor/zsks/patch/hispark_ss928v100_small_defconfig ohos/kernel/linux/config/linux-6.6/arch/arm64/configs/
+cp ../../vendor/zsks/patch/hispark_Hi3403V100_small_defconfig ohos/kernel/linux/config/linux-6.6/arch/arm64/configs/
 ```
 
 ### 步骤3：修改cfg文件
 
 * 修改~/pegasus/os/OpenHarmony/ohos/vendor/hisilicon/
 
-  hispark_ss928v100_linux/init_configs/中的init_linux_openharmony.cfg
+  hispark_Hi3403V100_linux/init_configs/中的init_linux_openharmony.cfg
 
   * 删掉apphilogcat、media_server、wms_server这三个服务
 
@@ -85,12 +85,12 @@ cd  pegasus/os/OpenHarmony/ohos
 
 rm out -rf
 
- ./build.sh --product-name=ipcamera_hispark_ss928v100_linux --ccache --no-prebuilt-sdk
+ ./build.sh --product-name=ipcamera_hispark_Hi3403V100_linux --ccache --no-prebuilt-sdk
 ```
 
 ![image-20260105095600039](pic/image-20260105095600039.png)
 
-* 编译成功后，会在 pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux目录下生成  boot_image_4GB.bin、uboot_env_4GB.bin、fip.bin、rootfs_ext4.img、userfs_ext4.img、userdata_ext4.img 、emmc_burn_table.xml这几个文件。
+* 编译成功后，会在 pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux目录下生成  boot_image_4GB.bin、uboot_env_4GB.bin、fip.bin、rootfs_ext4.img、userfs_ext4.img、userdata_ext4.img 、emmc_burn_table.xml这几个文件。
 
 ![image-20260105100514572](pic/image-20260105100514572.png)
 
@@ -174,7 +174,7 @@ re
 
 ### [3.6.ffmpeg](./docs/ffmpeg/README.md)
 
-* 文档主要包括ffmpeg源码包下载、依赖软件安装、交叉编译及安装、板端测试，以及ffmpeg硬件加速（调用SS928的硬件编解码模块）等内容。
+* 文档主要包括ffmpeg源码包下载、依赖软件安装、交叉编译及安装、板端测试，以及ffmpeg硬件加速（调用Hi3403V100的硬件编解码模块）等内容。
 
 ### [3.7.libcamera](./docs/libcamera/README.md)
 

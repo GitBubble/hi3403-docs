@@ -19,12 +19,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/快速�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1533613482454"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1587119153326"><a name="p1587119153326"></a><a name="p1587119153326"></a>SS928</p>
+<tbody><tr id="row1533613482454"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1587119153326"><a name="p1587119153326"></a><a name="p1587119153326"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p158711415193215"><a name="p158711415193215"></a><a name="p158711415193215"></a>V100</p>
 </td>
 </tr>
-<tr id="row567519265"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p787141553210"><a name="p787141553210"></a><a name="p787141553210"></a>SS927</p>
+<tr id="row567519265"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p787141553210"><a name="p787141553210"></a><a name="p787141553210"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p20871215113219"><a name="p20871215113219"></a><a name="p20871215113219"></a>V100</p>
 </td>
@@ -398,7 +398,7 @@ PC sample有一个完整的编译、仿真、板端、可视化结果输出的�
 
 ### 开发板Sample<a name="ZH-CN_TOPIC_0000002446762177"></a>
 
-开发板sample仅包含板端的编译与运行，使用视频流作为输入。sample所在路径：/SS928V100<version\>/SS928V100<version\>/01.software/board/SS928V100\_SDK\_<version\>/SS928V100\_SDK\_<version\>/package/smp/smp/a55\_linux/mpp/sample/svp/svp\__n__nn_。当前提供的sample包含resnet50和lstm。按照sample目录下的README.md文件的说明使用。
+开发板sample仅包含板端的编译与运行，使用视频流作为输入。sample所在路径：/Hi3403V100<version\>/Hi3403V100<version\>/01.software/board/Hi3403V100\_SDK\_<version\>/Hi3403V100\_SDK\_<version\>/package/smp/smp/a55\_linux/mpp/sample/svp/svp\__n__nn_。当前提供的sample包含resnet50和lstm。按照sample目录下的README.md文件的说明使用。
 
 注：需要严格按照规则使用sample，开发板中的sample均包含检测网硬化加速，则输入的om模型必须包含rpn这一路输入。如修改了原始模型分辨率或输入图像格式等信息，也需要修改sample对应的部分。
 
@@ -623,7 +623,7 @@ model execute success
 
 ##### 环境安装<a name="ZH-CN_TOPIC_0000002413203060"></a>
 
--   板端环境安装请参见《SS928V100╱SS927V100 SDK 安装以及升级使用说明》。
+-   板端环境安装请参见《Hi3403V100╱Hi3519AV200 SDK 安装以及升级使用说明》。
 -   SVP ACL接口使用说明请参见《应用开发指南》中“SVP ACL API参考”章节。
 -   需要将SVP\__NNN_相关库路径加入到系统环境变量LD\_LIBRARY\_PATH（如smp/a55\_linux/mpp/out/lib/svp\__nnn_）。
 -   板端开发所依赖的文件清单如[表1](#table764172014331)所示。

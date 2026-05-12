@@ -10,7 +10,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图形�
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   本文未有特殊说明，SS528V100、SS625V100、SS524V100、SS522V101与SS626V100完全一致。
->-   未有特殊说明，SS927V100与SS928V100，SS522V100与SS524V100内容完全一致。
+>-   未有特殊说明，Hi3519AV200与Hi3403V100，SS522V100与SS524V100内容完全一致。
 
 **产品版本<a name="section147mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图形�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row161mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>SS928</p>
+<tbody><tr id="row161mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p165mcpsimp"><a name="p165mcpsimp"></a><a name="p165mcpsimp"></a>V100</p>
 </td>
@@ -58,7 +58,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图形�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1844992446"><a name="p1844992446"></a><a name="p1844992446"></a>V100</p>
 </td>
 </tr>
-<tr id="row124425241073"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row124425241073"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -153,7 +153,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图形�
 
 -   SS528V100/SS625V100/SS524V100支持2路高清HD0\\HD1显示设备，1路标清SD0显示设备，同时支持4个图形层G0、G1、G2、G3。
 -   SS522V101支持1路高清HD0显示设备，1路标清SD0显示设备，同时支持3个图形层G0、G2、G3。
--   SS928V100支持2路高清HD0和HD1显示设备，1路标清SD0显示设备，同时支持3个图形层G0、G1、G3。
+-   Hi3403V100支持2路高清HD0和HD1显示设备，1路标清SD0显示设备，同时支持3个图形层G0、G1、G3。
 -   SS626V100支持2路高清HD0和HD1显示设备，1路标清SD0显示设备，同时支持5个图形层G0、G1、G2、G3、G4。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -238,7 +238,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图形�
 </tbody>
 </table>
 
-**表 3**  FB设备文件、图形层以及输出设备的对应关系 \(SS928V100\)
+**表 3**  FB设备文件、图形层以及输出设备的对应关系 \(Hi3403V100\)
 
 <a name="table326mcpsimp"></a>
 <table><thead align="left"><tr id="row333mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.2.4.1.1"><p id="p335mcpsimp"><a name="p335mcpsimp"></a><a name="p335mcpsimp"></a>FB设备文件</p>

@@ -8,12 +8,12 @@ This document uses a Buildroot image built based on the hispark/pegasus project.
 
 Since Hi3403 pins have function multiplexing, before using a particular on-chip peripheral or external module, the corresponding pin or module pins must be configured with the appropriate multiplexing function.
 
-The complete Hi3403 pin multiplexing configuration can be found in the table [SS928V100_PINOUT_CN.xlsx](#).
+The complete Hi3403 pin multiplexing configuration can be found in the table [Hi3403V100_PINOUT_CN.xlsx](#).
 
 In hispark/pegasus, the chip pin multiplexing function is configured in two locations:
 
-- The xlsm table corresponding to the compiled boot in the platform/ss928v100_gcc/osdrv/tools/pc/uboot_tools folder: used to define the values of some registers in the early chip initialization phase. Pins used by u-boot or linux kernel initialization need to be defined here.
-- platform/ss928v100_gcc/smp/a55_linux/interdrv/sysconfig: kernel external module, used to configure pin multiplexing functions after the linux system starts, before pins are used.
+- The xlsm table corresponding to the compiled boot in the platform/Hi3403V100_gcc/osdrv/tools/pc/uboot_tools folder: used to define the values of some registers in the early chip initialization phase. Pins used by u-boot or linux kernel initialization need to be defined here.
+- platform/Hi3403V100_gcc/smp/a55_linux/interdrv/sysconfig: kernel external module, used to configure pin multiplexing functions after the linux system starts, before pins are used.
 
 Generally, only sysconfig needs to be modified. After modification, run the `make sysconfig` command in the sysconfig directory to compile sys_config.ko. Transfer sys_config.ko to the board and load the module with `insmod sys_config.ko` to complete the pin multiplexing configuration.
 
@@ -283,13 +283,13 @@ Before functional verification, compile the sample programs, related ko driver m
 
 ##### Compile Library Files and Driver Modules
 
-Navigate to the platform/ss928v100_gcc/smp/a55_linux/mpp/out/ directory.
+Navigate to the platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/ directory.
 
 Run the `make` command in the obj directory. The compiled ko modules and lib files are saved in the ko and lib directories of the out directory respectively.
 
 Check the files in the ko directory — they already include sys_config.ko, ot_hdmi.ko, ot_mipi_rx.ko, and other driver modules for setting the chip's pin functions and hardware interface configuration.
 
-Check the load_ss928v100_user script in the ko directory. This is a script for loading and unloading modules. Its parameters are as follows:
+Check the load_Hi3403V100_user script in the ko directory. This is a script for loading and unloading modules. Its parameters are as follows:
 
 - -i                       Load modules
 - -r                       Unload modules
@@ -302,7 +302,7 @@ By setting mem_size and os_mem_size, the memory size available for MPP can be ca
 
 For specific calculation and adjustment methods, refer to the document [Memory Layout Adjustment Guide.md](../../../soc-linux/memory-layout/index.md).
 
-Transfer the lib files and driver modules to the board. For example, using the scp command over the network, execute the following command from the platform/ss928v100_gcc/smp/a55_linux/mpp/out/ directory:
+Transfer the lib files and driver modules to the board. For example, using the scp command over the network, execute the following command from the platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/ directory:
 
 ```
 # Transfer all files in lib to the board's /lib directory
@@ -317,7 +317,7 @@ If insufficient space is reported, run the `resize2fs /dev/mmcblk0p3` command to
 
 ##### Compile Sample Programs
 
-Navigate to the platform/ss928v100_gcc/smp/a55_linux/mpp/sample directory. Use the `make` command to compile all sample programs at once. The compiled executable files are saved in the corresponding sample program directories.
+Navigate to the platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample directory. Use the `make` command to compile all sample programs at once. The compiled executable files are saved in the corresponding sample program directories.
 
 You can also enter a specific sample program directory under the sample directory and use the `make` command to compile only that sample program.
 
@@ -329,7 +329,7 @@ If modifications are made and recompilation is needed, first run `make clean` th
 
 The lib files have already been transferred to the board's /lib directory in the previous steps. Now the modules need to be loaded.
 
-Navigate to the /root/ko directory on the board and run the `./load_ss928v100_user -i` command to load the modules.
+Navigate to the /root/ko directory on the board and run the `./load_Hi3403V100_user -i` command to load the modules.
 
 #### HDMI
 
@@ -361,9 +361,9 @@ After modifying the configuration, recompile and transfer the compiled vio sampl
 scp -r vio/ root@192.168.5.53:/root
 ```
 
-Before running sample_vio, confirm that when executing the load_ss928v100_user script to load modules, it prints the sensor model. If it is not imx415, add the sensor parameter when loading the module. If it is imx415, this can be ignored.
+Before running sample_vio, confirm that when executing the load_Hi3403V100_user script to load modules, it prints the sensor model. If it is not imx415, add the sensor parameter when loading the module. If it is imx415, this can be ignored.
 ```
-./load_ss928v100_user -i -sensor0 imx415 -sensor1 imx415 -sensor2 imx415 -sensor3 imx415
+./load_Hi3403V100_user -i -sensor0 imx415 -sensor1 imx415 -sensor2 imx415 -sensor3 imx415
 ```
 
 Navigate to the /root/vio directory on the board. Run `./sample_vio 0`. When prompted for vpss mode, select 0. The camera will initialize and display on the hdmi screen. The video will also be encoded and saved to stream_chn0.h265.

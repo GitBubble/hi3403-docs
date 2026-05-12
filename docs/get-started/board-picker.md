@@ -59,7 +59,7 @@ flowchart TD
 
 ### 都不是？
 
-如果你已经有别的 SS928V100 自研板（比如 SS928V100 reference design），
+如果你已经有别的 Hi3403V100 自研板（比如 Hi3403V100 reference design），
 也可以用这套文档 —— Hi3403 SDK 和这里的多媒体 / AI 文档是芯片层面的，
 跟具体板子无关。板子专属的内容（pinout、原理图、烧录脚本）请参考
 你板子厂商提供的资料。

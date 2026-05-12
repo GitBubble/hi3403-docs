@@ -25,10 +25,10 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/ebaina/READM
 cd pegasus/vendor/ebaina/patch
 
 ./patch_build.sh -h 	#脚本使用说明
-./patch_build.sh -clang #单独打ss928v100_clang补丁
-./patch_build.sh -gcc 	#单独打ss928v100_gcc补丁
-./patch_build.sh -all   #同时打ss928v100_clang和ss928v100_gcc补丁
-./patch_build.sh    	#同时打ss928v100_clang和ss928v100_gcc补丁
+./patch_build.sh -clang #单独打Hi3403V100_clang补丁
+./patch_build.sh -gcc 	#单独打Hi3403V100_gcc补丁
+./patch_build.sh -all   #同时打Hi3403V100_clang和Hi3403V100_gcc补丁
+./patch_build.sh    	#同时打Hi3403V100_clang和Hi3403V100_gcc补丁
 ```
 
 ### 2、编译SDK
@@ -37,12 +37,12 @@ cd pegasus/vendor/ebaina/patch
 
 ```
 #编译CLANG SDK
-cd ~/pegasus/platform/ss928v100_clang/osdrv
-make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_clang/osdrv
+make LLVM=1 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 
 #编译GCC SDK
-cd ~/pegasus/platform/ss928v100_gcc/osdrv
-make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_gcc/osdrv
+make LLVM=0 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 ```
 
 ## 二、规格参数
@@ -486,7 +486,7 @@ hwclock -w     #保存 RTC 时钟
 
 注：目前只有OpenEuler支持
 
-Tsensor是海鸥派主控SS928V100的芯片温度传感器驱动，主要用于获取主控的芯片温度，获取当前主控温度
+Tsensor是海鸥派主控Hi3403V100的芯片温度传感器驱动，主要用于获取主控的芯片温度，获取当前主控温度
 
 ```
 cat /proc/Tsensor
@@ -913,14 +913,14 @@ d. 图像传感器适配说明
 
 ##### 2.13.2、Sensor时钟修改
 
-①  . 方法一，修改加载load_ss928v100 脚本参数
+①  . 方法一，修改加载load_Hi3403V100 脚本参数
 
 ![image-20260121175510609](docs/pic/image-20260121175510609.png)
 
 OS04A10和OS08A20 时钟相同，配置一个即可（不加参数时默认加载imx347）。
 
 ```shell
-./load_ss928v100 -i -sensor0 os08a20 -sensor1 os08a20 -sensor2 os08a20 -sensor3 os08a20
+./load_Hi3403V100 -i -sensor0 os08a20 -sensor1 os08a20 -sensor2 os08a20 -sensor3 os08a20
 ```
 
 ![image-20260121175526564](docs/pic/image-20260121175526564.png)

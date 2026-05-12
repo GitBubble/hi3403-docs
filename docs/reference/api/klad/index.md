@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/KLAD API
 KLAD是密钥管理模块，集成密钥派生、明文KEY传递、ROOTKEY层级传递。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文未有特殊说明，SS927V100与SS928V100内容完全一致。
+>本文未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section1592mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ KLAD是密钥管理模块，集成密钥派生、明文KEY传递、ROOTKEY层级
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1606mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1608mcpsimp"><a name="p1608mcpsimp"></a><a name="p1608mcpsimp"></a>SS928</p>
+<tbody><tr id="row1606mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1608mcpsimp"><a name="p1608mcpsimp"></a><a name="p1608mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1610mcpsimp"><a name="p1610mcpsimp"></a><a name="p1610mcpsimp"></a>V100</p>
 </td>
@@ -32,7 +32,7 @@ KLAD是密钥管理模块，集成密钥派生、明文KEY传递、ROOTKEY层级
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1615mcpsimp"><a name="p1615mcpsimp"></a><a name="p1615mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row149564818401"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row149564818401"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -130,7 +130,7 @@ KLAD是密钥管理模块。支持密钥派生、明文KEY传递和ROOTKEY层级
 
 -   支持 AES 128/192/256bits加解密。
 -   支持 SM4 128bits加解密。
--   SS928V100、SS626V100不支持 SM4。
+-   Hi3403V100、SS626V100不支持 SM4。
 
 ### ROOTKEY传递<a name="ZH-CN_TOPIC_0000002424189630"></a>
 
@@ -138,8 +138,8 @@ ROOTKEY即通过OTP模块的根密钥，经密钥解混淆、密钥派生后产�
 
 -   支持 AES 128/256bits加解密。
 -   支持 SM4 128bits加解密。
--   SS928V100、SS626V100不支持 SM4。
--   SS928V100、SS626V100支持2级KLAD传递。
+-   Hi3403V100、SS626V100不支持 SM4。
+-   Hi3403V100、SS626V100支持2级KLAD传递。
 
 ### KLAD使用注意事项<a name="ZH-CN_TOPIC_0000002424349494"></a>
 
@@ -1443,7 +1443,7 @@ typedef enum {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM4。
+Hi3403V100、SS626V100不支持SM4。
 
 【相关数据类型及接口】
 
@@ -1537,7 +1537,7 @@ typedef enum {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM4。
+Hi3403V100、SS626V100不支持SM4。
 
 【相关数据类型及接口】
 
@@ -1598,7 +1598,7 @@ typedef enum {
 
 【注意事项】
 
-SS928V100、SS626V100支持2级KLAD。
+Hi3403V100、SS626V100支持2级KLAD。
 
 【相关数据类型及接口】
 
@@ -1658,7 +1658,7 @@ SS928V100、SS626V100支持2级KLAD。
 【注意事项】
 
 -   key\_size只支持128bits，即16byte。
--   对于SS928V100、SS626V100，level只能配置OT\_KLAD\_LEVEL1。
+-   对于Hi3403V100、SS626V100，level只能配置OT\_KLAD\_LEVEL1。
 
 【相关数据类型及接口】
 

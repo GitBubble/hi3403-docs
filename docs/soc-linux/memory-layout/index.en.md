@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/内存�
 This document describes how each subsystem module defines its memory space and provides example modifications, to guide developers in adjusting the system memory layout according to their specific use cases.
 
 >![](public_sys-resources/icon-notice.gif) **Notice:** 
->In the descriptions below, "xxxx" represents the project name — for example: xxxx\_defconfig → ss928v100\_defconfig.
+>In the descriptions below, "xxxx" represents the project name — for example: xxxx\_defconfig → Hi3403V100\_defconfig.
 >"yyyy" represents the version number — for example: u-boot-yyyy → u-boot-2020.01, linux-yyyy → linux-6.6
 
 **Product Version<a name="section5164203710567"></a>**
@@ -23,12 +23,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row419914372567"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p181991937105611"><a name="p181991937105611"></a><a name="p181991937105611"></a>SS928</p>
+<tbody><tr id="row419914372567"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p181991937105611"><a name="p181991937105611"></a><a name="p181991937105611"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.75000000000001%" headers="mcps1.1.3.1.2 "><p id="p819943745619"><a name="p819943745619"></a><a name="p819943745619"></a>V100</p>
 </td>
 </tr>
-<tr id="row127881511132510"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p1397518149259"><a name="p1397518149259"></a><a name="p1397518149259"></a>SS927</p>
+<tr id="row127881511132510"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p1397518149259"><a name="p1397518149259"></a><a name="p1397518149259"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.75000000000001%" headers="mcps1.1.3.1.2 "><p id="p397511145253"><a name="p397511145253"></a><a name="p397511145253"></a>V100</p>
 </td>
@@ -37,7 +37,7 @@ The product versions corresponding to this document are listed below.
 </table>
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference platform. Unless otherwise noted, SS927V100 content is identical to SS928V100.
+>This document uses Hi3403V100 as the reference platform. Unless otherwise noted, Hi3519AV200 content is identical to Hi3403V100.
 
 **Intended Audience<a name="section4378592816410"></a>**
 

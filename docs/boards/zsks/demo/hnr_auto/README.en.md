@@ -2,7 +2,7 @@
 
 ### 2.2.1. hnr_auto Program Introduction
 
-* hnr_auto is developed based on the SS928V100 platform, using the EulerPi kit as an example. hnr_auto is based on HiSilicon's HNR case and implements the ultra-low-light nighttime functionality. When the external ISO reaches a certain threshold, it automatically switches to the HNR model, making the image clearly visible even in dark conditions.
+* hnr_auto is developed based on the Hi3403V100 platform, using the EulerPi kit as an example. hnr_auto is based on HiSilicon's HNR case and implements the ultra-low-light nighttime functionality. When the external ISO reaches a certain threshold, it automatically switches to the HNR model, making the image clearly visible even in dark conditions.
 
 ### 2.2.2. Directory Structure
 
@@ -52,7 +52,7 @@ pegasus/vendor/zsks/demo/hnr_auto
 <img src="/boards/zsks/demo/hnr_auto/pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
 
 * Step 1: Copy the compiled executable to the SD card.
-* Step 2: Copy the cfg model files from the ss928v100_clang/smp/a55_linux/mpp/sample/hnr/ directory to the SD card.
+* Step 2: Copy the cfg model files from the Hi3403V100_clang/smp/a55_linux/mpp/sample/hnr/ directory to the SD card.
 
 ![image-20251030144458528](pic/image-20251030144458528.png)
 
@@ -78,7 +78,7 @@ mount -t vfat /dev/mmcblk1p1 /mnt
 * First, prepare a network cable.
 * Step 1: Refer to the [blog link](https://blog.csdn.net/Wu_GuiMing/article/details/115872995?spm=1001.2014.3001.5501) for setting up the NFS environment.
 * Step 2: Copy the compiled executable to the Windows NFS shared path.
-* Step 3: Copy the cfg model files from the ss928v100_clang/smp/a55_linux/mpp/sample/hnr/ directory to the Windows NFS shared path.
+* Step 3: Copy the cfg model files from the Hi3403V100_clang/smp/a55_linux/mpp/sample/hnr/ directory to the Windows NFS shared path.
 
 ![image-20251030144417819](pic/image-20251030144417819.png)
 

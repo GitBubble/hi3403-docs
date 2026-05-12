@@ -5,7 +5,7 @@ title: Hi3403V100 Ubuntu Image Builder
 
 # Hi3403V100 Ubuntu Image Builder
 
-Build Ubuntu 22.04 ARM64 images for Hi3403V100 (SS928V100) boards using the open-source [Hi3403](https://gitee.com/HiSpark/pegasus) repository.
+Build Ubuntu 22.04 ARM64 images for Hi3403V100 (Hi3403V100) boards using the open-source [Hi3403](https://gitee.com/HiSpark/pegasus) repository.
 
 ## Supported Boards
 
@@ -75,7 +75,7 @@ Build Ubuntu 22.04 ARM64 images for Hi3403V100 (SS928V100) boards using the open
 ```bash
 ./build.sh ubuntu_xfce_all -j 8         # Use 8 parallel jobs
 ./build.sh rootfs ROOTFS_TYPE=lite      # Build lite rootfs
-./build.sh all BOOT_MEDIA=spi CHIP=ss928v100   # Custom build params
+./build.sh all BOOT_MEDIA=spi CHIP=Hi3403V100   # Custom build params
 ```
 
 | Option | Description | Default |
@@ -83,19 +83,19 @@ Build Ubuntu 22.04 ARM64 images for Hi3403V100 (SS928V100) boards using the open
 | `-j N` | Parallel make jobs | `nproc` |
 | `ROOTFS_TYPE=` | `xfce` or `lite` | `xfce` |
 | `BOOT_MEDIA=` | `emmc`, `spi`, `nand` | `emmc` |
-| `CHIP=` | `ss928v100` or `ss927v100` | `ss928v100` |
+| `CHIP=` | `Hi3403V100` or `Hi3519AV200` | `Hi3403V100` |
 
 ## Output
 
 ```
 output/
-├── hi3403-ubuntu-xfce-ss928v100.img    # Rootfs ext4 image
+├── hi3403-ubuntu-xfce-Hi3403V100.img    # Rootfs ext4 image
 ├── boot/
 │   ├── u-boot.bin                      # U-Boot 2020.01
 │   ├── bl31.bin                        # ATF BL31
 │   ├── Image.gz                        # Linux 6.6.86 ARM64
-│   ├── ss928v100-demb-emmc.dtb         # eMMC variant DTB
-│   └── ss928v100-demb-flash.dtb        # Flash variant DTB
+│   ├── Hi3403V100-demb-emmc.dtb         # eMMC variant DTB
+│   └── Hi3403V100-demb-flash.dtb        # Flash variant DTB
 └── mpp/
     ├── ko/                              # Kernel modules
     └── lib/                             # MPP shared libraries

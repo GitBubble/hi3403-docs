@@ -44,7 +44,7 @@ git checkout v2.2.5
 
 [constants]
 toolchain = '/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin'
-sysroot = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot'
+sysroot = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot'
 host_cpu = 'aarch64'
 host_arch = 'aarch64'
 common_flags = ['--sysroot=' + sysroot, '--target=' + host_cpu + '-linux-ohos']

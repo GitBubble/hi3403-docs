@@ -81,7 +81,7 @@ Kernel build complete:
 
 ![image-20260326171605701](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716750.png)
 
-The resulting image file `uImage_ss928v100` is copied to the `output` directory, as shown below:
+The resulting image file `uImage_Hi3403V100` is copied to the `output` directory, as shown below:
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716987.png)
 
@@ -151,7 +151,7 @@ Kernel build complete:
 
 ![image-20260326171605701](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716750.png)
 
-The resulting image file `uImage_ss928v100` is copied to the `output` directory, as shown below:
+The resulting image file `uImage_Hi3403V100` is copied to the `output` directory, as shown below:
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261716987.png)
 
@@ -269,7 +269,7 @@ Kernel build complete:
 
 ![image-20260326175431735](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261754781.png)
 
-The resulting image file `uImage_ss928v100` is copied to the `output` directory, as shown below:
+The resulting image file `uImage_Hi3403V100` is copied to the `output` directory, as shown below:
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261754696.png)
 
@@ -331,7 +331,7 @@ Kernel build complete:
 
 ![image-20260326180002420](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261800457.png)
 
-The resulting image file `uImage_ss928v100` is copied to the `output` directory, as shown below:
+The resulting image file `uImage_Hi3403V100` is copied to the `output` directory, as shown below:
 
 ![image-20260326171629958](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603261800423.png)
 

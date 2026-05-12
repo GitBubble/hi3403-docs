@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HDMI 开
 The built-in HDMI (High-Definition MultiMedia Interface) module of the solution supports HDMI video output.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified in this document, SS625V100, SS522V101, SS522V100 are completely consistent with SS524V100; the content for SS927V100 is identical to that of SS928V100.
+>Unless otherwise specified in this document, SS625V100, SS522V101, SS522V100 are completely consistent with SS524V100; the content for Hi3519AV200 is identical to that of Hi3403V100.
 
 **Product Versions<a name="section5496mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5510mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5512mcpsimp"><a name="p5512mcpsimp"></a><a name="p5512mcpsimp"></a>SS928</p>
+<tbody><tr id="row5510mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5512mcpsimp"><a name="p5512mcpsimp"></a><a name="p5512mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5514mcpsimp"><a name="p5514mcpsimp"></a><a name="p5514mcpsimp"></a>V100</p>
 </td>
@@ -57,7 +57,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p46095339816"><a name="p46095339816"></a><a name="p46095339816"></a>V100</p>
 </td>
 </tr>
-<tr id="row153105414511"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row153105414511"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>

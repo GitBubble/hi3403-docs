@@ -15,12 +15,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row321619548461"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p621715416465"><a name="p621715416465"></a><a name="p621715416465"></a>SS928</p>
+<tbody><tr id="row321619548461"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p621715416465"><a name="p621715416465"></a><a name="p621715416465"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p1821711545468"><a name="p1821711545468"></a><a name="p1821711545468"></a>V100</p>
 </td>
 </tr>
-<tr id="row2452175520019"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p379219581304"><a name="p379219581304"></a><a name="p379219581304"></a>SS927</p>
+<tr id="row2452175520019"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p379219581304"><a name="p379219581304"></a><a name="p379219581304"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p187922584010"><a name="p187922584010"></a><a name="p187922584010"></a>V100</p>
 </td>
@@ -29,7 +29,7 @@ The product versions corresponding to this document are as follows.
 </table>
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 and SS928V100 is identical.
+>This document uses the Hi3403V100 description as an example. Unless otherwise specified, the content for Hi3519AV200 and Hi3403V100 is identical.
 
 **Intended Audience<a name="section0132125444614"></a>**
 
@@ -147,7 +147,7 @@ DIS calculates motion offset using three algorithms:
 
 ## DIS Implementation<a name="ZH-CN_TOPIC_0000002457880761"></a>
 
-The DIS function is integrated into the VI module. Refer to the "SS928V100 VI Channel Functional Block Diagram" in the Video Input chapter of the MPP Media Processing Software V5.0 Development Reference.
+The DIS function is integrated into the VI module. Refer to the "Hi3403V100 VI Channel Functional Block Diagram" in the Video Input chapter of the MPP Media Processing Software V5.0 Development Reference.
 
 >![](public_sys-resources/icon-notice.gif) **Important:** 
 >-   DIS only supports operation on physical channels.
@@ -193,7 +193,7 @@ Differences between 4_DOF and 6_DOF:
 -   6_DOF: The algorithm uses 6 operators, primarily performing translation, rotation, scaling, aspect ratio change, and shearing on the image. The advantage is better stabilization effect and the ability to correct parallelogram distortions. The disadvantage is that it is more likely to cause abnormal phenomena such as background dragging.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->For SS928V100's HYBRID mode, the DSP must be enabled and the hybrid stabilization bin file must be loaded. Call the ss_mpi_gdc_set_dsp_lut_cfg interface (refer to the "12 Geometric Distortion Correction Subsystem" chapter of the MPP Media Processing Software V5.0 Development Reference) to enable the dsp_lut function and bind the corresponding DSP core. A single-core DSP supports 4K30fps performance.
+>For Hi3403V100's HYBRID mode, the DSP must be enabled and the hybrid stabilization bin file must be loaded. Call the ss_mpi_gdc_set_dsp_lut_cfg interface (refer to the "12 Geometric Distortion Correction Subsystem" chapter of the MPP Media Processing Software V5.0 Development Reference) to enable the dsp_lut function and bind the corresponding DSP core. A single-core DSP supports 4K30fps performance.
 >Description of each mode:
 >-   OT_DIS_MODE_4_DOF_GME refers to the 4_DOF stabilization mode.
 >-   OT_DIS_MODE_6_DOF_GME refers to the 6_DOF stabilization mode.
@@ -211,7 +211,7 @@ Camera motion levels are divided into: OT_DIS_MOTION_LEVEL_LOW, OT_DIS_MOTION_LE
 Typically set to OT_DIS_MOTION_LEVEL_NORM. Adjust according to the actual motion amplitude.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->SS928V100 does not support the OT_DIS_MOTION_LEVEL_LOW mode.
+>Hi3403V100 does not support the OT_DIS_MOTION_LEVEL_LOW mode.
 
 **pdt_type<a name="section2080685121417"></a>**
 

@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 平台框架主要是集成了BurnTool，FastplayBinTool，LoaderBinTool等工具的一款平台工具，本文档主要介绍平台框架的功能及使用方法。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100为例，未有特殊说明，SS528V100、SS524V100、SS522V100、SS626V100、SS927V100与SS928V100内容完全一致。
+>本文以Hi3403V100为例，未有特殊说明，SS528V100、SS524V100、SS522V100、SS626V100、Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section329632361710"></a>**
 
@@ -22,7 +22,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1034642371711"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p1134682313174"><a name="p1134682313174"></a><a name="p1134682313174"></a>SS928</p>
+<tbody><tr id="row1034642371711"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p1134682313174"><a name="p1134682313174"></a><a name="p1134682313174"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p43461623201712"><a name="p43461623201712"></a><a name="p43461623201712"></a>V100</p>
 </td>
@@ -52,7 +52,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p138241269524"><a name="p138241269524"></a><a name="p138241269524"></a>V100</p>
 </td>
 </tr>
-<tr id="row206101594251"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row206101594251"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -133,15 +133,15 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 ![](figures/方案切换菜单.png "方案切换菜单")
 ## 方案工具适配性<a name="ZH-CN_TOPIC_0000002408329616"></a>
 
-在工具平台菜单中【Device】\>【Current Device】中，显示当前为SS928V100，如[图1](#2-3-1)所示。
+在工具平台菜单中【Device】\>【Current Device】中，显示当前为Hi3403V100，如[图1](#2-3-1)所示。
 
-**图 1**  切换到SS928V100<a name="2-3-1"></a>  
-![](figures/切换到SS928V100.png "切换到SS928V100")
+**图 1**  切换到Hi3403V100<a name="2-3-1"></a>  
+![](figures/切换到Hi3403V100.png "切换到Hi3403V100")
 
-在ToolPlatform平台界面上显示SS928V100可调用的工具，如[图2](#2-3-2)所示。
+在ToolPlatform平台界面上显示Hi3403V100可调用的工具，如[图2](#2-3-2)所示。
 
-**图 2**  SS928V100可用工具<a name="2-3-2"></a>  
-![](figures/SS928V100可用工具.png "SS928V100可用工具")
+**图 2**  Hi3403V100可用工具<a name="2-3-2"></a>  
+![](figures/Hi3403V100可用工具.png "Hi3403V100可用工具")
 # 语言切换
 在文件菜单栏中选择语言切换，具体步骤如下：
 

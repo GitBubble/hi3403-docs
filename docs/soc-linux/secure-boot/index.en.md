@@ -1,6 +1,6 @@
 ---
 title: "Preface"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 安全启动使用指南/SS928V100╱SS927V100 安全启动使用指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100╱Hi3519AV200 安全启动使用指南/Hi3403V100╱Hi3519AV200 安全启动使用指南.md
 ---
 
 # Preface
@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 This document is intended to guide personnel using this secure boot solution in understanding the overall security solution process, and then using this secure boot solution through specific operational steps and methods. It mainly introduces the specifications and features of this secure boot, including the basic secure boot flow, the key hierarchy and signature verification logic, and the overall usage of the secure boot solution.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->This document takes the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 is identical to that of SS928V100.
+>This document takes the Hi3403V100 description as an example. Unless otherwise specified, the content for Hi3519AV200 is identical to that of Hi3403V100.
 
 **Product Version<a name="section239mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row253mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p255mcpsimp"><a name="p255mcpsimp"></a><a name="p255mcpsimp"></a>SS928</p>
+<tbody><tr id="row253mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p255mcpsimp"><a name="p255mcpsimp"></a><a name="p255mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p257mcpsimp"><a name="p257mcpsimp"></a><a name="p257mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1186319271312"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8648177191319"><a name="p8648177191319"></a><a name="p8648177191319"></a>SS927</p>
+<tr id="row1186319271312"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8648177191319"><a name="p8648177191319"></a><a name="p8648177191319"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p136484751315"><a name="p136484751315"></a><a name="p136484751315"></a>V100</p>
 </td>
@@ -395,9 +395,9 @@ The root key originates from OTP and is generated and programmed by OEM.
 ![](figures/安全启动模式解密关系图.png "安全启动模式解密关系图")
 
 # Boot Image Creation and Programming
-SS928V100 supports multiple boot schemes. The creation and programming steps for boot images must correspond to the boot scheme. Additionally, the OTP of SS928V100 controls the boot flow, including boot scheme selection, image legitimacy verification, and version verification, and must be configured and programmed according to the boot scheme.
+Hi3403V100 supports multiple boot schemes. The creation and programming steps for boot images must correspond to the boot scheme. Additionally, the OTP of Hi3403V100 controls the boot flow, including boot scheme selection, image legitimacy verification, and version verification, and must be configured and programmed according to the boot scheme.
 
-This chapter describes the SS928V100 image creation steps, OTP programming steps, image programming methods, and provides reference values for environment variable configuration.
+This chapter describes the Hi3403V100 image creation steps, OTP programming steps, image programming methods, and provides reference values for environment variable configuration.
 
 Before starting, the following must be clarified:
 
@@ -406,7 +406,7 @@ Before starting, the following must be clarified:
 
 ## Boot Image Creation Steps<a name="ZH-CN_TOPIC_0000002424197890"></a>
 
-The image creation method for the fast boot scheme is the same as the traditional boot scheme. To create boot images for non-secure boot and secure boot, the "image\_map" image creation script needs to be used. This section describes the image creation steps for each boot scheme of SS928V100.
+The image creation method for the fast boot scheme is the same as the traditional boot scheme. To create boot images for non-secure boot and secure boot, the "image\_map" image creation script needs to be used. This section describes the image creation steps for each boot scheme of Hi3403V100.
 
 ### Fast Boot<a name="ZH-CN_TOPIC_0000002424197934"></a>
 
@@ -445,12 +445,12 @@ The following are the specific steps for creating the Boot image:
 
     ```
     cd boot/gsl/
-    make CHIP=ss928v100
+    make CHIP=Hi3403V100
     ```
 
     The GSL binary image `gsl.bin` will be generated in the `pub/` directory.
 
-3.  Enter the `open_source/u-boot/` directory and compile U-Boot to obtain the U-Boot image `u-boot-ss928v100.bin`.
+3.  Enter the `open_source/u-boot/` directory and compile U-Boot to obtain the U-Boot image `u-boot-Hi3403V100.bin`.
 
     For compilation methods, please refer to "osdrv/readme\_cn.txt".
 
@@ -458,7 +458,7 @@ The following are the specific steps for creating the Boot image:
 
     ```
     cp osdrv/components/boot/gsl/pub/gsl.bin osdrv/components/boot/image_map/
-    cp open_source/u-boot/u-boot-2020.01/u-boot-ss928v100.bin osdrv/components/boot/image_map/u-boot-original.bin
+    cp open_source/u-boot/u-boot-2020.01/u-boot-Hi3403V100.bin osdrv/components/boot/image_map/u-boot-original.bin
     cp open_source/u-boot/u-boot-2020.01/.reg osdrv/components/boot/image_map/.reg
     ```
 
@@ -492,7 +492,7 @@ The following are the steps for OEM to create the Boot image:
 
     The operation is the same as steps 1-2 in "[Non-Secure Boot](#ZH-CN_TOPIC_0000002457836493)".
 
-2.  Compile U-Boot to obtain the U-Boot image `u-boot-ss928v100.bin`.
+2.  Compile U-Boot to obtain the U-Boot image `u-boot-Hi3403V100.bin`.
 
     The operation is the same as step 3 in "[Non-Secure Boot](#ZH-CN_TOPIC_0000002457836493)".
 
@@ -528,7 +528,7 @@ The following are the steps for OEM to create the Boot image:
 
     After completing the option selection, the configuration file `oem/oem_config.json` will be generated.
 
-4.  Fill in the unconfigured fields in `oem_config.json` (enclosed by "/* */", remove "/* */" when filling). For configuration methods, please refer to the "SS928V100/SS927V100 Secure Boot Script Configuration Guide" document. For the `GSL_Code` and `Boot_Code` fields, fill in the paths to `gsl.bin` and `u-boot-ss928v100.bin` generated in steps 1 and 2 respectively. For the `Cfg_Param` field, fill in the path to the U-Boot table (the `.reg` file used for compiling U-Boot in step 2).
+4.  Fill in the unconfigured fields in `oem_config.json` (enclosed by "/* */", remove "/* */" when filling). For configuration methods, please refer to the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide" document. For the `GSL_Code` and `Boot_Code` fields, fill in the paths to `gsl.bin` and `u-boot-Hi3403V100.bin` generated in steps 1 and 2 respectively. For the `Cfg_Param` field, fill in the path to the U-Boot table (the `.reg` file used for compiling U-Boot in step 2).
 
 5.  Create a Boot image with OEM signature.
 
@@ -554,7 +554,7 @@ If a Third\_party needs to sign the Boot image, the following operations must be
 
     After completing the option selection, the configuration file `third_party/third_party_config.json` will be generated.
 
-3.  Fill in the unconfigured fields in `third_party_config.json` (enclosed by "/* */", remove "/* */" when filling). For configuration methods, please refer to the "SS928V100/SS927V100 Secure Boot Script Configuration Guide" document.
+3.  Fill in the unconfigured fields in `third_party_config.json` (enclosed by "/* */", remove "/* */" when filling). For configuration methods, please refer to the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide" document.
 4.  Sign the Boot image.
 
     ```
@@ -565,7 +565,7 @@ If a Third\_party needs to sign the Boot image, the following operations must be
 
 ## OTP Configuration and Programming<a name="ZH-CN_TOPIC_0000002457876665"></a>
 
-SS928V100 supports multiple boot schemes. The boot scheme used by the chip needs to be configured through OTP. This section describes the OTP configuration method and how to use U-Boot to complete OTP programming.
+Hi3403V100 supports multiple boot schemes. The boot scheme used by the chip needs to be configured through OTP. This section describes the OTP configuration method and how to use U-Boot to complete OTP programming.
 
 Please be aware of the following before reading:
 
@@ -633,7 +633,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p540mcpsimp"><a name="p540mcpsimp"></a><a name="p540mcpsimp"></a>0x42: Non-secure boot;</p>
     <p id="p541mcpsimp"><a name="p541mcpsimp"></a><a name="p541mcpsimp"></a>0xFF: Secure boot.</p>
-    <p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>Before enabling secure boot, the SCS_simulate_flag in the image can be used to simulate the behavior of secure_boot_en being enabled for debugging the <a href="#ZH-CN_TOPIC_0000002457876645">Boot Flash Mapping</a> area, preventing irreparable chip errors due to incorrect OTP programming. Please refer to the description of the SCS_simulate_flag in the "SS928V100/SS927V100 Secure Boot Script Configuration Guide".</p>
+    <p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>Before enabling secure boot, the SCS_simulate_flag in the image can be used to simulate the behavior of secure_boot_en being enabled for debugging the <a href="#ZH-CN_TOPIC_0000002457876645">Boot Flash Mapping</a> area, preventing irreparable chip errors due to incorrect OTP programming. Please refer to the description of the SCS_simulate_flag in the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide".</p>
     </td>
     </tr>
     <tr id="row556mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p558mcpsimp"><a name="p558mcpsimp"></a><a name="p558mcpsimp"></a>gsl_dec_en</p>
@@ -646,7 +646,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p567mcpsimp"><a name="p567mcpsimp"></a><a name="p567mcpsimp"></a>0xF: GSL decryption enabled;</p>
     <p id="p568mcpsimp"><a name="p568mcpsimp"></a><a name="p568mcpsimp"></a>0xA: Whether to decrypt GSL depends on the GSL_Code_Enc_Flag in the image.</p>
-    <p id="p569mcpsimp"><a name="p569mcpsimp"></a><a name="p569mcpsimp"></a>The "SS928V100/SS927V100 Secure Boot Script Configuration Guide" describes the GSL_Code_Enc_Flag configuration method. GSL is not decrypted only when gsl_dec_en is configured as 0xA and GSL_Code_Enc_Flag is configured as 0x3C7896E1.</p>
+    <p id="p569mcpsimp"><a name="p569mcpsimp"></a><a name="p569mcpsimp"></a>The "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide" describes the GSL_Code_Enc_Flag configuration method. GSL is not decrypted only when gsl_dec_en is configured as 0xA and GSL_Code_Enc_Flag is configured as 0x3C7896E1.</p>
     </td>
     </tr>
     <tr id="row570mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p572mcpsimp"><a name="p572mcpsimp"></a><a name="p572mcpsimp"></a>bload_dec_en</p>
@@ -659,7 +659,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p581mcpsimp"><a name="p581mcpsimp"></a><a name="p581mcpsimp"></a>0x1: U-Boot decryption enabled;</p>
     <p id="p582mcpsimp"><a name="p582mcpsimp"></a><a name="p582mcpsimp"></a>0x0: Whether to decrypt U-Boot depends on the Boot_Enc_Flag in the image.</p>
-    <p id="p583mcpsimp"><a name="p583mcpsimp"></a><a name="p583mcpsimp"></a>The "SS928V100/SS927V100 Secure Boot Script Configuration Guide" describes the Boot_Enc_Flag configuration method. U-Boot is not decrypted only when bload_dec_en is configured as 0x0 and Boot_Enc_Flag is configured as 0x3C7896E1.</p>
+    <p id="p583mcpsimp"><a name="p583mcpsimp"></a><a name="p583mcpsimp"></a>The "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide" describes the Boot_Enc_Flag configuration method. U-Boot is not decrypted only when bload_dec_en is configured as 0x0 and Boot_Enc_Flag is configured as 0x3C7896E1.</p>
     </td>
     </tr>
     <tr id="row597mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p599mcpsimp"><a name="p599mcpsimp"></a><a name="p599mcpsimp"></a>uboot_redundance</p>
@@ -682,7 +682,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p617mcpsimp"><a name="p617mcpsimp"></a><a name="p617mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p621mcpsimp"><a name="p621mcpsimp"></a><a name="p621mcpsimp"></a>The field value must be consistent with the oem_rk_deob_en value used by the KDFTool in the "SS928V100/SS927V100 Secure Boot Script Configuration Guide". If inconsistent, secure boot will fail.</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p621mcpsimp"><a name="p621mcpsimp"></a><a name="p621mcpsimp"></a>The field value must be consistent with the oem_rk_deob_en value used by the KDFTool in the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide". If inconsistent, secure boot will fail.</p>
     </td>
     </tr>
     <tr id="row622mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p624mcpsimp"><a name="p624mcpsimp"></a><a name="p624mcpsimp"></a>oem_root_public_key_sha256</p>
@@ -704,7 +704,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p643mcpsimp"><a name="p643mcpsimp"></a><a name="p643mcpsimp"></a>This field is the OTP KEY described in "<a href="#ZH-CN_TOPIC_0000002457836485">Chip Key Derivation</a>". It is <strong id="b646mcpsimp"><a name="b646mcpsimp"></a><a name="b646mcpsimp"></a>sensitive information and must not be disclosed</strong>. The field value must be consistent with the oem_root_symc_key field used by the KDFTool in the "SS928V100/SS927V100 Secure Boot Script Configuration Guide", and cannot be all zeros; otherwise, secure boot will fail.</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p643mcpsimp"><a name="p643mcpsimp"></a><a name="p643mcpsimp"></a>This field is the OTP KEY described in "<a href="#ZH-CN_TOPIC_0000002457836485">Chip Key Derivation</a>". It is <strong id="b646mcpsimp"><a name="b646mcpsimp"></a><a name="b646mcpsimp"></a>sensitive information and must not be disclosed</strong>. The field value must be consistent with the oem_root_symc_key field used by the KDFTool in the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide", and cannot be all zeros; otherwise, secure boot will fail.</p>
     </td>
     </tr>
     <tr id="row647mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p649mcpsimp"><a name="p649mcpsimp"></a><a name="p649mcpsimp"></a>oem_root_symc_key0_flag</p>
@@ -726,7 +726,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p664mcpsimp"><a name="p664mcpsimp"></a><a name="p664mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p668mcpsimp"><a name="p668mcpsimp"></a><a name="p668mcpsimp"></a>OEM customer market segment identifier (ID). If it does not match the OEM_MSID_Ext in the "SS928V100/SS927V100 Secure Boot Script Configuration Guide", secure boot will fail.</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p668mcpsimp"><a name="p668mcpsimp"></a><a name="p668mcpsimp"></a>OEM customer market segment identifier (ID). If it does not match the OEM_MSID_Ext in the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide", secure boot will fail.</p>
     </td>
     </tr>
     <tr id="row669mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p671mcpsimp"><a name="p671mcpsimp"></a><a name="p671mcpsimp"></a>oem_version</p>
@@ -737,7 +737,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p675mcpsimp"><a name="p675mcpsimp"></a><a name="p675mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p679mcpsimp"><a name="p679mcpsimp"></a><a name="p679mcpsimp"></a>OEM version number. The number of Bit 1s in the field represents the version number, used for Boot Image anti-rollback. If the version number indicated by OEM_Version_Ext in the "SS928V100/SS927V100 Secure Boot Script Configuration Guide" is less than the version number indicated by this field, secure boot will fail.</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p679mcpsimp"><a name="p679mcpsimp"></a><a name="p679mcpsimp"></a>OEM version number. The number of Bit 1s in the field represents the version number, used for Boot Image anti-rollback. If the version number indicated by OEM_Version_Ext in the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide" is less than the version number indicated by this field, secure boot will fail.</p>
     </td>
     </tr>
     <tr id="row700mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p702mcpsimp"><a name="p702mcpsimp"></a><a name="p702mcpsimp"></a>double_sign_en</p>
@@ -772,7 +772,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p737mcpsimp"><a name="p737mcpsimp"></a><a name="p737mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p741mcpsimp"><a name="p741mcpsimp"></a><a name="p741mcpsimp"></a>This field is related to dual signature and is only valid when double_sign_en is enabled. It represents the third-party market segment identifier (ID). If it does not match the Third_party_MSID_Ext in the "SS928V100/SS927V100 Secure Boot Script Configuration Guide", secure boot will fail.</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p741mcpsimp"><a name="p741mcpsimp"></a><a name="p741mcpsimp"></a>This field is related to dual signature and is only valid when double_sign_en is enabled. It represents the third-party market segment identifier (ID). If it does not match the Third_party_MSID_Ext in the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide", secure boot will fail.</p>
     </td>
     </tr>
     <tr id="row742mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p744mcpsimp"><a name="p744mcpsimp"></a><a name="p744mcpsimp"></a>third_party_version</p>
@@ -783,7 +783,7 @@ The following are the specific steps for OTP configuration and programming:
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p748mcpsimp"><a name="p748mcpsimp"></a><a name="p748mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p752mcpsimp"><a name="p752mcpsimp"></a><a name="p752mcpsimp"></a>This field is related to dual signature and is only valid when double_sign_en is enabled. The number of Bit 1s in the field represents the third-party version number, used for Boot Image anti-rollback. If the version number indicated by Third_party_Version_Ext in the "SS928V100/SS927V100 Secure Boot Script Configuration Guide" is less than the version number indicated by this field, secure boot will fail.</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p752mcpsimp"><a name="p752mcpsimp"></a><a name="p752mcpsimp"></a>This field is related to dual signature and is only valid when double_sign_en is enabled. The number of Bit 1s in the field represents the third-party version number, used for Boot Image anti-rollback. If the version number indicated by Third_party_Version_Ext in the "Hi3403V100/Hi3519AV200 Secure Boot Script Configuration Guide" is less than the version number indicated by this field, secure boot will fail.</p>
     </td>
     </tr>
     </tbody>
@@ -795,7 +795,7 @@ The following are the specific steps for OTP configuration and programming:
     obj-y += write_otp_fun.o
     ```
 
-5.  Add the following macro definition in the `./include/configs/ss928v100.h` file to enable the OTP driver.
+5.  Add the following macro definition in the `./include/configs/Hi3403V100.h` file to enable the OTP driver.
 
     ```
     #define CONFIG_OTP_ENABLE
@@ -806,14 +806,14 @@ The following are the specific steps for OTP configuration and programming:
     Before compiling U-Boot, use a Windows system to enter the `osdrv/tools/pc/uboot_tools/` directory, open the Excel file for the corresponding board, select the `main` tab, and click the "Generate reg bin file" button to generate the U-Boot table file `reg_info.bin` for the corresponding platform. Then return to the Linux system to execute the operations:
 
     ```
-    cp configs/ss928v100_defconfig .config
+    cp configs/Hi3403V100_defconfig .config
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- menuconfig
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- -j 20
     cp ../../../osdrv/tools/pc/uboot_tools/reg_info.bin .reg
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- u-boot-z.bin
     ```
 
-    The above operations take SPI NOR/NAND as the boot medium as an example. If the boot medium is eMMC, change the configuration file `configs/ss928v100_defconfig` to `ss928v100_emmc_defconfig`.
+    The above operations take SPI NOR/NAND as the boot medium as an example. If the boot medium is eMMC, change the configuration file `configs/Hi3403V100_defconfig` to `Hi3403V100_emmc_defconfig`.
 
 7.  Verify OTP configuration values (optional step).
 
@@ -835,13 +835,13 @@ The following are the specific steps for OTP configuration and programming:
 8.  Enter the `osdrv/components/boot-otp/gsl/` directory and compile the GSL image to obtain `gsl.bin`.
 
     ```
-    make CHIP=ss928v100
+    make CHIP=Hi3403V100
     ```
 
 9.  Enter `osdrv/components/boot-otp/image_map` to create the Boot image.
 
     ```
-    cp ../../../../open_source/u-boot/u-boot-otp/u-boot-ss928v100.bin ./u-boot-original.bin
+    cp ../../../../open_source/u-boot/u-boot-otp/u-boot-Hi3403V100.bin ./u-boot-original.bin
     cp ../../../../open_source/u-boot/u-boot-otp/.reg ./
     cp ../gsl/pub/gsl.bin ./
     python oem/oem_quick_build.py
@@ -881,7 +881,7 @@ The image programming layout is shown in [Figure 1](#__Ref55287952).
 ![](figures/ToolPlatform烧写分区参考图.png "ToolPlatform烧写分区参考图")
 
 >![](public_sys-resources/icon-notice.gif) **Caution:**
->The `uImage_ss928v100` file programmed in [Figure 1](#_fig1991144012019) and [Figure 1](#__Ref55287952) is the ATF+Kernel image.
+>The `uImage_Hi3403V100` file programmed in [Figure 1](#_fig1991144012019) and [Figure 1](#__Ref55287952) is the ATF+Kernel image.
 
 ## Board Environment Variable Configuration Reference<a name="ZH-CN_TOPIC_0000002424357730"></a>
 

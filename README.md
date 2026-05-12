@@ -1,6 +1,6 @@
 # Hi3403 Developer Center
 
-The community documentation site for the HiSilicon **SS928V100 / SS927V100
+The community documentation site for the HiSilicon **Hi3403V100 / Hi3519AV200
 Hi3403** platform
 
 

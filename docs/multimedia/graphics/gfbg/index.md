@@ -10,7 +10,7 @@ Graphic Framebuffer Group（以下简称GFBG）是数字媒体处理平台提供
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   未有特殊说明，SS528V100、SS625V100、SS524V100、SS522V101、与SS626V100完全一致。
->-   未有特殊说明，SS927V100与SS928V100，SS522V100与SS524V100内容完全一致。
+>-   未有特殊说明，Hi3519AV200与Hi3403V100，SS522V100与SS524V100内容完全一致。
 
 **产品版本<a name="section155mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ Graphic Framebuffer Group（以下简称GFBG）是数字媒体处理平台提供
 </th>
 </tr>
 </thead>
-<tbody><tr id="row169mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p171mcpsimp"><a name="p171mcpsimp"></a><a name="p171mcpsimp"></a>SS928</p>
+<tbody><tr id="row169mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p171mcpsimp"><a name="p171mcpsimp"></a><a name="p171mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p173mcpsimp"><a name="p173mcpsimp"></a><a name="p173mcpsimp"></a>V100</p>
 </td>
@@ -58,7 +58,7 @@ Graphic Framebuffer Group（以下简称GFBG）是数字媒体处理平台提供
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9879931201010"><a name="p9879931201010"></a><a name="p9879931201010"></a>V100</p>
 </td>
 </tr>
-<tr id="row621517317519"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row621517317519"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -178,8 +178,8 @@ Linux Framebuffer是一个子设备号对应一个显卡，GFBG则是一个子�
 >-   对于SS528V100/SS625V100/SS524V100，GFBG最多可以管理4个叠加图形层：图形层0～图形层3（G0\~G3），对应的设备文件依次为/dev/fb0 \~ /dev/fb3。
 >    SS528V100/SS625V100/SS524V100支持3个输出设备上可以叠加图形层：高清输出设备0（简称HD0）、高清输出设备1（简称HD1）、标清输出设备0（简称SD0）。4个图形层与这3个输出设备的关系如[表1](#_Toc363726513)所示。
 >-   对于SS522V101，GFBG最多可以管理3个叠加图形层：图形层0、2、3（G0、G2、G3），对应的设备文件依次为/dev/fb0/dev/fb1/dev/fb2。SS522V101支持2个输出设备上可以叠加图形层：高清输出设备0（简称HD0）、标清输出设备0（简称SD0）。3个图形层与输出设备的关系如[表2](#_Ref49523582)所示。
->-   对于SS928V100，GFBG最多可以管理3个叠加图形层：图形层0、1、3（G0、G1、G3），对应的设备文件依次为/dev/fb0/dev/fb1/dev/fb2。
->    SS928V100支持2个输出设备上可以叠加图形层：高清输出设备0（简称HD0）、标清输出设备0（简称SD0）。3个图形层与输出设备的关系如[表3](#_Ref49523598)所示。
+>-   对于Hi3403V100，GFBG最多可以管理3个叠加图形层：图形层0、1、3（G0、G1、G3），对应的设备文件依次为/dev/fb0/dev/fb1/dev/fb2。
+>    Hi3403V100支持2个输出设备上可以叠加图形层：高清输出设备0（简称HD0）、标清输出设备0（简称SD0）。3个图形层与输出设备的关系如[表3](#_Ref49523598)所示。
 >-   对于SS626V100, GFBG最多可以管理5个叠加图形层：图形层0、1、2、3、4（G0、G1、G2、G3、G4），对应的设备文件依次为/dev/fb0 \~ /dev/fb4。5个图形层与3个输出设备的关系如[表4](#_Ref57989656)所示。
 
 **表 1**  FB设备文件、图形层以及输出设备的对应关系
@@ -489,7 +489,7 @@ Linux Framebuffer是一个子设备号对应一个显卡，GFBG则是一个子�
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p410mcpsimp"><a name="p410mcpsimp"></a><a name="p410mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row411mcpsimp"><td class="cellrowborder" rowspan="3" valign="top" width="17.17171717171717%" headers="mcps1.1.7.1.1 "><p id="p413mcpsimp"><a name="p413mcpsimp"></a><a name="p413mcpsimp"></a>SS928V100</p>
+<tr id="row411mcpsimp"><td class="cellrowborder" rowspan="3" valign="top" width="17.17171717171717%" headers="mcps1.1.7.1.1 "><p id="p413mcpsimp"><a name="p413mcpsimp"></a><a name="p413mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.09100910091009%" headers="mcps1.1.7.1.2 "><p id="p415mcpsimp"><a name="p415mcpsimp"></a><a name="p415mcpsimp"></a>G0</p>
 </td>
@@ -718,7 +718,7 @@ vramn_size * 1024 >= displaywidth * displayHeight * bpp * BufferMode;
 该参数决定是否启用软鼠标功能。当它的值为“off”时，则软鼠标功能为禁止状态（即硬件鼠标功能可用），否则软鼠标功能启用。模块一旦加载，是否启用软鼠标功能便确定。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->SS528V100/SS625V100/SS524V100/SS522V101/SS928V100不支持软鼠标。
+>SS528V100/SS625V100/SS524V100/SS522V101/Hi3403V100不支持软鼠标。
 
 ### 参数g\_layer\_mmz\_names<a name="ZH-CN_TOPIC_0000002441655021"></a>
 
@@ -739,7 +739,7 @@ vramn_size * 1024 >= displaywidth * displayHeight * bpp * BufferMode;
 
     video="gfbg:vram0\_size: 32400，vram1\_size: 16200，vram2\_size:256，vram3\_size: 4052 "
 
--   SS928V100
+-   Hi3403V100
 
     video="gfbg:vram0\_size: 32400，vram1\_size: 16200，vram3\_size: 3240 "
 

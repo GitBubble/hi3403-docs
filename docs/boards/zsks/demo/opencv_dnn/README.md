@@ -2,7 +2,7 @@
 
 ### 2.1.1、opencv_dnn程序简介
 
-* opencv_dnn sample基于SS928V100平台开发，以EulerPi套件为例，opencv_dnn sample是通过USB camera采集到的图片送到人脸检测模型进行推理，将得到的结果通过HDMI，显示在外接显示屏上面。
+* opencv_dnn sample基于Hi3403V100平台开发，以EulerPi套件为例，opencv_dnn sample是通过USB camera采集到的图片送到人脸检测模型进行推理，将得到的结果通过HDMI，显示在外接显示屏上面。
 * opencv_dnn案例，模型推理是在CPU上实现了，没有调用svp_npu的接口，都是调用opencv的接口来实现。
 
 ### 2.1.2、目录

@@ -15,12 +15,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row192mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a>SS928</p>
+<tbody><tr id="row192mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row2090316292516"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16920183212510"><a name="p16920183212510"></a><a name="p16920183212510"></a>SS927</p>
+<tr id="row2090316292516"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16920183212510"><a name="p16920183212510"></a><a name="p16920183212510"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p119201326520"><a name="p119201326520"></a><a name="p119201326520"></a>V100</p>
 </td>
@@ -29,7 +29,7 @@ The product versions corresponding to this document are as follows.
 </table>
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 is consistent with SS928V100.
+>This document uses the Hi3403V100 description as an example. Unless otherwise specified, the content for Hi3519AV200 is consistent with Hi3403V100.
 
 **Target Audience<a name="section197mcpsimp"></a>**
 
@@ -153,7 +153,7 @@ MIPI Rx is a capture unit that supports multiple differential video input interf
 </th>
 </tr>
 </thead>
-<tbody><tr id="row477mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p479mcpsimp"><a name="p479mcpsimp"></a><a name="p479mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row477mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p479mcpsimp"><a name="p479mcpsimp"></a><a name="p479mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>MIPI Rx supports up to 8-Lane MIPI input or 8-Lane LVDS input.</p>
 </td>
@@ -172,7 +172,7 @@ MIPI Rx can interface with multiple sensors simultaneously. The maximum number o
 </th>
 </tr>
 </thead>
-<tbody><tr id="row495mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row495mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><p id="p499mcpsimp"><a name="p499mcpsimp"></a><a name="p499mcpsimp"></a>4</p>
 </td>
@@ -199,7 +199,7 @@ MIPI Rx can interface with different numbers of sensors simultaneously, and each
 </th>
 </tr>
 </thead>
-<tbody><tr id="row525mcpsimp"><td class="cellrowborder" rowspan="4" valign="top" width="26.732673267326735%" headers="mcps1.2.7.1.1 "><p id="p527mcpsimp"><a name="p527mcpsimp"></a><a name="p527mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row525mcpsimp"><td class="cellrowborder" rowspan="4" valign="top" width="26.732673267326735%" headers="mcps1.2.7.1.1 "><p id="p527mcpsimp"><a name="p527mcpsimp"></a><a name="p527mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.2.7.1.2 "><p id="p529mcpsimp"><a name="p529mcpsimp"></a><a name="p529mcpsimp"></a>0</p>
 </td>
@@ -267,7 +267,7 @@ For detailed MIPI Rx Lane pin connections, please refer to [Table 4](#_Ref484014
 </th>
 </tr>
 </thead>
-<tbody><tr id="row596mcpsimp"><td class="cellrowborder" rowspan="8" valign="top" width="18.81188118811881%" headers="mcps1.2.7.1.1 "><p id="p598mcpsimp"><a name="p598mcpsimp"></a><a name="p598mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row596mcpsimp"><td class="cellrowborder" rowspan="8" valign="top" width="18.81188118811881%" headers="mcps1.2.7.1.1 "><p id="p598mcpsimp"><a name="p598mcpsimp"></a><a name="p598mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.7.1.2 "><p id="p600mcpsimp"><a name="p600mcpsimp"></a><a name="p600mcpsimp"></a>Lane0</p>
 </td>

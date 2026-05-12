@@ -1,6 +1,6 @@
 ---
 title: Hi3403 Developer Center
-description: HiSilicon SS928V100/SS927V100 Hi3403 Platform Community Documentation
+description: HiSilicon Hi3403V100/Hi3519AV200 Hi3403 Platform Community Documentation
 hide:
 - toc
 - navigation
@@ -11,7 +11,7 @@ title: Hi3403 Documentation
 
 # Hi3403 Documentation
 
-Community-maintained development documentation written for the HiSilicon **SS928V100 / SS927V100** platform.
+Community-maintained development documentation written for the HiSilicon **Hi3403V100 / Hi3519AV200** platform.
 Covering chips, Linux, multimedia, AI, development boards and construction tools.
 
 [Start now :octicons-arrow-right-24:](get-started/index.md){ .md-button .md-button--primary }

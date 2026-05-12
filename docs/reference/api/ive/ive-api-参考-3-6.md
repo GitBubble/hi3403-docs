@@ -7183,12 +7183,12 @@ typedef struct {
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2411mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p2413mcpsimp"><a name="p2413mcpsimp"></a><a name="p2413mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row2411mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p2413mcpsimp"><a name="p2413mcpsimp"></a><a name="p2413mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p2415mcpsimp"><a name="p2415mcpsimp"></a><a name="p2415mcpsimp"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
 </td>
 </tr>
-<tr id="row181113452368"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>SS927V100</p>
+<tr id="row181113452368"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
 </td>
@@ -7757,12 +7757,12 @@ typedef struct {
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5933mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p5935mcpsimp"><a name="p5935mcpsimp"></a><a name="p5935mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row5933mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p5935mcpsimp"><a name="p5935mcpsimp"></a><a name="p5935mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p5937mcpsimp"><a name="p5937mcpsimp"></a><a name="p5937mcpsimp"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
 </td>
 </tr>
-<tr id="row9671651133611"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>SS927V100</p>
+<tr id="row9671651133611"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
 </td>

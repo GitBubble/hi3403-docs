@@ -59,7 +59,7 @@ rm libevent-2.1.12-stable.tar.gz
 cd libevent-2.1.12-stable
 
 # 注意：这里的路径请根据自己的Pegasus目录进行修改
-export CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot"
+export CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot"
 ```
 
 ![image-20251020162138430](pic/image-20251020162138430.png)
@@ -120,7 +120,7 @@ cd tiff-4.5.1
 * 在服务器的命令行执行下面的命令，编译ttif
 
 ```sh
-./configure --prefix=$PWD/install --host=aarch64-linux-ohos --with-sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot CFLAGS="--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot" CXXFLAGS="--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot"
+./configure --prefix=$PWD/install --host=aarch64-linux-ohos --with-sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot CFLAGS="--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot" CXXFLAGS="--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot"
 
 make && make install
 ```
@@ -163,7 +163,7 @@ sed -i 's/linux-uclibc\*/linux-uclibc\* | linux-ohos\*/g' config.sub
 
 
 ```sh
-export CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot"
+export CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot"
 
 ./configure --prefix=$PWD/install --host=aarch64-linux-ohos	
 
@@ -194,7 +194,7 @@ cd openssl-OpenSSL_1_1_1w
 
 perl Configure linux-aarch64 --prefix=$PWD/install
 
-make CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot" LDFLAGS="--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot -L/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot/usr/lib"
+make CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot" LDFLAGS="--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot -L/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot/usr/lib"
 
 make install
 ```
@@ -256,16 +256,16 @@ cpu = 'aarch64'
 endian = 'little'
 
 [properties]
-sys_root = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot'
-libdir = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot/usr/lib'
-includedir = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot/usr/include'
+sys_root = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot'
+libdir = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot/usr/lib'
+includedir = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot/usr/include'
 
 [built-in options]
-c_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot', '-isystem', '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot/usr/include']
-cpp_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot', '-isystem', '/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/include/libcxx-ohos/include/c++/v1', '-D_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER', '-std=c++17', '-I/home/openharmony/pegasus/vendor/opensource/tiff-4.5.1/install/include', '-I/home/openharmony/pegasus/vendor/opensource/libevent-2.1.12-stable/install/include', '-I/home/openharmony/pegasus/vendor/opensource/openssl-OpenSSL_1_1_1w/install/include', '-I/home/openharmony/pegasus/vendor/opensource/jpeg-9d/install/include',]
+c_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot', '-isystem', '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot/usr/include']
+cpp_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot', '-isystem', '/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/include/libcxx-ohos/include/c++/v1', '-D_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER', '-std=c++17', '-I/home/openharmony/pegasus/vendor/opensource/tiff-4.5.1/install/include', '-I/home/openharmony/pegasus/vendor/opensource/libevent-2.1.12-stable/install/include', '-I/home/openharmony/pegasus/vendor/opensource/openssl-OpenSSL_1_1_1w/install/include', '-I/home/openharmony/pegasus/vendor/opensource/jpeg-9d/install/include',]
 
-c_link_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot']
-cpp_link_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot', '-L/home/openharmony/pegasus/vendor/opensource/tiff-4.5.1/install/lib', '-L/home/openharmony/pegasus/vendor/opensource/libevent-2.1.12-stable/install/lib', '-L/home/openharmony/pegasus/vendor/opensource/openssl-OpenSSL_1_1_1w/install/lib', '-L/home/openharmony/pegasus/vendor/opensource/jpeg-9d/install/lib',]
+c_link_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot']
+cpp_link_args = ['--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot', '-L/home/openharmony/pegasus/vendor/opensource/tiff-4.5.1/install/lib', '-L/home/openharmony/pegasus/vendor/opensource/libevent-2.1.12-stable/install/lib', '-L/home/openharmony/pegasus/vendor/opensource/openssl-OpenSSL_1_1_1w/install/lib', '-L/home/openharmony/pegasus/vendor/opensource/jpeg-9d/install/lib',]
 ```
 
 * 结合第三章内容，配置依赖软件的环境变量。
@@ -277,7 +277,7 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/openharmony/pegasus/vendor/opensou
 
 ### 步骤3：修改代码
 
-* /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot/usr/include/aarch64-linux-ohos/linux/videodev2.h 文件中内容，如图所示，在文件的71行下添加14和15两个参数：
+* /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot/usr/include/aarch64-linux-ohos/linux/videodev2.h 文件中内容，如图所示，在文件的71行下添加14和15两个参数：
 
 ```c
  V4L2_BUF_TYPE_META_OUTPUT          = 14,

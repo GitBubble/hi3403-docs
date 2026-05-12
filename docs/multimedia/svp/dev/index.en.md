@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0�
 This document is intended to help users understand the hardware features, toolchain, and development workflow of the SVP \(Smart Vision Platform\) 2.0 platform, enabling rapid onboarding and the development of recognition solutions that fully exploit SVP 2.0 capabilities.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference. Unless otherwise specified, the content for SS927V100 is identical to SS928V100.
+>This document uses Hi3403V100 as the reference. Unless otherwise specified, the content for Hi3519AV200 is identical to Hi3403V100.
 
 **Product Version<a name="section186mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row200mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a>SS928</p>
+<tbody><tr id="row200mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p204mcpsimp"><a name="p204mcpsimp"></a><a name="p204mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1795219203403"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p3421112315406"><a name="p3421112315406"></a><a name="p3421112315406"></a>SS927</p>
+<tr id="row1795219203403"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p3421112315406"><a name="p3421112315406"></a><a name="p3421112315406"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p20421423114012"><a name="p20421423114012"></a><a name="p20421423114012"></a>V100</p>
 </td>
@@ -134,14 +134,14 @@ Different solutions use different SVP hardware resources, as shown in [Table 1](
 </th>
 </tr>
 </thead>
-<tbody><tr id="row348mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row348mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.2 "><p id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a>Quad-core A55</p>
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.4.1.3 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>2</p>
 </td>
 </tr>
-<tr id="row9294425145618"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p1753616261569"><a name="p1753616261569"></a><a name="p1753616261569"></a>SS927V100</p>
+<tr id="row9294425145618"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p1753616261569"><a name="p1753616261569"></a><a name="p1753616261569"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.2 "><p id="p553702619566"><a name="p553702619566"></a><a name="p553702619566"></a>Quad-core A55</p>
 </td>
@@ -175,12 +175,12 @@ Different solutions run SVP in different environments, as shown in [Table 1](#__
 </th>
 </tr>
 </thead>
-<tbody><tr id="row584mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p586mcpsimp"><a name="p586mcpsimp"></a><a name="p586mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row584mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p586mcpsimp"><a name="p586mcpsimp"></a><a name="p586mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.00000000000001%" headers="mcps1.2.3.1.2 "><p id="p588mcpsimp"><a name="p588mcpsimp"></a><a name="p588mcpsimp"></a>SMP(Linux)</p>
 </td>
 </tr>
-<tr id="row15850154019567"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p352014216560"><a name="p352014216560"></a><a name="p352014216560"></a>SS927V100</p>
+<tr id="row15850154019567"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p352014216560"><a name="p352014216560"></a><a name="p352014216560"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.00000000000001%" headers="mcps1.2.3.1.2 "><p id="p152054265616"><a name="p152054265616"></a><a name="p152054265616"></a>SMP(Linux)</p>
 </td>
@@ -196,7 +196,7 @@ Different solutions run SVP in different environments, as shown in [Table 1](#__
 
 # DSP Development Guide
 >![](public_sys-resources/icon-notice.gif) **Notice:** 
->This chapter is not currently supported for the open-source ecosystem versions SS928V100/SS927V100.
+>This chapter is not currently supported for the open-source ecosystem versions Hi3403V100/Hi3519AV200.
 
 ## Development Tool Introduction<a name="ZH-CN_TOPIC_0000002441691649"></a>
 
@@ -223,7 +223,7 @@ The configuration core is located in the directory matching the DSP model used i
 </th>
 </tr>
 </thead>
-<tbody><tr id="row319mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.1 "><p id="p321mcpsimp"><a name="p321mcpsimp"></a><a name="p321mcpsimp"></a>SS928V100/SS927V100</p>
+<tbody><tr id="row319mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.1 "><p id="p321mcpsimp"><a name="p321mcpsimp"></a><a name="p321mcpsimp"></a>Hi3403V100/Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.4.1.2 "><p id="p323mcpsimp"><a name="p323mcpsimp"></a><a name="p323mcpsimp"></a>XtensaTools_RH_2018_7_linux.tgz</p>
 <p id="p324mcpsimp"><a name="p324mcpsimp"></a><a name="p324mcpsimp"></a>XtensaTools_RH_2018_7_win32.tgz</p>
@@ -277,7 +277,7 @@ The configuration core is located in the directory matching the DSP model used i
 <td class="cellrowborder" valign="top" width="9.999999999999998%" headers="mcps1.2.8.1.7 "><p id="p552mcpsimp"><a name="p552mcpsimp"></a><a name="p552mcpsimp"></a>1</p>
 </td>
 </tr>
-<tr id="row553mcpsimp"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p555mcpsimp"><a name="p555mcpsimp"></a><a name="p555mcpsimp"></a>SS928V100</p>
+<tr id="row553mcpsimp"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p555mcpsimp"><a name="p555mcpsimp"></a><a name="p555mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.999999999999996%" headers="mcps1.2.8.1.2 "><p id="p557mcpsimp"><a name="p557mcpsimp"></a><a name="p557mcpsimp"></a>VQ6</p>
 </td>
@@ -292,7 +292,7 @@ The configuration core is located in the directory matching the DSP model used i
 <td class="cellrowborder" valign="top" width="9.999999999999998%" headers="mcps1.2.8.1.7 "><p id="p567mcpsimp"><a name="p567mcpsimp"></a><a name="p567mcpsimp"></a>2</p>
 </td>
 </tr>
-<tr id="row7370181914570"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p231112165710"><a name="p231112165710"></a><a name="p231112165710"></a>SS927V100</p>
+<tr id="row7370181914570"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p231112165710"><a name="p231112165710"></a><a name="p231112165710"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.999999999999996%" headers="mcps1.2.8.1.2 "><p id="p6311172185713"><a name="p6311172185713"></a><a name="p6311172185713"></a>VQ6</p>
 </td>
@@ -315,10 +315,10 @@ The configuration core is located in the directory matching the DSP model used i
 
 ## Installing the DSP Toolchain and Configuration Core on Windows<a name="ZH-CN_TOPIC_0000002408292262"></a>
 
-This section assumes that Xplorer 8.0.7 has already been installed on Windows and uses the SS928V100 VQ6 configuration core Otechn\_VisionQ6\_v3 as an example. The installation procedure for other solutions and configuration cores in different Xplorer versions is similar.
+This section assumes that Xplorer 8.0.7 has already been installed on Windows and uses the Hi3403V100 VQ6 configuration core Otechn\_VisionQ6\_v3 as an example. The installation procedure for other solutions and configuration cores in different Xplorer versions is similar.
 
 >![](public_sys-resources/icon-notice.gif) **Notice:** 
->The SS928V100 VQ6 configuration core Otechn\_VisionQ6\_v3 must be used with the RH-2018.7 toolchain (see Table 1, XtensaTools\_RH\_2018\_7\_win32.tgz). Xplorer 8.0.7 bundles the RG2016.4 toolchain by default. If using another Xplorer version, the RH-2018.7 toolchain must be installed separately.
+>The Hi3403V100 VQ6 configuration core Otechn\_VisionQ6\_v3 must be used with the RH-2018.7 toolchain (see Table 1, XtensaTools\_RH\_2018\_7\_win32.tgz). Xplorer 8.0.7 bundles the RG2016.4 toolchain by default. If using another Xplorer version, the RH-2018.7 toolchain must be installed separately.
 
 1.  Open Xplorer 8.0.7, right-click **Configurations** in the System Overview panel (as shown in [Figure 1](#fig31925394563)), and click **Find and Install a Configuration Build**.
 
@@ -605,11 +605,11 @@ As shown in [Figure 1](#__fig11884284184), DSP program development and usage con
     -   IPCM: Inter-core communication module.
 
 >![](public_sys-resources/icon-caution.gif) **Caution:** 
->To accelerate compilation, the DSP-side library/code does not include optimization flags (-O). Users can add these during the performance tuning phase. The example below adds -O2 in the `SS928V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/Makefile.param` file (using SS928V100 SMP as an example, where XX is the DSP core number).![](figures/zh-cn_image_0000002441731525.png)
+>To accelerate compilation, the DSP-side library/code does not include optimization flags (-O). Users can add these during the performance tuning phase. The example below adds -O2 in the `Hi3403V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/Makefile.param` file (using Hi3403V100 SMP as an example, where XX is the DSP core number).![](figures/zh-cn_image_0000002441731525.png)
 
 #### Adapting TileManager<a name="ZH-CN_TOPIC_0000002408292250"></a>
 
-The TileManager software package provided by Cadence must be adapted for wide-address operations before use. After adapting the code, copy the TileManager source to the `SS928V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/tm/vendor` directory (using SS928V100 SMP as an example, where XX is the DSP core number). Only then is the TileManager adaptation complete.
+The TileManager software package provided by Cadence must be adapted for wide-address operations before use. After adapting the code, copy the TileManager source to the `Hi3403V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/tm/vendor` directory (using Hi3403V100 SMP as an example, where XX is the DSP core number). Only then is the TileManager adaptation complete.
 
 In the adaptation code diagrams in the following sections, the left side shows the original code and the right side shows the modified code.
 
@@ -761,4 +761,4 @@ On the DSP side:
 >![](public_sys-resources/icon-notice.gif) **Notice:** 
 >-   The number of DSPs and the IRAM/SRAM/DRAM addressing differ across solutions. Refer to the corresponding chip manual for details.
 >-   Due to the ReorderBuf logic, there is a constraint on IDMA usage: the idma\_init programming interface can only use MAX\_BLOCK\_2 / MAX\_BLOCK\_4 / MAX\_BLOCK\_8, not MAX\_BLOCK\_16.
->-   On SS928V100/SS927V100, the CPU accesses DDR in the address range \[0x40000000, 0x2FFFFFFFF\]. On the DSP side, IDMA maps this to \[0x440000000, 0x6FFFFFFFF\] for access — i.e., the IDMA DDR address must have offset 0x400000000 added (the idma\_offset value). This mapping framework is already built into the SDK; users can simply refer to the framework sample for usage.
+>-   On Hi3403V100/Hi3519AV200, the CPU accesses DDR in the address range \[0x40000000, 0x2FFFFFFFF\]. On the DSP side, IDMA maps this to \[0x440000000, 0x6FFFFFFFF\] for access — i.e., the IDMA DDR address must have offset 0x400000000 added (the idma\_offset value). This mapping framework is already built into the SDK; users can simply refer to the framework sample for usage.

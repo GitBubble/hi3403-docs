@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 图�
 本文为ISP图像质量调试而写，内部详细介绍了ISP各模块调试方法，目的是为您在开发过程中遇到的问题提供解决办法和帮助。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section3091mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 图�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3105mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p3107mcpsimp"><a name="p3107mcpsimp"></a><a name="p3107mcpsimp"></a>SS928</p>
+<tbody><tr id="row3105mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p3107mcpsimp"><a name="p3107mcpsimp"></a><a name="p3107mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p3109mcpsimp"><a name="p3109mcpsimp"></a><a name="p3109mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row185704453169"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p640211481164"><a name="p640211481164"></a><a name="p640211481164"></a>SS927</p>
+<tr id="row185704453169"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p640211481164"><a name="p640211481164"></a><a name="p640211481164"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p184021248131615"><a name="p184021248131615"></a><a name="p184021248131615"></a>V100</p>
 </td>
@@ -113,7 +113,7 @@ ISP图像调优指南是一个指导用户进行图像调优的文档。本篇�
 -   《ISP 颜色调优说明》：对颜色调优的详细说明；
 -   《图像质量调试工具使用指南》：对调优图像过程中使用的工具PQTools的详细说明；
 -   芯片手册：对寄存器级别的模块说明；
--   《SS928V100/SS927V100 3DNR参数配置说明》：对3DNR接口参数进行相应的说明，描述每个参数代表的意义及调试对应的效果趋势；
+-   《Hi3403V100/Hi3519AV200 3DNR参数配置说明》：对3DNR接口参数进行相应的说明，描述每个参数代表的意义及调试对应的效果趋势；
 -   《Sensor 调试指南》：开发3A算法时需要参考的说明文档。
 
 图像调优指南涉及到的文档关系图如[图1](#fig3895711632)所示。
@@ -137,7 +137,7 @@ ISP 模块支持标准的Sensor图像数据处理，包括自动白平衡、自�
 -   支持gamma校正
 -   支持动态范围压缩（DRC）
 -   支持Sensor内部合成宽动态功能（Sensor Built-in WDR）
--   SS928V100最大支持3合1 宽动态功能\(WDR\)
+-   Hi3403V100最大支持3合1 宽动态功能\(WDR\)
 -   支持自动白平衡 
 -   支持自动曝光 
 -   支持自动对焦
@@ -152,22 +152,22 @@ ISP 模块支持标准的Sensor图像数据处理，包括自动白平衡、自�
 
 ## ISP功能框图<a name="ZH-CN_TOPIC_0000002457841029"></a>
 
-ISP SS928V100的功能结构图如[图1](#fig19340125514231)、[图2](#fig1829272832518)、[图3](#fig474713442299)所示。此图与本文中提到的ISP\_FE均代指ISP pipeline中FPN（不包含）之前的部分，ISP\_BE均代指ISP pipeline中FPN（包含）之后的部分。
+ISP Hi3403V100的功能结构图如[图1](#fig19340125514231)、[图2](#fig1829272832518)、[图3](#fig474713442299)所示。此图与本文中提到的ISP\_FE均代指ISP pipeline中FPN（不包含）之前的部分，ISP\_BE均代指ISP pipeline中FPN（包含）之后的部分。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >本文中ISP采用\*.\*、S\*.\*表示无符号数和有符号数。如：U8.8表示数据类型为无符号数，整数部分8bit，小数部分8bit；同理，S8.8表示数据类型为有符号数，整数部分8bit（包括1bit符号位），小数部分8bit。
 
 本文档的以下章节将会介绍各模块的简要原理及图像质量调试方法。
 
-**图 1**  ISP 整体结构图（SS928V100）<a name="fig19340125514231"></a>  
-![](figures/ISP-整体结构图（SS928V100）.png "ISP-整体结构图（SS928V100）")
+**图 1**  ISP 整体结构图（Hi3403V100）<a name="fig19340125514231"></a>  
+![](figures/ISP-整体结构图（Hi3403V100）.png "ISP-整体结构图（Hi3403V100）")
 
-**图 2**  ISP\_FE 结构图（SS928V100）<a name="fig1829272832518"></a>  
-![](figures/ISP_FE-结构图（SS928V100）.png "ISP_FE-结构图（SS928V100）")
+**图 2**  ISP\_FE 结构图（Hi3403V100）<a name="fig1829272832518"></a>  
+![](figures/ISP_FE-结构图（Hi3403V100）.png "ISP_FE-结构图（Hi3403V100）")
 ![](figures/2-2-0.png)
 
-**图 3**  ISP\_BE 结构图（SS928V100）<a name="fig474713442299"></a>  
-![](figures/ISP_BE-结构图（SS928V100）.png "ISP_BE-结构图（SS928V100）")
+**图 3**  ISP\_BE 结构图（Hi3403V100）<a name="fig474713442299"></a>  
+![](figures/ISP_BE-结构图（Hi3403V100）.png "ISP_BE-结构图（Hi3403V100）")
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >\*图中DG1功能和DG一致。
 
@@ -241,7 +241,7 @@ ISP 各模块功能简介如[表1](#_Ref500230610)所示。
 </tr>
 <tr id="row170mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p172mcpsimp"><a name="p172mcpsimp"></a><a name="p172mcpsimp"></a>LSC</p>
 </td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p174mcpsimp"><a name="p174mcpsimp"></a><a name="p174mcpsimp"></a>用于镜头阴影校正。SS928V100只有mesh shading。</p>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p174mcpsimp"><a name="p174mcpsimp"></a><a name="p174mcpsimp"></a>用于镜头阴影校正。Hi3403V100只有mesh shading。</p>
 </td>
 </tr>
 <tr id="row175mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p177mcpsimp"><a name="p177mcpsimp"></a><a name="p177mcpsimp"></a>DG</p>
@@ -338,12 +338,12 @@ ISP 各模块功能简介如[表1](#_Ref500230610)所示。
 </table>
 
 # 图像质量调优总体概述
-当前SS928V100主要面向两大应用场景，即录像机公共安全应用场景和消费类应用场景，其中录像机公共安全应用场景包括线性模式和WDR模式；消费类应用场景主要包括运动DV、行车记录仪以及抓拍等产品形态。录像机公共安全应用场景由于具有视频采集行业特殊需求，对图像质量的关注点与消费类应用场景会不同。
+当前Hi3403V100主要面向两大应用场景，即录像机公共安全应用场景和消费类应用场景，其中录像机公共安全应用场景包括线性模式和WDR模式；消费类应用场景主要包括运动DV、行车记录仪以及抓拍等产品形态。录像机公共安全应用场景由于具有视频采集行业特殊需求，对图像质量的关注点与消费类应用场景会不同。
 
 
 ## 录像机应用图像调优概述<a name="ZH-CN_TOPIC_0000002457880933"></a>
 
-当前SS928V100针对录像机应用场景主要包括线性模式和WDR模式两种典型应用。线性模式的图像质量关注维度主要包括图像亮度合理性，色彩还原准确、图像整体清晰度锐利以及图像的整体通透性等；WDR模式的图像质量关注维度主要包括图像整体的动态范围合理，即亮区不过曝，暗区细节能够看得见，色彩还原尽量准确、图像整体清晰度锐利以及图像整体通透性等维度。以下针对线性模式和WDR模式的图像质量调优分别介绍调试步骤以及ISP单点算法调试的注意事项。
+当前Hi3403V100针对录像机应用场景主要包括线性模式和WDR模式两种典型应用。线性模式的图像质量关注维度主要包括图像亮度合理性，色彩还原准确、图像整体清晰度锐利以及图像的整体通透性等；WDR模式的图像质量关注维度主要包括图像整体的动态范围合理，即亮区不过曝，暗区细节能够看得见，色彩还原尽量准确、图像整体清晰度锐利以及图像整体通透性等维度。以下针对线性模式和WDR模式的图像质量调优分别介绍调试步骤以及ISP单点算法调试的注意事项。
 
 
 
@@ -358,9 +358,9 @@ ISP 各模块功能简介如[表1](#_Ref500230610)所示。
 
 ****Sensor对接**<a name="section638688361"></a>**
 
--   Sensor对接：主要包括在SS928V100对接所需要调优的Sensor。
+-   Sensor对接：主要包括在Hi3403V100对接所需要调优的Sensor。
 
-    主要包括1080p@30fps Linear、1080p@30fps 3合1 WDR、1080p@30fps 2合1 WDR等模式，根据Sensor厂商提供的DataSheet挖掘出各个模式的初始化寄存器序列，将初始化寄存器序列适配SS928V100的MIPI配置，这样可以在SS928V100下调通该Sensor。Sensor对接的完成标准主要如下：对接模式的基本通路正常且各个模式之间能够正常切换，AE基本功能正常包括降低帧率无闪烁、自动长曝光正常以及Sensor驱动各个模块的默认参数合理，详细请参考《Sensor 调试指南》。
+    主要包括1080p@30fps Linear、1080p@30fps 3合1 WDR、1080p@30fps 2合1 WDR等模式，根据Sensor厂商提供的DataSheet挖掘出各个模式的初始化寄存器序列，将初始化寄存器序列适配Hi3403V100的MIPI配置，这样可以在Hi3403V100下调通该Sensor。Sensor对接的完成标准主要如下：对接模式的基本通路正常且各个模式之间能够正常切换，AE基本功能正常包括降低帧率无闪烁、自动长曝光正常以及Sensor驱动各个模块的默认参数合理，详细请参考《Sensor 调试指南》。
 
 -   Sensor和镜头的标定工作
 
@@ -477,7 +477,7 @@ ISP 各模块功能简介如[表1](#_Ref500230610)所示。
 
     调试NR模块的入口条件为：黑电平校正准确、NoiseProfile标定合理、AWB和CCM标定参数合理。
 
-    SS928V100 NR包括时域和空域，当前调试NR的准则，尽量将一部分静止区域的时域强度分担到NR上面，运动空域区域主要采用NR的空域。主要做的好处是NR的时域相对于3DNR的时域动静判决更准，同时图像过完NR的时域再经过Sharpen，可以更好的提升图像整体的清晰度。NR的具体调优方法请参考"[NR](#ZH-CN_TOPIC_0000002457841025)”章节。
+    Hi3403V100 NR包括时域和空域，当前调试NR的准则，尽量将一部分静止区域的时域强度分担到NR上面，运动空域区域主要采用NR的空域。主要做的好处是NR的时域相对于3DNR的时域动静判决更准，同时图像过完NR的时域再经过Sharpen，可以更好的提升图像整体的清晰度。NR的具体调优方法请参考"[NR](#ZH-CN_TOPIC_0000002457841025)”章节。
 
 3.  Bayersharpen的调试准则主要将图像的暗区弱纹理调试到合适，当前需要注意的Bayersharpen不能调试过强，且Bayersharpen的调试效果主要以中频为主，调试过强会导致画面整体比较粗。Bayersharpen的调试具体参考"[BayerSharpen](#ZH-CN_TOPIC_0000002424362250)”章节；
 4.  YUV Sharpen的调试准则主要将图像的纹理细节和边缘锐度调到合适，以实验室静物场景为例，YUV Sharpen需要将图像在经过3DNR之前将静物场景的草垫子、狮子等纹理细节锐化出来，[图14](#_Ref500231916)中红色框图部分为YUV Sharpen锐化出来的纹理细节。同时还需要将桌子和斜方格等大边锐化出来，[图15](#_Ref500231919)中红色框图部分YUV Sharpen锐化出来的大边。YUV Sharpen的参数需要根据ISO进行联动，确保在实验室静物场景中不同照度下，YUV Sharpen参数调试合理。
@@ -534,7 +534,7 @@ AE的曝光比决定WDR模式图像的动态范围，因此不同的场景动态
 
 ****合成区的运动拖尾维度**<a name="section240420577354"></a>**
 
-WDR模式影响合成区域的运动拖尾主要包括WDR模块和AE的曝光比，曝光比越大，合成区域出现拖尾的概率也就越高，但在典型WDR背光场景下，WDR 2合1模式下，曝光比通常为16-32倍，此时影响合成区域的运动拖尾主要就是WDR模块。当前在SS928V100下，由于WDR模块算法的限制，很难区分暗区和亮区人物运动，在保证暗区人物运动尽量不选择短帧的前提下，亮区人物挥手的手臂容易出现断裂的平衡，一般在调试过程，将合成模块的运动权重md\_thr\_low\_gain和md\_thr\_hig\_gain调试到暗区人物运动尽量选择长帧，此时观察亮区人物挥手的表现，WDR合成模块调试具体可以参考"[WDR](#ZH-CN_TOPIC_0000002424362078)" 模块的描述。
+WDR模式影响合成区域的运动拖尾主要包括WDR模块和AE的曝光比，曝光比越大，合成区域出现拖尾的概率也就越高，但在典型WDR背光场景下，WDR 2合1模式下，曝光比通常为16-32倍，此时影响合成区域的运动拖尾主要就是WDR模块。当前在Hi3403V100下，由于WDR模块算法的限制，很难区分暗区和亮区人物运动，在保证暗区人物运动尽量不选择短帧的前提下，亮区人物挥手的手臂容易出现断裂的平衡，一般在调试过程，将合成模块的运动权重md\_thr\_low\_gain和md\_thr\_hig\_gain调试到暗区人物运动尽量选择长帧，此时观察亮区人物挥手的表现，WDR合成模块调试具体可以参考"[WDR](#ZH-CN_TOPIC_0000002424362078)" 模块的描述。
 
 ****场景的动态范围维度**<a name="section14693204713367"></a>**
 
@@ -542,7 +542,7 @@ WDR模式影响场景的动态范围包括：AE的曝光比、DRC模块以及Gam
 
 调试DRC模块的入口条件：黑电平标定正确、Shading标定完成、AE模块调试合理、AWB和CCM标定完成、预设一组Gamma参数。
 
-当前为了提升背光下小脸亮度和局部对比度，当前SS928V100 DRC包括Filter和FilterX，针对背光小脸的提升，当前建议倾向使用FilterX滤波器，而非背光小脸区域倾向使用Filter滤波器。这样融合的原则主要是由于背光小脸的细节提升，当前通过FilterX滤波器可以更好的保留和增强，而Filter滤波器更多的是提升大尺度的细节。DRC模块的调试具体可以参考参考"[DRC](#ZH-CN_TOPIC_0000002457881045)”模块的描述。
+当前为了提升背光下小脸亮度和局部对比度，当前Hi3403V100 DRC包括Filter和FilterX，针对背光小脸的提升，当前建议倾向使用FilterX滤波器，而非背光小脸区域倾向使用Filter滤波器。这样融合的原则主要是由于背光小脸的细节提升，当前通过FilterX滤波器可以更好的保留和增强，而Filter滤波器更多的是提升大尺度的细节。DRC模块的调试具体可以参考参考"[DRC](#ZH-CN_TOPIC_0000002457881045)”模块的描述。
 
 当前WDR模式中的DRC算法由于为了提升小脸的局部亮度而采用滤波窗口偏小，从而导致亮暗交界区域对比度拉伸差异比较大，从而形成边线。当前DRC算法中的GradRevMax和GradRevThr调大可以改善亮度交界区域的边线表现，但同时会带来小脸的对比度发朦，影响小脸的识别，因此亮暗交界区域的边线与小脸亮度存在权衡。
 
@@ -2796,7 +2796,7 @@ AntiFalseColor算法的调试主要有以下几个部分：
 
 本模块使用Mesh Shading的矫正方式来处理由于镜头光学折射不均匀导致的画面暗角现象。
 
-在SS928V100中 Mesh Shading算法使用Mesh（网格）方式对画面进行标定/矫正，算法会将整个Bayer域画面分割成32\*32个子区域，这32\*32个区域大小大致相等。
+在Hi3403V100中 Mesh Shading算法使用Mesh（网格）方式对画面进行标定/矫正，算法会将整个Bayer域画面分割成32\*32个子区域，这32\*32个区域大小大致相等。
 
 在数据处理过程中，算法将分别对RAW域中的每个通道进行处理。
 
@@ -3195,7 +3195,7 @@ SPECAWB:
 
 Sensor RGB三分量对光谱的响应，与人眼对光谱的响应通常是有偏差的，可通过一个色彩校正矩阵校正光谱响应的交叉效应和响应强度，使前端捕获的图片与人眼视觉在色彩上保持一致。
 
-CCM标定工具支持对24色卡进行3x3 Color Correction Matrix的预校正。SS928V100支持多组不同色温的CCM，在ISP运行时，FW根据当前的光照强度，调整饱和度，实现CCM（Color Correction Matrix）矩阵系数的动态调整。
+CCM标定工具支持对24色卡进行3x3 Color Correction Matrix的预校正。Hi3403V100支持多组不同色温的CCM，在ISP运行时，FW根据当前的光照强度，调整饱和度，实现CCM（Color Correction Matrix）矩阵系数的动态调整。
 
 ### 关键参数<a name="ZH-CN_TOPIC_0000002457841045"></a>
 
@@ -3646,7 +3646,7 @@ CA和CP只能开其中的一个，并不能同时打开。
 
 ### 功能描述<a name="ZH-CN_TOPIC_0000002424202402"></a>
 
-SS928V100是在YUV域对图像进行radial crop操作，将设定半径之外的地方直接拉黑掉。
+Hi3403V100是在YUV域对图像进行radial crop操作，将设定半径之外的地方直接拉黑掉。
 
 ### 关键参数<a name="ZH-CN_TOPIC_0000002457880961"></a>
 
@@ -3953,7 +3953,7 @@ Dehaze算法支持手动和自动模式。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   去雾强度越大，整体图像对比度越高，可能会带来暗区细节的损失，在调试过程中应根据实际场景做权衡。
->-   SS928V100的DEHAZE算法在ISP运行4次后生效，即使能后第4帧生效。
+>-   Hi3403V100的DEHAZE算法在ISP运行4次后生效，即使能后第4帧生效。
 >-   注意在分辨率切换或者模式切换时，DEHAZE生效时间晚于其他算法。
 >-   当场景出现剧烈变化，比如强光灯照射镜头后拿开，tmprflt\_incr\_coef和tmprflt\_decr\_coef 从0调到1，可能会出现一帧亮度跳变，不建议将滤波系数调为0。
 
@@ -4196,7 +4196,7 @@ RGBIR模块的算法框图以及关键参数的对应模块如[图1](#fig1652319
 
 -   RGBIR sensor的启动序列配置方法和普通Bayer sensor的配置方法完全一致。用户可参考普通Bayer sensor的配置方法将通路启动，然后打开RGBIR模块，即可得到颜色和亮度表现正常的图像。
 -   在对接RGBIR sensor时，请使用双通滤光片，否则IR分量错误，会导致画面出错。
--   在对接RGBIR sensor时，AE策略需要重新考虑。SS928V100支持在FE和BE均获得AE统计信息。其中FE的AE统计信息为IR剥离前的统计结果（原始数据统计结果），BE的统计信息为IR剥离后的统计结果。用户可以使用这两个统计信息进行AE策略的修改。
+-   在对接RGBIR sensor时，AE策略需要重新考虑。Hi3403V100支持在FE和BE均获得AE统计信息。其中FE的AE统计信息为IR剥离前的统计结果（原始数据统计结果），BE的统计信息为IR剥离后的统计结果。用户可以使用这两个统计信息进行AE策略的修改。
 
 ## CRB<a name="ZH-CN_TOPIC_0000002457881101"></a>
 

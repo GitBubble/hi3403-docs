@@ -372,7 +372,7 @@ td_s32 ss_mpi_isp_set_drc_attr(ot_vi_pipe vi_pipe, const ot_isp_drc_attr *drc_at
 
 The LSC module is mainly used to handle vignetting (shadows around the lens edges) caused by non-uniform optical refraction of the lens. Currently popular processing methods include the Radial (coaxial circle) method and the Mesh (grid) method.
 
-In SS928V100, the Mesh Shading algorithm uses the Mesh (grid) method for lens calibration/correction. The algorithm divides the entire Bayer domain image into 32x32 sub-regions, each approximately equal in size.
+In Hi3403V100, the Mesh Shading algorithm uses the Mesh (grid) method for lens calibration/correction. The algorithm divides the entire Bayer domain image into 32x32 sub-regions, each approximately equal in size.
 
 During data processing, the algorithm processes each channel in the RAW domain separately.
 

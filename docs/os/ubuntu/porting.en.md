@@ -1,11 +1,11 @@
 ---
 title: Ubuntu porting & build guide
-description: Use hi3403-build to one-shot a Hi3403V100 (SS928V100) Ubuntu 22.04 ARM64 image
+description: Use hi3403-build to one-shot a Hi3403V100 (Hi3403V100) Ubuntu 22.04 ARM64 image
 ---
 
 # Ubuntu porting & build guide
 
-This guide walks you through building a Hi3403V100 (SS928V100) Ubuntu
+This guide walks you through building a Hi3403V100 (Hi3403V100) Ubuntu
 22.04 ARM64 image — boot, kernel, MPP, and rootfs — using the
 [`hi3403-build`](https://github.com/GitBubble/hi3403-build) project on
 top of the open-source [Pegasus](https://gitee.com/HiSpark/pegasus) SDK.
@@ -87,7 +87,7 @@ top of the open-source [Pegasus](https://gitee.com/HiSpark/pegasus) SDK.
 ```bash
 ./build.sh ubuntu_xfce_all -j 8                # 8 parallel jobs
 ./build.sh rootfs ROOTFS_TYPE=lite             # lite rootfs only
-./build.sh all BOOT_MEDIA=spi CHIP=ss928v100   # custom build params
+./build.sh all BOOT_MEDIA=spi CHIP=Hi3403V100   # custom build params
 ```
 
 | Option | Meaning | Default |
@@ -95,19 +95,19 @@ top of the open-source [Pegasus](https://gitee.com/HiSpark/pegasus) SDK.
 | `-j N` | Parallel make jobs | `nproc` |
 | `ROOTFS_TYPE=` | `xfce` or `lite` | `xfce` |
 | `BOOT_MEDIA=` | `emmc`, `spi`, `nand` | `emmc` |
-| `CHIP=` | `ss928v100` or `ss927v100` | `ss928v100` |
+| `CHIP=` | `Hi3403V100` or `Hi3519AV200` | `Hi3403V100` |
 
 ## Output
 
 ```text
 output/
-├── hi3403-ubuntu-xfce-ss928v100.img    # rootfs ext4 image
+├── hi3403-ubuntu-xfce-Hi3403V100.img    # rootfs ext4 image
 ├── boot/
 │   ├── u-boot.bin                      # U-Boot 2020.01
 │   ├── bl31.bin                        # ATF BL31
 │   ├── Image.gz                        # Linux 6.6.86 ARM64
-│   ├── ss928v100-demb-emmc.dtb         # eMMC variant DTB
-│   └── ss928v100-demb-flash.dtb        # Flash variant DTB
+│   ├── Hi3403V100-demb-emmc.dtb         # eMMC variant DTB
+│   └── Hi3403V100-demb-flash.dtb        # Flash variant DTB
 └── mpp/
     ├── ko/                              # kernel modules
     └── lib/                             # MPP user-space libraries

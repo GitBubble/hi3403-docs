@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 The ToolPlatform framework integrates tools such as BurnTool, FastplayBinTool, and LoaderBinTool into a unified platform. This document describes the features and usage of the platform framework.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference. Unless otherwise specified, SS528V100, SS524V100, SS522V100, SS626V100, and SS927V100 are identical to SS928V100.
+>This document uses Hi3403V100 as the reference. Unless otherwise specified, SS528V100, SS524V100, SS522V100, SS626V100, and Hi3519AV200 are identical to Hi3403V100.
 
 **Product Versions<a name="section329632361710"></a>**
 
@@ -22,7 +22,7 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1034642371711"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p1134682313174"><a name="p1134682313174"></a><a name="p1134682313174"></a>SS928</p>
+<tbody><tr id="row1034642371711"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p1134682313174"><a name="p1134682313174"></a><a name="p1134682313174"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p43461623201712"><a name="p43461623201712"></a><a name="p43461623201712"></a>V100</p>
 </td>
@@ -52,7 +52,7 @@ The product versions corresponding to this document are listed below.
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p138241269524"><a name="p138241269524"></a><a name="p138241269524"></a>V100</p>
 </td>
 </tr>
-<tr id="row206101594251"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row206101594251"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -133,15 +133,15 @@ Navigate to **Device** > **Switch Device** in the menu bar and select the target
 ![](figures/方案切换菜单.png "方案切换菜单")
 ## Tool Compatibility with Profiles<a name="ZH-CN_TOPIC_0000002408329616"></a>
 
-Navigate to **Device** > **Current Device** in the menu bar to view the currently selected device. The example below shows SS928V100 selected, as shown in [Figure 1](#2-3-1).
+Navigate to **Device** > **Current Device** in the menu bar to view the currently selected device. The example below shows Hi3403V100 selected, as shown in [Figure 1](#2-3-1).
 
-**Figure 1**  SS928V100 selected<a name="2-3-1"></a>  
-![](figures/切换到SS928V100.png "切换到SS928V100")
+**Figure 1**  Hi3403V100 selected<a name="2-3-1"></a>  
+![](figures/切换到Hi3403V100.png "切换到Hi3403V100")
 
-The ToolPlatform interface displays the tools available for SS928V100, as shown in [Figure 2](#2-3-2).
+The ToolPlatform interface displays the tools available for Hi3403V100, as shown in [Figure 2](#2-3-2).
 
-**Figure 2**  Available tools for SS928V100<a name="2-3-2"></a>  
-![](figures/SS928V100可用工具.png "SS928V100可用工具")
+**Figure 2**  Available tools for Hi3403V100<a name="2-3-2"></a>  
+![](figures/Hi3403V100可用工具.png "Hi3403V100可用工具")
 # Language Switching
 To change the display language, follow these steps:
 

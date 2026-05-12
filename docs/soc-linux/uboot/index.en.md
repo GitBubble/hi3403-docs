@@ -1,15 +1,15 @@
 ---
-title: "SS928V100/SS927V100 U-Boot Porting and Application Development Guide"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 U-boot 移植应用开发指南/SS928V100╱SS927V100 U-boot 移植应用开发指南.md
+title: "Hi3403V100/Hi3519AV200 U-Boot Porting and Application Development Guide"
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100╱Hi3519AV200 U-boot 移植应用开发指南/Hi3403V100╱Hi3519AV200 U-boot 移植应用开发指南.md
 ---
 
 # Preface
 **Overview<a name="section143mcpsimp"></a>**
 
-This document describes how to port and flash U-Boot (the bootloader for the SS928V100 board) and how to use ARM debugging tools.
+This document describes how to port and flash U-Boot (the bootloader for the Hi3403V100 board) and how to use ARM debugging tools.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference platform. Unless otherwise noted, SS927V100 content is identical to SS928V100.
+>This document uses Hi3403V100 as the reference platform. Unless otherwise noted, Hi3519AV200 content is identical to Hi3403V100.
 
 **Product Version<a name="section146mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>SS928</p>
+<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row722513515541"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p109711853135416"><a name="p109711853135416"></a><a name="p109711853135416"></a>SS927</p>
+<tr id="row722513515541"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p109711853135416"><a name="p109711853135416"></a><a name="p109711853135416"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p179716539542"><a name="p179716539542"></a><a name="p179716539542"></a>V100</p>
 </td>
@@ -68,7 +68,7 @@ The revision history accumulates descriptions of each document update. The lates
 # Overview
 ## Overview<a name="ZH-CN_TOPIC_0000002457834693"></a>
 
-The SS928V100 board uses U-Boot as its bootloader. If the peripheral chips on your board differ from those on the reference board, you need to modify the U-Boot configuration, primarily the memory controller and pin mux settings.
+The Hi3403V100 board uses U-Boot as its bootloader. If the peripheral chips on your board differ from those on the reference board, you need to modify the U-Boot configuration, primarily the memory controller and pin mux settings.
 
 ## U-Boot Directory Structure<a name="ZH-CN_TOPIC_0000002457874789"></a>
 
@@ -93,9 +93,9 @@ The main U-Boot directory structure is shown in [Table 1](#_Ref138244663). For a
 <td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p221mcpsimp"><a name="p221mcpsimp"></a><a name="p221mcpsimp"></a>Board-specific code, primarily memory drivers.</p>
 </td>
 </tr>
-<tr id="row222mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p224mcpsimp"><a name="p224mcpsimp"></a><a name="p224mcpsimp"></a>board/vendor/ss928v100</p>
+<tr id="row222mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p224mcpsimp"><a name="p224mcpsimp"></a><a name="p224mcpsimp"></a>board/vendor/Hi3403V100</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p226mcpsimp"><a name="p226mcpsimp"></a><a name="p226mcpsimp"></a>SS928V100 board-specific code.</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p226mcpsimp"><a name="p226mcpsimp"></a><a name="p226mcpsimp"></a>Hi3403V100 board-specific code.</p>
 </td>
 </tr>
 <tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a>arch/xxx/lib</p>
@@ -164,7 +164,7 @@ The main U-Boot directory structure is shown in [Table 1](#_Ref138244663). For a
 # Porting U-Boot
 ## U-Boot Hardware Environment<a name="ZH-CN_TOPIC_0000002424355914"></a>
 
-The SS928V100 DMEB board peripherals include DDR SDRAM, eMMC, SPI Nor Flash, SPI-NAND Flash, and parallel NAND Flash.
+The Hi3403V100 DMEB board peripherals include DDR SDRAM, eMMC, SPI Nor Flash, SPI-NAND Flash, and parallel NAND Flash.
 
 ## Building U-Boot<a name="ZH-CN_TOPIC_0000002457834689"></a>
 
@@ -173,7 +173,7 @@ Once all porting steps are complete, build U-Boot as follows:
 1.  Copy the configuration file
 
     ```
-    cp configs/ss928v100_defconfig .config
+    cp configs/Hi3403V100_defconfig .config
     ```
 
 2.  Configure the build environment
@@ -214,14 +214,14 @@ Steps to generate the U-Boot image:
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- u-boot-z.bin
     ```
 
-    The resulting u-boot-ss928v100.bin is the U-Boot image that runs on the board.
+    The resulting u-boot-Hi3403V100.bin is the U-Boot image that runs on the board.
 
 # Flashing U-Boot
 ## Overview<a name="ZH-CN_TOPIC_0000002457834677"></a>
 
 If U-Boot is already running on the target board, you can update it directly over serial or Ethernet by connecting to a server.
 
-For initial flashing, use the ToolPlatform or DS-5 tool. Due to chip requirements, you must initialize the memory and chip before using DS-5. The SS928V100 SDK provides the required initialization scripts; if different peripheral chips are used, the scripts must be reconfigured accordingly.
+For initial flashing, use the ToolPlatform or DS-5 tool. Due to chip requirements, you must initialize the memory and chip before using DS-5. The Hi3403V100 SDK provides the required initialization scripts; if different peripheral chips are used, the scripts must be reconfigured accordingly.
 
 ## Flashing U-Boot Using the BootROM Tool<a name="ZH-CN_TOPIC_0000002424355918"></a>
 
@@ -238,14 +238,14 @@ To flash SPI-Nor Flash:
     ```
     # mw.b <ddr_addr> ff 0x100000      /* initialize memory */
      
-    # tftp <ddr_addr> u-boot-ss928v100.bin     /* download U-Boot to memory */
+    # tftp <ddr_addr> u-boot-Hi3403V100.bin     /* download U-Boot to memory */
     # sf probe 0                      /* probe and initialize SPI-Nor flash */
     # sf erase 0x0 0x100000              /* erase 1 MB */
     # sf write <ddr_addr> 0x0 0x100000  /* write from memory to SPI-Nor Flash */
     ```
 
     >![](public_sys-resources/icon-note.gif) **Note:** 
-    >On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
+    >On the Hi3403V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
 
 2.  After completing the above steps, restart the system to confirm U-Boot was flashed successfully.
 
@@ -261,12 +261,12 @@ To flash SPI-NAND Flash:
     ```
     # nand erase 0 0x100000              /* erase 1 MB */
     # mw.b <ddr_addr> 0xff 0x100000         /* initialize memory */
-    # tftp <ddr_addr> u-boot-ss928v100.bin     /* download U-Boot to memory */
+    # tftp <ddr_addr> u-boot-Hi3403V100.bin     /* download U-Boot to memory */
     # nand write <ddr_addr> 0 0x100000 /* write from memory to NAND Flash */
     ```
 
     >![](public_sys-resources/icon-note.gif) **Note:** 
-    >On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
+    >On the Hi3403V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
 
 2.  Restart the system to confirm U-Boot was flashed successfully.
 
@@ -278,12 +278,12 @@ To flash eMMC:
 
     ```
     # mw.b <ddr_addr> 0xff 0x80000               /* initialize memory */
-    # tftp <ddr_addr> u-boot-ss928v100.bin    /* download U-Boot to memory */
+    # tftp <ddr_addr> u-boot-Hi3403V100.bin    /* download U-Boot to memory */
     # mmc write 0 <ddr_addr> 0 0x400   /* write from memory to eMMC */
     ```
 
     >![](public_sys-resources/icon-note.gif) **Note:** 
-    >On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
+    >On the Hi3403V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
     >mmc write command format: mmc write \<device num\> addr blk\# cnt
     >Parameters:
     >-   \<device num\>: device number
@@ -454,7 +454,7 @@ Using SPI-Nor Flash as an example:
 ```
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
+>On the Hi3403V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
 
 # Appendix
 ## U-Boot Command Reference<a name="ZH-CN_TOPIC_0000002424355890"></a>
@@ -515,7 +515,7 @@ This displays the current BP level value, the valid level range, and the current
     ![](figures/通过设置-level值锁定指定区域.png "通过设置-level值锁定指定区域")
 ### tftp Command Address Restrictions<a name="ZH-CN_TOPIC_0000002457834685"></a>
 
-The PHYS\_SDRAM\_1\_SIZE macro defined in `include/configs/ss928v100.h` limits the address range accessible to the tftp command. In the default release package, PHYS\_SDRAM\_1\_SIZE is set to 0x20000000, restricting tftp downloads to the first 512 MB of DDR address space.
+The PHYS\_SDRAM\_1\_SIZE macro defined in `include/configs/Hi3403V100.h` limits the address range accessible to the tftp command. In the default release package, PHYS\_SDRAM\_1\_SIZE is set to 0x20000000, restricting tftp downloads to the first 512 MB of DDR address space.
 
 tftp command usage example:
 

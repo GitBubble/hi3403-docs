@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONF
 This document is written for engineers developing with the MPP media processing chip. Its purpose is to provide various reference information about the SYS_CONFIG sub-module of the media processing software during development, including system control, clock configuration, and pin multiplexing. This document describes the usage of each key function in SYS_CONFIG and the related configuration principles.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->This document uses the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 is the same as for SS928V100.
+>This document uses the Hi3403V100 description as an example. Unless otherwise specified, the content for Hi3519AV200 is the same as for Hi3403V100.
 
 **Product Version<a name="section145mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product version corresponding to this document is as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>SS928</p>
+<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row15828177202310"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p198461710152317"><a name="p198461710152317"></a><a name="p198461710152317"></a>SS927</p>
+<tr id="row15828177202310"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p198461710152317"><a name="p198461710152317"></a><a name="p198461710152317"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p6846171016231"><a name="p6846171016231"></a><a name="p6846171016231"></a>V100</p>
 </td>
@@ -116,7 +116,7 @@ SYS_CONFIG is a module for system-level and board-level configuration. Its main 
 
 SYS_CONFIG is released both as a binary .ko file and as source code. The source code is located in the interdrv/sysconfig directory.
 
-To modify the SYS_CONFIG code, refer to the following documents and steps (using SS928V100 as an example):
+To modify the SYS_CONFIG code, refer to the following documents and steps (using Hi3403V100 as an example):
 
 -   To modify clock configuration and system control, first refer to the chip manual, then modify the sysconfig code.
 -   To modify pin multiplexing configuration, first refer to the chip manual, then modify the sysconfig code.
@@ -234,7 +234,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row339mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p341mcpsimp"><a name="p341mcpsimp"></a><a name="p341mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row339mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p341mcpsimp"><a name="p341mcpsimp"></a><a name="p341mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.2 "><p id="p343mcpsimp"><a name="p343mcpsimp"></a><a name="p343mcpsimp"></a>g_reg_misc_base</p>
 </td>
@@ -259,7 +259,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row365mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p367mcpsimp"><a name="p367mcpsimp"></a><a name="p367mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row365mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p367mcpsimp"><a name="p367mcpsimp"></a><a name="p367mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.2 "><p id="p369mcpsimp"><a name="p369mcpsimp"></a><a name="p369mcpsimp"></a>g_reg_crg_base</p>
 </td>
@@ -284,7 +284,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row391mcpsimp"><td class="cellrowborder" rowspan="2" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p393mcpsimp"><a name="p393mcpsimp"></a><a name="p393mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row391mcpsimp"><td class="cellrowborder" rowspan="2" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p393mcpsimp"><a name="p393mcpsimp"></a><a name="p393mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.2 "><p id="p395mcpsimp"><a name="p395mcpsimp"></a><a name="p395mcpsimp"></a>g_reg_iocfg_base</p>
 </td>
@@ -316,7 +316,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row425mcpsimp"><td class="cellrowborder" valign="top" width="25.742574257425744%" headers="mcps1.2.5.1.1 "><p id="p427mcpsimp"><a name="p427mcpsimp"></a><a name="p427mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row425mcpsimp"><td class="cellrowborder" valign="top" width="25.742574257425744%" headers="mcps1.2.5.1.1 "><p id="p427mcpsimp"><a name="p427mcpsimp"></a><a name="p427mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.67326732673268%" headers="mcps1.2.5.1.2 "><p id="p429mcpsimp"><a name="p429mcpsimp"></a><a name="p429mcpsimp"></a>g_reg_gpio_base</p>
 </td>
@@ -341,7 +341,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row452mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p454mcpsimp"><a name="p454mcpsimp"></a><a name="p454mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row452mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p454mcpsimp"><a name="p454mcpsimp"></a><a name="p454mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.5.1.2 "><p id="p456mcpsimp"><a name="p456mcpsimp"></a><a name="p456mcpsimp"></a>g_reg_sys_base</p>
 </td>
@@ -366,7 +366,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row479mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row479mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.5.1.2 "><p id="p483mcpsimp"><a name="p483mcpsimp"></a><a name="p483mcpsimp"></a>g_reg_ddr_base</p>
 </td>
@@ -391,7 +391,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </th>
 </tr>
 </thead>
-<tbody><tr id="row505mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p507mcpsimp"><a name="p507mcpsimp"></a><a name="p507mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row505mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p507mcpsimp"><a name="p507mcpsimp"></a><a name="p507mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.5.1.2 "><p id="p509mcpsimp"><a name="p509mcpsimp"></a><a name="p509mcpsimp"></a>g_reg_mipi_tx_base</p>
 </td>
@@ -420,7 +420,7 @@ The operation functions are as follows:
 
 Based on the VI VPSS online/offline mode situation, the VI VPSS online/offline mode needs to be selected.
 
-The following uses SS928V100 as an example.
+The following uses Hi3403V100 as an example.
 
 ### VI VPSS Online/Offline Mode Configuration<a name="ZH-CN_TOPIC_0000002408102290"></a>
 
@@ -577,7 +577,7 @@ Configuration value 0x44777755:
 None.
 
 # Clock Reset Configuration
-Clocks are the foundation for normal operation of each module. The following uses SS928V100 as an example to describe clock-related configurations.
+Clocks are the foundation for normal operation of each module. The following uses Hi3403V100 as an example to describe clock-related configurations.
 
 The clock reset configuration function is as follows (the actual function implementation depends on the application scenario):
 
@@ -1402,7 +1402,7 @@ The LCD display screen IC chip connects to the main chip via the SPI bus. In the
 
 ### SPI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661537"></a>
 
-[Configuration] (Using SS928V100 as an example)
+[Configuration] (Using Hi3403V100 as an example)
 
 g\_reg\_iocfg2\_base1 is described in [Table 3](#_table16578980)
 
@@ -1563,7 +1563,7 @@ The following describes pin multiplexing in VICAP.
 
 g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980).
 
-Taking the MIPI\_RX PHY0 interface of SS928V100 as an example:
+Taking the MIPI\_RX PHY0 interface of Hi3403V100 as an example:
 
 ```
 static void mipi0_rx_pin_mux(void)
@@ -1965,7 +1965,7 @@ The clock pin configuration is the same as described in the BT.656 section (AK22
 
 [Precautions]
 
-SS928V100 has only 1 BT.656 interface. When configuring the BT.1120 interface, in addition to configuring BT.656 pins for VI\_DATA0~DATA7, 8 additional pins need to be configured as VI\_DATA8~DATA15.
+Hi3403V100 has only 1 BT.656 interface. When configuring the BT.1120 interface, in addition to configuring BT.656 pins for VI\_DATA0~DATA7, 8 additional pins need to be configured as VI\_DATA8~DATA15.
 
 #### SENSOR Reference Clock Pin<a name="ZH-CN_TOPIC_0000002441661473"></a>
 
@@ -2020,7 +2020,7 @@ None.
 
 ### HDMI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262158"></a>
 
-[Configuration] (Using SS928V100 as an example)
+[Configuration] (Using Hi3403V100 as an example)
 
 g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980).
 
@@ -2050,7 +2050,7 @@ None.
 
 ### MIPI\_TX Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102166"></a>
 
-[Configuration] (Using SS928V100 as an example)
+[Configuration] (Using Hi3403V100 as an example)
 
 g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980).
 
@@ -2086,7 +2086,7 @@ Except for VSYNC\_TE\_MIPITX, the drive capability of other MIPI\_TX pins is con
 
 ### VO BT.1120 Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262142"></a>
 
-[Configuration] (Using SS928V100 as an example)
+[Configuration] (Using Hi3403V100 as an example)
 
 g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980), g\_reg\_mipi\_tx\_base is described in [Table 7](#_table071427174311).
 
@@ -2258,7 +2258,7 @@ None.
 
 ### Amplifier GPIO Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661489"></a>
 
-[Configuration] (Using SS928V100 as an example)
+[Configuration] (Using Hi3403V100 as an example)
 
 ```
 static void amp_unmute_pin_mux(void) 

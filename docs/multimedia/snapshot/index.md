@@ -15,12 +15,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/抓拍�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2436mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p2438mcpsimp"><a name="p2438mcpsimp"></a><a name="p2438mcpsimp"></a>SS928</p>
+<tbody><tr id="row2436mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p2438mcpsimp"><a name="p2438mcpsimp"></a><a name="p2438mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p2440mcpsimp"><a name="p2440mcpsimp"></a><a name="p2440mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row22121948133617"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p368135114363"><a name="p368135114363"></a><a name="p368135114363"></a>SS927</p>
+<tr id="row22121948133617"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p368135114363"><a name="p368135114363"></a><a name="p368135114363"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p16681151103616"><a name="p16681151103616"></a><a name="p16681151103616"></a>V100</p>
 </td>
@@ -29,7 +29,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/抓拍�
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **修订记录<a name="section2441mcpsimp"></a>**
 
@@ -146,7 +146,7 @@ Sensor的曝光控制是由上面的视频pipe的ISP来控制的。
 单pipe在线拍照的数据通路和单pipe离线的类似，区别是数据通路是在线的。这种数据通路可以拍摄NORMAL和PRO模式的照片。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->SS928V100的VI模块目前只支持1个pipe在线，如果多于1个sensor输入的场景，所有sensor要离线处理。
+>Hi3403V100的VI模块目前只支持1个pipe在线，如果多于1个sensor输入的场景，所有sensor要离线处理。
 
 ### ZSL模式拍照<a name="ZH-CN_TOPIC_0000002441723225"></a>
 
@@ -1102,8 +1102,8 @@ PHOTO模块的运行依赖DSP的资源，PHOTO的库默认编译到DSP0的镜像
 -   HDR合成当前仅支持三合一，就是输入三帧不同曝光的连续YUV，输出一帧高动态范围的YUV。三帧的输入顺序依次是短曝光的YUV，正常曝光的YUV，长曝光的YUV。
 -   HDR算法支持对人脸区域的图像效果做特殊优化处理。图像中的人脸区域坐标需要提前通过人脸检测的智能算法检测出来。
 -   MFNR当前仅支持四合一，输入是四帧连续的正常曝光的YUV，输出是一帧经过时域和空域降噪的YUV。
--   DE算法需要BNR RAW数据，SS928V100暂不支持获取BNR RAW数据
--   MFNR算法做完后，可以再对输出后的YUV做一次DE算法处理。DE算法需要的BNR RAW数据可以是MFNR输入的四帧YUV里面任意一帧YUV对应的BNR RAW；SS928V100暂不支持获取BNR RAW数据，因此不支持MFNR+DE的算法处理。
+-   DE算法需要BNR RAW数据，Hi3403V100暂不支持获取BNR RAW数据
+-   MFNR算法做完后，可以再对输出后的YUV做一次DE算法处理。DE算法需要的BNR RAW数据可以是MFNR输入的四帧YUV里面任意一帧YUV对应的BNR RAW；Hi3403V100暂不支持获取BNR RAW数据，因此不支持MFNR+DE的算法处理。
 -   算法处理输入和输出帧数据的Stride必须是128Byte对齐，并且帧数据的像素宽高必须是8的倍数。
 -   算法处理的输入YUV数据，仅支持处理NV21格式（也就是OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420格式）的非压缩数据，输入图像的动态范围仅支持OT\_DYNAMIC\_RANGE\_SDR8的。
 -   拍照后处理是一个原子任务，该原子任务包含完整的init-\>process-\>deinit流程（不同算法需要调用的process次数可能不同），仅支持在同一个进程或线程中以原子任务为单位串行处理，不支持多个原子任务并行处理，不支持前一个原子任务未结束就启动下一个原子任务。

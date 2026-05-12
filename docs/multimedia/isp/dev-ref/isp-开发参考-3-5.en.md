@@ -896,7 +896,7 @@ td_s32 ss_mpi_isp_set_hdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_hdr_exp
 
 【Notes】
 
-SS928V100 does not support HDR mode.
+Hi3403V100 does not support HDR mode.
 
 【Example】
 
@@ -975,7 +975,7 @@ td_s32 ss_mpi_isp_get_hdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_hdr_exposure_
 
 【Notes】
 
-SS928V100 does not support HDR mode.
+Hi3403V100 does not support HDR mode.
 
 【Example】
 

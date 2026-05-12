@@ -10,7 +10,7 @@ This document is based on OpenHarmony 5.1.0 Release adapted for Hi3403V100/Hi351
 
 >![](public_sys-resources/icon-note.gif) **Note:**
 >-   This document uses Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 content is consistent with Hi3403V100.
->-   Running OpenHarmony on Hi3403V100 and Hi3519AV200 depends on the same SS928V100_SDK version package.
+>-   Running OpenHarmony on Hi3403V100 and Hi3519AV200 depends on the same Hi3403V100_SDK version package.
 
 **Product Version<a name="section196mcpsimp"></a>**
 
@@ -227,13 +227,13 @@ ln -s /bin/bash /bin/sh
 
 Configure the compilation directories for Hi3403V100 and Hi3519AV200 companion products in the OpenHarmony environment.
 
-1.  Download the HiSpark community Hi3403 repository code. Since ss928v100_clang and ss928v100_gcc are sub-repositories of Hi3403, and OpenHarmony uses the LLVM-Clang toolchain SDK, this step downloads the Hi3403 and ss928v100_clang code directories.
+1.  Download the HiSpark community Hi3403 repository code. Since Hi3403V100_clang and Hi3403V100_gcc are sub-repositories of Hi3403, and OpenHarmony uses the LLVM-Clang toolchain SDK, this step downloads the Hi3403 and Hi3403V100_clang code directories.
 
     ```
     git clone https://gitee.com/HiSpark/pegasus.git
     cd pegasus
     git submodule init
-    git submodule update platform/ss928v100_clang
+    git submodule update platform/Hi3403V100_clang
     ```
 
     After the above steps, the Hi3403 project file directory is as follows.
@@ -248,17 +248,17 @@ Configure the compilation directories for Hi3403V100 and Hi3519AV200 companion p
     │   └── manifest
     │       ├── devboard_hispark_aifly_5.1.0.xml  # Repo manifest file (defines the list of code repositories)
     │       └── prebuilts_setup.sh                # Prebuilt environment preparation script
-    ├── platform/ss928v100_clang        # SDK source code and binary libraries (kernel drivers, Samples, open source packages)
+    ├── platform/Hi3403V100_clang        # SDK source code and binary libraries (kernel drivers, Samples, open source packages)
     └── vendor
         └── rkh/patches                 # Runhe OpenHarmony source patches (categorized by subsystem, enhanced system functions and driver support)
     ```
 
     -   The `os/OpenHarmony` directory contains patches, configuration, and build scripts for adapting HiSilicon chips to OpenHarmony. The `manifest/devboard_hispark_aifly_5.1.0.xml` is the repo manifest file, defining the list of code repositories to sync for OpenHarmony 5.1.0 Release, optimized for the Small system by removing unnecessary repositories and commenting out remote download for commonly modified repositories (kernel_linux_config, kernel_linux_patches, device_soc_hisilicon, device_board_hisilicon, vendor_hisilicon), using local subdirectories instead.
-    -   The `platform/ss928v100_clang` directory is the SS928V100 SDK source code and binary libraries, including kernel driver source, Sample source code, and open source packages.
+    -   The `platform/Hi3403V100_clang` directory is the Hi3403V100 SDK source code and binary libraries, including kernel driver source, Sample source code, and open source packages.
     -   The `vendor` directory contains incremental feature developments by ecosystem partners (Ebaina, Wildfire, TopEet, Runhe, Zhongshan Kuangshi, etc.) based on the Hi3403 platform, including board adaptation patches, Demo examples, and third-party open source software compilation guides. This differs from `os/OpenHarmony/vendor` (HiSilicon's original product configuration).
 
     >![](public_sys-resources/icon-note.gif) **Note:**
-    >Since SS927V100 and SS928V100 are similar, the SS927V100 SDK can reuse the SS928V100 SDK source code, sharing the `os/OpenHarmony/device/soc/hisilicon/ss928v100/sdk_linux` directory.
+    >Since Hi3519AV200 and Hi3403V100 are similar, the Hi3519AV200 SDK can reuse the Hi3403V100 SDK source code, sharing the `os/OpenHarmony/device/soc/hisilicon/Hi3403V100/sdk_linux` directory.
 
 2.  Enter the `os/OpenHarmony` directory and use the repo tool to initialize and sync the OpenHarmony code. The repo manifest file `devboard_hispark_aifly_5.1.0.xml` has been optimized for the Small system, removing unnecessary repositories.
 
@@ -277,7 +277,7 @@ Configure the compilation directories for Hi3403V100 and Hi3519AV200 companion p
 
 3.  Execute the `os/OpenHarmony/manifest/prebuilts_setup.sh` script to prepare the prebuilt environment. This script mainly performs the following tasks:
     -   Fixes known issues in `system_util.py` and `patch_process.py` scripts
-    -   Copies the `platform/ss928v100_clang` directory to the SDK target path
+    -   Copies the `platform/Hi3403V100_clang` directory to the SDK target path
     -   Downloads the mbedtls v2.16.10 source package (saved to `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/mbedtls/` directory)
     -   Downloads the arm-trusted-firmware v2.2 source package (saved to `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/trusted-firmware-a/` directory)
     -   Calls `build/prebuilts_download.sh` to download OpenHarmony compilation toolchains (clang, gn, ninja, cmake, nodejs, etc.)
@@ -318,7 +318,7 @@ Configure the compilation directories for Hi3403V100 and Hi3519AV200 companion p
     │   ├── vendor
     │   ├── build.sh
     │   └── build.py
-    ├── platform/ss928v100_clang
+    ├── platform/Hi3403V100_clang
     └── vendor
         └── rkh/patches
     ```
@@ -348,7 +348,7 @@ The system uses the DRM display framework by default. To switch to the FrameBuff
     Open `os/OpenHarmony/vendor/hisilicon/hispark_aifly_linux/init_configs/etc/init.d/S82ohos`, find the driver loading command, and remove the `-display drm` parameter or change it to `-display fb`.
 
     ```bash
-    ./load_ss928v100_ohos -i
+    ./load_Hi3403V100_ohos -i
     ```
 
     >![](public_sys-resources/icon-note.gif) **Note:**
@@ -491,11 +491,11 @@ To compile uboot, enter the SDK's osdrv directory. The SDK path is `os/OpenHarmo
 
     ```
     cd os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/osdrv/
-    make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all -j 20
+    make LLVM=1 BOOT_MEDIA=emmc CHIP=Hi3403V100 all -j 20
     ```
 
     >![](public_sys-resources/icon-note.gif) **Note:**
-    >-   `CHIP`: Can be `ss928v100` or `ss927v100`, default is `ss928v100`.
+    >-   `CHIP`: Can be `Hi3403V100` or `Hi3519AV200`, default is `Hi3403V100`.
     >-   `BOOT_MEDIA`: Select based on the boot medium: `spi` (spi nor or spi nand), `nand` (parallel nand), or `emmc`.
     >-   `LLVM=1`: Compiles using the musl toolchain; if not specified, the glibc toolchain is used.
 
@@ -512,7 +512,7 @@ To compile uboot, enter the SDK's osdrv directory. The SDK path is `os/OpenHarmo
     make distclean    # Thoroughly clean intermediate compilation files
     ```
 
-    After successful compilation, the generated `boot_image.bin` image file is located in the `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/osdrv/pub/ss928v100_emmc_image_musl/` directory.
+    After successful compilation, the generated `boot_image.bin` image file is located in the `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/osdrv/pub/Hi3403V100_emmc_image_musl/` directory.
 
 ### SDK Sample Compilation<a name="ZH-CN_TOPIC_0000002432267302"></a>
 
@@ -702,7 +702,7 @@ Products with screens and applications need to test ActsAbilityMgrTest and ActsB
     ![](figures/XTS认证送检材料参考目录.png "XTS认证送检材料参考目录")
 ### Hardware Board Flashing<a name="ZH-CN_TOPIC_0000002374732952"></a>
 
-Steps for burning KEY0 on SS928V100 and SS927V100 hardware boards.
+Steps for burning KEY0 on Hi3403V100 and Hi3519AV200 hardware boards.
 
 1.  Enter the U-Boot command line and execute the following commands sequentially
 
@@ -791,7 +791,7 @@ OpenHarmony 5.1 toybox telnetd connections require a password by default. Config
 
 3.  Before compiling the version, libsns_hy_s0603.so needs to be recompiled because this library reports a link error during dynamic loading. Therefore, modify the compilation script for recompilation. The script path is:
 
-    os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/smp/a55_linux/mpp/cbb/isp/user/sensor/ss928v100/hy_s0603/Makefile
+    os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/smp/a55_linux/mpp/cbb/isp/user/sensor/Hi3403V100/hy_s0603/Makefile
 
     The modification method is shown in [Figure 2](#fig13477396910).
 

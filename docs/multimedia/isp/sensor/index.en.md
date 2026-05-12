@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensorè°
 This guide is written for engineers integrating new sensors. It covers the steps and considerations involved in sensor integration, including the driver development workflow for a new sensor and the process for adapting a new sensor within the SDK.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference. Unless otherwise stated, SS927V100 and SS928V100 are identical.
+>This document uses Hi3403V100 as the reference. Unless otherwise stated, Hi3519AV200 and Hi3403V100 are identical.
 
 **Product Versions<a name="section1178605582218"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row158831255122216"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p10883145542218"><a name="p10883145542218"></a><a name="p10883145542218"></a>SS928</p>
+<tbody><tr id="row158831255122216"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p10883145542218"><a name="p10883145542218"></a><a name="p10883145542218"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p138831555152211"><a name="p138831555152211"></a><a name="p138831555152211"></a>V100</p>
 </td>
 </tr>
-<tr id="row144953172313"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p259913572312"><a name="p259913572312"></a><a name="p259913572312"></a>SS927</p>
+<tr id="row144953172313"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p259913572312"><a name="p259913572312"></a><a name="p259913572312"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p185997502317"><a name="p185997502317"></a><a name="p185997502317"></a>V100</p>
 </td>

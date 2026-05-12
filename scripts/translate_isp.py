@@ -85,7 +85,7 @@ text = text.replace('>![](public_sys-resources/icon-note.gif) **说明：**', '>
 # 7. Foreword paragraphs
 FOREWORD = {
     '本文为使用ISP开发的程序员而写，目的是为您在开发过程中遇到的问题提供解决办法和帮助。': 'This document is written for engineers developing with ISP. It provides solutions and assistance for issues encountered during development.',
-    '>**说明：** 本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。': '> **Note:** Unless otherwise stated, the SS927V100 and SS928V100 content is identical.',
+    '>**说明：** 本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。': '> **Note:** Unless otherwise stated, the Hi3519AV200 and Hi3403V100 content is identical.',
     '与本文档相对应的产品版本如下。': 'The product versions corresponding to this document are as follows.',
     '本文档（本指南）主要适用于以下工程师：': 'This document (guide) is primarily intended for the following engineers:',
     '-   技术支持工程师': '-   Technical Support Engineers',

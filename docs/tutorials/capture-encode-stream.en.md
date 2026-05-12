@@ -47,12 +47,12 @@ The `hi3403-build` image runs `topeet-start.sh` on first boot to
 lsmod | grep -E 'sys_|isp|venc|vi_|vo_'
 ```
 
-You should see a set of `ot_*` / `ss928_*` modules. If empty, run the
+You should see a set of `ot_*` / `Hi3403V100_*` modules. If empty, run the
 loader by hand:
 
 ``` bash
 cd /ko
-sudo bash load_ss928v100_ubuntu -i
+sudo bash load_Hi3403V100_ubuntu -i
 ```
 
 ## Step 2 — Cross-build a sample (optional)
@@ -61,7 +61,7 @@ Pegasus SDK ships sample source code. **On the PC host**, cross-compile:
 
 ``` bash
 # In your SDK checkout (set OSDRV_CROSS / toolchain per the README first)
-cd pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/
+cd pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/
 
 # What samples are there?
 ls
@@ -189,7 +189,7 @@ int main(void) {
 ```
 
 A complete buildable example lives in
-`pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/composite/`.
+`pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/composite/`.
 
 ## Tuning — common issues
 

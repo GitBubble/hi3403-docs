@@ -8,12 +8,12 @@
 
 由于Hi3403的引脚存在功能复用，当我们使用某一片上外设或外部模块前，需要先对该外设的引脚或模块所连的引脚配置适当的复用功能。
 
-Hi3403完整的引脚复用配置可查看表格 [SS928V100_PINOUT_CN.xlsx](#)
+Hi3403完整的引脚复用配置可查看表格 [Hi3403V100_PINOUT_CN.xlsx](#)
 
 在hispark/pegasus中，对芯片引脚复用功能的配置在两个位置：
 
-- platform/ss928v100_gcc/osdrv/tools/pc/uboot_tools文件夹内编译boot时对应的xlsm表格：用于定义芯片初始化早期部分寄存器的值，u-boot或linux kernel初始化时使用的引脚需要在这里定义。
-- platform/ss928v100_gcc/smp/a55_linux/interdrv/sysconfig: 内核外部模块，用于linux系统启动后，在引脚使用前对引脚复用功能进行配置。
+- platform/Hi3403V100_gcc/osdrv/tools/pc/uboot_tools文件夹内编译boot时对应的xlsm表格：用于定义芯片初始化早期部分寄存器的值，u-boot或linux kernel初始化时使用的引脚需要在这里定义。
+- platform/Hi3403V100_gcc/smp/a55_linux/interdrv/sysconfig: 内核外部模块，用于linux系统启动后，在引脚使用前对引脚复用功能进行配置。
 
 一般情况下只需要修改sysconfig即可。修改完成后在sysconfig目录运行`make sysconfig`命令编译得到sys_config.ko，将sys_config.ko传输到板卡，使用`insmo sys_config.ko`加载模块就可以完成引脚复用功能配置。
 
@@ -283,13 +283,13 @@ modprobe goodix_ts.ko invert_x=1 invert_y=1
 
 ##### 编译库文件和驱动模块
 
-进入platform/ss928v100_gcc/smp/a55_linux/mpp/out/目录
+进入platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/目录
 
 在obj目录下执行`make`命令，编译得到的ko模块和lib文件分别保存在out目录的ko和lib目录
 
 查看ko目录内的文件，已经包含了sys_config.ko、ot_hdmi.ko、ot_mipi_rx.ko等驱动模块，用于设置芯片的引脚功能和硬件接口配置。
 
-查看ko目录内的load_ss928v100_user脚本，这是一个用于加载和卸载模块的脚本。其参数介绍如下：
+查看ko目录内的load_Hi3403V100_user脚本，这是一个用于加载和卸载模块的脚本。其参数介绍如下：
 
 - -i                       加载模块
 - -r                       卸载模块
@@ -302,7 +302,7 @@ modprobe goodix_ts.ko invert_x=1 invert_y=1
 
 具体计算及调整方法查看文档 [内存布局调整指南.md](../../../soc-linux/memory-layout/index.md)
 
-将lib文件和驱动模块传输到板卡中。以通过网络使用scp命令为例，在platform/ss928v100_gcc/smp/a55_linux/mpp/out/目录中执行下面的命令：
+将lib文件和驱动模块传输到板卡中。以通过网络使用scp命令为例，在platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/目录中执行下面的命令：
 
 ```
 # 将lib下的所有文件传输到板卡/lib目录下
@@ -317,7 +317,7 @@ scp -r ./ko/  root@192.168.5.53:/root/
 
 ##### 编译示例程序
 
-进入platform/ss928v100_gcc/smp/a55_linux/mpp/sample目录，使用`make`命令一次性编译所有示例程序，编译生成的可执行文件保存在示例程序对应目录中。
+进入platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample目录，使用`make`命令一次性编译所有示例程序，编译生成的可执行文件保存在示例程序对应目录中。
 
 也可以进入sample目录下示例程序单独的目录，使用`make`命令编译当前示例程序。
 
@@ -329,7 +329,7 @@ scp -r ./ko/  root@192.168.5.53:/root/
 
 lib文件在之前的步骤中已经传输到了板卡的/lib目录下，还需要加载模块。
 
-进入板卡/root/ko目录下，执行`./load_ss928v100_user -i`命令，运行脚本加载模块。
+进入板卡/root/ko目录下，执行`./load_Hi3403V100_user -i`命令，运行脚本加载模块。
 
 #### HDMI
 
@@ -361,9 +361,9 @@ LubanCat-Hi3403板卡的MIPI-CSI接口引脚电平为1.8V，需要搭配1.8V电�
 scp -r vio/ root@192.168.5.53:/root
 ```
 
-在执行sample_vio前还要确认，在加载模块执行load_ss928v100_user脚本时打会打印sensors型号，如果不是imx415则要在加载模块时添加sensor参数，如果是imx415则可以忽略。
+在执行sample_vio前还要确认，在加载模块执行load_Hi3403V100_user脚本时打会打印sensors型号，如果不是imx415则要在加载模块时添加sensor参数，如果是imx415则可以忽略。
 ```
-./load_ss928v100_user -i -sensor0 imx415 -sensor1 imx415 -sensor2 imx415 -sensor3 imx415
+./load_Hi3403V100_user -i -sensor0 imx415 -sensor1 imx415 -sensor2 imx415 -sensor3 imx415
 ```
 
 进入板卡/root/vio目录下，执行`./sample_vio 0`，稍后的vpss mode选择0，继续执行会初始化摄像头，然后将摄像头画面显示在hdmi屏幕上。同时将视频进行编码，保存到文件stream_chn0.h265。

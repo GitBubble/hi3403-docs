@@ -2,7 +2,7 @@
 
 ### 2.4.1、sample_kcf_track程序简介
 
-* sample_kcf_track 基于SS928V100平台开发，以EulerPi套件为例，sample_kcf_track 基于KCF+Track模型，通过USB Camera，将采集到的图片送到KCF+trak模型，实现对目标的实时跟踪效果。
+* sample_kcf_track 基于Hi3403V100平台开发，以EulerPi套件为例，sample_kcf_track 基于KCF+Track模型，通过USB Camera，将采集到的图片送到KCF+trak模型，实现对目标的实时跟踪效果。
 
 ### 2.4.2、目录
 

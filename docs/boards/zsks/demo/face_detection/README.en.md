@@ -2,7 +2,7 @@
 
 ### 2.5.1. face_detection Program Introduction
 
-* The face_detection sample is developed based on the SS928V100 platform, using the EulerPi kit as an example. The face_detection sample captures images via a USB camera and feeds them into a face detection model for inference. When a face is detected, a rectangle is drawn around the face area and displayed in real-time on an external display via an HDMI cable.
+* The face_detection sample is developed based on the Hi3403V100 platform, using the EulerPi kit as an example. The face_detection sample captures images via a USB camera and feeds them into a face detection model for inference. When a face is detected, a rectangle is drawn around the face area and displayed in real-time on an external display via an HDMI cable.
 * The face_detection case primarily uses the PyTorch framework, based on the YoloV8 network, using open-source datasets such as widerface, FDDB, and UFDD — a total of over 13,000 images — to train a face detection model that works under strong light, backlight, and low light conditions.
 
 ### 2.5.2. Directory Structure

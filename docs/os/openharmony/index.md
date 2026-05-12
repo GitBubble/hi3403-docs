@@ -28,7 +28,7 @@ pegasus/
 │   └── manifest
 │       ├── devboard_hispark_aifly_5.1.0.xml  # repo清单文件（定义代码仓库列表）
 │       └── prebuilts_setup.sh                # 预编译环境准备脚本
-├── platform/ss928v100_clang        # SDK源码和二进制库（内核驱动、Sample、开源软件包）
+├── platform/Hi3403V100_clang        # SDK源码和二进制库（内核驱动、Sample、开源软件包）
 └── vendor
     └── rkh/patches                 # 润开鸿OpenHarmony源码补丁（按子系统分类，增强系统功能和驱动支持）
 ```

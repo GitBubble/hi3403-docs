@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0�
 本文档旨在帮助用户了解SVP \(Smart Vision Platform\) 2.0平台的硬件特性、工具链及开发流程，以期达到快速上手和开发出充分利用SVP2.0特性的_识别_方案。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section186mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row200mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a>SS928</p>
+<tbody><tr id="row200mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p204mcpsimp"><a name="p204mcpsimp"></a><a name="p204mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1795219203403"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p3421112315406"><a name="p3421112315406"></a><a name="p3421112315406"></a>SS927</p>
+<tr id="row1795219203403"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p3421112315406"><a name="p3421112315406"></a><a name="p3421112315406"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p20421423114012"><a name="p20421423114012"></a><a name="p20421423114012"></a>V100</p>
 </td>
@@ -134,14 +134,14 @@ SVP开发框架如[图1](#__fig46510526497)所示。目前SVP中包含的硬件�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row348mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row348mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.2 "><p id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a>四核A55</p>
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.4.1.3 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>2个</p>
 </td>
 </tr>
-<tr id="row9294425145618"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p1753616261569"><a name="p1753616261569"></a><a name="p1753616261569"></a>SS927V100</p>
+<tr id="row9294425145618"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p1753616261569"><a name="p1753616261569"></a><a name="p1753616261569"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.2 "><p id="p553702619566"><a name="p553702619566"></a><a name="p553702619566"></a>四核A55</p>
 </td>
@@ -175,12 +175,12 @@ SVP为_识别_加速平台，因此需要结合 MPP平台一起来进行软件�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row584mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p586mcpsimp"><a name="p586mcpsimp"></a><a name="p586mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row584mcpsimp"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p586mcpsimp"><a name="p586mcpsimp"></a><a name="p586mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.00000000000001%" headers="mcps1.2.3.1.2 "><p id="p588mcpsimp"><a name="p588mcpsimp"></a><a name="p588mcpsimp"></a>SMP(Linux)</p>
 </td>
 </tr>
-<tr id="row15850154019567"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p352014216560"><a name="p352014216560"></a><a name="p352014216560"></a>SS927V100</p>
+<tr id="row15850154019567"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p352014216560"><a name="p352014216560"></a><a name="p352014216560"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.00000000000001%" headers="mcps1.2.3.1.2 "><p id="p152054265616"><a name="p152054265616"></a><a name="p152054265616"></a>SMP(Linux)</p>
 </td>
@@ -196,7 +196,7 @@ SVP为_识别_加速平台，因此需要结合 MPP平台一起来进行软件�
 
 # DSP开发指南
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->本章节对于生态开源版本SS928V100/SS927V100暂不支持。
+>本章节对于生态开源版本Hi3403V100/Hi3519AV200暂不支持。
 
 
 
@@ -231,7 +231,7 @@ Xtensa Xplorer的安装使用可参考Cadence提供的官方文档，以下均�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row319mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.1 "><p id="p321mcpsimp"><a name="p321mcpsimp"></a><a name="p321mcpsimp"></a>SS928V100/SS927V100</p>
+<tbody><tr id="row319mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.1 "><p id="p321mcpsimp"><a name="p321mcpsimp"></a><a name="p321mcpsimp"></a>Hi3403V100/Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.4.1.2 "><p id="p323mcpsimp"><a name="p323mcpsimp"></a><a name="p323mcpsimp"></a>XtensaTools_RH_2018_7_linux.tgz</p>
 <p id="p324mcpsimp"><a name="p324mcpsimp"></a><a name="p324mcpsimp"></a>XtensaTools_RH_2018_7_win32.tgz</p>
@@ -285,7 +285,7 @@ Xtensa Xplorer的安装使用可参考Cadence提供的官方文档，以下均�
 <td class="cellrowborder" valign="top" width="9.999999999999998%" headers="mcps1.2.8.1.7 "><p id="p552mcpsimp"><a name="p552mcpsimp"></a><a name="p552mcpsimp"></a>1</p>
 </td>
 </tr>
-<tr id="row553mcpsimp"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p555mcpsimp"><a name="p555mcpsimp"></a><a name="p555mcpsimp"></a>SS928V100</p>
+<tr id="row553mcpsimp"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p555mcpsimp"><a name="p555mcpsimp"></a><a name="p555mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.999999999999996%" headers="mcps1.2.8.1.2 "><p id="p557mcpsimp"><a name="p557mcpsimp"></a><a name="p557mcpsimp"></a>VQ6</p>
 </td>
@@ -300,7 +300,7 @@ Xtensa Xplorer的安装使用可参考Cadence提供的官方文档，以下均�
 <td class="cellrowborder" valign="top" width="9.999999999999998%" headers="mcps1.2.8.1.7 "><p id="p567mcpsimp"><a name="p567mcpsimp"></a><a name="p567mcpsimp"></a>2</p>
 </td>
 </tr>
-<tr id="row7370181914570"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p231112165710"><a name="p231112165710"></a><a name="p231112165710"></a>SS927V100</p>
+<tr id="row7370181914570"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p231112165710"><a name="p231112165710"></a><a name="p231112165710"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.999999999999996%" headers="mcps1.2.8.1.2 "><p id="p6311172185713"><a name="p6311172185713"></a><a name="p6311172185713"></a>VQ6</p>
 </td>
@@ -323,10 +323,10 @@ Xtensa Xplorer的安装使用可参考Cadence提供的官方文档，以下均�
 
 ## Windows环境下安装DSP工具链和配置核<a name="ZH-CN_TOPIC_0000002408292262"></a>
 
-本文假定用户在windows环境中已经安装好了Xplorer8.0.7，并以SS928V100 VQ6配置核Otechn\_VisionQ6\_v3为例进行配置核安装，不同解决方案不同配置核的在不同Xplorer版本的安装类似。
+本文假定用户在windows环境中已经安装好了Xplorer8.0.7，并以Hi3403V100 VQ6配置核Otechn\_VisionQ6\_v3为例进行配置核安装，不同解决方案不同配置核的在不同Xplorer版本的安装类似。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->SS928V100 VQ6配置核Otechn\_VisionQ6\_v3需与RH-2018.7版本的工具包（见表1  XtensaTools\_RH\_2018\_7\_win32.tgz）配套使用，Xplorer8.0.7默认集成了RG2016.4工具包，如用户使用其他版本的Xplorer，需要另外安装RH-2018.7工具包。
+>Hi3403V100 VQ6配置核Otechn\_VisionQ6\_v3需与RH-2018.7版本的工具包（见表1  XtensaTools\_RH\_2018\_7\_win32.tgz）配套使用，Xplorer8.0.7默认集成了RG2016.4工具包，如用户使用其他版本的Xplorer，需要另外安装RH-2018.7工具包。
 
 1.  打开Xplorer 8.0.7，右键System Overview窗口下的Configurations，如[图1](#fig31925394563)所示，点击Find and Install a Configuration Build；
 
@@ -617,13 +617,13 @@ DSP应用程序开发框图如[图1](#__fig11884284184)所示。
     -   IPCM：核间通信模块。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
->为提高编译速度，在DSP端库/代码没有加编译优化选项（-O），用户可以在调试性能阶段添加上去。以下添加-O2为例，在发布包SS928V100\_SDK\_V2.0.0.3\_B020/smp/dsp\_liteos/dspXX/Makefile.param\(在这里以SS928V100某个版本的smp为例，XX表示DSP核编号\)文件添加即可。![](figures/zh-cn_image_0000002441731525.png)
+>为提高编译速度，在DSP端库/代码没有加编译优化选项（-O），用户可以在调试性能阶段添加上去。以下添加-O2为例，在发布包Hi3403V100\_SDK\_V2.0.0.3\_B020/smp/dsp\_liteos/dspXX/Makefile.param\(在这里以Hi3403V100某个版本的smp为例，XX表示DSP核编号\)文件添加即可。![](figures/zh-cn_image_0000002441731525.png)
 
 
 
 #### 适配TileManager<a name="ZH-CN_TOPIC_0000002408292250"></a>
 
-需要在Cadence提供的TileManager软件包适配宽地址操作，才能使用。适配完代码，把TileManager代码拷贝至发布包SS928V100\_SDK\_V2.0.0.3\_B020/smp/dsp\_liteos/dspXX/tm/vendor目录下\(在这里以SS928V100某个版本的smp为例，XX表示DSP核编号\)，至此TileManager才是适配完成。
+需要在Cadence提供的TileManager软件包适配宽地址操作，才能使用。适配完代码，把TileManager代码拷贝至发布包Hi3403V100\_SDK\_V2.0.0.3\_B020/smp/dsp\_liteos/dspXX/tm/vendor目录下\(在这里以Hi3403V100某个版本的smp为例，XX表示DSP核编号\)，至此TileManager才是适配完成。
 
 以下章节适配代码图示中，左边为原生代码，右边为修改后的代码。
 
@@ -778,5 +778,5 @@ DSP应用程序开发框图如[图1](#__fig11884284184)所示。
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   在不同的解决方案中DSP的个数会不同，而且IRAM/SRAM/DRAM的编址也会不一样。具体请参考对应芯片手册。
 >-   由于逻辑增加了ReorderBuf，导致IDMA有一个使用约束，IDMA的编程接口idma\_init函数只能使用MAX\_BLOCK\_2/MAX\_BLOCK\_4/MAX\_BLOCK\_8，不能使用MAX\_BLOCK\_16。
->-   SS928V100/SS927V100 CPU访问的DDR地址区间\[0x40000000, 0x2FFFFFFFF\], 在DSP端IDMA会映射到\[0x440000000, 0x6FFFFFFFF\]地址区间来访问，即IDMA访问的DDR地址需要加上偏移0x400000000\(加上idma\_offset值\),此部分映射框架已搭建好了，用户参考框架Sample使用即可。
+>-   Hi3403V100/Hi3519AV200 CPU访问的DDR地址区间\[0x40000000, 0x2FFFFFFFF\], 在DSP端IDMA会映射到\[0x440000000, 0x6FFFFFFFF\]地址区间来访问，即IDMA访问的DDR地址需要加上偏移0x400000000\(加上idma\_offset值\),此部分映射框架已搭建好了，用户参考框架Sample使用即可。
 

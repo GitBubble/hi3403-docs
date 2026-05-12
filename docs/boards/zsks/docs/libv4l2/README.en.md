@@ -24,7 +24,7 @@ cd v4l-utils
 
 [constants]
 toolchain = '/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin'
-sysroot = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot'
+sysroot = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot'
 
 * Create a hisi-cross.txt file in the v4l-utils directory, copy the following content into it and save.
 
@@ -44,7 +44,7 @@ strip = '/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linu
 pkg-config = '/usr/bin/pkg-config'
 
 [properties]
-sysroot = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot'
+sysroot = '/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot'
 c_args = ['--sysroot=' + sysroot, '--target=aarch64-linux-ohos', '-I' + sysroot + '/usr/include']
 c_link_args = ['--sysroot=' + sysroot, '--target=aarch64-linux-ohos', '-fuse-ld=lld', '-L' + sysroot + '/usr/lib/aarch64-linux-ohos', '-L' + sysroot + '/lib', '-lc']
 ~~~
@@ -69,7 +69,7 @@ cd argp-standalone-1.3
 
 ```sh
 # Configure variables
-export SYSROOT=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot
+export SYSROOT=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot
 export CC=/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang
 export CXX=/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang++
 export AR=/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/llvm-ar            
@@ -417,7 +417,7 @@ int main(int argc, char *argv[]) {
 
 ~~~bash
 /home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang -o test_libv4l2 test_libv4l2.c \
---sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot \
+--sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot \
 -I/home/openharmony/pegasus/vendor/opensource/v4l-utils/install/include \
 -I/home/openharmony/pegasus/vendor/opensource/v4l-utils/lib/include \
 -L/home/openharmony/pegasus/vendor/opensource/v4l-utils/install/lib \

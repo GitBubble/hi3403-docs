@@ -16,7 +16,7 @@ This patchset adapts **OpenHarmony 5.1.0 Release** to the
 4. Passes the L1 device XTS compatibility tests, with and without a display
 5. Inherits the OpenHarmony graphics, media, and enhancement features —
    the media + graphics samples run end-to-end
-6. Runs the SS928V100 SDK's native samples
+6. Runs the Hi3403V100 SDK's native samples
 
 ## Repository layout
 
@@ -30,7 +30,7 @@ pegasus/
 │   └── manifest
 │       ├── devboard_hispark_aifly_5.1.0.xml  # repo manifest (lists code repos)
 │       └── prebuilts_setup.sh                # pre-build environment setup
-├── platform/ss928v100_clang        # SDK source + binaries (kernel drivers, samples, OSS)
+├── platform/Hi3403V100_clang        # SDK source + binaries (kernel drivers, samples, OSS)
 └── vendor
     └── rkh/patches                 # RKH (Runkaihong) OpenHarmony patches by subsystem (extra features + driver support)
 ```

@@ -19,12 +19,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/应用�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>SS928</p>
+<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>SS927</p>
+<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
 </td>
@@ -742,7 +742,7 @@ last_hw_task_time   hw_utilization   total_running_time
 </tbody>
 </table>
 
-备注：loadSS928V100脚本位置在版本包目录/mpp/out/ko/路径下。其中loadSS928V100脚本默认加载PQP的ko，PQP与svp\__nnn_是互斥的，不能同时加载，需要手动修改loadSS928V100脚本加载svp\__nnn_的ko。
+备注：loadHi3403V100脚本位置在版本包目录/mpp/out/ko/路径下。其中loadHi3403V100脚本默认加载PQP的ko，PQP与svp\__nnn_是互斥的，不能同时加载，需要手动修改loadHi3403V100脚本加载svp\__nnn_的ko。
 
 # 接口调用流程介绍
 ## 主要接口调用流程<a name="ZH-CN_TOPIC_0000002442021025"></a>
@@ -8801,7 +8801,7 @@ processModel.DumpModelOutputResult();</pre>
             ```
 
 # FAQ
-## SS928V100解决方案使用SVP\__NNN_模块注意事项<a name="ZH-CN_TOPIC_0000002408421590"></a>
+## Hi3403V100解决方案使用SVP\__NNN_模块注意事项<a name="ZH-CN_TOPIC_0000002408421590"></a>
 
 hnr与svp\__nnn_互斥：
 

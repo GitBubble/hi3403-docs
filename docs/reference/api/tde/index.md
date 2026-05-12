@@ -10,7 +10,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/TDE API�
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   本文以SS528V100为例，未有特殊说明，SS625V100、SS524V100、SS522V100、SS626V100与SS528V100内容一致；
->-   未有特殊说明，SS927V100与SS928V100内容一致。
+>-   未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section105mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/TDE API�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
@@ -53,7 +53,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/TDE API�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p17692193818426"><a name="p17692193818426"></a><a name="p17692193818426"></a>V100</p>
 </td>
 </tr>
-<tr id="row3972248661"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row3972248661"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -2083,12 +2083,12 @@ td_s32 ss_tde_quick_resize(td_s32 handle, const ot_tde_single_src *single_src);
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p834mcpsimp"><a name="p834mcpsimp"></a><a name="p834mcpsimp"></a>1920</p>
 </td>
 </tr>
-<tr id="row835mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p837mcpsimp"><a name="p837mcpsimp"></a><a name="p837mcpsimp"></a>SS928V100</p>
+<tr id="row835mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p837mcpsimp"><a name="p837mcpsimp"></a><a name="p837mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p839mcpsimp"><a name="p839mcpsimp"></a><a name="p839mcpsimp"></a>2048</p>
 </td>
 </tr>
-<tr id="row7386112917158"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1238620299155"><a name="p1238620299155"></a><a name="p1238620299155"></a>SS927V100</p>
+<tr id="row7386112917158"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1238620299155"><a name="p1238620299155"></a><a name="p1238620299155"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p193869292158"><a name="p193869292158"></a><a name="p193869292158"></a>2048</p>
 </td>
@@ -2565,7 +2565,7 @@ td_s32 ss_tde_rotate(td_s32 handle, const ot_tde_single_src *single_src, ot_tde_
 【注意】
 
 -   SS528V100、SS625V100、SS524V100、SS522V100不支持该功能。
--   SS928V100支持该功能。
+-   Hi3403V100支持该功能。
 -   支持的像素格式：
 
     OT\_TDE\_COLOR\_FORMAT\_ARGB1555，

@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DDR 小�
 本文为进行小型化开发的程序员而写，目的是介绍在单板上进行Linux开发、裁剪、优化及使用注意事项等内容。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->未有特殊说明，SS927V100与SS928V100内容完全一致。
+>未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section25718263411"></a>**
 
@@ -27,12 +27,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DDR 小�
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p93951718242"><a name="p93951718242"></a><a name="p93951718242"></a>V100</p>
 </td>
 </tr>
-<tr id="row188062423511"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p208065421519"><a name="p208065421519"></a><a name="p208065421519"></a>SS928</p>
+<tr id="row188062423511"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p208065421519"><a name="p208065421519"></a><a name="p208065421519"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p168061342157"><a name="p168061342157"></a><a name="p168061342157"></a>V100</p>
 </td>
 </tr>
-<tr id="row31204306217"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row31204306217"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -103,7 +103,7 @@ DDR小型化可以从多个方向入手：uboot、kernel、filesys、SDK、APP�
 
 VI采集状态下最多会占用三个视频帧VB。一个用于当前帧采集，一个用于准备给下一帧采集，一个在轮转流程中（主要是后级模块占用）。
 
-SS928V100中 MMZ占用：
+Hi3403V100中 MMZ占用：
 
 -   vi\(%d\)\_model\_%d：每路pipe需占用两个一定大小模板MMZ内存，大小与通路宽度相关，宽度小于等于4096时大小为16KB。
 -   vi\(%d\)\_lmf：每路pipe开启LMF功能时占用MMZ内存，用于存放LMF的系数，固定值4K。
@@ -263,7 +263,7 @@ SVP\_NNN内存占用分为MMZ内存和os内存，其中MMZ内存包括任务节�
     OS内存主要包括两部分：静态全局变量的内存，大小大约5.6KB；动态内存，大小大约0.594KB。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >SS927V100不支持SVP\_NNN模块。
+    >Hi3519AV200不支持SVP\_NNN模块。
 
 **IVE<a name="section8594155332913"></a>**
 
@@ -532,7 +532,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p497735543915"><a name="p497735543915"></a><a name="p497735543915"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><a name="ul14706112944616"></a><a name="ul14706112944616"></a><ul id="ul14706112944616"><li>SS928V100：vi phys chn attr1:<p id="p9429133620436"><a name="p9429133620436"></a><a name="p9429133620436"></a>compress_mode</p>
+<td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><a name="ul14706112944616"></a><a name="ul14706112944616"></a><ul id="ul14706112944616"><li>Hi3403V100：vi phys chn attr1:<p id="p9429133620436"><a name="p9429133620436"></a><a name="p9429133620436"></a>compress_mode</p>
 </li><li>其他：vi phychn attr 2:<p id="p13774436174218"><a name="p13774436174218"></a><a name="p13774436174218"></a>compress_mode</p>
 </li></ul>
 </td>
@@ -545,7 +545,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p1619017161701"><a name="p1619017161701"></a><a name="p1619017161701"></a>cache_line配置过小时可能导致图像分层</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p191902161105"><a name="p191902161105"></a><a name="p191902161105"></a>SS928V100支持</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p191902161105"><a name="p191902161105"></a><a name="p191902161105"></a>Hi3403V100支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p219011617015"><a name="p219011617015"></a><a name="p219011617015"></a>vi wdr fusion grp attr：cache_line</p>
 </td>
@@ -558,7 +558,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p1426102114386"><a name="p1426102114386"></a><a name="p1426102114386"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1226122111388"><a name="p1226122111388"></a><a name="p1226122111388"></a>SS928V100支持</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1226122111388"><a name="p1226122111388"></a><a name="p1226122111388"></a>Hi3403V100支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p126921113816"><a name="p126921113816"></a><a name="p126921113816"></a>vi pipe attr1:</p>
 <p id="p1112971894317"><a name="p1112971894317"></a><a name="p1112971894317"></a>compress_mode</p>
@@ -572,7 +572,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p619018161605"><a name="p619018161605"></a><a name="p619018161605"></a>VI在线只能处理一路，VPSS在线无法在VI_CHN做通道后处理相关功能</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p2019001618011"><a name="p2019001618011"></a><a name="p2019001618011"></a>SS928V100支持</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p2019001618011"><a name="p2019001618011"></a><a name="p2019001618011"></a>Hi3403V100支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p61901416900"><a name="p61901416900"></a><a name="p61901416900"></a>vi vpss mode &amp; vi video mode：vi_vpss_mode</p>
 </td>
@@ -585,7 +585,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p2914152810361"><a name="p2914152810361"></a><a name="p2914152810361"></a>normal模式 HNR功能在BE前面</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1427543315374"><a name="p1427543315374"></a><a name="p1427543315374"></a>SS928V100支持</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1427543315374"><a name="p1427543315374"></a><a name="p1427543315374"></a>Hi3403V100支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p1791492823613"><a name="p1791492823613"></a><a name="p1791492823613"></a>vi vpss mode &amp; vi video mode：vi_vpss_mode</p>
 </td>
@@ -598,7 +598,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p240323223019"><a name="p240323223019"></a><a name="p240323223019"></a>bnr_buf_num主要影响VI连续缓存不释放的YUV个数</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p5176194463810"><a name="p5176194463810"></a><a name="p5176194463810"></a>SS928V100支持</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p5176194463810"><a name="p5176194463810"></a><a name="p5176194463810"></a>Hi3403V100支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p1240383233018"><a name="p1240383233018"></a><a name="p1240383233018"></a>vi pipe bnr buf num:</p>
 <p id="p250319140392"><a name="p250319140392"></a><a name="p250319140392"></a>bnr_buf_num</p>
@@ -612,7 +612,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p189471921174513"><a name="p189471921174513"></a><a name="p189471921174513"></a>影响效果</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p12469112194717"><a name="p12469112194717"></a><a name="p12469112194717"></a>SS928V100支持</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p12469112194717"><a name="p12469112194717"></a><a name="p12469112194717"></a>Hi3403V100支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p1094782144512"><a name="p1094782144512"></a><a name="p1094782144512"></a>bayernr info: enable</p>
 </td>
@@ -1389,7 +1389,7 @@ SS626V100在线画框可节省G3的MMZ内存, 若仅G3用作在线画框时可�
     同一条流上的多个模型之间可以使用同一块workbuf，从而减少mmz内存占用。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >SS927V100不支持SVP\_NNN模块
+    >Hi3519AV200不支持SVP\_NNN模块
 
 **NNN<a name="section1727814121310"></a>**
 

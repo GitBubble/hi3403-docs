@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR å¼€å
 This document is written for software development engineers and image quality development engineers using HNR, aiming to provide usage guidance and assistance during development.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->This document uses SS928V100 as an example. Unless otherwise specified, SS927V100 content is consistent with SS928V100.
+>This document uses Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 content is consistent with Hi3403V100.
 
 **Product Version<a name="section143mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row157mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p159mcpsimp"><a name="p159mcpsimp"></a><a name="p159mcpsimp"></a>SS928</p>
+<tbody><tr id="row157mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p159mcpsimp"><a name="p159mcpsimp"></a><a name="p159mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row79393281419"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p761953118419"><a name="p761953118419"></a><a name="p761953118419"></a>SS927</p>
+<tr id="row79393281419"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p761953118419"><a name="p761953118419"></a><a name="p761953118419"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1361913118420"><a name="p1361913118420"></a><a name="p1361913118420"></a>V100</p>
 </td>
@@ -1981,7 +1981,7 @@ Records current PQP working status resource information, mainly including PQP qu
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.1.4.1.2 "><p>Dev ID.</p></td>
 </tr>
 <tr><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p>high_profile</p></td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p>High performance switch: only SS928V100 supports this.</p><p>Y: enabled;</p><p>N: disabled.</p></td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p>High performance switch: only Hi3403V100 supports this.</p><p>Y: enabled;</p><p>N: disabled.</p></td>
 </tr>
 <tr><td class="cellrowborder" rowspan="7" valign="top" width="21.21212121212121%" headers="mcps1.1.4.1.1 "><p>pqp task queue info</p><p>PQP module task queue information</p></td>
 <td class="cellrowborder" valign="top" width="32.32323232323232%" headers="mcps1.1.4.1.1 "><p>dev_id</p></td>

@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开�
 本文为使用ISP开发的程序员而写，目的是为您在开发过程中遇到的问题提供解决办法和帮助。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section105mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row5694533162316"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p36535379232"><a name="p36535379232"></a><a name="p36535379232"></a>SS927</p>
+<tr id="row5694533162316"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p36535379232"><a name="p36535379232"></a><a name="p36535379232"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p14653537142315"><a name="p14653537142315"></a><a name="p14653537142315"></a>V100</p>
 </td>
@@ -3342,7 +3342,7 @@ td_s32 ss_mpi_isp_ir_auto_run_once(ot_vi_pipe vi_pipe, ot_isp_ir_auto_attr *ir_a
 
 【注意】
 
-使用此接口时需要包含libot\_ir\_auto.a，该功能SS928V100不支持。
+使用此接口时需要包含libot\_ir\_auto.a，该功能Hi3403V100不支持。
 
 【举例】
 
@@ -5027,7 +5027,7 @@ typedef struct {
 -   水平方向起始位置与图像宽度之和应小于sensor输出的图像宽度。
 -   垂直方向起始位置与图像高度之和应小于sensor输出的图像高度，由于无法检测sensor实际输出的宽高，当不满足该条件时MPI不报错。
 -   使能AF模块时，要求图像的最小宽度为256。
--   SS928V100不同vi\_pipe AE支持的分辨率不同，vi\_pipe0支持的最大分辨率为8192\*8192，vi\_pipe1/vi\_pipe2/vi\_pipe3支持的最大分辨率为4096\*4096。当vi\_pipe1/vi\_pipe2/vi\_pipe3这三路的分辨率超过4096时，对应路ae统计信息使能关闭。
+-   Hi3403V100不同vi\_pipe AE支持的分辨率不同，vi\_pipe0支持的最大分辨率为8192\*8192，vi\_pipe1/vi\_pipe2/vi\_pipe3支持的最大分辨率为4096\*4096。当vi\_pipe1/vi\_pipe2/vi\_pipe3这三路的分辨率超过4096时，对应路ae统计信息使能关闭。
 
 【相关数据类型及接口】
 
@@ -5272,13 +5272,13 @@ typedef struct {
 <tbody><tr id="row4362mcpsimp"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.1.3.1.1 "><p id="p4364mcpsimp"><a name="p4364mcpsimp"></a><a name="p4364mcpsimp"></a>width</p>
 </td>
 <td class="cellrowborder" valign="top" width="78%" headers="mcps1.1.3.1.2 "><p id="p4366mcpsimp"><a name="p4366mcpsimp"></a><a name="p4366mcpsimp"></a>Sensor输出宽度。</p>
-<p id="p4367mcpsimp"><a name="p4367mcpsimp"></a><a name="p4367mcpsimp"></a>SS928V100取值范围：[120, 8192]</p>
+<p id="p4367mcpsimp"><a name="p4367mcpsimp"></a><a name="p4367mcpsimp"></a>Hi3403V100取值范围：[120, 8192]</p>
 </td>
 </tr>
 <tr id="row4368mcpsimp"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.1.3.1.1 "><p id="p4370mcpsimp"><a name="p4370mcpsimp"></a><a name="p4370mcpsimp"></a>height</p>
 </td>
 <td class="cellrowborder" valign="top" width="78%" headers="mcps1.1.3.1.2 "><p id="p4372mcpsimp"><a name="p4372mcpsimp"></a><a name="p4372mcpsimp"></a>Sensor输出高度。</p>
-<p id="p4373mcpsimp"><a name="p4373mcpsimp"></a><a name="p4373mcpsimp"></a>SS928V100取值范围：[120, 8192]</p>
+<p id="p4373mcpsimp"><a name="p4373mcpsimp"></a><a name="p4373mcpsimp"></a>Hi3403V100取值范围：[120, 8192]</p>
 </td>
 </tr>
 </tbody>
@@ -6365,7 +6365,7 @@ typedef struct {
 【注意事项】
 
 -   pfn\_cmos\_sensor\_init, pfn\_cmos\_get\_isp\_default, pfn\_cmos\_get\_isp\_black\_level, pfn\_cmos\_set\_pixel\_detect和pfn\_cmos\_get\_sns\_reg\_info必须赋值，其他回调函数指针如果不需要赋值，应置为NULL。例如有的sensor不支持切换分辨率，那么pfn\_cmos\_set\_image\_mode需要置为NULL。
--   SS928V100不支持AWB增益在sensor配置，仅支持sensor侧获取当前AWB增益。
+-   Hi3403V100不支持AWB增益在sensor配置，仅支持sensor侧获取当前AWB增益。
 -   不支持切换AWB增益配置位置。
 
 【相关数据类型及接口】
@@ -6995,7 +6995,7 @@ typedef struct {
 
 【定义】
 
-SS928V100中定义：
+Hi3403V100中定义：
 
 ```
 typedef union {
@@ -7169,7 +7169,7 @@ typedef union {
 
 【定义】
 
-SS928V100定义：
+Hi3403V100定义：
 
 ```
 typedef struct {
@@ -9009,8 +9009,8 @@ typedef struct {
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   表中说明仅在ISP默认配置下生效，实际会受到黑电平配置及AE统计信息位置的影响。
->-   WDR合成前（FE）统计信息为固定在WB模块之后，不可配置。使用FE统计信息时需要减去黑电平，直方图应减去10bit黑电平，均值应减去16bit黑电平。WDR合成前\(FE\)统计信息受到位于FE AE之前处理模块（在SS928V100中，FE AE之前的处理模块有DG/WB）增益影响，这些模块的FE增益值由算法内部保证与BE保持一致，无需单独配置。
->-   在SS928V100中第0路FE统计信息会经过水平下采样，因此点数减半。
+>-   WDR合成前（FE）统计信息为固定在WB模块之后，不可配置。使用FE统计信息时需要减去黑电平，直方图应减去10bit黑电平，均值应减去16bit黑电平。WDR合成前\(FE\)统计信息受到位于FE AE之前处理模块（在Hi3403V100中，FE AE之前的处理模块有DG/WB）增益影响，这些模块的FE增益值由算法内部保证与BE保持一致，无需单独配置。
+>-   在Hi3403V100中第0路FE统计信息会经过水平下采样，因此点数减半。
 >-   线性模式推荐使用WDR合成前\(FE\)1024段直方图。WDR模式推荐使用WDR合成前\(FE\)1024段直方图，或者使用WDR合成后\(BE\)开方模式的1024段直方图。离线模式下业务压力大时，WDR合成前\(FE\)实时性更好，因此离线模式下推荐使用FE统计信息。SDK提供的AE算法在如果采用的是BE统计信息，默认在线性模式下使用（BE）不开方模式的统计信息，在WDR模式下使用（BE）开方模式的统计信息。如果线性模式下使用（BE）开方模式的统计信息，或者WDR模式下使用（BE）不开方模式的统计信息，会导致SDK提供AE算法的出现异常。
 
 【相关数据类型及接口】
@@ -9703,7 +9703,7 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="74%" headers="mcps1.1.3.1.2 "><p id="p8503mcpsimp"><a name="p8503mcpsimp"></a><a name="p8503mcpsimp"></a>白平衡增益在ISP的位置。取值范围：[0,1]</p>
 <p id="p8504mcpsimp"><a name="p8504mcpsimp"></a><a name="p8504mcpsimp"></a>0：白平衡增益配置在WDR合成前的DG1处。</p>
 <p id="p8505mcpsimp"><a name="p8505mcpsimp"></a><a name="p8505mcpsimp"></a>1：白平衡增益配置在WB处。</p>
-<p id="p8506mcpsimp"><a name="p8506mcpsimp"></a><a name="p8506mcpsimp"></a>SS928V100暂不支持白平衡增益配置在DG1处。</p>
+<p id="p8506mcpsimp"><a name="p8506mcpsimp"></a><a name="p8506mcpsimp"></a>Hi3403V100暂不支持白平衡增益配置在DG1处。</p>
 </td>
 </tr>
 <tr id="row8507mcpsimp"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.1.3.1.1 "><p id="p8509mcpsimp"><a name="p8509mcpsimp"></a><a name="p8509mcpsimp"></a>awb_stat_switch</p>
@@ -9712,7 +9712,7 @@ typedef struct {
 <p id="p8512mcpsimp"><a name="p8512mcpsimp"></a><a name="p8512mcpsimp"></a>0：白平衡统计模块在DG后。</p>
 <p id="p8513mcpsimp"><a name="p8513mcpsimp"></a><a name="p8513mcpsimp"></a>1：白平衡统计模块在EXPANDER后。</p>
 <p id="p8514mcpsimp"><a name="p8514mcpsimp"></a><a name="p8514mcpsimp"></a>2：白平衡统计模块在DRC后。</p>
-<p id="p8515mcpsimp"><a name="p8515mcpsimp"></a><a name="p8515mcpsimp"></a>SS928V100暂不支持配置白平衡统计模块在EXPANDER后。</p>
+<p id="p8515mcpsimp"><a name="p8515mcpsimp"></a><a name="p8515mcpsimp"></a>Hi3403V100暂不支持配置白平衡统计模块在EXPANDER后。</p>
 </td>
 </tr>
 <tr id="row8516mcpsimp"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.1.3.1.1 "><p id="p8518mcpsimp"><a name="p8518mcpsimp"></a><a name="p8518mcpsimp"></a>wb_gain_in_sensor</p>
@@ -9720,7 +9720,7 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="74%" headers="mcps1.1.3.1.2 "><p id="p8520mcpsimp"><a name="p8520mcpsimp"></a><a name="p8520mcpsimp"></a>白平衡增益是否在sensor配置。取值范围：[0, 1]</p>
 <p id="p8521mcpsimp"><a name="p8521mcpsimp"></a><a name="p8521mcpsimp"></a>0：白平衡增益在ISP配置。</p>
 <p id="p8522mcpsimp"><a name="p8522mcpsimp"></a><a name="p8522mcpsimp"></a>1：白平衡增益在sensor配置。</p>
-<p id="p8523mcpsimp"><a name="p8523mcpsimp"></a><a name="p8523mcpsimp"></a>SS928V100暂不支持白平衡增益在sensor配置。</p>
+<p id="p8523mcpsimp"><a name="p8523mcpsimp"></a><a name="p8523mcpsimp"></a>Hi3403V100暂不支持白平衡增益在sensor配置。</p>
 </td>
 </tr>
 <tr id="row8524mcpsimp"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.1.3.1.1 "><p id="p8526mcpsimp"><a name="p8526mcpsimp"></a><a name="p8526mcpsimp"></a>wdr_wb_gain[-]</p>
@@ -10580,7 +10580,7 @@ typedef struct {
 </thead>
 <tbody><tr id="row9227mcpsimp"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.1.3.1.1 "><p id="p9229mcpsimp"><a name="p9229mcpsimp"></a><a name="p9229mcpsimp"></a>be_buf_num</p>
 </td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.1.3.1.2 "><p id="p9231mcpsimp"><a name="p9231mcpsimp"></a><a name="p9231mcpsimp"></a>离线模式下，ISP BE config buffer的数目。仅离线模式有效取值范围：[2, 20]，SS928V100默认值为8</p>
+<td class="cellrowborder" valign="top" width="72%" headers="mcps1.1.3.1.2 "><p id="p9231mcpsimp"><a name="p9231mcpsimp"></a><a name="p9231mcpsimp"></a>离线模式下，ISP BE config buffer的数目。仅离线模式有效取值范围：[2, 20]，Hi3403V100默认值为8</p>
 </td>
 </tr>
 <tr id="row9232mcpsimp"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.1.3.1.1 "><p id="p9234mcpsimp"><a name="p9234mcpsimp"></a><a name="p9234mcpsimp"></a>proc_param</p>
@@ -10713,7 +10713,7 @@ typedef struct {
 <tr id="row9357mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9359mcpsimp"><a name="p9359mcpsimp"></a><a name="p9359mcpsimp"></a>quick_start</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9361mcpsimp"><a name="p9361mcpsimp"></a><a name="p9361mcpsimp"></a>表示ISP是否采用快速启动，默认值为0。</p>
-<a name="ul9362mcpsimp"></a><a name="ul9362mcpsimp"></a><ul id="ul9362mcpsimp"><li>quick_start=0：ISP初始化时配置sensor序列</li><li>quick_start=1：ISP初始化时不配置sensor序列。SS928V100不支持。</li></ul>
+<a name="ul9362mcpsimp"></a><a name="ul9362mcpsimp"></a><ul id="ul9362mcpsimp"><li>quick_start=0：ISP初始化时配置sensor序列</li><li>quick_start=1：ISP初始化时不配置sensor序列。Hi3403V100不支持。</li></ul>
 </td>
 </tr>
 <tr id="row9365mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9367mcpsimp"><a name="p9367mcpsimp"></a><a name="p9367mcpsimp"></a>long_frame_interrupt_en</p>
@@ -11379,7 +11379,7 @@ typedef enum {
 
 【注意事项】
 
-SS928V100不支持机器学习AWB。
+Hi3403V100不支持机器学习AWB。
 
 【相关数据类型及接口】
 

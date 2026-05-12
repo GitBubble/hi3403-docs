@@ -19,12 +19,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1533613482454"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1587119153326"><a name="p1587119153326"></a><a name="p1587119153326"></a>SS928</p>
+<tbody><tr id="row1533613482454"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1587119153326"><a name="p1587119153326"></a><a name="p1587119153326"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p158711415193215"><a name="p158711415193215"></a><a name="p158711415193215"></a>V100</p>
 </td>
 </tr>
-<tr id="row567519265"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p787141553210"><a name="p787141553210"></a><a name="p787141553210"></a>SS927</p>
+<tr id="row567519265"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p787141553210"><a name="p787141553210"></a><a name="p787141553210"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p20871215113219"><a name="p20871215113219"></a><a name="p20871215113219"></a>V100</p>
 </td>
@@ -387,7 +387,7 @@ Note: Follow sample usage rules strictly. For example, networks in `2_object_det
 
 ### Development Board Sample<a name="ZH-CN_TOPIC_0000002446762177"></a>
 
-The development board sample covers only board-side compilation and execution, using a video stream as input. The sample path is: `/SS928V100<version>/SS928V100<version>/01.software/board/SS928V100_SDK_<version>/SS928V100_SDK_<version>/package/smp/smp/a55_linux/mpp/sample/svp/svp_nnn`. The currently provided samples include resnet50 and lstm. Follow the instructions in each sample's `README.md`.
+The development board sample covers only board-side compilation and execution, using a video stream as input. The sample path is: `/Hi3403V100<version>/Hi3403V100<version>/01.software/board/Hi3403V100_SDK_<version>/Hi3403V100_SDK_<version>/package/smp/smp/a55_linux/mpp/sample/svp/svp_nnn`. The currently provided samples include resnet50 and lstm. Follow the instructions in each sample's `README.md`.
 
 Note: Follow sample usage rules strictly. All development board samples include hardware-accelerated detection network support, so the input om model must include the RPN input branch. If you modify the original model resolution or input image format, update the corresponding sample code accordingly.
 
@@ -595,7 +595,7 @@ model execute success
 
 ##### Environment Installation<a name="ZH-CN_TOPIC_0000002413203060"></a>
 
--   For board-side environment installation, refer to *SS928V100/SS927V100 SDK Installation and Upgrade Guide*.
+-   For board-side environment installation, refer to *Hi3403V100/Hi3519AV200 SDK Installation and Upgrade Guide*.
 -   For SVP ACL interface usage, refer to the "SVP ACL API Reference" section in the *Application Development Guide*.
 -   Add the SVP\_NNN library path to the system environment variable `LD_LIBRARY_PATH` (e.g., `smp/a55_linux/mpp/out/lib/svp_nnn`).
 -   Required files for board-side development are listed in [Table 1](#table764172014331).

@@ -15,8 +15,8 @@ generate the inputs the DPU needs.
 
 | Product | Version |
 |---|---|
-| SS928 | V100 |
-| SS927 | V100 |
+| Hi3403V100 | V100 |
+| Hi3519AV200 | V100 |
 
 **Audience**
 

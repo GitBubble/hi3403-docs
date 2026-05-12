@@ -1,6 +1,6 @@
 ---
 title: Hi3403 开发者中心
-description: HiSilicon SS928V100/SS927V100 Hi3403 平台社区文档
+description: HiSilicon Hi3403V100/Hi3519AV200 Hi3403 平台社区文档
 hide:
   - toc
   - navigation
@@ -10,7 +10,7 @@ hide:
 
 # Hi3403 文档
 
-为 HiSilicon **SS928V100 / SS927V100** 平台编写、由社区维护的开发文档。
+为 HiSilicon **Hi3403V100 / Hi3519AV200** 平台编写、由社区维护的开发文档。
 覆盖芯片、Linux、多媒体、AI、开发板与构建工具。
 
 [现在开始 :octicons-arrow-right-24:](get-started/index.md){ .md-button .md-button--primary }

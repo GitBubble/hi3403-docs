@@ -53,7 +53,7 @@ wget https://ultralytics.com/images/bus.jpg
 
 ATC turns the ONNX into the SVP-executable `.om` format. **Exact
 arguments vary by SDK version** — the snippet below is a common
-SS928V100 invocation; refer to the
+Hi3403V100 invocation; refer to the
 [ATC user guide](../multimedia/atc/tool/index.md) for the authoritative
 flags:
 
@@ -63,7 +63,7 @@ atc \
     --framework=5 \
     --output=yolov5n \
     --input_shape="images:1,3,640,640" \
-    --soc_version=SS928V100 \
+    --soc_version=Hi3403V100 \
     --log=info
 ```
 
@@ -71,7 +71,7 @@ atc \
 |---|---|
 | `--framework` | `1`=Caffe, `3`=TensorFlow, `5`=ONNX |
 | `--input_shape` | Model input tensor shape |
-| `--soc_version` | Target chip (some SDK versions take `Hi3403V100`, others `SS928V100`) |
+| `--soc_version` | Target chip (some SDK versions take `Hi3403V100`, others `Hi3403V100`) |
 
 You should now have `yolov5n.om` (~8 MB).
 
@@ -89,7 +89,7 @@ scp yolov5n.om bus.jpg hi@<board-IP>:~/
 ## Step 4 — Run inference on the board
 
 The SDK ships several SVP / ACL samples under
-`pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/` — exact names
+`pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/` — exact names
 vary by SDK version (commonly `nnie_sample`, `acl_sample`,
 `svp_sample`). Cross-build the relevant sample, copy its binary to the
 board, and feed it your `.om`:
@@ -115,7 +115,7 @@ Expected output (the exact format depends on which sample you ran):
 
 ## Step 5 — Speed up: quantize
 
-YOLOv5n at FP16 lands around 7 ms on SS928V100. Quantize to INT8 with
+YOLOv5n at FP16 lands around 7 ms on Hi3403V100. Quantize to INT8 with
 [AMCT](../multimedia/amct/index.md) and the same model drops to ~3 ms:
 
 ``` bash

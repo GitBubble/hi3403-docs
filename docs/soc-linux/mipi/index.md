@@ -15,12 +15,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MIPI 使
 </th>
 </tr>
 </thead>
-<tbody><tr id="row192mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a>SS928</p>
+<tbody><tr id="row192mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row2090316292516"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16920183212510"><a name="p16920183212510"></a><a name="p16920183212510"></a>SS927</p>
+<tr id="row2090316292516"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16920183212510"><a name="p16920183212510"></a><a name="p16920183212510"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p119201326520"><a name="p119201326520"></a><a name="p119201326520"></a>V100</p>
 </td>
@@ -29,7 +29,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MIPI 使
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **读者对象<a name="section197mcpsimp"></a>**
 
@@ -152,7 +152,7 @@ MIPI Rx是一个支持多种差分视频输入接口的采集单元，通过comb
 </th>
 </tr>
 </thead>
-<tbody><tr id="row477mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p479mcpsimp"><a name="p479mcpsimp"></a><a name="p479mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row477mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p479mcpsimp"><a name="p479mcpsimp"></a><a name="p479mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>MIPI Rx最大支持8Lane MIPI输入或8Lane LVDS输入。</p>
 </td>
@@ -171,7 +171,7 @@ MIPI Rx能同时对接多个sensor，最多对接sensor的数目如[表2](#_Ref5
 </th>
 </tr>
 </thead>
-<tbody><tr id="row495mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row495mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><p id="p499mcpsimp"><a name="p499mcpsimp"></a><a name="p499mcpsimp"></a>4</p>
 </td>
@@ -198,7 +198,7 @@ MIPI Rx最大能同时对接不同数量的sensor，每个sensor需要的Lane也
 </th>
 </tr>
 </thead>
-<tbody><tr id="row525mcpsimp"><td class="cellrowborder" rowspan="4" valign="top" width="26.732673267326735%" headers="mcps1.2.7.1.1 "><p id="p527mcpsimp"><a name="p527mcpsimp"></a><a name="p527mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row525mcpsimp"><td class="cellrowborder" rowspan="4" valign="top" width="26.732673267326735%" headers="mcps1.2.7.1.1 "><p id="p527mcpsimp"><a name="p527mcpsimp"></a><a name="p527mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.2.7.1.2 "><p id="p529mcpsimp"><a name="p529mcpsimp"></a><a name="p529mcpsimp"></a>0</p>
 </td>
@@ -266,7 +266,7 @@ MIPI Rx具体的Lane管脚连接请参见[表4](#_Ref484014656)。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row596mcpsimp"><td class="cellrowborder" rowspan="8" valign="top" width="18.81188118811881%" headers="mcps1.2.7.1.1 "><p id="p598mcpsimp"><a name="p598mcpsimp"></a><a name="p598mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row596mcpsimp"><td class="cellrowborder" rowspan="8" valign="top" width="18.81188118811881%" headers="mcps1.2.7.1.1 "><p id="p598mcpsimp"><a name="p598mcpsimp"></a><a name="p598mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.7.1.2 "><p id="p600mcpsimp"><a name="p600mcpsimp"></a><a name="p600mcpsimp"></a>Lane0</p>
 </td>
@@ -531,7 +531,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4084mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p4086mcpsimp"><a name="p4086mcpsimp"></a><a name="p4086mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row4084mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p4086mcpsimp"><a name="p4086mcpsimp"></a><a name="p4086mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4088mcpsimp"><a name="p4088mcpsimp"></a><a name="p4088mcpsimp"></a>支持</p>
 </td>
@@ -594,7 +594,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3285mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p3287mcpsimp"><a name="p3287mcpsimp"></a><a name="p3287mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row3285mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p3287mcpsimp"><a name="p3287mcpsimp"></a><a name="p3287mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p3289mcpsimp"><a name="p3289mcpsimp"></a><a name="p3289mcpsimp"></a>支持</p>
 </td>
@@ -657,7 +657,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row168mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p170mcpsimp"><a name="p170mcpsimp"></a><a name="p170mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row168mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p170mcpsimp"><a name="p170mcpsimp"></a><a name="p170mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p172mcpsimp"><a name="p172mcpsimp"></a><a name="p172mcpsimp"></a>支持</p>
 </td>
@@ -720,7 +720,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row303mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p305mcpsimp"><a name="p305mcpsimp"></a><a name="p305mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row303mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p305mcpsimp"><a name="p305mcpsimp"></a><a name="p305mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p307mcpsimp"><a name="p307mcpsimp"></a><a name="p307mcpsimp"></a>支持</p>
 </td>
@@ -783,7 +783,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4136mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p4138mcpsimp"><a name="p4138mcpsimp"></a><a name="p4138mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row4136mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p4138mcpsimp"><a name="p4138mcpsimp"></a><a name="p4138mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p4140mcpsimp"><a name="p4140mcpsimp"></a><a name="p4140mcpsimp"></a>支持</p>
 </td>
@@ -846,7 +846,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row453mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p455mcpsimp"><a name="p455mcpsimp"></a><a name="p455mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row453mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p455mcpsimp"><a name="p455mcpsimp"></a><a name="p455mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p457mcpsimp"><a name="p457mcpsimp"></a><a name="p457mcpsimp"></a>支持</p>
 </td>
@@ -909,7 +909,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row752mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p754mcpsimp"><a name="p754mcpsimp"></a><a name="p754mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row752mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p754mcpsimp"><a name="p754mcpsimp"></a><a name="p754mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p756mcpsimp"><a name="p756mcpsimp"></a><a name="p756mcpsimp"></a>支持</p>
 </td>
@@ -972,7 +972,7 @@ MIPI Tx提供对接显示屏、级联的功能。提供ioctl接口，可用的�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row867mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p869mcpsimp"><a name="p869mcpsimp"></a><a name="p869mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row867mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p869mcpsimp"><a name="p869mcpsimp"></a><a name="p869mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p871mcpsimp"><a name="p871mcpsimp"></a><a name="p871mcpsimp"></a>支持</p>
 </td>
@@ -1035,7 +1035,7 @@ SENSOR的时钟设备源编号。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2146mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2148mcpsimp"><a name="p2148mcpsimp"></a><a name="p2148mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row2146mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2148mcpsimp"><a name="p2148mcpsimp"></a><a name="p2148mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2150mcpsimp"><a name="p2150mcpsimp"></a><a name="p2150mcpsimp"></a>支持</p>
 </td>
@@ -1098,7 +1098,7 @@ SENSOR的时钟设备源编号。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4225mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p4227mcpsimp"><a name="p4227mcpsimp"></a><a name="p4227mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row4225mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p4227mcpsimp"><a name="p4227mcpsimp"></a><a name="p4227mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p4229mcpsimp"><a name="p4229mcpsimp"></a><a name="p4229mcpsimp"></a>支持</p>
 </td>
@@ -1544,7 +1544,7 @@ typedef unsigned int combo_dev_t;
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3447mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p3449mcpsimp"><a name="p3449mcpsimp"></a><a name="p3449mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row3447mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p3449mcpsimp"><a name="p3449mcpsimp"></a><a name="p3449mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p3451mcpsimp"><a name="p3451mcpsimp"></a><a name="p3451mcpsimp"></a>[0, <a href="#ZH-CN_TOPIC_0000002408262242">MIPI_RX_MAX_DEV_NUM</a>)</p>
 </td>
@@ -1584,7 +1584,7 @@ SENSOR的复位信号线个数。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4161mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p xml:lang="sv-SE" id="p4163mcpsimp"><a name="p4163mcpsimp"></a><a name="p4163mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row4161mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p xml:lang="sv-SE" id="p4163mcpsimp"><a name="p4163mcpsimp"></a><a name="p4163mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p4165mcpsimp"><a name="p4165mcpsimp"></a><a name="p4165mcpsimp"></a>4</p>
 </td>
@@ -1621,7 +1621,7 @@ SENSOR的时钟信号线个数。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1942mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1944mcpsimp"><a name="p1944mcpsimp"></a><a name="p1944mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row1942mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1944mcpsimp"><a name="p1944mcpsimp"></a><a name="p1944mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1946mcpsimp"><a name="p1946mcpsimp"></a><a name="p1946mcpsimp"></a>4</p>
 </td>
@@ -1658,7 +1658,7 @@ typedef unsigned int sns_rst_source_t;
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1138mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p1140mcpsimp"><a name="p1140mcpsimp"></a><a name="p1140mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row1138mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p1140mcpsimp"><a name="p1140mcpsimp"></a><a name="p1140mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p1142mcpsimp"><a name="p1142mcpsimp"></a><a name="p1142mcpsimp"></a>[0, SNS_MAX_RST_SOURCE_NUM)</p>
 </td>
@@ -1695,7 +1695,7 @@ typedef unsigned int sns_clk_source_t;
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1548mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p1550mcpsimp"><a name="p1550mcpsimp"></a><a name="p1550mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row1548mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p1550mcpsimp"><a name="p1550mcpsimp"></a><a name="p1550mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p1552mcpsimp"><a name="p1552mcpsimp"></a><a name="p1552mcpsimp"></a>[0, SNS_MAX_CLK_SOURCE_NUM)</p>
 </td>
@@ -1733,7 +1733,7 @@ MIPI Rx支持的设备数。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3828mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p3830mcpsimp"><a name="p3830mcpsimp"></a><a name="p3830mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row3828mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p3830mcpsimp"><a name="p3830mcpsimp"></a><a name="p3830mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p3832mcpsimp"><a name="p3832mcpsimp"></a><a name="p3832mcpsimp"></a>4</p>
 </td>
@@ -1743,7 +1743,7 @@ MIPI Rx支持的设备数。
 
 【注意事项】
 
-SS928V100支持多个MIPI Rx设备同时使用。
+Hi3403V100支持多个MIPI Rx设备同时使用。
 
 【相关数据类型及接口】
 
@@ -1944,7 +1944,7 @@ typedef enum {
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3802mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p3804mcpsimp"><a name="p3804mcpsimp"></a><a name="p3804mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row3802mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p3804mcpsimp"><a name="p3804mcpsimp"></a><a name="p3804mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p xml:lang="sv-SE" id="p3806mcpsimp"><a name="p3806mcpsimp"></a><a name="p3806mcpsimp"></a>[LANE_DIVIDE_MODE_0, LANE_DIVIDE_MODE_3]</p>
 </td>
@@ -2016,7 +2016,7 @@ typedef enum
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1021mcpsimp"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.3.1.1 "><p id="p1023mcpsimp"><a name="p1023mcpsimp"></a><a name="p1023mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row1021mcpsimp"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.3.1.1 "><p id="p1023mcpsimp"><a name="p1023mcpsimp"></a><a name="p1023mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.1.3.1.2 "><p id="p1025mcpsimp"><a name="p1025mcpsimp"></a><a name="p1025mcpsimp"></a>MIPI的所有设备都支持。</p>
 </td>
@@ -2184,7 +2184,7 @@ typedef enum
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1503mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.1.3.1.1 "><p id="p1505mcpsimp"><a name="p1505mcpsimp"></a><a name="p1505mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row1503mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.1.3.1.1 "><p id="p1505mcpsimp"><a name="p1505mcpsimp"></a><a name="p1505mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="59%" headers="mcps1.1.3.1.2 "><p id="p1507mcpsimp"><a name="p1507mcpsimp"></a><a name="p1507mcpsimp"></a>全部支持</p>
 </td>
@@ -2470,7 +2470,7 @@ typedef enum
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3580mcpsimp"><td class="cellrowborder" valign="top" width="60%" headers="mcps1.1.3.1.1 "><p id="p3582mcpsimp"><a name="p3582mcpsimp"></a><a name="p3582mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row3580mcpsimp"><td class="cellrowborder" valign="top" width="60%" headers="mcps1.1.3.1.1 "><p id="p3582mcpsimp"><a name="p3582mcpsimp"></a><a name="p3582mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.1.3.1.2 "><p id="p3584mcpsimp"><a name="p3584mcpsimp"></a><a name="p3584mcpsimp"></a>都支持</p>
 </td>
@@ -3133,7 +3133,7 @@ typedef struct
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3373mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p3375mcpsimp"><a name="p3375mcpsimp"></a><a name="p3375mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row3373mcpsimp"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p3375mcpsimp"><a name="p3375mcpsimp"></a><a name="p3375mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p3377mcpsimp"><a name="p3377mcpsimp"></a><a name="p3377mcpsimp"></a>支持</p>
 </td>
@@ -3714,7 +3714,7 @@ MIPI\_RX正常工作状态下proc信息中宽高应该是稳定不变且和senso
 【调试信息】
 
 ```
-[MIPI_RX] Version: [SS928V100V1.0.0.0 B010 Release], Build Time[Jan 25 2022, 11:06:37]
+[MIPI_RX] Version: [Hi3403V100V1.0.0.0 B010 Release], Build Time[Jan 25 2022, 11:06:37]
 -----mipi lane divide mdoe---------------------------------------------------------------------------------
   mode         lane divide
      0                   8
@@ -4351,7 +4351,7 @@ MIPI\_TX的proc信息主要有：MIPI\_TX设备模块参数、MIPI\_TX设备配�
 【调试信息】
 
 ```
-[MIPI_TX] Version: [SS928V100V1.0.0.0 B010 Release], Build Time[Jan 25 2022, 11:07:02]
+[MIPI_TX] Version: [Hi3403V100V1.0.0.0 B010 Release], Build Time[Jan 25 2022, 11:07:02]
 ----------mipi_tx module config------------------------
   smooth
        0

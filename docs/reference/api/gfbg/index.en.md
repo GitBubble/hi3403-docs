@@ -10,7 +10,7 @@ This document mainly introduces the GFBG API, data types, and Proc debug informa
 
 >![](public_sys-resources/icon-note.gif) **Note:**
 >-   Unless otherwise specified, the content for SS528V100, SS625V100, SS524V100, SS522V101 is the same as SS626V100.
->-   Unless otherwise specified, SS927V100 is identical to SS928V100, and SS522V100 is identical to SS524V100.
+>-   Unless otherwise specified, Hi3519AV200 is identical to Hi3403V100, and SS522V100 is identical to SS524V100.
 
 **Product Version<a name="section418mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ The product version corresponding to this document is as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row432mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p434mcpsimp"><a name="p434mcpsimp"></a><a name="p434mcpsimp"></a>SS928</p>
+<tbody><tr id="row432mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p434mcpsimp"><a name="p434mcpsimp"></a><a name="p434mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p436mcpsimp"><a name="p436mcpsimp"></a><a name="p436mcpsimp"></a>V100</p>
 </td>
@@ -48,7 +48,7 @@ The product version corresponding to this document is as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p215119511412"><a name="p215119511412"></a><a name="p215119511412"></a>V100</p>
 </td>
 </tr>
-<tr id="row943434601820"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>SS927</p>
+<tr id="row943434601820"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p34921898474"><a name="p34921898474"></a><a name="p34921898474"></a>V100</p>
 </td>

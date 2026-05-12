@@ -10,7 +10,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OpenHarm
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   本文以Hi3403V100为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
->-   Hi3403V100和Hi3519AV200上运行OpenHarmony依赖同一个SS928V100_SDK版本包。
+>-   Hi3403V100和Hi3519AV200上运行OpenHarmony依赖同一个Hi3403V100_SDK版本包。
 
 **产品版本<a name="section196mcpsimp"></a>**
 
@@ -230,13 +230,13 @@ ln -s /bin/bash /bin/sh
 
 OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
 
-1.  下载HiSpark社区Hi3403仓代码，由于ss928v100\_clang和ss928v100\_gcc为Hi3403的子仓，而OpenHarmony使用LLVM-Clang工具链的SDK，故此步骤下载得到Hi3403和ss928v100\_clang代码目录。
+1.  下载HiSpark社区Hi3403仓代码，由于Hi3403V100\_clang和Hi3403V100\_gcc为Hi3403的子仓，而OpenHarmony使用LLVM-Clang工具链的SDK，故此步骤下载得到Hi3403和Hi3403V100\_clang代码目录。
 
     ```
     git clone https://gitee.com/HiSpark/pegasus.git
     cd pegasus
     git submodule init
-    git submodule update platform/ss928v100_clang
+    git submodule update platform/Hi3403V100_clang
     ```
 
     通过以上步骤操作，得到Hi3403项目文件目录如下。
@@ -251,17 +251,17 @@ OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
     │   └── manifest
     │       ├── devboard_hispark_aifly_5.1.0.xml  # repo清单文件（定义代码仓库列表）
     │       └── prebuilts_setup.sh                # 预编译环境准备脚本
-    ├── platform/ss928v100_clang        # SDK源码和二进制库（内核驱动、Sample、开源软件包）
+    ├── platform/Hi3403V100_clang        # SDK源码和二进制库（内核驱动、Sample、开源软件包）
     └── vendor
         └── rkh/patches                 # 润开鸿OpenHarmony源码补丁（按子系统分类，增强系统功能和驱动支持）
     ```
 
     -   `os/OpenHarmony`目录包含海思芯片适配OpenHarmony的补丁、配置和构建脚本。其中`manifest/devboard_hispark_aifly_5.1.0.xml`为repo清单文件，定义了OpenHarmony 5.1.0 Release版本需要同步的代码仓库列表，已针对Small型系统优化，剔除了非必要的代码仓，并将常用修改的代码仓（kernel_linux_config、kernel_linux_patches、device_soc_hisilicon、device_board_hisilicon、vendor_hisilicon）注释掉远程下载，直接使用本地子目录。
-    -   `platform/ss928v100_clang`目录是SS928V100的SDK源码和二进制库，包含内核驱动源码、Sample源码及开源软件包。
+    -   `platform/Hi3403V100_clang`目录是Hi3403V100的SDK源码和二进制库，包含内核驱动源码、Sample源码及开源软件包。
     -   `vendor`目录是生态伙伴（易百纳、野火、迅为、润开鸿、中山旷视等）基于Hi3403平台做的增量特性开发，包括板卡适配补丁、Demo示例、第三方开源软件编译指南等，与`os/OpenHarmony/vendor`（海思原厂产品配置）有所区别。
 
     >![](public_sys-resources/icon-note.gif) **说明：**
-    >由于SS927V100和SS928V100相似，因此SS927V100的SDK能复用SS928V100的SDK源码，共用`os/OpenHarmony/device/soc/hisilicon/ss928v100/sdk_linux`目录。
+    >由于Hi3519AV200和Hi3403V100相似，因此Hi3519AV200的SDK能复用Hi3403V100的SDK源码，共用`os/OpenHarmony/device/soc/hisilicon/Hi3403V100/sdk_linux`目录。
 
 2.  进入`os/OpenHarmony`目录，使用repo工具初始化并同步OpenHarmony代码。repo清单文件`devboard_hispark_aifly_5.1.0.xml`已针对Small型系统优化，剔除了非必要的代码仓。
 
@@ -280,7 +280,7 @@ OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
 
 3.  执行`os/OpenHarmony/manifest/prebuilts_setup.sh`脚本，完成预编译环境准备。该脚本主要完成以下任务：
     -   修复`system_util.py`和`patch_process.py`脚本中的已知问题
-    -   将`platform/ss928v100_clang`目录拷贝至SDK目标路径
+    -   将`platform/Hi3403V100_clang`目录拷贝至SDK目标路径
     -   下载mbedtls v2.16.10源码包（存放至`os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/mbedtls/`目录）
     -   下载arm-trusted-firmware v2.2源码包（存放至`os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/trusted-firmware-a/`目录）
     -   调用`build/prebuilts_download.sh`下载OpenHarmony编译工具链（clang、gn、ninja、cmake、nodejs等）
@@ -321,7 +321,7 @@ pegasus
 │   ├── vendor
 │   ├── build.sh
 │   └── build.py
-├── platform/ss928v100_clang
+├── platform/Hi3403V100_clang
 └── vendor
     └── rkh/patches
 ```
@@ -351,7 +351,7 @@ pegasus
     打开 `os/OpenHarmony/vendor/hisilicon/hispark_aifly_linux/init_configs/etc/init.d/S82ohos`，找到加载驱动的命令行，移除 `-display drm` 参数或改为 `-display fb`。
 
     ```bash
-    ./load_ss928v100_ohos -i
+    ./load_Hi3403V100_ohos -i
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**
@@ -497,11 +497,11 @@ insmod: failed to load xxx.ko:Key was rejected by service
 
     ```
     cd os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/osdrv/
-    make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all -j 20
+    make LLVM=1 BOOT_MEDIA=emmc CHIP=Hi3403V100 all -j 20
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**
-    >-   `CHIP`：可选 `ss928v100` 或 `ss927v100`，默认为 `ss928v100`。
+    >-   `CHIP`：可选 `Hi3403V100` 或 `Hi3519AV200`，默认为 `Hi3403V100`。
     >-   `BOOT_MEDIA`：根据启动介质选择，`spi`（spi nor 或 spi nand）、`nand`（并口 nand）、`emmc`。
     >-   `LLVM=1`：使用 musl 工具链编译；不指定则使用 glibc 工具链。
 
@@ -518,7 +518,7 @@ insmod: failed to load xxx.ko:Key was rejected by service
     make distclean    # 彻底清除编译中间文件
     ```
 
-编译成功后，生成的 `boot_image.bin` 镜像文件位于 `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/osdrv/pub/ss928v100_emmc_image_musl/` 目录下。
+编译成功后，生成的 `boot_image.bin` 镜像文件位于 `os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/osdrv/pub/Hi3403V100_emmc_image_musl/` 目录下。
 
 ### SDK sample编译<a name="ZH-CN_TOPIC_0000002432267302"></a>
 
@@ -714,7 +714,7 @@ Hi3403V100硬件单板烧写KEY0步骤如下。
     ![](figures/XTS认证送检材料参考目录.png "XTS认证送检材料参考目录")
 ### 硬件单板烧写<a name="ZH-CN_TOPIC_0000002374732952"></a>
 
-SS928V100和SS927V100硬件单板烧写KEY0步骤。
+Hi3403V100和Hi3519AV200硬件单板烧写KEY0步骤。
 
 1.  进入 U-Boot 命令行，依次执行如下命令
 
@@ -803,7 +803,7 @@ OpenHarmony5.1 toybox的telnetd连接默认需要密码，按如下两种方法�
 
 3.  在编译版本之前，需要重新编译libsns\_hy\_s0603.so，因为此库动态加载的时候，会报链接的错误，所以需要修改编译脚本进行重新编译，编译脚本路径如下：
 
-    os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/smp/a55_linux/mpp/cbb/isp/user/sensor/ss928v100/hy_s0603/Makefile
+    os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/smp/a55_linux/mpp/cbb/isp/user/sensor/Hi3403V100/hy_s0603/Makefile
 
     修改方式如[图2](#fig13477396910)所示。
 

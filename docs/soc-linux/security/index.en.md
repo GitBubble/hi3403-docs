@@ -15,7 +15,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row14800754183515"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p680013548356"><a name="p680013548356"></a><a name="p680013548356"></a>SS928</p>
+<tbody><tr id="row14800754183515"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p680013548356"><a name="p680013548356"></a><a name="p680013548356"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p14800145403519"><a name="p14800145403519"></a><a name="p14800145403519"></a>V100</p>
 </td>
@@ -25,7 +25,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p114975173716"><a name="p114975173716"></a><a name="p114975173716"></a>V100</p>
 </td>
 </tr>
-<tr id="row203262171414"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row203262171414"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>

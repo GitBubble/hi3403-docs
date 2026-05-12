@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensor�
 本文为对接不同Sensor的程序员而写，目的是供您在进行Sensor对接的过程中提供对接步骤及注意事项的参考。该指南主要包括一款新Sensor对接的驱动开发流程、新Sensor在SDK中的适配等。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section1178605582218"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensor�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row158831255122216"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p10883145542218"><a name="p10883145542218"></a><a name="p10883145542218"></a>SS928</p>
+<tbody><tr id="row158831255122216"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p10883145542218"><a name="p10883145542218"></a><a name="p10883145542218"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p138831555152211"><a name="p138831555152211"></a><a name="p138831555152211"></a>V100</p>
 </td>
 </tr>
-<tr id="row144953172313"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p259913572312"><a name="p259913572312"></a><a name="p259913572312"></a>SS927</p>
+<tr id="row144953172313"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p259913572312"><a name="p259913572312"></a><a name="p259913572312"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p185997502317"><a name="p185997502317"></a><a name="p185997502317"></a>V100</p>
 </td>

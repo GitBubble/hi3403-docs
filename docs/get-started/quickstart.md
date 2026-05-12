@@ -42,8 +42,8 @@ description: 从空板子到登录界面 —— 最短路径的入门
 预编译镜像的命名一般是：
 
 ```
-hi3403-ubuntu-xfce-ss928v100.img    # 8 GB，带 XFCE 桌面
-hi3403-ubuntu-lite-ss928v100.img    # 1.5 GB，纯命令行
+hi3403-ubuntu-xfce-Hi3403V100.img    # 8 GB，带 XFCE 桌面
+hi3403-ubuntu-lite-Hi3403V100.img    # 1.5 GB，纯命令行
 ```
 
 ## 步骤 2 — 烧录镜像
@@ -63,7 +63,7 @@ hi3403-ubuntu-lite-ss928v100.img    # 1.5 GB，纯命令行
 
     ``` bash
     # ⚠️ 先确认 /dev/sdX 是 SD 卡，不是你的硬盘！
-    sudo dd if=hi3403-ubuntu-xfce-ss928v100.img of=/dev/sdX bs=4M status=progress
+    sudo dd if=hi3403-ubuntu-xfce-Hi3403V100.img of=/dev/sdX bs=4M status=progress
     sudo sync
     ```
 

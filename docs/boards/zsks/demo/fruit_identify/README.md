@@ -2,7 +2,7 @@
 
 ### 2.3.1、fruit_identify程序简介
 
-* fruit_identify sample基于SS928V100平台开发，以EulerPi套件为例，fruit_identify sample是通过USB Camera，将采集到的图片送到水果检测模型中进行推理，当检测到特定水果时，会通过外接显示屏实时显示水果的种类以及执行度，并框住水果的具体位置，并通过耳机播放出此时识别到的水果类别。
+* fruit_identify sample基于Hi3403V100平台开发，以EulerPi套件为例，fruit_identify sample是通过USB Camera，将采集到的图片送到水果检测模型中进行推理，当检测到特定水果时，会通过外接显示屏实时显示水果的种类以及执行度，并框住水果的具体位置，并通过耳机播放出此时识别到的水果类别。
 * fruit_identify案例主要是使用pytorch框架，基于YoloV8网络，使用自行标注的水果数据集训练出来的水果分类模型。
 
 ### 2.3.2、目录

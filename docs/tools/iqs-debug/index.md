@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像�
 PQ Tools图像质量调试工具使用指南主要辅助调试人员进行图像效果及差异化的调节，本文重点阐述相关的调试操作方法。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section5625mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ PQ Tools图像质量调试工具使用指南主要辅助调试人员进行图像
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5639mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5641mcpsimp"><a name="p5641mcpsimp"></a><a name="p5641mcpsimp"></a>SS928</p>
+<tbody><tr id="row5639mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5641mcpsimp"><a name="p5641mcpsimp"></a><a name="p5641mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5643mcpsimp"><a name="p5643mcpsimp"></a><a name="p5643mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row4477135110273"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p17797185342716"><a name="p17797185342716"></a><a name="p17797185342716"></a>SS927</p>
+<tr id="row4477135110273"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p17797185342716"><a name="p17797185342716"></a><a name="p17797185342716"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1879775352710"><a name="p1879775352710"></a><a name="p1879775352710"></a>V100</p>
 </td>
@@ -149,7 +149,7 @@ PQTools工具分为客户端（即PC端软件）和服务端（即板端软件�
 
 
 
-#### SS928V100\_PQ\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002498301738"></a>
+#### Hi3403V100\_PQ\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002498301738"></a>
 
 此版本使用请参考“[Linux系统下板端软件的安装与运行](#ZH-CN_TOPIC_0000002530221763)”章节。解压后包的目录结构如[图1](#_ref513797864)所示。
 
@@ -162,7 +162,7 @@ PQTools工具分为客户端（即PC端软件）和服务端（即板端软件�
 -   ittb\_control和ittb\_stream是业务程序文件
 -   StartControl.sh是快速重启ittb\_control的脚本文件
 
-#### SS928V100\_ext\_api\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002530221767"></a>
+#### Hi3403V100\_ext\_api\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002530221767"></a>
 
 此发布包用于将PQTools工具部分功能编译到用户业务中的小型化场景。解压后包的目录结构如[图1](#_toc51692445)所示。
 
@@ -1073,7 +1073,7 @@ PQTools提供了CA曲线调试功能。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   生态版本不支持MCF功能。
->-   MCF调试必须在MCF业务时才能使用。目前仅支持SS928V100解决方案。
+>-   MCF调试必须在MCF业务时才能使用。目前仅支持Hi3403V100解决方案。
 
 在左侧的调试表树视图中找到带有![](figures/zh-cn_image_0000002498141898.jpg)标识的页面，点击即可打开MCF模块调试界面。
 
@@ -1151,7 +1151,7 @@ OffsetX和OffsetY是设置MeshShading分块的中心点，取值范围\[0,32\]�
 
 ### 3DNR可视化调试<a name="ZH-CN_TOPIC_0000002530061689"></a>
 
-与其他寄存器和算法模块不同，3DNR功能复杂且限制较多，因此进行了单独设计。以下均以SS928V100的X接口为例说明。
+与其他寄存器和算法模块不同，3DNR功能复杂且限制较多，因此进行了单独设计。以下均以Hi3403V100的X接口为例说明。
 
 在调试表中点击名称以3DNR\_X起始的调试页，即可打开3DNR调试界面，如[图1](#_toc51692492)所示：
 
@@ -2537,7 +2537,7 @@ CLUT主界面如[图1](#fig18977141615210)所示。
 
 -   可以修改“LUT Operations”栏目下的“Mode”下拉框选择工作模式，SDR模式下选择Linear，HDR模式下选择CLUT HDR。填写Smoothness参数，Smoothness参数范围为1-100，平滑度逐渐提高，建议值在15-30范围，值越小会尽量让各种颜色的调节准确，但容易把图像噪声放大；值越大会让相邻颜色平滑调节，减少由于颜色增强导致的噪声过大。点击“Calibrate LUT”按钮，对RGB列表中的RGB对进行标定。
 -   点击“Calibrate LUT”按钮，约40秒后，工具内部生成了CLUT标定参数。推荐用户将CLUT参数下发板端后，灌RAW观察颜色调节效果。
--   点击”Cube to 3Dlut" 按钮，支持将Cube格式3D Lut表转换为SS928V100 3D Lut表（需要配置正确的gamma）。
+-   点击”Cube to 3Dlut" 按钮，支持将Cube格式3D Lut表转换为Hi3403V100 3D Lut表（需要配置正确的gamma）。
 
 ### DynaBLC标定<a name="ZH-CN_TOPIC_0000002498141784"></a>
 
@@ -3031,7 +3031,7 @@ AE功能页面各区域功能如下（对应[图1](#fig62311646689)）：
 3.  直方图：可查看AE统计直方图。可使用上方的下拉框或标签页选择来切换想要查看的直方图。After DRC Histogram 1024是工具板端程序自动将AE统计信息切换到After DRC之后，重新获取上来的BE直方图，切换到After DRC Histogram 1024后，全局统计信息和分块统计信息也会是After DRC的。All Histogram是将所有的直方图合并到一个页签内，该页内的某个直方图\(背景色变成白色\)，则当前的分块统计信息和全局统计信息也会与之对应。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->-   拼接模式下，若图像是多路拼接的，则导出的统计信息也是多路的，并且与图像是相对应的。以SS928V100为例，VI、VPSS导出Pipe的统计信息，VO导出拼接后的统计信息。
+>-   拼接模式下，若图像是多路拼接的，则导出的统计信息也是多路的，并且与图像是相对应的。以Hi3403V100为例，VI、VPSS导出Pipe的统计信息，VO导出拼接后的统计信息。
 >-   当Histogram Quick Jump下拉框切到MG时，是没有直方图信息的，只有全局统计信息和分块统计信息，线性模式下，MG统计信息默认是bypass的（获取上来全是0），需要将工具主界面Top-\> Bypass Setting中 bit\_bypass\_mg\_stat去勾选才能获取到正常的MG统计信息。
 >-   在获取After DRC位置的BE统计信息前，需要将ExposureAttr中的op\_type和hist\_stat\_adjust分别设置Manual和False，并且要将DRC的开关打开，否则After DRC统计信息可能会有异常。
 >-   当选择从VI或VPSS获取图像时，板端工具会创建一个venc通道用于将VI和VPSS通道的YUV送入进行编码生成JPEG图像，再发送给3A分析工具。创建的VENC通道的通道号默认为最后一个通道，可以通过修改板端版本包里面的config.cfg中的“JpegChn”来配置。选择从VO获取图像则是由板端将VO通道的YUV图像直接发送给PC端。
@@ -3053,7 +3053,7 @@ AE功能页面各区域功能如下（对应[图1](#fig62311646689)）：
 点击AF统计信息对话框下方的“Export AF Statistics”按钮，可将从板端获取的统计信息保存为明文的txt文件。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->拼接模式下，若图像是多路拼接的，则导出的统计信息也是多路的，并且与图像是相对应的。以SS928V100为例，VI、VPSS导出Pipe的统计信息，VO导出拼接后的统计信息。
+>拼接模式下，若图像是多路拼接的，则导出的统计信息也是多路的，并且与图像是相对应的。以Hi3403V100为例，VI、VPSS导出Pipe的统计信息，VO导出拼接后的统计信息。
 
 #### 查看AWB统计数据<a name="ZH-CN_TOPIC_0000002530061781"></a>
 
@@ -3088,7 +3088,7 @@ BIN 0用于显示不同亮度范围下的统计图。BIN的个数取决于主界
 点击“Export AWB Statistics”按钮，可以将从板端获取到的统计信息数据保存为明文的txt文本文件。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->-   拼接模式下，若图像是多路拼接的，则导出的统计信息也是多路的，并且与图像是相对应的。以SS928V100为例，VI、VPSS导出Pipe的统计信息，VO导出拼接后的统计信息。
+>-   拼接模式下，若图像是多路拼接的，则导出的统计信息也是多路的，并且与图像是相对应的。以Hi3403V100为例，VI、VPSS导出Pipe的统计信息，VO导出拼接后的统计信息。
 >-   拼接模式下，每一路的参数是独立配置的，每一路的分块个数都需要配置，而且需要相同。即每一路的stitch\_enable，zone\_col，zone\_bin需要相同。
 >-   3A分析工具获取的AWB统计信息是统计模块直接输出结果。
 >-   配置AWB统计模块位置为Expander后时，3A分析工具的统计信息和AWB算法的统计信息不一致。此时，AWB分析工具不可用。
@@ -3244,7 +3244,7 @@ PQTools工具提供了易于使用的抓拍工具，可以抓取板端的图像�
 6.  当勾选了“Change file directory”，每次抓拍工具将弹出选择保存YUV文件路径的对话框，否则只有首次抓拍会弹出。若抓取成功，则保存在已选择的目录下。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   SS928V100解决方案最大支持帧数为5000帧。
+    >-   Hi3403V100解决方案最大支持帧数为5000帧。
     >-   勾选StitchFlag后，从AVS前端绑定模块抓取数据，与YUV Image Capture选取的YUV数据抓取位置无关。
     >-   若抓取的帧数较大，超出了板端当前分配的vb块数，需要修改ini文件，增加分配给业务的vb块数。板端可供抓取的帧数为业务第一次启动时的所有可用Pool下的Minfree之和（通过cat /proc/umap/vb查看），如果大于这个数，会占用业务正常运行时使用的vb，导致抓取的帧是不连续的。
     >-   若通道开启压缩模式，抓取YUV会进行解压缩再发送给PC端，解压缩的操作会占用一块vb。
@@ -3289,13 +3289,13 @@ PQTools工具提供了易于使用的抓拍工具，可以抓取板端的图像�
     >-   抓取的图像数据均为纯数据，不包含任何头数据。
     >-   抓取RAW数据时需要common vb配置为图像的像素数乘以2，否则抓取可能会失败。
     >-   抓取数据的bit数不应该小于sensor数据的bit数。
-    >-   SS928V100解决方案最大支持帧数为5000帧。
+    >-   Hi3403V100解决方案最大支持帧数为5000帧。
     >-   若抓取的帧数较大，超出了板端当前分配的vb块数，需要修改ini文件，增加分配给业务的vb块数。板端可供抓取的帧数为业务第一次启动时的所有可用Pool下的Minfree之和（通过cat /proc/umap/vb查看），如果大于这个数，会占用业务正常运行时使用的vb，导致抓取的帧是不连续的。
     >-   拼接模式下RAW文件保存顺序：四路拼接，勾选StitchFlag，Frames为2，抓取的RAW文件帧顺序按AVS pipe顺序保存（pipe0-pipe1-pipe2-pipe3-pipe0-pipe1-pipe2-pipe3）。
 
 #### 抓取JPEG图像数据<a name="ZH-CN_TOPIC_0000002498141730"></a>
 
-以SS928V100为例，抓取JPEG图像数据步骤如下：
+以Hi3403V100为例，抓取JPEG图像数据步骤如下：
 
 1.  在“JPEG Image”分组中，在“Capture from”下拉框处选择抓取数据的位置（AVS\\VI\\VPSS\\VENC）；选择AVS时，如果是单镜头抓拍，选择镜头对应的Pipe，勾选Pipe0或Pipe1，如果是双镜头抓拍，Pipe0和Pipe1都勾选，如果需要抓拍AVS拼接的所有镜头，则勾选All Pipe。Source Seq用于指定AVS前端模块（例如VPSS）的镜头顺序（例如4路场景的两路非融合拼接，Source Seq指定为3 2 1 0，表示用户定义VPSS Grp3为镜头0，VPSS Grp2为镜头1，VPSS Grp1为镜头2，VPSS Grp0为镜头3），镜头号会体现在JPEG文件命名上。
 2.  根据不同位置显示的不同UI，在Group、Pipe、Chn等编辑框输入相应的值，选择Check控件是否使能。（Trigger复选框勾选时是在snap通路抓图像数据，不勾选时抓的是视频通路数据）
@@ -3445,7 +3445,7 @@ ISPInfo信息获取来源优先级：
 5.  设置灌入方式：选择Route Combine方式时，工具会将勾选的相同通路的RAW数据组合在一起后，按通路号从小到大的次序依次将RAW文件灌入设备。
 6.  使用Route Combine方式倒灌RAW数据时，如果需要使用循环倒灌功能，请将Loop单选框勾选。
 7.  如果需要灌RAW时同时发送IspInfo到板端，需要勾选IspInfo复选框，工具就会解析与RAW文件同一路径下同名的txt文件，并将参数发送到板端。板端灌RAW过程中会将IspInfo中的“Exposure\_Time”、“A\_Gain”、“D\_Gain”、“ISP\_D\_Gain”这几个参数的值通过OT\_MPI\_ISP\_SetExposureAttr生效；“Ratio\_0”、“Ratio\_1”、“Ratio\_2” 这几个参数通过OT\_MPI\_ISP\_SetWDRExposureAttr生效；“BlackLevel\_R”，“BlackLevel\_Gr”，“BlackLevel\_Gb”，“BlackLevel\_B”通过OT\_MPI\_ISP\_SetBlackLevelAttr生效；“Bayer”则通过OT\_MPI\_ISP\_SetPubAttr生效。并且会将对应Auto/Manual设置为Manual。当点击“Flush”停止灌RAW时，参数会被恢复到灌RAW之前的值。
-8.  SS928V100支持灌RAW到FE。灌RAW到FE前，需要开启自产生时序。开启方法是：勾选主界面可调项的TimingAttr页面的Enable。
+8.  Hi3403V100支持灌RAW到FE。灌RAW到FE前，需要开启自产生时序。开启方法是：勾选主界面可调项的TimingAttr页面的Enable。
 
     >![](public_sys-resources/icon-caution.gif) **注意：** 
     >FE灌wdr格式RAW文件时，必须在业务初始化时开启自产生时序属性，设置方法是在对应场景的ini文件的业务相关\[vi\_timing.x\] 属性中配置TimingEnable = TRUE, TimingFrmRate = 合适的帧率。
@@ -3565,7 +3565,7 @@ Config.cfg的\[Dump\_Method\]是抓拍存外接存储设备的控制参数。\[Y
 
 ##### 使用CMA方案保存RAW文件到SSD<a name="ZH-CN_TOPIC_0000002498301678"></a>
 
-使用CMA方案配置uboot启动参数和加载相关ko的参数，以SS928V100为例：
+使用CMA方案配置uboot启动参数和加载相关ko的参数，以Hi3403V100为例：
 
 -   修改u-boot的参数：
 
@@ -3573,7 +3573,7 @@ Config.cfg的\[Dump\_Method\]是抓拍存外接存储设备的控制参数。\[Y
     setenv bootargs 'mem=4032M mmz_allocator=cma mmz=anonymous,0,0x64000000,3520M console=ttyAMA0,115200 root=/dev/mtdblock2 rw rootfstype=yaffs2 mtdparts=nand:1M(boot),9M(kernel),16M(rootfs)'
     ```
 
--   修改load\_ss928v100：将该脚本中的mmz\_allocator=ot改为mmz\_allocator=cma
+-   修改load\_Hi3403V100：将该脚本中的mmz\_allocator=ot改为mmz\_allocator=cma
 
     修改config.cfg，如[图1](#_ref11424457)和[图2](#_toc51692606)所示。
 
@@ -4013,7 +4013,7 @@ Stitch Auto Fine Tuning 工具提供了多路自动精调功能。支持在线�
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   输入的是圆形logo，故输入图片的宽高必须相等（正方形图片），否则无法读入。输出图像的显示有拉伸，以最终保存图像为准。
->-   仅SS928V100解决方案支持此功能。
+>-   仅Hi3403V100解决方案支持此功能。
 
 ### DIS标定工具使用说明<a name="ZH-CN_TOPIC_0000002498141726"></a>
 
@@ -4153,7 +4153,7 @@ DIS镜头标定提供模型及产线标定，并提供算法参数下发板端�
 
 DistCoeffType是畸变系数的个数，一般默认为3个，当输出畸变参数超出芯片支持的范围时，按照3-\>2-\>1-\>0 的顺序逐个尝试减少数量；
 
-DistRatio是相对输入源图像畸变的比例，默认配置为1，即不做畸变校正，畸变保持和源图像一致；配置为0时，畸变最小；DistRatio在参数转换（Convert Calibration Data）时起作用，转换的系数下发板端（Apply To Board）时只有在GYRO DIS 开启且LDCV2 disable后生效；SS928V100中 DistRatio配置无效。
+DistRatio是相对输入源图像畸变的比例，默认配置为1，即不做畸变校正，畸变保持和源图像一致；配置为0时，畸变最小；DistRatio在参数转换（Convert Calibration Data）时起作用，转换的系数下发板端（Apply To Board）时只有在GYRO DIS 开启且LDCV2 disable后生效；Hi3403V100中 DistRatio配置无效。
 
 **图 1**  DIS标定模型标定页面<a name="_toc51692624"></a>  
 
@@ -4229,7 +4229,7 @@ DistRatio是相对输入源图像畸变的比例，默认配置为1，即不做�
 <a name="table2819mcpsimp"></a>
 <table><thead align="left"><tr id="row2826mcpsimp"><th class="cellrowborder" valign="top" width="22.222222222222225%" id="mcps1.2.4.1.1"><p id="p2828mcpsimp"><a name="p2828mcpsimp"></a><a name="p2828mcpsimp"></a>参数名称</p>
 </th>
-<th class="cellrowborder" valign="top" width="34.34343434343434%" id="mcps1.2.4.1.2"><p id="p2830mcpsimp"><a name="p2830mcpsimp"></a><a name="p2830mcpsimp"></a>CAMERA_CALIB_SS928</p>
+<th class="cellrowborder" valign="top" width="34.34343434343434%" id="mcps1.2.4.1.2"><p id="p2830mcpsimp"><a name="p2830mcpsimp"></a><a name="p2830mcpsimp"></a>CAMERA_CALIB_Hi3403V100</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.43434343434344%" id="mcps1.2.4.1.3"><p id="p2832mcpsimp"><a name="p2832mcpsimp"></a><a name="p2832mcpsimp"></a>备注</p>
 </th>
@@ -4665,7 +4665,7 @@ DistRatio是相对输入源图像畸变的比例，默认配置为1，即不做�
 >生态版本不支持拼接、MCF相关功能。
 
 
-### SS928V100参数<a name="ZH-CN_TOPIC_0000002498301796"></a>
+### Hi3403V100参数<a name="ZH-CN_TOPIC_0000002498301796"></a>
 
 **表 1**  TOP设置对应API
 
@@ -6660,7 +6660,7 @@ int OT_PQ_BIN_ImportBinData(PQ_BIN_MODULE_S *pstBinParam，unsigned char* pu8Buf
 **图 1**  输出图层选项<a name="fig13203174711144"></a>  
 ![](figures/输出图层选项.png "输出图层选项")
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->此功能依赖隐私保护媒体业务，SS928V100不支持。
+>此功能依赖隐私保护媒体业务，Hi3403V100不支持。
 
 ### WDR模式切换<a name="ZH-CN_TOPIC_0000002530061639"></a>
 
@@ -7447,7 +7447,7 @@ Win7系统下，PQTools工具运行后，打开“PQ RAW YUV Analyzer”界面�
 
 【现象】
 
-SS928V100、使用PQ RAW Utilities工具将RAW文件倒灌到板端，图像显示异常，如[图1](#_fig10111422426)所示。
+Hi3403V100、使用PQ RAW Utilities工具将RAW文件倒灌到板端，图像显示异常，如[图1](#_fig10111422426)所示。
 
 **图 1**  使用RAW Utilities工具后图像异常示意图<a name="_fig10111422426"></a>  
 ![](figures/使用RAW-Utilities工具后图像异常示意图.png "使用RAW-Utilities工具后图像异常示意图")

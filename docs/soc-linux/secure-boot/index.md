@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 安全启动使用指南/SS928V100╱SS927V100 安全启动使用指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100╱Hi3519AV200 安全启动使用指南/Hi3403V100╱Hi3519AV200 安全启动使用指南.md
 ---
 
 # 前言
@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 本文档主要是指导使用本安全启动方案的相关人员了解整个安全方案的流程，再通过一定的操作步骤和方法来使用本安全启动方案。主要介绍本安全启动的规格和特性，包括安全启动基本流程和key的层级结构与验签逻辑，及其整个安全启动方案的使用。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section239mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 </th>
 </tr>
 </thead>
-<tbody><tr id="row253mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p255mcpsimp"><a name="p255mcpsimp"></a><a name="p255mcpsimp"></a>SS928</p>
+<tbody><tr id="row253mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p255mcpsimp"><a name="p255mcpsimp"></a><a name="p255mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p257mcpsimp"><a name="p257mcpsimp"></a><a name="p257mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1186319271312"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8648177191319"><a name="p8648177191319"></a><a name="p8648177191319"></a>SS927</p>
+<tr id="row1186319271312"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8648177191319"><a name="p8648177191319"></a><a name="p8648177191319"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p136484751315"><a name="p136484751315"></a><a name="p136484751315"></a>V100</p>
 </td>
@@ -403,9 +403,9 @@ SoC提供三级密钥派生，其工作原理如[图1](#fig248010331147)所示�
 **图 1**  安全启动模式解密关系图<a name="fig1739414716164"></a>  
 ![](figures/安全启动模式解密关系图.png "安全启动模式解密关系图")
 # 启动镜像制作及烧写
-SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要与启动方案相配套。此外，SS928V100的OTP控制着启动方案选择、镜像合法性校验、版本校验等启动流程，要根据启动方案来进行配置和烧写。
+Hi3403V100支持多种启动方案，启动镜像的制作和烧写步骤需要与启动方案相配套。此外，Hi3403V100的OTP控制着启动方案选择、镜像合法性校验、版本校验等启动流程，要根据启动方案来进行配置和烧写。
 
-本章阐述了SS928V100镜像制作步骤、OTP烧写步骤、镜像烧写方法，以及给出了环境变量配置参考值。
+本章阐述了Hi3403V100镜像制作步骤、OTP烧写步骤、镜像烧写方法，以及给出了环境变量配置参考值。
 
 开始操作前，需要明确的以下内容：
 
@@ -418,7 +418,7 @@ SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要�
 
 ## 启动镜像制作步骤<a name="ZH-CN_TOPIC_0000002424197890"></a>
 
-快速启动方案的镜像制作方法与传统的启动方案相同；若要制作非安全启动和安全启动的启动镜像，则需要借助“image\_map”镜像制作脚本。本节将阐述SS928V100各启动方案的镜像制作步骤。
+快速启动方案的镜像制作方法与传统的启动方案相同；若要制作非安全启动和安全启动的启动镜像，则需要借助“image\_map”镜像制作脚本。本节将阐述Hi3403V100各启动方案的镜像制作步骤。
 
 
 
@@ -460,12 +460,12 @@ SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要�
 
     ```
     cd boot/gsl/
-    make CHIP=ss928v100
+    make CHIP=Hi3403V100
     ```
 
     在pub/目录下会生成GSL的二进制镜像gsl.bin。
 
-3.  进入open\_source/u-boot/目录，编译U-Boot得到U-Boot镜像u-boot-ss928v100.bin。
+3.  进入open\_source/u-boot/目录，编译U-Boot得到U-Boot镜像u-boot-Hi3403V100.bin。
 
     编译方法请参考“osdrv/readme\_cn.txt”。
 
@@ -473,7 +473,7 @@ SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要�
 
     ```
     cp osdrv/components/boot/gsl/pub/gsl.bin osdrv/components/boot/image_map/
-    cp open_source/u-boot/u-boot-2020.01/u-boot-ss928v100.bin osdrv/components/boot/image_map/u-boot-original.bin
+    cp open_source/u-boot/u-boot-2020.01/u-boot-Hi3403V100.bin osdrv/components/boot/image_map/u-boot-original.bin
     cp open_source/u-boot/u-boot-2020.01/.reg osdrv/components/boot/image_map/.reg
     ```
 
@@ -507,7 +507,7 @@ SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要�
 
     操作与“[非安全启动](#ZH-CN_TOPIC_0000002457836493)”步骤1\~2相同。
 
-2.  编译U-Boot，得到U-Boot镜像u-boot-ss928v100.bin。
+2.  编译U-Boot，得到U-Boot镜像u-boot-Hi3403V100.bin。
 
     操作与“[非安全启动](#ZH-CN_TOPIC_0000002457836493)”步骤3相同。
 
@@ -543,7 +543,7 @@ SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要�
 
     完成选项填写后，会生成配置文件oem/oem\_config.json。
 
-4.  填写oem\_config.json内未配置的字段（被“/\* \*/”括住，填写时请删除“/\* \*/”）。配置方法请参考《SS928V100/SS927V100安全启动脚本配置说明》文档。其中GSL\_Code、Boot\_Code字段，应分别填入步骤1和 2生成的gsl.bin和u-boot-ss928v100.bin的路径，Cfg\_Param字段填U-Boot表格（步骤2中用于编译U-Boot的.reg文件）的路径。
+4.  填写oem\_config.json内未配置的字段（被“/\* \*/”括住，填写时请删除“/\* \*/”）。配置方法请参考《Hi3403V100/Hi3519AV200安全启动脚本配置说明》文档。其中GSL\_Code、Boot\_Code字段，应分别填入步骤1和 2生成的gsl.bin和u-boot-Hi3403V100.bin的路径，Cfg\_Param字段填U-Boot表格（步骤2中用于编译U-Boot的.reg文件）的路径。
 5.  制作具有OEM签名的Boot image。
 
     ```
@@ -568,7 +568,7 @@ SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要�
 
     完成选项填写后，会生成配置文件third\_party/third\_party\_config.json。
 
-3.  填写third\_party\_config.json中未配置的字段（被“/\* \*/”括住，填写时请删除“/\* \*/”）。配置方法请参考《SS928V100/SS927V100安全启动脚本配置说明》文档。
+3.  填写third\_party\_config.json中未配置的字段（被“/\* \*/”括住，填写时请删除“/\* \*/”）。配置方法请参考《Hi3403V100/Hi3519AV200安全启动脚本配置说明》文档。
 4.  对Boot image签名。
 
     ```
@@ -579,7 +579,7 @@ SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要�
 
 ## OTP配置与烧写<a name="ZH-CN_TOPIC_0000002457876665"></a>
 
-SS928V100支持多种启动方案，芯片采用何种启动方案，需要通过OTP来配置。本节将介绍OTP的配置方法，以及如何利用U-Boot完成OTP烧写。
+Hi3403V100支持多种启动方案，芯片采用何种启动方案，需要通过OTP来配置。本节将介绍OTP的配置方法，以及如何利用U-Boot完成OTP烧写。
 
 阅读前，请先了解以下事项：
 
@@ -647,7 +647,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p540mcpsimp"><a name="p540mcpsimp"></a><a name="p540mcpsimp"></a>0x42：非安全启动；</p>
     <p id="p541mcpsimp"><a name="p541mcpsimp"></a><a name="p541mcpsimp"></a>0xFF：安全启动。</p>
-    <p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>安全启动使能前，可利用镜像中的SCS_simulate_flag标志位来模拟secure_boot_en使能情况下对<a href="#ZH-CN_TOPIC_0000002457876645">Boot Flash Mapping</a> 区域的调试，防止OTP烧写不正确，导致芯片出现不可修复的错误。请参考《SS928V100/SS927V100安全启动脚本配置说明》中SCS_simulate_flag标志位的介绍。</p>
+    <p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>安全启动使能前，可利用镜像中的SCS_simulate_flag标志位来模拟secure_boot_en使能情况下对<a href="#ZH-CN_TOPIC_0000002457876645">Boot Flash Mapping</a> 区域的调试，防止OTP烧写不正确，导致芯片出现不可修复的错误。请参考《Hi3403V100/Hi3519AV200安全启动脚本配置说明》中SCS_simulate_flag标志位的介绍。</p>
     </td>
     </tr>
     <tr id="row556mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p558mcpsimp"><a name="p558mcpsimp"></a><a name="p558mcpsimp"></a>gsl_dec_en</p>
@@ -660,7 +660,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p567mcpsimp"><a name="p567mcpsimp"></a><a name="p567mcpsimp"></a>0xF：GSL解密使能；</p>
     <p id="p568mcpsimp"><a name="p568mcpsimp"></a><a name="p568mcpsimp"></a>0xA：是否解密GSL取决于镜像中的GSL_Code_Enc_Flag标志。</p>
-    <p id="p569mcpsimp"><a name="p569mcpsimp"></a><a name="p569mcpsimp"></a>《SS928V100/SS927V100安全启动脚本配置说明》介绍了GSL_Code_Enc_Flag的配置方法。仅当gsl_dec_en 配置为0xA，且GSL_Code_Enc_Flag配置为0x3C7896E1时，GSL不解密。</p>
+    <p id="p569mcpsimp"><a name="p569mcpsimp"></a><a name="p569mcpsimp"></a>《Hi3403V100/Hi3519AV200安全启动脚本配置说明》介绍了GSL_Code_Enc_Flag的配置方法。仅当gsl_dec_en 配置为0xA，且GSL_Code_Enc_Flag配置为0x3C7896E1时，GSL不解密。</p>
     </td>
     </tr>
     <tr id="row570mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p572mcpsimp"><a name="p572mcpsimp"></a><a name="p572mcpsimp"></a>bload_dec_en</p>
@@ -673,7 +673,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p581mcpsimp"><a name="p581mcpsimp"></a><a name="p581mcpsimp"></a>0x1：U-Boot解密使能；</p>
     <p id="p582mcpsimp"><a name="p582mcpsimp"></a><a name="p582mcpsimp"></a>0x0：是否解密U-Boot取决于镜像中的Boot_Enc_Flag标志。</p>
-    <p id="p583mcpsimp"><a name="p583mcpsimp"></a><a name="p583mcpsimp"></a>《SS928V100/SS927V100安全启动脚本配置说明》介绍了Boot_Enc_Flag的配置方法。仅当bload_dec_en配置为0x0，且Boot_Enc_Flag配置为0x3C7896E1时，U-Boot不解密。</p>
+    <p id="p583mcpsimp"><a name="p583mcpsimp"></a><a name="p583mcpsimp"></a>《Hi3403V100/Hi3519AV200安全启动脚本配置说明》介绍了Boot_Enc_Flag的配置方法。仅当bload_dec_en配置为0x0，且Boot_Enc_Flag配置为0x3C7896E1时，U-Boot不解密。</p>
     </td>
     </tr>
     <tr id="row597mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p599mcpsimp"><a name="p599mcpsimp"></a><a name="p599mcpsimp"></a>uboot_redundance</p>
@@ -696,7 +696,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p617mcpsimp"><a name="p617mcpsimp"></a><a name="p617mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p621mcpsimp"><a name="p621mcpsimp"></a><a name="p621mcpsimp"></a>字段值与《SS928V100/SS927V100安全启动脚本配置说明》KDFTool工具所使用的oem_rk_deob_en值保持一致即可。若不一致，安全启动失败。</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p621mcpsimp"><a name="p621mcpsimp"></a><a name="p621mcpsimp"></a>字段值与《Hi3403V100/Hi3519AV200安全启动脚本配置说明》KDFTool工具所使用的oem_rk_deob_en值保持一致即可。若不一致，安全启动失败。</p>
     </td>
     </tr>
     <tr id="row622mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p624mcpsimp"><a name="p624mcpsimp"></a><a name="p624mcpsimp"></a>oem_root_public_key_sha256</p>
@@ -718,7 +718,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p643mcpsimp"><a name="p643mcpsimp"></a><a name="p643mcpsimp"></a>该字段即“<a href="#ZH-CN_TOPIC_0000002457836485">芯片密钥派生</a>”中描述的OTP KEY，<strong id="b646mcpsimp"><a name="b646mcpsimp"></a><a name="b646mcpsimp"></a>属于敏感信息，不可外泄</strong>。字段值与《SS928V100/SS927V100安全启动脚本配置说明》KDFTool工具所使用的oem_root_symc_key字段保持一致，且不能为全零，否则安全启动失败。</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p643mcpsimp"><a name="p643mcpsimp"></a><a name="p643mcpsimp"></a>该字段即“<a href="#ZH-CN_TOPIC_0000002457836485">芯片密钥派生</a>”中描述的OTP KEY，<strong id="b646mcpsimp"><a name="b646mcpsimp"></a><a name="b646mcpsimp"></a>属于敏感信息，不可外泄</strong>。字段值与《Hi3403V100/Hi3519AV200安全启动脚本配置说明》KDFTool工具所使用的oem_root_symc_key字段保持一致，且不能为全零，否则安全启动失败。</p>
     </td>
     </tr>
     <tr id="row647mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p649mcpsimp"><a name="p649mcpsimp"></a><a name="p649mcpsimp"></a>oem_root_symc_key0_flag</p>
@@ -740,7 +740,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p664mcpsimp"><a name="p664mcpsimp"></a><a name="p664mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p668mcpsimp"><a name="p668mcpsimp"></a><a name="p668mcpsimp"></a>OEM客户细分市场标识（ID），若与《SS928V100/SS927V100安全启动脚本配置说明》中的OEM_MSID_Ext不匹配，安全启动失败。</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p668mcpsimp"><a name="p668mcpsimp"></a><a name="p668mcpsimp"></a>OEM客户细分市场标识（ID），若与《Hi3403V100/Hi3519AV200安全启动脚本配置说明》中的OEM_MSID_Ext不匹配，安全启动失败。</p>
     </td>
     </tr>
     <tr id="row669mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p671mcpsimp"><a name="p671mcpsimp"></a><a name="p671mcpsimp"></a>oem_version</p>
@@ -751,7 +751,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p675mcpsimp"><a name="p675mcpsimp"></a><a name="p675mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p679mcpsimp"><a name="p679mcpsimp"></a><a name="p679mcpsimp"></a>OEM版本号，字段中Bit 1的数量表示版本号，用于Boot Image防回滚。若《SS928V100/SS927V100安全启动脚本配置说明》中OEM_Version_Ext表示的版本号小于此字段表示的版本号，安全启动失败。</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p679mcpsimp"><a name="p679mcpsimp"></a><a name="p679mcpsimp"></a>OEM版本号，字段中Bit 1的数量表示版本号，用于Boot Image防回滚。若《Hi3403V100/Hi3519AV200安全启动脚本配置说明》中OEM_Version_Ext表示的版本号小于此字段表示的版本号，安全启动失败。</p>
     </td>
     </tr>
     <tr id="row700mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p702mcpsimp"><a name="p702mcpsimp"></a><a name="p702mcpsimp"></a>double_sign_en</p>
@@ -786,7 +786,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p737mcpsimp"><a name="p737mcpsimp"></a><a name="p737mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p741mcpsimp"><a name="p741mcpsimp"></a><a name="p741mcpsimp"></a>该字段与双签相关，仅double_sign_en使能时有效，表示为第三方细分市场标识（ID）。若与《SS928V100/SS927V100安全启动脚本配置说明》中的Third_party_MSID_Ext不匹配，安全启动失败。</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p741mcpsimp"><a name="p741mcpsimp"></a><a name="p741mcpsimp"></a>该字段与双签相关，仅double_sign_en使能时有效，表示为第三方细分市场标识（ID）。若与《Hi3403V100/Hi3519AV200安全启动脚本配置说明》中的Third_party_MSID_Ext不匹配，安全启动失败。</p>
     </td>
     </tr>
     <tr id="row742mcpsimp"><td class="cellrowborder" valign="top" width="18.85%" headers="mcps1.2.6.1.1 "><p id="p744mcpsimp"><a name="p744mcpsimp"></a><a name="p744mcpsimp"></a>third_party_version</p>
@@ -797,7 +797,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     </td>
     <td class="cellrowborder" valign="top" width="17.69%" headers="mcps1.2.6.1.4 "><p id="p748mcpsimp"><a name="p748mcpsimp"></a><a name="p748mcpsimp"></a>√</p>
     </td>
-    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p752mcpsimp"><a name="p752mcpsimp"></a><a name="p752mcpsimp"></a>该字段与双签相关，仅double_sign_en使能时有效，字段中Bit 1的数量表示第三方版本号，用于Boot Image防回滚。若《SS928V100/SS927V100安全启动脚本配置说明》中Third_party_Version_Ext表示的版本号小于此字段所表示的版本号，安全启动失败。</p>
+    <td class="cellrowborder" valign="top" width="41.410000000000004%" headers="mcps1.2.6.1.5 "><p id="p752mcpsimp"><a name="p752mcpsimp"></a><a name="p752mcpsimp"></a>该字段与双签相关，仅double_sign_en使能时有效，字段中Bit 1的数量表示第三方版本号，用于Boot Image防回滚。若《Hi3403V100/Hi3519AV200安全启动脚本配置说明》中Third_party_Version_Ext表示的版本号小于此字段所表示的版本号，安全启动失败。</p>
     </td>
     </tr>
     </tbody>
@@ -809,7 +809,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     obj-y += write_otp_fun.o
     ```
 
-5.  在./include/configs/ss928v100.h文件添加以下宏定义，使能OTP驱动。
+5.  在./include/configs/Hi3403V100.h文件添加以下宏定义，使能OTP驱动。
 
     ```
     #define CONFIG_OTP_ENABLE
@@ -820,14 +820,14 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
     编译U-Boot前，需要用Windows系统进入osdrv/tools/pc/uboot\_tools/目录，打开对应单板的Excel文件，选择main标签，点击“Generate reg bin file”按钮，生成对应平台的U-Boot表格文件reg\_info.bin。然后回到Linux系统执行操作：
 
     ```
-    cp configs/ss928v100_defconfig .config 
+    cp configs/Hi3403V100_defconfig .config 
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- menuconfig 
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- -j 20 
     cp ../../../osdrv/tools/pc/uboot_tools/reg_info.bin .reg 
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- u-boot-z.bin
     ```
 
-    以上操作以SPI NOR/ NAND启动介质为例，如果启动介质为eMMC，则上述操作中的配置文件“configs/ss928v100\_defconfig”改为“ss928v100\_emmc\_defconfig”。
+    以上操作以SPI NOR/ NAND启动介质为例，如果启动介质为eMMC，则上述操作中的配置文件“configs/Hi3403V100\_defconfig”改为“Hi3403V100\_emmc\_defconfig”。
 
 7.  检验 OTP 配置值（可选步骤）。
 
@@ -849,13 +849,13 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
 8.  进入osdrv/components/boot-otp/gsl/目录，编译GSL镜像，得到gsl.bin。
 
     ```
-    make CHIP=ss928v100
+    make CHIP=Hi3403V100
     ```
 
 9.  进入osdrv/components/boot-otp/image\_map制作Boot image。
 
     ```
-    cp ../../../../open_source/u-boot/u-boot-otp/u-boot-ss928v100.bin ./u-boot-original.bin
+    cp ../../../../open_source/u-boot/u-boot-otp/u-boot-Hi3403V100.bin ./u-boot-original.bin
     cp ../../../../open_source/u-boot/u-boot-otp/.reg ./
     cp ../gsl/pub/gsl.bin ./  
     python oem/oem_quick_build.py
@@ -895,7 +895,7 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
 **图 1**  ToolPlatform烧写分区参考图<a name="__Ref55287952"></a>  
 ![](figures/ToolPlatform烧写分区参考图.png "ToolPlatform烧写分区参考图")
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->[图1](#_fig1991144012019)和[图1](#__Ref55287952)中烧写的uImage\_ss928v100文件是ATF+Kernel镜像。
+>[图1](#_fig1991144012019)和[图1](#__Ref55287952)中烧写的uImage\_Hi3403V100文件是ATF+Kernel镜像。
 
 ## 单板环境变量配置参考<a name="ZH-CN_TOPIC_0000002424357730"></a>
 

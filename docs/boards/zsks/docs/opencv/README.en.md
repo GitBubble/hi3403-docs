@@ -60,7 +60,7 @@ cd build
 set -e 
 BuildDir=.
 ToolChain=/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin
-SYSROOT=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot
+SYSROOT=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot
 if [ ! -d "$BuildDir" ]; then
   echo "create ${BuildDir}..."
   mkdir -p ${BuildDir}

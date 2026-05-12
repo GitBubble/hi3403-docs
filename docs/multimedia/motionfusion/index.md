@@ -15,12 +15,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MotionFu
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2188mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p2190mcpsimp"><a name="p2190mcpsimp"></a><a name="p2190mcpsimp"></a>SS928</p>
+<tbody><tr id="row2188mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p2190mcpsimp"><a name="p2190mcpsimp"></a><a name="p2190mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p2192mcpsimp"><a name="p2192mcpsimp"></a><a name="p2192mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1450412425144"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1937114619148"><a name="p1937114619148"></a><a name="p1937114619148"></a>SS927</p>
+<tr id="row1450412425144"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1937114619148"><a name="p1937114619148"></a><a name="p1937114619148"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p937114671412"><a name="p937114671412"></a><a name="p937114671412"></a>V100</p>
 </td>

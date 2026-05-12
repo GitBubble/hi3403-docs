@@ -2,7 +2,7 @@
 
 ### 2.1.1. opencv_dnn Program Introduction
 
-* The opencv_dnn sample is developed based on the SS928V100 platform, using the EulerPi kit as an example. The opencv_dnn sample captures images via a USB camera and feeds them into a face detection model for inference, then displays the results on an external display via HDMI.
+* The opencv_dnn sample is developed based on the Hi3403V100 platform, using the EulerPi kit as an example. The opencv_dnn sample captures images via a USB camera and feeds them into a face detection model for inference, then displays the results on an external display via HDMI.
 * In the opencv_dnn case, model inference runs on the CPU without using the SVP_NPU interface — all processing uses OpenCV interfaces.
 
 ### 2.1.2. Directory Structure

@@ -10,19 +10,19 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/zsks/README.
   aim is to ship convenient, efficient, easy-to-use third-party
   software and tools for developers, growing the HiSilicon ecosystem.
 - The `demo/` directory holds practical examples ZSKS built on the
-  SS928 platform, including:
+  Hi3403V100 platform, including:
     - OpenCV face detection
     - HNR-based extreme low-light night-vision
     - YOLOv8 fruit recognition + voice announcement
     - KCF object tracking
     - YOLOv8 face detection under strong backlight
     - OpenCV hardware-accelerated through IVE — lets OpenCV-fluent
-      developers use the SS928 hardware accelerator with minimal
+      developers use the Hi3403V100 hardware accelerator with minimal
       learning curve
-- ZSKS has ported common third-party software to SS928 — Python,
+- ZSKS has ported common third-party software to Hi3403V100 — Python,
   NumPy, OpenCV, libv4l2, alsa-lib, ffmpeg, libcamera. The `doc/`
   directory contains the porting and dev documentation. They have also
-  Python-bound the SS928 MPP modules so a few lines of Python suffice
+  Python-bound the Hi3403V100 MPP modules so a few lines of Python suffice
   to drive a HiSilicon use-case.
 - The `patch/` directory ships ZSKS' SDK patches that the demos depend on.
 
@@ -56,9 +56,9 @@ sudo apt-get install dos2unix
 
 dos2unix ohos/foundation/systemabilitymgr/samgr_lite/samgr/source/service.c
 
-dos2unix ohos/vendor/hisilicon/hispark_ss928v100_linux/config.json
+dos2unix ohos/vendor/hisilicon/hispark_Hi3403V100_linux/config.json
 
-dos2unix ohos/vendor/hisilicon/hispark_ss928v100_linux/init_configs/init_linux_openharmony.cfg
+dos2unix ohos/vendor/hisilicon/hispark_Hi3403V100_linux/init_configs/init_linux_openharmony.cfg
 
 chmod +x rkh_patch_build.sh
 
@@ -71,7 +71,7 @@ Apply the UVC + Ethernet OpenHarmony kernel patches:
 cd  pegasus/os/OpenHarmony
 
 cp ../../vendor/zsks/patch/0001-support-eulerpi-uvc-and-ethernet.patch \
-   ohos/kernel/linux/patches/linux-6.6/hispark_ss928v100_patch/
+   ohos/kernel/linux/patches/linux-6.6/hispark_Hi3403V100_patch/
 ```
 
 ### Step 3: Build & flash

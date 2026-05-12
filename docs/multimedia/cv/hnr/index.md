@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR 开�
 本文为使用HNR的软件开发工程师和图像质量开发工程师而写，目的是为您在开发过程中提供使用指导和帮助。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section143mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR 开�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row157mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p159mcpsimp"><a name="p159mcpsimp"></a><a name="p159mcpsimp"></a>SS928</p>
+<tbody><tr id="row157mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p159mcpsimp"><a name="p159mcpsimp"></a><a name="p159mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row79393281419"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p761953118419"><a name="p761953118419"></a><a name="p761953118419"></a>SS927</p>
+<tr id="row79393281419"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p761953118419"><a name="p761953118419"></a><a name="p761953118419"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1361913118420"><a name="p1361913118420"></a><a name="p1361913118420"></a>V100</p>
 </td>
@@ -2018,7 +2018,7 @@ hnr_en   attr_en       sfs   set_bnr_bypass bnr_bypass_status  long_frame_mode  
 </tr>
 <tr id="row1868161410523"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p568914165216"><a name="p568914165216"></a><a name="p568914165216"></a>high_profile</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1868914175214"><a name="p1868914175214"></a><a name="p1868914175214"></a>高性能的开关：仅SS928V100支持。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1868914175214"><a name="p1868914175214"></a><a name="p1868914175214"></a>高性能的开关：仅Hi3403V100支持。</p>
 <p id="p6443521105512"><a name="p6443521105512"></a><a name="p6443521105512"></a>Y：使能；</p>
 <p id="p0324227205519"><a name="p0324227205519"></a><a name="p0324227205519"></a>N：不使能。</p>
 </td>

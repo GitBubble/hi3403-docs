@@ -35,7 +35,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/topeet/docs/
 
 ![image-20260327105327160](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271053191.png)
 
- 烧写工具打开之后会进入芯片选择界面，这里只有SS928V100，所以直接点击确认即可，如下图所示：
+ 烧写工具打开之后会进入芯片选择界面，这里只有Hi3403V100，所以直接点击确认即可，如下图所示：
 
 ![image-20260327110244623](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271102651.png)
 
@@ -181,7 +181,7 @@ TF卡启动前提条件如下：
 
 ![image-20260327111530932](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271115961.png)
 
- 这里的image用来存放TF卡要启动的镜像，make_sd.sh为TF卡制作脚本，后面两个目录为临时挂载目录，然后将要启动的镜像放到image目录下，注意这里只需要拷贝内核镜像uImage_ss928v100和文件系统镜像rootfs.img即可，拷贝完成如下所示：
+ 这里的image用来存放TF卡要启动的镜像，make_sd.sh为TF卡制作脚本，后面两个目录为临时挂载目录，然后将要启动的镜像放到image目录下，注意这里只需要拷贝内核镜像uImage_Hi3403V100和文件系统镜像rootfs.img即可，拷贝完成如下所示：
 
 ![image-20260327111541182](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271115202.png)
 

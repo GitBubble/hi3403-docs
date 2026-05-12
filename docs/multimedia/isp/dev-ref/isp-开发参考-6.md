@@ -2016,7 +2016,7 @@ typedef struct {
 
 LSC模块主要用来处理由于镜头光学折射不均匀导致的镜头周围出现阴影的情况。目前流行的处理方式有Radial（同轴圆）方式以及Mesh（网格）方式。
 
-在SS928V100中 Mesh Shading算法使用Mesh（网格）方式对画面进行标定/矫正，算法会将整个Bayer域画面分割成32\*32个子区域，这32\*32个区域大小大致相等。
+在Hi3403V100中 Mesh Shading算法使用Mesh（网格）方式对画面进行标定/矫正，算法会将整个Bayer域画面分割成32\*32个子区域，这32\*32个区域大小大致相等。
 
 在数据处理过程中，算法将分别对RAW域中的每个通道进行处理。
 
@@ -2483,7 +2483,7 @@ typedef struct {
 <tr id="row22819mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p id="p22821mcpsimp"><a name="p22821mcpsimp"></a><a name="p22821mcpsimp"></a>mesh_strength</p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p22823mcpsimp"><a name="p22823mcpsimp"></a><a name="p22823mcpsimp"></a>用来全局纠正Mesh Shading标定后的强度。当镜头shading很严重的时候，画面四个角补偿的增益很大，容易导致噪声很大，而且画面有格子现象。这个调整mesh_strength小于一倍默认值，可以减少Mesh Shading的补偿值，让四个角的补偿增益较小一些，达到优化噪声和画面格子问题。</p>
-<p id="p22824mcpsimp"><a name="p22824mcpsimp"></a><a name="p22824mcpsimp"></a>SS928V100范围：[0, 65535]</p>
+<p id="p22824mcpsimp"><a name="p22824mcpsimp"></a><a name="p22824mcpsimp"></a>Hi3403V100范围：[0, 65535]</p>
 </td>
 </tr>
 <tr id="row22825mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p id="p22827mcpsimp"><a name="p22827mcpsimp"></a><a name="p22827mcpsimp"></a>blend_ratio</p>
@@ -2817,7 +2817,7 @@ DPC算法通过在5x5的窗口中通过某些坏点检测算法找到该窗口�
     -   在亮点流程中，光圈处于关闭状态，启动坏点标定程序，得到坏点坐标信息。坏点个数的总数由坏点校正模块的memory决定的。得到的坏点通过临近像素的中值滤波进行校正。
     -   在暗点流程中，光圈处于正常打开状态，要求平坦背景，最好使用灰度箱固定光源，图像整体平均亮度大约为最大亮度50%，或Bayer格式中B通道亮度为最大亮度20%左右，启动坏点检测程序，得到坏点坐标。坏点个数的总数是由坏点校正模块的memory决定的。得到的坏点通过临近像素的中值滤波进行校正。
 
-        注意：SS928V100 DPC所能支持的最大静态坏点数为6144。
+        注意：Hi3403V100 DPC所能支持的最大静态坏点数为6144。
 
 -   动态坏点检测/校正
 
@@ -3093,7 +3093,7 @@ td_s32 ss_mpi_isp_set_dp_static_attr(ot_vi_pipe vi_pipe, const ot_isp_dp_static_
 
 【注意】
 
-每一路ISP BE所能支持的最大静态坏点个数为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL\(在SS928V100中，OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL = 2048\)，因此DPC模块所能支持的最大静态坏点个数为count = OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL \* \(当前业务场景下ISP BE的分块数目\)。则亮点数目bright\_count <= count且dark\_count <= count，若亮点表和暗点表中有same个重复的坏点，则bright\_count + dark\_count – same < =count。ISP BE的分块数目参考ISP Proc信息中的” block\_num”。
+每一路ISP BE所能支持的最大静态坏点个数为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL\(在Hi3403V100中，OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL = 2048\)，因此DPC模块所能支持的最大静态坏点个数为count = OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL \* \(当前业务场景下ISP BE的分块数目\)。则亮点数目bright\_count <= count且dark\_count <= count，若亮点表和暗点表中有same个重复的坏点，则bright\_count + dark\_count – same < =count。ISP BE的分块数目参考ISP Proc信息中的” block\_num”。
 
 【举例】
 
@@ -7855,7 +7855,7 @@ td_s32 ss_mpi_isp_fpn_calibrate(ot_vi_pipe vi_pipe, ot_isp_fpn_calibrate_attr *c
 -   当VI处于离线OT\_VI\_VIDEO\_MODE\_NORM模式下，图像宽度大于4096时，不支持FPN标定；当图像面积大于3840x2160时，不支持离线OT\_VI\_VIDEO\_MODE\_NORM模式标定，可能会出现标定失败的现象，可使用OT\_VI\_VIDEO\_MODE\_ADVANCED模式标出黑帧。
 -   当VI处于OT\_VI\_STITCH\_CFG\_MODE\_SYNC模式下，不支持FPN标定。
 -   图像宽度大于4096时，只支持OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP格式的黑帧标定。
--   SS928V100 FPN标定不支持压缩，只能是非压缩模式。
+-   Hi3403V100 FPN标定不支持压缩，只能是非压缩模式。
 -   在WDR模式下，FPN不支持标定。
 -   VI物理通道使能时，不支持开启FPN标定。
 -   当VI模块的PIPE有销毁操作时（例如：分辨率切换、WDR模式切换等情况），保存在VI模块的FPN属性会丢失，FPN功能需要在VI模块的PIPE创建后重新配置才能恢复。
@@ -7939,7 +7939,7 @@ td_s32 ss_mpi_isp_set_fpn_attr(ot_vi_pipe vi_pipe, const ot_isp_fpn_attr *fpn_at
 
 【注意】
 
--   SS928V100 FPN校正不支持压缩，只能是非压缩模式。
+-   Hi3403V100 FPN校正不支持压缩，只能是非压缩模式。
 -   图像宽度大于4096时，只支持OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP格式的黑帧校正。
 -   当VI处于OT\_VI\_STITCH\_CFG\_MODE\_SYNC模式下，不支持FPN校正。
 -   3合 1 WDR模式下不支持FPN校正。
@@ -8091,7 +8091,7 @@ typedef struct {
 </tr>
 <tr id="row28179mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.1.3.1.1 "><p id="p28181mcpsimp"><a name="p28181mcpsimp"></a><a name="p28181mcpsimp"></a>frm_size</p>
 </td>
-<td class="cellrowborder" valign="top" width="81%" headers="mcps1.1.3.1.2 "><p id="p28183mcpsimp"><a name="p28183mcpsimp"></a><a name="p28183mcpsimp"></a>帧的大小，输出的黑帧有二种：压缩、非压缩，来自于标定时保存的黑帧大小。SS928V100只支持非压缩。</p>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.1.3.1.2 "><p id="p28183mcpsimp"><a name="p28183mcpsimp"></a><a name="p28183mcpsimp"></a>帧的大小，输出的黑帧有二种：压缩、非压缩，来自于标定时保存的黑帧大小。Hi3403V100只支持非压缩。</p>
 </td>
 </tr>
 <tr id="row28184mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.1.3.1.1 "><p id="p28186mcpsimp"><a name="p28186mcpsimp"></a><a name="p28186mcpsimp"></a>fpn_frame</p>
@@ -8152,7 +8152,7 @@ typedef struct {
 <tr id="row28233mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p id="p28235mcpsimp"><a name="p28235mcpsimp"></a><a name="p28235mcpsimp"></a>fpn_type</p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p28237mcpsimp"><a name="p28237mcpsimp"></a><a name="p28237mcpsimp"></a>标定的类型，有二种：帧模式与行模式，帧模式校正效果要优于行模式，而行模式要比帧模式省内存。</p>
-<p id="p28238mcpsimp"><a name="p28238mcpsimp"></a><a name="p28238mcpsimp"></a>SS928V100只支持帧模式。</p>
+<p id="p28238mcpsimp"><a name="p28238mcpsimp"></a><a name="p28238mcpsimp"></a>Hi3403V100只支持帧模式。</p>
 </td>
 </tr>
 <tr id="row28239mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p id="p28241mcpsimp"><a name="p28241mcpsimp"></a><a name="p28241mcpsimp"></a>fpn_cali_frame</p>
@@ -10421,7 +10421,7 @@ typedef enum {
 
 【注意事项】
 
-SS928V100仅支持白平衡增益配置在WB处。
+Hi3403V100仅支持白平衡增益配置在WB处。
 
 【相关数据类型及接口】
 
@@ -11292,7 +11292,7 @@ typedef struct {
 
 ### 功能描述<a name="ZH-CN_TOPIC_0000002504084873"></a>
 
-SS928V100是在YUV域对图像进行radial crop操作，将设定半径之外的地方直接拉黑掉。
+Hi3403V100是在YUV域对图像进行radial crop操作，将设定半径之外的地方直接拉黑掉。
 
 ### API参考<a name="ZH-CN_TOPIC_0000002471084954"></a>
 
@@ -11858,11 +11858,11 @@ typedef struct {
 
 【注意事项】
 
--   color\_gamut中可选择OT\_COLOR\_GAMUT\_BT601，OT\_COLOR\_GAMUT\_BT709，OT\_COLOR\_GAMUT\_BT2020，OT\_COLOR\_GAMUT\_USER四种模式。SS928V100不支持OT\_COLOR\_GAMUT\_BT2020模式。在选择OT\_COLOR\_GAMUT\_USER模式下，可根据实际情况自由设定csc\_magtrx的参数来进行色彩空间转换。
+-   color\_gamut中可选择OT\_COLOR\_GAMUT\_BT601，OT\_COLOR\_GAMUT\_BT709，OT\_COLOR\_GAMUT\_BT2020，OT\_COLOR\_GAMUT\_USER四种模式。Hi3403V100不支持OT\_COLOR\_GAMUT\_BT2020模式。在选择OT\_COLOR\_GAMUT\_USER模式下，可根据实际情况自由设定csc\_magtrx的参数来进行色彩空间转换。
 -   如果将contr值调小（20左右）时，在平坦区域容易出现等高线，出现的原因是因为contr值调小后，会影响画面的动态范围，导致原本0\~255（或者10bit 0\~1023）的动态范围缩小到原来的20%左右，因此在平坦区域如果有亮度变化，则非常容易产生量化误差出现等高线。
 -   Hue，luma，contr，satu参数实现的色调，亮度，对比度，饱和度调节的功能是在当前的色彩空间转换矩阵基础上进行的。当这些参数不在默认值时，会对YUV值的范围产生影响，即VI输出端的YUV数据不会准确的在Full range或Limited range规定的值的范围内。建议limited\_range\_en配置为Full range。
 -   CSC后的模块，比如Sharpen，LDCI，CA等模块，会对YUV数据进行处理。当开启这些模块时，VI输出端的YUV数据不会准确的在Full range或Limited range规定的值的范围内。建议limited\_range\_en配置为Full range。
--   当需要系统最终输出的YUV数据在Limited range规定的数值范围内时，可以将CSC的limited\_range\_en配置为Full range。设置ot\_vpss\_nrx\_v2中的limit\_range\_en参数，在VPSS输出端得到Limited range的YUV数据。ot\_vpss\_nrx\_v2的定义见《SS928V100/SS927100  3DNR参数配置说明》。
+-   当需要系统最终输出的YUV数据在Limited range规定的数值范围内时，可以将CSC的limited\_range\_en配置为Full range。设置ot\_vpss\_nrx\_v2中的limit\_range\_en参数，在VPSS输出端得到Limited range的YUV数据。ot\_vpss\_nrx\_v2的定义见《Hi3403V100/Hi3519AV200100  3DNR参数配置说明》。
 -   当系统接入YUV数据，需要通过CSC进行YUV和RGB数据之间的转换时，可以按照需要将CSC的limited\_range\_en配置为Full range或Limited range，或者配置ot\_isp\_csc\_matrx参数。
 
 【相关数据类型及接口】
@@ -11945,7 +11945,7 @@ COLOR\_3D\_LUT是利用线性RGB空间17x17x17分格的3D LUT实现复杂的颜�
 
 总共需要三类查找表，R、G和B各一张表。
 
-SS928V100：大小分别为R：17x17x17x10bit，G：17x17x17x10bit，B：17x17x17x10bit，即R的调节量为\[-511,511\]，G的调节量为\[-511,511\]，B的调节量为\[-511,511\]。
+Hi3403V100：大小分别为R：17x17x17x10bit，G：17x17x17x10bit，B：17x17x17x10bit，即R的调节量为\[-511,511\]，G的调节量为\[-511,511\]，B的调节量为\[-511,511\]。
 
 CLUT调节量处理的数据是\[0, 4095\]范围的12bit线性RGB数据。
 
@@ -12358,7 +12358,7 @@ typedef struct {
 
 【注意事项】
 
-增益设定为512时，相当于增益是1.0。增益和LUT查表得出的调整量相乘，得到实际调整量。实际调整量和输入RGB值相加得到输出RGB值。SS928V100建议默认增益为512。
+增益设定为512时，相当于增益是1.0。增益和LUT查表得出的调整量相乘，得到实际调整量。实际调整量和输入RGB值相加得到输出RGB值。Hi3403V100建议默认增益为512。
 
 【相关数据类型及接口】
 
@@ -12374,7 +12374,7 @@ typedef struct {
 
 ```
 typedef struct {
-    td_u32 lut[OT_ISP_CLUT_LUT_LENGTH];  /* RW; Range: SS928V100 = [0, 1073741823] */
+    td_u32 lut[OT_ISP_CLUT_LUT_LENGTH];  /* RW; Range: Hi3403V100 = [0, 1073741823] */
 } ot_isp_clut_lut;
 ```
 
@@ -12400,7 +12400,7 @@ typedef struct {
 
 由于采用了压缩存储的格式，这个表的内容会由PQTools生成。一般用户在PQTools界面调试后可以生成这个格式的LUT，不需要关心数据格式。
 
-对于SS928V100的用户：
+对于Hi3403V100的用户：
 
 如果用户不使用PQTools，需要将自行生成的3D LUT表加载到芯片。需要做的工作是将17x17x17x3的LUT放入8x3的LUT，然后将8x3的LUT紧凑排列填入长度为5508的LUT。
 
@@ -14014,7 +14014,7 @@ typedef struct {
 
 ### 功能描述<a name="ZH-CN_TOPIC_0000002504084717"></a>
 
-本模块用于在SS928V100上实现对单一光源的在线Mesh LSC标定功能。具体调用实例可参考开发包中的lsc\_online\_cali用例。本模块可针对单一光源生成符合SS928V100中Mesh LSC的标定数据。
+本模块用于在Hi3403V100上实现对单一光源的在线Mesh LSC标定功能。具体调用实例可参考开发包中的lsc\_online\_cali用例。本模块可针对单一光源生成符合Hi3403V100中Mesh LSC的标定数据。
 
 在使用本模块进行标定过程中，标定环境与离线标定MLSC时需要的标定环境相同。
 
@@ -16162,7 +16162,7 @@ typedef struct {
 
 在sensor手册中会给出sensor在sensor built-in模式下内部压缩时使用的拐点配置，需要将这几个拐点配置按照对应的原则进行转换，然后配置到knee\_point\_coord中即可。
 
-SS928V100转换原则如下：
+Hi3403V100转换原则如下：
 
 -   knee\_point\_coord的横坐标x需要根据sensor压缩曲线转换到\[0,256\]之间（8bit），例如sensor压缩输出的后有效数据位宽是12bit，则需要将sensor压缩曲线拐点的纵坐标右移4bit得到knee\_point\_coord的横坐标x；
 -   knee\_point\_coord的纵坐标y需要根据sensor压缩曲线转换到\[0,1048576\]之间（20bit），例如sensor合成有效数据未压缩之前有效位宽是16bit，则需要将sensor压缩曲线的拐点的横坐标左移4bit，得到knee\_point\_coord的纵坐标y。

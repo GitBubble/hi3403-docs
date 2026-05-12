@@ -19,12 +19,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 </th>
 </tr>
 </thead>
-<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>SS928</p>
+<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>SS927</p>
+<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
 </td>
@@ -34,7 +34,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >MindCmd仅作为开发调试工具，不建议在实际产品中集成。
->本文未有特殊说明，SS928与SS927内容完全一致。
+>本文未有特殊说明，Hi3403V100与Hi3519AV200内容完全一致。
 
 **读者对象<a name="section4378592816410"></a>**
 
@@ -433,7 +433,7 @@ apt-get update
 >-   如果安装过程中出现下载依赖连接超时的情况，请用户检查pip环境是否正常可用，如需网络代理或更换镜像源，请用户自行配置。
 >-   安装MindCmd后，请使用如下命令配置到生态开源版本默认配置：
 >```
->mindcmd config --global base_config.target_version=SS928V100
+>mindcmd config --global base_config.target_version=Hi3403V100
 >mindcmd config --global base_config.cross_compiler=musl_clang
 >```
 
@@ -511,7 +511,7 @@ MindCmd命令行工具为用户提供全局配置文件，配置文件路径为�
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p203352168125"><a name="p203352168125"></a><a name="p203352168125"></a>TARGET_VERSION</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p4335121651215"><a name="p4335121651215"></a><a name="p4335121651215"></a>目标解决方案的版本，如：TARGET_VERSION=SS928V100</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p4335121651215"><a name="p4335121651215"></a><a name="p4335121651215"></a>目标解决方案的版本，如：TARGET_VERSION=Hi3403V100</p>
 <p id="p1885014185114"><a name="p1885014185114"></a><a name="p1885014185114"></a>需要根据实际解决方案版本替换。</p>
 </td>
 </tr>
@@ -534,7 +534,7 @@ MindCmd命令行工具为用户提供全局配置文件，配置文件路径为�
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p14848934141917"><a name="p14848934141917"></a><a name="p14848934141917"></a>CROSS_COMPILER</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1983715210286"><a name="p1983715210286"></a><a name="p1983715210286"></a>交叉编译链选项，可配置上板所用的交叉编译链。可选值包括：SS928V100(musl_clang、gnu）</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1983715210286"><a name="p1983715210286"></a><a name="p1983715210286"></a>交叉编译链选项，可配置上板所用的交叉编译链。可选值包括：Hi3403V100(musl_clang、gnu）</p>
 </td>
 </tr>
 <tr id="row128983510315"><td class="cellrowborder" rowspan="11" valign="top" width="16.39%" headers="mcps1.2.6.1.1 "><p id="p529053510315"><a name="p529053510315"></a><a name="p529053510315"></a>oneclick_switch</p>

@@ -2,7 +2,7 @@
 
 ### 2.5.1、face_detection 程序简介
 
-* face_detection sample基于SS928V100平台开发，以EulerPi套件为例，face_detection sample是通过USB Camera，将采集到的图片送到人脸检测模型中进行推理，当检测到人脸时，会在人脸区域画出矩形框，并通过外接HDMI线实时的显示在外接显示屏上。
+* face_detection sample基于Hi3403V100平台开发，以EulerPi套件为例，face_detection sample是通过USB Camera，将采集到的图片送到人脸检测模型中进行推理，当检测到人脸时，会在人脸区域画出矩形框，并通过外接HDMI线实时的显示在外接显示屏上。
 * face_detection 案例主要是使用pytorch框架，基于YoloV8网络，使用widerface、FDDB、UFDD等开源数据集，共1.3万多张训练出来在强光、逆光、暗光下的人脸检测模型。
 
 ### 2.5.2、目录

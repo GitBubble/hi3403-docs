@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 This document is written for programmers using MCF development, aiming to provide solutions and assistance for problems encountered during the development process.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the description example. Unless otherwise specified, SS927V100 has the same content as SS928V100.
+>This document uses Hi3403V100 as the description example. Unless otherwise specified, Hi3519AV200 has the same content as Hi3403V100.
 
 **Product Version<a name="section105mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row4420516474"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p166961419277"><a name="p166961419277"></a><a name="p166961419277"></a>SS927</p>
+<tr id="row4420516474"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p166961419277"><a name="p166961419277"></a><a name="p166961419277"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p869611191071"><a name="p869611191071"></a><a name="p869611191071"></a>V100</p>
 </td>
@@ -215,7 +215,7 @@ By calling the binding interface of the SYS module, it can be bound with modules
 **Figure 2** MCF Internal Processing Flow Diagram<a name="fig12877101218348"></a>  
 ![](figures/MCF内部处理流程图.png "MCF Internal Processing Flow Diagram")
 >![](public_sys-resources/icon-note.gif) **Note:** 
->SS928V100 MCF supports 8 extension channels, but only one is shown in the diagram. Extension channels can be bound to any physical channel. The diagram only schematically shows binding to one physical channel.
+>Hi3403V100 MCF supports 8 extension channels, but only one is shown in the diagram. Extension channels can be bound to any physical channel. The diagram only schematically shows binding to one physical channel.
 
 ### Input and Output Characteristics<a name="ZH-CN_TOPIC_0000002457829757"></a>
 
@@ -242,7 +242,7 @@ By calling the binding interface of the SYS module, it can be bound with modules
 </th>
 </tr>
 </thead>
-<tbody><tr id="row318mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p id="p320mcpsimp"><a name="p320mcpsimp"></a><a name="p320mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row318mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p id="p320mcpsimp"><a name="p320mcpsimp"></a><a name="p320mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.6.1.2 mcps1.2.6.2.2 "><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>Y: 8bit</p></td></tr></tbody></table>
 

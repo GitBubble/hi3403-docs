@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/CIPHER A
 CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC摘要算法，随机数算法，以及RSA不对称算法，主要用于对音视频码流进行加解密及数据合法性验证等场景。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文未有特殊说明，SS927V100与SS928V100内容完全一致。
+>本文未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section5008mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5022mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5024mcpsimp"><a name="p5024mcpsimp"></a><a name="p5024mcpsimp"></a>SS928</p>
+<tbody><tr id="row5022mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5024mcpsimp"><a name="p5024mcpsimp"></a><a name="p5024mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5026mcpsimp"><a name="p5026mcpsimp"></a><a name="p5026mcpsimp"></a>V100</p>
 </td>
@@ -32,7 +32,7 @@ CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5031mcpsimp"><a name="p5031mcpsimp"></a><a name="p5031mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row10245112718406"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row10245112718406"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -127,7 +127,7 @@ CIPHER是安全算法模块，其提供了包括AES对称加解密算法，RSA�
 
 -   AES：支持ECB/CBC/CFB/OFB/CTR/CCM/GCM等工作模式。CCM/GCM模式下，加解密结束后需获取一次TAG值。
 -   以上算法除了CTR/CCM/GCM，其它算法、模式的数据长度必须按块大小对齐；CCM/GCM的N、A需要靠软件按标准把各个字段封装成块大小对齐的数据块；各种工作模式支持一次实现多个分组的加解密运算，也支持一次实现单个分组的加解密运算。
--   SS928V100、SS626V100支持申请15个通道。
+-   Hi3403V100、SS626V100支持申请15个通道。
 -   ECB模式安全性低，该模式仅用于调试，不能用于产品。
 
 ### 不对称加解密算法<a name="ZH-CN_TOPIC_0000002441572925"></a>
@@ -184,7 +184,7 @@ CIPHER支持的AES、HASH、RSA不同解决方案间的配置差异如[表1](#_R
 <a name="_Ref47627660"></a>
 <table><thead align="left"><tr id="row153mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.2.3.1.1"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>规格差异</p>
 </th>
-<th class="cellrowborder" valign="top" width="46%" id="mcps1.2.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>SS928V100、SS626V100</p>
+<th class="cellrowborder" valign="top" width="46%" id="mcps1.2.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>Hi3403V100、SS626V100</p>
 </th>
 </tr>
 </thead>
@@ -774,7 +774,7 @@ td_s32 ss_mpi_cipher_create (td_handle *handle, const ot_cipher_attr *cipher_att
 【注意】
 
 -   handle、cipher\_attr不能为空。
--   SS928V100、SS626V100支持15路CIPHER通道。
+-   Hi3403V100、SS626V100支持15路CIPHER通道。
 -   使用完通道后，应销毁对应的通道。
 
 【举例】
@@ -2603,7 +2603,7 @@ td_s32 ss_mpi_cipher_sm2_encrypt(const ot_cipher_sm2_public_key *sm2_key, const 
 
 -   sm2\_key，plain\_txt，cipher\_txt不能为空。
 -   cipher\_txt的成员data\_len即是加密的数据缓冲区长度，也是加密输出的数据长度。缓冲区长度不能小于输出的数据长度。
--   SS928V100、SS626V100不支持SM2接口。
+-   Hi3403V100、SS626V100不支持SM2接口。
 
 【举例】
 
@@ -2687,7 +2687,7 @@ td_s32 ss_mpi_cipher_sm2_decrypt(const ot_cipher_sm2_private_key *sm2_key, const
 
 -   sm2\_key，plain\_txt，cipher\_txt不能为空。
 -   plain\_txt的成员data\_len即是解密的数据缓冲区长度，也是解密输出的数据长度。缓冲区长度不能小于输出的数据长度。
--   SS928V100、SS626V100不支持SM2接口。
+-   Hi3403V100、SS626V100不支持SM2接口。
 
 【举例】
 
@@ -2771,7 +2771,7 @@ td_s32 ss_mpi_cipher_sm2_sign(const ot_cipher_sm2_sign *sm2_sign, const ot_ciphe
 
 -   sm2\_sign，sm2\_data，sign\_data不能为空。
 -   当前SM2只支持签名数据类型OT\_CIPHER\_SIGN\_TYPE\_MSG。
--   SS928V100、SS626V100不支持SM2接口。
+-   Hi3403V100、SS626V100不支持SM2接口。
 
 【举例】
 
@@ -2855,7 +2855,7 @@ td_s32 ss_mpi_cipher_sm2_verify(const ot_cipher_sm2_verify *sm2_verify, const ot
 
 -   sm2\_verify，sm2\_data，sign\_data不能为空。
 -   当前SM2只支持签名数据类型OT\_CIPHER\_SIGN\_TYPE\_MSG。
--   SS928V100、SS626V100不支持SM2接口。
+-   Hi3403V100、SS626V100不支持SM2接口。
 
 【举例】
 
@@ -3365,7 +3365,7 @@ typedef enum {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM1、SM4。
+Hi3403V100、SS626V100不支持SM1、SM4。
 
 【相关数据类型及接口】
 
@@ -3839,7 +3839,7 @@ typedef struct {
 
 -   SM4支持的工作模式为：ECB/CBC/CFB/OFB/CTR，其中CFB支持的位宽可以为1、8、128bit，OFB模式仅支持128bit位宽。
 -   ECB模式可以不配置iv。
--   SS928V100、SS626V100不支持SM4。
+-   Hi3403V100、SS626V100不支持SM4。
 
 【相关数据类型及接口】
 
@@ -4076,7 +4076,7 @@ typedef enum {
 【注意事项】
 
 -   不支持SHA1、SHA224、HMAC-SHA1、HMAC-SHA224。
--   SS928V100、SS626V100不支持SM3、HMAC-SM3。
+-   Hi3403V100、SS626V100不支持SM3、HMAC-SM3。
 
 【相关数据类型及接口】
 
@@ -4584,7 +4584,7 @@ typedef struct {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM2。
+Hi3403V100、SS626V100不支持SM2。
 
 【相关数据类型及接口】
 
@@ -4623,7 +4623,7 @@ typedef struct {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM2。
+Hi3403V100、SS626V100不支持SM2。
 
 【相关数据类型及接口】
 
@@ -4686,7 +4686,7 @@ typedef struct {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM2。
+Hi3403V100、SS626V100不支持SM2。
 
 【相关数据类型及接口】
 
@@ -4743,7 +4743,7 @@ typedef struct {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM2。
+Hi3403V100、SS626V100不支持SM2。
 
 【相关数据类型及接口】
 
@@ -4788,7 +4788,7 @@ typedef struct {
 
 【注意事项】
 
-SS928V100、SS626V100不支持SM2。
+Hi3403V100、SS626V100不支持SM2。
 
 【相关数据类型及接口】
 

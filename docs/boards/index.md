@@ -62,7 +62,7 @@ Hi3403 平台目前支持以下几款 Hi3403V100 开发板。点击进入查看�
 
 <div class="grid cards" markdown>
 
--   :material-chip:{ .lg .middle } __SS928V100 SoC 参考__
+-   :material-chip:{ .lg .middle } __Hi3403V100 SoC 参考__
 
     ---
 

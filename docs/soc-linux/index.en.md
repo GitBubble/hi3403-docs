@@ -1,5 +1,5 @@
 ---
-description: SS928V100 chip hardware, U-Boot, Linux kernel, peripheral drivers, secure
+description: Hi3403V100 chip hardware, U-Boot, Linux kernel, peripheral drivers, secure
   boot
 title: SoC & Linux
 ---
@@ -11,7 +11,7 @@ Boot link (U-Boot → ATF → Kernel), various peripherals, memory layout, and s
 
 <div class="grid cards" markdown>
 
--   :material-chip:{ .lg .middle } __SS928V100 Overview__
+-   :material-chip:{ .lg .middle } __Hi3403V100 Overview__
 
     ---
 
@@ -31,7 +31,7 @@ Boot link (U-Boot → ATF → Kernel), various peripherals, memory layout, and s
 
     ---
 
-    SS928V100/SS927V100 secure boot key, signature, and burning process.
+    Hi3403V100/Hi3519AV200 secure boot key, signature, and burning process.
 
     [:octicons-arrow-right-24: Enter](secure-boot/index.md)
 
@@ -71,7 +71,7 @@ Boot link (U-Boot → ATF → Kernel), various peripherals, memory layout, and s
 
     ---
 
-    Multi-chip SS928V100 PCIE cascade networking application.
+    Multi-chip Hi3403V100 PCIE cascade networking application.
 
     [:octicons-arrow-right-24: Enter](pcie/index.md)
 

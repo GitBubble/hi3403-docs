@@ -1,6 +1,6 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 3DNR参数配置说明/SS928V100╱SS927V100 3DNR参数配置说明.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100╱Hi3519AV200 3DNR参数配置说明/Hi3403V100╱Hi3519AV200 3DNR参数配置说明.md
 ---
 
 # 前言
@@ -15,12 +15,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 </th>
 </tr>
 </thead>
-<tbody><tr id="row152mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p154mcpsimp"><a name="p154mcpsimp"></a><a name="p154mcpsimp"></a>SS928</p>
+<tbody><tr id="row152mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p154mcpsimp"><a name="p154mcpsimp"></a><a name="p154mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row78701417509"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p12794157145012"><a name="p12794157145012"></a><a name="p12794157145012"></a>SS927</p>
+<tr id="row78701417509"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p12794157145012"><a name="p12794157145012"></a><a name="p12794157145012"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1579410725013"><a name="p1579410725013"></a><a name="p1579410725013"></a>V100</p>
 </td>
@@ -29,7 +29,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **读者对象<a name="section76301743411"></a>**
 
@@ -995,7 +995,7 @@ typedef struct {
 
 ## 默认参数<a name="ZH-CN_TOPIC_0000002424361866"></a>
 
-SS928V100 YUV 3DNR参数的接口默认参数，如[图1](#ref515453020)所示。
+Hi3403V100 YUV 3DNR参数的接口默认参数，如[图1](#ref515453020)所示。
 
 **图 1**  3DNR参数的接口参数界面<a name="ref515453020"></a>  
 ![](figures/3DNR参数的接口参数界面.png "3DNR参数的接口参数界面")

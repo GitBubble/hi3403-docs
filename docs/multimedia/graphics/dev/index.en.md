@@ -10,7 +10,7 @@ This document presents one recommended solution for graphics development, coveri
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
 >-   Unless otherwise stated, SS528V100, SS625V100, SS524V100, SS522V101, and SS626V100 are fully identical.
->-   Unless otherwise stated, SS927V100 and SS928V100, and SS522V100 and SS524V100 are fully identical.
+>-   Unless otherwise stated, Hi3519AV200 and Hi3403V100, and SS522V100 and SS524V100 are fully identical.
 
 **Product Versions<a name="section147mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row161mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>SS928</p>
+<tbody><tr id="row161mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p165mcpsimp"><a name="p165mcpsimp"></a><a name="p165mcpsimp"></a>V100</p>
 </td>
@@ -58,7 +58,7 @@ The product versions corresponding to this document are listed below.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1844992446"><a name="p1844992446"></a><a name="p1844992446"></a>V100</p>
 </td>
 </tr>
-<tr id="row124425241073"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row124425241073"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -153,7 +153,7 @@ The digital media processing platform provides a complete set of mechanisms for 
 
 -   SS528V100/SS625V100/SS524V100 support 2 HD display outputs (HD0, HD1) and 1 SD display output (SD0), along with 4 graphics layers: G0, G1, G2, and G3.
 -   SS522V101 supports 1 HD display output (HD0) and 1 SD display output (SD0), along with 3 graphics layers: G0, G2, and G3.
--   SS928V100 supports 2 HD display outputs (HD0, HD1) and 1 SD display output (SD0), along with 3 graphics layers: G0, G1, and G3.
+-   Hi3403V100 supports 2 HD display outputs (HD0, HD1) and 1 SD display output (SD0), along with 3 graphics layers: G0, G1, and G3.
 -   SS626V100 supports 2 HD display outputs (HD0, HD1) and 1 SD display output (SD0), along with 5 graphics layers: G0, G1, G2, G3, and G4.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
@@ -238,7 +238,7 @@ The mapping between graphics layers and display devices is subject to certain co
 </tbody>
 </table>
 
-**Table 3** FB device files, graphics layers, and output device mappings (SS928V100)
+**Table 3** FB device files, graphics layers, and output device mappings (Hi3403V100)
 
 <a name="table326mcpsimp"></a>
 <table><thead align="left"><tr id="row333mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.2.4.1.1"><p id="p335mcpsimp"><a name="p335mcpsimp"></a><a name="p335mcpsimp"></a>FB Device File</p>

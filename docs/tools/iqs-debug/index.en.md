@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Image Qu
 The PQ Tools Image Quality Debugging Tool User Guide mainly assists debuggers in image effect adjustment and differentiation. This document focuses on explaining the relevant debugging operation methods.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 is consistent with SS928V100.
+>This document uses the Hi3403V100 description as an example. Unless otherwise specified, the content for Hi3519AV200 is consistent with Hi3403V100.
 
 **Product Version<a name="section5625mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5639mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5641mcpsimp"><a name="p5641mcpsimp"></a><a name="p5641mcpsimp"></a>SS928</p>
+<tbody><tr id="row5639mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5641mcpsimp"><a name="p5641mcpsimp"></a><a name="p5641mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5643mcpsimp"><a name="p5643mcpsimp"></a><a name="p5643mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row4477135110273"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p17797185342716"><a name="p17797185342716"></a><a name="p17797185342716"></a>SS927</p>
+<tr id="row4477135110273"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p17797185342716"><a name="p17797185342716"></a><a name="p17797185342716"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1879775352710"><a name="p1879775352710"></a><a name="p1879775352710"></a>V100</p>
 </td>
@@ -143,7 +143,7 @@ The PQTools tool is divided into a client side (PC software) and a server side (
 
 ### PQTools Release Package Directory Description<a name="ZH-CN_TOPIC_0000002498141840"></a>
 
-#### SS928V100\_PQ\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002498301738"></a>
+#### Hi3403V100\_PQ\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002498301738"></a>
 
 For this version, please refer to the "[Installation and Operation of Board-Side Software under Linux](#ZH-CN_TOPIC_0000002530221763)" chapter. The directory structure after decompression is shown in [Figure 1](#_ref513797864).
 
@@ -157,7 +157,7 @@ For this version, please refer to the "[Installation and Operation of Board-Side
 -   ittb_control and ittb_stream are the business program files
 -   StartControl.sh is the script file for quickly restarting ittb_control
 
-#### SS928V100\_ext\_api\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002530221767"></a>
+#### Hi3403V100\_ext\_api\_Vx.x.x.x.tgz<a name="ZH-CN_TOPIC_0000002530221767"></a>
 
 This release package is used for miniaturized scenarios where some PQTools tool functions are compiled into user applications. The directory structure after decompression is shown in [Figure 1](#_toc51692445).
 

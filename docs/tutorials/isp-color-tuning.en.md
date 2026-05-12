@@ -14,7 +14,7 @@ AWB live, and persist the result to SYS_CONFIG.
 
 !!! info "Tool naming"
 
-    HiSilicon offers two image-quality tuning tools for SS928V100:
+    HiSilicon offers two image-quality tuning tools for Hi3403V100:
 
     - **PQ Tool** (a.k.a. IQS / Image Quality Studio) — typically a
       Windows GUI; the Pegasus SDK provides the on-board agent source

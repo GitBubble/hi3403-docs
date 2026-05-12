@@ -9,8 +9,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/PCIEçº§è
 This document introduces the Demo board PCIe cascade operation guide from the aspects of hardware environment preparation and software environment preparation. It also introduces the basics of PCIe, the business implementation of PCIe cascading, and the PCIe MPI interface functions, providing references for users when using the PCIe cascade function.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->- Unless otherwise specified, ssxx in the following text represents solutions including SS528V100, SS625V100, SS928V100, SS927V100, and SS626V100.
->- Unless otherwise specified, the content for SS927V100 is identical to that of SS928V100.
+>- Unless otherwise specified, ssxx in the following text represents solutions including SS528V100, SS625V100, Hi3403V100, Hi3519AV200, and SS626V100.
+>- Unless otherwise specified, the content for Hi3519AV200 is identical to that of Hi3403V100.
 
 **Product Versions<a name="section1375mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1389mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1391mcpsimp"><a name="p1391mcpsimp"></a><a name="p1391mcpsimp"></a>SS928</p>
+<tbody><tr id="row1389mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1391mcpsimp"><a name="p1391mcpsimp"></a><a name="p1391mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1393mcpsimp"><a name="p1393mcpsimp"></a><a name="p1393mcpsimp"></a>V100</p>
 </td>
@@ -43,7 +43,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1062316593517"><a name="p1062316593517"></a><a name="p1062316593517"></a>V100</p>
 </td>
 </tr>
-<tr id="row1425220334618"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row1425220334618"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>

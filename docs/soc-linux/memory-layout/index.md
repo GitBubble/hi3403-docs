@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/内存�
 本文描述了小系统各模块如何定义内存空间并给出示例修改，以指导开发人员根据实际业务场景，调整系统的内存布局。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->后文的描述用“xxxx”表示项目名称，例如：xxxx\_defconfig  --\>  ss928v100\_defconfig。
+>后文的描述用“xxxx”表示项目名称，例如：xxxx\_defconfig  --\>  Hi3403V100\_defconfig。
 >“yyyy”表示版本号，例如：u-boot-yyyy  --\>  u-boot-2020.01、linux-yyyy  --\>  linux-6.6
 
 **产品版本<a name="section5164203710567"></a>**
@@ -23,12 +23,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/内存�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row419914372567"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p181991937105611"><a name="p181991937105611"></a><a name="p181991937105611"></a>SS928</p>
+<tbody><tr id="row419914372567"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p181991937105611"><a name="p181991937105611"></a><a name="p181991937105611"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.75000000000001%" headers="mcps1.1.3.1.2 "><p id="p819943745619"><a name="p819943745619"></a><a name="p819943745619"></a>V100</p>
 </td>
 </tr>
-<tr id="row127881511132510"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p1397518149259"><a name="p1397518149259"></a><a name="p1397518149259"></a>SS927</p>
+<tr id="row127881511132510"><td class="cellrowborder" valign="top" width="39.25%" headers="mcps1.1.3.1.1 "><p id="p1397518149259"><a name="p1397518149259"></a><a name="p1397518149259"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.75000000000001%" headers="mcps1.1.3.1.2 "><p id="p397511145253"><a name="p397511145253"></a><a name="p397511145253"></a>V100</p>
 </td>
@@ -37,7 +37,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/内存�
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **读者对象<a name="section4378592816410"></a>**
 

@@ -15,12 +15,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2436mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p2438mcpsimp"><a name="p2438mcpsimp"></a><a name="p2438mcpsimp"></a>SS928</p>
+<tbody><tr id="row2436mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p2438mcpsimp"><a name="p2438mcpsimp"></a><a name="p2438mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p2440mcpsimp"><a name="p2440mcpsimp"></a><a name="p2440mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row22121948133617"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p368135114363"><a name="p368135114363"></a><a name="p368135114363"></a>SS927</p>
+<tr id="row22121948133617"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p368135114363"><a name="p368135114363"></a><a name="p368135114363"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p16681151103616"><a name="p16681151103616"></a><a name="p16681151103616"></a>V100</p>
 </td>
@@ -29,7 +29,7 @@ The product versions corresponding to this document are as follows.
 </table>
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->This document uses SS928V100 as an example. Unless otherwise specified, SS927V100 content is consistent with SS928V100.
+>This document uses Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 content is consistent with Hi3403V100.
 
 **Revision History<a name="section2441mcpsimp"></a>**
 
@@ -103,7 +103,7 @@ Preview and capture share one pipe. Only when switching to capture mode are sens
 
 Similar to single-pipe offline, but the data path is online.
 
-> Note: The SS928V100 VI module currently supports only 1 online pipe. If there are multiple sensor inputs, all sensors must be processed offline.
+> Note: The Hi3403V100 VI module currently supports only 1 online pipe. If there are multiple sensor inputs, all sensors must be processed offline.
 
 ### ZSL Mode Capture
 

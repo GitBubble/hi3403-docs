@@ -63,7 +63,7 @@ Don't know which piece to choose? See the comparison table in [Choose a developm
 
 <div class="grid cards" markdown>
 
--   :material-chip:{ .lg .middle } __SS928V100 SoC Reference__
+-   :material-chip:{ .lg .middle } __Hi3403V100 SoC Reference__
 
     ---
 

@@ -338,7 +338,7 @@ SENTENCE_MAP = {
     "dst_chn如果找不到绑定的源通道，则直接返回成功。如果找到了绑定的源通道，但是绑定的源通道和src_chn不匹配，则返回失败。": "If dst_chn cannot find a bound source channel, it returns success. If a bound source channel is found but does not match src_chn, it returns failure.",
     "VDEC作为数据源，是以通道为发送者，向其他模块发送数据，用户将设备号置为0，SDK不检查输入的设备号。": "When VDEC acts as a data source, the channel serves as the sender to transmit data to other modules. Users should set the device number to 0; the SDK does not check the input device number.",
     "SS528V100/SS625V100/SS524V100/SS522V101/SS626V100 VI作为数据源，是以通道为发送者，向其他模块发送数据，用户将设备号置为0，SDK不检查输入的设备号。": "For SS528V100/SS625V100/SS524V100/SS522V101/SS626V100, when VI acts as a data source, the channel serves as the sender to transmit data to other modules. Users should set the device number to 0; the SDK does not check the input device number.",
-    "SS928V100 VI作为数据源，是以设备（pipe）、通道（chn）为发送者，向其他模块发送数据；作为数据接收者时，以设备（pipe）、通道（chn）为接收者。": "For SS928V100, when VI acts as a data source, the device (pipe) and channel (chn) serve as the sender to transmit data to other modules; when acting as a data receiver, the device (pipe) and channel (chn) serve as the receiver.",
+    "Hi3403V100 VI作为数据源，是以设备（pipe）、通道（chn）为发送者，向其他模块发送数据；作为数据接收者时，以设备（pipe）、通道（chn）为接收者。": "For Hi3403V100, when VI acts as a data source, the device (pipe) and channel (chn) serve as the sender to transmit data to other modules; when acting as a data receiver, the device (pipe) and channel (chn) serve as the receiver.",
     "VO作为数据源发送回写（WBC）数据时，是以设备为发送者，向其他模块发送数据，用户将通道号置为0，SDK不检查输入的通道号。": "When VO sends writeback (WBC) data as a data source, the device serves as the sender. Users should set the channel number to 0; the SDK does not check the input channel number.",
     "VPSS作为数据接收者时，是以设备（GROUP）为接收者，接收其他模块发来的数据，用户将通道号置为0。": "When VPSS acts as a data receiver, the device (GROUP) serves as the receiver. Users should set the channel number to 0.",
     "VENC作为数据接收者时，是以通道号为接收者，接收其他模块发过来的数据，用户将设备号置为0，SDK不检查输入的设备号。若VENC工作在OT_VENC_PIC_RECV_MULTI模式下，用户需要配置设备号，此时设备号实际用于指定输入源，可以使用OT_VENC_RECV_SRC0、OT_VENC_RECV_SRC1、OT_VENC_RECV_SRC2、OT_VENC_RECV_SRC3宏进行输入源指定。": "When VENC acts as a data receiver, the channel number serves as the receiver. Users should set the device number to 0; the SDK does not check the input device number. If VENC works in OT_VENC_PIC_RECV_MULTI mode, users need to configure the device number, which is then used to specify the input source. Macros OT_VENC_RECV_SRC0, OT_VENC_RECV_SRC1, OT_VENC_RECV_SRC2, and OT_VENC_RECV_SRC3 can be used for input source specification.",
@@ -349,26 +349,26 @@ SENTENCE_MAP = {
     # ── Video buffer pool descriptions ──
     "一般linear格式的YUV或者raw数据缓存池配置，VI/VPSS模块紧凑段压缩格式需使用单独计算接口": "General linear format YUV or RAW data buffer pool configuration. VI/VPSS module compact segment compression format requires a separate calculation interface.",
     "一般linear格式的YUV或者raw数据缓存池大小，VI/VPSS模块紧凑段压缩格式需使用单独计算接口": "General linear format YUV or RAW data buffer pool size. VI/VPSS module compact segment compression format requires a separate calculation interface.",
-    "HNR使用的帧数据缓存池，仅SS928V100支持": "Frame data buffer pool used by HNR, only supported on SS928V100.",
-    "raw数据根据压缩率获取缓存池配置，仅SS928V100支持": "Obtains buffer pool configuration for RAW data based on compression ratio, only supported on SS928V100.",
+    "HNR使用的帧数据缓存池，仅Hi3403V100支持": "Frame data buffer pool used by HNR, only supported on Hi3403V100.",
+    "raw数据根据压缩率获取缓存池配置，仅Hi3403V100支持": "Obtains buffer pool configuration for RAW data based on compression ratio, only supported on Hi3403V100.",
     "VDEC输出的YUV帧存缓存池": "YUV frame buffer pool for VDEC output.",
     "VDEC输出的Tmv数据缓存池": "Tmv data buffer pool for VDEC output.",
     "VENC Picture信息VB大小，支持帧节省模式计算": "VENC Picture information VB size, supports frame saving mode calculation.",
     "VENC Picture VB大小，支持帧节省模式计算": "VENC Picture VB size, supports frame saving mode calculation.",
-    "VENC参考帧大小，SS928V100/SS626V100不支持": "VENC reference frame size, not supported on SS928V100/SS626V100.",
+    "VENC参考帧大小，Hi3403V100/SS626V100不支持": "VENC reference frame size, not supported on Hi3403V100/SS626V100.",
     "VENC参考帧信息（pme、pmeinfo、tmv）大小": "VENC reference frame information (pme, pmeinfo, tmv) size.",
-    "SS928V100/SS626V100不支持": "Not supported on SS928V100/SS626V100.",
+    "Hi3403V100/SS626V100不支持": "Not supported on Hi3403V100/SS626V100.",
     "qpmap映射表大小": "qpmap mapping table size.",
     "qpmap映射表stride": "qpmap mapping table stride.",
     "roi map映射表大小": "roi map mapping table size.",
     "roi map映射表stride": "roi map mapping table stride.",
     "skip weight映射表大小": "skip weight mapping table size.",
     "skip weight映射表stride": "skip weight mapping table stride.",
-    "AVS输入的YUV数据缓存池，仅SS928V100支持": "YUV data buffer pool for AVS input, only supported on SS928V100.",
-    "MCF场景彩色通路VPSS通道VB大小，仅SS928V100支持": "VPSS channel VB size for MCF scene color path, only supported on SS928V100.",
-    "MCF场景黑白通路VPSS通道VB大小，仅SS928V100支持": "VPSS channel VB size for MCF scene monochrome path, only supported on SS928V100.",
-    "VI输出的YUV数据缓存池大小，仅SS928V100支持": "YUV data buffer pool size for VI output, only supported on SS928V100.",
-    "VPSS输出的YUV数据缓存池大小，仅SS928V100支持": "YUV data buffer pool size for VPSS output, only supported on SS928V100.",
+    "AVS输入的YUV数据缓存池，仅Hi3403V100支持": "YUV data buffer pool for AVS input, only supported on Hi3403V100.",
+    "MCF场景彩色通路VPSS通道VB大小，仅Hi3403V100支持": "VPSS channel VB size for MCF scene color path, only supported on Hi3403V100.",
+    "MCF场景黑白通路VPSS通道VB大小，仅Hi3403V100支持": "VPSS channel VB size for MCF scene monochrome path, only supported on Hi3403V100.",
+    "VI输出的YUV数据缓存池大小，仅Hi3403V100支持": "YUV data buffer pool size for VI output, only supported on Hi3403V100.",
+    "VPSS输出的YUV数据缓存池大小，仅Hi3403V100支持": "YUV data buffer pool size for VPSS output, only supported on Hi3403V100.",
 
     # ── VI/VPSS mode descriptions ──
     "VI_CAP与VI_PROC之间在线数据流传输，此模式下VI_CAP不会写出RAW数据到DDR，而是直接把数据流送给VI_PROC。": "Online data flow transmission between VI_CAP and VI_PROC. In this mode, VI_CAP does not write RAW data to DDR; instead, it directly sends the data stream to VI_PROC.",
@@ -388,7 +388,7 @@ SENTENCE_MAP = {
     "无特殊说明，SS625V100/SS626V100的描述与SS528V100一致，SS524V100的描述与SS522V100一致。": "Unless otherwise specified, the descriptions for SS625V100/SS626V100 are the same as SS528V100, and the descriptions for SS524V100 are the same as SS522V100.",
     "SS528V100、SS625V100和SS524V100不支持低延时、拼接和MCF": "SS528V100, SS625V100, and SS524V100 do not support low latency, stitching, and MCF.",
     "各模块低延时开启会与一些特定功能组合存在冲突，具体开启的方法及对应的限制参考各模块章节中相关的低延时描述。": "Enabling low latency on each module may conflict with certain specific feature combinations. For the specific enabling method and corresponding restrictions, refer to the low latency description in each module chapter.",
-    "SS928V100/SS626V100支持低延时，支持的模块分别见表1和表2，未在列表中的模块不支持低延时。": "SS928V100/SS626V100 support low latency. See Table 1 and Table 2 for supported modules; modules not listed do not support low latency.",
+    "Hi3403V100/SS626V100支持低延时，支持的模块分别见表1和表2，未在列表中的模块不支持低延时。": "Hi3403V100/SS626V100 support low latency. See Table 1 and Table 2 for supported modules; modules not listed do not support low latency.",
 
     # ── VI overview ──
     "视频输入（VI）模块实现的功能：通过MIPI Rx（含MIPI接口、LVDS接口和HISPI接口），BT.1120，BT.656，BT.601，DC等接口接收视频数据。VI将接收到的数据存入到指定的内存区域，在此过程中，VI可以对接收到的原始视频图像数据进行处理，实现视频数据的采集。": "The Video Input (VI) module receives video data through MIPI Rx (including MIPI, LVDS, and HISPI interfaces), BT.1120, BT.656, BT.601, DC, and other interfaces. VI stores the received data into the specified memory area. During this process, VI can process the received raw video image data to achieve video data capture.",
@@ -401,9 +401,9 @@ SENTENCE_MAP = {
     # ── VPSS overview etc. ──
     "VPSS（Video Process SubSystem，视频处理子系统）支持对输入视频图像进行缩放、锐化、裁剪、旋转、镜像等多种处理。同时VPSS提供多种处理算法，如去噪、去隔行等。支持内插（interlace）和逐行（progressive）两种扫描格式视频源的处理。": "The VPSS (Video Process SubSystem) supports various processing operations on input video images, including scaling, sharpening, cropping, rotation, and mirroring. It also provides multiple processing algorithms such as denoising and de-interlacing. It supports processing of both interlaced and progressive scan format video sources.",
 
-    "MCF（Multi-Camera Fusion，多目融合，仅SS928V100支持）模块支持多路视频拼接融合，实现全景监控的功能，支持对ISP输入的多路RAW数据做图像融合，得到合成图像。": "The MCF (Multi-Camera Fusion, only supported on SS928V100) module supports multi-channel video stitching and fusion to achieve panoramic monitoring. It supports image fusion of multi-channel RAW data from ISP input to produce a composite image.",
+    "MCF（Multi-Camera Fusion，多目融合，仅Hi3403V100支持）模块支持多路视频拼接融合，实现全景监控的功能，支持对ISP输入的多路RAW数据做图像融合，得到合成图像。": "The MCF (Multi-Camera Fusion, only supported on Hi3403V100) module supports multi-channel video stitching and fusion to achieve panoramic monitoring. It supports image fusion of multi-channel RAW data from ISP input to produce a composite image.",
 
-    "AVS（Anti-Vibration System，电子防抖，仅SS928V100支持）模块通过陀螺仪数据和图像数据融合处理以实现电子防抖功能。": "The AVS (Anti-Vibration System, only supported on SS928V100) module achieves electronic image stabilization through fusion processing of gyroscope data and image data.",
+    "AVS（Anti-Vibration System，电子防抖，仅Hi3403V100支持）模块通过陀螺仪数据和图像数据融合处理以实现电子防抖功能。": "The AVS (Anti-Vibration System, only supported on Hi3403V100) module achieves electronic image stabilization through fusion processing of gyroscope data and image data.",
 
     "本章主要包括以下内容：": "This chapter mainly includes the following:",
     "芯片解决方案与业务模块的映射关系": "Mapping between chip solutions and service modules",
@@ -601,8 +601,8 @@ SENTENCE_MAP = {
     "设置运动物体区域拖尾和残留区域检测参数。": "Sets detection parameters for motion object trailing and residual areas.",
     "获取JPEG和MJPEG编码通道的ROI高级属性。": "Gets the advanced ROI attributes for JPEG and MJPEG channels.",
     "设置JPEG和MJPEG编码通道的ROI高级属性。": "Sets the advanced ROI attributes for JPEG and MJPEG channels.",
-    "**注意：SS528V100/SS625V100/SS524V100/SS522V101/SS928V100/SS626V100不支持PRORES相关接口。**":
-        "**Note: SS528V100/SS625V100/SS524V100/SS522V101/SS928V100/SS626V100 do not support PRORES-related interfaces.**",
+    "**注意：SS528V100/SS625V100/SS524V100/SS522V101/Hi3403V100/SS626V100不支持PRORES相关接口。**":
+        "**Note: SS528V100/SS625V100/SS524V100/SS522V101/Hi3403V100/SS626V100 do not support PRORES-related interfaces.**",
 
     # Encoding prose translations
     "1. 通道的帧率控制默认不打开，需要用户调用接口设置。RC中也具有帧率控制功能。推荐使用RC的帧率控制，这样不会对码率控制造成过大的冲击。":
@@ -675,7 +675,7 @@ SENTENCE_MAP = {
     "QUICK：快速调度模式。": "QUICK: Quick scheduling mode.",
     "3DNR延时模式使能。": "3DNR delay mode enable.",
     "组的多任务使能。": "Group multi-task enable.",
-    "VPSS模块高性开关，仅SS928V100支持。": "VPSS module high-performance switch, only supported by SS928V100.",
+    "VPSS模块高性开关，仅Hi3403V100支持。": "VPSS module high-performance switch, only supported by Hi3403V100.",
     "VPSS组链阈值。": "VPSS group chain threshold.",
     "有效范围：[40, 160]。": "Valid range: [40, 160].",
     "VPSS支持输出低延时开关。": "VPSS output low-delay switch.",
@@ -688,8 +688,8 @@ SENTENCE_MAP = {
     "前言": "Preface",
     "本文为使用ISP开发的程序员而写，目的是为您在开发过程中遇到的问题提供解决办法和帮助。":
         "This document is written for programmers developing with ISP, aiming to provide solutions and assistance for issues encountered during development.",
-    "本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。":
-        "This document uses SS928V100 as an example. Unless otherwise specified, SS927V100 and SS928V100 have the same content.",
+    "本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。":
+        "This document uses Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 and Hi3403V100 have the same content.",
     "本文档（本指南）主要适用于以下工程师：": "This document (guide) mainly applies to the following engineers:",
     "技术支持工程师": "Technical Support Engineer",
     "软件开发工程师": "Software Development Engineer",

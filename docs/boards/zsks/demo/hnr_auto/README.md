@@ -2,7 +2,7 @@
 
 ### 2.2.1、hnr_auto程序简介
 
-* hnr_auto 基于SS928V100平台开发，以EulerPi套件为例，hnr_auto 是基于海思的hnr案例，实现夜间超微光的功能，当外接ISO到达一定阈值是，自动切换到hnr模型，使得在黑暗条件下也能清楚看到画面。
+* hnr_auto 基于Hi3403V100平台开发，以EulerPi套件为例，hnr_auto 是基于海思的hnr案例，实现夜间超微光的功能，当外接ISO到达一定阈值是，自动切换到hnr模型，使得在黑暗条件下也能清楚看到画面。
 
 ### 2.2.2、目录
 
@@ -52,7 +52,7 @@ pegasus/vendor/zsks/demo/hnr_auto
 <img src="/boards/zsks/demo/hnr_auto/pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
 
 * 步骤1：将编译后生成的可执行文件拷贝到SD卡中。
-* 步骤2：将ss928v100_clang/smp/a55_linux/mpp/sample/hnr/目录下的cfg模型文件拷贝到SD卡中。
+* 步骤2：将Hi3403V100_clang/smp/a55_linux/mpp/sample/hnr/目录下的cfg模型文件拷贝到SD卡中。
 
 ![image-20251030144458528](pic/image-20251030144458528.png)
 
@@ -78,7 +78,7 @@ mount -t vfat /dev/mmcblk1p1 /mnt
 * 首先需要自己准备一根网线
 * 步骤1：参考[博客链接](https://blog.csdn.net/Wu_GuiMing/article/details/115872995?spm=1001.2014.3001.5501)中的内容，进行nfs的环境搭建
 * 步骤2：将编译后生成的可执行文件拷贝到Windows的nfs共享路径下
-* 步骤2：将ss928v100_clang/smp/a55_linux/mpp/sample/hnr/目录下的cfg模型文件拷贝到Windows的nfs共享路径下
+* 步骤2：将Hi3403V100_clang/smp/a55_linux/mpp/sample/hnr/目录下的cfg模型文件拷贝到Windows的nfs共享路径下
 
 ![image-20251030144417819](pic/image-20251030144417819.png)
 

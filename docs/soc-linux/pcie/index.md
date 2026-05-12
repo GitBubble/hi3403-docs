@@ -9,8 +9,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/PCIE级�
 本文分别从硬件环境准备、软件环境准备等方面介绍Demo板PCIe级联操作的相关指导，同时介绍了PCIe的基础知识、PCIe级联的业务实现和PCIe MPI接口函数等，可为用户在使用PCIe级联功能时提供参考。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->-   未有特殊说明，下文中的ssxx表示的解决方案包含SS528V100、SS625V100、SS928V100、SS927V100、SS626V100。
->-   未有特殊说明，SS927V100与SS928V100内容完全一致。
+>-   未有特殊说明，下文中的ssxx表示的解决方案包含SS528V100、SS625V100、Hi3403V100、Hi3519AV200、SS626V100。
+>-   未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section1375mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/PCIE级�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1389mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1391mcpsimp"><a name="p1391mcpsimp"></a><a name="p1391mcpsimp"></a>SS928</p>
+<tbody><tr id="row1389mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1391mcpsimp"><a name="p1391mcpsimp"></a><a name="p1391mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1393mcpsimp"><a name="p1393mcpsimp"></a><a name="p1393mcpsimp"></a>V100</p>
 </td>
@@ -43,7 +43,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/PCIE级�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1062316593517"><a name="p1062316593517"></a><a name="p1062316593517"></a>V100</p>
 </td>
 </tr>
-<tr id="row1425220334618"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row1425220334618"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -336,7 +336,7 @@ PCIe从启动时，注意时钟硬件选择管脚的设置：
 <p id="p987mcpsimp"><a name="p987mcpsimp"></a><a name="p987mcpsimp"></a>1：外部时钟。</p>
 </td>
 </tr>
-<tr id="row988mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p id="p990mcpsimp"><a name="p990mcpsimp"></a><a name="p990mcpsimp"></a>SS928V100</p>
+<tr id="row988mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p id="p990mcpsimp"><a name="p990mcpsimp"></a><a name="p990mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.5.1.2 "><p id="p992mcpsimp"><a name="p992mcpsimp"></a><a name="p992mcpsimp"></a>PCIE_REFCLK_SEL</p>
 </td>
@@ -393,17 +393,17 @@ PCIe从启动时，注意时钟硬件选择管脚的设置：
 
     **图 4**  两片PCIe X2级联示意图<a name="fig251748193818"></a>  
     ![](figures/两片PCIe-X2级联示意图.png "两片PCIe-X2级联示意图")
-### SS928V100/SS927V100<a name="ZH-CN_TOPIC_0000002441674833"></a>
+### Hi3403V100/Hi3519AV200<a name="ZH-CN_TOPIC_0000002441674833"></a>
 
--   PCIe差分时钟PCIE\_REFCLKM和PCIE\_REFCLKP为电流型信号，以SS928V100为例，当差分时钟信号需要输出给外部设备时，在差分时钟输出端对地加49.9Ω电阻，如[图1](#fig74118483404)所示。
+-   PCIe差分时钟PCIE\_REFCLKM和PCIE\_REFCLKP为电流型信号，以Hi3403V100为例，当差分时钟信号需要输出给外部设备时，在差分时钟输出端对地加49.9Ω电阻，如[图1](#fig74118483404)所示。
 
-    **图 1**  SS928V100 PCIe时钟图<a name="fig74118483404"></a>  
-    ![](figures/SS928V100-PCIe时钟图.png "SS928V100-PCIe时钟图")
--   SS928V100各种PCIE组合如[图2](#_Ref48220706)所示。
+    **图 1**  Hi3403V100 PCIe时钟图<a name="fig74118483404"></a>  
+    ![](figures/Hi3403V100-PCIe时钟图.png "Hi3403V100-PCIe时钟图")
+-   Hi3403V100各种PCIE组合如[图2](#_Ref48220706)所示。
 
     **图 2**  PCIe模式图<a name="_Ref48220706"></a>  
     ![](figures/PCIe模式图-0.png "PCIe模式图-0")
--   SS928V100 两片PCIe X1级联，如[图3](#fig133146123541)所示。
+-   Hi3403V100 两片PCIe X1级联，如[图3](#fig133146123541)所示。
 
     **图 3**  两片PCIe X1级联示意图<a name="fig133146123541"></a>  
     ![](figures/两片PCIe-X1级联示意图-1.png "两片PCIe-X1级联示意图-1")
@@ -428,7 +428,7 @@ PCIe从启动时，注意时钟硬件选择管脚的设置：
 ### PCIe时钟选择模式配置<a name="ZH-CN_TOPIC_0000002408275430"></a>
 
 -   SS528V100/SS625V100请参考芯片手册文档“13.7.5.1 时钟和复位 时钟设置”章节的相关描述。
--   SS928V100请参考芯片手册文档“14.8.5.1 时钟和复位”章节的相关描述。
+-   Hi3403V100请参考芯片手册文档“14.8.5.1 时钟和复位”章节的相关描述。
 -   SS626V100请参考芯片手册文档“13.7.5.1 时钟和复位”章节的相关描述。
 
 ### PCIE\_MCC驱动配置<a name="ZH-CN_TOPIC_0000002408275522"></a>
@@ -2228,7 +2228,7 @@ SS528V100/SS625V100/SS626V100：
 #define OT_PCIV_MAX_CHN_NUM                128
 ```
 
-SS928V100：
+Hi3403V100：
 
 ```
 #define OT_PCIV_MAX_CHN_NUM                16
@@ -2248,7 +2248,7 @@ SS928V100：
 <td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.2 "><p id="p294mcpsimp"><a name="p294mcpsimp"></a><a name="p294mcpsimp"></a>最多128个通道</p>
 </td>
 </tr>
-<tr id="row295mcpsimp"><td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.1 "><p id="p297mcpsimp"><a name="p297mcpsimp"></a><a name="p297mcpsimp"></a>SS928V100</p>
+<tr id="row295mcpsimp"><td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.1 "><p id="p297mcpsimp"><a name="p297mcpsimp"></a><a name="p297mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.2 "><p id="p299mcpsimp"><a name="p299mcpsimp"></a><a name="p299mcpsimp"></a>最多16个通道</p>
 </td>
@@ -2568,7 +2568,7 @@ typedef struct {
 </td>
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2913mcpsimp"><a name="p2913mcpsimp"></a><a name="p2913mcpsimp"></a>图像缓存块尺寸。</p>
 <p xml:lang="sv-SE" id="p2914mcpsimp"><a name="p2914mcpsimp"></a><a name="p2914mcpsimp"></a><span xml:lang="en-US" id="ph2915mcpsimp"><a name="ph2915mcpsimp"></a><a name="ph2915mcpsimp"></a>取值范围：不应小于所传输图像实际尺寸。为节约性能，可参考</span>《MPP 媒体处理软件V5.0开发参考》的“系统控制”章节下视频缓存池小节中提供的视频缓存池大小计算接口简介所提供的计算方式计算该尺寸。</p>
-<p xml:lang="sv-SE" id="p2916mcpsimp"><a name="p2916mcpsimp"></a><a name="p2916mcpsimp"></a><strong id="b2917mcpsimp"><a name="b2917mcpsimp"></a><a name="b2917mcpsimp"></a>注意：由于部分图像格式数据分布存在差异，需要额外信息才能计算大小，如VDEC输出YUV大小，SS928V100中VPSS输出的紧凑段压缩图像等，PCIV内部对于blk_size的校验可能不准确，请以实际提供的计算公式为准，否则可能出现解压错误，图像不完整等未知错误。</strong></p>
+<p xml:lang="sv-SE" id="p2916mcpsimp"><a name="p2916mcpsimp"></a><a name="p2916mcpsimp"></a><strong id="b2917mcpsimp"><a name="b2917mcpsimp"></a><a name="b2917mcpsimp"></a>注意：由于部分图像格式数据分布存在差异，需要额外信息才能计算大小，如VDEC输出YUV大小，Hi3403V100中VPSS输出的紧凑段压缩图像等，PCIV内部对于blk_size的校验可能不准确，请以实际提供的计算公式为准，否则可能出现解压错误，图像不完整等未知错误。</strong></p>
 </td>
 </tr>
 <tr id="row2918mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2920mcpsimp"><a name="p2920mcpsimp"></a><a name="p2920mcpsimp"></a>blk_cnt</p>

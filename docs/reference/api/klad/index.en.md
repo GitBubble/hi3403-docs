@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/KLAD API
 KLAD is the key management module, integrating key derivation, plaintext KEY transfer, and ROOTKEY hierarchical transfer.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified in this document, the content for SS927V100 and SS928V100 is completely identical.
+>Unless otherwise specified in this document, the content for Hi3519AV200 and Hi3403V100 is completely identical.
 
 **Product Version<a name="section1592mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1606mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1608mcpsimp"><a name="p1608mcpsimp"></a><a name="p1608mcpsimp"></a>SS928</p>
+<tbody><tr id="row1606mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1608mcpsimp"><a name="p1608mcpsimp"></a><a name="p1608mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1610mcpsimp"><a name="p1610mcpsimp"></a><a name="p1610mcpsimp"></a>V100</p>
 </td>
@@ -32,7 +32,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1615mcpsimp"><a name="p1615mcpsimp"></a><a name="p1615mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row149564818401"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row149564818401"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -126,7 +126,7 @@ Plaintext KEY refers to the working key used by the encryption/decryption engine
 
 -   Supports AES 128/192/256 bits encryption/decryption.
 -   Supports SM4 128 bits encryption/decryption.
--   SS928V100 and SS626V100 do not support SM4.
+-   Hi3403V100 and SS626V100 do not support SM4.
 
 ### ROOTKEY Transfer<a name="ZH-CN_TOPIC_0000002424189630"></a>
 
@@ -134,8 +134,8 @@ ROOTKEY is the key generated from the root key of the OTP module through key de-
 
 -   Supports AES 128/256 bits encryption/decryption.
 -   Supports SM4 128 bits encryption/decryption.
--   SS928V100 and SS626V100 do not support SM4.
--   SS928V100 and SS626V100 support 2-level KLAD transfer.
+-   Hi3403V100 and SS626V100 do not support SM4.
+-   Hi3403V100 and SS626V100 support 2-level KLAD transfer.
 
 ### KLAD Usage Notes<a name="ZH-CN_TOPIC_0000002424349494"></a>
 
@@ -1407,7 +1407,7 @@ typedef enum {
 
 [Notes]
 
-SS928V100 and SS626V100 do not support SM4.
+Hi3403V100 and SS626V100 do not support SM4.
 
 [Related Data Types and Interfaces]
 
@@ -1501,7 +1501,7 @@ typedef enum {
 
 [Notes]
 
-SS928V100 and SS626V100 do not support SM4.
+Hi3403V100 and SS626V100 do not support SM4.
 
 [Related Data Types and Interfaces]
 
@@ -1562,7 +1562,7 @@ typedef enum {
 
 [Notes]
 
-SS928V100 and SS626V100 support 2-level KLAD.
+Hi3403V100 and SS626V100 support 2-level KLAD.
 
 [Related Data Types and Interfaces]
 
@@ -1622,7 +1622,7 @@ Defines the 1st to (n-1)th level KLAD key information structure.
 [Notes]
 
 -   key\_size only supports 128 bits, i.e., 16 bytes.
--   For SS928V100 and SS626V100, level can only be configured as OT\_KLAD\_LEVEL1.
+-   For Hi3403V100 and SS626V100, level can only be configured as OT\_KLAD\_LEVEL1.
 
 [Related Data Types and Interfaces]
 

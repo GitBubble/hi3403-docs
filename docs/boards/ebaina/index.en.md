@@ -25,10 +25,10 @@ Enter the `pegasus/vendor/ebaina/patch` directory and run the `patch_build.sh` s
 cd pegasus/vendor/ebaina/patch
 
 ./patch_build.sh -h 	#script usage help
-./patch_build.sh -clang #apply ss928v100_clang patch only
-./patch_build.sh -gcc 	#apply ss928v100_gcc patch only
-./patch_build.sh -all   #apply both ss928v100_clang and ss928v100_gcc patches
-./patch_build.sh    	#apply both ss928v100_clang and ss928v100_gcc patches
+./patch_build.sh -clang #apply Hi3403V100_clang patch only
+./patch_build.sh -gcc 	#apply Hi3403V100_gcc patch only
+./patch_build.sh -all   #apply both Hi3403V100_clang and Hi3403V100_gcc patches
+./patch_build.sh    	#apply both Hi3403V100_clang and Hi3403V100_gcc patches
 ```
 
 ### 2. Build the SDK
@@ -37,12 +37,12 @@ Rebuild the SDK. You may build the CLANG SDK, the GCC SDK, or both as needed.
 
 ```
 #Build CLANG SDK
-cd ~/pegasus/platform/ss928v100_clang/osdrv
-make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_clang/osdrv
+make LLVM=1 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 
 #Build GCC SDK
-cd ~/pegasus/platform/ss928v100_gcc/osdrv
-make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_gcc/osdrv
+make LLVM=0 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 ```
 
 ## Chapter 2: Specifications
@@ -486,7 +486,7 @@ Disconnect power (including the debug serial cable), wait a while, then power on
 
 Note: Currently only supported on openEuler.
 
-Tsensor is the chip temperature sensor driver for the Euler Pi's main controller SS928V100. It is used to read the chip temperature of the main controller:
+Tsensor is the chip temperature sensor driver for the Euler Pi's main controller Hi3403V100. It is used to read the chip temperature of the main controller:
 
 ```
 cat /proc/Tsensor
@@ -914,14 +914,14 @@ Notes:
 
 ##### 2.13.2. Sensor Clock Configuration
 
-① Method 1: Modify the `load_ss928v100` script parameters
+① Method 1: Modify the `load_Hi3403V100` script parameters
 
 ![image-20260121175510609](docs/pic/image-20260121175510609.png)
 
 OS04A10 and OS08A20 use the same clock, so configuring one is sufficient (default is imx347 when no parameter is specified).
 
 ```shell
-./load_ss928v100 -i -sensor0 os08a20 -sensor1 os08a20 -sensor2 os08a20 -sensor3 os08a20
+./load_Hi3403V100 -i -sensor0 os08a20 -sensor1 os08a20 -sensor2 os08a20 -sensor3 os08a20
 ```
 
 ![image-20260121175526564](docs/pic/image-20260121175526564.png)

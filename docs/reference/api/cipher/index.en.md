@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/CIPHER A
 CIPHER is a security algorithm module that provides AES symmetric encryption/decryption algorithms, HASH and HMAC digest algorithms, random number algorithms, and RSA asymmetric algorithms. It is mainly used for encrypting/decrypting audio/video streams and verifying data legitimacy.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified in this document, the content for SS927V100 and SS928V100 is completely identical.
+>Unless otherwise specified in this document, the content for Hi3519AV200 and Hi3403V100 is completely identical.
 
 **Product Version<a name="section5008mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5022mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5024mcpsimp"><a name="p5024mcpsimp"></a><a name="p5024mcpsimp"></a>SS928</p>
+<tbody><tr id="row5022mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5024mcpsimp"><a name="p5024mcpsimp"></a><a name="p5024mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5026mcpsimp"><a name="p5026mcpsimp"></a><a name="p5026mcpsimp"></a>V100</p>
 </td>
@@ -32,7 +32,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5031mcpsimp"><a name="p5031mcpsimp"></a><a name="p5031mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row10245112718406"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row10245112718406"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -120,7 +120,7 @@ CIPHER is a security algorithm module that provides AES symmetric encryption/dec
 
 -   AES: Supports ECB/CBC/CFB/OFB/CTR/CCM/GCM work modes. In CCM/GCM modes, the TAG value must be obtained once after encryption/decryption completes.
 -   Except for CTR/CCM/GCM, data length must be block-aligned for other algorithms and modes; for CCM/GCM, N and A need to be software-assembled into block-aligned data blocks according to standards; various work modes support one-time encryption/decryption of multiple blocks as well as single-block encryption/decryption.
--   SS928V100 and SS626V100 support up to 15 channels.
+-   Hi3403V100 and SS626V100 support up to 15 channels.
 -   ECB mode has low security and is only for debugging, not for production use.
 
 ### Asymmetric Encryption/Decryption Algorithms<a name="ZH-CN_TOPIC_0000002441572925"></a>
@@ -177,7 +177,7 @@ Configuration differences for AES, HASH, and RSA supported by CIPHER across diff
 <a name="_Ref47627660"></a>
 <table><thead align="left"><tr id="row153mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.2.3.1.1"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>Specification</p>
 </th>
-<th class="cellrowborder" valign="top" width="46%" id="mcps1.2.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>SS928V100, SS626V100</p>
+<th class="cellrowborder" valign="top" width="46%" id="mcps1.2.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>Hi3403V100, SS626V100</p>
 </th>
 </tr>
 </thead>
@@ -704,7 +704,7 @@ td_s32 ss_mpi_cipher_create (td_handle *handle, const ot_cipher_attr *cipher_att
 [Notes]
 
 -   handle and cipher\_attr must not be NULL.
--   SS928V100 and SS626V100 support 15 CIPHER channels.
+-   Hi3403V100 and SS626V100 support 15 CIPHER channels.
 -   After using a channel, the corresponding channel should be destroyed.
 
 [Example]

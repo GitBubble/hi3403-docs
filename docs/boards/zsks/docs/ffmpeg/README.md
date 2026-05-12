@@ -37,9 +37,9 @@ cd x264
 
 ```sh
 CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang \
-  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot" \
+  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot" \
 CXX="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang++ \
-  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot" \
+  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot" \
 CFLAGS="-march=armv8-a -mfpu=neon" \
 ./configure \
 --host=aarch64-linux-ohos \
@@ -104,7 +104,7 @@ set(CMAKE_RANLIB /home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/o
 set(CMAKE_STRIP /home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/llvm-strip)
 
 # Specify the target environment (sysroot)
-set(CMAKE_SYSROOT /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot)
+set(CMAKE_SYSROOT /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot)
 
 # Compiler and linker flags
 set(CMAKE_C_FLAGS "-fPIC -target aarch64-unknown-linux-ohos" CACHE STRING "C flags")
@@ -118,7 +118,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I/home/openharmony/pegasus/vendor/opens
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L/home/openharmony/pegasus/vendor/opensource/x264/install/lib" CACHE STRING "Linker flags")
 
 # Search paths for libraries and headers
-set(CMAKE_FIND_ROOT_PATH /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot /home/openharmony/pegasus/vendor/opensource/x264/install /home/openharmony/pegasus/vendor/opensource/v4l-utils/install)
+set(CMAKE_FIND_ROOT_PATH /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot /home/openharmony/pegasus/vendor/opensource/x264/install /home/openharmony/pegasus/vendor/opensource/v4l-utils/install)
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
@@ -211,17 +211,17 @@ export LDFLAGS="-L/home/openharmony/pegasus/vendor/opensource/v4l-utils/install/
 
 ### 步骤3：修改相关编译脚本
 
-* 在pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample/common/makefile的第4行，添加一个fPIC选项到CFLAGS，如下图所示：
+* 在pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample/common/makefile的第4行，添加一个fPIC选项到CFLAGS，如下图所示：
 
 ![image-20251022142837408](pic/image-20251022142837408.png)
 
-* 然后进入到pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample/common目录下，执行 make clean && make 命令，重新生成.o文件
+* 然后进入到pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample/common目录下，执行 make clean && make 命令，重新生成.o文件
 * 注意：请根据自己服务器的实际情况修改里面的绝对路径
 
 ```sh
 export PATH=/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin:$PATH
 
-export SYSROOT_PATH=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot
+export SYSROOT_PATH=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot
 
 make clean && make 
 ```
@@ -242,7 +242,7 @@ TOOLCHAIN_ROOT="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/oh
 # 交叉编译工具链前缀
 CROSS_PREFIX="aarch64-unknown-linux-ohos"
 # 设置sysroot路径
-SYSROOT="/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot"
+SYSROOT="/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot"
 
 # C 和 C++ 编译器
 CC="${TOOLCHAIN_ROOT}/bin/${CROSS_PREFIX}-clang"
@@ -260,9 +260,9 @@ WORK_DIR="$(pwd)"
 PREFIX="${WORK_DIR}/install"
 
 # 海思SDK路径
-HISI_SDK_BASE="/home/openharmony/pegasus/platform/ss928v100_clang/smp/a55_linux"
+HISI_SDK_BASE="/home/openharmony/pegasus/platform/Hi3403V100_clang/smp/a55_linux"
 HISI_MPP_BASE="${HISI_SDK_BASE}/mpp"
-HISI_COMMON_DIR="/home/openharmony/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample/common"
+HISI_COMMON_DIR="/home/openharmony/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample/common"
 
 # 配置PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="/home/openharmony/pegasus/vendor/opensource/x264/install/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -489,12 +489,12 @@ function gen_cfg_cmd() {
         "--enable-libx264" \
         "--enable-libx265" \
         "--enable-gpl" \
-        "--enable-encoder=h264_ss928" \
-        "--enable-encoder=h265_ss928" \
-        "--enable-encoder=mjpeg_ss928" \
-        "--enable-decoder=h264_ss928" \
-        "--enable-decoder=h265_ss928" \
-        "--enable-decoder=mjpeg_ss928" \
+        "--enable-encoder=h264_Hi3403V100" \
+        "--enable-encoder=h265_Hi3403V100" \
+        "--enable-encoder=mjpeg_Hi3403V100" \
+        "--enable-decoder=h264_Hi3403V100" \
+        "--enable-decoder=h265_Hi3403V100" \
+        "--enable-decoder=mjpeg_Hi3403V100" \
         "--extra-cflags='$CFLAGS'" \
         "--extra-ldflags='$LDFLAGS'"
     echo
@@ -637,7 +637,7 @@ cd /mnt/ffmpeg/sample/hisi
 chmod +x *
 
 # hisi编码
-./hisi_264venc  /dev/video0  h264_ss928  640 480 30
+./hisi_264venc  /dev/video0  h264_Hi3403V100  640 480 30
 
 cd /mnt/ffmpeg/sample/ffmpeg
 
@@ -656,7 +656,7 @@ chmod +x *
 cd /mnt/ffmpeg/sample/hisi 
 
 # hisi解码
-./hisi_264vdec h264_ss928_output.h264  output
+./hisi_264vdec h264_Hi3403V100_output.h264  output
 
 # ffmpeg解码
 ./264dec libx264_output.h264  output
@@ -669,24 +669,24 @@ cd /mnt/ffmpeg/sample/hisi
 * 如果想在自己的代码中使用ffmpeg调用hisi的硬件编解码模块，可以使用avcodec_find_decoder_by_name接口来实现
 
 ```c
-avcodec_find_decoder_by_name("h264ss928");
+avcodec_find_decoder_by_name("h264Hi3403V100");
 
-avcodec_find_decoder_by_name("h265_ss928");
+avcodec_find_decoder_by_name("h265_Hi3403V100");
 
-avcodec_find_decoder_by_name("mjpeg_ss928");
+avcodec_find_decoder_by_name("mjpeg_Hi3403V100");
 
-avcodec_find_encoder_by_name("h264_ss928");
+avcodec_find_encoder_by_name("h264_Hi3403V100");
 
-avcodec_find_encoder_by_name("h265_ss928");
+avcodec_find_encoder_by_name("h265_Hi3403V100");
 
-avcodec_find_encoder_by_name("mjpeg_ss928");
+avcodec_find_encoder_by_name("mjpeg_Hi3403V100");
 ```
 
 ## 5、海思硬件编解码与ffmpeg原生编解码对比
 
 * decoder
 
-| 数据/解码器         | h264                  | h264_ss928            | hevc                  | h265_ss928            | mjpeg                 | mjpeg_ss928           |
+| 数据/解码器         | h264                  | h264_Hi3403V100            | hevc                  | h265_Hi3403V100            | mjpeg                 | mjpeg_Hi3403V100           |
 | ------------------- | --------------------- | --------------------- | --------------------- | --------------------- | --------------------- | --------------------- |
 | 视频参数            | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS |
 | 总处理帧数          | 85                    | 207                   | 21                    | 221                   | 125                   | 217                   |
@@ -704,7 +704,7 @@ avcodec_find_encoder_by_name("mjpeg_ss928");
 
 * encoder
 
-| 数据/编码器                   | libx264                  | h264_ss928            | libx265               | h265_ss928            | mjpeg                 | mjpeg_ss928           |
+| 数据/编码器                   | libx264                  | h264_Hi3403V100            | libx265               | h265_Hi3403V100            | mjpeg                 | mjpeg_Hi3403V100           |
 | ----------------------------- | ------------------------ | --------------------- | --------------------- | --------------------- | --------------------- | --------------------- |
 | 视频参数                      | 1920x1080<br />@30FPS    | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS | 1920x1080<br />@30FPS |
 | 总处理帧数                    | 85                       | 208                   | 21                    | 222                   | 114                   | 218                   |

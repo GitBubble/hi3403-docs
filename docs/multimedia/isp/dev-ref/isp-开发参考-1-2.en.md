@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP Deve
 This document is written for programmers using ISP development, aiming to provide solutions and assistance for issues encountered during development.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the description example. Unless otherwise specified, the content for SS927V100 is the same as SS928V100.
+>This document uses Hi3403V100 as the description example. Unless otherwise specified, the content for Hi3519AV200 is the same as Hi3403V100.
 
 **Product Version<a name="section105mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product version corresponding to this document is as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row5694533162316"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p36535379232"><a name="p36535379232"></a><a name="p36535379232"></a>SS927</p>
+<tr id="row5694533162316"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p36535379232"><a name="p36535379232"></a><a name="p36535379232"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p14653537142315"><a name="p14653537142315"></a><a name="p14653537142315"></a>V100</p>
 </td>
@@ -3342,7 +3342,7 @@ td_s32 ss_mpi_isp_ir_auto_run_once(ot_vi_pipe vi_pipe, ot_isp_ir_auto_attr *ir_a
 
 **Note**
 
-When using this interface, libot\_ir\_auto.a must be included. This feature is not supported on SS928V100.
+When using this interface, libot\_ir\_auto.a must be included. This feature is not supported on Hi3403V100.
 
 **Example**
 
@@ -5027,7 +5027,7 @@ typedef struct {
 -   The sum of the horizontal start position and image width must be less than the sensor output image width.
 -   The sum of the vertical start position and image height must be less than the sensor output image height. Since the actual sensor output dimensions cannot be detected, the MPI does not report an error when this condition is not met.
 -   When the AF module is enabled, the minimum image width is 256.
--   Different vi\_pipe channels on SS928V100 support different AE resolutions: vi\_pipe0 supports a maximum resolution of 8192\*8192, and vi\_pipe1/vi\_pipe2/vi\_pipe3 support a maximum resolution of 4096\*4096. When the resolution of vi\_pipe1/vi\_pipe2/vi\_pipe3 exceeds 4096, AE statistics are disabled for those channels.
+-   Different vi\_pipe channels on Hi3403V100 support different AE resolutions: vi\_pipe0 supports a maximum resolution of 8192\*8192, and vi\_pipe1/vi\_pipe2/vi\_pipe3 support a maximum resolution of 4096\*4096. When the resolution of vi\_pipe1/vi\_pipe2/vi\_pipe3 exceeds 4096, AE statistics are disabled for those channels.
 
 **Related Data Types and Interfaces**
 
@@ -5272,13 +5272,13 @@ typedef struct {
 <tbody><tr id="row4362mcpsimp"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.1.3.1.1 "><p id="p4364mcpsimp"><a name="p4364mcpsimp"></a><a name="p4364mcpsimp"></a>width</p>
 </td>
 <td class="cellrowborder" valign="top" width="78%" headers="mcps1.1.3.1.2 "><p id="p4366mcpsimp"><a name="p4366mcpsimp"></a><a name="p4366mcpsimp"></a>Sensor output width.</p>
-<p id="p4367mcpsimp"><a name="p4367mcpsimp"></a><a name="p4367mcpsimp"></a>SS928V100Valid range: [120, 8192]</p>
+<p id="p4367mcpsimp"><a name="p4367mcpsimp"></a><a name="p4367mcpsimp"></a>Hi3403V100Valid range: [120, 8192]</p>
 </td>
 </tr>
 <tr id="row4368mcpsimp"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.1.3.1.1 "><p id="p4370mcpsimp"><a name="p4370mcpsimp"></a><a name="p4370mcpsimp"></a>height</p>
 </td>
 <td class="cellrowborder" valign="top" width="78%" headers="mcps1.1.3.1.2 "><p id="p4372mcpsimp"><a name="p4372mcpsimp"></a><a name="p4372mcpsimp"></a>Sensor output height.</p>
-<p id="p4373mcpsimp"><a name="p4373mcpsimp"></a><a name="p4373mcpsimp"></a>SS928V100Valid range: [120, 8192]</p>
+<p id="p4373mcpsimp"><a name="p4373mcpsimp"></a><a name="p4373mcpsimp"></a>Hi3403V100Valid range: [120, 8192]</p>
 </td>
 </tr>
 </tbody>
@@ -6365,7 +6365,7 @@ typedef struct {
 **Precautions**
 
 -   pfn\_cmos\_sensor\_init, pfn\_cmos\_get\_isp\_default, pfn\_cmos\_get\_isp\_black\_level, pfn\_cmos\_set\_pixel\_detect, and pfn\_cmos\_get\_sns\_reg\_info must be assigned. Other callback function pointers that are not needed should be set to NULL. For example, if a sensor does not support resolution switching, set pfn\_cmos\_set\_image\_mode to NULL.
--   SS928V100 does not support configuring AWB gains on the sensor side; only reading the current AWB gains from the sensor side is supported.
+-   Hi3403V100 does not support configuring AWB gains on the sensor side; only reading the current AWB gains from the sensor side is supported.
 -   Switching the AWB gain configuration location is not supported.
 
 **Related Data Types and Interfaces**
@@ -6995,7 +6995,7 @@ Defines flag bits indicating whether each ISP algorithm uses the default CMOS co
 
 **Definition**
 
-Definition for SS928V100:
+Definition for Hi3403V100:
 
 ```
 typedef union {
@@ -7169,7 +7169,7 @@ Defines the initialization parameter struct for the ISP base algorithm library.
 
 **Definition**
 
-Definition for SS928V100:
+Definition for Hi3403V100:
 
 ```
 typedef struct {
@@ -9009,8 +9009,8 @@ typedef struct {
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
 >-   The descriptions in the table are valid only under the ISP default configuration; actual behavior is affected by the black level configuration and the AE statistics position.
->-   The pre-WDR (FE) statistics are fixed after the WB module, not configurable. When using FE statistics, the black level must be subtracted: subtract the 10-bit black level for histograms and the 16-bit black level for averages.The pre-WDR \(FE\) statistics are affected by the gain of processing modules preceding the FE AE (in SS928V100, these are DG/WB). The FE gain values for these modules are guaranteed by the algorithm internals to be consistent with BE; no separate configuration is needed.
->-   In SS928V100, the channel-0 FE statistics pass through horizontal downsampling, so the number of points is halved.
+>-   The pre-WDR (FE) statistics are fixed after the WB module, not configurable. When using FE statistics, the black level must be subtracted: subtract the 10-bit black level for histograms and the 16-bit black level for averages.The pre-WDR \(FE\) statistics are affected by the gain of processing modules preceding the FE AE (in Hi3403V100, these are DG/WB). The FE gain values for these modules are guaranteed by the algorithm internals to be consistent with BE; no separate configuration is needed.
+>-   In Hi3403V100, the channel-0 FE statistics pass through horizontal downsampling, so the number of points is halved.
 >-   In linear mode, the pre-WDR \(FE\) 1024-bin histogram is recommended. In WDR mode, either the pre-WDR \(FE\) 1024-bin histogram or the post-WDR \(BE\) 1024-bin histogram with square-root mode is recommended. In offline mode under heavy workloads, the pre-WDR \(FE\) statistics have better real-time performance, so FE statistics are recommended. The SDK-provided AE algorithm defaults to using BE statistics without square-root mode in linear mode, and BE statistics with square-root mode in WDR mode. Using BE statistics with square-root mode in linear mode, or BE statistics without square-root mode in WDR mode, will cause anomalies in the SDK-provided AE algorithm.
 
 **Related Data Types and Interfaces**
@@ -9703,7 +9703,7 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="74%" headers="mcps1.1.3.1.2 "><p id="p8503mcpsimp"><a name="p8503mcpsimp"></a><a name="p8503mcpsimp"></a>Position of white balance gain in the ISP. Valid range: [0, 1].</p>
 <p id="p8504mcpsimp"><a name="p8504mcpsimp"></a><a name="p8504mcpsimp"></a>0: WB gain configured at DG1 before WDR synthesis.</p>
 <p id="p8505mcpsimp"><a name="p8505mcpsimp"></a><a name="p8505mcpsimp"></a>1: WB gain configured at WB.</p>
-<p id="p8506mcpsimp"><a name="p8506mcpsimp"></a><a name="p8506mcpsimp"></a>SS928V100 does not support configuring WB gain at DG1 for now.</p>
+<p id="p8506mcpsimp"><a name="p8506mcpsimp"></a><a name="p8506mcpsimp"></a>Hi3403V100 does not support configuring WB gain at DG1 for now.</p>
 </td>
 </tr>
 <tr id="row8507mcpsimp"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.1.3.1.1 "><p id="p8509mcpsimp"><a name="p8509mcpsimp"></a><a name="p8509mcpsimp"></a>awb_stat_switch</p>
@@ -9712,7 +9712,7 @@ typedef struct {
 <p id="p8512mcpsimp"><a name="p8512mcpsimp"></a><a name="p8512mcpsimp"></a>0: WB statistics module after DG.</p>
 <p id="p8513mcpsimp"><a name="p8513mcpsimp"></a><a name="p8513mcpsimp"></a>1: WB statistics module after EXPANDER.</p>
 <p id="p8514mcpsimp"><a name="p8514mcpsimp"></a><a name="p8514mcpsimp"></a>2: WB statistics module after DRC.</p>
-<p id="p8515mcpsimp"><a name="p8515mcpsimp"></a><a name="p8515mcpsimp"></a>SS928V100 does not support configuring the WB statistics module after EXPANDER for now.</p>
+<p id="p8515mcpsimp"><a name="p8515mcpsimp"></a><a name="p8515mcpsimp"></a>Hi3403V100 does not support configuring the WB statistics module after EXPANDER for now.</p>
 </td>
 </tr>
 <tr id="row8516mcpsimp"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.1.3.1.1 "><p id="p8518mcpsimp"><a name="p8518mcpsimp"></a><a name="p8518mcpsimp"></a>wb_gain_in_sensor</p>
@@ -9720,7 +9720,7 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="74%" headers="mcps1.1.3.1.2 "><p id="p8520mcpsimp"><a name="p8520mcpsimp"></a><a name="p8520mcpsimp"></a>Whether the white balance gain is configured in the sensor. Valid range: [0, 1].</p>
 <p id="p8521mcpsimp"><a name="p8521mcpsimp"></a><a name="p8521mcpsimp"></a>0: WB gain configured in ISP.</p>
 <p id="p8522mcpsimp"><a name="p8522mcpsimp"></a><a name="p8522mcpsimp"></a>1: WB gain configured in sensor.</p>
-<p id="p8523mcpsimp"><a name="p8523mcpsimp"></a><a name="p8523mcpsimp"></a>SS928V100 does not support configuring WB gain in sensor for now.</p>
+<p id="p8523mcpsimp"><a name="p8523mcpsimp"></a><a name="p8523mcpsimp"></a>Hi3403V100 does not support configuring WB gain in sensor for now.</p>
 </td>
 </tr>
 <tr id="row8524mcpsimp"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.1.3.1.1 "><p id="p8526mcpsimp"><a name="p8526mcpsimp"></a><a name="p8526mcpsimp"></a>wdr_wb_gain[-]</p>
@@ -10580,7 +10580,7 @@ typedef struct {
 </thead>
 <tbody><tr id="row9227mcpsimp"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.1.3.1.1 "><p id="p9229mcpsimp"><a name="p9229mcpsimp"></a><a name="p9229mcpsimp"></a>be_buf_num</p>
 </td>
-<td class="cellrowborder" valign="top" width="72%" headers="mcps1.1.3.1.2 "><p id="p9231mcpsimp"><a name="p9231mcpsimp"></a><a name="p9231mcpsimp"></a>Number of ISP BE config buffers in offline mode. Only effective in offline mode. Valid range: [2, 20]; SS928V100 default: 8.</p>
+<td class="cellrowborder" valign="top" width="72%" headers="mcps1.1.3.1.2 "><p id="p9231mcpsimp"><a name="p9231mcpsimp"></a><a name="p9231mcpsimp"></a>Number of ISP BE config buffers in offline mode. Only effective in offline mode. Valid range: [2, 20]; Hi3403V100 default: 8.</p>
 </td>
 </tr>
 <tr id="row9232mcpsimp"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.1.3.1.1 "><p id="p9234mcpsimp"><a name="p9234mcpsimp"></a><a name="p9234mcpsimp"></a>proc_param</p>
@@ -10713,7 +10713,7 @@ typedef struct {
 <tr id="row9357mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9359mcpsimp"><a name="p9359mcpsimp"></a><a name="p9359mcpsimp"></a>quick_start</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9361mcpsimp"><a name="p9361mcpsimp"></a><a name="p9361mcpsimp"></a>Indicates whether ISP uses fast startup. Default: 0.</p>
-<a name="ul9362mcpsimp"></a><a name="ul9362mcpsimp"></a><ul id="ul9362mcpsimp"><li>quick_start=0：ISP initialization configures the sensor sequence.</li><li>quick_start=1: ISP initialization does not configure the sensor sequence. Not supported on SS928V100.</li></ul>
+<a name="ul9362mcpsimp"></a><a name="ul9362mcpsimp"></a><ul id="ul9362mcpsimp"><li>quick_start=0：ISP initialization configures the sensor sequence.</li><li>quick_start=1: ISP initialization does not configure the sensor sequence. Not supported on Hi3403V100.</li></ul>
 </td>
 </tr>
 <tr id="row9365mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9367mcpsimp"><a name="p9367mcpsimp"></a><a name="p9367mcpsimp"></a>long_frame_interrupt_en</p>
@@ -11379,7 +11379,7 @@ typedef enum {
 
 **Precautions**
 
-SS928V100 does not support machine-learning AWB.
+Hi3403V100 does not support machine-learning AWB.
 
 **Related Data Types and Interfaces**
 

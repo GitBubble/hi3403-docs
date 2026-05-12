@@ -10,7 +10,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/GFBG API
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   未有特殊说明，SS528V100、SS625V100、SS524V100、SS522V101与SS626V100内容一致。
->-   未有特殊说明，SS927V100与SS928V100，SS522V100与SS524V100内容完全一致。
+>-   未有特殊说明，Hi3519AV200与Hi3403V100，SS522V100与SS524V100内容完全一致。
 
 **产品版本<a name="section418mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/GFBG API
 </th>
 </tr>
 </thead>
-<tbody><tr id="row432mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p434mcpsimp"><a name="p434mcpsimp"></a><a name="p434mcpsimp"></a>SS928</p>
+<tbody><tr id="row432mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p434mcpsimp"><a name="p434mcpsimp"></a><a name="p434mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p436mcpsimp"><a name="p436mcpsimp"></a><a name="p436mcpsimp"></a>V100</p>
 </td>
@@ -58,7 +58,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/GFBG API
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1147511911102"><a name="p1147511911102"></a><a name="p1147511911102"></a>V100</p>
 </td>
 </tr>
-<tr id="row1834158659"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row1834158659"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -2272,7 +2272,7 @@ int ioctl (int fd,
 -   不支持压缩和旋转同时做。
 -   ARGB8888的情况下，压缩可以节省内存45%。具体使用方式可以在加载ko时按典型场景所需内存的55%计算并4K对齐。
 -   压缩仅支持数据格式：ARGB8888、ARGB1555、ARGB4444。
--   压缩仅支持图层G0和G1，SS928V100 G1不支持该功能。
+-   压缩仅支持图层G0和G1，Hi3403V100 G1不支持该功能。
 -   压缩仅支持全屏刷新，不支持随机刷新和局部刷新。
 -   ARGB1555、ARGB4444 4k压缩时会存在膨胀的情况，因此需要比非压缩情况下分配更多内存。压缩场景内存计算公式如下：
 
@@ -2464,7 +2464,7 @@ int ioctl (int fd,
 -   压缩功能使能条件下，内存侦测默认打开。内存侦测最多支持同时32个内存区域进行变化侦测，G0默认占用区域0至区域15，G1默认占用区域16至区域31。
 -   内存侦测功能按照内存侦测的区域个数，对显示buffer按像素行进行均匀分割，进行内存侦测。
 -   当用户设置内存侦测区域数为0时，内存侦测功能被关闭。
--   SS528V100/SS625V100/SS524V100/SS522V101/SS928V100/SS626V100不支持该功能。
+-   SS528V100/SS625V100/SS524V100/SS522V101/Hi3403V100/SS626V100不支持该功能。
 
 【举例】
 
@@ -2555,7 +2555,7 @@ int ioctl (int fd,
 
 【注意】
 
-SS528V100/SS625V100/SS524V100/SS522V101/SS928V100/SS626V100不支持该功能。
+SS528V100/SS625V100/SS524V100/SS522V101/Hi3403V100/SS626V100不支持该功能。
 
 【举例】
 
@@ -3567,7 +3567,7 @@ int ioctl (int fd,
     -   另外，该功能仅支持OT\_FB\_LAYER\_BUF\_ONE、OT\_FB\_LAYER\_BUF\_DOUBLE和OT\_FB\_LAYER\_BUF\_DOUBLE\_IMMEDIATE三种刷新模式下（见ot\_fb\_layer\_buf）特定角度（90度、180度、270度）的旋转。
 
 -   SS528V100, SS625V100, SS524V100, SS522V101, SS626V100旋转像素格式仅支持ARGB4444、ARGB1555。
--   SS928V100支持ARGB1555, ARGB4444, ARGB8888。
+-   Hi3403V100支持ARGB1555, ARGB4444, ARGB8888。
 -   不支持旋转模式与镜像同时做。
 
 【举例】
@@ -3826,7 +3826,7 @@ int ioctl (int fd,
 
 【注意】
 
--   SS528V100/SS625V100/SS928V100不支持。
+-   SS528V100/SS625V100/Hi3403V100不支持。
 
 -   按照clut4像素格式配置，最大支持分辨率3840\*2160。
 -   图形层G3用作在线画框功能时，不可用于标清显示或离线画框显示。如果不再使用在线画框功能或误用了（即调用过FBIO\_DRAW\_SMART\_RECT），此时想用G3图形层做标清显示层或离线画框，需要close并重新open该图形层设备。
@@ -3922,7 +3922,7 @@ return TD_SUCCESS;
 
 本小节中描述的接口只有在软鼠标功能启用的情况下才真正生效。如果想启用软鼠标功能，则应在加载gfbg.ko时把参数softcursor置为“on”。在启用软鼠标功能的情况下，调用open函数打开/dev/fb0后，就可以调用下面的函数进行软鼠标的相关操作（建议只使用下面的函数来使用软鼠标，而不要使用之前介绍的函数）。
 
-SS528V100/SS625V100/SS524V100/SS522V101/SS928V100/SS626V100均不支持软鼠标功能。
+SS528V100/SS625V100/SS524V100/SS522V101/Hi3403V100/SS626V100均不支持软鼠标功能。
 
 
 
@@ -5376,7 +5376,7 @@ struct fb_var_screeninfo
     -   对于SS522V101不支持G1，G0：分辨率最小32\*32，最大3840\*2160；G2：分辨率最小2\*2，最大256\*256；G3：最小32\*32，CLUT格式支持3840\*2160，其他格式720x576。
     -   对于SS625V100，G0：分辨率最小32\*32，最大4096\*2160；G1:分辨率最小32\*32，最大2560\*1600；G2：分辨率最小2\*2，最大256\*256；G3：最小32\*32，CLUT格式支持3840\*2160，其他格式720x576。
     -   对于SS626V100，G0: 分辨率最小32\*32，最大4096\*4320; G1: 分辨率最小32\*32，最大4096\*2160；G2：分辨率最小2\*2，最大256\*256；G3/G4：最小32\*32，CLUT格式支持3840\*2160，其他格式720x576。
-    -   对于SS928V100不支持G2。G0分辨率最小32\*32，最大3840\*2160；G1：分辨率最小32\*32，最大1920\*1080；G3：最小2\*2，CLUT格式支持3840\*2160，其他格式960x576。
+    -   对于Hi3403V100不支持G2。G0分辨率最小32\*32，最大3840\*2160；G1：分辨率最小32\*32，最大1920\*1080；G3：最小2\*2，CLUT格式支持3840\*2160，其他格式960x576。
 
 【相关数据类型及接口】
 
@@ -7346,7 +7346,7 @@ SDK使用VO模块控制设备层。SDK的VO模块提供设备层和视频层控�
 <p id="p087403510717"><a name="p087403510717"></a><a name="p087403510717"></a>G2、G3层动态绑定在设备DHD0或DSD0上</p>
 </td>
 </tr>
-<tr id="row587411359716"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p1887416351771"><a name="p1887416351771"></a><a name="p1887416351771"></a>SS928V100</p>
+<tr id="row587411359716"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p1887416351771"><a name="p1887416351771"></a><a name="p1887416351771"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p198741535173"><a name="p198741535173"></a><a name="p198741535173"></a>支持3个图形层：G0，G1，G3</p>
 <p id="p4874173511718"><a name="p4874173511718"></a><a name="p4874173511718"></a>G0层固定绑定在设备DHD0上</p>

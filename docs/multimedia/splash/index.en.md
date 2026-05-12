@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/开机�
 This document provides basic function calls and boot command lines for implementing a boot splash screen. Users can configure them according to their specific applications.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->Unless otherwise specified, SS927V100 and SS928V100, and SS522V100 and SS524V100, have identical content.
+>Unless otherwise specified, Hi3519AV200 and Hi3403V100, and SS522V100 and SS524V100, have identical content.
 
 **Product Versions<a name="section145mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>SS928</p>
+<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>V100</p>
 </td>
@@ -57,7 +57,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p91011518114310"><a name="p91011518114310"></a><a name="p91011518114310"></a>V100</p>
 </td>
 </tr>
-<tr id="row2044258578"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row2044258578"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -368,7 +368,7 @@ The Uboot code provides the following features:
 <p id="p390mcpsimp"><a name="p390mcpsimp"></a><a name="p390mcpsimp"></a>512: RGB_24BIT</p>
 </td>
 </tr>
-<tr id="row391mcpsimp"><td class="cellrowborder" valign="top" width="22.222222222222225%" headers="mcps1.2.6.1.1 "><p id="p393mcpsimp"><a name="p393mcpsimp"></a><a name="p393mcpsimp"></a>SS928V100</p>
+<tr id="row391mcpsimp"><td class="cellrowborder" valign="top" width="22.222222222222225%" headers="mcps1.2.6.1.1 "><p id="p393mcpsimp"><a name="p393mcpsimp"></a><a name="p393mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="11.111111111111112%" headers="mcps1.2.6.1.2 "><p id="p395mcpsimp"><a name="p395mcpsimp"></a><a name="p395mcpsimp"></a>{0, 1}</p>
 </td>
@@ -554,7 +554,7 @@ type.h
 >-   For SS625V100, replace the above "xxx" with "ss625v100", and mipi_tx configuration under product/ot_osd is not supported.
 >-   For SS524V100, replace the above "xxx" with "ss524v100", and mipi_tx configuration under product/ot_osd is not supported.
 >-   For SS522V101, replace the above "xxx" with "ss522v101", and mipi_tx configuration under product/ot_osd is not supported.
->-   For SS928V100, replace the above "xxx" with "ss928v100".
+>-   For Hi3403V100, replace the above "xxx" with "Hi3403V100".
 >-   For SS626V100, replace the above "xxx" with "ss626v100", and mipi_tx configuration under product/ot_osd is not supported.
 
 ## Command Line Example<a name="ZH-CN_TOPIC_0000002408115478"></a>

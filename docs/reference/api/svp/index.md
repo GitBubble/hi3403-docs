@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0 A
 本文档为SVP2.0平台_识别_分析方案开发的程序员而写，目的是供您在开发过程中查阅SVP2.0支持的各种参考信息，包括API、头文件、错误码等。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文未有特殊说明，SS927V100与SS928V100内容完全一致。
+>本文未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section4565mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0 A
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4579mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p4581mcpsimp"><a name="p4581mcpsimp"></a><a name="p4581mcpsimp"></a>SS928</p>
+<tbody><tr id="row4579mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p4581mcpsimp"><a name="p4581mcpsimp"></a><a name="p4581mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p4583mcpsimp"><a name="p4583mcpsimp"></a><a name="p4583mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row7182111314449"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row7182111314449"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -454,12 +454,12 @@ td_s32 ss_mpi_svp_mau_matrix_mul(ot_svp_mau_handle *handle, const ot_svp_mau_src
 </th>
 </tr>
 </thead>
-<tbody><tr id="row972mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p974mcpsimp"><a name="p974mcpsimp"></a><a name="p974mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row972mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p974mcpsimp"><a name="p974mcpsimp"></a><a name="p974mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p976mcpsimp"><a name="p976mcpsimp"></a><a name="p976mcpsimp"></a>dst数据类型仅支持OT_SVP_BLOB_TYPE_FP32。</p>
 </td>
 </tr>
-<tr id="row82156407404"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p162151940164019"><a name="p162151940164019"></a><a name="p162151940164019"></a>SS927V100</p>
+<tr id="row82156407404"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p162151940164019"><a name="p162151940164019"></a><a name="p162151940164019"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p11216104020409"><a name="p11216104020409"></a><a name="p11216104020409"></a>dst数据类型仅支持OT_SVP_BLOB_TYPE_FP32。</p>
 </td>
@@ -669,12 +669,12 @@ td_s32 ss_mpi_svp_mau_cos_dist(ot_svp_mau_handle *handle, const ot_svp_mau_src_d
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1404mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1406mcpsimp"><a name="p1406mcpsimp"></a><a name="p1406mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row1404mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1406mcpsimp"><a name="p1406mcpsimp"></a><a name="p1406mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p1408mcpsimp"><a name="p1408mcpsimp"></a><a name="p1408mcpsimp"></a>dst-&gt;op_result和dst-&gt;top_n数据类型仅支持OT_SVP_BLOB_TYPE_FP32。</p>
 </td>
 </tr>
-<tr id="row3615740104110"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p164134274112"><a name="p164134274112"></a><a name="p164134274112"></a>SS927V100</p>
+<tr id="row3615740104110"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p164134274112"><a name="p164134274112"></a><a name="p164134274112"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p441842154120"><a name="p441842154120"></a><a name="p441842154120"></a>dst-&gt;op_result和dst-&gt;top_n数据类型仅支持OT_SVP_BLOB_TYPE_FP32。</p>
 </td>
@@ -890,12 +890,12 @@ td_s32 ss_mpi_svp_mau_euclid_dist(ot_svp_mau_handle *handle, const ot_svp_mau_sr
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4430mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p4432mcpsimp"><a name="p4432mcpsimp"></a><a name="p4432mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row4430mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p4432mcpsimp"><a name="p4432mcpsimp"></a><a name="p4432mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p4434mcpsimp"><a name="p4434mcpsimp"></a><a name="p4434mcpsimp"></a>dst-&gt;op_result和dst-&gt;top_n数据类型仅支持OT_SVP_BLOB_TYPE_FP32。</p>
 </td>
 </tr>
-<tr id="row1640516543416"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p135105654111"><a name="p135105654111"></a><a name="p135105654111"></a>SS927V100</p>
+<tr id="row1640516543416"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p135105654111"><a name="p135105654111"></a><a name="p135105654111"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p185185614111"><a name="p185185614111"></a><a name="p185185614111"></a>dst-&gt;op_result和dst-&gt;top_n数据类型仅支持OT_SVP_BLOB_TYPE_FP32。</p>
 </td>
@@ -1154,12 +1154,12 @@ td_s32 ss_mpi_svp_mau_manhattan_dist(ot_svp_mau_handle *handle, const ot_svp_mau
 </th>
 </tr>
 </thead>
-<tbody><tr id="row7854mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p7856mcpsimp"><a name="p7856mcpsimp"></a><a name="p7856mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row7854mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p7856mcpsimp"><a name="p7856mcpsimp"></a><a name="p7856mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p7858mcpsimp"><a name="p7858mcpsimp"></a><a name="p7858mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row1783979144212"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1148191184218"><a name="p1148191184218"></a><a name="p1148191184218"></a>SS927V100</p>
+<tr id="row1783979144212"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1148191184218"><a name="p1148191184218"></a><a name="p1148191184218"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p1114811119421"><a name="p1114811119421"></a><a name="p1114811119421"></a>不支持</p>
 </td>
@@ -1399,12 +1399,12 @@ td_s32 ss_mpi_svp_mau_transpose(ot_svp_mau_handle *handle, const ot_svp_blob *sr
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3371mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p3373mcpsimp"><a name="p3373mcpsimp"></a><a name="p3373mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row3371mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p3373mcpsimp"><a name="p3373mcpsimp"></a><a name="p3373mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p3375mcpsimp"><a name="p3375mcpsimp"></a><a name="p3375mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row1215792304213"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p12315182494211"><a name="p12315182494211"></a><a name="p12315182494211"></a>SS927V100</p>
+<tr id="row1215792304213"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p12315182494211"><a name="p12315182494211"></a><a name="p12315182494211"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p8315124164216"><a name="p8315124164216"></a><a name="p8315124164216"></a>不支持</p>
 </td>
@@ -1567,12 +1567,12 @@ td_s32 ss_mpi_svp_mau_vector_op(ot_svp_mau_handle *handle, const ot_svp_mau_src_
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2341mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p2343mcpsimp"><a name="p2343mcpsimp"></a><a name="p2343mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row2341mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p2343mcpsimp"><a name="p2343mcpsimp"></a><a name="p2343mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p2345mcpsimp"><a name="p2345mcpsimp"></a><a name="p2345mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row10949835174211"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p2949736144219"><a name="p2949736144219"></a><a name="p2949736144219"></a>SS927V100</p>
+<tr id="row10949835174211"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p2949736144219"><a name="p2949736144219"></a><a name="p2949736144219"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p294913369427"><a name="p294913369427"></a><a name="p294913369427"></a>不支持</p>
 </td>
@@ -1844,12 +1844,12 @@ td_s32 ss_mpi_svp_mau_type_convert(ot_svp_mau_handle *handle, const ot_svp_blob 
 </th>
 </tr>
 </thead>
-<tbody><tr id="row9017mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p9019mcpsimp"><a name="p9019mcpsimp"></a><a name="p9019mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row9017mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p9019mcpsimp"><a name="p9019mcpsimp"></a><a name="p9019mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p9021mcpsimp"><a name="p9021mcpsimp"></a><a name="p9021mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row577849144219"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p124581150174214"><a name="p124581150174214"></a><a name="p124581150174214"></a>SS927V100</p>
+<tr id="row577849144219"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p124581150174214"><a name="p124581150174214"></a><a name="p124581150174214"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p12458350194210"><a name="p12458350194210"></a><a name="p12458350194210"></a>不支持</p>
 </td>
@@ -1962,12 +1962,12 @@ td_s32 ss_mpi_svp_mau_get_sort_tmpbuf_size(ot_svp_blob_type type, td_u32 src_col
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5844mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row5844mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p5848mcpsimp"><a name="p5848mcpsimp"></a><a name="p5848mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row447632144314"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p14777143144313"><a name="p14777143144313"></a><a name="p14777143144313"></a>SS927V100</p>
+<tr id="row447632144314"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p14777143144313"><a name="p14777143144313"></a><a name="p14777143144313"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p577717364318"><a name="p577717364318"></a><a name="p577717364318"></a>不支持</p>
 </td>
@@ -2089,12 +2089,12 @@ td_s32 ss_mpi_svp_mau_sort(ot_svp_mau_handle *handle, const ot_svp_mau_sort_matr
 </th>
 </tr>
 </thead>
-<tbody><tr id="row6463mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p6465mcpsimp"><a name="p6465mcpsimp"></a><a name="p6465mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row6463mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p6465mcpsimp"><a name="p6465mcpsimp"></a><a name="p6465mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p6467mcpsimp"><a name="p6467mcpsimp"></a><a name="p6467mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row16601212104318"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>SS927V100</p>
+<tr id="row16601212104318"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p5848mcpsimp"><a name="p5848mcpsimp"></a><a name="p5848mcpsimp"></a>不支持</p>
 </td>
@@ -2199,12 +2199,12 @@ td_s32 ss_mpi_svp_mau_get_fir_tmpbuf_size (const ot_svp_mau_fir_src *src, td_u32
 </th>
 </tr>
 </thead>
-<tbody><tr id="row238mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p240mcpsimp"><a name="p240mcpsimp"></a><a name="p240mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row238mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p240mcpsimp"><a name="p240mcpsimp"></a><a name="p240mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p242mcpsimp"><a name="p242mcpsimp"></a><a name="p242mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row184610253430"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>SS927V100</p>
+<tr id="row184610253430"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p5848mcpsimp"><a name="p5848mcpsimp"></a><a name="p5848mcpsimp"></a>不支持</p>
 </td>
@@ -2326,12 +2326,12 @@ ss_mpi_svp_mau_fir(ot_svp_mau_handle *handle, const ot_svp_mau_fir_src *src, con
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5384mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5386mcpsimp"><a name="p5386mcpsimp"></a><a name="p5386mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row5384mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5386mcpsimp"><a name="p5386mcpsimp"></a><a name="p5386mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p5388mcpsimp"><a name="p5388mcpsimp"></a><a name="p5388mcpsimp"></a>不支持</p>
 </td>
 </tr>
-<tr id="row1213313356431"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>SS927V100</p>
+<tr id="row1213313356431"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p5846mcpsimp"><a name="p5846mcpsimp"></a><a name="p5846mcpsimp"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p5848mcpsimp"><a name="p5848mcpsimp"></a><a name="p5848mcpsimp"></a>不支持</p>
 </td>
@@ -10691,7 +10691,7 @@ disparity_num  disparity_start_pos  first_penalty_coef  second_penalty_coef  ass
 DSP（Digital Signal Process）是SVP 平台下的可编程硬件加速模块。用户基于DSP开发_识别_分析方案可以加速_识别_分析，降低CPU占用。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->本章节对于生态开源版本SS928V100/SS927V100暂不支持。
+>本章节对于生态开源版本Hi3403V100/Hi3519AV200暂不支持。
 
 ## 功能描述<a name="ZH-CN_TOPIC_0000002408134368"></a>
 

@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MPP åª’ä
 This document is written for programmers developing with the MPP media processing software. Its purpose is to provide solutions and assistance for problems encountered during development.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified, the content for SS927V100 is identical to SS928V100.
+>Unless otherwise specified, the content for Hi3519AV200 is identical to Hi3403V100.
 
 **Product Version<a name="section105mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ The product version corresponding to this document is as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
@@ -52,7 +52,7 @@ The product version corresponding to this document is as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p107354154419"><a name="p107354154419"></a><a name="p107354154419"></a>V100</p>
 </td>
 </tr>
-<tr id="row12913714769"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row12913714769"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -348,7 +348,7 @@ This indicates overall MMZ statistics, including total MMZ size, used size, rema
 
 ### CMA Related<a name="ZH-CN_TOPIC_0000002441714865"></a>
 
-In projects such as SS528V100/SS625V100/SS524V100/SS522V100/SS928V100/SS626V100, CMA is enabled by default. When CMA is enabled, the system reserves a portion of memory by default. Only part of this reserved memory may be used. Therefore, to save memory, customers can use the following two methods:
+In projects such as SS528V100/SS625V100/SS524V100/SS522V100/Hi3403V100/SS626V100, CMA is enabled by default. When CMA is enabled, the system reserves a portion of memory by default. Only part of this reserved memory may be used. Therefore, to save memory, customers can use the following two methods:
 
 1.  Adjust the system reserved memory.
     Use `cat /proc/meminfo` to view the current system reserved CMA memory and its usage. CmaTotal is the total reserved CMA memory, and CmaFree is the remaining memory:
@@ -431,12 +431,12 @@ Customers need to modify kernel options. After recompiling the kernel, driver KO
 -   Modify kernel options and recompile the kernel. Refer to the readme\_cn.txt/readme\_en.txt files in the osdrv directory of the delivery package.
 -   After changing kernel options, all business drivers need to be recompiled and relinked.
     -   For SS528V100/SS524V100/SS625V100/SS522V100, enter the vendor, interdrv, osal/linux, mpp/component/security\_subsys, mpp/component/gfgb, mpp/component/pciv, and mpp/obj directories in the delivery package, and run: make clean; make.
-    -   For SS928V100, enter the mpp/out/obj directory, run: make clean; make. ipcm.ko and virt-tty.ko need to be compiled in osdrv to be updated.
+    -   For Hi3403V100, enter the mpp/out/obj directory, run: make clean; make. ipcm.ko and virt-tty.ko need to be compiled in osdrv to be updated.
     -   For SS626V100, enter the mpp/out/obj directory, run: make clean; make.
 
 [Precautions]
 
--   The generated driver ko is automatically copied to the mpp/ko (SS928V100 copies to mpp/out/ko) directory, overwriting the old driver ko.
+-   The generated driver ko is automatically copied to the mpp/ko (Hi3403V100 copies to mpp/out/ko) directory, overwriting the old driver ko.
 -   The default kernel source path is open\_source/linux/linux-4.x.y in the delivery package (x is the kernel version). To specify a kernel path, use: make clean; make KERNEL\_ROOT=<kernel source path>.
 
 ## Quick Schedule Precautions<a name="ZH-CN_TOPIC_0000002408115634"></a>
@@ -506,14 +506,14 @@ Low latency features reduce delay between pipeline modules (e.g., VPSS->VO/VENC)
 
 ### VENC<a name="ZH-CN_TOPIC_0000002441714861"></a>
 
--   Input low latency is only supported on SS928V100.
+-   Input low latency is only supported on Hi3403V100.
 -   Output low latency includes H.264/H.265 slice interrupt output and JPEGE/MJPEGE ECS interrupt output.
--   SS928V100/SS626V100/SS524V100/SS528V100 support slice low latency output (ss\_mpi\_venc\_set\_slice\_split).
--   SS928V100/SS626V100 support ECS interrupt output (ss\_mpi\_venc\_set\_mjpeg\_param).
+-   Hi3403V100/SS626V100/SS524V100/SS528V100 support slice low latency output (ss\_mpi\_venc\_set\_slice\_split).
+-   Hi3403V100/SS626V100 support ECS interrupt output (ss\_mpi\_venc\_set\_mjpeg\_param).
 
 ### VI<a name="ZH-CN_TOPIC_0000002441674889"></a>
 
--   Input/output low latency is only supported on SS928V100.
+-   Input/output low latency is only supported on Hi3403V100.
 -   Configure pipe output low latency via ss\_mpi\_vi\_set\_pipe\_low\_delay\_attr.
 -   Configure channel/channel post-processing output low latency via ss\_mpi\_vi\_set\_chn\_low\_delay\_attr.
 -   Adjust VI interrupt type via ss\_mpi\_vi\_set\_pipe\_frame\_interrupt\_attr.
@@ -605,7 +605,7 @@ All YUV PACKAGE 422 formats mapping:
 
 #### CRG and Pin Multiplexing Configuration<a name="ZH-CN_TOPIC_0000002408275590"></a>
 
-When loading the ko, use: load\_ss928v100 -a --sensor1 t0. Adjust pin multiplexing in sysconfig as needed, referring to functions thermo\_clock\_config and thermo\_sensor\_pin\_mux.
+When loading the ko, use: load\_Hi3403V100 -a --sensor1 t0. Adjust pin multiplexing in sysconfig as needed, referring to functions thermo\_clock\_config and thermo\_sensor\_pin\_mux.
 
 #### MIPI Configuration<a name="ZH-CN_TOPIC_0000002441674977"></a>
 
@@ -630,7 +630,7 @@ Only Dev1 can be used. Set intf\_mode to OT\_VI\_INTF\_MODE\_THERMO. Other confi
 
 #### CRG and Pin Multiplexing Configuration<a name="ZH-CN_TOPIC_0000002441674965"></a>
 
-Use: load\_ss928v100 -a -sensor0 t1. Adjust pin multiplexing as needed.
+Use: load\_Hi3403V100 -a -sensor0 t1. Adjust pin multiplexing as needed.
 
 #### MIPI Configuration (LVDS Configuration)<a name="ZH-CN_TOPIC_0000002408115534"></a>
 
@@ -700,7 +700,7 @@ For BT.1120/BT.656 interfaces, ensure horizontal pixel count is aligned to 16 to
 [Phenomenon] Static logo loading causes flicker.
 [Solution] Set the channel layer to VGS layer before sending the logo. Logo configuration timing differs between HD and SD.
 
-## SS928V100 Cascade VO Part Screen Flicker<a name="ZH-CN_TOPIC_0000002441674877"></a>
+## Hi3403V100 Cascade VO Part Screen Flicker<a name="ZH-CN_TOPIC_0000002441674877"></a>
 
 [Phenomenon] Flicker on cascaded VO partial screens.
 [Solution] Enable BTA for BT.1120 output.
@@ -898,7 +898,7 @@ Switching between HNR (High Noise Reduction) and smart business modes. Follow th
 [Phenomenon] VO interrupt delays causing display issues.
 [Solution] Check interrupt handling and CPU affinity settings.
 
-## SS928V100 VI Buffer Overflow Interrupt Frame Drop Issue<a name="ZH-CN_TOPIC_0000002408275630"></a>
+## Hi3403V100 VI Buffer Overflow Interrupt Frame Drop Issue<a name="ZH-CN_TOPIC_0000002408275630"></a>
 
 [Phenomenon] VI reporting buffer overflow interrupt and dropping frames.
 [Solution] Increase VB pool size or reduce VI input load.

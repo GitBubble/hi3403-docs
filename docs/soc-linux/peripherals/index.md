@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/外围�
 本文档主要是指导使用GMAC、USB和eMMC卡等驱动模块的相关人员，通过一定的步骤和方法对和这些驱动模块相连的外围设备进行控制，主要包括操作准备、操作过程、操作中需要注意的问题以及操作示例。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section10120166104220"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/外围�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1819118616425"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p81911613425"><a name="p81911613425"></a><a name="p81911613425"></a>SS928</p>
+<tbody><tr id="row1819118616425"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p81911613425"><a name="p81911613425"></a><a name="p81911613425"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p91911617427"><a name="p91911617427"></a><a name="p91911617427"></a>V100</p>
 </td>
 </tr>
-<tr id="row64983499368"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p182829527361"><a name="p182829527361"></a><a name="p182829527361"></a>SS927</p>
+<tr id="row64983499368"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p182829527361"><a name="p182829527361"></a><a name="p182829527361"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p4282165214366"><a name="p4282165214366"></a><a name="p4282165214366"></a>V100</p>
 </td>
@@ -125,7 +125,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/外围�
 
 ```
 cd open_source/linux/linux-4.19.y
-cp arch/arm64/configs/ss928v100_defconfig .config
+cp arch/arm64/configs/Hi3403V100_defconfig .config
 make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- menuconfig
 ```
 
@@ -163,11 +163,11 @@ IPv6环境配置如下：
 
 -   U-boot下配置方式
 
-    U-boot下可通过修改U-boot配置文件include/configs/ss928v100.h中宏定义 CONFIG\_GMAC\_PHY0\_ADDR和CONFIG\_GMAC\_PHY1\_ADDR的值来配置不同的PHY地址。
+    U-boot下可通过修改U-boot配置文件include/configs/Hi3403V100.h中宏定义 CONFIG\_GMAC\_PHY0\_ADDR和CONFIG\_GMAC\_PHY1\_ADDR的值来配置不同的PHY地址。
 
 -   Kernel下配置方式
 
-    在Kernel下可通过修改 arch/arm64/boot/dts/vendor下的dts配置文件 ss928v100-demb.dts配置PHY地址。如[图1](#_Toc498609229)所示，“reg = <1\>”中的数值1表示PHY地址。
+    在Kernel下可通过修改 arch/arm64/boot/dts/vendor下的dts配置文件 Hi3403V100-demb.dts配置PHY地址。如[图1](#_Toc498609229)所示，“reg = <1\>”中的数值1表示PHY地址。
 
 **图 1**  PHY地址配置节点示意图<a name="_Toc498609229"></a>  
 ![](figures/PHY地址配置节点示意图.png "PHY地址配置节点示意图")
@@ -194,7 +194,7 @@ GMAC网络支持IEEE 802.3x定义的流控功能，能够发送流控帧和接�
 
 ```
 cd open_source/linux/linux-4.19.y
-cp arch/arm64/configs/ss928v100_defconfig .config
+cp arch/arm64/configs/Hi3403V100_defconfig .config
 make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- menuconfig
 ```
 
@@ -267,7 +267,7 @@ GMAC1	100M\(rmii\) phy 3
 
 U-boot修改点：
 
-进入U-boot目录：vim include/configs/ss928v100.h
+进入U-boot目录：vim include/configs/Hi3403V100.h
 
 修改后值：
 
@@ -287,7 +287,7 @@ U-boot修改点：
 
 Linux修改点：
 
-进入linux目录：vim arch/arm64/boot/dts/vendor/ss928v100-demb.dts
+进入linux目录：vim arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts
 
 修改后值：
 
@@ -363,7 +363,7 @@ USB的操作准备如下：
     make ARCH=arm CROSS_COMPILE=aarch64-mix210-linux- u-boot-z.bin
     ```
 
-    编译生成的 u-boot-ss928v100.bin即为可用的u-boot镜像。
+    编译生成的 u-boot-Hi3403V100.bin即为可用的u-boot镜像。
 
 #### 内核下USB Host操作过程<a name="ZH-CN_TOPIC_0000002512103591"></a>
 
@@ -901,7 +901,7 @@ USB的操作准备如下：
     
     ./ConfigUVC.sh
     cd ./ko
-    ./load_ss928v100 -i
+    ./load_Hi3403V100 -i
     cd -
     if [ "$PerfMode" == "v4l2" ]; then
      ./sample_uvc_v4l2 ${UVC_DEVICE_CNT} &
@@ -927,7 +927,7 @@ USB的操作准备如下：
     >    -   PerfMode="v4l2"表示使用传统v4l2方式送流\(对应应用程序sample\_uvc\_v4l2\)，注释掉或其他值表示使用高性能0拷贝方式送流\(对应应用程序sample\_uvc\)；
     >    -   StillCaptureMethod=2表示支持Still Image method2，"=3"表示支持Still Image method3，"=0"或注释掉表示不支持Still Image功能；
     >    -   UVC\_DEVICE\_CNT=1表示使用单路UVC，"=2”表示使用双路UVC；
-    >    -   脚本中的“./load\_ss928v100 -i”语句为加载媒体驱动的命令，请根据项目实际需要正确配置参数。
+    >    -   脚本中的“./load\_Hi3403V100 -i”语句为加载媒体驱动的命令，请根据项目实际需要正确配置参数。
     >2.  ./ko目录为媒体相关驱动。
     >3.  双路UVC因USB带宽等限制不支持yuyv/nv21/nv21 2160p及部分1080p分辨率的组合\(仅USB3.0下isoc的部分组合，未提及均不涉及\)：
     >    -   yuyv/nv12/nv21 1080p +  yuyv/nv12/nv21 的任意分辨率；
@@ -1128,8 +1128,8 @@ eMMC发布模式是HS400ES（工作在8bit模式下）或者HS200（工作在4bi
 **图 1**  uboot下修改<a name="_Ref33704652"></a>  
 ![](figures/uboot下修改.png "uboot下修改")
 
-**图 2**  内核下修改（以SS928V100为例）<a name="_Ref33704655"></a>  
-![](figures/内核下修改（以SS928V100为例）.png "内核下修改（以SS928V100为例）")
+**图 2**  内核下修改（以Hi3403V100为例）<a name="_Ref33704655"></a>  
+![](figures/内核下修改（以Hi3403V100为例）.png "内核下修改（以Hi3403V100为例）")
 ## I2C操作指南<a name="ZH-CN_TOPIC_0000002480063636"></a>
 
 
@@ -1152,12 +1152,12 @@ I2C的操作准备如下：
 
 1.  启动单板，加载本地文件系统jffs2、ext4或squashFS，也可以通过本地文件系统进一步挂载到NFS。
 2.  加载内核。默认I2C相关模块已全部编入内核，不需要再执行加载命令。
-3.  参考SS928V100\_PINOUT\_CN.xlsx表格，自行配置相应I2C的管脚复用。
+3.  参考Hi3403V100\_PINOUT\_CN.xlsx表格，自行配置相应I2C的管脚复用。
 4.  在控制台下运行I2C读写命令或者自行在内核态或者用户态编写I2C读写程序，就可以对挂载在I2C控制器上的外围设备进行读写操作。具体操作请参见“[操作示例](#ZH-CN_TOPIC_0000002512103593)”。
 
 ### 接口速率设置说明<a name="ZH-CN_TOPIC_0000002479903712"></a>
 
-发布包中默认接口速率是100K。如果要更改接口速率，需要修改 arch/arm64/boot/dts/vendor/ss928v100.dtsi，并重新编译内核。具体操作如下：
+发布包中默认接口速率是100K。如果要更改接口速率，需要修改 arch/arm64/boot/dts/vendor/Hi3403V100.dtsi，并重新编译内核。具体操作如下：
 
 i2c\_bus0节点中的clock-frequency属性的值，如[图1](#_Ref411428751)所示。
 
@@ -1557,7 +1557,7 @@ i2c\_bus0节点中的clock-frequency属性的值，如[图1](#_Ref411428751)所�
 
 #### 中断模式<a name="ZH-CN_TOPIC_0000002479903686"></a>
 
-I2C的工作模式默认是轮询模式，如果需要切换中断模式，则需要打开arch/arm64/boot/dts/vendor/ss928v100.dtsi文件，找到对应的I2C，填写中断号即可，例如将I2C2切换为中断模式，则需要加入“interrupts = <GIC\_SPI 64 IRQ\_TYPE\_LEVEL\_HIGH\>;”，如[图1](#_Ref36827088)所示。
+I2C的工作模式默认是轮询模式，如果需要切换中断模式，则需要打开arch/arm64/boot/dts/vendor/Hi3403V100.dtsi文件，找到对应的I2C，填写中断号即可，例如将I2C2切换为中断模式，则需要加入“interrupts = <GIC\_SPI 64 IRQ\_TYPE\_LEVEL\_HIGH\>;”，如[图1](#_Ref36827088)所示。
 
 **图 1**  I2C节点描述图<a name="_Ref36827088"></a>  
 ![](figures/I2C节点描述图.png "I2C节点描述图")
@@ -1569,7 +1569,7 @@ I2C的工作模式默认是轮询模式，如果需要切换中断模式，则�
 
 #### DMA模式<a name="ZH-CN_TOPIC_0000002512063539"></a>
 
-1.  I2C的工作模式默认是轮询模式，如果需要切换DMA模式，则需要打开arch/arm64/boot/dts/vendor/ss928v100.dtsi文件，找到对应的I2C，填写dmas和dma-names的内容，如I2C2加入“dmas = <&edmacv310\_0 4 4\>, <&edmacv310\_0 5 5\>;”和“dma-names = "tx","rx";”，如[图1](#fig279852413388)所示。
+1.  I2C的工作模式默认是轮询模式，如果需要切换DMA模式，则需要打开arch/arm64/boot/dts/vendor/Hi3403V100.dtsi文件，找到对应的I2C，填写dmas和dma-names的内容，如I2C2加入“dmas = <&edmacv310\_0 4 4\>, <&edmacv310\_0 5 5\>;”和“dma-names = "tx","rx";”，如[图1](#fig279852413388)所示。
 
     **图 1**  I2C节点描述图<a name="fig279852413388"></a>  
     ![](figures/I2C节点描述图-2.png "I2C节点描述图-2")
@@ -1581,12 +1581,12 @@ I2C的工作模式默认是轮询模式，如果需要切换中断模式，则�
     **图 2**  编译menuconfig过程图<a name="fig823117223395"></a>  
     ![](figures/编译menuconfig过程图.png "编译menuconfig过程图")
 
-3.  打开arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件，如果需要打开DMA功能，则需要将edmacv310\_0的“status”的值配置为okay；相对的，如果要关闭DMA功能，则将该控制器的“status”的值配置为disabled，如[图3](#fig196853232401)所示。
+3.  打开arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件，如果需要打开DMA功能，则需要将edmacv310\_0的“status”的值配置为okay；相对的，如果要关闭DMA功能，则将该控制器的“status”的值配置为disabled，如[图3](#fig196853232401)所示。
 
     **图 3**  DMA控制器节点<a name="fig196853232401"></a>  
     ![](figures/DMA控制器节点.png "DMA控制器节点")
 
-4.  打开arch/arm64/boot/dts/vendor/ss928v100.dtsi文件，将edmacv310\_0的compatible属性修改为"vendor,edmacv310\_n"，使用非标准DMA驱动，如[图4](#fig3543719154118)所示。
+4.  打开arch/arm64/boot/dts/vendor/Hi3403V100.dtsi文件，将edmacv310\_0的compatible属性修改为"vendor,edmacv310\_n"，使用非标准DMA驱动，如[图4](#fig3543719154118)所示。
 
     **图 4**  修改DMA节点compatible属性<a name="fig3543719154118"></a>  
     ![](figures/修改DMA节点compatible属性.png "修改DMA节点compatible属性")
@@ -1615,7 +1615,7 @@ SPI的操作准备如下：
 
 1.  启动单板，加载本地文件系统jffs2、ext4或squashFS，也可以通过本地文件系统进一步挂载到NFS。
 2.  加载内核。默认SPI相关模块已全部编入内核，不需要再执行加载命令。
-3.  参考SS928V100\_PINOUT\_CN.xlsx表格，自行配置相应SPI的管脚复用。
+3.  参考Hi3403V100\_PINOUT\_CN.xlsx表格，自行配置相应SPI的管脚复用。
 4.  在控制台下运行SPI读写命令或者自行在内核态或者用户态编写SPI读写程序，就可以对挂载在某个SPI控制器某个片选上的外围设备进行读写操作。具体操作请参见“[操作示例](#ZH-CN_TOPIC_0000002512103593)”。
 
 ### 操作示例<a name="ZH-CN_TOPIC_0000002512103523"></a>
@@ -2133,13 +2133,13 @@ SPI的操作准备如下：
 
 #### 轮询模式<a name="ZH-CN_TOPIC_0000002512063575"></a>
 
-SPI的工作模式默认是中断模式，如果要修改SPI的工作模式为轮询模式，则需要修改arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件中对应的SPI中将“pl022,com-mode”配置为1，而且确认该SPI的“status”值为okay，如[图1](#_Ref36827303)所示。
+SPI的工作模式默认是中断模式，如果要修改SPI的工作模式为轮询模式，则需要修改arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件中对应的SPI中将“pl022,com-mode”配置为1，而且确认该SPI的“status”值为okay，如[图1](#_Ref36827303)所示。
 
 **图 1**  SPI节点描述图<a name="_Ref36827303"></a>  
 ![](figures/SPI节点描述图.png "SPI节点描述图")
 #### 中断模式<a name="ZH-CN_TOPIC_0000002480063632"></a>
 
-SPI的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件找到对应的SPI，确认“pl022,com-mode”配置为0，而且“status”值为okay，如[图1](#_Ref36827325)所示。
+SPI的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件找到对应的SPI，确认“pl022,com-mode”配置为0，而且“status”值为okay，如[图1](#_Ref36827325)所示。
 
 **图 1**  SPI节点描述图<a name="_Ref36827325"></a>  
 ![](figures/SPI节点描述图-3.png "SPI节点描述图-3")
@@ -2150,17 +2150,17 @@ SPI的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss928
     **图 1**  编译menuconfig过程图<a name="fig04111939496"></a>  
     ![](figures/编译menuconfig过程图-4.png "编译menuconfig过程图-4")
 
-2.  打开arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件，如果需要打开DMA功能，则需要将edmacv310\_0的“status”的值配置为okay；相对的，如果要关闭DMA功能，则将该控制器的“status”的值配置为disabled，如[图2](#fig46191059997)所示。
+2.  打开arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件，如果需要打开DMA功能，则需要将edmacv310\_0的“status”的值配置为okay；相对的，如果要关闭DMA功能，则将该控制器的“status”的值配置为disabled，如[图2](#fig46191059997)所示。
 
     **图 2**  DMA控制器节点<a name="fig46191059997"></a>  
     ![](figures/DMA控制器节点-5.png "DMA控制器节点-5")
 
-3.  为SPI添加DMA相关属性，在arch/arm64/boot/dts/vendor/ss928v100.dtsi文件对应spi\_bus节点中添加dmas和dma-names属性。其中，<&edmacv310\_0 12 12\>中的12需要和DMA外设请求信号线号保持一致，具体需要查看芯片手册中的硬件请求线编号说明，如[图3](#fig18931127141015)所示。
+3.  为SPI添加DMA相关属性，在arch/arm64/boot/dts/vendor/Hi3403V100.dtsi文件对应spi\_bus节点中添加dmas和dma-names属性。其中，<&edmacv310\_0 12 12\>中的12需要和DMA外设请求信号线号保持一致，具体需要查看芯片手册中的硬件请求线编号说明，如[图3](#fig18931127141015)所示。
 
     **图 3**  SPI添加DMA相关属性<a name="fig18931127141015"></a>  
     ![](figures/SPI添加DMA相关属性.png "SPI添加DMA相关属性")
 
-4.  SPI的工作模式默认是中断模式，如果要修改SPI的工作模式为DMA模式，则需要修改arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件中对应的SPI中将“pl022,com-mode”配置为2，而且确认该SPI的“status”值为okay，如[图4](#fig15784105971010)所示。
+4.  SPI的工作模式默认是中断模式，如果要修改SPI的工作模式为DMA模式，则需要修改arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件中对应的SPI中将“pl022,com-mode”配置为2，而且确认该SPI的“status”值为okay，如[图4](#fig15784105971010)所示。
 
     **图 4**  SPI节点描述图<a name="fig15784105971010"></a>  
     ![](figures/SPI节点描述图-6.png "SPI节点描述图-6")
@@ -2302,14 +2302,14 @@ GPIO的操作准备如下：
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >默认使用内核标准GPIO。若客户自己实现了GPIO的驱动及中断注册，而非使用内核标准GPIO，则需关闭内核标准GPIO。否则两套驱动之间会产生冲突，影响使用。
 >关闭内核标准GPIO方法如下：
->-   打开dts文件：/arch/arm64/boot/dts/vendor/ss928v100-demb.dts，将相应的gpio状态从“okay”改成“disabled”，如[图1](#_Ref492480915)所示。
->    vi /arch/arm64/boot/dts/vendor/ss928v100-demb.dts
+>-   打开dts文件：/arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts，将相应的gpio状态从“okay”改成“disabled”，如[图1](#_Ref492480915)所示。
+>    vi /arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts
 >-   修改后保存退出，重新编译内核。
->    cp arch/arm64/configs/ss928v100\_defconfig .config
+>    cp arch/arm64/configs/Hi3403V100\_defconfig .config
 >    make ARCH=arm64 CROSS\_COMPILE=aarch64-mix210-linux- menuconfig
 >    make ARCH=arm64 CROSS\_COMPILE=aarch64-mix210-linux- uImage -j 20
 >    cd osdrv/open\_source/trusted-firmware-a/trusted-firmware-a-2.2
->    ./mk\_ss928v100.sh
+>    ./mk\_Hi3403V100.sh
 
 **图 1**  关闭内核标准GPIO示例<a name="_Ref492480915"></a>  
 ![](figures/关闭内核标准GPIO示例.png "关闭内核标准GPIO示例")
@@ -2747,9 +2747,9 @@ UART的操作准备如下：
 
 操作过程如下：
 
-1.  SS928V100默认只打开了uart0，如果需要打开其他uart，可以进入arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件，找到对应的uart，将“status”的值配置为okay。
+1.  Hi3403V100默认只打开了uart0，如果需要打开其他uart，可以进入arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件，找到对应的uart，将“status”的值配置为okay。
 2.  编译并加载内核。启动单板，加载jffs2、ext4或cramfs文件系统，也可以使用NFS。
-3.  参考《SS928V100\_PINOUT\_CN.xlsx》表格，自行配置相应Uart的管脚复用。
+3.  参考《Hi3403V100\_PINOUT\_CN.xlsx》表格，自行配置相应Uart的管脚复用。
 
 ### 操作示例<a name="ZH-CN_TOPIC_0000002479903670"></a>
 
@@ -2909,7 +2909,7 @@ echoctl echoke
 
 #### 中断模式<a name="ZH-CN_TOPIC_0000002479903652"></a>
 
-UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss928v100.dtsi文件，找到对应的uart，填写中断号即可，例如将uart1切换为中断模式，则需要加入“interrupts = <GIC\_SPI 57 IRQ\_TYPE\_LEVEL\_HIGH\>;”，如[图1](#_Ref82872793)所示。
+UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/Hi3403V100.dtsi文件，找到对应的uart，填写中断号即可，例如将uart1切换为中断模式，则需要加入“interrupts = <GIC\_SPI 57 IRQ\_TYPE\_LEVEL\_HIGH\>;”，如[图1](#_Ref82872793)所示。
 
 **图 1**  UART节点描述图<a name="_Ref82872793"></a>  
 ![](figures/UART节点描述图.png "UART节点描述图")
@@ -2923,12 +2923,12 @@ UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss92
     **图 1**  编译menuconfig过程图<a name="fig16720171216599"></a>  
     ![](figures/编译menuconfig过程图-7.png "编译menuconfig过程图-7")
 
-2.  打开arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件，如果需要打开DMA功能，则需要将edmacv310\_0的“status”的值配置为okay；相对的，如果要关闭DMA功能，则将该控制器的“status”的值配置为disabled，如[图2](#fig7351949302)所示。
+2.  打开arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件，如果需要打开DMA功能，则需要将edmacv310\_0的“status”的值配置为okay；相对的，如果要关闭DMA功能，则将该控制器的“status”的值配置为disabled，如[图2](#fig7351949302)所示。
 
     **图 2**  DMA控制器节点<a name="fig7351949302"></a>  
     ![](figures/DMA控制器节点-8.png "DMA控制器节点-8")
 
-3.  UART的工作模式默认是中断模式，如果需要切换DMA模式，则需要打开arch/arm64/boot/dts/vendor/ss928v100.dtsi文件，找到对应的UART，填写dmas和dma-names的内容，如uart1加入“dmas = <&edmacv310\_0 22 22\>, <&edmacv310\_0 23 23\>;”和“dma-names = "rx","tx";”，如[图3](#fig12271338911)所示。
+3.  UART的工作模式默认是中断模式，如果需要切换DMA模式，则需要打开arch/arm64/boot/dts/vendor/Hi3403V100.dtsi文件，找到对应的UART，填写dmas和dma-names的内容，如uart1加入“dmas = <&edmacv310\_0 22 22\>, <&edmacv310\_0 23 23\>;”和“dma-names = "rx","tx";”，如[图3](#fig12271338911)所示。
 
     **图 3**  UART添加DMA相关属性<a name="fig12271338911"></a>  
     ![](figures/UART添加DMA相关属性.png "UART添加DMA相关属性")
@@ -2940,15 +2940,15 @@ UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss92
 
 ### 内核中SDIO驱动开启方法<a name="ZH-CN_TOPIC_0000002512103603"></a>
 
-内核中SDIO驱动默认是开启的，SS928V100有3个MMC控制器，其中 MMC2控制器默认开启SDIO功能，模式为HS模式。如需开启MMC2控制器SDR104模式，请修改DTSI。
+内核中SDIO驱动默认是开启的，Hi3403V100有3个MMC控制器，其中 MMC2控制器默认开启SDIO功能，模式为HS模式。如需开启MMC2控制器SDR104模式，请修改DTSI。
 
-1.  打开ss928v100.dtsi文件
+1.  打开Hi3403V100.dtsi文件
 
     ```
-    $vi arch/arm64/boot/dts/vendor/ss928v100.dtsi
+    $vi arch/arm64/boot/dts/vendor/Hi3403V100.dtsi
     ```
 
-2.  DTSI增加SDR104描述（以SS928V100为例）
+2.  DTSI增加SDR104描述（以Hi3403V100为例）
 
     ![](figures/sdio.png)
 
@@ -2959,12 +2959,12 @@ UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss92
 
 ### 内核中PCIe控制器驱动开启方法<a name="ZH-CN_TOPIC_0000002480063626"></a>
 
-在SS928V100内核中，PCIe控制器默认工作在 EP 模式，如果需要使用 RC 模式，可以按照如下方法：
+在Hi3403V100内核中，PCIe控制器默认工作在 EP 模式，如果需要使用 RC 模式，可以按照如下方法：
 
 1.  执行menuconfig命令
 
     ```
-    $ cp arch/arm64/configs/ss928v100_defconfig .config
+    $ cp arch/arm64/configs/Hi3403V100_defconfig .config
     $ make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- menuconfig
     ```
 
@@ -2989,23 +2989,23 @@ UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss92
 
 4.  编译ATF镜像
 
-    进入opensource/arm-trusted-firmware/trusted-firmware-a-2.2目录，执行mk\_ss928v100.sh脚本：
+    进入opensource/arm-trusted-firmware/trusted-firmware-a-2.2目录，执行mk\_Hi3403V100.sh脚本：
 
     ```
-    $ chmod 777 mk_ss928v100.sh
-    $ ./mk_ss928v100.sh
+    $ chmod 777 mk_Hi3403V100.sh
+    $ ./mk_Hi3403V100.sh
     ```
 
-    在opensource/arm-trusted-firmware/trusted-firmware-a-2.2/build/ss928v100/release目录下，生成的fip.bin文件就是ATF+kernel的镜像。
+    在opensource/arm-trusted-firmware/trusted-firmware-a-2.2/build/Hi3403V100/release目录下，生成的fip.bin文件就是ATF+kernel的镜像。
 
 ### 内核中PCIe MSI中断关闭方法<a name="ZH-CN_TOPIC_0000002512103541"></a>
 
-在SS928V100内核中，默认开启了PCIe的MSI中断，如果要关闭PCIe的MSI中断，可以按照如下方法：
+在Hi3403V100内核中，默认开启了PCIe的MSI中断，如果要关闭PCIe的MSI中断，可以按照如下方法：
 
-1.  打开ss928v100.dtsi文件
+1.  打开Hi3403V100.dtsi文件
 
     ```
-    $vi arch/arm64/boot/dts/vendor/ss928v100.dtsi
+    $vi arch/arm64/boot/dts/vendor/Hi3403V100.dtsi
     ```
 
 2.  在PCIe的配置信息中，把MSI相关的参数注释掉
@@ -3014,24 +3014,24 @@ UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss92
 
     如上图，注释掉PCIe1配置信息中的“interrupts = <GIC\_SPI 140 IRQ\_TYPE\_LEVEL\_HIGH\>;”和“interrupt-names = "msi";”。
 
-3.  保存ss928v100.dtsi文件配置，编译内核镜像uImage
+3.  保存Hi3403V100.dtsi文件配置，编译内核镜像uImage
 
     ```
-    $ cp arch/arm64/configs/ss928v100_defconfig .config
+    $ cp arch/arm64/configs/Hi3403V100_defconfig .config
     $ make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- menuconfig
     $ make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- uImage
     ```
 
 4.  编译ATF镜像
 
-    进入opensource/arm-trusted-firmware/trusted-firmware-a-2.2目录，执行mk\_ss928v100.sh脚本：
+    进入opensource/arm-trusted-firmware/trusted-firmware-a-2.2目录，执行mk\_Hi3403V100.sh脚本：
 
     ```
-    $ chmod 777 mk_ss928v100.sh
-    $ ./mk_ss928v100.sh
+    $ chmod 777 mk_Hi3403V100.sh
+    $ ./mk_Hi3403V100.sh
     ```
 
-    在opensource/arm-trusted-firmware/trusted-firmware-a-2.2/build/ss928v100/release目录下，生成的fip.bin文件就是ATF+kernel的镜像。
+    在opensource/arm-trusted-firmware/trusted-firmware-a-2.2/build/Hi3403V100/release目录下，生成的fip.bin文件就是ATF+kernel的镜像。
 
 ### 支持 NVME 设备方法<a name="ZH-CN_TOPIC_0000002479903692"></a>
 
@@ -3050,12 +3050,12 @@ Device Drivers  --->
 
 ### 内核PWM驱动开启方法<a name="ZH-CN_TOPIC_0000002512063523"></a>
 
-在内核中，PWM驱动默认未开启，如果需要开启PWM驱动，可以按照如下方法\(以SS928V100为例，默认情况下，该解决方案内核适配的是PWM0和PWM1\)：
+在内核中，PWM驱动默认未开启，如果需要开启PWM驱动，可以按照如下方法\(以Hi3403V100为例，默认情况下，该解决方案内核适配的是PWM0和PWM1\)：
 
 1.  执行menuconfig命令
 
     ```
-    $ cp arch/arm64/configs/ss928v100_defconfig .config
+    $ cp arch/arm64/configs/Hi3403V100_defconfig .config
     $ make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- menuconfig
     ```
 
@@ -3077,18 +3077,18 @@ Device Drivers  --->
 
 4.  编译ATF镜像
 
-    进入opensource/arm-trusted-firmware/trusted-firmware-a-2.2目录，执行mk\_ss928v100.sh脚本：
+    进入opensource/arm-trusted-firmware/trusted-firmware-a-2.2目录，执行mk\_Hi3403V100.sh脚本：
 
     ```
-    $ chmod 777 mk_ss928v100.sh
-    $ ./mk_ss928v100.sh
+    $ chmod 777 mk_Hi3403V100.sh
+    $ ./mk_Hi3403V100.sh
     ```
 
-    在opensource/arm-trusted-firmware/trusted-firmware-a-2.2/build/ss928v100/release目录下，生成的fip.bin文件就是ATF+kernel的镜像。
+    在opensource/arm-trusted-firmware/trusted-firmware-a-2.2/build/Hi3403V100/release目录下，生成的fip.bin文件就是ATF+kernel的镜像。
 
 ### 内核PWM驱动使用方法<a name="ZH-CN_TOPIC_0000002480063678"></a>
 
-内核已经开启PWM驱动情况下，使用PWM的方法如下（以SS928V100为例）：
+内核已经开启PWM驱动情况下，使用PWM的方法如下（以Hi3403V100为例）：
 
 方法1：使用echo，cat命令的方式（以PWM0的通道0为例）
 
@@ -3262,7 +3262,7 @@ Device Drivers  --->
 
 ```
 
-此外，还需要将 arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件中 edmacv310\_0 的“status”的值配置为okay；
+此外，还需要将 arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts文件中 edmacv310\_0 的“status”的值配置为okay；
 
 ```
  &edmacv310_0 {
@@ -5321,7 +5321,7 @@ struct spi_ioc_transfer {
 
 ### 功能介绍<a name="ZH-CN_TOPIC_0000002512103547"></a>
 
-UART是一个异步串行的通信接口。UART模块实现SS928V100与其连接的其它UART设备\(串行终端，MCU等\)收发通信。
+UART是一个异步串行的通信接口。UART模块实现Hi3403V100与其连接的其它UART设备\(串行终端，MCU等\)收发通信。
 
 ### 模块编译<a name="ZH-CN_TOPIC_0000002479903706"></a>
 

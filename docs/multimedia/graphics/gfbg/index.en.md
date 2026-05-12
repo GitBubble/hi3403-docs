@@ -10,7 +10,7 @@ Graphic Framebuffer Group (hereinafter referred to as GFBG) is a module provided
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
 >-   Unless otherwise specified, SS528V100, SS625V100, SS524V100, SS522V101, and SS626V100 are completely identical.
->-   Unless otherwise specified, SS927V100 and SS928V100, SS522V100 and SS524V100 have completely identical content.
+>-   Unless otherwise specified, Hi3519AV200 and Hi3403V100, SS522V100 and SS524V100 have completely identical content.
 
 **Product Version<a name="section155mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row169mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p171mcpsimp"><a name="p171mcpsimp"></a><a name="p171mcpsimp"></a>SS928</p>
+<tbody><tr id="row169mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p171mcpsimp"><a name="p171mcpsimp"></a><a name="p171mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p173mcpsimp"><a name="p173mcpsimp"></a><a name="p173mcpsimp"></a>V100</p>
 </td>
@@ -58,7 +58,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9879931201010"><a name="p9879931201010"></a><a name="p9879931201010"></a>V100</p>
 </td>
 </tr>
-<tr id="row621517317519"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row621517317519"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -178,8 +178,8 @@ In Linux Framebuffer, a sub-device number corresponds to a graphics card. In GFB
 >-   For SS528V100/SS625V100/SS524V100, GFBG can manage up to 4 overlay graphics layers: graphics layer 0 to graphics layer 3 (G0–G3), with corresponding device files /dev/fb0 to /dev/fb3 respectively.
 >    SS528V100/SS625V100/SS524V100 support graphics layer overlay on 3 output devices: high-definition output device 0 (abbreviated as HD0), high-definition output device 1 (abbreviated as HD1), and standard-definition output device 0 (abbreviated as SD0). The relationship between the 4 graphics layers and these 3 output devices is shown in [Table 1](#_Toc363726513).
 >-   For SS522V101, GFBG can manage up to 3 overlay graphics layers: graphics layers 0, 2, 3 (G0, G2, G3), with corresponding device files /dev/fb0, /dev/fb1, /dev/fb2 respectively. SS522V101 supports graphics layer overlay on 2 output devices: high-definition output device 0 (abbreviated as HD0) and standard-definition output device 0 (abbreviated as SD0). The relationship between the 3 graphics layers and the output devices is shown in [Table 2](#_Ref49523582).
->-   For SS928V100, GFBG can manage up to 3 overlay graphics layers: graphics layers 0, 1, 3 (G0, G1, G3), with corresponding device files /dev/fb0, /dev/fb1, /dev/fb2 respectively.
->    SS928V100 supports graphics layer overlay on 2 output devices: high-definition output device 0 (abbreviated as HD0) and standard-definition output device 0 (abbreviated as SD0). The relationship between the 3 graphics layers and the output devices is shown in [Table 3](#_Ref49523598).
+>-   For Hi3403V100, GFBG can manage up to 3 overlay graphics layers: graphics layers 0, 1, 3 (G0, G1, G3), with corresponding device files /dev/fb0, /dev/fb1, /dev/fb2 respectively.
+>    Hi3403V100 supports graphics layer overlay on 2 output devices: high-definition output device 0 (abbreviated as HD0) and standard-definition output device 0 (abbreviated as SD0). The relationship between the 3 graphics layers and the output devices is shown in [Table 3](#_Ref49523598).
 >-   For SS626V100, GFBG can manage up to 5 overlay graphics layers: graphics layers 0, 1, 2, 3, 4 (G0, G1, G2, G3, G4), with corresponding device files /dev/fb0 to /dev/fb4 respectively. The relationship between the 5 graphics layers and the 3 output devices is shown in [Table 4](#_Ref57989656).
 
 **Table 1**  Correspondence between FB device files, graphics layers, and output devices
@@ -489,7 +489,7 @@ Through module load parameters, GFBG can be controlled to manage one or multiple
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p410mcpsimp"><a name="p410mcpsimp"></a><a name="p410mcpsimp"></a>Not supported</p>
 </td>
 </tr>
-<tr id="row411mcpsimp"><td class="cellrowborder" rowspan="3" valign="top" width="17.17171717171717%" headers="mcps1.1.7.1.1 "><p id="p413mcpsimp"><a name="p413mcpsimp"></a><a name="p413mcpsimp"></a>SS928V100</p>
+<tr id="row411mcpsimp"><td class="cellrowborder" rowspan="3" valign="top" width="17.17171717171717%" headers="mcps1.1.7.1.1 "><p id="p413mcpsimp"><a name="p413mcpsimp"></a><a name="p413mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.09100910091009%" headers="mcps1.1.7.1.2 "><p id="p415mcpsimp"><a name="p415mcpsimp"></a><a name="p415mcpsimp"></a>G0</p>
 </td>
@@ -718,7 +718,7 @@ For example: In 2 buffer mode with a resolution of 1280×720 and ARGB8888 format
 This parameter determines whether to enable the soft cursor function. When its value is "off", the soft cursor function is disabled (i.e., the hardware cursor function is available); otherwise, the soft cursor function is enabled. Once the module is loaded, whether the soft cursor function is enabled is determined.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->SS528V100/SS625V100/SS524V100/SS522V101/SS928V100 do not support the soft cursor.
+>SS528V100/SS625V100/SS524V100/SS522V101/Hi3403V100 do not support the soft cursor.
 
 ### Parameter g_layer_mmz_names<a name="ZH-CN_TOPIC_0000002441655021"></a>
 
@@ -739,7 +739,7 @@ If the GFBG driver is loaded without any parameters, the system's default config
 
     video="gfbg:vram0_size: 32400, vram1_size: 16200, vram2_size:256, vram3_size: 4052 "
 
--   SS928V100
+-   Hi3403V100
 
     video="gfbg:vram0_size: 32400, vram1_size: 16200, vram3_size: 3240 "
 

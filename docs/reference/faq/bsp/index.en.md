@@ -11,7 +11,7 @@ This document describes solutions to issues encountered when using the BSP.
 The device models mentioned in this document only represent test results and do not provide compatibility guarantees.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->Using SS928V100 as an example, unless otherwise specified, the content for SS927V100 and SS928V100, and SS522V100 and SS524V100, is identical.
+>Using Hi3403V100 as an example, unless otherwise specified, the content for Hi3519AV200 and Hi3403V100, and SS522V100 and SS524V100, is identical.
 
 **Product Version<a name="section837mcpsimp"></a>**
 
@@ -29,7 +29,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p855mcpsimp"><a name="p855mcpsimp"></a><a name="p855mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row619163515513"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1519183535516"><a name="p1519183535516"></a><a name="p1519183535516"></a>SS928</p>
+<tr id="row619163515513"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1519183535516"><a name="p1519183535516"></a><a name="p1519183535516"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p2019153565514"><a name="p2019153565514"></a><a name="p2019153565514"></a>V100</p>
 </td>
@@ -54,7 +54,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1899794724715"><a name="p1899794724715"></a><a name="p1899794724715"></a>V100</p>
 </td>
 </tr>
-<tr id="row171848431118"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>SS927</p>
+<tr id="row171848431118"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1744691541216"><a name="p1744691541216"></a><a name="p1744691541216"></a>V100</p>
 </td>
@@ -715,7 +715,7 @@ The PCIe module's reference clock has two main sources: one from inside the chip
 
 PCIe device BAR addresses are allocated during system boot and stored in the PCIe configuration space. According to the chip manual's "Peripherals -> PCI Express" chapter, the device's configuration space can be accessed through configuration transactions. The configuration space at offsets 0x10, 0x14, and 0x18 contains the address information for BAR0, BAR1, and BAR2 respectively, and so on.
 
-Using SS928V100 as an example, accessing the configuration space of the first device connected under PCIe controller 0:
+Using Hi3403V100 as an example, accessing the configuration space of the first device connected under PCIe controller 0:
 
 ```
 bspmd.l 0x20100000
@@ -743,7 +743,7 @@ For products with two PCIe controllers, such as SS626V100, the configuration spa
 
 ## How to View PCIe Address Mapping Information<a name="ZH-CN_TOPIC_0000002457879417"></a>
 
-Our PCIe address mapping information is stored in the ATU register set in the PCIe configuration space. Each register set has input and output directions. The selection of register set and direction is controlled by the Viewport register (at PCIe configuration space offset 0x900). Using the SS928V100 master-slave cascading as an example, this section describes how to use this register set:
+Our PCIe address mapping information is stored in the ATU register set in the PCIe configuration space. Each register set has input and output directions. The selection of register set and direction is controlled by the Viewport register (at PCIe configuration space offset 0x900). Using the Hi3403V100 master-slave cascading as an example, this section describes how to use this register set:
 
 ```
 bspmm 0x20100900 0x80000000
@@ -1055,7 +1055,7 @@ Therefore, the Flash devices listed below are cases where IDs are identical but 
 
 Starting from the Linux 3.18 kernel, the SPI Nor Flash driver adapts to the SPI Nor standard driver framework, and the SoC and board-level topology is uniformly described in DTS (Device Tree) files. By default, only a single SPI Nor Flash is supported.
 
-Using SS928V100 as an example, to add another SPI Nor Flash, add an SPI Nor device node in the board-level DTS file. Find the sfc node in the arch/arm64/boot/dts/ss928v100-demb.dts file:
+Using Hi3403V100 as an example, to add another SPI Nor Flash, add an SPI Nor device node in the board-level DTS file. Find the sfc node in the arch/arm64/boot/dts/Hi3403V100-demb.dts file:
 
 ![](figures/zh-cn_image_0000002424200754.png)
 

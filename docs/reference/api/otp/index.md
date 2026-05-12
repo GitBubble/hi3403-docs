@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OTP API 
 OTP是一种非易失性存储器。其主要特性是对应存储空间的位内容由0写为1后，或根据锁机制，锁定对应的区域后，就不能再修改。OTP主要用于保存一些特定的数据，如用于CIPHER模块的root key，安全使能标志等信息。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->未有特殊说明，SS528V100与SS625V100、SS524V100与SS522V100、SS927V100与SS928V100内容一致。
+>未有特殊说明，SS528V100与SS625V100、SS524V100与SS522V100、Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section286mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ OTP是一种非易失性存储器。其主要特性是对应存储空间的位�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row300mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p302mcpsimp"><a name="p302mcpsimp"></a><a name="p302mcpsimp"></a>SS928</p>
+<tbody><tr id="row300mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p302mcpsimp"><a name="p302mcpsimp"></a><a name="p302mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p304mcpsimp"><a name="p304mcpsimp"></a><a name="p304mcpsimp"></a>V100</p>
 </td>
@@ -52,7 +52,7 @@ OTP是一种非易失性存储器。其主要特性是对应存储空间的位�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p647779132814"><a name="p647779132814"></a><a name="p647779132814"></a>V100</p>
 </td>
 </tr>
-<tr id="row766620218412"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row766620218412"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -141,8 +141,8 @@ OTP模块提供驱动一次性编程的MPI接口，实现CIPHER模块root key烧
 **图 1**  SS528V100、SS524V100 OTP中密钥使用机制<a name="fig46402535464"></a>  
 ![](figures/SS528V100-SS524V100-OTP中密钥使用机制.png "SS528V100-SS524V100-OTP中密钥使用机制")
 
-**图 2**  SS928V100、SS626V100 OTP中密钥使用机制<a name="fig12487132617471"></a>  
-![](figures/SS928V100-SS626V100-OTP中密钥使用机制.png "SS928V100-SS626V100-OTP中密钥使用机制")
+**图 2**  Hi3403V100、SS626V100 OTP中密钥使用机制<a name="fig12487132617471"></a>  
+![](figures/Hi3403V100-SS626V100-OTP中密钥使用机制.png "Hi3403V100-SS626V100-OTP中密钥使用机制")
 ## OTP使用注意事项<a name="ZH-CN_TOPIC_0000002424349942"></a>
 
 OTP部署在不同场景下时，使用方式可能会有所不同。

@@ -2,7 +2,7 @@
 
 ### 2.3.1. fruit_identify Program Introduction
 
-* The fruit_identify sample is developed based on the SS928V100 platform, using the EulerPi kit as an example. The fruit_identify sample captures images via a USB camera and feeds them into a fruit detection model for inference. When a specific fruit is detected, the fruit type and confidence score are displayed on the external display in real-time, the fruit's location is framed, and the recognized fruit category is played back through headphones.
+* The fruit_identify sample is developed based on the Hi3403V100 platform, using the EulerPi kit as an example. The fruit_identify sample captures images via a USB camera and feeds them into a fruit detection model for inference. When a specific fruit is detected, the fruit type and confidence score are displayed on the external display in real-time, the fruit's location is framed, and the recognized fruit category is played back through headphones.
 * The fruit_identify case primarily uses the PyTorch framework, based on the YoloV8 network, using a self-annotated fruit dataset to train a fruit classification model.
 
 ### 2.3.2. Directory Structure

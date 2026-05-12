@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP APIå
 This document mainly introduces the SVP (Smart Vision Platform) API, data types, and Proc debug information. The SVP platform includes the MAU (Matrix Arithmetic Unit), DPU_RECT, DPU_MATCH, and DSP modules.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->-   This document uses SS928V100 as an example. Unless otherwise specified, SS927V100 is consistent with SS928V100.
+>-   This document uses Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 is consistent with Hi3403V100.
 >-   Some modules (like DSP) may not be available on all platform variants.
 
 **Product Version**
@@ -18,8 +18,8 @@ The product version corresponding to this document is as follows.
 
 | Product Name | Product Version |
 |---|---|
-| SS928 | V100 |
-| SS927 | V100 |
+| Hi3403V100 | V100 |
+| Hi3519AV200 | V100 |
 
 **Target Audience**
 

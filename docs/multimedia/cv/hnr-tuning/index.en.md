@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR è°ƒä
 This guide is written for image quality engineers using HNR. It provides solutions and assistance for issues encountered during development.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference. Unless otherwise stated, SS927V100 and SS928V100 are identical.
+>This document uses Hi3403V100 as the reference. Unless otherwise stated, Hi3519AV200 and Hi3403V100 are identical.
 
 **Product Versions<a name="section466mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row480mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p482mcpsimp"><a name="p482mcpsimp"></a><a name="p482mcpsimp"></a>SS928</p>
+<tbody><tr id="row480mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p482mcpsimp"><a name="p482mcpsimp"></a><a name="p482mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p484mcpsimp"><a name="p484mcpsimp"></a><a name="p484mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row12306122581311"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16276429191319"><a name="p16276429191319"></a><a name="p16276429191319"></a>SS927</p>
+<tr id="row12306122581311"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16276429191319"><a name="p16276429191319"></a><a name="p16276429191319"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p627612293139"><a name="p627612293139"></a><a name="p627612293139"></a>V100</p>
 </td>

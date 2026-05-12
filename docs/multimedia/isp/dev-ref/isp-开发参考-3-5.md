@@ -924,7 +924,7 @@ td_s32 ss_mpi_isp_set_hdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_hdr_exp
 
 【注意】
 
-SS928V100不支持HDR模式。
+Hi3403V100不支持HDR模式。
 
 【举例】
 
@@ -1003,7 +1003,7 @@ td_s32 ss_mpi_isp_get_hdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_hdr_exposure_
 
 【注意】
 
-SS928V100不支持HDR模式。
+Hi3403V100不支持HDR模式。
 
 【举例】
 
@@ -9473,7 +9473,7 @@ typedef struct {
 
 -   bypass 为TD\_TRUE时，WB的其它参数设置不生效，RGB通道增益系数固定为0x100。
 -   awb\_run\_interval默认为2，表示每2帧运行一次AWB。客户可根据业务需求降低AWB的运行频率。
--   SS928V100仅支持GW AWB。
+-   Hi3403V100仅支持GW AWB。
 
 【相关数据类型及接口】
 
@@ -10028,7 +10028,7 @@ typedef struct {
 -   混合光源检测仅在室内场景打开，AWB判断为室外场景后，逐渐减弱混合光源检测的强度，以避免饱和度降低。
 -   混合光源概率说明：主光源和次要光源的亮度、色温差等条件影响混合光源的概率计算。检测到场景内存在主光源和次要光源两种光源后，主光源和次要光源的色温差异越大、亮度差异越小，混合光源概率越大。
 -   ls0\_area和ls1\_area之和有可能大于白平衡分区个数，原因是部分区域可能受到两种光源的影响，算法不将重叠区域严格识别，会叠加到主光源、次要光源。
--   SS928V100不支持bv值输出，查询结果固定为0。
+-   Hi3403V100不支持bv值输出，查询结果固定为0。
 -   first\_stable\_time是AWB首次收敛稳定后所对应的帧数，非0表示AWB已稳定。ISP系统启动后，1-64帧AWB固定每帧执行一次，以加速AWB收敛。
 
 【相关数据类型及接口】

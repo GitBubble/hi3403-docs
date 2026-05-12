@@ -1,12 +1,12 @@
 ---
 title: Ubuntu on Hi3403V100
-description: Hi3403V100 (SS928V100) Ubuntu 22.04 ARM64 — software stack, feature matrix, and build entry point
+description: Hi3403V100 (Hi3403V100) Ubuntu 22.04 ARM64 — software stack, feature matrix, and build entry point
 ---
 
 # Ubuntu on Hi3403V100
 
 This section explains how to run **Ubuntu 22.04 ARM64** on a
-Hi3403V100 (SS928V100) board, end-to-end from source to image.
+Hi3403V100 (Hi3403V100) board, end-to-end from source to image.
 
 If you just want to flash a card and boot, jump straight to the
 [**:material-arrow-right: Ubuntu porting & build guide**](porting.md).
@@ -36,7 +36,7 @@ flowchart TB
     E --> F[Linux 6.6.86 + HiSilicon BSP]
     F --> G[ATF BL31]
     G --> H[U-Boot 2020.01]
-    H --> I[SS928V100 SoC]
+    H --> I[Hi3403V100 SoC]
 ```
 
 | Layer | Version | Source |
@@ -111,13 +111,13 @@ Key locations inside the image produced by `hi3403-build`:
 | `/boot/Image.gz` | Kernel (board's `/boot` partition, loaded by U-Boot) |
 | `/boot/*.dtb` | Device tree (U-Boot picks one at boot) |
 | `/ko/*.ko` | MPP kernel modules (8) |
-| `/ko/load_ss928v100_ubuntu` | MPP loader script |
+| `/ko/load_Hi3403V100_ubuntu` | MPP loader script |
 | `/usr/lib/lib*.so*` | MPP user-space shared libraries (~89) |
 | `/etc/init.d/topeet-start.sh` | Boot-time script (insmod, start ISP, …) |
 | `/etc/systemd/system/topeet-start.service` | Wires the init script to systemd |
 
 MPP **sample code lives in the SDK** (not on the board):
-`pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/` — the exact
+`pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/` — the exact
 sample names (`hnr` / `snap` / `dis` / `composite`, …) depend on your
 SDK version. Cross-build on the host, then `scp` to the board.
 
@@ -136,5 +136,5 @@ SDK version. Cross-build on the host, then `scp` to the board.
 
 - Build system source: [**GitHub · GitBubble/hi3403-build**](https://github.com/GitBubble/hi3403-build)
 - HiSilicon SDK upstream: [Gitee · HiSpark/pegasus](https://gitee.com/HiSpark/pegasus)
-- Vendor reference: Topeet "SS928V100 creating Ubuntu rootfs" PDF
+- Vendor reference: Topeet "Hi3403V100 creating Ubuntu rootfs" PDF
   (lives at SDK `vendor/topeet/docs/`)

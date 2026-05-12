@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HDMI 开
 解决方案的内置HDMI（High-Definition MultiMedia Interface）模块支持视频的HDMI输出。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文未有特殊说明，SS625V100、SS522V101、SS522V100与SS524V100完全一致；SS927V100与SS928V100内容完全一致。
+>本文未有特殊说明，SS625V100、SS522V101、SS522V100与SS524V100完全一致；Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section5496mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HDMI 开
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5510mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5512mcpsimp"><a name="p5512mcpsimp"></a><a name="p5512mcpsimp"></a>SS928</p>
+<tbody><tr id="row5510mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5512mcpsimp"><a name="p5512mcpsimp"></a><a name="p5512mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5514mcpsimp"><a name="p5514mcpsimp"></a><a name="p5514mcpsimp"></a>V100</p>
 </td>
@@ -57,7 +57,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HDMI 开
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p46095339816"><a name="p46095339816"></a><a name="p46095339816"></a>V100</p>
 </td>
 </tr>
-<tr id="row153105414511"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row153105414511"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -179,7 +179,7 @@ HDMI的音频不能单独输出，必须依赖于视频输出，且HDMI的时钟
 <td class="cellrowborder" valign="top" width="52%" headers="mcps1.2.3.1.2 "><p id="p3943mcpsimp"><a name="p3943mcpsimp"></a><a name="p3943mcpsimp"></a>HDMI1.4</p>
 </td>
 </tr>
-<tr id="row3944mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.3.1.1 "><p id="p3946mcpsimp"><a name="p3946mcpsimp"></a><a name="p3946mcpsimp"></a>SS928V100</p>
+<tr id="row3944mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.3.1.1 "><p id="p3946mcpsimp"><a name="p3946mcpsimp"></a><a name="p3946mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="52%" headers="mcps1.2.3.1.2 "><p id="p3948mcpsimp"><a name="p3948mcpsimp"></a><a name="p3948mcpsimp"></a>HDMI2.0</p>
 </td>
@@ -2001,16 +2001,16 @@ td_s32 ss_mpi_hdmi_set_mod_param(ot_hdmi_id hdmi, const ot_hdmi_mod_param *mod_p
     -   SS625V100默认3.5inch
     -   SS524V100默认3.0inch
     -   SS522V101默认3.0inch
-    -   SS928V100默认2.0inch
+    -   Hi3403V100默认2.0inch
     -   SS626V100默认2.0inch
 
 -   解决方案默认的指标参数与另外的9套调试参数里相同尺寸的参数不是同一套，也就是说每个解决方案都有总共10套指标参数\(1套默认参数加9套调试参数\)。
 -   可以通过将trace\_len设置成OT\_HDMI\_TRACE\_DEFAULT切回到解决方案的默认指标参数配置。
--   当前除了SS528V100、SS625V100、SS524V100、SS522V101、SS928V100、SS626V100之外的其他解决方案都不支持走线长度设置，接口调用后不会返回报错但是会将对应的配置值强制设置成对应的默认走线长度\(OT\_HDMI\_TRACE\_DEFAULT\)。
+-   当前除了SS528V100、SS625V100、SS524V100、SS522V101、Hi3403V100、SS626V100之外的其他解决方案都不支持走线长度设置，接口调用后不会返回报错但是会将对应的配置值强制设置成对应的默认走线长度\(OT\_HDMI\_TRACE\_DEFAULT\)。
 -   如果用户有开机画面场景，且用户使用此接口自行配置了HDMI硬件指标参数，请在开机画面场景下使用相关的接口设置相同的HDMI硬件指标参数。
 -   展频开关驱动默认是不开的，打开展频会对兼容性有影响请谨慎设置。
--   当前除了SS528V100、SS625V100、SS524V100、SS522V101、SS928V100、SS626V100之外的其他解决方案都不支持展频开关设置，接口调用后不会返回报错但是会将对应的配置值强制设置成对应的默认值\(关展频\)。
--   SS928V100开机画面场景已支持走线长度设置，若不设置则默认是与2.0 inch对应的配置。
+-   当前除了SS528V100、SS625V100、SS524V100、SS522V101、Hi3403V100、SS626V100之外的其他解决方案都不支持展频开关设置，接口调用后不会返回报错但是会将对应的配置值强制设置成对应的默认值\(关展频\)。
+-   Hi3403V100开机画面场景已支持走线长度设置，若不设置则默认是与2.0 inch对应的配置。
 
 【举例】
 
@@ -4711,8 +4711,8 @@ typedef struct {
 
 【注意事项】
 
--   HDMI指标参数中上升沿参数在SS928V100、SS626V100上不建议设置，如果进行设置不会返回失败，但是设置不生效。
--   SS928V100、SS626V100的指标参数取值范围有变化。
+-   HDMI指标参数中上升沿参数在Hi3403V100、SS626V100上不建议设置，如果进行设置不会返回失败，但是设置不生效。
+-   Hi3403V100、SS626V100的指标参数取值范围有变化。
     -   辅助区电流  取值范围：\[0, 63\]
     -   主区电流  取值范围：\(0, 63\]
 

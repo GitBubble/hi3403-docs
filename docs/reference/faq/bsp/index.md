@@ -11,7 +11,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/BSP FAQ/
 本文档中涉及的器件型号，仅表示测试结果，不提供兼容性承诺。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->以SS928V100为例，未有特殊说明，SS927V100与SS928V100，SS522V100与SS524V100内容完全一致。
+>以Hi3403V100为例，未有特殊说明，Hi3519AV200与Hi3403V100，SS522V100与SS524V100内容完全一致。
 
 **产品版本<a name="section837mcpsimp"></a>**
 
@@ -29,7 +29,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/BSP FAQ/
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p855mcpsimp"><a name="p855mcpsimp"></a><a name="p855mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row619163515513"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1519183535516"><a name="p1519183535516"></a><a name="p1519183535516"></a>SS928</p>
+<tr id="row619163515513"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1519183535516"><a name="p1519183535516"></a><a name="p1519183535516"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p2019153565514"><a name="p2019153565514"></a><a name="p2019153565514"></a>V100</p>
 </td>
@@ -54,7 +54,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/BSP FAQ/
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1899794724715"><a name="p1899794724715"></a><a name="p1899794724715"></a>V100</p>
 </td>
 </tr>
-<tr id="row171848431118"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>SS927</p>
+<tr id="row171848431118"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1744691541216"><a name="p1744691541216"></a><a name="p1744691541216"></a>V100</p>
 </td>
@@ -735,7 +735,7 @@ PCIe模块的参考时钟，主要有两个来源：一个是来自芯片内部�
 
 PCIe设备BAR地址在系统启动时分配，其信息存放在PCIe 配置空间中。根据芯片手册“外围设备 -\> PCI Express”章节，可通过配置事务来访问设备的配置空间。配置空间中偏移地址 0x10、0x14、0x18中分别存放了BAR0、BAR1、BAR2的地址信息，以此类推。
 
-以SS928V100为例，访问PCIe控制器0下面接的第一个设备的配置空间：
+以Hi3403V100为例，访问PCIe控制器0下面接的第一个设备的配置空间：
 
 ```
 bspmd.l 0x20100000
@@ -763,7 +763,7 @@ bspmd.l 0x20100000
 
 ## 如何查看PCIe地址映射信息<a name="ZH-CN_TOPIC_0000002457879417"></a>
 
-我们的PCIe地址映射信息，保存在PCIe配置空间的ATU寄存器组中。每组寄存器有输入和输出两个方向。寄存器组和方向的选择，都通过Viewport 寄存器控制\( PCIe 配置空间偏移量为0x900\)。下面以SS928V100主从片级联为例，说明如何使用该寄存器组：
+我们的PCIe地址映射信息，保存在PCIe配置空间的ATU寄存器组中。每组寄存器有输入和输出两个方向。寄存器组和方向的选择，都通过Viewport 寄存器控制\( PCIe 配置空间偏移量为0x900\)。下面以Hi3403V100主从片级联为例，说明如何使用该寄存器组：
 
 ```
 bspmm 0x20100900 0x80000000
@@ -1076,7 +1076,7 @@ nandwrite是根据镜像文件大小逐页写数据的，并且写page时，会�
 
 从linux 3.18内核开始，SPI Nor Flash驱动适配SPI Nor标准驱动框架，且Soc和board级的拓扑结构统一在DTS（设备树）文件上进行描述。默认都只支持单片SPI Nor Flash。
 
-以SS928V100为例，若想要再增加一个SPI Nor Flash，就要在board级DTS文件中增加一个SPI Nor器件结点。在arch/arm64/boot/dts/ss928v100-demb.dts文件中找到sfc结点：
+以Hi3403V100为例，若想要再增加一个SPI Nor Flash，就要在board级DTS文件中增加一个SPI Nor器件结点。在arch/arm64/boot/dts/Hi3403V100-demb.dts文件中找到sfc结点：
 
 ![](figures/zh-cn_image_0000002424200754.png)
 

@@ -1,15 +1,15 @@
 ---
 title: "前言"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 U-boot 移植应用开发指南/SS928V100╱SS927V100 U-boot 移植应用开发指南.md
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100╱Hi3519AV200 U-boot 移植应用开发指南/Hi3403V100╱Hi3519AV200 U-boot 移植应用开发指南.md
 ---
 
 # 前言
 **概述<a name="section143mcpsimp"></a>**
 
-本文档主要介绍在SS928V100单板上如何移植和烧写U-boot（SS928V100单板的Bootloader）的相关操作及如何使用ARM调试工具。
+本文档主要介绍在Hi3403V100单板上如何移植和烧写U-boot（Hi3403V100单板的Bootloader）的相关操作及如何使用ARM调试工具。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section146mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 </th>
 </tr>
 </thead>
-<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>SS928</p>
+<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row722513515541"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p109711853135416"><a name="p109711853135416"></a><a name="p109711853135416"></a>SS927</p>
+<tr id="row722513515541"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p109711853135416"><a name="p109711853135416"></a><a name="p109711853135416"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p179716539542"><a name="p179716539542"></a><a name="p179716539542"></a>V100</p>
 </td>
@@ -68,7 +68,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 # 概述
 ## 概述<a name="ZH-CN_TOPIC_0000002457834693"></a>
 
-SS928V100单板的Bootloader采用U-boot。当选用的外围芯片的型号与单板上外围芯片的型号不同时，需要修改U-boot配置文件，主要包括存储器配置、管脚复用。
+Hi3403V100单板的Bootloader采用U-boot。当选用的外围芯片的型号与单板上外围芯片的型号不同时，需要修改U-boot配置文件，主要包括存储器配置、管脚复用。
 
 ## U-boot目录结构<a name="ZH-CN_TOPIC_0000002457874789"></a>
 
@@ -93,9 +93,9 @@ U-boot的主要目录结构如[表1](#_Ref138244663)所示，详细目录说明�
 <td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p221mcpsimp"><a name="p221mcpsimp"></a><a name="p221mcpsimp"></a>各种单板的相关代码，主要包括存储器驱动等。</p>
 </td>
 </tr>
-<tr id="row222mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p224mcpsimp"><a name="p224mcpsimp"></a><a name="p224mcpsimp"></a>board/vendor/ss928v100</p>
+<tr id="row222mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p224mcpsimp"><a name="p224mcpsimp"></a><a name="p224mcpsimp"></a>board/vendor/Hi3403V100</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p226mcpsimp"><a name="p226mcpsimp"></a><a name="p226mcpsimp"></a>SS928V100单板相关代码。</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p226mcpsimp"><a name="p226mcpsimp"></a><a name="p226mcpsimp"></a>Hi3403V100单板相关代码。</p>
 </td>
 </tr>
 <tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a>arch/xxx/lib</p>
@@ -164,7 +164,7 @@ U-boot的主要目录结构如[表1](#_Ref138244663)所示，详细目录说明�
 # 移植U-boot
 ## U-boot硬件环境<a name="ZH-CN_TOPIC_0000002424355914"></a>
 
-SS928V100 DMEB板上的外围设备包括DDR SDRAM、eMMC、SPI Nor Flash和SPI-NAND Flash 以及并口 NAND Flash。
+Hi3403V100 DMEB板上的外围设备包括DDR SDRAM、eMMC、SPI Nor Flash和SPI-NAND Flash 以及并口 NAND Flash。
 
 ## 编译U-boot<a name="ZH-CN_TOPIC_0000002457834689"></a>
 
@@ -173,7 +173,7 @@ SS928V100 DMEB板上的外围设备包括DDR SDRAM、eMMC、SPI Nor Flash和SPI-
 1.  拷贝配置文件
 
     ```
-    cp configs/ss928v100_defconfig .config
+    cp configs/Hi3403V100_defconfig .config
     ```
 
 2.  配置编译环境
@@ -214,14 +214,14 @@ U-boot镜像生成步骤如下：
     make ARCH=arm CROSS_COMPILE=aarch64-v01c01-linux-gnu- u-boot-z.bin
     ```
 
-    生成的  u-boot-ss928v100.bin  就是能够在单板上运行的uboot镜像。
+    生成的  u-boot-Hi3403V100.bin  就是能够在单板上运行的uboot镜像。
 
 # 烧写U-boot
 ## 概述<a name="ZH-CN_TOPIC_0000002457834677"></a>
 
 如果待移植单板中已有U-boot运行，则可以通过串口或网口与服务器连接，直接更新U-boot。
 
-如果是第一次烧写，则需要使用ToolPlatform或者DS-5工具进行烧写。由于芯片特性，在使用DS-5时必须要对存储器和芯片进行初始化。在SS928V100 SDK中提供了相应的初始化脚本，当选用了不同的外围芯片，则需要重新配置初始化脚本才能使用。
+如果是第一次烧写，则需要使用ToolPlatform或者DS-5工具进行烧写。由于芯片特性，在使用DS-5时必须要对存储器和芯片进行初始化。在Hi3403V100 SDK中提供了相应的初始化脚本，当选用了不同的外围芯片，则需要重新配置初始化脚本才能使用。
 
 ## 通过bootrom工具烧写U-boot<a name="ZH-CN_TOPIC_0000002424355918"></a>
 
@@ -240,14 +240,14 @@ SPI-Nor Flash烧写方法如下：
     ```
     # mw.b <ddr_addr> ff 0x100000      /* 对内存初始化*/
      
-    # tftp <ddr_addr> u-boot-ss928v100.bin     /*U-boot下载到内存*/
+    # tftp <ddr_addr> u-boot-Hi3403V100.bin     /*U-boot下载到内存*/
     # sf probe 0                      /*探测并初始化SPI-Nor flash*/
     # sf erase 0x0 0x100000              /*擦除 1M大小*/
     # sf write <ddr_addr> 0x0 0x100000  /*从内存写入SPI-Nor Flash*/
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >SS928V100平台的<ddr\_addr\>可用地址0x42000000。
+    >Hi3403V100平台的<ddr\_addr\>可用地址0x42000000。
 
 2.  上述步骤操作完成后，重启系统可以看到U-boot烧写成功。
 
@@ -263,12 +263,12 @@ SPI-Nand Flash烧写方法如下：
     ```
     # nand erase 0 0x100000              /*擦除 1M大小*/
     # mw.b <ddr_addr> 0xff 0x100000         /* 对内存初始化*/
-    # tftp <ddr_addr> u-boot-ss928v100.bin     /*U-boot下载到内存*/
+    # tftp <ddr_addr> u-boot-Hi3403V100.bin     /*U-boot下载到内存*/
     # nand write <ddr_addr> 0 0x100000 /*从内存写入NAND Flash*/
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >SS928V100平台的<ddr\_addr\>可用地址0x42000000。
+    >Hi3403V100平台的<ddr\_addr\>可用地址0x42000000。
 
 2.  重启系统可以看到U-boot烧写成功。
 
@@ -280,12 +280,12 @@ eMMC烧写方法如下：
 
     ```
     # mw.b <ddr_addr> 0xff 0x80000               /* 对内存初始化*/
-    # tftp <ddr_addr> u-boot-ss928v100.bin    /*U-boot下载到内存*/
+    # tftp <ddr_addr> u-boot-Hi3403V100.bin    /*U-boot下载到内存*/
     # mmc write 0 <ddr_addr> 0 0x400   /*从内存写入eMMC*/
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >SS928V100平台的<ddr\_addr\>可用地址0x42000000。
+    >Hi3403V100平台的<ddr\_addr\>可用地址0x42000000。
     >mmc write命令说明：
     >格式：mmc write  <device num\>  addr  blk\#  cnt
     >参数：
@@ -465,7 +465,7 @@ U-Boot启动后，通过串口将内存中的U-Boot映像写入启动介质中�
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->SS928V100平台的<ddr\_addr\>可用地址0x42000000。
+>Hi3403V100平台的<ddr\_addr\>可用地址0x42000000。
 
 # 附录
 ## u-boot命令说明<a name="ZH-CN_TOPIC_0000002424355890"></a>
@@ -529,7 +529,7 @@ sf lock
     ![](figures/通过设置-level值锁定指定区域.png "通过设置-level值锁定指定区域")
 ### tftp命令的使用限制<a name="ZH-CN_TOPIC_0000002457834685"></a>
 
-uboot下include/configs/ss928v100.h文件中PHYS\_SDRAM\_1\_SIZE宏的大小定义限制了tftp命令的地址范围。默认发布包中，PHYS\_SDRAM\_1\_SIZE宏定义为0x20000000，即通过tftp命令只能把文件下载到ddr前512M的地址空间。
+uboot下include/configs/Hi3403V100.h文件中PHYS\_SDRAM\_1\_SIZE宏的大小定义限制了tftp命令的地址范围。默认发布包中，PHYS\_SDRAM\_1\_SIZE宏定义为0x20000000，即通过tftp命令只能把文件下载到ddr前512M的地址空间。
 
 tftp命令使用示例如下所示:
 

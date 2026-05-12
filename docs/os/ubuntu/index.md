@@ -1,11 +1,11 @@
 ---
 title: Ubuntu on Hi3403V100
-description: Hi3403V100 (SS928V100) Ubuntu 22.04 ARM64 概览 — 软件栈、特性矩阵与构建入口
+description: Hi3403V100 (Hi3403V100) Ubuntu 22.04 ARM64 概览 — 软件栈、特性矩阵与构建入口
 ---
 
 # Ubuntu on Hi3403V100
 
-本节介绍如何在 Hi3403V100 (SS928V100) 平台上运行 **Ubuntu 22.04 ARM64**，
+本节介绍如何在 Hi3403V100 (Hi3403V100) 平台上运行 **Ubuntu 22.04 ARM64**，
 并给出从源码到镜像的端到端构建路径。
 
 如果你只是想快速烧一张能跑的卡，请直接跳到
@@ -35,7 +35,7 @@ flowchart TB
     E --> F[Linux 6.6.86 + HiSilicon BSP]
     F --> G[ATF BL31]
     G --> H[U-Boot 2020.01]
-    H --> I[SS928V100 SoC]
+    H --> I[Hi3403V100 SoC]
 ```
 
 | 层 | 版本 | 来源 |
@@ -104,13 +104,13 @@ flowchart TB
 | `/boot/Image.gz` | 内核（板子的 `/boot` 分区，由 U-Boot 引导） |
 | `/boot/*.dtb` | 设备树（启动时由 U-Boot 选择） |
 | `/ko/*.ko` | MPP 内核模块（8 个） |
-| `/ko/load_ss928v100_ubuntu` | MPP 加载脚本 |
+| `/ko/load_Hi3403V100_ubuntu` | MPP 加载脚本 |
 | `/usr/lib/lib*.so*` | MPP 用户态共享库（约 89 个） |
 | `/etc/init.d/topeet-start.sh` | 开机执行脚本（加载 .ko、起 ISP 等） |
 | `/etc/systemd/system/topeet-start.service` | 把上面的 init 脚本接到 systemd |
 
 MPP **示例代码在 SDK 里**（不在板子上）：
-`pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/` —— 具体 sample 名
+`pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/` —— 具体 sample 名
 （hnr / snap / dis / composite 等）以你 SDK 版本为准。需要时在 PC 主机交叉编译，
 再 `scp` 到板子。
 
@@ -129,4 +129,4 @@ MPP **示例代码在 SDK 里**（不在板子上）：
 
 - 构建系统源码：[**GitHub · GitBubble/hi3403-build**](https://github.com/GitBubble/hi3403-build)
 - HiSilicon SDK 上游：[Gitee · HiSpark/pegasus](https://gitee.com/HiSpark/pegasus)
-- 厂商参考资料：迅为 (Topeet)《SS928V100 创建 Ubuntu rootfs》PDF（位于 SDK `vendor/topeet/docs/`）
+- 厂商参考资料：迅为 (Topeet)《Hi3403V100 创建 Ubuntu rootfs》PDF（位于 SDK `vendor/topeet/docs/`）

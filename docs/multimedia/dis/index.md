@@ -15,12 +15,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DIS 调�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row321619548461"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p621715416465"><a name="p621715416465"></a><a name="p621715416465"></a>SS928</p>
+<tbody><tr id="row321619548461"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p621715416465"><a name="p621715416465"></a><a name="p621715416465"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p1821711545468"><a name="p1821711545468"></a><a name="p1821711545468"></a>V100</p>
 </td>
 </tr>
-<tr id="row2452175520019"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p379219581304"><a name="p379219581304"></a><a name="p379219581304"></a>SS927</p>
+<tr id="row2452175520019"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p379219581304"><a name="p379219581304"></a><a name="p379219581304"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p187922584010"><a name="p187922584010"></a><a name="p187922584010"></a>V100</p>
 </td>
@@ -29,7 +29,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DIS 调�
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **读者对象<a name="section0132125444614"></a>**
 
@@ -147,7 +147,7 @@ DIS计算运动偏移有三种算法：
 
 ## DIS的实现<a name="ZH-CN_TOPIC_0000002457880761"></a>
 
-DIS功能集成在VI模块，参考《MPP媒体处理软件V5.0开发参考》的视频输入章节中的“SS928V100 VI通道功能框图”。
+DIS功能集成在VI模块，参考《MPP媒体处理软件V5.0开发参考》的视频输入章节中的“Hi3403V100 VI通道功能框图”。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   DIS只支持在物理通道上运行。
@@ -193,7 +193,7 @@ DIS输出图像的裁剪比例。其取值范围为\[50, 98\]。通常设置为8
 -   6\_DOF：算法中使用了6个算子，主要是对图像进行平移、旋转、放大、改变图像宽高比及错切。优点是防抖效果较好，能够对平行四边形进行校正，缺点是容易引起背景拖拽等异常现象。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->SS928V100的HYBRID模式需要使能DSP并加载混合防抖的bin文件，调用ss\_mpi\_gdc\_set\_dsp\_lut\_cfg接口（参考《MPP 媒体处理软件 V5.0 开发参考》“12 几何畸变矫正子系统”章节）开启dsp\_lut功能，绑定对应的DSP核。单核DSP支持4K30fps的性能。
+>Hi3403V100的HYBRID模式需要使能DSP并加载混合防抖的bin文件，调用ss\_mpi\_gdc\_set\_dsp\_lut\_cfg接口（参考《MPP 媒体处理软件 V5.0 开发参考》“12 几何畸变矫正子系统”章节）开启dsp\_lut功能，绑定对应的DSP核。单核DSP支持4K30fps的性能。
 >各个模式说明：
 >-   OT\_DIS\_MODE\_4\_DOF\_GME是指4\_DOF防抖模式。
 >-   OT\_DIS\_MODE\_6\_DOF\_GME是指6\_DOF防抖模式。
@@ -211,7 +211,7 @@ Camera的运动级别分为：OT\_DIS\_MOTION\_LEVEL\_LOW、OT\_DIS\_MOTION\_LEV
 通常设置为OT\_DIS\_MOTION\_LEVEL\_NORM，请根据实际运动幅度进行调整。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->SS928V100不支持OT\_DIS\_MOTION\_LEVEL\_LOW模式。
+>Hi3403V100不支持OT\_DIS\_MOTION\_LEVEL\_LOW模式。
 
 **pdt\_type<a name="section2080685121417"></a>**
 

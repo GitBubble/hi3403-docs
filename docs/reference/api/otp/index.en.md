@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OTP API 
 OTP is a non-volatile memory. Its main characteristic is that once the bit content of the corresponding storage space is written from 0 to 1, or after locking the corresponding area according to the lock mechanism, it can no longer be modified. OTP is mainly used to store specific data, such as the root key for the CIPHER module, security enable flags, and other information.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified, the content for SS528V100 and SS625V100, SS524V100 and SS522V100, SS927V100 and SS928V100 is identical.
+>Unless otherwise specified, the content for SS528V100 and SS625V100, SS524V100 and SS522V100, Hi3519AV200 and Hi3403V100 is identical.
 
 **Product Version<a name="section286mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row300mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p302mcpsimp"><a name="p302mcpsimp"></a><a name="p302mcpsimp"></a>SS928</p>
+<tbody><tr id="row300mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p302mcpsimp"><a name="p302mcpsimp"></a><a name="p302mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p304mcpsimp"><a name="p304mcpsimp"></a><a name="p304mcpsimp"></a>V100</p>
 </td>
@@ -52,7 +52,7 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p647779132814"><a name="p647779132814"></a><a name="p647779132814"></a>V100</p>
 </td>
 </tr>
-<tr id="row766620218412"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row766620218412"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -139,8 +139,8 @@ The OTP module provides MPI interfaces for driving one-time programmable operati
 **Figure 1**  Key Usage Mechanism in SS528V100, SS524V100 OTP<a name="fig46402535464"></a>
 ![](figures/SS528V100-SS524V100-OTP中密钥使用机制.png "SS528V100-SS524V100-OTP中密钥使用机制")
 
-**Figure 2**  Key Usage Mechanism in SS928V100, SS626V100 OTP<a name="fig12487132617471"></a>
-![](figures/SS928V100-SS626V100-OTP中密钥使用机制.png "SS928V100-SS626V100-OTP中密钥使用机制")
+**Figure 2**  Key Usage Mechanism in Hi3403V100, SS626V100 OTP<a name="fig12487132617471"></a>
+![](figures/Hi3403V100-SS626V100-OTP中密钥使用机制.png "Hi3403V100-SS626V100-OTP中密钥使用机制")
 
 ## OTP Usage Notes<a name="ZH-CN_TOPIC_0000002424349942"></a>
 

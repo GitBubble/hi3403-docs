@@ -37,9 +37,9 @@ cd x264
 
 ```sh
 CC="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang \
-  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot" \
+  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot" \
 CXX="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/aarch64-unknown-linux-ohos-clang++ \
-  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot" \
+  --sysroot=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot" \
 CFLAGS="-march=armv8-a -mfpu=neon" \
 ./configure \
 --host=aarch64-linux-ohos \
@@ -104,7 +104,7 @@ set(CMAKE_RANLIB /home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/o
 set(CMAKE_STRIP /home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin/llvm-strip)
 
 # Specify the target environment (sysroot)
-set(CMAKE_SYSROOT /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot)
+set(CMAKE_SYSROOT /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot)
 
 # Compiler and linker flags
 set(CMAKE_C_FLAGS "-fPIC -target aarch64-unknown-linux-ohos" CACHE STRING "C flags")
@@ -118,7 +118,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I/home/openharmony/pegasus/vendor/opens
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L/home/openharmony/pegasus/vendor/opensource/x264/install/lib" CACHE STRING "Linker flags")
 
 # Search paths for libraries and headers
-set(CMAKE_FIND_ROOT_PATH /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot /home/openharmony/pegasus/vendor/opensource/x264/install /home/openharmony/pegasus/vendor/opensource/v4l-utils/install)
+set(CMAKE_FIND_ROOT_PATH /home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot /home/openharmony/pegasus/vendor/opensource/x264/install /home/openharmony/pegasus/vendor/opensource/v4l-utils/install)
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
@@ -211,17 +211,17 @@ export LDFLAGS="-L/home/openharmony/pegasus/vendor/opensource/v4l-utils/install/
 
 ### Step 3: Modify Relevant Build Scripts
 
-* In line 4 of pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample/common/makefile, add an fPIC option to CFLAGS, as shown below:
+* In line 4 of pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample/common/makefile, add an fPIC option to CFLAGS, as shown below:
 
 ![image-20251022142837408](pic/image-20251022142837408.png)
 
-* Then navigate to pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample/common and run `make clean && make` to regenerate the .o files.
+* Then navigate to pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample/common and run `make clean && make` to regenerate the .o files.
 * Note: Modify the absolute paths according to your server's actual configuration.
 
 ```sh
 export PATH=/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/ohos/linux-x86_64/llvm/bin:$PATH
 
-export SYSROOT_PATH=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot
+export SYSROOT_PATH=/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot
 
 make clean && make 
 ```
@@ -242,7 +242,7 @@ TOOLCHAIN_ROOT="/home/openharmony/pegasus/os/OpenHarmony/ohos/prebuilts/clang/oh
 # Cross-compilation toolchain prefix
 CROSS_PREFIX="aarch64-unknown-linux-ohos"
 # Set sysroot path
-SYSROOT="/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_ss928v100/ipcamera_hispark_ss928v100_linux/sysroot"
+SYSROOT="/home/openharmony/pegasus/os/OpenHarmony/ohos/out/hispark_Hi3403V100/ipcamera_hispark_Hi3403V100_linux/sysroot"
 
 # C and C++ compilers
 CC="${TOOLCHAIN_ROOT}/bin/${CROSS_PREFIX}-clang"
@@ -260,9 +260,9 @@ WORK_DIR="$(pwd)"
 PREFIX="${WORK_DIR}/install"
 
 # Hisi SDK path
-HISI_SDK_BASE="/home/openharmony/pegasus/platform/ss928v100_clang/smp/a55_linux"
+HISI_SDK_BASE="/home/openharmony/pegasus/platform/Hi3403V100_clang/smp/a55_linux"
 HISI_MPP_BASE="${HISI_SDK_BASE}/mpp"
-HISI_COMMON_DIR="/home/openharmony/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample/common"
+HISI_COMMON_DIR="/home/openharmony/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample/common"
 
 # Configure PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="/home/openharmony/pegasus/vendor/opensource/x264/install/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -485,12 +485,12 @@ function gen_cfg_cmd() {
         "--enable-libx264" \
         "--enable-libx265" \
         "--enable-gpl" \
-        "--enable-encoder=h264_ss928" \
-        "--enable-encoder=h265_ss928" \
-        "--enable-encoder=mjpeg_ss928" \
-        "--enable-decoder=h264_ss928" \
-        "--enable-decoder=h265_ss928" \
-        "--enable-decoder=mjpeg_ss928" \
+        "--enable-encoder=h264_Hi3403V100" \
+        "--enable-encoder=h265_Hi3403V100" \
+        "--enable-encoder=mjpeg_Hi3403V100" \
+        "--enable-decoder=h264_Hi3403V100" \
+        "--enable-decoder=h265_Hi3403V100" \
+        "--enable-decoder=mjpeg_Hi3403V100" \
         "--extra-cflags='$CFLAGS'" \
         "--extra-ldflags='$LDFLAGS'"
     echo
@@ -633,7 +633,7 @@ cd /mnt/ffmpeg/sample/hisi
 chmod +x *
 
 # hisi encoding
-./hisi_264venc  /dev/video0  h264_ss928  640 480 30
+./hisi_264venc  /dev/video0  h264_Hi3403V100  640 480 30
 
 cd /mnt/ffmpeg/sample/ffmpeg
 
@@ -652,7 +652,7 @@ chmod +x *
 cd /mnt/ffmpeg/sample/hisi 
 
 # hisi decoding
-./hisi_264vdec h264_ss928_output.h264  output
+./hisi_264vdec h264_Hi3403V100_output.h264  output
 
 # ffmpeg decoding
 ./264dec libx264_output.h264  output
@@ -665,24 +665,24 @@ cd /mnt/ffmpeg/sample/hisi
 * If you want to use ffmpeg to call Hisi's hardware codec module in your own code, use the avcodec_find_decoder_by_name interface.
 
 ```c
-avcodec_find_decoder_by_name("h264_ss928");
+avcodec_find_decoder_by_name("h264_Hi3403V100");
 
-avcodec_find_decoder_by_name("h265_ss928");
+avcodec_find_decoder_by_name("h265_Hi3403V100");
 
-avcodec_find_decoder_by_name("mjpeg_ss928");
+avcodec_find_decoder_by_name("mjpeg_Hi3403V100");
 
-avcodec_find_encoder_by_name("h264_ss928");
+avcodec_find_encoder_by_name("h264_Hi3403V100");
 
-avcodec_find_encoder_by_name("h265_ss928");
+avcodec_find_encoder_by_name("h265_Hi3403V100");
 
-avcodec_find_encoder_by_name("mjpeg_ss928");
+avcodec_find_encoder_by_name("mjpeg_Hi3403V100");
 ```
 
 ## 5. Comparison of Hisi Hardware Codec and FFmpeg Native Codec
 
 * Decoder
 
-| Data/Decoder            | h264                  | h264_ss928            | hevc                  | h265_ss928            | mjpeg                 | mjpeg_ss928           |
+| Data/Decoder            | h264                  | h264_Hi3403V100            | hevc                  | h265_Hi3403V100            | mjpeg                 | mjpeg_Hi3403V100           |
 | ----------------------- | --------------------- | --------------------- | --------------------- | --------------------- | --------------------- | --------------------- |
 | Video parameters        | 1920x1080 @30FPS      | 1920x1080 @30FPS      | 1920x1080 @30FPS      | 1920x1080 @30FPS      | 1920x1080 @30FPS      | 1920x1080 @30FPS      |
 | Total frames processed  | 85                    | 207                   | 21                    | 221                   | 125                   | 217                   |
@@ -700,7 +700,7 @@ avcodec_find_encoder_by_name("mjpeg_ss928");
 
 * Encoder
 
-| Data/Encoder         | libx264              | h264_ss928           | libx265              | h265_ss928           | mjpeg                | mjpeg_ss928          |
+| Data/Encoder         | libx264              | h264_Hi3403V100           | libx265              | h265_Hi3403V100           | mjpeg                | mjpeg_Hi3403V100          |
 | -------------------- | -------------------- | -------------------- | -------------------- | -------------------- | -------------------- | -------------------- |
 | Video parameters     | 1920x1080 @30FPS     | 1920x1080 @30FPS     | 1920x1080 @30FPS     | 1920x1080 @30FPS     | 1920x1080 @30FPS     | 1920x1080 @30FPS     |
 | Total frames processed | 85                  | 208                  | 21                   | 222                  | 114                  | 218                  |

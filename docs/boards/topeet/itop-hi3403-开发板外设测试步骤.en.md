@@ -38,7 +38,7 @@ Run `ToolPlatform.exe`:
 
 ![image-20260327105327160](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271053191.png)
 
-The chip selector lists only **SS928V100** — confirm:
+The chip selector lists only **Hi3403V100** — confirm:
 
 ![image-20260327110244623](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271102651.png)
 

@@ -2,7 +2,7 @@
 
 ### 2.4.1. sample_kcf_track Program Introduction
 
-* sample_kcf_track is developed based on the SS928V100 platform, using the EulerPi kit as an example. sample_kcf_track is based on the KCF+Track model. It captures images via a USB camera and feeds them into the KCF+Track model to achieve real-time target tracking.
+* sample_kcf_track is developed based on the Hi3403V100 platform, using the EulerPi kit as an example. sample_kcf_track is based on the KCF+Track model. It captures images via a USB camera and feeds them into the KCF+Track model to achieve real-time target tracking.
 
 ### 2.4.2. Directory Structure
 

@@ -19,12 +19,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>SS928</p>
+<tbody><tr id="row314mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>SS927</p>
+<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
 </td>
@@ -34,7 +34,7 @@ The product versions corresponding to this document are as follows.
 
 >![](public_sys-resources/icon-notice.gif) **Notice:** 
 >MindCmd is only intended as a development and debugging tool. It is not recommended for integration into actual products.
->Unless otherwise specified in this document, the content for SS928 and SS927 is identical.
+>Unless otherwise specified in this document, the content for Hi3403V100 and Hi3519AV200 is identical.
 
 **Target Audience<a name="section4378592816410"></a>**
 
@@ -432,7 +432,7 @@ MindCmd can be used in Docker. The solution provides a Dockerfile. For building 
 >-   If a download dependency connection timeout occurs during installation, check whether the pip environment is working properly. Configure a network proxy or change the mirror source as needed.
 >-   After installing MindCmd, use the following commands to configure the default settings for the open-source ecosystem version:
 >```
->mindcmd config --global base_config.target_version=SS928V100
+>mindcmd config --global base_config.target_version=Hi3403V100
 >mindcmd config --global base_config.cross_compiler=musl_clang
 >```
 
@@ -511,7 +511,7 @@ After the tool is installed, specify the CANN software package installation path
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p203352168125"><a name="p203352168125"></a><a name="p203352168125"></a>TARGET_VERSION</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p4335121651215"><a name="p4335121651215"></a><a name="p4335121651215"></a>Target solution version, e.g., TARGET_VERSION=SS928V100</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p4335121651215"><a name="p4335121651215"></a><a name="p4335121651215"></a>Target solution version, e.g., TARGET_VERSION=Hi3403V100</p>
 <p id="p1885014185114"><a name="p1885014185114"></a><a name="p1885014185114"></a>Must be replaced with the actual solution version.</p>
 </td>
 </tr>
@@ -534,7 +534,7 @@ After the tool is installed, specify the CANN software package installation path
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p14848934141917"><a name="p14848934141917"></a><a name="p14848934141917"></a>CROSS_COMPILER</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1983715210286"><a name="p1983715210286"></a><a name="p1983715210286"></a>Cross-compilation chain option. Configurable values for SS928V100: musl_clang, gnu</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1983715210286"><a name="p1983715210286"></a><a name="p1983715210286"></a>Cross-compilation chain option. Configurable values for Hi3403V100: musl_clang, gnu</p>
 </td>
 </tr>
 <tr id="row128983510315"><td class="cellrowborder" rowspan="11" valign="top" width="16.39%" headers="mcps1.2.6.1.1 "><p id="p529053510315"><a name="p529053510315"></a><a name="p529053510315"></a>oneclick_switch</p>

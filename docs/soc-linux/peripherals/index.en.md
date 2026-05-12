@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Peripher
 This document guides personnel using driver modules such as GMAC, USB, and eMMC to control peripheral devices connected to these driver modules through specific steps and methods. It mainly includes operation preparation, operation procedures, issues to note during operation, and operation examples.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 is consistent with SS928V100.
+>This document uses the Hi3403V100 description as an example. Unless otherwise specified, the content for Hi3519AV200 is consistent with Hi3403V100.
 
 **Product Version<a name="section10120166104220"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1819118616425"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p81911613425"><a name="p81911613425"></a><a name="p81911613425"></a>SS928</p>
+<tbody><tr id="row1819118616425"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p81911613425"><a name="p81911613425"></a><a name="p81911613425"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p91911617427"><a name="p91911617427"></a><a name="p91911617427"></a>V100</p>
 </td>
 </tr>
-<tr id="row64983499368"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p182829527361"><a name="p182829527361"></a><a name="p182829527361"></a>SS927</p>
+<tr id="row64983499368"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p182829527361"><a name="p182829527361"></a><a name="p182829527361"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p4282165214366"><a name="p4282165214366"></a><a name="p4282165214366"></a>V100</p>
 </td>
@@ -119,7 +119,7 @@ IPv6 is disabled by default in the release package. To support IPv6, you need to
 
 ```
 cd open_source/linux/linux-4.19.y
-cp arch/arm64/configs/ss928v100_defconfig .config
+cp arch/arm64/configs/Hi3403V100_defconfig .config
 make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- menuconfig
 ```
 
@@ -157,11 +157,11 @@ IPv6 environment configuration:
 
 -   Configuration method under U-boot
 
-    Under U-boot, you can configure different PHY addresses by modifying the values of the macros CONFIG\_GMAC\_PHY0\_ADDR and CONFIG\_GMAC\_PHY1\_ADDR in the U-boot configuration file include/configs/ss928v100.h.
+    Under U-boot, you can configure different PHY addresses by modifying the values of the macros CONFIG\_GMAC\_PHY0\_ADDR and CONFIG\_GMAC\_PHY1\_ADDR in the U-boot configuration file include/configs/Hi3403V100.h.
 
 -   Configuration method under Kernel
 
-    Under the kernel, you can configure the PHY address by modifying the dts configuration file ss928v100-demb.dts under arch/arm64/boot/dts/vendor. As shown in [Figure 1](#_Toc498609229), the value "1" in "reg = <1>" represents the PHY address.
+    Under the kernel, you can configure the PHY address by modifying the dts configuration file Hi3403V100-demb.dts under arch/arm64/boot/dts/vendor. As shown in [Figure 1](#_Toc498609229), the value "1" in "reg = <1>" represents the PHY address.
 
 **Figure 1** PHY Address Configuration Node Diagram<a name="_Toc498609229"></a>  
 ![](figures/PHY address configuration node diagram.png "PHY address configuration node diagram")
@@ -186,7 +186,7 @@ The flow control configuration method is as follows:
 
 ```
 cd open_source/linux/linux-4.19.y
-cp arch/arm64/configs/ss928v100_defconfig .config
+cp arch/arm64/configs/Hi3403V100_defconfig .config
 make ARCH=arm64 CROSS_COMPILE=aarch64-mix210-linux- menuconfig
 ```
 
@@ -260,7 +260,7 @@ GMAC1 100M (rmii) phy 3
 
 U-boot modification points:
 
-Enter the U-boot directory: vim include/configs/ss928v100.h
+Enter the U-boot directory: vim include/configs/Hi3403V100.h
 
 Modified values:
 
@@ -280,7 +280,7 @@ Modified values:
 
 Linux modification points:
 
-Enter the Linux directory: vim arch/arm64/boot/dts/vendor/ss928v100-demb.dts
+Enter the Linux directory: vim arch/arm64/boot/dts/vendor/Hi3403V100-demb.dts
 
 Modified values:
 
@@ -349,7 +349,7 @@ Compile USB-related drivers under uboot.
     make ARCH=arm CROSS_COMPILE=aarch64-mix210-linux- u-boot-z.bin
     ```
 
-    The compiled u-boot-ss928v100.bin is the usable u-boot image.
+    The compiled u-boot-Hi3403V100.bin is the usable u-boot image.
 
 #### USB Host Operation Process under Kernel<a name="ZH-CN_TOPIC_0000002512103591"></a>
 

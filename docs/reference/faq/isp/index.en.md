@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP FAQ/
 This document is written for developers using ISP. It provides solutions and guidance for issues encountered during development.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference. Unless otherwise specified, SS927V100 is identical to SS928V100.
+>This document uses Hi3403V100 as the reference. Unless otherwise specified, Hi3519AV200 is identical to Hi3403V100.
 
 **Product Versions<a name="section146mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>SS928</p>
+<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row3890144411453"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p17589247164514"><a name="p17589247164514"></a><a name="p17589247164514"></a>SS927</p>
+<tr id="row3890144411453"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p17589247164514"><a name="p17589247164514"></a><a name="p17589247164514"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p7589247134510"><a name="p7589247134510"></a><a name="p7589247134510"></a>V100</p>
 </td>

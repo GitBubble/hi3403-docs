@@ -364,14 +364,14 @@ sudo service smbd restart
 ## 2、搭建SDK环境
 
 - 该章节部分内容与搭建OpenHarmony Small型系统编译环境是重复的，详细请参见<a href="/os/openharmony/usage/">《OpenHarmony Small 版本使用指南》</a>的开发环境章节。
-- Hi3403V100有两套SDK，支持`clang`和`gcc`两种工具链，分别对应`ss928v100_clang`和`ss928v100_gcc`。<a id="section1"></a>
+- Hi3403V100有两套SDK，支持`clang`和`gcc`两种工具链，分别对应`Hi3403V100_clang`和`Hi3403V100_gcc`。<a id="section1"></a>
 
 |                   | 编译器       | 运行时库          |
 | ----------------- | ------------ | ----------------- |
-| `ss928v100_clang` | `llvm 15.04` | `musl libc 1.2.5` |
-| `ss928v100_gcc`   | `gcc 12.3.0` | `glibc 2.38`      |
+| `Hi3403V100_clang` | `llvm 15.04` | `musl libc 1.2.5` |
+| `Hi3403V100_gcc`   | `gcc 12.3.0` | `glibc 2.38`      |
 
-- `ss928v100_clang`和`ss928v100_gcc`的uboot都是使用`gcc`进行编译的，所以`ss928v100_clang`的整编同时依赖`clang`和`gcc`工具链，而`ss928v100_gcc`整编只依赖`gcc`工具链，建议同时安装`clang`和`gcc`工具链。
+- `Hi3403V100_clang`和`Hi3403V100_gcc`的uboot都是使用`gcc`进行编译的，所以`Hi3403V100_clang`的整编同时依赖`clang`和`gcc`工具链，而`Hi3403V100_gcc`整编只依赖`gcc`工具链，建议同时安装`clang`和`gcc`工具链。
 
 ### 2.1、搭建基础环境
 
@@ -436,12 +436,12 @@ git clone https://gitee.com/HiSpark/pegasus.git
 
 ![image-20251028155152278](figures/image-20251028155152278.png)
 
-- 下载ss928v100_clang、ss928v100_gcc两个子仓。
+- 下载Hi3403V100_clang、Hi3403V100_gcc两个子仓。
 
 ```
 cd pegasus
 git submodule init
-git submodule update platform/ss928v100_clang platform/ss928v100_gcc
+git submodule update platform/Hi3403V100_clang platform/Hi3403V100_gcc
 ```
 
 ![image-20251028155334937](figures/image-20251028155334937.png)
@@ -453,10 +453,10 @@ git submodule update platform/ss928v100_clang platform/ss928v100_gcc
 
 | 开源软件官方源下载                                           | 镜像源下载                                                   | 拷贝路径                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [linux](https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.86.tar.gz) | [阿里云](https://mirrors.aliyun.com/linux-kernel/v6.x/linux-6.6.86.tar.gz) | 1、~/pegasus/platform/ss928v100_clang/open_source/linux<br />2、~/pegasus/platform/ss928v100_gcc/open_source/linux |
-| [mbedtls](https://github.com/ARMmbed/mbedtls/archive/refs/tags/v2.16.10.tar.gz) | \                                                            | 1、~/pegasus/platform/ss928v100_clang/open_source/mbedtls<br />2、~/pegasus/platform/ss928v100_gcc/open_source/mbedtls |
-| [trusted-firmware-a](https://github.com/ARM-software/arm-trusted-firmware/archive/v2.2.tar.gz) | \                                                            | 1、~/pegasus/platform/ss928v100_clang/open_source/trusted-firmware-a<br />2、~/pegasus/platform/ss928v100_gcc/open_source/trusted-firmware-a |
-| [u-boot](https://ftp.denx.de/pub/u-boot/u-boot-2020.01.tar.bz2) | \                                                            | 1、~/pegasus/platform/ss928v100_clang/open_source/u-boot<br />2、~/pegasus/platform/ss928v100_gcc/open_source/u-boot |
+| [linux](https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.86.tar.gz) | [阿里云](https://mirrors.aliyun.com/linux-kernel/v6.x/linux-6.6.86.tar.gz) | 1、~/pegasus/platform/Hi3403V100_clang/open_source/linux<br />2、~/pegasus/platform/Hi3403V100_gcc/open_source/linux |
+| [mbedtls](https://github.com/ARMmbed/mbedtls/archive/refs/tags/v2.16.10.tar.gz) | \                                                            | 1、~/pegasus/platform/Hi3403V100_clang/open_source/mbedtls<br />2、~/pegasus/platform/Hi3403V100_gcc/open_source/mbedtls |
+| [trusted-firmware-a](https://github.com/ARM-software/arm-trusted-firmware/archive/v2.2.tar.gz) | \                                                            | 1、~/pegasus/platform/Hi3403V100_clang/open_source/trusted-firmware-a<br />2、~/pegasus/platform/Hi3403V100_gcc/open_source/trusted-firmware-a |
+| [u-boot](https://ftp.denx.de/pub/u-boot/u-boot-2020.01.tar.bz2) | \                                                            | 1、~/pegasus/platform/Hi3403V100_clang/open_source/u-boot<br />2、~/pegasus/platform/Hi3403V100_gcc/open_source/u-boot |
 
 ![image-20251028161831427](figures/image-20251028161831427.png)
 
@@ -479,7 +479,7 @@ repo forall -c 'git lfs pull'
 
 - 执行`os/OpenHarmony/manifest/prebuilts_setup.sh`脚本，完成预编译环境准备。该脚本主要完成以下任务：
     - 修复`system_util.py`和`patch_process.py`脚本中的已知问题
-    - 将`platform/ss928v100_clang`目录拷贝至SDK目标路径
+    - 将`platform/Hi3403V100_clang`目录拷贝至SDK目标路径
     - 下载mbedtls v2.16.10源码包（存放至`os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/mbedtls/`目录）
     - 下载arm-trusted-firmware v2.2源码包（存放至`os/OpenHarmony/device/soc/hisilicon/hi3403v100/sdk_linux/open_source/trusted-firmware-a/`目录）
     - 调用`build/prebuilts_download.sh`下载OpenHarmony编译工具链（clang、gn、ninja、cmake、nodejs等）
@@ -491,7 +491,7 @@ repo forall -c 'git lfs pull'
 ./os/OpenHarmony/manifest/prebuilts_setup.sh
 ```
 
-- ss928v100_clang SDK sample编译部分依赖OpenHarmony编译生成的sysroot，所以在这里需要执行OpenHarmony编译命令。
+- Hi3403V100_clang SDK sample编译部分依赖OpenHarmony编译生成的sysroot，所以在这里需要执行OpenHarmony编译命令。
 
 #### 初次编译
 
@@ -589,33 +589,33 @@ aarch64-openeuler-linux-gnu-gcc -v
 
 ## 3、编译
 
-- `ss928v100_clang`和`ss928v100_gcc`编译大致相同，编译命令主要是LLVM参数的不同，整编和单编详细内容请参见`~/pegasus/platform/ss928v100_clang/osdrv/readme_cn.txt`或`~/pegasus/platform/ss928v100_gcc/osdrv/readme_cn.txt`。
+- `Hi3403V100_clang`和`Hi3403V100_gcc`编译大致相同，编译命令主要是LLVM参数的不同，整编和单编详细内容请参见`~/pegasus/platform/Hi3403V100_clang/osdrv/readme_cn.txt`或`~/pegasus/platform/Hi3403V100_gcc/osdrv/readme_cn.txt`。
 
-### 3.1、编译ss928v100_clang
+### 3.1、编译Hi3403V100_clang
 
 - 该编译方式同时依赖clang交叉编译器和gcc交叉编译器，具体安装请参见[2.4小节安装交叉编译器](#2.4、安装交叉编译器)。
 
 #### 3.1.1、整编
 
-- 进入`~/pegasus/platform/ss928v100_clang/osdrv`，执行编译命令。
+- 进入`~/pegasus/platform/Hi3403V100_clang/osdrv`，执行编译命令。
 
 ```
-cd ~/pegasus/platform/ss928v100_clang/osdrv
-make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_clang/osdrv
+make LLVM=1 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 ```
 
 ![image-20251103195510322](figures/image-20251103195510322.png)
 
 - 编译生成的镜像位于 osdrv/pub/xxx 目录，包括：
   - boot_image.bin 为 bootloader 镜像。
-  - u-boot-ss928v100.bin 为 u-boot 镜像（OTP 使能快速启动时使用）。
-  - uImage_ss928v100 为 Linux 内核镜像。
+  - u-boot-Hi3403V100.bin 为 u-boot 镜像（OTP 使能快速启动时使用）。
+  - uImage_Hi3403V100 为 Linux 内核镜像。
 
 #### 3.1.2、单编
 
 ##### 3.1.2.1、编译uboot
 
-- 进入`~/pegasus/platform/ss928v100_clang/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
+- 进入`~/pegasus/platform/Hi3403V100_clang/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
 
 ```
 make BOOT_MEDIA=emmc gslboot_build -j 20
@@ -625,7 +625,7 @@ make BOOT_MEDIA=emmc gslboot_build -j 20
 
 ##### 3.1.2.2、编译kernel
 
-- 进入`~/pegasus/platform/ss928v100_clang/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
+- 进入`~/pegasus/platform/Hi3403V100_clang/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
 
 ```
 make LLVM=1 BOOT_MEDIA=emmc atf -j 20
@@ -635,10 +635,10 @@ make LLVM=1 BOOT_MEDIA=emmc atf -j 20
 
 #### 3.1.3、编译sample
 
-- 进入`~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample`，执行编译命令，生成的可执行文件在各个sample目录下。
+- 进入`~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample`，执行编译命令，生成的可执行文件在各个sample目录下。
 
 ```shell
-cd ~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample
+cd ~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/sample
 make
 ```
 
@@ -646,40 +646,40 @@ make
 
 #### 3.1.4、编译ko
 
-- 进入`~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/out/obj`，执行编译命令，生成的ko文件在`~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/out/ko`目录下。
+- 进入`~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/out/obj`，执行编译命令，生成的ko文件在`~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/out/ko`目录下。
 
 ```shell
-cd ~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/out/obj
+cd ~/pegasus/platform/Hi3403V100_clang/smp/a55_linux/mpp/out/obj
 make
 ```
 
 ![image-20251104151107767](figures/image-20251104151107767.png)
 
-### 3.2、编译ss928v100_gcc
+### 3.2、编译Hi3403V100_gcc
 
 - 该编译方式只依赖gcc交叉编译器，具体安装请参见[2.4.2小节安装gcc交叉编译器](#2.4.2、安装gcc交叉编译器)。
 
 #### 3.2.1、整编
 
-- 进入`~/pegasus/platform/ss928v100_gcc/osdrv`，执行编译命令。
+- 进入`~/pegasus/platform/Hi3403V100_gcc/osdrv`，执行编译命令。
 
 ```
-cd ~/pegasus/platform/ss928v100_gcc/osdrv
-make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
+cd ~/pegasus/platform/Hi3403V100_gcc/osdrv
+make LLVM=0 BOOT_MEDIA=emmc CHIP=Hi3403V100 all
 ```
 
 ![image-20251028191255408](figures/image-20251028191255408.png)
 
 - 编译生成的镜像位于 osdrv/pub/xxx 目录，包括：
   - boot_image.bin 为 bootloader 镜像。
-  -  u-boot-ss928v100.bin 为 u-boot 镜像（OTP 使能快速启动时使用）。
-  -  uImage_ss928v100 为 Linux 内核镜像。
+  -  u-boot-Hi3403V100.bin 为 u-boot 镜像（OTP 使能快速启动时使用）。
+  -  uImage_Hi3403V100 为 Linux 内核镜像。
 
 #### 3.2.2、单编
 
 ##### 3.2.2.1、编译uboot
 
-- 进入`~/pegasus/platform/ss928v100_gcc/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
+- 进入`~/pegasus/platform/Hi3403V100_gcc/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
 
 ```
 make BOOT_MEDIA=emmc gslboot_build -j 20
@@ -689,7 +689,7 @@ make BOOT_MEDIA=emmc gslboot_build -j 20
 
 ##### 3.2.2.2、编译kernel
 
-- 进入`~/pegasus/platform/ss928v100_gcc/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
+- 进入`~/pegasus/platform/Hi3403V100_gcc/osdrv`，执行编译命令，编译生成的镜像位于 osdrv/pub/xxx 目录下。
 
 ```
 make LLVM=0 BOOT_MEDIA=emmc atf -j 20
@@ -699,10 +699,10 @@ make LLVM=0 BOOT_MEDIA=emmc atf -j 20
 
 #### 3.2.3、编译sample
 
-- 进入`~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample`，执行编译命令，生成的可执行文件在各个sample目录下。
+- 进入`~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample`，执行编译命令，生成的可执行文件在各个sample目录下。
 
 ```shell
-cd ~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample
+cd ~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample
 make
 ```
 
@@ -710,10 +710,10 @@ make
 
 #### 3.2.4、编译ko
 
-- 进入`~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/out/obj`，执行编译命令，生成的ko文件在`~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/out/ko`目录下。
+- 进入`~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/obj`，执行编译命令，生成的ko文件在`~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/ko`目录下。
 
 ```shell
-cd ~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/out/obj
+cd ~/pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/out/obj
 make
 ```
 

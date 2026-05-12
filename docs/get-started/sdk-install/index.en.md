@@ -1,15 +1,15 @@
 ---
-title: "SS928V100 SDK Installation and Upgrade Guide"
-source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V100╱SS927V100 SDK 安装以及升级使用说明/SS928V100╱SS927V100 SDK 安装以及升级使用说明.md
+title: "Hi3403V100 SDK Installation and Upgrade Guide"
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100╱Hi3519AV200 SDK 安装以及升级使用说明/Hi3403V100╱Hi3519AV200 SDK 安装以及升级使用说明.md
 ---
 
 # Preface
 **Overview<a name="section142mcpsimp"></a>**
 
-This document describes the installation and upgrade procedures for the SS928V100 SDK, enabling users to quickly set up the SDK runtime environment on the corresponding chip's DEMB board.
+This document describes the installation and upgrade procedures for the Hi3403V100 SDK, enabling users to quickly set up the SDK runtime environment on the corresponding chip's DEMB board.
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses SS928V100 as the reference. Unless otherwise specified, the content applies equally to SS927V100.
+>This document uses Hi3403V100 as the reference. Unless otherwise specified, the content applies equally to Hi3519AV200.
 
 **Product Versions<a name="section145mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are listed below.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>SS928</p>
+<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1127814474269"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p632375032618"><a name="p632375032618"></a><a name="p632375032618"></a>SS927</p>
+<tr id="row1127814474269"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p632375032618"><a name="p632375032618"></a><a name="p632375032618"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p13236502265"><a name="p13236502265"></a><a name="p13236502265"></a>V100</p>
 </td>
@@ -105,19 +105,19 @@ The following symbols may appear in this document with the meanings described be
 </table>
 
 # First-Time SDK Installation
-If you have already installed the SDK, refer directly to [Installing and Upgrading the SS928V100 DEMO Board Development Environment](#ZH-CN_TOPIC_0000002457836393).
+If you have already installed the SDK, refer directly to [Installing and Upgrading the Hi3403V100 DEMO Board Development Environment](#ZH-CN_TOPIC_0000002457836393).
 
-## SS928V100 SDK Package Location<a name="ZH-CN_TOPIC_0000002457876545"></a>
+## Hi3403V100 SDK Package Location<a name="ZH-CN_TOPIC_0000002457876545"></a>
 
-Under the `SS928V100R001***/01.software/board` directory, you will find a file named `SS928V100_SDK_Vx.x.x.x.tgz`. This is the software development kit for SS928V100.
+Under the `Hi3403V100R001***/01.software/board` directory, you will find a file named `Hi3403V100_SDK_Vx.x.x.x.tgz`. This is the software development kit for Hi3403V100.
 
 ## Extracting the SDK Package<a name="ZH-CN_TOPIC_0000002457836397"></a>
 
-On a Linux server (or a PC running Linux — any mainstream distribution is supported), run `tar -zxf SS928V100_SDK_Vx.x.x.x.tgz` to extract the archive. This produces a directory named `SS928V100_SDK_Vx.x.x.x`.
+On a Linux server (or a PC running Linux — any mainstream distribution is supported), run `tar -zxf Hi3403V100_SDK_Vx.x.x.x.tgz` to extract the archive. This produces a directory named `Hi3403V100_SDK_Vx.x.x.x`.
 
 ## Unpacking the SDK Contents<a name="ZH-CN_TOPIC_0000002424197802"></a>
 
-Navigate into the `SS928V100_SDK_Vx.x.x.x` directory and run `./sdk.unpack` (as root or with sudo) to expand the compressed contents of the SDK package. Follow the on-screen prompts to complete the operation.
+Navigate into the `Hi3403V100_SDK_Vx.x.x.x` directory and run `./sdk.unpack` (as root or with sudo) to expand the compressed contents of the SDK package. Follow the on-screen prompts to complete the operation.
 
 If you need to copy the SDK package via a Windows system, first run `./sdk.cleanup` to repack the contents, copy to the new location, then expand again.
 
@@ -131,7 +131,7 @@ Refer to the readme file in the osdrv directory.
 
 ## SDK Directory Structure<a name="ZH-CN_TOPIC_0000002457876533"></a>
 
-The `SS928V100_SDK_Vx.x.x.x` directory structure is as follows:
+The `Hi3403V100_SDK_Vx.x.x.x` directory structure is as follows:
 
 ├── smp                             \#smp directory
 
@@ -215,8 +215,8 @@ The `SS928V100_SDK_Vx.x.x.x` directory structure is as follows:
 
 └── sdk.unpack                        \#SDK unpack script
 
-# Installing and Upgrading the SS928V100 DEMO Board Development Environment
-If you are using an SS928V100 DEMO board, you can flash U-Boot, the kernel, and the filesystem using the following procedures. All operations below use the network for updates:
+# Installing and Upgrading the Hi3403V100 DEMO Board Development Environment
+If you are using an Hi3403V100 DEMO board, you can flash U-Boot, the kernel, and the filesystem using the following procedures. All operations below use the network for updates:
 
 -   If the board does not have U-Boot, use the tool at `01.software/pc/ToolPlatform` to flash it. For detailed flashing instructions, refer to the *BurnTool User Guide* located in the `01.software/pc/ToolPlatform` directory.
 -   If the board already has U-Boot, follow the steps below to flash U-Boot, kernel, and rootfs to Flash via the network interface. The DEMO board boots from SPI Flash by default.
@@ -239,7 +239,7 @@ ping serverip (verify network connectivity)
 ```
 
 >![](public_sys-resources/icon-notice.gif) **Notice:** 
->-   SS928V100 supports two boot modes: fast boot (using `u-boot-ss928v100.bin`) and non-fast boot (non-secure/secure boot, using `boot_image.bin`). See Chapter 2 "Boot Modes" in the *SS928V100/SS927V100 Secure Boot User Guide*.
+>-   Hi3403V100 supports two boot modes: fast boot (using `u-boot-Hi3403V100.bin`) and non-fast boot (non-secure/secure boot, using `boot_image.bin`). See Chapter 2 "Boot Modes" in the *Hi3403V100/Hi3519AV200 Secure Boot User Guide*.
 >-   The boot mode can be confirmed by reading register `0x10122090`. A value of `0x5` indicates fast boot; any other value indicates non-fast boot.
 >-   Boards ship with "non-secure boot" as the default. The following instructions use this mode as the example.
 
@@ -287,7 +287,7 @@ The following operations are based on the address space layout shown above. Adju
 
     ```
     mw.b 0x42000000 0xff 0xb00000
-    tftp 0x42000000 uImage_ss928v100
+    tftp 0x42000000 uImage_Hi3403V100
     sf probe 0
     sf erase 0x100000 0xb00000
     sf write 0x42000000 0x100000 0xb00000
@@ -297,7 +297,7 @@ The following operations are based on the address space layout shown above. Adju
 
     ```
     mw.b 0x42000000 0xff 0x1300000
-    tftp 0x42000000 rootfs_ss928v100_64k.jffs2
+    tftp 0x42000000 rootfs_Hi3403V100_64k.jffs2
     sf probe 0
     sf erase 0xc00000 0x1300000
     sf write 0x42000000 0xc00000 0x1300000
@@ -365,7 +365,7 @@ The following operations are based on the address space layout shown above. Adju
 
     ```
     mw.b 0x42000000 0xff 0xb00000
-    tftp 0x42000000 uImage_ss928v100
+    tftp 0x42000000 uImage_Hi3403V100
     nand erase 0x100000 0xb00000
     nand write 0x42000000 0x100000 0xb00000
     ```
@@ -374,7 +374,7 @@ The following operations are based on the address space layout shown above. Adju
 
     ```
     mw.b 0x42000000 0xff 0x2000000
-    tftp 0x42000000 rootfs_ss928v100_2k_128k_32M.ubifs
+    tftp 0x42000000 rootfs_Hi3403V100_2k_128k_32M.ubifs
     nand erase 0xc00000 0x2000000
     nand write 0x42000000 0xc00000 0x2000000
     ```
@@ -439,7 +439,7 @@ The following operations are based on the address space layout shown above. Adju
 
     ```
     mw.b 0x42000000 0xff 0xb00000
-    tftp 0x42000000 uImage_ss928v100
+    tftp 0x42000000 uImage_Hi3403V100
     mmc write 0 0x42000000 0x800 0x5800
     ```
 
@@ -447,7 +447,7 @@ The following operations are based on the address space layout shown above. Adju
 
     ```
     mw.b 0x42000000 0xff 0x6000000
-    tftp 0x42000000 rootfs_ss928v100_96M.ext4
+    tftp 0x42000000 rootfs_Hi3403V100_96M.ext4
     mmc write 0 0x42000000 0x6000 0x30000
     ```
 
@@ -479,9 +479,9 @@ reset	\# Reboot to enter the new system.
 # Pre-Development Environment Setup
 ## Pin Multiplexing<a name="ZH-CN_TOPIC_0000002424357658"></a>
 
-Pin multiplexing related to media services, DDR priority configuration, and similar settings are configured in the `interdrv/sys_config` open-source driver (managed via Linux DTS). If the configuration does not match your hardware, you can modify it directly. The `sys_config.ko` driver is called by `load_ss928v100` and is executed before MPP kernel modules are loaded.
+Pin multiplexing related to media services, DDR priority configuration, and similar settings are configured in the `interdrv/sys_config` open-source driver (managed via Linux DTS). If the configuration does not match your hardware, you can modify it directly. The `sys_config.ko` driver is called by `load_Hi3403V100` and is executed before MPP kernel modules are loaded.
 
-Pin multiplexing for non-MPP peripherals is configured uniformly in U-Boot. For details, refer to the *SS928V100/SS927V100 U-Boot Porting and Application Development Guide*.
+Pin multiplexing for non-MPP peripherals is configured uniformly in U-Boot. For details, refer to the *Hi3403V100/Hi3519AV200 U-Boot Porting and Application Development Guide*.
 
 # Development Using the SDK and DEMO Board
 ## Enabling Linux Networking<a name="ZH-CN_TOPIC_0000002424197794"></a>
@@ -517,7 +517,7 @@ On the board's Linux system, navigate to the `mpp/out/ko` directory and load the
 
 ```
 cd mpp/ko
-./load_ss928v100 -a
+./load_Hi3403V100 -a
 ```
 
 ## Switching Between Linux and LiteOS<a name="ZH-CN_TOPIC_0000002424197810"></a>
@@ -579,4 +579,4 @@ DDR:
 Notes:
 
 1.  When configuring boot parameters, set the OS managed memory to 512 MB: `setenv bootargs 'mem=512M...'`.
-2.  For special use cases, the `load_ss928v100` script can be modified to customize MMZ partitioning, for example: `insmod ot_osal.ko anony=1 mmz_allocator=ot mmz=anonymous,0,0x70000000,1786M:jpeg,0,0xDFA00000,6M`.
+2.  For special use cases, the `load_Hi3403V100` script can be modified to customize MMZ partitioning, for example: `insmod ot_osal.ko anony=1 mmz_allocator=ot mmz=anonymous,0,0x70000000,1786M:jpeg,0,0xDFA00000,6M`.

@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP é¢œè
 This document is written for debugging and issue localization of AWB, CCM, and CLUT algorithms. It provides detailed instructions on calibration, parameter tuning, and other usage guidelines, aiming to offer solutions and assistance for problems encountered during development.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->This document uses SS928V100 as an example. Unless otherwise specified, SS927V100 content is consistent with SS928V100.
+>This document uses Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 content is consistent with Hi3403V100.
 
 **Product Version<a name="section306mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row320mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>SS928</p>
+<tbody><tr id="row320mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p324mcpsimp"><a name="p324mcpsimp"></a><a name="p324mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row650476102011"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16117171192015"><a name="p16117171192015"></a><a name="p16117171192015"></a>SS927</p>
+<tr id="row650476102011"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p16117171192015"><a name="p16117171192015"></a><a name="p16117171192015"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1711771112016"><a name="p1711771112016"></a><a name="p1711771112016"></a>V100</p>
 </td>
@@ -136,7 +136,7 @@ A 3x3 Color Correction Matrix corrects the sensor's spectral response deviation 
 # AWB Debugging
 ## Statistics Module Debugging<a name="ZH-CN_TOPIC_0000002457880949"></a>
 
-Gray point condition parameters: white_level (brightness upper limit), black_level (brightness lower limit), cr_max/cr_min (R/G chromatic aberration limits), cb_max/cb_min (B/G chromatic aberration limits). Solution differences exist between platforms (SS928V100 uses 16-bit input without black level).
+Gray point condition parameters: white_level (brightness upper limit), black_level (brightness lower limit), cr_max/cr_min (R/G chromatic aberration limits), cb_max/cb_min (B/G chromatic aberration limits). Solution differences exist between platforms (Hi3403V100 uses 16-bit input without black level).
 
 ### Statistics Output Description
 

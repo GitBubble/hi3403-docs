@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MPP 媒�
 本文为使用MPP媒体处理软件开发的程序员而写，目的是为您在开发过程中遇到的问题提供解决办法和帮助。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文未有特殊说明，SS927V100与SS928V100内容完全一致。
+>本文未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
 
 **产品版本<a name="section105mcpsimp"></a>**
 
@@ -22,7 +22,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MPP 媒�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
@@ -52,7 +52,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MPP 媒�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p107354154419"><a name="p107354154419"></a><a name="p107354154419"></a>V100</p>
 </td>
 </tr>
-<tr id="row12913714769"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row12913714769"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -371,7 +371,7 @@ echo 4096 \>/proc/sys/vm/min\_free\_kbytes
 
 ### CMA相关<a name="ZH-CN_TOPIC_0000002441714865"></a>
 
-在SS528V100/SS625V100/SS524V100/SS522V100/SS928V100/SS626V100等项目中，系统默认打开了CMA。打开CMA后，系统会默认保留部分内存。这部分保留的内存可能只会使用其中一部分。因此，为了节省内存，客户可以采取以下两种方法：
+在SS528V100/SS625V100/SS524V100/SS522V100/Hi3403V100/SS626V100等项目中，系统默认打开了CMA。打开CMA后，系统会默认保留部分内存。这部分保留的内存可能只会使用其中一部分。因此，为了节省内存，客户可以采取以下两种方法：
 
 1.  调整系统保留的内存。
 
@@ -467,12 +467,12 @@ echo 4096 \>/proc/sys/vm/min\_free\_kbytes
 -   修改内核选项和重编内核，参照发布包中osdrv目录下readme\_cn.txt/readme\_en.txt文件。
 -   内核选项更改后，所有业务驱动需要重新编译链接。
     -   SS528V100/SS524V100/SS625V100/SS522V100依次进入发布包下的vendor、interdrv、osal/linux、mpp/component/security\_subsys、mpp/component/gfgb、mpp/component/pciv和mpp/obj目录，执行命令: make clean; make。
-    -   SS928V100进入发布包mpp/out/obj目录，执行命令make clean; make。ipcm.ko，virt-tty.ko需要在osdrv下编译才能更新。
+    -   Hi3403V100进入发布包mpp/out/obj目录，执行命令make clean; make。ipcm.ko，virt-tty.ko需要在osdrv下编译才能更新。
     -   SS626V100进入发布包下的mpp/out/obj目录，执行命令: make clean; make。
 
 【注意事项】
 
--   生成驱动ko会自动拷贝至mpp/ko（SS928V100拷贝至mpp/out/ko）目录，旧的驱动ko会被覆盖。
+-   生成驱动ko会自动拷贝至mpp/ko（Hi3403V100拷贝至mpp/out/ko）目录，旧的驱动ko会被覆盖。
 -   默认指定的内核源码路径为发布包中open\_source/linux/linux-4.x.y路径\(x为内核版本\)，如需指定内核路径，使用如下命令编译业务驱动: make clean; make KERNEL\_ROOT=<内核源码路径\>。
 
 ## Quick schedule注意事项<a name="ZH-CN_TOPIC_0000002408115634"></a>
@@ -633,14 +633,14 @@ Quick schedule为一个VDEC-VPSS-VO整体优化方案，需要端到端的协同
 
 ### VENC<a name="ZH-CN_TOPIC_0000002441714861"></a>
 
--   输入低延时仅SS928V100支持。
+-   输入低延时仅Hi3403V100支持。
 -   输出低延时分为H.264/H.265的slice中断输出和JPEGE/MJPEGE的ECS中断输出。
--   其中仅SS928V100/SS626V100/SS524V100/SS528V100支持slice低延时输出，具体操作请参考ss\_mpi\_venc\_set\_slice\_split接口描述。
--   仅SS928V100/SS626V100支持ECS中断输出， 具体操作请参考ss\_mpi\_venc\_set\_mjpeg\_param接口描述。
+-   其中仅Hi3403V100/SS626V100/SS524V100/SS528V100支持slice低延时输出，具体操作请参考ss\_mpi\_venc\_set\_slice\_split接口描述。
+-   仅Hi3403V100/SS626V100支持ECS中断输出， 具体操作请参考ss\_mpi\_venc\_set\_mjpeg\_param接口描述。
 
 ### VI<a name="ZH-CN_TOPIC_0000002441674889"></a>
 
--   输入输出低延时仅SS928V100支持。
+-   输入输出低延时仅Hi3403V100支持。
 -   pipe配置输出低延时，具体操作请参考ss\_mpi\_vi\_set\_pipe\_low\_delay\_attr接口描述。
 -   通道及通道后处理配置输出低延时，具体操作请参考ss\_mpi\_vi\_set\_chn\_low\_delay\_attr接口描述。
 -   调整VI中断类型，具体操作请参考ss\_mpi\_vi\_set\_pipe\_frame\_interrupt\_attr接口描述。
@@ -794,7 +794,7 @@ YUV PACKAGE 422格式各分量与内存各字节对应关系，以其中的YUYV�
 
 #### CRG和管脚复用配置<a name="ZH-CN_TOPIC_0000002408275590"></a>
 
-加载ko的时候使用如下命令：load\_ss928v100 -a –sensor1 t0，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_sensor\_pin\_mux配置。
+加载ko的时候使用如下命令：load\_Hi3403V100 -a –sensor1 t0，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_sensor\_pin\_mux配置。
 
 #### MIPI配置<a name="ZH-CN_TOPIC_0000002441674977"></a>
 
@@ -845,7 +845,7 @@ YUV PACKAGE 422格式各分量与内存各字节对应关系，以其中的YUYV�
 
 #### CRG和管脚复用配置<a name="ZH-CN_TOPIC_0000002441674965"></a>
 
-加载ko的时候使用如下命令：load\_ss928v100 -a -sensor0 t1，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_sensor\_pin\_mux配置。
+加载ko的时候使用如下命令：load\_Hi3403V100 -a -sensor0 t1，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_sensor\_pin\_mux配置。
 
 #### MIPI配置（LVDS配置）<a name="ZH-CN_TOPIC_0000002408115534"></a>
 
@@ -963,7 +963,7 @@ YUV PACKAGE 422格式各分量与内存各字节对应关系，以其中的YUYV�
 
 #### CRG和管脚复用配置<a name="ZH-CN_TOPIC_0000002408275618"></a>
 
-加载ko的时候使用如下命令：load\_ss928v100 -a –sensor1 t2，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_sensor\_pin\_mux配置。
+加载ko的时候使用如下命令：load\_Hi3403V100 -a –sensor1 t2，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_sensor\_pin\_mux配置。
 
 #### MIPI配置<a name="ZH-CN_TOPIC_0000002441674997"></a>
 
@@ -1009,7 +1009,7 @@ YUV PACKAGE 422格式各分量与内存各字节对应关系，以其中的YUYV�
 
 #### CRG和管脚复用配置<a name="ZH-CN_TOPIC_0000002441674961"></a>
 
-加载ko的时候使用如下命令：load ss928v100 -a –sensor3 t3，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_t3\_pin\_mux配置。
+加载ko的时候使用如下命令：load Hi3403V100 -a –sensor3 t3，可根据具体情况在sysconfig中调整管脚复用，参照函数thermo\_clock\_config、thermo\_t3\_pin\_mux配置。
 
 #### MIPI配置<a name="ZH-CN_TOPIC_0000002408275466"></a>
 
@@ -1186,14 +1186,14 @@ VI进YUV的场景配置需要注意的地方比较多，首先要配置管脚复
 
 #### SYS\_CONFIG配置<a name="ZH-CN_TOPIC_0000002441674985"></a>
 
--   使用ko目录下的load\_ss928v100配置，sensor参数为bt1120，通过指定该参数配置bt1120的管脚复用：vi\_bt1120\_mode\_mux\(void\)，COMS时钟：
+-   使用ko目录下的load\_Hi3403V100配置，sensor参数为bt1120，通过指定该参数配置bt1120的管脚复用：vi\_bt1120\_mode\_mux\(void\)，COMS时钟：
 
     coms\_clock\_config\(int index\) 等配置。
 
 -   AD芯片默认使用sensor1时钟，若有其他使用场景可自行修改SYSCONFIG文件。
 
     ```
-    ./load_ss928v100 –sensor0 sensor_xxx –sensor1 sensor_xxx –sensor2 sensor_xxx –sensor3 sensor_xxx
+    ./load_Hi3403V100 –sensor0 sensor_xxx –sensor1 sensor_xxx –sensor2 sensor_xxx –sensor3 sensor_xxx
     ```
 
 #### MIPI配置<a name="ZH-CN_TOPIC_0000002441714761"></a>
@@ -1207,7 +1207,7 @@ BT.1120时序不需要配置MIPI\_RX，建议不起MIPI\_RX业务。
 -   扫描格式：只支持逐行OT\_VI\_SCAN\_PROGRESSIVE
 -   UV顺序：UV顺序根据实际输入时序确定是OT\_VI\_DATA\_SEQ\_VUVU还是OT\_VI\_DATA\_SEQ\_UVUV
 -   数据类型：BT.1120进YUV数据，因此是OT\_VI\_DATA\_TYPE\_YUV
--   SS928V100配置BT.1120时需使用VI DEV3。其管脚复用的配置在sysconfig文件已配置封装好，可通过对应load脚本指令进行对应的选择，详情请查看ko目录下的load\_ss928v100。
+-   Hi3403V100配置BT.1120时需使用VI DEV3。其管脚复用的配置在sysconfig文件已配置封装好，可通过对应load脚本指令进行对应的选择，详情请查看ko目录下的load\_Hi3403V100。
 
     ```
     ot_vi_dev_attr vi_bt1120_dev_attr = {
@@ -1267,14 +1267,14 @@ BT.1120时序不需要配置MIPI\_RX，建议不起MIPI\_RX业务。
 
 #### SYS\_CONFIG配置<a name="ZH-CN_TOPIC_0000002441714821"></a>
 
--   使用ko目录下的load\_ss928v100配置，sensor参数为bt656，通过指定该参数配置bt656的管脚复用：vi\_bt1120\_mode\_mux\(void\)，COMS时钟：
+-   使用ko目录下的load\_Hi3403V100配置，sensor参数为bt656，通过指定该参数配置bt656的管脚复用：vi\_bt1120\_mode\_mux\(void\)，COMS时钟：
 
     coms\_clock\_config\(int index\) 等配置。
 
 -   AD芯片默认使用sensor1时钟，若有其他使用场景可自行修改SYSCONFIG文件。
 
 ```
-./load_ss928v100 –sensor0 sensor_xxx –sensor1 sensor_xxx –sensor2 sensor_xxx –sensor3 sensor_xxx
+./load_Hi3403V100 –sensor0 sensor_xxx –sensor1 sensor_xxx –sensor2 sensor_xxx –sensor3 sensor_xxx
 ```
 
 #### MIPI配置<a name="ZH-CN_TOPIC_0000002408275570"></a>
@@ -1288,7 +1288,7 @@ BT.656时序不需要配置MIPI\_RX，建议不起MIPI\_RX业务。
 -   扫描格式：只支持逐行OT\_VI\_SCAN\_PROGRESSIVE
 -   UV顺序：UV顺序根据实际输入时序确定是OT\_VI\_DATA\_SEQ\_UYVY/OT\_VI\_DATA\_SEQ\_VYUY/OT\_VI\_DATA\_SEQ\_YUYV/OT\_VI\_DATA\_SEQ\_YVYU。
 -   数据类型：BT.656进YUV数据，因此是OT\_VI\_DATA\_TYPE\_YUV
--   SS928V100配置BT.656时需使用VI DEV3。其管脚复用的配置在sysconfig文件已配置封装好，可通过对应load脚本指令进行对应的选择，详情请查看ko目录下的load\_ss928v100。
+-   Hi3403V100配置BT.656时需使用VI DEV3。其管脚复用的配置在sysconfig文件已配置封装好，可通过对应load脚本指令进行对应的选择，详情请查看ko目录下的load\_Hi3403V100。
 
     ```
     ot_vi_dev_attr vi_bt656_dev_attr = {
@@ -1348,11 +1348,11 @@ BT.656时序不需要配置MIPI\_RX，建议不起MIPI\_RX业务。
 
 #### SYS\_CONFIG配置<a name="ZH-CN_TOPIC_0000002441714913"></a>
 
--   使用ko目录下的load\_ss928v100配置，sensor参数为mipi\_ad。
+-   使用ko目录下的load\_Hi3403V100配置，sensor参数为mipi\_ad。
 -   AD芯片默认使用sensor0时钟，若有其他使用场景可自行修改SYSCONFIG文件。
 
     ```
-    ./load_ss928v100 –sensor0 sensor_xxx
+    ./load_Hi3403V100 –sensor0 sensor_xxx
     ```
 
 #### MIPI配置<a name="ZH-CN_TOPIC_0000002441675045"></a>
@@ -1442,7 +1442,7 @@ BT.656时序不需要配置MIPI\_RX，建议不起MIPI\_RX业务。
 
 ## Stagger通路配置<a name="ZH-CN_TOPIC_0000002441714845"></a>
 
-物理pipe数目有限时（SS928V100 物理pipe数目为4），若运行普通的行模式WDR/帧模式WDR会占用较多的物理pipe资源，此时所能调节的设备受限（以运行一组3to1 WDR为例，会占用3个物理pipe，此时只剩余1个空闲的物理pipe）。
+物理pipe数目有限时（Hi3403V100 物理pipe数目为4），若运行普通的行模式WDR/帧模式WDR会占用较多的物理pipe资源，此时所能调节的设备受限（以运行一组3to1 WDR为例，会占用3个物理pipe，此时只剩余1个空闲的物理pipe）。
 
 若sensor使用同一个VC号写出所有的WDR帧（称为stagger模式），仅用一个物理pipe就可以接收多帧WDR数据，物理pipe写出多帧WDR raw后，可以按需拆分raw数据送给不同的虚拟pipe进行ISP的处理。简单示意流程如[图1](#fig7578163664419)所示。
 
@@ -2700,7 +2700,7 @@ pub_attr->sync.info. ivs = 0;
 具体的接口使用方法请参考文档《MPP 媒体处理软件 V5.0 开发参考》中的“视频输出”章节。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->在客户一些场景下需要特殊的时序如1080P59.94，通过ss\_mpi\_vo\_set\_user\_sync\_info接口调整PLL即可。在SS928V100的设备1中，如果也需要使用PLL，则需要先使用ss\_mpi\_audio\_set\_mod\_param接口（详细参考《MPP 媒体处理软件 V5.0 开发参考》的“音频”章节）将SPLL释放，然后通过配置SPLL的寄存器来改变时钟，SPLL的配置寄存器0地址：0x11010900，SPLL的配置寄存器1地址：0x11010904。
+>在客户一些场景下需要特殊的时序如1080P59.94，通过ss\_mpi\_vo\_set\_user\_sync\_info接口调整PLL即可。在Hi3403V100的设备1中，如果也需要使用PLL，则需要先使用ss\_mpi\_audio\_set\_mod\_param接口（详细参考《MPP 媒体处理软件 V5.0 开发参考》的“音频”章节）将SPLL释放，然后通过配置SPLL的寄存器来改变时钟，SPLL的配置寄存器0地址：0x11010900，SPLL的配置寄存器1地址：0x11010904。
 
 ### 用户时序下HDMI接口<a name="ZH-CN_TOPIC_0000002441714905"></a>
 
@@ -3113,9 +3113,9 @@ static ot_vi_dev_attr g_mipi_yuv422_dev_attr = {
 
 ## H.264 AVBR 较其他平台码率有差异问题<a name="ZH-CN_TOPIC_0000002408115726"></a>
 
-**具体表现**：H.264+AVBR在ss524/ss928平台比老版本芯片平台码率多20%\~30%，在复杂运动场景下，码率增多更加显著。
+**具体表现**：H.264+AVBR在ss524/Hi3403V100平台比老版本芯片平台码率多20%\~30%，在复杂运动场景下，码率增多更加显著。
 
-**原因分析**：在ss524/ss928平台在AVBR码控的设计上，为了解决码率降低带来的图像质量副作用，自适应的提升了一部分码率来平衡图像质量问题，因此在码率节省上对比其他老的芯片版本少。
+**原因分析**：在ss524/Hi3403V100平台在AVBR码控的设计上，为了解决码率降低带来的图像质量副作用，自适应的提升了一部分码率来平衡图像质量问题，因此在码率节省上对比其他老的芯片版本少。
 
 **解决方法**：增加了在AVBR的param参数集里增加了save\_bitrate\_en开关，该参数使能之后可自适应节省背景区域的码率。码率节省程度与老版本芯片相当。
 
@@ -3147,7 +3147,7 @@ static ot_vi_dev_attr g_mipi_yuv422_dev_attr = {
 ## VI通路调试<a name="ZH-CN_TOPIC_0000002441714801"></a>
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->以下VI通路调试不适用于SS928V100解决方案。
+>以下VI通路调试不适用于Hi3403V100解决方案。
 
 VI的数据通路如下：
 
@@ -3695,9 +3695,9 @@ EARLY/EARLY\_END模式下early\_line配置受系统响应及时性影响，会�
 
 【现象】
 
-SS928V100平台HNR与智能SVP\__NNN_业务互斥，当前两种业务切换需要进行ko的卸载与加载。
+Hi3403V100平台HNR与智能SVP\__NNN_业务互斥，当前两种业务切换需要进行ko的卸载与加载。
 
-注：SS927V100不支持SVP\__NNN_
+注：Hi3519AV200不支持SVP\__NNN_
 
 【说明】
 
@@ -3743,7 +3743,7 @@ system\("insmod ot\_pqp.ko"\);
 
 解决方案：将VO的中断绑定到其他CPU核上。例：将VO中断绑定到CPU 1核上。命令：echo 0x02 \> /proc/irq/70/smp\_affinity
 
-## SS928V100 VI报buffer overflow中断丢帧问题<a name="ZH-CN_TOPIC_0000002408275630"></a>
+## Hi3403V100 VI报buffer overflow中断丢帧问题<a name="ZH-CN_TOPIC_0000002408275630"></a>
 
 【现象】
 

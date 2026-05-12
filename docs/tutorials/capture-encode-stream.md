@@ -45,11 +45,11 @@ MPP 模块 `insmod` 进内核。验证：
 lsmod | grep -E 'sys_|isp|venc|vi_|vo_'
 ```
 
-期望看到一组 `ot_*` / `ss928_*` 模块已加载。如果空，手动跑一次：
+期望看到一组 `ot_*` / `Hi3403V100_*` 模块已加载。如果空，手动跑一次：
 
 ``` bash
 cd /ko
-sudo bash load_ss928v100_ubuntu -i
+sudo bash load_Hi3403V100_ubuntu -i
 ```
 
 ## 步骤 2 — 编译 sample（如果你需要修改）
@@ -58,7 +58,7 @@ Pegasus SDK 自带媒体处理 sample 源码。在 **PC 主机**上交叉编译�
 
 ``` bash
 # 进入 SDK，按 README 设置好 OSDRV_CROSS / 工具链
-cd pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/
+cd pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/
 
 # 看一下都有哪些 sample
 ls
@@ -182,7 +182,7 @@ int main(void) {
 ```
 
 完整可编译代码在
-`pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample/composite/`。
+`pegasus/platform/Hi3403V100_gcc/smp/a55_linux/mpp/sample/composite/`。
 
 ## 调优常见问题
 

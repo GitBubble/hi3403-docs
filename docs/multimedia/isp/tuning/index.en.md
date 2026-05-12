@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 图�
 This document is written for ISP image quality debugging. It provides detailed descriptions of the debugging methods for each ISP module, aiming to offer solutions and assistance for issues encountered during development.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->This document uses SS928V100 as an example. Unless otherwise specified, the content for SS927V100 is identical to that of SS928V100.
+>This document uses Hi3403V100 as an example. Unless otherwise specified, the content for Hi3519AV200 is identical to that of Hi3403V100.
 
 **Product Versions<a name="section3091mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ The product versions corresponding to this document are as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3105mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p3107mcpsimp"><a name="p3107mcpsimp"></a><a name="p3107mcpsimp"></a>SS928</p>
+<tbody><tr id="row3105mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p3107mcpsimp"><a name="p3107mcpsimp"></a><a name="p3107mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p3109mcpsimp"><a name="p3109mcpsimp"></a><a name="p3109mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row185704453169"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p640211481164"><a name="p640211481164"></a><a name="p640211481164"></a>SS927</p>
+<tr id="row185704453169"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p640211481164"><a name="p640211481164"></a><a name="p640211481164"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p184021248131615"><a name="p184021248131615"></a><a name="p184021248131615"></a>V100</p>
 </td>
@@ -113,7 +113,7 @@ The ISP Image Tuning Guide is a document that guides users through image tuning.
 -   "ISP Color Tuning Guide": Detailed description of color tuning;
 -   "Image Quality Debugging Tool User Guide": Detailed description of the PQTools used in the image tuning process;
 -   Chip Manual: Register-level module description;
--   "SS928V100/SS927V100 3DNR Parameter Configuration Guide": Describes the 3DNR interface parameters, the meaning of each parameter, and the corresponding effect trends during debugging;
+-   "Hi3403V100/Hi3519AV200 3DNR Parameter Configuration Guide": Describes the 3DNR interface parameters, the meaning of each parameter, and the corresponding effect trends during debugging;
 -   "Sensor Debugging Guide": Reference document needed when developing 3A algorithms.
 
 The relationship diagram of documents related to the Image Tuning Guide is shown in [Figure 1](#fig3895711632).
@@ -137,7 +137,7 @@ The ISP module supports standard Sensor image data processing, including basic f
 -   Supports gamma correction
 -   Supports dynamic range compression (DRC)
 -   Supports Sensor built-in WDR
--   SS928V100 supports up to 3-in-1 WDR
+-   Hi3403V100 supports up to 3-in-1 WDR
 -   Supports auto white balance
 -   Supports auto exposure
 -   Supports auto focus
@@ -152,22 +152,22 @@ The ISP module supports standard Sensor image data processing, including basic f
 
 ## ISP Functional Block Diagram<a name="ZH-CN_TOPIC_0000002457841029"></a>
 
-The functional structure diagram of the ISP SS928V100 is shown in [Figure 1](#fig19340125514231), [Figure 2](#fig1829272832518), and [Figure 3](#fig474713442299). In this diagram and throughout this document, ISP_FE refers to the part of the ISP pipeline before FPN (not including FPN), and ISP_BE refers to the part of the ISP pipeline after FPN (including FPN).
+The functional structure diagram of the ISP Hi3403V100 is shown in [Figure 1](#fig19340125514231), [Figure 2](#fig1829272832518), and [Figure 3](#fig474713442299). In this diagram and throughout this document, ISP_FE refers to the part of the ISP pipeline before FPN (not including FPN), and ISP_BE refers to the part of the ISP pipeline after FPN (including FPN).
 
 >![](public_sys-resources/icon-note.gif) **Note:**
 >In this document, ISP uses *.* and S*.* to represent unsigned and signed numbers. For example: U8.8 indicates the data type is unsigned, with 8-bit integer part and 8-bit fractional part. Similarly, S8.8 indicates signed, with 8-bit integer part (including 1-bit sign) and 8-bit fractional part.
 
 The following sections of this document will introduce the brief principles of each module and the image quality debugging methods.
 
-**Figure 1** ISP Overall Structure Diagram (SS928V100)<a name="fig19340125514231"></a>
-![](figures/ISP-整体结构图（SS928V100）.png "ISP Overall Structure Diagram (SS928V100)")
+**Figure 1** ISP Overall Structure Diagram (Hi3403V100)<a name="fig19340125514231"></a>
+![](figures/ISP-整体结构图（Hi3403V100）.png "ISP Overall Structure Diagram (Hi3403V100)")
 
-**Figure 2** ISP_FE Structure Diagram (SS928V100)<a name="fig1829272832518"></a>
-![](figures/ISP_FE-结构图（SS928V100）.png "ISP_FE Structure Diagram (SS928V100)")
+**Figure 2** ISP_FE Structure Diagram (Hi3403V100)<a name="fig1829272832518"></a>
+![](figures/ISP_FE-结构图（Hi3403V100）.png "ISP_FE Structure Diagram (Hi3403V100)")
 ![](figures/2-2-0.png)
 
-**Figure 3** ISP_BE Structure Diagram (SS928V100)<a name="fig474713442299"></a>
-![](figures/ISP_BE-结构图（SS928V100）.png "ISP_BE Structure Diagram (SS928V100)")
+**Figure 3** ISP_BE Structure Diagram (Hi3403V100)<a name="fig474713442299"></a>
+![](figures/ISP_BE-结构图（Hi3403V100）.png "ISP_BE Structure Diagram (Hi3403V100)")
 >![](public_sys-resources/icon-note.gif) **Note:**
 >*The DG1 function in the diagram is the same as DG.
 
@@ -241,7 +241,7 @@ The function of each ISP module is briefly described in [Table 1](#_Ref500230610
 </tr>
 <tr id="row170mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p172mcpsimp"><a name="p172mcpsimp"></a><a name="p172mcpsimp"></a>LSC</p>
 </td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p174mcpsimp"><a name="p174mcpsimp"></a><a name="p174mcpsimp"></a>Used for lens shading correction. SS928V100 only supports mesh shading.</p>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p174mcpsimp"><a name="p174mcpsimp"></a><a name="p174mcpsimp"></a>Used for lens shading correction. Hi3403V100 only supports mesh shading.</p>
 </td>
 </tr>
 <tr id="row175mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p177mcpsimp"><a name="p177mcpsimp"></a><a name="p177mcpsimp"></a>DG</p>
@@ -338,11 +338,11 @@ The function of each ISP module is briefly described in [Table 1](#_Ref500230610
 </table>
 
 # Image Quality Tuning Overview
-Currently, the SS928V100 is mainly targeted at two major application scenarios: the recorder/public safety application scenario and the consumer application scenario. The recorder/public safety application scenario includes Linear mode and WDR mode. Consumer application scenarios mainly include product forms such as action DV, dashcam, and snapshot cameras. Due to the special requirements of the video capture industry in the recorder/public safety application scenario, the focus on image quality differs from that of consumer application scenarios.
+Currently, the Hi3403V100 is mainly targeted at two major application scenarios: the recorder/public safety application scenario and the consumer application scenario. The recorder/public safety application scenario includes Linear mode and WDR mode. Consumer application scenarios mainly include product forms such as action DV, dashcam, and snapshot cameras. Due to the special requirements of the video capture industry in the recorder/public safety application scenario, the focus on image quality differs from that of consumer application scenarios.
 
 ## Recorder Application Image Tuning Overview<a name="ZH-CN_TOPIC_0000002457880933"></a>
 
-Currently, the SS928V100 for recorder application scenarios mainly includes two typical modes: Linear mode and WDR mode. For Linear mode, the image quality dimensions of concern mainly include reasonable image brightness, accurate color reproduction, sharp overall image clarity, and overall image transparency. For WDR mode, the image quality dimensions of concern mainly include a reasonable overall dynamic range (bright areas not overexposed, dark area details visible), accurate color reproduction as much as possible, sharp overall image clarity, and overall image transparency. The following sections introduce the debugging steps for Linear mode and WDR mode image quality tuning, as well as precautions for ISP single-point algorithm debugging.
+Currently, the Hi3403V100 for recorder application scenarios mainly includes two typical modes: Linear mode and WDR mode. For Linear mode, the image quality dimensions of concern mainly include reasonable image brightness, accurate color reproduction, sharp overall image clarity, and overall image transparency. For WDR mode, the image quality dimensions of concern mainly include a reasonable overall dynamic range (bright areas not overexposed, dark area details visible), accurate color reproduction as much as possible, sharp overall image clarity, and overall image transparency. The following sections introduce the debugging steps for Linear mode and WDR mode image quality tuning, as well as precautions for ISP single-point algorithm debugging.
 
 ### Linear Mode Image Quality Tuning<a name="ZH-CN_TOPIC_0000002457840933"></a>
 
@@ -355,9 +355,9 @@ The main work that needs to be carried out before image quality tuning is as fol
 
 **Sensor Integration**<a name="section638688361"></a>
 
--   Sensor Integration: Mainly involves integrating the Sensor to be tuned with the SS928V100.
+-   Sensor Integration: Mainly involves integrating the Sensor to be tuned with the Hi3403V100.
 
-    This mainly includes modes such as 1080p@30fps Linear, 1080p@30fps 3-in-1 WDR, and 1080p@30fps 2-in-1 WDR. Based on the DataSheet provided by the Sensor manufacturer, extract the initialization register sequences for each mode and adapt them to the SS928V100 MIPI configuration to enable the Sensor to work with the SS928V100. The completion criteria for Sensor integration are: the basic path of the integration mode is normal, and modes can switch normally. The basic AE functions are normal, including frame rate reduction without flicker, normal auto long exposure, and reasonable default parameters for each Sensor driver module. For details, refer to the "Sensor Debugging Guide."
+    This mainly includes modes such as 1080p@30fps Linear, 1080p@30fps 3-in-1 WDR, and 1080p@30fps 2-in-1 WDR. Based on the DataSheet provided by the Sensor manufacturer, extract the initialization register sequences for each mode and adapt them to the Hi3403V100 MIPI configuration to enable the Sensor to work with the Hi3403V100. The completion criteria for Sensor integration are: the basic path of the integration mode is normal, and modes can switch normally. The basic AE functions are normal, including frame rate reduction without flicker, normal auto long exposure, and reasonable default parameters for each Sensor driver module. For details, refer to the "Sensor Debugging Guide."
 
 -   Sensor and Lens Calibration
 
@@ -474,7 +474,7 @@ Modules affecting image sharpness and noise mainly include NR, Demosaic, DPC dyn
 
     Entry conditions for debugging the NR module: accurate black level correction, reasonable NoiseProfile calibration, and reasonable AWB and CCM calibration parameters.
 
-    SS928V100 NR includes temporal and spatial domains. The current guideline for debugging NR is to distribute as much of the temporal strength for static areas to NR, while motion areas mainly use the spatial domain of NR. The main advantage is that NR's temporal domain has more accurate motion/static judgment compared to 3DNR's temporal domain, and the image passing through NR's temporal domain and then through Sharpen can better improve overall image sharpness. For specific NR tuning methods, refer to the "[NR](#ZH-CN_TOPIC_0000002457841025)" section.
+    Hi3403V100 NR includes temporal and spatial domains. The current guideline for debugging NR is to distribute as much of the temporal strength for static areas to NR, while motion areas mainly use the spatial domain of NR. The main advantage is that NR's temporal domain has more accurate motion/static judgment compared to 3DNR's temporal domain, and the image passing through NR's temporal domain and then through Sharpen can better improve overall image sharpness. For specific NR tuning methods, refer to the "[NR](#ZH-CN_TOPIC_0000002457841025)" section.
 
 3.  The debugging guideline for Bayersharpen is mainly to adjust the weak textures in the dark areas of the image appropriately. Note that Bayersharpen should not be set too strong, and its debugging effect mainly focuses on mid-frequency content. Excessive debugging can cause the overall image to appear coarse. For specific Bayersharpen debugging, refer to the "[BayerSharpen](#ZH-CN_TOPIC_0000002424362250)" section.
 4.  The debugging guideline for YUV Sharpen is mainly to adjust the texture details and edge sharpness to appropriate levels. Using a laboratory still-life scene as an example, YUV Sharpen needs to sharpen the texture details of objects such as straw mats and lions in the still-life scene before the image goes through 3DNR. [Figure 14](#_Ref500231916) shows the texture details sharpened by YUV Sharpen (red boxes). Additionally, larger edges such as tables and diagonal grids need to be sharpened, as shown in [Figure 15](#_Ref500231919). YUV Sharpen parameters need to be linked with ISO to ensure reasonable adjustment at different illuminance levels in the laboratory still-life scene.
@@ -529,7 +529,7 @@ The AE exposure ratio determines the dynamic range of the WDR mode image. Theref
 
 **Motion Trailing Dimension in the Synthesis Area**<a name="section240420577354"></a>
 
-The factors affecting motion trailing in the WDR synthesis area mainly include the WDR module and the AE exposure ratio. The larger the exposure ratio, the higher the probability of trailing in the synthesis area. However, in typical WDR backlit scenes, under WDR 2-in-1 mode, the exposure ratio is usually 16-32 times. In this case, the main factor affecting motion trailing in the synthesis area is the WDR module. On the current SS928V100 platform, due to limitations of the WDR module algorithm, it is difficult to distinguish between dark area and bright area human motion. While ensuring that dark area human motion does not select short frames, the arm of a person waving in the bright area is prone to breaking. During debugging, adjust the synthesis module's motion weights md\_thr\_low\_gain and md\_thr\_hig\_gain so that dark area human motion selects long frames as much as possible. Then observe the performance of the bright area person waving. For specific WDR synthesis module debugging, refer to the description of the "[WDR](#ZH-CN_TOPIC_0000002424362078)" module.
+The factors affecting motion trailing in the WDR synthesis area mainly include the WDR module and the AE exposure ratio. The larger the exposure ratio, the higher the probability of trailing in the synthesis area. However, in typical WDR backlit scenes, under WDR 2-in-1 mode, the exposure ratio is usually 16-32 times. In this case, the main factor affecting motion trailing in the synthesis area is the WDR module. On the current Hi3403V100 platform, due to limitations of the WDR module algorithm, it is difficult to distinguish between dark area and bright area human motion. While ensuring that dark area human motion does not select short frames, the arm of a person waving in the bright area is prone to breaking. During debugging, adjust the synthesis module's motion weights md\_thr\_low\_gain and md\_thr\_hig\_gain so that dark area human motion selects long frames as much as possible. Then observe the performance of the bright area person waving. For specific WDR synthesis module debugging, refer to the description of the "[WDR](#ZH-CN_TOPIC_0000002424362078)" module.
 
 **Scene Dynamic Range Dimension**<a name="section14693204713367"></a>
 
@@ -537,7 +537,7 @@ Factors affecting the scene dynamic range in WDR mode include: AE exposure ratio
 
 Entry conditions for debugging the DRC module: correct black level calibration, completed Shading calibration, reasonable AE module debugging, completed AWB and CCM calibration, and a preset set of Gamma parameters.
 
-Currently, to improve backlit face brightness and local contrast, the SS928V100 DRC includes Filter and FilterX. For backlit face enhancement, it is recommended to use the FilterX filter, while for non-backlit face areas, the Filter filter is preferred. The principle of this fusion is that FilterX can better preserve and enhance backlit face details, while Filter mainly enhances large-scale details. For specific DRC module debugging, refer to the description of the "[DRC](#ZH-CN_TOPIC_0000002457881045)" module.
+Currently, to improve backlit face brightness and local contrast, the Hi3403V100 DRC includes Filter and FilterX. For backlit face enhancement, it is recommended to use the FilterX filter, while for non-backlit face areas, the Filter filter is preferred. The principle of this fusion is that FilterX can better preserve and enhance backlit face details, while Filter mainly enhances large-scale details. For specific DRC module debugging, refer to the description of the "[DRC](#ZH-CN_TOPIC_0000002457881045)" module.
 
 In the current WDR mode, the DRC algorithm uses a smaller filter window to enhance local face brightness, which results in a larger contrast stretch difference at the boundaries between bright and dark areas, creating edge lines. In the current DRC algorithm, increasing GradRevMax and GradRevThr can improve the edge line performance in the brightness transition area, but this also reduces the contrast of the face, affecting face recognition. Therefore, there is a trade-off between edge lines at the bright-dark boundary and face brightness.
 

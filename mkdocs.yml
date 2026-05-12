@@ -1,7 +1,7 @@
 site_name: Hi3403 Developer Center
 site_url: https://gitbubble.github.io/hi3403-docs/
 
-site_description: Documentation for the HiSilicon SS928V100 / SS927V100 Hi3403 platform
+site_description: Documentation for the HiSilicon Hi3403V100 / Hi3519AV200 Hi3403 platform
 site_author: Hi3403 community
 
 repo_name: GitBubble/hi3403-docs
@@ -123,7 +123,7 @@ plugins:
             "OpenEuler": "OpenEuler"
             "Buildroot": "Buildroot"
             "SoC 与 Linux": "SoC & Linux"
-            "SS928V100 概览": "SS928V100 Overview"
+            "Hi3403V100 概览": "Hi3403V100 Overview"
             "U-Boot": "U-Boot"
             "安全启动": "Secure Boot"
             "外设驱动": "Peripheral Drivers"
@@ -314,7 +314,7 @@ nav:
       - Buildroot: os/buildroot/index.md
   - SoC 与 Linux:
       - SoC 与 Linux: soc-linux/index.md
-      - SS928V100 概览: soc-linux/soc-overview/index.md
+      - Hi3403V100 概览: soc-linux/soc-overview/index.md
       - U-Boot: soc-linux/uboot/index.md
       - 安全启动: soc-linux/secure-boot/index.md
       - 外设驱动: soc-linux/peripherals/index.md

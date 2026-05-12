@@ -10,7 +10,7 @@ This document mainly introduces the TDE API, data types, and Proc debug informat
 
 >![](public_sys-resources/icon-note.gif) **Note:**
 >-   This document uses SS528V100 as an example. Unless otherwise specified, SS625V100, SS524V100, SS522V100, SS626V100 are consistent with SS528V100.
->-   Unless otherwise specified, SS927V100 is consistent with SS928V100.
+>-   Unless otherwise specified, Hi3519AV200 is consistent with Hi3403V100.
 
 **Product Version<a name="section105mcpsimp"></a>**
 
@@ -23,7 +23,7 @@ The product version corresponding to this document is as follows.
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
@@ -48,7 +48,7 @@ The product version corresponding to this document is as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p13835920181"><a name="p13835920181"></a><a name="p13835920181"></a>V100</p>
 </td>
 </tr>
-<tr id="row44298361112014"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>SS927</p>
+<tr id="row44298361112014"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p34921898474"><a name="p34921898474"></a><a name="p34921898474"></a>V100</p>
 </td>

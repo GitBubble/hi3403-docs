@@ -10,9 +10,9 @@ Hi3403 documentation is full of abbreviations. This table gives a one-sentence e
 
 ## Chips and Subsystems
 
-`Hi3403V100` / `SS928V100`
-: Two names for the same chip. Hi3403 is the product code name, SS928 is the chip code name,
-Completely equivalent. Comes with SS927V100 (lite version with one less NPU cluster).
+`Hi3403V100` / `Hi3403V100`
+: Two names for the same chip. Hi3403 is the product code name, Hi3403V100 is the chip code name,
+Completely equivalent. Comes with Hi3519AV200 (lite version with one less NPU cluster).
 
 `SoC`
 : System on Chip. Integrate CPU, NPU, ISP, codecs, and various IO controllers
@@ -176,7 +176,7 @@ Kernel driver, sample code. There are two variants: GCC-GLIBC and CLANG-MUSL.
 
 ## Other common abbreviations
 
-`SS928V100` ↔ `Hi3403V100` - see "Chip and Subsystem" above.
+`Hi3403V100` ↔ `Hi3403V100` - see "Chip and Subsystem" above.
 
 `Topeet` / `LubanCat` / `ebaina` / `rkh` / `zsks`
 : Development board OEM. They are Xunwei, Yehuo, Yibaina, Runkaihong, and Zhongshan Kuangshi.

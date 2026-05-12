@@ -164,7 +164,7 @@ device/soc/hisilicon
 │   │   ├── smp                        #SDK软件，包括内核驱动源码、sample实例代码，闭源库
 │   │   ├── 001_mpp.patch              #OpenHarmony环境编译SDK适配（内核路径、OHOS_LITE编译参数）
 │   │   ├── 002_trusted_firmware.patch #ATF编译适配（BL33指向OpenHarmony内核uImage路径）
-│   │   └── 003_load_ss928v100_ohos.patch #OpenHarmony环境ko加载适配（DRM/FB显示模块加载卸载）
+│   │   └── 003_load_Hi3403V100_ohos.patch #OpenHarmony环境ko加载适配（DRM/FB显示模块加载卸载）
 │   ├── soc.gni
 │   └── uboot
 └── patches                            #OpenHarmony源码补丁（按子系统分类）
@@ -207,9 +207,9 @@ if (defined(ohos_lite)) {
     if (ohos_build_compiler_dir != "") {
       clang_dir = rebase_path("$ohos_build_compiler_dir")
     }
-    chip = "ss928v100"
+    chip = "Hi3403V100"
     if (board_name == "hispark_aiflylite") {
-      chip = "ss927v100"
+      chip = "Hi3519AV200"
     }
     command = "./build.sh ${ohos_root_path} ${outdir} y ${clang_dir} ${linux_kernel_version} ${chip}"
     deps = [ "//device/board/hisilicon/${device_name}/kernel:build_kernel" ]
@@ -289,7 +289,7 @@ cp -rf ${SDK_LINUX_SRC_PATH}/open_source/mbedtls ${SDK_LINUX_OPEN_PATH}/
 echo "Add patchs to sdk..."
 pushd ${SDK_LINUX_SMP_PATH}
 patch -p1 < ./001_mpp.patch
-patch -p1 < ./003_load_ss928v100_ohos.patch
+patch -p1 < ./003_load_Hi3403V100_ohos.patch
 popd
 
 echo "Add patchs to atf..."

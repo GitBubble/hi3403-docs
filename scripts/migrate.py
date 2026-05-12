@@ -60,18 +60,18 @@ SLUG_MAP: Dict[str, str] = {
     # ---- Get started ------------------------------------------------------
     "Hi3403V100环境搭建指南":               "get-started/environment",
     "驱动和开发环境安装指南":               "get-started/driver-install",
-    "SS928V100╱SS927V100 SDK 安装以及升级使用说明":
+    "Hi3403V100╱Hi3519AV200 SDK 安装以及升级使用说明":
                                             "get-started/sdk-install",
     # Upstream "quickstart" lands at /upstream-quickstart so the friendly
     # hand-written get-started/quickstart.md owns the canonical URL.
     "快速上手指南":                          "get-started/upstream-quickstart",
 
     # ---- SoC & Linux ------------------------------------------------------
-    "SS928V100 超高清智能网络录像机 SoC 产品简介":
+    "Hi3403V100 超高清智能网络录像机 SoC 产品简介":
                                             "soc-linux/soc-overview",
-    "SS928V100╱SS927V100 U-boot 移植应用开发指南":
+    "Hi3403V100╱Hi3519AV200 U-boot 移植应用开发指南":
                                             "soc-linux/uboot",
-    "SS928V100╱SS927V100 安全启动使用指南": "soc-linux/secure-boot",
+    "Hi3403V100╱Hi3519AV200 安全启动使用指南": "soc-linux/secure-boot",
     "外围设备驱动操作指南":                 "soc-linux/peripherals",
     "内存布局调整指南":                     "soc-linux/memory-layout",
     "MIPI 使用指南":                        "soc-linux/mipi",
@@ -92,7 +92,7 @@ SLUG_MAP: Dict[str, str] = {
     "HDMI 开发参考":                        "multimedia/hdmi",
     "图形开发用户指南":                     "multimedia/graphics/dev",
     "GFBG 开发指南":                        "multimedia/graphics/gfbg",
-    "SS928V100╱SS927V100 3DNR参数配置说明": "multimedia/3dnr",
+    "Hi3403V100╱Hi3519AV200 3DNR参数配置说明": "multimedia/3dnr",
     "HNR 开发参考":                         "multimedia/cv/hnr",
     "HNR 调优指南":                         "multimedia/cv/hnr-tuning",
     "DIS 调试指南":                         "multimedia/dis",

@@ -28,7 +28,7 @@ pegasus/
 │   └── manifest
 │       ├── devboard_hispark_aifly_5.1.0.xml  # repo manifest file (defines the repository list)
 │       └── prebuilts_setup.sh                # Pre-build environment setup script
-├── platform/ss928v100_clang        # SDK source and binary libraries (kernel drivers, Samples, open-source packages)
+├── platform/Hi3403V100_clang        # SDK source and binary libraries (kernel drivers, Samples, open-source packages)
 └── vendor
     └── rkh/patches                 # RKH OpenHarmony source patches (classified by subsystem; enhance system features and driver support)
 ```

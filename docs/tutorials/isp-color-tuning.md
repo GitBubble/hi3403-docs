@@ -13,7 +13,7 @@ PC 上连到板子上的 ISP 调试代理、实时改 AWB 参数、把结果固�
 
 !!! info "工具命名说明"
 
-    海思针对 SS928V100 的图像质量调优工具有两条路线：
+    海思针对 Hi3403V100 的图像质量调优工具有两条路线：
 
     - **PQ Tool**（也叫 IQS / Image Quality Studio）—— 通常是 Windows GUI，
       Pegasus SDK 的 `mpp/sample/pqtool/` 提供板端 agent 源码。

@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 本文为使用MCF开发的程序员而写，目的是为您在开发过程中遇到的问题提供解决办法和帮助。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section105mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>SS928</p>
+<tbody><tr id="row119mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row4420516474"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p166961419277"><a name="p166961419277"></a><a name="p166961419277"></a>SS927</p>
+<tr id="row4420516474"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p166961419277"><a name="p166961419277"></a><a name="p166961419277"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p869611191071"><a name="p869611191071"></a><a name="p869611191071"></a>V100</p>
 </td>
@@ -217,7 +217,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 **图 2**  MCF内部处理流程图<a name="fig12877101218348"></a>  
 ![](figures/MCF内部处理流程图.png "MCF内部处理流程图")
 >![](public_sys-resources/icon-note.gif) **说明：** 
->SS928V100 MCF支持8个扩展通道，图中仅画一个。扩展通道可以绑定到任意物理通道，图中仅示意性绑定到一个物理通道。
+>Hi3403V100 MCF支持8个扩展通道，图中仅画一个。扩展通道可以绑定到任意物理通道，图中仅示意性绑定到一个物理通道。
 
 ### 输入输出特性<a name="ZH-CN_TOPIC_0000002457829757"></a>
 
@@ -244,7 +244,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row318mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p id="p320mcpsimp"><a name="p320mcpsimp"></a><a name="p320mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row318mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p id="p320mcpsimp"><a name="p320mcpsimp"></a><a name="p320mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.6.1.2 mcps1.2.6.2.2 "><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>Y</p>
 </td>
@@ -274,7 +274,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row350mcpsimp"><td class="cellrowborder" valign="top" width="30.693069306930692%" headers="mcps1.2.5.1.1 mcps1.2.5.2.1 "><p id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row350mcpsimp"><td class="cellrowborder" valign="top" width="30.693069306930692%" headers="mcps1.2.5.1.1 mcps1.2.5.2.1 "><p id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.831683168316832%" headers="mcps1.2.5.1.2 mcps1.2.5.2.2 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>Y</p>
 </td>
@@ -295,7 +295,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row371mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p373mcpsimp"><a name="p373mcpsimp"></a><a name="p373mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row371mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p373mcpsimp"><a name="p373mcpsimp"></a><a name="p373mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p375mcpsimp"><a name="p375mcpsimp"></a><a name="p375mcpsimp"></a>宽[256, 8192]</p>
 <p id="p376mcpsimp"><a name="p376mcpsimp"></a><a name="p376mcpsimp"></a>高[256, 4096]</p>
@@ -329,7 +329,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row409mcpsimp"><td class="cellrowborder" valign="top" width="12.000000000000002%" headers="mcps1.2.7.1.1 mcps1.2.7.2.1 "><p id="p411mcpsimp"><a name="p411mcpsimp"></a><a name="p411mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row409mcpsimp"><td class="cellrowborder" valign="top" width="12.000000000000002%" headers="mcps1.2.7.1.1 mcps1.2.7.2.1 "><p id="p411mcpsimp"><a name="p411mcpsimp"></a><a name="p411mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.000000000000002%" headers="mcps1.2.7.1.2 mcps1.2.7.2.2 "><p id="p413mcpsimp"><a name="p413mcpsimp"></a><a name="p413mcpsimp"></a>Y</p>
 </td>
@@ -363,7 +363,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row446mcpsimp"><td class="cellrowborder" valign="top" width="17.82178217821782%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p id="p448mcpsimp"><a name="p448mcpsimp"></a><a name="p448mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row446mcpsimp"><td class="cellrowborder" valign="top" width="17.82178217821782%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p id="p448mcpsimp"><a name="p448mcpsimp"></a><a name="p448mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.82178217821782%" headers="mcps1.2.6.1.2 mcps1.2.6.2.2 "><p id="p450mcpsimp"><a name="p450mcpsimp"></a><a name="p450mcpsimp"></a>仅通道0支持</p>
 </td>
@@ -386,7 +386,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row469mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p471mcpsimp"><a name="p471mcpsimp"></a><a name="p471mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row469mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p471mcpsimp"><a name="p471mcpsimp"></a><a name="p471mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p473mcpsimp"><a name="p473mcpsimp"></a><a name="p473mcpsimp"></a>宽[128, 16384]</p>
 <p id="p474mcpsimp"><a name="p474mcpsimp"></a><a name="p474mcpsimp"></a>高[64, 8192]</p>
@@ -481,7 +481,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row573mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 mcps1.2.8.2.1 "><p xml:lang="fr-FR" id="p575mcpsimp"><a name="p575mcpsimp"></a><a name="p575mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row573mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 mcps1.2.8.2.1 "><p xml:lang="fr-FR" id="p575mcpsimp"><a name="p575mcpsimp"></a><a name="p575mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="7.000000000000001%" headers="mcps1.2.8.1.2 mcps1.2.8.2.2 "><p id="p577mcpsimp"><a name="p577mcpsimp"></a><a name="p577mcpsimp"></a>Y</p>
 </td>
@@ -517,7 +517,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row612mcpsimp"><td class="cellrowborder" valign="top" width="17.82178217821782%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p xml:lang="fr-FR" id="p614mcpsimp"><a name="p614mcpsimp"></a><a name="p614mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row612mcpsimp"><td class="cellrowborder" valign="top" width="17.82178217821782%" headers="mcps1.2.6.1.1 mcps1.2.6.2.1 "><p xml:lang="fr-FR" id="p614mcpsimp"><a name="p614mcpsimp"></a><a name="p614mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.82178217821782%" headers="mcps1.2.6.1.2 mcps1.2.6.2.2 "><p id="p616mcpsimp"><a name="p616mcpsimp"></a><a name="p616mcpsimp"></a>支持</p>
 </td>
@@ -540,7 +540,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </th>
 </tr>
 </thead>
-<tbody><tr id="row636mcpsimp"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.3.1.1 "><p xml:lang="fr-FR" id="p638mcpsimp"><a name="p638mcpsimp"></a><a name="p638mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row636mcpsimp"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.3.1.1 "><p xml:lang="fr-FR" id="p638mcpsimp"><a name="p638mcpsimp"></a><a name="p638mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="78%" headers="mcps1.2.3.1.2 "><p id="p640mcpsimp"><a name="p640mcpsimp"></a><a name="p640mcpsimp"></a>宽[64, 16384]</p>
 <p id="p641mcpsimp"><a name="p641mcpsimp"></a><a name="p641mcpsimp"></a>高[64, 8192]</p>
@@ -550,7 +550,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </table>
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->SS928V100 MCF输入图像宽度大于4096时不支持紧凑段压缩输入/输出，输出宽度大于4096时不支持紧凑段压缩输出。
+>Hi3403V100 MCF输入图像宽度大于4096时不支持紧凑段压缩输入/输出，输出宽度大于4096时不支持紧凑段压缩输出。
 
 # API参考
 该功能模块为用户提供以下MPI：
@@ -3302,7 +3302,7 @@ td_s32 ss_mpi_mcf_get_chn_rgn_luma(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 num, c
 -   GROUP必须已创建并且对应的通道已经使能。
 -   统计区域的数量范围为\[1, 64\]。
 -   统计区域坐标和宽高要求2像素对齐。
--   统计区域宽高最小为2x2，SS928V100统计区域宽高最大为8192x8192。
+-   统计区域宽高最小为2x2，Hi3403V100统计区域宽高最大为8192x8192。
 -   亮度和区域不得超出图像。
 
 【举例】
@@ -4654,7 +4654,7 @@ typedef struct {
         系统将自动更新用户仍未获取的最旧的图像数据，保证缓存的图像队列为最近的新图像。由于用户不能保证获取速度，导致获取的可能不是连续图像。
 
 -   系统为MCF组缓存的depth\*2个图像数据，占用MPP内部的缓存块（简称VB）。故用户应通过接口ss\_mpi\_vb\_set\_cfg 置足够的VB，否则可能由于系统缓存图像占用过多VB，从而影响MCF的正常运行。支持动态调整depth。如用户在不需要获取该MCF组数据时，可设置depth为0，以减少占用内部VB的数量；在需要获取时，再设置depth为合适的值，即可获取到设置时刻后的连续图像。组上的图像有黑白和彩色两路，所以占用的VB内存是depth\*2。
--   SS927V100所有的组通道的输入总面积最大为2688x1520x2，SS928V100无此限制。
+-   Hi3519AV200所有的组通道的输入总面积最大为2688x1520x2，Hi3403V100无此限制。
 
 【相关数据类型及接口】
 

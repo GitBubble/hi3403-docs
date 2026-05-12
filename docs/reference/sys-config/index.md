@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONF
 本文为使用MPP媒体处理芯片进行开发的工程师而写，目的是供您在开发过程中查阅媒体处理软件SYS\_CONFIG子模块的各种参考信息，包括系统控制、时钟配置、管脚复用等。本文档描述SYS\_CONFIG中的各个关键函数的使用方法，以及相关的配置原理。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->本文以SS928V100描述为例，未有特殊说明，SS927V100与SS928V100内容一致。
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
 
 **产品版本<a name="section145mcpsimp"></a>**
 
@@ -22,12 +22,12 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONF
 </th>
 </tr>
 </thead>
-<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>SS928</p>
+<tbody><tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row15828177202310"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p198461710152317"><a name="p198461710152317"></a><a name="p198461710152317"></a>SS927</p>
+<tr id="row15828177202310"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p198461710152317"><a name="p198461710152317"></a><a name="p198461710152317"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p6846171016231"><a name="p6846171016231"></a><a name="p6846171016231"></a>V100</p>
 </td>
@@ -116,7 +116,7 @@ SYS\_CONFIG是进行系统级和板级进行配置的模块，主要作用是在
 
 SYS\_CONFIG以二进制文件形式的ko和源码形式同时进行发布，源码位于interdrv/sysconfig目录。
 
-如需修改SYS\_CONFIG代码，可以参照以下文档和步骤（以SS928V100为例）：
+如需修改SYS\_CONFIG代码，可以参照以下文档和步骤（以Hi3403V100为例）：
 
 -   如需修改时钟配置和系统控制，请先参考芯片手册，再修改sysconfig代码。
 -   如需修改管脚复用配置，请先参考芯片手册，再修改sysconfig代码。
@@ -234,7 +234,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row339mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p341mcpsimp"><a name="p341mcpsimp"></a><a name="p341mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row339mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p341mcpsimp"><a name="p341mcpsimp"></a><a name="p341mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.2 "><p id="p343mcpsimp"><a name="p343mcpsimp"></a><a name="p343mcpsimp"></a>g_reg_misc_base</p>
 </td>
@@ -259,7 +259,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row365mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p367mcpsimp"><a name="p367mcpsimp"></a><a name="p367mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row365mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p367mcpsimp"><a name="p367mcpsimp"></a><a name="p367mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.2 "><p id="p369mcpsimp"><a name="p369mcpsimp"></a><a name="p369mcpsimp"></a>g_reg_crg_base</p>
 </td>
@@ -284,7 +284,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row391mcpsimp"><td class="cellrowborder" rowspan="2" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p393mcpsimp"><a name="p393mcpsimp"></a><a name="p393mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row391mcpsimp"><td class="cellrowborder" rowspan="2" valign="top" width="27%" headers="mcps1.2.5.1.1 "><p id="p393mcpsimp"><a name="p393mcpsimp"></a><a name="p393mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.2 "><p id="p395mcpsimp"><a name="p395mcpsimp"></a><a name="p395mcpsimp"></a>g_reg_iocfg_base</p>
 </td>
@@ -316,7 +316,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row425mcpsimp"><td class="cellrowborder" valign="top" width="25.742574257425744%" headers="mcps1.2.5.1.1 "><p id="p427mcpsimp"><a name="p427mcpsimp"></a><a name="p427mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row425mcpsimp"><td class="cellrowborder" valign="top" width="25.742574257425744%" headers="mcps1.2.5.1.1 "><p id="p427mcpsimp"><a name="p427mcpsimp"></a><a name="p427mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.67326732673268%" headers="mcps1.2.5.1.2 "><p id="p429mcpsimp"><a name="p429mcpsimp"></a><a name="p429mcpsimp"></a>g_reg_gpio_base</p>
 </td>
@@ -341,7 +341,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row452mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p454mcpsimp"><a name="p454mcpsimp"></a><a name="p454mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row452mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p454mcpsimp"><a name="p454mcpsimp"></a><a name="p454mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.5.1.2 "><p id="p456mcpsimp"><a name="p456mcpsimp"></a><a name="p456mcpsimp"></a>g_reg_sys_base</p>
 </td>
@@ -366,7 +366,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row479mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row479mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.5.1.2 "><p id="p483mcpsimp"><a name="p483mcpsimp"></a><a name="p483mcpsimp"></a>g_reg_ddr_base</p>
 </td>
@@ -391,7 +391,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row505mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p507mcpsimp"><a name="p507mcpsimp"></a><a name="p507mcpsimp"></a>SS928V100</p>
+<tbody><tr id="row505mcpsimp"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.5.1.1 "><p id="p507mcpsimp"><a name="p507mcpsimp"></a><a name="p507mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.5.1.2 "><p id="p509mcpsimp"><a name="p509mcpsimp"></a><a name="p509mcpsimp"></a>g_reg_mipi_tx_base</p>
 </td>
@@ -420,7 +420,7 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 
 根据VI VPSS在线离线模式情况，需要选择VI VPSS在线离线模式。
 
-以下以SS928V100为例说明。
+以下以Hi3403V100为例说明。
 
 
 ### VI VPSS在线离线模式配置<a name="ZH-CN_TOPIC_0000002408102290"></a>
@@ -578,7 +578,7 @@ Offset Address: 0x5000   Total Reset Value: 0x0000\_0000
 无。
 
 # 时钟复位配置
-时钟是各模块正常运行的基础，以下以SS928V100为例说明时钟相关配置。
+时钟是各模块正常运行的基础，以下以Hi3403V100为例说明时钟相关配置。
 
 时钟复位配置函数如下（函数具体实现以实际应用场景为准）：
 
@@ -1419,7 +1419,7 @@ LCD显示屏幕IC芯片通过SPI总线连接到主芯片，在LCD屏幕驱动中
 
 ### SPI管脚复用<a name="ZH-CN_TOPIC_0000002441661537"></a>
 
-【配置】（以SS928V100为例）
+【配置】（以Hi3403V100为例）
 
 g\_reg\_iocfg2\_base1见[表3](#_table16578980)
 
@@ -1585,7 +1585,7 @@ AK33管脚存在4种功能复用：GPIO16\_3/SPI0\_SCLK/I2C2\_SCL/SPI\_3WIRE\_CL
 
 g\_reg\_iocfg2\_base 见[表3](#_table16578980)。
 
-以SS928V100的MIPI\_RX的PHY0接口为例：
+以Hi3403V100的MIPI\_RX的PHY0接口为例：
 
 ```
 static void mipi0_rx_pin_mux(void)
@@ -2319,7 +2319,7 @@ static void vi_bt1120_mode_mux(void)
 
 【注意事项】
 
-SS928V100只有1个BT.656接口，在配置BT.1120接口时，除了配置BT.656为相关功能外\(VI\_DATA0\~DATA7\)，需要另外配置8根管脚为VI\_DATA8\~DATA15为相关功能。
+Hi3403V100只有1个BT.656接口，在配置BT.1120接口时，除了配置BT.656为相关功能外\(VI\_DATA0\~DATA7\)，需要另外配置8根管脚为VI\_DATA8\~DATA15为相关功能。
 
 #### SENSOR参考时钟管脚<a name="ZH-CN_TOPIC_0000002441661473"></a>
 
@@ -2498,7 +2498,7 @@ AL32管脚配置：0x02d1
 
 ### HDMI管脚复用<a name="ZH-CN_TOPIC_0000002408262158"></a>
 
-【配置】（以SS928V100为例）
+【配置】（以Hi3403V100为例）
 
 g\_reg\_iocfg2\_base 见[表3](#_table16578980)。
 
@@ -2633,7 +2633,7 @@ AK11管脚配置：0x2801
 
 ### MIPI\_TX管脚复用<a name="ZH-CN_TOPIC_0000002408102166"></a>
 
-【配置】（以SS928V100为例）
+【配置】（以Hi3403V100为例）
 
 g\_reg\_iocfg2\_base 见[表3](#_table16578980)。
 
@@ -2790,7 +2790,7 @@ AL4管脚配置：0x0201
 
 ### BT.1120管脚复用<a name="ZH-CN_TOPIC_0000002408262142"></a>
 
-【配置】（以SS928V100为例）
+【配置】（以Hi3403V100为例）
 
 g\_reg\_iocfg2\_base 见[表3](#_table16578980)，g\_reg\_mipi\_tx\_base见[表7](#_table071427174311)。
 
@@ -3153,7 +3153,7 @@ bspmd.l g_reg_mipi_tx_base+0x00b8
 
 ### BT.656管脚复用<a name="ZH-CN_TOPIC_0000002408102278"></a>
 
-【配置示例】（以SS928V100为例）
+【配置示例】（以Hi3403V100为例）
 
 g\_reg\_iocfg\_base2 见[表3](#_table16578980)。
 
@@ -3476,7 +3476,7 @@ AIAO模块对接外置CODEC时，需要使能I2S相关的管脚复用。AIAO模�
 
 I2S管脚复用
 
-【配置】（以SS928V100的I2S为例）
+【配置】（以Hi3403V100的I2S为例）
 
 ```
 static void i2s_pin_mux(void) 
@@ -3607,7 +3607,7 @@ AK15配置值为0x000001C2：
 
 ### 功放GPIO管脚复用<a name="ZH-CN_TOPIC_0000002441661489"></a>
 
-【配置】（以SS928V100为例）
+【配置】（以Hi3403V100为例）
 
 ```
 static void amp_unmute_pin_mux(void) 

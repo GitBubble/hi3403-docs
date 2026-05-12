@@ -9,7 +9,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DDR å°å
 This document is written for programmers developing miniaturization, with the aim of introducing Linux development, tailoring, optimization, and usage precautions on a single board.
 
 >![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified, the content for SS927V100 is identical to that of SS928V100.
+>Unless otherwise specified, the content for Hi3519AV200 is identical to that of Hi3403V100.
 
 **Product Version<a name="section25718263411"></a>**
 
@@ -27,12 +27,12 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p93951718242"><a name="p93951718242"></a><a name="p93951718242"></a>V100</p>
 </td>
 </tr>
-<tr id="row188062423511"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p208065421519"><a name="p208065421519"></a><a name="p208065421519"></a>SS928</p>
+<tr id="row188062423511"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p208065421519"><a name="p208065421519"></a><a name="p208065421519"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p168061342157"><a name="p168061342157"></a><a name="p168061342157"></a>V100</p>
 </td>
 </tr>
-<tr id="row31204306217"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>SS927</p>
+<tr id="row31204306217"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
@@ -85,7 +85,7 @@ In general business scenarios, MMZ occupancy often accounts for a large portion 
 
 In the VI capture state, a maximum of three video frame VBs will be occupied. One is used for current frame capture, one is prepared for the next frame capture, and one is in the rotation flow (mainly occupied by downstream modules).
 
-MMZ occupancy in SS928V100:
+MMZ occupancy in Hi3403V100:
 
 -   vi\(%d\)\_model\_%d: Each pipe needs to occupy two template MMZ memories of a certain size. The size is related to the channel width. When the width is less than or equal to 4096, the size is 16KB.
 -   vi\(%d\)\_lmf: Occupies MMZ memory when LMF function is enabled on each pipe, used to store LMF coefficients, fixed at 4K.
@@ -245,7 +245,7 @@ SVP\_NNN memory usage is divided into MMZ memory and OS memory. MMZ memory inclu
     OS memory mainly includes two parts: static global variable memory, approximately 5.6KB; dynamic memory, approximately 0.594KB.
 
     >![](public_sys-resources/icon-note.gif) **Note:**
-    >SS927V100 does not support the SVP\_NNN module.
+    >Hi3519AV200 does not support the SVP\_NNN module.
 
 **IVE<a name="section8594155332913"></a>**
 
@@ -514,7 +514,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p497735543915"><a name="p497735543915"></a><a name="p497735543915"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><a name="ul14706112944616"></a><a name="ul14706112944616"></a><ul id="ul14706112944616"><li>SS928V100: vi phys chn attr1:<p id="p9429133620436"><a name="p9429133620436"></a><a name="p9429133620436"></a>compress_mode</p>
+<td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><a name="ul14706112944616"></a><a name="ul14706112944616"></a><ul id="ul14706112944616"><li>Hi3403V100: vi phys chn attr1:<p id="p9429133620436"><a name="p9429133620436"></a><a name="p9429133620436"></a>compress_mode</p>
 </li><li>Others: vi phychn attr 2:<p id="p13774436174218"><a name="p13774436174218"></a><a name="p13774436174218"></a>compress_mode</p>
 </li></ul>
 </td>
@@ -527,7 +527,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p1619017161701"><a name="p1619017161701"></a><a name="p1619017161701"></a>If cache_line is configured too small, image layering may occur</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p191902161105"><a name="p191902161105"></a><a name="p191902161105"></a>Supported by SS928V100</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p191902161105"><a name="p191902161105"></a><a name="p191902161105"></a>Supported by Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p219011617015"><a name="p219011617015"></a><a name="p219011617015"></a>vi wdr fusion grp attr: cache_line</p>
 </td>
@@ -540,7 +540,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p1426102114386"><a name="p1426102114386"></a><a name="p1426102114386"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1226122111388"><a name="p1226122111388"></a><a name="p1226122111388"></a>Supported by SS928V100</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1226122111388"><a name="p1226122111388"></a><a name="p1226122111388"></a>Supported by Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p126921113816"><a name="p126921113816"></a><a name="p126921113816"></a>vi pipe attr1:</p>
 <p id="p1112971894317"><a name="p1112971894317"></a><a name="p1112971894317"></a>compress_mode</p>
@@ -554,7 +554,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p619018161605"><a name="p619018161605"></a><a name="p619018161605"></a>VI online can only process one path; VPSS online cannot perform channel post-processing functions at VI_CHN</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p2019001618011"><a name="p2019001618011"></a><a name="p2019001618011"></a>Supported by SS928V100</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p2019001618011"><a name="p2019001618011"></a><a name="p2019001618011"></a>Supported by Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p61901416900"><a name="p61901416900"></a><a name="p61901416900"></a>vi vpss mode &amp; vi video mode: vi_vpss_mode</p>
 </td>
@@ -567,7 +567,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p2914152810361"><a name="p2914152810361"></a><a name="p2914152810361"></a>In normal mode, HNR function is before BE</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1427543315374"><a name="p1427543315374"></a><a name="p1427543315374"></a>Supported by SS928V100</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p1427543315374"><a name="p1427543315374"></a><a name="p1427543315374"></a>Supported by Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p1791492823613"><a name="p1791492823613"></a><a name="p1791492823613"></a>vi vpss mode &amp; vi video mode: vi_vpss_mode</p>
 </td>
@@ -580,7 +580,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p240323223019"><a name="p240323223019"></a><a name="p240323223019"></a>bnr_buf_num mainly affects the number of YUV frames that VI continuously caches without releasing</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p5176194463810"><a name="p5176194463810"></a><a name="p5176194463810"></a>Supported by SS928V100</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p5176194463810"><a name="p5176194463810"></a><a name="p5176194463810"></a>Supported by Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p1240383233018"><a name="p1240383233018"></a><a name="p1240383233018"></a>vi pipe bnr buf num:</p>
 <p id="p250319140392"><a name="p250319140392"></a><a name="p250319140392"></a>bnr_buf_num</p>
@@ -594,7 +594,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p189471921174513"><a name="p189471921174513"></a><a name="p189471921174513"></a>Affects image quality</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p12469112194717"><a name="p12469112194717"></a><a name="p12469112194717"></a>Supported by SS928V100</p>
+<td class="cellrowborder" valign="top" width="11.88%" headers="mcps1.1.7.1.5 "><p id="p12469112194717"><a name="p12469112194717"></a><a name="p12469112194717"></a>Supported by Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.23%" headers="mcps1.1.7.1.6 "><p id="p1094782144512"><a name="p1094782144512"></a><a name="p1094782144512"></a>bayernr info: enable</p>
 </td>
@@ -1371,7 +1371,7 @@ SS626V100 online drawing can save G3 MMZ memory. If G3 is only used for online d
     Multiple models on the same stream can share the same workbuf, thereby reducing mmz memory usage.
 
     >![](public_sys-resources/icon-note.gif) **Note:**
-    >SS927V100 does not support the SVP\_NNN module.
+    >Hi3519AV200 does not support the SVP\_NNN module.
 
 **NNN<a name="section1727814121310"></a>**
 
