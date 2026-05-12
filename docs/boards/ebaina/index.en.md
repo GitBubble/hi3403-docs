@@ -49,7 +49,7 @@ make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
 
 ### 1. Product Interfaces
 
-![Euler Pi interface diagram](./docs/pic/欧拉派接口图.png)
+![Euler Pi interface diagram](../../boards/ebaina/docs/pic/欧拉派接口图.png)
 
 ### 2. Feature List
 
@@ -135,7 +135,7 @@ cd build/hieulerpi1
 oebuild bitbake
 ```
 
-![image-20251209095218861](./docs/pic/image-20251209095218861-1767928507247-1.png)
+![image-20251209095218861](../../boards/ebaina/docs/pic/image-20251209095218861-1767928507247-1.png)
 
 #### Step 3: Build
 
@@ -145,7 +145,7 @@ Build the image.
 bitbake openeuler-image
 ```
 
-![image-20251209102846910](./docs/pic/image-20251209102846910-1767928507247-2.png)
+![image-20251209102846910](../../boards/ebaina/docs/pic/image-20251209102846910-1767928507247-2.png)
 
 > Note:
 >
@@ -164,21 +164,21 @@ bitbake openeuler-image
 
 After a successful build, the kernel and root filesystem images are placed in the `output` directory. Only the kernel and root filesystem images are expected here. Copy the compiled kernel and root filesystem images to your Windows machine.
 
-![image-20251219085312858](./docs/pic/image-20251219085312858-1767928507247-3.png)
+![image-20251219085312858](../../boards/ebaina/docs/pic/image-20251219085312858-1767928507247-3.png)
 
 ### 3. Flashing
 
 Download [Eulerpi_OpenEuler_IMAGE](https://pan.baidu.com/s/1iyDzKp9ldcJz_wXmhs8JJw?pwd=e6eu) and use ToolPlatform to load the partition table as shown below. Select 4G or 8G based on your board configuration.
 
-![image-20260121164202724](./docs/pic/image-20260121164202724.png)
+![image-20260121164202724](../../boards/ebaina/docs/pic/image-20260121164202724.png)
 
 You can flash directly here using the pre-built images. If you want to flash your own custom-built images, continue with the steps below to replace the kernel and root filesystem images.
 
-![image-20260121165036196](./docs/pic/image-20260121165036196.png)
+![image-20260121165036196](../../boards/ebaina/docs/pic/image-20260121165036196.png)
 
 On first boot after flashing, you will be prompted to set an account and password. Recommended account: `root`, password: `@ebaina2026`.
 
-![image-20260106175904717](./docs/pic/image-20260106175904717-1767928507247-5.png)
+![image-20260106175904717](../../boards/ebaina/docs/pic/image-20260106175904717-1767928507247-5.png)
 
 ## Chapter 4: Euler Pi openEuler Quick Start (Example Verification)
 
@@ -189,19 +189,19 @@ On first boot after flashing, you will be prompted to set an account and passwor
 
 Power on the Euler Pi board, then connect its debug port to the PC using a Type-C cable:
 
-![image-20260121170212426](./docs/pic/image-20260121170212426.png)
+![image-20260121170212426](../../boards/ebaina/docs/pic/image-20260121170212426.png)
 
 You can use "04. Development Tools/MobaXterm_Portable_v25.1_CHS" from the [【Ebaina】Euler Pi 2.0](https://pan.baidu.com/s/1GwvuEjbLGsMLyX8kkG8dlQ?pwd=s7hs) resource package as the connection tool.
 
-![image-20260121170323795](./docs/pic/image-20260121170323795.png)
+![image-20260121170323795](../../boards/ebaina/docs/pic/image-20260121170323795.png)
 
 Select Session, set the COM port number and baud rate to 115200, then click OK to connect to the Euler Pi:
 
-![image-20260121170338790](./docs/pic/image-20260121170338790.png)
+![image-20260121170338790](../../boards/ebaina/docs/pic/image-20260121170338790.png)
 
 The COM port number can be found under Device Manager > Ports:
 
-![image-20260121170349522](./docs/pic/image-20260121170349522.png)
+![image-20260121170349522](../../boards/ebaina/docs/pic/image-20260121170349522.png)
 
 Note: If the screen is blank after connecting via serial port, press Ctrl+C and check whether you can log in. If it still does not work, try reconnecting the serial port.
 
@@ -217,21 +217,21 @@ Using GPIO2_1 (Pin 13) as an example.
 
 Run `./gpio_ctrl.sh 1` to drive the pin high.
 
-![image-20260121170832715](./docs/pic/image-20260121170832715.png)
+![image-20260121170832715](../../boards/ebaina/docs/pic/image-20260121170832715.png)
 
 Measure with a multimeter: 1.8 V.
 
-![image-20260121170840650](./docs/pic/image-20260121170840650.png)
+![image-20260121170840650](../../boards/ebaina/docs/pic/image-20260121170840650.png)
 
 ② Set Low
 
 Run `./gpio_ctrl.sh 0` to drive the pin low.
 
-![image-20260121170850940](./docs/pic/image-20260121170850940.png)
+![image-20260121170850940](../../boards/ebaina/docs/pic/image-20260121170850940.png)
 
 Measure with a multimeter: 0 V.
 
-![image-20260121170914583](./docs/pic/image-20260121170914583.png)
+![image-20260121170914583](../../boards/ebaina/docs/pic/image-20260121170914583.png)
 
 ##### 2.1.2. Kernel-space Control
 
@@ -239,7 +239,7 @@ Measure with a multimeter: 0 V.
 
 Run `./gpio_driver_ctrl.sh 1` to drive the pin high.
 
-![image-20260121170950867](./docs/pic/image-20260121170950867.png)
+![image-20260121170950867](../../boards/ebaina/docs/pic/image-20260121170950867.png)
 
 Measure with a multimeter: 1.8 V.
 
@@ -247,7 +247,7 @@ Measure with a multimeter: 1.8 V.
 
 Run `./gpio_driver_ctrl.sh 0` to drive the pin low.
 
-![image-20260121171014069](./docs/pic/image-20260121171014069.png)
+![image-20260121171014069](../../boards/ebaina/docs/pic/image-20260121171014069.png)
 
 Measure with a multimeter: 0 V.
 
@@ -272,7 +272,7 @@ rmmod gpio_driver    //unload the driver before testing console control
 | UART4_RXD (Pin10)| TXD        |
 | GND (Pin9)       | GND        |
 
-![image-20260121171327940](./docs/pic/image-20260121171327940.png)
+![image-20260121171327940](../../boards/ebaina/docs/pic/image-20260121171327940.png)
 
 ② Pin Multiplexing
 
@@ -287,7 +287,7 @@ bspmm 0x102f0138 0x1201    //UART4_RXD
 ./hi_uart_sample /dev/ttyAMA4 115200
 ```
 
-![image-20260121171354608](./docs/pic/image-20260121171354608.png)
+![image-20260121171354608](../../boards/ebaina/docs/pic/image-20260121171354608.png)
 
 ##### 2.2.2. RS485
 
@@ -298,7 +298,7 @@ bspmm 0x102f0138 0x1201    //UART4_RXD
 | Pin2 | A            |
 | Pin1 | B            |
 
-![image-20260121171434126](./docs/pic/image-20260121171434126.png)
+![image-20260121171434126](../../boards/ebaina/docs/pic/image-20260121171434126.png)
 
 ② Pin Multiplexing
 
@@ -313,7 +313,7 @@ bspmm 0x102f0130 0x1201  //UART3_TXD
 ./hi_uart_sample /dev/ttyAMA3 115200
 ```
 
-![image-20260121171519889](./docs/pic/image-20260121171519889.png)
+![image-20260121171519889](../../boards/ebaina/docs/pic/image-20260121171519889.png)
 
 #### 2.3. I2C (OLED Display)
 
@@ -326,13 +326,13 @@ bspmm 0x102f0130 0x1201  //UART3_TXD
 | SCL      | SCL (Pin5)                |
 | SDA      | SDA (Pin3)                |
 
-![image-20260121171608337](./docs/pic/image-20260121171608337.png)
+![image-20260121171608337](../../boards/ebaina/docs/pic/image-20260121171608337.png)
 
 ② Load Driver
 
 Load the driver on the board and check the device node.
 
-![image-20260121171617698](./docs/pic/image-20260121171617698.png)
+![image-20260121171617698](../../boards/ebaina/docs/pic/image-20260121171617698.png)
 
 ③ Functional Verification
 
@@ -340,11 +340,11 @@ Load the driver on the board and check the device node.
 ./oled /dev/oled-1 1
 ```
 
-![image-20260121171631890](./docs/pic/image-20260121171631890.png)
+![image-20260121171631890](../../boards/ebaina/docs/pic/image-20260121171631890.png)
 
 After running the example, the OLED display shows the Ebaina whale logo normally.
 
-![image-20260121171643183](./docs/pic/image-20260121171643183.png)
+![image-20260121171643183](../../boards/ebaina/docs/pic/image-20260121171643183.png)
 
 #### 2.4. ADC
 
@@ -352,7 +352,7 @@ After running the example, the OLED display shows the Ebaina whale logo normally
 
 The reserved 40-Pin IO Pin11 is LSADC_CH3. Prepare two jumper wires and connect them to the 40-PIN expansion header on the Euler Pi: ADC pin is Pin11, GND pin can be Pin9.
 
-![image-20260121171717695](./docs/pic/image-20260121171717695.png)
+![image-20260121171717695](../../boards/ebaina/docs/pic/image-20260121171717695.png)
 
 ② Pin Multiplexing
 
@@ -368,15 +368,15 @@ a. Driver starts enabled by default
 insmod hi_adc.ko auto_run=1   //auto_run 0: disabled by default  1: enabled by default
 ```
 
-![image-20260121171743078](./docs/pic/image-20260121171743078.png)
+![image-20260121171743078](../../boards/ebaina/docs/pic/image-20260121171743078.png)
 
 Pin11 (ADC) connected to Pin9 (GND):
 
-![image-20260121171750722](./docs/pic/image-20260121171750722.png)
+![image-20260121171750722](../../boards/ebaina/docs/pic/image-20260121171750722.png)
 
 Pin11 (ADC) connected to 1.8 V (maximum ADC input is 1.8 V; voltages above 1.8 V may damage the chip):
 
-![image-20260121171759716](./docs/pic/image-20260121171759716.png)
+![image-20260121171759716](../../boards/ebaina/docs/pic/image-20260121171759716.png)
 
 b. Driver disabled by default; values retrieved from user space
 
@@ -384,7 +384,7 @@ b. Driver disabled by default; values retrieved from user space
 insmod hi_adc.ko auto_run=0
 ```
 
-![image-20260121171814038](./docs/pic/image-20260121171814038.png)
+![image-20260121171814038](../../boards/ebaina/docs/pic/image-20260121171814038.png)
 
 #### 2.5. PWM (Servo)
 
@@ -396,7 +396,7 @@ insmod hi_adc.ko auto_run=0
 | Brown (GND)        | J5 Pin1                       |
 | Yellow (Signal)    | J5 Pin5                       |
 
-![image-20260121172023559](./docs/pic/image-20260121172023559.png)
+![image-20260121172023559](../../boards/ebaina/docs/pic/image-20260121172023559.png)
 
 The reserved 40-Pin IO Pin32 is PWM0_OUT1_0_P.
 Note: PWM servo control (connecting directly to Pin32 will not rotate the servo due to insufficient voltage; use the expansion board instead).
@@ -409,7 +409,7 @@ bspmm 0x102f01ec 0x1201
 
 ③ Functional Verification
 
-![image-20260121172045338](./docs/pic/image-20260121172045338.png)
+![image-20260121172045338](../../boards/ebaina/docs/pic/image-20260121172045338.png)
 
 Running `open` causes the MG90S TowerPro servo to rotate 360°.
 
@@ -428,7 +428,7 @@ Running `open` causes the MG90S TowerPro servo to rotate 360°.
 | RX/CAN_H   | CAN_H (CAN Pin2)          |
 | TX/CAN_L   | CAN_L (CAN Pin1)          |
 
-![image-20260121172223005](./docs/pic/image-20260121172223005.png)
+![image-20260121172223005](../../boards/ebaina/docs/pic/image-20260121172223005.png)
 
 ② Pin Multiplexing
 
@@ -457,16 +457,16 @@ ip link set can0 up
 
 Open PCAN-View software.
 
-![image-20260121172451629](./docs/pic/image-20260121172451629.png)
+![image-20260121172451629](../../boards/ebaina/docs/pic/image-20260121172451629.png)
 
 ```shell
 cansend can0 123#8877665544332211        //send
 candump can0                             //receive
 ```
 
-![image-20260121172643130](./docs/pic/image-20260121172643130.png)
+![image-20260121172643130](../../boards/ebaina/docs/pic/image-20260121172643130.png)
 
-![image-20260121172730635](./docs/pic/image-20260121172730635.png)
+![image-20260121172730635](../../boards/ebaina/docs/pic/image-20260121172730635.png)
 
 #### 2.7. RTC Clock
 
@@ -478,7 +478,7 @@ date -s "2025-06-23 19:30:00"     #set system time
 hwclock -w     #write system time to RTC
 ```
 
-![image-20260121173116464](./docs/pic/image-20260121173116464.png)
+![image-20260121173116464](../../boards/ebaina/docs/pic/image-20260121173116464.png)
 
 Disconnect power (including the debug serial cable), wait a while, then power on and query the time.
 
@@ -492,7 +492,7 @@ Tsensor is the chip temperature sensor driver for the Euler Pi's main controller
 cat /proc/Tsensor
 ```
 
-![image-20260121173234267](./docs/pic/image-20260121173234267.png)
+![image-20260121173234267](../../boards/ebaina/docs/pic/image-20260121173234267.png)
 
 #### 2.9. Storage
 
@@ -500,13 +500,13 @@ cat /proc/Tsensor
 
 ① Hardware Connection
 
-![image-20260121173312712](./docs/pic/image-20260121173312712.png)
+![image-20260121173312712](../../boards/ebaina/docs/pic/image-20260121173312712.png)
 
 ② Functional Verification
 
 When a TF card is inserted, relevant information is printed on the debug serial console:
 
-![image-20260121173321720](./docs/pic/image-20260121173321720.png)
+![image-20260121173321720](../../boards/ebaina/docs/pic/image-20260121173321720.png)
 
 a. View TF card and partition details
 
@@ -514,7 +514,7 @@ a. View TF card and partition details
 fdisk -l      //check whether the TF card is recognized correctly
 ```
 
-![image-20260121173340632](./docs/pic/image-20260121173340632.png)
+![image-20260121173340632](../../boards/ebaina/docs/pic/image-20260121173340632.png)
 
 b. Format a partition
 
@@ -528,19 +528,19 @@ c. Test read/write speed
 ./test_storage.sh /dev/mmcblk1p1
 ```
 
-![image-20260121173417288](./docs/pic/image-20260121173417288.png)
+![image-20260121173417288](../../boards/ebaina/docs/pic/image-20260121173417288.png)
 
 ##### 2.9.2. USB Flash Drive
 
 ① Hardware Connection
 
-![image-20260121173442477](./docs/pic/image-20260121173442477.png)
+![image-20260121173442477](../../boards/ebaina/docs/pic/image-20260121173442477.png)
 
 ② Functional Verification
 
 When a USB flash drive is inserted, relevant information is printed on the debug serial console:
 
-![image-20260121173450346](./docs/pic/image-20260121173450346.png)
+![image-20260121173450346](../../boards/ebaina/docs/pic/image-20260121173450346.png)
 
 a. View USB flash drive and partition details
 
@@ -548,7 +548,7 @@ a. View USB flash drive and partition details
 fdisk -l    
 ```
 
-![image-20260121173541981](./docs/pic/image-20260121173541981.png)
+![image-20260121173541981](../../boards/ebaina/docs/pic/image-20260121173541981.png)
 
 b. Format a partition
 
@@ -562,13 +562,13 @@ c. Test read/write speed
 ./test_storage.sh /dev/sda1  
 ```
 
-![image-20260121173620401](./docs/pic/image-20260121173620401.png)
+![image-20260121173620401](../../boards/ebaina/docs/pic/image-20260121173620401.png)
 
 ##### 2.9.3. PCIe SSD
 
 ① Hardware Connection
 
-![image-20260121173640935](./docs/pic/image-20260121173640935.png)
+![image-20260121173640935](../../boards/ebaina/docs/pic/image-20260121173640935.png)
 
 <font color="red">**Note: The PCIe SSD is not a hot-plug device. After connecting a PCIe SSD, a reboot is required for the device to be recognized.**</font>
 
@@ -582,7 +582,7 @@ a. View PCIe SSD and partition details
 fdisk -l     
 ```
 
-![image-20260121173733176](./docs/pic/image-20260121173733176.png)
+![image-20260121173733176](../../boards/ebaina/docs/pic/image-20260121173733176.png)
 
 b. Format a partition
 
@@ -596,19 +596,19 @@ c. Test read/write speed
 ./test_storage.sh /dev/nvme0n1p1
 ```
 
-![image-20260121173806988](./docs/pic/image-20260121173806988.png)
+![image-20260121173806988](../../boards/ebaina/docs/pic/image-20260121173806988.png)
 
 #### 2.10. USB UVC Camera
 
 ① Hardware Connection
 
-![image-20260121173850518](./docs/pic/image-20260121173850518.png)
+![image-20260121173850518](../../boards/ebaina/docs/pic/image-20260121173850518.png)
 
 ② Functional Verification
 
 Kernel log when a UVC camera is connected:
 
-![image-20260121173902016](./docs/pic/image-20260121173902016.png)
+![image-20260121173902016](../../boards/ebaina/docs/pic/image-20260121173902016.png)
 
 Query supported video formats of the USB camera:
 
@@ -622,9 +622,9 @@ After connecting an HDMI monitor, pass the supported video format as a parameter
 ./sample_uvc /dev/video0 -fMJPEG -s1280x720 -Ftest.mjpg
 ```
 
-![image-20260121173939378](./docs/pic/image-20260121173939378.png)
+![image-20260121173939378](../../boards/ebaina/docs/pic/image-20260121173939378.png)
 
-![image-20260121173947480](./docs/pic/image-20260121173947480.png)
+![image-20260121173947480](../../boards/ebaina/docs/pic/image-20260121173947480.png)
 
 #### 2.11. 5G Module
 
@@ -634,13 +634,13 @@ After connecting an HDMI monitor, pass the supported video format as a parameter
 
 Mount the RedCap module onto the adapter board, install the SIM card in the adapter board slot, then plug the adapter board into the USB port.
 
-![image-20260121174027612](./docs/pic/image-20260121174027612.png)![image-20260121174055719](./docs/pic/image-20260121174055719.png)
+![image-20260121174027612](../../boards/ebaina/docs/pic/image-20260121174027612.png)![image-20260121174055719](../../boards/ebaina/docs/pic/image-20260121174055719.png)
 
 ② Functional Verification
 
 a. Kernel log when module is connected
 
-![image-20260121174110962](./docs/pic/image-20260121174110962.png)
+![image-20260121174110962](../../boards/ebaina/docs/pic/image-20260121174110962.png)
 
 b. Verify PCUI port is working
 
@@ -654,7 +654,7 @@ cat /dev/ttyUSB1
 echo -e "ATE1\r\n" > /dev/ttyUSB1
 ```
 
-![image-20260121174132026](./docs/pic/image-20260121174132026.png)
+![image-20260121174132026](../../boards/ebaina/docs/pic/image-20260121174132026.png)
 
 c. Dial-up test
 
@@ -663,7 +663,7 @@ echo -e "AT^NDISDUP=1,1\r\n" > /dev/ttyUSB1
 udhcpc -i usb0
 ```
 
-![image-20260121174152197](./docs/pic/image-20260121174152197.png)
+![image-20260121174152197](../../boards/ebaina/docs/pic/image-20260121174152197.png)
 
 #### 2.12. SparkLink Module (WS73)
 
@@ -678,7 +678,7 @@ vi /etc/wireless/wpa_supplicant.conf
 //run only if you need to change the SSID and password
 ```
 
-![image-20260121174258432](./docs/pic/image-20260121174258432.png)
+![image-20260121174258432](../../boards/ebaina/docs/pic/image-20260121174258432.png)
 
 a. Power on/off the module
 
@@ -693,11 +693,11 @@ b. Enable WiFi
 ./wifi_sta.sh 0
 ```
 
-![image-20260121174331654](./docs/pic/image-20260121174331654.png)
+![image-20260121174331654](../../boards/ebaina/docs/pic/image-20260121174331654.png)
 
 Run `ifconfig` to view the IP address.
 
-![image-20260121174339924](./docs/pic/image-20260121174339924.png)
+![image-20260121174339924](../../boards/ebaina/docs/pic/image-20260121174339924.png)
 
 If the connected WiFi has internet access, test with ping:
 
@@ -705,7 +705,7 @@ If the connected WiFi has internet access, test with ping:
 ping -I wlan0 www.baidu.com
 ```
 
-![image-20260121174400984](./docs/pic/image-20260121174400984.png)
+![image-20260121174400984](../../boards/ebaina/docs/pic/image-20260121174400984.png)
 
 c. Disable WiFi
 
@@ -713,7 +713,7 @@ c. Disable WiFi
 ./wifi_sta.sh 1
 ```
 
-![image-20260121174417496](./docs/pic/image-20260121174417496.png)
+![image-20260121174417496](../../boards/ebaina/docs/pic/image-20260121174417496.png)
 
 ② AP Mode Test
 
@@ -724,7 +724,7 @@ vi /etc/wireless/hostapd.conf
 //run only if you need to change the SSID, password, or gateway
 ```
 
-![image-20260121174442536](./docs/pic/image-20260121174442536.png)
+![image-20260121174442536](../../boards/ebaina/docs/pic/image-20260121174442536.png)
 
 a. Power on/off the module
 
@@ -739,7 +739,7 @@ b. Enable WiFi
 ./wifi_ap.sh 0
 ```
 
-![image-20260121174517841](./docs/pic/image-20260121174517841.png)
+![image-20260121174517841](../../boards/ebaina/docs/pic/image-20260121174517841.png)
 
 c. Disable WiFi
 
@@ -747,7 +747,7 @@ c. Disable WiFi
 ./wifi_ap.sh 1
 ```
 
-![image-20260121174538961](./docs/pic/image-20260121174538961.png)
+![image-20260121174538961](../../boards/ebaina/docs/pic/image-20260121174538961.png)
 
 ##### 2.12.2. Bluetooth
 
@@ -766,7 +766,7 @@ insmod plat_soc.ko
 insmod ble_soc.ko
 ```
 
-![image-20260121174709504](./docs/pic/image-20260121174709504.png)
+![image-20260121174709504](../../boards/ebaina/docs/pic/image-20260121174709504.png)
 
 ③ Start bluetoothctl
 
@@ -776,7 +776,7 @@ Copy and paste the two lines shown in green in the `ble.sh` output into the term
 bluetoothctl
 ```
 
-![image-20260121174730560](./docs/pic/image-20260121174730560.png)
+![image-20260121174730560](../../boards/ebaina/docs/pic/image-20260121174730560.png)
 
 a. Power on the Bluetooth device
 
@@ -784,7 +784,7 @@ a. Power on the Bluetooth device
 power on
 ```
 
-![image-20260121174744781](./docs/pic/image-20260121174744781.png)
+![image-20260121174744781](../../boards/ebaina/docs/pic/image-20260121174744781.png)
 
 b. Scan for devices
 
@@ -794,7 +794,7 @@ After scanning and finding the target device, use `scan off` to stop.
 scan on
 ```
 
-![image-20260121174801392](./docs/pic/image-20260121174801392.png)
+![image-20260121174801392](../../boards/ebaina/docs/pic/image-20260121174801392.png)
 
 c. View scan results
 
@@ -802,7 +802,7 @@ c. View scan results
 devices
 ```
 
-![image-20260121174819824](./docs/pic/image-20260121174819824.png)
+![image-20260121174819824](../../boards/ebaina/docs/pic/image-20260121174819824.png)
 
 d. Connect to a device
 
@@ -811,7 +811,7 @@ connect <bluetooth-device-address>     //connect to a Bluetooth device
 disconnect <bluetooth-device-address>  //disconnect
 ```
 
-![image-20260121174839003](./docs/pic/image-20260121174839003.png)
+![image-20260121174839003](../../boards/ebaina/docs/pic/image-20260121174839003.png)
 
 e. Power off Bluetooth
 
@@ -819,7 +819,7 @@ e. Power off Bluetooth
 power off
 ```
 
-![image-20260121174901809](./docs/pic/image-20260121174901809.png)
+![image-20260121174901809](../../boards/ebaina/docs/pic/image-20260121174901809.png)
 
 f. Exit bluetoothctl
 
@@ -854,11 +854,11 @@ Run on Board B:
 ./sle_client.sh 0
 ```
 
-![image-20260121175029854](./docs/pic/image-20260121175029854.png)
+![image-20260121175029854](../../boards/ebaina/docs/pic/image-20260121175029854.png)
 
 After A and B connect, Board A (server) continuously prints the received data rate.
 
-![image-20260121175045918](./docs/pic/image-20260121175045918.png)
+![image-20260121175045918](../../boards/ebaina/docs/pic/image-20260121175045918.png)
 
 #### 2.13. MIPI_RX (Sensor)
 
@@ -873,7 +873,7 @@ a. EULER_1R2D V1.0 Adapter Board
 
 EULER_1R2D V1.0 adapter board diagram:
 
-![image-20260121175158803](./docs/pic/image-20260121175158803.png)
+![image-20260121175158803](../../boards/ebaina/docs/pic/image-20260121175158803.png)
 
 b. EULER_2R V1.0 Adapter Board
 
@@ -883,7 +883,7 @@ b. EULER_2R V1.0 Adapter Board
 
 EULER_2R V1.0 adapter board diagram:
 
-![image-20260121175237366](./docs/pic/image-20260121175237366.png)
+![image-20260121175237366](../../boards/ebaina/docs/pic/image-20260121175237366.png)
 
 c. EULER_4SEN V1.0 Adapter Board
 
@@ -895,7 +895,7 @@ c. EULER_4SEN V1.0 Adapter Board
 
 EULER_4SEN V1.0 adapter board diagram:
 
-![image-20260121175312512](./docs/pic/image-20260121175312512.png)
+![image-20260121175312512](../../boards/ebaina/docs/pic/image-20260121175312512.png)
 
 d. Image Sensor Compatibility
 
@@ -916,7 +916,7 @@ Notes:
 
 ① Method 1: Modify the `load_ss928v100` script parameters
 
-![image-20260121175510609](./docs/pic/image-20260121175510609.png)
+![image-20260121175510609](../../boards/ebaina/docs/pic/image-20260121175510609.png)
 
 OS04A10 and OS08A20 use the same clock, so configuring one is sufficient (default is imx347 when no parameter is specified).
 
@@ -924,7 +924,7 @@ OS04A10 and OS08A20 use the same clock, so configuring one is sufficient (defaul
 ./load_ss928v100 -i -sensor0 os08a20 -sensor1 os08a20 -sensor2 os08a20 -sensor3 os08a20
 ```
 
-![image-20260121175526564](./docs/pic/image-20260121175526564.png)
+![image-20260121175526564](../../boards/ebaina/docs/pic/image-20260121175526564.png)
 
 ② Method 2: Modify the clock configuration registers
 
@@ -944,7 +944,7 @@ bspmm 0x110184A0 0x4001    #Configure Sensor3 to 24 MHz
 
 For details, refer to the "21AP10 Ultra-HD Smart NVR SoC User Guide" PDF.
 
-![image-20260121175618188](./docs/pic/image-20260121175618188.png)
+![image-20260121175618188](../../boards/ebaina/docs/pic/image-20260121175618188.png)
 
 ##### 2.13.3. IMX347
 
@@ -956,11 +956,11 @@ a. Hardware Connection
 
 EULER_1R2D V1.0 adapter board wiring:
 
-![image-20260121175648091](./docs/pic/image-20260121175648091.png)
+![image-20260121175648091](../../boards/ebaina/docs/pic/image-20260121175648091.png)
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121175654676](./docs/pic/image-20260121175654676.png)
+![image-20260121175654676](../../boards/ebaina/docs/pic/image-20260121175654676.png)
 
 b. Functional Verification
 
@@ -968,9 +968,9 @@ b. Functional Verification
 ./sample_vio 0 0
 ```
 
-![image-20260121175738168](./docs/pic/image-20260121175738168.png)
+![image-20260121175738168](../../boards/ebaina/docs/pic/image-20260121175738168.png)
 
-![image-20260121175742778](./docs/pic/image-20260121175742778.png)
+![image-20260121175742778](../../boards/ebaina/docs/pic/image-20260121175742778.png)
 
 ② 2×4-lane VIO
 
@@ -978,7 +978,7 @@ a. Hardware Connection
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121175750811](./docs/pic/image-20260121175750811.png)
+![image-20260121175750811](../../boards/ebaina/docs/pic/image-20260121175750811.png)
 
 b. Functional Verification
 
@@ -986,9 +986,9 @@ b. Functional Verification
 ./sample_vio 2 0
 ```
 
-![image-20260121175815913](./docs/pic/image-20260121175815913.png)
+![image-20260121175815913](../../boards/ebaina/docs/pic/image-20260121175815913.png)
 
-![image-20260121175820209](./docs/pic/image-20260121175820209.png)
+![image-20260121175820209](../../boards/ebaina/docs/pic/image-20260121175820209.png)
 
 ##### 2.13.4. OS04A10
 
@@ -1000,11 +1000,11 @@ a. Hardware Connection
 
 EULER_1R2D V1.0 adapter board wiring:
 
-![image-20260121175844496](./docs/pic/image-20260121175844496.png)
+![image-20260121175844496](../../boards/ebaina/docs/pic/image-20260121175844496.png)
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121175926917](./docs/pic/image-20260121175926917.png)
+![image-20260121175926917](../../boards/ebaina/docs/pic/image-20260121175926917.png)
 
 b. Functional Verification
 
@@ -1012,9 +1012,9 @@ b. Functional Verification
 ./sample_vio 0 0
 ```
 
-![image-20260121175942683](./docs/pic/image-20260121175942683.png)
+![image-20260121175942683](../../boards/ebaina/docs/pic/image-20260121175942683.png)
 
-![image-20260121175947721](./docs/pic/image-20260121175947721.png)
+![image-20260121175947721](../../boards/ebaina/docs/pic/image-20260121175947721.png)
 
 ② 2×4-lane VIO
 
@@ -1022,7 +1022,7 @@ a. Hardware Connection
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121180006588](./docs/pic/image-20260121180006588.png)
+![image-20260121180006588](../../boards/ebaina/docs/pic/image-20260121180006588.png)
 
 b. Functional Verification
 
@@ -1030,9 +1030,9 @@ b. Functional Verification
 ./sample_vio 2 0
 ```
 
-![image-20260121180023012](./docs/pic/image-20260121180023012.png)
+![image-20260121180023012](../../boards/ebaina/docs/pic/image-20260121180023012.png)
 
-![image-20260121180029293](./docs/pic/image-20260121180029293.png)
+![image-20260121180029293](../../boards/ebaina/docs/pic/image-20260121180029293.png)
 
 ##### 2.13.5. OS08A20
 
@@ -1044,11 +1044,11 @@ a. Hardware Connection
 
 EULER_1R2D V1.0 adapter board wiring:
 
-![image-20260121180059714](./docs/pic/image-20260121180059714.png)
+![image-20260121180059714](../../boards/ebaina/docs/pic/image-20260121180059714.png)
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121180111072](./docs/pic/image-20260121180111072.png)
+![image-20260121180111072](../../boards/ebaina/docs/pic/image-20260121180111072.png)
 
 b. Functional Verification
 
@@ -1056,9 +1056,9 @@ b. Functional Verification
 ./sample_vio 0 0
 ```
 
-![image-20260121180126228](./docs/pic/image-20260121180126228.png)
+![image-20260121180126228](../../boards/ebaina/docs/pic/image-20260121180126228.png)
 
-![image-20260121180131248](./docs/pic/image-20260121180131248.png)
+![image-20260121180131248](../../boards/ebaina/docs/pic/image-20260121180131248.png)
 
 ② 2×4-lane VIO
 
@@ -1066,7 +1066,7 @@ a. Hardware Connection
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121180145086](./docs/pic/image-20260121180145086.png)
+![image-20260121180145086](../../boards/ebaina/docs/pic/image-20260121180145086.png)
 
 b. Functional Verification
 
@@ -1074,9 +1074,9 @@ b. Functional Verification
 ./sample_vio 2 0
 ```
 
-![image-20260121180201640](./docs/pic/image-20260121180201640.png)
+![image-20260121180201640](../../boards/ebaina/docs/pic/image-20260121180201640.png)
 
-![image-20260121180207226](./docs/pic/image-20260121180207226.png)
+![image-20260121180207226](../../boards/ebaina/docs/pic/image-20260121180207226.png)
 
 ##### 2.13.6. SC450AI
 
@@ -1088,11 +1088,11 @@ a. Hardware Connection
 
 EULER_1R2D V1.0 adapter board wiring:
 
-![image-20260121180244186](./docs/pic/image-20260121180244186.png)
+![image-20260121180244186](../../boards/ebaina/docs/pic/image-20260121180244186.png)
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121180254155](./docs/pic/image-20260121180254155.png)
+![image-20260121180254155](../../boards/ebaina/docs/pic/image-20260121180254155.png)
 
 b. Functional Verification
 
@@ -1100,9 +1100,9 @@ b. Functional Verification
 ./sample_vio 0 0
 ```
 
-![image-20260121180311583](./docs/pic/image-20260121180311583.png)
+![image-20260121180311583](../../boards/ebaina/docs/pic/image-20260121180311583.png)
 
-![image-20260121180316143](./docs/pic/image-20260121180316143.png)
+![image-20260121180316143](../../boards/ebaina/docs/pic/image-20260121180316143.png)
 
 ② 2×4-lane VIO
 
@@ -1110,7 +1110,7 @@ a. Hardware Connection
 
 EULER_2R V1.0 adapter board wiring:
 
-![image-20260121180331629](./docs/pic/image-20260121180331629.png)
+![image-20260121180331629](../../boards/ebaina/docs/pic/image-20260121180331629.png)
 
 b. Functional Verification
 
@@ -1118,9 +1118,9 @@ b. Functional Verification
 ./sample_vio 2 0
 ```
 
-![image-20260121180347864](./docs/pic/image-20260121180347864.png)
+![image-20260121180347864](../../boards/ebaina/docs/pic/image-20260121180347864.png)
 
-![image-20260121180352416](./docs/pic/image-20260121180352416.png)
+![image-20260121180352416](../../boards/ebaina/docs/pic/image-20260121180352416.png)
 
 ③ 4×2-lane VIO
 
@@ -1128,7 +1128,7 @@ a. Hardware Connection
 
 EULER_4SEN V1.0 adapter board wiring:
 
-![image-20260121180406150](./docs/pic/image-20260121180406150.png)
+![image-20260121180406150](../../boards/ebaina/docs/pic/image-20260121180406150.png)
 
 b. Functional Verification
 
@@ -1141,9 +1141,9 @@ Sensor2 and sensor3 reset requires a GPIO reset; run the `sns23_reset_4x2lane.sh
 ./sample_vio_4x2lane_4M
 ```
 
-![image-20260121180428892](./docs/pic/image-20260121180428892.png)
+![image-20260121180428892](../../boards/ebaina/docs/pic/image-20260121180428892.png)
 
-![image-20260121180434131](./docs/pic/image-20260121180434131.png)
+![image-20260121180434131](../../boards/ebaina/docs/pic/image-20260121180434131.png)
 
 - Sensor driver: 2lane_30fps_1920x1080:
 
@@ -1152,9 +1152,9 @@ Sensor2 and sensor3 reset requires a GPIO reset; run the `sns23_reset_4x2lane.sh
 ./sample_vio_4x2lane_2M
 ```
 
-![image-20260121180505070](./docs/pic/image-20260121180505070.png)
+![image-20260121180505070](../../boards/ebaina/docs/pic/image-20260121180505070.png)
 
-![image-20260121180509743](./docs/pic/image-20260121180509743.png)
+![image-20260121180509743](../../boards/ebaina/docs/pic/image-20260121180509743.png)
 
 #### 2.14. MIPI_TX (MIPI Display)
 
@@ -1162,9 +1162,9 @@ Sensor2 and sensor3 reset requires a GPIO reset; run the `sns23_reset_4x2lane.sh
 
 Connect the screen's 40-pin connector to the LED-labeled end of the adapter board.
 
-![image-20260121180529101](./docs/pic/image-20260121180529101.png)
+![image-20260121180529101](../../boards/ebaina/docs/pic/image-20260121180529101.png)
 
-![image-20260121180532764](./docs/pic/image-20260121180532764.png)
+![image-20260121180532764](../../boards/ebaina/docs/pic/image-20260121180532764.png)
 
 ② Functional Verification
 
@@ -1172,20 +1172,20 @@ Connect the screen's 40-pin connector to the LED-labeled end of the adapter boar
 ./sample_vdec
 ```
 
-![image-20260121180618608](./docs/pic/image-20260121180618608.png)
+![image-20260121180618608](../../boards/ebaina/docs/pic/image-20260121180618608.png)
 
-![image-20260121180624022](./docs/pic/image-20260121180624022.png)
+![image-20260121180624022](../../boards/ebaina/docs/pic/image-20260121180624022.png)
 
 Backlight and reset control scripts that may be needed:
 
-![image-20260121180631007](./docs/pic/image-20260121180631007.png)
+![image-20260121180631007](../../boards/ebaina/docs/pic/image-20260121180631007.png)
 
 #### 2.15. Audio
 
 ① Audio Input
 
-![image-20260121180655415](./docs/pic/image-20260121180655415.png)
+![image-20260121180655415](../../boards/ebaina/docs/pic/image-20260121180655415.png)
 
 ② Audio Output
 
-![image-20260121180735209](./docs/pic/image-20260121180735209.png)
+![image-20260121180735209](../../boards/ebaina/docs/pic/image-20260121180735209.png)

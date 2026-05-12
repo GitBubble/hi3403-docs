@@ -81,7 +81,6 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DPU2.0 �
 
 **图 1**  输入查找表排布格式<a name="fig52461276114"></a>  
 ![](figures/输入查找表排布格式.png "输入查找表排布格式")
-
 -   查找表大小为Width\*Height\*64 bits，Width为校正后图像宽度，Height为校正后图像高度。
 -   Fxu，Fyu表示输出图像坐标为u的像素点对应输入图像中的像素坐标。Fx，Fy用单精度浮点表示。RECT根据每个像素提供的Fx，Fy进行插值。
 

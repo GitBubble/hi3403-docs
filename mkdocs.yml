@@ -1,5 +1,6 @@
 site_name: Hi3403 Developer Center
 site_url: https://gitbubble.github.io/hi3403-docs/
+
 site_description: Documentation for the HiSilicon SS928V100 / SS927V100 Hi3403 platform
 site_author: Hi3403 community
 
@@ -235,11 +236,7 @@ plugins:
 
 validation:
   links:
-    # The migrated upstream corpus contains many generated cross-file links
-    # whose targets were renamed, split, or not imported yet. Keep `--strict`
-    # for configuration/build warnings, but let link debt be handled by the
-    # dedicated `make linkcheck` workflow while migration stabilizes.
-    not_found: ignore
+    not_found: warn
 
 markdown_extensions:
   - admonition                   # !!! note / warning / tip blocks

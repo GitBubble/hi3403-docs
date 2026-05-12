@@ -348,7 +348,6 @@ ARM Development Studio 5是由ARM公司提供的DS-5 Eclipse安装程序。安�
 
 **图 1**  DS-5 Eclipse启动界面<a name="_Toc452126556"></a>  
 ![](figures/DS-5-Eclipse启动界面.png "DS-5-Eclipse启动界面")
-
 ### 新建目标平台配置数据库<a name="ZH-CN_TOPIC_0000002457834681"></a>
 
 新建目标平台配置数据库的步骤如下：
@@ -394,7 +393,6 @@ ARM Development Studio 5是由ARM公司提供的DS-5 Eclipse安装程序。安�
 
     **图 11**  配置平台数据库界面—完成“Platform Information”配置<a name="fig437mcpsimp"></a>  
     ![](figures/配置平台数据库界面-完成-Platform-Information-配置.png "配置平台数据库界面-完成-Platform-Information-配置")
-
 ### 连接目标平台<a name="ZH-CN_TOPIC_0000002424196058"></a>
 
 连接到目标平台上的具体步骤如下：
@@ -415,7 +413,6 @@ ARM Development Studio 5是由ARM公司提供的DS-5 Eclipse安装程序。安�
 
     **图 4**  DS-5 Debug – Eclipse Platform窗口<a name="fig451mcpsimp"></a>  
     ![](figures/DS-5-Debug-Eclipse-Platform窗口.png "DS-5-Debug-Eclipse-Platform窗口")
-
 ## 使用仿真器烧写Flash<a name="ZH-CN_TOPIC_0000002424196054"></a>
 
 
@@ -437,7 +434,6 @@ ARM Development Studio 5是由ARM公司提供的DS-5 Eclipse安装程序。安�
 
 **图 2**  Memory窗口<a name="_Toc452126567"></a>  
 ![](figures/Memory窗口.png "Memory窗口")
-
 ### 下载U-Boot映像<a name="ZH-CN_TOPIC_0000002424355898"></a>
 
 步骤如下：
@@ -455,7 +451,6 @@ ARM Development Studio 5是由ARM公司提供的DS-5 Eclipse安装程序。安�
 
     **图 3**  Registers窗口<a name="_Toc452126570"></a>  
     ![](figures/Registers窗口.png "Registers窗口")
-
 ### 烧写映像<a name="ZH-CN_TOPIC_0000002457874797"></a>
 
 U-Boot启动后，通过串口将内存中的U-Boot映像写入启动介质中。
@@ -487,7 +482,6 @@ u-boot默认是不支持SPI-Nor块保护功能，若需要开启SPI-Nor块保护
 
     **图 1**  SPI-Nor块保护选项图<a name="_Ref29310076"></a>  
     ![](figures/SPI-Nor块保护选项图.png "SPI-Nor块保护选项图")
-
 ### SPI-Nor块保护命令<a name="ZH-CN_TOPIC_0000002424196066"></a>
 
 常用的SPI Nor Flash上都提供了块保护位（Block Protect：以下简称BP）来保护数据安全。
@@ -515,28 +509,24 @@ sf lock
 
 **图 1**  查看当前块保护信息<a name="_Toc498536356"></a>  
 ![](figures/查看当前块保护信息.png "查看当前块保护信息")
-
 -   sf lock all
 
     锁定所有的块（整个器件），等同于设置等级 level为最大值，如[图2](#_Toc498536357)所示。
 
     **图 2**  锁定整个器件<a name="_Toc498536357"></a>  
     ![](figures/锁定整个器件.png "锁定整个器件")
-
 -   sf lock 0
 
     解除当前块保护锁定状态，此时器件上所有的块都处于未保护状态，可以任意进行擦写操作。如[图3](#_Toc498536358)所示。
 
     **图 3**  解除当前锁定状态<a name="_Toc498536358"></a>  
     ![](figures/解除当前锁定状态.png "解除当前锁定状态")
-
 -   sf lock <level\>
 
     设置BP level值，根据level值对应的长度，这样处于块保护区域的块不可以进行正常擦写，如[图4](#_Toc498536359)所示。
 
     **图 4**  通过设置 level值锁定指定区域<a name="_Toc498536359"></a>  
     ![](figures/通过设置-level值锁定指定区域.png "通过设置-level值锁定指定区域")
-
 ### tftp命令的使用限制<a name="ZH-CN_TOPIC_0000002457834685"></a>
 
 uboot下include/configs/ss928v100.h文件中PHYS\_SDRAM\_1\_SIZE宏的大小定义限制了tftp命令的地址范围。默认发布包中，PHYS\_SDRAM\_1\_SIZE宏定义为0x20000000，即通过tftp命令只能把文件下载到ddr前512M的地址空间。

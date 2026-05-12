@@ -30,14 +30,14 @@ SDK images and documentation provided by the manufacturer.
 
 ```mermaid
 flowchart TD
-    Start[What am I going to do?] --> A{第一次接触 Hi3403？}
-    A -- 是 --> Topeet[iTOP-Hi3403<br> complete peripherals + complete documentation]
-    A -- 否 --> B{要做哪类系统？}
-    B -- OpenHarmony 设备 --> RKH[Run Kaihong]
+    Start[What am I going to do?] --> A{First time with Hi3403?}
+    A -- Yes --> Topeet[iTOP-Hi3403<br> complete peripherals + complete documentation]
+    A -- No --> B{What type of system?}
+    B -- OpenHarmony device --> RKH[Run Kaihong]
     B -- OpenEuler --> Ebaina[Euler Pi]
     B -- Buildroot --> LubanCat[LubanCat-Hi3403]
-    B -- AI 应用 demo --> ZSKS[Zhongshan Kuangshi zsks]
-    B -- Ubuntu 桌面 --> Topeet
+    B -- AI application demo --> ZSKS[Zhongshan Kuangshi zsks]
+    B -- Ubuntu desktop --> Topeet
 
     style Topeet stroke:#7c4dff,stroke-width:3px
     style LubanCat stroke:#7c4dff,stroke-width:2px

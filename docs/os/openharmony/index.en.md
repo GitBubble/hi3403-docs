@@ -32,7 +32,7 @@ pegasus/
 │       └── prebuilts_setup.sh                # pre-build environment setup
 ├── platform/ss928v100_clang        # SDK source + binaries (kernel drivers, samples, OSS)
 └── vendor
-    └── rkh/patches                 # 润开鸿 (RKH) OpenHarmony patches by subsystem (extra features + driver support)
+    └── rkh/patches                 # RKH (Runkaihong) OpenHarmony patches by subsystem (extra features + driver support)
 ```
 
 ## Directory guide
@@ -119,7 +119,7 @@ sliced by subsystem. Each patch carries:
 When OpenHarmony moves, these are the patches you re-base to bring up
 a newer release.
 
-## Vendor: 润开鸿 (RKH)
+## Vendor: RKH (Runkaihong)
 
 `vendor/rkh/patches/` adds OpenHarmony tweaks specific to the RKH
 desktop image — extended driver support, more GUI components, and

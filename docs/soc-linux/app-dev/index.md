@@ -156,7 +156,6 @@ SVP ACL（Smart Vision Processing Advanced Computing Language）提供Device管�
 
 **图 1**  逻辑架构图<a name="fig1754516145614"></a>  
 ![](figures/逻辑架构图.png "逻辑架构图")
-
 ## 基本概念<a name="ZH-CN_TOPIC_0000002441980857"></a>
 
 **表 1**  概念介绍
@@ -795,7 +794,6 @@ last_hw_task_time   hw_utilization   total_running_time
 
 **图 1**  模型加载流程<a name="fig15136105912515"></a>  
 ![](figures/模型加载流程.png "模型加载流程")
-
 -   在模型加载前，需使用ATC工具将第三方网络（例如，Caffe ResNet-50网络）转换为适配SoC的离线模型（\*.om文件），请参见《ATC工具使用指南》。
 -   支持以下方式加载模型，模型加载成功后，返回标识模型的模型ID：
 
@@ -947,7 +945,6 @@ SVP\_ACL支持检测网阈值通过data层传入，阈值输入固定长度为4�
 
 **图 7**  检测框结果数据排布（通道为2，chn为2示意图）<a name="fig2039910144816"></a>  
 ![](figures/检测框结果数据排布（通道为2-chn为2示意图）.png "检测框结果数据排布（通道为2-chn为2示意图）")
-
 ## 同步等待<a name="ZH-CN_TOPIC_0000002442020793"></a>
 
 
@@ -957,7 +954,6 @@ SVP\_ACL支持检测网阈值通过data层传入，阈值输入固定长度为4�
 
 **图 1**  同步等待流程多Device场景<a name="fig18381162175012"></a>  
 ![](figures/同步等待流程多Device场景.png "同步等待流程多Device场景")
-
 -   在多Device时，利用Context切换（调用[svp\_acl\_rt\_set\_current\_context](#ZH-CN_TOPIC_0000002408421610)接口）来切换Device，比使用[svp\_acl\_rt\_set\_device](#ZH-CN_TOPIC_0000002408421586)接口效率高。
 -   调用[svp\_acl\_rt\_synchronize\_device](#ZH-CN_TOPIC_0000002441980957)接口等待Device上的计算任务结束。
 -   模型加载的流程请参见“[模型加载](#ZH-CN_TOPIC_0000002408581558)”，模型执行的流程请参见“[模型执行](#ZH-CN_TOPIC_0000002408421538)”。
@@ -8280,7 +8276,6 @@ typedef struct svp_acl_aapp_info {
 
 **图 1**  Sample示例<a name="fig5655mcpsimp"></a>  
 ![](figures/Sample示例.png "Sample示例")
-
 #### 原理介绍<a name="ZH-CN_TOPIC_0000002441981025"></a>
 
 在该Sample中，涉及的关键功能点，如[表1](#table607mcpsimp)所示。API接口的详细介绍请参见[SVP ACL API参考](#ZH-CN_TOPIC_0000002408421574)。
@@ -8543,7 +8538,6 @@ processModel.DumpModelOutputResult();</pre>
 
 **图 1**  Sample示例<a name="fig1605mcpsimp"></a>  
 ![](figures/Sample示例-0.png "Sample示例-0")
-
 #### 原理介绍<a name="ZH-CN_TOPIC_0000002408581814"></a>
 
 在该Sample中，涉及的关键功能点，如[表1](#table4320mcpsimp)所示。API接口的详细介绍请参见[SVP ACL API参考](#ZH-CN_TOPIC_0000002408421574)。

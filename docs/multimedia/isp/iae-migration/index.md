@@ -357,7 +357,6 @@ svp_acl_error svp_acl_ext_get_mdl_aacpu_task_num(uint32_t model_id, uint32_t *nu
 
     **图 4**  阈值输入数据排布<a name="fig01731256135515"></a>  
     ![](figures/阈值输入数据排布.png "阈值输入数据排布")
-
 ### 支持的接口<a name="ZH-CN_TOPIC_0000002441980509"></a>
 
 **表 1**  支持的接口差异

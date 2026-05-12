@@ -25,7 +25,7 @@ reference* are split out for chapter-by-chapter browsing.
 
 -   __02 · System control__
 
-    [:octicons-arrow-right-24: Open](02-系统控制.md)
+    [:octicons-arrow-right-24: Open](02-System control.md)
 
 -   __03 · Video input (VI)__
 

@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 图�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424362510.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/multimedia/isp/tuning/figures/zh-cn_image_0000002424362510.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457881409.png"></span></p>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="/multimedia/isp/tuning/figures/zh-cn_image_0000002457881409.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424202670.png"></span></p>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="/multimedia/isp/tuning/figures/zh-cn_image_0000002424202670.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457841297.png"></span></p>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="/multimedia/isp/tuning/figures/zh-cn_image_0000002457841297.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457881413.png"></span></p>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="/multimedia/isp/tuning/figures/zh-cn_image_0000002457881413.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
 <p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -164,12 +164,10 @@ ISP SS928V100的功能结构图如[图1](#fig19340125514231)、[图2](#fig182927
 
 **图 2**  ISP\_FE 结构图（SS928V100）<a name="fig1829272832518"></a>  
 ![](figures/ISP_FE-结构图（SS928V100）.png "ISP_FE-结构图（SS928V100）")
-
 ![](figures/2-2-0.png)
 
 **图 3**  ISP\_BE 结构图（SS928V100）<a name="fig474713442299"></a>  
 ![](figures/ISP_BE-结构图（SS928V100）.png "ISP_BE-结构图（SS928V100）")
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >\*图中DG1功能和DG一致。
 
@@ -370,7 +368,6 @@ ISP 各模块功能简介如[表1](#_Ref500230610)所示。
 
     **图 2**  Sensor和镜头标定的流程图<a name="fig1589155619710"></a>  
     ![](figures/Sensor和镜头标定的流程图.png "Sensor和镜头标定的流程图")
-
     -   黑电平标定：黑电平标定是整个ISP标定的第一步，因此正确的标定出黑电平对后续的标定会产生积极的影响。黑电平的具体标定方法可以参考《图像质量调试工具使用指南》。需要注意的是不同的Sensor在低照度下\(高增益\)，黑电平会产生漂移，从而带来低照度下整个画面的颜色偏色，因此如果Sensor的黑电平随着增益的增加，漂移比较大，建议黑电平的标定需要根据ISO进行联动；
     -   NR的NoiseProfile标定：在黑电平标定正确的基础上，接下来就需要标定NR模块的NoiseProfile。NR模块降噪需要参考噪声标定NoiseProfile，不同iso下得到一个拟合系数，具体标定NoiseProfile需要参考《图像质量调试工具使用指南》。
     -   Sensor的静态坏点标定：Sensor的静态坏点主要受Sensor的工艺有关，其中包括亮点和暗点，静态坏点的标定受Sensor的分辨率影响，例如消费者Sensor 包括多个分辨率，如4K@30fps、1080p@120fps、720p@240fps，不同的分辨率的静态坏点表需要重新标定；标定的过程需要分别针对亮点和暗点进行标定，得到亮点表和暗点表，再将亮点表和暗点表进行合并，可以得到整个坏点表，具体标定的流程方法请参考“[DPC](#ZH-CN_TOPIC_0000002457881037)“章节。
@@ -422,7 +419,6 @@ ISP 各模块功能简介如[表1](#_Ref500230610)所示。
 
     **Figure  7**  AWB标定的静态白平衡系数示例<a name="_Ref500231591"></a>  
     ![](figures/AWB标定的静态白平衡系数示例.png "AWB标定的静态白平衡系数示例")
-
     ![](figures/zh-cn_image_0000002457841265.png)
 
 2.  在实验室灯箱场景抓取D50、TL84、A光源三组24色卡的raw通过标定工具生成CCM饱和度矩阵。在标定CCM的过程中需要注意用户自定义ISP Gamma值时，需注意匹配相对应的LAB参考值，防止由于ISP Gamma和LAB Reference不匹配，导致作为线性变化的AWB和CCM共同作用无法达到目标图片的效果。标定获取的CCM参数，如果在实际应用场景发现图像的饱和度效果不理想的情况下，需要根据实际场景出现的颜色的问题手动调整饱和度。[图8](#_Ref500253148)所示为标定CCM得到的三组色温\(D50、TL84、A\)的饱和度矩阵的示例。
@@ -437,7 +433,6 @@ ISP 各模块功能简介如[表1](#_Ref500230610)所示。
 
     **Figure  10**  通过Imatest得到的色彩还原指标<a name="_Ref500231699"></a>  
     ![](figures/通过Imatest得到的色彩还原指标.png "通过Imatest得到的色彩还原指标")
-
     ![](figures/zh-cn_image_0000002424202634.png)
 
 4.  AWB和CCM模块的参数的合理性，还需要大量依赖于实际应用场景的大量测试和调试。通常实际应用场景包括典型室外场景，包括顺光、背光、阴天、夕阳、以及混合光源等场景。如果场景中的灰色块还原不准确，需要调整AWB参数，场景中出现个别颜色过饱和或者偏色，建议调试CCM参数。针对混合光源应用场景，需要调节AWB中室内外检测的参数；针对实际场景中人物肤色还原不准确，需要调整CCM参数。
@@ -610,7 +605,6 @@ WDR 模式关于清晰度和噪声的调试方法整体上和线性模式是一�
 
     **图 2**  强光抑制场景AE权重表的示例<a name="_Ref504553359"></a>  
     ![](figures/强光抑制场景AE权重表的示例.png "强光抑制场景AE权重表的示例")
-
 -   在确定AE权重表的基础上，接下来调试AE的目标值。调试AE目标值之前，建议将DRC、Gamma、LDCI、Dehaze、FSWDR等模块Bypass，单独观察长帧和短帧车灯的光晕表现，一般情况下，车灯里面过曝区域会倾向于选择短帧，车灯外围的光晕区可能会落在长帧和短帧融合区，具体还需要视FSWDR短帧和长帧的阈值而定。因此调试AE的目标值尽量避免短帧的车灯光晕过大。同时也要兼顾画面的整体亮度和噪声的平衡。
 -   确定AE目标值合理的基础上，需要设置合理的AE Route，一般需要限制曝光时间，优先使用增益，来避免曝光时间过大加重运动车牌的模糊。在夜晚交通应用场景下，一般需要将曝光时间限制为10ms左右，曝光时间和增益的分配，具体还需要看实际应用需求。
 
@@ -645,7 +639,6 @@ DRC模块的其他参数，如细节层的正向和负向增强以及窗口的�
 
 **图 4**  去雾自定义曲线的示例图<a name="_Ref504567603"></a>  
 ![](figures/去雾自定义曲线的示例图.png "去雾自定义曲线的示例图")
-
 -   LDCI在强光抑制场景的调试思路主要就是提升车牌的局部对比度，一般建议将LDCI调试的局部一些，但同时需要注意：在夜晚场景下，LDCI的调试会带来车灯光晕的加大，需要平衡车灯光晕的大小和车牌局部对比度的表现。
 
 ****清晰度和噪声维度**<a name="section13539101449"></a>**
@@ -670,7 +663,6 @@ Sharpen模块用于增强图像的清晰度，可以实现对图像的带方向�
 
 **图 1**  Sharpen模块的系统框图<a name="fig2506236456"></a>  
 ![](figures/Sharpen模块的系统框图.png "Sharpen模块的系统框图")
-
 ### 关键参数<a name="ZH-CN_TOPIC_0000002424202226"></a>
 
 **表 1**  Sharpen关键参数
@@ -950,7 +942,6 @@ Sharpen的调试步骤如下：
 
     **图 4**  skin\_umin/ skin\_vmin /skin\_umax和skin\_vmax决定的肤色矩形窗区域范围示意图<a name="_Ref533581415"></a>  
     ![](figures/skin_umin-skin_vmin-skin_umax和skin_vmax决定的肤色矩形窗区域范围示意图.png "skin_umin-skin_vmin-skin_umax和skin_vmax决定的肤色矩形窗区域范围示意图")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   over\_shoot和under\_shoot决定了图像整体的overshoot（白边白点）和undershoot（黑边黑点）的强度，而且，over\_shoot和under\_shoot的大小会直接影响图像的锐度（texture\_strength和edge\_strength两个参数是决定图像锐度的直接参数和根本因素）。shoot\_sup\_strength基于over\_shoot和under\_shoot的强度可以再次独立压低边缘的黑边白边的强度、收窄黑边白边的宽度，并且可以使图像的清晰度不明显下降。detail\_ctrl是通过单独调节纹理细节区的overshoot和undershoot的强度来单独调节细节纹理的清晰度，使得细节纹理区的shoot和边缘的shoot不一样。
 >-   texture\_freq是一个12bit 6.6的带小数点精度的数，高6bit是整数部分，低6bit是小数部分，texture\_freq对应于texture\_strength，texture\_freq的调节效果和texture\_strength相关联。texture\_strength较大时，texture\_freq调大到一定值后（小于满量程4095的值），texture\_freq继续增大，图像可能就不会再有明显的变化。
@@ -972,7 +963,6 @@ Demosaic模块实现的功能就是将输入的Bayer数据转化成RGB数据。�
 
 **图 2**  demosaic功能<a name="fig118124712595"></a>  
 ![](figures/demosaic功能.png "demosaic功能")
-
 ### 关键参数<a name="ZH-CN_TOPIC_0000002457840833"></a>
 
 **表 1**  Demosaic关键参数
@@ -1044,7 +1034,6 @@ detail\_smooth\_range表示细节平滑范围，值越大，做平滑处理的�
 
 **图 1**  detail\_smooth\_range作用范围示意图<a name="fig1444319487611"></a>  
 ![](figures/detail_smooth_range作用范围示意图.png "detail_smooth_range作用范围示意图")
-
 ![](figures/zh-cn_image_0000002424202594.png) ![](figures/zh-cn_image_0000002424362414.png)
 
 ![](figures/zh-cn_image_0000002424362438.png) ![](figures/zh-cn_image_0000002424362442.png)
@@ -1203,7 +1192,6 @@ Sharpen的调试步骤如下：
 
 **图 1**  NR功能原理图<a name="_Ref500231359"></a>  
 ![](figures/NR功能原理图.png "NR功能原理图")
-
 ### 关键参数<a name="ZH-CN_TOPIC_0000002424362082"></a>
 
 **表 1**  NR关键参数
@@ -1561,7 +1549,6 @@ DPC不支持校正的坏点类型：
 
 **图 4**  多个坏点<a name="fig15926164116530"></a>  
 ![](figures/多个坏点.png "多个坏点")
-
 ![](figures/4-17.png)
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
@@ -1861,7 +1848,6 @@ DPC处理强度的选择是和iso值有很大的关系，iso越高，对应的DP
 
 **图 1**  DRC的一般模型<a name="fig193791815162718"></a>  
 ![](figures/DRC的一般模型.png "DRC的一般模型")
-
 ### 关键参数<a name="ZH-CN_TOPIC_0000002424362190"></a>
 
 **表 1**  DRC关键参数
@@ -2113,7 +2099,6 @@ DPC处理强度的选择是和iso值有很大的关系，iso越高，对应的DP
 
 **图 1**  DRC算法流程及各关键参数示意图<a name="fig4349895610"></a>  
 ![](figures/DRC算法流程及各关键参数示意图.png "DRC算法流程及各关键参数示意图")
-
 ### 调试步骤<a name="ZH-CN_TOPIC_0000002457840973"></a>
 
 DRC的一般调试步骤如下：
@@ -2168,7 +2153,6 @@ CASE4: Curve1 \(2, 180, 50, 180\); Curve2 \(2, 180, 50, 100\)
 
 **图 5**  参数compress的变化对曲线的影响趋势<a name="fig3651mcpsimp"></a>  
 ![](figures/参数compress的变化对曲线的影响趋势.png "参数compress的变化对曲线的影响趋势")
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >Asymmetry曲线必须是单调非递减的。当配置的参数使得到的曲线上某点的值小于其前一点的值时，该点的值将被自动置为其前一点的值，以使最终曲线符合单调非递减的条件。
 
@@ -2524,7 +2508,6 @@ mdt\_long\_blend表示运动区域叠加长帧的权重，该值越大，运动�
 
 **图 3**  帧间差值与运动程度之间的关系<a name="fig07301849183011"></a>  
 ![](figures/帧间差值与运动程度之间的关系.png "帧间差值与运动程度之间的关系")
-
 #### Fusion模式阈值调试<a name="ZH-CN_TOPIC_0000002424202354"></a>
 
 参数fusion\_threshold\[4\] 用来调节超短帧，短帧，中帧，长帧的阈值，将对应帧的输入数据限制在阈值以下。如2合1WDR中，fusion\_threshold\[0\]为短帧门限值，短帧内超过该门限值的像素将被截断到该门限值，低于该门限值的像素仍使用真实值。fusion\_threshold\[1\]为长帧门限值，长帧内超过该门限值的像素将被截断到该门限值，低于该门限值的像素仍使用真实值。在融合时，fusion\_threshold\[1\]变小，比较多的像素会选择短帧，噪声会变大；fusion\_threshold\[1\]变大，对于亮区会有一部分像素选择长帧，导致过曝。并且fusion\_threshold\[1\]接近最大值时，由于受黑电平影响，会导致融合时像素选择不合理，进而出现图像偏色的问题。建议各帧阈值不超过3FFF-黑电平（14bit）。
@@ -2622,7 +2605,6 @@ Crosstalk  模块的主要功能是为了平衡raw数据之间临近像素Gr和G
 
 **图 1**  Crosstalk 门限<a name="fig567682915506"></a>  
 ![](figures/Crosstalk-门限.png "Crosstalk-门限")
-
 ### Crosstalk参数<a name="ZH-CN_TOPIC_0000002424202182"></a>
 
 **表 1**  Crosstalk参数
@@ -2968,7 +2950,6 @@ Curve区域由两个参数组成，Gamma COEFFI和Slope at zero。其中Gamma CO
 
 **图 2**  Gamma COEFFI对Gamma曲线的影响<a name="fig678mcpsimp"></a>  
 ![](figures/Gamma-COEFFI对Gamma曲线的影响.png "Gamma-COEFFI对Gamma曲线的影响")
-
 -   如果是COEFFI不变，而只是Slope at zero有变化，则曲线整体形状不变，只是在0点斜率处发生变化（会导致整体曲线发生轻微位移）。
 
 **图 3**  Gamma COEFFI对Gamma曲线的影响<a name="fig682mcpsimp"></a>  
@@ -2976,7 +2957,6 @@ Curve区域由两个参数组成，Gamma COEFFI和Slope at zero。其中Gamma CO
 
 **图 4**  Gamma COEFFI对Gamma曲线的影响（零点斜率处放大）<a name="fig684mcpsimp"></a>  
 ![](figures/Gamma-COEFFI对Gamma曲线的影响（零点斜率处放大）.png "Gamma-COEFFI对Gamma曲线的影响（零点斜率处放大）")
-
 ## White Balance<a name="ZH-CN_TOPIC_0000002424362106"></a>
 
 
@@ -2995,7 +2975,6 @@ AWB的增益是全局的，因此，在混合光源下，不能达到所有灰�
 
 **图 1**  AWB和SPECAWB算法<a name="fig13215624131819"></a>  
 ![](figures/AWB和SPECAWB算法.png "AWB和SPECAWB算法")
-
 ### 关键参数\(AWB\)<a name="ZH-CN_TOPIC_0000002424362038"></a>
 
 **表 1**  AWB标定参数
@@ -3409,17 +3388,14 @@ Local CAC主要用来消除图像中出现的紫边问题。
 
 **图 1**  purple\_detect\_range效果图<a name="fig1513620551827"></a>  
 ![](figures/purple_detect_range效果图.png "purple_detect_range效果图")
-
 -   若只需要校正强边缘处的紫色，则可以增加var\_threshold的值；var\_threshold的值越小，所能校正的紫边的范围越大，如[图2](#fig133951171378)所示，var\_threshold=0时所能检测的紫边范围不受强边缘条件的现在，所能检测校正的范围较宽，而当var\_threshold=200时，只能检测靠近灯管边缘的几个紫边像素能被检测校正掉。
 
 **图 2**  var\_threshold效果图<a name="fig133951171378"></a>  
 ![](figures/var_threshold效果图.png "var_threshold效果图")
-
 -   在配置完上述的检测参数之后，可以调整de\_purple\_cr\_strength、de\_purple\_cb\_strength来确定R、B通道的校正强度，校正强度调节的太大，可能会造成紫边处明显的灰度化，如[图3](#fig4334816181020)所示，调节至可接受的紫边校正强度即可。一般紫边的颜色表现为蓝紫色，即在高光区过渡到低光区时，B通道的衰减更慢，对于紫边出现的贡献更大，这个时候就需要将de\_purple\_cb\_strength的值调整的更大一些。
 
 **图 3**  de\_purple\_cb\_strength效果图<a name="fig4334816181020"></a>  
 ![](figures/de_purple_cb_strength效果图.png "de_purple_cb_strength效果图")
-
 #### 注意事项<a name="ZH-CN_TOPIC_0000002457880941"></a>
 
 紫边表现与镜头特性有直接关系，有些镜头的紫边会扩散至十多个像素，受限于算法能力，在紫边很宽的时候，CAC容易引入锯齿问题和紫色块和蓝色块噪声跳动问题。其中，锯齿问题是因为紫边太宽导致部分紫边去除，部分紫边残留而形成锯齿。紫色块和蓝色块噪声跳动问题是因为CAC调试太强，导致紫色块和蓝色块的部分颜色去除，部分没有去除而形成噪声跳动。所以在WDR模式下调节CAC要注意var\_threshold的调节：
@@ -3535,7 +3511,6 @@ ACAC不仅可以对纵向色差校正，还可以对横向色差校正。
 
     **图 1**  紫色检测范围示意图<a name="fig3343mcpsimp"></a>  
     ![](figures/紫色检测范围示意图.png "紫色检测范围示意图")
-
 #### 注意事项<a name="ZH-CN_TOPIC_0000002457881021"></a>
 
 -   若场景中有一些较严重的紫边，需要加强去除紫边能力，将fcc\_y\_strength，fcc\_rb\_strength的值设置得较大，且edge\_alpha也设置得较大，注意这种情况下容易导致正常的物体边缘颜色呈灰色。
@@ -3703,8 +3678,8 @@ SS928V100是在YUV域对图像进行radial crop操作，将设定半径之外的
 <tr id="row910mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="p912mcpsimp"><a name="p912mcpsimp"></a><a name="p912mcpsimp"></a>radius</p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="p914mcpsimp"><a name="p914mcpsimp"></a><a name="p914mcpsimp"></a>拉黑的半径，到中心点的距离大于半径的区域直接拉黑。</p>
-<p class="msonormal" id="p915mcpsimp"><a name="p915mcpsimp"></a><a name="p915mcpsimp"></a>取值范围：[0, <a name="image441242542911"></a><a name="image441242542911"></a><span><img class="mathml" id="image441242542911" src="figures/zh-cn_formulaimage_0000002457881317.png"></span>]</p>
-<p class="msonormal" id="p916mcpsimp"><a name="p916mcpsimp"></a><a name="p916mcpsimp"></a>默认值<a name="image7374141116311"></a><a name="image7374141116311"></a><span><img class="mathml" id="image7374141116311" src="figures/zh-cn_formulaimage_0000002424202582.png"></span></p>
+<p class="msonormal" id="p915mcpsimp"><a name="p915mcpsimp"></a><a name="p915mcpsimp"></a>取值范围：[0, <a name="image441242542911"></a><a name="image441242542911"></a><span><img class="mathml" id="image441242542911" src="/multimedia/isp/tuning/figures/zh-cn_formulaimage_0000002457881317.png"></span>]</p>
+<p class="msonormal" id="p916mcpsimp"><a name="p916mcpsimp"></a><a name="p916mcpsimp"></a>默认值<a name="image7374141116311"></a><a name="image7374141116311"></a><span><img class="mathml" id="image7374141116311" src="/multimedia/isp/tuning/figures/zh-cn_formulaimage_0000002424202582.png"></span></p>
 </td>
 </tr>
 </tbody>
@@ -3730,7 +3705,6 @@ SS928V100是在YUV域对图像进行radial crop操作，将设定半径之外的
 
 **图 1**  LDCI 结构框图<a name="fig14349192616324"></a>  
 ![](figures/LDCI-结构框图.png "LDCI-结构框图")
-
 ### 关键参数<a name="ZH-CN_TOPIC_0000002424362174"></a>
 
 **表 1**  LDCI关键参数
@@ -3844,7 +3818,6 @@ LDCI可以通过调节统计信息的滤波系数来控制局部对比度增强�
 
 **图 2**  gauss\_lpf\_sigma取值不同时图像效果<a name="_Ref479254969"></a>  
 ![](figures/gauss_lpf_sigma取值不同时图像效果.png "gauss_lpf_sigma取值不同时图像效果")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >增大gauss\_lpf\_sigma滤波系数，滤波结果可能变大，可能变小，亮度上不是单调变化的。
 
@@ -3870,7 +3843,6 @@ LDCI增强之后亮度提升的区域，可采用参数he\_pos\_wgt.wgt、he\_po
 
 **图 5**  he\_neg\_wgt取值不同时效果<a name="_Ref479255366"></a>  
 ![](figures/he_neg_wgt取值不同时效果.png "he_neg_wgt取值不同时效果")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >当he\_neg\_wgt.sigma或者he\_pos\_wgt.sigma 设置较小时，调节mean，可能会出现LUT跳变的情况或者过渡不平滑的现象，不建议将sigma设置为15以下。
 
@@ -3883,7 +3855,6 @@ LDCI还可以在对比度增强的基础上适当的对暗区增强程度进行�
 
 **图 2**  blc\_ctrl取值不同时效果<a name="_Ref479255490"></a>  
 ![](figures/blc_ctrl取值不同时效果.png "blc_ctrl取值不同时效果")
-
 #### 时域参数调试<a name="ZH-CN_TOPIC_0000002424202302"></a>
 
 为了避免亮度发生突变时，LDCI出现闪烁问题，LDCI内部增加了对统计信息的时域滤波处理，保持统计信息平滑变化，接口tpr\_incr\_coef用来调节画面由暗到亮变化时域滤波系数，接口tpr\_decr\_coef用来调节画面由亮到暗变化时域滤波系数，值越大，参考当前帧比重越大，当tpr\_incr\_coef=256或tpr\_decr\_coef=256时完全使用当前帧统计值，不再参考历史帧统计信息。当tpr\_incr\_coef=0或tpr\_decr\_coef=0时完全使用历史帧统计值，不再参考当前帧统计，建议时域滤波系数不要调试过大，防止出现闪烁问题。
@@ -3994,12 +3965,10 @@ Dehaze算法同样支持使用PQ工具里的Dehaze COEFFI进行调节，曲线�
 
 **图 1**  Dehaze COEFFI为0.45时的情况<a name="_Ref521483310"></a>  
 ![](figures/Dehaze-COEFFI为0-45时的情况.png "Dehaze-COEFFI为0-45时的情况")
-
 -   Dehaze COEFFI为1.3时的情况，如[图2](#_Ref521483398)所示。
 
 **图 2**  Dehaze COEFFI为1.3时的情况<a name="_Ref521483398"></a>  
 ![](figures/Dehaze-COEFFI为1-3时的情况.png "Dehaze-COEFFI为1-3时的情况")
-
 ## CLUT<a name="ZH-CN_TOPIC_0000002457881033"></a>
 
 
@@ -4068,7 +4037,6 @@ RGBIR模块的算法框图以及关键参数的对应模块如[图1](#fig1652319
 
 **图 1**  RGBIR算法框图<a name="fig16523192519472"></a>  
 ![](figures/RGBIR算法框图.png "RGBIR算法框图")
-
 ### 关键参数<a name="ZH-CN_TOPIC_0000002457840805"></a>
 
 **表 1**  RGBIR关键参数

@@ -1,6 +1,7 @@
 # MkDocs build output
 /site/
 /.cache/
+/.claude/
 
 # Python
 __pycache__/
@@ -16,6 +17,10 @@ venv/
 .DS_Store
 Thumbs.db
 
+# Translation caches
+scripts/.translate_cache*.json
+scripts/.translate_patch_cache*.json
+*.bak
 # Migration intermediates
 /build/
 /inventory.csv

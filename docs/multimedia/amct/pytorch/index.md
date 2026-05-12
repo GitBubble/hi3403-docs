@@ -31,28 +31,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/AMCT使�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441982621.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/multimedia/amct/pytorch/figures/zh-cn_image_0000002441982621.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408583234.png"></span></p>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="/multimedia/amct/pytorch/figures/zh-cn_image_0000002408583234.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442022453.png"></span></p>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="/multimedia/amct/pytorch/figures/zh-cn_image_0000002442022453.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442022457.png"></span></p>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="/multimedia/amct/pytorch/figures/zh-cn_image_0000002442022457.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408423318.png"></span></p>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="/multimedia/amct/pytorch/figures/zh-cn_image_0000002408423318.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
 <p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -99,7 +99,6 @@ AMCT使用场景如[图1](#fig530421204511)所示，AMCT当前仅支持在Ubuntu
 
 **图 1**  部署架构<a name="fig530421204511"></a>  
 ![](figures/部署架构.png "部署架构")
-
 ## 概念介绍<a name="ZH-CN_TOPIC_0000002408583046"></a>
 
 根据量化方法不同，分为训练后量化（Post-Training Quantization）和量化感知训练（Quantization-Aware Training）；上述两种量化方法，根据量化对象不同，分为权重（weight）量化和数据（activation）量化。
@@ -132,7 +131,6 @@ AMCT使用场景如[图1](#fig530421204511)所示，AMCT当前仅支持在Ubuntu
 
     **图 1**  反量化示意图<a name="fig12771415124116"></a>  
     ![](figures/反量化示意图.png "反量化示意图")
-
 -   **伪量化**
 
     伪量化主要针对训练和推理过程中对量化误差的模拟场景，其能够保证大多数浮点训练框架不变的情况下，通过量化-反量化的机制来模拟误差。
@@ -141,14 +139,12 @@ AMCT使用场景如[图1](#fig530421204511)所示，AMCT当前仅支持在Ubuntu
 
     **图 2** **伪量化示意图**<a name="fig8680173722710"></a>  
     ![](figures/伪量化示意图.png "伪量化示意图")
-
 -   **真量化**
 
     真量化能够模拟板端硬件的误差。例如[图3](#fig12679247202216)所示，权重（weight）/数据（activation）/偏差（bias）经过量化转化int类型，然后执行后续的乘法运算和加法运算，再次从浮点重量化（ReQuant）为定点的计算过程称为真量化。
 
     **图 3**  真量化示意图<a name="fig12679247202216"></a>  
     ![](figures/真量化示意图.png "真量化示意图")
-
 ### 量化感知训练<a name="ZH-CN_TOPIC_0000002408423234"></a>
 
 量化感知训练，是指借助用户完整训练数据集，在训练过程中引入量化操作，通过在训练前向计算中对数据和权重进行量化反量化，引入量化误差损失，从而在训练过程中提高模型对量化效应的适应能力，提高最终的量化模型精度。
@@ -634,7 +630,6 @@ AMCT量化过程中的日志信息以及日志级别，可以通过环境变量�
 
 **图 1**  训练后量化实现原理<a name="fig44212565592"></a>  
 ![](figures/训练后量化实现原理.png "训练后量化实现原理")
-
 ### 量化示例<a name="ZH-CN_TOPIC_0000002408423198"></a>
 
 
@@ -1076,7 +1071,6 @@ AMCT量化过程中的日志信息以及日志级别，可以通过环境变量�
 
     **图 1**  调参流程<a name="fig9825154214173"></a>  
     ![](figures/调参流程.png "调参流程")
-
 ## 量化感知训练<a name="ZH-CN_TOPIC_0000002442022353"></a>
 
 
@@ -1086,7 +1080,6 @@ AMCT量化过程中的日志信息以及日志级别，可以通过环境变量�
 
 **图 1**  量化感知训练实现原理<a name="fig936695415614"></a>  
 ![](figures/量化感知训练实现原理.png "量化感知训练实现原理")
-
 ### 量化示例<a name="ZH-CN_TOPIC_0000002442022313"></a>
 
 
@@ -3844,7 +3837,6 @@ amct.save_quant_retrain_model(
 
 **图 2**  修改后的模型定义<a name="fig8996117171"></a>  
 ![](figures/修改后的模型定义.png "修改后的模型定义")
-
 ### retrain场景，重复使用的层需多次定义<a name="ZH-CN_TOPIC_0000002408423210"></a>
 
 retrain场景，对于不带权重重复使用的层，需要根据使用次数在模型init方法中定义相应次数。原始模型如[图1](#fig627315983714)。
@@ -3866,7 +3858,6 @@ retrain场景，对于不带权重重复使用的层，需要根据使用次数�
 
 **图 4**  修改后的循环调用eltwise的module<a name="fig19841359153019"></a>  
 ![](figures/修改后的循环调用eltwise的module.png "修改后的循环调用eltwise的module")
-
 ### chunk算子替换成split算子<a name="ZH-CN_TOPIC_0000002408583098"></a>
 
 当前1.10.2版本的pytorch，指定onnx opset version为13进行pytorch到onnx的算子转换时，torch.chunk算子会变成小算子组合，这使得量化配置及量化参数映射流程极其复杂。此时需要用户手动将chunk算子替换为split算子。torch.chunk算子的含义是将tensor拆分成n块，torch.split算子的含义是将tensor拆分成大小为n的多块。经过替换后的模型，先进行一轮数据forward，确保所有split算子的chunk属性被初始化，再进行模型修改和forward。
@@ -3876,7 +3867,6 @@ retrain场景，对于不带权重重复使用的层，需要根据使用次数�
 
 **图 2**  chunk修改为split定义后的InvertedResidual定义<a name="fig2082061113612"></a>  
 ![](figures/chunk修改为split定义后的InvertedResidual定义.png "chunk修改为split定义后的InvertedResidual定义")
-
 ## 拓展单输入单输出module量化<a name="ZH-CN_TOPIC_0000002442022329"></a>
 
 1.  对于单输入单输出且有module表示的算子，不在[支持量化的算子列表](#ZH-CN_TOPIC_0000002498353100)中，可以手动进行拓展，打开site-packages/hotwheels/amct\_pytorch/capacity/capacity\_config.csv，在NO\_WEIGHT\_QUANT\_TYPES增加要拓展的pytorch层类型，NO\_WEIGHT\_QUANT\_ONNX\_TYPES中增加该层转换到onnx对应的层类型。例如，客户想要增加torch.nn.XLayer的量化，可以将‘Xlayer’添加到NO\_WEIGHT\_QUANT\_TYPES列表末尾，并用逗号分隔，再将其在opset\_version为13下转为onnx对应的算子类型ONNX\_XLayer添加到NO\_WEIGHT\_QUANT\_ONNX\_TYPES列表末尾，并用逗号分隔。
@@ -5235,7 +5225,6 @@ def graph_to_dynamic_module(graph_module: torch.fx.GraphModule, save_module_path
 
 **图 2**  优化后模型定义<a name="fig15813225189"></a>  
 ![](figures/优化后模型定义.png "优化后模型定义")
-
 ## pip install 安装torch包失败<a name="ZH-CN_TOPIC_0000002498353092"></a>
 
 按照如下指令安装torch及torch相关依赖，出现代理错误。

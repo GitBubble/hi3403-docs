@@ -49,28 +49,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MIPI 使
 </th>
 </tr>
 </thead>
-<tbody><tr id="row217mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p219mcpsimp"><a name="p219mcpsimp"></a><a name="p219mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002441661733.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row217mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p219mcpsimp"><a name="p219mcpsimp"></a><a name="p219mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="/soc-linux/mipi/figures/zh-cn_image_0000002441661733.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p221mcpsimp"><a name="p221mcpsimp"></a><a name="p221mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row222mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p224mcpsimp"><a name="p224mcpsimp"></a><a name="p224mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002441661737.png" height="27.93" width="75.81"></span></p>
+<tr id="row222mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p224mcpsimp"><a name="p224mcpsimp"></a><a name="p224mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="/soc-linux/mipi/figures/zh-cn_image_0000002441661737.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p226mcpsimp"><a name="p226mcpsimp"></a><a name="p226mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002408102414.png" height="27.93" width="75.81"></span></p>
+<tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="/soc-linux/mipi/figures/zh-cn_image_0000002408102414.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p231mcpsimp"><a name="p231mcpsimp"></a><a name="p231mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row232mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a><a name="image108"></a><a name="image108"></a><span><img id="image108" src="figures/zh-cn_image_0000002408262318.png" height="27.93" width="75.81"></span></p>
+<tr id="row232mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a><a name="image108"></a><a name="image108"></a><span><img id="image108" src="/soc-linux/mipi/figures/zh-cn_image_0000002408262318.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p236mcpsimp"><a name="p236mcpsimp"></a><a name="p236mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p237mcpsimp"><a name="p237mcpsimp"></a><a name="p237mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row238mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p240mcpsimp"><a name="p240mcpsimp"></a><a name="p240mcpsimp"></a><a name="image109"></a><a name="image109"></a><span><img id="image109" src="figures/zh-cn_image_0000002408102410.png" height="27.93" width="75.81"></span></p>
+<tr id="row238mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p240mcpsimp"><a name="p240mcpsimp"></a><a name="p240mcpsimp"></a><a name="image109"></a><a name="image109"></a><span><img id="image109" src="/soc-linux/mipi/figures/zh-cn_image_0000002408102410.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p242mcpsimp"><a name="p242mcpsimp"></a><a name="p242mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p243mcpsimp"><a name="p243mcpsimp"></a><a name="p243mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -131,7 +131,6 @@ MIPI Rx支持MIPI D-PHY、LVDS（Low-Voltage Differential Signal）、HiSPi（Hi
 
         **图 1**  SOF/EOF/SOL/EOL同步方式<a name="fig9405124663417"></a>  
         ![](figures/SOF-EOF-SOL-EOL同步方式.png "SOF-EOF-SOL-EOL同步方式")
-
     -   使用SAV\(invalid\) EAV\(invalid\)表示消隐区的无效数据开始和结束，使用SAV\(valid\) EAV\(valid\)表示有效像素数据的开始和结束。
 
         每个同步码由4个字段组成，每个字段的位宽与像素数据位宽保持一致。前3个字段为固定基准码字，第4个字段由sensor厂家确定。
@@ -140,7 +139,6 @@ MIPI Rx支持MIPI D-PHY、LVDS（Low-Voltage Differential Signal）、HiSPi（Hi
 
         **图 2**  SAV/EAV同步方式<a name="fig1737184853619"></a>  
         ![](figures/SAV-EAV同步方式.png "SAV-EAV同步方式")
-
 ## 功能描述<a name="ZH-CN_TOPIC_0000002408262130"></a>
 
 MIPI Rx是一个支持多种差分视频输入接口的采集单元，通过combo-PHY接收MIPI/LVDS/sub-LVDS/HiSPi/DC接口的数据，通过不同的功能模式配置，MIPI Rx可以支持多种速度和分辨率的数据传输需求，支持多种外部输入设备。最大支持Lane个数如[表1](#_Ref484179711)所示。
@@ -1662,7 +1660,7 @@ typedef unsigned int sns_rst_source_t;
 </thead>
 <tbody><tr id="row1138mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p1140mcpsimp"><a name="p1140mcpsimp"></a><a name="p1140mcpsimp"></a>SS928V100</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p1142mcpsimp"><a name="p1142mcpsimp"></a><a name="p1142mcpsimp"></a>[0, <a href="SNS_MAX_RST_SOURCE_NUM.md">SNS_MAX_RST_SOURCE_NUM</a>)</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p1142mcpsimp"><a name="p1142mcpsimp"></a><a name="p1142mcpsimp"></a>[0, SNS_MAX_RST_SOURCE_NUM)</p>
 </td>
 </tr>
 </tbody>
@@ -1699,7 +1697,7 @@ typedef unsigned int sns_clk_source_t;
 </thead>
 <tbody><tr id="row1548mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p id="p1550mcpsimp"><a name="p1550mcpsimp"></a><a name="p1550mcpsimp"></a>SS928V100</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p1552mcpsimp"><a name="p1552mcpsimp"></a><a name="p1552mcpsimp"></a>[0, <a href="SNS_MAX_CLK_SOURCE_NUM.md">SNS_MAX_CLK_SOURCE_NUM</a>)</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p1552mcpsimp"><a name="p1552mcpsimp"></a><a name="p1552mcpsimp"></a>[0, SNS_MAX_CLK_SOURCE_NUM)</p>
 </td>
 </tr>
 </tbody>
@@ -2518,13 +2516,13 @@ typedef enum
 <tbody><tr id="row3889mcpsimp"><td class="cellrowborder" valign="top" width="35%" headers="mcps1.2.3.1.1 "><p id="p3891mcpsimp"><a name="p3891mcpsimp"></a><a name="p3891mcpsimp"></a>LVDS_SYNC_MODE_SOF</p>
 </td>
 <td class="cellrowborder" valign="top" width="65%" headers="mcps1.2.3.1.2 "><p id="p3893mcpsimp"><a name="p3893mcpsimp"></a><a name="p3893mcpsimp"></a>SOF、EOF、SOL、EOL</p>
-<p id="p3894mcpsimp"><a name="p3894mcpsimp"></a><a name="p3894mcpsimp"></a>请参考<a href="重要概念.md#fig9405124663417">图1</a>。</p>
+<p id="p3894mcpsimp"><a name="p3894mcpsimp"></a><a name="p3894mcpsimp"></a>请参考图1。</p>
 </td>
 </tr>
 <tr id="row3896mcpsimp"><td class="cellrowborder" valign="top" width="35%" headers="mcps1.2.3.1.1 "><p id="p3898mcpsimp"><a name="p3898mcpsimp"></a><a name="p3898mcpsimp"></a>LVDS_SYNC_MODE_SAV</p>
 </td>
 <td class="cellrowborder" valign="top" width="65%" headers="mcps1.2.3.1.2 "><p id="p3900mcpsimp"><a name="p3900mcpsimp"></a><a name="p3900mcpsimp"></a>invalid SAV、invalid EAV、valid SAV、valid EAV</p>
-<p id="p3901mcpsimp"><a name="p3901mcpsimp"></a><a name="p3901mcpsimp"></a>请参考<a href="重要概念.md#fig1737184853619">图2</a>。</p>
+<p id="p3901mcpsimp"><a name="p3901mcpsimp"></a><a name="p3901mcpsimp"></a>请参考图2。</p>
 </td>
 </tr>
 </tbody>
@@ -2930,7 +2928,7 @@ typedef struct
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p xml:lang="sv-SE" id="p2073mcpsimp"><a name="p2073mcpsimp"></a><a name="p2073mcpsimp"></a>发送端(sensor)和接收端(MIPI Rx) lane的对应关系</p>
 <p xml:lang="sv-SE" id="p2074mcpsimp"><a name="p2074mcpsimp"></a><a name="p2074mcpsimp"></a>未使用的lane设置为-1</p>
-<p xml:lang="sv-SE" id="p2075mcpsimp"><a name="p2075mcpsimp"></a><a name="p2075mcpsimp"></a>lane id的配置方式请参考“<a href="MIPI-RX-Lane-id如何配置.md">MIPI RX Lane id<span xml:lang="en-US" id="ph2077mcpsimp"><a name="ph2077mcpsimp"></a><a name="ph2077mcpsimp"></a>如何配置</span></a>”。</p>
+<p xml:lang="sv-SE" id="p2075mcpsimp"><a name="p2075mcpsimp"></a><a name="p2075mcpsimp"></a>lane id的配置方式请参考“MIPI RX Lane id<span xml:lang="en-US" id="ph2077mcpsimp"><a name="ph2077mcpsimp"></a><a name="ph2077mcpsimp"></a>如何配置</span></a>”。</p>
 </td>
 </tr>
 <tr id="row2078mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p xml:lang="sv-SE" id="p2080mcpsimp"><a name="p2080mcpsimp"></a><a name="p2080mcpsimp"></a>sync_code</p>
@@ -3490,7 +3488,7 @@ typedef struct {
 <tr id="row349mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p xml:lang="sv-SE" id="p351mcpsimp"><a name="p351mcpsimp"></a><a name="p351mcpsimp"></a>lane_id</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p xml:lang="sv-SE" id="p353mcpsimp"><a name="p353mcpsimp"></a><a name="p353mcpsimp"></a>lane个数和模式配置，取决于lane_id中非-1值的个数，仅四种模式可选，且lane个数、lane号码、lane顺序可调整：</p>
-<p xml:lang="sv-SE" id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>配置方法参考本章<a href="MIPI-RX-Lane-id如何配置.md">MIPI RX Lane id如何配置</a>小节。</p>
+<p xml:lang="sv-SE" id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>配置方法参考本章MIPI RX Lane id如何配置小节。</p>
 <p xml:lang="sv-SE" id="p358mcpsimp"><a name="p358mcpsimp"></a><a name="p358mcpsimp"></a>1 lane模式：lane0</p>
 <p xml:lang="sv-SE" id="p359mcpsimp"><a name="p359mcpsimp"></a><a name="p359mcpsimp"></a>2 lane模式：lane0，lane1</p>
 <p xml:lang="sv-SE" id="p360mcpsimp"><a name="p360mcpsimp"></a><a name="p360mcpsimp"></a>3 lane模式：lane0，lane1，lane2</p>
@@ -3596,7 +3594,7 @@ typedef struct {
 <tr id="row2592mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p2594mcpsimp"><a name="p2594mcpsimp"></a><a name="p2594mcpsimp"></a>cmd_size</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p xml:lang="sv-SE" id="p2596mcpsimp"><a name="p2596mcpsimp"></a><a name="p2596mcpsimp"></a>短指令的数据，范围：[0, 0xFFFF]。</p>
-<p xml:lang="sv-SE" id="p2597mcpsimp"><a name="p2597mcpsimp"></a><a name="p2597mcpsimp"></a>长指令的数据长度，范围：(0, <a href="MIPI_TX_SET_DATA_SIZE.md">MIPI_TX_SET_DATA_SIZE</a>]，单位：字节。</p>
+<p xml:lang="sv-SE" id="p2597mcpsimp"><a name="p2597mcpsimp"></a><a name="p2597mcpsimp"></a>长指令的数据长度，范围：(0, MIPI_TX_SET_DATA_SIZE]，单位：字节。</p>
 <p id="p2599mcpsimp"><a name="p2599mcpsimp"></a><a name="p2599mcpsimp"></a>注<span xml:lang="sv-SE" id="ph2600mcpsimp"><a name="ph2600mcpsimp"></a><a name="ph2600mcpsimp"></a>：cmd</span>置为<span xml:lang="sv-SE" id="ph2601mcpsimp"><a name="ph2601mcpsimp"></a><a name="ph2601mcpsimp"></a>NULL：cmd_size</span>表示短指令的数据<span xml:lang="sv-SE" id="ph2602mcpsimp"><a name="ph2602mcpsimp"></a><a name="ph2602mcpsimp"></a>，</span>低八位对应数据<span xml:lang="sv-SE" id="ph2603mcpsimp"><a name="ph2603mcpsimp"></a><a name="ph2603mcpsimp"></a>1</span>、高八位对应数据<span xml:lang="sv-SE" id="ph2604mcpsimp"><a name="ph2604mcpsimp"></a><a name="ph2604mcpsimp"></a>2</span>。</p>
 <p xml:lang="sv-SE" id="p2605mcpsimp"><a name="p2605mcpsimp"></a><a name="p2605mcpsimp"></a>cmd<span xml:lang="en-US" id="ph2606mcpsimp"><a name="ph2606mcpsimp"></a><a name="ph2606mcpsimp"></a>置为非</span>NULL：<span xml:lang="en-US" id="ph2607mcpsimp"><a name="ph2607mcpsimp"></a><a name="ph2607mcpsimp"></a>cmd_size表示</span>长指令的数据长度。</p>
 </td>
@@ -3674,7 +3672,7 @@ typedef struct {
 </tr>
 <tr id="row930mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p932mcpsimp"><a name="p932mcpsimp"></a><a name="p932mcpsimp"></a>get_data_size</p>
 </td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p934mcpsimp"><a name="p934mcpsimp"></a><a name="p934mcpsimp"></a><span xml:lang="sv-SE" id="ph935mcpsimp"><a name="ph935mcpsimp"></a><a name="ph935mcpsimp"></a>预期获取的数据字节数，范围：(0,</span> <a href="MIPI_TX_GET_DATA_SIZE.md">MIPI_TX_GET_DATA_SIZE</a><span xml:lang="sv-SE" id="ph937mcpsimp"><a name="ph937mcpsimp"></a><a name="ph937mcpsimp"></a>]。</span></p>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p934mcpsimp"><a name="p934mcpsimp"></a><a name="p934mcpsimp"></a><span xml:lang="sv-SE" id="ph935mcpsimp"><a name="ph935mcpsimp"></a><a name="ph935mcpsimp"></a>预期获取的数据字节数，范围：(0,</span> MIPI_TX_GET_DATA_SIZE<span xml:lang="sv-SE" id="ph937mcpsimp"><a name="ph937mcpsimp"></a><a name="ph937mcpsimp"></a>]。</span></p>
 </td>
 </tr>
 <tr id="row938mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p940mcpsimp"><a name="p940mcpsimp"></a><a name="p940mcpsimp"></a>get_data</p>

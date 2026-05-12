@@ -6,8 +6,7 @@ title: Glossary
 
 # Glossary
 
-Hi3403 / Hi3403 documentation is full of abbreviations. This table gives a one-sentence explanation for each noun -
-Translate for people new to the platform.
+Hi3403 documentation is full of abbreviations. This table gives a one-sentence explanation for each term — helping newcomers get up to speed.
 
 ## Chips and Subsystems
 
@@ -25,7 +24,7 @@ User space program.
 
 `SVP`
 : Smart Vision Platform 2.0 - NPU of Hi3403. Run AI model inference.
-    [Reference](../multimedia/svp/index.md)
+    [Reference](/multimedia/svp/)
 
 `ISP`
 : Image Signal Processor——Image signal processor. Take the RAW output from the sensor
@@ -45,7 +44,7 @@ Avoid common Linux memory fragmentation issues.
 : Non-cacheable Memory Allocator - non-cacheable memory allocator,
 Buffer used for DMA transfers.
 
-## multimedia subsystem
+## Multimedia Subsystem
 
 `VI`
 : Video Input——Video input. Collect images from sensor / MIPI-CSI.
@@ -64,11 +63,11 @@ Color space conversion.
 : Audio encoding/decoding/input/output.
 
 `AEC` / `ANS`
-:   Acoustic Echo Cancellation / Acoustic Noise Suppression。
+:   Acoustic Echo Cancellation / Acoustic Noise Suppression.
 
 `TDE`
 : Two-Dimensional Engine - 2D graphics hardware accelerator.
-    [Reference](../reference/api/tde.md)
+    [Reference](/reference/api/tde/)
 
 `GFBG`
 : Graphics FrameBuffer Group——Graphics framebuffer management.
@@ -93,7 +92,7 @@ The model becomes smaller and runs faster.
 `IVE`
 : Intelligent Video Engine - traditional computer vision hardware accelerator
 (Histogram, Canny, Morphology, Optical Flow...).
-    [Reference](../reference/api/ive.md)
+    [Reference](/reference/api/ive/)
 
 `IVS`
 : Intelligent Video System - Video structuring framework.
@@ -117,16 +116,16 @@ The model becomes smaller and runs faster.
 
 `KLAD`
 : Key Ladder - Key derivation hardware unit.
-    [Reference](../reference/api/klad.md)
+    [Reference](/reference/api/klad/)
 
 `CIPHER`
 : General encryption and decryption hardware accelerator (AES, SM4, SHA, RSA...).
-    [Reference](../reference/api/cipher.md)
+    [Reference](/reference/api/cipher/)
 
 `OTP`
 : One-Time Programmable memory - one-time programmable memory, storage device
 Keys, Boot configuration, etc.
-    [Reference](../reference/api/otp.md)
+    [Reference](/reference/api/otp/)
 
 `TBBR`
 : Trusted Board Boot Requirements - ARM's Trusted Boot Specification.

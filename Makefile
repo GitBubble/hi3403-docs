@@ -28,7 +28,7 @@ PEGASUS_SRC ?= ../pegasus
 HI3403_BUILD ?= ../hi3403-build
 DEPS_STAMP  := $(VENV)/.deps.stamp
 
-.PHONY: help install build serve serve_html clean migrate linkcheck lint translate i18n-status
+.PHONY: help install build serve serve_html clean migrate linkcheck lint translate translate-patch i18n-status
 
 help:
 	@echo "Pegasus Documentation — make targets:"
@@ -37,7 +37,8 @@ help:
 	@echo "  make serve        live preview at http://127.0.0.1:8000/"
 	@echo "  make serve_html   alias for serve"
 	@echo "  make migrate      run scripts/migrate.py to ingest pegasus/ docs"
-	@echo "  make translate    generate missing .en.md siblings"
+	@echo "  make translate      generate missing .en.md siblings
+		@echo "  make translate-patch  translate remaining Chinese in .en.md files""
 	@echo "  make i18n-status  print zh:en coverage"
 	@echo "  make linkcheck    offline link check"
 	@echo "  make lint         markdownlint"
@@ -80,6 +81,10 @@ lint:
 translate: $(DEPS_STAMP)
 	@$(PIP) install -q deep-translator python-frontmatter 2>/dev/null || true
 	$(PYTHON) scripts/translate_docs.py
+
+translate-patch: $(DEPS_STAMP)
+	@$(PIP) install -q deep-translator python-frontmatter 2>/dev/null || true
+	$(PYTHON) scripts/translate_deepl.py
 
 i18n-status:
 	@total=$$(find docs -name '*.md' -not -name '*.en.md' | wc -l); \

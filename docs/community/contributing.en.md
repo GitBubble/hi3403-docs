@@ -26,16 +26,16 @@ to your own account.
 ### 2. Clone + create branch
 
 ``` bash
-git clone https://gitee.com/<你的账号>/hi3403-docs.git
+git clone https://gitee.com/<your-account>/hi3403-docs.git
 cd hi3403-docs
-git checkout -b fix/typo-in-quickstart   # 描述性的分支名
+git checkout -b fix/typo-in-quickstart   # descriptive branch name
 ```
 
 ### 3. Install dependencies + start local preview
 
 ``` bash
-make install        # 一次性，pip install -r requirements.txt
-make serve          # 本地预览 http://127.0.0.1:8000/
+make install        # one-time setup, pip install -r requirements.txt
+make serve          # local preview http://127.0.0.1:8000/
 ```
 
 Open the browser and you can see the complete documentation site.
@@ -50,7 +50,7 @@ Please follow [style guide](style-guide.md) when writing.
 
 ``` bash
 git add docs/path/to/your-change.md
-git commit -m "docs: fix typo in quickstart 步骤 3"
+git commit -m "docs: fix typo in quickstart step 3"
 git push origin fix/typo-in-quickstart
 ```
 
@@ -100,17 +100,17 @@ Discussion in [Gitee Issues](https://gitee.com/HiSpark/pegasus-docs/issues).
 Please use the following template:
 
 ``` markdown
-## 描述
+## Description
 
-（一句话描述）
+(One-line description)
 
-## 重现 / 链接
+## Reproduction / Link
 
-（如果是 bug，给出页面链接 + 截图）
+(If it is a bug, provide the page link + screenshot)
 
-## 期望
+## Expected
 
-（你希望的状态是什么）
+(What state do you expect?)
 ```
 
 ## code of conduct

@@ -1,0 +1,1200 @@
+---
+title: "Chapter 1 Ubuntu System Functional Test"
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/topeet/docs/iTOP-Hi3403 镜像烧写步骤.md
+---
+
+# Chapter 1 Ubuntu System Functional Test
+
+This section tests the Ubuntu system. Therefore, the Ubuntu system image needs to be flashed. The Ubuntu system image can be downloaded via the [cloud drive link](https://pan.baidu.com/s/16XKTCPqWIFCNlHM3DNKKFA?pwd=qiif).
+
+System account and password:
+
+Account: root
+
+Password: topeet
+
+## 1.1 System Startup
+
+The command line terminal displays the following and enters the root user.
+
+![image-20260327132735420](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271327461.png)
+
+## 1.2 System Information Query
+
+View kernel and CPU information by entering the following command:
+
+~~~shell
+uname -a
+~~~
+
+View operating system information:
+
+~~~bash
+cat /etc/issue
+~~~
+
+The results of the above commands are shown in the following figure.
+
+![image-20260327132836367](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271328401.png)
+
+## 1.3 Wired Network Test
+
+First, prepare a gigabit router and a gigabit Ethernet cable. As shown below, both network ports can connect to the external network. Connect the network port to the gigabit port of the router using an Ethernet cable.
+
+![image-20260327132858585](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271329826.png)
+
+You can choose which network port to connect based on your needs and use the command to check the IP of the network port, as shown below:
+
+~~~shell
+ifconfig eth0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320861.jpg)
+
+~~~shell
+ifconfig eth1
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320859.jpg)
+
+Enter the following command to test network port connectivity. Both network ports support connecting to the external network.
+
+~~~shell
+ping www.baidu.com -I eth0
+ping www.baidu.com -I eth1
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320881.jpg)
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320112.jpg)
+
+## 1.4 USB Drive Test
+
+When a USB drive is inserted, the USB drive format should be FAT32 (all 3 USB ports on the baseboard can accept USB drives), as shown below.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320135.jpg)
+
+1. Insert the USB drive (formatted as FAT32) into the USB port of the development board. The serial port print information is shown below. The device node of the USB drive is `/dev/sda`. The device node of the USB drive is not fixed; check the device node based on the actual situation.
+
+![image-20260327133111270](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271331295.png)
+
+2. Use the `mount` command to mount the USB drive to the `/mnt/usb0` directory, then use the `df -h` command to view the mount path, as shown below:
+
+~~~shell
+mount /dev/sda1 /mnt/usb0
+~~~
+
+![image-20260327133057182](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271330217.png)
+
+This completes the USB drive test.
+
+## 1.5 TF Card Test
+
+1. Insert the TF card into the TF card slot of the development board. The serial port print information is shown below. The device node of the TF card is `/dev/mmcblk1p1`.
+
+![image-20260327133232560](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271332589.png)
+
+2. Use the `mount` command to mount the USB drive to the `/mnt/sdcard` directory, then use the `df -h` command to view the mount path, as shown below:
+
+~~~shell
+mount /dev/mmcblk1p1 /mnt/sdcard/
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320335.jpg)
+
+## 1.6 Linux 485 Test
+
+### 1.6.1 485 Hardware Connection
+
+The positions of the two RS485 interfaces are shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320387.jpg)
+
+The schematic diagram corresponding to the RS485 interfaces is shown below:
+
+![image-20260327133501381](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271335433.png)
+
+![image-20260327133511500](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271335544.png)
+
+RS485 uses UART3 and UART4 respectively, which can be controlled via `/dev/ttyAMA3` and `/dev/ttyAMA4`. Next, use a USB-to-RS485 module for testing (you need to prepare this yourself). The USB-to-RS485 module is shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320493.jpg)     ![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320554.jpg)
+
+Connect the A and B pins of the RS485 interface to the USB-to-RS485 module: A to A, B to B, GND to GND.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320633.jpg)
+
+Connect the USB port of the USB-to-RS485 module to the computer.
+
+### 1.6.2 Testing 485
+
+Copy the test program to the development board (this program is pre-installed in the Ubuntu system at `/home/topeet/topeet_test/01_485_test` directory and can be used directly), as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320680.jpg)
+
+Open the serial port assistant on the computer, select the corresponding serial port number and baud rate. Note: the default baud rate is 115200!
+
+Open the serial port, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320717.jpg)
+
+Enter the following command to run the test program to send data. The data sent is `123456789`; the data content can be customized.
+
+~~~c
+./uarttest /dev/ttyAMA3 send 123456789
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320746.jpg)
+
+The computer side receives the information, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320812.jpg)
+
+Enter the following command to have the development board receive data, as shown below:
+
+~~~shell
+./uarttest /dev/ttyAMA3 recv
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320887.jpg)
+
+The computer side sends data, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320923.jpg)
+
+The development board receives the data, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320951.jpg)
+
+The test method for `/dev/ttyAMA4` is the same as above.
+
+## 1.7 4G Module Test
+
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+
+Copy the quectel-CM script to the development board (this program is pre-installed in the Ubuntu system at `/home/topeet/topeet_test/02_4g` directory and can be used directly), as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320082.jpg)
+
+Then execute the following command to run the connection script, as shown below:
+
+~~~shell
+./quectel-CM &
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320108.jpg)
+
+Enter the command `ifconfig` and the `wwan0` interface will appear, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320140.jpg)
+
+Then enter the following command to ping Baidu's IP address; you can see that internet access is already working, as shown below:
+
+~~~shell
+ping www.baidu.com
+~~~
+
+![image-20260327153108942](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271531989.png)
+
+## 1.8 5G Module AT Dial-Up Internet Test
+
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+
+After starting the development board, the 5G module nodes are detected as shown below:
+
+~~~shell
+ls /dev/ttyUSB*
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320228.jpg)
+
+Among them, `/dev/ttyUSB2` is the AT command channel.
+
+Use the following command to view the output print of `/dev/ttyUSB2`, as shown below:
+
+~~~shell
+cat /dev/ttyUSB2 &
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320253.jpg)
+
+Check SIM card status
+
+~~~shell
+echo -e "AT+CPIN?\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320337.jpg)
+
+Returning `READY` indicates that the SIM card has been successfully recognized.
+
+Query signal strength
+
+~~~shell
+echo -e "AT+CSQ\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320378.jpg)
+
+Returns `+CSQ: <rssi>,<ber>`. The `rssi` value is considered normal only when between 10 and 30.
+
+Auto-register to network
+
+~~~shell
+echo -e "AT+COPS=0\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320406.jpg)
+
+Returns `OK`, and you can use `AT+COPS?` to query the operator (e.g., CHINA MOBILE).
+
+~~~shell
+echo -e "AT+COPS?\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320504.jpg)
+
+Set APN
+
+~~~shell
+echo -e "AT+CGDCONT=1,\"IP\",\"CMNET\"\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320524.jpg)
+
+Use `"CMNET"` for China Mobile, `"3GNET"` for China Unicom, and `"CTNET"` for China Telecom.
+
+Attach data network
+
+~~~shell
+echo -e "AT+CGATT=1\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320546.jpg)
+
+Returns `OK` indicating attachment is complete.
+
+Open virtual network card - enable network card and assign IP
+
+~~~shell
+echo -e "AT+QCFG=\"ethernet\",1\r\n" > /dev/ttyUSB2
+echo -e "AT+QCFG=\"nat\",0\r\n" > /dev/ttyUSB2
+echo -e "AT+QNETDEVCTL=1,3,1\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320628.jpg)
+
+Query the assigned IP address
+
+~~~shell
+echo -e "AT+CGPADDR=1\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320664.jpg)
+
+The assigned IP is 10.167.148.251.
+
+Use the following command to view the 5G node, as shown below:
+
+~~~shell
+ifconfig
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320688.jpg)
+
+Test network
+
+~~~shell
+ping www.baidu.com -I usb0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320767.jpg)
+
+## 1.9 M.2 Interface SSD Test
+
+The iTOP-Hi3403 development board supports M.2 interface SSDs. Insert the SSD into the M.2 interface before powering on, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320811.jpg)
+
+PCI is a bus, and devices connected via the PCI bus are PCI devices. Many commonly used devices on PCs use the PCI bus, such as network cards and storage devices. Enter the following command to display all PCI device information.
+
+~~~shell
+lspci
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320848.jpg)
+
+Enter the following command to view the generated device node
+
+~~~shell
+ls /dev/nvme0*
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320874.jpg)
+
+Enter the following command to mount the SSD. Mount the SSD to the `nvme` directory; the mount directory can be specified arbitrarily, as shown below:
+
+~~~shell
+mkdir nvme
+mount /dev/nvme0n1p1 nvme/
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320939.jpg)
+
+After mounting, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320010.jpg)
+
+## 1.10 Headphone/Microphone Test
+
+The iTOP-Hi3403 development board has onboard headphone and microphone jacks, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320060.jpg)
+
+Connect a 3-segment headset and microphone. Use the `/sample/sample_audio` example for testing. The example output is as follows:
+
+~~~shell
+./sample_audio
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320087.jpg)
+
+Function 0 captures sound signals from the Audio Input (AI) channel and directly plays them back to the Audio Output (AO). Enter the following command to perform a loopback test, as shown below:
+
+~~~shell
+./sample_audio 0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320133.jpg)
+
+At this point, speaking into the microphone, the headphone will hear your own voice in real time. Use `Ctrl + C` to stop the test.
+
+Function 1 captures audio data from AI, compresses it through the audio encoder, and saves it as an audio file. Enter the following command to perform a recording test, as shown below:
+
+~~~shell
+./sample_audio 1
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320154.jpg)
+
+Speak into the microphone; the program will record the audio and generate a file. After stopping the recording with `Ctrl + C`, the generated file is `audio_chn0.aac`, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320239.jpg)
+
+Function 2 reads an audio stream from a local audio file, decodes it, and outputs it to the headphone. Enter the following command to play the just-recorded audio, as shown below:
+
+~~~shell
+./sample_audio 2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320286.jpg)
+
+At this point, the headphone will continuously play the content of the recorded `audio_chn0.aac` file. Use `Ctrl + C` to stop playback.
+
+## 1.11 Buzzer Test
+
+Set the baseboard DIP switches 1 and 2 to the ON position, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320347.jpg)
+
+PWM provides a user-space interface under the `/sys/class/pwm/` node:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320391.jpg)
+
+The buzzer uses channel 12 of PWM0. Check the files in the `pwmchip0` directory, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320412.jpg)
+
+Use the following commands to test the buzzer:
+
+~~~shell
+echo 12 > /sys/class/pwm/pwmchip0/export
+
+echo 366300 > /sys/class/pwm/pwmchip0/pwm12/period
+
+echo 260000 > /sys/class/pwm/pwmchip0/pwm12/duty_cycle
+
+echo 1 > /sys/class/pwm/pwmchip0/pwm12/enable  //enable
+
+echo 0 > /sys/class/pwm/pwmchip0/pwm12/enable  //disable
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320453.jpg)
+
+Modify the parameters in the second and third commands to change the PWM duty cycle, thereby controlling the volume of the buzzer sound.
+
+## 1.12 Temperature and Humidity Test
+
+The iTOP-Hi3403 development board has an onboard DHT11 module, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320497.jpg)
+
+Use the following command to view the current temperature, as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device1/in_temp_input
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320544.jpg)
+
+Use the following command to view the current humidity, as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device1/in_humidityrelative_input
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320594.jpg)
+
+## 1.13 ADC Potentiometer Test
+
+The iTOP-Hi3403 development board has an onboard potentiometer. The schematic diagram is shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320663.jpg)
+
+The schematic corresponding to the potentiometer is shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320704.jpg)
+
+As can be seen from the above figure, the circuit for the potentiometer (R244) is very simple. It uses 1.8V power supply, and the output pin is connected to the LSADC_CH0 pin of the Hi3403 via IR_CUT_0_CONTROL1. This enables voltage sampling of the potentiometer. By adjusting the knob on the potentiometer, the voltage collected by the ADC will vary within the range of 0~1.8V.
+
+Use the following command to view the raw data of the LSADC_CH0 channel, as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device0/in_voltage0_raw
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320729.jpg)
+
+Use the following command to view the voltage scaling factor (converts the raw sample value to an actual voltage value), as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device0/in_voltage0_scale
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320758.jpg)
+
+Multiply the raw value `in_voltage0_raw` (511) by the scaling factor `in_voltage0_scale` (1.757812500) to obtain the current actual voltage of this channel, which is approximately 898mV (i.e., 0.9V).
+
+## 1.14 EMMC Test
+
+The following briefly tests the read and write speeds of EMMC, using the ext4 filesystem as an example. Note: To ensure data accuracy, reboot the development board before testing the read speed.
+
+~~~shell
+dd if=/dev/zero of=/test bs=1M count=500 conv=fsync//write test
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320820.jpg)
+
+~~~shell
+dd if=/test of=/dev/null bs=100M //read test
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320846.jpg)
+
+## 1.15 OS08A20 Camera Test
+
+The development board supports a camera interface by default. The baseboard provides 2 camera interfaces. The default image can use the **J1** interface. The OS08A20 camera module provided by Xunwei is shown below.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320967.jpg)
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320991.jpg)
+
+Use the `sample_vo` example in the `/sample` directory of the system for testing, as shown below:
+
+~~~shell
+./sample_vo 0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320027.jpg)
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320094.jpg)
+
+## 1.16 RTC Clock Test
+
+In the Linux system, there is a system clock and a hardware clock. Use the `date` and `hwclock` commands to view them, respectively. The system clock is lost when the system loses power. The hardware clock, when a button cell battery is present, does not lose time even when the system is powered off. Each time the system starts, the system clock synchronizes with the hardware clock.
+
+First, start the development board and log in via the debug serial port, as shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320129.jpg)
+
+To view the system clock, enter the `date` command in the serial terminal. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320196.jpg)
+
+To view the hardware clock, enter the `hwclock -u` command in the serial terminal. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320221.jpg)
+
+You can also use the `date` command to set the system time. For example, to set the system time to 2025-09-11 14:30:00, enter the command `date -s "2025-9-11 14:30:00"` in the serial terminal. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320336.jpg)
+
+Then use the `hwclock --systohc -u` command to synchronize the current system time to the hardware clock, and then use the `hwclock -u` command to view the hardware clock. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320357.jpg)
+
+## 1.17 HDMI Test
+
+Use the `sample_hdmi` example in the `/sample` directory of the system for testing. The `sample_hdmi` example parses an H265 format video file and outputs it to the display via the HDMI interface. As shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320391.jpg)
+
+Use the following command to run `sample_hdmi` for testing, as shown below:
+
+~~~shell
+./sample_hdmi
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320479.jpg)
+
+The current example plays the file `/sample/source_file/3840x2160_8bit.h265`. After running, the HDMI screen displays the video file, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320503.jpg)
+
+Enter the example terminal and press `h` to view help information, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320537.jpg)
+
+Enter `q` to end the example, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320581.jpg)
+
+## 1.18 UVC Camera Test
+
+Use the `sample_uvc` example in the `/sample` directory of the system for testing. The `sample_uvc` example takes a USB camera input and outputs it to HDMI TX for display. As shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320607.jpg)
+
+Use the following command to run the example and view help information, as shown below:
+
+~~~shell
+./sample_uvc -h
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320639.jpg)
+
+Insert the USB camera into the development board; the uvc driver will be automatically installed. Use the following command to check if the camera is recognized, as shown below:
+
+~~~shell
+v4l2-ctl --list-devices
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320730.jpg)
+
+From the above figure, the USB camera node is `/dev/video0`.
+
+First, check the formats supported by the USB camera device, as shown below:
+
+~~~shell
+./sample_uvc /dev/video0 --enum-formats
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320784.jpg)
+
+Use the following command to run the example and view the camera image (you can modify the example parameters based on your actual output), as shown below:
+
+~~~shell
+./sample_uvc /dev/video0 -fYUYV -s640x480 -Ftest.yuv
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320821.jpg)
+
+After running, the HDMI screen displays the camera image, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320881.jpg)
+
+# Chapter 2 Buildroot System Functional Test
+
+This section tests the buildroot system. Therefore, the buildroot system image needs to be flashed. The buildroot system image can be downloaded via the [cloud drive link](https://pan.baidu.com/s/1CdzFZy7BRA-eMSfGNEZloQ?pwd=f4aa).
+
+## 2.1 System Startup
+
+The command line terminal displays the following and enters the root user.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320911.jpg)
+
+## 2.2 System Information Query
+
+View kernel and CPU information by entering the following command:
+
+~~~bash
+uname -a
+~~~
+
+View operating system information:
+
+~~~shell
+cat /etc/issue
+~~~
+
+The results of the above commands are shown in the following figure.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320970.jpg)
+
+## 2.3 Wired Network Test
+
+First, prepare a gigabit router and a gigabit Ethernet cable. As shown below, both network ports can connect to the external network. Connect the network port to the gigabit port of the router using an Ethernet cable.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320032.jpg)
+
+You can choose which network port to connect based on your needs and use the command to check the IP of the network port, as shown below:
+
+~~~shell
+ifconfig eth0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320065.jpg)
+
+~~~shell
+ifconfig eth1
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320112.jpg)
+
+Enter the following command to test network port connectivity. Both network ports support connecting to the external network.
+
+~~~shell
+ping www.baidu.com -I eth0
+
+ping www.baidu.com -I eth1
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320146.jpg)
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320210.jpg)
+
+## 2.4 USB Drive Test
+
+When a USB drive is inserted, the USB drive format should be FAT32 (all 3 USB ports on the baseboard can accept USB drives), as shown below.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320253.jpg)
+
+1. Insert the USB drive (formatted as FAT32) into the USB port of the development board. The serial port print information is shown below. The device node of the USB drive is `/dev/sda`. The device node of the USB drive is not fixed; check the device node based on the actual situation.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320303.jpg)
+
+2. Use the `mount` command to mount the USB drive to the `/mnt/usb0` directory, then use the `df -h` command to view the mount path, as shown below:
+
+~~~shell
+mount /dev/sda1 /mnt/usb0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320345.jpg)
+
+This completes the USB drive test.
+
+## 2.5 TF Card Test
+
+1. Insert the TF card into the TF card slot of the development board. The serial port print information is shown below. The device node of the TF card is `/dev/mmcblk1p1`.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320400.jpg)
+
+2. Use the `mount` command to mount the USB drive to the `/mnt/sdcard` directory, then use the `df -h` command to view the mount path, as shown below:
+
+~~~shell
+mount /dev/mmcblk1p1 /mnt/sdcard/
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320442.jpg)
+
+## 2.6 Linux 485 Test
+
+### 2.6.1 485 Hardware Connection
+
+The positions of the two RS485 interfaces are shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320473.jpg)
+
+The schematic diagram corresponding to the RS485 interfaces is shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320568.jpg)
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320596.jpg)
+
+RS485 uses UART3 and UART4 respectively, which can be controlled via `/dev/ttyAMA3` and `/dev/ttyAMA4`. Next, use a USB-to-RS485 module for testing (you need to prepare this yourself). The USB-to-RS485 module is shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320652.jpg)     ![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320674.jpg)
+
+Connect the A and B pins of the RS485 interface to the USB-to-RS485 module: A to A, B to B, GND to GND.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320764.jpg)
+
+Connect the USB port of the USB-to-RS485 module to the computer.
+
+### 2.6.2 Testing 485
+
+Copy the test program to the development board (this program is pre-installed in the buildroot system at `/topeet_test/01_485_test` directory and can be used directly), as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320808.jpg)
+
+Open the serial port assistant on the computer, select the corresponding serial port number and baud rate. Note: the default baud rate is 115200!
+
+Open the serial port, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320838.jpg)
+
+Enter the following command to run the test program to send data. The data sent is `123456789`; the data content can be customized.
+
+~~~shell
+./uarttest /dev/ttyAMA3 send 123456789
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320908.jpg)
+
+The computer side receives the information, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320960.jpg)
+
+Enter the following command to have the development board receive data, as shown below:
+
+~~~shell
+./uarttest /dev/ttyAMA3 recv
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320988.jpg)
+
+The computer side sends data, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320040.jpg)
+
+The development board receives the data, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320078.jpg)
+
+The test method for `/dev/ttyAMA4` is the same as above.
+
+## 2.7 4G Module Test
+
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+
+Copy the quectel-CM script to the development board (this program is pre-installed in the buildroot system at `/topeet_test/02_4g` directory and can be used directly), as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320101.jpg)
+
+Then execute the following command to run the connection script, as shown below:
+
+~~~shell
+./quectel-CM &
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320189.jpg)
+
+Enter the command `ifconfig wlan0` to view the 4G node, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320234.jpg)
+
+Then enter the following command to ping Baidu's IP address; you can see that internet access is already working, as shown below:
+
+ping www.baidu.com -I wwan0
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320261.jpg)
+
+## 2.8 5G Module AT Dial-Up Internet Test
+
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+
+After starting the development board, the 5G module nodes are detected as shown below:
+
+~~~shell
+ls /dev/ttyUSB*
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320312.jpg)
+
+Among them, `/dev/ttyUSB2` is the AT command channel.
+
+Use the following command to view the output print of `/dev/ttyUSB2`, as shown below:
+
+~~~shell
+cat /dev/ttyUSB2 &
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320358.jpg)
+
+Check SIM card status
+
+~~~shell
+echo -e "AT+CPIN?\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320410.jpg)
+
+Returning `READY` indicates that the SIM card has been successfully recognized.
+
+Query signal strength
+
+~~~shell
+echo -e "AT+CSQ\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320458.jpg)
+
+Returns `+CSQ: <rssi>,<ber>`. The `rssi` value is considered normal only when between 10 and 30.
+
+Auto-register to network
+
+~~~shell
+echo -e "AT+COPS=0\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320503.jpg)
+
+Returns `OK`, and you can use `AT+COPS?` to query the operator (e.g., CHINA MOBILE).
+
+~~~shell
+echo -e "AT+COPS?\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320546.jpg)
+
+Set APN
+
+~~~shell
+echo -e "AT+CGDCONT=1,\"IP\",\"CMNET\"\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320572.jpg)
+
+Use `"CMNET"` for China Mobile, `"3GNET"` for China Unicom, and `"CTNET"` for China Telecom.
+
+Attach data network
+
+~~~shell
+echo -e "AT+CGATT=1\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320613.jpg)
+
+Returns `OK` indicating attachment is complete.
+
+Open virtual network card - enable network card and assign IP
+
+~~~shell
+echo -e "AT+QCFG=\"ethernet\",1\r\n" > /dev/ttyUSB2
+
+echo -e "AT+QCFG=\"nat\",0\r\n" > /dev/ttyUSB2
+
+echo -e "AT+QNETDEVCTL=1,3,1\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320641.jpg)
+
+Query the assigned IP address
+
+~~~shell
+echo -e "AT+CGPADDR=1\r\n" > /dev/ttyUSB2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320726.jpg)
+
+The assigned IP is 10.167.148.251.
+
+Use the following command to view the 5G node, as shown below:
+
+~~~shell
+ifconfig
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320751.jpg)
+
+Test network
+
+~~~shell
+ping www.baidu.com -I usb0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320824.jpg)
+
+## 2.9 M.2 Interface SSD Test
+
+The iTOP-Hi3403 development board supports M.2 interface SSDs. Insert the SSD into the M.2 interface before powering on, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320865.jpg)
+
+PCI is a bus, and devices connected via the PCI bus are PCI devices. Many commonly used devices on PCs use the PCI bus, such as network cards and storage devices. Enter the following command to display all PCI device information.
+
+~~~shell
+lspci
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320897.jpg)
+
+Enter the following command to view the generated device node
+
+~~~shell
+ls /dev/nvme0*
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320937.jpg)
+
+Enter the following command to mount the SSD. Mount the SSD to the `nvme` directory; the mount directory can be specified arbitrarily, as shown below:
+
+~~~shell
+mkdir nvme
+
+mount /dev/nvme0n1p1 nvme/
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320959.jpg)
+
+After mounting, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320076.jpg)
+
+## 2.10 Headphone/Microphone Test
+
+The iTOP-Hi3403 development board has onboard headphone and microphone jacks, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320097.jpg)
+
+Connect a 3-segment headset and microphone. Use the `/sample/sample_audio` example for testing. The example output is as follows:
+
+~~~shell
+./sample_audio
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320129.jpg)
+
+Function 0 captures sound signals from the Audio Input (AI) channel and directly plays them back to the Audio Output (AO). Enter the following command to perform a loopback test, as shown below:
+
+~~~shell
+./sample_audio 0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320157.jpg)
+
+At this point, speaking into the microphone, the headphone will hear your own voice in real time. Use `Ctrl + C` to stop the test.
+
+Function 1 captures audio data from AI, compresses it through the audio encoder, and saves it as an audio file. Enter the following command to perform a recording test, as shown below:
+
+~~~shell
+./sample_audio 1
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320220.jpg)
+
+Speak into the microphone; the program will record the audio and generate a file. After stopping the recording with `Ctrl + C`, the generated file is `audio_chn0.aac`, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320299.jpg)
+
+Function 2 reads an audio stream from a local audio file, decodes it, and outputs it to the headphone. Enter the following command to play the just-recorded audio, as shown below:
+
+~~~shell
+./sample_audio 2
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320324.jpg)
+
+At this point, the headphone will continuously play the content of the recorded `audio_chn0.aac` file. Use `Ctrl + C` to stop playback.
+
+## 2.11 Buzzer Test
+
+Set the baseboard DIP switches 1 and 2 to the ON position, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320368.jpg)
+
+PWM provides a user-space interface under the `/sys/class/pwm/` node:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320430.jpg)
+
+The buzzer uses channel 12 of PWM0. Check the files in the `pwmchip0` directory, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320451.jpg)
+
+Use the following commands to test the buzzer:
+
+~~~shell
+echo 12 > /sys/class/pwm/pwmchip0/export
+
+echo 366300 > /sys/class/pwm/pwmchip0/pwm12/period
+
+echo 260000 > /sys/class/pwm/pwmchip0/pwm12/duty_cycle
+
+echo 1 > /sys/class/pwm/pwmchip0/pwm12/enable  //enable
+
+echo 0 > /sys/class/pwm/pwmchip0/pwm12/enable  //disable
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320499.jpg)
+
+Modify the parameters in the second and third commands to change the PWM duty cycle, thereby controlling the volume of the buzzer sound.
+
+## 2.12 Temperature and Humidity Test
+
+The iTOP-Hi3403 development board has an onboard DHT11 module, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320569.jpg)
+
+Use the following command to view the current temperature, as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device1/in_temp_input
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320627.jpg)
+
+Use the following command to view the current humidity, as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device1/in_humidityrelative_input
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320649.jpg)
+
+## 2.13 ADC Potentiometer Test
+
+The iTOP-Hi3403 development board has an onboard potentiometer. The schematic diagram is shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320679.jpg)
+
+The schematic corresponding to the potentiometer is shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320775.jpg)
+
+As can be seen from the above figure, the circuit for the potentiometer (R244) is very simple. It uses 1.8V power supply, and the output pin is connected to the LSADC_CH0 pin of the Hi3403 via IR_CUT_0_CONTROL1. This enables voltage sampling of the potentiometer. By adjusting the knob on the potentiometer, the voltage collected by the ADC will vary within the range of 0~1.8V.
+
+Use the following command to view the raw data of the LSADC_CH0 channel, as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device0/in_voltage0_raw
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320800.jpg)
+
+Use the following command to view the voltage scaling factor (converts the raw sample value to an actual voltage value), as shown below:
+
+~~~shell
+cat /sys/bus/iio/devices/iio\:device0/in_voltage0_scale
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320850.jpg)
+
+Multiply the raw value `in_voltage0_raw` (511) by the scaling factor `in_voltage0_scale` (1.757812500) to obtain the current actual voltage of this channel, which is approximately 898mV (i.e., 0.9V).
+
+## 2.14 EMMC Test
+
+The following briefly tests the read and write speeds of EMMC, using the ext4 filesystem as an example. Note: To ensure data accuracy, reboot the development board before testing the read speed.
+
+~~~shell
+dd if=/dev/zero of=/test bs=1M count=500 conv=fsync//write test
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320908.jpg)
+
+~~~shell
+dd if=/test of=/dev/null bs=100M //read test
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320931.jpg)
+
+## 2.15 OS08A20 Camera Test
+
+The development board supports a camera interface by default. The baseboard provides 2 camera interfaces. The default image can use the **J1** interface. The OS08A20 camera module provided by Xunwei is shown below.
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320983.jpg)
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320059.jpg)
+
+Use the `sample_vo` example in the `/sample` directory of the system for testing, as shown below:
+
+~~~shell
+./sample_vo 0
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320120.jpg)
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320148.jpg)
+
+## 2.16 RTC Clock Test
+
+In the Linux system, there is a system clock and a hardware clock. Use the `date` and `hwclock` commands to view them, respectively. The system clock is lost when the system loses power. The hardware clock, when a button cell battery is present, does not lose time even when the system is powered off. Each time the system starts, the system clock synchronizes with the hardware clock.
+
+First, start the development board and log in via the debug serial port, as shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320179.jpg)
+
+To view the system clock, enter the `date` command in the serial terminal. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320232.jpg)
+
+To view the hardware clock, enter the `hwclock -u` command in the serial terminal. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320283.jpg)
+
+You can also use the `date` command to set the system time. For example, to set the system time to 2025-09-11 14:30:00, enter the command `date -s "2025-9-11 14:30:00"` in the serial terminal. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320327.jpg)
+
+Then use the `hwclock --systohc -u` command to synchronize the current system time to the hardware clock, and then use the `hwclock -u` command to view the hardware clock. The result is shown in the figure:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320430.jpg)
+
+## 2.17 HDMI Test
+
+Use the `sample_hdmi` example in the `/sample` directory of the system for testing. The `sample_hdmi` example parses an H265 format video file and outputs it to the display via the HDMI interface. As shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320451.jpg)
+
+Use the following command to run `sample_hdmi` for testing, as shown below:
+
+~~~shell
+./sample_hdmi
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320480.jpg)
+
+The current example plays the file `/sample/source_file/3840x2160_8bit.h265`. After running, the HDMI screen displays the video file, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320509.jpg)
+
+Enter the example terminal and press `h` to view help information, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320600.jpg)
+
+Enter `q` to end the example, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320626.jpg)
+
+## 2.18 UVC Camera Test
+
+Use the `sample_uvc` example in the `/sample` directory of the system for testing. The `sample_uvc` example takes a USB camera input and outputs it to HDMI TX for display. As shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320675.jpg)
+
+Use the following command to run the example and view help information, as shown below:
+
+~~~shell
+./sample_uvc -h
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320714.jpg)
+
+Insert the USB camera into the development board; the uvc driver will be automatically installed. Use the following command to check if the camera is recognized, as shown below:
+
+~~~shell
+v4l2-ctl --list-devices
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320753.jpg)
+
+From the above figure, the USB camera node is `/dev/video0`.
+
+First, check the formats supported by the USB camera device, as shown below:
+
+~~~shell
+./sample_uvc /dev/video0 --enum-formats
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320804.jpg)
+
+Use the following command to run the example and view the camera image (you can modify the example parameters based on your actual output), as shown below:
+
+~~~shell
+./sample_uvc /dev/video0 -fYUYV -s640x480 -Ftest.yuv
+~~~
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320876.jpg)
+
+After running, the HDMI screen displays the camera image, as shown below:
+
+![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320906.jpg)

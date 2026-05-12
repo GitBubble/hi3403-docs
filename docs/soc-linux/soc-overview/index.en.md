@@ -216,10 +216,10 @@ SS928V100 comes with a stable, easy-to-use SDK to support rapid customer product
     -   Pin pitch: 0.65 mm
 
 # Block Diagram
-![](figures/zh-cn_image_0000002495024793.png)
+![](../../soc-linux/soc-overview/figures/zh-cn_image_0000002495024793.png)
 
 # SS928V100 Professional Intelligent IP Camera Solution
-![](figures/zh-cn_image_0000002462025394.png)
+![](../../soc-linux/soc-overview/figures/zh-cn_image_0000002462025394.png)
 
 # Acronyms and Abbreviations
 <a name="table123mcpsimp"></a>

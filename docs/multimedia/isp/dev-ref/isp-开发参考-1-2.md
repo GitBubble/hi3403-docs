@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row144mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p146mcpsimp"><a name="p146mcpsimp"></a><a name="p146mcpsimp"></a><a name="image102"></a><a name="image102"></a><span><img id="image102" src="figures/zh-cn_image_0000002474367802.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row144mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p146mcpsimp"><a name="p146mcpsimp"></a><a name="p146mcpsimp"></a><a name="image102"></a><a name="image102"></a><span><img id="image102" src="/multimedia/isp/dev-ref/figures/zh-cn_image_0000002474367802.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p148mcpsimp"><a name="p148mcpsimp"></a><a name="p148mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row149mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p151mcpsimp"><a name="p151mcpsimp"></a><a name="p151mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="figures/zh-cn_image_0000002506607747.png" height="27.93" width="75.81"></span></p>
+<tr id="row149mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p151mcpsimp"><a name="p151mcpsimp"></a><a name="p151mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="/multimedia/isp/dev-ref/figures/zh-cn_image_0000002506607747.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p153mcpsimp"><a name="p153mcpsimp"></a><a name="p153mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row154mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002506567693.png" height="27.93" width="75.81"></span></p>
+<tr id="row154mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="/multimedia/isp/dev-ref/figures/zh-cn_image_0000002506567693.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p158mcpsimp"><a name="p158mcpsimp"></a><a name="p158mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002474527736.png" height="27.93" width="75.81"></span></p>
+<tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="/multimedia/isp/dev-ref/figures/zh-cn_image_0000002474527736.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row165mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p167mcpsimp"><a name="p167mcpsimp"></a><a name="p167mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002474367804.png" height="27.93" width="75.81"></span></p>
+<tr id="row165mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p167mcpsimp"><a name="p167mcpsimp"></a><a name="p167mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="/multimedia/isp/dev-ref/figures/zh-cn_image_0000002474367804.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p169mcpsimp"><a name="p169mcpsimp"></a><a name="p169mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p170mcpsimp"><a name="p170mcpsimp"></a><a name="p170mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -161,7 +161,6 @@ Firmware内部流程分两部分，如[图1](#fig39021449132613)所示。一部�
 
 **图 2**  ISP firmware 软件结构<a name="fig81434122714"></a>  
 ![](figures/ISP-firmware-软件结构.png "ISP-firmware-软件结构")
-
 ### 软件流程<a name="ZH-CN_TOPIC_0000002504084739"></a>
 
 ISP作为前端采集部分，需要和视频采集单元（VIU）协同工作。ISP初始化和基本配置完成后，需要VIU进行接口时序匹配。一是为了匹配不同sensor的输入时序，二是为ISP配置正确的输入时序。待时序配置完成后，ISP就可以启动Run来进行动态图像质量调节。此时输出的图像被VIU采集，进而送去显示或编码。软件使用流程如[图1](#fig796617213110)所示。
@@ -260,7 +259,6 @@ Src文件夹中包含ISP控制单元和基础算法单元，编译后生成libss
 
 **图 1**  ISP firmware 文件组织<a name="fig142122515335"></a>  
 ![](figures/ISP-firmware-文件组织.png "ISP-firmware-文件组织")
-
 # 系统控制
 ## 功能概述<a name="ZH-CN_TOPIC_0000002471084924"></a>
 

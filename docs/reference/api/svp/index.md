@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0 A
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4609mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4611mcpsimp"><a name="p4611mcpsimp"></a><a name="p4611mcpsimp"></a><a name="image450"></a><a name="image450"></a><span><img id="image450" src="figures/zh-cn_image_0000002408294876.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row4609mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4611mcpsimp"><a name="p4611mcpsimp"></a><a name="p4611mcpsimp"></a><a name="image450"></a><a name="image450"></a><span><img id="image450" src="/reference/api/svp/figures/zh-cn_image_0000002408294876.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p4613mcpsimp"><a name="p4613mcpsimp"></a><a name="p4613mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row4614mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4616mcpsimp"><a name="p4616mcpsimp"></a><a name="p4616mcpsimp"></a><a name="image451"></a><a name="image451"></a><span><img id="image451" src="figures/zh-cn_image_0000002408134960.png" height="27.93" width="75.81"></span></p>
+<tr id="row4614mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4616mcpsimp"><a name="p4616mcpsimp"></a><a name="p4616mcpsimp"></a><a name="image451"></a><a name="image451"></a><span><img id="image451" src="/reference/api/svp/figures/zh-cn_image_0000002408134960.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p4618mcpsimp"><a name="p4618mcpsimp"></a><a name="p4618mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row4619mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4621mcpsimp"><a name="p4621mcpsimp"></a><a name="p4621mcpsimp"></a><a name="image452"></a><a name="image452"></a><span><img id="image452" src="figures/zh-cn_image_0000002408134952.png" height="27.93" width="75.81"></span></p>
+<tr id="row4619mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4621mcpsimp"><a name="p4621mcpsimp"></a><a name="p4621mcpsimp"></a><a name="image452"></a><a name="image452"></a><span><img id="image452" src="/reference/api/svp/figures/zh-cn_image_0000002408134952.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p4623mcpsimp"><a name="p4623mcpsimp"></a><a name="p4623mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row4624mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4626mcpsimp"><a name="p4626mcpsimp"></a><a name="p4626mcpsimp"></a><a name="image453"></a><a name="image453"></a><span><img id="image453" src="figures/zh-cn_image_0000002441734133.png" height="27.93" width="75.81"></span></p>
+<tr id="row4624mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4626mcpsimp"><a name="p4626mcpsimp"></a><a name="p4626mcpsimp"></a><a name="image453"></a><a name="image453"></a><span><img id="image453" src="/reference/api/svp/figures/zh-cn_image_0000002441734133.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p4628mcpsimp"><a name="p4628mcpsimp"></a><a name="p4628mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p4629mcpsimp"><a name="p4629mcpsimp"></a><a name="p4629mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row4630mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4632mcpsimp"><a name="p4632mcpsimp"></a><a name="p4632mcpsimp"></a><a name="image454"></a><a name="image454"></a><span><img id="image454" src="figures/zh-cn_image_0000002441734141.png" height="27.93" width="75.81"></span></p>
+<tr id="row4630mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p4632mcpsimp"><a name="p4632mcpsimp"></a><a name="p4632mcpsimp"></a><a name="image454"></a><a name="image454"></a><span><img id="image454" src="/reference/api/svp/figures/zh-cn_image_0000002441734141.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p4634mcpsimp"><a name="p4634mcpsimp"></a><a name="p4634mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p4635mcpsimp"><a name="p4635mcpsimp"></a><a name="p4635mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -138,7 +138,6 @@ MAU（Matrix Arithmetic Unit）为_识别_分析系统中的矩阵算术单元�
 
 **图 1**  跨度（stride）示意图<a name="fig4399128101817"></a>  
 ![](figures/跨度（stride）示意图.png "跨度（stride）示意图")
-
 -   对齐
 
     硬件为了快速访问内存首地址或者跨行访问数据，要求内存地址或内存跨度必须为对齐系数的倍数。
@@ -317,7 +316,6 @@ MAU（Matrix Arithmetic Unit）为_识别_分析系统中的矩阵算术单元�
 
 **图 19** [ot\_svp\_mem\_info](#ZH-CN_TOPIC_0000002408134312) 类型的数据内存示意<a name="fig939145054114"></a>  
 ![](figures/ot_svp_mem_info-类型的数据内存示意.png "ot_svp_mem_info-类型的数据内存示意")
-
 ### 使用示意<a name="ZH-CN_TOPIC_0000002408294128"></a>
 
 -   用户根据需求调用相应的算子接口创建任务，指定is\_instant类型，并记录该任务返回的handle号。
@@ -552,7 +550,6 @@ td_s32 ss_mpi_svp_mau_matrix_mul(ot_svp_mau_handle *handle, const ot_svp_mau_src
 
     **图 2**  右矩阵B内存排布<a name="fig815724551814"></a>  
     ![](figures/右矩阵B内存排布.png "右矩阵B内存排布")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果数值中有INF、-INF或NAN，从而使结果数值失去意义。
 -   ctrl-\>out\_type仅支持OT\_SVP\_MAU\_OUT\_OP\_RESULT。ctrl-\>has\_left\_idx，ctrl-\>has\_right\_idx和ctrl-\>is\_instant值必须为TD\_TRUE或TD\_FALSE。
 -   如果ctrl-\>has\_left\_idx等于TD\_TRUE，src\_idx-\>left\_matrix的宽取值范围：\[1, 100000\]，高必须为1，chn必须为1，num必须为1，物理地址需要4字节对齐，虚拟地址不使用，不做参数异常检查，stride需要16字节对齐，src\_idx-\>left\_matrix的内存中存储的索引值必须小于src-\>left\_matrix的高，数据类型仅支持OT\_SVP\_BLOB\_TYPE\_U32。
@@ -789,7 +786,6 @@ td_s32 ss_mpi_svp_mau_cos_dist(ot_svp_mau_handle *handle, const ot_svp_mau_src_d
 
     **图 2**  右矩阵B内存排布<a name="fig138318974316"></a>  
     ![](figures/右矩阵B内存排布-1.png "右矩阵B内存排布-1")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果数值中有INF、-INF或NAN，从而使结果数值失去意义。
 -   ctrl-\>out\_type可支持OT\_SVP\_MAU\_OUT\_OP\_RESULT，OT\_SVP\_MAU\_OUT\_TOP\_N和OT\_SVP\_MAU\_OUT\_BOTH。ctrl-\>has\_left\_idx，ctrl-\>has\_right\_idx和ctrl-\>is\_instant值必须为TD\_TRUE或TD\_FALSE。
 -   如果ctrl-\>has\_left\_idx等于TD\_TRUE，src\_idx-\>left\_matrix的宽取值范围：\[1, 100000\]，高必须为1，chn必须为1，num必须为1，物理地址需要4字节对齐，虚拟地址不使用，不做参数异常检查，stride 需要16字节对齐，内存中存储的索引必须小于src-\>left\_matrix的高，数据类型仅支持OT\_SVP\_BLOB\_TYPE\_U32。
@@ -1032,7 +1028,6 @@ td_s32 ss_mpi_svp_mau_euclid_dist(ot_svp_mau_handle *handle, const ot_svp_mau_sr
 
     **图 2**  右矩阵B内存排布<a name="fig161001854202415"></a>  
     ![](figures/右矩阵B内存排布-3.png "右矩阵B内存排布-3")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果中数值为INF、-INF或NAN，从而使结果数值失去意义。
 -   ctrl-\>out\_type可支持OT\_SVP\_MAU\_OUT\_OP\_RESULT，OT\_SVP\_MAU\_OUT\_TOP\_N和OT\_SVP\_MAU\_OUT\_BOTH。ctrl-\>has\_left\_idx，ctrl-\>has\_right\_idx和ctrl-\>is\_instant值必须为TD\_TRUE或TD\_FALSE。
 -   如果ctrl-\>has\_left\_idx等于TD\_TRUE，src\_idx-\>left\_matrix的宽取值范围：\[1, 100000\]，高必须为1，chn必须为1，num必须为1，物理地址需要4字节对齐，虚拟地址不使用，不做参数异常检查，stride 需要16字节对齐，内存中存储的索引必须小于src-\>left\_matrix的高，数据类型仅支持OT\_SVP\_BLOB\_TYPE\_U32。
@@ -1275,7 +1270,6 @@ td_s32 ss_mpi_svp_mau_manhattan_dist(ot_svp_mau_handle *handle, const ot_svp_mau
 
     **图 2**  右矩阵B内存排布<a name="fig529720654513"></a>  
     ![](figures/右矩阵B内存排布-5.png "右矩阵B内存排布-5")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果中数值为INF、-INF或NAN，从而使结果数值失去意义。
 -   ctrl-\>out\_type可支持OT\_SVP\_MAU\_OUT\_OP\_RESULT，OT\_SVP\_MAU\_OUT\_TOP\_N和OT\_SVP\_MAU\_OUT\_BOTH。ctrl-\>has\_left\_idx，ctrl-\>has\_right\_idx和ctrl-\>is\_instant值必须为TD\_TRUE或TD\_FALSE。
 -   如果ctrl-\>has\_left\_idx等于TD\_TRUE，src\_idx-\>left\_matrix的宽取值范围\[1, 100000\]，高必须为1，chn必须为1，num必须为1，物理地址需要4字节对齐，虚拟地址不使用，不做参数异常检查，stride需要16字节对齐，内存中存储的索引必须小于src-\>left\_matrix的高，数据类型仅支持OT\_SVP\_BLOB\_TYPE\_U32。
@@ -1458,7 +1452,6 @@ td_s32 ss_mpi_svp_mau_transpose(ot_svp_mau_handle *handle, const ot_svp_blob *sr
 
 **图 1**  矩阵A内存排布<a name="fig1019814712117"></a>  
 ![](figures/矩阵A内存排布.png "矩阵A内存排布")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果数值中有INF、-INF或NAN，从而使结果数值失去意义。
 -   ctrl-\>has\_idx和ctrl-\>is\_instant值必须为TD\_TRUE或TD\_FALSE。
 -   如果ctrl-\>has\_idx等于TD\_TRUE，src\_idx的宽取值范围\[1, 100000\]，高必须为1，chn必须为1，num必须为1，物理地址需要4字节对齐，虚拟地址不使用，不做参数异常检查，stride需要16字节对齐，src\_idx的内存中存储的索引值必须小于src的高，数据类型仅支持OT\_SVP\_BLOB\_TYPE\_U32。
@@ -1733,7 +1726,6 @@ td_s32 ss_mpi_svp_mau_vector_op(ot_svp_mau_handle *handle, const ot_svp_mau_src_
 
     **图 2**  右矩阵B内存排布<a name="fig67805106483"></a>  
     ![](figures/右矩阵B内存排布-7.png "右矩阵B内存排布-7")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果数值中有INF、-INF或NAN，从而使结果数值失去意义。
 -   ctrl-\>has\_left\_idx，ctrl-\>has\_right\_idx和ctrl-\>is\_instant值必须为TD\_TRUE或TD\_FALSE。
 -   如果ctrl-\>has\_left\_idx等于TD\_TRUE，src\_idx-\>left\_matrix的宽取值范围\[1, 100000\]，高必须为1，chn必须为1，num必须为1，物理地址需要4字节对齐，虚拟地址不使用，不做参数异常检查，stride 需要16字节对齐，内存中存储的索引必须小于src-\>left\_matrix的高，数据类型仅支持OT\_SVP\_BLOB\_TYPE\_U32。
@@ -1876,7 +1868,6 @@ td_s32 ss_mpi_svp_mau_type_convert(ot_svp_mau_handle *handle, const ot_svp_blob 
 
     **图 1**  矩阵内存排布<a name="fig73811434125414"></a>  
     ![](figures/矩阵内存排布.png "矩阵内存排布")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果数值中有INF、-INF或NAN，从而使结果数值失去意义。
 -   ctrl-\>has\_idx，和ctrl-\>is\_instant值必须为TD\_TRUE或TD\_FALSE。
 -   如果ctrl-\>has\_ idx等于TD\_TRUE，src\_idx的宽取值范围\[1, 100000\]，高必须为1，chn必须为1，num必须为1，物理地址需要4字节对齐，虚拟地址不使用，不做参数异常检查，stride需要16字节对齐，src\_idx的内存中存储的索引值必须小于src的高，数据类型仅支持OT\_SVP\_BLOB\_TYPE\_U32。
@@ -2122,7 +2113,6 @@ td_s32 ss_mpi_svp_mau_sort(ot_svp_mau_handle *handle, const ot_svp_mau_sort_matr
 
 **图 1**  矩阵内存排布<a name="fig1634410360812"></a>  
 ![](figures/矩阵内存排布-8.png "矩阵内存排布-8")
-
 ### ss\_mpi\_svp\_mau\_get\_fir\_tmpbuf\_size<a name="ZH-CN_TOPIC_0000002441853701"></a>
 
 【描述】
@@ -2360,7 +2350,6 @@ ss_mpi_svp_mau_fir(ot_svp_mau_handle *handle, const ot_svp_mau_fir_src *src, con
 
     **图 1**  矩阵内存排布<a name="fig1964663514146"></a>  
     ![](figures/矩阵内存排布-9.png "矩阵内存排布-9")
-
 -   用户需要确保输入左右矩阵的数据中不能含有INF、-INF或者NAN数据，并且输入数值和计算结果都在fp32数据表示有效范围内，否则会导致输出的结果数值中有INF、-INF或NAN，从而使结果数值失去意义。
 -   src-\>query\_item的chn必须为1，num必须为1，height取值范围为\[1, 65535\]；数据类型仅支持OT\_SVP\_BLOB\_TYPE\_FP32和OT\_SVP\_BLOB\_TYPE\_FP16；数据类型为FP32时，width取值范围为\[1, 8192\]，数据类型为FP16时，width取值范围为\[1,16384\]；数据类型为FP32时，物理地址需要4字节对齐，数据类型为FP16时，物理地址需2字节对齐，虚拟地址不使用，不做参数异常检查；stride需要16字节对齐。
 -   src-\>bucket\_center的chn必须为1，num必须为1，height取值范围为\[1, 65535\]；数据类型仅支持OT\_SVP\_BLOB\_TYPE\_FP32和OT\_SVP\_BLOB\_TYPE\_FP16；数据类型为FP32时，width取值范围为\[1, 8192\]，数据类型为FP16时，width取值范围为\[1,16384\]；数据类型为FP32时，物理地址需要4字节对齐，数据类型为FP16时，物理地址需2字节对齐，虚拟地址不使用，不做参数异常检查；stride需要16字节对齐。
@@ -4634,7 +4623,6 @@ DPU\(Depth Process Unit\)为_识别_分析系统中的深度处理单元。用�
 
 **图 1**  ot\_dpu\_rect\_mem\_info数据内存示意<a name="fig1846120121814"></a>  
 ![](figures/ot_dpu_rect_mem_info数据内存示意.png "ot_dpu_rect_mem_info数据内存示意")
-
 ### 调用流程<a name="ZH-CN_TOPIC_0000002441733381"></a>
 
 典型场景调用流程按是否绑定目标场景分为如[图1](#fig0844103714187)和[图2](#fig35521120171910)两种。绑定场景:支持VI或者VPSS作为DPU\_RECT源，DPU\_MATCH作为DPU\_RECT的目标。
@@ -4646,7 +4634,6 @@ DPU\(Depth Process Unit\)为_识别_分析系统中的深度处理单元。用�
 
 **图 2**  DPU\_RECT绑定目标场景调用流程<a name="fig35521120171910"></a>  
 ![](figures/DPU_RECT绑定目标场景调用流程.png "DPU_RECT绑定目标场景调用流程")
-
 ## API参考<a name="ZH-CN_TOPIC_0000002408294384"></a>
 
 该功能模块为用户提供以下MPI:
@@ -7318,14 +7305,12 @@ DPU\(Depth Process Unit\)为_识别_分析系统中的深度处理单元。用�
 
     **图 1**  ot\_dpu\_match\_mem\_info数据内存示意<a name="fig12816122325914"></a>  
     ![](figures/ot_dpu_match_mem_info数据内存示意.png "ot_dpu_match_mem_info数据内存示意")
-
 ### 调用流程<a name="ZH-CN_TOPIC_0000002441733501"></a>
 
 支持DPU\_RECT作为DPU\_MATCH的源。目前无目标模块可以绑定DPU\_MATCH, 接收DPU\_MATCH进行处理，必须手动的调用[ss\_mpi\_dpu\_match\_get\_frame](#ZH-CN_TOPIC_0000002408134196)获取结果，再进行处理。如[图1](#fig452655285913)所示。
 
 **图 1**  DPU\_MATCH调用流程<a name="fig452655285913"></a>  
 ![](figures/DPU_MATCH调用流程.png "DPU_MATCH调用流程")
-
 ## API参考<a name="ZH-CN_TOPIC_0000002408134432"></a>
 
 该功能模块为用户提供以下MPI：

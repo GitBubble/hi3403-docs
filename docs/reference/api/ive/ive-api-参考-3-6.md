@@ -3684,19 +3684,19 @@ typedef struct {
 </thead>
 <tbody><tr id="row3720mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p id="p3722mcpsimp"><a name="p3722mcpsimp"></a><a name="p3722mcpsimp"></a>num</p>
 </td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p class="msonormal" id="p3724mcpsimp"><a name="p3724mcpsimp"></a><a name="p3724mcpsimp"></a>NCC计算公式的分子--<a name="image159281555102516"></a><a name="image159281555102516"></a><span><img class="mathml" id="image159281555102516" src="figures/zh-cn_formulaimage_0000002503971347.png"></span></p>
+<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p class="msonormal" id="p3724mcpsimp"><a name="p3724mcpsimp"></a><a name="p3724mcpsimp"></a>NCC计算公式的分子--<a name="image159281555102516"></a><a name="image159281555102516"></a><span><img class="mathml" id="image159281555102516" src="/reference/api/ive/figures/zh-cn_formulaimage_0000002503971347.png"></span></p>
 </td>
 </tr>
 <tr id="row3725mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p id="p3727mcpsimp"><a name="p3727mcpsimp"></a><a name="p3727mcpsimp"></a>quad_sum1</p>
 </td>
 <td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p class="msonormal" id="p16204756268"><a name="p16204756268"></a><a name="p16204756268"></a>NCC计算公式的分母--根号内部分：</p>
-<p id="p1020311552617"><a name="p1020311552617"></a><a name="p1020311552617"></a>NCC计算公式的分子--<a name="image89161940183311"></a><a name="image89161940183311"></a><span><img class="mathml" id="image89161940183311" src="figures/zh-cn_formulaimage_0000002503971349.png"></span></p>
+<p id="p1020311552617"><a name="p1020311552617"></a><a name="p1020311552617"></a>NCC计算公式的分子--<a name="image89161940183311"></a><a name="image89161940183311"></a><span><img class="mathml" id="image89161940183311" src="/reference/api/ive/figures/zh-cn_formulaimage_0000002503971349.png"></span></p>
 </td>
 </tr>
 <tr id="row3730mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p id="p3732mcpsimp"><a name="p3732mcpsimp"></a><a name="p3732mcpsimp"></a>quad_sum2</p>
 </td>
 <td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p class="msonormal" id="p3734mcpsimp"><a name="p3734mcpsimp"></a><a name="p3734mcpsimp"></a>NCC计算公式的分母--根号内部分：</p>
-<p id="p173405772616"><a name="p173405772616"></a><a name="p173405772616"></a>NCC计算公式的分子--<a name="image20114173123411"></a><a name="image20114173123411"></a><span><img class="mathml" id="image20114173123411" src="figures/zh-cn_formulaimage_0000002471091414.png"></span></p>
+<p id="p173405772616"><a name="p173405772616"></a><a name="p173405772616"></a>NCC计算公式的分子--<a name="image20114173123411"></a><a name="image20114173123411"></a><span><img class="mathml" id="image20114173123411" src="/reference/api/ive/figures/zh-cn_formulaimage_0000002471091414.png"></span></p>
 </td>
 </tr>
 <tr id="row3735mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p3737mcpsimp"><a name="p3737mcpsimp"></a><a name="p3737mcpsimp"></a><span xml:lang="en-US" id="ph3738mcpsimp"><a name="ph3738mcpsimp"></a><a name="ph3738mcpsimp"></a>reserved[</span>OT_IVE_ARR_RESERVED_NUM_EIGHT<span xml:lang="en-US" id="ph3741mcpsimp"><a name="ph3741mcpsimp"></a><a name="ph3741mcpsimp"></a>]</span></p>
@@ -6105,7 +6105,7 @@ typedef struct {
 </tr>
 <tr id="row1110mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p id="p1112mcpsimp"><a name="p1112mcpsimp"></a><a name="p1112mcpsimp"></a>max_cnt</p>
 </td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p class="msonormal" id="p1114mcpsimp"><a name="p1114mcpsimp"></a><a name="p1114mcpsimp"></a>所有层中神经元数目或者特征维度的最大值：<a name="image108374142236"></a><a name="image108374142236"></a><span><img class="mathml" id="image108374142236" src="figures/zh-cn_formulaimage_0000002471091532.png"></span></p>
+<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p class="msonormal" id="p1114mcpsimp"><a name="p1114mcpsimp"></a><a name="p1114mcpsimp"></a>所有层中神经元数目或者特征维度的最大值：<a name="image108374142236"></a><a name="image108374142236"></a><span><img class="mathml" id="image108374142236" src="/reference/api/ive/figures/zh-cn_formulaimage_0000002471091532.png"></span></p>
 </td>
 </tr>
 <tr id="row1115mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p id="p1117mcpsimp"><a name="p1117mcpsimp"></a><a name="p1117mcpsimp"></a>layer_num</p>

@@ -75,28 +75,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row190mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p192mcpsimp"><a name="p192mcpsimp"></a><a name="p192mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="figures/zh-cn_image_0000002441714733.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row190mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p192mcpsimp"><a name="p192mcpsimp"></a><a name="p192mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="/reference/api/audio/figures/zh-cn_image_0000002441714733.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row195mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p197mcpsimp"><a name="p197mcpsimp"></a><a name="p197mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002441674929.png" height="27.93" width="75.81"></span></p>
+<tr id="row195mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p197mcpsimp"><a name="p197mcpsimp"></a><a name="p197mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="/reference/api/audio/figures/zh-cn_image_0000002441674929.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p199mcpsimp"><a name="p199mcpsimp"></a><a name="p199mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row200mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002441714825.png" height="27.93" width="75.81"></span></p>
+<tr id="row200mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="/reference/api/audio/figures/zh-cn_image_0000002441714825.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p204mcpsimp"><a name="p204mcpsimp"></a><a name="p204mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row205mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002408275514.png" height="27.93" width="75.81"></span></p>
+<tr id="row205mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="/reference/api/audio/figures/zh-cn_image_0000002408275514.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p209mcpsimp"><a name="p209mcpsimp"></a><a name="p209mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p210mcpsimp"><a name="p210mcpsimp"></a><a name="p210mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row211mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p213mcpsimp"><a name="p213mcpsimp"></a><a name="p213mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002408115650.png" height="27.93" width="75.81"></span></p>
+<tr id="row211mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p213mcpsimp"><a name="p213mcpsimp"></a><a name="p213mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="/reference/api/audio/figures/zh-cn_image_0000002408115650.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p215mcpsimp"><a name="p215mcpsimp"></a><a name="p215mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p216mcpsimp"><a name="p216mcpsimp"></a><a name="p216mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>

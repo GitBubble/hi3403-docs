@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/内存�
 
 This document describes how each subsystem module defines its memory space and provides example modifications, to guide developers in adjusting the system memory layout according to their specific use cases.
 
->![](public_sys-resources/icon-notice.gif) **Notice:** 
+>![](../../soc-linux/memory-layout/public_sys-resources/icon-notice.gif) **Notice:** 
 >In the descriptions below, "xxxx" represents the project name — for example: xxxx\_defconfig → ss928v100\_defconfig.
 >"yyyy" represents the version number — for example: u-boot-yyyy → u-boot-2020.01, linux-yyyy → linux-6.6
 
@@ -36,7 +36,7 @@ The product versions corresponding to this document are listed below.
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../soc-linux/memory-layout/public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference platform. Unless otherwise noted, SS927V100 content is identical to SS928V100.
 
 **Intended Audience<a name="section4378592816410"></a>**
@@ -83,7 +83,7 @@ This document explains how each module relates to the memory layout and how to m
 # Memory Layout
 This chapter describes how each module defines the memory space it uses.
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../soc-linux/memory-layout/public_sys-resources/icon-note.gif) **Note:** 
 >For each module, the relevant file path is given first, followed by descriptions of the configuration items, macros, and variables in that file that relate to memory layout definitions.
 
 ## U-Boot<a name="ZH-CN_TOPIC_0000002424361986"></a>
@@ -141,11 +141,10 @@ KERNEL\_LOAD\_ADDR = CONFIG\_KERNEL\_LOAD\_ADDR (where [CONFIG\_KERNEL\_LOAD\_AD
 -   ATF moves forward by the same 0x10000000 offset along with the kernel.
 
 **Figure 1**  Before and after removing LiteOS<a name="fig10232031174813"></a>  
-![](figures/删除LiteOS的前后对比.png "删除LiteOS的前后对比")
-
+![](../../soc-linux/memory-layout/figures/删除LiteOS的前后对比.png "删除LiteOS的前后对比")
 ### Changes Required<a name="ZH-CN_TOPIC_0000002457840789"></a>
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../soc-linux/memory-layout/public_sys-resources/icon-note.gif) **Note:** 
 >A leading "-" indicates the line before modification; "+" indicates the line after modification.
 >The Linux boot address must be 2 MB aligned. For example, 0x40080000 and 0x40280000 are valid 2 MB-aligned addresses; 0x40180000 will not boot.
 
@@ -227,11 +226,10 @@ KERNEL\_LOAD\_ADDR = CONFIG\_KERNEL\_LOAD\_ADDR (where [CONFIG\_KERNEL\_LOAD\_AD
 The current Linux memory reservation is 0x2F00000 (47 MB). To expand this region, move the BL33\_LOAD\_ADDR kernel load address to an unused address beyond OP-TEE.
 
 **Figure 1**  Before and after expanding Linux memory<a name="fig10232031174813"></a>  
-![](figures/扩大Linux空间的前后对比.png "扩大Linux空间的前后对比")
-
+![](../../soc-linux/memory-layout/figures/扩大Linux空间的前后对比.png "扩大Linux空间的前后对比")
 ### Changes Required<a name="ZH-CN_TOPIC_0000002424202098"></a>
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../soc-linux/memory-layout/public_sys-resources/icon-note.gif) **Note:** 
 >A leading "-" indicates the line before modification; "+" indicates the line after modification.
 
 -   U-Boot: update the kernel load address, shifting it back by 0x6000000

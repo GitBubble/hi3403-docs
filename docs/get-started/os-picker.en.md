@@ -21,21 +21,21 @@ Ecology, image size, real-time, and compliance requirements. Below is a comparis
 
 ```mermaid
 flowchart TD
-    Start[What are the needs?] --> A{需要图形桌面？}
-    A -- 是 --> B{什么类型？}
-    A -- 否 --> C{追求最小镜像？}
+    Start[What are the needs?] --> A{Need a graphical desktop?}
+    A -- Yes --> B{What type?}
+    A -- No --> C{Minimal image?}
 
-    B -- 标准 Linux 桌面 --> Ubuntu[Ubuntu 22.04 XFCE]
-    B -- OpenHarmony 应用 --> OH[OpenHarmony Small]
+    B -- Standard Linux desktop --> Ubuntu[Ubuntu 22.04 XFCE]
+    B -- OpenHarmony app --> OH[OpenHarmony Small]
 
-    C -- 是，越小越好 --> Buildroot[Buildroot]
-    C -- 否 --> D{合规需求？}
+    C -- Yes, smallest possible --> Buildroot[Buildroot]
+    C -- No --> D{Compliance requirements?}
 
-    D -- 国产化 / 等保 --> OE[OpenEuler]
-    D -- 没有 --> E{要 apt 吗？}
+    D -- Domestic/Compliance --> OE[OpenEuler]
+    D -- None --> E{Need apt?}
 
-    E -- 是 --> Ubuntu_lite[Ubuntu lite]
-    E -- 否 --> Buildroot
+    E -- Yes --> Ubuntu_lite[Ubuntu lite]
+    E -- No --> Buildroot
 
     style Ubuntu stroke:#7c4dff,stroke-width:3px
     style Ubuntu_lite stroke:#7c4dff,stroke-width:2px

@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row187mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p189mcpsimp"><a name="p189mcpsimp"></a><a name="p189mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="figures/zh-cn_image_0000002424362286.png" height="23.94" width="66.5"></span></p>
+<tbody><tr id="row187mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p189mcpsimp"><a name="p189mcpsimp"></a><a name="p189mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="/multimedia/dual-fusion/tuning/figures/zh-cn_image_0000002424362286.png" height="23.94" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p191mcpsimp"><a name="p191mcpsimp"></a><a name="p191mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row192mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002424202450.png" height="23.94" width="66.5"></span></p>
+<tr id="row192mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="/multimedia/dual-fusion/tuning/figures/zh-cn_image_0000002424202450.png" height="23.94" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row197mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p199mcpsimp"><a name="p199mcpsimp"></a><a name="p199mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002457841081.png" height="23.94" width="66.5"></span></p>
+<tr id="row197mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p199mcpsimp"><a name="p199mcpsimp"></a><a name="p199mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="/multimedia/dual-fusion/tuning/figures/zh-cn_image_0000002457841081.png" height="23.94" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p201mcpsimp"><a name="p201mcpsimp"></a><a name="p201mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row202mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p204mcpsimp"><a name="p204mcpsimp"></a><a name="p204mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002457841065.png" height="23.94" width="66.5"></span></p>
+<tr id="row202mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p204mcpsimp"><a name="p204mcpsimp"></a><a name="p204mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="/multimedia/dual-fusion/tuning/figures/zh-cn_image_0000002457841065.png" height="23.94" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p206mcpsimp"><a name="p206mcpsimp"></a><a name="p206mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row208mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p210mcpsimp"><a name="p210mcpsimp"></a><a name="p210mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002424362302.png" height="23.94" width="66.5"></span></p>
+<tr id="row208mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p210mcpsimp"><a name="p210mcpsimp"></a><a name="p210mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="/multimedia/dual-fusion/tuning/figures/zh-cn_image_0000002424362302.png" height="23.94" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p212mcpsimp"><a name="p212mcpsimp"></a><a name="p212mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p213mcpsimp"><a name="p213mcpsimp"></a><a name="p213mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -115,7 +115,6 @@ MCF模块的基本原理图如[图1](#fig1275217156391)所示。
 
 **图 1**  MCF模块基本原理图<a name="fig1275217156391"></a>  
 ![](figures/MCF模块基本原理图.png "MCF模块基本原理图")
-
 # 关键参数
 <a name="table244mcpsimp"></a>
 <table><thead align="left"><tr id="row251mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.5.1.1"><p id="p253mcpsimp"><a name="p253mcpsimp"></a><a name="p253mcpsimp"></a>模块</p>
@@ -359,7 +358,6 @@ MCF模块的基本原理图如[图1](#fig1275217156391)所示。
 
 **图 2**  4M@30fps MCF端到端调试流程图<a name="fig082311423517"></a>  
 ![](figures/4M-30fps-MCF端到端调试流程图.png "4M-30fps-MCF端到端调试流程图")
-
 ## ISP基础图像质量调优<a name="ZH-CN_TOPIC_0000002457840693"></a>
 
 正常照度下全部或者主要使用可见光分量，可以不用融合和少量融合红外成分，融合强度调低，ISP、3DNR与单通路调节相同，本文不再描述。
@@ -433,7 +431,6 @@ MCF模块的基本原理图如[图1](#fig1275217156391)所示。
 
         **图 1**  MCF调试风格示例图<a name="fig2192183017464"></a>  
         ![](figures/MCF调试风格示例图.png "MCF调试风格示例图")
-
 ## 融合后3DNR调节<a name="ZH-CN_TOPIC_0000002424361910"></a>
 
 融合后过VPSS 3DNR的目的主要是为了去除由于MCF模块中的uvgain曲线提升整体色彩饱和度而引起的色噪，以及由于IR图像没有经过3DNR引起的静止区域和运动区域的颗粒感。调试的方法与调试彩色图像的方法一致。
@@ -469,7 +466,6 @@ MCF模块的基本原理图如[图1](#fig1275217156391)所示。
 
 **图 1**  MCF标定场景推荐示例图<a name="_fig26861861"></a>  
 ![](figures/MCF标定场景推荐示例图.png "MCF标定场景推荐示例图")
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >MCF标定的视场角矫正和防抖都使用了GDC，如果开启了视场角矫正和两路及以上陀螺仪防抖功能，可能会性能不足。
 

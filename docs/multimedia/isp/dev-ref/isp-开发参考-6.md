@@ -1217,7 +1217,6 @@ DRC算法的目的就是要使真实场景的观察者和显示设备的观察�
 
 **图 1**  动态范围压缩<a name="fig040711214316"></a>  
 ![](figures/动态范围压缩.png "动态范围压缩")
-
 ### API参考<a name="ZH-CN_TOPIC_0000002503965163"></a>
 
 -   [ss\_mpi\_isp\_set\_drc\_attr](#ZH-CN_TOPIC_0000002470925106)：设置动态范围压缩参数。
@@ -4010,7 +4009,6 @@ Crosstalk Removal模块的主要功能是为了平衡raw数据上临近像素Gr�
 
 **图 1**  Crosstalk 门限<a name="_Ref49417361"></a>  
 ![](figures/Crosstalk-门限.png "Crosstalk-门限")
-
 ### API参考<a name="ZH-CN_TOPIC_0000002471084840"></a>
 
 -   [ss\_mpi\_isp\_set\_crosstalk\_attr](#ZH-CN_TOPIC_0000002470925204)：设定Crosstalk 属性。
@@ -6120,7 +6118,6 @@ Demosaic模块实现的功能是：将输入的Bayer数据转化成RGB数据。C
 
 **图 1**  去马赛克处理图<a name="fig15860155811308"></a>  
 ![](figures/去马赛克处理图.png "去马赛克处理图")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >在处理高频黑白图像时，由于去马赛克模块对输入Bayer CFA数据进行了插值，因此在高频区域容易发生混叠，导致出现打开去马赛克模块高频区域清晰度反而下降的情况，此为正常现象。
 
@@ -7775,7 +7772,6 @@ FPN的校正过程：
 
 **图 2**  FPN校正示意图<a name="fig977310014714"></a>  
 ![](figures/FPN校正示意图.png "FPN校正示意图")
-
 ### API参考<a name="ZH-CN_TOPIC_0000002471085090"></a>
 
 -   [ss\_mpi\_isp\_fpn\_calibrate](#ZH-CN_TOPIC_0000002504085029)：设置去FPN标定属性。
@@ -8874,7 +8870,6 @@ typedef struct {
 
 **图 1**  色差图解<a name="fig132774915195"></a>  
 ![](figures/色差图解.png "色差图解")
-
 ### API参考<a name="ZH-CN_TOPIC_0000002470925068"></a>
 
 -   [ss\_mpi\_isp\_set\_local\_cac\_attr](#ZH-CN_TOPIC_0000002470925168)：设置紫边检测校正参数。
@@ -9866,7 +9861,6 @@ WDR算法的目的就是将从sensor输出的长短帧数据合成为一帧20bit
 
 **图 1**  WDR算法合成模型<a name="_Ref498504952"></a>  
 ![](figures/WDR算法合成模型.png "WDR算法合成模型")
-
 -   本模块可以通过[ot\_isp\_wdr\_merge\_mode](#ZH-CN_TOPIC_0000002504085037)来决定合成的方式。若该值为0，则用传统的WDR功能合成；若该值为1，则打开Fusion功能，即用来改善Flicker现象；其中[ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787)结构体用来控制传统的WDR功能，而[ot\_isp\_fusion\_attr](#ZH-CN_TOPIC_0000002504085067)结构体用来控制Fusion功能。
 -   传统的WDR，包括以下功能：
     -   可以去除鬼影。通过[ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787)  来选择融合区域是采用短帧还是长帧；
@@ -10599,7 +10593,6 @@ AWB差异参数的校正过程：
 
     **图 1**  AWB小规模试产过程中确定GoldenSample流程图<a name="fig30489mcpsimp"></a>  
     ![](figures/AWB小规模试产过程中确定GoldenSample流程图.png "AWB小规模试产过程中确定GoldenSample流程图")
-
 ### API参考<a name="ZH-CN_TOPIC_0000002470925064"></a>
 
 请参考2.2小节中的ss\_mpi\_isp\_get\_lightbox\_gain。
@@ -11516,8 +11509,8 @@ typedef struct {
 <tr id="row31311mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p id="p31313mcpsimp"><a name="p31313mcpsimp"></a><a name="p31313mcpsimp"></a>radius</p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p31315mcpsimp"><a name="p31315mcpsimp"></a><a name="p31315mcpsimp"></a>拉黑的半径，到中心点的距离大于半径的区域直接拉黑。</p>
-<p class="msonormal" id="p31316mcpsimp"><a name="p31316mcpsimp"></a><a name="p31316mcpsimp"></a>取值范围：[0,<a name="image959720461575"></a><a name="image959720461575"></a><span><img class="mathml" id="image959720461575" src="figures/zh-cn_formulaimage_0000002470925244.png"></span> ]</p>
-<p class="msonormal" id="p31317mcpsimp"><a name="p31317mcpsimp"></a><a name="p31317mcpsimp"></a>默认值<a name="image1144134915109"></a><a name="image1144134915109"></a><span><img class="mathml" id="image1144134915109" src="figures/zh-cn_formulaimage_0000002471085230.png"></span></p>
+<p class="msonormal" id="p31316mcpsimp"><a name="p31316mcpsimp"></a><a name="p31316mcpsimp"></a>取值范围：[0,<a name="image959720461575"></a><a name="image959720461575"></a><span><img class="mathml" id="image959720461575" src="/multimedia/isp/dev-ref/figures/zh-cn_formulaimage_0000002470925244.png"></span> ]</p>
+<p class="msonormal" id="p31317mcpsimp"><a name="p31317mcpsimp"></a><a name="p31317mcpsimp"></a>默认值<a name="image1144134915109"></a><a name="image1144134915109"></a><span><img class="mathml" id="image1144134915109" src="/multimedia/isp/dev-ref/figures/zh-cn_formulaimage_0000002471085230.png"></span></p>
 </td>
 </tr>
 </tbody>
@@ -14423,7 +14416,6 @@ RGBIR分为RGBIR4X4模式及RGBIR Normal模式。RGBIR4X4模式支持输入RGB-I
 
 **图 2**  RGB-IR 4x4 pattern排列<a name="fig10536657133417"></a>  
 ![](figures/RGB-IR-4x4-pattern排列.png "RGB-IR-4x4-pattern排列")
-
 ### API参考<a name="ZH-CN_TOPIC_0000002470925004"></a>
 
 -   [ss\_mpi\_isp\_set\_rgbir\_attr](#ZH-CN_TOPIC_0000002504084935)：设定RGBIR属性。

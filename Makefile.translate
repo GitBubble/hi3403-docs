@@ -1,0 +1,4 @@
+# Makefile to translate Chinese proc documentation
+all:
+	cp /Users/arthurbetter/hi3403-build/hi3403-docs/docs/multimedia/mpp/13-proc调试信息-1316-1329.md /Users/arthurbetter/hi3403-build/hi3403-docs/docs/multimedia/mpp/13-proc调试信息-1316-1329.en.md
+	python3 /Users/arthurbetter/hi3403-build/hi3403-docs/translate_proc.py

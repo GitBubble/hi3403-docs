@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457876689.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/soc-linux/secure-boot/figures/zh-cn_image_0000002457876689.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424357782.png"></span></p>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="/soc-linux/secure-boot/figures/zh-cn_image_0000002424357782.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424197962.png"></span></p>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="/soc-linux/secure-boot/figures/zh-cn_image_0000002424197962.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457836557.png"></span></p>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="/soc-linux/secure-boot/figures/zh-cn_image_0000002457836557.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457876693.png"></span></p>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="/soc-linux/secure-boot/figures/zh-cn_image_0000002457876693.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
 <p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -201,14 +201,12 @@ OTP是一种特殊的非易失性存储器，允许编程一次，数据永久�
 
 **图 1**  快速启动流程<a name="fig9466924175919"></a>  
 ![](figures/快速启动流程.png "快速启动流程")
-
 ## 非安全启动<a name="ZH-CN_TOPIC_0000002457836541"></a>
 
 在非安全启动模式下，芯片从GSL启动，流程如[图1](#fig1746041719160)所示。该方案不会校验启动镜像的合法性，是非安全的。
 
 **图 1**  非安全启动流程<a name="fig1746041719160"></a>  
 ![](figures/非安全启动流程.png "非安全启动流程")
-
 ## 安全启动<a name="ZH-CN_TOPIC_0000002424357722"></a>
 
 与非安全启动方案相比，安全启动方案会校验启动镜像的合法性，方案在 “[镜像解密和验签](#ZH-CN_TOPIC_0000002457836477)”有具体介绍，镜像的解密校验环节层层依赖，若中间某个环节校验失败，则启动失败，从而保证镜像的合法性、完整性，以及敏感数据的机密性。
@@ -217,7 +215,6 @@ OTP是一种特殊的非易失性存储器，允许编程一次，数据永久�
 
 **图 1**  安全启动流程<a name="fig157715217257"></a>  
 ![](figures/安全启动流程.png "安全启动流程")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >其中U-Boot验签Kernel和Rootfs环节未实现，客户可参考“[内核及文件系统安全启动验签方案参考](#ZH-CN_TOPIC_0000002457836481)”，并结合应用场景调用Cipher API接口实现。
 
@@ -232,7 +229,6 @@ OTP是一种特殊的非易失性存储器，允许编程一次，数据永久�
 
 **图 1**  安全启动镜像布局图<a name="fig1050352493314"></a>  
 ![](figures/安全启动镜像布局图.png "安全启动镜像布局图")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >布局图标号1：Boot image 区域需放在启动介质0x00地址的起始位置，其余区域放置无特殊要求，可根据使用场景自行分配。
 
@@ -249,21 +245,18 @@ OTP是一种特殊的非易失性存储器，允许编程一次，数据永久�
 
 **图 1**  Vendor\_Root\_Public\_Key Area<a name="fig2809231153619"></a>  
 ![](figures/Vendor_Root_Public_Key-Area.png "Vendor_Root_Public_Key-Area")
-
 ### OEM\_Root\_Public\_Key Area<a name="ZH-CN_TOPIC_0000002424357734"></a>
 
 其镜像分布图，如[图1](#fig71661085015)所示。
 
 **图 1**  OEM\_Root\_Public\_Key Area<a name="fig71661085015"></a>  
 ![](figures/OEM_Root_Public_Key-Area.png "OEM_Root_Public_Key-Area")
-
 ### Third\_party\_Root\_Public\_Key Area<a name="ZH-CN_TOPIC_0000002457876617"></a>
 
 其镜像分布图，如[图1](#fig129062192012)所示。
 
 **图 1**  Third\_party\_Root\_Public\_Key Area<a name="fig129062192012"></a>  
 ![](figures/Third_party_Root_Public_Key-Area.png "Third_party_Root_Public_Key-Area")
-
 ### GSL Flash Mapping<a name="ZH-CN_TOPIC_0000002457836517"></a>
 
 
@@ -275,21 +268,18 @@ OTP是一种特殊的非易失性存储器，允许编程一次，数据永久�
 
 **图 1**  GSL third party Key Area<a name="fig065525410618"></a>  
 ![](figures/GSL-third-party-Key-Area.png "GSL-third-party-Key-Area")
-
 #### GSL Key Area<a name="ZH-CN_TOPIC_0000002424357754"></a>
 
 其镜像分布图，如[图1](#fig2404758151111)所示。
 
 **图 1**  GSL Key Area<a name="fig2404758151111"></a>  
 ![](figures/GSL-Key-Area.png "GSL-Key-Area")
-
 #### GSL Code Area<a name="ZH-CN_TOPIC_0000002424197902"></a>
 
 其镜像分布图，如[图1](#fig9794191161715)所示。
 
 **图 1**  GSL Code Area<a name="fig9794191161715"></a>  
 ![](figures/GSL-Code-Area.png "GSL-Code-Area")
-
 ### Boot Flash Mapping<a name="ZH-CN_TOPIC_0000002457876645"></a>
 
 
@@ -302,21 +292,18 @@ OTP是一种特殊的非易失性存储器，允许编程一次，数据永久�
 
 **图 1**  Key Area<a name="fig984510341212"></a>  
 ![](figures/Key-Area.png "Key-Area")
-
 #### Params Area<a name="ZH-CN_TOPIC_0000002424197930"></a>
 
 其镜像分布图，如[图1](#fig488863262618)所示。
 
 **图 1**  Params Area<a name="fig488863262618"></a>  
 ![](figures/Params-Area.png "Params-Area")
-
 #### Unchecked Area for Vendor<a name="ZH-CN_TOPIC_0000002424357726"></a>
 
 其镜像分布图，如[图1](#fig148151331193817)所示。
 
 **图 1**  Unchecked Area for Vendor<a name="fig148151331193817"></a>  
 ![](figures/Unchecked-Area-for-Vendor.png "Unchecked-Area-for-Vendor")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >该SCS\_simulate\_flag标志为在安全启动情况下，调试 “[Boot Flash Mapping](#ZH-CN_TOPIC_0000002457876645)”区域预留的一个开关，当OTP相应KEY等信息位烧写后，OTP相应的安全启动标志位（字段：secure\_boot\_en）在未使能的情况下，该标志位生效。其作用为当用户烧写OTP后，不使能安全启动标志位，可通过配置该标志位模式来模拟使能安全启动标志位的情况进行调试“[Boot Flash Mapping](#ZH-CN_TOPIC_0000002457876645)”区域。
 
@@ -326,7 +313,6 @@ OTP是一种特殊的非易失性存储器，允许编程一次，数据永久�
 
 **图 1**  U-Boot Area<a name="fig1359117512415"></a>  
 ![](figures/U-Boot-Area.png "U-Boot-Area")
-
 # 镜像解密和验签
 本安全启动方案支持对镜像完整性校验，支持使用加密镜像。每一级镜像是否加密，以及使用的加密密钥都可以独立控制。对于加密的镜像，启动流程遵循先解密后验签的原则。安全启动方案支持第三方进行再次签名，双重确认镜像完整性。
 
@@ -396,7 +382,6 @@ SoC公钥层级架构设计支持芯片启动过程中，从OTP根公钥哈希�
 
 **图 1**  安全启动模式公钥验签关系图<a name="fig1816828175512"></a>  
 ![](figures/安全启动模式公钥验签关系图.png "安全启动模式公钥验签关系图")
-
 ## 对称密钥管理<a name="ZH-CN_TOPIC_0000002457876625"></a>
 
 对于需要使用镜像解密功能的安全启动，芯片OTP需内置对应的对称密码算法（AES）根密钥。芯片OTP中预留4个128比特的根密钥空间，用于派生对应的密钥保护密钥，以及最终的工作密钥。客户可根据实际需要烧录其中一个或者多个根密钥。另外，芯片已预置一个128比特的Vendor 根密钥，存放在独立的OTP空间中（见《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”）。
@@ -409,7 +394,6 @@ SoC提供三级密钥派生，其工作原理如[图1](#fig248010331147)所示�
 
 **图 1**  密钥派生<a name="fig248010331147"></a>  
 ![](figures/密钥派生.png "密钥派生")
-
 ### 安全启动模式下密钥管理及镜像解密<a name="ZH-CN_TOPIC_0000002457876653"></a>
 
 安全启动的对称密钥层次结构和镜像解密关系，如[图1](#fig1739414716164)所示。
@@ -418,7 +402,6 @@ SoC提供三级密钥派生，其工作原理如[图1](#fig248010331147)所示�
 
 **图 1**  安全启动模式解密关系图<a name="fig1739414716164"></a>  
 ![](figures/安全启动模式解密关系图.png "安全启动模式解密关系图")
-
 # 启动镜像制作及烧写
 SS928V100支持多种启动方案，启动镜像的制作和烧写步骤需要与启动方案相配套。此外，SS928V100的OTP控制着启动方案选择、镜像合法性校验、版本校验等启动流程，要根据启动方案来进行配置和烧写。
 
@@ -905,14 +888,12 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
 
 **图 1**  快速启动ToolPlatform烧写分区参考图<a name="_fig1991144012019"></a>  
 ![](figures/快速启动ToolPlatform烧写分区参考图.png "快速启动ToolPlatform烧写分区参考图")
-
 ### 非安全启动和Non-TEE安全启动<a name="ZH-CN_TOPIC_0000002457836497"></a>
 
 镜像烧写布局如[图1](#__Ref55287952)所示。
 
 **图 1**  ToolPlatform烧写分区参考图<a name="__Ref55287952"></a>  
 ![](figures/ToolPlatform烧写分区参考图.png "ToolPlatform烧写分区参考图")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >[图1](#_fig1991144012019)和[图1](#__Ref55287952)中烧写的uImage\_ss928v100文件是ATF+Kernel镜像。
 
@@ -970,14 +951,12 @@ SS928V100支持多种启动方案，芯片采用何种启动方案，需要通�
 
 **图 1**  附验证信息U-Boot镜像结构<a name="fig13141855185214"></a>  
 ![](figures/附验证信息U-Boot镜像结构.png "附验证信息U-Boot镜像结构")
-
 ## 安全Kernel镜像结构<a name="ZH-CN_TOPIC_0000002457836509"></a>
 
 安全Kernel镜像由头部信息、Kernel镜像和签名信息等组成，如[图1](#fig47919505579)所示。在原有Kernel镜像结构进行拼接，其中Kernel镜像为压缩镜像。Kernel验签使用的RSA公钥信息保存在U-Boot原始镜像中，随安全镜像一起整合成安全启动镜像。
 
 **图 1**  安全Kernel镜像结构图<a name="fig47919505579"></a>  
 ![](figures/安全Kernel镜像结构图.png "安全Kernel镜像结构图")
-
 ## 功能实现<a name="ZH-CN_TOPIC_0000002424197894"></a>
 
 U-Boot验签Kernel部分功能实现请参考《CIPHER API 参考》文档内 RSA签名及验签使用流程章节调用相应API接口实现。

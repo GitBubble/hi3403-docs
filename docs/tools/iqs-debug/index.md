@@ -155,7 +155,6 @@ PQTools工具分为客户端（即PC端软件）和服务端（即板端软件�
 
 **图 1**  解压后的目录结构<a name="_ref513797864"></a>  
 ![](figures/解压后的目录结构.png "解压后的目录结构")
-
 -   configs目录，包含ittb\_stream运行各种业务场景的sensor配置文件（如果不需要运行ittb\_stream，可删除该目录以节省板端空间；如果只运行个别场景，可删除该目录下其他场景的sensor配置文件以节省板端空间）
 -   libs目录，包含ittb\_control和ittb\_stream运行的动态库文件（默认提供所有已支持场景的sensor库，如果只运行个别场景，可删除该目录下其他场景的sensor库以节省板端空间）
 -   config.cfg是ittb\_control和ittb\_stream运行所需的配置文件
@@ -169,7 +168,6 @@ PQTools工具分为客户端（即PC端软件）和服务端（即板端软件�
 
 **图 1**  解压后的目录结构<a name="_toc51692445"></a>  
 ![](figures/解压后的目录结构-0.png "解压后的目录结构-0")
-
 -   libbin目录，包含BIN功能的头文件和库文件，以及编译sample供用户参考。
 -   libcontrol目录，包含control功能的头文件和库文件，以及编译sample供用户参考。
 -   编译libbin与libcontrol的sample前，需要修改对应Makefile中的SDK\_DIR变量。
@@ -315,7 +313,6 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 
 **图 1**  工具调试表设置对话框<a name="fig1829891514415"></a>  
 ![](figures/工具调试表设置对话框.png "工具调试表设置对话框")
-
 #### 工具版本号查看<a name="ZH-CN_TOPIC_0000002498141776"></a>
 
 点击工具栏的“关于”按钮（![](figures/zh-cn_image_0000002530061853.png)），工具将弹出对话框如[图1](#fig127801132104515)所示。
@@ -396,14 +393,6 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 
 **图 2**  具有特殊属性的寄存器/算法参数组示例（以FPN为例）<a name="fig28121346501"></a>  
 ![](figures/具有特殊属性的寄存器-算法参数组示例（以FPN为例）.png "具有特殊属性的寄存器-算法参数组示例（以FPN为例）")
-
-
-
-
-
-
-
-
 #### 寄存器/算法参数的查看与修改<a name="ZH-CN_TOPIC_0000002498301822"></a>
 
 每个组内都包含有寄存器与算法参数，其中标有“![](figures/zh-cn_image_0000002530221921.png)”的参数行代表可写参数，标有“![](figures/zh-cn_image_0000002530061951.png)”的参数行代表只读参数。参数按照其内部形式与取值范围的不同，被分为以下五类，并以不同的控件呈现，如[表1](#table317mcpsimp)所示。
@@ -424,7 +413,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p335mcpsimp"><a name="p335mcpsimp"></a><a name="p335mcpsimp"></a>参数的形式是具有一定取值范围的实数</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p337mcpsimp"><a name="p337mcpsimp"></a><a name="p337mcpsimp"></a>使用以下调整面板：</p>
-<p id="p20888134219456"><a name="p20888134219456"></a><a name="p20888134219456"></a><a name="image118885425458"></a><a name="image118885425458"></a><span><img id="image118885425458" src="figures/a.png" width="266" height="20.282367"></span></p>
+<p id="p20888134219456"><a name="p20888134219456"></a><a name="p20888134219456"></a><a name="image118885425458"></a><a name="image118885425458"></a><span><img id="image118885425458" src="/tools/iqs-debug/figures/a.png" width="266" height="20.282367"></span></p>
 <p id="p339mcpsimp"><a name="p339mcpsimp"></a><a name="p339mcpsimp"></a>可通过文本框查看当前值。修改值可以通过以下三种方式：</p>
 <a name="ul340mcpsimp"></a><a name="ul340mcpsimp"></a><ul id="ul340mcpsimp"><li>在文本框中输入值</li><li>点击文本框右侧的小箭头按钮微调</li><li>拖动最右侧的滑动条</li></ul>
 </td>
@@ -434,7 +423,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p348mcpsimp"><a name="p348mcpsimp"></a><a name="p348mcpsimp"></a>参数在0和1中间取值</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>通过复选框查看并设定值，复选框选中时取1，未选中时取0</p>
-<p id="p1137710574455"><a name="p1137710574455"></a><a name="p1137710574455"></a><a name="image13377175711454"></a><a name="image13377175711454"></a><span><img id="image13377175711454" src="figures/b.png" width="266" height="18.422362"></span></p>
+<p id="p1137710574455"><a name="p1137710574455"></a><a name="p1137710574455"></a><a name="image13377175711454"></a><a name="image13377175711454"></a><span><img id="image13377175711454" src="/tools/iqs-debug/figures/b.png" width="266" height="18.422362"></span></p>
 </td>
 </tr>
 <tr id="row352mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.1 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>布尔</p>
@@ -442,7 +431,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p356mcpsimp"><a name="p356mcpsimp"></a><a name="p356mcpsimp"></a>参数的形式为二选一</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p358mcpsimp"><a name="p358mcpsimp"></a><a name="p358mcpsimp"></a>通过单选框查看并设定值：</p>
-<p id="p1281610617461"><a name="p1281610617461"></a><a name="p1281610617461"></a><a name="image881612614620"></a><a name="image881612614620"></a><span><img id="image881612614620" src="figures/c.png" width="266" height="19.808488"></span></p>
+<p id="p1281610617461"><a name="p1281610617461"></a><a name="p1281610617461"></a><a name="image881612614620"></a><a name="image881612614620"></a><span><img id="image881612614620" src="/tools/iqs-debug/figures/c.png" width="266" height="19.808488"></span></p>
 </td>
 </tr>
 <tr id="row360mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.1 "><p id="p362mcpsimp"><a name="p362mcpsimp"></a><a name="p362mcpsimp"></a>枚举</p>
@@ -450,7 +439,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p364mcpsimp"><a name="p364mcpsimp"></a><a name="p364mcpsimp"></a>参数的形式是多项（一般&gt;3）中取其一</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p366mcpsimp"><a name="p366mcpsimp"></a><a name="p366mcpsimp"></a>通过下拉框查看并设定值：</p>
-<p id="p8664191624611"><a name="p8664191624611"></a><a name="p8664191624611"></a><a name="image1466416160467"></a><a name="image1466416160467"></a><span><img id="image1466416160467" src="figures/d.png" width="266" height="20.849878"></span></p>
+<p id="p8664191624611"><a name="p8664191624611"></a><a name="p8664191624611"></a><a name="image1466416160467"></a><a name="image1466416160467"></a><span><img id="image1466416160467" src="/tools/iqs-debug/figures/d.png" width="266" height="20.849878"></span></p>
 </td>
 </tr>
 <tr id="row368mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.1 "><p id="p370mcpsimp"><a name="p370mcpsimp"></a><a name="p370mcpsimp"></a>矩阵</p>
@@ -458,9 +447,9 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p372mcpsimp"><a name="p372mcpsimp"></a><a name="p372mcpsimp"></a>参数的形式是一个多字节序列</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p374mcpsimp"><a name="p374mcpsimp"></a><a name="p374mcpsimp"></a>调试页面会显示一个打开矩阵的按钮：</p>
-<p id="p857920274467"><a name="p857920274467"></a><a name="p857920274467"></a><a name="image257810277461"></a><a name="image257810277461"></a><span><img id="image257810277461" src="figures/e.png" width="266" height="15.679636"></span></p>
+<p id="p857920274467"><a name="p857920274467"></a><a name="p857920274467"></a><a name="image257810277461"></a><a name="image257810277461"></a><span><img id="image257810277461" src="/tools/iqs-debug/figures/e.png" width="266" height="15.679636"></span></p>
 <p id="p376mcpsimp"><a name="p376mcpsimp"></a><a name="p376mcpsimp"></a>点击该按钮，会弹出一个对话框，矩阵的值会显示在对话框内的表格控件中：</p>
-<p id="p915135561517"><a name="p915135561517"></a><a name="p915135561517"></a><a name="image960845512157"></a><a name="image960845512157"></a><span><img id="image960845512157" src="figures/zh-cn_image_0000002498141998.png" width="292.6" height="139.0914"></span></p>
+<p id="p915135561517"><a name="p915135561517"></a><a name="p915135561517"></a><a name="image960845512157"></a><a name="image960845512157"></a><span><img id="image960845512157" src="/tools/iqs-debug/figures/zh-cn_image_0000002498141998.png" width="292.6" height="139.0914"></span></p>
 <p id="p378mcpsimp"><a name="p378mcpsimp"></a><a name="p378mcpsimp"></a>用户修改表格中的值，点击空白处或者关闭对话框，即可完成矩阵值的修改。</p>
 <p id="p379mcpsimp"><a name="p379mcpsimp"></a><a name="p379mcpsimp"></a>矩阵若是只读的，用户将无法修改表格内的值，且此时打开矩阵的按钮显示文本为“View this Matrix”。</p>
 <p id="p380mcpsimp"><a name="p380mcpsimp"></a><a name="p380mcpsimp"></a>Dimension用于三维矩阵选择第三维，一、二维矩阵Dimension下拉框中只有“0”。</p>
@@ -729,7 +718,6 @@ PQTools工具的XML格式中，对于算法参数接口和寄存器采取了不�
 
 **图 1**  Gamma可视化调试界面<a name="fig1055850102415"></a>  
 ![](figures/Gamma可视化调试界面.png "Gamma可视化调试界面")
-
 -   通过设置\[Enable\]参数项为Enable选中状态使能Gamma。
 -   通过Gamma COEFFI的滑条，或在滑条上方的文本框中输入数值，用户可以将可见的Gamma曲线恢复为标准的Gamma曲线（受当前选定的系数影响。系数范围为0.01到20.00）
 -   通过Slope at Zero 的滑条，或在滑条上方的文本框中输入数值，用户可以调节gamma曲线的零点斜率的值（受当前选定的系数影响。系数范围为0.001到20.000）
@@ -752,7 +740,6 @@ PQTools工具的XML格式中，对于算法参数接口和寄存器采取了不�
 
 **图 1**  DRC寄存器设置界面<a name="fig21194421522"></a>  
 ![](figures/DRC寄存器设置界面.png "DRC寄存器设置界面")
-
 ##### DRC色调映射曲线调试<a name="ZH-CN_TOPIC_0000002530221729"></a>
 
 PQTools工具提供了DRC色调映射曲线调试功能，通过2个或更多（取决于芯片）参数来调整DRC色调映射曲线的走向。
@@ -809,7 +796,6 @@ CLUT在线调优基于捕获的Clut模块输入图像，根据用户指定的目
 
 **图 1**  CLUT在线调优界面<a name="fig174981637261"></a>  
 ![](figures/CLUT在线调优界面.png "CLUT在线调优界面")
-
 ##### HSV可视化界面调优<a name="ZH-CN_TOPIC_0000002530221705"></a>
 
 1.  使能Clut，将强度设置为1024 \(1x\)，Clut表清零。
@@ -873,7 +859,6 @@ CLUT在线调优基于捕获的Clut模块输入图像，根据用户指定的目
 
     **图 11**  Table 操作界面<a name="fig6207338111314"></a>  
     ![](figures/Table-操作界面.png "Table-操作界面")
-
 ##### RGB对调优<a name="ZH-CN_TOPIC_0000002530061723"></a>
 
 1.  选择Zone0，在捕获图像上通过画框或者取点方式取RGB对的输入，同时在左侧HSV色彩空间显示源的位置，在右侧的源和目标映射区域，显示源和目标的RGB值、HSV值（目标色默认值与源相同）。
@@ -947,7 +932,6 @@ PQTools提供了专用的页面，供用户以图形化的方式调整Sharpen功
 
 **图 1**  Sharpen寄存器设置界面<a name="fig629mcpsimp"></a>  
 ![](figures/Sharpen寄存器设置界面.png "Sharpen寄存器设置界面")
-
 ##### Sharpen Luma Weight曲线调试<a name="ZH-CN_TOPIC_0000002498141790"></a>
 
 **图 1**  Sharpen Luma Weight调试界面<a name="fig6965727122518"></a>  
@@ -997,7 +981,6 @@ PQTools提供了CA曲线调试功能。
 
 **图 1**  CA寄存器设置界面<a name="fig661mcpsimp"></a>  
 ![](figures/CA寄存器设置界面.png "CA寄存器设置界面")
-
 ##### CA曲线调试<a name="ZH-CN_TOPIC_0000002498141842"></a>
 
 **图 1**  CA曲线调试界面<a name="fig94621221162915"></a>  
@@ -1032,7 +1015,6 @@ PQTools提供了CA曲线调试功能。
 
 **图 1**  LDCI寄存器设置界面<a name="fig682mcpsimp"></a>  
 ![](figures/LDCI寄存器设置界面.png "LDCI寄存器设置界面")
-
 ##### LDCI LPF Coef曲线调试<a name="ZH-CN_TOPIC_0000002498301658"></a>
 
 **图 1**  LDCI LPF Coef曲线调试界面<a name="fig685mcpsimp"></a>  
@@ -1371,7 +1353,6 @@ PQTools工具提供了黑电平（BLC）、NR、ACS、MLSC、RGBIR、CCM、AWB�
 
 **图 1**  黑电平设置对话框<a name="fig522761312110"></a>  
 ![](figures/黑电平设置对话框.png "黑电平设置对话框")
-
 #### 黑电平标定序列采集要求<a name="ZH-CN_TOPIC_0000002530221665"></a>
 
 如果事先未获取到sensor的黑电平参数，或者需要获得更精确的黑电平数值，本标定工具亦提供了自动标定黑电平的模式。在标定之前需要用户手动采集黑电平标定所需输入的Raw，采集步骤如下：
@@ -1384,7 +1365,6 @@ PQTools工具提供了黑电平（BLC）、NR、ACS、MLSC、RGBIR、CCM、AWB�
 
 **图 1**  黑电平输入Raw示意图<a name="fig15558203510351"></a>  
 ![](figures/黑电平输入Raw示意图.png "黑电平输入Raw示意图")
-
 #### 黑电平标定步骤<a name="ZH-CN_TOPIC_0000002530061711"></a>
 
 采集到标定算法所需的Raw后，用户可按照以下方法进行黑电平自动模式的标定：
@@ -1492,7 +1472,6 @@ ISP中的RGBIR模块使用一个矩阵来对输入颜色进行处理，以去除
 
 **图 1**  IR标定结果输出<a name="_toc51692511"></a>  
 ![](figures/IR标定结果输出.png "IR标定结果输出")
-
 #### 导出IR标定结果<a name="ZH-CN_TOPIC_0000002530061649"></a>
 
 标定完成后，点击“Export IR Matrix”可将IR矩阵保存为文本文件，文件中包含每一组RAW文件的标定结果，用with IR的RAW文件名来标识每个矩阵。选取保存路径后点击确定，即可保存成功。
@@ -1647,7 +1626,6 @@ NR标定工具界面可以划分如下三个区域（如[图1](#fig566015393120)
 
 **图 1**  NR 标定图像效果的影响<a name="_toc51692516"></a>  
 ![](figures/NR-标定图像效果的影响.png "NR-标定图像效果的影响")
-
 #### NR标定结果验证<a name="ZH-CN_TOPIC_0000002498301762"></a>
 
 为了对噪声模型标定结果进行验证，标定工具支持在线对标定参数进行验证，具体方式为：标定工具在线连接板子，获取板端标定参数，并计算出当前iso的kb值，绘制出kb曲线，同时支持客户在线抓raw（最小2帧），并在raw上面选取相关区域进行噪声方差计算，将计算结果和标定参数理论计算值进行对比，给出相应的误差比例，当误差比例过大时，说明当前标定参数不准确，建议客户重新进行噪声模型参数标定。
@@ -1729,7 +1707,6 @@ MLSC进行标定时，需要多光源的灰度图像。具体的采集要求如�
 
 **图 1**  MLSC标定序列图像<a name="fig7374324328"></a>  
 ![](figures/MLSC标定序列图像.png "MLSC标定序列图像")
-
 #### MLSC标定工具界面介绍<a name="ZH-CN_TOPIC_0000002530061707"></a>
 
 将ISP标定工具的主功能标签页切换到MLSC，即可看到MLSC标定的界面。MLSC标定的主界面如[图1](#fig16401114543215)所示。
@@ -1754,7 +1731,6 @@ MLSC进行标定时，需要多光源的灰度图像。具体的采集要求如�
 
 **图 1**  导入RAW数据后的MLSC界面<a name="fig417612409335"></a>  
 ![](figures/导入RAW数据后的MLSC界面.png "导入RAW数据后的MLSC界面")
-
 -   输入标定参数：MeshScale的值，MeshScale的具体取值方法和含义请参考附录内容；
 -   参数配置完成后，可勾选Show Grids on Image勾选框，确认在显示区图像上看到了均匀划分的32x32的网格；
 -   点击“Calibrate”按钮即可进行MLSC标定。
@@ -2002,7 +1978,6 @@ ACS进行标定时，需要各类光源的灰度图像，基本的采集要求�
 
 **图 1**  ACS标定序列图像<a name="fig11413124342213"></a>  
 ![](figures/ACS标定序列图像.png "ACS标定序列图像")
-
 #### ACS标定工具界面介绍<a name="ZH-CN_TOPIC_0000002530221757"></a>
 
 将ISP标定工具的主功能标签页切换到ACS，即可看到ACS标定的界面。ACS标定的主界面如[图1](#fig152884863520)所示。
@@ -2069,7 +2044,6 @@ R\_Min，R\_Step两个参数控制R分量上光源的平移和缩放，B\_Min，
 
 **图 6**  B\_Step增大<a name="fig3317114233515"></a>  
 ![](figures/B_Step增大.png "B_Step增大")
-
 #### ACS标定结果说明<a name="ZH-CN_TOPIC_0000002498301690"></a>
 
 标定结束后，工具会生成ACS标定参数，参数无下发板端功能，需手动配置到xxx\_cmos\_ex.h文件中编译并运行查看效果，可以点击“Export Head Data”按钮将标定参数导出为本地头文件：
@@ -2106,7 +2080,6 @@ AWB标定算法所需Raw可以在室内实验室环境下采集（光源类型�
 
 **图 1**  AWB标定算法输入Raw示意<a name="_toc51692533"></a>  
 ![](figures/AWB标定算法输入Raw示意.png "AWB标定算法输入Raw示意")
-
 #### AWB标定工具的界面说明<a name="ZH-CN_TOPIC_0000002498141738"></a>
 
 将标定工具的主功能标签页切换到AWB，即可看到AWB标定的界面。工具的界面如[图1](#fig3344269336)所示。
@@ -2153,7 +2126,6 @@ CrCb标定主要利用最大色温和最小色温的R/G、B/G的值进行标定�
 
 **图 1**  AWB标定结果<a name="fig1624654653613"></a>  
 ![](figures/AWB标定结果.png "AWB标定结果")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >标定算法需要3个关键光源才可运行。因此用户选定的关键光源不为3个时，点击“Calibrate Curve”按钮将无法进行标定。
 
@@ -2181,7 +2153,6 @@ AWB算法支持下发板端功能，完成标定后，点击“XX Apply To Board
 
 **图 3**  白块勾选完毕<a name="fig20920144172219"></a>  
 ![](figures/白块勾选完毕.png "白块勾选完毕")
-
 ### CCM标定<a name="ZH-CN_TOPIC_0000002530061663"></a>
 
 
@@ -2205,7 +2176,6 @@ CCM标定的原理是，使用sensor抓拍到的24色卡场景下前18个色块�
 
 **图 1**  CCM标定工具界面<a name="fig1289482822318"></a>  
 ![](figures/CCM标定工具界面.png "CCM标定工具界面")
-
 ![](figures/zh-cn_image_0000002530221793.png)
 
 CCM标定工具主要分为四部分：
@@ -2232,15 +2202,6 @@ CCM标定工具主要分为四部分：
 
 **图 1**  初步标定完成<a name="fig07341854152319"></a>  
 ![](figures/初步标定完成.png "初步标定完成")
-
-
-
-
-
-
-
-
-
 ##### 显示颜色差异结果<a name="ZH-CN_TOPIC_0000002530061717"></a>
 
 可点击“Show Color Analysis”按钮显示当前图像和源图像的差异结果，如[图1](#fig77431643112619)所示。
@@ -2562,7 +2523,6 @@ CLUT主界面如[图1](#fig18977141615210)所示。
 
     **图 3**  Color Check HSL场景框选<a name="fig6769140153515"></a>  
     ![](figures/Color-Check-HSL场景框选.png "Color-Check-HSL场景框选")
-
 ##### 附录5：整理RGB对<a name="ZH-CN_TOPIC_0000002498141752"></a>
 
 生成的RGB对添加到RGB对列表后，可在列表中对生成RGB对进行选择或取消选择或删除。使用Export RGB可导出列表中的RGB数据到文件中。使用Import RGB可以从文件导入RGB对到列表中进行标定。每次生成的RGB对会添加到当前RGB对的后面，Clear RGB可以清除当前列表中的所有RGB对。
@@ -2597,12 +2557,10 @@ Sensor的ob区黑电平和可见光区黑电平的差值会随iso的改变而改
 
     **图 1**  ob区裁剪起始点<a name="fig1549163211015"></a>  
     ![](figures/ob区裁剪起始点.png "ob区裁剪起始点")
-
 -   抓raw数据时，Again、Dgain成倍数增加。先增加Again，再增加dgain。不调节ISPDgain。从iso100开始，每增加一倍Again或Dgain值，采集一个该增益下对应iso的raw数据。直到Again，Dgain都为最大值。此增益下的iso为最后一档iso。如[图2](#fig27917328115)所示
 
     **图 2**  iso增益表<a name="fig27917328115"></a>  
     ![](figures/iso增益表.png "iso增益表")
-
 #### DynaBLC 工具界面介绍<a name="ZH-CN_TOPIC_0000002498301726"></a>
 
 **图 1**  工具界面图<a name="fig1343781191318"></a>  
@@ -2890,7 +2848,6 @@ Sensor的ob区黑电平和可见光区黑电平的差值会随iso的改变而改
 
 **图 2**  显示SNR计算结果<a name="fig1522202410"></a>  
 ![](figures/显示SNR计算结果.png "显示SNR计算结果")
-
 ### 原始数据（RAW）和YUV分析工具<a name="ZH-CN_TOPIC_0000002498141734"></a>
 
 
@@ -3010,7 +2967,6 @@ RAW/YUV分析工具支持连接单板在线分析，支持打开本地的RAW格�
 
 **图 1**  查看分量图像<a name="fig156516161271"></a>  
 ![](figures/查看分量图像.png "查看分量图像")
-
 ### 3A 分析工具<a name="ZH-CN_TOPIC_0000002498141766"></a>
 
 PQTools工具提供了3A分析工具插件，供用户方便地查看3A统计数据。
@@ -3034,7 +2990,6 @@ PQTools工具提供了3A分析工具插件，供用户方便地查看3A统计数
 
 **图 1**  3A分析工具界面<a name="fig102525561576"></a>  
 ![](figures/3A分析工具界面.png "3A分析工具界面")
-
 #### 获取图像与统计数据<a name="ZH-CN_TOPIC_0000002498141728"></a>
 
 3A分析工具当前仅支持连接单板进行分析。打开工具界面后，用户需通过以下操作从单板获取图像，以及对应的统计数据：
@@ -3060,7 +3015,6 @@ PQTools工具提供了3A分析工具插件，供用户方便地查看3A统计数
 
 **图 1**  AE统计信息对话框<a name="fig62311646689"></a>  
 ![](figures/AE统计信息对话框.png "AE统计信息对话框")
-
 -   界面上的Stitch复选框，支持拼接功能。且FE Histogram有多组，且为1024。
 -   Pipe id用于选择不同pipe的拼接分块统计信息，只有在勾选了Stitch的情况下才有效。用户需要保证Pipe id与主界面TOP页面的 ViPipe一致才能使图和统计信息对应。
 -   Select Item下拉框用于选择某个分块统计信息的分量显示在图像中的每个分块格子内，当选择None时，图像上不显示任何值。
@@ -3210,7 +3164,6 @@ AF水平滤波器具备以下两种模式：
 
 **图 2**  通过截止频率获取滤波系数（宽带）<a name="fig1448214180256"></a>  
 ![](figures/通过截止频率获取滤波系数（宽带）.png "通过截止频率获取滤波系数（宽带）")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >截止频率在工具中会自动适配精度。水平滤波器的截止频率取小数点后两位，垂直滤波器的截止频率取小数点后一位。取精度时，多余的小数位数直接舍弃。
 
@@ -3279,7 +3232,6 @@ PQTools工具提供了易于使用的抓拍工具，可以抓取板端的图像�
 
 **图 1**  抓拍工具界面<a name="fig20995161131416"></a>  
 ![](figures/抓拍工具界面.png "抓拍工具界面")
-
 #### 抓取YUV图像数据<a name="ZH-CN_TOPIC_0000002498141818"></a>
 
 抓取YUV图像数据步骤如下：
@@ -3406,7 +3358,6 @@ PQTools工具提供了RAW实用工具，可供用户将抓取的RAW图像数据�
 
 **图 1**  RAW实用工具界面<a name="fig1511763421510"></a>  
 ![](figures/RAW实用工具界面.png "RAW实用工具界面")
-
 #### 导入RAW数据<a name="ZH-CN_TOPIC_0000002530221625"></a>
 
 在进行倒灌和转换操作之前，用户需要将RAW数据导入到工具左侧的列表中，点击工具右上角的Add RAW File按钮即可添加RAW文件，支持同时导入多个文件。
@@ -3530,7 +3481,6 @@ PQTools工具提供了YUV实用工具，可供用户将抓取的YUV图像数据�
 
 **图 1**  YUV实用工具界面<a name="fig16104420171816"></a>  
 ![](figures/YUV实用工具界面.png "YUV实用工具界面")
-
 #### 向板端倒灌YUV图像数据<a name="ZH-CN_TOPIC_0000002498141780"></a>
 
 向板端倒灌YUV图像数据步骤如下：
@@ -3632,7 +3582,6 @@ Config.cfg的\[Dump\_Method\]是抓拍存外接存储设备的控制参数。\[Y
 
     **图 2**  抓raw的帧数<a name="_toc51692606"></a>  
     ![](figures/抓raw的帧数.png "抓raw的帧数")
-
 #### 从存储设备中读取文件灌RAW及YUV<a name="ZH-CN_TOPIC_0000002498301702"></a>
 
 需要将\[Method\]中的【Method】配置为3为灌RAW功能，开启功能；【Method】配置为4为灌YUV功能。
@@ -3906,13 +3855,6 @@ PQTools工具针对芯片的多路拼接功能提供了一系列工具，用以�
 
 **图 1**  PQTools Stitching Tool界面示意<a name="fig117415319231"></a>  
 ![](figures/PQTools-Stitching-Tool界面示意.png "PQTools-Stitching-Tool界面示意")
-
-
-
-
-
-
-
 #### 多路拼接标定功能（Stitch Calibration）<a name="ZH-CN_TOPIC_0000002498301778"></a>
 
 Stitch Calibration工具在PQ Stitching Tool中。该工具提供了多路拼接标定功能，可以根据用户所抓拍的多路标定图计算得到拼接标定参数。目前仅支持.jpg格式的图像。工具界面如[图1](#fig354494717236)所示。
@@ -4203,7 +4145,6 @@ DIS镜头标定提供模型及产线标定，并提供算法参数下发板端�
 
 **图 1**  建议的镜头模型标定方法抓取的标定图片示例<a name="_toc51692623"></a>  
 ![](figures/建议的镜头模型标定方法抓取的标定图片示例.png "建议的镜头模型标定方法抓取的标定图片示例")
-
 #### DIS标定工具界面介绍<a name="ZH-CN_TOPIC_0000002498141824"></a>
 
 图片采集好后，打开DIS标定工具界面，即可看到DIS标定界面由模型标定“Design Calibration”和 产线标定“Product Calibration”、Ldcv3标定“Ldcv3 Calibration”三个子页面组成；如[图1](#_toc51692624)所示。
@@ -6042,7 +5983,6 @@ typedef struct otPQ_BIN_MODULE_S{
 
 **图 1**  BIN推荐使用流程<a name="fig13565672314"></a>  
 ![](figures/BIN推荐使用流程.png "BIN推荐使用流程")
-
 #### 数据类型<a name="ZH-CN_TOPIC_0000002530061651"></a>
 
 
@@ -6693,19 +6633,16 @@ int OT_PQ_BIN_ImportBinData(PQ_BIN_MODULE_S *pstBinParam，unsigned char* pu8Buf
 
 **图 1**  右键菜单（显示方式）<a name="fig4890mcpsimp"></a>  
 ![](figures/右键菜单（显示方式）.png "右键菜单（显示方式）")
-
 #### 解码方式<a name="ZH-CN_TOPIC_0000002530061715"></a>
 
 在可视频预览页面“\(8\)视频预览主页面”，点击鼠标右键出现右键菜单，第2个Stream Type，有2个选项，默认使用Rate First，Data First一般使用超大I帧的场景。
 
 **图 1**  右键菜单（解码方式）<a name="fig4894mcpsimp"></a>  
 ![](figures/右键菜单（解码方式）.png "右键菜单（解码方式）")
-
 #### 区域平均亮度统计<a name="ZH-CN_TOPIC_0000002498141856"></a>
 
 **图 1**  亮度统计开关<a name="fig4897mcpsimp"></a>  
 ![](figures/亮度统计开关.png "亮度统计开关")
-
 -   打开后在工具的最下方状态栏出现亮度统计显示项。
 
 ![](figures/4-6a.png)
@@ -6722,7 +6659,6 @@ int OT_PQ_BIN_ImportBinData(PQ_BIN_MODULE_S *pstBinParam，unsigned char* pu8Buf
 
 **图 1**  输出图层选项<a name="fig13203174711144"></a>  
 ![](figures/输出图层选项.png "输出图层选项")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >此功能依赖隐私保护媒体业务，SS928V100不支持。
 
@@ -6757,7 +6693,6 @@ Pipe0 From Source Seq表示pipe0图像数据从镜头x获取，Pipe1 From Source
 
 **图 1**  录像设置<a name="fig96211046153415"></a>  
 ![](figures/录像设置.png "录像设置")
-
 -   Browse功能
 
     支持手动选择录像文件储存在PC中的路径。
@@ -6772,7 +6707,6 @@ Sensor参数设置功能“\(4\)参数设置”实现动态切换配置sensor参
 
 **图 1**  Config功能主界面<a name="fig109274101354"></a>  
 ![](figures/Config功能主界面.png "Config功能主界面")
-
 -   Browse功能
 
     支持手动选择PC中的配置文件。
@@ -7359,7 +7293,6 @@ VLC是一款开源的播放软件，通过[https://www.videolan.org](https://www
 
     **图 3**  设置播放参数<a name="_toc51692641"></a>  
     ![](figures/设置播放参数.png "设置播放参数")
-
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >因为默认跑SmartP，刚开始缺少I帧画面会发绿，且长时间刷不回来，过1\~2分钟后图像就正常了。
 
@@ -7597,7 +7530,6 @@ Stitch Preview拼接仿真功能对内存消耗较大。分辨率过大时就会
 
 **图 1**  拼接仿真内存不足报错<a name="fig3499334164112"></a>  
 ![](figures/拼接仿真内存不足报错.gif "拼接仿真内存不足报错")
-
 ## 关于使用工具抓JPEG图像异常<a name="ZH-CN_TOPIC_0000002530061675"></a>
 
 如果VENC前端绑定模块输出的YUV格式为Tile，会导致VENC 通道抓出的图像如下所示。需要将前端chn 属性中video\_format修改为 OT\_VIDEO\_FORMAT\_LINEAR。

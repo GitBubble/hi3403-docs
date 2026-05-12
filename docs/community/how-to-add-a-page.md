@@ -155,8 +155,8 @@ git push origin add/gstreamer-tutorial
 ``` markdown
 <!-- docs/tutorials/gstreamer.md 引用 docs/tutorials/images/pipeline.svg -->
 ![](images/pipeline.svg)        ✓ 对
-![](./images/pipeline.svg)      ✓ 对
-![](/images/pipeline.svg)       ✗ 错（站根，不是同目录）
+![](images/pipeline.svg)      ✓ 对
+![](../images/pipeline.svg)       ✗ 错（站根，不是同目录）
 ```
 
 ### "build --strict 失败"

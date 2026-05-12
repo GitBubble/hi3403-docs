@@ -48,13 +48,13 @@ The full name of the abbreviation - it's all here.
 
 <div class="grid cards" markdown>
 
--   :material-shield-key:{ .lg .middle } __security__
+-   :material-shield-key:{ .lg .middle } __Security__
 
     ---
 
     [CIPHER](api/cipher/index.md) · [KLAD](api/klad/index.md) · [OTP](api/otp/index.md)
 
--   :material-image:{ .lg .middle } __graphic__
+-   :material-image:{ .lg .middle } __Graphics__
 
     ---
 

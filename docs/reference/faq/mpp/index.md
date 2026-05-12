@@ -78,28 +78,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MPP 媒�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row149mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p151mcpsimp"><a name="p151mcpsimp"></a><a name="p151mcpsimp"></a><a name="image102"></a><a name="image102"></a><span><img id="image102" src="figures/zh-cn_image_0000002408115790.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row149mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p151mcpsimp"><a name="p151mcpsimp"></a><a name="p151mcpsimp"></a><a name="image102"></a><a name="image102"></a><span><img id="image102" src="/reference/faq/mpp/figures/zh-cn_image_0000002408115790.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p153mcpsimp"><a name="p153mcpsimp"></a><a name="p153mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row154mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="figures/zh-cn_image_0000002441675089.png" height="27.93" width="75.81"></span></p>
+<tr id="row154mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="/reference/faq/mpp/figures/zh-cn_image_0000002441675089.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p158mcpsimp"><a name="p158mcpsimp"></a><a name="p158mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002441675097.png" height="27.93" width="75.81"></span></p>
+<tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="/reference/faq/mpp/figures/zh-cn_image_0000002441675097.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row164mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p166mcpsimp"><a name="p166mcpsimp"></a><a name="p166mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002441714949.png" height="27.93" width="75.81"></span></p>
+<tr id="row164mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p166mcpsimp"><a name="p166mcpsimp"></a><a name="p166mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="/reference/faq/mpp/figures/zh-cn_image_0000002441714949.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p168mcpsimp"><a name="p168mcpsimp"></a><a name="p168mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p169mcpsimp"><a name="p169mcpsimp"></a><a name="p169mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row170mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p172mcpsimp"><a name="p172mcpsimp"></a><a name="p172mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002441714953.png" height="27.93" width="75.81"></span></p>
+<tr id="row170mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p172mcpsimp"><a name="p172mcpsimp"></a><a name="p172mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="/reference/faq/mpp/figures/zh-cn_image_0000002441714953.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p174mcpsimp"><a name="p174mcpsimp"></a><a name="p174mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p175mcpsimp"><a name="p175mcpsimp"></a><a name="p175mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -1448,7 +1448,6 @@ BT.656时序不需要配置MIPI\_RX，建议不起MIPI\_RX业务。
 
 **图 1**  简单示意流程图<a name="fig7578163664419"></a>  
 ![](figures/简单示意流程图.png "简单示意流程图")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   约束sensor首先写出长帧数据，这样物理pipe可以提供长帧数据的AE统计信息。
 >-   设置ss\_mpi\_vi\_set\_pipe\_frame\_source为OT\_VI\_PIPE\_FRAME\_SOURCE\_USER来bypass 物理pipe的BE的处理。
@@ -3178,7 +3177,7 @@ i2c常被用做配置AD使用，在VI的调试过程中，i2c的错误是一类�
 
 1.  输出图像黑屏
 
-    输出图像黑屏是在我们确认完通路正常后，但是VO输出无正确图像，此时的VO输出时有图的，只是图像为全黑，但mipi\_rx/VI信息都是正常的，此时会被很多人简单认为是无图像输出，需要大家仔细耐心的确认，在图像黑屏时候，对VI输入来说，问题一般是在[图1](VI通路调试.md#fig1511218112815)的**①**处，需要做的排查主要从录像机的连接。此类问题对VI来说比较容易排查，在此不作详述。
+    输出图像黑屏是在我们确认完通路正常后，但是VO输出无正确图像，此时的VO输出时有图的，只是图像为全黑，但mipi\_rx/VI信息都是正常的，此时会被很多人简单认为是无图像输出，需要大家仔细耐心的确认，在图像黑屏时候，对VI输入来说，问题一般是在图1的**①**处，需要做的排查主要从录像机的连接。此类问题对VI来说比较容易排查，在此不作详述。
 
 2.  输出无图像
 
@@ -3186,10 +3185,10 @@ i2c常被用做配置AD使用，在VI的调试过程中，i2c的错误是一类�
 
         如果通路数据通过mipi\_rx传输，可以通过cat /proc/umap/mipi\_rx检查mipi\_rx模块的“mipi detect info”的width/height，同时观察“mipi phy data info”中是否有数据在变动，以此来判断是否是mipi\_rx无图像。
 
-        在mipi\_rx宽高错误，或者phy\_data/mipi\_data无数据时候，说明**②**（见[图1](VI通路调试.md#fig1511218112815)）数据异常或者mipi配置不正确，此时需要做下述错误排查：
+        在mipi\_rx宽高错误，或者phy\_data/mipi\_data无数据时候，说明**②**（见图1）数据异常或者mipi配置不正确，此时需要做下述错误排查：
 
         -   mipi\_rx配置检查；
-        -   在排查异常出现在通路中的位置时候，可以借助mipi\_rx模块的Color Bar来辅助判断，由上图可见mipi\_rx中的Color Bar的位置，如果配置Color Bar功能时，后级模块能不能正常输出Color Bar，可以定位到图像异常由**②**（见[图1](VI通路调试.md#fig1511218112815)）位置之后的异常引起，即检查mipi的Pixel Controller和output模块的相关配置以及VI模块的异常；如果Color Bar配置后，后级模块输出正常，此时需要重点排查**②**（见）位置之前的模块，即是mipi\_rx的phy配置以及AD相关的软硬件配置。有关于Color Bar调试方法具体步骤参考下述[Color Bar调试](#ZH-CN_TOPIC_0000002441714897)。
+        -   在排查异常出现在通路中的位置时候，可以借助mipi\_rx模块的Color Bar来辅助判断，由上图可见mipi\_rx中的Color Bar的位置，如果配置Color Bar功能时，后级模块能不能正常输出Color Bar，可以定位到图像异常由**②**（见图1）位置之后的异常引起，即检查mipi的Pixel Controller和output模块的相关配置以及VI模块的异常；如果Color Bar配置后，后级模块输出正常，此时需要重点排查**②**（见）位置之前的模块，即是mipi\_rx的phy配置以及AD相关的软硬件配置。有关于Color Bar调试方法具体步骤参考下述[Color Bar调试](#ZH-CN_TOPIC_0000002441714897)。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >mipi\_rx问题排查仅仅在设置图像传输接口为mipi时候才使用，如果设置的VI的接口模式为BT.656/BT.1120时，不需要做此步骤的排查。
@@ -3198,7 +3197,7 @@ i2c常被用做配置AD使用，在VI的调试过程中，i2c的错误是一类�
 
     -   VI无图像
 
-        通过cat /proc/umap/vi命令，观察VI是否能检查到正确的宽高，可以用来辅助判断是否VI无图像问题，在检测到宽高错误时，说明[图1](VI通路调试.md#fig1511218112815)的**③**图像出现了异常，需要做下述错误排查：
+        通过cat /proc/umap/vi命令，观察VI是否能检查到正确的宽高，可以用来辅助判断是否VI无图像问题，在检测到宽高错误时，说明图1的**③**图像出现了异常，需要做下述错误排查：
 
         1.  cat /proc/interrupts查看是否上报VI中断，在VI无中断上报时，需要去检查VI前级模块（AD-\>VI或AD-\>mipi\_rx-\>VI）是否正常；在VI有中断上报时，可以通过cat /dev/logmpp查看VI是否上报异常中断，再针对不同的异常中断类型做相应的排查分析；
         2.  在检查到“vi phy detect info”中“valid\_width/valid\_height”异常，异常存在两类情况。
@@ -3207,7 +3206,7 @@ i2c常被用做配置AD使用，在VI的调试过程中，i2c的错误是一类�
 
             其二：宽高不断在跳变，并且宽高错误，此时一般VI也会上报错误中断，需要先在A错误中断类型相应排查，同时需要检查VI 的ot\_vi\_dev\_attr和ot\_vi\_chn\_attr是否正确配置。
 
-        3.  在判断此类异常时发生的位置时候，可以借助VI的Color Bar，配置VI的Color Bar后，由[图1](VI通路调试.md#fig1511218112815)可见Color Bar所在的位置，配置Color Bar后，如果可以正常输出到后级模块看到图像，则可以定位到图像异常**②**（见）位置之前的通路异常引起，需要中断排查VI的DEV属性配置以及VI的前级模块异常；如果配置Color Bar后级模块依然不能输出正常Color Bar图像，此时需要重点排查VI模块的CHN属性配置以及VI后级模块的异常。VI模块的Color Bar具体步骤参考下述[Color Bar调试](#ZH-CN_TOPIC_0000002441714897)。
+        3.  在判断此类异常时发生的位置时候，可以借助VI的Color Bar，配置VI的Color Bar后，由图1可见Color Bar所在的位置，配置Color Bar后，如果可以正常输出到后级模块看到图像，则可以定位到图像异常**②**（见）位置之前的通路异常引起，需要中断排查VI的DEV属性配置以及VI的前级模块异常；如果配置Color Bar后级模块依然不能输出正常Color Bar图像，此时需要重点排查VI模块的CHN属性配置以及VI后级模块的异常。VI模块的Color Bar具体步骤参考下述[Color Bar调试](#ZH-CN_TOPIC_0000002441714897)。
 
         ![](figures/绘图2.png)
 

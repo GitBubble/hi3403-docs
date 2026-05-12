@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0�
 
 This document is intended to help users understand the hardware features, toolchain, and development workflow of the SVP \(Smart Vision Platform\) 2.0 platform, enabling rapid onboarding and the development of recognition solutions that fully exploit SVP 2.0 capabilities.
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference. Unless otherwise specified, the content for SS927V100 is identical to SS928V100.
 
 **Product Version<a name="section186mcpsimp"></a>**
@@ -53,28 +53,28 @@ The following symbols may appear in this document with the meanings described be
 </th>
 </tr>
 </thead>
-<tbody><tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a><a name="image126"></a><a name="image126"></a><span><img id="image126" src="figures/zh-cn_image_0000002441731557.png" height="25.270000000000003" width="66.5"></span></p>
+<tbody><tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a><a name="image126"></a><a name="image126"></a><span><img id="image126" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441731557.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p231mcpsimp"><a name="p231mcpsimp"></a><a name="p231mcpsimp"></a>Indicates a high-risk hazard that, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row232mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a><a name="image127"></a><a name="image127"></a><span><img id="image127" src="figures/zh-cn_image_0000002441691713.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row232mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a><a name="image127"></a><a name="image127"></a><span><img id="image127" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441691713.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p236mcpsimp"><a name="p236mcpsimp"></a><a name="p236mcpsimp"></a>Indicates a medium-risk hazard that, if not avoided, could result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row237mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p239mcpsimp"><a name="p239mcpsimp"></a><a name="p239mcpsimp"></a><a name="image128"></a><a name="image128"></a><span><img id="image128" src="figures/zh-cn_image_0000002441691709.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row237mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p239mcpsimp"><a name="p239mcpsimp"></a><a name="p239mcpsimp"></a><a name="image128"></a><a name="image128"></a><span><img id="image128" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441691709.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p241mcpsimp"><a name="p241mcpsimp"></a><a name="p241mcpsimp"></a>Indicates a low-risk hazard that, if not avoided, could result in minor or moderate injury.</p>
 </td>
 </tr>
-<tr id="row242mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p244mcpsimp"><a name="p244mcpsimp"></a><a name="p244mcpsimp"></a><a name="image129"></a><a name="image129"></a><span><img id="image129" src="figures/zh-cn_image_0000002441731553.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row242mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p244mcpsimp"><a name="p244mcpsimp"></a><a name="p244mcpsimp"></a><a name="image129"></a><a name="image129"></a><span><img id="image129" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441731553.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p246mcpsimp"><a name="p246mcpsimp"></a><a name="p246mcpsimp"></a>Conveys device or environmental safety information. Failure to follow this notice may result in equipment damage, data loss, performance degradation, or other unpredictable consequences.</p>
 <p id="p247mcpsimp"><a name="p247mcpsimp"></a><a name="p247mcpsimp"></a>"Notice" does not involve personal injury.</p>
 </td>
 </tr>
-<tr id="row248mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p250mcpsimp"><a name="p250mcpsimp"></a><a name="p250mcpsimp"></a><a name="image130"></a><a name="image130"></a><span><img id="image130" src="figures/zh-cn_image_0000002441691705.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row248mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p250mcpsimp"><a name="p250mcpsimp"></a><a name="p250mcpsimp"></a><a name="image130"></a><a name="image130"></a><span><img id="image130" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441691705.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p252mcpsimp"><a name="p252mcpsimp"></a><a name="p252mcpsimp"></a>Provides supplementary information for key content in the text.</p>
 <p id="p253mcpsimp"><a name="p253mcpsimp"></a><a name="p253mcpsimp"></a>"Note" is not a safety warning and does not involve personal, equipment, or environmental harm.</p>
@@ -118,8 +118,7 @@ The SVP development framework is shown in [Figure 1](#__fig46510526497). SVP cur
 Different hardware units come with different toolchains; user applications must be developed using these tools.
 
 **Figure 1**  SVP Development Framework<a name="__fig46510526497"></a>  
-![](figures/SVP开发框架.png "SVP开发框架")
-
+![](../../../multimedia/svp/dev/figures/SVP开发框架.png "SVP Development Framework")
 ## Hardware Resources<a name="ZH-CN_TOPIC_0000002408132350"></a>
 
 Different solutions use different SVP hardware resources, as shown in [Table 1](#__toc3205560).
@@ -156,7 +155,7 @@ For detailed CPU specifications, refer to the official ARM documentation.
 
 For DSP hardware specifications, refer to the corresponding chip manual.
 
->![](public_sys-resources/icon-notice.gif) **Notice:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-notice.gif) **Notice:** 
 >Different solutions may use different SVP hardware resources. Even when using the same hardware model, the hardware configuration may differ.
 
 ## Software Development<a name="ZH-CN_TOPIC_0000002441691653"></a>
@@ -196,7 +195,7 @@ Different solutions run SVP in different environments, as shown in [Table 1](#__
 *MPP Media Processing Software Vx.0 Development Reference*
 
 # DSP Development Guide
->![](public_sys-resources/icon-notice.gif) **Notice:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-notice.gif) **Notice:** 
 >This chapter is not currently supported for the open-source ecosystem versions SS928V100/SS927V100.
 
 ## Development Tool Introduction<a name="ZH-CN_TOPIC_0000002441691649"></a>
@@ -236,7 +235,7 @@ The configuration core is located in the directory matching the DSP model used i
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **Notice:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-notice.gif) **Notice:** 
 >-   The toolchain can be downloaded within Xplorer and is therefore not included in the release package.
 >-   The `tool` directory of `DSP_PC_Vx.x.x.x` provides only one DSP configuration core per DSP configuration. If more than one is present, the solution contains DSPs with different configurations.
 
@@ -311,36 +310,35 @@ The configuration core is located in the directory matching the DSP model used i
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-note.gif) **Note:** 
 >For additional differences, refer to the section "Vision Q6 DSP Enhancements and Differences vs Vision P6 DSP" on page 203 of *visionq6_ug.pdf*. This document is available in the installation directory after the toolchain is installed.
 
 ## Installing the DSP Toolchain and Configuration Core on Windows<a name="ZH-CN_TOPIC_0000002408292262"></a>
 
 This section assumes that Xplorer 8.0.7 has already been installed on Windows and uses the SS928V100 VQ6 configuration core Otechn\_VisionQ6\_v3 as an example. The installation procedure for other solutions and configuration cores in different Xplorer versions is similar.
 
->![](public_sys-resources/icon-notice.gif) **Notice:** 
->The SS928V100 VQ6 configuration core Otechn\_VisionQ6\_v3 must be used with the RH-2018.7 toolchain (see [Table 1](DSP工具链和配置核版本.md#__toc3205562), XtensaTools\_RH\_2018\_7\_win32.tgz). Xplorer 8.0.7 bundles the RG2016.4 toolchain by default. If using another Xplorer version, the RH-2018.7 toolchain must be installed separately.
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-notice.gif) **Notice:** 
+>The SS928V100 VQ6 configuration core Otechn\_VisionQ6\_v3 must be used with the RH-2018.7 toolchain (see Table 1, XtensaTools\_RH\_2018\_7\_win32.tgz). Xplorer 8.0.7 bundles the RG2016.4 toolchain by default. If using another Xplorer version, the RH-2018.7 toolchain must be installed separately.
 
 1.  Open Xplorer 8.0.7, right-click **Configurations** in the System Overview panel (as shown in [Figure 1](#fig31925394563)), and click **Find and Install a Configuration Build**.
 
     **Figure 1**  System Overview<a name="fig31925394563"></a>  
-    ![](figures/System-Overview.png "System-Overview")
+    ![](../../../multimedia/svp/dev/figures/System-Overview.png "System-Overview")
 
 2.  In the Find and Install a Configuration Build window, click **Browse**, select the configuration core to install (in this example, Otechn\_VisionQ6\_v3\_win32\_redist), and click **OK** to begin installation.
 
     **Figure 2**  Find and Install a Configuration Build<a name="fig72876154572"></a>  
-    ![](figures/Find-and-Install-a-Configuration-Build.png "Find-and-Install-a-Configuration-Build")
+    ![](../../../multimedia/svp/dev/figures/Find-and-Install-a-Configuration-Build.png "Find-and-Install-a-Configuration-Build")
 
     After installation, the newly installed configuration core appears under **Configurations** in the System Overview panel, as shown in [Figure 3](#fig1742717500572). The Otechn\_VisionQ6\_v3 configuration core is now installed successfully.
 
     **Figure 3**  Viewing the installed configuration core<a name="fig1742717500572"></a>  
-    ![](figures/查看安装好的配置核.png "查看安装好的配置核")
+    ![](../../../multimedia/svp/dev/figures/查看安装好的配置核.png "View Installed Configuration Cores")
 
 3.  When running a project (using HelloWorld as an example), select **C: Otechn\_VisionQ6\_v3** as shown in [Figure 4](#fig185297106715) to use the Otechn\_VisionQ6\_v3 configuration core.
 
     **Figure 4**  Project creation window<a name="fig185297106715"></a>  
-    ![](figures/创建的工程界面.png "创建的工程界面")
-
+    ![](../../../multimedia/svp/dev/figures/创建的工程界面.png "Created Project Interface")
 ## memmap Configuration<a name="ZH-CN_TOPIC_0000002408292238"></a>
 
 The memmap.xmm file is located in the `dsp_liteos/dspxx/liteos/dspxx_ldscripts` directory of the release package, where `xx` represents a number. The DSP memory layout is generated from the memmap.xmm configuration file; users can use this file to understand and analyze the DSP memory layout. The memory map can be modified to suit the development environment. Refer to the *Xtensa® Linker Support Packages (LSPs) Reference Manual* for details on memmap.xmm.
@@ -352,13 +350,12 @@ Procedure:
 1.  Click **Tools -> Stack Usage** in Xplorer.
 
     **Figure 1**  Stack usage inspection interface<a name="fig19428194743813"></a>  
-    ![](figures/查看栈信息操作界面.png "查看栈信息操作界面")
+    ![](../../../multimedia/svp/dev/figures/查看栈信息操作界面.png "View Stack Information Operation Interface")
 
 2.  A Stack Usage window appears. Select a project, right-click the compiled executable file, select **Binary File Info**, then select **Stack Usage** to view the stack usage for that file.
 
     **Figure 2**  Stack usage display window<a name="fig1931604853914"></a>  
-    ![](figures/显示栈信息窗口.png "显示栈信息窗口")
-
+    ![](../../../multimedia/svp/dev/figures/显示栈信息窗口.png "Display Stack Information Window")
 ## Installing the DSP Toolchain and Configuration Core on Linux<a name="ZH-CN_TOPIC_0000002441731497"></a>
 
 For installing the Cadence DSP toolchain and configuration core on Linux, refer to the official Cadence document `dev_tools_install_guide.pdf`. When developing board-side DSP programs using the accompanying SDK package, it is recommended to install the DSP toolchain and configuration core as described below.
@@ -485,7 +482,7 @@ The following procedure uses Xplorer-8.0.7-linux-x64-installer.bin as an example
      (This initializes workspace location defaults) [Y/n]: n
     ```
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-note.gif) **Note:** 
 >On some Linux environments, a graphical (Gtk) interface may appear during installation. Follow the installation method described in this section.
 
 ### Installing the DSP Configuration Core<a name="ZH-CN_TOPIC_0000002441691673"></a>
@@ -552,7 +549,7 @@ The following uses the Otechn\_VisionQ6\_v3 core as a reference. The process for
      The installation process is now complete.
     ```
 
->![](public_sys-resources/icon-notice.gif) **Notice:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-notice.gif) **Notice:** 
 >-   When developing with the SDK, it is best to specify the configuration core path according to the installation path shown above. Otherwise, when developing DSP programs, you must modify the Makefile to specify the actual toolchain and configuration core paths (refer to the Cadence document *xtensa_xcc_compiler_ug.pdf* at `/opt/xtensa/XtDevTools/downloads/RH-2018.7/docs`).
 >-   Official Cadence documents are available at `/opt/xtensa/XtDevTools/downloads/RH-2018.7/docs`.
 >-   **If different solutions require different Xtensa Tools versions for their DSPs, extract the required XtensaTools package to `/opt/xtensa/XtDevTools/install/tools` and select that path when installing the configuration core.**
@@ -591,7 +588,7 @@ DSP development is divided into PC-side and board-side environments:
 The DSP application development block diagram is shown in [Figure 1](#__fig11884284184).
 
 **Figure 1**  DSP application development block diagram<a name="__fig11884284184"></a>  
-![](figures/DSP应用程序开发框图.png "DSP应用程序开发框图")
+![](../../../multimedia/svp/dev/figures/DSP应用程序开发框图.png "DSP Application Development Block Diagram")
 
 As shown in [Figure 1](#__fig11884284184), DSP program development and usage consists of the following parts:
 
@@ -607,8 +604,8 @@ As shown in [Figure 1](#__fig11884284184), DSP program development and usage con
     -   Lib: DSP operator library.
     -   IPCM: Inter-core communication module.
 
->![](public_sys-resources/icon-caution.gif) **Caution:** 
->To accelerate compilation, the DSP-side library/code does not include optimization flags (-O). Users can add these during the performance tuning phase. The example below adds -O2 in the `SS928V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/Makefile.param` file (using SS928V100 SMP as an example, where XX is the DSP core number).![](figures/zh-cn_image_0000002441731525.png)
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-caution.gif) **Caution:** 
+>To accelerate compilation, the DSP-side library/code does not include optimization flags (-O). Users can add these during the performance tuning phase. The example below adds -O2 in the `SS928V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/Makefile.param` file (using SS928V100 SMP as an example, where XX is the DSP core number).![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731525.png)
 
 #### Adapting TileManager<a name="ZH-CN_TOPIC_0000002408292250"></a>
 
@@ -620,119 +617,119 @@ In the adaptation code diagrams in the following sections, the left side shows t
 
 Adaptation point 1: Enable the wide-address macro
 
-![](figures/zh-cn_image_0000002441691685.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441691685.png)
 
 Adaptation point 2: Adapt the pFrameBuffer/pFrameData fields of the frame structure to 64-bit operations
 
-![](figures/zh-cn_image_0000002408292270.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292270.png)
 
 Adaptation point 3: Adapt the DRAM address validity check
 
-![](figures/zh-cn_image_0000002441731533.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731533.png)
 
 Adaptation point 4: Add type-conversion macros and high/low 32-bit operation macros
 
-![](figures/zh-cn_image_0000002408132366.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132366.png)
 
 ##### Adapting tileManager\_api.h<a name="ZH-CN_TOPIC_0000002441691657"></a>
 
 Adaptation point 1: Modify the bank count
 
-![](figures/zh-cn_image_0000002441731541.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731541.png)
 
 Adaptation point 2: Adapt pFrameBuffer/pFrameData fields of the frame structure to 64-bit operations
 
-![](figures/zh-cn_image_0000002441731537.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731537.png)
 
 Adaptation point 3: Adapt pFrameBuffer/pFrameData fields of the frame structure to 64-bit
 
-![](figures/zh-cn_image_0000002408292278.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292278.png)
 
 Adaptation point 4: Adapt destination and source pointer types of xvAddIdmaRequestMultiChannel to 64-bit
 
-![](figures/zh-cn_image_0000002441691689.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441691689.png)
 
 Adaptation point 5: Adapt the frame address pointer type of xvCreateFrame to 64-bit
 
-![](figures/zh-cn_image_0000002441691693.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441691693.png)
 
 ##### Adapting tileManager.c<a name="ZH-CN_TOPIC_0000002408132346"></a>
 
 Adaptation point 1: Adapt the DRAM validation in xvInitMemAllocator
 
-![](figures/zh-cn_image_0000002408132378.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132378.png)
 
 Adaptation point 2: Adapt the frame address pointer type and validation in xvCreateFrame to 64-bit
 
-![](figures/zh-cn_image_0000002408132374.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132374.png)
 
 Adaptation point 3: Adapt the inline function addIdmaRequestInlineMultiChannel for wide-address operations and move it before the xvAddIdmaRequestMultiChannel implementation
 
-![](figures/zh-cn_image_0000002441731545.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731545.png)
 
 Adaptation point 4: Adapt destination and source pointer types of xvAddIdmaRequestMultiChannel to 64-bit
 
-![](figures/zh-cn_image_0000002441731565.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731565.png)
 
 Adaptation point 5: Adapt destination/source address validation and copy operations in xvAddIdmaRequestMultiChannel, replacing them with the inline function addIdmaRequestInlineMultiChannel
 
-![](figures/zh-cn_image_0000002441731549.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731549.png)
 
 Adaptation point 6: Adapt solveForX for 64-bit source and wide-address operations
 
-![](figures/zh-cn_image_0000002408132382.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132382.png)
 
-![](figures/zh-cn_image_0000002408292290.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292290.png)
 
 Adaptation point 7: Adapt xvReqTileTransferInMultiChannel for 64-bit source and wide-address operations
 
-![](figures/zh-cn_image_0000002408132394.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132394.png)
 
-![](figures/zh-cn_image_0000002441691701.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441691701.png)
 
-![](figures/zh-cn_image_0000002408292286.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292286.png)
 
 Adaptation point 8: Add inline IDMA wide-address 2D copy operations
 
-![](figures/zh-cn_image_0000002408132390.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132390.png)
 
 Adaptation point 9: Adapt xvReqTileTransferInFastMultiChannel for 64-bit source and wide-address operations
 
-![](figures/zh-cn_image_0000002408292282.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292282.png)
 
-![](figures/zh-cn_image_0000002408132398.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132398.png)
 
 Adaptation point 10: Adapt xvReqTileTransferInFast16MultiChannel for 64-bit source and wide-address operations
 
-![](figures/zh-cn_image_0000002408292294.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292294.png)
 
-![](figures/zh-cn_image_0000002408292298.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292298.png)
 
 Adaptation point 11: Adapt xvReqTileTransferOutMultiChannel for 64-bit destination and wide-address operations
 
-![](figures/zh-cn_image_0000002441691717.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441691717.png)
 
-![](figures/zh-cn_image_0000002408292302.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292302.png)
 
 Adaptation point 12: Adapt xvReqTileTransferOutFastMultiChannel for 64-bit destination and wide-address operations
 
-![](figures/zh-cn_image_0000002408132386.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132386.png)
 
 Adaptation point 13: Adapt xvReqTileTransferOutFast16MultiChannel for 64-bit destination and wide-address operations
 
-![](figures/zh-cn_image_0000002408292306.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408292306.png)
 
 Adaptation point 14: Adapt the frame pointer field validity check in xvPadEdges
 
-![](figures/zh-cn_image_0000002441691697.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441691697.png)
 
 Adaptation point 15: Adapt the frame pointer field validity check in xvPadEdges16
 
-![](figures/zh-cn_image_0000002408132402.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002408132402.png)
 
 Adaptation point 16: Remove the index < 0 validation for the xvCheckForIdmaIndexMultiChannel function parameter
 
-![](figures/zh-cn_image_0000002441731561.png)
+![](../../../multimedia/svp/dev/figures/zh-cn_image_0000002441731561.png)
 
 #### Developing Custom Operators<a name="ZH-CN_TOPIC_0000002408132342"></a>
 
@@ -744,24 +741,24 @@ On the CPU side:
 
     Develop custom operators by wrapping the ss\_mpi\_svp\_dsp\_rpc / ss\_mpi\_svp\_dsp\_query interfaces.
 
-    >![](public_sys-resources/icon-note.gif) **Note:** 
+    >![](../../../multimedia/svp/dev/public_sys-resources/icon-note.gif) **Note:** 
     >Refer to the sample (sample\_svp\_dsp\_enca\_dilate\_3x3 / sample\_svp\_dsp\_enca\_erode\_3x3 wrappers) and the *SVP2.0 API Reference* for the ss\_mpi\_svp\_dsp\_rpc / ss\_mpi\_svp\_dsp\_query interface descriptions.
 
 On the DSP side:
 
 1.  Develop frame-level or tile-level operators under the `algo/include/int` directory in the release package.
 
-    >![](public_sys-resources/icon-note.gif) **Note:** 
+    >![](../../../multimedia/svp/dev/public_sys-resources/icon-note.gif) **Note:** 
     >Users can refer to `algo/include/int/svp_dsp_frm.h` and `algo/src/svp_dsp_frm.c` to develop frame-level operators.
 
 2.  Add calls to custom operators in the `svp_dsp_algo_process` function in `algo/src/svp_dsp_algo.c`.
 3.  Run `algo/Makefile` to recompile the code under the `algo` directory into a library.
 4.  Run `runtime/obj/Makefile` to compile the .o and .a files into an ELF file and convert it into four binaries.
 
-    >![](public_sys-resources/icon-note.gif) **Note:** 
+    >![](../../../multimedia/svp/dev/public_sys-resources/icon-note.gif) **Note:** 
     >The four binaries are ot\_iram.bin, ot\_sram.bin, ot\_dram0.bin, and ot\_dram1.bin, and are placed in `runtime/obj/bin`.
 
->![](public_sys-resources/icon-notice.gif) **Notice:** 
+>![](../../../multimedia/svp/dev/public_sys-resources/icon-notice.gif) **Notice:** 
 >-   The number of DSPs and the IRAM/SRAM/DRAM addressing differ across solutions. Refer to the corresponding chip manual for details.
 >-   Due to the ReorderBuf logic, there is a constraint on IDMA usage: the idma\_init programming interface can only use MAX\_BLOCK\_2 / MAX\_BLOCK\_4 / MAX\_BLOCK\_8, not MAX\_BLOCK\_16.
 >-   On SS928V100/SS927V100, the CPU accesses DDR in the address range \[0x40000000, 0x2FFFFFFFF\]. On the DSP side, IDMA maps this to \[0x440000000, 0x6FFFFFFFF\] for access — i.e., the IDMA DDR address must have offset 0x400000000 added (the idma\_offset value). This mapping framework is already built into the SDK; users can simply refer to the framework sample for usage.

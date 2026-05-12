@@ -1,0 +1,952 @@
+---
+title: "Preface"
+source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/拼接 FAQ/拼接 FAQ.md
+---
+
+# Preface
+**Overview<a name="section143mcpsimp"></a>**
+
+This document is written for developers using AVSP panoramic stitching, intended to provide solutions and assistance for issues encountered during development.
+
+**Product Version<a name="section146mcpsimp"></a>**
+
+The product versions corresponding to this document are as follows.
+
+<a name="table149mcpsimp"></a>
+<table><thead align="left"><tr id="row154mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a>Product Name</p>
+</th>
+<th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p158mcpsimp"><a name="p158mcpsimp"></a><a name="p158mcpsimp"></a>Product Version</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row160mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p162mcpsimp"><a name="p162mcpsimp"></a><a name="p162mcpsimp"></a>SS928</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>V100</p>
+</td>
+</tr>
+<tr id="row154435218294"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p20247152411299"><a name="p20247152411299"></a><a name="p20247152411299"></a>SS927</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p172471024192912"><a name="p172471024192912"></a><a name="p172471024192912"></a>V100</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**Intended Audience<a name="section165mcpsimp"></a>**
+
+This document (this guide) is primarily intended for the following engineers:
+
+- Technical support engineers
+- Software development engineers
+- Hardware development engineers
+
+**Revision History<a name="section172mcpsimp"></a>**
+
+The revision history accumulates the description of each document update. The latest version of the document contains all update content from previous versions.
+
+<a name="table126443203200"></a>
+<table><thead align="left"><tr id="row264516207203"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p146456203200"><a name="p146456203200"></a><a name="p146456203200"></a><strong id="b8645172022010"><a name="b8645172022010"></a><a name="b8645172022010"></a>Document Version</strong></p>
+</th>
+<th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p364512062019"><a name="p364512062019"></a><a name="p364512062019"></a><strong id="b1464512200200"><a name="b1464512200200"></a><a name="b1464512200200"></a>Release Date</strong></p>
+</th>
+<th class="cellrowborder" valign="top" width="53.16%" id="mcps1.1.4.1.3"><p id="p664522018206"><a name="p664522018206"></a><a name="p664522018206"></a><strong id="b156451420152010"><a name="b156451420152010"></a><a name="b156451420152010"></a>Modification Description</strong></p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row56451520182017"><td class="cellrowborder" valign="top" width="20.72%" headers="mcps1.1.4.1.1 "><p id="p1564572014209"><a name="p1564572014209"></a><a name="p1564572014209"></a>00B01</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.119999999999997%" headers="mcps1.1.4.1.2 "><p id="p126451920132014"><a name="p126451920132014"></a><a name="p126451920132014"></a>2025-09-15</p>
+</td>
+<td class="cellrowborder" valign="top" width="53.16%" headers="mcps1.1.4.1.3 "><p id="p1664582017209"><a name="p1664582017209"></a><a name="p1664582017209"></a>First temporary version release.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+# Production-Line Calibration
+## How to Understand the Ideal Production-Line Calibration Environment<a name="ZH-CN_TOPIC_0000002464984741"></a>
+
+[Symptom]
+
+The AVSP module requires a special production-line calibration environment, which is difficult for customers to understand.
+
+[Analysis]
+
+The ideal calibration environment must be customized according to algorithm design requirements, as described below.
+
+[Solution]
+
+The ideal panoramic stitching calibration environment is a checkerboard sphere, and the environment design is shown in [Figure 1](#fig6703175413384).
+
+**Figure 1**  Schematic diagram of the production-line calibration environment<a name="fig6703175413384"></a>  
+![](../../../reference/faq/splice/figures/产线标定环境示意图.png "Schematic diagram of the production-line calibration environment")
+
+The recommended sphere radius is between 0.6 m and 2 m, with clear focus imaging of the checkerboard as a reference. If a fisheye lens is used, the depth of field is relatively large and near-distance focusing is clear, so the sphere radius can be correspondingly reduced, which also reduces the difficulty of fabricating the production-line calibration environment and the space it occupies. If a non-fisheye lens is used, since the depth of field is relatively small and the focusing distance is farther, the sphere radius needs to be correspondingly larger; otherwise the captured images will be blurry, corner detection inaccurate, and calibration abnormal.
+
+The sphere surface must be covered with black-and-white checkerboard patterns. Based on the concept of world map latitude-longitude, it is recommended to have 36 grids between the north and south poles and 72 grids around the equator, with each grid spanning 5° in both latitude and longitude directions. Due to the characteristics of latitude and longitude, the horizontal width of each grid becomes increasingly smaller in high-latitude regions. To make grid sizes uniform, in the latitude 60°–80° region, grids are merged every 3 in the longitude direction, i.e., each grid spans 15° in longitude; in the latitude 0°–90° region, each grid spans 45° in longitude, as shown in [Figure 1](#fig6703175413384)(b).
+
+When collecting calibration images, place the optical center of the lens corresponding to model calibration channel 0 at the center of the sphere. Under ideal conditions, the distance from all checkerboard corner points on the sphere surface to the sphere center equals the sphere radius R. In practice, due to factors such as camera placement position and checkerboard structure tolerances, the consistency of the distance between corner points and the optical center of the channel 0 lens must be maintained within 10%, i.e., within the range of [0.95*R, 1.05*R].
+
+Since the entire sphere surface is covered with checkerboard patterns, there is theoretically no special requirement for the camera orientation. However, because the grid size differences in high-latitude areas are large, it is recommended to avoid high-latitude areas for the overlap regions as much as possible and place them in low-latitude areas.
+
+If the checkerboard does not cover the entire sphere surface, it must be ensured that the overlap regions between cameras all have checkerboard corner points. Technically speaking, the checkerboard only needs to cover the imaging overlap regions. Therefore, for non-panoramic cameras, the ideal calibration environment can be simplified according to the product form and production-line requirements, while ensuring that the checkerboard is distributed on a spherical arc surface, with grid sizes kept as consistent as possible and evenly distributed. The following sections will illustrate using dual-fisheye and four-channel horizontal structures as examples. For other panoramic camera structures, please adjust according to the actual situation.
+
+>![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>The size of the production-line calibration environment is not related to the optimal stitching distance. After calibration is complete, any optimal stitching distance can be configured when generating the LUT.
+
+## How to Understand the Production-Line Calibration Environment for Dual-Fisheye Structures<a name="ZH-CN_TOPIC_0000002464984737"></a>
+
+[Symptom]
+
+For dual-fisheye structures, the production-line calibration environment can be simplified based on the ideal calibration environment, which is difficult for customers to understand.
+
+[Analysis]
+
+The production-line calibration environment for dual-fisheye structures must be customized according to algorithm design requirements, as described below.
+
+[Solution]
+
+The overlap region of a dual-fisheye structure appears as a ring on the sphere surface. Therefore, based on the ideal sphere, the upper and lower regions (high-latitude regions) of the sphere can be cut away, retaining only the ring-shaped area near the equator.
+
+It is recommended that each grid be 5°, so there are still 72 grids around the ring, and the number of grids in the vertical direction (latitude direction) is designed based on the size of the overlap region. For example, if the lens FOV is 200°, then there is a 40° overlap region, in which case more than 8 grids are needed in the vertical direction, with 1 grid reserved above and below — 10 grids would be more appropriate. In this case, the checkerboard covers the area between 25°S and 25°N latitude. The effect is shown in [Figure 1](#fig261314513443), where the physical image has 16 grids in the vertical direction covering an 80° overlap region to accommodate different lens selections. Customers can adjust according to their own product form.
+
+**Figure 1**  Schematic diagram of the dual-fisheye structure production-line calibration environment<a name="fig261314513443"></a>  
+![](../../../reference/faq/splice/figures/双鱼眼结构产线标定环境示意图.png "Schematic diagram of the dual-fisheye structure production-line calibration environment")
+
+Since fisheye lenses have a large depth of field and can focus clearly at close range, the recommended ring radius is between 0.6 m and 1 m, and can be consistent with the optimal stitching distance targeted by the product to ensure the best results at that distance. For example, if the product is most concerned about the stitching effect at a distance of 0.8 m, the ring radius can be designed as 0.8 m to ensure the best effect at the 0.8 m position.
+
+During calibration, place the dual-fisheye structure at the center of the ring and ensure that the background (i.e., areas not covered by the checkerboard) is clean and free of other checkerboard-like patterns, to avoid false detections and matching errors that could cause calibration failure.
+
+Since the dual-fisheye structure is a 720° panoramic camera, the camera base will always have some occlusion, which is normal. The overlap region does not necessarily need to cover all checkerboard patterns. If occlusion cannot be completely avoided, try to cover as much as possible.
+
+The actual production-line calibration test effect is shown in [Figure 2](#fig1566112562484)(a). A demo version camera is used here, with a relatively large base and significant occlusion; the actual product can control occlusion better. [Figure 2](#fig1566112562484)(b) shows the stitching effect in the production-line calibration environment after production-line calibration.
+
+**Figure 2**  Dual-fisheye structure production-line calibration images<a name="fig1566112562484"></a>  
+![](../../../reference/faq/splice/figures/双鱼眼结构产线标定图.png "Dual-fisheye structure production-line calibration images")
+## How to Understand the Production-Line Calibration Environment for Four-Channel Horizontal Structures<a name="ZH-CN_TOPIC_0000002431386022"></a>
+
+[Symptom]
+
+For four-channel horizontal structures, the production-line calibration environment can be simplified based on the ideal calibration environment, which is difficult for customers to understand.
+
+[Analysis]
+
+The production-line calibration environment for four-channel horizontal structures must be customized according to algorithm design requirements, as described below.
+
+[Solution]
+
+The four-channel horizontal structure is generally used in the field of *public safety video capture*. The structure is generally as shown in [Figure 1](#fig087182975116). The FOV of the stitched image in the horizontal direction for this type of four-channel horizontal structure is typically equal to or less than 180°. Therefore, there are two options to choose from: hemisphere or three-arc target surface.
+
+**Figure 1**  Schematic diagram of the four-channel horizontal structure<a name="fig087182975116"></a>  
+![](../../../reference/faq/splice/figures/四路水平结构示意图.png "Schematic diagram of the four-channel horizontal structure")
+
+The hemisphere solution is relatively simple — it is a simple cropping on the basis of the fully ideal sphere, retaining 180° of the checkerboard sphere in the horizontal direction, and cropping in the vertical direction according to the lens FOV, as shown in [Figure 2](#fig1064814233245). In this diagram, only the region from 60°S to 60°N latitude is retained, with high-latitude regions cropped.
+
+For downward-tilted panoramic camera structures, this calibration environment is also applicable — simply tilt the panoramic camera upward so that its entire field of view faces the checkerboard region.
+
+The advantage of this solution is its unified structure — the sphere center position is easy to locate and relatively accurate, and it is applicable to downward-tilted panoramic camera structures. The disadvantage is greater fabrication difficulty, inconvenient handling and transportation, and large space occupation. Detailed specifications are not described here; please refer to the three-arc target surface solution.
+
+**Figure 2**  Hemisphere production-line calibration environment for four-channel horizontal structure<a name="fig1064814233245"></a>  
+![](../../../reference/faq/splice/figures/四路水平结构半球面产线标定环境.png "Hemisphere production-line calibration environment for four-channel horizontal structure")
+
+Technically speaking, when capturing images, the checkerboard only needs to cover the overlap regions between cameras. The four-channel horizontal structure has three overlap regions, so it can be further simplified from the hemisphere above to a three-arc target surface. As shown in [Figure 3](#fig4215154493014), only the checkerboard arc surfaces corresponding to the three overlap regions are retained. To make the environment even simpler, three identical independent and separately movable checkerboard spherical arc surfaces can be fabricated and placed at the corresponding positions of the three overlap regions during use.
+
+**Figure 3**  Three-arc target surface calibration environment for four-channel horizontal structure<a name="fig4215154493014"></a>  
+![](../../../reference/faq/splice/figures/四路水平结构三球弧靶面标定环境.png "Three-arc target surface calibration environment for four-channel horizontal structure")
+
+This product form is generally paired with non-fisheye lenses with a focal length of about 4 mm–6 mm. Their depth of field is smaller than that of fisheye lenses, and the focusing distance is farther. Therefore, it is recommended to design the arc surface radius as 1.5 m. Although this distance is not the optimal focusing distance of the panoramic camera, it can still produce relatively clear images with distinct corner points. If the paired lens has a larger focal length, consider correspondingly increasing the radius of the checkerboard sphere surface so that corner points can be clearly imaged, ensuring calibration quality.
+
+A single spherical arc target surface is recommended to cover a 30° horizontal sphere surface and a 120° vertical sphere surface. Also drawing on the concept of world map latitude-longitude, with each grid designed at 5°:
+
+- In the horizontal direction, there are 6 black-and-white grids, and the horizontal arc length at the equator is approximately
+
+    L1=θ1*R=π/6*1.5=0.785 m
+
+- In the vertical direction, there are 24 black-and-white grids centered on the equator, symmetrical above and below, with an arc length of approximately
+
+    L2=θ2*R=π*2/3*1.5=3.14 m
+
+The actual height is approximately H = 2.6 m.
+
+If the actual overlap region is larger, the arc surface size and number of black-and-white grids can be correspondingly increased; conversely, if the actual overlap region is smaller, the arc surface size and number of black-and-white grids can be correspondingly reduced. It is only necessary to ensure coverage of the overlap region.
+
+Special attention is required: in the calibration images, each overlap region must have at least more than one column of checkerboard, i.e., more than two columns of corner points. Otherwise, calibration cannot proceed. Due to lens distortion, structural tolerances, camera shooting angles, and other factors, please ensure that the overlap region between panoramic camera lenses is at least 10° or more, or even larger, to guarantee the best calibration quality.
+
+Before use, move the sphere centers corresponding to the three spherical arc surfaces to the same position, and based on the angles between lenses, adjust the angles between the arc surfaces while keeping the sphere centers stationary, so that all overlap regions have checkerboard coverage. During calibration, fix the optical center of the lens corresponding to pipe0 of the panoramic camera at the sphere center position. Considering tolerance conditions, maintain corner point distance consistency within 10%, ensuring that the distance between all checkerboard corner points and the pipe0 lens optical center is within [1.425 m, 1.575 m] to guarantee the best stitching effect.
+
+When shooting, please ensure that the background (i.e., areas not covered by the checkerboard) is clean and free of other checkerboard-like patterns, to avoid false detections and matching errors that could cause calibration failure.
+
+The advantage of this solution is that the production-line environment is less difficult to fabricate, occupies less space, and can be adjusted according to the panoramic camera overlap, making it adaptable to different four-channel horizontal structures, such as multi-channel surround structures. The disadvantage is that the center point is difficult to locate; it is recommended to use auxiliary guide rails for movement.
+
+The actual production-line measured calibration images are shown in [Figure 4](#fig18248161755212). For ease of comparison, the calibration images are rotated 90° for illustration in the document. The actual image resolution is the same as the sensor output, 3840×2160, and is consistent with the first step of model calibration. The images do not need to be rotated during calibration. The stitching effect after calibration is shown in [Figure 5](#fig1826815454525).
+
+**Figure 4**  Four-channel horizontal structure production-line calibration images<a name="fig18248161755212"></a>  
+![](../../../reference/faq/splice/figures/四路水平结构产线标定图.png "Four-channel horizontal structure production-line calibration images")
+
+**Figure 5**  Four-channel horizontal structure production-line calibration effect<a name="fig1826815454525"></a>  
+![](../../../reference/faq/splice/figures/四路水平结构产线标定效果图.png "Four-channel horizontal structure production-line calibration effect")
+
+Other suggestions and considerations regarding the production-line calibration environment are as follows:
+
+- Checkerboard application recommendations
+
+    The key difficulty in the entire production-line calibration environment fabrication process lies in the application of the checkerboard. The checkerboard needs to be applied on a spherical surface, and the area is relatively large. Applying the checkerboard as a single whole piece is difficult; it can be cut into strips and then applied strip by strip on the spherical surface to form the final complete checkerboard pattern.
+
+**Figure 6**  Checkerboard corner point quality<a name="fig151051344185812"></a>  
+![](../../../reference/faq/splice/figures/棋盘格角点质量.png "Checkerboard corner point quality")
+
+When applying strips, direct alignment between each strip has some tolerance, and there may be some misalignment between strips. For this misalignment, from a technical analysis perspective, the corner points in [Figure 6](#fig151051344185812)(a) are complete — although there is misalignment in the middle of the checkerboard, the impact on corner point detection is small. The corner points in [Figure 6](#fig151051344185812)(b) have misalignment, which affects detection accuracy during calibration.
+
+Based on the above analysis, to ensure corner point quality and integrity, each strip can be cut along the middle of the checkerboard rather than at the corner point positions. As shown in [Figure 7](#_Ref513707564), which demonstrates cutting the checkerboard pattern into strips along the horizontal direction in a four-channel horizontal structure calibration environment — the cutting positions follow the green lines, which does not affect corner point integrity. Similarly, if cutting vertically, it is also recommended to cut along the middle of the checkerboard grids.
+
+**Figure 7**  Checkerboard cutting diagram<a name="_Ref513707564"></a>  
+![](../../../reference/faq/splice/figures/棋盘格切割示意图.jpg "Checkerboard cutting diagram")
+- Watch out for checkerboard backlight and reflection
+
+    Under backlight and reflection conditions, the checkerboard imaging effect is greatly affected, which in turn affects the calibration effect. Therefore, the checkerboard material must be matte and non-reflective, and attention must be paid to the lighting of the production-line environment to avoid backlight projection on the checkerboard.
+
+## How to Create a Color Checkerboard Production-Line Calibration Environment<a name="ZH-CN_TOPIC_0000002431386026"></a>
+
+[Symptom]
+
+The black-and-white checkerboard requires that the individual consistency of panoramic cameras be controlled within half a grid. When individual consistency is poor, a color checkerboard calibration environment can be used for production-line calibration. The color checkerboard calibration environment can relax the individual difference requirement to 1 grid.
+
+[Analysis]
+
+The color checkerboard must be created according to certain requirements, as described below.
+
+[Solution]
+
+The color checkerboard calibration environment can be based on the black-and-white checkerboard environment, with circular colored stickers uniformly and alternately affixed in the black and white grids according to a certain pattern. The colors include: magenta (RGB: 255, 0, 255), green (RGB: 0, 255, 0), and cyan (RGB: 0, 255, 255) — three colors in total. This expands the original two black-and-white grid types to eight grid types. The eight types are: pure white, white with magenta, white with green, white with cyan, pure black, black with magenta, black with green, and black with cyan.
+
+The application pattern of these eight grid types is shown in [Figure 1](#fig10683514734). Please note that the positions of the different types of color checkerboard do not need to exactly match the pattern. The basic idea is: different types of grids are uniformly affixed so that the spacing between grids of the same type is as large as possible, to reduce feature point matching misalignment. In [Figure 1](#fig10683514734)(a), grids of the same type are spaced 4 grids apart in both horizontal and vertical directions, and 2 grids apart in diagonal directions. If the original black-and-white checkerboard distribution is uneven (such as the polar/near-polar regions in [Figure 1](#fig6703175413384)), then try to satisfy the pattern as closely as possible.
+
+The diameter of the colored circular stickers is approximately 0.5–0.9 times the grid side length, as long as they do not connect to adjacent grids. The colored circles do not need to be exactly the same shape and size. When black-and-white grid sizes differ significantly, the size of the colored stickers can also be adjusted. The colored stickers do not need to be perfectly circular — elliptical shapes are also acceptable. It is only required that the color accounts for more than 50% of the grid area for optimal results. Of course, try to avoid patterns with right-angle-like features to prevent false detection as checkerboard corner points.
+
+For dual-fisheye or four-channel horizontal structure simplified calibration environments, the colored circular stickers are also affixed based on the original black-and-white checkerboard following the same distribution pattern.
+
+**Figure 1**  Color checkerboard pattern<a name="fig10683514734"></a>  
+![](../../../reference/faq/splice/figures/彩色棋盘格图样.png "Color checkerboard pattern")
+
+Compared to the black-and-white checkerboard, the production-line calibration process based on the color checkerboard environment should avoid interference to image detection from anomalies such as noise and color cast, and must meet the following conditions:
+
+- If there is a color cast situation, first ensure color accuracy — the calibration images must be able to clearly distinguish the three colors of the color checkerboard.
+- The illumination intensity at the checkerboard position must be greater than 300 lux, i.e., typical indoor illumination intensity, with low noise in the calibration images.
+- The lighting across the entire sphere checkerboard should be uniform, without obvious reflection, shadow, or other issues.
+
+## How to Resolve Checkerboard Corner Point Matching Misalignment During Production-Line Calibration<a name="ZH-CN_TOPIC_0000002431386018"></a>
+
+[Symptom]
+
+In the stitched image under the production-line calibration environment, the seam is misaligned by one grid, as shown in [Figure 1](#_Ref7939578).
+
+**Figure 1**  Production-line calibration misaligned by one grid<a name="_Ref7939578"></a>  
+![](../../../reference/faq/splice/figures/产线标定错位一个格子.png "Production-line calibration misaligned by one grid")
+
+[Analysis]
+
+When the seam is exactly misaligned by one or more grids, this is due to checkerboard corner point matching errors during the production-line calibration process causing stitching misalignment. For localization, create a "tmp" folder in the main directory of the production-line calibration tool, and the corner point matching marked images will be saved during the production-line calibration program run. For the above use case, the corner point matching results of the two rightmost production-line calibration images are shown in [Figure 2](#fig99661723895). The same numbers in the figure indicate corner point matching pairs calculated by the calibration algorithm. In this use case, all corner point matches have misalignment — the right image is shifted downward by one grid.
+
+**Figure 2**  Production-line calibration feature point matching error<a name="fig99661723895"></a>  
+![](../../../reference/faq/splice/figures/产线标定特征点匹配错误.png "Production-line calibration feature point matching error")
+
+[Solution]
+
+During production-line calibration, the calibration algorithm searches for the nearest neighboring feature corner point matching pairs based on the positional relationship between adjacent images determined by model calibration. To resolve this issue, optimization can be performed in the following four aspects:
+
+1.  Eliminate the calibration error of model calibration at the distance corresponding to the production-line spherical calibration checkerboard radius.
+
+    Specific measure: use the .cal file obtained after production-line calibration of the model calibration machine as the seed for production-line calibration of other devices, rather than directly using the .cal file obtained from model calibration as the seed.
+
+2.  Optimize individual structural differences.
+
+    Optimize individual structural differences to ensure individual consistency. More specifically, the structural difference between the production-line calibration individual and the model calibration individual must be controlled within 0.5 grids to avoid the above corner point matching error issue.
+
+3.  Enlarge the checkerboard grids.
+
+    The recommended checkerboard for production-line calibration is 5° per grid. When individual structural differences are large, the checkerboard grid size can be appropriately enlarged to relax the consistency requirement.
+
+    However, special attention is needed: ensure that the narrowest position of the overlap region must cover more than two grids, i.e., regardless of how the camera is placed, the overlap region can see at least one complete grid. Since corner point matching is based on black or white grids as reference, without a complete black/white checkerboard grid, corner points may not be found at all.
+
+4.  Use the color checkerboard calibration solution.
+
+    The color checkerboard relaxes the structural difference requirement to 1 grid. For details, please refer to the "[How to Create a Color Checkerboard Production-Line Calibration Environment](#ZH-CN_TOPIC_0000002431386026)" section, and configure the color checkerboard mode when calling the production-line calibration interface.
+
+## How to Resolve the Issue of No Corner Point Matching Pairs During Production-Line Calibration<a name="ZH-CN_TOPIC_0000002464864621"></a>
+
+[Symptom]
+
+When production-line calibration does not return for a long time, or the stitching effect is very abnormal after production-line calibration, it may be caused by a complete absence of corner point matching pairs for a certain pair of adjacent images.
+
+[Analysis]
+
+First, when encountering abnormal issues during production-line calibration, create a "tmp" folder in the main directory of the production-line calibration tool to output corner point marked images for viewing and locating corner point matching situations.
+
+[Solution]
+
+When the configuration is correct, it is impossible for production-line calibration to have no corner point matching pairs. Therefore, when this issue occurs, the configuration must be reviewed and located, including whether the .cal file from model calibration was read correctly, whether the configured spherical checkerboard radius for production-line calibration is accurate, whether the image reading is normal, etc. When the resolution and rotation direction of model calibration images and production-line calibration images do not match, this issue may also occur.
+
+A simple localization method is to perform offline stitching in the PQTools tool and check whether the stitching effect is normal.
+
+>![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>The LUT imported for offline stitching is the LUT table generated from the model calibration .cal file (i.e., the "seed" of production-line calibration), and the imported images are the calibration images captured during production-line calibration. Since the production-line individual and the model calibration individual have some structural differences, the stitched image will have some misalignment, which is normal. If other abnormal situations occur, the problem can be located through the stitched image effect.
+
+## How to Optimize the Production-Line Calibration Stitching Effect<a name="ZH-CN_TOPIC_0000002431226190"></a>
+
+[Symptom]
+
+When production-line calibration is correct, a nearly misalignment-free stitched image can generally be obtained in the production-line environment. However, when calibration is poor, there may still be some misalignment at the seam position; or the effect is ideal and misalignment-free in the production-line environment, but misalignment occurs when the stitching distance is switched to a farther distance.
+
+[Analysis]
+
+This issue is caused by insufficient calibration accuracy and must be optimized from two aspects: model calibration and the production-line environment.
+
+[Solution]
+
+1.  Optimize model calibration accuracy.
+
+    Model calibration accuracy evaluation can be assessed by referring to the "[How to Use the tmp Files in PQ Tools to Evaluate Model Calibration Effect](#ZH-CN_TOPIC_0000002431386010)" section, or based on the model calibration machine, directly view the stitching effect at different distances. If the stitching effect of the model calibration itself is poor, it will affect the final calibration effect when used as the seed for production-line calibration. When dissatisfied with the model calibration effect, refer to the "[Model Calibration](#ZH-CN_TOPIC_0000002464864629)" guidance for correction and optimization. Alternatively, select multiple machines for model calibration and choose the best result as the seed for production-line calibration.
+
+2.  Adjust the production-line calibration environment.
+
+    Based on the basic requirements of the production-line calibration environment: the distance from the checkerboard to the lens must be kept as consistent as possible, i.e., the checkerboard is distributed on a spherical surface, the calibration machine is located at the sphere center, and the error is maintained within 10%.
+
+3.  Use the .cal file obtained after production-line calibration of the model calibration machine as the seed for production-line calibration, rather than directly using the .cal file from model calibration as the seed.
+
+    It is recommended that after model calibration, place the model calibration machine in the production-line environment for production-line calibration to obtain the model calibration production-line calibration .cal file, and use this .cal file as the production-line calibration seed for other machines. Whether it is the .cal obtained from model calibration or the .cal output from production-line calibration, the format and meaning are the same. Theoretically, every .cal can serve as a seed for production-line calibration. Therefore, you can also try to select a .cal with better stitching effect as the production-line calibration seed and continuously iterate and optimize the production-line stitching effect during the production process.
+
+# Model Calibration
+## How to Understand the Basic Requirements for Model Calibration Images<a name="ZH-CN_TOPIC_0000002431226186"></a>
+
+[Symptom]
+
+Capturing model calibration images requires the use of checkerboard target cards, and there are certain requirements for target card placement and calibration images, which customers cannot accurately understand.
+
+[Analysis]
+
+A summary of considerations.
+
+[Solution]
+
+Model calibration considerations are as follows:
+
+- The calibration environment should have <u>**sufficient lighting**</u> that is as uniform as possible; otherwise, significant <u>**noise**</u> may affect the detection of the calibration algorithm.
+- The checkerboard target card must not have obvious <u>**reflections/shadows**</u> or other areas of uneven brightness. This can be avoided by adjusting the relative positions of the lens, target card, and light source.
+- The checkerboard target card should not be too small. Generally speaking, <u>each grid side length should be **no less than 10 pixels**</u>. If the checkerboard occupies too few pixels in the frame, consider moving the checkerboard target card closer to the lens or replacing it with a larger target card (reducing the number of checkerboard grids if necessary — the minimum number of checkerboard corner points is 4×3).
+- <u>**Multiple checkerboards**</u> or props resembling checkerboard patterns must not appear in the frame. If this occurs, remove or cover the props in advance, or manually paint over that part in an image editing tool.
+- Each checkerboard target card must be <u>**complete**</u> in the frame; otherwise, detection will fail. It is recommended to leave a white border of at least half a grid width at the edges.
+- The placement of all checkerboards must <u>**cover the entire frame**</u> (for extrinsic parameters, it means covering the entire overlap region).
+- The checkerboard needs to cover at least <u>**3 different distances**</u>, and these distances should preferably include the most commonly used distance.
+- The checkerboard needs to cover <u>**different angles**</u>.
+- The checkerboard in each captured image must be <u>**clear**</u> without blurriness. If not clear enough, first confirm that focus is sharp and depth of field is good. **Focusing/zooming** operations on the lens are not allowed during the entire calibration process; after refocusing, all calibration steps must be restarted.
+- The target card should achieve a certain degree of coverage, which should include the actual calibration distance, effective image area, different angles, etc. Multiple identical images at the same position are meaningless.
+
+During calibration in the Stitching Tool, the tmp folder in the PQTools directory will save the corner point detection results of each calibration image. The images in this folder can be used to determine whether the calibration images meet the requirements.
+
+## How to Capture High-Quality Model Calibration Images<a name="ZH-CN_TOPIC_0000002464984733"></a>
+
+[Symptom]
+
+The model calibration process requires capturing many calibration images. To obtain the best calibration effect, there are certain requirements for calibration image capture. Customers are not particularly clear about these requirements.
+
+[Analysis]
+
+Model calibration images need to cover different distances, different positions, and different rotation angles. To more clearly describe the requirements for calibration image capture, text and image methods will be combined to demonstrate the details of calibration image capture.
+
+[Solution]
+
+To better explain the method of capturing model calibration images, a four-channel horizontal structure will be used as an example for illustrated explanation. The camera structure is shown in the schematic diagram of the four-channel horizontal structure, and other parameters are as follows:
+
+**Table 1**  Camera structure parameters
+
+<a name="table356mcpsimp"></a>
+<table><thead align="left"><tr id="row363mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.4.1.1"><p id="p365mcpsimp"><a name="p365mcpsimp"></a><a name="p365mcpsimp"></a>Item</p>
+</th>
+<th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.4.1.2"><p id="p367mcpsimp"><a name="p367mcpsimp"></a><a name="p367mcpsimp"></a>Parameter</p>
+</th>
+<th class="cellrowborder" valign="top" width="59%" id="mcps1.2.4.1.3"><p id="p369mcpsimp"><a name="p369mcpsimp"></a><a name="p369mcpsimp"></a>Remarks</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row371mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.4.1.1 "><p id="p373mcpsimp"><a name="p373mcpsimp"></a><a name="p373mcpsimp"></a>Horizontal FOV of each lens</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="p375mcpsimp"><a name="p375mcpsimp"></a><a name="p375mcpsimp"></a>55&deg;</p>
+</td>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p377mcpsimp"><a name="p377mcpsimp"></a><a name="p377mcpsimp"></a>The smaller the lens FOV, the more all distances in model calibration intrinsic calibration need to be correspondingly increased; conversely, all distances need to be correspondingly decreased.</p>
+</td>
+</tr>
+<tr id="row378mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.4.1.1 "><p id="p380mcpsimp"><a name="p380mcpsimp"></a><a name="p380mcpsimp"></a>FOV after stitching</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="p382mcpsimp"><a name="p382mcpsimp"></a><a name="p382mcpsimp"></a>Approx. 180&deg;</p>
+</td>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p384mcpsimp"><a name="p384mcpsimp"></a><a name="p384mcpsimp"></a>-</p>
+</td>
+</tr>
+<tr id="row385mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.4.1.1 "><p id="p387mcpsimp"><a name="p387mcpsimp"></a><a name="p387mcpsimp"></a>FOV of each overlap region</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.4.1.2 "><p id="p389mcpsimp"><a name="p389mcpsimp"></a><a name="p389mcpsimp"></a>Approx. 11&deg;</p>
+</td>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.4.1.3 "><p id="p391mcpsimp"><a name="p391mcpsimp"></a><a name="p391mcpsimp"></a>The smaller the overlap region FOV, the more all distances in model calibration extrinsic calibration need to be correspondingly increased; at the same time, the distance range (or multiple) that can be covered during extrinsic calibration also correspondingly decreases.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+### Intrinsic Parameter Calibration Image Capture Method<a name="ZH-CN_TOPIC_0000002464984729"></a>
+
+**Table 1**  Intrinsic calibration image capture guide
+
+<a name="table393mcpsimp"></a>
+<table><thead align="left"><tr id="row402mcpsimp"><th class="cellrowborder" valign="top" width="9%" id="mcps1.2.6.1.1"><p id="p404mcpsimp"><a name="p404mcpsimp"></a><a name="p404mcpsimp"></a>Step</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.6.1.2"><p id="p406mcpsimp"><a name="p406mcpsimp"></a><a name="p406mcpsimp"></a>Objective</p>
+</th>
+<th class="cellrowborder" valign="top" width="45%" id="mcps1.2.6.1.3"><p id="p408mcpsimp"><a name="p408mcpsimp"></a><a name="p408mcpsimp"></a>Calibration Method</p>
+</th>
+<th class="cellrowborder" valign="top" width="10%" id="mcps1.2.6.1.4"><p id="p410mcpsimp"><a name="p410mcpsimp"></a><a name="p410mcpsimp"></a>Quantity</p>
+</th>
+<th class="cellrowborder" valign="top" width="16%" id="mcps1.2.6.1.5"><p id="p412mcpsimp"><a name="p412mcpsimp"></a><a name="p412mcpsimp"></a>Reference Distance</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row414mcpsimp"><td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.6.1.1 "><p id="p416mcpsimp"><a name="p416mcpsimp"></a><a name="p416mcpsimp"></a>1</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.6.1.2 "><p id="p418mcpsimp"><a name="p418mcpsimp"></a><a name="p418mcpsimp"></a>Close distance, single target card full coverage</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.6.1.3 "><p id="p420mcpsimp"><a name="p420mcpsimp"></a><a name="p420mcpsimp"></a>Ensure the checkerboard target card is complete and maximized in the frame</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.6.1.4 "><p id="p422mcpsimp"><a name="p422mcpsimp"></a><a name="p422mcpsimp"></a>1</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.6.1.5 "><p id="p424mcpsimp"><a name="p424mcpsimp"></a><a name="p424mcpsimp"></a>350 mm</p>
+</td>
+</tr>
+<tr id="row425mcpsimp"><td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.6.1.1 "><p id="p427mcpsimp"><a name="p427mcpsimp"></a><a name="p427mcpsimp"></a>2</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.6.1.2 "><p id="p429mcpsimp"><a name="p429mcpsimp"></a><a name="p429mcpsimp"></a>Close distance, multiple target cards full coverage</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.6.1.3 "><p id="p431mcpsimp"><a name="p431mcpsimp"></a><a name="p431mcpsimp"></a>Cover the full screen (4 corners + 4 edges): each target card occupies approximately 1/4 of the frame, trapezoidal transformation at 4 corners, 4-edge target cards tilted approximately 30&deg; with the edge as the axis</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.6.1.4 "><p id="p433mcpsimp"><a name="p433mcpsimp"></a><a name="p433mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.6.1.5 "><p id="p435mcpsimp"><a name="p435mcpsimp"></a><a name="p435mcpsimp"></a>800 mm</p>
+</td>
+</tr>
+<tr id="row436mcpsimp"><td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.6.1.1 "><p id="p438mcpsimp"><a name="p438mcpsimp"></a><a name="p438mcpsimp"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.6.1.2 "><p id="p440mcpsimp"><a name="p440mcpsimp"></a><a name="p440mcpsimp"></a>Medium distance, multiple angles</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.6.1.3 "><p id="p442mcpsimp"><a name="p442mcpsimp"></a><a name="p442mcpsimp"></a>Increase the distance between the target card and the lens by one time, select three vertex positions of a triangle in the entire frame, and rotate the target card approximately 30&deg; each time at each position</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.6.1.4 "><p id="p445mcpsimp"><a name="p445mcpsimp"></a><a name="p445mcpsimp"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.6.1.5 "><p id="p447mcpsimp"><a name="p447mcpsimp"></a><a name="p447mcpsimp"></a>2000 mm</p>
+</td>
+</tr>
+<tr id="row448mcpsimp"><td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.6.1.1 "><p id="p450mcpsimp"><a name="p450mcpsimp"></a><a name="p450mcpsimp"></a>4</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.6.1.2 "><p id="p452mcpsimp"><a name="p452mcpsimp"></a><a name="p452mcpsimp"></a>Long distance, multiple angles</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.6.1.3 "><p id="p454mcpsimp"><a name="p454mcpsimp"></a><a name="p454mcpsimp"></a>Increase the distance between the target card and the lens again by about 4 times (note: rotate the target card approximately 30&deg; each time at each position)</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.6.1.4 "><p id="p457mcpsimp"><a name="p457mcpsimp"></a><a name="p457mcpsimp"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.6.1.5 "><p id="p459mcpsimp"><a name="p459mcpsimp"></a><a name="p459mcpsimp"></a>6000 mm</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+>![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>The actual distances for intrinsic parameter calibration are related to the FOV of a single lens: the smaller the lens FOV, the more all distances in model calibration intrinsic calibration need to be correspondingly increased; conversely, all distances need to be correspondingly decreased. The reference distances in this section are all estimated relative to a lens with a 55° FOV.
+
+The effect of one set of extrinsic calibration images is shown in [Figure 1](#_Ref520292586).
+
+**Figure 1**  A complete set of intrinsic calibration images<a name="_Ref520292586"></a>  
+![](../../../reference/faq/splice/figures/一组完整的内参标定图片.png "A complete set of intrinsic calibration images")
+
+To illustrate the intrinsic calibration process and requirements, the checkerboard target cards from the actual calibration images are extracted and drawn in a 3D model, with the effect shown in [Figure 2](#_Ref520292652).
+
+**Figure 2**  A 3D projection view of a complete set of intrinsic calibration images<a name="_Ref520292652"></a>  
+![](../../../reference/faq/splice/figures/一组完整的内参标定全部图片的三维投影图.png "A 3D projection view of a complete set of intrinsic calibration images")
+
+The specific meaning of each image in the 3D projection diagram is as follows.
+
+**Figure 3**  Description of the 3D projection diagram meaning<a name="fig9431258322"></a>  
+![](../../../reference/faq/splice/figures/三维投影示意图意义描述.png "Description of the 3D projection diagram meaning")
+
+The following four steps describe the intrinsic calibration process in detail.
+
+1.  Single image full-frame coverage
+
+    Bring the target card close to the lens so that the entire card is exactly **centered and fills** the entire frame (as long as it fills either vertically or horizontally), capturing approximately 1 image.
+
+    >![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+    >-   Priority should be given to ensuring the **completeness** of the target card. If the card exceeds the frame, increase the distance until all parts of the card appear in the frame.
+    >-   Priority should be given to ensuring that the lines and corner points of the target card are **clear**. If blurriness is obvious, increase the distance until the image is clear.
+    >-   The image may have **distortion**, but it cannot be excessive. Excessive distortion will cause the calibration algorithm to be unable to detect successfully. In this case, increase the distance to reduce the degree of line curvature.
+    >-   A single target card can cover the entire frame. At this time, the card is generally very **close** to the lens, but an excessively close distance may produce line curvature or blurriness. Usually, the closest distance should not be less than 300 mm, to be determined through actual preview effects.
+    >-   Under the above conditions, keeping the target card at its maximum proportion in the frame is sufficient.
+    >-   The target card having **slight tilt in various directions does not affect** calibration. The target card does not need to be perfectly upright.
+    >-   Generally, for fisheye lenses, due to the excessively large FOV, it is difficult for the target card to cover the entire frame. In this case, just cover as much as possible.
+
+    Example:
+
+    As shown in [Figure 4](#fig525635941410), a checkerboard with a single grid side length of 50 mm and 9×6 internal corner points is used to calibrate the single-channel coverage image for four-channel non-fisheye stitching.
+
+    **Figure 4**  Intrinsic calibration: single target card covering full screen<a name="fig525635941410"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-单张图卡覆盖全屏.png "Intrinsic calibration: single target card covering full screen")
+
+1.  Multiple images covering the entire frame
+
+    Multiple image full coverage uses the **4 corners + 4 edges** method. The checkerboard target card occupies approximately 1/4 of the frame, covering the 4 corners and 4 edges of the image respectively. At the 4 edges, the target card is tilted approximately <u>**30**</u>° with the adjacent edge as the axis. Capture approximately 8 images.
+
+    **Figure 5**  Intrinsic calibration: actual images of four-corner coverage<a name="fig4550121012119"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-四角覆盖实拍图.png "Intrinsic calibration: actual images of four-corner coverage")
+
+    **Figure 6**  Intrinsic calibration: actual images of four-edge coverage<a name="fig55511810161112"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-四边覆盖实拍图像.png "Intrinsic calibration: actual images of four-edge coverage")
+
+    **Figure 7**  Intrinsic calibration: 3D projection view of four-edge and four-corner coverage<a name="fig18761151781811"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-四边-四角覆盖三维投影图.png "Intrinsic calibration: 3D projection view of four-edge and four-corner coverage")
+
+2.  Coverage at different distances and angles
+
+    Increase the distance between the target card and the lens **by approximately one time**. Select three vertex positions of a triangle in the entire frame, and rotate the target card approximately <u>**30**</u>**°** each time at each position. Capture approximately <u>**3**</u> images.
+
+    **Figure 8**  Intrinsic calibration: actual images of coverage at different distances, angles, and positions<a name="fig455181014117"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-距离不同角度和位置覆盖实拍图像.png "Intrinsic calibration: actual images of coverage at different distances, angles, and positions")
+
+    **Figure 9**  Intrinsic calibration: 3D projection view of coverage at different distances, angles, and positions<a name="fig355231018116"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-距离不同角度和位置覆盖三维投影图.png "Intrinsic calibration: 3D projection view of coverage at different distances, angles, and positions")
+
+3.  Coverage at long distances and different angles
+
+    Increase the distance between the target card and the lens again by approximately <u>**4**</u> times (note: when the target card occupies too few pixels or the indoor test environment length is insufficient, the adjustment multiple can be appropriately reduced). Select three points at another triangle position in the entire frame, and rotate the target card approximately <u>**30**</u>**°** each time at each position. Capture approximately 3 images.
+
+    **Figure 10**  Intrinsic calibration: actual images of coverage at long distances and different angles and positions<a name="fig147131253020"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-远距离不同角度和位置覆盖实拍图像.png "Intrinsic calibration: actual images of coverage at long distances and different angles and positions")
+
+    **Figure 11**  Intrinsic calibration: 3D projection view of coverage at long distances and different angles and positions<a name="fig1577810123316"></a>  
+    ![](../../../reference/faq/splice/figures/内参标定-远距离不同角度和位置覆盖三维投影图.png "Intrinsic calibration: 3D projection view of coverage at long distances and different angles and positions")
+### Extrinsic Parameter Calibration Image Capture Method<a name="ZH-CN_TOPIC_0000002464864609"></a>
+
+**Table 1**  Extrinsic calibration image capture guide
+
+<a name="table529mcpsimp"></a>
+<table><thead align="left"><tr id="row538mcpsimp"><th class="cellrowborder" valign="top" width="9%" id="mcps1.2.6.1.1"><p id="p540mcpsimp"><a name="p540mcpsimp"></a><a name="p540mcpsimp"></a>Step</p>
+</th>
+<th class="cellrowborder" valign="top" width="21%" id="mcps1.2.6.1.2"><p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>Objective</p>
+</th>
+<th class="cellrowborder" valign="top" width="44%" id="mcps1.2.6.1.3"><p id="p544mcpsimp"><a name="p544mcpsimp"></a><a name="p544mcpsimp"></a>Calibration Method</p>
+</th>
+<th class="cellrowborder" valign="top" width="10%" id="mcps1.2.6.1.4"><p id="p546mcpsimp"><a name="p546mcpsimp"></a><a name="p546mcpsimp"></a>Quantity</p>
+</th>
+<th class="cellrowborder" valign="top" width="16%" id="mcps1.2.6.1.5"><p id="p548mcpsimp"><a name="p548mcpsimp"></a><a name="p548mcpsimp"></a>Reference Distance</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row550mcpsimp"><td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.6.1.1 "><p id="p552mcpsimp"><a name="p552mcpsimp"></a><a name="p552mcpsimp"></a>1</p>
+</td>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.6.1.2 "><p id="p554mcpsimp"><a name="p554mcpsimp"></a><a name="p554mcpsimp"></a>Full coverage of the overlap region at the closest distance</p>
+</td>
+<td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.6.1.3 "><p id="p556mcpsimp"><a name="p556mcpsimp"></a><a name="p556mcpsimp"></a>Align both sides of the narrow edge with the overlap region to maximize the checkerboard</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.6.1.4 "><p id="p558mcpsimp"><a name="p558mcpsimp"></a><a name="p558mcpsimp"></a>5</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.6.1.5 "><p id="p560mcpsimp"><a name="p560mcpsimp"></a><a name="p560mcpsimp"></a>1800 mm</p>
+</td>
+</tr>
+<tr id="row561mcpsimp"><td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.6.1.1 "><p id="p563mcpsimp"><a name="p563mcpsimp"></a><a name="p563mcpsimp"></a>2</p>
+</td>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.6.1.2 "><p id="p565mcpsimp"><a name="p565mcpsimp"></a><a name="p565mcpsimp"></a>Full coverage of the overlap region at different angles</p>
+</td>
+<td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.6.1.3 "><p id="p567mcpsimp"><a name="p567mcpsimp"></a><a name="p567mcpsimp"></a>Adjust the distance farther (approximately 1.8×), so that the diagonal of the target card is close to the two edge seams. Each pair shot is <strong id="b568mcpsimp"><a name="b568mcpsimp"></a><a name="b568mcpsimp"></a>rotated</strong> approximately 30&deg;</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.6.1.4 "><p id="p570mcpsimp"><a name="p570mcpsimp"></a><a name="p570mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.6.1.5 "><p id="p572mcpsimp"><a name="p572mcpsimp"></a><a name="p572mcpsimp"></a>2900 mm</p>
+</td>
+</tr>
+<tr id="row573mcpsimp"><td class="cellrowborder" valign="top" width="9%" headers="mcps1.2.6.1.1 "><p id="p575mcpsimp"><a name="p575mcpsimp"></a><a name="p575mcpsimp"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.6.1.2 "><p id="p577mcpsimp"><a name="p577mcpsimp"></a><a name="p577mcpsimp"></a>Coverage at long distance and different angles</p>
+</td>
+<td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.6.1.3 "><p id="p579mcpsimp"><a name="p579mcpsimp"></a><a name="p579mcpsimp"></a>Increase the distance by one time, capture 3 images</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.6.1.4 "><p id="p581mcpsimp"><a name="p581mcpsimp"></a><a name="p581mcpsimp"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.6.1.5 "><p id="p583mcpsimp"><a name="p583mcpsimp"></a><a name="p583mcpsimp"></a>5000 mm</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+>![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>The extrinsic calibration distance is related to the overlap region FOV: the smaller the overlap region FOV, the more all distances in model calibration extrinsic calibration need to be correspondingly increased; at the same time, the distance range (or multiple) that can be covered during extrinsic calibration also correspondingly decreases. The overlap region FOV in this section is 11°.
+
+Taking four-channel non-fisheye horizontal stitching as an example, the effect of one set of extrinsic calibration images for adjacent lenses is shown below (note that for typesetting convenience, the single board is placed vertically), with approximately 16 pairs of images captured in total:
+
+**Figure 1**  A complete set of extrinsic calibration images<a name="fig586mcpsimp"></a>  
+![](../../../reference/faq/splice/figures/一组完整的外参标定图片.png "A complete set of extrinsic calibration images")
+![](../../../reference/faq/splice/figures/2-2-2_p1_2.png)
+
+![](../../../reference/faq/splice/figures/2-2-2_p1_3.png)
+
+![](../../../reference/faq/splice/figures/2-2-2_p1_4.png)
+
+To illustrate the extrinsic calibration process and requirements, the checkerboard target cards from the actual calibration images are extracted and drawn in a 3D model, with the effect shown in [Figure 2](#_Ref520294639).
+
+**Figure 2**  A 3D projection view of a complete set of extrinsic calibration images<a name="_Ref520294639"></a>  
+![](../../../reference/faq/splice/figures/一组完整的外参标定图片的三维投影图.png "A 3D projection view of a complete set of extrinsic calibration images")
+
+3D projection viewing angle 1
+
+![](../../../reference/faq/splice/figures/2-13a.png)
+
+3D projection viewing angle 2
+
+1.  Full coverage of the overlap region at the closest distance
+
+    Covering the entire overlap region at the closest distance can reduce the number of calibration target cards and improve the sufficiency of calibration. The method is to align the side of the target card with fewer corner points with both sides of the overlap region, making the checkerboard complete and maximized. Move the target card from one side of the overlap region to the other, capturing one image at each position. The checkerboard does not need a specific rotation angle during this calibration period (otherwise it is easy to cause the checkerboard target card to exceed a certain overlap region). During the movement process, ensure that all captured target cards combined can cover the entire overlap region. Generally, capturing approximately 5 pairs of images is sufficient (the dual-fisheye back-to-back structure is relatively special and may require more pairs of images). This is shown in [Figure 3](#fig139332300472).
+
+    **Figure 3**  Extrinsic calibration: full coverage of the overlap region at the closest distance<a name="fig139332300472"></a>  
+    ![](../../../reference/faq/splice/figures/外参标定-最近距离下重叠区域全覆盖.png "Extrinsic calibration: full coverage of the overlap region at the closest distance")
+
+    \(a\) Extrinsic calibration: actual images of full coverage of the overlap region at the closest distance
+
+    ![](../../../reference/faq/splice/figures/2-14b.png)
+
+    \(b\) Extrinsic calibration: 3D projection image of full coverage of the overlap region at the closest distance
+
+2.  Full coverage of the overlap region at different angles
+
+    Full coverage of the overlap region at **different angles** can cover more shapes and angles. Since the checkerboard target card is square, it actually only needs to cover a 90° rotation of the target card. It is necessary to adjust the target card distance farther (generally increased to 1.8 times relative to step 1, so that the checkerboard **diagonal** just appears in the overlap region; refer to the following calibration reference image camera2_23_12.jpg, so that the target card can rotate arbitrarily in the overlap region without exceeding it) so that the checkerboard target card diagonal is close to the two edge overlap regions. Each pair of images is shot while moving the target card once and simultaneously **rotating** approximately 30°. This step captures approximately 8 pairs of images. This is shown in [Figure 4](#_Ref520294947).
+
+    **Figure 4**  Extrinsic calibration: full coverage of the overlap region at all angles<a name="_Ref520294947"></a>  
+    ![](../../../reference/faq/splice/figures/外参标定-全角度下重叠区域全覆盖.png "Extrinsic calibration: full coverage of the overlap region at all angles")
+    ![](../../../reference/faq/splice/figures/2-2-2_p4_2.png)
+
+    \(a\) Extrinsic calibration: actual images of full coverage of the overlap region at all angles
+
+    ![](../../../reference/faq/splice/figures/2-15b.png)
+
+    \(b\) Extrinsic calibration: 3D projection view of overlap region coverage at all angles
+
+3.  Coverage at long distances and different angles
+
+    **Long-distance** coverage at different angles: increase the distance between the target card and the lens by approximately 1 time relative to step 2, with positions generally covering the two ends and the middle position of the overlap region. Capture approximately 3 pairs of images.
+
+    >![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+    >-   Each grid of the target card must not occupy too few pixels in the frame. It is generally required that each grid be no less than 10 pixels. If the grids are too small, reduce the distance between the checkerboard and the lens.
+    >-   If the indoor environment space is limited, the distance can be appropriately reduced.
+    >-   When the distance is sufficient and the checkerboard still occupies relatively many pixels, the distance can also be appropriately increased.
+    >-   During the calibration process, try to ensure that the target card is in the **middle area** of the two overlap regions.
+    >-   The distance can be obtained through **visual estimation** or **direct estimation**.
+
+    **Figure 5**  Extrinsic calibration: coverage of the long-distance overlap region at different angles<a name="fig627mcpsimp"></a>  
+    ![](../../../reference/faq/splice/figures/外参标定-远距离重叠区域不同角度的覆盖.png "Extrinsic calibration: coverage of the long-distance overlap region at different angles")
+
+    Extrinsic calibration: actual images of coverage of the long-distance overlap region at different angles
+
+    ![](../../../reference/faq/splice/figures/2-16b.png)
+
+    Extrinsic calibration: 3D projection view of coverage of the long-distance overlap region at different angles
+
+## How to Use the tmp Files in PQ Tools to Evaluate Model Calibration Effect<a name="ZH-CN_TOPIC_0000002431386010"></a>
+
+[Symptom]
+
+When using PQTools for AVSP model calibration, the tmp folder in PQTools generates some temporary files used to evaluate the effect of this AVSP calibration. Customers are not familiar with these temporary files.
+
+[Analysis]
+
+During the model calibration process, three types of temporary files are generated in the tmp folder of PQTools: QA_measures.txt, distance.csv, and checkerboard marked JPG images. The meaning and usage of these files are explained.
+
+[Solution]
+
+Please refer to the descriptions from the "[QA_measures.txt File Content and Usage Instructions](#ZH-CN_TOPIC_0000002464984725)" section to the "[Checkerboard Marked JPG Images](#ZH-CN_TOPIC_0000002431386006)" section.
+
+
+
+
+### QA_measures.txt File Content and Usage Instructions<a name="ZH-CN_TOPIC_0000002464984725"></a>
+
+This file is generated after model calibration is complete and is used to evaluate the effect of model calibration. [Figure 1](#fig230116251091) is a use case generated from dual-lens calibration. QA_measures.txt is mainly divided into two parts: Total QA Measures and Each QA Measures.
+
+**Figure 1**  QA_measures.txt file content<a name="fig230116251091"></a>  
+![](../../../reference/faq/splice/figures/QA_measures-txt文件内容.png "QA_measures.txt file content")
+
+Total QA Measures is the overall calibration effect evaluation; Each QA Measures is the calibration effect evaluation for a single lens or each seam, allowing supplementation or optimization of calibration images based on a specific lens or overlap region. The meanings of the evaluation content are as follows:
+
+-   Average Reprojection Error: refers to the average reprojection error, in pixels. The reprojection error is the error between the theoretical projection point and the actual projection point in the stitched image, which can be simply understood as the average stitching misalignment size. The smaller this value, the better. Based on testing experience, a value in the range of (0, 1] indicates an excellent effect, in the range of (1, 2] a very good effect, in the range of (2, 3] a good effect, and when this value exceeds 3, the effect is average. Different product forms may vary; specifics can be evaluated through actual stitching assessment during the product evaluation phase.
+-   Maximum Reprojection Error: refers to the maximum reprojection error, which can determine whether there are checkerboard internal corner point matching errors during the calibration process. If this value is greater than 20, it is necessary to evaluate whether multiple checkerboards appear in the calibration images or if there are naming errors.
+-   Matched Point Count: refers to the number of successfully matched corner point pairs, related to the number of images and the number of checkerboard internal corner points.
+-   Total Dist Ratio or Dist Ratio: checkerboard distance evaluation coefficient. In model calibration images, checkerboards need to be placed at different distances to enrich the calibration model calculation. The larger the Dist Ratio, the richer the distance coverage, and theoretically the better the calibration effect, which also benefits production-line calibration. Based on testing experience, if this value is greater than 1.0, it indicates that the model calibration effect is acceptable; if greater than 3, it indicates that the model calibration effect will be relatively good.
+-   Minimum Dist Ratio: minimum checkerboard distance evaluation parameter. The checkerboard distance evaluation parameters are calculated by lens and overlap region. Similarly, if this value is greater than 1.0, the model calibration effect is acceptable; if greater than 3, the model calibration effect will be relatively good.
+
+### distance.csv File Content and Usage Instructions<a name="ZH-CN_TOPIC_0000002431226182"></a>
+
+This file provides a more detailed checkerboard distance distribution, including the checkerboard distance corresponding to each image and the checkerboard distance histogram distribution in each lens or each seam calibration image, allowing for a more intuitive evaluation of whether the checkerboard placement is correct.
+
+As shown in [Figure 1](#fig38491323325), this is a use case generated from dual-lens calibration. Region A represents the checkerboard distance corresponding to each calibration image. If a calibration image is marked TRUE, it indicates that this calibration image participates in the lens intrinsic/extrinsic parameter calibration calculation; if FALSE, it indicates that this calibration image does not participate in the intrinsic/extrinsic parameter calibration calculation. Whether a calibration image is TRUE depends on the iterative calculation during the calibration process. However, when there are many FALSE calibration images — more than half — it is necessary to consider re-capturing the calibration images. Region B represents the checkerboard distance histogram distribution for a single lens or overlap region, and the last column is the checkerboard distance histogram distribution for all calibration images, with distance units in millimeters (mm).
+
+The checkerboard distance histogram is used to further determine whether the calibration image capture meets the standards. If there are anomalies, it can improve the efficiency of problem localization.
+
+**Figure 1**  distance.csv file content<a name="fig38491323325"></a>  
+![](../../../reference/faq/splice/figures/distance-csv文件内容.png "distance.csv file content")
+### Checkerboard Marked JPG Images<a name="ZH-CN_TOPIC_0000002431386006"></a>
+
+Each calibration image will be copied in the tmp folder, and the checkerboard corner point positions in the image will be indicated with colored dots and lines, used to determine whether the checkerboard detection is accurate. This is shown in [Figure 1](#fig4128149192015).
+
+-   Figure a has colored dot and line markings, indicating that all corner points of the checkerboard were detected successfully, i.e., this calibration image is valid.
+-   Figure b has only a portion of gray dot markings, indicating that the checkerboard corner point detection failed, i.e., this calibration image is invalid.
+-   Figure c has no dot or line markings at all, indicating that the checkerboard corner point detection failed, i.e., this calibration image is invalid.
+
+When calibration images with failed checkerboard detection appear, supplement them as much as possible if conditions permit, to ensure the best calibration effect.
+
+Image naming follows the format avsp_calib_X_vid_Y_Z.jpg, where if X is a single number, it indicates that this image is an intrinsic calibration image corresponding to camera X; if X is two numbers, it indicates that this image is an extrinsic calibration image between these two cameras. Y is the lens suffix number, which only functions in extrinsic calibration images. Z is the image suffix, numbered starting from 0.
+
+**Figure 1**  Checkerboard marking diagram<a name="fig4128149192015"></a>  
+![](../../../reference/faq/splice/figures/棋盘格标志示意图.png "Checkerboard marking diagram")
+# LUT-Related Debugging Methods
+## When Pipes Cannot Be Numbered Sequentially, How to Correctly Generate and Configure LUT Tables<a name="ZH-CN_TOPIC_0000002431226178"></a>
+
+[Symptom]
+
+In certain special scenarios, such as WDR scenarios, pipe numbers cannot be assigned sequentially starting from 0. In such cases, it is unclear how to name calibration images according to the documentation guidance, and there are also difficulties in generating and configuring LUT lookup tables (i.e., .bin files).
+
+[Analysis]
+
+In the AVSP module, each pipe channel has an independent LUT lookup table that implements coordinate mapping between the output image and the input image. When used, each LUT file is first read into the board-side memory, and the memory address of each LUT is configured in the corresponding pipe channel register. Since the LUTs are independent and unrelated during actual use, the scattered pipe numbers can be mapped to sequential numbers when naming the captured calibration images, and sequentially named LUT lookup table files can be generated. During use, configure the LUT memory addresses to the corresponding pipe channels.
+
+[Solution]
+
+Taking a four-channel stitching WDR scenario as an example, the VI output pipe channel numbers are 0, 2, 4, and 6. It is generally required that the pipe channel order is consistent with the physical order of the lenses in the hardware structure — for example, pipe channels from small to large correspond to lens positions from left to right. It is recommended not to be out of order, otherwise the debugging process will be prone to errors.
+
+The calibration tool's requirement for calibration image naming is: image numbers must be sequentially numbered starting from 0. Therefore, when capturing calibration images, pipe0 can be named camera0, pipe2 named camera1, pipe4 named camera2, and pipe6 named camera3. After capturing the calibration images, perform model or production-line calibration and generate the calibration file (i.e., .cal file).
+
+If using PQTools or the production-line calibration library to generate LUTs, the output LUT file suffixes will be sequentially named starting from 0. For example, PQTools will automatically name them avsp_mesh_out_0.bin, avsp_mesh_out_1.bin, avsp_mesh_out_2.bin, and avsp_mesh_out_3.bin. When using them, avsp_mesh_out_0.bin needs to be read into the board-side memory address configured for pipe0, avsp_mesh_out_1.bin read into the board-side memory address configured for pipe2, avsp_mesh_out_2.bin read into the board-side memory address configured for pipe4, and avsp_mesh_out_3.bin read into the board-side memory address configured for pipe6.
+
+If using the board-side avs_lut library to generate LUTs, since this library only stores LUT data in memory addresses, customers can save the corresponding LUT memory as any name. In this case, the LUTs can be remapped to names corresponding to pipe numbers, for example, saving the third LUT memory as the avsp_mesh_out_4.bin file. Of course, it can also be used directly by only needing to configure the memory address in the corresponding AVSP register.
+
+## LUT Optimal Stitching Distance and Parallax Issues<a name="ZH-CN_TOPIC_0000002431386014"></a>
+
+[Symptom]
+
+When generating the LUT, stitching distance adjustment is supported. Even when calibration is completely correct, in general scenes, no matter how the stitching distance is adjusted, there will always be some ghosting or misalignment at the seam position.
+
+[Analysis]
+
+Since in a panoramic camera, adjacent lenses cannot be placed in the same position, the imaging effect will inevitably have parallax issues. As a result, objects at different distances in the overlap region have different relative positions in the image after imaging, making it impossible to achieve truly seamless stitching. General scenes inevitably have a certain depth of field, and seamless stitching cannot be guaranteed across the entire depth of field range. The stitching seam will therefore have some ghosting or misalignment. As shown in [Figure 1](#fig347372415259), in adjacent images, the foreground and background have different distances, creating a parallax phenomenon that causes the relative positions of the foreground and background to differ slightly, as shown in the red box. If the stitching distance is adjusted to the foreground position, the background will inevitably have ghosting caused by parallax, as shown in figure b; conversely, if the stitching distance is adjusted to the background object, the foreground will have misalignment.
+
+**Figure 1**  Parallax example<a name="fig347372415259"></a>  
+![](../../../reference/faq/splice/figures/视差示例.png "Parallax example")
+
+[Solution]
+
+This issue is an objective problem that exists in all stitching algorithms and cannot be fundamentally resolved. It can only be mitigated from the hardware side and through stitching distance debugging to reduce the misalignment problem caused by parallax and optimize the stitching effect. The simplified formula for parallax is as follows:
+
+![](../../../reference/faq/splice/figures/zh-cn_formulaimage_0000002431386070.png)
+
+In the above formula: W is the pixel width, in pixels; w is the sensor width, in mm; f is the lens focal length, in mm; b is the spacing between adjacent lenses, in mm; Z<sub>1</sub>/Z<sub>2</sub> are the imaging distances of different objects, in mm. Among these, W, w, and f are fixed values. Parallax is proportional to b and ![](../../../reference/faq/splice/figures/zh-cn_formulaimage_0000002464864685.png). Therefore, to reduce the misalignment effect caused by parallax, the spacing between adjacent lenses should be minimized as much as possible. Z<sub>1</sub> and Z<sub>2</sub> are scene-related and cannot be directly controlled. [Table 1](#table1228mcpsimp) shows the parallax sizes at different object distances calculated under certain conditions. It can be seen that when the object distance is closer, the parallax effect is greater. Therefore, panoramic cameras are more suitable for outdoor large and distant scenes. In indoor scenes, the parallax effect is more pronounced, making misalignment and ghosting issues more likely to occur.
+
+**Table 1**  Parallax examples at different object distances
+
+<a name="table1228mcpsimp"></a>
+<table><thead align="left"><tr id="row1238mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.8.1.1"><p id="p1240mcpsimp"><a name="p1240mcpsimp"></a><a name="p1240mcpsimp"></a>Z<sub id="sub1241mcpsimp"><a name="sub1241mcpsimp"></a><a name="sub1241mcpsimp"></a>1</sub>/Z<sub id="sub1242mcpsimp"><a name="sub1242mcpsimp"></a><a name="sub1242mcpsimp"></a>2</sub></p>
+</th>
+<th class="cellrowborder" valign="top" width="15%" id="mcps1.2.8.1.2"><p id="p1244mcpsimp"><a name="p1244mcpsimp"></a><a name="p1244mcpsimp"></a>1 m</p>
+</th>
+<th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.8.1.3"><p id="p1246mcpsimp"><a name="p1246mcpsimp"></a><a name="p1246mcpsimp"></a>2 m</p>
+</th>
+<th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.8.1.4"><p id="p1248mcpsimp"><a name="p1248mcpsimp"></a><a name="p1248mcpsimp"></a>3 m</p>
+</th>
+<th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.8.1.5"><p id="p1250mcpsimp"><a name="p1250mcpsimp"></a><a name="p1250mcpsimp"></a>5 m</p>
+</th>
+<th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.8.1.6"><p id="p1252mcpsimp"><a name="p1252mcpsimp"></a><a name="p1252mcpsimp"></a>8 m</p>
+</th>
+<th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.8.1.7"><p id="p1254mcpsimp"><a name="p1254mcpsimp"></a><a name="p1254mcpsimp"></a>10 m</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1256mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 "><p id="p1258mcpsimp"><a name="p1258mcpsimp"></a><a name="p1258mcpsimp"></a>1 m</p>
+</td>
+<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.2 "><p id="p1260mcpsimp"><a name="p1260mcpsimp"></a><a name="p1260mcpsimp"></a>0 pixel</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.3 "><p id="p1262mcpsimp"><a name="p1262mcpsimp"></a><a name="p1262mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.4 "><p id="p1264mcpsimp"><a name="p1264mcpsimp"></a><a name="p1264mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.5 "><p id="p1266mcpsimp"><a name="p1266mcpsimp"></a><a name="p1266mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.6 "><p id="p1268mcpsimp"><a name="p1268mcpsimp"></a><a name="p1268mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.7 "><p id="p1270mcpsimp"><a name="p1270mcpsimp"></a><a name="p1270mcpsimp"></a>-</p>
+</td>
+</tr>
+<tr id="row1271mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 "><p id="p1273mcpsimp"><a name="p1273mcpsimp"></a><a name="p1273mcpsimp"></a>2 m</p>
+</td>
+<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.2 "><p id="p1275mcpsimp"><a name="p1275mcpsimp"></a><a name="p1275mcpsimp"></a>160</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.3 "><p id="p1277mcpsimp"><a name="p1277mcpsimp"></a><a name="p1277mcpsimp"></a>0</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.4 "><p id="p1279mcpsimp"><a name="p1279mcpsimp"></a><a name="p1279mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.5 "><p id="p1281mcpsimp"><a name="p1281mcpsimp"></a><a name="p1281mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.6 "><p id="p1283mcpsimp"><a name="p1283mcpsimp"></a><a name="p1283mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.7 "><p id="p1285mcpsimp"><a name="p1285mcpsimp"></a><a name="p1285mcpsimp"></a>-</p>
+</td>
+</tr>
+<tr id="row1286mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 "><p id="p1288mcpsimp"><a name="p1288mcpsimp"></a><a name="p1288mcpsimp"></a>3 m</p>
+</td>
+<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.2 "><p id="p1290mcpsimp"><a name="p1290mcpsimp"></a><a name="p1290mcpsimp"></a>213</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.3 "><p id="p1292mcpsimp"><a name="p1292mcpsimp"></a><a name="p1292mcpsimp"></a>53</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.4 "><p id="p1294mcpsimp"><a name="p1294mcpsimp"></a><a name="p1294mcpsimp"></a>0</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.5 "><p id="p1296mcpsimp"><a name="p1296mcpsimp"></a><a name="p1296mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.6 "><p id="p1298mcpsimp"><a name="p1298mcpsimp"></a><a name="p1298mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.7 "><p id="p1300mcpsimp"><a name="p1300mcpsimp"></a><a name="p1300mcpsimp"></a>-</p>
+</td>
+</tr>
+<tr id="row1301mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 "><p id="p1303mcpsimp"><a name="p1303mcpsimp"></a><a name="p1303mcpsimp"></a>5 m</p>
+</td>
+<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.2 "><p id="p1305mcpsimp"><a name="p1305mcpsimp"></a><a name="p1305mcpsimp"></a>256</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.3 "><p id="p1307mcpsimp"><a name="p1307mcpsimp"></a><a name="p1307mcpsimp"></a>96</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.4 "><p id="p1309mcpsimp"><a name="p1309mcpsimp"></a><a name="p1309mcpsimp"></a>43</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.5 "><p id="p1311mcpsimp"><a name="p1311mcpsimp"></a><a name="p1311mcpsimp"></a>0</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.6 "><p id="p1313mcpsimp"><a name="p1313mcpsimp"></a><a name="p1313mcpsimp"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.7 "><p id="p1315mcpsimp"><a name="p1315mcpsimp"></a><a name="p1315mcpsimp"></a>-</p>
+</td>
+</tr>
+<tr id="row1316mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 "><p id="p1318mcpsimp"><a name="p1318mcpsimp"></a><a name="p1318mcpsimp"></a>8 m</p>
+</td>
+<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.2 "><p id="p1320mcpsimp"><a name="p1320mcpsimp"></a><a name="p1320mcpsimp"></a>280</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.3 "><p id="p1322mcpsimp"><a name="p1322mcpsimp"></a><a name="p1322mcpsimp"></a>120</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.4 "><p id="p1324mcpsimp"><a name="p1324mcpsimp"></a><a name="p1324mcpsimp"></a>67</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.5 "><p id="p1326mcpsimp"><a name="p1326mcpsimp"></a><a name="p1326mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.6 "><p id="p1328mcpsimp"><a name="p1328mcpsimp"></a><a name="p1328mcpsimp"></a>0</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.7 "><p id="p1330mcpsimp"><a name="p1330mcpsimp"></a><a name="p1330mcpsimp"></a>-</p>
+</td>
+</tr>
+<tr id="row1331mcpsimp"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.1 "><p id="p1333mcpsimp"><a name="p1333mcpsimp"></a><a name="p1333mcpsimp"></a>10 m</p>
+</td>
+<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.8.1.2 "><p id="p1335mcpsimp"><a name="p1335mcpsimp"></a><a name="p1335mcpsimp"></a>288</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.3 "><p id="p1337mcpsimp"><a name="p1337mcpsimp"></a><a name="p1337mcpsimp"></a>128</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.4 "><p id="p1339mcpsimp"><a name="p1339mcpsimp"></a><a name="p1339mcpsimp"></a>75</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.5 "><p id="p1341mcpsimp"><a name="p1341mcpsimp"></a><a name="p1341mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.6 "><p id="p1343mcpsimp"><a name="p1343mcpsimp"></a><a name="p1343mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.8.1.7 "><p id="p1345mcpsimp"><a name="p1345mcpsimp"></a><a name="p1345mcpsimp"></a>0</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+This model is calculated purely considering parallax under ideal conditions and is for reference only. In actual applications, misalignment is also related to other factors such as lens distortion and hardware differences between adjacent lenses. The more severe the lens distortion, such as with wide-angle lenses, the more severe the misalignment may be.
+
+## Fine Tuning Debugging Method<a name="ZH-CN_TOPIC_0000002464864613"></a>
+
+[Symptom]
+
+The Fine Tuning function is implemented in the board-side LUT library, meaning each Fine Tuning operation is realized by refreshing the LUT table. Fine Tuning parameters and debugging methods have a certain level of difficulty in understanding.
+
+[Analysis]
+
+Fine Tuning can adjust the image position of each channel in multi-channel stitching. The parameters have five dimensions, as follows:
+
+-   Attitude angles Yaw, Pitch, and Roll — three dimensions. Generally, the adjustment effect is equivalent to: Yaw translates the overall image in the X direction of the input image distortion center, Pitch translates the overall image in the Y direction of the input image distortion center, and Roll rotates the image around the input image distortion center as the axis.
+-   Distortion center translation OffsetX and OffsetY — two dimensions. Generally, the adjustment effect is: OffsetX changes the X coordinate of the input image distortion center, and OffsetY changes the Y coordinate of the input image distortion center.
+
+It is not recommended for customers to open the Fine Tuning function for closed-loop panoramic stitching (such as back-to-back dual-fisheye stitching, multi-channel horizontal surround 360° stitching, etc.), because after adjusting a single image, it is difficult to balance the left and right adjacent lenses. Fine Tuning is generally applied in multi-channel horizontal stitching (non-360°) scenarios.
+
+[Solution]
+
+Below, using the four-channel horizontal stitching scenario where Fine Tuning is most commonly applied as an example, guidance is provided on how to implement Fine Tuning. For simplification, it is recommended to open only the three dimensions of Yaw, Pitch, and Roll. Furthermore, to facilitate end-user understanding and usage, Yaw can be converted to OffsetH (i.e., horizontal offset), and Pitch converted to OffsetV (i.e., vertical offset).
+
+The Fine Tuning direction is fine-tuned based on the original image, while the final debugging effect is based on the stitched image effect. Therefore, OffsetH and OffsetV should be the up/down/left/right movement of a single image in the final stitched image. How to convert OffsetH and OffsetV into Yaw and Pitch in Fine Tuning is key. Roll is rotation and does not need conversion.
+
+Generally, for four-channel horizontal stitching use cases, the position of the original image in the stitched image may be rotated clockwise by 0°, 90°, 180°, and 270°. The conversion methods for these four common cases are as follows:
+
+-   Clockwise 0° rotation case:
+
+    Yaw = K1\*OffsetH
+
+    Pitch = K2\*OffsetV
+
+-   Clockwise 90° rotation case:
+
+    Yaw = - K1\*OffsetV
+
+    Pitch = K2\*OffsetH
+
+-   Clockwise 180° rotation case:
+
+    Yaw = - K1\*OffsetH
+
+    Pitch = - K2\*OffsetV
+
+-   Clockwise 270° rotation case:
+
+    Yaw = K1\*OffsetV
+
+    Pitch = - K2\*OffsetH
+
+Where K1 and K2 are the conversions between angles and pixel coordinates, depending on the stitched image resolution, FOV, and fine-tuning precision, which can be obtained through actual configuration testing.
+
+To further illustrate with a specific example, assume the original images and stitched image are as shown in [Figure 1](#fig8890314113117). The FOV of each lens is 90°×55°, the overlap region is 15%, the output stitched image resolution is 3840×2160, and the output FOV is approximately 195°×90°. Then in the horizontal direction, K1=195/3840=0.05, and in the vertical direction, K2=90/2160=0.04.
+
+Note that the original image rotation direction differs for different channels, so the conversion for each channel is as shown in [Table 1](#_Ref9347211).
+
+**Figure 1**  Original image and stitched image illustration<a name="fig8890314113117"></a>  
+![](../../../reference/faq/splice/figures/原图与拼接图示意.png "Original image and stitched image illustration")
+
+**Table 1**  Fine Tuning conversion results
+
+<a name="_Ref9347211"></a>
+<table><thead align="left"><tr id="row1386mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p1388mcpsimp"><a name="p1388mcpsimp"></a><a name="p1388mcpsimp"></a>Channel 0 (270&deg;)</p>
+</th>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.2"><p id="p1390mcpsimp"><a name="p1390mcpsimp"></a><a name="p1390mcpsimp"></a>Channel 1 (90&deg;)</p>
+</th>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.3"><p id="p1392mcpsimp"><a name="p1392mcpsimp"></a><a name="p1392mcpsimp"></a>Channel 2 (270&deg;)</p>
+</th>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="p1394mcpsimp"><a name="p1394mcpsimp"></a><a name="p1394mcpsimp"></a>Channel 3 (90&deg;)</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1395mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p1397mcpsimp"><a name="p1397mcpsimp"></a><a name="p1397mcpsimp"></a>Yaw = 0.05*OffsetV</p>
+<p id="p1398mcpsimp"><a name="p1398mcpsimp"></a><a name="p1398mcpsimp"></a>Pitch = -0.04*OffsetH</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p1400mcpsimp"><a name="p1400mcpsimp"></a><a name="p1400mcpsimp"></a>Yaw = - 0.05*OffsetV</p>
+<p id="p1401mcpsimp"><a name="p1401mcpsimp"></a><a name="p1401mcpsimp"></a>Pitch = 0.04*OffsetH</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p1403mcpsimp"><a name="p1403mcpsimp"></a><a name="p1403mcpsimp"></a>Yaw = 0.05*OffsetV</p>
+<p id="p1404mcpsimp"><a name="p1404mcpsimp"></a><a name="p1404mcpsimp"></a>Pitch = -0.04*OffsetH</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p1406mcpsimp"><a name="p1406mcpsimp"></a><a name="p1406mcpsimp"></a>Yaw = - 0.05*OffsetV</p>
+<p id="p1407mcpsimp"><a name="p1407mcpsimp"></a><a name="p1407mcpsimp"></a>Pitch = 0.04*OffsetH</p>
+</td>
+</tr>
+</tbody>
+</table>

@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 颜�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row345mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p347mcpsimp"><a name="p347mcpsimp"></a><a name="p347mcpsimp"></a><a name="image138"></a><a name="image138"></a><span><img id="image138" src="figures/zh-cn_image_0000002424362258.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row345mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p347mcpsimp"><a name="p347mcpsimp"></a><a name="p347mcpsimp"></a><a name="image138"></a><a name="image138"></a><span><img id="image138" src="/multimedia/isp/color/figures/zh-cn_image_0000002424362258.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p349mcpsimp"><a name="p349mcpsimp"></a><a name="p349mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row350mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a><a name="image139"></a><a name="image139"></a><span><img id="image139" src="figures/zh-cn_image_0000002424362198.png" height="27.93" width="75.81"></span></p>
+<tr id="row350mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a><a name="image139"></a><a name="image139"></a><span><img id="image139" src="/multimedia/isp/color/figures/zh-cn_image_0000002424362198.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row355mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p357mcpsimp"><a name="p357mcpsimp"></a><a name="p357mcpsimp"></a><a name="image140"></a><a name="image140"></a><span><img id="image140" src="figures/zh-cn_image_0000002424202358.png" height="27.93" width="75.81"></span></p>
+<tr id="row355mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p357mcpsimp"><a name="p357mcpsimp"></a><a name="p357mcpsimp"></a><a name="image140"></a><a name="image140"></a><span><img id="image140" src="/multimedia/isp/color/figures/zh-cn_image_0000002424202358.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p359mcpsimp"><a name="p359mcpsimp"></a><a name="p359mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row360mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p362mcpsimp"><a name="p362mcpsimp"></a><a name="p362mcpsimp"></a><a name="image141"></a><a name="image141"></a><span><img id="image141" src="figures/zh-cn_image_0000002457840937.png" height="27.93" width="75.81"></span></p>
+<tr id="row360mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p362mcpsimp"><a name="p362mcpsimp"></a><a name="p362mcpsimp"></a><a name="image141"></a><a name="image141"></a><span><img id="image141" src="/multimedia/isp/color/figures/zh-cn_image_0000002457840937.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p364mcpsimp"><a name="p364mcpsimp"></a><a name="p364mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p365mcpsimp"><a name="p365mcpsimp"></a><a name="p365mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row366mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p368mcpsimp"><a name="p368mcpsimp"></a><a name="p368mcpsimp"></a><a name="image142"></a><a name="image142"></a><span><img id="image142" src="figures/zh-cn_image_0000002424202378.png" height="27.93" width="75.81"></span></p>
+<tr id="row366mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p368mcpsimp"><a name="p368mcpsimp"></a><a name="p368mcpsimp"></a><a name="image142"></a><a name="image142"></a><span><img id="image142" src="/multimedia/isp/color/figures/zh-cn_image_0000002424202378.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p370mcpsimp"><a name="p370mcpsimp"></a><a name="p370mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p371mcpsimp"><a name="p371mcpsimp"></a><a name="p371mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -134,7 +134,6 @@ ISP系统支持两种层次的调色方案。
 
 **图 4**  色域边缘向外映射<a name="fig393mcpsimp"></a>  
 ![](figures/色域边缘向外映射.png "色域边缘向外映射")
-
 ## AWB模块工作原理<a name="ZH-CN_TOPIC_0000002424202166"></a>
 
 AWB模块由硬件WB信息统计模块及Firmware AWB策略控制算法两部分组成。
@@ -153,7 +152,6 @@ WB统计模块计算Raw图像满足灰点条件的像素点的R, G, B三个颜�
 
 **图 1**  AWB工作原理图<a name="fig633531718246"></a>  
 ![](figures/AWB工作原理图.png "AWB工作原理图")
-
 ## CCM模块工作原理<a name="ZH-CN_TOPIC_0000002424202130"></a>
 
 sensor对光谱的响应，在RGB各分量上与人眼对光谱的响应通常是有偏差的，通常通过一个色彩校正矩阵校正光谱响应的交叉效应和响应强度，使前端捕获的图片与人眼视觉在色彩上保持一致。
@@ -162,7 +160,6 @@ CCM标定工具支持对24色卡进行3x3 Color Correction Matrix的预校正。
 
 **图 1**  CCM矩阵<a name="fig11377163510281"></a>  
 ![](figures/CCM矩阵.png "CCM矩阵")
-
 # AWB调试
 ## 统计模块调试<a name="ZH-CN_TOPIC_0000002457880949"></a>
 
@@ -176,7 +173,6 @@ WB仅统计灰点的RGB三通道均值，准确地配置灰点条件，可提高
 
 **图 1**  灰点色差限制图<a name="fig414mcpsimp"></a>  
 ![](figures/灰点色差限制图.png "灰点色差限制图")
-
 ### 灰点条件参数说明及差异<a name="ZH-CN_TOPIC_0000002424202114"></a>
 
 **表 1**  Bayer域WB统计灰点条件参数
@@ -492,7 +488,6 @@ AWB标定中间光源KI色温会影响色调。客户在6000K色温采集了室�
 
     **Figure  3**  Auto与Semi-Auto AWB 效果验证<a name="_Ref492400244"></a>  
     ![](figures/Auto与Semi-Auto-AWB-效果验证.png "Auto与Semi-Auto-AWB-效果验证")
-
 #### 标定结果的确认\(AWB\)<a name="ZH-CN_TOPIC_0000002424202186"></a>
 
 标定完成，观察Planckian Curve，是否光源分布在曲线两侧，是否有光源点距离普朗克曲线较远，估计的色温是否准确。如果某些光源的误差较大，可调整其权重值，再次进行标定。
@@ -524,7 +519,6 @@ AWB标定中间光源KI色温会影响色调。客户在6000K色温采集了室�
 
     **Figure  2**  高色温下灰点的色差信息<a name="_Ref492400251"></a>  
     ![](figures/高色温下灰点的色差信息.png "高色温下灰点的色差信息")
-
 ## AWB FW<a name="ZH-CN_TOPIC_0000002457840861"></a>
 
 
@@ -803,7 +797,7 @@ ot\_isp\_awb\_attr结构体定义了AWB FW算法的基本可调节参数，包�
 <td class="cellrowborder" valign="top" width="49%" headers="mcps1.2.4.1.2 "><p xml:lang="sv-SE" id="p3755185919912"><a name="p3755185919912"></a><a name="p3755185919912"></a>用户设置亮度直方图的权重，自动、手动模式下均有效。8bit小数精度，取值范围：<span xml:lang="en-US" id="ph16755125916911"><a name="ph16755125916911"></a><a name="ph16755125916911"></a>[0x0, 0xFFFF]</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.3 "><p xml:lang="sv-SE" id="p1975513591398"><a name="p1975513591398"></a><a name="p1975513591398"></a>亮度权重的影响公式：</p>
-<p class="msonormal" id="p3755759493"><a name="p3755759493"></a><a name="p3755759493"></a><a name="image137551059699"></a><a name="image137551059699"></a><span><img class="mathml" id="image137551059699" src="figures/zh-cn_formulaimage_0000002457881109.png" width="159.60000000000002" height="22.453991000000002"></span></p>
+<p class="msonormal" id="p3755759493"><a name="p3755759493"></a><a name="p3755759493"></a><a name="image137551059699"></a><a name="image137551059699"></a><span><img class="mathml" id="image137551059699" src="/multimedia/isp/color/figures/zh-cn_formulaimage_0000002457881109.png" width="159.60000000000002" height="22.453991000000002"></span></p>
 </td>
 </tr>
 </tbody>
@@ -1122,7 +1116,6 @@ ot\_isp\_awb\_attr\_ex结构体定义了Advance算法的可调节参数，包括
 
     **图 4**  检查室内外配置参数<a name="fig1305mcpsimp"></a>  
     ![](figures/检查室内外配置参数.png "检查室内外配置参数")
-
     ![](figures/2-18b.png)
 
 5.  确认检测色温有没有超出色温的上下限。将色温的上限调大，下限调小，观察问题是否有改善。
@@ -1398,21 +1391,18 @@ CLUT是一个改变线性RGB值的模块，这个模块把用户的颜色调节�
 
 **图 1**  色卡对<a name="fig216mcpsimp"></a>  
 ![](figures/色卡对.png "色卡对")
-
 #### 任意颜色对<a name="ZH-CN_TOPIC_0000002424362034"></a>
 
 使用源设备和目标设备同时拍摄同一场景，可以从场景中选择对应的物体表面，可以获得任意颜色对，指导CLUT表的生成。
 
 **图 1**  任意颜色对<a name="fig220mcpsimp"></a>  
 ![](figures/任意颜色对.png "任意颜色对")
-
 #### HSL参数调节<a name="ZH-CN_TOPIC_0000002457880905"></a>
 
 在没有目标设备的情况下，用源设备拍摄场景后，可以选择想调节的颜色表面，然后通过调整HSL参数来获得目标RGB值，指导CLUT表的生成。hue范围+-20，sat范围0.4-1.6倍，light范围0.6-1.4倍。
 
 **图 1**  HSL参数调节<a name="fig224mcpsimp"></a>  
 ![](figures/HSL参数调节.png "HSL参数调节")
-
 ### CLUT应用举例<a name="ZH-CN_TOPIC_0000002457840737"></a>
 
 

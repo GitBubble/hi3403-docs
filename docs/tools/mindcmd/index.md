@@ -55,28 +55,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408581998.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/tools/mindcmd/figures/zh-cn_image_0000002408581998.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441981441.png"></span></p>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="/tools/mindcmd/figures/zh-cn_image_0000002441981441.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442021309.png"></span></p>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="/tools/mindcmd/figures/zh-cn_image_0000002442021309.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408422122.png"></span></p>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="/tools/mindcmd/figures/zh-cn_image_0000002408422122.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442021221.png"></span></p>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="/tools/mindcmd/figures/zh-cn_image_0000002442021221.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
 <p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -127,7 +127,6 @@ MindCmd命令行工具主要关注一键化、自动化，聚焦部署侧的全�
 
 **图 1**  MindCmd功能框架<a name="fig109661225380"></a>  
 ![](figures/MindCmd功能框架.png "MindCmd功能框架")
-
 ## 工具功能<a name="ZH-CN_TOPIC_0000002442020581"></a>
 
 MindCmd中主要几个功能特性如下。
@@ -157,11 +156,6 @@ MindCmd安装流程如[图3](#fig194332362414)所示。
 
 **图 3**  安装流程<a name="fig194332362414"></a>  
 ![](figures/安装流程.png "安装流程")
-
-
-
-
-
 ## 软件包获取<a name="ZH-CN_TOPIC_0000002442020661"></a>
 
 MindCmd工具只支持在18.04 x86\_64架构服务器安装。安装前，请先获取MindCmd工具软件包。
@@ -474,7 +468,6 @@ mindcmd config --global base_config.cann_install_path=~/Ascend/ascend-toolkit/sv
 
 **图 3**  修改某一个配置项的值<a name="fig52432531624"></a>  
 ![](figures/修改某一个配置项的值.png "修改某一个配置项的值")
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >mindcmd config 子命令不展示atc\_args\_append部分的配置参数，不支持在命令行修改atc\_args\_append的配置参数。
 
@@ -667,9 +660,6 @@ Caffe模型一键推理流程如[图1](#fig15202155618339)所示。
 
 **图 1**  Caffe模型一键推理流程图<a name="fig15202155618339"></a>  
 ![](figures/Caffe模型一键推理流程图.png "Caffe模型一键推理流程图")
-
-
-
 ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020649"></a>
 
 Caffe模型一键推理的命令行格式如下。
@@ -947,11 +937,6 @@ PyTorch模型一键推理流程如[图1](#fig204223548810)所示。
 
 **图 1**  PyTorch模型一键推理流程图<a name="fig204223548810"></a>  
 ![](figures/PyTorch模型一键推理流程图.png "PyTorch模型一键推理流程图")
-
-
-
-
-
 ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020573"></a>
 
 PyTorch模型一键推理的命令行格式如下。
@@ -1243,7 +1228,6 @@ mindcmd oneclick pytorch -m MODEL -w WEIGHT  -i IMAGE_LIST --input_shape INPUT_S
 
 **图 1**  量化后模型一键推理流程图<a name="fig148822420395"></a>  
 ![](figures/量化后模型一键推理流程图.png "量化后模型一键推理流程图")
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >当且仅当同时输入量化后的权重文件和量化配置文件时，才会执行量化后模型一键推理。
 
@@ -1257,7 +1241,6 @@ mindcmd oneclick pytorch -m MODEL -i IMAGE_LIST --realquant
 
 **图 1**  硬件感知一键推理流程图<a name="fig116795781218"></a>  
 ![](figures/硬件感知一键推理流程图.png "硬件感知一键推理流程图")
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >当参数--quant\_config传入量化配置文件（\*.json）时，不会执行硬件感知一键推理。
 
@@ -1267,9 +1250,6 @@ ONNX模型一键推理流程如[图1](#fig41101631131215)所示。
 
 **图 1**  ONNX模型一键推理流程图<a name="fig41101631131215"></a>  
 ![](figures/ONNX模型一键推理流程图.png "ONNX模型一键推理流程图")
-
-
-
 ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421390"></a>
 
 ONNX模型一键推理的命令行格式如下。
@@ -1519,7 +1499,6 @@ ONNX模型一键推理的命令行参数说明如[表1](#table16770184613465)所
 
 **图 1**  Deployed一键推理流程图<a name="fig127401254671"></a>  
 ![](figures/Deployed一键推理流程图.png "Deployed一键推理流程图")
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >Deployed模型的一键推理命令格式请参考：[Caffe模型一键推理](#ZH-CN_TOPIC_0000002408421546)、[PyTorch模型一键推理](#ZH-CN_TOPIC_0000002408581310)和[ONNX模型一键推理](#ZH-CN_TOPIC_0000002441980689)。
 
@@ -3196,7 +3175,6 @@ mindcmd compare -l MY_DUMP_PATH -r GOLDEN_DUMP_PATH
 
     **图 2**  精度比对执行结果展示<a name="fig20745123117434"></a>  
     ![](figures/精度比对执行结果展示.png "精度比对执行结果展示")
-
 # 性能分析
 ## 功能介绍<a name="ZH-CN_TOPIC_0000002442020561"></a>
 
@@ -3457,7 +3435,6 @@ mindcmd profile show -d COLLECTION_PATH
 
         **图 1**  性能分析展示图<a name="fig1793811366253"></a>  
         ![](figures/性能分析展示图.png "性能分析展示图")
-
 -   执行性能数据采集
     1.  文件准备
 
@@ -4549,4 +4526,3 @@ PyTorch模型执行模型压缩的过程中模型推理失败，如[图1](#fig13
 
 **图 2**  使用构造参数类传入参数<a name="fig49161240743"></a>  
 ![](figures/使用构造参数类传入参数.png "使用构造参数类传入参数")
-

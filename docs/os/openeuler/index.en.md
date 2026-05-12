@@ -7,7 +7,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/os/OpenEuler/README
 
 - **Development platform**:
   - Host server: Ubuntu 22.04
-  - Hardware: 海鸥派 (Euler Pi)
+  - Hardware: Euler Pi
 - **Two paths to a usable image**:
   - [§ 2.1 Download a pre-built image](#21-download-a-pre-built-image) — fastest, skips the build
   - [§ 2.2 Build the image yourself](#22-build-the-image-yourself) — slower but better understanding

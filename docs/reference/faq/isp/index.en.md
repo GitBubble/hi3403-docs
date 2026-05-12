@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP FAQ/
 
 This document is written for developers using ISP. It provides solutions and guidance for issues encountered during development.
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../../reference/faq/isp/public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference. Unless otherwise specified, SS927V100 is identical to SS928V100.
 
 **Product Versions<a name="section146mcpsimp"></a>**
@@ -202,7 +202,7 @@ AE shows severe overexposure or underexposure, and adjusting the target brightne
 
 Use the `ot_mpi_isp_query_inner_state_info` interface to query the current exposure time and gain values.
 
->![](public_sys-resources/icon-note.gif) **Note:**  For the `ot_mpi_isp_query_inner_state_info` interface, refer to the *ISP Development Reference* document.
+>![](../../../reference/faq/isp/public_sys-resources/icon-note.gif) **Note:**  For the `ot_mpi_isp_query_inner_state_info` interface, refer to the *ISP Development Reference* document.
 
 **Solution**
 
@@ -365,7 +365,7 @@ In low-light conditions, the image brightness and contrast are lower than the re
 At normal illumination levels, directional fringing appears near bright light source text, as shown in [Figure 1](#_Ref508268875).
 
 **Figure 1**  Example of directional fringing near light source text<a name="_Ref508268875"></a>  
-![](figures/光源字体附近出现方向性的毛刺效果图.png "Example of directional fringing near light source text")
+![](../../../reference/faq/isp/figures/光源字体附近出现方向性的毛刺效果图.png "Example of directional fringing near light source text")
 
 **Analysis**
 
@@ -377,7 +377,7 @@ First, verify whether the Global CAC static coefficients are correctly calibrate
 
 **Figure 2**  Comparison with and without Global CAC enabled under incorrect static coefficient calibration<a name="_Ref508268896"></a>  
 
-![](figures/zh-cn_image_0000002441684005.png) ![](figures/zh-cn_image_0000002408284590.png)
+![](../../../reference/faq/isp/figures/zh-cn_image_0000002441684005.png) ![](../../../reference/faq/isp/figures/zh-cn_image_0000002408284590.png)
 
 ### How to Resolve AE Unable to Control the P-Iris Aperture<a name="ZH-CN_TOPIC_0000002408124662"></a>
 
@@ -475,7 +475,7 @@ In a completely dark lab environment (no or minimal visible light), with IR ligh
 Before enabling DynamicBLC mode, ensure that the MIPI data contains OB (optical black) regions for statistics. The data processing flow is shown in [Figure 1](#fig6558124065118).
 
 **Figure 1**  Data processing flow<a name="fig6558124065118"></a>  
-![](figures/数据处理流程.png "Data processing flow")
+![](../../../reference/faq/isp/figures/数据处理流程.png "Data processing flow")
 
 To use the Dynamic BLC module to obtain a valid black level based on OB region statistics, configure the entire data processing pipeline as follows:
 
@@ -573,7 +573,7 @@ With the default SDK parameters and anti-flicker enabled, the feature does not w
 The AC waveform is shown in [Figure 1](#_Ref464811362).
 
 **Figure 1**  AC waveform<a name="_Ref464811362"></a>  
-![](figures/交流电波形.png "AC waveform")
+![](../../../reference/faq/isp/figures/交流电波形.png "AC waveform")
 
 Different rows of the sensor start exposure at different times. If the exposure time is short, some rows expose during a bright phase and others during a dark phase of the AC cycle. Even with the same exposure time per row, the accumulated energy differs noticeably across rows, causing frame-to-frame brightness differences in the same row and row-to-row brightness differences within the same frame, resulting in flickering.
 
@@ -623,7 +623,7 @@ When long and short frame data are merged inside the sensor (internal synthesis 
 **Description**
 
 **Figure 1**  Illustration of croppable modules<a name="fig145621869587"></a>  
-![](figures/可裁剪模块的图示说明.png "Illustration of croppable modules")
+![](../../../reference/faq/isp/figures/可裁剪模块的图示说明.png "Illustration of croppable modules")
 
 **Implementation**
 

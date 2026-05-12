@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474560250.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002474560250.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474400314.png"></span></p>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002474400314.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002506720227.png"></span></p>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002506720227.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002506640279.png"></span></p>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002506640279.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474560254.png"></span></p>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002474560254.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
 <p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -140,7 +140,6 @@ IVE（_Identification_  Video Engine）是媒体处理芯片_识别_分析系统
 
 **图 1**  跨度（stride）示意图<a name="fig1615616519207"></a>  
 ![](figures/跨度（stride）示意图.png "跨度（stride）示意图")
-
 -   对齐
 
     硬件为了快速访问内存首地址或者跨行访问数据，要求内存地址或内存跨度必须为对齐系数的倍数。
@@ -397,7 +396,6 @@ IVE（_Identification_  Video Engine）是媒体处理芯片_识别_分析系统
 
 **图 14**  直方图输出格式示意<a name="fig1457715441337"></a>  
 ![](figures/直方图输出格式示意.png "直方图输出格式示意")
-
 -   块数据类型
 
     ot\_svp\_blob、ot\_svp\_src\_blob、ot\_svp\_dst\_blob，类型参考ot\_svp\_blob\_type，具体的内存分布见《SVPx.0 API参考》中的blob的描述。
@@ -683,7 +681,6 @@ Set模式是指OT\_IVE\_DMA\_MODE\_SET\_3BYTE和OT\_IVE\_DMA\_MODE\_SET\_8BYTE�
 
     **图 1**  快速拷贝示意图<a name="fig4891747121518"></a>  
     ![](figures/快速拷贝示意图.png "快速拷贝示意图")
-
 -   OT\_IVE\_DMA\_MODE\_INTERVAL\_COPY：间隔拷贝模式
     -   要求源数据宽度为hor\_seg\_size的倍数；
     -   间隔拷贝的方式：将每ver\_seg\_rows行中第一行数据分割为hor\_seg\_size大小的段，拷贝每段中的前elem\_size大小的字节。如[图2](#fig4242047161711)所示。
@@ -1472,7 +1469,6 @@ td_s32 ss_mpi_ive_mag_and_ang(ot_ive_handle *handle, const ot_svp_src_img *src, 
 
 **图 1**  mag\_and\_ang计算示意图<a name="fig12486154181013"></a>  
 ![](figures/mag_and_ang计算示意图.png "mag_and_ang计算示意图")
-
 ![](figures/zh-cn_formulaimage_0000002470931540.png)
 
 ![](figures/2-5-2.png)
@@ -1626,7 +1622,6 @@ td_s32 ss_mpi_ive_dilate(ot_ive_handle *handle, const ot_svp_src_img *src, const
 
 **图 1**  dilate计算公式示意图<a name="fig9560216103916"></a>  
 ![](figures/dilate计算公式示意图.png "dilate计算公式示意图")
-
 ![](figures/zh-cn_formulaimage_0000002503971419.png)
 
 ![](figures/zh-cn_formulaimage_0000002503971435.png)
@@ -1779,7 +1774,6 @@ td_s32 ss_mpi_ive_erode(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 
 **图 1**  erode计算公式示意图<a name="fig149692467233"></a>  
 ![](figures/erode计算公式示意图.png "erode计算公式示意图")
-
 ![](figures/zh-cn_formulaimage_0000002503971573.png)
 
 ![](figures/zh-cn_formulaimage_0000002504091483.png)
@@ -5132,7 +5126,6 @@ LBP计算公式如[图1](#fig15702172044811)所示。
 
 **图 1**  lbp计算公式示意图<a name="fig15702172044811"></a>  
 ![](figures/lbp计算公式示意图.png "lbp计算公式示意图")
-
 -   OT\_IVE\_LBP\_COMPARE\_MODE\_NORMAL
 
     ![](figures/zh-cn_formulaimage_0000002504091335.png),其中  ![](figures/zh-cn_formulaimage_0000002471091468.png);
@@ -5320,7 +5313,6 @@ td_s32 ss_mpi_ive_norm_grad(ot_ive_handle *handle, const ot_svp_src_img *src, co
 
 **图 1**  norm\_grad计算公式示意图<a name="fig193657347590"></a>  
 ![](figures/norm_grad计算公式示意图.png "norm_grad计算公式示意图")
-
 ![](figures/zh-cn_formulaimage_0000002504091329.png)
 
 【举例】
@@ -5562,7 +5554,6 @@ td_s32 ss_mpi_ive_lk_optical_flow_pyr(ot_ive_handle *handle, const ot_svp_src_im
 
 **图 1**  3层金字塔LK光流计算示意图<a name="fig19671108289"></a>  
 ![](figures/3层金字塔LK光流计算示意图.png "3层金字塔LK光流计算示意图")
-
 -   根据输入的特征点坐标，计算出3层金字塔特征点对应的坐标：p0，p1，p2；若需要初始光流，计算出m0，m1，m2；否则m0=p0，m1=p1，m2=p2；
 -   以m2作为输入求出在第2层上的光流终点n2；
 -   计算出n2在第1层的对应坐标n1，以n1作为输入求出第1层上的光流终点q1；
@@ -7048,7 +7039,6 @@ Sigmoid对称激活函数：![](figures/zh-cn_formulaimage_0000002503971491.png)
 
     **图 1**  ann\_mlp输入样本向量数组示意图<a name="fig1987840192317"></a>  
     ![](figures/ann_mlp输入样本向量数组示意图.png "ann_mlp输入样本向量数组示意图")
-
     -   输出n个预测结果向量，每个向量均是包含m3个dst\_elem类型为SQ16.16或者SQ18.14的向量：
 
     **图 2**  ann\_mlp输出预测结果示意图<a name="fig141686172511"></a>  
@@ -7444,7 +7434,6 @@ td_s32 ss_mpi_ive_svm_predict(ot_ive_handle *handle, const ot_svp_src_data *src,
 
     **图 1**  svm输入样本向量数组示意图<a name="fig10427125313279"></a>  
     ![](figures/svm输入样本向量数组示意图.png "svm输入样本向量数组示意图")
-
     -   输出r个预测结果向量，每个均为td\_u16类型的N维向量：
 
     **图 2**  svm预测结果示意图<a name="fig4259197112812"></a>  
@@ -7855,7 +7844,6 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 
     **图 1**  cnn输出特征向量数组示意图<a name="fig97981942303"></a>  
     ![](figures/cnn输出特征向量数组示意图.png "cnn输出特征向量数组示意图")
-
 -   该接口和[ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)配套使用，特征向量数组dst是[ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)的输入。
 -   CNN网络模型支持最多8层Conv-ReLU-Pooling和8层全连接层；Conv-ReLU-Pooling层的卷积核仅支持3x3，ReLU\(Rectified Linear Units\)和Pooling可配（见ot\_ive\_cnn\_actv\_func和ot\_ive\_cnn\_pooling），每层Conv-ReLU-Pooling最多输出50张feature map；全连接层仅支持ReLU激活函数，层数范围\[3, 8\]：全连接输入层（即Conv-ReLU-Pooling的最终输出）维数\[1, 1024\]，中间隐藏层神经元数目\[2,256\]，输出层维数\[1, 256\]。具体参数配置参见下列表格：
 
@@ -8076,7 +8064,6 @@ td_s32 ss_mpi_ive_cnn_get_result(const ot_svp_src_data *src, const ot_svp_dst_me
 
 **图 1**  cnn各样本预测结果示意图<a name="fig174217383416"></a>  
 ![](figures/cnn各样本预测结果示意图.png "cnn各样本预测结果示意图")
-
 -   该接口实现的rank-1版本，用户可根据自己的需求实现rank-n（表示最可能的n类）版本，步骤如下：
     1.  通过softmax计算出每个类别的置信度；
     2.  对置信度进行排序；
@@ -8940,7 +8927,6 @@ td_s32 ss_mpi_ive_kcf_proc(ot_ive_handle *handle, const ot_svp_src_img *src, ot_
 
     **图 1**  KCF软件调用流程<a name="fig13293144115712"></a>  
     ![](figures/KCF软件调用流程.png "KCF软件调用流程")
-
 -   算法描述如下：
 
     KCF算法利用循环矩阵对角化等性质，将跟踪问题核化，使核化后跟踪比对的操作简化成易于并行加速的矩阵运算，提升跟踪解决方案的系统性能，KCF算法可以和HOG算子联合使用，典型的算法用例如[图2](#fig78578448113)所示。

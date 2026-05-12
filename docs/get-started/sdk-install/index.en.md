@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 
 This document describes the installation and upgrade procedures for the SS928V100 SDK, enabling users to quickly set up the SDK runtime environment on the corresponding chip's DEMB board.
 
->![](public_sys-resources/icon-note.gif) **Note:** 
+>![](../../get-started/sdk-install/public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference. Unless otherwise specified, the content applies equally to SS927V100.
 
 **Product Versions<a name="section145mcpsimp"></a>**
@@ -53,28 +53,28 @@ The following symbols may appear in this document with the meanings described be
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424357674.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/get-started/sdk-install/figures/zh-cn_image_0000002424357674.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>Indicates a high-risk hazard that, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457876557.png"></span></p>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="/get-started/sdk-install/figures/zh-cn_image_0000002457876557.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>Indicates a medium-risk hazard that, if not avoided, could result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424197818.png"></span></p>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="/get-started/sdk-install/figures/zh-cn_image_0000002424197818.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>Indicates a low-risk hazard that, if not avoided, could result in minor or moderate injury.</p>
 </td>
 </tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457836413.png"></span></p>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="/get-started/sdk-install/figures/zh-cn_image_0000002457836413.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>Conveys device or environment safety warnings. Failure to comply may result in device damage, data loss, degraded performance, or other unpredictable outcomes.</p>
 <p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>"Notice" does not involve personal injury.</p>
 </td>
 </tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424197822.png"></span></p>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="/get-started/sdk-install/figures/zh-cn_image_0000002424197822.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>Supplementary information for key points in the main text.</p>
 <p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>"Note" is not a safety warning and does not involve personal, device, or environmental hazards.</p>
@@ -238,7 +238,7 @@ setenv gatewayip xx.xx.xx.xx
 ping serverip (verify network connectivity)
 ```
 
->![](public_sys-resources/icon-notice.gif) **Notice:** 
+>![](../../get-started/sdk-install/public_sys-resources/icon-notice.gif) **Notice:** 
 >-   SS928V100 supports two boot modes: fast boot (using `u-boot-ss928v100.bin`) and non-fast boot (non-secure/secure boot, using `boot_image.bin`). See Chapter 2 "Boot Modes" in the *SS928V100/SS927V100 Secure Boot User Guide*.
 >-   The boot mode can be confirmed by reading register `0x10122090`. A value of `0x5` indicates fast boot; any other value indicates non-fast boot.
 >-   Boards ship with "non-secure boot" as the default. The following instructions use this mode as the example.
@@ -469,7 +469,7 @@ The following operations are based on the address space layout shown above. Adju
     setenv bootcmd 'mmc read 0 0x50000000 0x800 0x5800; bootm 50000000';sa
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **Notice:** 
+    >![](../../get-started/sdk-install/public_sys-resources/icon-notice.gif) **Notice:** 
     >Adjust the image sizes in the commands for [Flashing Image Files to SPI Nor Flash](#ZH-CN_TOPIC_0000002424357662) through [Flashing Image Files to EMMC](#ZH-CN_TOPIC_0000002457876529) to match the actual image sizes. The default LiteOS boot address is `0x44000000`. If the customer's memory layout differs, adjust the LiteOS boot address accordingly. If LiteOS is not used, customers can adjust the Linux boot address instead.
 
 ## Booting the New System<a name="ZH-CN_TOPIC_0000002457876541"></a>

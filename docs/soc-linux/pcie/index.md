@@ -69,28 +69,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/PCIE级�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1419mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1421mcpsimp"><a name="p1421mcpsimp"></a><a name="p1421mcpsimp"></a><a name="image158"></a><a name="image158"></a><span><img id="image158" src="figures/zh-cn_image_0000002408275650.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row1419mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1421mcpsimp"><a name="p1421mcpsimp"></a><a name="p1421mcpsimp"></a><a name="image158"></a><a name="image158"></a><span><img id="image158" src="/soc-linux/pcie/figures/zh-cn_image_0000002408275650.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p1423mcpsimp"><a name="p1423mcpsimp"></a><a name="p1423mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row1424mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1426mcpsimp"><a name="p1426mcpsimp"></a><a name="p1426mcpsimp"></a><a name="image159"></a><a name="image159"></a><span><img id="image159" src="figures/zh-cn_image_0000002441675013.png" height="27.93" width="75.81"></span></p>
+<tr id="row1424mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1426mcpsimp"><a name="p1426mcpsimp"></a><a name="p1426mcpsimp"></a><a name="image159"></a><a name="image159"></a><span><img id="image159" src="/soc-linux/pcie/figures/zh-cn_image_0000002441675013.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p1428mcpsimp"><a name="p1428mcpsimp"></a><a name="p1428mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row1429mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1431mcpsimp"><a name="p1431mcpsimp"></a><a name="p1431mcpsimp"></a><a name="image160"></a><a name="image160"></a><span><img id="image160" src="figures/zh-cn_image_0000002441714877.png" height="27.93" width="75.81"></span></p>
+<tr id="row1429mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1431mcpsimp"><a name="p1431mcpsimp"></a><a name="p1431mcpsimp"></a><a name="image160"></a><a name="image160"></a><span><img id="image160" src="/soc-linux/pcie/figures/zh-cn_image_0000002441714877.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p1433mcpsimp"><a name="p1433mcpsimp"></a><a name="p1433mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row1434mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1436mcpsimp"><a name="p1436mcpsimp"></a><a name="p1436mcpsimp"></a><a name="image161"></a><a name="image161"></a><span><img id="image161" src="figures/zh-cn_image_0000002408275606.png" height="27.93" width="75.81"></span></p>
+<tr id="row1434mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1436mcpsimp"><a name="p1436mcpsimp"></a><a name="p1436mcpsimp"></a><a name="image161"></a><a name="image161"></a><span><img id="image161" src="/soc-linux/pcie/figures/zh-cn_image_0000002408275606.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p1438mcpsimp"><a name="p1438mcpsimp"></a><a name="p1438mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p1439mcpsimp"><a name="p1439mcpsimp"></a><a name="p1439mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row1440mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1442mcpsimp"><a name="p1442mcpsimp"></a><a name="p1442mcpsimp"></a><a name="image162"></a><a name="image162"></a><span><img id="image162" src="figures/zh-cn_image_0000002408115682.png" height="27.93" width="75.81"></span></p>
+<tr id="row1440mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1442mcpsimp"><a name="p1442mcpsimp"></a><a name="p1442mcpsimp"></a><a name="image162"></a><a name="image162"></a><span><img id="image162" src="/soc-linux/pcie/figures/zh-cn_image_0000002408115682.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p1444mcpsimp"><a name="p1444mcpsimp"></a><a name="p1444mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p1445mcpsimp"><a name="p1445mcpsimp"></a><a name="p1445mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -373,7 +373,6 @@ PCIe从启动时，注意时钟硬件选择管脚的设置：
 
     **图 1**  SS528V100 PCIe时钟图<a name="fig181756507345"></a>  
     ![](figures/SS528V100-PCIe时钟图.png "SS528V100-PCIe时钟图")
-
 -   PCIe选择为外部时钟输入时，差分时钟信号的匹配方式取决于输出设备，且只支持HCSL电平，不支持交流耦合。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
@@ -390,46 +389,38 @@ PCIe从启动时，注意时钟硬件选择管脚的设置：
 
     **图 3**  两片PCIe X1级联示意图<a name="fig2638231103819"></a>  
     ![](figures/两片PCIe-X1级联示意图.png "两片PCIe-X1级联示意图")
-
 -   两片PCIe X2级联，如[图4](#fig251748193818)所示。
 
     **图 4**  两片PCIe X2级联示意图<a name="fig251748193818"></a>  
     ![](figures/两片PCIe-X2级联示意图.png "两片PCIe-X2级联示意图")
-
 ### SS928V100/SS927V100<a name="ZH-CN_TOPIC_0000002441674833"></a>
 
 -   PCIe差分时钟PCIE\_REFCLKM和PCIE\_REFCLKP为电流型信号，以SS928V100为例，当差分时钟信号需要输出给外部设备时，在差分时钟输出端对地加49.9Ω电阻，如[图1](#fig74118483404)所示。
 
     **图 1**  SS928V100 PCIe时钟图<a name="fig74118483404"></a>  
     ![](figures/SS928V100-PCIe时钟图.png "SS928V100-PCIe时钟图")
-
 -   SS928V100各种PCIE组合如[图2](#_Ref48220706)所示。
 
     **图 2**  PCIe模式图<a name="_Ref48220706"></a>  
     ![](figures/PCIe模式图-0.png "PCIe模式图-0")
-
 -   SS928V100 两片PCIe X1级联，如[图3](#fig133146123541)所示。
 
     **图 3**  两片PCIe X1级联示意图<a name="fig133146123541"></a>  
     ![](figures/两片PCIe-X1级联示意图-1.png "两片PCIe-X1级联示意图-1")
-
 ### SS626V100<a name="ZH-CN_TOPIC_0000002408275426"></a>
 
 -   SS626V100 PCIe差分时钟PCIE\_REFCLKM和PCIE\_REFCLKP为电流型信号，当差分时钟信号需要输出给外部设备时，在差分时钟输出端对地加49.9Ω电阻，如[图1](#fig12617468544)所示。
 
     **图 1**  SS626V100 PCIe时钟图<a name="fig12617468544"></a>  
     ![](figures/SS626V100-PCIe时钟图.png "SS626V100-PCIe时钟图")
-
 -   SS626V100各种PCIE组合如[图2](#fig9798149145515)所示。
 
     **图 2**  PCIe模式图<a name="fig9798149145515"></a>  
     ![](figures/PCIe模式图-2.png "PCIe模式图-2")
-
 -   SS626V100 两片PCIe X1级联，如[图3](#fig2095313298559)所示。
 
     **图 3**  两片PCIe X1级联示意图<a name="fig2095313298559"></a>  
     ![](figures/两片PCIe-X1级联示意图-3.png "两片PCIe-X1级联示意图-3")
-
 ## 从启动软件配置<a name="ZH-CN_TOPIC_0000002441714677"></a>
 
 
@@ -546,7 +537,6 @@ PCIe主设备由操作系统统一分配从设备配置空间中的BAR0，BAR1�
 
 **图 2**  PCIe地址与AHB侧地址的映射关系图<a name="fig18426182421215"></a>  
 ![](figures/PCIe地址与AHB侧地址的映射关系图-4.png "PCIe地址与AHB侧地址的映射关系图-4")
-
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >PF Memory在从片上的地址范围是可以不断移动的（即窗口的移动），但鉴于整个系统的稳定性以及PCIe消息模块对NP基址的依赖性，不建议在从片启动后再移动窗口。
 
@@ -626,7 +616,6 @@ MCC的消息缓存池使用PCIe窗口中的可预取内存空间，且固定使�
 
 **图 1**  PCIe窗口PF区域和MMZ区域的示意<a name="fig1512455175210"></a>  
 ![](figures/PCIe窗口PF区域和MMZ区域的示意.png "PCIe窗口PF区域和MMZ区域的示意")
-
 # PCIV开发参考
 ## PCIV概述<a name="ZH-CN_TOPIC_0000002441714749"></a>
 

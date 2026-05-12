@@ -58,28 +58,28 @@ CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5052mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5054mcpsimp"><a name="p5054mcpsimp"></a><a name="p5054mcpsimp"></a><a name="image216"></a><a name="image216"></a><span><img id="image216" src="figures/zh-cn_image_0000002441653093.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row5052mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5054mcpsimp"><a name="p5054mcpsimp"></a><a name="p5054mcpsimp"></a><a name="image216"></a><a name="image216"></a><span><img id="image216" src="/reference/api/cipher/figures/zh-cn_image_0000002441653093.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5056mcpsimp"><a name="p5056mcpsimp"></a><a name="p5056mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5057mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5059mcpsimp"><a name="p5059mcpsimp"></a><a name="p5059mcpsimp"></a><a name="image217"></a><a name="image217"></a><span><img id="image217" src="figures/zh-cn_image_0000002408093786.png" height="27.93" width="75.81"></span></p>
+<tr id="row5057mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5059mcpsimp"><a name="p5059mcpsimp"></a><a name="p5059mcpsimp"></a><a name="image217"></a><a name="image217"></a><span><img id="image217" src="/reference/api/cipher/figures/zh-cn_image_0000002408093786.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5061mcpsimp"><a name="p5061mcpsimp"></a><a name="p5061mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5062mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5064mcpsimp"><a name="p5064mcpsimp"></a><a name="p5064mcpsimp"></a><a name="image218"></a><a name="image218"></a><span><img id="image218" src="figures/zh-cn_image_0000002408253682.png" height="27.93" width="75.81"></span></p>
+<tr id="row5062mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5064mcpsimp"><a name="p5064mcpsimp"></a><a name="p5064mcpsimp"></a><a name="image218"></a><a name="image218"></a><span><img id="image218" src="/reference/api/cipher/figures/zh-cn_image_0000002408253682.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5066mcpsimp"><a name="p5066mcpsimp"></a><a name="p5066mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5067mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5069mcpsimp"><a name="p5069mcpsimp"></a><a name="p5069mcpsimp"></a><a name="image219"></a><a name="image219"></a><span><img id="image219" src="figures/zh-cn_image_0000002441572941.png" height="27.93" width="75.81"></span></p>
+<tr id="row5067mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5069mcpsimp"><a name="p5069mcpsimp"></a><a name="p5069mcpsimp"></a><a name="image219"></a><a name="image219"></a><span><img id="image219" src="/reference/api/cipher/figures/zh-cn_image_0000002441572941.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5071mcpsimp"><a name="p5071mcpsimp"></a><a name="p5071mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p5072mcpsimp"><a name="p5072mcpsimp"></a><a name="p5072mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row5073mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5075mcpsimp"><a name="p5075mcpsimp"></a><a name="p5075mcpsimp"></a><a name="image220"></a><a name="image220"></a><span><img id="image220" src="figures/zh-cn_image_0000002441572945.png" height="27.93" width="75.81"></span></p>
+<tr id="row5073mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5075mcpsimp"><a name="p5075mcpsimp"></a><a name="p5075mcpsimp"></a><a name="image220"></a><a name="image220"></a><span><img id="image220" src="/reference/api/cipher/figures/zh-cn_image_0000002441572945.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5077mcpsimp"><a name="p5077mcpsimp"></a><a name="p5077mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p5078mcpsimp"><a name="p5078mcpsimp"></a><a name="p5078mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -684,7 +684,7 @@ td_s32 ss_mpi_cipher_deinit(td_void);
 </tr>
 <tr id="row591mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p593mcpsimp"><a name="p593mcpsimp"></a><a name="p593mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p595mcpsimp"><a name="p595mcpsimp"></a><a name="p595mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p595mcpsimp"><a name="p595mcpsimp"></a><a name="p595mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -760,7 +760,7 @@ td_s32 ss_mpi_cipher_create (td_handle *handle, const ot_cipher_attr *cipher_att
 </tr>
 <tr id="row660mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p662mcpsimp"><a name="p662mcpsimp"></a><a name="p662mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p664mcpsimp"><a name="p664mcpsimp"></a><a name="p664mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p664mcpsimp"><a name="p664mcpsimp"></a><a name="p664mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -830,7 +830,7 @@ td_s32 ss_mpi_cipher_destroy (td_handle handle);
 </tr>
 <tr id="row721mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p723mcpsimp"><a name="p723mcpsimp"></a><a name="p723mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p725mcpsimp"><a name="p725mcpsimp"></a><a name="p725mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p725mcpsimp"><a name="p725mcpsimp"></a><a name="p725mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -905,7 +905,7 @@ td_s32 ss_mpi_cipher_set_cfg (td_handle handle, const ot_cipher_ctrl *ctrl);
 </tr>
 <tr id="row790mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p792mcpsimp"><a name="p792mcpsimp"></a><a name="p792mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p794mcpsimp"><a name="p794mcpsimp"></a><a name="p794mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p794mcpsimp"><a name="p794mcpsimp"></a><a name="p794mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -981,7 +981,7 @@ td_s32 ss_mpi_cipher_get_cfg(td_handle handle, ot_cipher_ctrl *ctrl);
 </tr>
 <tr id="row859mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p861mcpsimp"><a name="p861mcpsimp"></a><a name="p861mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p863mcpsimp"><a name="p863mcpsimp"></a><a name="p863mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p863mcpsimp"><a name="p863mcpsimp"></a><a name="p863mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1071,7 +1071,7 @@ td_s32 ss_mpi_cipher_encrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_
 </tr>
 <tr id="row941mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p943mcpsimp"><a name="p943mcpsimp"></a><a name="p943mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p945mcpsimp"><a name="p945mcpsimp"></a><a name="p945mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p945mcpsimp"><a name="p945mcpsimp"></a><a name="p945mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1164,7 +1164,7 @@ td_s32 ss_mpi_cipher_decrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_
 </tr>
 <tr id="row1025mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1027mcpsimp"><a name="p1027mcpsimp"></a><a name="p1027mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1029mcpsimp"><a name="p1029mcpsimp"></a><a name="p1029mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1029mcpsimp"><a name="p1029mcpsimp"></a><a name="p1029mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1257,7 +1257,7 @@ td_s32 ss_mpi_cipher_encrypt_virt(td_handle handle, const td_u8 *src_data, td_u8
 </tr>
 <tr id="row1109mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1111mcpsimp"><a name="p1111mcpsimp"></a><a name="p1111mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1113mcpsimp"><a name="p1113mcpsimp"></a><a name="p1113mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1113mcpsimp"><a name="p1113mcpsimp"></a><a name="p1113mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1350,7 +1350,7 @@ td_s32 ss_mpi_cipher_decrypt_virt(td_handle handle, const td_u8 *src_data, td_u8
 </tr>
 <tr id="row1193mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1195mcpsimp"><a name="p1195mcpsimp"></a><a name="p1195mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1197mcpsimp"><a name="p1197mcpsimp"></a><a name="p1197mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1197mcpsimp"><a name="p1197mcpsimp"></a><a name="p1197mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1437,7 +1437,7 @@ td_u32 data_pack_num);
 </tr>
 <tr id="row1272mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1274mcpsimp"><a name="p1274mcpsimp"></a><a name="p1274mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1276mcpsimp"><a name="p1276mcpsimp"></a><a name="p1276mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1276mcpsimp"><a name="p1276mcpsimp"></a><a name="p1276mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1524,7 +1524,7 @@ td_s32 ss_mpi_cipher_decrypt_multi_pack(td_handle handle, const ot_cipher_data *
 </tr>
 <tr id="row1353mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1355mcpsimp"><a name="p1355mcpsimp"></a><a name="p1355mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1357mcpsimp"><a name="p1357mcpsimp"></a><a name="p1357mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1357mcpsimp"><a name="p1357mcpsimp"></a><a name="p1357mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1611,7 +1611,7 @@ td_s32 ss_mpi_cipher_get_tag(td_handle handle, td_u8 *tag, td_u32 tag_len);
 </tr>
 <tr id="row1431mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1433mcpsimp"><a name="p1433mcpsimp"></a><a name="p1433mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1435mcpsimp"><a name="p1435mcpsimp"></a><a name="p1435mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1435mcpsimp"><a name="p1435mcpsimp"></a><a name="p1435mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1689,7 +1689,7 @@ td_s32 ss_mpi_cipher_hash_init(const ot_cipher_hash_attr *hash_attr, td_handle *
 </tr>
 <tr id="row1503mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1505mcpsimp"><a name="p1505mcpsimp"></a><a name="p1505mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1507mcpsimp"><a name="p1507mcpsimp"></a><a name="p1507mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1507mcpsimp"><a name="p1507mcpsimp"></a><a name="p1507mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1772,7 +1772,7 @@ td_s32 ss_mpi_cipher_hash_update(td_handle handle, const td_u8 *in_data, td_u32 
 </tr>
 <tr id="row1577mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1579mcpsimp"><a name="p1579mcpsimp"></a><a name="p1579mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1581mcpsimp"><a name="p1581mcpsimp"></a><a name="p1581mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1581mcpsimp"><a name="p1581mcpsimp"></a><a name="p1581mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1855,7 +1855,7 @@ td_s32 ss_mpi_cipher_hash_final(td_handle handle, td_u8 *out_hash, td_u32 out_ha
 </tr>
 <tr id="row1653mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1655mcpsimp"><a name="p1655mcpsimp"></a><a name="p1655mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1657mcpsimp"><a name="p1657mcpsimp"></a><a name="p1657mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1657mcpsimp"><a name="p1657mcpsimp"></a><a name="p1657mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -1923,7 +1923,7 @@ td_s32 ss_mpi_cipher_get_random_num(td_u32 *random_num);
 </tr>
 <tr id="row1711mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1713mcpsimp"><a name="p1713mcpsimp"></a><a name="p1713mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1715mcpsimp"><a name="p1715mcpsimp"></a><a name="p1715mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1715mcpsimp"><a name="p1715mcpsimp"></a><a name="p1715mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2019,7 +2019,7 @@ td_s32 ss_mpi_cipher_rsa_public_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_h
 </tr>
 <tr id="row1807mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1809mcpsimp"><a name="p1809mcpsimp"></a><a name="p1809mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1811mcpsimp"><a name="p1811mcpsimp"></a><a name="p1811mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1811mcpsimp"><a name="p1811mcpsimp"></a><a name="p1811mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2117,7 +2117,7 @@ td_s32 ss_mpi_cipher_rsa_private_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_
 </tr>
 <tr id="row1903mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1905mcpsimp"><a name="p1905mcpsimp"></a><a name="p1905mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1907mcpsimp"><a name="p1907mcpsimp"></a><a name="p1907mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1907mcpsimp"><a name="p1907mcpsimp"></a><a name="p1907mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2214,7 +2214,7 @@ td_s32 ss_mpi_cipher_rsa_private_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_
 </tr>
 <tr id="row1999mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2001mcpsimp"><a name="p2001mcpsimp"></a><a name="p2001mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2003mcpsimp"><a name="p2003mcpsimp"></a><a name="p2003mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2003mcpsimp"><a name="p2003mcpsimp"></a><a name="p2003mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2311,7 +2311,7 @@ td_s32 ss_mpi_cipher_rsa_public_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_h
 </tr>
 <tr id="row2095mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2097mcpsimp"><a name="p2097mcpsimp"></a><a name="p2097mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2099mcpsimp"><a name="p2099mcpsimp"></a><a name="p2099mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2099mcpsimp"><a name="p2099mcpsimp"></a><a name="p2099mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2408,7 +2408,7 @@ td_s32 ss_mpi_cipher_rsa_sign(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type s
 </tr>
 <tr id="row2191mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2193mcpsimp"><a name="p2193mcpsimp"></a><a name="p2193mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2195mcpsimp"><a name="p2195mcpsimp"></a><a name="p2195mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2195mcpsimp"><a name="p2195mcpsimp"></a><a name="p2195mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2505,7 +2505,7 @@ td_s32 ss_mpi_cipher_rsa_verify(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type
 </tr>
 <tr id="row2287mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2289mcpsimp"><a name="p2289mcpsimp"></a><a name="p2289mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2291mcpsimp"><a name="p2291mcpsimp"></a><a name="p2291mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2291mcpsimp"><a name="p2291mcpsimp"></a><a name="p2291mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2588,7 +2588,7 @@ td_s32 ss_mpi_cipher_sm2_encrypt(const ot_cipher_sm2_public_key *sm2_key, const 
 </tr>
 <tr id="row2365mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2367mcpsimp"><a name="p2367mcpsimp"></a><a name="p2367mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2369mcpsimp"><a name="p2369mcpsimp"></a><a name="p2369mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2369mcpsimp"><a name="p2369mcpsimp"></a><a name="p2369mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2672,7 +2672,7 @@ td_s32 ss_mpi_cipher_sm2_decrypt(const ot_cipher_sm2_private_key *sm2_key, const
 </tr>
 <tr id="row2444mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2446mcpsimp"><a name="p2446mcpsimp"></a><a name="p2446mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2448mcpsimp"><a name="p2448mcpsimp"></a><a name="p2448mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2448mcpsimp"><a name="p2448mcpsimp"></a><a name="p2448mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2756,7 +2756,7 @@ td_s32 ss_mpi_cipher_sm2_sign(const ot_cipher_sm2_sign *sm2_sign, const ot_ciphe
 </tr>
 <tr id="row2523mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2525mcpsimp"><a name="p2525mcpsimp"></a><a name="p2525mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2527mcpsimp"><a name="p2527mcpsimp"></a><a name="p2527mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2527mcpsimp"><a name="p2527mcpsimp"></a><a name="p2527mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2840,7 +2840,7 @@ td_s32 ss_mpi_cipher_sm2_verify(const ot_cipher_sm2_verify *sm2_verify, const ot
 </tr>
 <tr id="row2602mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2604mcpsimp"><a name="p2604mcpsimp"></a><a name="p2604mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2606mcpsimp"><a name="p2606mcpsimp"></a><a name="p2606mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2606mcpsimp"><a name="p2606mcpsimp"></a><a name="p2606mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2917,7 +2917,7 @@ td_s32 ss_mpi_keyslot_create(const ot_keyslot_attr *attr, td_handle *keyslot);
 </tr>
 <tr id="row2672mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2674mcpsimp"><a name="p2674mcpsimp"></a><a name="p2674mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2676mcpsimp"><a name="p2676mcpsimp"></a><a name="p2676mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2676mcpsimp"><a name="p2676mcpsimp"></a><a name="p2676mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -2987,7 +2987,7 @@ td_s32 ss_mpi_keyslot_destroy (td_handle keyslot);
 </tr>
 <tr id="row2733mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2735mcpsimp"><a name="p2735mcpsimp"></a><a name="p2735mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2737mcpsimp"><a name="p2737mcpsimp"></a><a name="p2737mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2737mcpsimp"><a name="p2737mcpsimp"></a><a name="p2737mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -3063,7 +3063,7 @@ td_s32 ss_mpi_cipher_attach(td_handle cipher, td_handle keyslot);
 </tr>
 <tr id="row2800mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2802mcpsimp"><a name="p2802mcpsimp"></a><a name="p2802mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2804mcpsimp"><a name="p2804mcpsimp"></a><a name="p2804mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2804mcpsimp"><a name="p2804mcpsimp"></a><a name="p2804mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -3139,7 +3139,7 @@ td_s32 ss_mpi_cipher_detach(td_handle cipher, td_handle keyslot);
 </tr>
 <tr id="row2867mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2869mcpsimp"><a name="p2869mcpsimp"></a><a name="p2869mcpsimp"></a>非0</p>
 </td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2871mcpsimp"><a name="p2871mcpsimp"></a><a name="p2871mcpsimp"></a>参见<a href="错误码.md">错误码</a>。</p>
+<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2871mcpsimp"><a name="p2871mcpsimp"></a><a name="p2871mcpsimp"></a>参见错误码。</p>
 </td>
 </tr>
 </tbody>
@@ -3684,7 +3684,7 @@ typedef struct {
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3383mcpsimp"><td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.3.1.1 "><p id="p3385mcpsimp"><a name="p3385mcpsimp"></a><a name="p3385mcpsimp"></a>iv[<a href="OT_CIPHER_MAX_IV_SIZE_IN_WORD.md">OT_CIPHER_MAX_IV_SIZE_IN_WORD</a>]</p>
+<tbody><tr id="row3383mcpsimp"><td class="cellrowborder" valign="top" width="63%" headers="mcps1.1.3.1.1 "><p id="p3385mcpsimp"><a name="p3385mcpsimp"></a><a name="p3385mcpsimp"></a>iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD]</p>
 </td>
 <td class="cellrowborder" valign="top" width="37%" headers="mcps1.1.3.1.2 "><p id="p3388mcpsimp"><a name="p3388mcpsimp"></a><a name="p3388mcpsimp"></a>向量</p>
 </td>
@@ -3747,7 +3747,7 @@ typedef struct {
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3446mcpsimp"><td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.1 "><p id="p3448mcpsimp"><a name="p3448mcpsimp"></a><a name="p3448mcpsimp"></a>iv[<a href="OT_CIPHER_MAX_IV_SIZE_IN_WORD.md">OT_CIPHER_MAX_IV_SIZE_IN_WORD</a>]</p>
+<tbody><tr id="row3446mcpsimp"><td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.1 "><p id="p3448mcpsimp"><a name="p3448mcpsimp"></a><a name="p3448mcpsimp"></a>iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD]</p>
 </td>
 <td class="cellrowborder" valign="top" width="43%" headers="mcps1.1.3.1.2 "><p id="p3451mcpsimp"><a name="p3451mcpsimp"></a><a name="p3451mcpsimp"></a>向量IV</p>
 </td>
@@ -3822,7 +3822,7 @@ typedef struct {
 </th>
 </tr>
 </thead>
-<tbody><tr id="row3516mcpsimp"><td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.1 "><p id="p3518mcpsimp"><a name="p3518mcpsimp"></a><a name="p3518mcpsimp"></a><span xml:lang="de-DE" id="ph3519mcpsimp"><a name="ph3519mcpsimp"></a><a name="ph3519mcpsimp"></a>iv[</span><a href="OT_CIPHER_MAX_IV_SIZE_IN_WORD.md">OT_CIPHER_MAX_IV_SIZE_IN_WORD</a><span xml:lang="de-DE" id="ph3521mcpsimp"><a name="ph3521mcpsimp"></a><a name="ph3521mcpsimp"></a>]</span></p>
+<tbody><tr id="row3516mcpsimp"><td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.1 "><p id="p3518mcpsimp"><a name="p3518mcpsimp"></a><a name="p3518mcpsimp"></a><span xml:lang="de-DE" id="ph3519mcpsimp"><a name="ph3519mcpsimp"></a><a name="ph3519mcpsimp"></a>iv[</span>OT_CIPHER_MAX_IV_SIZE_IN_WORD<span xml:lang="de-DE" id="ph3521mcpsimp"><a name="ph3521mcpsimp"></a><a name="ph3521mcpsimp"></a>]</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.2 "><p id="p3523mcpsimp"><a name="p3523mcpsimp"></a><a name="p3523mcpsimp"></a>向量</p>
 </td>

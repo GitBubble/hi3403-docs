@@ -131,7 +131,6 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 
 **图 1**  方案切换菜单<a name="_Ref377548814"></a>  
 ![](figures/方案切换菜单.png "方案切换菜单")
-
 ## 方案工具适配性<a name="ZH-CN_TOPIC_0000002408329616"></a>
 
 在工具平台菜单中【Device】\>【Current Device】中，显示当前为SS928V100，如[图1](#2-3-1)所示。
@@ -143,7 +142,6 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 
 **图 2**  SS928V100可用工具<a name="2-3-2"></a>  
 ![](figures/SS928V100可用工具.png "SS928V100可用工具")
-
 # 语言切换
 在文件菜单栏中选择语言切换，具体步骤如下：
 
@@ -165,7 +163,6 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 
     **图 3**  程序中文界面<a name="6-3"></a>  
     ![](figures/程序中文界面.png "程序中文界面")
-
 # FAQ
 ## 工具运行缓慢<a name="ZH-CN_TOPIC_0000002441768849"></a>
 

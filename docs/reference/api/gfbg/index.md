@@ -84,28 +84,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/GFBG API
 </th>
 </tr>
 </thead>
-<tbody><tr id="row462mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p464mcpsimp"><a name="p464mcpsimp"></a><a name="p464mcpsimp"></a><a name="image109"></a><a name="image109"></a><span><img id="image109" src="figures/zh-cn_image_0000002441654509.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row462mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p464mcpsimp"><a name="p464mcpsimp"></a><a name="p464mcpsimp"></a><a name="image109"></a><a name="image109"></a><span><img id="image109" src="/reference/api/gfbg/figures/zh-cn_image_0000002441654509.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p466mcpsimp"><a name="p466mcpsimp"></a><a name="p466mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row467mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p469mcpsimp"><a name="p469mcpsimp"></a><a name="p469mcpsimp"></a><a name="image110"></a><a name="image110"></a><span><img id="image110" src="figures/zh-cn_image_0000002441694357.png" height="27.93" width="75.81"></span></p>
+<tr id="row467mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p469mcpsimp"><a name="p469mcpsimp"></a><a name="p469mcpsimp"></a><a name="image110"></a><a name="image110"></a><span><img id="image110" src="/reference/api/gfbg/figures/zh-cn_image_0000002441694357.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p471mcpsimp"><a name="p471mcpsimp"></a><a name="p471mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row472mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p474mcpsimp"><a name="p474mcpsimp"></a><a name="p474mcpsimp"></a><a name="image111"></a><a name="image111"></a><span><img id="image111" src="figures/zh-cn_image_0000002408255110.png" height="27.93" width="75.81"></span></p>
+<tr id="row472mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p474mcpsimp"><a name="p474mcpsimp"></a><a name="p474mcpsimp"></a><a name="image111"></a><a name="image111"></a><span><img id="image111" src="/reference/api/gfbg/figures/zh-cn_image_0000002408255110.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p476mcpsimp"><a name="p476mcpsimp"></a><a name="p476mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row477mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p479mcpsimp"><a name="p479mcpsimp"></a><a name="p479mcpsimp"></a><a name="image112"></a><a name="image112"></a><span><img id="image112" src="figures/zh-cn_image_0000002441654513.png" height="27.93" width="75.81"></span></p>
+<tr id="row477mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p479mcpsimp"><a name="p479mcpsimp"></a><a name="p479mcpsimp"></a><a name="image112"></a><a name="image112"></a><span><img id="image112" src="/reference/api/gfbg/figures/zh-cn_image_0000002441654513.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p482mcpsimp"><a name="p482mcpsimp"></a><a name="p482mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row483mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p485mcpsimp"><a name="p485mcpsimp"></a><a name="p485mcpsimp"></a><a name="image113"></a><a name="image113"></a><span><img id="image113" src="figures/zh-cn_image_0000002408095190.png" height="27.93" width="75.81"></span></p>
+<tr id="row483mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p485mcpsimp"><a name="p485mcpsimp"></a><a name="p485mcpsimp"></a><a name="image113"></a><a name="image113"></a><span><img id="image113" src="/reference/api/gfbg/figures/zh-cn_image_0000002408095190.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p487mcpsimp"><a name="p487mcpsimp"></a><a name="p487mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p488mcpsimp"><a name="p488mcpsimp"></a><a name="p488mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -7301,7 +7301,6 @@ typedef struct {
 
 **图 1**  视频输出单元基本结构<a name="fig1274380513"></a>  
 ![](figures/视频输出单元基本结构.png "视频输出单元基本结构")
-
 ### 注意事项<a name="ZH-CN_TOPIC_0000002408255030"></a>
 
 开发图形层时需要注意以下事项：

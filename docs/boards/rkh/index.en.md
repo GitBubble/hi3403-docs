@@ -7,23 +7,23 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/rkh/README_z
 
 A 4 GB RAM / 32 GB eMMC board based on the EBaina design.
 
-![Board](board_image.png)
+![Board](../../boards/rkh/board_image.png)
 
 ## Build
 
 Follow the
-[Development environment](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md#开发环境)
+[Development environment](../../os/openharmony/usage/index.md#开发环境)
 section to set up the toolchain and build the image.
 
 ## Flashing the image
 
 Follow the
-[Image flashing](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md#版本烧写)
+[Image flashing](../../os/openharmony/usage/index.md#版本烧写)
 section.
 
 ## First boot — desktop
 
-![Desktop](launcher_image.png)
+![Desktop](../../boards/rkh/launcher_image.png)
 
 ## Multimedia smoke test
 
@@ -44,39 +44,39 @@ section.
 2. Plug headphones into the headphone jack
 3. Open the Gallery app to browse images and play video
 
-![Gallery](gallery_image.png)
+![Gallery](../../boards/rkh/gallery_image.png)
 
 ## DHCP smoke test
 
 1. With the network cable plugged in, open Settings → DHCP
 
-    ![Settings](setting_image.png)
+    ![Settings](../../boards/rkh/setting_image.png)
 
 2. Toggle the DHCP switch on
 
-    ![Settings DHCP](setting_dhcp_image.png)
+    ![Settings DHCP](../../boards/rkh/setting_dhcp_image.png)
 
 3. Use `ifconfig` (or similar) to confirm IP / DNS / default route
 
-    ![DHCP info](dhcp_info.png)
+    ![DHCP info](../../boards/rkh/dhcp_info.png)
 
 ## Recorder smoke test
 
 1. Plug in headphones
 2. Tap the Recorder icon on the desktop to launch the app
 
-    ![Recorder start](recorder_start.jpg)
+    ![Recorder start](../../boards/rkh/recorder_start.jpg)
 
 3. Tap the record button to start; tap again to stop
 
-    ![Recorder button](recorder_button.jpg)
+    ![Recorder button](../../boards/rkh/recorder_button.jpg)
 
 4. Adjust folder permissions: `chmod 777 /userdata/audio/norm`
    (only required on first launch)
 5. Quit and re-launch the Recorder, then record again
 6. Stopped recordings appear in the list — tap to play (volume is low)
 
-    ![Recorder list](recorder_list.jpg)
+    ![Recorder list](../../boards/rkh/recorder_list.jpg)
 
 Known issues: recorded audio is quiet and sometimes incomplete.
 Tip: speak close to the microphone, otherwise nothing is captured.

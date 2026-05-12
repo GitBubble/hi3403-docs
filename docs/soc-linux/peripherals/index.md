@@ -171,7 +171,6 @@ IPv6环境配置如下：
 
 **图 1**  PHY地址配置节点示意图<a name="_Toc498609229"></a>  
 ![](figures/PHY地址配置节点示意图.png "PHY地址配置节点示意图")
-
 ### IEEE 802.3x流控功能配置<a name="ZH-CN_TOPIC_0000002480063688"></a>
 
 
@@ -952,7 +951,6 @@ USB的操作准备如下：
 
     **图 2**  安装过程示意图<a name="fig926614531282"></a>  
     ![](figures/安装过程示意图.jpg "安装过程示意图")
-
     ![](figures/zh-cn_image_0000002512063591.jpg)
 
     ![](figures/zh-cn_image_0000002512103621.jpg)
@@ -976,7 +974,6 @@ USB的操作准备如下：
 
     **图 4**  配置选项选择<a name="fig18932417111320"></a>  
     ![](figures/配置选项选择.png "配置选项选择")
-
     ![](figures/截图-0.png)
 
     ![](figures/截图-1.png)
@@ -1133,7 +1130,6 @@ eMMC发布模式是HS400ES（工作在8bit模式下）或者HS200（工作在4bi
 
 **图 2**  内核下修改（以SS928V100为例）<a name="_Ref33704655"></a>  
 ![](figures/内核下修改（以SS928V100为例）.png "内核下修改（以SS928V100为例）")
-
 ## I2C操作指南<a name="ZH-CN_TOPIC_0000002480063636"></a>
 
 
@@ -1167,7 +1163,6 @@ i2c\_bus0节点中的clock-frequency属性的值，如[图1](#_Ref411428751)所�
 
 **图 1**  接口速率配置示意图<a name="_Ref411428751"></a>  
 ![](figures/接口速率配置示意图.png "接口速率配置示意图")
-
 ### 操作示例<a name="ZH-CN_TOPIC_0000002480063624"></a>
 
 
@@ -1595,7 +1590,6 @@ I2C的工作模式默认是轮询模式，如果需要切换中断模式，则�
 
     **图 4**  修改DMA节点compatible属性<a name="fig3543719154118"></a>  
     ![](figures/修改DMA节点compatible属性.png "修改DMA节点compatible属性")
-
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >I2C使用非标准DMA驱动，防止冲突标准DMA驱动和非标准DMA驱动只能二选一。因此，如果打开了非标准DMA驱动，则由标准DMA驱动所支持的UART DMA传输功能和SPI DMA传输功能将不可用。
     >由于不支持中断嵌套，使用I2C的DMA模式时，不能在其它模块的中断处理中调用I2C的读写函数。
@@ -2143,14 +2137,12 @@ SPI的工作模式默认是中断模式，如果要修改SPI的工作模式为�
 
 **图 1**  SPI节点描述图<a name="_Ref36827303"></a>  
 ![](figures/SPI节点描述图.png "SPI节点描述图")
-
 #### 中断模式<a name="ZH-CN_TOPIC_0000002480063632"></a>
 
 SPI的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss928v100-demb.dts文件找到对应的SPI，确认“pl022,com-mode”配置为0，而且“status”值为okay，如[图1](#_Ref36827325)所示。
 
 **图 1**  SPI节点描述图<a name="_Ref36827325"></a>  
 ![](figures/SPI节点描述图-3.png "SPI节点描述图-3")
-
 #### DMA模式的开启和关闭<a name="ZH-CN_TOPIC_0000002480063650"></a>
 
 1.  如果需要开启DMA功能，首先需要在编译linux时menuconfig打开对应的选项，Device Drivers  ---\> DMA Engine support  ---\> Vendor EDMAC Controller support。相对的，如果需要关闭DMA功能，则将该选项关闭，如[图1](#fig04111939496)所示。
@@ -2172,7 +2164,6 @@ SPI的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss928
 
     **图 4**  SPI节点描述图<a name="fig15784105971010"></a>  
     ![](figures/SPI节点描述图-6.png "SPI节点描述图-6")
-
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >区别于I2C，SPI使用标准DMA驱动，防止冲突标准DMA驱动和非标准DMA驱动只能二选一。因此，如果打开了标准DMA驱动，则由非标准DMA驱动所支持的I2C DMA传输功能将不可用。
 
@@ -2941,7 +2932,6 @@ UART的工作模式默认是中断模式，打开arch/arm64/boot/dts/vendor/ss92
 
     **图 3**  UART添加DMA相关属性<a name="fig12271338911"></a>  
     ![](figures/UART添加DMA相关属性.png "UART添加DMA相关属性")
-
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >UART使用标准DMA驱动，防止冲突标准DMA驱动和非标准DMA驱动只能二选一。因此，如果打开了标准DMA驱动，则由非标准DMA驱动所支持的I2C DMA传输功能将不可用。
 
@@ -5232,7 +5222,7 @@ int spi_dev_set(int host_no, int cs_no, struct spi_ioc_transfer *transfer);
 <tr id="row891mcpsimp"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.1 "><p id="p893mcpsimp"><a name="p893mcpsimp"></a><a name="p893mcpsimp"></a>transfer</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.4.1.2 "><p id="p895mcpsimp"><a name="p895mcpsimp"></a><a name="p895mcpsimp"></a>传输控制结构体指针。</p>
-<p id="p896mcpsimp"><a name="p896mcpsimp"></a><a name="p896mcpsimp"></a>取值：用户定义并填充成员，参考<a href="数据类型-32.md">数据类型</a>。</p>
+<p id="p896mcpsimp"><a name="p896mcpsimp"></a><a name="p896mcpsimp"></a>取值：用户定义并填充成员，参考数据类型。</p>
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.3 "><p id="p899mcpsimp"><a name="p899mcpsimp"></a><a name="p899mcpsimp"></a>输入</p>
 </td>

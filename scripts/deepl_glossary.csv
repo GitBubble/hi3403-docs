@@ -1,0 +1,58 @@
+MPP	MPP
+VPSS	VPSS
+VENC	VENC
+VI	Video Input
+VO	Video Output
+VGS	VGS
+ISP	ISP
+AE	AE
+AWB	AWB
+AF	AF
+SVP	SVP
+MMZ	MMZ
+VDEC	VDEC
+VBS	VBS
+VGS	VGS
+帧	frame
+帧率	frame rate
+码流	bitstream
+码率	bit rate
+编码	encoding
+解码	decoding
+编码通道	encoding channel
+分辨率	resolution
+像素	pixel
+缓存池	buffer pool
+通道	channel
+管道	pipe
+参数	parameter
+属性	attribute
+接口	interface
+回调	callback
+注册	register
+初始化	initialize
+去初始化	deinitialize
+退出	exit
+配置	configure
+描述	description
+语法	syntax
+定义	defines
+返回值	return value
+枚举	enumeration
+结构体	structure
+宏	macro
+取值范围	valid range
+有效范围	valid range
+默认值	default value
+保留	reserved
+拼接	stitching
+抓拍	snapshot
+缩放	scaling
+裁剪	cropping
+旋转	rotation
+叠加	overlay
+调试	debug
+信息	information
+概览	overview
+注意事项	precautions
+案例	example

@@ -149,7 +149,6 @@ KERNEL\_LOAD\_ADDR = CONFIG\_KERNEL\_LOAD\_ADDR （[CONFIG\_KERNEL\_LOAD\_ADDR](
 
 **图 1**  删除LiteOS的前后对比<a name="fig10232031174813"></a>  
 ![](figures/删除LiteOS的前后对比.png "删除LiteOS的前后对比")
-
 ### 修改点<a name="ZH-CN_TOPIC_0000002457840789"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -237,7 +236,6 @@ KERNEL\_LOAD\_ADDR = CONFIG\_KERNEL\_LOAD\_ADDR （[CONFIG\_KERNEL\_LOAD\_ADDR](
 
 **图 1**  扩大Linux空间的前后对比<a name="fig10232031174813"></a>  
 ![](figures/扩大Linux空间的前后对比.png "扩大Linux空间的前后对比")
-
 ### 修改点<a name="ZH-CN_TOPIC_0000002424202098"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 

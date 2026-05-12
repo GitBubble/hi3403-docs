@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a><a name="image126"></a><a name="image126"></a><span><img id="image126" src="figures/zh-cn_image_0000002441731557.png" height="25.270000000000003" width="66.5"></span></p>
+<tbody><tr id="row227mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a><a name="image126"></a><a name="image126"></a><span><img id="image126" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441731557.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p231mcpsimp"><a name="p231mcpsimp"></a><a name="p231mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row232mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a><a name="image127"></a><a name="image127"></a><span><img id="image127" src="figures/zh-cn_image_0000002441691713.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row232mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a><a name="image127"></a><a name="image127"></a><span><img id="image127" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441691713.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p236mcpsimp"><a name="p236mcpsimp"></a><a name="p236mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row237mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p239mcpsimp"><a name="p239mcpsimp"></a><a name="p239mcpsimp"></a><a name="image128"></a><a name="image128"></a><span><img id="image128" src="figures/zh-cn_image_0000002441691709.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row237mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p239mcpsimp"><a name="p239mcpsimp"></a><a name="p239mcpsimp"></a><a name="image128"></a><a name="image128"></a><span><img id="image128" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441691709.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p241mcpsimp"><a name="p241mcpsimp"></a><a name="p241mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row242mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p244mcpsimp"><a name="p244mcpsimp"></a><a name="p244mcpsimp"></a><a name="image129"></a><a name="image129"></a><span><img id="image129" src="figures/zh-cn_image_0000002441731553.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row242mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p244mcpsimp"><a name="p244mcpsimp"></a><a name="p244mcpsimp"></a><a name="image129"></a><a name="image129"></a><span><img id="image129" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441731553.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p246mcpsimp"><a name="p246mcpsimp"></a><a name="p246mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p247mcpsimp"><a name="p247mcpsimp"></a><a name="p247mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row248mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p250mcpsimp"><a name="p250mcpsimp"></a><a name="p250mcpsimp"></a><a name="image130"></a><a name="image130"></a><span><img id="image130" src="figures/zh-cn_image_0000002441691705.png" height="25.270000000000003" width="66.5"></span></p>
+<tr id="row248mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p250mcpsimp"><a name="p250mcpsimp"></a><a name="p250mcpsimp"></a><a name="image130"></a><a name="image130"></a><span><img id="image130" src="/multimedia/svp/dev/figures/zh-cn_image_0000002441691705.png" height="25.270000000000003" width="66.5"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p252mcpsimp"><a name="p252mcpsimp"></a><a name="p252mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p253mcpsimp"><a name="p253mcpsimp"></a><a name="p253mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -119,7 +119,6 @@ SVP开发框架如[图1](#__fig46510526497)所示。目前SVP中包含的硬件�
 
 **图 1**  SVP开发框架<a name="__fig46510526497"></a>  
 ![](figures/SVP开发框架.png "SVP开发框架")
-
 ## 硬件资源<a name="ZH-CN_TOPIC_0000002408132350"></a>
 
 不同的解决方案SVP会使用不同硬件资源，如[表1](#__toc3205560)所示。
@@ -327,7 +326,7 @@ Xtensa Xplorer的安装使用可参考Cadence提供的官方文档，以下均�
 本文假定用户在windows环境中已经安装好了Xplorer8.0.7，并以SS928V100 VQ6配置核Otechn\_VisionQ6\_v3为例进行配置核安装，不同解决方案不同配置核的在不同Xplorer版本的安装类似。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->SS928V100 VQ6配置核Otechn\_VisionQ6\_v3需与RH-2018.7版本的工具包（见[表1](DSP工具链和配置核版本.md#__toc3205562)  XtensaTools\_RH\_2018\_7\_win32.tgz）配套使用，Xplorer8.0.7默认集成了RG2016.4工具包，如用户使用其他版本的Xplorer，需要另外安装RH-2018.7工具包。
+>SS928V100 VQ6配置核Otechn\_VisionQ6\_v3需与RH-2018.7版本的工具包（见表1  XtensaTools\_RH\_2018\_7\_win32.tgz）配套使用，Xplorer8.0.7默认集成了RG2016.4工具包，如用户使用其他版本的Xplorer，需要另外安装RH-2018.7工具包。
 
 1.  打开Xplorer 8.0.7，右键System Overview窗口下的Configurations，如[图1](#fig31925394563)所示，点击Find and Install a Configuration Build；
 
@@ -348,7 +347,6 @@ Xtensa Xplorer的安装使用可参考Cadence提供的官方文档，以下均�
 
     **图 4**  创建的工程界面<a name="fig185297106715"></a>  
     ![](figures/创建的工程界面.png "创建的工程界面")
-
 ## memmap配置<a name="ZH-CN_TOPIC_0000002408292238"></a>
 
 memmap.xmm文件在发布包 dsp\_liteos/dspxx/liteos/dspxx\_ldscripts目录下，xx代表数字。DSP的内存布局由memmap.xmm文件配置生成，用户可以通过这个文件了解和分析DSP的内存布局。用户可以根据自己的开发环境来修改memory map。可以参考Xtensa ® Linker Support Packages \(LSPs\) Reference Manual 了解memmap.xmm。
@@ -366,7 +364,6 @@ memmap.xmm文件在发布包 dsp\_liteos/dspxx/liteos/dspxx\_ldscripts目录下�
 
     **图 2**  显示栈信息窗口<a name="fig1931604853914"></a>  
     ![](figures/显示栈信息窗口.png "显示栈信息窗口")
-
 ## Linux环境下安装DSP工具链和配置核<a name="ZH-CN_TOPIC_0000002441731497"></a>
 
 在Linux环境下安装Cadence DSP的工具链和配置核可参考Cadence提供的官方文档dev\_tools\_install\_guide.pdf。用户在利用配套的SDK包进行板端DSP程序开发时，推荐按照以下方式安装DSP的工具链和配置核。

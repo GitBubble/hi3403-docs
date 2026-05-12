@@ -43,7 +43,7 @@ Boot link (U-Boot → ATF → Kernel), various peripherals, memory layout, and s
 
     [:octicons-arrow-right-24: Enter](peripherals/index.md)
 
--   :material-memory:{ .lg .middle } __memory layout__
+-   :material-memory:{ .lg .middle } __Memory Layout__
 
     ---
 
@@ -75,7 +75,7 @@ Boot link (U-Boot → ATF → Kernel), various peripherals, memory layout, and s
 
     [:octicons-arrow-right-24: Enter](pcie/index.md)
 
--   :material-security:{ .lg .middle } __security subsystem__
+-   :material-security:{ .lg .middle } __Security Subsystem__
 
     ---
 

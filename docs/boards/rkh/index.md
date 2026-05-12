@@ -8,10 +8,10 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/rkh/README_z
 ![输入图片说明](board_image.png)
 
 ## 编译
-请参考 [开发环境](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md#开发环境) 章节进行环境搭建和版本编译。
+请参考 [开发环境](../../os/openharmony/usage/index.md#开发环境) 章节进行环境搭建和版本编译。
 
 ## 镜像烧写
-请参考 [版本烧写](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md#版本烧写) 章节进行镜像烧写操作。
+请参考 [版本烧写](../../os/openharmony/usage/index.md#版本烧写) 章节进行镜像烧写操作。
 
 ## 系统进入桌面
 ![输入图片说明](launcher_image.png)
@@ -36,8 +36,10 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/rkh/README_z
 ## DHCP验证
 1. 如上图开发板所示，插入网线，点击setting应用，打开设置界面，点击DHCP，即可进入DHCP开关界面
 ![输入图片说明](setting_image.png)
+
 2. 点击DHCP开关
 ![输入图片说明](setting_dhcp_image.png)
+
 3. 通过ifconfig等相关命令，可以查看获取到dhcp的ip地址、dns、以及默认路由。 
 ![输入图片说明](dhcp_info.png)
 
@@ -45,8 +47,10 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/rkh/README_z
 1.插上耳机
 2.鼠标点击桌面录音机图标打开录音机应用 
 ![输入图片说明](recorder_start.jpg)
+
 3.点击录音按钮开始录音，再次点击停止录音     
 ![输入图片说明](recorder_button.jpg)  
+
 4.修改文件夹权限: chmod 777 /userdata/audio/norm  （仅首次启动需要修改）  
 5.退出录音机应用重新打开，点击录音录音
 6.停止录音后在录音列表能够看见音频文件，点击播放（播放时声音很小） 

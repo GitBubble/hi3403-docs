@@ -15,11 +15,11 @@ Each page corresponds to a specific location in IA. The following are the direct
 
 | Section | Table of contents | What to pretend |
 |---|---|---|
-| Get started | `docs/get-started/` | quickstart, decision, installation class |
-| Boards | `docs/boards/<vendor>/` | Exclusive content for the board |
-| OS | `docs/os/<distro>/` | OS porting, dedicated content |
-| SoC & Linux | `docs/soc-linux/` | Chip + kernel + startup related |
-| Multimedia & AI | `docs/multimedia/` | MPP、ISP、AI |
+| Get Started | `docs/get-started/` | Quickstart, decision, installation |
+| Boards | `docs/boards/<vendor>/` | Board-specific content |
+| OS | `docs/os/<distro>/` | OS porting, distro-specific content |
+| SoC & Linux | `docs/soc-linux/` | Chip + kernel + boot related |
+| Multimedia & AI | `docs/multimedia/` | MPP, ISP, AI |
 | Tools | `docs/tools/` | Tools |
 | Reference | `docs/reference/` | API, FAQ, configuration |
 | Tutorials | `docs/tutorials/` | End-to-end practice |
@@ -41,8 +41,8 @@ YAML front-matter is required at the top of every page:
 
 ``` markdown
 ---
-title: 在 Hi3403 上跑 GStreamer
-description: 编译 GStreamer + Hi3403 插件，跑一条 pipeline
+title: Running GStreamer on Hi3403
+description: Compile GStreamer + Hi3403 plugins and run a pipeline
 ---
 ```
 
@@ -54,19 +54,19 @@ subtitle inside.
 Refer to the structure of [style guide](style-guide.md):
 
 ``` markdown
-# 在 Hi3403 上跑 GStreamer
+# Running GStreamer on Hi3403
 
-**目标**：编译 GStreamer 1.22 + Hi3403 视频插件，跑一条 pipeline 把
-摄像头数据通过 GStreamer 的 H.264 编码器输出。
+**Goal**: Compile GStreamer 1.22 + Hi3403 video plugin, and run a pipeline to
+output camera data through GStreamer's H.264 encoder.
 
-**用时**：约 1 小时
+**Time**: ~1 hour
 
-**前置条件**：
+**Prerequisites**:
 
-- 启动了 Hi3403（[quickstart](../get-started/quickstart.md)）
-- 主机有交叉编译工具链
+- Booted Hi3403 ([quickstart](../get-started/quickstart.md))
+- Host has a cross-compilation toolchain
 
-## 步骤 1 — ...
+## Step 1 — ...
 
 ...
 ```
@@ -83,9 +83,9 @@ Appears on the landing, edit the `index.md` of that section:
 
     ---
 
-    用 GStreamer 1.22 接 Hi3403 编码器。
+    Use GStreamer 1.22 with the Hi3403 encoder.
 
-    [:octicons-arrow-right-24: 进入](gstreamer.md)
+    [:octicons-arrow-right-24: Enter](gstreamer.md)
 
 </div>
 ```
@@ -107,7 +107,7 @@ docs/tutorials/
 Quote:
 
 ``` markdown
-![GStreamer pipeline 示意图](images/pipeline.svg)
+![GStreamer pipeline diagram](../community/images/pipeline.svg)
 ```
 
 Remember to alt text (what’s in square brackets) – Accessibility + SEO.
@@ -118,7 +118,7 @@ Remember to alt text (what’s in square brackets) – Accessibility + SEO.
 make serve
 ```
 
-Browser opens <ZXTOKEN0END> - your new page should
+Browser opens `http://127.0.0.1:8000/` - your new page should
 Right there. Try changing a line and saving - the browser will refresh automatically.
 
 ## Step 7 — Link Check
@@ -154,9 +154,9 @@ The relative path of the link is incorrect. Calculate the path from the perspect
 
 ``` markdown
 <!-- docs/tutorials/gstreamer.md 引用 docs/tutorials/images/pipeline.svg -->
-![](images/pipeline.svg)        ✓ 对
-![](./images/pipeline.svg)      ✓ 对
-![](/images/pipeline.svg)       ✗ 错（站根，不是同目录）
+![](../community/images/pipeline.svg)        ✓ correct
+![](../community/images/pipeline.svg)      ✓ correct
+![](../images/pipeline.svg)       ✗ wrong (site root, not same directory)
 ```
 
 ### "build --strict failed"

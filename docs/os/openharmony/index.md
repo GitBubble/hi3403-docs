@@ -307,14 +307,14 @@ repo forall -c 'git lfs pull'
 
 ## 快速入手
 
-请参考 [OpenHarmony Small版本使用指南](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md) 快速开始。
+请参考 [OpenHarmony Small版本使用指南](usage/index.md) 快速开始。
 
 ### 相关文档
 
 | **文档路径** | **用途介绍** |
 |-------------|-------------|
-| [OpenHarmony Small版本使用指南](../../docs/zh-CN/OpenHarmony%20Small版本使用指南/OpenHarmony%20Small版本使用指南.md) | Hi3403V100/Hi3519AV200 上运行 OpenHarmony Small 系统，rootfs 打包文件系统，配置代码开发环境、编译、烧写；鸿蒙内核选项修改；XTS 测试说明；媒体功能使用；图形功能使用 |
-| [OpenHarmony Small系统集成Hi3403V100移植案例](../../docs/zh-CN/OpenHarmony%20Small系统集成Hi3403V100移植案例/OpenHarmony%20Small系统集成Hi3403V100移植案例.md) | Hi3403V100 芯片解决方案集成案例：产品配置添加，内核移植适配、编译，XTS 认证，图形增强特性，媒体增强特性的适配案例总结 |
+| [OpenHarmony Small版本使用指南](usage/index.md) | Hi3403V100/Hi3519AV200 上运行 OpenHarmony Small 系统，rootfs 打包文件系统，配置代码开发环境、编译、烧写；鸿蒙内核选项修改；XTS 测试说明；媒体功能使用；图形功能使用 |
+| [OpenHarmony Small系统集成Hi3403V100移植案例](porting/index.md) | Hi3403V100 芯片解决方案集成案例：产品配置添加，内核移植适配、编译，XTS 认证，图形增强特性，媒体增强特性的适配案例总结 |
 
 ## 许可证
 

@@ -69,7 +69,7 @@ Don't know which piece to choose? See the comparison table in [Choose a developm
 
     The capabilities of the chip itself - not dependent on the board.
 
-    [:octicons-arrow-right-24: Enter](../soc-linux/soc-overview.md)
+    [:octicons-arrow-right-24: Enter](../soc-linux/soc-overview/index.md)
 
 -   :material-disc-player:{ .lg .middle } __operating system__
 

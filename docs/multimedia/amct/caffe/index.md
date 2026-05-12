@@ -83,7 +83,6 @@ AMCT使用场景如[图1](#fig15946191505911)所示，AMCT当前仅支持在Ubun
 
 **图 1**  部署架构<a name="fig15946191505911"></a>  
 ![](figures/部署架构.png "部署架构")
-
 ## 基本功能<a name="ZH-CN_TOPIC_0000002408581194"></a>
 
 
@@ -181,7 +180,6 @@ AMCT原理如[图1](#fig2589125075314)所示，蓝色部分为用户实现，灰
 
 **图 1**  工具原理示意图<a name="fig2589125075314"></a>  
 ![](figures/工具原理示意图.png "工具原理示意图")
-
 ### 工具实现的融合功能<a name="ZH-CN_TOPIC_0000002441980785"></a>
 
 当前该工具主要实现的是BN融合功能，分为如下几类：
@@ -1687,7 +1685,6 @@ bash init_env.sh CPU **/caffe-master python3.7.5 /usr/include/python3.7m with_be
 
 **图 1**  非均匀量化流程<a name="fig438795118316"></a>  
 ![](figures/非均匀量化流程.png "非均匀量化流程")
-
 ### 量化示例<a name="ZH-CN_TOPIC_0000002442020465"></a>
 
 1.  获取非均匀量化简单配置文件，详细说明以及配置模板请参见[训练后量化简易量化配置文件说明](#ZH-CN_TOPIC_0000002441980761)。
@@ -2899,7 +2896,6 @@ bash init_env.sh CPU **/caffe-master python3.7.5 /usr/include/python3.7m with_be
 
     **图 1**  调参流程<a name="fig198509323537"></a>  
     ![](figures/调参流程.png "调参流程")
-
 # 量化感知训练
 ## 量化示例<a name="ZH-CN_TOPIC_0000002408421242"></a>
 
@@ -4911,14 +4907,12 @@ ModuleNotFoundError: No module named '_tkinter'
 
 **图 1**  错误信息1<a name="fig1204mcpsimp"></a>  
 ![](figures/错误信息1.png "错误信息1")
-
 -   数据范围![](figures/zh-cn_image_0000002442021657.png)：（其中_EPSILON_包括DBL\_EPSILON double类型，FLT\_EPSILON float类型，当前使用的是FLT\_EPSILON类型）
 
     AMCT量化支持计算得到的最大![](figures/zh-cn_image_0000002408422626.png)，因为在SoC量化动作做的是乘法计算：![](figures/zh-cn_image_0000002408582498.png)  ， 如果scale大于![](figures/zh-cn_image_0000002442021693.png)，  ![](figures/zh-cn_image_0000002408582530.png)会小于_FLT\_EPSILON_，此时量化后结果就不可信。因此AMCT量化算法仅支持原始数据范围在![](figures/zh-cn_image_0000002408582470.png)内进行量化，否则会提示不支持并提示错误信息。
 
 **图 2**  错误信息2<a name="fig6238192915416"></a>  
 ![](figures/错误信息2.png "错误信息2")
-
 # 附录
 ## 支持量化的算子列表<a name="ZH-CN_TOPIC_0000002408581274"></a>
 

@@ -76,28 +76,28 @@ Hi3403V100与Hi3519AV200同为4K60 Ultra-HD Smart IP Camera SOC，在CPU、ISP�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002374573272.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/os/openharmony/usage/figures/zh-cn_image_0000002374573272.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002374733132.png"></span></p>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="/os/openharmony/usage/figures/zh-cn_image_0000002374733132.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002374573268.png"></span></p>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="/os/openharmony/usage/figures/zh-cn_image_0000002374573268.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002374733128.png"></span></p>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="/os/openharmony/usage/figures/zh-cn_image_0000002374733128.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002374733136.png"></span></p>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="/os/openharmony/usage/figures/zh-cn_image_0000002374733136.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
 <p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -226,7 +226,6 @@ ln -s /bin/bash /bin/sh
 
 **图 3**  构建镜像不支持dash命令报错<a name="fig1560035719163"></a>  
 ![](figures/构建镜像不支持dash命令报错.png "构建镜像不支持dash命令报错")
-
 ### 搭建代码开发环境<a name="ZH-CN_TOPIC_0000002482342753"></a>
 
 OpenHarmony环境下配置Hi3403V100和Hi3519AV200配套产品的编译目录。
@@ -659,7 +658,6 @@ Hi3403V100硬件单板烧写KEY0步骤如下。
 
     **图 1**  小型系统资源文件<a name="fig18181965513"></a>  
     ![](figures/小型系统资源文件.png "小型系统资源文件")
-
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >OH5.0及以前社区下载的resource\\tools\\query.bin是32位的，无法在64位的设备上使用。客户需要使用自行编译生成的query.bin文件（os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/suites/acts/resource/tools/query.bin）。
     >OH5.1社区下载resource没有tools目录。
@@ -714,7 +712,6 @@ Hi3403V100硬件单板烧写KEY0步骤如下。
 
     **图 3**  XTS认证送检材料参考目录<a name="fig1406506511"></a>  
     ![](figures/XTS认证送检材料参考目录.png "XTS认证送检材料参考目录")
-
 ### 硬件单板烧写<a name="ZH-CN_TOPIC_0000002374732952"></a>
 
 SS928V100和SS927V100硬件单板烧写KEY0步骤。
@@ -909,7 +906,6 @@ OpenHarmony5.1 toybox的telnetd连接默认需要密码，按如下两种方法�
 
     **图 1**  启动播放功能<a name="fig824648174310"></a>  
     ![](figures/启动播放功能.png "启动播放功能")
-
 ### 采集H264码流功能<a name="ZH-CN_TOPIC_0000002374573076"></a>
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
@@ -952,7 +948,6 @@ OpenHarmony5.1 toybox的telnetd连接默认需要密码，按如下两种方法�
 
     **图 3**  音频采集文件<a name="fig1977325816493"></a>  
     ![](figures/音频采集文件.png "音频采集文件")
-
 ## 图形示例应用使用指导<a name="ZH-CN_TOPIC_0000002408172677"></a>
 
 图形子系统提供两个示例应用。包含控件示例应用，和窗口示例应用。控件示例应用主要覆盖图形子系统的控件能力，例如Button、Label、ScrollView等。窗口示例应用主要覆盖窗口管理能力，包含窗口的创建、删除、以及位置设置。
@@ -1120,7 +1115,6 @@ OpenHarmony5.1 toybox的telnetd连接默认需要密码，按如下两种方法�
 
     **图 1**  启动画面结果<a name="fig042845495519"></a>  
     ![](figures/启动画面结果.png "启动画面结果")
-
 ## 在rootfs中打包自定义文件或目录<a name="ZH-CN_TOPIC_0000002374573036"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -1183,7 +1177,6 @@ OpenHarmony5.1 toybox的telnetd连接默认需要密码，按如下两种方法�
 
     **图 2**  rootfs中新增xxx目录<a name="fig523011572911"></a>  
     ![](figures/rootfs中新增xxx目录.png "rootfs中新增xxx目录")
-
 ### 往rootfs现有目录下打包文件<a name="ZH-CN_TOPIC_0000002408172613"></a>
 
 参考os/OpenHarmony/vendor/hisilicon/hispark_aifly_linux/init\_configs目录实现，拷贝xxx/xxx.sh文件到etc/xxx目录下。

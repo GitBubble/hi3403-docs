@@ -63,8 +63,8 @@ Do not skip levels (`#` jumps directly to `###`).
 **Use relative paths** to link to other pages on this site:
 
 ```markdown
-[ISP 调优](../multimedia/isp/tuning/index.md)    ✓ 对
-[ISP 调优](https://docs.example.com/multimedia/...)  ✗ 错
+[ISP Tuning](../multimedia/isp/tuning/index.md)    ✓ correct
+[ISP Tuning](https://docs.example.com/multimedia/...)  ✗ wrong
 ```
 
 External links remain https. **Don't** add "(opens in new tab)" to https links.
@@ -80,20 +80,20 @@ make build
 ```
 ````
 
-不要写裸 ``` ```。
+Do not write bare ` ``` `.
 
-命令行示例**不带提示符**（`$` `#`）—— 复制粘贴更方便：
+Command-line examples **without a prompt** (`$` `#`) — easier to copy-paste:
 
-| 不要 | 要 |
+| Don't | Do |
 |---|---|
 | `$ make build` | `make build` |
 | `# apt update` | `sudo apt update` |
 
-需要区分用户/root 时显式写 `sudo`。
+When distinguishing user/root is necessary, write `sudo` explicitly.
 
-## 命令输出
+## Command output
 
-把期望输出放在另一个代码块里，不要混在命令里：
+Put expected output in a separate code block, not mixed into the command:
 
 ````markdown
 ``` bash
@@ -107,22 +107,22 @@ Expected output:
 ```
 ````
 
-## Admonition 块
+## Admonition blocks
 
-用 Material 主题提供的 admonition：
+Use the admonitions provided by the Material theme:
 
 ```markdown
-!!! note "标题（可选）"
+!!! note "Title (optional)"
 
-    这是一条 note。
+    This is a note.
 
 !!! warning
 
-    这是一条 warning。
+    This is a warning.
 ```
 
 Available types: `note`, `tip`, `info`, `warning`, `danger`, `example`,
-`question`、`bug`。
+`question`, `bug`.
 
 ## card grid
 
@@ -131,13 +131,13 @@ Each section landing uses grid cards:
 ```markdown
 <div class="grid cards" markdown>
 
--   :material-rocket-launch:{ .lg .middle } __标题__
+-   :material-rocket-launch:{ .lg .middle } __Title__
 
     ---
 
-    一句话描述。
+    One-line description.
 
-    [:octicons-arrow-right-24: 进入](path/to/page.md)
+    [:octicons-arrow-right-24: Go](path/to/page.md)
 
 </div>
 ```
@@ -150,9 +150,9 @@ Octicons/Simple Icons. Try to unify the icon family within a section.
 Use pipe tables, not HTML:
 
 ```markdown
-| 列 1 | 列 2 |
+| Col 1 | Col 2 |
 |---|---|
-| 值 1 | 值 2 |
+| Val 1 | Val 2 |
 ```
 
 If markdown cannot support complex tables, change it to admonition + multiple tables.
@@ -196,7 +196,7 @@ Check the table first to avoid disagreements.
 
 ## don't want
 
-- ❌ Emoji are everywhere - occasionally used in titles ✓ ✗ The reminder effect is okay; use with caution in the text
+- ❌ Emojis everywhere — occasionally using ✓ ✗ in titles for status is acceptable; use sparingly in body text
 - ❌ "More efficient" / "faster" without giving a baseline
 - ❌ Put a lot of code in a long paragraph - split it into short paragraphs + code blocks
 - ❌ Translation accent ("As you can see..." → "As you can see...")
