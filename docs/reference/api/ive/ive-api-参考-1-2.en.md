@@ -53,22 +53,22 @@ The following symbols may appear in this document, with their meanings described
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002474560250.png"></span></p>
+<tbody><tr id="row1372280416410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p3734547016410"><a name="p3734547016410"></a><a name="p3734547016410"></a><a name="image2670064316410"></a><a name="image2670064316410"></a><span><img class="" id="image2670064316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474560250.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>Indicates a high-risk hazard which, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row1353859316410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1881397116410"><a name="p1881397116410"></a><a name="p1881397116410"></a><a name="image5212732816410"></a><a name="image5212732816410"></a><span><img class="" id="image5212732816410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002474560248.png"></span></p>
+<tr id="row1353859316410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1881397116410"><a name="p1881397116410"></a><a name="p1881397116410"></a><a name="image5212732816410"></a><a name="image5212732816410"></a><span><img class="" id="image5212732816410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474560248.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p992247316410"><a name="p992247316410"></a><a name="p992247316410"></a>Indicates a low-risk hazard which, if not avoided, may result in minor or moderate injury.</p>
 </td>
 </tr>
-<tr id="row1423601316410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2858958516410"><a name="p2858958516410"></a><a name="p2858958516410"></a><a name="image4811428216410"></a><a name="image4811428216410"></a><span><img class="" id="image4811428216410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002474560252.png"></span></p>
+<tr id="row1423601316410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2858958516410"><a name="p2858958516410"></a><a name="p2858958516410"></a><a name="image4811428216410"></a><a name="image4811428216410"></a><span><img class="" id="image4811428216410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474560252.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p2050093516410"><a name="p2050093516410"></a><a name="p2050093516410"></a>Indicates a potentially hazardous situation which, if not avoided, could result in equipment damage, data loss, performance degradation, or unexpected results.</p>
 </td>
 </tr>
-<tr id="row1659538316410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1202610116410"><a name="p1202610116410"></a><a name="p1202610116410"></a><a name="image5401272116410"></a><a name="image5401272116410"></a><span><img class="" id="image5401272116410" height="25.270000000000003" width="67.83" src="/reference/api/ive/figures/zh-cn_image_0000002474560254.png"></span></p>
+<tr id="row1659538316410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1202610116410"><a name="p1202610116410"></a><a name="p1202610116410"></a><a name="image5401272116410"></a><a name="image5401272116410"></a><span><img class="" id="image5401272116410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474560254.png"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p464982916410"><a name="p464982916410"></a><a name="p464982916410"></a>Provides additional information to emphasize or supplement key points in the main text.</p>
 </td>

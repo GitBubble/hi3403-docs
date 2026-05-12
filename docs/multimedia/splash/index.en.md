@@ -83,28 +83,28 @@ The following symbols may appear in this document. Their meanings are as follows
 </th>
 </tr>
 </thead>
-<tbody><tr id="row189mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p191mcpsimp"><a name="p191mcpsimp"></a><a name="p191mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="/multimedia/splash/figures/zh-cn_image_0000002441674941.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row189mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p191mcpsimp"><a name="p191mcpsimp"></a><a name="p191mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="figures/zh-cn_image_0000002441674941.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p193mcpsimp"><a name="p193mcpsimp"></a><a name="p193mcpsimp"></a>Indicates a high-risk hazard that, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row194mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="/multimedia/splash/figures/zh-cn_image_0000002408275526.png" height="27.93" width="75.81"></span></p>
+<tr id="row194mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002408275526.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p198mcpsimp"><a name="p198mcpsimp"></a><a name="p198mcpsimp"></a>Indicates a medium-risk hazard that, if not avoided, could result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row199mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p201mcpsimp"><a name="p201mcpsimp"></a><a name="p201mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="/multimedia/splash/figures/zh-cn_image_0000002408115658.png" height="27.93" width="75.81"></span></p>
+<tr id="row199mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p201mcpsimp"><a name="p201mcpsimp"></a><a name="p201mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002408115658.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p203mcpsimp"><a name="p203mcpsimp"></a><a name="p203mcpsimp"></a>Indicates a low-risk hazard that, if not avoided, could result in minor or moderate injury.</p>
 </td>
 </tr>
-<tr id="row204mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p206mcpsimp"><a name="p206mcpsimp"></a><a name="p206mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="/multimedia/splash/figures/zh-cn_image_0000002408115554.png" height="27.93" width="75.81"></span></p>
+<tr id="row204mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p206mcpsimp"><a name="p206mcpsimp"></a><a name="p206mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002408115554.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p208mcpsimp"><a name="p208mcpsimp"></a><a name="p208mcpsimp"></a>Used to convey equipment or environmental safety warning information. If not avoided, it may result in equipment damage, data loss, performance degradation, or other unpredictable results.</p>
 <p id="p209mcpsimp"><a name="p209mcpsimp"></a><a name="p209mcpsimp"></a>"Notice" does not involve personal injury.</p>
 </td>
 </tr>
-<tr id="row210mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p212mcpsimp"><a name="p212mcpsimp"></a><a name="p212mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="/multimedia/splash/figures/zh-cn_image_0000002441714741.png" height="27.93" width="75.81"></span></p>
+<tr id="row210mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p212mcpsimp"><a name="p212mcpsimp"></a><a name="p212mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002441714741.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p214mcpsimp"><a name="p214mcpsimp"></a><a name="p214mcpsimp"></a>Supplementary explanation of key information in the main text.</p>
 <p id="p215mcpsimp"><a name="p215mcpsimp"></a><a name="p215mcpsimp"></a>"Note" is not a safety warning and does not involve personal, equipment, or environmental harm.</p>

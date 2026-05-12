@@ -307,7 +307,7 @@ cd Python-3.13.2
   * 在1772行 添加： | ohos*
   * 在 1833行添加： | linux-ohos*-
 
-<img src="/boards/zsks/docs/python/pic/image-20251009200915614.png" alt="image-20251009200915614" style="zoom: 50%;" />
+<img src="pic/image-20251009200915614.png" alt="image-20251009200915614" style="zoom: 50%;" />
 
 ![image-20251009201117880](pic/image-20251009201117880.png)
 
@@ -420,7 +420,7 @@ export PYTHONPATH=/mnt/install/lib/python3.13:$PYTHONPATH
 export LD_LIBRARY_PATH=/mnt/install/lib/python3.13/lib-dynload:$LD_LIBRARY_PATH
 ```
 
-<img src="/boards/zsks/docs/python/pic/image-20251010101732852.png" alt="image-20251010101732852" style="zoom:35%;" />
+<img src="pic/image-20251010101732852.png" alt="image-20251010101732852" style="zoom:35%;" />
 
 ### 步骤3：运行python代码
 
@@ -483,5 +483,5 @@ if __name__ == "__main__":
 python3 python_test.py
 ```
 
-<img src="/boards/zsks/docs/python/pic/image-20251010102204475.png" alt="image-20251010102204475" style="zoom:40%;" />
+<img src="pic/image-20251010102204475.png" alt="image-20251010102204475" style="zoom:40%;" />
 

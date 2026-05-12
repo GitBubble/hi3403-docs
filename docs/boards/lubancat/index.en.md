@@ -5,7 +5,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/LubanCat-Hi3
 
 ## Product overview
 
-<img src="/boards/lubancat/doc/media/lbc-hi3403.jpg" alt="LubanCat-Hi3403" width="800"  />
+<img src="doc/media/lbc-hi3403.jpg" alt="LubanCat-Hi3403" width="800"  />
 
 The LubanCat-Hi3403 family is a high-performance single-board computer
 from EmbedFire built around the Hi3403V100. The board exposes a
@@ -59,5 +59,5 @@ display, control, and networking applications.
 | Fan | 2-pin 1.5 mm ZH socket + 5 V supply, PWM-controlled |
 | RTC battery | 2-pin 1.25 mm wire-to-board header for the on-board RTC |
 
-<img src="/boards/lubancat/doc/media/lbc-hi3403-front.jpg" alt="LubanCat-Hi3403 (front)" width="800"  />
-<img src="/boards/lubancat/doc/media/lbc-hi3403-back.jpg" alt="LubanCat-Hi3403 (back)" width="800"  />
+<img src="doc/media/lbc-hi3403-front.jpg" alt="LubanCat-Hi3403 (front)" width="800"  />
+<img src="doc/media/lbc-hi3403-back.jpg" alt="LubanCat-Hi3403 (back)" width="800"  />

@@ -5,7 +5,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/LubanCat-Hi3
 
 ## 产品概述
 
-<img src="/boards/lubancat/doc/media/lbc-hi3403.jpg" alt="LubanCat-Hi3403" width="800"  />
+<img src="doc/media/lbc-hi3403.jpg" alt="LubanCat-Hi3403" width="800"  />
 
 LubanCat-Hi3403系列板卡是野火电子推出的基于Hi3403V100设计的一款高性能单板电脑，
 保留了完善的硬件资源，充分考虑用户的使用需求，引出了尽可能多的外设功能，
@@ -48,5 +48,5 @@ LubanCat-Hi3403使用了一颗包含四核Cortex-A55 CPU和高能效神经网络
 | 风扇接口    | 预留风扇固定孔和5V风扇电源接口(2Pin 1.5mm ZH座)，支持PWM控制                            |
 | RTC电池接口 | 2Pin 1.25mm线对板针座，用于板载RTC芯片供电                                              |
 
-<img src="/boards/lubancat/doc/media/lbc-hi3403-front.jpg" alt="LubanCat-Hi3403" width="800"  />
-<img src="/boards/lubancat/doc/media/lbc-hi3403-back.jpg" alt="LubanCat-Hi3403" width="800"  />
+<img src="doc/media/lbc-hi3403-front.jpg" alt="LubanCat-Hi3403" width="800"  />
+<img src="doc/media/lbc-hi3403-back.jpg" alt="LubanCat-Hi3403" width="800"  />

@@ -11509,8 +11509,8 @@ typedef struct {
 <tr id="row31311mcpsimp"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p id="p31313mcpsimp"><a name="p31313mcpsimp"></a><a name="p31313mcpsimp"></a>radius</p>
 </td>
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p31315mcpsimp"><a name="p31315mcpsimp"></a><a name="p31315mcpsimp"></a>拉黑的半径，到中心点的距离大于半径的区域直接拉黑。</p>
-<p class="msonormal" id="p31316mcpsimp"><a name="p31316mcpsimp"></a><a name="p31316mcpsimp"></a>取值范围：[0,<a name="image959720461575"></a><a name="image959720461575"></a><span><img class="mathml" id="image959720461575" src="/multimedia/isp/dev-ref/figures/zh-cn_formulaimage_0000002470925244.png"></span> ]</p>
-<p class="msonormal" id="p31317mcpsimp"><a name="p31317mcpsimp"></a><a name="p31317mcpsimp"></a>默认值<a name="image1144134915109"></a><a name="image1144134915109"></a><span><img class="mathml" id="image1144134915109" src="/multimedia/isp/dev-ref/figures/zh-cn_formulaimage_0000002471085230.png"></span></p>
+<p class="msonormal" id="p31316mcpsimp"><a name="p31316mcpsimp"></a><a name="p31316mcpsimp"></a>取值范围：[0,<a name="image959720461575"></a><a name="image959720461575"></a><span><img class="mathml" id="image959720461575" src="figures/zh-cn_formulaimage_0000002470925244.png"></span> ]</p>
+<p class="msonormal" id="p31317mcpsimp"><a name="p31317mcpsimp"></a><a name="p31317mcpsimp"></a>默认值<a name="image1144134915109"></a><a name="image1144134915109"></a><span><img class="mathml" id="image1144134915109" src="figures/zh-cn_formulaimage_0000002471085230.png"></span></p>
 </td>
 </tr>
 </tbody>

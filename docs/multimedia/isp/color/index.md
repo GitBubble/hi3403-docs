@@ -53,28 +53,28 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 颜�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row345mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p347mcpsimp"><a name="p347mcpsimp"></a><a name="p347mcpsimp"></a><a name="image138"></a><a name="image138"></a><span><img id="image138" src="/multimedia/isp/color/figures/zh-cn_image_0000002424362258.png" height="27.93" width="75.81"></span></p>
+<tbody><tr id="row345mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p347mcpsimp"><a name="p347mcpsimp"></a><a name="p347mcpsimp"></a><a name="image138"></a><a name="image138"></a><span><img id="image138" src="figures/zh-cn_image_0000002424362258.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p349mcpsimp"><a name="p349mcpsimp"></a><a name="p349mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row350mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a><a name="image139"></a><a name="image139"></a><span><img id="image139" src="/multimedia/isp/color/figures/zh-cn_image_0000002424362198.png" height="27.93" width="75.81"></span></p>
+<tr id="row350mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p352mcpsimp"><a name="p352mcpsimp"></a><a name="p352mcpsimp"></a><a name="image139"></a><a name="image139"></a><span><img id="image139" src="figures/zh-cn_image_0000002424362198.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row355mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p357mcpsimp"><a name="p357mcpsimp"></a><a name="p357mcpsimp"></a><a name="image140"></a><a name="image140"></a><span><img id="image140" src="/multimedia/isp/color/figures/zh-cn_image_0000002424202358.png" height="27.93" width="75.81"></span></p>
+<tr id="row355mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p357mcpsimp"><a name="p357mcpsimp"></a><a name="p357mcpsimp"></a><a name="image140"></a><a name="image140"></a><span><img id="image140" src="figures/zh-cn_image_0000002424202358.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p359mcpsimp"><a name="p359mcpsimp"></a><a name="p359mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row360mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p362mcpsimp"><a name="p362mcpsimp"></a><a name="p362mcpsimp"></a><a name="image141"></a><a name="image141"></a><span><img id="image141" src="/multimedia/isp/color/figures/zh-cn_image_0000002457840937.png" height="27.93" width="75.81"></span></p>
+<tr id="row360mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p362mcpsimp"><a name="p362mcpsimp"></a><a name="p362mcpsimp"></a><a name="image141"></a><a name="image141"></a><span><img id="image141" src="figures/zh-cn_image_0000002457840937.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p364mcpsimp"><a name="p364mcpsimp"></a><a name="p364mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
 <p id="p365mcpsimp"><a name="p365mcpsimp"></a><a name="p365mcpsimp"></a>“须知”不涉及人身伤害。</p>
 </td>
 </tr>
-<tr id="row366mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p368mcpsimp"><a name="p368mcpsimp"></a><a name="p368mcpsimp"></a><a name="image142"></a><a name="image142"></a><span><img id="image142" src="/multimedia/isp/color/figures/zh-cn_image_0000002424202378.png" height="27.93" width="75.81"></span></p>
+<tr id="row366mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p368mcpsimp"><a name="p368mcpsimp"></a><a name="p368mcpsimp"></a><a name="image142"></a><a name="image142"></a><span><img id="image142" src="figures/zh-cn_image_0000002424202378.png" height="27.93" width="75.81"></span></p>
 </td>
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p370mcpsimp"><a name="p370mcpsimp"></a><a name="p370mcpsimp"></a>对正文中重点信息的补充说明。</p>
 <p id="p371mcpsimp"><a name="p371mcpsimp"></a><a name="p371mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
@@ -797,7 +797,7 @@ ot\_isp\_awb\_attr结构体定义了AWB FW算法的基本可调节参数，包�
 <td class="cellrowborder" valign="top" width="49%" headers="mcps1.2.4.1.2 "><p xml:lang="sv-SE" id="p3755185919912"><a name="p3755185919912"></a><a name="p3755185919912"></a>用户设置亮度直方图的权重，自动、手动模式下均有效。8bit小数精度，取值范围：<span xml:lang="en-US" id="ph16755125916911"><a name="ph16755125916911"></a><a name="ph16755125916911"></a>[0x0, 0xFFFF]</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.3 "><p xml:lang="sv-SE" id="p1975513591398"><a name="p1975513591398"></a><a name="p1975513591398"></a>亮度权重的影响公式：</p>
-<p class="msonormal" id="p3755759493"><a name="p3755759493"></a><a name="p3755759493"></a><a name="image137551059699"></a><a name="image137551059699"></a><span><img class="mathml" id="image137551059699" src="/multimedia/isp/color/figures/zh-cn_formulaimage_0000002457881109.png" width="159.60000000000002" height="22.453991000000002"></span></p>
+<p class="msonormal" id="p3755759493"><a name="p3755759493"></a><a name="p3755759493"></a><a name="image137551059699"></a><a name="image137551059699"></a><span><img class="mathml" id="image137551059699" src="figures/zh-cn_formulaimage_0000002457881109.png" width="159.60000000000002" height="22.453991000000002"></span></p>
 </td>
 </tr>
 </tbody>

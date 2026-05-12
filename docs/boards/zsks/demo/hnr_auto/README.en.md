@@ -49,7 +49,7 @@ pegasus/vendor/zsks/demo/hnr_auto
 
 * First, prepare a Micro SD card (about 16GB) and a Micro SD card reader.
 
-<img src="/boards/zsks/demo/hnr_auto/pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
+<img src="pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
 
 * Step 1: Copy the compiled executable to the SD card.
 * Step 2: Copy the cfg model files from the Hi3403V100_clang/smp/a55_linux/mpp/sample/hnr/ directory to the SD card.
@@ -58,7 +58,7 @@ pegasus/vendor/zsks/demo/hnr_auto
 
 * Step 3: After the executable is successfully copied, insert the SD card into the development board's SD card slot and mount it on the board using the SD card mount command.
 
-<img src="/boards/zsks/demo/hnr_auto/pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
+<img src="pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
 
 * In the development board's terminal, execute the following command to mount the SD card:
   * If mounting fails, refer to [this issue for resolution](https://gitee.com/HiSpark/HiSpark_NICU2022/issues/I54932?from=project-issue)
@@ -120,7 +120,7 @@ chmod +x main
 
 * At this point, a real-time video stream will appear on the external HDMI display, as shown below:
 
-<img src="/boards/zsks/demo/hnr_auto/pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
+<img src="pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
 
 * If you see a different result from the image below, verify that the lens cap has been removed.
 * If you see a very blurry image, try turning the lens left or right to manually focus until the image is clear.

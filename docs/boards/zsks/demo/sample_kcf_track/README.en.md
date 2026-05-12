@@ -52,7 +52,7 @@ pegasus/vendor/zsks/demo/sample_kcf_track
 
 * First, prepare a Micro SD card (about 16GB) and a Micro SD card reader.
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
+<img src="pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
 
 * Step 1: Copy the compiled executable main to the SD card.
 
@@ -60,7 +60,7 @@ pegasus/vendor/zsks/demo/sample_kcf_track
 
 * Step 2: After the executable is successfully copied, insert the SD card into the development board's SD card slot and mount it on the board using the SD card mount command.
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
+<img src="pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
 
 * In the development board's terminal, execute the following command to mount the SD card:
   * If mounting fails, refer to [this issue for resolution](https://gitee.com/HiSpark/HiSpark_NICU2022/issues/I54932?from=project-issue)
@@ -103,7 +103,7 @@ mount -o nolock,addr=192.168.100.10 -t nfs 192.168.100.10:/d/nfs /mnt
 
 * Connect the USB camera to the USB port of the EulerPi development board.
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20250919150630870.png" alt="image-20250919150630870" style="zoom: 25%;" />
+<img src="pic/image-20250919150630870.png" alt="image-20250919150630870" style="zoom: 25%;" />
 
 ### 2.4.6. Functional Verification
 
@@ -121,7 +121,7 @@ chmod +x main
 
 * At this point, a real-time video stream will appear on the external HDMI display, as shown below:
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
+<img src="pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
 
 * If you see a different result from the image below, verify that the USB camera is connected to the development board's USB port and that video0 and video1 device nodes are visible in the /dev directory on the development board. If these two device nodes are not present, ensure that the image has been burned correctly.
 

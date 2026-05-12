@@ -624,7 +624,7 @@ cd /mnt/ffmpeg/ffmpeg_install/bin/
 ffmpeg -version
 ```
 
-<img src="/boards/zsks/docs/ffmpeg/pic/image-20251022170611820.png" alt="image-20251022170611820" style="zoom:50%;" />
+<img src="pic/image-20251022170611820.png" alt="image-20251022170611820" style="zoom:50%;" />
 
 ### 步骤4：测试sample案例
 

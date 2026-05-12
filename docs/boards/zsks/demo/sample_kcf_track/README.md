@@ -52,7 +52,7 @@ pegasus/vendor/zsks/demo/sample_kcf_track
 
 * 首先需要自己准备一张Micro sd卡(16G 左右即可)，还得有一个Micro sd卡的读卡器。
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
+<img src="pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
 
 * 步骤1：将编译后生成的可执行文件main，拷贝到SD卡中。
 
@@ -60,7 +60,7 @@ pegasus/vendor/zsks/demo/sample_kcf_track
 
 * 步骤2：可执行文件拷贝成功后，将内存卡插入开发板的SD卡槽中，可通过挂载的方式挂载到板端，可选择SD卡 mount指令进行挂载。
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
+<img src="pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
 
 * 在开发板的终端，执行下面的命令进行SD卡的挂载
   * 如果挂载失败，可以参考[这个issue尝试解决](https://gitee.com/HiSpark/HiSpark_NICU2022/issues/I54932?from=project-issue)
@@ -103,7 +103,7 @@ mount -o nolock,addr=192.168.100.10 -t nfs 192.168.100.10:/d/nfs /mnt
 
 * 将USB 摄像头接在EulerPi开发板的USB接口上。
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20250919150630870.png" alt="image-20250919150630870" style="zoom: 25%;" />
+<img src="pic/image-20250919150630870.png" alt="image-20250919150630870" style="zoom: 25%;" />
 
 ### 2.4.6、功能验证
 
@@ -121,7 +121,7 @@ chmod +x main
 
 * 此时，在HDMI的外接显示屏上即可出现实时码流，如下图所示：
 
-<img src="/boards/zsks/demo/sample_kcf_track/pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
+<img src="pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
 
 * 如果您看到的现象和下图现象不一致，可以确认一下USB摄像头是否插入到开发板的USB口，并且在开发板的/dev目录下能够看到video0 和 video1两个设备节点。如果没有这两个设备节点，请确保镜像烧录正常。
 

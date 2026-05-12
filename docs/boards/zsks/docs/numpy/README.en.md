@@ -184,7 +184,7 @@ export PYTHONPATH=/mnt/install/lib/python3.13:$PYTHONPATH
 export LD_LIBRARY_PATH=/mnt/install/lib/python3.13/lib-dynload:$LD_LIBRARY_PATH
 ```
 
-<img src="/boards/zsks/docs/python/pic/image-20251010101732852.png" alt="image-20251010101732852" style="zoom:35%;" />
+<img src="../python/pic/image-20251010101732852.png" alt="image-20251010101732852" style="zoom:35%;" />
 
 ### Step 3: Using Python to Call NumPy Interfaces
 

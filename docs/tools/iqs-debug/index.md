@@ -413,7 +413,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p335mcpsimp"><a name="p335mcpsimp"></a><a name="p335mcpsimp"></a>参数的形式是具有一定取值范围的实数</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p337mcpsimp"><a name="p337mcpsimp"></a><a name="p337mcpsimp"></a>使用以下调整面板：</p>
-<p id="p20888134219456"><a name="p20888134219456"></a><a name="p20888134219456"></a><a name="image118885425458"></a><a name="image118885425458"></a><span><img id="image118885425458" src="/tools/iqs-debug/figures/a.png" width="266" height="20.282367"></span></p>
+<p id="p20888134219456"><a name="p20888134219456"></a><a name="p20888134219456"></a><a name="image118885425458"></a><a name="image118885425458"></a><span><img id="image118885425458" src="figures/a.png" width="266" height="20.282367"></span></p>
 <p id="p339mcpsimp"><a name="p339mcpsimp"></a><a name="p339mcpsimp"></a>可通过文本框查看当前值。修改值可以通过以下三种方式：</p>
 <a name="ul340mcpsimp"></a><a name="ul340mcpsimp"></a><ul id="ul340mcpsimp"><li>在文本框中输入值</li><li>点击文本框右侧的小箭头按钮微调</li><li>拖动最右侧的滑动条</li></ul>
 </td>
@@ -423,7 +423,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p348mcpsimp"><a name="p348mcpsimp"></a><a name="p348mcpsimp"></a>参数在0和1中间取值</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>通过复选框查看并设定值，复选框选中时取1，未选中时取0</p>
-<p id="p1137710574455"><a name="p1137710574455"></a><a name="p1137710574455"></a><a name="image13377175711454"></a><a name="image13377175711454"></a><span><img id="image13377175711454" src="/tools/iqs-debug/figures/b.png" width="266" height="18.422362"></span></p>
+<p id="p1137710574455"><a name="p1137710574455"></a><a name="p1137710574455"></a><a name="image13377175711454"></a><a name="image13377175711454"></a><span><img id="image13377175711454" src="figures/b.png" width="266" height="18.422362"></span></p>
 </td>
 </tr>
 <tr id="row352mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.1 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>布尔</p>
@@ -431,7 +431,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p356mcpsimp"><a name="p356mcpsimp"></a><a name="p356mcpsimp"></a>参数的形式为二选一</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p358mcpsimp"><a name="p358mcpsimp"></a><a name="p358mcpsimp"></a>通过单选框查看并设定值：</p>
-<p id="p1281610617461"><a name="p1281610617461"></a><a name="p1281610617461"></a><a name="image881612614620"></a><a name="image881612614620"></a><span><img id="image881612614620" src="/tools/iqs-debug/figures/c.png" width="266" height="19.808488"></span></p>
+<p id="p1281610617461"><a name="p1281610617461"></a><a name="p1281610617461"></a><a name="image881612614620"></a><a name="image881612614620"></a><span><img id="image881612614620" src="figures/c.png" width="266" height="19.808488"></span></p>
 </td>
 </tr>
 <tr id="row360mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.1 "><p id="p362mcpsimp"><a name="p362mcpsimp"></a><a name="p362mcpsimp"></a>枚举</p>
@@ -439,7 +439,7 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p364mcpsimp"><a name="p364mcpsimp"></a><a name="p364mcpsimp"></a>参数的形式是多项（一般&gt;3）中取其一</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p366mcpsimp"><a name="p366mcpsimp"></a><a name="p366mcpsimp"></a>通过下拉框查看并设定值：</p>
-<p id="p8664191624611"><a name="p8664191624611"></a><a name="p8664191624611"></a><a name="image1466416160467"></a><a name="image1466416160467"></a><span><img id="image1466416160467" src="/tools/iqs-debug/figures/d.png" width="266" height="20.849878"></span></p>
+<p id="p8664191624611"><a name="p8664191624611"></a><a name="p8664191624611"></a><a name="image1466416160467"></a><a name="image1466416160467"></a><span><img id="image1466416160467" src="figures/d.png" width="266" height="20.849878"></span></p>
 </td>
 </tr>
 <tr id="row368mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.1 "><p id="p370mcpsimp"><a name="p370mcpsimp"></a><a name="p370mcpsimp"></a>矩阵</p>
@@ -447,9 +447,9 @@ PQTools工具的主界面按功能的不同分为以下几个区域：
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.2 "><p id="p372mcpsimp"><a name="p372mcpsimp"></a><a name="p372mcpsimp"></a>参数的形式是一个多字节序列</p>
 </td>
 <td class="cellrowborder" valign="top" width="67%" headers="mcps1.2.4.1.3 "><p id="p374mcpsimp"><a name="p374mcpsimp"></a><a name="p374mcpsimp"></a>调试页面会显示一个打开矩阵的按钮：</p>
-<p id="p857920274467"><a name="p857920274467"></a><a name="p857920274467"></a><a name="image257810277461"></a><a name="image257810277461"></a><span><img id="image257810277461" src="/tools/iqs-debug/figures/e.png" width="266" height="15.679636"></span></p>
+<p id="p857920274467"><a name="p857920274467"></a><a name="p857920274467"></a><a name="image257810277461"></a><a name="image257810277461"></a><span><img id="image257810277461" src="figures/e.png" width="266" height="15.679636"></span></p>
 <p id="p376mcpsimp"><a name="p376mcpsimp"></a><a name="p376mcpsimp"></a>点击该按钮，会弹出一个对话框，矩阵的值会显示在对话框内的表格控件中：</p>
-<p id="p915135561517"><a name="p915135561517"></a><a name="p915135561517"></a><a name="image960845512157"></a><a name="image960845512157"></a><span><img id="image960845512157" src="/tools/iqs-debug/figures/zh-cn_image_0000002498141998.png" width="292.6" height="139.0914"></span></p>
+<p id="p915135561517"><a name="p915135561517"></a><a name="p915135561517"></a><a name="image960845512157"></a><a name="image960845512157"></a><span><img id="image960845512157" src="figures/zh-cn_image_0000002498141998.png" width="292.6" height="139.0914"></span></p>
 <p id="p378mcpsimp"><a name="p378mcpsimp"></a><a name="p378mcpsimp"></a>用户修改表格中的值，点击空白处或者关闭对话框，即可完成矩阵值的修改。</p>
 <p id="p379mcpsimp"><a name="p379mcpsimp"></a><a name="p379mcpsimp"></a>矩阵若是只读的，用户将无法修改表格内的值，且此时打开矩阵的按钮显示文本为“View this Matrix”。</p>
 <p id="p380mcpsimp"><a name="p380mcpsimp"></a><a name="p380mcpsimp"></a>Dimension用于三维矩阵选择第三维，一、二维矩阵Dimension下拉框中只有“0”。</p>

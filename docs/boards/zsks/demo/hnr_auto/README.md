@@ -49,7 +49,7 @@ pegasus/vendor/zsks/demo/hnr_auto
 
 * 首先需要自己准备一张Micro sd卡(16G 左右即可)，还得有一个Micro sd卡的读卡器。
 
-<img src="/boards/zsks/demo/hnr_auto/pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
+<img src="pic/image-20221114150205685.png" alt="image-20221114150205685" style="zoom:50%;" />
 
 * 步骤1：将编译后生成的可执行文件拷贝到SD卡中。
 * 步骤2：将Hi3403V100_clang/smp/a55_linux/mpp/sample/hnr/目录下的cfg模型文件拷贝到SD卡中。
@@ -58,7 +58,7 @@ pegasus/vendor/zsks/demo/hnr_auto
 
 * 步骤3：可执行文件拷贝成功后，将内存卡插入开发板的SD卡槽中，可通过挂载的方式挂载到板端，可选择SD卡 mount指令进行挂载。
 
-<img src="/boards/zsks/demo/hnr_auto/pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
+<img src="pic/image-20250210161601541.png" alt="image-20250210161601541" style="zoom:67%;" />
 
 * 在开发板的终端，执行下面的命令进行SD卡的挂载
   * 如果挂载失败，可以参考[这个issue尝试解决](https://gitee.com/HiSpark/HiSpark_NICU2022/issues/I54932?from=project-issue)
@@ -120,7 +120,7 @@ chmod +x main
 
 * 此时，在HDMI的外接显示屏上即可出现实时码流，如下图所示：
 
-<img src="/boards/zsks/demo/hnr_auto/pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
+<img src="pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
 
 * 如果您看到的现象和下图现象不一致，可以确认一下镜头盖是否未取下来。
 * 如果您看到的画面是非常模糊的，您可以尝试左右拧动镜头，进行手动对焦，直到画面清晰。

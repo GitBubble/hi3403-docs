@@ -131,7 +131,7 @@ buildroot_clean
 
 分区配置如下：
 
-<img src="/boards/lubancat/doc/media/ToolPlatfrom.png" alt="ToolPlatfrom" width="800"  />
+<img src="media/ToolPlatfrom.png" alt="ToolPlatfrom" width="800"  />
 
 | 文件             | 分区   | 分区地址范围 | 分区大小 | 说明                                              |
 | ---------------- | ------ | ------------ | -------- | ------------------------------------------------- |

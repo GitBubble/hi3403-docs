@@ -25,27 +25,27 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V1
 
 - Double-click the VirtualBox-6.1.36-152435-Win.exe installer downloaded in **section 1.1**, click Next, and install VirtualBox.
 
-<img src="/get-started/environment/figures/1660296543764.png" alt="1660296543764"  />
+<img src="figures/1660296543764.png" alt="1660296543764"  />
 
 - Click Browse to change the VirtualBox installation path, then click OK and then Next.
 
-<img src="/get-started/environment/figures/1660296754355.png" alt="1660296754355"  />
+<img src="figures/1660296754355.png" alt="1660296754355"  />
 
 - When the following screen appears, click Next.
 
-<img src="/get-started/environment/figures/1660296839014.png" alt="1660296839014"  />
+<img src="figures/1660296839014.png" alt="1660296839014"  />
 
 - When the following screen appears, click Yes.
 
-<img src="/get-started/environment/figures/1660296858985.png" alt="1660296858985"  />
+<img src="figures/1660296858985.png" alt="1660296858985"  />
 
 - When the installation screen appears, click Install.
 
-<img src="/get-started/environment/figures/1660296894293.png" alt="1660296894293"  />
+<img src="figures/1660296894293.png" alt="1660296894293"  />
 
 - Click Finish to complete the VirtualBox installation.
 
-<img src="/get-started/environment/figures/1660296945033.png" alt="1660296945033"  />
+<img src="figures/1660296945033.png" alt="1660296945033"  />
 
 ### 1.3. Installing Ubuntu 22.04 in VirtualBox
 
@@ -55,48 +55,48 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V1
 
 - Open VirtualBox and click New.
 
-<img src="/get-started/environment/figures/1660297859905.png" alt="1660297859905" style="zoom: 80%;" />
+<img src="figures/1660297859905.png" alt="1660297859905" style="zoom: 80%;" />
 
 - Set the virtual machine name to **hispark**, change the installation folder (the default is on the C drive; it is recommended to change to another drive), set the type to Linux, and select Ubuntu (64-bit) as the version, then click Next.
 
-<img src="/get-started/environment/figures/1660298040734.png" alt="1660298040734"  />
+<img src="figures/1660298040734.png" alt="1660298040734"  />
 
 - Set the memory size to 4 GB, then click Next.
 
-<img src="/get-started/environment/figures/1660298548447.png" alt="1660298548447"  />
+<img src="figures/1660298548447.png" alt="1660298548447"  />
 
 - Select "Create a virtual hard disk now" and click Create.
 
-<img src="/get-started/environment/figures/1660299094251.png" alt="1660299094251"  />
+<img src="figures/1660299094251.png" alt="1660299094251"  />
 
 - Select VDI (VirtualBox Disk Image) and click Next.
 
-<img src="/get-started/environment/figures/1660299447519.png" alt="1660299447519"  />
+<img src="figures/1660299447519.png" alt="1660299447519"  />
 
 - Select Dynamically allocated and click Next.
 
-<img src="/get-started/environment/figures/1660299605429.png" alt="1660299605429"  />
+<img src="figures/1660299605429.png" alt="1660299605429"  />
 
 - Set the disk size to 100 GB and click Create. Allocate at least 100 GB; otherwise subsequent steps may fail due to insufficient space.
 
-<img src="/get-started/environment/figures/1660543557813.png" alt="1660543557813"  />
+<img src="figures/1660543557813.png" alt="1660543557813"  />
 
 - Click Settings, select General, and under Advanced set both Shared Clipboard and Drag'n'Drop to Bidirectional, then click OK.
 
-<img src="/get-started/environment/figures/1660535140230.png" alt="1660535140230"  />
+<img src="figures/1660535140230.png" alt="1660535140230"  />
 
 - Click Settings, then System, select Processor, and set the processor count to 4.
 - Note: If your machine has 4 or fewer processors, reduce this number accordingly.
 
-<img src="/get-started/environment/figures/1660524570782.png" alt="1660524570782"  />
+<img src="figures/1660524570782.png" alt="1660524570782"  />
 
 - Click Network, select Adapter 2, check Enable Network Adapter, choose Host-only Adapter, and click OK.
 
-<img src="/get-started/environment/figures/1660526866883.png" alt="1660526866883"  />
+<img src="figures/1660526866883.png" alt="1660526866883"  />
 
 - Click Settings, select Storage, choose the empty optical drive, click the disk icon, and select Choose a disk file.
 
-<img src="/get-started/environment/figures/image-20221008204335405.png" alt="image-20221008204335405"  />
+<img src="figures/image-20221008204335405.png" alt="image-20221008204335405"  />
 
 - Select the Ubuntu 22.04 ISO image downloaded in **section 1.1**, then click Open.
 
@@ -104,21 +104,21 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V1
 
 - Click OK to close Settings.
 
-<img src="/get-started/environment/figures/image-20221008204748937.png" alt="image-20221008204748937"  />
+<img src="figures/image-20221008204748937.png" alt="image-20221008204748937"  />
 
 - Select USB, uncheck Enable USB Controller to disable the USB device, then click OK. (Some machines may not support this step — it can be skipped.)
 
-<img src="/get-started/environment/figures/1677850636004.png" alt="1677850636004" style="zoom: 80%;" />
+<img src="figures/1677850636004.png" alt="1677850636004" style="zoom: 80%;" />
 
 - Click Start to boot the Ubuntu system.
 
-<img src="/get-started/environment/figures/image-20221008204846859.png" alt="image-20221008204846859"  />
+<img src="figures/image-20221008204846859.png" alt="image-20221008204846859"  />
 
 #### Step 2: Installing Ubuntu
 
 - Select your language, then click Install Ubuntu.
 
-<img src="/get-started/environment/figures/image-20221008205114466.png" alt="image-20221008205114466" style="zoom: 80%;" />
+<img src="figures/image-20221008205114466.png" alt="image-20221008205114466" style="zoom: 80%;" />
 
 - If the display is incomplete due to resolution issues and the buttons at the bottom are not visible, press `Ctrl+Alt+T` to open a terminal, then type `xrandr` to see the supported resolutions.
 
@@ -126,62 +126,62 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V1
 
 - For example, to set 1920x1200, run `xrandr -s 1920x1200` and press Enter.
 
-<img src="/get-started/environment/figures/1660528406710.png" alt="1660528406710" style="zoom: 80%;" />
+<img src="figures/1660528406710.png" alt="1660528406710" style="zoom: 80%;" />
 
 - Select your keyboard layout and click Continue.
 
-<img src="/get-started/environment/figures/image-20221008205422524.png" alt="image-20221008205422524"  />
+<img src="figures/image-20221008205422524.png" alt="image-20221008205422524"  />
 
 - Uncheck "Download updates while installing Ubuntu" and click Continue.
 
-<img src="/get-started/environment/figures/1660528559616.png" alt="1660528559616" style="zoom: 80%;" />
+<img src="figures/1660528559616.png" alt="1660528559616" style="zoom: 80%;" />
 
 - Click Install Now.
 
-<img src="/get-started/environment/figures/1660528682567.png" alt="1660528682567" style="zoom: 80%;" />
+<img src="figures/1660528682567.png" alt="1660528682567" style="zoom: 80%;" />
 
 - Click Continue.
 
-<img src="/get-started/environment/figures/1660528767526.png" alt="1660528767526" style="zoom: 80%;" />
+<img src="figures/1660528767526.png" alt="1660528767526" style="zoom: 80%;" />
 
 - Select your timezone (e.g., Shanghai) and click Continue.
 
-<img src="/get-started/environment/figures/1660528851907.png" alt="1660528851907" style="zoom: 80%;" />
+<img src="figures/1660528851907.png" alt="1660528851907" style="zoom: 80%;" />
 
 - Set the account and password, then click Continue. The account and password configured here are used to log in to Ubuntu.
 - Follow this guide's configuration: username: **hispark**, password: **hispark**.
 
-<img src="/get-started/environment/figures/1660528966097.png" alt="1660528966097" style="zoom: 80%;" />
+<img src="figures/1660528966097.png" alt="1660528966097" style="zoom: 80%;" />
 
 - Installation begins.
 
-<img src="/get-started/environment/figures/1660529074917.png" alt="1660529074917" style="zoom: 80%;" />
+<img src="figures/1660529074917.png" alt="1660529074917" style="zoom: 80%;" />
 
 - After Ubuntu installation is complete, click Restart Now.
 
-<img src="/get-started/environment/figures/1660530895384.png" alt="1660530895384" style="zoom: 80%;" />
+<img src="figures/1660530895384.png" alt="1660530895384" style="zoom: 80%;" />
 
 - If the prompt **"please remove the installation medium"** appears during restart, click the close button, select Force Quit, and click OK.
 
-<img src="/get-started/environment/figures/image-20221008211749642.png" alt="image-20221008211749642" style="zoom:80%;" />
+<img src="figures/image-20221008211749642.png" alt="image-20221008211749642" style="zoom:80%;" />
 
-<img src="/get-started/environment/figures/image-20221008211932823.png" alt="image-20221008211932823" style="zoom: 80%;" />
+<img src="figures/image-20221008211932823.png" alt="image-20221008211932823" style="zoom: 80%;" />
 
 - In VirtualBox, click Devices and then Install Guest Additions.
 
-<img src="/get-started/environment/figures/1660531880704.png" alt="1660531880704"  />
+<img src="figures/1660531880704.png" alt="1660531880704"  />
 
 - When a dialog asks whether to run the autorun software, click Cancel.
 
-<img src="/get-started/environment/figures/image-20221206112854144.png" alt="image-20221206112854144"  />
+<img src="figures/image-20221206112854144.png" alt="image-20221206112854144"  />
 
 - A disc icon will appear in the left task bar. Click it to open the folder.
 
-<img src="/get-started/environment/figures/1660532499347.png" alt="1660532499347" style="zoom:67%;" />
+<img src="figures/1660532499347.png" alt="1660532499347" style="zoom:67%;" />
 
 - Right-click in the empty area of the disc folder and select "Open in Terminal".
 
-<img src="/get-started/environment/figures/1660532614696.png" alt="1660532614696" style="zoom: 80%;" />
+<img src="figures/1660532614696.png" alt="1660532614696" style="zoom: 80%;" />
 
 - Run the following commands to install the Guest Additions.
 
@@ -191,9 +191,9 @@ sudo apt-get install  gcc make perl -y
 sudo ./VBoxLinuxAdditions.run
 ```
 
-<img src="/get-started/environment/figures/1660534104460.png" alt="1660534104460"  />
+<img src="figures/1660534104460.png" alt="1660534104460"  />
 
-<img src="/get-started/environment/figures/1660533974180.png" alt="1660533974180"  />
+<img src="figures/1660533974180.png" alt="1660533974180"  />
 
 - After successful installation, run the `reboot` command in the terminal to restart Ubuntu.
 
@@ -201,33 +201,33 @@ sudo ./VBoxLinuxAdditions.run
 reboot
 ```
 
-<img src="/get-started/environment/figures/image-20221011145610949.png" alt="image-20221011145610949"  />
+<img src="figures/image-20221011145610949.png" alt="image-20221011145610949"  />
 
 #### Step 3: Update Software
 
 - After Ubuntu restarts, click the nine-dot icon in the lower-left corner and open Software & Updates.
 
-<img src="/get-started/environment/figures/image-20221011150040989.png" alt="image-20221011150040989" style="zoom:50%;" />
+<img src="figures/image-20221011150040989.png" alt="image-20221011150040989" style="zoom:50%;" />
 
 - Click the Ubuntu Software tab, then click the "Download from" dropdown and select Other.
 
-<img src="/get-started/environment/figures/1660534504940.png" alt="1660534504940"  />
+<img src="figures/1660534504940.png" alt="1660534504940"  />
 
 - Under **China**, select **Alibaba Cloud (aliyun)**, then click Choose Server.
 
-<img src="/get-started/environment/figures/1660534590521.png" alt="1660534590521" style="zoom: 80%;" />
+<img src="figures/1660534590521.png" alt="1660534590521" style="zoom: 80%;" />
 
 - An authentication dialog will appear. Enter your Ubuntu login password (hispark in this guide).
 
-<img src="/get-started/environment/figures/1660534734924.png" alt="1660534734924" style="zoom: 80%;" />
+<img src="figures/1660534734924.png" alt="1660534734924" style="zoom: 80%;" />
 
 - Click Close, then click Reload in the dialog that appears. Wait while the software lists are updated.
 
-<img src="/get-started/environment/figures/1660534898362.png" alt="1660534898362" style="zoom: 80%;" />
+<img src="figures/1660534898362.png" alt="1660534898362" style="zoom: 80%;" />
 
 - After the update is complete, right-click on the Ubuntu desktop and select "Open Terminal".
 
-<img src="/get-started/environment/figures/image-20221011153823669.png" alt="image-20221011153823669" style="zoom: 80%;" />
+<img src="figures/image-20221011153823669.png" alt="image-20221011153823669" style="zoom: 80%;" />
 
 - Run the following two commands to update software packages.
 
@@ -238,7 +238,7 @@ sudo apt-get upgrade -y
 
 
 
-<img src="/get-started/environment/figures/image-20220817160453331.png" alt="image-20220817160453331"  />
+<img src="figures/image-20220817160453331.png" alt="image-20220817160453331"  />
 
 #### Step 4: Configure SSH Service on Ubuntu
 
@@ -248,7 +248,7 @@ sudo apt-get upgrade -y
 sudo apt-get install openssh-server -y
 ```
 
-<img src="/get-started/environment/figures/image-20221012145535748.png" alt="image-20221012145535748"  />
+<img src="figures/image-20221012145535748.png" alt="image-20221012145535748"  />
 
 - Run the following command to start the SSH service.
 
@@ -256,14 +256,14 @@ sudo apt-get install openssh-server -y
 sudo systemctl start ssh
 ```
 
-<img src="/get-started/environment/figures/image-20221012145800709.png" alt="image-20221012145800709"  />
+<img src="figures/image-20221012145800709.png" alt="image-20221012145800709"  />
 
 #### Step 5: Install MobaXterm and Connect to Ubuntu
 
 - On the Windows host, extract the MobaXterm_Installer_v22.1.zip downloaded in **section 1.1**, then double-click MobaXterm_installer_22.1.msi to install MobaXterm.
 - Keep clicking Next to complete the installation.
 
-<img src="/get-started/environment/figures/image-20221012150919332.png" alt="image-20221012150919332"  />
+<img src="figures/image-20221012150919332.png" alt="image-20221012150919332"  />
 
 - Run the following command to install net-tools.
 
@@ -271,7 +271,7 @@ sudo systemctl start ssh
 sudo apt install net-tools  -y
 ```
 
-<img src="/get-started/environment/figures/image-20220817175838126.png" alt="image-20220817175838126"  />
+<img src="figures/image-20220817175838126.png" alt="image-20220817175838126"  />
 
 - Run the following command to view the Ubuntu IP address. In this example the IP address is 192.168.56.106.
 
@@ -279,15 +279,15 @@ sudo apt install net-tools  -y
 ifconfig
 ```
 
-<img src="/get-started/environment/figures/image-20221011162217364.png" alt="image-20221011162217364"  />
+<img src="figures/image-20221011162217364.png" alt="image-20221011162217364"  />
 
 - Open MobaXterm on Windows, click the Session icon in the top-left corner, click the SSH icon in the dialog, enter your Ubuntu IP address, check "Specify username" and fill in your Ubuntu username, then click OK.
 
-<img src="/get-started/environment/figures/image-20221012151654877.png" alt="image-20221012151654877" style="zoom:80%;" />
+<img src="figures/image-20221012151654877.png" alt="image-20221012151654877" style="zoom:80%;" />
 
 - After clicking OK, enter your Ubuntu login password when prompted to access the Ubuntu terminal.
 
-<img src="/get-started/environment/figures/image-20221012152351010.png" alt="image-20221012152351010" style="zoom: 80%;" />
+<img src="figures/image-20221012152351010.png" alt="image-20221012152351010" style="zoom: 80%;" />
 
 #### Step 6: Configure Samba Service on Ubuntu
 
@@ -347,7 +347,7 @@ sudo service smbd restart
 
 - On Windows, right-click This PC and select "Map network drive".
 
-<img src="/get-started/environment/figures/image-20220507194232987-1761559591651-82.png" alt="image-20220507194232987"  />
+<img src="figures/image-20220507194232987-1761559591651-82.png" alt="image-20220507194232987"  />
 
 - Enter <font color='RedOrange'>\\\Ubuntu IP address</font>, click Finish, then enter the account (hispark) and password (the Samba password configured earlier).
 
@@ -359,7 +359,7 @@ sudo service smbd restart
 
 - The root directory will now appear as a Windows network drive, enabling easy file sharing between Windows and the Ubuntu environment.
 
-<img src="/get-started/environment/figures/image-20230202110442244-1761559591651-83.png" alt="image-20230202110442244" style="zoom:80%;" />
+<img src="figures/image-20230202110442244-1761559591651-83.png" alt="image-20230202110442244" style="zoom:80%;" />
 
 ## 2. Setting Up the SDK Environment
 
@@ -724,33 +724,33 @@ make
 - If VSCode is already installed, skip this step.
 - Double-click the VSCode installer downloaded in **section 1.1** and click Next to install.
 
-<img src="/get-started/environment/figures/1660616774005.png" alt="1660616774005" style="zoom: 80%;" />
+<img src="figures/1660616774005.png" alt="1660616774005" style="zoom: 80%;" />
 
 - Click Browse to select the VSCode installation path, then click Next.
 
-<img src="/get-started/environment/figures/1660616884682.png" alt="1660616884682" style="zoom: 80%;" />
+<img src="figures/1660616884682.png" alt="1660616884682" style="zoom: 80%;" />
 
 - When the following screen appears, click Next.
 
-<img src="/get-started/environment/figures/1660616935702.png" alt="1660616935702" style="zoom: 80%;" />
+<img src="figures/1660616935702.png" alt="1660616935702" style="zoom: 80%;" />
 
 - When the following screen appears, click Next.
 
-<img src="/get-started/environment/figures/1660617000292.png" alt="1660617000292" style="zoom: 80%;" />
+<img src="figures/1660617000292.png" alt="1660617000292" style="zoom: 80%;" />
 
 - When the following screen appears, click Install.
 
-<img src="/get-started/environment/figures/1660617037533.png" alt="1660617037533" style="zoom: 80%;" />
+<img src="figures/1660617037533.png" alt="1660617037533" style="zoom: 80%;" />
 
 - When the following screen appears, click Finish.
 
-<img src="/get-started/environment/figures/1660617098393.png" alt="1660617098393" style="zoom: 80%;" />
+<img src="figures/1660617098393.png" alt="1660617098393" style="zoom: 80%;" />
 
 ## 5. Importing the Code into VSCode
 
 - Click File in the upper-left corner of VSCode, then click Open Folder.
 
-<img src="/get-started/environment/figures/1660617664316.png" alt="1660617664316" style="zoom: 80%;" />
+<img src="figures/1660617664316.png" alt="1660617664316" style="zoom: 80%;" />
 
 - Select `/home/hispark/hi3403` as shown below, then click Select Folder.
 
@@ -758,6 +758,6 @@ make
 
 - After the code is imported successfully, a dialog will appear. Check the trust option and click "Yes, I trust the authors".
 
-<img src="/get-started/environment/figures/image-20221109141616499.png" alt="image-20221109141616499" style="zoom: 80%;" />
+<img src="figures/image-20221109141616499.png" alt="image-20221109141616499" style="zoom: 80%;" />
 
 - The code has now been successfully imported.

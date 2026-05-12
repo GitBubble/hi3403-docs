@@ -131,7 +131,7 @@ The board has onboard eMMC storage for system boot. Select **Burn eMMC** in the 
 
 Partition configuration is as follows:
 
-<img src="/boards/lubancat/doc/media/ToolPlatfrom.png" alt="ToolPlatfrom" width="800"  />
+<img src="media/ToolPlatfrom.png" alt="ToolPlatfrom" width="800"  />
 
 | File             | Partition | Partition Address Range | Partition Size | Description                                              |
 | ---------------- | --------- | ----------------------- | -------------- | -------------------------------------------------------- |
