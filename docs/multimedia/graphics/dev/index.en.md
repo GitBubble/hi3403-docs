@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图形�
 
 This document presents one recommended solution for graphics development, covering the solution overview, derived variants, development workflow, applicable scenarios, and the associated advantages and limitations. It serves as a reference for users developing graphics applications.
 
->![](../../../multimedia/graphics/dev/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   Unless otherwise stated, SS528V100, SS625V100, SS524V100, SS522V101, and SS626V100 are fully identical.
 >-   Unless otherwise stated, SS927V100 and SS928V100, and SS522V100 and SS524V100 are fully identical.
 
@@ -145,7 +145,7 @@ The digital media processing platform provides a complete set of mechanisms for 
 -   Two Dimensional Engine (TDE): a hardware-accelerated engine for processing graphics and images.
 -   Graphic Framebuffer Group (GFBG): manages overlapping graphics layers. In addition to the standard Linux Framebuffer functionality, GFBG adds extended features such as inter-layer colorkey and inter-layer alpha blending.
 
->![](../../../multimedia/graphics/dev/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   For TDE usage, refer to the *TDE API Reference*.
 >-   For GFBG usage, refer to the *GFBG Developer Guide* and *GFBG API Reference*.
 
@@ -156,7 +156,7 @@ The digital media processing platform provides a complete set of mechanisms for 
 -   SS928V100 supports 2 HD display outputs (HD0, HD1) and 1 SD display output (SD0), along with 3 graphics layers: G0, G1, and G3.
 -   SS626V100 supports 2 HD display outputs (HD0, HD1) and 1 SD display output (SD0), along with 5 graphics layers: G0, G1, G2, G3, and G4.
 
->![](../../../multimedia/graphics/dev/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >For the interface types and timing supported by each output device, refer to the VDP chapter of the corresponding chip manual.
 
 The mapping between graphics layers and display devices is subject to certain constraints, as shown in [Table 1](#_Ref391716435) through [Table 4](#_Ref57990861).
@@ -322,7 +322,7 @@ The mapping between graphics layers and display devices is subject to certain co
 </tbody>
 </table>
 
->![](../../../multimedia/graphics/dev/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >To display graphics layers, users must first configure and start the output device, then use the GFBG module interface to enable the graphics layer for display.
 
 # Recommended Graphics Development Solution
@@ -365,7 +365,7 @@ This solution uses the following mechanisms:
 The structure of this solution is shown in [Figure 1](#fig116691737132).
 
 **Figure 1** Structure diagram of the single-layer solution<a name="fig116691737132"></a>  
-![](../../../multimedia/graphics/dev/figures/单图层方案的结构示意图.png "单图层方案的结构示意图")
+![](figures/单图层方案的结构示意图.png "单图层方案的结构示意图")
 
 When either the back-end OSD or the GUI changes, the FB buffer must be redrawn:
 
@@ -382,7 +382,7 @@ When the same GUI content needs to be displayed simultaneously on both SD0 and H
 The structure of this derived variant is shown in [Figure 1](#fig16738132531813).
 
 **Figure 1** Structure diagram of the derived variant<a name="fig16738132531813"></a>  
-![](../../../multimedia/graphics/dev/figures/衍生方案的结构图.png "衍生方案的结构图")
+![](figures/衍生方案的结构图.png "衍生方案的结构图")
 ### Development Workflow<a name="ZH-CN_TOPIC_0000002441674801"></a>
 
 #### Development Workflow for Solution 1<a name="ZH-CN_TOPIC_0000002441674817"></a>

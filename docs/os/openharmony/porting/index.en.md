@@ -106,7 +106,7 @@ device/board/hisilicon/hispark_aifly/
 ## OpenHarmony Hi3403V100 Kernel Compilation Code Model<a name="ZH-CN_TOPIC_0000002524275084"></a>
 
 **Figure 1** OpenHarmony Hi3403V100 kernel compilation code model<a name="fig1914934174010"></a>
-![](figures/OpenHarmony上Hi3403V100内核编译代码模型.png "Hi3403V100 Kernel Compilation Code Model on OpenHarmony")
+![](figures/OpenHarmony上Hi3403V100内核编译代码模型.png "OpenHarmony上Hi3403V100内核编译代码模型")
 ## OpenHarmony Kernel Compilation<a name="ZH-CN_TOPIC_0000002524435066"></a>
 
 OpenHarmony's Linux kernel is based on the open-source Linux kernel LTS 5.10y/6.6.y branches, backporting CVE patches and OpenHarmony features. To support chip kernel features, select kernel source code of the same version or a nearby version from the corresponding branch of the open-source Linux kernel LTS. The kernel version chosen for this system chip is the same linux-6.6.86 as OpenHarmony's Linux kernel. The SDK-provided linux-6.6.86.patch patch file can be directly applied to the HarmonyOS kernel source code, resolving code conflicts.
@@ -611,7 +611,7 @@ To enable the HUKS component to properly use the encryption/decryption capabilit
 Since Hi3403V100 uses the arm64 architecture, which differs from the community L1 Hi3516DV300's arm32, an error occurs during adaptation compilation: ../../../third_party/openssl/crypto/modes/ctr128.c:166:13: warning: call to undeclared function 'asm'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
 
 **Figure 1** openssl compilation error<a name="fig8458101819159"></a>
-![](figures/openssl编译报错.png "OpenSSL Compilation Error")
+![](figures/openssl编译报错.png "openssl编译报错")
 
 The __asm__ syntax is a standardized extension syntax of GCC, suitable for a wider range of compiler environments, while the asm syntax is an older GCC syntax that may be deprecated in newer compilers.
 
@@ -665,7 +665,7 @@ This section mainly introduces the subsystem set that hispark_aifly needs for L1
     When running screen-equipped acts test cases, test/xts/acts/ability_lite/ability_posix/src/AbilityMgrTest.cpp testDisConnectAbility fails. This test case verifies the DisConnectAbility interface. The code's g_errorcode==16 is an exception protection that prevents the test case from executing effectively. However, since DisConnectAbility and ConnectAbility must appear as a pair, this causes the test case to fail.
 
     **Figure 1** testDisConnectAbility test case code<a name="fig162331412418"></a>
-    ![](figures/testDisConnectAbility用例代码.png "testDisConnectAbility Test Case Code")
+    ![](figures/testDisConnectAbility用例代码.png "testDisConnectAbility用例代码")
 
     Printing g_errorcode at this point shows -1, which also does not conform to the exception protection logic. This is a community acts suite test case issue. It will be reported to the community for fixing later.
 
@@ -701,10 +701,10 @@ This section mainly introduces the subsystem set that hispark_aifly needs for L1
 2.  ActsSamgrTest:testIPCClient0130 execution fails.
 
     **Figure 2** testIPCClient0130 test case source code with added debug logs<a name="fig1349811244513"></a>
-    ![](figures/testIPCClient0130用例源码增加维测日志.png "testIPCClient0130 Source with Debug Logs Added")
+    ![](figures/testIPCClient0130用例源码增加维测日志.png "testIPCClient0130用例源码增加维测日志")
 
     **Figure 3** testIPCClient0130 test case failure analysis<a name="fig149642718449"></a>
-    ![](figures/testIPCClient0130用例失败分析.png "testIPCClient0130 Failure Analysis")
+    ![](figures/testIPCClient0130用例失败分析.png "testIPCClient0130用例失败分析")
 
     From the printed logs of svcIdentity.handle and svcIdentity.token, both output 0xffffffff. But the assertion results are quite different. Examining the definitions of the two variables reveals that the svcIdentity.token type is uintptr_t, which depends on the architecture's bit width. The community uses arm, but on arm64, the value extends to 0x00000000ffffffff, causing the comparison to fail. This is confirmed by sizeof(svcIdentity.token)=8.
 
@@ -727,7 +727,7 @@ If the user can properly configure the xdevice test environment, this section ca
 xts_tools packages the tools compiled from xdevice source code into xdevice-0.0.0-py*.egg and xdevice_ohos-0.0.0-py.*.egg. When executing the acts/run.bat script, it downloads software from https://pypi.org/simple/xdevice/, and xdevice environment configuration often fails.
 
 **Figure 1** xts_tools packaging generates egg file code<a name="fig8497141415313"></a>
-![](figures/xts_tools打包生成egg文件代码.png "Code for xts_tools Packaging to Generate Egg File")
+![](figures/xts_tools打包生成egg文件代码.png "xts_tools打包生成egg文件代码")
 
 Modify test/xts/tools/lite/build/suite.py to change xdevice packaging to tar.gz:
 
@@ -932,7 +932,7 @@ command = [utils.get_python_cmd(), "setup.py", "sdist"]
 2.  If some test cases in ActsHuksLiteFunctionTest fail during XTS testing on Hi3403V100 boards:
 
     **Figure 1** HksCipherTest003 test case failure log<a name="fig154392039112413"></a>
-    ![](figures/HksCipherTest003用例failed日志.png "HksCipherTest003 Failed Log")
+    ![](figures/HksCipherTest003用例failed日志.png "HksCipherTest003用例failed日志")
 
     Hi3403V100 hardware boards require a one-time KEY0 burn-in during mass production and cannot be re-burned. If KEY0 is not burned, the hardware blocks key derivation operations, and hardware key encryption/decryption cannot be used normally.
 

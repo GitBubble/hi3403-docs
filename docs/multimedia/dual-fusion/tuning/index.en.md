@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 
 This document is written for developers working with Mono-Color Fusion (MCF) tuning. It introduces the basic principles, operating procedures, and optimization methods for MCF.
 
->![](../../../multimedia/dual-fusion/tuning/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses the SS928V100 as an example. Unless otherwise specified, SS927V100 and SS928V100 content is identical.
 
 **Product Versions<a name="section146mcpsimp"></a>**
@@ -114,7 +114,7 @@ Mono-Color Fusion (MCF) technology is used to fuse the above color image and IR 
 The basic principle diagram of the MCF module is shown in [Figure 1](#fig1275217156391).
 
 **Figure 1**  MCF module basic principle diagram<a name="fig1275217156391"></a>  
-![](../../../multimedia/dual-fusion/tuning/figures/MCF模块基本原理图.png "MCF module basic principle diagram")
+![](figures/MCF模块基本原理图.png "MCF模块基本原理图")
 # Key Parameters
 <a name="table244mcpsimp"></a>
 <table><thead align="left"><tr id="row251mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.5.1.1"><p id="p253mcpsimp"><a name="p253mcpsimp"></a><a name="p253mcpsimp"></a>Module</p>
@@ -354,10 +354,10 @@ The basic principle diagram of the MCF module is shown in [Figure 1](#fig1275217
 ## MCF End-to-End Tuning Flowchart<a name="ZH-CN_TOPIC_0000002457840741"></a>
 
 **Figure 1**  4K@30fps MCF end-to-end tuning flowchart<a name="fig498963145116"></a>  
-![](../../../multimedia/dual-fusion/tuning/figures/4K-30fps-MCF端到端调试流程图.png "4K-30fps MCF end-to-end tuning flowchart")
+![](figures/4K-30fps-MCF端到端调试流程图.png "4K-30fps-MCF端到端调试流程图")
 
 **Figure 2**  4M@30fps MCF end-to-end tuning flowchart<a name="fig082311423517"></a>  
-![](../../../multimedia/dual-fusion/tuning/figures/4M-30fps-MCF端到端调试流程图.png "4M-30fps MCF end-to-end tuning flowchart")
+![](figures/4M-30fps-MCF端到端调试流程图.png "4M-30fps-MCF端到端调试流程图")
 ## ISP Basic Image Quality Tuning<a name="ZH-CN_TOPIC_0000002457840693"></a>
 
 Under normal illumination, the visible light component is used predominantly or entirely, with little or no IR component fusion. The fusion intensity should be turned down, and ISP and 3DNR tuning is the same as for a single channel and is not described further in this document.
@@ -386,12 +386,12 @@ Since fine textures and mid-to-high-frequency details are primarily supplemented
 Since the fused image must still maintain a certain level of color saturation while color noise is also significant, some processing is required. First, adjust AWB: if an accurate light source correction is needed, no special handling is required; otherwise, the light source color can be partially retained to reduce the pronounced color noise that occurs at low color temperatures. In the CCM, appropriately reduce the coefficients of the red and blue components — i.e., reduce the main R and B coefficients. The CA module should be enabled as much as possible to reduce saturation in dark areas and increase saturation in bright areas. CLUT can be used, following a principle similar to CA: preserve color in high-SNR areas and reduce saturation of low-SNR colors. The recommended tuning for chroma denoising in 3DNR is: for the nr_c0 level, set sfc to 31 and tfc to 31 to suppress flickering chroma noise; for the nr_c1 level, set both the foreground and background sfn to 7, with the difference being that the foreground's sf7 hybrid filter tends toward filter 5 while the background's sf7 hybrid filter tends toward filter 6. Note that filter 5 removes chroma noise but also causes some loss of normal color, which involves a trade-off. Specific parameters are shown in [Figure 1](#fig13993142443410).
 
 **Figure 1**  Recommended parameters for color channel 3DNR chroma noise tuning<a name="fig13993142443410"></a>  
-![](../../../multimedia/dual-fusion/tuning/figures/彩色路3DNR色噪调试建议参数图.png "Recommended parameters for color channel 3DNR chroma noise tuning")
+![](figures/彩色路3DNR色噪调试建议参数图.png "彩色路3DNR色噪调试建议参数图")
 
 After tuning the color channel, the overall result is shown in [Figure 2](#fig9166426103219).
 
 **Figure 2**  Color channel tuning result<a name="fig9166426103219"></a>  
-![](../../../multimedia/dual-fusion/tuning/figures/彩色通路调优效果图.png "Color channel tuning result")
+![](figures/彩色通路调优效果图.png "彩色通路调优效果图")
 
 **Contrast<a name="section1120026183211"></a>**
 
@@ -428,7 +428,7 @@ Gamma, LDCI, and Dehaze can be adjusted based on the actual application, similar
     -   To avoid amplifying the saturation of chroma noise in low light, cc_thd_y can be set. When the brightness of the color image is below the threshold cc_thd_y, the degree of chrominance saturation compensation is gradually reduced from the threshold down to brightness 0.
 
         **Figure 1**  MCF tuning style example<a name="fig2192183017464"></a>  
-        ![](../../../multimedia/dual-fusion/tuning/figures/MCF调试风格示例图.png "MCF tuning style example")
+        ![](figures/MCF调试风格示例图.png "MCF调试风格示例图")
 ## Post-Fusion 3DNR Adjustment<a name="ZH-CN_TOPIC_0000002424361910"></a>
 
 The purpose of passing the fused output through VPSS 3DNR is primarily to remove chroma noise caused by the uvgain curve in the MCF module boosting overall color saturation, as well as to remove graininess in static and moving regions caused by the IR image not having passed through 3DNR. The tuning method is the same as for color images.
@@ -461,8 +461,8 @@ In the dual-channel images captured for calibration, the calibration scene shoul
 A reference diagram of the calibration scene is provided below. See [Figure 1](#_fig26861861) for details.
 
 **Figure 1**  Recommended MCF calibration scene example<a name="_fig26861861"></a>  
-![](../../../multimedia/dual-fusion/tuning/figures/MCF标定场景推荐示例图.png "Recommended MCF calibration scene example")
->![](../../../multimedia/dual-fusion/tuning/public_sys-resources/icon-note.gif) **Note:** 
+![](figures/MCF标定场景推荐示例图.png "MCF标定场景推荐示例图")
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >MCF calibration uses GDC for both FOV correction and stabilization. Enabling FOV correction along with two or more channels of gyroscope stabilization may cause insufficient performance.
 
 ## Using the Calibration Library<a name="ZH-CN_TOPIC_0000002457840713"></a>
@@ -503,11 +503,11 @@ Examples are provided below.
 
     If the calibrated matrix coefficients are:
 
-    ![](../../../multimedia/dual-fusion/tuning/figures/zh-cn_formulaimage_0000002424202430.png)
+    ![](figures/zh-cn_formulaimage_0000002424202430.png)
 
     Then the matrix coefficients actually used for correction are modified to:
 
-    ![](../../../multimedia/dual-fusion/tuning/figures/zh-cn_formulaimage_0000002424362262.png)
+    ![](figures/zh-cn_formulaimage_0000002424362262.png)
 
     If the calibrated effective region parameters are [x, y, w, h], then the effective region parameters actually used for correction are modified to [x*4, y*4, w*4, h*4].
 

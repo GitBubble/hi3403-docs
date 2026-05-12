@@ -35,6 +35,7 @@ help:
 	@echo "  make install      install Python dependencies"
 	@echo "  make build        build the static site to site/"
 	@echo "  make serve        live preview at http://127.0.0.1:8000/"
+	@echo "  make reserve      rebuild + restart dev server (fresh CSS/JS)"
 	@echo "  make serve_html   alias for serve"
 	@echo "  make migrate      run scripts/migrate.py to ingest pegasus/ docs"
 	@echo "  make translate      generate missing .en.md siblings
@@ -58,6 +59,11 @@ build: $(DEPS_STAMP)
 	$(MKDOCS) build --strict
 
 serve serve_html: $(DEPS_STAMP)
+	$(MKDOCS) serve
+
+reserve: $(DEPS_STAMP)
+	$(MKDOCS) build
+	pkill -f "mkdocs serve" 2>/dev/null; sleep 1
 	$(MKDOCS) serve
 
 clean:

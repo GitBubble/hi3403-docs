@@ -107,7 +107,7 @@ docs/tutorials/
 Quote:
 
 ``` markdown
-![GStreamer pipeline diagram](../community/images/pipeline.svg)
+![GStreamer pipeline diagram](images/pipeline.svg)
 ```
 
 Remember to alt text (what’s in square brackets) – Accessibility + SEO.
@@ -154,8 +154,8 @@ The relative path of the link is incorrect. Calculate the path from the perspect
 
 ``` markdown
 <!-- docs/tutorials/gstreamer.md references docs/tutorials/images/pipeline.svg -->
-![](../community/images/pipeline.svg)        ✓ correct
-![](../community/images/pipeline.svg)      ✓ correct
+![](images/pipeline.svg)        ✓ correct
+![](images/pipeline.svg)      ✓ correct
 ![](../images/pipeline.svg)       ✗ wrong (site root, not same directory)
 ```
 

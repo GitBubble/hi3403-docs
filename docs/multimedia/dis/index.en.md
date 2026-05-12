@@ -28,7 +28,7 @@ The product versions corresponding to this document are as follows.
 </tbody>
 </table>
 
->![](../../multimedia/dis/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 and SS928V100 is identical.
 
 **Intended Audience<a name="section0132125444614"></a>**
@@ -120,16 +120,16 @@ An IMU is a device that measures the x, y, z three-axis attitude angles (or angu
 
 The basic principle of DIS is a 2D affine transformation process on the image based on motion offset. Affine transformations include translation, rotation, scaling, and shearing (commonly understood as parallelogram transformation) of the image, and this transformation can be represented by a 3×3 matrix.
 
-![](../../multimedia/dis/figures/zh-cn_formulaimage_0000002457881133.png)
+![](figures/zh-cn_formulaimage_0000002457881133.png)
 
-![](../../multimedia/dis/figures/zh-cn_formulaimage_0000002424362186.png)
+![](figures/zh-cn_formulaimage_0000002424362186.png)
 
 The 3×3 matrix is the motion offset to be calculated in the DIS algorithm. (x, y) represents the coordinate position of the original image, and (x', y') is the coordinate position of the transformed image.
 
 When performing image transformation operations on the image, the positions of image pixels are changed, which may cause the edges of the image to exceed the width and height of the original image and be translated out of the entire frame position. Therefore, during DIS stabilization, the image must be cropped and enlarged. DIS stabilization involves cropping the edges of the image at a certain cropping ratio after completing the transformation operation, and then enlarging the cropped image to the original width and height, as shown in [Figure 1](#fig593612433564).
 
 **Figure 1**  DIS schematic diagram<a name="fig593612433564"></a>  
-![](../../multimedia/dis/figures/DIS-原理图.png "DIS schematic diagram")
+![](figures/DIS-原理图.png "DIS-原理图")
 
 DIS calculates motion offset using three algorithms:
 
@@ -149,7 +149,7 @@ DIS calculates motion offset using three algorithms:
 
 The DIS function is integrated into the VI module. Refer to the "SS928V100 VI Channel Functional Block Diagram" in the Video Input chapter of the MPP Media Processing Software V5.0 Development Reference.
 
->![](../../multimedia/dis/public_sys-resources/icon-notice.gif) **Important:** 
+>![](public_sys-resources/icon-notice.gif) **Important:** 
 >-   DIS only supports operation on physical channels.
 >-   DIS video input image format supports linear Semi-planar420 and single component, and only supports uncompressed images. After enabling GME DIS, flip and mirror operations cannot be performed in VI.
 >-   The aspect ratio (width-to-height ratio) range supported for DIS video input images is 16:3 to 16:27.
@@ -161,7 +161,7 @@ The DIS function is integrated into the VI module. Refer to the "SS928V100 VI Ch
 For DIS-related API and parameter descriptions, please refer to the "Video Input" chapter of the MPP Media Processing Software V5.0 Development Reference. For specific implementation, refer to the DIS sample. The DIS usage flow is shown in [Figure 1](#fig75191462011).
 
 **Figure 1**  DIS usage flow<a name="fig75191462011"></a>  
-![](../../multimedia/dis/figures/DIS使用流程.png "DIS usage flow")
+![](figures/DIS使用流程.png "DIS使用流程")
 ## Parameter Settings<a name="ZH-CN_TOPIC_0000002457840657"></a>
 
 Before starting DIS, parameters such as DIS configuration information and attributes must be set first. Different parameter values affect the stabilization effect to varying degrees. This section mainly introduces several important parameter settings that affect the stabilization effect.
@@ -192,7 +192,7 @@ Differences between 4_DOF and 6_DOF:
 -   4_DOF: The algorithm uses 4 operators, primarily performing translation, rotation, and scaling operations on the image. Compared to 6_DOF, it has 2 fewer operators. With fewer calculated operators, it is less prone to misjudgment and can also better prevent background dragging caused by large-area object movement, though the rolling shutter phenomenon is more noticeable.
 -   6_DOF: The algorithm uses 6 operators, primarily performing translation, rotation, scaling, aspect ratio change, and shearing on the image. The advantage is better stabilization effect and the ability to correct parallelogram distortions. The disadvantage is that it is more likely to cause abnormal phenomena such as background dragging.
 
->![](../../multimedia/dis/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >For SS928V100's HYBRID mode, the DSP must be enabled and the hybrid stabilization bin file must be loaded. Call the ss_mpi_gdc_set_dsp_lut_cfg interface (refer to the "12 Geometric Distortion Correction Subsystem" chapter of the MPP Media Processing Software V5.0 Development Reference) to enable the dsp_lut function and bind the corresponding DSP core. A single-core DSP supports 4K30fps performance.
 >Description of each mode:
 >-   OT_DIS_MODE_4_DOF_GME refers to the 4_DOF stabilization mode.
@@ -210,7 +210,7 @@ Camera motion levels are divided into: OT_DIS_MOTION_LEVEL_LOW, OT_DIS_MOTION_LE
 
 Typically set to OT_DIS_MOTION_LEVEL_NORM. Adjust according to the actual motion amplitude.
 
->![](../../multimedia/dis/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >SS928V100 does not support the OT_DIS_MOTION_LEVEL_LOW mode.
 
 **pdt_type<a name="section2080685121417"></a>**
@@ -227,7 +227,7 @@ Effective only for GYRO and HYBRID modes. Rotation matrix, a 3×3 matrix. This p
 
 The conversion between the gyroscope coordinate system direction and the image coordinate system direction is performed via the rotation matrix. Assume the gyroscope data is (Xg, Yg, Zg) and the gyroscope data used by the algorithm is (Xa, Ya, Za).
 
-![](../../multimedia/dis/figures/zh-cn_formulaimage_0000002424202394.png)
+![](figures/zh-cn_formulaimage_0000002424202394.png)
 
 The 9 parameters of the rotation matrix matrix[OT_MFUSION_MATRIX_NUM] correspond to [a, b, c, d, e, f, g, h, l] respectively. For the specific method of calculating the 9 parameters, please refer to "[Adapting Gyroscope and Image Coordinate System Directions](#ZH-CN_TOPIC_0000002424361994)".
 
@@ -251,7 +251,7 @@ timelag = t_readout – t_vsync – t_gyro_lpf_delay
 Under normal Sensor sequence configuration, this time parameter is near t_gyro_lpf_delay and is a **negative number**. [Figure 1](#_Toc519600753) briefly describes the position of timelag in the sensor timing.
 
 **Figure 1**  Schematic diagram of timelag in sensor timing (before subtracting GYRO_LPF delay)<a name="_Toc519600753"></a>  
-![](../../multimedia/dis/figures/timelag在sensor时序中的示意图（减去GYRO_LPF延时之前）.png "Schematic diagram of timelag in sensor timing (before subtracting GYRO_LPF delay)")
+![](figures/timelag在sensor时序中的示意图（减去GYRO_LPF延时之前）.png "timelag在sensor时序中的示意图（减去GYRO_LPF延时之前）")")
 **hor_limit and ver_limit<a name="section8533195119167"></a>**
 
 Effective only for GME and HYBRID modes. Horizontal offset and vertical offset limits, value range [0, 1000]. When the horizontal offset caused by background dragging from a large-area object passing through exceeds a certain amplitude, stabilization is not performed. Offset amplitude calculation: 2047 * hor_limit/1000.
@@ -262,7 +262,7 @@ These parameters need to be used together with camera_steady, and only take effe
 
 This switch disables the DIS stabilization effect, but the image continues to be output at the cropping ratio. When this switch is on, the DIS output image has no stabilization effect, but the cropping ratio of the output image remains the same as that of the output image with stabilization effect. Typically, this parameter is set to TD_FALSE; set this value to TD_TRUE when needed.
 
->![](../../multimedia/dis/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >For PTZ pan/tilt rotation scenarios, the still_crop function needs to be enabled before rotation begins and disabled after rotation ends to prevent abnormal stabilization effects during rotation.
 
 **strength<a name="section177138819171"></a>**
@@ -271,7 +271,7 @@ Background: When the camera is in low-light conditions, enabling DIS makes the e
 
 strength is the intensity control for DIS gyroscope stabilization, effective only for GYRO and HYBRID modes, with a maximum intensity of 1024. When the value is 0, there is no GYRO stabilization effect.
 
->![](../../multimedia/dis/public_sys-resources/icon-notice.gif) **Important:** 
+>![](public_sys-resources/icon-notice.gif) **Important:** 
 >In development, this parameter should be configured as 1024 by default. Generally, there is no need to adjust this parameter; reducing strength will reduce the stabilization effect.
 >For the use of strength, please refer to "[Application Scheme for Gyroscope Stabilization Intensity](#ZH-CN_TOPIC_0000002424202150)".
 
@@ -293,7 +293,7 @@ fpd_adaptive_en
 
 Effective only for GME and HYBRID modes. Since the algorithm's feature point pair threshold is fixed at 30, and IPC has scenes with few image feature points, feature point search may fail. In this case, enabling the adaptive search switch can lower the feature point pair threshold, enhancing the stabilization effect. It is recommended that customers enable this function switch in indoor scenes with simple backgrounds. After lowering the feature point threshold, the stabilization effect will improve somewhat, but it may cause motion dragging. The default parameter is set to TD_FALSE; set this value to TD_TRUE when needed.
 
->![](../../multimedia/dis/public_sys-resources/icon-notice.gif) **Important:** 
+>![](public_sys-resources/icon-notice.gif) **Important:** 
 >The four parameters large_motion_stable_coef, low_freq_motion_preserve, low_freq_motion_freq, and fpd_adaptive_en only take effect in GME mode and HYBRID mode.
 
 ## Gyroscope Usage<a name="ZH-CN_TOPIC_0000002424202142"></a>
@@ -358,7 +358,7 @@ When using, simply execute the make command in the motionsensor directory to obt
 The principle of DIS obtaining gyroscope data is shown in [Figure 1](#fig12185191732514).
 
 **Figure 1**  Schematic diagram of DIS obtaining gyroscope data<a name="fig12185191732514"></a>  
-![](../../multimedia/dis/figures/DIS获取陀螺仪数据原理图.png "Schematic diagram of DIS obtaining gyroscope data")
+![](figures/DIS获取陀螺仪数据原理图.png "DIS获取陀螺仪数据原理图")
 
 Gyroscope data is stored in the allocated Gyro Data buffer. After starting the gyroscope driver, the gyroscope driver internally starts a timer that continuously reads gyroscope data from the gyroscope FIFO, timestamps each group of data, and writes the data to the Gyro Data buffer. The DIS driver obtains the gyroscope data for the corresponding time period from the Gyro Data buffer based on the start timestamp and end timestamp of each frame for stabilization processing.
 
@@ -378,9 +378,9 @@ When using DIS gyroscope-related algorithms, first correctly match the coordinat
 The DIS algorithm references the image coordinate system. The IMU (gyroscope) coordinate system can be determined by looking at the position of the black dot on the chip in the IMU datasheet. For example, the coordinate system of a certain gyroscope model is shown in [Figure 2](#fig1600174122810).
 
 **Figure 1**  Image coordinate system (lens facing forward in the Zc direction for shooting)<a name="_Ref452476337"></a>  
-![](../../multimedia/dis/figures/图像坐标系（镜头朝前Zc方向拍摄）.png "Image coordinate system (lens facing forward in the Zc direction for shooting)")
+![](figures/图像坐标系（镜头朝前Zc方向拍摄）.png "图像坐标系（镜头朝前Zc方向拍摄）")")
 **Figure 2**  Gyroscope coordinate system<a name="fig1600174122810"></a>  
-![](../../multimedia/dis/figures/陀螺仪坐标系.png "Gyroscope coordinate system")
+![](figures/陀螺仪坐标系.png "陀螺仪坐标系")
 
 The following describes how to convert coordinate system directions using two different gyroscope installation positions as examples. For other installation positions, please extrapolate accordingly.
 
@@ -388,26 +388,26 @@ The following describes how to convert coordinate system directions using two di
 
     When the gyroscope is installed as shown in [Figure 3](#fig1483505715311), the gyroscope coordinate system and the image coordinate system directions are the same. The gyroscope obtains data (Xg, Yg, Zg), and the algorithm uses gyroscope data (Xa, Ya, Za). In this case:
 
-    ![](../../multimedia/dis/figures/zh-cn_formulaimage_0000002457841077.png)
+    ![](figures/zh-cn_formulaimage_0000002457841077.png)
 
-    Therefore, set the rotation matrix in the DIS Config to the identity matrix, i.e., ![](../../multimedia/dis/figures/zh-cn_formulaimage_0000002424202478.png), with the 9 parameters of matrix[OT_MFUSION_MATRIX_NUM] corresponding to [1, 0, 0, 0, 1, 0, 0, 0, 1] respectively.
+    Therefore, set the rotation matrix in the DIS Config to the identity matrix, i.e., ![](figures/zh-cn_formulaimage_0000002424202478.png), with the 9 parameters of matrix[OT_MFUSION_MATRIX_NUM] corresponding to [1, 0, 0, 0, 1, 0, 0, 0, 1] respectively.
 
     **Figure 3**  Gyroscope installation position 1<a name="fig1483505715311"></a>  
-    ![](../../multimedia/dis/figures/陀螺仪安装位置1.png "Gyroscope installation position 1")
+    ![](figures/陀螺仪安装位置1.png "陀螺仪安装位置1")
 -   Gyroscope installation position 2
 
     When the gyroscope is installed as shown in [Figure 4](#_Ref483210897), the gyroscope coordinate system and the image coordinate system directions are inconsistent and need to be converted. The gyroscope obtains data (Xg, Yg, Zg), and the algorithm uses gyroscope data (Xa, Ya, Za). In this case, the conversion relationship is:
 
-    ![](../../multimedia/dis/figures/zh-cn_formulaimage_0000002424202490.png)
+    ![](figures/zh-cn_formulaimage_0000002424202490.png)
 
     Therefore, set the rotation matrix in the DIS Config to:
 
-    ![](../../multimedia/dis/figures/zh-cn_formulaimage_0000002424362338.png)
+    ![](figures/zh-cn_formulaimage_0000002424362338.png)
 
     The 9 parameters of matrix[OT_MFUSION_MATRIX_NUM] correspond to [0, 1, 0, -1, 0, 0, 0, 0, 1] respectively.
 
     **Figure 4**  Gyroscope installation position 2<a name="_Ref483210897"></a>  
-    ![](../../multimedia/dis/figures/陀螺仪安装位置2.png "Gyroscope installation position 2")
+    ![](figures/陀螺仪安装位置2.png "陀螺仪安装位置2")
 ### Lens Calibration Parameters and timelag<a name="ZH-CN_TOPIC_0000002424361898"></a>
 
 The lens calibration parameter camera_calibration_dis_param and the MPI board-side parameter ot_ldc_v2_attr are completely consistent in data type. The parameters generated from lens calibration can be directly configured to the corresponding MPI parameters.
@@ -425,7 +425,7 @@ Initializing the gyroscope primarily involves allocating MMZ memory for gyroscop
 The data output by the gyroscope is placed in a rotating buffer, and the algorithm reads the gyroscope data from the buffer based on frame interrupts. XYZ axis data is in one-to-one correspondence with timestamps.
 
 **Figure 1**  Buffer data diagram<a name="fig286321915420"></a>  
-![](../../multimedia/dis/figures/Buffer数据图.png "Buffer data diagram")
+![](figures/Buffer数据图.png "Buffer数据图")
 
 The buffer allocated from MMZ is used to store 5 parts of data: x, y, z axis gyroscope data, temperature data temp, and timestamp. The data type length of the timestamp is 8 bytes, and the data type length of the XYZ axis data and temperature data temp is 4 bytes. Each time a frame interrupt comes to fetch data, the data is searched within the buffer segment based on the start timestamp and end timestamp. The gyroscope data that meets the conditions is found and then passed to the DIS algorithm for use. For specific buffer allocation and size, please refer to the sample.
 
@@ -441,7 +441,7 @@ The recommended accelerometer measurement range setting is 16, with fractional p
 
 The recommended accelerometer data sampling frequency (ODR) setting is 1000, with fractional precision of 10 bits. The output data bit width of the accelerometer is 15 bits, and the accelerometer data range is [-32768, 32768].
 
->![](../../multimedia/dis/public_sys-resources/icon-notice.gif) **Important:** 
+>![](public_sys-resources/icon-notice.gif) **Important:** 
 >The nominal measurement range of some gyroscope models is not the exact range and needs to be confirmed against the angular velocity sensitivity and data bit width (angular velocity sensitivity × 2^data bit width = measurement range). If necessary, confirm the exact measurement range with the gyroscope manufacturer.
 
 ### Application Scheme for Gyroscope Stabilization Intensity<a name="ZH-CN_TOPIC_0000002424202150"></a>
@@ -460,7 +460,7 @@ It is recommended to prioritize the exposure-limiting strategy, and then use str
     -   Relatively low illumination (e.g., indoor with lights, outdoor overcast): stabilization effect **improved**, but image brightness is lower or noise increases.
     -   Extremely low illumination: stabilization effect improved, but image is too dark (if the maximum gain multiple is kept unchanged) or noise is excessive (if the maximum gain is increased by the corresponding multiple).
 
-    >![](../../multimedia/dis/public_sys-resources/icon-notice.gif) **Important:** 
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >-   When only the exposure time is limited without increasing the corresponding gain, the image may become dark under relatively low illumination.
     >-   When the exposure is limited but the gain is simultaneously increased by the corresponding multiple, the image will not become dark, but noise will increase.
 
@@ -976,13 +976,13 @@ It can be self-encapsulated to achieve dynamic invocation and continuous smooth 
 
     As shown in the figure below, the angular velocity values collected over 1 second (different colors represent different directions) yield RMS values of: (7.2279649, 7.5939398, 6.1901026). Based on the sensor configuration, these can be converted to (0.061216958, 0.057220072, 0.048206896) °/s, which is on the same order of magnitude as the manual noise of 0.04, and can be considered reasonable.
 
-    ![](../../multimedia/dis/figures/zh-cn_image_0000002457881201.jpg)
+    ![](figures/zh-cn_image_0000002457881201.jpg)
 
-    ![](../../multimedia/dis/figures/zh-cn_image_0000002424362318.png)
+    ![](figures/zh-cn_image_0000002424362318.png)
 
 1.  Move the machine in a specific direction of the sensor angle and check whether the sensor output responds and whether the direction is reasonable. If the sensor output does not respond, the sensor configuration needs to be checked. If the direction is unreasonable, see the handling of possible problem 3 in "[Gyroscope Stabilization Has No Effect](#ZH-CN_TOPIC_0000002457840745)".
 
-    ![](../../multimedia/dis/figures/zh-cn_image_0000002457841113.jpg)
+    ![](figures/zh-cn_image_0000002457841113.jpg)
 
 ## Whether Gyroscope Timestamps Are Smooth<a name="ZH-CN_TOPIC_0000002457880889"></a>
 

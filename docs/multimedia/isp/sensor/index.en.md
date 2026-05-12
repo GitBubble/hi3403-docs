@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensor�
 
 This guide is written for engineers integrating new sensors. It covers the steps and considerations involved in sensor integration, including the driver development workflow for a new sensor and the process for adapting a new sensor within the SDK.
 
->![](../../../multimedia/isp/sensor/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference. Unless otherwise stated, SS927V100 and SS928V100 are identical.
 
 **Product Versions<a name="section1178605582218"></a>**
@@ -112,7 +112,7 @@ The revision history accumulates descriptions of each document update. The lates
 Follow the debugging workflow shown in [Figure 1](#fig148028410245).
 
 **Figure 1** Sensor debugging flowchart<a name="fig148028410245"></a>  
-![](../../../multimedia/isp/sensor/figures/Sensor调试流程图.png "Sensor调试流程图")
+![](figures/Sensor调试流程图.png "Sensor调试流程图")
 ## Preparation<a name="ZH-CN_TOPIC_0000002424202058"></a>
 
 ### Verify SoC Specifications<a name="ZH-CN_TOPIC_0000002424361862"></a>
@@ -303,7 +303,7 @@ Implement ISP basic functions in the following order:
 
     Configure the black level for all four RAW data channels in this function.
 
-    >![](../../../multimedia/isp/sensor/public_sys-resources/icon-notice.gif) **Notice:** 
+    >![](public_sys-resources/icon-notice.gif) **Notice:** 
     >For some sensors, the black level drifts with gain changes. In such cases, calibrate the black level at different ISO values and implement the corresponding logic in `cmos_get_isp_black_level()`.
 
 -   `sensor_global_init()`
@@ -401,7 +401,7 @@ For image quality tuning, refer to the corresponding *ISP Image Tuning Guide*.
 
     The `update` flag for both long-frame and short-frame exposure times is always set to `TD_TRUE`.
 
->![](../../../multimedia/isp/sensor/public_sys-resources/icon-notice.gif) **Notice:** 
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
 >In general, for frame WDR, it is recommended to configure the short-frame exposure time first, then the long-frame exposure time. This reduces motion ghosting artifacts.
 
 ### Sensor Output<a name="ZH-CN_TOPIC_0000002457880813"></a>

@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ToolPlat
 
 The ToolPlatform framework integrates tools such as BurnTool, FastplayBinTool, and LoaderBinTool into a unified platform. This document describes the features and usage of the platform framework.
 
->![](../../tools/toolplatform/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference. Unless otherwise specified, SS528V100, SS524V100, SS522V100, SS626V100, and SS927V100 are identical to SS928V100.
 
 **Product Versions<a name="section329632361710"></a>**
@@ -100,12 +100,12 @@ The platform framework is an integration platform for other tools. It can host m
 When the tool platform is launched, you will see the splash screen shown in [Figure 1](#1-1).
 
 **Figure 1**  Tool splash screen<a name="1-1"></a>  
-![](../../tools/toolplatform/figures/工具启动画面.png "Tool splash screen")
+![](figures/工具启动画面.png "工具启动画面")
 
 After the splash screen closes, the tool home page is displayed, as shown in [Figure 2](#_Ref403114108).
 
 **Figure 2**  Tool home page<a name="_Ref403114108"></a>  
-![](../../tools/toolplatform/figures/工具首页.png "Tool home page")
+![](figures/工具首页.png "工具首页")
 
 The tool home page layout from top to bottom consists of:
 
@@ -118,7 +118,7 @@ When you switch to a different tool perspective, the toolbar buttons specific to
 In the main ToolPlatform window, you can view all available perspectives, including the platform's own perspective and the perspectives of any installed and activated tools, as shown in [Figure 3](#1-3).
 
 **Figure 3**  Installed perspectives<a name="1-3"></a>  
-![](../../tools/toolplatform/figures/已安装透视图.png "Installed perspectives")
+![](figures/已安装透视图.png "已安装透视图")
 
 Click a perspective icon to switch to the corresponding tool view. Perspective shortcut icons can be deleted or dragged to reorder them.
 
@@ -130,18 +130,18 @@ You can switch the current device profile using the ToolPlatform menu bar. After
 Navigate to **Device** > **Switch Device** in the menu bar and select the target profile, as shown in [Figure 1](#_Ref377548814).
 
 **Figure 1**  Profile switch menu<a name="_Ref377548814"></a>  
-![](../../tools/toolplatform/figures/方案切换菜单.png "Profile switch menu")
+![](figures/方案切换菜单.png "方案切换菜单")
 ## Tool Compatibility with Profiles<a name="ZH-CN_TOPIC_0000002408329616"></a>
 
 Navigate to **Device** > **Current Device** in the menu bar to view the currently selected device. The example below shows SS928V100 selected, as shown in [Figure 1](#2-3-1).
 
 **Figure 1**  SS928V100 selected<a name="2-3-1"></a>  
-![](../../tools/toolplatform/figures/切换到SS928V100.png "SS928V100 selected")
+![](figures/切换到SS928V100.png "切换到SS928V100")
 
 The ToolPlatform interface displays the tools available for SS928V100, as shown in [Figure 2](#2-3-2).
 
 **Figure 2**  Available tools for SS928V100<a name="2-3-2"></a>  
-![](../../tools/toolplatform/figures/SS928V100可用工具.png "Available tools for SS928V100")
+![](figures/SS928V100可用工具.png "SS928V100可用工具")
 # Language Switching
 To change the display language, follow these steps:
 
@@ -150,19 +150,19 @@ Launch the tool platform and open the main interface.
 1.  Navigate to **File** > **Language** in the menu bar to choose between Chinese and English, as shown in [Figure 1](#6-1).
 
     **Figure 1**  Language switch menu<a name="6-1"></a>  
-    ![](../../tools/toolplatform/figures/语言切换菜单.png "Language switch menu")
+    ![](figures/语言切换菜单.png "语言切换菜单")
 
 2.  Click **English**. The tool displays the splash screen while restarting.
 3.  Once the restart is complete, the splash screen closes and the main interface is displayed in English, as shown in [Figure 3](#6-3).
 
     **Figure 2**  English interface<a name="6-2"></a>  
-    ![](../../tools/toolplatform/figures/程序英文界面.png "English interface")
+    ![](figures/程序英文界面.png "程序英文界面")
 
 4.  To switch back to Chinese, navigate to **File** > **Language** and click **Chinese**. The splash screen is displayed with a progress bar.
 5.  Once loading completes, the splash screen closes and the main interface is displayed in Chinese, as shown in [Figure 3](#6-3).
 
     **Figure 3**  Chinese interface<a name="6-3"></a>  
-    ![](../../tools/toolplatform/figures/程序中文界面.png "Chinese interface")
+    ![](figures/程序中文界面.png "程序中文界面")
 # FAQ
 ## Tool Running Slowly<a name="ZH-CN_TOPIC_0000002441768849"></a>
 
@@ -201,7 +201,7 @@ Parameter descriptions:
 -   -XX:+UseParallelGC
     -   Description: Enables parallel garbage collection.
 
->![](../../tools/toolplatform/public_sys-resources/icon-notice.gif) **Notice:** 
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
 >-   When free heap memory falls below 40%, the JVM expands the heap up to the -Xmx limit.
 >-   When free heap memory exceeds 70%, the JVM shrinks the heap down to the -Xms limit.
 >-   It is generally recommended to set -Xms and -Xmx to the same value to avoid heap resizing after each GC cycle.
@@ -225,7 +225,7 @@ Run the following command in a console window: `java -version`
 When the tool is installed under a path such as `F:\Work!!!!!!!!!!!!!!!!!!!!!\`, an exception is thrown as shown in [Figure 1](#fig326mcpsimp), and the tool cannot start.
 
 **Figure 1**  Path exception prompt<a name="fig326mcpsimp"></a>  
-![](../../tools/toolplatform/figures/路径异常提示.png "Path exception prompt")
+![](figures/路径异常提示.png "路径异常提示")
 
 **Root Cause<a name="section16242653152911"></a>**
 

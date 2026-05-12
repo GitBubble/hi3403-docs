@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 
 This document describes the installation and upgrade procedures for the SS928V100 SDK, enabling users to quickly set up the SDK runtime environment on the corresponding chip's DEMB board.
 
->![](../../get-started/sdk-install/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference. Unless otherwise specified, the content applies equally to SS927V100.
 
 **Product Versions<a name="section145mcpsimp"></a>**
@@ -238,7 +238,7 @@ setenv gatewayip xx.xx.xx.xx
 ping serverip (verify network connectivity)
 ```
 
->![](../../get-started/sdk-install/public_sys-resources/icon-notice.gif) **Notice:** 
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
 >-   SS928V100 supports two boot modes: fast boot (using `u-boot-ss928v100.bin`) and non-fast boot (non-secure/secure boot, using `boot_image.bin`). See Chapter 2 "Boot Modes" in the *SS928V100/SS927V100 Secure Boot User Guide*.
 >-   The boot mode can be confirmed by reading register `0x10122090`. A value of `0x5` indicates fast boot; any other value indicates non-fast boot.
 >-   Boards ship with "non-secure boot" as the default. The following instructions use this mode as the example.
@@ -469,7 +469,7 @@ The following operations are based on the address space layout shown above. Adju
     setenv bootcmd 'mmc read 0 0x50000000 0x800 0x5800; bootm 50000000';sa
     ```
 
-    >![](../../get-started/sdk-install/public_sys-resources/icon-notice.gif) **Notice:** 
+    >![](public_sys-resources/icon-notice.gif) **Notice:** 
     >Adjust the image sizes in the commands for [Flashing Image Files to SPI Nor Flash](#ZH-CN_TOPIC_0000002424357662) through [Flashing Image Files to EMMC](#ZH-CN_TOPIC_0000002457876529) to match the actual image sizes. The default LiteOS boot address is `0x44000000`. If the customer's memory layout differs, adjust the LiteOS boot address accordingly. If LiteOS is not used, customers can adjust the Linux boot address instead.
 
 ## Booting the New System<a name="ZH-CN_TOPIC_0000002457876541"></a>

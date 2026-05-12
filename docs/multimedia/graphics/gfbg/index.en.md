@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/GFBG 开
 
 Graphic Framebuffer Group (hereinafter referred to as GFBG) is a module provided by the digital media processing platform for managing graphics overlay layers. It is implemented based on the Linux Framebuffer, providing basic Linux Framebuffer functionality while extending additional graphics layer control features such as inter-layer Alpha and origin setting. This document primarily introduces how to load the GFBG module and develop applications for the first time.
 
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   Unless otherwise specified, SS528V100, SS625V100, SS524V100, SS522V101, and SS626V100 are completely identical.
 >-   Unless otherwise specified, SS927V100 and SS928V100, SS522V100 and SS524V100 have completely identical content.
 
@@ -149,7 +149,7 @@ Framebuffer (hereinafter referred to as GFBG) is a module provided by the digita
 Applications use GFBG based on the Linux filesystem. The architecture of GFBG is shown in [Figure 1](#fig103731568718).
 
 **Figure 1**  GFBG architecture<a name="fig103731568718"></a>  
-![](../../../multimedia/graphics/gfbg/figures/GFBG体系结构.png "GFBG architecture")
+![](figures/GFBG体系结构.png "GFBG体系结构")
 ### Application Scenarios<a name="ZH-CN_TOPIC_0000002441655009"></a>
 
 GFBG can be applied in the following scenarios:
@@ -174,7 +174,7 @@ GFBG can be applied in the following scenarios:
 
 In Linux Framebuffer, a sub-device number corresponds to a graphics card. In GFBG, a sub-device number corresponds to an overlay graphics layer. GFBG can manage multiple overlay graphics layers; the specific number is chip-dependent.
 
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   For SS528V100/SS625V100/SS524V100, GFBG can manage up to 4 overlay graphics layers: graphics layer 0 to graphics layer 3 (G0–G3), with corresponding device files /dev/fb0 to /dev/fb3 respectively.
 >    SS528V100/SS625V100/SS524V100 support graphics layer overlay on 3 output devices: high-definition output device 0 (abbreviated as HD0), high-definition output device 1 (abbreviated as HD1), and standard-definition output device 0 (abbreviated as SD0). The relationship between the 4 graphics layers and these 3 output devices is shown in [Table 1](#_Toc363726513).
 >-   For SS522V101, GFBG can manage up to 3 overlay graphics layers: graphics layers 0, 2, 3 (G0, G2, G3), with corresponding device files /dev/fb0, /dev/fb1, /dev/fb2 respectively. SS522V101 supports graphics layer overlay on 2 output devices: high-definition output device 0 (abbreviated as HD0) and standard-definition output device 0 (abbreviated as SD0). The relationship between the 3 graphics layers and the output devices is shown in [Table 2](#_Ref49523582).
@@ -640,14 +640,14 @@ GFBG provides a complete refresh solution for upper-layer users, called the FB e
     The difference between the two is that in the latter, each subsequent refresh operation waits until the drawn content is actually displayed before returning.
 
 **Figure 1**  0 buffer illustration<a name="fig194946465118"></a>  
-![](../../../multimedia/graphics/gfbg/figures/0-buffer示意图.png "0 buffer illustration")
+![](figures/0-buffer示意图.png "0-buffer示意图")
 
 **Figure 2**  1 buffer illustration<a name="fig76714267123"></a>  
-![](../../../multimedia/graphics/gfbg/figures/1-buffer示意图.png "1 buffer illustration")
+![](figures/1-buffer示意图.png "1-buffer示意图")
 
 **Figure 3**  2 buffer illustration<a name="fig1270123631220"></a>  
-![](../../../multimedia/graphics/gfbg/figures/2-buffer示意图.png "2 buffer illustration")
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+![](figures/2-buffer示意图.png "2-buffer示意图")
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >The three resolutions mentioned above: canvas resolution (i.e., the resolution of the user drawing buffer), video memory resolution, and screen display resolution. The process of drawing content from the user drawing buffer to the display buffer supports scaling and anti-flicker; while the process from the display buffer to the display device supports scaling but not anti-flicker. The video memory resolution and screen display resolution are the same by default; the screen resolution can be set via the FBIOPUT_SCREEN_SIZE interface.
 
 ### Graphics Layer Compression<a name="ZH-CN_TOPIC_0000002441694853"></a>
@@ -657,7 +657,7 @@ The graphics layer compression function means that the graphics layer receives d
 A typical graphics layer compression buffer illustration is shown in [Figure 1](#fig1764612121513).
 
 **Figure 1**  Compression buffer illustration<a name="fig1764612121513"></a>  
-![](../../../multimedia/graphics/gfbg/figures/压缩-buffer示意图.png "Compression buffer illustration")
+![](figures/压缩-buffer示意图.png "压缩-buffer示意图")
 
 The compression function is only supported in FB extended refresh mode, under the OT_FB_LAYER_BUF_DOUBLE and OT_FB_LAYER_BUF_DOUBLE_IMMEDIATE refresh modes.
 
@@ -686,7 +686,7 @@ GFBG can configure the size of the physical video memory for the overlay graphic
 video="gfbg:vram0_size:xxx, vram1_size:xxx,…"
 ```
 
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   Options are separated by commas ",".
 >-   Options and option values are separated by colons ":".
 >-   If a graphics layer is not configured with a physical video memory size, the system defaults it to 0.
@@ -710,14 +710,14 @@ vramn_size * 1024 >= displaywidth * displayHeight * bpp * BufferMode;
 
 For example: In 2 buffer mode with a resolution of 1280×720 and ARGB8888 format, the memory required for graphics layer 0 is vram0_size = 1280×720×4×2 = 7200 K.
 
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >vramn_size must be a multiple of PAGE_SIZE (4 K bytes); otherwise, the GFBG driver forces it to be a multiple of PAGE_SIZE, rounding up.
 
 ### Parameter softcursor<a name="ZH-CN_TOPIC_0000002441655013"></a>
 
 This parameter determines whether to enable the soft cursor function. When its value is "off", the soft cursor function is disabled (i.e., the hardware cursor function is available); otherwise, the soft cursor function is enabled. Once the module is loaded, whether the soft cursor function is enabled is determined.
 
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >SS528V100/SS625V100/SS524V100/SS522V101/SS928V100 do not support the soft cursor.
 
 ### Parameter g_layer_mmz_names<a name="ZH-CN_TOPIC_0000002441655021"></a>
@@ -753,7 +753,7 @@ Users need to configure, from a global perspective, the overlay graphics layers 
 
 Examples of configuring GFBG to manage overlay graphics layers are as follows:
 
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >The module file of the GFBG driver is gfbg.ko.
 
 -   Configuring GFBG to manage one overlay graphics layer.
@@ -784,7 +784,7 @@ GFBG is primarily used for displaying 2D graphics (by directly operating physica
 The development process of GFBG is shown in [Figure 1](#fig031318474168).
 
 **Figure 1**  GFBG development process<a name="fig031318474168"></a>  
-![](../../../multimedia/graphics/gfbg/figures/GFBG的开发流程.png "GFBG development process")
+![](figures/GFBG的开发流程.png "GFBG的开发流程")
 
 The development steps for GFBG are as follows:
 
@@ -797,7 +797,7 @@ The development steps for GFBG are as follows:
 7.  Call munmap to unmap the video memory.
 8.  Call the close function to close the device.
 
->![](../../../multimedia/graphics/gfbg/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >Since modifying the virtual resolution will change the fixed information of GFBG, fb_fix_screeninfo::line_length (stride), to ensure that the drawing program executes correctly, it is recommended to first set the variable information fb_var_screeninfo of GFBG, and then obtain the fixed information fb_fix_screeninfo::line_length of GFBG.
 
 The tasks completed in each development stage of GFBG are shown in [Table 1](#table3584165011503).

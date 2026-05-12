@@ -75,9 +75,13 @@ body,
   color: #fff;
 }
 
-/* Smooth scrolling for the whole document */
+/* Smooth scrolling + anchor offset below fixed header (3.4rem) + tabs (2.4rem) */
 html {
   scroll-behavior: smooth;
+}
+
+:root {
+  --md-scroll-margin: 6rem;
 }
 
 .md-typeset {
@@ -258,10 +262,14 @@ html {
   color: var(--md-default-fg-color);
 }
 
-.md-tabs__link--active {
+.md-tabs__item--active .md-tabs__link {
   opacity: 1;
   color: var(--md-primary-fg-color);
   font-weight: 600;
+}
+
+.md-tabs__item--active {
+  box-shadow: inset 0 -6px 0 0 var(--md-primary-fg-color);
 }
 
 .md-tabs__item {

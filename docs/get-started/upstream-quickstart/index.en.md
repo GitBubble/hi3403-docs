@@ -109,7 +109,7 @@ Image Analysis Engine 1 and Image Analysis Engine 2 differ in behavior. For a de
 ## Functional Framework<a name="ZH-CN_TOPIC_0000002446642273"></a>
 
 **Figure 1**  Overall Architecture<a name="fig183212536115"></a>  
-![](../../get-started/upstream-quickstart/figures/整体框架.png "Overall Architecture")
+![](figures/整体框架.png "整体框架")
 ## Tool Capabilities<a name="ZH-CN_TOPIC_0000002413203024"></a>
 
 The SVP\_NNN\_PC component package provides the following toolchain:
@@ -136,7 +136,7 @@ The deployment architecture is shown in [Figure 1](#fig730141553). The NNN envir
 
 **Figure 1**  Deployment Architecture<a name="fig730141553"></a>  
 
-![](../../get-started/upstream-quickstart/figures/部署架构图.png)
+![](figures/部署架构图.png)
 
 **Board-side environment:** Contains the header files, dynamic libraries, driver ko modules, and samples needed for on-board inference.
 
@@ -150,7 +150,7 @@ This section describes the end-to-end workflow for running a trained model on SV
 
 **Figure 1**  Workflow<a name="fig15391337766"></a>  
 
-![](../../get-started/upstream-quickstart/figures/使用流程.png)
+![](figures/使用流程.png)
 
 The following uses an ONNX model as an example:
 
@@ -159,7 +159,7 @@ The following uses an ONNX model as an example:
 3.  If accuracy issues arise after inference, you can Dump intermediate layer data from the network and compare it against ONNX Dump results to locate the problematic layer. To narrow the scope, use MindCmd's sub-model export feature to isolate the problem range, then reproduce the issue with the exported sub-model.
 4.  If inference performance is insufficient, use the Profiling tool to view per-operator latency and bandwidth data, then optimize the network based on bottleneck analysis.
 
->![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >Reference documents for the above workflow:
 >-   AMCT model compression tool:
 >    -   Recommended use cases:
@@ -176,7 +176,7 @@ The installation workflow is shown in [Figure 1](#fig212818171998).
 
 **Figure 1**  Installation Workflow<a name="fig212818171998"></a>  
 
-![](../../get-started/upstream-quickstart/figures/安装流程.png)
+![](figures/安装流程.png)
 
 ### Obtaining the Software Package<a name="ZH-CN_TOPIC_0000002446762145"></a>
 
@@ -311,7 +311,7 @@ Replace `${INSTALL_DIR}` in the commands below with the actual installation path
     ./*.run --install
     ```
 
-    >![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   If installing as root, avoid installing to a non-root user's directory, as this creates a security risk where non-root users could replace root-owned files to escalate privileges.
     >-   To maintain multiple versions, use `--install-path=<path>` to specify a new installation path.
     >-   If a different NNN architecture version is already installed at the default path, use `--install-path=<path>` to specify a new path. Otherwise, the installation will overwrite the existing version.
@@ -524,7 +524,7 @@ The offline model (`yolov5_original.om`) is available in the `model` directory.
 
 #### Local Compilation<a name="ZH-CN_TOPIC_0000002413043228"></a>
 
->![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >The toolchains for this chip are: aarch64-unknown-linux-ohos-clang and aarch64-v01c01-linux-gnu-gcc.
 
 Navigate to the sample directory `2_object_detection/yolo` and run:
@@ -556,7 +556,7 @@ In this scenario, the CANN software package must be deployed independently and u
     python3 ../script/transferPic.py 5
     ```
 
-    >![](../../get-started/upstream-quickstart/public_sys-resources/icon-notice.gif) **Notice:** 
+    >![](public_sys-resources/icon-notice.gif) **Notice:** 
     >-   If the script fails with `ModuleNotFoundError: No module named 'PIL'`, install the Pillow library using `pip3.7.5 install Pillow --user`.
     >-   `5` indicates the yolov5 model.
 
@@ -686,7 +686,7 @@ After model execution, detection results are written to `out/xxx_detResult.txt`.
 The result image is saved as `out_img_yolov5.jpg`, as shown in [Figure 1](#fig1017592634014).
 
 **Figure 1**  Result Image<a name="fig1017592634014"></a>  
-![](../../get-started/upstream-quickstart/figures/结果图.png "Result Image")
+![](figures/结果图.png "结果图")
 # Automated Deployment
 This section demonstrates one-click deployment of the open-source yolov5s.onnx model using the MindCmd tool.
 
@@ -717,7 +717,7 @@ Follow the steps below to install and configure MindCmd:
     mindcmd config --global base_config.cann_install_path
     ```
 
-    ![](../../get-started/upstream-quickstart/figures/查看CANN配置路径.png)
+    ![](figures/查看CANN配置路径.png)
 
     If the path is incorrect, update it with:
 
@@ -725,7 +725,7 @@ Follow the steps below to install and configure MindCmd:
     mindcmd config --global base_config.cann_install_path=/usr/local/Ascend/ascend-toolkit/svp_latest
     ```
 
-    >![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >The path `/usr/local/Ascend/ascend-toolkit/svp_latest` is an example. Replace it with the actual installation path.
 
 3.  Check version information
@@ -738,9 +738,9 @@ Follow the steps below to install and configure MindCmd:
 
     If the following key information is returned (version numbers reflect actual installations), MindCmd is installed successfully:
 
-    ![](../../get-started/upstream-quickstart/figures/zh-cn_image_0000002446642329.png)
+    ![](figures/zh-cn_image_0000002446642329.png)
 
-    >![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >The MindCmd and CANN version information shown in the screenshot is for reference only. Actual output depends on the versions installed in your environment.
 
 ## Resource Preparation<a name="ZH-CN_TOPIC_0000002413203072"></a>
@@ -763,7 +763,7 @@ mindcmd oneclick onnx --model ./onnx_model/yolov5s.onnx --image_list ./data/imag
 
 A successful functional simulation run produces:
 
-![](../../get-started/upstream-quickstart/figures/仿真运行.png)
+![](figures/仿真运行.png)
 
 ## Running on the Development Board<a name="ZH-CN_TOPIC_0000002446762169"></a>
 
@@ -799,7 +799,7 @@ After the above setup is complete, follow these steps to run yolov5s.onnx on the
     PORT=22
     ```
 
-    >![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   MindCmd automatically performs mount/umount operations using the configuration file above when running on-board inference.
     >-   `HOST_MOUNT_PATH` must be within the NFS shared directory configured on the server; otherwise, the mount may fail.
     >-   Replace `${SHARE_DIR}`, `${username}`, and `${password}` with actual values.
@@ -810,7 +810,7 @@ After the above setup is complete, follow these steps to run yolov5s.onnx on the
     mindcmd config --global base_config.default_workspace=${SHARE_DIR}/host_workspace
     ```
 
-    >![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   MindCmd shares resources with the board via NFS mount, so the MindCmd working path must not exceed the server-side mount path (`HOST_MOUNT_PATH`) configured in [step 1](#li189831627119).
     >-   Replace `${SHARE_DIR}` with the actual value.
 
@@ -829,7 +829,7 @@ After the above setup is complete, follow these steps to run yolov5s.onnx on the
 
     A successful on-board run produces:
 
-    ![](../../get-started/upstream-quickstart/figures/上板运行.png)
+    ![](figures/上板运行.png)
 
 # Advanced Guide
 ## Accuracy Analysis<a name="ZH-CN_TOPIC_0000002446642285"></a>
@@ -865,7 +865,7 @@ mindcmd oneclick onnx --model ./onnx_model/yolov5s_cpu.onnx --image_list ./data/
 As shown in [Figure 1](#fig183067191416), MindCmd one-click inference automatically runs original model inference, quantized model inference, and functional simulation inference, then performs an accuracy comparison.
 
 **Figure 1**  Accuracy Comparison Display<a name="fig183067191416"></a>  
-![](../../get-started/upstream-quickstart/figures/精度比对展示.png "Accuracy Comparison Display")
+![](figures/精度比对展示.png "精度比对展示")
 
 For detailed descriptions of each parameter, refer to the "10 Accuracy Comparison" section in the *MindCmd User Guide*.
 
@@ -962,7 +962,7 @@ After installing MindCmd, enable on-board Profiling by modifying the global conf
 
 2.  Create the file `$HOME/ssh.cfg` as described in [step 1](#li189831627119).
 
-    >![](../../get-started/upstream-quickstart/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   Refer to the "NFS Environment Setup" section in the *MindCmd User Guide* for NFS configuration.
     >-   Refer to the "Working Path, Mount Path, Data Volume Path, and NFS Share Path" section in the *MindCmd User Guide* for MindCmd and board-side mount path configuration.
 
@@ -980,18 +980,18 @@ After installing MindCmd, enable on-board Profiling by modifying the global conf
     After Oneclick completes, MindCmd saves the collected performance data in a CSV file (see [Figure 1](#fig1239501163019)). The CSV file location is shown in [Figure 2](#fig1691436783), and the overall network performance summary is printed as shown in [Figure 3](#fig1073092175015).
 
     **Figure 1**  Performance Data Table<a name="fig1239501163019"></a>  
-    ![](../../get-started/upstream-quickstart/figures/性能数据表格.png "Performance Data Table")
+    ![](figures/性能数据表格.png "性能数据表格")
 
     **Figure 2**  Performance Data Table Location<a name="fig1691436783"></a>  
-    ![](../../get-started/upstream-quickstart/figures/性能数据表格存放位置.png "Performance Data Table Location")
+    ![](figures/性能数据表格存放位置.png "性能数据表格存放位置")
 
     **Figure 3**  Overall Network Performance Data<a name="fig1073092175015"></a>  
-    ![](../../get-started/upstream-quickstart/figures/模型整网性能数据.png "Overall Network Performance Data")
+    ![](figures/模型整网性能数据.png "模型整网性能数据")
 
     The Profiling data provides per-operator latency and latency ratio, bandwidth, frame rate, and other metrics, as shown in [Figure 4](#fig6208184011418). By analyzing this data, you can identify critical performance bottlenecks and guide model optimization.
 
     **Figure 4**  AI Core Data Table (op\_summary\_\*.csv)<a name="fig6208184011418"></a>  
-    ![](../../get-started/upstream-quickstart/figures/AI-Core数据表（op_summary_-csv）.png "AI Core Data Table (op_summary_*.csv)")
+    ![](figures/AI-Core数据表（op_summary_-csv）.png "AI-Core数据表（op_summary_-csv）")")
     The Profiling data includes:
 
     -   Hardware performance metrics: AI Core, AI Vector Core, and AI CPU system hardware performance indicators.

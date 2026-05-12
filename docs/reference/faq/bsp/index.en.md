@@ -627,7 +627,7 @@ Even though the network cable is connected to the board, why does it still repor
 After removing the overcurrent protection chip from the USB 3.0 port, a Teclast USB 3.0 flash drive plugged in at power-on cannot be recognized. The cause of this problem is that the controller stays in USB 3.0 mode for too short a time, and the USB 3.0 flash drive has not fully initialized before recognition fails. As shown in [Figure 1](#fig10824113063715).
 
 **Figure 1**  USB 3.0 flash drive boot recognition process<a name="fig10824113063715"></a>  
-![](figures/USB3-0-U盘启动识别流程.png "USB 3.0 flash drive boot recognition process")
+![](figures/USB3-0-U盘启动识别流程.png "USB3-0-U盘启动识别流程")
 
 A USB 3.0 controller without the overcurrent protection chip enters USB 2.0 mode first, then after reset, enters USB 3.0 mode. Thus, the time T2 the controller stays in USB 3.0 mode is significantly shorter than T1 with the overcurrent protection chip directly entering USB 3.0 mode. The flash drive's state is not yet ready, causing the host to fail when sending commands. The solution is to extend the value of HUB\_ROOT\_RESET\_TIME to 100 in drivers/usb/core/hub.c:
 
@@ -640,7 +640,7 @@ A USB 3.0 controller without the overcurrent protection chip enters USB 2.0 mode
 The kernel-space interface functions used in I2C device drivers include i2c\_master\_send, i2c\_master\_recv, and i2c\_transfer. These interface functions internally acquire different locks depending on whether the operation is atomic or non-atomic. The code is located in the drivers/i2c/i2c-core-base.c file, as shown in [Figure 1](#_Ref449015618).
 
 **Figure 1**  Lock acquisition in kernel-space interfaces<a name="_Ref449015618"></a>  
-![](figures/内核态接口中申请锁的操作.png "Lock acquisition in kernel-space interfaces")
+![](figures/内核态接口中申请锁的操作.png "内核态接口中申请锁的操作")
 
 If an atomic lock is used before calling the I2C interface function, or if the call is made within an interrupt, the current operation will be in an atomic context. If in an atomic context, the if branch in the upper half of [Figure 1](#_Ref449015618) will execute; otherwise, the else branch will execute.
 
@@ -648,7 +648,7 @@ If an atomic lock is used before calling the I2C interface function, or if the c
 >In atomic operations, i2c\_trylock\_adapter(adap) is used to try to acquire the lock. If -EAGAIN is returned, it means the lock was not acquired, not that the I2C communication failed. In this case, the read/write operation has not been executed. For writes, the value has not been written; for reads, the value is meaningless. Therefore, it is necessary to further check whether the error return value equals -EAGAIN. If so, decide whether to retry based on the situation, as illustrated by the I2C write example in [Figure 2](#_Ref449015992).
 
 **Figure 2**  Write operation example<a name="_Ref449015992"></a>  
-![](figures/写操作示例图.png "Write operation example")
+![](figures/写操作示例图.png "写操作示例图")
 
 ## SATA Speed Limiting Method<a name="ZH-CN_TOPIC_0000002457879401"></a>
 
@@ -1001,7 +1001,7 @@ The specific reason is as follows:
 Since some Nand Flash chips have bad block (BB) markers set to non-zero values (e.g., 0xFE) at the factory, it is easy for the FMC controller to correct them to 0xFF using ECC (because 0xFF is valid and correctable in the controller's ECC algorithm). Therefore, an Empty Block (EB) marker bit is set in the last two bytes of the OOB information for each page. As shown in [Figure 1](#_Ref443982950), when u-boot starts, the logical condition for considering a block as a good block is: BB = 0xFF and EB = 0x00 in the block's first page 1 and last page N.
 
 **Figure 1**  Nand Flash block structure<a name="_Ref443982950"></a>  
-![](figures/Nand-Flash-块结构图.jpg "Nand Flash block structure")
+![](figures/Nand-Flash-块结构图.jpg "Nand-Flash-块结构图")
 
 nandwrite writes data page by page according to the image file size, automatically setting the EB bit of the current page to 0x00 when writing a page. When the last written page is not the last page of the block, since the EB of the last page of that block is 0xFF, the logic treats this block as an empty block and does not read its data, causing u-boot boot failure.
 
@@ -1265,12 +1265,12 @@ Recommendation:
 In certain business scenarios, the kswapd thread CPU usage in Linux systems suddenly increases and remains high for an extended period, as shown in [Figure 1](#_Ref5118078).
 
 **Figure 1**  CPU usage increase<a name="_Ref5118078"></a>  
-![](figures/CPU占用率升高.png "CPU usage increase")
+![](figures/CPU占用率升高.png "CPU占用率升高")
 
 Kernel boot information is shown in [Figure 2](#_Ref5118390).
 
 **Figure 2**  Kernel boot prints<a name="_Ref5118390"></a>  
-![](figures/内核启动打印.png "Kernel boot prints")
+![](figures/内核启动打印.png "内核启动打印")
 
 The system memory is 125 MB, far below the boundaries of system low memory and vmalloc space, but 1 MB of highmem appears in the boot information.
 
@@ -1291,7 +1291,7 @@ In the Linux-4.19.y kernel, for security, address information printed with the "
 To use "cat /proc/vmallocinfo" to view vmalloc address information, modify the mm/vmalloc.c code, as shown in [Figure 1](#_Ref32946196).
 
 **Figure 1**  Modification method<a name="_Ref32946196"></a>  
-![](figures/修改方法.png "Modification method")
+![](figures/修改方法.png "修改方法")
 
 **Note**: This modification is only applicable for debug builds and should not be used in formal release versions.
 

@@ -79,7 +79,7 @@ The ideal calibration environment must be customized according to algorithm desi
 The ideal panoramic stitching calibration environment is a checkerboard sphere, and the environment design is shown in [Figure 1](#fig6703175413384).
 
 **Figure 1**  Schematic diagram of the production-line calibration environment<a name="fig6703175413384"></a>  
-![](../../../reference/faq/splice/figures/产线标定环境示意图.png "Schematic diagram of the production-line calibration environment")
+![](figures/产线标定环境示意图.png "产线标定环境示意图")
 
 The recommended sphere radius is between 0.6 m and 2 m, with clear focus imaging of the checkerboard as a reference. If a fisheye lens is used, the depth of field is relatively large and near-distance focusing is clear, so the sphere radius can be correspondingly reduced, which also reduces the difficulty of fabricating the production-line calibration environment and the space it occupies. If a non-fisheye lens is used, since the depth of field is relatively small and the focusing distance is farther, the sphere radius needs to be correspondingly larger; otherwise the captured images will be blurry, corner detection inaccurate, and calibration abnormal.
 
@@ -91,7 +91,7 @@ Since the entire sphere surface is covered with checkerboard patterns, there is 
 
 If the checkerboard does not cover the entire sphere surface, it must be ensured that the overlap regions between cameras all have checkerboard corner points. Technically speaking, the checkerboard only needs to cover the imaging overlap regions. Therefore, for non-panoramic cameras, the ideal calibration environment can be simplified according to the product form and production-line requirements, while ensuring that the checkerboard is distributed on a spherical arc surface, with grid sizes kept as consistent as possible and evenly distributed. The following sections will illustrate using dual-fisheye and four-channel horizontal structures as examples. For other panoramic camera structures, please adjust according to the actual situation.
 
->![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>![](public_sys-resources/icon-notice.gif) **Note:** 
 >The size of the production-line calibration environment is not related to the optimal stitching distance. After calibration is complete, any optimal stitching distance can be configured when generating the LUT.
 
 ## How to Understand the Production-Line Calibration Environment for Dual-Fisheye Structures<a name="ZH-CN_TOPIC_0000002464984737"></a>
@@ -111,7 +111,7 @@ The overlap region of a dual-fisheye structure appears as a ring on the sphere s
 It is recommended that each grid be 5°, so there are still 72 grids around the ring, and the number of grids in the vertical direction (latitude direction) is designed based on the size of the overlap region. For example, if the lens FOV is 200°, then there is a 40° overlap region, in which case more than 8 grids are needed in the vertical direction, with 1 grid reserved above and below — 10 grids would be more appropriate. In this case, the checkerboard covers the area between 25°S and 25°N latitude. The effect is shown in [Figure 1](#fig261314513443), where the physical image has 16 grids in the vertical direction covering an 80° overlap region to accommodate different lens selections. Customers can adjust according to their own product form.
 
 **Figure 1**  Schematic diagram of the dual-fisheye structure production-line calibration environment<a name="fig261314513443"></a>  
-![](../../../reference/faq/splice/figures/双鱼眼结构产线标定环境示意图.png "Schematic diagram of the dual-fisheye structure production-line calibration environment")
+![](figures/双鱼眼结构产线标定环境示意图.png "双鱼眼结构产线标定环境示意图")
 
 Since fisheye lenses have a large depth of field and can focus clearly at close range, the recommended ring radius is between 0.6 m and 1 m, and can be consistent with the optimal stitching distance targeted by the product to ensure the best results at that distance. For example, if the product is most concerned about the stitching effect at a distance of 0.8 m, the ring radius can be designed as 0.8 m to ensure the best effect at the 0.8 m position.
 
@@ -122,7 +122,7 @@ Since the dual-fisheye structure is a 720° panoramic camera, the camera base wi
 The actual production-line calibration test effect is shown in [Figure 2](#fig1566112562484)(a). A demo version camera is used here, with a relatively large base and significant occlusion; the actual product can control occlusion better. [Figure 2](#fig1566112562484)(b) shows the stitching effect in the production-line calibration environment after production-line calibration.
 
 **Figure 2**  Dual-fisheye structure production-line calibration images<a name="fig1566112562484"></a>  
-![](../../../reference/faq/splice/figures/双鱼眼结构产线标定图.png "Dual-fisheye structure production-line calibration images")
+![](figures/双鱼眼结构产线标定图.png "双鱼眼结构产线标定图")
 ## How to Understand the Production-Line Calibration Environment for Four-Channel Horizontal Structures<a name="ZH-CN_TOPIC_0000002431386022"></a>
 
 [Symptom]
@@ -138,7 +138,7 @@ The production-line calibration environment for four-channel horizontal structur
 The four-channel horizontal structure is generally used in the field of *public safety video capture*. The structure is generally as shown in [Figure 1](#fig087182975116). The FOV of the stitched image in the horizontal direction for this type of four-channel horizontal structure is typically equal to or less than 180°. Therefore, there are two options to choose from: hemisphere or three-arc target surface.
 
 **Figure 1**  Schematic diagram of the four-channel horizontal structure<a name="fig087182975116"></a>  
-![](../../../reference/faq/splice/figures/四路水平结构示意图.png "Schematic diagram of the four-channel horizontal structure")
+![](figures/四路水平结构示意图.png "四路水平结构示意图")
 
 The hemisphere solution is relatively simple — it is a simple cropping on the basis of the fully ideal sphere, retaining 180° of the checkerboard sphere in the horizontal direction, and cropping in the vertical direction according to the lens FOV, as shown in [Figure 2](#fig1064814233245). In this diagram, only the region from 60°S to 60°N latitude is retained, with high-latitude regions cropped.
 
@@ -147,12 +147,12 @@ For downward-tilted panoramic camera structures, this calibration environment is
 The advantage of this solution is its unified structure — the sphere center position is easy to locate and relatively accurate, and it is applicable to downward-tilted panoramic camera structures. The disadvantage is greater fabrication difficulty, inconvenient handling and transportation, and large space occupation. Detailed specifications are not described here; please refer to the three-arc target surface solution.
 
 **Figure 2**  Hemisphere production-line calibration environment for four-channel horizontal structure<a name="fig1064814233245"></a>  
-![](../../../reference/faq/splice/figures/四路水平结构半球面产线标定环境.png "Hemisphere production-line calibration environment for four-channel horizontal structure")
+![](figures/四路水平结构半球面产线标定环境.png "四路水平结构半球面产线标定环境")
 
 Technically speaking, when capturing images, the checkerboard only needs to cover the overlap regions between cameras. The four-channel horizontal structure has three overlap regions, so it can be further simplified from the hemisphere above to a three-arc target surface. As shown in [Figure 3](#fig4215154493014), only the checkerboard arc surfaces corresponding to the three overlap regions are retained. To make the environment even simpler, three identical independent and separately movable checkerboard spherical arc surfaces can be fabricated and placed at the corresponding positions of the three overlap regions during use.
 
 **Figure 3**  Three-arc target surface calibration environment for four-channel horizontal structure<a name="fig4215154493014"></a>  
-![](../../../reference/faq/splice/figures/四路水平结构三球弧靶面标定环境.png "Three-arc target surface calibration environment for four-channel horizontal structure")
+![](figures/四路水平结构三球弧靶面标定环境.png "四路水平结构三球弧靶面标定环境")
 
 This product form is generally paired with non-fisheye lenses with a focal length of about 4 mm–6 mm. Their depth of field is smaller than that of fisheye lenses, and the focusing distance is farther. Therefore, it is recommended to design the arc surface radius as 1.5 m. Although this distance is not the optimal focusing distance of the panoramic camera, it can still produce relatively clear images with distinct corner points. If the paired lens has a larger focal length, consider correspondingly increasing the radius of the checkerboard sphere surface so that corner points can be clearly imaged, ensuring calibration quality.
 
@@ -181,10 +181,10 @@ The advantage of this solution is that the production-line environment is less d
 The actual production-line measured calibration images are shown in [Figure 4](#fig18248161755212). For ease of comparison, the calibration images are rotated 90° for illustration in the document. The actual image resolution is the same as the sensor output, 3840×2160, and is consistent with the first step of model calibration. The images do not need to be rotated during calibration. The stitching effect after calibration is shown in [Figure 5](#fig1826815454525).
 
 **Figure 4**  Four-channel horizontal structure production-line calibration images<a name="fig18248161755212"></a>  
-![](../../../reference/faq/splice/figures/四路水平结构产线标定图.png "Four-channel horizontal structure production-line calibration images")
+![](figures/四路水平结构产线标定图.png "四路水平结构产线标定图")
 
 **Figure 5**  Four-channel horizontal structure production-line calibration effect<a name="fig1826815454525"></a>  
-![](../../../reference/faq/splice/figures/四路水平结构产线标定效果图.png "Four-channel horizontal structure production-line calibration effect")
+![](figures/四路水平结构产线标定效果图.png "四路水平结构产线标定效果图")
 
 Other suggestions and considerations regarding the production-line calibration environment are as follows:
 
@@ -193,14 +193,14 @@ Other suggestions and considerations regarding the production-line calibration e
     The key difficulty in the entire production-line calibration environment fabrication process lies in the application of the checkerboard. The checkerboard needs to be applied on a spherical surface, and the area is relatively large. Applying the checkerboard as a single whole piece is difficult; it can be cut into strips and then applied strip by strip on the spherical surface to form the final complete checkerboard pattern.
 
 **Figure 6**  Checkerboard corner point quality<a name="fig151051344185812"></a>  
-![](../../../reference/faq/splice/figures/棋盘格角点质量.png "Checkerboard corner point quality")
+![](figures/棋盘格角点质量.png "棋盘格角点质量")
 
 When applying strips, direct alignment between each strip has some tolerance, and there may be some misalignment between strips. For this misalignment, from a technical analysis perspective, the corner points in [Figure 6](#fig151051344185812)(a) are complete — although there is misalignment in the middle of the checkerboard, the impact on corner point detection is small. The corner points in [Figure 6](#fig151051344185812)(b) have misalignment, which affects detection accuracy during calibration.
 
 Based on the above analysis, to ensure corner point quality and integrity, each strip can be cut along the middle of the checkerboard rather than at the corner point positions. As shown in [Figure 7](#_Ref513707564), which demonstrates cutting the checkerboard pattern into strips along the horizontal direction in a four-channel horizontal structure calibration environment — the cutting positions follow the green lines, which does not affect corner point integrity. Similarly, if cutting vertically, it is also recommended to cut along the middle of the checkerboard grids.
 
 **Figure 7**  Checkerboard cutting diagram<a name="_Ref513707564"></a>  
-![](../../../reference/faq/splice/figures/棋盘格切割示意图.jpg "Checkerboard cutting diagram")
+![](figures/棋盘格切割示意图.jpg "棋盘格切割示意图")
 - Watch out for checkerboard backlight and reflection
 
     Under backlight and reflection conditions, the checkerboard imaging effect is greatly affected, which in turn affects the calibration effect. Therefore, the checkerboard material must be matte and non-reflective, and attention must be paid to the lighting of the production-line environment to avoid backlight projection on the checkerboard.
@@ -226,7 +226,7 @@ The diameter of the colored circular stickers is approximately 0.5–0.9 times t
 For dual-fisheye or four-channel horizontal structure simplified calibration environments, the colored circular stickers are also affixed based on the original black-and-white checkerboard following the same distribution pattern.
 
 **Figure 1**  Color checkerboard pattern<a name="fig10683514734"></a>  
-![](../../../reference/faq/splice/figures/彩色棋盘格图样.png "Color checkerboard pattern")
+![](figures/彩色棋盘格图样.png "彩色棋盘格图样")
 
 Compared to the black-and-white checkerboard, the production-line calibration process based on the color checkerboard environment should avoid interference to image detection from anomalies such as noise and color cast, and must meet the following conditions:
 
@@ -241,14 +241,14 @@ Compared to the black-and-white checkerboard, the production-line calibration pr
 In the stitched image under the production-line calibration environment, the seam is misaligned by one grid, as shown in [Figure 1](#_Ref7939578).
 
 **Figure 1**  Production-line calibration misaligned by one grid<a name="_Ref7939578"></a>  
-![](../../../reference/faq/splice/figures/产线标定错位一个格子.png "Production-line calibration misaligned by one grid")
+![](figures/产线标定错位一个格子.png "产线标定错位一个格子")
 
 [Analysis]
 
 When the seam is exactly misaligned by one or more grids, this is due to checkerboard corner point matching errors during the production-line calibration process causing stitching misalignment. For localization, create a "tmp" folder in the main directory of the production-line calibration tool, and the corner point matching marked images will be saved during the production-line calibration program run. For the above use case, the corner point matching results of the two rightmost production-line calibration images are shown in [Figure 2](#fig99661723895). The same numbers in the figure indicate corner point matching pairs calculated by the calibration algorithm. In this use case, all corner point matches have misalignment — the right image is shifted downward by one grid.
 
 **Figure 2**  Production-line calibration feature point matching error<a name="fig99661723895"></a>  
-![](../../../reference/faq/splice/figures/产线标定特征点匹配错误.png "Production-line calibration feature point matching error")
+![](figures/产线标定特征点匹配错误.png "产线标定特征点匹配错误")
 
 [Solution]
 
@@ -288,7 +288,7 @@ When the configuration is correct, it is impossible for production-line calibrat
 
 A simple localization method is to perform offline stitching in the PQTools tool and check whether the stitching effect is normal.
 
->![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>![](public_sys-resources/icon-notice.gif) **Note:** 
 >The LUT imported for offline stitching is the LUT table generated from the model calibration .cal file (i.e., the "seed" of production-line calibration), and the imported images are the calibration images captured during production-line calibration. Since the production-line individual and the model calibration individual have some structural differences, the stitched image will have some misalignment, which is normal. If other abnormal situations occur, the problem can be located through the stitched image effect.
 
 ## How to Optimize the Production-Line Calibration Stitching Effect<a name="ZH-CN_TOPIC_0000002431226190"></a>
@@ -458,23 +458,23 @@ To better explain the method of capturing model calibration images, a four-chann
 </tbody>
 </table>
 
->![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>![](public_sys-resources/icon-notice.gif) **Note:** 
 >The actual distances for intrinsic parameter calibration are related to the FOV of a single lens: the smaller the lens FOV, the more all distances in model calibration intrinsic calibration need to be correspondingly increased; conversely, all distances need to be correspondingly decreased. The reference distances in this section are all estimated relative to a lens with a 55° FOV.
 
 The effect of one set of extrinsic calibration images is shown in [Figure 1](#_Ref520292586).
 
 **Figure 1**  A complete set of intrinsic calibration images<a name="_Ref520292586"></a>  
-![](../../../reference/faq/splice/figures/一组完整的内参标定图片.png "A complete set of intrinsic calibration images")
+![](figures/一组完整的内参标定图片.png "一组完整的内参标定图片")
 
 To illustrate the intrinsic calibration process and requirements, the checkerboard target cards from the actual calibration images are extracted and drawn in a 3D model, with the effect shown in [Figure 2](#_Ref520292652).
 
 **Figure 2**  A 3D projection view of a complete set of intrinsic calibration images<a name="_Ref520292652"></a>  
-![](../../../reference/faq/splice/figures/一组完整的内参标定全部图片的三维投影图.png "A 3D projection view of a complete set of intrinsic calibration images")
+![](figures/一组完整的内参标定全部图片的三维投影图.png "一组完整的内参标定全部图片的三维投影图")
 
 The specific meaning of each image in the 3D projection diagram is as follows.
 
 **Figure 3**  Description of the 3D projection diagram meaning<a name="fig9431258322"></a>  
-![](../../../reference/faq/splice/figures/三维投影示意图意义描述.png "Description of the 3D projection diagram meaning")
+![](figures/三维投影示意图意义描述.png "三维投影示意图意义描述")
 
 The following four steps describe the intrinsic calibration process in detail.
 
@@ -482,7 +482,7 @@ The following four steps describe the intrinsic calibration process in detail.
 
     Bring the target card close to the lens so that the entire card is exactly **centered and fills** the entire frame (as long as it fills either vertically or horizontally), capturing approximately 1 image.
 
-    >![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+    >![](public_sys-resources/icon-notice.gif) **Note:** 
     >-   Priority should be given to ensuring the **completeness** of the target card. If the card exceeds the frame, increase the distance until all parts of the card appear in the frame.
     >-   Priority should be given to ensuring that the lines and corner points of the target card are **clear**. If blurriness is obvious, increase the distance until the image is clear.
     >-   The image may have **distortion**, but it cannot be excessive. Excessive distortion will cause the calibration algorithm to be unable to detect successfully. In this case, increase the distance to reduce the degree of line curvature.
@@ -496,40 +496,40 @@ The following four steps describe the intrinsic calibration process in detail.
     As shown in [Figure 4](#fig525635941410), a checkerboard with a single grid side length of 50 mm and 9×6 internal corner points is used to calibrate the single-channel coverage image for four-channel non-fisheye stitching.
 
     **Figure 4**  Intrinsic calibration: single target card covering full screen<a name="fig525635941410"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-单张图卡覆盖全屏.png "Intrinsic calibration: single target card covering full screen")
+    ![](figures/内参标定-单张图卡覆盖全屏.png "内参标定-单张图卡覆盖全屏")
 
 1.  Multiple images covering the entire frame
 
     Multiple image full coverage uses the **4 corners + 4 edges** method. The checkerboard target card occupies approximately 1/4 of the frame, covering the 4 corners and 4 edges of the image respectively. At the 4 edges, the target card is tilted approximately <u>**30**</u>° with the adjacent edge as the axis. Capture approximately 8 images.
 
     **Figure 5**  Intrinsic calibration: actual images of four-corner coverage<a name="fig4550121012119"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-四角覆盖实拍图.png "Intrinsic calibration: actual images of four-corner coverage")
+    ![](figures/内参标定-四角覆盖实拍图.png "内参标定-四角覆盖实拍图")
 
     **Figure 6**  Intrinsic calibration: actual images of four-edge coverage<a name="fig55511810161112"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-四边覆盖实拍图像.png "Intrinsic calibration: actual images of four-edge coverage")
+    ![](figures/内参标定-四边覆盖实拍图像.png "内参标定-四边覆盖实拍图像")
 
     **Figure 7**  Intrinsic calibration: 3D projection view of four-edge and four-corner coverage<a name="fig18761151781811"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-四边-四角覆盖三维投影图.png "Intrinsic calibration: 3D projection view of four-edge and four-corner coverage")
+    ![](figures/内参标定-四边-四角覆盖三维投影图.png "内参标定-四边-四角覆盖三维投影图")
 
 2.  Coverage at different distances and angles
 
     Increase the distance between the target card and the lens **by approximately one time**. Select three vertex positions of a triangle in the entire frame, and rotate the target card approximately <u>**30**</u>**°** each time at each position. Capture approximately <u>**3**</u> images.
 
     **Figure 8**  Intrinsic calibration: actual images of coverage at different distances, angles, and positions<a name="fig455181014117"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-距离不同角度和位置覆盖实拍图像.png "Intrinsic calibration: actual images of coverage at different distances, angles, and positions")
+    ![](figures/内参标定-距离不同角度和位置覆盖实拍图像.png "内参标定-距离不同角度和位置覆盖实拍图像")
 
     **Figure 9**  Intrinsic calibration: 3D projection view of coverage at different distances, angles, and positions<a name="fig355231018116"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-距离不同角度和位置覆盖三维投影图.png "Intrinsic calibration: 3D projection view of coverage at different distances, angles, and positions")
+    ![](figures/内参标定-距离不同角度和位置覆盖三维投影图.png "内参标定-距离不同角度和位置覆盖三维投影图")
 
 3.  Coverage at long distances and different angles
 
     Increase the distance between the target card and the lens again by approximately <u>**4**</u> times (note: when the target card occupies too few pixels or the indoor test environment length is insufficient, the adjustment multiple can be appropriately reduced). Select three points at another triangle position in the entire frame, and rotate the target card approximately <u>**30**</u>**°** each time at each position. Capture approximately 3 images.
 
     **Figure 10**  Intrinsic calibration: actual images of coverage at long distances and different angles and positions<a name="fig147131253020"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-远距离不同角度和位置覆盖实拍图像.png "Intrinsic calibration: actual images of coverage at long distances and different angles and positions")
+    ![](figures/内参标定-远距离不同角度和位置覆盖实拍图像.png "内参标定-远距离不同角度和位置覆盖实拍图像")
 
     **Figure 11**  Intrinsic calibration: 3D projection view of coverage at long distances and different angles and positions<a name="fig1577810123316"></a>  
-    ![](../../../reference/faq/splice/figures/内参标定-远距离不同角度和位置覆盖三维投影图.png "Intrinsic calibration: 3D projection view of coverage at long distances and different angles and positions")
+    ![](figures/内参标定-远距离不同角度和位置覆盖三维投影图.png "内参标定-远距离不同角度和位置覆盖三维投影图")
 ### Extrinsic Parameter Calibration Image Capture Method<a name="ZH-CN_TOPIC_0000002464864609"></a>
 
 **Table 1**  Extrinsic calibration image capture guide
@@ -583,27 +583,27 @@ The following four steps describe the intrinsic calibration process in detail.
 </tbody>
 </table>
 
->![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+>![](public_sys-resources/icon-notice.gif) **Note:** 
 >The extrinsic calibration distance is related to the overlap region FOV: the smaller the overlap region FOV, the more all distances in model calibration extrinsic calibration need to be correspondingly increased; at the same time, the distance range (or multiple) that can be covered during extrinsic calibration also correspondingly decreases. The overlap region FOV in this section is 11°.
 
 Taking four-channel non-fisheye horizontal stitching as an example, the effect of one set of extrinsic calibration images for adjacent lenses is shown below (note that for typesetting convenience, the single board is placed vertically), with approximately 16 pairs of images captured in total:
 
 **Figure 1**  A complete set of extrinsic calibration images<a name="fig586mcpsimp"></a>  
-![](../../../reference/faq/splice/figures/一组完整的外参标定图片.png "A complete set of extrinsic calibration images")
-![](../../../reference/faq/splice/figures/2-2-2_p1_2.png)
+![](figures/一组完整的外参标定图片.png "一组完整的外参标定图片")
+![](figures/2-2-2_p1_2.png)
 
-![](../../../reference/faq/splice/figures/2-2-2_p1_3.png)
+![](figures/2-2-2_p1_3.png)
 
-![](../../../reference/faq/splice/figures/2-2-2_p1_4.png)
+![](figures/2-2-2_p1_4.png)
 
 To illustrate the extrinsic calibration process and requirements, the checkerboard target cards from the actual calibration images are extracted and drawn in a 3D model, with the effect shown in [Figure 2](#_Ref520294639).
 
 **Figure 2**  A 3D projection view of a complete set of extrinsic calibration images<a name="_Ref520294639"></a>  
-![](../../../reference/faq/splice/figures/一组完整的外参标定图片的三维投影图.png "A 3D projection view of a complete set of extrinsic calibration images")
+![](figures/一组完整的外参标定图片的三维投影图.png "一组完整的外参标定图片的三维投影图")
 
 3D projection viewing angle 1
 
-![](../../../reference/faq/splice/figures/2-13a.png)
+![](figures/2-13a.png)
 
 3D projection viewing angle 2
 
@@ -612,11 +612,11 @@ To illustrate the extrinsic calibration process and requirements, the checkerboa
     Covering the entire overlap region at the closest distance can reduce the number of calibration target cards and improve the sufficiency of calibration. The method is to align the side of the target card with fewer corner points with both sides of the overlap region, making the checkerboard complete and maximized. Move the target card from one side of the overlap region to the other, capturing one image at each position. The checkerboard does not need a specific rotation angle during this calibration period (otherwise it is easy to cause the checkerboard target card to exceed a certain overlap region). During the movement process, ensure that all captured target cards combined can cover the entire overlap region. Generally, capturing approximately 5 pairs of images is sufficient (the dual-fisheye back-to-back structure is relatively special and may require more pairs of images). This is shown in [Figure 3](#fig139332300472).
 
     **Figure 3**  Extrinsic calibration: full coverage of the overlap region at the closest distance<a name="fig139332300472"></a>  
-    ![](../../../reference/faq/splice/figures/外参标定-最近距离下重叠区域全覆盖.png "Extrinsic calibration: full coverage of the overlap region at the closest distance")
+    ![](figures/外参标定-最近距离下重叠区域全覆盖.png "外参标定-最近距离下重叠区域全覆盖")
 
     \(a\) Extrinsic calibration: actual images of full coverage of the overlap region at the closest distance
 
-    ![](../../../reference/faq/splice/figures/2-14b.png)
+    ![](figures/2-14b.png)
 
     \(b\) Extrinsic calibration: 3D projection image of full coverage of the overlap region at the closest distance
 
@@ -625,12 +625,12 @@ To illustrate the extrinsic calibration process and requirements, the checkerboa
     Full coverage of the overlap region at **different angles** can cover more shapes and angles. Since the checkerboard target card is square, it actually only needs to cover a 90° rotation of the target card. It is necessary to adjust the target card distance farther (generally increased to 1.8 times relative to step 1, so that the checkerboard **diagonal** just appears in the overlap region; refer to the following calibration reference image camera2_23_12.jpg, so that the target card can rotate arbitrarily in the overlap region without exceeding it) so that the checkerboard target card diagonal is close to the two edge overlap regions. Each pair of images is shot while moving the target card once and simultaneously **rotating** approximately 30°. This step captures approximately 8 pairs of images. This is shown in [Figure 4](#_Ref520294947).
 
     **Figure 4**  Extrinsic calibration: full coverage of the overlap region at all angles<a name="_Ref520294947"></a>  
-    ![](../../../reference/faq/splice/figures/外参标定-全角度下重叠区域全覆盖.png "Extrinsic calibration: full coverage of the overlap region at all angles")
-    ![](../../../reference/faq/splice/figures/2-2-2_p4_2.png)
+    ![](figures/外参标定-全角度下重叠区域全覆盖.png "外参标定-全角度下重叠区域全覆盖")
+    ![](figures/2-2-2_p4_2.png)
 
     \(a\) Extrinsic calibration: actual images of full coverage of the overlap region at all angles
 
-    ![](../../../reference/faq/splice/figures/2-15b.png)
+    ![](figures/2-15b.png)
 
     \(b\) Extrinsic calibration: 3D projection view of overlap region coverage at all angles
 
@@ -638,7 +638,7 @@ To illustrate the extrinsic calibration process and requirements, the checkerboa
 
     **Long-distance** coverage at different angles: increase the distance between the target card and the lens by approximately 1 time relative to step 2, with positions generally covering the two ends and the middle position of the overlap region. Capture approximately 3 pairs of images.
 
-    >![](../../../reference/faq/splice/public_sys-resources/icon-notice.gif) **Note:** 
+    >![](public_sys-resources/icon-notice.gif) **Note:** 
     >-   Each grid of the target card must not occupy too few pixels in the frame. It is generally required that each grid be no less than 10 pixels. If the grids are too small, reduce the distance between the checkerboard and the lens.
     >-   If the indoor environment space is limited, the distance can be appropriately reduced.
     >-   When the distance is sufficient and the checkerboard still occupies relatively many pixels, the distance can also be appropriately increased.
@@ -646,11 +646,11 @@ To illustrate the extrinsic calibration process and requirements, the checkerboa
     >-   The distance can be obtained through **visual estimation** or **direct estimation**.
 
     **Figure 5**  Extrinsic calibration: coverage of the long-distance overlap region at different angles<a name="fig627mcpsimp"></a>  
-    ![](../../../reference/faq/splice/figures/外参标定-远距离重叠区域不同角度的覆盖.png "Extrinsic calibration: coverage of the long-distance overlap region at different angles")
+    ![](figures/外参标定-远距离重叠区域不同角度的覆盖.png "外参标定-远距离重叠区域不同角度的覆盖")
 
     Extrinsic calibration: actual images of coverage of the long-distance overlap region at different angles
 
-    ![](../../../reference/faq/splice/figures/2-16b.png)
+    ![](figures/2-16b.png)
 
     Extrinsic calibration: 3D projection view of coverage of the long-distance overlap region at different angles
 
@@ -676,7 +676,7 @@ Please refer to the descriptions from the "[QA_measures.txt File Content and Usa
 This file is generated after model calibration is complete and is used to evaluate the effect of model calibration. [Figure 1](#fig230116251091) is a use case generated from dual-lens calibration. QA_measures.txt is mainly divided into two parts: Total QA Measures and Each QA Measures.
 
 **Figure 1**  QA_measures.txt file content<a name="fig230116251091"></a>  
-![](../../../reference/faq/splice/figures/QA_measures-txt文件内容.png "QA_measures.txt file content")
+![](figures/QA_measures-txt文件内容.png "QA_measures-txt文件内容")
 
 Total QA Measures is the overall calibration effect evaluation; Each QA Measures is the calibration effect evaluation for a single lens or each seam, allowing supplementation or optimization of calibration images based on a specific lens or overlap region. The meanings of the evaluation content are as follows:
 
@@ -695,7 +695,7 @@ As shown in [Figure 1](#fig38491323325), this is a use case generated from dual-
 The checkerboard distance histogram is used to further determine whether the calibration image capture meets the standards. If there are anomalies, it can improve the efficiency of problem localization.
 
 **Figure 1**  distance.csv file content<a name="fig38491323325"></a>  
-![](../../../reference/faq/splice/figures/distance-csv文件内容.png "distance.csv file content")
+![](figures/distance-csv文件内容.png "distance-csv文件内容")
 ### Checkerboard Marked JPG Images<a name="ZH-CN_TOPIC_0000002431386006"></a>
 
 Each calibration image will be copied in the tmp folder, and the checkerboard corner point positions in the image will be indicated with colored dots and lines, used to determine whether the checkerboard detection is accurate. This is shown in [Figure 1](#fig4128149192015).
@@ -709,7 +709,7 @@ When calibration images with failed checkerboard detection appear, supplement th
 Image naming follows the format avsp_calib_X_vid_Y_Z.jpg, where if X is a single number, it indicates that this image is an intrinsic calibration image corresponding to camera X; if X is two numbers, it indicates that this image is an extrinsic calibration image between these two cameras. Y is the lens suffix number, which only functions in extrinsic calibration images. Z is the image suffix, numbered starting from 0.
 
 **Figure 1**  Checkerboard marking diagram<a name="fig4128149192015"></a>  
-![](../../../reference/faq/splice/figures/棋盘格标志示意图.png "Checkerboard marking diagram")
+![](figures/棋盘格标志示意图.png "棋盘格标志示意图")
 # LUT-Related Debugging Methods
 ## When Pipes Cannot Be Numbered Sequentially, How to Correctly Generate and Configure LUT Tables<a name="ZH-CN_TOPIC_0000002431226178"></a>
 
@@ -742,15 +742,15 @@ When generating the LUT, stitching distance adjustment is supported. Even when c
 Since in a panoramic camera, adjacent lenses cannot be placed in the same position, the imaging effect will inevitably have parallax issues. As a result, objects at different distances in the overlap region have different relative positions in the image after imaging, making it impossible to achieve truly seamless stitching. General scenes inevitably have a certain depth of field, and seamless stitching cannot be guaranteed across the entire depth of field range. The stitching seam will therefore have some ghosting or misalignment. As shown in [Figure 1](#fig347372415259), in adjacent images, the foreground and background have different distances, creating a parallax phenomenon that causes the relative positions of the foreground and background to differ slightly, as shown in the red box. If the stitching distance is adjusted to the foreground position, the background will inevitably have ghosting caused by parallax, as shown in figure b; conversely, if the stitching distance is adjusted to the background object, the foreground will have misalignment.
 
 **Figure 1**  Parallax example<a name="fig347372415259"></a>  
-![](../../../reference/faq/splice/figures/视差示例.png "Parallax example")
+![](figures/视差示例.png "视差示例")
 
 [Solution]
 
 This issue is an objective problem that exists in all stitching algorithms and cannot be fundamentally resolved. It can only be mitigated from the hardware side and through stitching distance debugging to reduce the misalignment problem caused by parallax and optimize the stitching effect. The simplified formula for parallax is as follows:
 
-![](../../../reference/faq/splice/figures/zh-cn_formulaimage_0000002431386070.png)
+![](figures/zh-cn_formulaimage_0000002431386070.png)
 
-In the above formula: W is the pixel width, in pixels; w is the sensor width, in mm; f is the lens focal length, in mm; b is the spacing between adjacent lenses, in mm; Z<sub>1</sub>/Z<sub>2</sub> are the imaging distances of different objects, in mm. Among these, W, w, and f are fixed values. Parallax is proportional to b and ![](../../../reference/faq/splice/figures/zh-cn_formulaimage_0000002464864685.png). Therefore, to reduce the misalignment effect caused by parallax, the spacing between adjacent lenses should be minimized as much as possible. Z<sub>1</sub> and Z<sub>2</sub> are scene-related and cannot be directly controlled. [Table 1](#table1228mcpsimp) shows the parallax sizes at different object distances calculated under certain conditions. It can be seen that when the object distance is closer, the parallax effect is greater. Therefore, panoramic cameras are more suitable for outdoor large and distant scenes. In indoor scenes, the parallax effect is more pronounced, making misalignment and ghosting issues more likely to occur.
+In the above formula: W is the pixel width, in pixels; w is the sensor width, in mm; f is the lens focal length, in mm; b is the spacing between adjacent lenses, in mm; Z<sub>1</sub>/Z<sub>2</sub> are the imaging distances of different objects, in mm. Among these, W, w, and f are fixed values. Parallax is proportional to b and ![](figures/zh-cn_formulaimage_0000002464864685.png). Therefore, to reduce the misalignment effect caused by parallax, the spacing between adjacent lenses should be minimized as much as possible. Z<sub>1</sub> and Z<sub>2</sub> are scene-related and cannot be directly controlled. [Table 1](#table1228mcpsimp) shows the parallax sizes at different object distances calculated under certain conditions. It can be seen that when the object distance is closer, the parallax effect is greater. Therefore, panoramic cameras are more suitable for outdoor large and distant scenes. In indoor scenes, the parallax effect is more pronounced, making misalignment and ghosting issues more likely to occur.
 
 **Table 1**  Parallax examples at different object distances
 
@@ -920,7 +920,7 @@ To further illustrate with a specific example, assume the original images and st
 Note that the original image rotation direction differs for different channels, so the conversion for each channel is as shown in [Table 1](#_Ref9347211).
 
 **Figure 1**  Original image and stitched image illustration<a name="fig8890314113117"></a>  
-![](../../../reference/faq/splice/figures/原图与拼接图示意.png "Original image and stitched image illustration")
+![](figures/原图与拼接图示意.png "原图与拼接图示意")
 
 **Table 1**  Fine Tuning conversion results
 

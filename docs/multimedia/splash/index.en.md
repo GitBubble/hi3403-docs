@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/开机�
 
 This document provides basic function calls and boot command lines for implementing a boot splash screen. Users can configure them according to their specific applications.
 
->![](../../multimedia/splash/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >Unless otherwise specified, SS927V100 and SS928V100, and SS522V100 and SS524V100, have identical content.
 
 **Product Versions<a name="section145mcpsimp"></a>**
@@ -408,7 +408,7 @@ The Uboot code provides the following features:
 </tbody>
 </table>
 
->![](../../multimedia/splash/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   If using user-defined timing, you need to modify the file: product\\ot_osd\\vo\\arch\\xxx\\hal\\drv_vo_dev.c or product\\ot_osd\\vo\\arch\\xxx\\hal\\drv_vo_dev.c. The global variable g_vo_user_sync_timing in this file is used to configure the timing structure, and g_vo_user_sync_info is used to configure clock-related information. For the configuration method of each member in this structure, see the ot_vo_user_sync_info data item in the "4 Video Output" chapter of the *MPP Media Processing Software V5.0 Development Reference*.
 >-   HDMI interface does not support user-defined timing.
 >-   If using BT.1120 interface output, the user needs to develop the BT.1120 driver themselves.
@@ -549,7 +549,7 @@ sample_comm_mipi_tx.c
 type.h
 ```
 
->![](../../multimedia/splash/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   For SS528V100, replace the above "xxx" with "ss528v100", and mipi_tx configuration under product/ot_osd is not supported.
 >-   For SS625V100, replace the above "xxx" with "ss625v100", and mipi_tx configuration under product/ot_osd is not supported.
 >-   For SS524V100, replace the above "xxx" with "ss524v100", and mipi_tx configuration under product/ot_osd is not supported.
@@ -611,7 +611,7 @@ The boot splash screen in uboot supports hardware decoding. After hardware decod
 
 Smooth transition refers to the seamless switch from the boot splash screen to the service screen without turning off the display output. Smooth transition requires the boot splash screen and the service screen to use the same interface and timing.
 
->![](../../multimedia/splash/public_sys-resources/icon-notice.gif) **Notice:** 
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
 >-   HDMI smooth transition requires that after entering the system, the HDMI-related attribute configuration is consistent with the boot splash screen configuration in uboot.
 >-   HDMI only supports smooth transition for CEA (Consumer Electronics Association) timings.
 

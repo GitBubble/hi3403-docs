@@ -191,14 +191,14 @@ Secure boot involves multiple keys and signatures that need to be appended to th
 To be compatible with traditional boot schemes, the chip supports a fast boot scheme. The fast boot flow is shown in [Figure 1](#fig9466924175919), starting directly from U-Boot, which then boots Linux. This scheme does not verify the legitimacy of the boot image and is non-secure. Fast boot is faster than secure boot and non-secure boot and can be used in scenarios where secure boot is not required but speed is.
 
 **Figure 1** Fast Boot Flow<a name="fig9466924175919"></a>
-![](figures/快速启动流程.png "Fast Boot Flow")
+![](figures/快速启动流程.png "快速启动流程")
 
 ## Non-Secure Boot<a name="ZH-CN_TOPIC_0000002457836541"></a>
 
 In non-secure boot mode, the chip starts from GSL, with the flow shown in [Figure 1](#fig1746041719160). This scheme does not verify the legitimacy of the boot image and is non-secure.
 
 **Figure 1** Non-Secure Boot Flow<a name="fig1746041719160"></a>
-![](figures/非安全启动流程.png "Non-Secure Boot Flow")
+![](figures/非安全启动流程.png "非安全启动流程")
 
 ## Secure Boot<a name="ZH-CN_TOPIC_0000002424357722"></a>
 
@@ -207,7 +207,7 @@ Compared with the non-secure boot scheme, the secure boot scheme verifies the le
 Secure boot adds image legitimacy verification steps on top of non-secure boot, with the flow shown in [Figure 1](#fig157715217257).
 
 **Figure 1** Secure Boot Flow<a name="fig157715217257"></a>
-![](figures/安全启动流程.png "Secure Boot Flow")
+![](figures/安全启动流程.png "安全启动流程")
 
 >![](public_sys-resources/icon-notice.gif) **Caution:**
 >The U-Boot signature verification of Kernel and Rootfs has not been implemented. Customers can refer to "[Reference for Kernel and Filesystem Secure Boot Signature Verification Solution](#ZH-CN_TOPIC_0000002457836481)" and implement it by calling the Cipher API interface based on the application scenario.
@@ -222,7 +222,7 @@ The secure boot image on the boot medium is mainly divided into 3 major blocks:
 -   The third block is the filesystem.
 
 **Figure 1** Secure Boot Image Layout Diagram<a name="fig1050352493314"></a>
-![](figures/安全启动镜像布局图.png "Secure Boot Image Layout Diagram")
+![](figures/安全启动镜像布局图.png "安全启动镜像布局图")
 
 >![](public_sys-resources/icon-notice.gif) **Caution:**
 >Label 1 in the layout diagram: The Boot image area must be placed at the starting address 0x00 of the boot medium. There are no special requirements for the placement of other areas; they can be allocated according to the usage scenario.
@@ -372,7 +372,7 @@ The secure boot solution provides 3 trust chains based on three root public key 
 In secure boot mode, image signature verification is the responsibility of OEM, with the verification relationship hierarchy shown in [Figure 1](#fig1816828175512).
 
 **Figure 1** Secure Boot Mode Public Key Signature Verification Relationship Diagram<a name="fig1816828175512"></a>
-![](figures/安全启动模式公钥验签关系图.png "Secure Boot Mode Public Key Signature Verification Relationship Diagram")
+![](figures/安全启动模式公钥验签关系图.png "安全启动模式公钥验签关系图")
 
 ## Symmetric Key Management<a name="ZH-CN_TOPIC_0000002457876625"></a>
 
@@ -383,7 +383,7 @@ For secure boot requiring image decryption functionality, the chip's OTP needs t
 The SoC provides three levels of key derivation, with its working principle shown in [Figure 1](#fig248010331147). RKP retrieves the root key protected by RKP from OTP (OTP KEY), generates the actual root key within the RKP hardware, and sends it to KLAD through a secure channel. KLAD can perform two levels of key derivation, with each level's key derivation material inputtable from memory. The first-level key derivation material ProtectionKey\_L1 is 128 bits, and the second-level key derivation material ProtectionKey\_L2 is 256 bits. Based on the OTP KEY and key derivation materials, KLAD ultimately outputs the actual working key to the hardware encryption/decryption engine.
 
 **Figure 1** Key Derivation<a name="fig248010331147"></a>
-![](figures/密钥派生.png "Key Derivation")
+![](figures/密钥派生.png "密钥派生")
 
 ### Key Management and Image Decryption in Secure Boot Mode<a name="ZH-CN_TOPIC_0000002457876653"></a>
 
@@ -392,7 +392,7 @@ The symmetric key hierarchy and image decryption relationship for secure boot ar
 The root key originates from OTP and is generated and programmed by OEM.
 
 **Figure 1** Secure Boot Mode Decryption Relationship Diagram<a name="fig1739414716164"></a>
-![](figures/安全启动模式解密关系图.png "Secure Boot Mode Decryption Relationship Diagram")
+![](figures/安全启动模式解密关系图.png "安全启动模式解密关系图")
 
 # Boot Image Creation and Programming
 SS928V100 supports multiple boot schemes. The creation and programming steps for boot images must correspond to the boot scheme. Additionally, the OTP of SS928V100 controls the boot flow, including boot scheme selection, image legitimacy verification, and version verification, and must be configured and programmed according to the boot scheme.
@@ -871,14 +871,14 @@ When using other storage media (SPI NAND, eMMC), the filesystem type and program
 The image programming layout for fast boot is shown in [Figure 1](#_fig1991144012019).
 
 **Figure 1** Fast Boot ToolPlatform Programming Partition Reference Diagram<a name="_fig1991144012019"></a>
-![](figures/快速启动ToolPlatform烧写分区参考图.png "Fast Boot ToolPlatform Programming Partition Reference Diagram")
+![](figures/快速启动ToolPlatform烧写分区参考图.png "快速启动ToolPlatform烧写分区参考图")
 
 ### Non-Secure Boot and Non-TEE Secure Boot<a name="ZH-CN_TOPIC_0000002457836497"></a>
 
 The image programming layout is shown in [Figure 1](#__Ref55287952).
 
 **Figure 1** ToolPlatform Programming Partition Reference Diagram<a name="__Ref55287952"></a>
-![](figures/ToolPlatform烧写分区参考图.png "ToolPlatform Programming Partition Reference Diagram")
+![](figures/ToolPlatform烧写分区参考图.png "ToolPlatform烧写分区参考图")
 
 >![](public_sys-resources/icon-notice.gif) **Caution:**
 >The `uImage_ss928v100` file programmed in [Figure 1](#_fig1991144012019) and [Figure 1](#__Ref55287952) is the ATF+Kernel image.
@@ -923,7 +923,7 @@ The description in this document only covers BOOTROM verification before booting
 The solution first aligns the size of the non-secure U-Boot original image to 16 bytes before the image, then appends information such as the kernel's secure verification public key to the end of the Boot original image. After appending this information, a new secure boot image is generated through "[Boot Image Creation Steps](#ZH-CN_TOPIC_0000002424197890)".
 
 **Figure 1** Kernel and Filesystem Boot Verification Flow Block Diagram<a name="fig135231753812"></a>
-![](figures/内核及文件系统启动验签流程框图.png "Kernel and Filesystem Boot Verification Flow Block Diagram")
+![](figures/内核及文件系统启动验签流程框图.png "内核及文件系统启动验签流程框图")
 
 For the hash calculation and asymmetric RSA encryption/decryption involved in the secure boot verification flow, please consult relevant resources on your own; this document does not elaborate further. For further development of encryption/decryption functionality, you may explore other encryption algorithms, such as the symmetric AES encryption algorithm.
 
@@ -932,14 +932,14 @@ For the hash calculation and asymmetric RSA encryption/decryption involved in th
 The structure of the U-Boot image with appended verification information is shown in [Figure 1](#fig13141855185214). Kernel-related security information is appended to the end of the U-Boot image, and then the U-Boot image with Kernel verification information is made into a secure boot image.
 
 **Figure 1** U-Boot Image Structure with Verification Information<a name="fig13141855185214"></a>
-![](figures/附验证信息U-Boot镜像结构.png "U-Boot Image Structure with Verification Information")
+![](figures/附验证信息U-Boot镜像结构.png "附验证信息U-Boot镜像结构")
 
 ## Secure Kernel Image Structure<a name="ZH-CN_TOPIC_0000002457836509"></a>
 
 The secure Kernel image consists of header information, the Kernel image, and signature information, as shown in [Figure 1](#fig47919505579). It is assembled on top of the original Kernel image structure, where the Kernel image is a compressed image. The RSA public key used for Kernel signature verification is stored in the U-Boot original image and is integrated into the secure boot image along with the secure image.
 
 **Figure 1** Secure Kernel Image Structure Diagram<a name="fig47919505579"></a>
-![](figures/安全Kernel镜像结构图.png "Secure Kernel Image Structure Diagram")
+![](figures/安全Kernel镜像结构图.png "安全Kernel镜像结构图")
 
 ## Functional Implementation<a name="ZH-CN_TOPIC_0000002424197894"></a>
 

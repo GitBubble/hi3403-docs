@@ -100,7 +100,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V1
 
 - Select the Ubuntu 22.04 ISO image downloaded in **section 1.1**, then click Open.
 
-![image-20250208150917754](../../get-started/environment/figures/image-20250208150917754.png)
+![image-20250208150917754](figures/image-20250208150917754.png)
 
 - Click OK to close Settings.
 
@@ -122,7 +122,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V1
 
 - If the display is incomplete due to resolution issues and the buttons at the bottom are not visible, press `Ctrl+Alt+T` to open a terminal, then type `xrandr` to see the supported resolutions.
 
-  ![image-20230110153935578](../../get-started/environment/figures/image-20230110153935578.png)
+  ![image-20230110153935578](figures/image-20230110153935578.png)
 
 - For example, to set 1920x1200, run `xrandr -s 1920x1200` and press Enter.
 
@@ -297,7 +297,7 @@ ifconfig
 sudo apt-get install vim samba samba-common
 ```
 
-![image-20251028172858032](../../get-started/environment/figures/image-20251028172858032.png)
+![image-20251028172858032](figures/image-20251028172858032.png)
 
 - Run the following command to grant read/write permissions on the Samba share.
 
@@ -311,7 +311,7 @@ sudo chmod 777  /
 sudo smbpasswd -a hispark
 ```
 
-![image-20251027180215076](../../get-started/environment/figures/image-20251027180215076.png)
+![image-20251027180215076](figures/image-20251027180215076.png)
 
 - Run the following command to edit the Samba configuration file.
 
@@ -335,7 +335,7 @@ sudo vim /etc/samba/smb.conf
         directory mask = 0777
 ```
 
-![image-20251027180344641](../../get-started/environment/figures/image-20251027180344641.png)
+![image-20251027180344641](figures/image-20251027180344641.png)
 
 - Run the following command to restart the Samba service and apply changes.
 
@@ -355,7 +355,7 @@ sudo service smbd restart
 \\192.168.56.106\hispark
 ```
 
-![image-20251103160007521](../../get-started/environment/figures/image-20251103160007521.png)
+![image-20251103160007521](figures/image-20251103160007521.png)
 
 - The root directory will now appear as a Windows network drive, enabling easy file sharing between Windows and the Ubuntu environment.
 
@@ -396,7 +396,7 @@ sudo cp repo /usr/bin/repo
 sudo chmod +x /usr/bin/repo
 ```
 
-![image-20251028154646629](../../get-started/environment/figures/image-20251028154646629.png)
+![image-20251028154646629](figures/image-20251028154646629.png)
 
 - Install Python modules.
 
@@ -414,7 +414,7 @@ pip3 install six --upgrade --ignore-installed six -i https://repo.huaweicloud.co
 sudo ln -s /usr/bin/python3 /usr/bin/python
 ```
 
-![image-20251028154940864](../../get-started/environment/figures/image-20251028154940864.png)
+![image-20251028154940864](figures/image-20251028154940864.png)
 
 - Switch the shell type.
 
@@ -423,7 +423,7 @@ sudo rm -rf /bin/sh
 sudo ln -s /bin/bash /bin/sh
 ```
 
-![image-20251028154953913](../../get-started/environment/figures/image-20251028154953913.png)
+![image-20251028154953913](figures/image-20251028154953913.png)
 
 ### 2.2. Cloning the Repository
 
@@ -434,7 +434,7 @@ cd ~
 git clone https://gitee.com/HiSpark/pegasus.git
 ```
 
-![image-20251028155152278](../../get-started/environment/figures/image-20251028155152278.png)
+![image-20251028155152278](figures/image-20251028155152278.png)
 
 - Initialize and update the `ss928v100_clang` and `ss928v100_gcc` submodules.
 
@@ -444,7 +444,7 @@ git submodule init
 git submodule update platform/ss928v100_clang platform/ss928v100_gcc
 ```
 
-![image-20251028155334937](../../get-started/environment/figures/image-20251028155334937.png)
+![image-20251028155334937](figures/image-20251028155334937.png)
 
 ### 2.3. Downloading Open-Source Software
 
@@ -458,7 +458,7 @@ git submodule update platform/ss928v100_clang platform/ss928v100_gcc
 | [trusted-firmware-a](https://github.com/ARM-software/arm-trusted-firmware/archive/v2.2.tar.gz) | \                                                            | 1. ~/pegasus/platform/ss928v100_clang/open_source/trusted-firmware-a<br />2. ~/pegasus/platform/ss928v100_gcc/open_source/trusted-firmware-a |
 | [u-boot](https://ftp.denx.de/pub/u-boot/u-boot-2020.01.tar.bz2) | \                                                            | 1. ~/pegasus/platform/ss928v100_clang/open_source/u-boot<br />2. ~/pegasus/platform/ss928v100_gcc/open_source/u-boot |
 
-![image-20251028161831427](../../get-started/environment/figures/image-20251028161831427.png)
+![image-20251028161831427](figures/image-20251028161831427.png)
 
 ### 2.4. Installing the Cross-Compiler
 
@@ -546,7 +546,7 @@ echo $SYSROOT_PATH
 
 - Click [here](https://gitee.com/openeuler/yocto-meta-openeuler/releases) and download all compressed packages for version 0.1.8 arm64 as shown in the figure below.
 
-![image-20251028104357994](../../get-started/environment/figures/image-20251028104357994.png)
+![image-20251028104357994](figures/image-20251028104357994.png)
 
 - Copy all arm64 packages to the Ubuntu hispark user home directory, then run the following commands to concatenate them into one archive and extract it.
 
@@ -561,7 +561,7 @@ rm -rf openeuler_gcc_arm64le.tar.gz
 
 - The cross-compiler executables are now located in `openeuler_gcc_arm64le/bin/`.
 
-![image-20251028175519101](../../get-started/environment/figures/image-20251028175519101.png)
+![image-20251028175519101](figures/image-20251028175519101.png)
 
 - Open `~/.bashrc` and append `export PATH="/home/hispark/openeuler_gcc_arm64le/bin:$PATH"` to the end.
 
@@ -569,7 +569,7 @@ rm -rf openeuler_gcc_arm64le.tar.gz
 vim ~/.bashrc
 ```
 
-![image-20251028175927006](../../get-started/environment/figures/image-20251028175927006.png)
+![image-20251028175927006](figures/image-20251028175927006.png)
 
 - Apply the environment changes.
 
@@ -577,7 +577,7 @@ vim ~/.bashrc
 source ~/.bashrc
 ```
 
-![image-20251028180026168](../../get-started/environment/figures/image-20251028180026168.png)
+![image-20251028180026168](figures/image-20251028180026168.png)
 
 - Verify that the cross-compiler toolchain is available.
 
@@ -585,7 +585,7 @@ source ~/.bashrc
 aarch64-openeuler-linux-gnu-gcc -v
 ```
 
-![image-20251028180045878](../../get-started/environment/figures/image-20251028180045878.png)
+![image-20251028180045878](figures/image-20251028180045878.png)
 
 ## 3. Building
 
@@ -604,7 +604,7 @@ cd ~/pegasus/platform/ss928v100_clang/osdrv
 make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all
 ```
 
-![image-20251103195510322](../../get-started/environment/figures/image-20251103195510322.png)
+![image-20251103195510322](figures/image-20251103195510322.png)
 
 - Build output images are located in the `osdrv/pub/xxx` directory, including:
   - `boot_image.bin` — bootloader image
@@ -621,7 +621,7 @@ make LLVM=1 BOOT_MEDIA=emmc CHIP=ss928v100 all
 make BOOT_MEDIA=emmc gslboot_build -j 20
 ```
 
-![image-20251103183804810](../../get-started/environment/figures/image-20251103183804810.png)
+![image-20251103183804810](figures/image-20251103183804810.png)
 
 ##### 3.1.2.2. Build kernel
 
@@ -631,7 +631,7 @@ make BOOT_MEDIA=emmc gslboot_build -j 20
 make LLVM=1 BOOT_MEDIA=emmc atf -j 20
 ```
 
-![image-20251103195813305](../../get-started/environment/figures/image-20251103195813305.png)
+![image-20251103195813305](figures/image-20251103195813305.png)
 
 #### 3.1.3. Build Samples
 
@@ -642,7 +642,7 @@ cd ~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/sample
 make
 ```
 
-![image-20251103185307557](../../get-started/environment/figures/image-20251103185307557.png)
+![image-20251103185307557](figures/image-20251103185307557.png)
 
 #### 3.1.4. Build ko Modules
 
@@ -653,7 +653,7 @@ cd ~/pegasus/platform/ss928v100_clang/smp/a55_linux/mpp/out/obj
 make
 ```
 
-![image-20251104151107767](../../get-started/environment/figures/image-20251104151107767.png)
+![image-20251104151107767](figures/image-20251104151107767.png)
 
 ### 3.2. Building ss928v100_gcc
 
@@ -668,7 +668,7 @@ cd ~/pegasus/platform/ss928v100_gcc/osdrv
 make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
 ```
 
-![image-20251028191255408](../../get-started/environment/figures/image-20251028191255408.png)
+![image-20251028191255408](figures/image-20251028191255408.png)
 
 - Build output images are located in the `osdrv/pub/xxx` directory, including:
   - `boot_image.bin` — bootloader image
@@ -685,7 +685,7 @@ make LLVM=0 BOOT_MEDIA=emmc CHIP=ss928v100 all
 make BOOT_MEDIA=emmc gslboot_build -j 20
 ```
 
-![image-20251028191753329](../../get-started/environment/figures/image-20251028191753329.png)
+![image-20251028191753329](figures/image-20251028191753329.png)
 
 ##### 3.2.2.2. Build kernel
 
@@ -695,7 +695,7 @@ make BOOT_MEDIA=emmc gslboot_build -j 20
 make LLVM=0 BOOT_MEDIA=emmc atf -j 20
 ```
 
-![image-20251028191739874](../../get-started/environment/figures/image-20251028191739874.png)
+![image-20251028191739874](figures/image-20251028191739874.png)
 
 #### 3.2.3. Build Samples
 
@@ -706,7 +706,7 @@ cd ~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/sample
 make
 ```
 
-![image-20251028190036181](../../get-started/environment/figures/image-20251028190036181.png)
+![image-20251028190036181](figures/image-20251028190036181.png)
 
 #### 3.2.4. Build ko Modules
 
@@ -717,7 +717,7 @@ cd ~/pegasus/platform/ss928v100_gcc/smp/a55_linux/mpp/out/obj
 make
 ```
 
-![image-20251103184217471](../../get-started/environment/figures/image-20251103184217471.png)
+![image-20251103184217471](figures/image-20251103184217471.png)
 
 ## 4. Installing VSCode
 
@@ -754,7 +754,7 @@ make
 
 - Select `/home/hispark/hi3403` as shown below, then click Select Folder.
 
-![image-20251028191026772](../../get-started/environment/figures/image-20251028191026772.png)
+![image-20251028191026772](figures/image-20251028191026772.png)
 
 - After the code is imported successfully, a dialog will appear. Check the trust option and click "Yes, I trust the authors".
 

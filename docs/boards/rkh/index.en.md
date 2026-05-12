@@ -7,7 +7,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/vendor/rkh/README_z
 
 A 4 GB RAM / 32 GB eMMC board based on the EBaina design.
 
-![Board](../../boards/rkh/board_image.png)
+![Board](board_image.png)
 
 ## Build
 
@@ -23,7 +23,7 @@ section.
 
 ## First boot — desktop
 
-![Desktop](../../boards/rkh/launcher_image.png)
+![Desktop](launcher_image.png)
 
 ## Multimedia smoke test
 
@@ -44,39 +44,39 @@ section.
 2. Plug headphones into the headphone jack
 3. Open the Gallery app to browse images and play video
 
-![Gallery](../../boards/rkh/gallery_image.png)
+![Gallery](gallery_image.png)
 
 ## DHCP smoke test
 
 1. With the network cable plugged in, open Settings → DHCP
 
-    ![Settings](../../boards/rkh/setting_image.png)
+    ![Settings](setting_image.png)
 
 2. Toggle the DHCP switch on
 
-    ![Settings DHCP](../../boards/rkh/setting_dhcp_image.png)
+    ![Settings DHCP](setting_dhcp_image.png)
 
 3. Use `ifconfig` (or similar) to confirm IP / DNS / default route
 
-    ![DHCP info](../../boards/rkh/dhcp_info.png)
+    ![DHCP info](dhcp_info.png)
 
 ## Recorder smoke test
 
 1. Plug in headphones
 2. Tap the Recorder icon on the desktop to launch the app
 
-    ![Recorder start](../../boards/rkh/recorder_start.jpg)
+    ![Recorder start](recorder_start.jpg)
 
 3. Tap the record button to start; tap again to stop
 
-    ![Recorder button](../../boards/rkh/recorder_button.jpg)
+    ![Recorder button](recorder_button.jpg)
 
 4. Adjust folder permissions: `chmod 777 /userdata/audio/norm`
    (only required on first launch)
 5. Quit and re-launch the Recorder, then record again
 6. Stopped recordings appear in the list — tap to play (volume is low)
 
-    ![Recorder list](../../boards/rkh/recorder_list.jpg)
+    ![Recorder list](recorder_list.jpg)
 
 Known issues: recorded audio is quiet and sometimes incomplete.
 Tip: speak close to the microphone, otherwise nothing is captured.

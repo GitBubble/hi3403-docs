@@ -28,7 +28,7 @@ The product versions corresponding to this document are as follows.
 </tbody>
 </table>
 
->![](../../multimedia/3dnr/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses the SS928V100 description as an example. Unless otherwise specified, the content for SS927V100 and SS928V100 is identical.
 
 **Intended Audience<a name="section76301743411"></a>**
@@ -999,15 +999,15 @@ typedef struct {
 The default interface parameters for SS928V100 YUV 3DNR parameters are shown in [Figure 1](#ref515453020).
 
 **Figure 1**  3DNR parameter interface parameter screen<a name="ref515453020"></a>  
-![](../../multimedia/3dnr/figures/3DNR参数的接口参数界面.png "3DNR parameter interface parameter screen")
+![](figures/3DNR参数的接口参数界面.png "3DNR参数的接口参数界面")
 
 The luminance denoising (NRy) of 3DNR consists of four series-connected denoising functions, divided into 4 levels numbered N0, N1, N2, N3. Due to implementation differences, series effects, etc., filters of the same number and type at different levels may not produce completely identical results.
 
 N0~N2 can select temporal filtering and spatial filtering. N3 is a pure spatial filter (with temporal assistance). The color filter is independent of the luminance filter, divided into two levels, C1 and C2, as shown in [Figure 2](#ref515443368).
 
 **Figure 2**  3DNR parameter numbering diagram<a name="ref515443368"></a>  
-![](../../multimedia/3dnr/figures/3DNR参数编号示意图.png "3DNR parameter numbering diagram")
->![](../../multimedia/3dnr/public_sys-resources/icon-note.gif) **Note:** 
+![](figures/3DNR参数编号示意图.png "3DNR参数编号示意图")
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >-   The X in nX\*\* and mX\*\* parameters represents the level number, referring to the nth level. For example, n0sf2 specifically refers to the N0 level parameter in the nXsf2 series parameters, and m1id0 specifically refers to the first-level parameter in the mXid0 series.
 >-   [en] enables the denoising function for that level. 0 indicates the function at this level is off, 1 indicates the function is active. Parameters marked in red font are parameters not recommended for adjustment.
 >-   The N3 spatial filter parameters [nXsf6], [nXsf7], [nXsfr7], [nXsbr7], [nXsf8], [nXsfn], [nXsth], and [sfr] each have two sets of interfaces (as shown in the N3a and N3b areas in [Figure 2](#ref515443368)), acting on the motion area (N3a) and the still area (N3b) to achieve different processing effects. For the N3 level to take effect, the N2 level must be enabled with temporal reference turned on; otherwise, N3 has no practical effect.

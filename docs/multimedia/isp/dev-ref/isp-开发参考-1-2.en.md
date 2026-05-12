@@ -118,7 +118,7 @@ The ISP control structure is shown in [Figure 1](#fig19534124782113). After the 
 The ISP consists of ISP logic and the firmware running on it. In addition to completing part of the algorithm processing, the logic unit can also collect real-time information about the current image. The firmware obtains image statistics from the ISP logic, recalculates, and provides feedback control to the lens, sensor, and ISP logic to achieve automatic image quality adjustment.
 
 **Figure 1**  ISP Control Structure Diagram<a name="fig19534124782113"></a>  
-![](figures/ISP Control Structure Diagram "ISP Control Structure Diagram")
+![](figures/ISP控制结构示意图.png "ISP控制结构示意图")
 
 For the main ISP logic flow, specific concepts, and functional points, please refer to the chip manual.
 
@@ -132,7 +132,7 @@ For the main ISP logic flow, specific concepts, and functional points, please re
 The ISP firmware consists of three parts: one part is the ISP control unit and basic algorithm library, one part is the AE/AWB algorithm library, and one part is the sensor library. The basic idea of the firmware design is to provide the 3A algorithm library separately, with the ISP control unit scheduling the basic algorithm library and the 3A algorithm library, while the sensor library registers function callbacks to the ISP basic algorithm library and the 3A algorithm library respectively, to achieve differentiated sensor adaptation. The ISP firmware architecture is shown in [Figure 1](#fig1959110622411).
 
 **Figure 1**  ISP Firmware Architecture<a name="fig1959110622411"></a>  
-![](figures/ISP Firmware Architecture "ISP Firmware Architecture")
+![](figures/ISP-firmware-架构.png "ISP-firmware-架构")
 
 Different sensors all register control functions with the ISP algorithm library in the form of callback functions. When the ISP control unit schedules the basic algorithm library and the 3A algorithm library, it will obtain initialization parameters through these callback functions and control the sensor, such as adjusting exposure time, analog gain, digital gain, and controlling lens step focusing or iris rotation.
 
@@ -157,10 +157,10 @@ The SDK supports users using multiple development modes:
 The firmware internal flow is divided into two parts, as shown in [Figure 1](#fig39021449132613). One part is the initialization task, which mainly completes the initialization of the ISP control unit, ISP basic algorithm library, and 3A algorithm library, including calling sensor callbacks to obtain sensor-specific initialization parameters. The other part is the dynamic adjustment process, during which the ISP control unit in the firmware schedules the ISP basic algorithm library and the 3A algorithm library, performing real-time calculations and corresponding control. The firmware software structure is shown in [Figure 2](#fig81434122714).
 
 **Figure 1**  ISP Firmware Internal Flow<a name="fig39021449132613"></a>  
-![](figures/ISP Firmware Internal Flow "ISP Firmware Internal Flow")
+![](figures/ISP-firmware-内部流程.png "ISP-firmware-内部流程")
 
 **Figure 2**  ISP Firmware Software Structure<a name="fig81434122714"></a>  
-![](figures/ISP Firmware Software Structure "ISP Firmware Software Structure")
+![](figures/ISP-firmware-软件结构.png "ISP-firmware-软件结构")
 ### Software Flow<a name="ZH-CN_TOPIC_0000002504084739"></a>
 
 As the front-end capture component, ISP needs to work together with the Video Input Unit (VIU). After ISP initialization and basic configuration, the VIU needs to perform interface timing matching. This is done first to match the input timing of different sensors, and second to configure the correct input timing for the ISP. Once the timing configuration is complete, the ISP can start running to perform dynamic image quality adjustment. The output image is then captured by the VIU and sent for display or encoding. The software usage flow is shown in [Figure 1](#fig796617213110).
@@ -168,7 +168,7 @@ As the front-end capture component, ISP needs to work together with the Video In
 The PQ Tools tool mainly performs dynamic image quality adjustment on the PC side, allowing adjustment of multiple factors that affect image quality, such as denoising strength, color conversion matrix, and saturation.
 
 **Figure 1**  ISP Firmware Usage Flow<a name="fig796617213110"></a>  
-![](figures/ISP Firmware Usage Flow "ISP Firmware Usage Flow")
+![](figures/ISP-firmware使用流程.png "ISP-firmware使用流程")
 
 After the user has debugged the image effect, they can use the configuration file save function provided by the PQ Tools tool to save the configuration parameters. On the next startup, the system can use the configuration file loading function provided by the PQ Tools tool to load the already adjusted image parameters.
 
@@ -258,7 +258,7 @@ The file organization structure of the ISP firmware is shown in [Figure 1](#fig1
 The Src folder contains the ISP control unit and basic algorithm unit, which are compiled to generate libss\_isp.a and libot\_isp.a, i.e., the ISP library. The 3a folder contains the AE/AWB algorithm library; users can also develop their own 3A algorithms based on a unified interface. The Sensor folder contains driver programs for each sensor; this code is open source. The dehaze folder corresponds to the dehazing algorithm program, the ldci folder corresponds to the local automatic contrast enhancement algorithm program, and the drc folder corresponds to the dynamic range compression algorithm program; these parts are not open source.
 
 **Figure 1**  ISP Firmware File Organization<a name="fig142122515335"></a>  
-![](figures/ISP Firmware File Organization "ISP Firmware File Organization")
+![](figures/ISP-firmware-文件组织.png "ISP-firmware-文件组织")
 # System Control
 ## Function Overview<a name="ZH-CN_TOPIC_0000002471084924"></a>
 
@@ -1709,7 +1709,7 @@ td_s32 ss_mpi_isp_sensor_reg_callback(ot_vi_pipe vi_pipe, ot_isp_sns_attr_info *
 -   This interfacedoes not support multi-process operation.
 
 **Figure 1**  Interface between ISP library and sensor library<a name="fig19561149142511"></a>  
-![](figures/Interface between ISP library and sensor library "Interface between ISP library and sensor library")
+![](figures/ISP库与sensor库间的接口.png "ISP库与sensor库间的接口")
 
 **Example**
 
@@ -1909,7 +1909,7 @@ td_s32 ss_mpi_isp_ae_lib_reg_callback(ot_vi_pipe vi_pipe, const ot_isp_3a_alg_li
 -   A maximum of 2 AE libraries can be registered.
 
 **Figure 1**  Interface between ISP library and AE library<a name="fig7744142162816"></a>  
-![](figures/Interface between ISP library and AE library "Interface between ISP library and AE library")
+![](figures/ISP库与AE库间的接口.png "ISP库与AE库间的接口")
 
 **Example**
 
@@ -2098,7 +2098,7 @@ td_s32 ss_mpi_isp_awb_lib_reg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *aw
 -   Supports a maximum of 2 AWB library registrations.
 
 **Figure 1**  Interface between ISP library and AWB library<a name="fig2137158318"></a>  
-![](figures/Interface between ISP library and AWB library "Interface between ISP library and AWB library")
+![](figures/ISP库与AWB库间的接口.png "ISP库与AWB库间的接口")
 
 **Example**
 
@@ -5667,13 +5667,13 @@ typedef struct {
 As shown in [Figure 1](#_Ref440016125) to [Figure 3](#_Ref440016130), the meaning of each configuration parameter for the sync signal generator module is illustrated.
 
 **Figure 1**  Sync signal configuration timing diagram<a name="_Ref440016125"></a>  
-![](figures/Sync Signal Configuration Timing Diagram "Sync Signal Configuration Timing Diagram")
+![](figures/同步信号配置时序图.png "同步信号配置时序图")
 
 **Figure 2**  Sync signal polarity inversion<a name="fig4740mcpsimp"></a>  
-![](figures/Sync Signal Polarity Inversion "Sync Signal Polarity Inversion")
+![](figures/同步信号极性翻转.png "同步信号极性翻转")
 
 **Figure 3**  Sync signal enabled<a name="_Ref440016130"></a>  
-![](figures/Sync Signal Enabled "Sync Signal Enabled")
+![](figures/同步信号使能.png "同步信号使能")
 
 **Related Data Types and Interfaces**
 
@@ -9812,7 +9812,7 @@ typedef struct {
 </table>
 
 **Figure 1**  White region selection parameters<a name="fig645810198416"></a>  
-![](figures/White Region Selection Parameters "White Region Selection Parameters")
+![](figures/白色区域选择相关参数.png "白色区域选择相关参数")
 
 **Precautions**
 
@@ -10529,7 +10529,7 @@ typedef enum {
 2.  ot\_isp\_run\_wakeup\_select defaults to OT\_ISP\_RUN\_WAKEUP\_FE\_START and can be used with the ss\_mpi\_isp\_run interface. The recommended calling flow is shown in [Figure 1](#fig86541627175814).
 
     **Figure 1**  Interface call flow (1)<a name="fig86541627175814"></a>  
-    ![](figures/API Call Flow (1) "API Call Flow (1)")
+    ![](figures/接口调用流程(1) "API Call Flow (1)")
 
 1.  If frames need to be retrieved from VI and then raw data sent for processing, ot\_isp\_run\_wakeup\_select can be set to OT\_ISP\_RUN\_WAKEUP\_BE\_END and used with the ss\_mpi\_isp\_run interface. The recommended calling flow is shown in [Figure 2](#fig1140172181212). This configuration uses the run\_be software path. When calling ss\_mpi\_vi\_send\_pipe\_raw to send raw frames, ensure even frame intervals. Uneven raw frame delivery may affect image quality during exposure ratio switching, mode switching, and similar scenarios.
 
@@ -10539,7 +10539,7 @@ typedef enum {
     -   Both run\_be and runonce support manual frame submission. run\_be supports multi-channel stitch mode frame submission; runonce does not support multi-channel stitching. runonce uses serial processing between software and hardware; run\_be uses parallel processing, which optimizes logical performance. Therefore, run\_be is recommended for video processing scenarios where performance is critical; runonce is recommended for snapshot scenarios.
 
     **Figure 2**  Interface call flow (2)<a name="fig1140172181212"></a>  
-    ![](figures/API Call Flow (2) "API Call Flow (2)")
+    ![](figures/接口调用流程(2) "API Call Flow (2)")
 
 **Related Data Types and Interfaces**
 

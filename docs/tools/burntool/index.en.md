@@ -92,7 +92,7 @@ The revision history accumulates the description of each document update. The la
 
 The BurnTool is a multifunctional tool primarily used for image burning, image uploading, and burner image creation.
 
->![](../../tools/burntool/public_sys-resources/icon-note.gif) **Note:**  The current tool only supports use on 64-bit operating systems.
+>![](public_sys-resources/icon-note.gif) **Note:**  The current tool only supports use on 64-bit operating systems.
 
 ## Application Scenarios<a name="ZH-CN_TOPIC_0000002408329736"></a>
 
@@ -232,20 +232,20 @@ The environment preparation for BurnTool burning is as follows:
 3.  Extract ToolPlatform-X.X.X.zip, double-click ToolPlatform.exe in the tool directory to open the ToolPlatform tool, as shown in [Figure 1](#_Ref427762404).
 
     **Figure 1**  Opening the ToolPlatform tool from the ToolPlatform tool directory<a name="_Ref427762404"></a>  
-    ![](../../tools/burntool/figures/从ToolPlatform工具目录打开ToolPlatform工具.png "Opening the ToolPlatform tool from the ToolPlatform tool directory")
+    ![](figures/从ToolPlatform工具目录打开ToolPlatform工具.png "从ToolPlatform工具目录打开ToolPlatform工具")
 
 4.  Select the BurnTool in the welcome page, as shown in [Figure 2](#_Ref427762422).
 
     **Figure 2**  Selecting the BurnTool<a name="_Ref427762422"></a>  
-    ![](../../tools/burntool/figures/选择BurnTool工具.png "Selecting the BurnTool")
+    ![](figures/选择BurnTool工具.png "选择BurnTool工具")
 
 5.  Parameter configuration: select the serial port used to connect to the board, select the network IP address used by the PC, and configure the board's MAC address, IP address, subnet mask, and gateway, as shown in [Figure 3](#fig58684616564).
 
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >The selected PC server IP must be in the same network segment as the board's network configuration; otherwise, images other than fastboot cannot be burned via the network port (the fastboot image is burned via the serial port).
 
     **Figure 3**  Parameter settings<a name="fig58684616564"></a>  
-    ![](../../tools/burntool/figures/参数设置.png "Parameter settings")
+    ![](figures/参数设置.png "参数设置")
 # Burn by Partition
 ## Applicable Scenarios<a name="ZH-CN_TOPIC_0000002408329724"></a>
 
@@ -258,18 +258,18 @@ The specific burning steps are as follows:
 1.  After opening the BurnTool, switch to the "Burn by Partition" tab, as shown in [Figure 1](#fig1560862365516).
 
     **Figure 1**  BurnTool Burn by Partition<a name="fig1560862365516"></a>  
-    ![](../../tools/burntool/figures/BurnTool按分区烧写.png "BurnTool Burn by Partition")
-    >![](../../tools/burntool/public_sys-resources/icon-note.gif) **Note:** 
+    ![](figures/BurnTool按分区烧写.png "BurnTool按分区烧写")
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   When the software is first opened, it will automatically generate default parameters. When these parameter configuration information is changed, the software will automatically record the latest changed values. When the software exits normally, the configuration parameters are automatically saved. Upon next startup, the latest configuration parameters are used. If the software encounters an abnormal exit, the software's configuration parameters may not be correctly saved, meaning the most recent parameter modifications will be lost.
     >-   Click the Save button to save the current board-side network configuration. Click the Load button to select a set of configurations from the saved results as the current configuration.
     >-   Toggle the "Use XML path by default" checkbox state. If checked, the partition file is searched for in the XML path first. If unchecked, the absolute path is used to search for the file first. If the file is not found, the tool then tries to find it in the XML directory.
     >-   **XML is a configuration file used to save partition table information. The edited partition table can be saved as an XML file using the Save button on the tool. The next time the tool is opened, import the XML and the partition table information will be directly loaded.**
 
-2.  Configure the board partition information. Click the browse button ![](../../tools/burntool/figures/zh-cn_image_0000002408330452.png) to select an XML file with pre-configured partition table information and load it into the tool. The partition information will be loaded, as shown in [Figure 2](#fig62556341).
+2.  Configure the board partition information. Click the browse button ![](figures/zh-cn_image_0000002408330452.png) to select an XML file with pre-configured partition table information and load it into the tool. The partition information will be loaded, as shown in [Figure 2](#fig62556341).
 
     **Figure 2**  Configuring board partition information<a name="fig62556341"></a>  
-    ![](../../tools/burntool/figures/配置单板分区信息.png "Configuring board partition information")
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    ![](figures/配置单板分区信息.png "配置单板分区信息")
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >-   The partition information is only used for burning and does not determine the actual partition layout of the board. The actual partition layout of the board is determined by the board's bootargs. Please ensure that the partition information here corresponds to the partition information specified by the board's bootargs; otherwise, errors may occur.
     >-   BurnTool supports inconsistent partition paths and remote burning, meaning the images to be burned can be images on remote paths.
     >-   If a partition is selected but no burning file is chosen, the partition will be erased during the burning process.
@@ -278,59 +278,59 @@ The specific burning steps are as follows:
     To modify partition information, you can directly modify the xml-format partition information file, or modify it in the tool by clicking on the column of the partition you want to modify, as shown in [Figure 3](#fig1406152918013).
 
     **Figure 3**  Editing board partition information<a name="fig1406152918013"></a>  
-    ![](../../tools/burntool/figures/编辑单板分区信息.png "Editing board partition information")
+    ![](figures/编辑单板分区信息.png "编辑单板分区信息")
 
-    Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002441769937.jpg) to add a row of partition. In this row, you can modify the partition name, select the flash type, whether a file system is needed and the file system type, and modify the partition start address and partition size.
+    Click the button ![](figures/zh-cn_image_0000002441769937.jpg) to add a row of partition. In this row, you can modify the partition name, select the flash type, whether a file system is needed and the file system type, and modify the partition start address and partition size.
 
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >-   The partition start address and partition size are in KB or MB units and must be integer multiples of the flash block size; otherwise, errors may occur.
     >-   For the jffs2 file system in a partition, it is not a special format — simply select none.
 
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002408330584.jpg) to select or change the burning file for this partition.
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002441769729.jpg) to delete this partition information.
+    -   Click the button ![](figures/zh-cn_image_0000002408330584.jpg) to select or change the burning file for this partition.
+    -   Click the button ![](figures/zh-cn_image_0000002441769729.jpg) to delete this partition information.
 
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >The fastboot partition cannot be deleted here, and the fastboot partition name cannot be modified, because if the fastboot partition is deleted or its name is modified, one-click burning cannot be achieved.
 
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002441890057.jpg) to select all partitions to be burned for one-click burning of all partitions. Click the button again ![](../../tools/burntool/figures/zh-cn_image_0000002441890145.jpg) to deselect all partitions to be burned. You can also click the checkbox ![](../../tools/burntool/figures/zh-cn_image_0000002441889885.jpg) to select the corresponding partitions for burning.
-    -   Click the save button ![](../../tools/burntool/figures/zh-cn_image_0000002441769905.png) to save the edited partition table as a file.
+    -   Click the button ![](figures/zh-cn_image_0000002441890057.jpg) to select all partitions to be burned for one-click burning of all partitions. Click the button again ![](figures/zh-cn_image_0000002441890145.jpg) to deselect all partitions to be burned. You can also click the checkbox ![](figures/zh-cn_image_0000002441889885.jpg) to select the corresponding partitions for burning.
+    -   Click the save button ![](figures/zh-cn_image_0000002441769905.png) to save the edited partition table as a file.
 
-    >![](../../tools/burntool/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   When the tool is first opened, there may not be an xml-format partition information file for the board partition information. In this case, you can directly fill in or modify the board partition information in the tool interface to create it. After creation, when closing the ToolPlatform tool, the dialog shown in [Figure 4](#Figure2.5) will appear, reminding you whether to save the partition information. Click "OK", and in the dialog that appears, select the path to save the partition information, enter the filename to save, and it will be saved as xml-format partition information. Click "Cancel" to close the tool without saving the partition information.
     >-   After creation, when switching tools, the dialog shown in [Figure 5](#Figure2.6) appears. Click "OK", and in the dialog that appears, select the path to save the partition information, enter the filename to save, and it will be saved as xml-format partition information. Click "Cancel" to switch views without saving the partition information. Note that the filename suffix for saving partition information must be .xml format; otherwise, the partition information may not be correctly loaded the next time. Saving partition information is shown in [Figure 6](#Figure2.7).
 
     **Figure 4**  Dialog reminding whether to save partition information when closing the ToolPlatform tool<a name="Figure2.5"></a>  
-    ![](../../tools/burntool/figures/关闭ToolPlatform工具时提醒是否保存分区信息界面.png "Dialog reminding whether to save partition information when closing the ToolPlatform tool")
+    ![](figures/关闭ToolPlatform工具时提醒是否保存分区信息界面.png "关闭ToolPlatform工具时提醒是否保存分区信息界面")
 
     **Figure 5**  Dialog reminding whether to save partition information when switching views<a name="Figure2.6"></a>  
-    ![](../../tools/burntool/figures/切换视图时提醒是否保存分区信息界面.png "Dialog reminding whether to save partition information when switching views")
+    ![](figures/切换视图时提醒是否保存分区信息界面.png "切换视图时提醒是否保存分区信息界面")
 
     **Figure 6**  Partition information save interface<a name="Figure2.7"></a>  
-    ![](../../tools/burntool/figures/分区信息保存界面.png "Partition information save interface")
+    ![](figures/分区信息保存界面.png "分区信息保存界面")
 
-    Select the current last row, click New ![](../../tools/burntool/figures/zh-cn_image_0000002441769857.jpg) to get a new last row, then enter "-" in the length column of that row, add the partition name, file system, and file reference path for that row. During subsequent burning, the length of this row can be calculated as the remaining length of the entire device. This is shown in [Figure 7](#fig99064111119).
+    Select the current last row, click New ![](figures/zh-cn_image_0000002441769857.jpg) to get a new last row, then enter "-" in the length column of that row, add the partition name, file system, and file reference path for that row. During subsequent burning, the length of this row can be calculated as the remaining length of the entire device. This is shown in [Figure 7](#fig99064111119).
 
     **Figure 7**  Setting length to "-" after creating new board partition information<a name="fig99064111119"></a>  
-    ![](../../tools/burntool/figures/新建单板分区信息后设置长度为--.png "Setting length to '-' after creating new board partition information")
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    ![](figures/新建单板分区信息后设置长度为--.png "新建单板分区信息后设置长度为--")
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >If the user does not select the current last partition when creating a new partition row, the newly created partition may not be the new last partition, and "-" cannot be used to represent the remaining length.
 
 3.  Prepare the board environment, select a transmission method, as shown in [Figure 8](#fig15452338171518). If the board is powered on, power it off.
 
     **Figure 8**  Selecting the transmission method<a name="fig15452338171518"></a>  
-    ![](../../tools/burntool/figures/选择传输方式.png "Selecting the transmission method")
+    ![](figures/选择传输方式.png "选择传输方式")
     -   If selecting the network port, connect the board's serial port and network port.
     -   If selecting the serial port, connect the board's serial port.
 
-4.  Burn the board. Click the burn button ![](../../tools/burntool/figures/zh-cn_image_0000002441889961.png), as shown in [Figure 9](#fig1659555711617).
+4.  Burn the board. Click the burn button ![](figures/zh-cn_image_0000002441889961.png), as shown in [Figure 9](#fig1659555711617).
 
     **Figure 9**  Clicking Burn<a name="fig1659555711617"></a>  
-    ![](../../tools/burntool/figures/点击烧写.png "Clicking Burn")
+    ![](figures/点击烧写.png "点击烧写")
 
 5.  Power on the board, enter the burning process, and wait for burning to complete. The burning process is shown in [Figure 10](#fig297215536181).
 
     **Figure 10**  Burning process<a name="fig297215536181"></a>  
-    ![](../../tools/burntool/figures/烧写过程.png "Burning process")
+    ![](figures/烧写过程.png "烧写过程")
 
     Information about the burning process will be displayed in the console above. If a burning error is found, please check the board again:
 
@@ -342,28 +342,28 @@ The specific burning steps are as follows:
 
 ## Creating NAND Burner Images<a name="ZH-CN_TOPIC_0000002408169740"></a>
 
-BurnTool provides the function of creating NAND burner images. After configuring the partition list, click the Create NAND Burner Image button ![](../../tools/burntool/figures/zh-cn_image_0000002408329812.png), and the NAND Burner Image Creation interface will appear, as shown in [Figure 1](#fig106441654201914).
+BurnTool provides the function of creating NAND burner images. After configuring the partition list, click the Create NAND Burner Image button ![](figures/zh-cn_image_0000002408329812.png), and the NAND Burner Image Creation interface will appear, as shown in [Figure 1](#fig106441654201914).
 
 **Figure 1**  NAND Burner Image Creation interface<a name="fig106441654201914"></a>  
-![](../../tools/burntool/figures/制作Nand烧片器镜像界面.png "NAND Burner Image Creation interface")
+![](figures/制作Nand烧片器镜像界面.png "制作Nand烧片器镜像界面")
 
 After selecting the various data in the dialog box (the Randomization function is available for devices with 8K and above Page Size), click the "Make" button to generate the NAND burner image.
 
->![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+>![](public_sys-resources/icon-notice.gif) **Important:** 
 >-   The parameters entered or selected must be consistent with the corresponding item values in the board boot information (which can be captured and viewed using terminal software such as HyperTerminal) or match the actual device parameters installed.
 >-   If the user does not select a partition, or does not specify a burning file for a selected partition, the image file for that partition cannot be created.
 >-   If creating an image for a non-yaffs partition, the file system item in the partition table must not be specified as yaffs. When creating an image for a yaffs partition, the file system must be specified as yaffs. Otherwise, the resulting image will be incorrect.
 
 ## Selecting a Single Row in the Partition Table to Jump to the Burn by Address Interface<a name="ZH-CN_TOPIC_0000002441768853"></a>
 
-Burn by Partition provides the ability to carry sub-partition information, i.e., the partition name, file system, file reference path, start address, and partition length, to jump to the Burn by Address interface, and use the partition's information to directly populate the Burn by Address information fields for user convenience. In the Burn by Partition interface, select a row in the partition table and click the jump button ![](../../tools/burntool/figures/zh-cn_image_0000002441769277.jpg) to jump to the Burn by Address interface. This is shown in [Figure 1](#fig19742104082116) and [Figure 2](#fig1241812821916).
+Burn by Partition provides the ability to carry sub-partition information, i.e., the partition name, file system, file reference path, start address, and partition length, to jump to the Burn by Address interface, and use the partition's information to directly populate the Burn by Address information fields for user convenience. In the Burn by Partition interface, select a row in the partition table and click the jump button ![](figures/zh-cn_image_0000002441769277.jpg) to jump to the Burn by Address interface. This is shown in [Figure 1](#fig19742104082116) and [Figure 2](#fig1241812821916).
 
 **Figure 1**  Selecting a single row and clicking jump<a name="fig19742104082116"></a>  
-![](../../tools/burntool/figures/选中单行-点击跳转.png "Selecting a single row and clicking jump")
+![](figures/选中单行-点击跳转.png "选中单行-点击跳转")
 
 **Figure 2**  Entering the Burn by Address interface<a name="fig1241812821916"></a>  
-![](../../tools/burntool/figures/进入按地址烧写界面.png "Entering the Burn by Address interface")
->![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+![](figures/进入按地址烧写界面.png "进入按地址烧写界面")
+>![](public_sys-resources/icon-notice.gif) **Important:** 
 >Before jumping, the user must select the partition row that needs to jump to the Burn by Address page; only then will the jump button appear.
 
 # Burn by Address
@@ -378,26 +378,26 @@ The specific burning steps are as follows:
 1.  Switch to the "Burn by Address" tab, as shown in [Figure 1](#fig77356229246).
 
     **Figure 1**  Burn by Address interface<a name="fig77356229246"></a>  
-    ![](../../tools/burntool/figures/地址烧写界面.png "Burn by Address interface")
+    ![](figures/地址烧写界面.png "地址烧写界面")
 
 1.  Configure the board burning information: select the flash type to burn, set the burning start address and length, and select the file to burn, as shown in [Figure 2](#fig1355103942610).
 
     **Figure 2**  Configuring board burning information<a name="fig1355103942610"></a>  
-    ![](../../tools/burntool/figures/配置单板烧写信息.png "Configuring board burning information")
+    ![](figures/配置单板烧写信息.png "配置单板烧写信息")
 
 2.  Same as section 2.2 step [3](#ZH-CN_TOPIC_0000002441889129).
-3.  Click the burn button ![](../../tools/burntool/figures/zh-cn_image_0000002441769249.png), as shown in [Figure 3](#_Ref416783621).
+3.  Click the burn button ![](figures/zh-cn_image_0000002441769249.png), as shown in [Figure 3](#_Ref416783621).
 
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >When burning by address, the user does not need to select a file type — just select the file you want to burn. Since yaffs files (with OOB data) and other types of files (without OOB data) have different formats, the tool will automatically distinguish the file type in the background based on the selected file (the tool distinguishes between yaffs type and None type). It then executes the corresponding burning according to the different types. Power on the board, enter the burning process, and wait for burning to complete. For Burn by Address, only the first time the burn button is clicked does the board need to be powered on again. For subsequent image burns, the board does not need to be powered on again.
 
     **Figure 3**  Clicking Burn<a name="_Ref416783621"></a>  
-    ![](../../tools/burntool/figures/单击烧写.png "Clicking Burn")
+    ![](figures/单击烧写.png "单击烧写")
 
 4.  Power on the board, enter the burning process, and wait for burning to complete. The burning process is shown in [Figure 4](#_Ref416783705).
 
     **Figure 4**  Burning process<a name="_Ref416783705"></a>  
-    ![](../../tools/burntool/figures/烧写过程-0.png "Burning process-0")
+    ![](figures/烧写过程-0.png "烧写过程-0")
 
     Information about the burning process will be printed in the "Console" above. If a burning error is found, please check the board again:
 
@@ -418,14 +418,14 @@ Burning and uploading are two inverse operations. The burning function writes im
 3.  Configure the board upload information: select the flash type to upload, set the start address and length to be uploaded in the storage device, and set the save file after uploading, as shown in [Figure 1](#fig12876191611389).
 
     **Figure 1**  Upload information<a name="fig12876191611389"></a>  
-    ![](../../tools/burntool/figures/上载信息.png "Upload information")
+    ![](figures/上载信息.png "上载信息")
 
 4.  Same as section 3.2 step [3](#ZH-CN_TOPIC_0000002441889077).
 5.  Click "upload". If the image in the region to be uploaded is fastboot, kernel, ubifs, etc., please select Data without OOB. If the image is yaffs, please select Data with OOB, as shown in [Figure 2](#_Ref416783742).
 
     **Figure 2**  Selecting the data type<a name="_Ref416783742"></a>  
-    ![](../../tools/burntool/figures/选择数据类型.png "Selecting the data type")
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    ![](figures/选择数据类型.png "选择数据类型")
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >When uploading by address, the user needs to explicitly specify the data type to upload. This step is completed in the pop-up dialog after the user clicks the "Upload" button. If the user makes an incorrect selection at this step, the uploaded data will not match the original file. When partially uploading a yaffs file system, the length should be a multiple of pagesize + oobsize.
 
 ## Erase Steps<a name="ZH-CN_TOPIC_0000002441889041"></a>
@@ -437,14 +437,14 @@ The erase function erases content of a specified length starting from a specifie
 3.  Configure the board erase information: select the flash type to erase, set the start address and length to be erased in the storage device, as shown in [Figure 1](#fig10547163316314).
 
     **Figure 1**  Erase information<a name="fig10547163316314"></a>  
-    ![](../../tools/burntool/figures/擦除信息.png "Erase information")
+    ![](figures/擦除信息.png "擦除信息")
 
 4.  Same as section 3.2 step [3](#ZH-CN_TOPIC_0000002441889077).
 5.  Click "erase", power on the board, enter the erase process, and wait for erasure to complete, as shown in [Figure 2](#_Ref416783804).
 
     **Figure 2**  Erase process<a name="_Ref416783804"></a>  
-    ![](../../tools/burntool/figures/擦除过程.png "Erase process")
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    ![](figures/擦除过程.png "擦除过程")
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >When erasing, the length should be a multiple of the blocksize.
 
 # Boot Burning
@@ -459,28 +459,28 @@ The specific burning steps are as follows:
 1.  Switch to the "Burn Fastboot" tab, as shown in [Figure 1](#_Ref416783832).
 
     **Figure 1**  Fastboot burning interface<a name="_Ref416783832"></a>  
-    ![](../../tools/burntool/figures/Fastboot烧写界面.png "Fastboot burning interface")
+    ![](figures/Fastboot烧写界面.png "Fastboot烧写界面")
 
 2.  Configure the serial port: select the serial port used to connect to the board, as shown in [Figure 2](#_Ref416783851).
 
     **Figure 2**  Serial port selection<a name="_Ref416783851"></a>  
-    ![](../../tools/burntool/figures/串口选择.png "Serial port selection")
+    ![](figures/串口选择.png "串口选择")
 
 3.  Configure the Boot burning information, as shown in [Figure 3](#fig6981215103111).
 
     **Figure 3**  Configuring boot burning information<a name="fig6981215103111"></a>  
-    ![](../../tools/burntool/figures/配置boot-烧写信息.png "Configuring boot burning information")
+    ![](figures/配置boot-烧写信息.png "配置boot-烧写信息")
 
 4.  Prepare the board environment. If the board is powered on, power it off.
-5.  Click the burn button ![](../../tools/burntool/figures/zh-cn_image_0000002408170424.png), as shown in [Figure 4](#fig1999382113211).
+5.  Click the burn button ![](figures/zh-cn_image_0000002408170424.png), as shown in [Figure 4](#fig1999382113211).
 
     **Figure 4**  Clicking Burn<a name="fig1999382113211"></a>  
-    ![](../../tools/burntool/figures/点击Burn.png "Clicking Burn")
+    ![](figures/点击Burn.png "点击Burn")
 
 6.  Power on the board, enter the burning process, and wait for burning to complete. The burning process is shown in [Figure 5](#_Ref416783918).
 
     **Figure 5**  Burning process<a name="_Ref416783918"></a>  
-    ![](../../tools/burntool/figures/烧写过程-1.png "Burning process-1")
+    ![](figures/烧写过程-1.png "烧写过程-1")
 
     Information about the burning process will be printed in the "Console" above. If a burning error is found, please check again whether the serial port selection is correct.
 
@@ -498,53 +498,53 @@ The specific burning steps are as follows:
 1.  Switch to the "Burn eMMC" tab, as shown in [Figure 1](#fig10733727164915).
 
     **Figure 1**  eMMC burning interface<a name="fig10733727164915"></a>  
-    ![](../../tools/burntool/figures/eMMC-烧写界面.png "eMMC burning interface")
-    >![](../../tools/burntool/public_sys-resources/icon-note.gif) **Note:** 
+    ![](figures/eMMC-烧写界面.png "eMMC-烧写界面")
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   Toggle the "Use XML path by default" checkbox state. If checked, the partition file is searched for in the XML path first. If unchecked, the absolute path is used to search for the file first. If the file is not found, the tool then tries to find it in the XML directory. This state is checked by default.
     >-   **XML is a configuration file used to save partition table information. The edited partition table can be saved as an XML file using the Save button on the tool. The next time the tool is opened, import the XML and the partition table information will be directly loaded.**
 
 1.  Configure the board partition information. Click "Browse" to select pre-configured partition table information and load it into the tool, as shown in [Figure 2](#fig19253651205117). When the device type of the boot partition is emmc or emmc0, boot will be burned into the default partition. emmc will not switch the boot partition, while emmc0 will switch the boot partition to the default partition. When the device type of the boot partition is emmc1 or emmc2, boot will be burned into the corresponding boot1 or boot2 partition, and the boot partition will be switched to the corresponding boot1 or boot2 partition.
 
     **Figure 2**  Configuring board partition information<a name="fig19253651205117"></a>  
-    ![](../../tools/burntool/figures/配置单板分区信息-2.png "Configuring board partition information-2")
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    ![](figures/配置单板分区信息-2.png "配置单板分区信息-2")
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >If all partition files are packaged into a single image for burning (since eMMC file system partitions need to create a partition table, if the file system partitions are different, they cannot be packaged together; this issue does not exist for Android versions), this image must be placed in the fastboot partition, and the image must contain fastboot. Additionally, since burning at this time uses the serial port method, the burning speed is relatively slow — please be patient.
 
-    >![](../../tools/burntool/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >eMMC uses the DOS partition format. For Ext3/4 file system partitions, partition table information needs to be created for the kernel to correctly recognize the Ext3/4 file system partitions.
 
     To modify the information of a partition, you can directly modify the partition information file saved in xml format, or modify it in the tool. To modify the information of a partition in the tool, click on the row where that partition is located, and it will appear as shown in [Figure 3](#fig05531290513).
 
     **Figure 3**  Editing board partition information<a name="fig05531290513"></a>  
-    ![](../../tools/burntool/figures/编辑单板分区信息-3.png "Editing board partition information-3")
-    >![](../../tools/burntool/public_sys-resources/icon-notice.gif) **Important:** 
+    ![](figures/编辑单板分区信息-3.png "编辑单板分区信息-3")
+    >![](public_sys-resources/icon-notice.gif) **Important:** 
     >The partition start size and partition size are in KB or MB units and must be integer multiples of the eMMC sector size; otherwise, errors may occur.
 
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002408170740.jpg) to add a row of partition. In this row, you can modify the partition name, select whether a file system is needed and the file system type, and modify the partition start size and partition size.
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002408170832.jpg) to select or change the burning file for this partition.
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002408330712.jpg) to delete this partition information. Note: the fastboot partition cannot be deleted here, and the fastboot partition name cannot be modified, because if the fastboot partition is deleted or its name is modified, one-click burning cannot be achieved.
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002441889837.jpg) to select all partitions for one-click burning of all partitions. Click the button again ![](../../tools/burntool/figures/zh-cn_image_0000002408170596.jpg) to deselect all partitions to be burned. You can also click the checkbox ![](../../tools/burntool/figures/zh-cn_image_0000002408330496.jpg) to select the corresponding partitions for burning.
-    -   Click the button ![](../../tools/burntool/figures/zh-cn_image_0000002441769909.jpg) to save the edited partition table as a file.
+    -   Click the button ![](figures/zh-cn_image_0000002408170740.jpg) to add a row of partition. In this row, you can modify the partition name, select whether a file system is needed and the file system type, and modify the partition start size and partition size.
+    -   Click the button ![](figures/zh-cn_image_0000002408170832.jpg) to select or change the burning file for this partition.
+    -   Click the button ![](figures/zh-cn_image_0000002408330712.jpg) to delete this partition information. Note: the fastboot partition cannot be deleted here, and the fastboot partition name cannot be modified, because if the fastboot partition is deleted or its name is modified, one-click burning cannot be achieved.
+    -   Click the button ![](figures/zh-cn_image_0000002441889837.jpg) to select all partitions for one-click burning of all partitions. Click the button again ![](figures/zh-cn_image_0000002408170596.jpg) to deselect all partitions to be burned. You can also click the checkbox ![](figures/zh-cn_image_0000002408330496.jpg) to select the corresponding partitions for burning.
+    -   Click the button ![](figures/zh-cn_image_0000002441769909.jpg) to save the edited partition table as a file.
 
-    >![](../../tools/burntool/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >After creation, when switching perspectives, a dialog as shown will pop up. Click "OK", and in the dialog that appears, select the path to save the partition information, enter the filename to save, and it will be saved as xml-format partition information. Click "Cancel" to switch views without saving the partition information. Note that the filename suffix for saving partition information must be .xml format; otherwise, the partition information may not be correctly loaded the next time. Saving information is shown in [Figure 6](#fig196451156109).
 
     **Figure 4**  Dialog reminding whether to save partition information when closing the BurnTool<a name="fig0725202195510"></a>  
-    ![](../../tools/burntool/figures/关闭BurnTool工具时提醒是否保存分区信息界.png "Dialog reminding whether to save partition information when closing the BurnTool")
+    ![](figures/关闭BurnTool工具时提醒是否保存分区信息界.png "关闭BurnTool工具时提醒是否保存分区信息界")
 
     **Figure 5**  Dialog reminding whether to save partition information when switching views<a name="fig13640113718555"></a>  
-    ![](../../tools/burntool/figures/切换视图时提醒是否保存分区信息界面-4.png "Dialog reminding whether to save partition information when switching views-4")
+    ![](figures/切换视图时提醒是否保存分区信息界面-4.png "切换视图时提醒是否保存分区信息界面-4")
 
     Saving information is shown in [Figure 6](#fig196451156109).
 
     **Figure 6**  Partition information save interface<a name="fig196451156109"></a>  
-    ![](../../tools/burntool/figures/分区信息保存界面-5.png "Partition information save interface-5")
+    ![](figures/分区信息保存界面-5.png "分区信息保存界面-5")
 
 1.  Same as [2.2 step 3](#ZH-CN_TOPIC_0000002441889129).
-2.  Burn the board. Click the burn button ![](../../tools/burntool/figures/zh-cn_image_0000002408170564.png), as shown in [Figure 7](#fig79197461111).
+2.  Burn the board. Click the burn button ![](figures/zh-cn_image_0000002408170564.png), as shown in [Figure 7](#fig79197461111).
 
     **Figure 7**  Clicking Burn<a name="fig79197461111"></a>  
-    ![](../../tools/burntool/figures/点击烧写-6.png "Clicking Burn-6")
+    ![](figures/点击烧写-6.png "点击烧写-6")
 
 1.  Power on the board, enter the burning process, and wait for burning to complete.
 
@@ -558,10 +558,10 @@ The specific burning steps are as follows:
 
 ## Creating Burner Images<a name="ZH-CN_TOPIC_0000002441768929"></a>
 
-The Create Burner Image function can create the files selected in the current partition list as a burner image file. After configuring the partition list, click the Create Burner Image button ![](../../tools/burntool/figures/zh-cn_image_0000002441890077.png), set the file path in the Save dialog that appears, and the burner image creation will begin, as shown in [Figure 1](#fig114434436368).
+The Create Burner Image function can create the files selected in the current partition list as a burner image file. After configuring the partition list, click the Create Burner Image button ![](figures/zh-cn_image_0000002441890077.png), set the file path in the Save dialog that appears, and the burner image creation will begin, as shown in [Figure 1](#fig114434436368).
 
 **Figure 1**  Burner image creation process<a name="fig114434436368"></a>  
-![](../../tools/burntool/figures/制作烧片器镜像过程.png "Burner image creation process")
+![](figures/制作烧片器镜像过程.png "制作烧片器镜像过程")
 ## Upload Steps<a name="ZH-CN_TOPIC_0000002408169712"></a>
 
 The upload function is not available — the board does not support uploading.
@@ -571,17 +571,17 @@ The upload function is not available — the board does not support uploading.
 1.  Switch to the eMMC tab and import the partition table information, as shown in [Figure 1](#fig119011214321).
 
     **Figure 1**  Importing partition table<a name="fig119011214321"></a>  
-    ![](../../tools/burntool/figures/导入分区表.png "Importing partition table")
+    ![](figures/导入分区表.png "导入分区表")
 
 2.  Edit the boot device type, as shown in [Figure 2](#fig151791728173710). If the device type is emmc, only the default partition will be erased. If the device type is emmc0, 1, or 2, the default partition, boot1, and boot2 partitions will all be erased.
 
     **Figure 2**  Editing boot device type<a name="fig151791728173710"></a>  
-    ![](../../tools/burntool/figures/编辑boot器件类型.png "Editing boot device type")
+    ![](figures/编辑boot器件类型.png "编辑boot器件类型")
 
 3.  Click Erase, as shown in [Figure 3](#fig17109141184016).
 
     **Figure 3**  Clicking Erase<a name="fig17109141184016"></a>  
-    ![](../../tools/burntool/figures/点击擦除.png "Clicking Erase")
+    ![](figures/点击擦除.png "点击擦除")
 # Merging Images
 ## Applicable Scenarios<a name="ZH-CN_TOPIC_0000002408329680"></a>
 
@@ -596,24 +596,24 @@ The specific merging steps are as follows:
 1.  Switch to the "Merge Image" tab, as shown in [Figure 1](#_Ref416784461).
 
     **Figure 1**  BurnTool Merge Image interface<a name="_Ref416784461"></a>  
-    ![](../../tools/burntool/figures/BurnTool合并镜像界面.png "BurnTool Merge Image interface")
+    ![](figures/BurnTool合并镜像界面.png "BurnTool合并镜像界面")
 
-2.  Click the Browse button to load a partition table, or click the ![](../../tools/burntool/figures/zh-cn_image_0000002408329860.png) button to manually create a new partition table, as shown in [Figure 2](#fig1195161117453).
+2.  Click the Browse button to load a partition table, or click the ![](figures/zh-cn_image_0000002408329860.png) button to manually create a new partition table, as shown in [Figure 2](#fig1195161117453).
 
     **Figure 2**  Loading partition table<a name="fig1195161117453"></a>  
-    ![](../../tools/burntool/figures/加载分区表.png "Loading partition table")
+    ![](figures/加载分区表.png "加载分区表")
 
 3.  Click the Merging Image button to merge images, as shown in [Figure 3](#_Ref416784524).
 
     **Figure 3**  Merging images<a name="_Ref416784524"></a>  
-    ![](../../tools/burntool/figures/合并镜像.png "Merging images")
+    ![](figures/合并镜像.png "合并镜像")
 # Preferences Settings
 ## Command Settings<a name="ZH-CN_TOPIC_0000002441889057"></a>
 
 The BurnTool's serial port command send timeout can be set through Preferences. Click "Window" → "Preferences" in the menu bar to enter the Preferences dialog, and go to the "Command Settings" page under "BurnTool", as shown in [Figure 1](#_Ref416784561).
 
 **Figure 1**  Command Settings page<a name="_Ref416784561"></a>  
-![](../../tools/burntool/figures/命令设置页面.png "Command Settings page")
+![](figures/命令设置页面.png "命令设置页面")
 
 Note: Timeout (ms): used for serial port command send response timeout. Unit: ms.
 
@@ -622,7 +622,7 @@ Note: Timeout (ms): used for serial port command send response timeout. Unit: ms
 The BurnTool's TFTP can be set through Preferences. Click "Window" → "Preferences" in the menu bar to enter the Preferences dialog, and go to the "TFTP Settings" page under "BurnTool", as shown in [Figure 1](#_Ref416784544).
 
 **Figure 1**  TFTP Settings page<a name="_Ref416784544"></a>  
-![](../../tools/burntool/figures/TFTP设置页面.png "TFTP Settings page")
+![](figures/TFTP设置页面.png "TFTP设置页面")
 
 Settings items:
 
@@ -643,18 +643,18 @@ The BurnTool's Debug console can be set through Preferences.
 1.  Click "Window" → "Preferences" in the menu bar to enter the Preferences dialog, go to the "BurnTool" page, and select the "Open Debug Mode" button to enable the Debug console, as shown in [Figure 1](#_Ref410048637).
 
     **Figure 1**  Selecting to enable the Debug console<a name="_Ref410048637"></a>  
-    ![](../../tools/burntool/figures/选中开启Debug控制台.png "Selecting to enable the Debug console")
+    ![](figures/选中开启Debug控制台.png "选中开启Debug控制台")
 
 2.  After starting burning, the tool will automatically create a Debug console. Click the console switch button in the upper right corner of the console and select the "BurnTool-Debug" console to switch. The current console will then display as the Debug console, as shown in [Figure 2](#_Ref410048738).
 
     **Figure 2**  Switching to the BurnTool-Debug console<a name="_Ref410048738"></a>  
-    ![](../../tools/burntool/figures/切换BurnTool-Debug控制台.png "Switching to the BurnTool-Debug console")
+    ![](figures/切换BurnTool-Debug控制台.png "切换BurnTool-Debug控制台")
 ### Check Same Network Segment Settings<a name="ZH-CN_TOPIC_0000002441768921"></a>
 
 Click "Window" → "Preferences" in the menu bar to enter the Preferences dialog, go to the "BurnTool" page, and select the "Check whether the PC and Board IP addresses are in the same network segment" button, as shown in [Figure 1](#_Ref410048821). This enables checking whether the PC and board IPs are in the same gateway before burning. Deselecting it means this check will not be performed before burning.
 
 **Figure 1**  Check Same Network Segment Settings page<a name="_Ref410048821"></a>  
-![](../../tools/burntool/figures/检查同一网段设置页面.png "Check Same Network Segment Settings page")
+![](figures/检查同一网段设置页面.png "检查同一网段设置页面")
 # FAQ
 ## Solution for TFTP Timeout Prompt During BurnTool Burning<a name="ZH-CN_TOPIC_0000002408169704"></a>
 
@@ -663,7 +663,7 @@ Click "Window" → "Preferences" in the menu bar to enter the Preferences dialog
 When the following TFTP error occurs, as shown in [Figure 1](#_Ref386011440), how should it be resolved?
 
 **Figure 1**  TFTP timeout problem<a name="_Ref386011440"></a>  
-![](../../tools/burntool/figures/TFTP超时问题.png "TFTP timeout problem")
+![](figures/TFTP超时问题.png "TFTP超时问题")
 
 **Solution<a name="section05094512502"></a>**
 
@@ -672,13 +672,13 @@ Resolving this issue involves the following four aspects:
 -   Check whether the network configuration in the BurnTool is correct, as shown in [Figure 2](#_Ref386011442). First, check whether the server IP is correct. If not, click Reload to load the latest PC-side IP address. Then check whether the subnet mask and gateway are correctly configured. If correct, check whether the board-side IP address is occupied (use the ping command to check whether the current board IP can be pinged; if not, it indicates that the current network is unreachable). After ensuring all the above parameters are correct, try burning again.
 
     **Figure 2**  Checking whether the network configuration is correct<a name="_Ref386011442"></a>  
-    ![](../../tools/burntool/figures/检查网络配置是否正确.png "Checking whether the network configuration is correct")
+    ![](figures/检查网络配置是否正确.png "检查网络配置是否正确")
 -   Use an external tftpd32 tool instead of the built-in TFTP in the tool for download operations (see "[How to Use an External tftpd32 for Image Download?](#ZH-CN_TOPIC_0000002441889093)"). If tftpd32 also shows a timeout, check whether the current network environment is normal.
 -   Modify the TFTP parameter settings in the tool to match the current network environment. Through the menu bar, click "Window" → "Preferences" → "BurnTool" → "TFTP Setting", as shown in [Figure 3](#_Ref386007685). Set the "The number of consecutive packet loss" and "TFTP no response timeout" parameters larger, then perform burning to check whether it is normal.
 -   Check whether the firewall is disabled. If not, disable the firewall.
 
     **Figure 3**  Modifying TFTP settings<a name="_Ref386007685"></a>  
-    ![](../../tools/burntool/figures/修改TFTP设置.png "Modifying TFTP settings")
+    ![](figures/修改TFTP设置.png "修改TFTP设置")
 ## How to Use an External tftpd32 for Image Download?<a name="ZH-CN_TOPIC_0000002441889093"></a>
 
 **Problem Description<a name="section43891210195218"></a>**
@@ -692,15 +692,15 @@ The steps for using the external tftpd32 are:
 1.  Before burning, open the tftpd32 tool and select the correct PC-side IP address and the directory where the images to be burned are located, as shown in [Figure 1](#_Ref386011451).
 
     **Figure 1**  Configuring the tftpd32 tool<a name="_Ref386011451"></a>  
-    ![](../../tools/burntool/figures/配置tftpd32工具.png "Configuring the tftpd32 tool")
+    ![](figures/配置tftpd32工具.png "配置tftpd32工具")
 
 1.  Click the burn button normally in the BurnTool. A prompt box will appear, as shown in [Figure 2](#_Ref386011453). Click Confirm to start burning. The external tftpd32 will then be used for image download, as shown in [Figure 3](#_Ref386011454).
 
     **Figure 2**  Prompt indicating built-in TFTP startup failed, port occupied by external tftpd32 tool<a name="_Ref386011453"></a>  
-    ![](../../tools/burntool/figures/提示内置TFTP启动失败-端口被外置tftpd32工具占.png "Prompt indicating built-in TFTP startup failed, port occupied by external tftpd32 tool")
+    ![](figures/提示内置TFTP启动失败-端口被外置tftpd32工具占.png "提示内置TFTP启动失败-端口被外置tftpd32工具占")
 
     **Figure 3**  External tftpd32 tool downloading image<a name="_Ref386011454"></a>  
-    ![](../../tools/burntool/figures/外置tftpd32工具正在下载镜像.png "External tftpd32 tool downloading image")
+    ![](figures/外置tftpd32工具正在下载镜像.png "外置tftpd32工具正在下载镜像")
 ## Solution for "Failed to Send Start Frame" Error When Burning the Fastboot Partition with BurnTool<a name="ZH-CN_TOPIC_0000002408329668"></a>
 
 **Problem Description<a name="section17113181011420"></a>**
@@ -708,14 +708,14 @@ The steps for using the external tftpd32 are:
 When the following "Failed to send start frame" error occurs while burning the Fastboot partition, as shown in [Figure 1](#_Ref386011456), what should I do?
 
 **Figure 1**  "Failed to send start frame" error message<a name="_Ref386011456"></a>  
-![](../../tools/burntool/figures/Failed-to-send-start-frame-报错信息.png "\")Failed to send start frame\" error message")
+![](figures/Failed-to-send-start-frame-报错信息.png "Failed-to-send-start-frame-报错信息")Failed to send start frame\" error message")
 
 **Solution<a name="section1951334642"></a>**
 
 First, confirm whether the board was powered on again within 15 seconds after the last burn was clicked. If it has already been powered on again, check whether the serial port is making good contact with the board. If the connection is normal, check whether the correct serial port number is selected in the BurnTool, as shown in [Figure 2](#_Ref386011460). After ensuring everything is correct, try burning again.
 
 **Figure 2**  Checking whether the serial port number is correctly selected<a name="_Ref386011460"></a>  
-![](../../tools/burntool/figures/检查串口号是否选择正确.png "Checking whether the serial port number is correctly selected")
+![](figures/检查串口号是否选择正确.png "检查串口号是否选择正确")
 ## Solution When the Console Only Prints a Line of "#########" Then Stops, and the Tool Reports "Failed to Send Head Frame" During Fastboot Partition Burning<a name="ZH-CN_TOPIC_0000002408169788"></a>
 
 **Problem Description<a name="section1174175519"></a>**
@@ -723,7 +723,7 @@ First, confirm whether the board was powered on again within 15 seconds after th
 When burning the Fastboot partition, the console only prints a line of "#########" and then stops, and the tool reports a "Failed to send head frame" error, as shown in [Figure 1](#_Ref386011462), how should it be resolved?
 
 **Figure 1**  "Failed to send head frame" error message<a name="_Ref386011462"></a>  
-![](../../tools/burntool/figures/Failed-to-send-head-frame-报错信息.png "\")Failed to send head frame\" error message")
+![](figures/Failed-to-send-head-frame-报错信息.png "Failed-to-send-head-frame-报错信息")Failed to send head frame\" error message")
 
 **Solution<a name="section1286417136513"></a>**
 
@@ -739,7 +739,7 @@ There may be two causes for this error:
 When the following "Failed to send data frame" error occurs while burning the Fastboot partition, as shown in [Figure 1](#_Ref386011468), what should I do?
 
 **Figure 1**  "Failed to send data frame" error message<a name="_Ref386011468"></a>  
-![](../../tools/burntool/figures/Failed-to-send-data-frame-报错信息.png "\")Failed to send data frame\" error message")
+![](figures/Failed-to-send-data-frame-报错信息.png "Failed-to-send-data-frame-报错信息")Failed to send data frame\" error message")
 
 **Solution<a name="section35233257619"></a>**
 
@@ -752,14 +752,14 @@ The cause of this error may be that the serial port connection became loose duri
 When the following "Failed to execute command" error occurs while burning the Fastboot partition, as shown in [Figure 1](#_Ref386011469), what should I do?
 
 **Figure 1**  "Failed to execute command" error message<a name="_Ref386011469"></a>  
-![](../../tools/burntool/figures/Failed-to-execute-command-报错信息.png "\")Failed to execute command\" error message")
+![](figures/Failed-to-execute-command-报错信息.png "Failed-to-execute-command-报错信息")Failed to execute command\" error message")
 
 **Solution<a name="section1426113619713"></a>**
 
 The cause of this error may be that the Flash type selected for the current Fastboot partition is incorrect, as shown in [Figure 2](#_Ref386011475). Restart the board and check the current "Flash" attribute of the board. If it is currently eMMC, use Burn by eMMC, and select emmc as the Flash type for the Fastboot partition.
 
 **Figure 2**  Viewing board Flash information via the serial port<a name="_Ref386011475"></a>  
-![](../../tools/burntool/figures/通过串口查看单板Flash信息.png "Viewing board Flash information via the serial port")
+![](figures/通过串口查看单板Flash信息.png "通过串口查看单板Flash信息")
 ## What Should Be Noted When Selecting a File Transfer Method?<a name="ZH-CN_TOPIC_0000002408169696"></a>
 
 **Problem Description<a name="section290917257720"></a>**
@@ -811,7 +811,7 @@ When burning NAND, what do pure data length and len_incl_bad printed in the cons
 As shown in [Figure 1](#_Ref386007893), pure data length represents the actual length of data burned, while len incl bad represents the actual length occupied by burning including bad blocks. Neither of the above two lengths includes the oobSize length.
 
 **Figure 1**  Burn length printed by the console as feedback to the burn command<a name="_Ref386007893"></a>  
-![](../../tools/burntool/figures/控制台打印烧写命令反馈的烧写长度.png "Burn length printed by the console as feedback to the burn command")
+![](figures/控制台打印烧写命令反馈的烧写长度.png "控制台打印烧写命令反馈的烧写长度")
 ## What Will the Tool Print When Board DDR Training Fails?<a name="ZH-CN_TOPIC_0000002408329624"></a>
 
 **Problem Description<a name="section1033016544115"></a>**
@@ -823,7 +823,7 @@ What will the tool print when board DDR Training fails?
 When board DDR Training fails, during Fastboot partition burning, the information shown in [Figure 1](#_Ref386011496) will be printed.
 
 **Figure 1**  Printing DDR Training failure information<a name="_Ref386011496"></a>  
-![](../../tools/burntool/figures/打印DDR-Training失败信息.png "Printing DDR Training failure information")
+![](figures/打印DDR-Training失败信息.png "打印DDR-Training失败信息")
 ## What Needs to Be Provided When Reporting Issues Encountered During BurnTool Usage?<a name="ZH-CN_TOPIC_0000002408329640"></a>
 
 **Problem Description<a name="section4620102214128"></a>**
@@ -849,14 +849,14 @@ Enter the following in the cmd command line tool, and the printout will look lik
 netstat -ano -p udp
 
 **Figure 1**  Viewing process port occupation<a name="_Ref413161493"></a>  
-![](../../tools/burntool/figures/查看进程的端口占用.png "Viewing process port occupation")
+![](figures/查看进程的端口占用.png "查看进程的端口占用")
 
 Check whether any process is occupying port 69. In the above figure, it can be seen that the process with pid 7696 is occupying port 69. Then use the following command to view the name of the 7696 process, with the printout as shown in [Figure 2](#_Ref413161472).
 
 tasklist|findstr "7696"
 
 **Figure 2**  Viewing the process name for a specified PID<a name="_Ref413161472"></a>  
-![](../../tools/burntool/figures/查看指定PID的进程名称.png "Viewing the process name for a specified PID")
+![](figures/查看指定PID的进程名称.png "查看指定PID的进程名称")
 
 Then kill that process in the process manager.
 
@@ -879,7 +879,7 @@ Additionally, ToolPlatform-XXX-4.0.15 and later versions already have the JRE pr
 If the system is a non-Chinese system, the tool cannot burn images with Chinese paths in the system. To query the language system, enter the chcp command in cmd. As shown in Figure Querying the Windows Language System Method, 437 represents the US language system, while 936 represents the Chinese language system.
 
 **Figure 1**  Method for querying the Windows language system<a name="_Ref4156611"></a>  
-![](../../tools/burntool/figures/查询windows语言系统方法.png "Method for querying the Windows language system")
+![](figures/查询windows语言系统方法.png "查询windows语言系统方法")
 
 **Solution<a name="section185019199156"></a>**
 

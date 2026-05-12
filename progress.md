@@ -32,6 +32,15 @@
 
 The current phrase-replacement approach has a fundamental flaw: after stripping CJK characters, English words are concatenated without spaces, producing ugly "Chinglish" like `this interfacecannot be used withothermpiInterfaceSimultaneouslyCalls`. 
 
+### Broken links in newly added English .md files
+
+Newly created `.en.md` files contain broken internal links because:
+- Cross-reference anchors use Chinese heading names (e.g., `#ZH-CN_TOPIC_000000...`) that don't resolve in English pages
+- Image paths reference Chinese filenames (e.g., `figures/角框示意图.png`) that exist only on disk, not in the English namespace
+- Internal doc links point to `.md` files with Chinese names (e.g., `../03-视频输入.md`) which break when the English page is served under `/en/`
+
+These show as `INFO` warnings during `mkdocs build` and are not user-blocking, but should be audited before production release.
+
 The `--extract-notes` mode shows zh/en side by side, but the final pass should:
 1. Find paragraphs with CJK in the .en.md file
 2. Read the corresponding Chinese paragraph from the .md file

@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SS928V10
 
 This document describes how to port and flash U-Boot (the bootloader for the SS928V100 board) and how to use ARM debugging tools.
 
->![](../../soc-linux/uboot/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference platform. Unless otherwise noted, SS927V100 content is identical to SS928V100.
 
 **Product Version<a name="section146mcpsimp"></a>**
@@ -190,7 +190,7 @@ Once all porting steps are complete, build U-Boot as follows:
 
     After a successful build, u-boot.bin is generated in the U-Boot directory.
 
-    >![](../../soc-linux/uboot/public_sys-resources/icon-notice.gif) **Notice:** 
+    >![](public_sys-resources/icon-notice.gif) **Notice:** 
     >The u-boot.bin generated in this step is an intermediate artifact, not the final U-Boot image that runs on the board.
 
 ## Configuring DDR Memory<a name="ZH-CN_TOPIC_0000002457874801"></a>
@@ -244,12 +244,12 @@ To flash SPI-Nor Flash:
     # sf write <ddr_addr> 0x0 0x100000  /* write from memory to SPI-Nor Flash */
     ```
 
-    >![](../../soc-linux/uboot/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
 
 2.  After completing the above steps, restart the system to confirm U-Boot was flashed successfully.
 
->![](../../soc-linux/uboot/public_sys-resources/icon-notice.gif) **Notice:** 
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
 >In the current version, `sf lock` can be used to apply block protection (Blocks Protect) to SPI Nor Flash. A protected block becomes read-only — erase and write commands have no effect on it, and the protection persists across power cycles. To erase or write a protected block, first run `sf lock 0` to remove the block protection. See the "[SPI-Nor Block Protection Commands](#ZH-CN_TOPIC_0000002424196066)" section for details.
 
 ### SPI-NAND Flash Flashing Procedure<a name="ZH-CN_TOPIC_0000002424355910"></a>
@@ -265,7 +265,7 @@ To flash SPI-NAND Flash:
     # nand write <ddr_addr> 0 0x100000 /* write from memory to NAND Flash */
     ```
 
-    >![](../../soc-linux/uboot/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
 
 2.  Restart the system to confirm U-Boot was flashed successfully.
@@ -282,7 +282,7 @@ To flash eMMC:
     # mmc write 0 <ddr_addr> 0 0x400   /* write from memory to eMMC */
     ```
 
-    >![](../../soc-linux/uboot/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
     >mmc write command format: mmc write \<device num\> addr blk\# cnt
     >Parameters:
@@ -339,7 +339,7 @@ For more detailed information about using ARM debugging tools, refer to the docu
 ARM Development Studio 5 is installed using the DS-5 Eclipse installer provided by ARM. Read the relevant ARM documentation before installation. After installation, launch DS-5 Eclipse as shown in [Figure 1](#_Toc452126556).
 
 **Figure 1**  DS-5 Eclipse startup screen<a name="_Toc452126556"></a>  
-![](../../soc-linux/uboot/figures/DS-5-Eclipse启动界面.png "DS-5-Eclipse启动界面")
+![](figures/DS-5-Eclipse启动界面.png "DS-5-Eclipse启动界面")
 ### Creating a Target Platform Configuration Database<a name="ZH-CN_TOPIC_0000002457834681"></a>
 
 Steps to create a target platform configuration database:
@@ -347,44 +347,44 @@ Steps to create a target platform configuration database:
 1.  Select **File** > **New** > **Other**. In the dialog, select **Platform Configuration** under the **DS-5 Configuration Database** folder, then click **Next >** and follow the prompts.
 
     **Figure 1**  Platform configuration screen<a name="fig414mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/平台配置界面.png "平台配置界面")
+    ![](figures/平台配置界面.png "平台配置界面")
 
 1.  Connect the debug adapter. From the menu, go to **ARM DS-5 v5.24.1** > **Debug Hardware** > **Debug Hardware Config IP (5.24.1)**. In the software interface, click **Scan** to detect the debug adapter, then configure its IP address to be on the same subnet as the host PC.
 
-    >![](../../soc-linux/uboot/public_sys-resources/icon-note.gif) **Note:** 
+    >![](public_sys-resources/icon-note.gif) **Note:** 
     >ARM DS-5 v5.24.1 does not support A55 core debugging. Install ARM DS-5 v5.29 instead.
 
     **Figure 2**  Config IP screen<a name="fig418mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/Config-IP界面.png "Config-IP界面")
+    ![](figures/Config-IP界面.png "Config-IP界面")
 
     **Figure 3**  Config IP scan screen<a name="fig420mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/Config-IP扫描界面.png "Config-IP扫描界面")
+    ![](figures/Config-IP扫描界面.png "Config-IP扫描界面")
 
     **Figure 4**  Debug adapter IP configuration screen<a name="fig422mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置仿真器IP界面.png "配置仿真器IP界面")
+    ![](figures/配置仿真器IP界面.png "配置仿真器IP界面")
 
 1.  Return to the DS-5 Eclipse interface. Select **Automatic/simple platform detection (Recommended)** and click Next. The system performs an automatic scan. Enter the debug adapter IP address in the **Connection Address** field and click **Next >**. Check **Debug target after saving configuration** and click **Next >**. Click **Create New Database**, enter a name, click **OK**, then click **Next >**. Set **Platform Manufacturer** to "Vendor" and **Platform Name** to "Chip\_XX", then click **Finish** to complete the platform database configuration.
 
     **Figure 5**  Platform database configuration — Create Platform Configuration<a name="fig425mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置平台数据库界面-Create-Platform-Configuration.png "配置平台数据库界面-Create-Platform-Configuration")
+    ![](figures/配置平台数据库界面-Create-Platform-Configuration.png "配置平台数据库界面-Create-Platform-Configuration")
 
     **Figure 6**  Platform database configuration — Debug Adapter Connection<a name="fig427mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置平台数据库界面-Debug-Adapter-Connection.png "配置平台数据库界面-Debug-Adapter-Connection")
+    ![](figures/配置平台数据库界面-Debug-Adapter-Connection.png "配置平台数据库界面-Debug-Adapter-Connection")
 
     **Figure 7**  Platform database configuration — Summary<a name="fig429mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置平台数据库界面-Summary.png "配置平台数据库界面-Summary")
+    ![](figures/配置平台数据库界面-Summary.png "配置平台数据库界面-Summary")
 
     **Figure 8**  Platform database configuration — DS-5 Configuration Database — Create New Database<a name="fig431mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置平台数据库界面-DS-5-Configuration-Database-Create-New-Database.png "配置平台数据库界面-DS-5-Configuration-Database-Create-New-Database")
+    ![](figures/配置平台数据库界面-DS-5-Configuration-Database-Create-New-Database.png "配置平台数据库界面-DS-5-Configuration-Database-Create-New-Database")
 
     **Figure 9**  Platform database configuration — DS-5 Configuration Database — Create New Database complete<a name="fig433mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置平台数据库界面-DS-5-Configuration-Database-完成-Create-New-Database.png "配置平台数据库界面-DS-5-Configuration-Database-完成-Create-New-Database")
+    ![](figures/配置平台数据库界面-DS-5-Configuration-Database-完成-Create-New-Database.png "配置平台数据库界面-DS-5-Configuration-Database-完成-Create-New-Database")
 
     **Figure 10**  Platform database configuration — Platform Information<a name="fig435mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置平台数据库界面-Platform-Information.png "配置平台数据库界面-Platform-Information")
+    ![](figures/配置平台数据库界面-Platform-Information.png "配置平台数据库界面-Platform-Information")
 
     **Figure 11**  Platform database configuration — Platform Information complete<a name="fig437mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/配置平台数据库界面-完成-Platform-Information-配置.png "配置平台数据库界面-完成-Platform-Information-配置")
+    ![](figures/配置平台数据库界面-完成-Platform-Information-配置.png "配置平台数据库界面-完成-Platform-Information-配置")
 ### Connecting to the Target Platform<a name="ZH-CN_TOPIC_0000002424196058"></a>
 
 Steps to connect to the target platform:
@@ -395,51 +395,51 @@ Steps to connect to the target platform:
 4.  Click **Debug** to connect to the target platform.
 
     **Figure 1**  Debug Configurations window<a name="fig447mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/Debug-Configurations窗口.png "Debug-Configurations窗口")
+    ![](figures/Debug-Configurations窗口.png "Debug-Configurations窗口")
 
     **Figure 2**  Debug Configurations window — selecting the target database and entering the DS-5 device IP address<a name="_Toc452126564"></a>  
-    ![](../../soc-linux/uboot/figures/Debug-Configurations窗口-选择新添加的目标平台配置数据库并输入DS-5设备的IP地址.png "Debug-Configurations窗口-选择新添加的目标平台配置数据库并输入DS-5设备的IP地址")
+    ![](figures/Debug-Configurations窗口-选择新添加的目标平台配置数据库并输入DS-5设备的IP地址.png "Debug-Configurations窗口-选择新添加的目标平台配置数据库并输入DS-5设备的IP地址")
 
     **Figure 3**  Debug Configurations window — selecting "Connect only"<a name="_Toc452126565"></a>  
-    ![](../../soc-linux/uboot/figures/Debug-Configurations窗口-勾选-Connect-only.png "Debug-Configurations窗口-勾选-Connect-only")
+    ![](figures/Debug-Configurations窗口-勾选-Connect-only.png "Debug-Configurations窗口-勾选-Connect-only")
 
     **Figure 4**  DS-5 Debug – Eclipse Platform window<a name="fig451mcpsimp"></a>  
-    ![](../../soc-linux/uboot/figures/DS-5-Debug-Eclipse-Platform窗口.png "DS-5-Debug-Eclipse-Platform窗口")
+    ![](figures/DS-5-Debug-Eclipse-Platform窗口.png "DS-5-Debug-Eclipse-Platform窗口")
 ## Flashing Flash Storage Using the Debug Adapter<a name="ZH-CN_TOPIC_0000002424196054"></a>
 
 ### Memory Initialization<a name="ZH-CN_TOPIC_0000002457874809"></a>
 
-In the **Scripts** window, click the ![](../../soc-linux/uboot/figures/zh-cn_image_0000002424355926.png) icon to import the memory initialization script, then click the ![](../../soc-linux/uboot/figures/zh-cn_image_0000002424355922.png) icon to run it. (If the debug adapter is currently running, first click the ![](../../soc-linux/uboot/figures/zh-cn_image_0000002424196074.png) button in the **Debug Control** window to pause it.) See [Figure 1](#_Toc452126566).
+In the **Scripts** window, click the ![](figures/zh-cn_image_0000002424355926.png) icon to import the memory initialization script, then click the ![](figures/zh-cn_image_0000002424355922.png) icon to run it. (If the debug adapter is currently running, first click the ![](figures/zh-cn_image_0000002424196074.png) button in the **Debug Control** window to pause it.) See [Figure 1](#_Toc452126566).
 
->![](../../soc-linux/uboot/public_sys-resources/icon-notice.gif) **Notice:** 
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
 >Memory initialization scripts are `.ds`, `.py`, or `.txt` files located in `osdrv/tools/pc/uboot_tools/`.
 
 **Figure 1**  Scripts window<a name="_Toc452126566"></a>  
-![](../../soc-linux/uboot/figures/脚本窗口.png "脚本窗口")
+![](figures/脚本窗口.png "脚本窗口")
 
 To verify that memory initialization succeeded:
 
 In the **Memory** window, enter a memory address (e.g., 0x42000000) and press Enter. If the table shows values for that memory region and you can write to it successfully, initialization is confirmed. To write a test value, double-click a cell (e.g., at address 0x42000000), enter a new value (e.g., 0x12345678), press Enter, and confirm that the cell displays the new value. See [Figure 2](#_Toc452126567).
 
 **Figure 2**  Memory window<a name="_Toc452126567"></a>  
-![](../../soc-linux/uboot/figures/Memory窗口.png "Memory窗口")
+![](figures/Memory窗口.png "Memory窗口")
 ### Downloading the U-Boot Image<a name="ZH-CN_TOPIC_0000002424355898"></a>
 
 Steps:
 
-1.  In the **Memory** window, click the ![](../../soc-linux/uboot/figures/zh-cn_image_0000002457834713.png) button to display the menu shown in [Figure 1](#_Toc452126568).
+1.  In the **Memory** window, click the ![](figures/zh-cn_image_0000002457834713.png) button to display the menu shown in [Figure 1](#_Toc452126568).
 2.  Select **Import Memory** to open the image download dialog. Download the U-Boot image to a memory address (e.g., 0x42000000), as shown in [Figure 2](#_Toc452126569).
 3.  In the **Registers** window, set the PC register to 0x42000000, as shown in [Figure 3](#_Toc452126570).
-4.  Click the ![](../../soc-linux/uboot/figures/zh-cn_image_0000002424355934.png) button in the **Debug Control** window to start U-Boot. You can view the U-Boot startup output on the serial console.
+4.  Click the ![](figures/zh-cn_image_0000002424355934.png) button in the **Debug Control** window to start U-Boot. You can view the U-Boot startup output on the serial console.
 
     **Figure 1**  Memory dropdown menu<a name="_Toc452126568"></a>  
-    ![](../../soc-linux/uboot/figures/Memory下拉窗口.png "Memory下拉窗口")
+    ![](figures/Memory下拉窗口.png "Memory下拉窗口")
 
     **Figure 2**  Memory Importer window<a name="_Toc452126569"></a>  
-    ![](../../soc-linux/uboot/figures/Memory-Importer窗口.png "Memory-Importer窗口")
+    ![](figures/Memory-Importer窗口.png "Memory-Importer窗口")
 
     **Figure 3**  Registers window<a name="_Toc452126570"></a>  
-    ![](../../soc-linux/uboot/figures/Registers窗口.png "Registers窗口")
+    ![](figures/Registers窗口.png "Registers窗口")
 ### Writing the Image to Flash<a name="ZH-CN_TOPIC_0000002457874797"></a>
 
 After U-Boot starts, write the U-Boot image from memory to the boot medium over the serial console.
@@ -453,7 +453,7 @@ Using SPI-Nor Flash as an example:
 # reset						/* restart the board */
 ```
 
->![](../../soc-linux/uboot/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >On the SS928V100 platform, use DDR address 0x42000000 for \<ddr\_addr\>.
 
 # Appendix
@@ -467,7 +467,7 @@ SPI-Nor block protection is disabled by default in U-Boot. To enable it, configu
 2.  Enter **SPI Flash Support** and select the option highlighted in [Figure 1](#_Ref29310076), then save.
 
     **Figure 1**  SPI-Nor block protection option<a name="_Ref29310076"></a>  
-    ![](../../soc-linux/uboot/figures/SPI-Nor块保护选项图.png "SPI-Nor块保护选项图")
+    ![](figures/SPI-Nor块保护选项图.png "SPI-Nor块保护选项图")
 ### SPI-Nor Block Protection Commands<a name="ZH-CN_TOPIC_0000002424196066"></a>
 
 Most SPI Nor Flash devices provide Block Protect (BP) bits in the Status Register (SR) to protect data integrity.
@@ -494,37 +494,37 @@ sf lock
 This displays the current BP level value, the valid level range, and the currently locked region, along with command usage information. See [Figure 1](#_Toc498536356).
 
 **Figure 1**  Viewing current block protection status<a name="_Toc498536356"></a>  
-![](../../soc-linux/uboot/figures/查看当前块保护信息.png "查看当前块保护信息")
+![](figures/查看当前块保护信息.png "查看当前块保护信息")
 -   sf lock all
 
     Locks all blocks (the entire device), equivalent to setting the level to its maximum value. See [Figure 2](#_Toc498536357).
 
     **Figure 2**  Locking the entire device<a name="_Toc498536357"></a>  
-    ![](../../soc-linux/uboot/figures/锁定整个器件.png "锁定整个器件")
+    ![](figures/锁定整个器件.png "锁定整个器件")
 -   sf lock 0
 
     Removes all block protection, leaving all blocks unprotected and available for erase/write operations. See [Figure 3](#_Toc498536358).
 
     **Figure 3**  Removing current block protection<a name="_Toc498536358"></a>  
-    ![](../../soc-linux/uboot/figures/解除当前锁定状态.png "解除当前锁定状态")
+    ![](figures/解除当前锁定状态.png "解除当前锁定状态")
 -   sf lock \<level\>
 
     Sets the BP level. Blocks in the protected range cannot be erased or written normally. See [Figure 4](#_Toc498536359).
 
     **Figure 4**  Locking a specific region by setting the level value<a name="_Toc498536359"></a>  
-    ![](../../soc-linux/uboot/figures/通过设置-level值锁定指定区域.png "通过设置-level值锁定指定区域")
+    ![](figures/通过设置-level值锁定指定区域.png "通过设置-level值锁定指定区域")
 ### tftp Command Address Restrictions<a name="ZH-CN_TOPIC_0000002457834685"></a>
 
 The PHYS\_SDRAM\_1\_SIZE macro defined in `include/configs/ss928v100.h` limits the address range accessible to the tftp command. In the default release package, PHYS\_SDRAM\_1\_SIZE is set to 0x20000000, restricting tftp downloads to the first 512 MB of DDR address space.
 
 tftp command usage example:
 
-![](../../soc-linux/uboot/figures/6.png)
+![](figures/6.png)
 
 The first argument to the tftp command must be within the first 512 MB of DDR address space, i.e., 0x40000000 to 0x5fffffff.
 
 Note: To download a file to an address above 512 MB, first download it to within the 512 MB range using tftp, then copy it to the higher address using `cp.b`. Example:
 
-![](../../soc-linux/uboot/figures/1.png)
+![](figures/1.png)
 
 In the cp.b command above, the first argument is the source address, the second is the destination address, and the third is the length in bytes.

@@ -8,7 +8,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR 调�
 
 This guide is written for image quality engineers using HNR. It provides solutions and assistance for issues encountered during development.
 
->![](../../../multimedia/cv/hnr-tuning/public_sys-resources/icon-note.gif) **Note:** 
+>![](public_sys-resources/icon-note.gif) **Note:** 
 >This document uses SS928V100 as the reference. Unless otherwise stated, SS927V100 and SS928V100 are identical.
 
 **Product Versions<a name="section466mcpsimp"></a>**
@@ -121,17 +121,17 @@ Key characteristics of HNR:
 ## HNR Data Flow Diagram<a name="ZH-CN_TOPIC_0000002424202070"></a>
 
 **Figure 1** HNR advance mode data flow diagram<a name="fig1624263413361"></a>  
-![](../../../multimedia/cv/hnr-tuning/figures/HNR-advance模式数据流框图.png "HNR-advance Mode Data Flow Diagram")
+![](figures/HNR-advance模式数据流框图.png "HNR-advance模式数据流框图")
 
 In advance mode, HNR is positioned in the ISP pipeline in parallel with BNR, sharing the same input. The outputs are blended through a MUX module, with the blending ratio configurable via parameters.
 
 **Figure 2** HNR normal mode data flow diagram<a name="fig1180614194257"></a>  
-![](../../../multimedia/cv/hnr-tuning/figures/HNR-normal模式数据流框图.png "HNR-normal Mode Data Flow Diagram")
+![](figures/HNR-normal模式数据流框图.png "HNR-normal模式数据流框图")
 
 In normal mode with `normal_blend` set to false, HNR is positioned between FE and BE in the ISP pipeline. There is no blending operation between HNR and BNR; they are completely independent modules.
 
 **Figure 3** HNR normal_blend mode data flow<a name="fig237492243814"></a>  
-![](../../../multimedia/cv/hnr-tuning/figures/HNR-normal_blend模式数据流.png "HNR-normal_blend Mode Data Flow")
+![](figures/HNR-normal_blend模式数据流.png "HNR-normal_blend模式数据流")
 
 In normal mode with `normal_blend` set to true, the data path retrieves a raw frame from FE and delivers it to BE, enabling blending of HNR and BNR. The blending tuning parameters in this mode are the same as in advance mode.
 
@@ -278,7 +278,7 @@ When using ADVANCED mode or NORM mode with `normal_blend` enabled, the following
 </tbody>
 </table>
 
->![](../../../multimedia/cv/hnr-tuning/public_sys-resources/icon-notice.gif) **Notice:** 
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
 >-   In HNR+BNR blend mode, BNR's `sfm` spatial filter parameters have no effect.
 >-   In HNR+BNR blend mode, tune BNR parameters with BNR temporal processing enabled. With temporal processing disabled, use `fine_strength` to adjust the HNR-to-original-pixel blend ratio; set `coring_wgt` to 0.
 >-   In HNR+BNR blend mode, set `user_define_md=1` to enable user-defined motion detection for tuning the BNR temporal effect.
@@ -367,12 +367,12 @@ Key parameters in `scene_auto` related to HNR. `scene_auto` is a reference examp
 Because HNR is used at very high ISO values where the sensor operates at its maximum gain limit, most sensors exhibit some degree of dark shading. As shown in [Figure 1](#_Ref69199905), at ISO 200000, the left side of the sensor frame has a green cast and a bright band appears at the bottom. FPN correction is needed to remove this dark shading.
 
 **Figure 1** Dark shading on a sensor at high ISO<a name="_Ref69199905"></a>  
-![](../../../multimedia/cv/hnr-tuning/figures/sensor在高ISO时的dark-shading现象.png "Sensor Dark-shading at High ISO")
+![](figures/sensor在高ISO时的dark-shading现象.png "sensor在高ISO时的dark-shading现象")
 
 As shown in [Figure 2](#_Ref69199888), the left image shows the result without FPN correction; the right image shows the result after FPN correction.
 
 **Figure 2** Comparison before and after FPN correction<a name="_Ref69199888"></a>  
-![](../../../multimedia/cv/hnr-tuning/figures/未做与做过FPN处理对比图.png "Before and After FPN Correction Comparison")
+![](figures/未做与做过FPN处理对比图.png "未做与做过FPN处理对比图")
 
 Based on the severity of sensor dark shading, select the appropriate FPN approach as shown in [Table 1](#_Ref69204090).
 

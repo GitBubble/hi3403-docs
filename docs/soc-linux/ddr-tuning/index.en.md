@@ -74,7 +74,7 @@ DDR miniaturization can be approached from multiple directions: uboot, kernel, f
 The SDK based on SS626V100 currently supports running both Linux and LiteOS dual systems or a single Linux system. If the business scenario only requires running a single Linux system, please refer to Section 3.2 of the "Memory Layout Adjustment Guide" to trim MMZ occupancy related to the liteos system. This document is based on the Linux and LiteOS dual-system configuration by default. The system miniaturization of SS626V100 is implemented on the DEMO board, using 2GB DDR memory as an example.
 
 **Figure 1** Linux System Memory Allocation Diagram on DEMO Board (for reference only)<a name="fig58516719710"></a>
-![](figures/DEMO板中Linux系统内存分配图（仅供参考）.png "Linux System Memory Allocation Diagram on DEMO Board (for reference only)")
+![](figures/DEMO板中Linux系统内存分配图（仅供参考）.png "DEMO板中Linux系统内存分配图（仅供参考）")")
 
 For MMZ memory usage data in typical SS626V100 business scenarios, please refer to the "SS626V100 Memory Usage Statistics Report". Additionally, specific memory usage for customer applications needs to be analyzed in conjunction with specific scenarios. The following sections describe the MMZ memory usage of each module and optimization methods for miniaturization.
 
