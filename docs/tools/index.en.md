@@ -9,7 +9,7 @@ Official and community tools around Hi3403. From one-click image building to Fla
 
 <div class="grid cards" markdown>
 
--   :material-package-variant:{ .lg .middle } __hi3403-build (one-click build)__
+-   :material-package-variant:{ .lg .middle } __hi3403-build (One-Command Build)__
 
     ---
 

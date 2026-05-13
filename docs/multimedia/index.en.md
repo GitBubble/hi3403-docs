@@ -45,7 +45,7 @@ and computer vision middleware IVE/IVS/DPU/HNR.
 
     [:octicons-arrow-right-24: Enter](graphics/index.md)
 
--   :material-image-multiple:{ .lg .middle } __Splash (Splash)__
+-   :material-image-multiple:{ .lg .middle } __Splash__
 
     ---
 
@@ -115,7 +115,7 @@ and computer vision middleware IVE/IVS/DPU/HNR.
 
     [:octicons-arrow-right-24: Enter](3dnr/index.md)
 
--   :material-contrast-circle:{ .lg .middle } __Black and white color dual-channel fusion__
+-   :material-contrast-circle:{ .lg .middle } __Mono + Color Dual-Sensor Fusion__
 
     ---
 

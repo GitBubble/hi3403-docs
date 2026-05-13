@@ -172,7 +172,7 @@ Hi3519AV200 and Hi3403V100 OpenHarmony versions are developed based on the 5.1.0
 
     https://gitee.com/openharmony/security/blob/master/zh/security-disclosure/README.md
 
-## OpenHarmony Small System Source Code Porting Modification Description<a name="ZH-CN_TOPIC_0000002408172717"></a>
+## OpenHarmony Lite System Source Code Porting Modification Description<a name="ZH-CN_TOPIC_0000002408172717"></a>
 
 -   To improve code download efficiency, non-essential components have been trimmed. Refer to the comments in `os/OpenHarmony/manifest/**.xml` for the trimmed software. If needed for product development, uncomment the corresponding component repositories.
 -   Completed adaptation of the chip SOC software and development board repositories, such as: os/OpenHarmony/vendor/hisilicon, os/OpenHarmony/device/soc/hisilicon, os/OpenHarmony/device/board/hisilicon.
@@ -195,9 +195,9 @@ Hi3519AV200 and Hi3403V100 OpenHarmony versions are developed based on the 5.1.0
 # Development Environment
 ## Setting Up the OpenHarmony Development Environment<a name="ZH-CN_TOPIC_0000002408172585"></a>
 
-### Setting Up the OpenHarmony Small System Compilation Environment<a name="ZH-CN_TOPIC_0000002465545977"></a>
+### Setting Up the OpenHarmony Lite System Compilation Environment<a name="ZH-CN_TOPIC_0000002465545977"></a>
 
-**Figure 1** OpenHarmony Small System Development Environment<a name="fig1027713362117"></a>
+**Figure 1** OpenHarmony Lite System Development Environment<a name="fig1027713362117"></a>
 ![](figures/OpenHarmony-Small型系统开发环境.png "OpenHarmony-Small型系统开发环境")
 
 For Ubuntu configuration of the OpenHarmony development environment, please refer to the OpenHarmony community documentation.
@@ -642,7 +642,7 @@ The steps for Flashing KEY0 on Hi3403V100 hardware boards are as follows.
 
     [https://www.openharmony.cn/certification/document/guid](https://www.openharmony.cn/certification/document/guid)
 
-    Refer to the "Compatibility Test Execution Environment Setup" section in the link to configure the Windows environment and install the necessary software. hispark_aifly and hispark_aiflylite are Small systems. Please refer to the "Small System Application Compatibility Test Guide" section for environment setup and configuration.
+    Refer to the "Compatibility Test Execution Environment Setup" section in the link to configure the Windows environment and install the necessary software. hispark_aifly and hispark_aiflylite are Small systems. Please refer to the "Lite System Application Compatibility Test Guide" section for environment setup and configuration.
 
     For XTS test resource files, download the community OpenHarmony 5.1.0 Release Small system ACTS resource files and replace the files under the acts\\resource directory.
 
@@ -683,11 +683,11 @@ Products with screens and applications need to test ActsAbilityMgrTest and ActsB
 
 ### XTS Application Evaluation Notes<a name="ZH-CN_TOPIC_0000002374733068"></a>
 
-1.  Refer to the specification requirements in sheet1 of the "OpenHarmony Device Compatibility Specification x.x Self-Check Form_Small System.xlsx" to modify the configuration file os/OpenHarmony/vendor/hisilicon/hispark_aifly_linux/hals/utils/sys_param/vendor.para and set product information.
+1.  Refer to the specification requirements in sheet1 of the "OpenHarmony Device Compatibility Specification x.x Self-Check Form_Lite System.xlsx" to modify the configuration file os/OpenHarmony/vendor/hisilicon/hispark_aifly_linux/hals/utils/sys_param/vendor.para and set product information.
 
     OpenHarmony device compatibility specification self-check form download address: https://www.openharmony.cn/certification/document/pcs/
 
-    **Figure 1** Small System PCS5.x Self-Check Form<a name="fig1252105314519"></a>
+    **Figure 1** Lite System PCS5.x Self-Check Form<a name="fig1252105314519"></a>
     ![](figures/小型系统-PCS5-x-自检表.png "小型系统-PCS5-x-自检表")
 
 2.  When filling out the evaluation application form, the PCID.sc file must be uploaded. Obtain it from the out directory (os/OpenHarmony/out/hispark_aifly/ipcamera_hispark_aifly_linux/PCID.sc).

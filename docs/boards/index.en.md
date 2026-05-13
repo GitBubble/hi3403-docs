@@ -15,7 +15,7 @@ The Hi3403 platform currently supports the following Hi3403V100 development boar
 
     ---
 
-    Produced by Xunwei. The official default target board of the SDK has the richest peripherals and the most complete documentation - it is recommended for novices to get started.
+Manufactured by Topeet (迅为). The official SDK reference board — richest peripherals and most complete documentation. Recommended for beginners.
 
     [:octicons-arrow-right-24: Enter](topeet/index.md)
 
@@ -23,15 +23,15 @@ The Hi3403 platform currently supports the following Hi3403V100 development boar
 
     ---
 
-    Produced by Wildfire, it comes with pre-installed Buildroot system and an active community ecosystem.
+Manufactured by Wildfire (野火). Ships with pre-installed Buildroot and an active community ecosystem.
 
     [:octicons-arrow-right-24: Enter](lubancat/index.md)
 
--   :material-developer-board:{ .lg .middle } __ Euler Pi __
+-   :material-developer-board:{ .lg .middle } __Euler Pi__
 
     ---
 
-    Produced by Ebina. OpenEuler adapts better.
+    Manufactured by Ebina (易百纳). Optimized for OpenEuler.
 
     [:octicons-arrow-right-24: Enter](ebaina/index.md)
 
@@ -43,7 +43,7 @@ The Hi3403 platform currently supports the following Hi3403V100 development boar
 
     [:octicons-arrow-right-24: Enter](rkh/index.md)
 
--   :material-developer-board:{ .lg .middle } __Zhongshan Kuangshi (zsks)__
+-   :material-developer-board:{ .lg .middle } __Zhongshan Kuangshi (中山狂石)__
 
     ---
 

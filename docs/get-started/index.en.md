@@ -5,7 +5,7 @@ title: Get started
 
 # Get started
 
-Novice-friendly entry path - from selecting a development board to lighting up the Hi3403, it can be completed in as little as 30 minutes.
+Beginner-Friendly Getting Started Guide — from choosing a board to booting your Hi3403 in as little as 30 minutes.
 
 <div class="grid cards" markdown>
 
@@ -21,7 +21,7 @@ Novice-friendly entry path - from selecting a development board to lighting up t
 
     ---
 
-    Xunwei, Yehuo, Yibaina, Runkaihong... the differences, price points, and applicable scenarios of each board are clear at a glance.
+Compare Topeet, Wildfire, Ebina, and RKH side by side — features, price, and best-fit scenarios at a glance.
 
     [:octicons-arrow-right-24: Enter](board-picker.md)
 

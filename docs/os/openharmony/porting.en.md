@@ -139,7 +139,7 @@ kernel/linux/config
    - Includes: FUTEX, EPOLL, EVENTFD, security features, etc.
 
 2. **type/small_defconfig** - Small system configuration
-   - Common kernel configuration for small systems
+   - Common kernel configuration for Lite systems
 
 3. **type/standard_defconfig** - Standard system configuration
    - Common kernel configuration for standard systems
@@ -307,14 +307,14 @@ Contains product definition configuration, HDF configuration, filesystem configu
 
 ## Quick Start
 
-See the OpenHarmony Small System User Guide to get started quickly.
+See the OpenHarmony Lite System User Guide to get started quickly.
 
 ### Related Documents
 
 | **Document** | **Description** |
 |-------------|-------------|
-| OpenHarmony Small System User Guide | Running OpenHarmony Small system on Hi3403V100/Hi3519AV200: rootfs filesystem packaging, development environment setup, compilation, flashing; OpenHarmony kernel option changes; XTS test instructions; media feature usage; graphics feature usage |
-| OpenHarmony Small System Integration Hi3403V100 Porting Case | Hi3403V100 chip solution integration case: product configuration, kernel porting and adaptation, compilation, XTS certification, graphics enhanced features, media enhanced features |
+| OpenHarmony Lite System User Guide | Running OpenHarmony Small system on Hi3403V100/Hi3519AV200: rootfs filesystem packaging, development environment setup, compilation, flashing; OpenHarmony kernel option changes; XTS test instructions; media feature usage; graphics feature usage |
+| OpenHarmony Lite System Integration Hi3403V100 Porting Case | Hi3403V100 chip solution integration case: product configuration, kernel porting and adaptation, compilation, XTS certification, graphics enhanced features, media enhanced features |
 
 ## License
 

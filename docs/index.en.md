@@ -20,7 +20,7 @@ Covering chips, Linux, multimedia, AI, development boards and construction tools
 
 </div>
 
-## Browse documentation
+## Explore the Documentation
 
 <div class="grid cards" markdown>
 
@@ -36,7 +36,7 @@ Covering chips, Linux, multimedia, AI, development boards and construction tools
 
     ---
 
-    Development board introductions, pin diagrams and purchasing information of various manufacturers: Xunwei, Yehuo, Yibeina, Runkaihong...
+    Development board introductions, pin diagrams and purchasing information of various manufacturers: Topeet, Wildfire, Ebaina, RKH...
 
     [:octicons-arrow-right-24: Enter](boards/index.md)
 
@@ -68,7 +68,7 @@ Covering chips, Linux, multimedia, AI, development boards and construction tools
 
     ---
 
-    `hi3403-build` one-click build script, BurnTool flashing tool, MindCmd, ToolPlatform.
+    `hi3403-build` one-command build, BurnTool flashing tool, MindCmd, ToolPlatform.
 
     [:octicons-arrow-right-24: Enter](tools/index.md)
 

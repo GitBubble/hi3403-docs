@@ -354,7 +354,7 @@ sdk_libs_name_set = [
 The product directory structure is:
 
 ```
-vendor/hisilicon/hispark_aifly_linux/    # hispark_aifly_linux small system related configuration
+vendor/hisilicon/hispark_aifly_linux/    # hispark_aifly_linux Lite system related configuration
 ├── BUILD.gn
 ├── config.json                           # Defines the subsystem scope integrated by the current product; added to config.json to be included in the build
 ├── fs.yml                    # Guides the build packaging to generate rootfs, sets file attributes, permissions, creates symbolic links, and generates filesystem images

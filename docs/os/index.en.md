@@ -23,7 +23,7 @@ Number of software packages, real-time performance, and image size. Below are th
 
     ---
 
-    OpenHarmony 5.1.0 Release version, small system.
+    OpenHarmony 5.1.0 Release version, Lite system.
     Supports XTS certification and is suitable for OpenHarmony devices.
 
     [:octicons-arrow-right-24: Enter](openharmony/index.md)

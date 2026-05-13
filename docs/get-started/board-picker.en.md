@@ -14,9 +14,9 @@ Decision tree helps you choose in 30 seconds.
 
 | Board | Vendor | price | peripherals | Document | Suitable for whom |
 |---|---|---|---|---|---|
-| [iTOP-Hi3403](../boards/topeet/index.md) | Xunwei | middle | richest | The most complete | **Getting Started, SDK Development** |
+| [iTOP-Hi3403](../boards/topeet/index.md) | Topeet | middle | richest | The most complete | **Getting Started, SDK Development** |
 | [LubanCat-Hi3403](../boards/lubancat/index.md) | wildfire | middle | medium | Complete (Buildroot friendly) | Buildroot user, custom system |
-| [Euler Pi](../boards/ebaina/index.md) | Yibaina | middle | medium | OpenEuler is well adapted | OpenEuler Developer |
+| [Euler Pi](../boards/ebaina/index.md) | Ebaina | middle | medium | OpenEuler is well adapted | OpenEuler Developer |
 | [Run Kaihong](../boards/rkh/index.md) | Run Kaihong | — | — | OpenHarmony Desktop Adaptation | OpenHarmony device development |
 | [Zhongshan Kuangshi (zsks)](../boards/zsks/index.md) | Zhongshan Kuangshi | — | Contains rich AI demos | Partial AI Example | Get started with a ready-made AI demo |
 
@@ -53,7 +53,7 @@ flowchart TD
 - **Newbie/Learning SDK** → iTOP-Hi3403. SDK default target board, with the most community information,
 You have the highest probability of finding the answer by digging into the pits.
 - **Volume Production Engineering/Customized Linux** → LubanCat-Hi3403. The Buildroot project link is mature.
-- **OpenHarmony App** → Runkaihong. Desktop system adaptation is the best.
+- **OpenHarmony App** → RKH. Desktop system adaptation is the best.
 - **OpenEuler localization** → Euler Pi.
 - **AI algorithm verification** → Zhongshan Kuangshi. The demo provided can be run directly (face_detection,
 kcf_track, fruit_identify, opencv_dnn, hnr_auto), suitable for seeing the effect without writing code.

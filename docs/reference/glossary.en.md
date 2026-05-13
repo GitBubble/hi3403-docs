@@ -179,7 +179,7 @@ Kernel driver, sample code. There are two variants: GCC-GLIBC and CLANG-MUSL.
 `Hi3403V100` ↔ `Hi3403V100` - see "Chip and Subsystem" above.
 
 `Topeet` / `LubanCat` / `ebaina` / `rkh` / `zsks`
-: Development board OEM. They are Xunwei, Yehuo, Yibaina, Runkaihong, and Zhongshan Kuangshi.
+: Development board OEM. They are Topeet, Wildfire, Ebaina, RKH, and Zhongshan Kuangshi.
     [Development board comparison](../get-started/board-picker.md)
 
 ---

@@ -170,7 +170,7 @@ The test method for `/dev/ttyAMA4` is the same as above.
 
 ## 1.7 4G Module Test
 
-The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Topeet. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
 
 Copy the quectel-CM script to the development board (this program is pre-installed in the Ubuntu system at `/home/topeet/topeet_test/02_4g` directory and can be used directly), as shown below:
 
@@ -198,7 +198,7 @@ ping www.baidu.com
 
 ## 1.8 5G Module AT Dial-Up Internet Test
 
-The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Topeet. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
 
 After starting the development board, the 5G module nodes are detected as shown below:
 
@@ -493,7 +493,7 @@ dd if=/test of=/dev/null bs=100M //read test
 
 ## 1.15 OS08A20 Camera Test
 
-The development board supports a camera interface by default. The baseboard provides 2 camera interfaces. The default image can use the **J1** interface. The OS08A20 camera module provided by Xunwei is shown below.
+The development board supports a camera interface by default. The baseboard provides 2 camera interfaces. The default image can use the **J1** interface. The OS08A20 camera module provided by Topeet is shown below.
 
 ![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320967.jpg)
 
@@ -765,7 +765,7 @@ The test method for `/dev/ttyAMA4` is the same as above.
 
 ## 2.7 4G Module Test
 
-The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Topeet. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
 
 Copy the quectel-CM script to the development board (this program is pre-installed in the buildroot system at `/topeet_test/02_4g` directory and can be used directly), as shown below:
 
@@ -791,7 +791,7 @@ ping www.baidu.com -I wwan0
 
 ## 2.8 5G Module AT Dial-Up Internet Test
 
-The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Xunwei. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
+The iTOP-Hi3403 development board has a reserved 4G/5G interface that can connect to the EM05-CE module (4G module) and RM500U-CN (5G module) provided by Topeet. Connect the 4G/5G module to the corresponding interface on the iTOP-Hi3403 development board, attach the antennas (three antennas for the 4G module, four antennas for the 5G module), and insert a SIM card with network access capability.
 
 After starting the development board, the 5G module nodes are detected as shown below:
 
@@ -1089,7 +1089,7 @@ dd if=/test of=/dev/null bs=100M //read test
 
 ## 2.15 OS08A20 Camera Test
 
-The development board supports a camera interface by default. The baseboard provides 2 camera interfaces. The default image can use the **J1** interface. The OS08A20 camera module provided by Xunwei is shown below.
+The development board supports a camera interface by default. The baseboard provides 2 camera interfaces. The default image can use the **J1** interface. The OS08A20 camera module provided by Topeet is shown below.
 
 ![img](https://chai-1301855619.cos.ap-beijing.myqcloud.com/202603271320983.jpg)
 
