@@ -1,91 +1,321 @@
 ---
 title: "OpenHarmony HiSilicon Chip Porting"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/os/OpenHarmony/README_zh.md
---- # OpenHarmony HiSilicon Chip Porting ## Version Description This document describes the patch package for adapting OpenHarmony 5.1.0 Release to the Hi3403V100 chips: 1. Supports running OpenHarmony 5.1.0 Small system on Hi3403V100 chips
+---
+
+# OpenHarmony HiSilicon Chip Porting
+
+## Version Description
+
+This document describes the patch package for adapting OpenHarmony 5.1.0 Release to the Hi3403V100/Hi3519AV200 chips:
+
+1. Supports running OpenHarmony 5.1.0 Small system on Hi3403V100/Hi3519AV200 chips
 2. Supports Linux 6.6.86 kernel
 3. Inherits the OpenHarmony native llvm-clang toolchain
 4. Supports XTS compatibility testing for L1 devices with and without display
 5. Supports development of OpenHarmony graphics, media, and enhanced features; meets Sample functional requirements for media and graphics
-6. Supports running the native SDK Samples for Hi3403V100 ## Directory Structure ```
+6. Supports running the native SDK Samples for Hi3403V100
+
+## Directory Structure
+
+```
 pegasus/
 ├── os/OpenHarmony
-│ ├── device
-│ │ └── soc/hisilicon/patches # OpenHarmony source patches (classified by subsystem; customizations to native code)
-│ ├── kernel # Kernel configuration and patches (linux-6.6)
-│ ├── vendor # HiSilicon product configuration (hispark_aifly_linux, hispark_aiflylite_linux)
-│ └── manifest
-│ ├── devboard_hispark_aifly_5.1.0.xml # repo manifest file (defines the repository list)
-│ └── prebuilts_setup.sh # Pre-build environment setup script
-├── platform/Hi3403V100_clang # SDK source and binary libraries (kernel drivers, Samples, open-source packages)
-└── vendor └── rkh/patches # RKH OpenHarmony source patches (classified by subsystem; enhance system features and driver support)
-``` ## Directory Description ### device - Device-Related Code #### device/board/hisilicon - Board Configuration Contains board-related content based on HiSilicon chips, including kernel build configuration and build scripts. **Supported boards:** 1. **hispark_aifly** (Hi3403V100 chip) - System type: Small system - Application domain: Smart vision, AI computing - Key files: - `kernel/BUILD.gn` - Build framework GN file - `kernel/kernel.mk` - Kernel build configuration - `kernel/kernel_module_build.sh` - Kernel build entry script - `linux/config.gni` - Product configuration information 2. **hispark_aiflylite** ( chip) - System type: Small system - Application domain: Smart vision, AI computing #### device/soc/hisilicon - SoC Chip Related Contains chip-related content including HDI implementations, chip software, driver source code, and patches. **Main subdirectories:**
+│   ├── device
+│   │   └── soc/hisilicon/patches   # OpenHarmony source patches (classified by subsystem; customizations to native code)
+│   ├── kernel                      # Kernel configuration and patches (linux-6.6)
+│   ├── vendor                      # HiSilicon product configuration (hispark_aifly_linux, hispark_aiflylite_linux)
+│   └── manifest
+│       ├── devboard_hispark_aifly_5.1.0.xml  # repo manifest file (defines the repository list)
+│       └── prebuilts_setup.sh                # Pre-build environment setup script
+├── platform/Hi3403V100_clang        # SDK source and binary libraries (kernel drivers, Samples, open-source packages)
+└── vendor
+    └── rkh/patches                 # RKH OpenHarmony source patches (classified by subsystem; enhance system features and driver support)
+```
+
+## Directory Description
+
+### device - Device-Related Code
+
+#### device/board/hisilicon - Board Configuration
+
+Contains board-related content based on HiSilicon chips, including kernel build configuration and build scripts.
+
+**Supported boards:**
+
+1. **hispark_aifly** (Hi3403V100 chip)
+   - System type: Small system
+   - Application domain: Smart vision, AI computing
+   - Key files:
+     - `kernel/BUILD.gn` - Build framework GN file
+     - `kernel/kernel.mk` - Kernel build configuration
+     - `kernel/kernel_module_build.sh` - Kernel build entry script
+     - `linux/config.gni` - Product configuration information
+
+2. **hispark_aiflylite** (Hi3519AV200 chip)
+   - System type: Small system
+   - Application domain: Smart vision, AI computing
+
+#### device/soc/hisilicon - SoC Chip Related
+
+Contains chip-related content including HDI implementations, chip software, driver source code, and patches.
+
+**Main subdirectories:**
 - **common** - Common code (HAL layer implementation, platform drivers)
 - **hi3403v100** - Hi3403V100 chip SDK (Linux SDK, U-Boot)
-- **patches** - OpenHarmony patches (classified by subsystem; customizations to native code) **patches directory structure:** ```
+- **patches** - OpenHarmony patches (classified by subsystem; customizations to native code)
+
+**patches directory structure:**
+
+```
 patches
-├── applications/sample # Application sample patches
-├── base # Base subsystem patches
-│ ├── security # Security subsystem patches
-│ └── startup # Startup subsystem patches
-├── build # Build system patches
-├── commonlibrary # Common library patches
-│ └── c_utils # C utility library patches
-├── developtools # Development tools patches
-│ └── syscap_codec # Syscap codec tool patches
-├── drivers # Driver patches
-│ ├── hdf_core # HDF core patches
-│ └── peripheral # Peripheral driver patches
-├── foundation # Foundation framework patches
-│ ├── arkui # ArkUI patches
-│ ├── distributedhardware # Distributed hardware patches
-│ ├── graphic # Graphics subsystem patches
-│ ├── multimedia # Multimedia subsystem patches
-│ └── window # Window management patches
-├── test # Test patches
-│ └── xts # XTS compatibility test patches
-├── third_party # Third-party component patches
-│ ├── musl # Musl libc patches
-│ └── openssl # OpenSSL patches
-├── make_linux_patch.sh # Patch creation script
-└── README.md # Patch documentation
-``` **Key features:**
+├── applications/sample       # Application sample patches
+├── base                      # Base subsystem patches
+│   ├── security              # Security subsystem patches
+│   └── startup               # Startup subsystem patches
+├── build                     # Build system patches
+├── commonlibrary             # Common library patches
+│   └── c_utils               # C utility library patches
+├── developtools              # Development tools patches
+│   └── syscap_codec          # Syscap codec tool patches
+├── drivers                   # Driver patches
+│   ├── hdf_core              # HDF core patches
+│   └── peripheral            # Peripheral driver patches
+├── foundation                # Foundation framework patches
+│   ├── arkui                 # ArkUI patches
+│   ├── distributedhardware   # Distributed hardware patches
+│   ├── graphic               # Graphics subsystem patches
+│   ├── multimedia            # Multimedia subsystem patches
+│   └── window                # Window management patches
+├── test                      # Test patches
+│   └── xts                   # XTS compatibility test patches
+├── third_party               # Third-party component patches
+│   ├── musl                  # Musl libc patches
+│   └── openssl               # OpenSSL patches
+├── make_linux_patch.sh       # Patch creation script
+└── README.md                 # Patch documentation
+```
+
+**Key features:**
 - **HAL layer**: Provides hardware abstraction layer implementations for display, media, audio, etc.
 - **Platform drivers**: ADC, GPIO, I2C, I2S, SPI, UART, WiFi, and other drivers
 - **Hi3403V100 SDK**: Includes media processing platform (MPP), peripheral drivers, OS adaptation layer
-- **Patch system**: Customized modifications to OpenHarmony native code ### kernel - Kernel Configuration and Patches #### kernel/linux/config - Kernel Configuration Kernel configuration files use a layered design; the final defconfig is generated by merging multiple configuration files. **Directory structure:** ```
+- **Patch system**: Customized modifications to OpenHarmony native code
+
+### kernel - Kernel Configuration and Patches
+
+#### kernel/linux/config - Kernel Configuration
+
+Kernel configuration files use a layered design; the final defconfig is generated by merging multiple configuration files.
+
+**Directory structure:**
+
+```
 kernel/linux/config
 ├── LICENSE
 ├── OAT.xml
 ├── README.md
 ├── README_zh.md
-└── linux-6.6 ├── base_defconfig # Base required configuration ├── type # System type configuration │ ├── small_defconfig # Small system configuration │ └── standard_defconfig # Standard system configuration ├── hispark_aifly # Hi3403V100 configuration │ └── arch │ ├── arm64_defconfig # ARM64 architecture configuration │ └── support_defconfig # OpenHarmony support configuration └── hispark_aiflylite # configuration └── arch ├── arm64_defconfig └── support_defconfig
-``` **Configuration file components:** 1. **base_defconfig** - Base required configuration - Mandatory kernel modules required by OpenHarmony features - Security baseline feature configuration - Includes: FUTEX, EPOLL, EVENTFD, security features, etc. 2. **type/small_defconfig** - Small system configuration - Common kernel configuration for Lite systems 3. **type/standard_defconfig** - Standard system configuration - Common kernel configuration for standard systems 4. **arch/arm64_defconfig** - Chip feature configuration - Chip board 64-bit version related configuration 5. **arch/support_defconfig** - OpenHarmony support configuration - Dedicated configuration for adapting the OpenHarmony kernel **Configuration merge process:** ```bash
+└── linux-6.6
+    ├── base_defconfig              # Base required configuration
+    ├── type                        # System type configuration
+    │   ├── small_defconfig         # Small system configuration
+    │   └── standard_defconfig      # Standard system configuration
+    ├── hispark_aifly               # Hi3403V100 configuration
+    │   └── arch
+    │       ├── arm64_defconfig     # ARM64 architecture configuration
+    │       └── support_defconfig   # OpenHarmony support configuration
+    └── hispark_aiflylite           # Hi3519AV200 configuration
+        └── arch
+            ├── arm64_defconfig
+            └── support_defconfig
+```
+
+**Configuration file components:**
+
+1. **base_defconfig** - Base required configuration
+   - Mandatory kernel modules required by OpenHarmony features
+   - Security baseline feature configuration
+   - Includes: FUTEX, EPOLL, EVENTFD, security features, etc.
+
+2. **type/small_defconfig** - Small system configuration
+   - Common kernel configuration for Lite systems
+
+3. **type/standard_defconfig** - Standard system configuration
+   - Common kernel configuration for standard systems
+
+4. **arch/arm64_defconfig** - Chip feature configuration
+   - Chip board 64-bit version related configuration
+
+5. **arch/support_defconfig** - OpenHarmony support configuration
+   - Dedicated configuration for adapting the OpenHarmony kernel
+
+**Configuration merge process:**
+
+```bash
 # Merge multiple configuration files to generate the final defconfig
-bash scripts/kconfig/merge_config.sh -O arch/arm64/configs/ \ -m type/small_defconfig \ hispark_aifly/arch/arm64_defconfig \ hispark_aifly/arch/support_defconfig \ base_defconfig
-``` #### kernel/linux/patches - Kernel Patches **Directory structure:** ```
+bash scripts/kconfig/merge_config.sh -O arch/arm64/configs/ \
+     -m type/small_defconfig \
+        hispark_aifly/arch/arm64_defconfig \
+        hispark_aifly/arch/support_defconfig \
+        base_defconfig
+```
+
+#### kernel/linux/patches - Kernel Patches
+
+**Directory structure:**
+
+```
 kernel/linux/patches
-└── linux-6.6 ├── common_patch # Common patches │ └── hdf.patch # HDF driver framework patch ├── hispark_aifly_patch # Hi3403V100 chip patches │ ├── 0001-kernel-hispark_aifly.patch │ ├── 0002-kernel-compile-support.patch │ ├── 0003-support-eulerpi-uvc-and-ethernet.patch │ ├── 0004-kernel-drm-support.patch │ ├── 0005-kernel-dhcp-support.patch │ └── patch_hispark_aifly.sh # Patch application script └── hispark_aiflylite_patch # chip patches └── patch_hispark_aiflylite.sh
-``` **Patch descriptions:** - **common_patch**: Common patches including HDF
-- **hispark_aifly_patch**: Hi3403V100 chip-specific patches 1. `0001-kernel-hispark_aifly.patch` - Basic chip support 2. `0002-kernel-compile-support.patch` - Compile support 3. `0003-support-eulerpi-uvc-and-ethernet.patch` - UVC and Ethernet support 4. `0004-kernel-drm-support.patch` - DHCP support 5. `0005-kernel-dhcp-support.patch` - DRM display support ### manifest - Repository Manifest Repository manifest files based on OpenHarmony 5.1.0 Release, used for syncing code with the repo tool. **Files:**
+└── linux-6.6
+    ├── common_patch                # Common patches
+    │   └── hdf.patch               # HDF driver framework patch
+    ├── hispark_aifly_patch         # Hi3403V100 chip patches
+    │   ├── 0001-kernel-hispark_aifly.patch
+    │   ├── 0002-kernel-compile-support.patch
+    │   ├── 0003-support-eulerpi-uvc-and-ethernet.patch
+    │   ├── 0004-kernel-drm-support.patch
+    │   ├── 0005-kernel-dhcp-support.patch
+    │   └── patch_hispark_aifly.sh  # Patch application script
+    └── hispark_aiflylite_patch     # Hi3519AV200 chip patches
+        └── patch_hispark_aiflylite.sh
+```
+
+**Patch descriptions:**
+
+- **common_patch**: Common patches including HDF
+- **hispark_aifly_patch**: Hi3403V100 chip-specific patches
+  1. `0001-kernel-hispark_aifly.patch` - Basic chip support
+  2. `0002-kernel-compile-support.patch` - Compile support
+  3. `0003-support-eulerpi-uvc-and-ethernet.patch` - UVC and Ethernet support
+  4. `0004-kernel-drm-support.patch` - DHCP support
+  5. `0005-kernel-dhcp-support.patch` - DRM display support
+- **hispark_aiflylite_patch**: Hi3519AV200 chip-specific patches
+
+### manifest - Repository Manifest
+
+Repository manifest files based on OpenHarmony 5.1.0 Release, used for syncing code with the repo tool.
+
+**Files:**
 - `devboard_hispark_aifly_5.1.0.xml` - repo manifest file
-- `prebuilts_setup.sh` - Pre-build environment setup script (fixes script bugs, copies SDK, downloads mbedtls/trusted-firmware-a, downloads toolchain, configures Clang environment variables) **Manifest characteristics:** 1. **Removal of repositories not needed for Small systems** - Comments out LiteOS-A, LiteOS-M, Uniproton, and other kernel repositories - Comments out some standard-system-only components (e.g., NFC, DLP manager, etc.) - Comments out some Rust third-party libraries 2. **Commonly modified repositories** - **kernel_linux_config** - Kernel configuration (commented out; using local version) - **kernel_linux_patches** - Kernel patches (commented out; using local version) - **device_soc_hisilicon** - HiSilicon SoC support (commented out; using local version) - **device_board_hisilicon** - HiSilicon board configuration (commented out; using local version) - **vendor_hisilicon** - HiSilicon product configuration (commented out; using local version) 3. **Main subsystem components** - **systemabilitymgr** - System ability management (samgr_lite, safwk_lite) - **hiviewdfx** - Logging and diagnostics (hilog_lite, faultloggerd) - **security** - Security subsystem (permission_lite, appverify, device_auth, huks) - **startup** - Startup subsystem (bootstrap_lite, init, appspawn) - **hdf** - Driver framework (hdf_core, drivers_peripheral_display, drivers_peripheral_input) - **ability** - Ability framework (ability_lite, dmsfwk_lite) - **bundlemanager** - Package management (bundle_framework_lite) - **xts** - Compatibility testing (acts, tools, device_attest_lite) - **communication** - Communication subsystem (dhcp, ipc) - **arkui** - UI framework (ace_engine_lite, ui_lite) - **graphic** - Graphics subsystem (graphic_utils_lite, surface_lite) - **window** - Window management (window_manager_lite) - **multimedia** - Multimedia subsystem (camera_lite, media_lite, audio_lite, media_service) - **powermgr** - Power management (powermgr_lite) - **applications** - Application samples (camera_sample_app, camera_screensaver_app) **Usage:** ```bash
+- `prebuilts_setup.sh` - Pre-build environment setup script (fixes script bugs, copies SDK, downloads mbedtls/trusted-firmware-a, downloads toolchain, configures Clang environment variables)
+
+**Manifest characteristics:**
+
+1. **Removal of repositories not needed for Small systems**
+   - Comments out LiteOS-A, LiteOS-M, Uniproton, and other kernel repositories
+   - Comments out some standard-system-only components (e.g., NFC, DLP manager, etc.)
+   - Comments out some Rust third-party libraries
+
+2. **Commonly modified repositories**
+   - **kernel_linux_config** - Kernel configuration (commented out; using local version)
+   - **kernel_linux_patches** - Kernel patches (commented out; using local version)
+   - **device_soc_hisilicon** - HiSilicon SoC support (commented out; using local version)
+   - **device_board_hisilicon** - HiSilicon board configuration (commented out; using local version)
+   - **vendor_hisilicon** - HiSilicon product configuration (commented out; using local version)
+
+3. **Main subsystem components**
+   - **systemabilitymgr** - System ability management (samgr_lite, safwk_lite)
+   - **hiviewdfx** - Logging and diagnostics (hilog_lite, faultloggerd)
+   - **security** - Security subsystem (permission_lite, appverify, device_auth, huks)
+   - **startup** - Startup subsystem (bootstrap_lite, init, appspawn)
+   - **hdf** - Driver framework (hdf_core, drivers_peripheral_display, drivers_peripheral_input)
+   - **ability** - Ability framework (ability_lite, dmsfwk_lite)
+   - **bundlemanager** - Package management (bundle_framework_lite)
+   - **xts** - Compatibility testing (acts, tools, device_attest_lite)
+   - **communication** - Communication subsystem (dhcp, ipc)
+   - **arkui** - UI framework (ace_engine_lite, ui_lite)
+   - **graphic** - Graphics subsystem (graphic_utils_lite, surface_lite)
+   - **window** - Window management (window_manager_lite)
+   - **multimedia** - Multimedia subsystem (camera_lite, media_lite, audio_lite, media_service)
+   - **powermgr** - Power management (powermgr_lite)
+   - **applications** - Application samples (camera_sample_app, camera_screensaver_app)
+
+**Usage:**
+
+```bash
 # 1. Enter the os/OpenHarmony directory
-cd os/OpenHarmony # 2. Initialize and sync code
-repo init -u https:/gitee.com/HiSpark/pegasus.git -m manifest/devboard_hispark_aifly_5.1.0.xml
+cd os/OpenHarmony
+
+# 2. Initialize and sync code
+repo init -u https://gitee.com/HiSpark/pegasus.git -m manifest/devboard_hispark_aifly_5.1.0.xml
 repo sync -c
 repo forall -c 'git lfs pull'
-``` ### vendor - Vendor Product Configuration Contains product definition configuration, HDF configuration, filesystem configuration, etc. **Main subdirectories:**
-- **hispark_aifly_linux** - Hi3403V100 product configuration **Key configuration files:** 1. **config.json** - Product definition ```json { "product_name": "ipcamera_hispark_aifly_linux", "version": "3.0", "type": "small", "ohos_version": "OpenHarmony 5.1", "device_company": "hisilicon", "board": "hispark_aifly", "kernel_type": "linux", "kernel_version": "6.6", "target_cpu": "arm64", "subsystems": [...] } ``` 2. **patch.yml** - Patch configuration - Defines the OpenHarmony source patches to apply - Includes patches from HiSilicon and RKH - Covers applications, security, startup, build, drivers, and other modules 3. **fs.yml** - Filesystem configuration - Defines rootfs, userfs, and userdata partitions - Specifies packaging rules for files and directories - Sets file permissions and symbolic links - Generates ext4 filesystem images 4. **hdf_config** - HDF configuration - Supported device configurations: GPIO, I2C, UART, SPI, ADC - Watchdog, PWM, MMC/SDIO, eMMC - LCD display, Input - WiFi, Sensor - Vibrator ## Supported Products | Product Name | Chip | Kernel Version | System Type | Application Domain |
+```
+
+### vendor - Vendor Product Configuration
+
+Contains product definition configuration, HDF configuration, filesystem configuration, etc.
+
+**Main subdirectories:**
+- **hispark_aifly_linux** - Hi3403V100 product configuration
+- **hispark_aiflylite_linux** - Hi3519AV200 product configuration
+
+**Key configuration files:**
+
+1. **config.json** - Product definition
+   ```json
+   {
+     "product_name": "ipcamera_hispark_aifly_linux",
+     "version": "3.0",
+     "type": "small",
+     "ohos_version": "OpenHarmony 5.1",
+     "device_company": "hisilicon",
+     "board": "hispark_aifly",
+     "kernel_type": "linux",
+     "kernel_version": "6.6",
+     "target_cpu": "arm64",
+     "subsystems": [...]
+   }
+   ```
+
+2. **patch.yml** - Patch configuration
+   - Defines the OpenHarmony source patches to apply
+   - Includes patches from HiSilicon and RKH
+   - Covers applications, security, startup, build, drivers, and other modules
+
+3. **fs.yml** - Filesystem configuration
+   - Defines rootfs, userfs, and userdata partitions
+   - Specifies packaging rules for files and directories
+   - Sets file permissions and symbolic links
+   - Generates ext4 filesystem images
+
+4. **hdf_config** - HDF configuration
+   - Supported device configurations: GPIO, I2C, UART, SPI, ADC
+   - Watchdog, PWM, MMC/SDIO, eMMC
+   - LCD display, Input
+   - WiFi, Sensor
+   - Vibrator
+
+## Supported Products
+
+| Product Name | Chip | Kernel Version | System Type | Application Domain |
 |---------|------|---------|---------|---------|
 | ipcamera_hispark_aifly_linux | Hi3403V100 | Linux 6.6 | Small | Smart vision, AI computing |
-| ipcamera_hispark_aiflylite_linux | | Linux 6.6 | Small | Smart vision, AI computing | ## Key Technical Features - **Kernel**: Linux 6.6.86, supports ARM64 architecture
+| ipcamera_hispark_aiflylite_linux | Hi3519AV200 | Linux 6.6 | Small | Smart vision, AI computing |
+
+## Key Technical Features
+
+- **Kernel**: Linux 6.6.86, supports ARM64 architecture
 - **Toolchain**: Inherits OpenHarmony native llvm-clang
 - **Driver framework**: HDF (Hardware Driver Foundation)
 - **Filesystem**: ext4, supports rootfs/userfs/userdata partitions
 - **Security**: Supports HUKS, device authentication, application verification
 - **Media**: Supports audio/video capture, codec, output
 - **Graphics**: Supports DRM display, UI engine
-- **Testing**: Supports XTS compatibility testing ## Quick Start See the OpenHarmony Lite System User Guide to get started quickly. ### Related Documents | **Document** | **Description** |
+- **Testing**: Supports XTS compatibility testing
+
+## Quick Start
+
+See the OpenHarmony Lite System User Guide to get started quickly.
+
+### Related Documents
+
+| **Document** | **Description** |
 |-------------|-------------|
-| OpenHarmony Lite System User Guide | Running OpenHarmony Small system on Hi3403V100: rootfs filesystem packaging, development environment setup, compilation, flashing; OpenHarmony kernel option changes; XTS test instructions; media feature usage; graphics feature usage |
-| OpenHarmony Lite System Integration Hi3403V100 Porting Case | Hi3403V100 chip solution integration case: product configuration, kernel porting and adaptation, compilation, XTS certification, graphics enhanced features, media enhanced features | ## License This project follows the OpenHarmony open-source license. See the LICENSE files in each directory for details.
+| OpenHarmony Lite System User Guide | Running OpenHarmony Small system on Hi3403V100/Hi3519AV200: rootfs filesystem packaging, development environment setup, compilation, flashing; OpenHarmony kernel option changes; XTS test instructions; media feature usage; graphics feature usage |
+| OpenHarmony Lite System Integration Hi3403V100 Porting Case | Hi3403V100 chip solution integration case: product configuration, kernel porting and adaptation, compilation, XTS certification, graphics enhanced features, media enhanced features |
+
+## License
+
+This project follows the OpenHarmony open-source license. See the LICENSE files in each directory for details.

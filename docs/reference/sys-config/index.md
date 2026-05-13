@@ -1,8 +1,21 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONFIG配置指南/SYS_CONFIG 配置指南.md
---- # 前言
-**概述<a name="section142mcpsimp"></a>** 本文为使用MPP媒体处理芯片进行开发的工程师而写，目的是供您在开发过程中查阅媒体处理软件SYS\_CONFIG子模块的各种参考信息，包括系统控制、时钟配置、管脚复用等。本文档描述SYS\_CONFIG中的各个关键函数的使用方法，以及相关的配置原理。 >![](public_sys-resources/icon-note.gif) **说明：** >本文以Hi3403V100描述为例，未有特殊说明，与Hi3403V100内容一致。 **产品版本<a name="section145mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table148mcpsimp"></a>
+---
+
+# 前言
+**概述<a name="section142mcpsimp"></a>**
+
+本文为使用MPP媒体处理芯片进行开发的工程师而写，目的是供您在开发过程中查阅媒体处理软件SYS\_CONFIG子模块的各种参考信息，包括系统控制、时钟配置、管脚复用等。本文档描述SYS\_CONFIG中的各个关键函数的使用方法，以及相关的配置原理。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
+
+**产品版本<a name="section145mcpsimp"></a>**
+
+与本文档相对应的产品版本如下。
+
+<a name="table148mcpsimp"></a>
 <table><thead align="left"><tr id="row153mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>产品版本</p>
@@ -14,9 +27,26 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONF
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>V100</p>
 </td>
 </tr>
+<tr id="row15828177202310"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p198461710152317"><a name="p198461710152317"></a><a name="p198461710152317"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p6846171016231"><a name="p6846171016231"></a><a name="p6846171016231"></a>V100</p>
+</td>
+</tr>
 </tbody>
-</table> **读者对象<a name="section164mcpsimp"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
-- 软件开发工程师 **符号约定<a name="section170mcpsimp"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table173mcpsimp"></a>
+</table>
+
+**读者对象<a name="section164mcpsimp"></a>**
+
+本文档（本指南）主要适用于以下工程师：
+
+-   技术支持工程师
+-   软件开发工程师
+
+**符号约定<a name="section170mcpsimp"></a>**
+
+在本文中可能出现下列标志，它们所代表的含义如下。
+
+<a name="table173mcpsimp"></a>
 <table><thead align="left"><tr id="row178mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p180mcpsimp"><a name="p180mcpsimp"></a><a name="p180mcpsimp"></a><strong id="b181mcpsimp"><a name="b181mcpsimp"></a><a name="b181mcpsimp"></a>符号</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p183mcpsimp"><a name="p183mcpsimp"></a><a name="p183mcpsimp"></a><strong id="b184mcpsimp"><a name="b184mcpsimp"></a><a name="b184mcpsimp"></a>说明</strong></p>
@@ -28,8 +58,34 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONF
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p190mcpsimp"><a name="p190mcpsimp"></a><a name="p190mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
+<tr id="row191mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p193mcpsimp"><a name="p193mcpsimp"></a><a name="p193mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002408262290.png" height="23.94" width="67.83"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p195mcpsimp"><a name="p195mcpsimp"></a><a name="p195mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row196mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p198mcpsimp"><a name="p198mcpsimp"></a><a name="p198mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002408102394.png" height="23.94" width="67.83"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p200mcpsimp"><a name="p200mcpsimp"></a><a name="p200mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row201mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p203mcpsimp"><a name="p203mcpsimp"></a><a name="p203mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002441661709.png" height="23.94" width="67.83"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p205mcpsimp"><a name="p205mcpsimp"></a><a name="p205mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
+<p id="p206mcpsimp"><a name="p206mcpsimp"></a><a name="p206mcpsimp"></a>“须知”不涉及人身伤害。</p>
+</td>
+</tr>
+<tr id="row207mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p209mcpsimp"><a name="p209mcpsimp"></a><a name="p209mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002441701561.png" height="23.94" width="67.83"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p211mcpsimp"><a name="p211mcpsimp"></a><a name="p211mcpsimp"></a>对正文中重点信息的补充说明。</p>
+<p id="p212mcpsimp"><a name="p212mcpsimp"></a><a name="p212mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
+</td>
+</tr>
 </tbody>
-</table> **修改记录<a name="section213mcpsimp"></a>** <a name="table215mcpsimp"></a>
+</table>
+
+**修改记录<a name="section213mcpsimp"></a>**
+
+<a name="table215mcpsimp"></a>
 <table><thead align="left"><tr id="row221mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p223mcpsimp"><a name="p223mcpsimp"></a><a name="p223mcpsimp"></a><strong id="b224mcpsimp"><a name="b224mcpsimp"></a><a name="b224mcpsimp"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26%" id="mcps1.1.4.1.2"><p id="p226mcpsimp"><a name="p226mcpsimp"></a><a name="p226mcpsimp"></a><strong id="b227mcpsimp"><a name="b227mcpsimp"></a><a name="b227mcpsimp"></a>发布日期</strong></p>
@@ -46,12 +102,40 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONF
 </td>
 </tr>
 </tbody>
-</table> # 概述
-## SYS\_CONFIG介绍<a name="ZH-CN_TOPIC_0000002441701425"></a> SYS\_CONFIG是进行系统级和板级进行配置的模块，主要作用是在系统加载sys\_config.ko时候，对不需要动态修改的初始化环境做配置。包括以下几个部分： - 初始化
-- 系统控制
-- 时钟复位配置
-- 管脚复用 SYS\_CONFIG以二进制文件形式的ko和源码形式同时进行发布，源码位于interdrv/sysconfig目录。 如需修改SYS\_CONFIG代码，可以参照以下文档和步骤（以Hi3403V100为例）： - 如需修改时钟配置和系统控制，请先参考芯片手册，再修改sysconfig代码。
-- 如需修改管脚复用配置，请先参考芯片手册，再修改sysconfig代码。 根据连接的视频输入的sensor不同，系统控制和芯片管脚复用配置存在差异，可以通过模块参数g\_sensor\_list来进行区分。 比如： insmod sys\_config.ko sensors="sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx" vo\_intf="bt1120" 或者 insmod sys\_config.ko sensors=sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx vo\_intf=bt1120 各模块参数意义如[表1](#_table34233312)所示。 **表 1** 各模块参数意义 <a name="_table34233312"></a>
+</table>
+
+# 概述
+## SYS\_CONFIG介绍<a name="ZH-CN_TOPIC_0000002441701425"></a>
+
+SYS\_CONFIG是进行系统级和板级进行配置的模块，主要作用是在系统加载sys\_config.ko时候，对不需要动态修改的初始化环境做配置。包括以下几个部分：
+
+-   初始化
+-   系统控制
+-   时钟复位配置
+-   管脚复用
+
+SYS\_CONFIG以二进制文件形式的ko和源码形式同时进行发布，源码位于interdrv/sysconfig目录。
+
+如需修改SYS\_CONFIG代码，可以参照以下文档和步骤（以Hi3403V100为例）：
+
+-   如需修改时钟配置和系统控制，请先参考芯片手册，再修改sysconfig代码。
+-   如需修改管脚复用配置，请先参考芯片手册，再修改sysconfig代码。
+
+根据连接的视频输入的sensor不同，系统控制和芯片管脚复用配置存在差异，可以通过模块参数g\_sensor\_list来进行区分。
+
+比如：
+
+insmod sys\_config.ko sensors="sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx" vo\_intf="bt1120"
+
+或者
+
+insmod sys\_config.ko sensors=sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx vo\_intf=bt1120
+
+各模块参数意义如[表1](#_table34233312)所示。
+
+**表 1**  各模块参数意义
+
+<a name="_table34233312"></a>
 <table><thead align="left"><tr id="row265mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.3.1.1"><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.2.3.1.2"><p id="p269mcpsimp"><a name="p269mcpsimp"></a><a name="p269mcpsimp"></a>意义</p>
@@ -99,10 +183,47 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONF
 </td>
 </tr>
 </tbody>
-</table> 用户可以根据以下实际物理环境，修改SYS\_CONFIG模块源代码文件中的相关内容： - 根据实际系统配置修改相应的系统配置;
-- 根据实际系统运行时钟需要修改相应的时钟；
-- 根据实际物理电路管脚使用布置情况修改管脚复用的相关内容。 修改完成后，编译和加载模块ko，即可以完成所需新的用户环境的配置。 SYS\_CONFIG配置流程如[图1](#_fig9145151194318)所示。 **图 1** SYS\_CONFIG整体流程图<a name="_fig9145151194318"></a> ![](figures/SYS_CONFIG整体流程图.png "SYS_CONFIG整体流程图") 包括以下4个流程： - 初始化（sysconfig\_init） 对配置寄存器的地址进行映射，主要寄存器地址包括CRG、系统控制、MISC、IO管脚复用、GPIO控制、MIPI等。 - 系统控制（sys\_ctl） 对系统控制部分进行配置，如对VI和VPSS的在线离线模式QoS设置。 - 时钟复位配置（clk\_cfg） 配置VI、VO、SPI、I2C等模块的时钟。 - 管脚复用配置（pin\_mux） 根据不同应用场景配置管脚复用为不同的功能。 # 初始化
-SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，得到软件可以操作配置的虚拟地址。 以下为SYS\_CONFIG的初始化进行映射的寄存器地址。 **表 1** MSIC寄存器地址 <a name="_table44115416"></a>
+</table>
+
+用户可以根据以下实际物理环境，修改SYS\_CONFIG模块源代码文件中的相关内容：
+
+-   根据实际系统配置修改相应的系统配置;
+-   根据实际系统运行时钟需要修改相应的时钟；
+-   根据实际物理电路管脚使用布置情况修改管脚复用的相关内容。
+
+修改完成后，编译和加载模块ko，即可以完成所需新的用户环境的配置。
+
+SYS\_CONFIG配置流程如[图1](#_fig9145151194318)所示。
+
+**图 1**  SYS\_CONFIG整体流程图<a name="_fig9145151194318"></a>  
+![](figures/SYS_CONFIG整体流程图.png "SYS_CONFIG整体流程图")
+
+包括以下4个流程：
+
+-   初始化（sysconfig\_init）
+
+    对配置寄存器的地址进行映射，主要寄存器地址包括CRG、系统控制、MISC、IO管脚复用、GPIO控制、MIPI等。
+
+-   系统控制（sys\_ctl）
+
+    对系统控制部分进行配置，如对VI和VPSS的在线离线模式QoS设置。
+
+-   时钟复位配置（clk\_cfg）
+
+    配置VI、VO、SPI、I2C等模块的时钟。
+
+-   管脚复用配置（pin\_mux）
+
+    根据不同应用场景配置管脚复用为不同的功能。
+
+# 初始化
+SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，得到软件可以操作配置的虚拟地址。
+
+以下为SYS\_CONFIG的初始化进行映射的寄存器地址。
+
+**表 1**  MSIC寄存器地址
+
+<a name="_table44115416"></a>
 <table><thead align="left"><tr id="row329mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.5.1.1"><p id="p331mcpsimp"><a name="p331mcpsimp"></a><a name="p331mcpsimp"></a>解决方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="34%" id="mcps1.2.5.1.2"><p id="p333mcpsimp"><a name="p333mcpsimp"></a><a name="p333mcpsimp"></a>基址变量</p>
@@ -123,7 +244,11 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </td>
 </tr>
 </tbody>
-</table> **表 2** 时钟复位寄存器地址 <a name="_table61494432"></a>
+</table>
+
+**表 2**  时钟复位寄存器地址
+
+<a name="_table61494432"></a>
 <table><thead align="left"><tr id="row355mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.5.1.1"><p id="p357mcpsimp"><a name="p357mcpsimp"></a><a name="p357mcpsimp"></a>解决方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="34%" id="mcps1.2.5.1.2"><p id="p359mcpsimp"><a name="p359mcpsimp"></a><a name="p359mcpsimp"></a>基址变量</p>
@@ -144,7 +269,11 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </td>
 </tr>
 </tbody>
-</table> **表 3** 管脚复用寄存器地址 <a name="_table16578980"></a>
+</table>
+
+**表 3**  管脚复用寄存器地址
+
+<a name="_table16578980"></a>
 <table><thead align="left"><tr id="row381mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.5.1.1"><p id="p383mcpsimp"><a name="p383mcpsimp"></a><a name="p383mcpsimp"></a>解决方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="34%" id="mcps1.2.5.1.2"><p id="p385mcpsimp"><a name="p385mcpsimp"></a><a name="p385mcpsimp"></a>基址变量</p>
@@ -172,7 +301,11 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </td>
 </tr>
 </tbody>
-</table> **表 4** GPIO寄存器地址 <a name="table407mcpsimp"></a>
+</table>
+
+**表 4**  GPIO寄存器地址
+
+<a name="table407mcpsimp"></a>
 <table><thead align="left"><tr id="row415mcpsimp"><th class="cellrowborder" valign="top" width="25.742574257425744%" id="mcps1.2.5.1.1"><p id="p417mcpsimp"><a name="p417mcpsimp"></a><a name="p417mcpsimp"></a>解决方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="32.67326732673268%" id="mcps1.2.5.1.2"><p id="p419mcpsimp"><a name="p419mcpsimp"></a><a name="p419mcpsimp"></a>基址变量</p>
@@ -193,7 +326,11 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </td>
 </tr>
 </tbody>
-</table> **表 5** SYS寄存器地址 <a name="table434mcpsimp"></a>
+</table>
+
+**表 5**  SYS寄存器地址
+
+<a name="table434mcpsimp"></a>
 <table><thead align="left"><tr id="row442mcpsimp"><th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.2.5.1.1"><p id="p1278416222180"><a name="p1278416222180"></a><a name="p1278416222180"></a>解决方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.5.1.2"><p id="p446mcpsimp"><a name="p446mcpsimp"></a><a name="p446mcpsimp"></a>基址变量</p>
@@ -214,7 +351,11 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </td>
 </tr>
 </tbody>
-</table> **表 6** DDR寄存器地址 <a name="table461mcpsimp"></a>
+</table>
+
+**表 6**  DDR寄存器地址
+
+<a name="table461mcpsimp"></a>
 <table><thead align="left"><tr id="row469mcpsimp"><th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.2.5.1.1"><p id="p471mcpsimp"><a name="p471mcpsimp"></a><a name="p471mcpsimp"></a>解决方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.5.1.2"><p id="p473mcpsimp"><a name="p473mcpsimp"></a><a name="p473mcpsimp"></a>基址变量</p>
@@ -235,7 +376,11 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </td>
 </tr>
 </tbody>
-</table> **表 7** MIPI\_TX寄存器地址 <a name="_table071427174311"></a>
+</table>
+
+**表 7**  MIPI\_TX寄存器地址
+
+<a name="_table071427174311"></a>
 <table><thead align="left"><tr id="row495mcpsimp"><th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.2.5.1.1"><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>解决方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.5.1.2"><p id="p499mcpsimp"><a name="p499mcpsimp"></a><a name="p499mcpsimp"></a>基址变量</p>
@@ -256,14 +401,64 @@ SYS\_CONFIG的初始化对需要配置的寄存器地址进行ioremap映射，�
 </td>
 </tr>
 </tbody>
-</table> 本章节对寄存器地址的映射是其他章节的寄存器配置的基础，在完成本章节寄存器物理地址（即寄存器地址）映射后得到寄存器虚拟地址，通过寄存器虚拟地址可完成对相应寄存器的读写。 操作函数如下： ```
+</table>
+
+本章节对寄存器地址的映射是其他章节的寄存器配置的基础，在完成本章节寄存器物理地址（即寄存器地址）映射后得到寄存器虚拟地址，通过寄存器虚拟地址可完成对相应寄存器的读写。
+
+操作函数如下：
+
+```
 #define sys_writel(addr, value) ((*((volatile unsigned int *)(addr))) = (value))
 #define sys_read(addr) (*((volatile int *)(addr)))
-``` - sys\_writel是写函数，addr表示寄存器虚拟地址，value表示写入寄存器的值。
-- sys\_read是读函数，addr表示寄存器虚拟地址。操作的结果即为读取到的寄存器的值。 # 系统控制
-## VI VPSS在线离线模式<a name="ZH-CN_TOPIC_0000002441701441"></a> 根据VI VPSS在线离线模式情况，需要选择VI VPSS在线离线模式。 以下以Hi3403V100为例说明。 ### VI VPSS在线离线模式配置<a name="ZH-CN_TOPIC_0000002408102290"></a> 【配置】 g\_reg\_misc\_base 见[表1](#_table44115416). ```
-static void set_vi_online_video_norm_vpss_online_qos(void) { void *misc_base = sys_config_get_reg_misc; sys_writel(misc_base + 0x1000, 0x44777755); sys_writel(misc_base + 0x1004, 0x45455066); sys_writel(misc_base + 0x1008, 0x60050055); sys_writel(misc_base + 0x100c, 0x45433306); sys_writel(misc_base + 0x1010, 0x33333366); sys_writel(misc_base + 0x1014, 0x33503333); sys_writel(misc_base + 0x1018, 0x00044466); sys_writel(misc_base + 0x101c, 0x44777765); sys_writel(misc_base + 0x1020, 0x55556066); sys_writel(misc_base + 0x1024, 0x60050056); sys_writel(misc_base + 0x1028, 0x46433306); sys_writel(misc_base + 0x102c, 0x66555377); sys_writel(misc_base + 0x1030, 0x33503663); sys_writel(misc_base + 0x1034, 0x00055577); }
-``` 【描述说明】 MDDRC\_QOS\_CTRL0为QOS寄存器。 Offset Address: 0x5000 Total Reset Value: 0x0000\_0000 <a name="table535mcpsimp"></a>
+```
+
+-   sys\_writel是写函数，addr表示寄存器虚拟地址，value表示写入寄存器的值。
+-   sys\_read是读函数，addr表示寄存器虚拟地址。操作的结果即为读取到的寄存器的值。
+
+# 系统控制
+## VI VPSS在线离线模式<a name="ZH-CN_TOPIC_0000002441701441"></a>
+
+根据VI VPSS在线离线模式情况，需要选择VI VPSS在线离线模式。
+
+以下以Hi3403V100为例说明。
+
+
+### VI VPSS在线离线模式配置<a name="ZH-CN_TOPIC_0000002408102290"></a>
+
+【配置】
+
+g\_reg\_misc\_base 见[表1](#_table44115416).
+
+```
+static void set_vi_online_video_norm_vpss_online_qos(void) 
+{ 
+    void *misc_base = sys_config_get_reg_misc(); 
+  
+    sys_writel(misc_base + 0x1000, 0x44777755); 
+    sys_writel(misc_base + 0x1004, 0x45455066); 
+    sys_writel(misc_base + 0x1008, 0x60050055); 
+    sys_writel(misc_base + 0x100c, 0x45433306); 
+    sys_writel(misc_base + 0x1010, 0x33333366); 
+    sys_writel(misc_base + 0x1014, 0x33503333); 
+    sys_writel(misc_base + 0x1018, 0x00044466); 
+  
+    sys_writel(misc_base + 0x101c, 0x44777765); 
+    sys_writel(misc_base + 0x1020, 0x55556066); 
+    sys_writel(misc_base + 0x1024, 0x60050056); 
+    sys_writel(misc_base + 0x1028, 0x46433306); 
+    sys_writel(misc_base + 0x102c, 0x66555377); 
+    sys_writel(misc_base + 0x1030, 0x33503663); 
+    sys_writel(misc_base + 0x1034, 0x00055577); 
+}
+```
+
+【描述说明】
+
+MDDRC\_QOS\_CTRL0为QOS寄存器。
+
+Offset Address: 0x5000   Total Reset Value: 0x0000\_0000
+
+<a name="table535mcpsimp"></a>
 <table><thead align="left"><tr id="row543mcpsimp"><th class="cellrowborder" valign="top" width="12.000000000000002%" id="mcps1.1.6.1.1"><p id="p545mcpsimp"><a name="p545mcpsimp"></a><a name="p545mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.000000000000002%" id="mcps1.1.6.1.2"><p id="p547mcpsimp"><a name="p547mcpsimp"></a><a name="p547mcpsimp"></a>Access</p>
@@ -365,21 +560,63 @@ static void set_vi_online_video_norm_vpss_online_qos(void) { void *misc_base = s
 </td>
 </tr>
 </tbody>
-</table> 配置值为0x44777755： - Bits\[30:28\]=0x4，表示DPU写通道QOS配置为4。
-- Bits\[26:24\]=0x4，表示IVE写通道QOS配置为4。
-- Bits\[22:20\]=0x7，表示VPSS写通道QOS配置为7。
-- Bits\[18:16\]=0x7，表示VIPROC\_2ND写通道QOS配置为7。
-- Bits\[14:12\]=0x7，表示VIPROC\_1ST写通道QOS配置为7。
-- Bits\[10:8\]=0x7，表示VICAP写通道QOS配置为7。
-- Bits\[6:4\]=0x5，表示VDH写通道QOS配置为5。
-- Bits\[2:0\]=0x5，表示VEDU写通道QOS配置为5。 【注意事项】 无。 # 时钟复位配置
-时钟是各模块正常运行的基础，以下以Hi3403V100为例说明时钟相关配置。 时钟复位配置函数如下（函数具体实现以实际应用场景为准）： ```
+</table>
+
+配置值为0x44777755：
+
+-   Bits\[30:28\]=0x4，表示DPU写通道QOS配置为4。
+-   Bits\[26:24\]=0x4，表示IVE写通道QOS配置为4。
+-   Bits\[22:20\]=0x7，表示VPSS写通道QOS配置为7。
+-   Bits\[18:16\]=0x7，表示VIPROC\_2ND写通道QOS配置为7。
+-   Bits\[14:12\]=0x7，表示VIPROC\_1ST写通道QOS配置为7。
+-   Bits\[10:8\]=0x7，表示VICAP写通道QOS配置为7。
+-   Bits\[6:4\]=0x5，表示VDH写通道QOS配置为5。
+-   Bits\[2:0\]=0x5，表示VEDU写通道QOS配置为5。
+
+【注意事项】
+
+无。
+
+# 时钟复位配置
+时钟是各模块正常运行的基础，以下以Hi3403V100为例说明时钟相关配置。
+
+时钟复位配置函数如下（函数具体实现以实际应用场景为准）：
+
+```
 void clk_cfg(void)
-{ i2c_spi_clk_cfg; ……
+{
+    i2c_spi_clk_cfg();
+    ……
 }
-``` ## VI 时钟复位配置<a name="ZH-CN_TOPIC_0000002441701453"></a> ### VICAP时钟<a name="ZH-CN_TOPIC_0000002408262174"></a> 【配置】 g\_reg\_crg\_base 见[表2](#_table61494432)。 ``` /* vicap ppc&bus reset&cken, ppc 600M */
+```
+
+
+
+## VI 时钟复位配置<a name="ZH-CN_TOPIC_0000002441701453"></a>
+
+
+
+
+
+
+### VICAP时钟<a name="ZH-CN_TOPIC_0000002408262174"></a>
+
+【配置】
+
+g\_reg\_crg\_base 见[表2](#_table61494432)。
+
+```
+     /* vicap ppc&bus reset&cken, ppc 600M */
 sys_writel(g_reg_crg_base + 0x9140, 0x6030);
-``` 【描述说明】 PERI\_CRG9296为VICAP时钟及复位控制寄存器，参考芯片手册。 Offset Address: 0x9140 Total Reset Value: 0x0000\_0003 <a name="table673mcpsimp"></a>
+```
+
+【描述说明】
+
+PERI\_CRG9296为VICAP时钟及复位控制寄存器，参考芯片手册。
+
+Offset Address: 0x9140   Total Reset Value: 0x0000\_0003
+
+<a name="table673mcpsimp"></a>
 <table><thead align="left"><tr id="row681mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.6.1.1"><p id="p683mcpsimp"><a name="p683mcpsimp"></a><a name="p683mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p685mcpsimp"><a name="p685mcpsimp"></a><a name="p685mcpsimp"></a>Access</p>
@@ -461,15 +698,39 @@ sys_writel(g_reg_crg_base + 0x9140, 0x6030);
 </td>
 </tr>
 </tbody>
-</table> 配置值为0x6030： - Bits\[14:12\]=0x6，表示时钟配置为600MHz；
-- Bits\[5:4\]=0x3，表示打开VICAP时钟门控。 【注意事项】 工作时钟必须大于SENSOR的时钟。 ### PORT口时钟<a name="ZH-CN_TOPIC_0000002408102198"></a> 【配置】（以PORT0配置为例） g\_reg\_crg\_base 见[表2](#_table61494432)。 ```
+</table>
+
+配置值为0x6030：
+
+-   Bits\[14:12\]=0x6，表示时钟配置为600MHz；
+-   Bits\[5:4\]=0x3，表示打开VICAP时钟门控。
+
+【注意事项】
+
+工作时钟必须大于SENSOR的时钟。
+
+### PORT口时钟<a name="ZH-CN_TOPIC_0000002408102198"></a>
+
+【配置】（以PORT0配置为例）
+
+g\_reg\_crg\_base 见[表2](#_table61494432)。
+
+```
 /* vi port */
 sys_writel(g_reg_crg_base + 0x9148, 0xff0);
 sys_writel(g_reg_crg_base + 0x9164, 0x7010);
 sys_writel(g_reg_crg_base + 0x9184, 0x7010);
 sys_writel(g_reg_crg_base + 0x91a4, 0x7010);
 sys_writel(g_reg_crg_base + 0x91c4, 0x7010);
-``` 【描述说明】 PERI\_CRG9305为VICAP PORT0时钟及复位控制寄存器。 Offset Address: 0x9164 Total Reset Value: 0x0000\_0000 <a name="table780mcpsimp"></a>
+```
+
+【描述说明】
+
+PERI\_CRG9305为VICAP PORT0时钟及复位控制寄存器。
+
+Offset Address: 0x9164   Total Reset Value: 0x0000\_0000
+
+<a name="table780mcpsimp"></a>
 <table><thead align="left"><tr id="row788mcpsimp"><th class="cellrowborder" valign="top" width="14.14141414141414%" id="mcps1.1.6.1.1"><p id="p790mcpsimp"><a name="p790mcpsimp"></a><a name="p790mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.14141414141414%" id="mcps1.1.6.1.2"><p id="p792mcpsimp"><a name="p792mcpsimp"></a><a name="p792mcpsimp"></a>Access</p>
@@ -528,10 +789,32 @@ sys_writel(g_reg_crg_base + 0x91c4, 0x7010);
 </td>
 </tr>
 </tbody>
-</table> 配置值为0x7010: Bits\[14:12\]=0x7，表示PORT口时钟配置为600Mhz。 【注意事项】 无。 ### CMOS时钟<a name="ZH-CN_TOPIC_0000002408262118"></a> 【配置】 g\_reg\_crg\_base 见[表2](#_table61494432)。 ```
+</table>
+
+配置值为0x7010: Bits\[14:12\]=0x7，表示PORT口时钟配置为600Mhz。
+
+【注意事项】
+
+无。
+
+### CMOS时钟<a name="ZH-CN_TOPIC_0000002408262118"></a>
+
+【配置】
+
+g\_reg\_crg\_base 见[表2](#_table61494432)。
+
+```
 /* vi cmos0 */
 sys_writel(g_reg_crg_base + 0x9160, 0x0);
-``` 【描述说明】 PERI\_CRG9304为VI CMOS0时钟复位配置寄存器。 Offset Address: 0x9160 Total Reset Value: 0x0000\_0000 <a name="table857mcpsimp"></a>
+```
+
+【描述说明】
+
+PERI\_CRG9304为VI CMOS0时钟复位配置寄存器。
+
+Offset Address: 0x9160   Total Reset Value: 0x0000\_0000
+
+<a name="table857mcpsimp"></a>
 <table><thead align="left"><tr id="row865mcpsimp"><th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.1"><p id="p867mcpsimp"><a name="p867mcpsimp"></a><a name="p867mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p869mcpsimp"><a name="p869mcpsimp"></a><a name="p869mcpsimp"></a>Access</p>
@@ -580,11 +863,38 @@ sys_writel(g_reg_crg_base + 0x9160, 0x0);
 </td>
 </tr>
 </tbody>
-</table> 配置值为0x0：Bits\[20\]=0x0，表示VI CMOS时钟相位不取反。 【注意事项】 无。 ### SENSOR时钟<a name="ZH-CN_TOPIC_0000002408262078"></a> 【配置】（以SENSOR0配置为例） g\_reg\_crg\_base 见[表2](#_table61494432)。 ```
+</table>
+
+配置值为0x0：Bits\[20\]=0x0，表示VI CMOS时钟相位不取反。
+
+【注意事项】
+
+无。
+
+### SENSOR时钟<a name="ZH-CN_TOPIC_0000002408262078"></a>
+
+【配置】（以SENSOR0配置为例）
+
+g\_reg\_crg\_base 见[表2](#_table61494432)。
+
+```
 static void sensor_clock_config(int index, unsigned int clock)
-{ int offset = 0x8440; offset += index * (0x20); /* sensor0 - 3 */ sys_writel(g_reg_crg_base + offset, clock); /* im327 clock: 0x8010 */
+{
+    int offset = 0x8440;
+    offset += index * (0x20); /* sensor0 - 3 */
+    sys_writel(g_reg_crg_base + offset, clock); /* im327 clock: 0x8010 */
 }
-``` 【描述说明】 sysconfig通过解析模块参数传入的sensor号和sensor名称解析对应的寄存器地址和配置的值，比如模块参数sensors=sns0=sensor0\_xxx时，解析出index=0，clock=0x8010，计算的sensor0的offset=0x8440。以SENSOR0时钟复位配置寄存器为例进行详细说明。 PERI\_CRG8464为SENSOR0时钟复位配置寄存器。 Offset Address: 0x8440 Total Reset Value: 0x0000\_0000 <a name="table929mcpsimp"></a>
+```
+
+【描述说明】
+
+sysconfig通过解析模块参数传入的sensor号和sensor名称解析对应的寄存器地址和配置的值，比如模块参数sensors=sns0=sensor0\_xxx时，解析出index=0，clock=0x8010，计算的sensor0的offset=0x8440。以SENSOR0时钟复位配置寄存器为例进行详细说明。
+
+PERI\_CRG8464为SENSOR0时钟复位配置寄存器。
+
+Offset Address: 0x8440   Total Reset Value: 0x0000\_0000
+
+<a name="table929mcpsimp"></a>
 <table><thead align="left"><tr id="row937mcpsimp"><th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.1"><p id="p939mcpsimp"><a name="p939mcpsimp"></a><a name="p939mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p941mcpsimp"><a name="p941mcpsimp"></a><a name="p941mcpsimp"></a>Access</p>
@@ -659,9 +969,32 @@ static void sensor_clock_config(int index, unsigned int clock)
 </td>
 </tr>
 </tbody>
-</table> 配置值为0x8010：Bits\[15:12\]=0x8，表示SENSOR0时钟配置为为37MHZ。 【注意事项】 无。 ### VIPROC时钟<a name="ZH-CN_TOPIC_0000002441701365"></a> 【配置】 g\_reg\_crg\_base 见[表2](#_table61494432)。 ``` /* viproc_pre ppc&bus reset&cken, ppc 600M */
+</table>
+
+配置值为0x8010：Bits\[15:12\]=0x8，表示SENSOR0时钟配置为为37MHZ。
+
+【注意事项】
+
+无。
+
+### VIPROC时钟<a name="ZH-CN_TOPIC_0000002441701365"></a>
+
+【配置】
+
+g\_reg\_crg\_base 见[表2](#_table61494432)。
+
+```
+     /* viproc_pre ppc&bus reset&cken, ppc 600M */
 sys_writel(g_reg_crg_base + 0x9740, 0x4010);
-``` 【描述说明】 PERI\_CRG9680为VIPROC时钟及复位控制寄存器。 Offset Address: 0x9740 Total Reset Value: 0x0000\_0000 <a name="table1022mcpsimp"></a>
+```
+
+【描述说明】
+
+PERI\_CRG9680为VIPROC时钟及复位控制寄存器。
+
+Offset Address: 0x9740   Total Reset Value: 0x0000\_0000
+
+<a name="table1022mcpsimp"></a>
 <table><thead align="left"><tr id="row1030mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.6.1.1"><p id="p1032mcpsimp"><a name="p1032mcpsimp"></a><a name="p1032mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p1034mcpsimp"><a name="p1034mcpsimp"></a><a name="p1034mcpsimp"></a>Access</p>
@@ -718,13 +1051,45 @@ sys_writel(g_reg_crg_base + 0x9740, 0x4010);
 </td>
 </tr>
 </tbody>
-</table> 配置值为0x4010： - Bits\[14:12\]=0x4, 表示时钟配置为600MHz；
-- Bits\[4\]=0x1，表示打开VIPROC时钟门控。 【注意事项】 无。 ## SPI时钟<a name="ZH-CN_TOPIC_0000002408102226"></a> VO的RGB接口输出，外设LCD显示屏幕使用到了SPI总线，需要使能SPI时钟。 【配置】 g\_reg\_crg\_base参考[表2](#_table61494432)。 ```
+</table>
+
+配置值为0x4010：
+
+-   Bits\[14:12\]=0x4, 表示时钟配置为600MHz；
+-   Bits\[4\]=0x1，表示打开VIPROC时钟门控。
+
+【注意事项】
+
+无。
+
+## SPI时钟<a name="ZH-CN_TOPIC_0000002408102226"></a>
+
+VO的RGB接口输出，外设LCD显示屏幕使用到了SPI总线，需要使能SPI时钟。
+
+【配置】
+
+g\_reg\_crg\_base参考[表2](#_table61494432)。
+
+```
 static void i2c_spi_clk_cfg(void)
 {
-void *g_reg_crg_base = sys_config_get_reg_crg; /* SPI */ sys_writel(g_reg_crg_base + 0x4480, 0x10); /* ssp0 reset&cken */ sys_writel(g_reg_crg_base + 0x4488, 0x10); /* ssp1 reset&cken */ sys_writel(g_reg_crg_base + 0x4490, 0x10); /* ssp2 reset&cken */ sys_writel(g_reg_crg_base + 0x4498, 0x10); /* ssp3 reset&cken */ sys_writel(g_reg_crg_base + 0x44a0, 0x10); /* 3wire spi reset&cken */
+void *g_reg_crg_base = sys_config_get_reg_crg();
+    /* SPI */
+    sys_writel(g_reg_crg_base + 0x4480, 0x10); /* ssp0 reset&cken       */
+    sys_writel(g_reg_crg_base + 0x4488, 0x10); /* ssp1 reset&cken       */
+    sys_writel(g_reg_crg_base + 0x4490, 0x10); /* ssp2 reset&cken       */
+    sys_writel(g_reg_crg_base + 0x4498, 0x10); /* ssp3 reset&cken       */
+    sys_writel(g_reg_crg_base + 0x44a0, 0x10); /* 3wire spi reset&cken  */
 }
-``` 【描述说明】 PERI\_CRG4384是SPI0的时钟门控和复位寄存器。 Offset Address: 0x4480 Total Reset Value: 0x0000\_0000 <a name="table1110mcpsimp"></a>
+```
+
+【描述说明】
+
+PERI\_CRG4384是SPI0的时钟门控和复位寄存器。
+
+Offset Address: 0x4480   Total Reset Value: 0x0000\_0000
+
+<a name="table1110mcpsimp"></a>
 <table><thead align="left"><tr id="row1118mcpsimp"><th class="cellrowborder" valign="top" width="15.841584158415845%" id="mcps1.1.6.1.1"><p id="p1120mcpsimp"><a name="p1120mcpsimp"></a><a name="p1120mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.841584158415845%" id="mcps1.1.6.1.2"><p id="p1122mcpsimp"><a name="p1122mcpsimp"></a><a name="p1122mcpsimp"></a>Access</p>
@@ -786,13 +1151,76 @@ void *g_reg_crg_base = sys_config_get_reg_crg; /* SPI */ sys_writel(g_reg_crg_ba
 </td>
 </tr>
 </tbody>
-</table> 配置值为0x10： - Bits\[0\]=0，表示对SPI0撤销复位，
-- Bits\[4\]=1，表示打开SPI0的时钟。 【注意事项】 无。 # 管脚复用
-管脚复用是芯片在有限的输出管脚中，为满足不同场景需要，灵活使用管脚资源，在不同场景中输出管脚呈现不同用途。 ## I2C总线管脚复用<a name="ZH-CN_TOPIC_0000002441701329"></a> I2C总线一般用于配置外设芯片，在外设驱动中通常使用I2C接口对外设芯片进行配置。因此需要在SYS\_CONFIG 中配置相应的管脚复用为I2C管脚。 ### I2C管脚复用<a name="ZH-CN_TOPIC_0000002441701345"></a> 【配置】 g\_reg\_iocfg2\_base 见[表3](#_table16578980)。 I2C0: ```
-static void i2c0_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x013C, 0x2031); sys_writel(iocfg2_base + 0x0140, 0x2031); }
-``` I2C1: ```
-static void i2c1_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x00E8, 0x0072); sys_writel(iocfg2_base + 0x00EC, 0x0072); }
-``` 【描述说明】 以I2C0为例，I2C原理图如[图1](#fig13182150165411)所示，参考硬件原理图。 **图 1** I2C原理图<a name="fig13182150165411"></a> ![](figures/I2C原理图.jpg "I2C原理图") I2C0需要I2C0\_SCL\(时钟\)/ I2C0\_SDA\(数据\)2根管脚。以下对2根管脚的管脚复用进行描述。 #### 时钟管脚配置（AM19）<a name="ZH-CN_TOPIC_0000002441701373"></a> AM19 \(寄存器：0x0102F0140\)。 **表 1** AM19 AM20管脚控制寄存器 <a name="_table796515471314"></a>
+</table>
+
+配置值为0x10：
+
+-   Bits\[0\]=0，表示对SPI0撤销复位，
+-   Bits\[4\]=1，表示打开SPI0的时钟。
+
+【注意事项】
+
+无。
+
+# 管脚复用
+管脚复用是芯片在有限的输出管脚中，为满足不同场景需要，灵活使用管脚资源，在不同场景中输出管脚呈现不同用途。
+
+
+
+
+
+
+## I2C总线管脚复用<a name="ZH-CN_TOPIC_0000002441701329"></a>
+
+I2C总线一般用于配置外设芯片，在外设驱动中通常使用I2C接口对外设芯片进行配置。因此需要在SYS\_CONFIG 中配置相应的管脚复用为I2C管脚。
+
+
+### I2C管脚复用<a name="ZH-CN_TOPIC_0000002441701345"></a>
+
+【配置】
+
+g\_reg\_iocfg2\_base 见[表3](#_table16578980)。
+
+I2C0:
+
+```
+static void i2c0_pin_mux(void) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+    sys_writel(iocfg2_base + 0x013C, 0x2031); 
+    sys_writel(iocfg2_base + 0x0140, 0x2031); 
+}
+```
+
+I2C1:
+
+```
+static void i2c1_pin_mux(void) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+    sys_writel(iocfg2_base + 0x00E8, 0x0072); 
+    sys_writel(iocfg2_base + 0x00EC, 0x0072); 
+}
+```
+
+【描述说明】
+
+以I2C0为例，I2C原理图如[图1](#fig13182150165411)所示，参考硬件原理图。
+
+**图 1**  I2C原理图<a name="fig13182150165411"></a>  
+![](figures/I2C原理图.jpg "I2C原理图")
+
+I2C0需要I2C0\_SCL\(时钟\)/ I2C0\_SDA\(数据\)2根管脚。以下对2根管脚的管脚复用进行描述。
+
+
+
+#### 时钟管脚配置（AM19）<a name="ZH-CN_TOPIC_0000002441701373"></a>
+
+AM19 \(寄存器：0x0102F0140\)。
+
+**表 1**  AM19 AM20管脚控制寄存器
+
+<a name="_table796515471314"></a>
 <table><thead align="left"><tr id="row1213mcpsimp"><th class="cellrowborder" valign="top" width="14.85148514851485%" id="mcps1.2.8.1.1"><p id="p1215mcpsimp"><a name="p1215mcpsimp"></a><a name="p1215mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.2.8.1.2"><p id="p1217mcpsimp"><a name="p1217mcpsimp"></a><a name="p1217mcpsimp"></a>Pin Number</p>
@@ -822,6 +1250,47 @@ static void i2c1_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; 
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.2.8.1.6 "><p id="p1241mcpsimp"><a name="p1241mcpsimp"></a><a name="p1241mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.8.1.7 "><p id="p1243mcpsimp"><a name="p1243mcpsimp"></a><a name="p1243mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1244mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1246mcpsimp"><a name="p1246mcpsimp"></a><a name="p1246mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1248mcpsimp"><a name="p1248mcpsimp"></a><a name="p1248mcpsimp"></a>输入电平域值选择2：</p>
+<p id="p1249mcpsimp"><a name="p1249mcpsimp"></a><a name="p1249mcpsimp"></a>0x0：Vil/ViH=1.1V/1.7V for 3.3V/5V PAD tolerant input；</p>
+<p id="p1250mcpsimp"><a name="p1250mcpsimp"></a><a name="p1250mcpsimp"></a>0x1：Vil/ViH=1.5V/2.5V for 3.3V/5V PAD tolerant input。</p>
+</td>
+</tr>
+<tr id="row1251mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1253mcpsimp"><a name="p1253mcpsimp"></a><a name="p1253mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1255mcpsimp"><a name="p1255mcpsimp"></a><a name="p1255mcpsimp"></a>输入电平域值选择1：</p>
+<p id="p1256mcpsimp"><a name="p1256mcpsimp"></a><a name="p1256mcpsimp"></a>0x0：1.8V PAD input；</p>
+<p id="p1257mcpsimp"><a name="p1257mcpsimp"></a><a name="p1257mcpsimp"></a>0x1：3.3V /5V PAD  tolerant input。</p>
+</td>
+</tr>
+<tr id="row1258mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1260mcpsimp"><a name="p1260mcpsimp"></a><a name="p1260mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1262mcpsimp"><a name="p1262mcpsimp"></a><a name="p1262mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1263mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1265mcpsimp"><a name="p1265mcpsimp"></a><a name="p1265mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1267mcpsimp"><a name="p1267mcpsimp"></a><a name="p1267mcpsimp"></a>管脚施密特输入控制：</p>
+<p id="p1268mcpsimp"><a name="p1268mcpsimp"></a><a name="p1268mcpsimp"></a>0x0：关闭；</p>
+<p id="p1269mcpsimp"><a name="p1269mcpsimp"></a><a name="p1269mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row1270mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1272mcpsimp"><a name="p1272mcpsimp"></a><a name="p1272mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1274mcpsimp"><a name="p1274mcpsimp"></a><a name="p1274mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1275mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1277mcpsimp"><a name="p1277mcpsimp"></a><a name="p1277mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1279mcpsimp"><a name="p1279mcpsimp"></a><a name="p1279mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1280mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1282mcpsimp"><a name="p1282mcpsimp"></a><a name="p1282mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1284mcpsimp"><a name="p1284mcpsimp"></a><a name="p1284mcpsimp"></a>保留</p>
 </td>
 </tr>
 <tr id="row1285mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1287mcpsimp"><a name="p1287mcpsimp"></a><a name="p1287mcpsimp"></a>7:4</p>
@@ -856,6 +1325,47 @@ static void i2c1_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; 
 <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.8.1.7 "><p id="p1316mcpsimp"><a name="p1316mcpsimp"></a><a name="p1316mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row1317mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1319mcpsimp"><a name="p1319mcpsimp"></a><a name="p1319mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1321mcpsimp"><a name="p1321mcpsimp"></a><a name="p1321mcpsimp"></a>输入电平域值选择2：</p>
+<p id="p1322mcpsimp"><a name="p1322mcpsimp"></a><a name="p1322mcpsimp"></a>0x0：Vil/ViH=1.1V/1.7V for 3.3V/5V PAD tolerant input；</p>
+<p id="p1323mcpsimp"><a name="p1323mcpsimp"></a><a name="p1323mcpsimp"></a>0x1：Vil/ViH=1.5V/2.5V for 3.3V/5V PAD tolerant input。</p>
+</td>
+</tr>
+<tr id="row1324mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1326mcpsimp"><a name="p1326mcpsimp"></a><a name="p1326mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1328mcpsimp"><a name="p1328mcpsimp"></a><a name="p1328mcpsimp"></a>输入电平域值选择1：</p>
+<p id="p1329mcpsimp"><a name="p1329mcpsimp"></a><a name="p1329mcpsimp"></a>0x0：1.8V PAD input；</p>
+<p id="p1330mcpsimp"><a name="p1330mcpsimp"></a><a name="p1330mcpsimp"></a>0x1：3.3V /5V PAD  tolerant input。</p>
+</td>
+</tr>
+<tr id="row1331mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1333mcpsimp"><a name="p1333mcpsimp"></a><a name="p1333mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1335mcpsimp"><a name="p1335mcpsimp"></a><a name="p1335mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1336mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1338mcpsimp"><a name="p1338mcpsimp"></a><a name="p1338mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1340mcpsimp"><a name="p1340mcpsimp"></a><a name="p1340mcpsimp"></a>管脚施密特输入控制：</p>
+<p id="p1341mcpsimp"><a name="p1341mcpsimp"></a><a name="p1341mcpsimp"></a>0x0：关闭；</p>
+<p id="p1342mcpsimp"><a name="p1342mcpsimp"></a><a name="p1342mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row1343mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1345mcpsimp"><a name="p1345mcpsimp"></a><a name="p1345mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1347mcpsimp"><a name="p1347mcpsimp"></a><a name="p1347mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1348mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1350mcpsimp"><a name="p1350mcpsimp"></a><a name="p1350mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1352mcpsimp"><a name="p1352mcpsimp"></a><a name="p1352mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1353mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1355mcpsimp"><a name="p1355mcpsimp"></a><a name="p1355mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1357mcpsimp"><a name="p1357mcpsimp"></a><a name="p1357mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row1358mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1360mcpsimp"><a name="p1360mcpsimp"></a><a name="p1360mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1362mcpsimp"><a name="p1362mcpsimp"></a><a name="p1362mcpsimp"></a>管脚驱动能力选择：</p>
@@ -874,13 +1384,69 @@ static void i2c1_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; 
 </td>
 </tr>
 </tbody>
-</table> 管脚存在1种复用情形：I2C0\_SCL。 AM19配置值为0x2001： - Bits\[3:0\]=0x1，管脚复用为1，管脚复用配置为I2C0\_SCL;
-- Bits\[7:4\]=0x0，管脚管脚驱动能力配置为档位4（最大值），档位值越大，对应的驱动能力越大;
-- Bits\[13\]=0x1，输入电平域选择3.3V /5V PAD。 #### DATA管脚配置（AM20）<a name="ZH-CN_TOPIC_0000002441701409"></a> AM20 \(寄存器：0x0102F013C\)。 AM20管脚控制寄存器见[表1](#_table796515471314)。 管脚存在2种复用情形：GPIO11\_4/I2C0\_SDA。 AM20配置值为0x2001： - Bits\[3:0\]=0x1，管脚复用为1，管脚复用配置为I2C0\_SDA;
-- Bits\[7:4\]=0x0，管脚管脚驱动能力配置为档位4（最大值），档位值越大，对应的驱动能力越大;
-- Bits\[13\]=0x1，输入电平域选择3.3V /5V PAD。 【注意事项】 无。 ## SPI总线管脚复用<a name="ZH-CN_TOPIC_0000002441661509"></a> LCD显示屏幕IC芯片通过SPI总线连接到主芯片，在LCD屏幕驱动中通常使用SPI接口对LCD IC芯片进行配置。因此需要配置相应的管脚复用为SPI管脚。 ### SPI管脚复用<a name="ZH-CN_TOPIC_0000002441661537"></a> 【配置】（以Hi3403V100为例） g\_reg\_iocfg2\_base1见[表3](#_table16578980) ```
-static void spi0_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01D8, 0x02b1); sys_writel(iocfg2_base + 0x01DC, 0x0251); sys_writel(iocfg2_base + 0x01E0, 0x0201); sys_writel(iocfg2_base + 0x01E4, 0x0201); }
-``` 【描述说明】 SPI0\_SDI（AL33），SPI0\_SDO（AL34），SPI0\_CSN（AM34），SPI0\_SCLK（AK33）管脚如[图1](#_fig1987716341641)所示。 **图 1** SPI0原理图<a name="_fig1987716341641"></a> ![](figures/SPI0原理图.jpg "SPI0原理图") 以AK33管脚的复用关系配置为例进行描述，SPI0\_SCLK（AK33）管脚控制寄存器如[表1](#_table3777103411415)所示。 **表 1** AK33管脚控制寄存器 <a name="_table3777103411415"></a>
+</table>
+
+管脚存在1种复用情形：I2C0\_SCL。
+
+AM19配置值为0x2001：
+
+-   Bits\[3:0\]=0x1，管脚复用为1，管脚复用配置为I2C0\_SCL;
+-   Bits\[7:4\]=0x0，管脚管脚驱动能力配置为档位4（最大值），档位值越大，对应的驱动能力越大;
+-   Bits\[13\]=0x1，输入电平域选择3.3V /5V PAD。
+
+#### DATA管脚配置（AM20）<a name="ZH-CN_TOPIC_0000002441701409"></a>
+
+AM20 \(寄存器：0x0102F013C\)。
+
+AM20管脚控制寄存器见[表1](#_table796515471314)。
+
+管脚存在2种复用情形：GPIO11\_4/I2C0\_SDA。
+
+AM20配置值为0x2001：
+
+-   Bits\[3:0\]=0x1，管脚复用为1，管脚复用配置为I2C0\_SDA;
+-   Bits\[7:4\]=0x0，管脚管脚驱动能力配置为档位4（最大值），档位值越大，对应的驱动能力越大;
+-   Bits\[13\]=0x1，输入电平域选择3.3V /5V PAD。
+
+【注意事项】
+
+无。
+
+## SPI总线管脚复用<a name="ZH-CN_TOPIC_0000002441661509"></a>
+
+LCD显示屏幕IC芯片通过SPI总线连接到主芯片，在LCD屏幕驱动中通常使用SPI接口对LCD IC芯片进行配置。因此需要配置相应的管脚复用为SPI管脚。
+
+
+### SPI管脚复用<a name="ZH-CN_TOPIC_0000002441661537"></a>
+
+【配置】（以Hi3403V100为例）
+
+g\_reg\_iocfg2\_base1见[表3](#_table16578980)
+
+```
+static void spi0_pin_mux(void) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+  
+    sys_writel(iocfg2_base + 0x01D8, 0x02b1); 
+    sys_writel(iocfg2_base + 0x01DC, 0x0251); 
+    sys_writel(iocfg2_base + 0x01E0, 0x0201); 
+    sys_writel(iocfg2_base + 0x01E4, 0x0201); 
+}
+```
+
+【描述说明】
+
+SPI0\_SDI（AL33），SPI0\_SDO（AL34），SPI0\_CSN（AM34），SPI0\_SCLK（AK33）管脚如[图1](#_fig1987716341641)所示。
+
+**图 1**  SPI0原理图<a name="_fig1987716341641"></a>  
+![](figures/SPI0原理图.jpg "SPI0原理图")
+
+以AK33管脚的复用关系配置为例进行描述，SPI0\_SCLK（AK33）管脚控制寄存器如[表1](#_table3777103411415)所示。
+
+**表 1**  AK33管脚控制寄存器
+
+<a name="_table3777103411415"></a>
 <table><thead align="left"><tr id="row1416mcpsimp"><th class="cellrowborder" valign="top" width="14.85148514851485%" id="mcps1.2.8.1.1"><p id="p1418mcpsimp"><a name="p1418mcpsimp"></a><a name="p1418mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.900990099009901%" id="mcps1.2.8.1.2"><p id="p1420mcpsimp"><a name="p1420mcpsimp"></a><a name="p1420mcpsimp"></a>Pin Number</p>
@@ -910,6 +1476,47 @@ static void spi0_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; 
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.2.8.1.6 "><p id="p1444mcpsimp"><a name="p1444mcpsimp"></a><a name="p1444mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.792079207920793%" headers="mcps1.2.8.1.7 "><p id="p1446mcpsimp"><a name="p1446mcpsimp"></a><a name="p1446mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1447mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1449mcpsimp"><a name="p1449mcpsimp"></a><a name="p1449mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1451mcpsimp"><a name="p1451mcpsimp"></a><a name="p1451mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1452mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1454mcpsimp"><a name="p1454mcpsimp"></a><a name="p1454mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1456mcpsimp"><a name="p1456mcpsimp"></a><a name="p1456mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1457mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1459mcpsimp"><a name="p1459mcpsimp"></a><a name="p1459mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1461mcpsimp"><a name="p1461mcpsimp"></a><a name="p1461mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1462mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1464mcpsimp"><a name="p1464mcpsimp"></a><a name="p1464mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1466mcpsimp"><a name="p1466mcpsimp"></a><a name="p1466mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1467mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1469mcpsimp"><a name="p1469mcpsimp"></a><a name="p1469mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1471mcpsimp"><a name="p1471mcpsimp"></a><a name="p1471mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p1472mcpsimp"><a name="p1472mcpsimp"></a><a name="p1472mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p1473mcpsimp"><a name="p1473mcpsimp"></a><a name="p1473mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row1474mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1476mcpsimp"><a name="p1476mcpsimp"></a><a name="p1476mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1478mcpsimp"><a name="p1478mcpsimp"></a><a name="p1478mcpsimp"></a>管脚下拉控制：</p>
+<p id="p1479mcpsimp"><a name="p1479mcpsimp"></a><a name="p1479mcpsimp"></a>0x0：关闭；</p>
+<p id="p1480mcpsimp"><a name="p1480mcpsimp"></a><a name="p1480mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row1481mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1483mcpsimp"><a name="p1483mcpsimp"></a><a name="p1483mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1485mcpsimp"><a name="p1485mcpsimp"></a><a name="p1485mcpsimp"></a>管脚上拉控制：</p>
+<p id="p1486mcpsimp"><a name="p1486mcpsimp"></a><a name="p1486mcpsimp"></a>0x0：关闭；</p>
+<p id="p1487mcpsimp"><a name="p1487mcpsimp"></a><a name="p1487mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row1488mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1490mcpsimp"><a name="p1490mcpsimp"></a><a name="p1490mcpsimp"></a>7:4</p>
@@ -945,13 +1552,74 @@ static void spi0_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; 
 </td>
 </tr>
 </tbody>
-</table> AK33管脚存在4种功能复用：GPIO16\_3/SPI0\_SCLK/I2C2\_SCL/SPI\_3WIRE\_CLK 当前AK33管脚配置值：0x02b1 - Bits \[3:0\]=1，表示AK33复用为SPI0\_SCLK
-- Bits\[7:4\]=0xb，表示驱动能力选择档位12
-- Bits\[9\]=0x1，表示管脚下拉：打开 【注意事项】 无。 ## VI管脚复用<a name="ZH-CN_TOPIC_0000002441661573"></a> 视频输入是通过BT.656/BT.1120/MIPI接口接收视频数据，按照一定的视频接收协议进行视频数据的采集，并将数据存入指定的内存区域。 以下对VICAP中的存在的管脚复用进行说明。 ### PORT口管脚复用<a name="ZH-CN_TOPIC_0000002441661521"></a> #### MIPI\_RX管脚复用<a name="ZH-CN_TOPIC_0000002408102178"></a> 【配置】 g\_reg\_iocfg2\_base 见[表3](#_table16578980)。 以Hi3403V100的MIPI\_RX的PHY0接口为例： ```
+</table>
+
+AK33管脚存在4种功能复用：GPIO16\_3/SPI0\_SCLK/I2C2\_SCL/SPI\_3WIRE\_CLK
+
+当前AK33管脚配置值：0x02b1
+
+-   Bits \[3:0\]=1，表示AK33复用为SPI0\_SCLK
+-   Bits\[7:4\]=0xb，表示驱动能力选择档位12
+-   Bits\[9\]=0x1，表示管脚下拉：打开
+
+【注意事项】
+
+无。
+
+## VI管脚复用<a name="ZH-CN_TOPIC_0000002441661573"></a>
+
+视频输入是通过BT.656/BT.1120/MIPI接口接收视频数据，按照一定的视频接收协议进行视频数据的采集，并将数据存入指定的内存区域。
+
+以下对VICAP中的存在的管脚复用进行说明。
+
+
+### PORT口管脚复用<a name="ZH-CN_TOPIC_0000002441661521"></a>
+
+
+
+
+
+#### MIPI\_RX管脚复用<a name="ZH-CN_TOPIC_0000002408102178"></a>
+
+【配置】
+
+g\_reg\_iocfg2\_base 见[表3](#_table16578980)。
+
+以Hi3403V100的MIPI\_RX的PHY0接口为例：
+
+```
 static void mipi0_rx_pin_mux(void)
-{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01B0, 0x0000); sys_writel(iocfg2_base + 0x01B4, 0x0000); sys_writel(iocfg2_base + 0x01C0, 0x0000); sys_writel(iocfg2_base + 0x01C4, 0x0000); sys_writel(iocfg2_base + 0x01B8, 0x0000); sys_writel(iocfg2_base + 0x01BC, 0x0000); sys_writel(iocfg2_base + 0x01A8, 0x0000); sys_writel(iocfg2_base + 0x01AC, 0x0000); sys_writel(iocfg2_base + 0x0198, 0x0000); sys_writel(iocfg2_base + 0x019C, 0x0000); sys_writel(iocfg2_base + 0x01A0, 0x0000); sys_writel(iocfg2_base + 0x01A4, 0x0000);
+{
+    void *iocfg2_base = sys_config_get_reg_iocfg2();
+    sys_writel(iocfg2_base + 0x01B0, 0x0000);
+    sys_writel(iocfg2_base + 0x01B4, 0x0000);
+    sys_writel(iocfg2_base + 0x01C0, 0x0000);
+    sys_writel(iocfg2_base + 0x01C4, 0x0000);
+    sys_writel(iocfg2_base + 0x01B8, 0x0000);
+    sys_writel(iocfg2_base + 0x01BC, 0x0000);
+    sys_writel(iocfg2_base + 0x01A8, 0x0000);
+    sys_writel(iocfg2_base + 0x01AC, 0x0000);
+    sys_writel(iocfg2_base + 0x0198, 0x0000);
+    sys_writel(iocfg2_base + 0x019C, 0x0000);
+    sys_writel(iocfg2_base + 0x01A0, 0x0000);
+    sys_writel(iocfg2_base + 0x01A4, 0x0000);
 }
-``` 【描述说明】 原理图如[图1](#_toc51764061)所示。 **图 1** MIPI\_RX0原理图<a name="_toc51764061"></a> ![](figures/MIPI_RX0原理图.png "MIPI_RX0原理图") 当VI视频采集接口为MIPI\_RX接口采集时，需要配置[图1](#_toc51764061)中对应的10根管脚为对应的MIPI\_RX的相关功能，MIPI接口的10根管脚分为1对时钟线和4对DATA数据线，1对管脚为1对差分信号。 - 时钟管脚配置（以AP30复用为MIPI\_RX0\_CK0P为例说明）。 **表 1** AP30管脚控制寄存器 <a name="table1561mcpsimp"></a>
+```
+
+【描述说明】
+
+原理图如[图1](#_toc51764061)所示。
+
+**图 1**  MIPI\_RX0原理图<a name="_toc51764061"></a>  
+![](figures/MIPI_RX0原理图.png "MIPI_RX0原理图")
+
+当VI视频采集接口为MIPI\_RX接口采集时，需要配置[图1](#_toc51764061)中对应的10根管脚为对应的MIPI\_RX的相关功能，MIPI接口的10根管脚分为1对时钟线和4对DATA数据线，1对管脚为1对差分信号。
+
+-   时钟管脚配置（以AP30复用为MIPI\_RX0\_CK0P为例说明）。
+
+**表 1**  AP30管脚控制寄存器
+
+<a name="table1561mcpsimp"></a>
 <table><thead align="left"><tr id="row1572mcpsimp"><th class="cellrowborder" valign="top" width="13.591359135913592%" id="mcps1.2.8.1.1"><p id="p1574mcpsimp"><a name="p1574mcpsimp"></a><a name="p1574mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.62126212621262%" id="mcps1.2.8.1.2"><p id="p1576mcpsimp"><a name="p1576mcpsimp"></a><a name="p1576mcpsimp"></a>Pin Number</p>
@@ -983,6 +1651,41 @@ static void mipi0_rx_pin_mux(void)
 <td class="cellrowborder" valign="top" width="21.362136213621362%" headers="mcps1.2.8.1.7 "><p id="p1602mcpsimp"><a name="p1602mcpsimp"></a><a name="p1602mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row1603mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1605mcpsimp"><a name="p1605mcpsimp"></a><a name="p1605mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1607mcpsimp"><a name="p1607mcpsimp"></a><a name="p1607mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1608mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1610mcpsimp"><a name="p1610mcpsimp"></a><a name="p1610mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1612mcpsimp"><a name="p1612mcpsimp"></a><a name="p1612mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1613mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1615mcpsimp"><a name="p1615mcpsimp"></a><a name="p1615mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1617mcpsimp"><a name="p1617mcpsimp"></a><a name="p1617mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1618mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1620mcpsimp"><a name="p1620mcpsimp"></a><a name="p1620mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1622mcpsimp"><a name="p1622mcpsimp"></a><a name="p1622mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1623mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1625mcpsimp"><a name="p1625mcpsimp"></a><a name="p1625mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1627mcpsimp"><a name="p1627mcpsimp"></a><a name="p1627mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1628mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1630mcpsimp"><a name="p1630mcpsimp"></a><a name="p1630mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1632mcpsimp"><a name="p1632mcpsimp"></a><a name="p1632mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1633mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1635mcpsimp"><a name="p1635mcpsimp"></a><a name="p1635mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1637mcpsimp"><a name="p1637mcpsimp"></a><a name="p1637mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row1638mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1640mcpsimp"><a name="p1640mcpsimp"></a><a name="p1640mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1642mcpsimp"><a name="p1642mcpsimp"></a><a name="p1642mcpsimp"></a>保留。</p>
@@ -997,7 +1700,17 @@ static void mipi0_rx_pin_mux(void)
 </td>
 </tr>
 </tbody>
-</table> 管脚存在2种复用情形：MIPI\_RX0\_CK0P/GPIO15\_0。 配置值为0x0000:Bits\[3:0\]=0，管脚复用为0，配置复用为MIPI\_RX0\_CK0P。 - DATA管脚配置（以AN31复用为MIPI\_RX0\_D0N为例说明）。 **表 2** AN31管脚控制寄存器 <a name="table1655mcpsimp"></a>
+</table>
+
+管脚存在2种复用情形：MIPI\_RX0\_CK0P/GPIO15\_0。
+
+配置值为0x0000:Bits\[3:0\]=0，管脚复用为0，配置复用为MIPI\_RX0\_CK0P。
+
+-   DATA管脚配置（以AN31复用为MIPI\_RX0\_D0N为例说明）。
+
+**表 2**  AN31管脚控制寄存器
+
+<a name="table1655mcpsimp"></a>
 <table><thead align="left"><tr id="row1666mcpsimp"><th class="cellrowborder" valign="top" width="13.591359135913592%" id="mcps1.2.8.1.1"><p id="p1668mcpsimp"><a name="p1668mcpsimp"></a><a name="p1668mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.62126212621262%" id="mcps1.2.8.1.2"><p id="p1670mcpsimp"><a name="p1670mcpsimp"></a><a name="p1670mcpsimp"></a>Pin Number</p>
@@ -1029,6 +1742,41 @@ static void mipi0_rx_pin_mux(void)
 <td class="cellrowborder" valign="top" width="21.362136213621362%" headers="mcps1.2.8.1.7 "><p id="p1696mcpsimp"><a name="p1696mcpsimp"></a><a name="p1696mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row1697mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1699mcpsimp"><a name="p1699mcpsimp"></a><a name="p1699mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1701mcpsimp"><a name="p1701mcpsimp"></a><a name="p1701mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1702mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1704mcpsimp"><a name="p1704mcpsimp"></a><a name="p1704mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1706mcpsimp"><a name="p1706mcpsimp"></a><a name="p1706mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1707mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1709mcpsimp"><a name="p1709mcpsimp"></a><a name="p1709mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1711mcpsimp"><a name="p1711mcpsimp"></a><a name="p1711mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1712mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1714mcpsimp"><a name="p1714mcpsimp"></a><a name="p1714mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1716mcpsimp"><a name="p1716mcpsimp"></a><a name="p1716mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1717mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1719mcpsimp"><a name="p1719mcpsimp"></a><a name="p1719mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1721mcpsimp"><a name="p1721mcpsimp"></a><a name="p1721mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1722mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1724mcpsimp"><a name="p1724mcpsimp"></a><a name="p1724mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1726mcpsimp"><a name="p1726mcpsimp"></a><a name="p1726mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1727mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1729mcpsimp"><a name="p1729mcpsimp"></a><a name="p1729mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1731mcpsimp"><a name="p1731mcpsimp"></a><a name="p1731mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row1732mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1734mcpsimp"><a name="p1734mcpsimp"></a><a name="p1734mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1736mcpsimp"><a name="p1736mcpsimp"></a><a name="p1736mcpsimp"></a>保留。</p>
@@ -1043,11 +1791,58 @@ static void mipi0_rx_pin_mux(void)
 </td>
 </tr>
 </tbody>
-</table> 管脚存在2种复用情形：MIPI\_RX0\_D0N /GPIO14\_3。 配置值为0x0000: Bits\[3:0\]=0，管脚复用为0，配置复用为MIPI\_RX0\_D0P。 其他管脚复用关系配置和以上示例管脚配置情况类似，在此不做详细描述详细描述。 【注意事项】 无。 #### BT.656管脚复用<a name="ZH-CN_TOPIC_0000002408262106"></a> 【配置】 以设备1的BT.656接口为例。 g\_reg\_iocfg\_base 见[表3](#_table16578980)。 ```
+</table>
+
+管脚存在2种复用情形：MIPI\_RX0\_D0N /GPIO14\_3。
+
+配置值为0x0000:
+
+Bits\[3:0\]=0，管脚复用为0，配置复用为MIPI\_RX0\_D0P。
+
+其他管脚复用关系配置和以上示例管脚配置情况类似，在此不做详细描述详细描述。
+
+【注意事项】
+
+无。
+
+#### BT.656管脚复用<a name="ZH-CN_TOPIC_0000002408262106"></a>
+
+【配置】
+
+以设备1的BT.656接口为例。
+
+g\_reg\_iocfg\_base 见[表3](#_table16578980)。
+
+```
 static void vi_bt656_mode_mux(void)
-{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0158, 0x0206); sys_writel(iocfg2_base + 0x016C, 0x0006); sys_writel(iocfg2_base + 0x0178, 0x0006); sys_writel(iocfg2_base + 0x017C, 0x0006); sys_writel(iocfg2_base + 0x0174, 0x0006); sys_writel(iocfg2_base + 0x0160, 0x0206); sys_writel(iocfg2_base + 0x015C, 0x0206); sys_writel(iocfg2_base + 0x0164, 0x0206); sys_writel(iocfg2_base + 0x0154, 0x0206);
+{
+    void *iocfg2_base = sys_config_get_reg_iocfg2();
+    sys_writel(iocfg2_base + 0x0158, 0x0206);
+    sys_writel(iocfg2_base + 0x016C, 0x0006);
+    sys_writel(iocfg2_base + 0x0178, 0x0006);
+    sys_writel(iocfg2_base + 0x017C, 0x0006);
+    sys_writel(iocfg2_base + 0x0174, 0x0006);
+    sys_writel(iocfg2_base + 0x0160, 0x0206);
+    sys_writel(iocfg2_base + 0x015C, 0x0206);
+    sys_writel(iocfg2_base + 0x0164, 0x0206);
+    sys_writel(iocfg2_base + 0x0154, 0x0206);
 }
-``` 【描述说明】 原理图如[图1](#_toc51764062)所示。 **图 1** VI BT.656原理图<a name="_toc51764062"></a> ![](figures/VI-BT-656原理图.png "VI-BT-656原理图") 当VI视频采集接口为BT.656接口采集时，需要配置上图中对应的10根管脚为对应的BT.656的相关功能，BT.656接口的10根管脚包含有时钟管脚和8根DATA（VI\_DATA0\~ VI\_DATA7）数据管脚。 - 时钟管脚配置（以AK22复用为VI\_CLK为例说明）： **表 1** AK22管脚控制寄存器 <a name="table1776mcpsimp"></a>
+```
+
+【描述说明】
+
+原理图如[图1](#_toc51764062)所示。
+
+**图 1**  VI BT.656原理图<a name="_toc51764062"></a>  
+![](figures/VI-BT-656原理图.png "VI-BT-656原理图")
+
+当VI视频采集接口为BT.656接口采集时，需要配置上图中对应的10根管脚为对应的BT.656的相关功能，BT.656接口的10根管脚包含有时钟管脚和8根DATA（VI\_DATA0\~ VI\_DATA7）数据管脚。
+
+-   时钟管脚配置（以AK22复用为VI\_CLK为例说明）：
+
+**表 1**  AK22管脚控制寄存器
+
+<a name="table1776mcpsimp"></a>
 <table><thead align="left"><tr id="row1787mcpsimp"><th class="cellrowborder" valign="top" width="14.14141414141414%" id="mcps1.2.8.1.1"><p id="p1789mcpsimp"><a name="p1789mcpsimp"></a><a name="p1789mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.121212121212121%" id="mcps1.2.8.1.2"><p id="p1791mcpsimp"><a name="p1791mcpsimp"></a><a name="p1791mcpsimp"></a>Pin Number</p>
@@ -1077,6 +1872,47 @@ static void vi_bt656_mode_mux(void)
 <td class="cellrowborder" valign="top" width="7.07070707070707%" headers="mcps1.2.8.1.6 "><p id="p1815mcpsimp"><a name="p1815mcpsimp"></a><a name="p1815mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.8.1.7 "><p id="p1817mcpsimp"><a name="p1817mcpsimp"></a><a name="p1817mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1818mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1820mcpsimp"><a name="p1820mcpsimp"></a><a name="p1820mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1822mcpsimp"><a name="p1822mcpsimp"></a><a name="p1822mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1823mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1825mcpsimp"><a name="p1825mcpsimp"></a><a name="p1825mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1827mcpsimp"><a name="p1827mcpsimp"></a><a name="p1827mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1828mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1830mcpsimp"><a name="p1830mcpsimp"></a><a name="p1830mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1832mcpsimp"><a name="p1832mcpsimp"></a><a name="p1832mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1833mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1835mcpsimp"><a name="p1835mcpsimp"></a><a name="p1835mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1837mcpsimp"><a name="p1837mcpsimp"></a><a name="p1837mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1838mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1840mcpsimp"><a name="p1840mcpsimp"></a><a name="p1840mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1842mcpsimp"><a name="p1842mcpsimp"></a><a name="p1842mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p1843mcpsimp"><a name="p1843mcpsimp"></a><a name="p1843mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p1844mcpsimp"><a name="p1844mcpsimp"></a><a name="p1844mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row1845mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1847mcpsimp"><a name="p1847mcpsimp"></a><a name="p1847mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1849mcpsimp"><a name="p1849mcpsimp"></a><a name="p1849mcpsimp"></a>管脚下拉控制：</p>
+<p id="p1850mcpsimp"><a name="p1850mcpsimp"></a><a name="p1850mcpsimp"></a>0x0：关闭；</p>
+<p id="p1851mcpsimp"><a name="p1851mcpsimp"></a><a name="p1851mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row1852mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1854mcpsimp"><a name="p1854mcpsimp"></a><a name="p1854mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1856mcpsimp"><a name="p1856mcpsimp"></a><a name="p1856mcpsimp"></a>管脚上拉控制：</p>
+<p id="p1857mcpsimp"><a name="p1857mcpsimp"></a><a name="p1857mcpsimp"></a>0x0：关闭；</p>
+<p id="p1858mcpsimp"><a name="p1858mcpsimp"></a><a name="p1858mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row1859mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1861mcpsimp"><a name="p1861mcpsimp"></a><a name="p1861mcpsimp"></a>7:4</p>
@@ -1116,7 +1952,21 @@ static void vi_bt656_mode_mux(void)
 </td>
 </tr>
 </tbody>
-</table> 管脚存在8种复用情形：HT\_SD2/VI\_CLK/SENSOR2\_HS/SENSOR1\_HS/SENSOR0\_HS/I2C4\_SDA/SPI1\_CSN0/GPIO12\_3。 配置值为0x0206:Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_CLK。 - DATA管脚配置： VI\_DATA0\~VI\_DATA7为对应的BT.656接口的相关功能。 以AN24复用为VI\_DATA0为例进行说明。 **表 2** AK26管脚控制寄存器 <a name="table1901mcpsimp"></a>
+</table>
+
+管脚存在8种复用情形：HT\_SD2/VI\_CLK/SENSOR2\_HS/SENSOR1\_HS/SENSOR0\_HS/I2C4\_SDA/SPI1\_CSN0/GPIO12\_3。
+
+配置值为0x0206:Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_CLK。
+
+-   DATA管脚配置：
+
+    VI\_DATA0\~VI\_DATA7为对应的BT.656接口的相关功能。
+
+    以AN24复用为VI\_DATA0为例进行说明。
+
+**表 2**  AK26管脚控制寄存器
+
+<a name="table1901mcpsimp"></a>
 <table><thead align="left"><tr id="row1912mcpsimp"><th class="cellrowborder" valign="top" width="13.271327132713273%" id="mcps1.2.8.1.1"><p id="p1914mcpsimp"><a name="p1914mcpsimp"></a><a name="p1914mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.241224122412241%" id="mcps1.2.8.1.2"><p id="p1916mcpsimp"><a name="p1916mcpsimp"></a><a name="p1916mcpsimp"></a>Pin Number</p>
@@ -1148,6 +1998,41 @@ static void vi_bt656_mode_mux(void)
 <td class="cellrowborder" valign="top" width="26.532653265326534%" headers="mcps1.2.8.1.7 "><p id="p1942mcpsimp"><a name="p1942mcpsimp"></a><a name="p1942mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row1943mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1945mcpsimp"><a name="p1945mcpsimp"></a><a name="p1945mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1947mcpsimp"><a name="p1947mcpsimp"></a><a name="p1947mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1948mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1950mcpsimp"><a name="p1950mcpsimp"></a><a name="p1950mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1952mcpsimp"><a name="p1952mcpsimp"></a><a name="p1952mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1953mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1955mcpsimp"><a name="p1955mcpsimp"></a><a name="p1955mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1957mcpsimp"><a name="p1957mcpsimp"></a><a name="p1957mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1958mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1960mcpsimp"><a name="p1960mcpsimp"></a><a name="p1960mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1962mcpsimp"><a name="p1962mcpsimp"></a><a name="p1962mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1963mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1965mcpsimp"><a name="p1965mcpsimp"></a><a name="p1965mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1967mcpsimp"><a name="p1967mcpsimp"></a><a name="p1967mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1968mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1970mcpsimp"><a name="p1970mcpsimp"></a><a name="p1970mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1972mcpsimp"><a name="p1972mcpsimp"></a><a name="p1972mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row1973mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1975mcpsimp"><a name="p1975mcpsimp"></a><a name="p1975mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1977mcpsimp"><a name="p1977mcpsimp"></a><a name="p1977mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row1978mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1980mcpsimp"><a name="p1980mcpsimp"></a><a name="p1980mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1982mcpsimp"><a name="p1982mcpsimp"></a><a name="p1982mcpsimp"></a>保留。</p>
@@ -1164,11 +2049,62 @@ static void vi_bt656_mode_mux(void)
 </td>
 </tr>
 </tbody>
-</table> 管脚存在4种复用情形：HT\_DO6/VI\_DATA0/GPIO13\_0/MIPI\_RX1\_D0P。配置值为0x0006: Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_DATA0。 其他管脚复用关系配置和以上示例管脚配置情况类似，在此不做详细描述。 【注意事项】 无。 #### BT.1120管脚复用<a name="ZH-CN_TOPIC_0000002408102242"></a> BT.1120接口由时钟管脚（VI\_CLK）和16根数据管脚（VI\_DATA0\~VI\_DATA15）组成。 【配置】 g\_reg\_iocfg\_base 见[表3](#_table16578980)。 ```
+</table>
+
+管脚存在4种复用情形：HT\_DO6/VI\_DATA0/GPIO13\_0/MIPI\_RX1\_D0P。配置值为0x0006: Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_DATA0。
+
+其他管脚复用关系配置和以上示例管脚配置情况类似，在此不做详细描述。
+
+【注意事项】
+
+无。
+
+#### BT.1120管脚复用<a name="ZH-CN_TOPIC_0000002408102242"></a>
+
+BT.1120接口由时钟管脚（VI\_CLK）和16根数据管脚（VI\_DATA0\~VI\_DATA15）组成。
+
+【配置】
+
+g\_reg\_iocfg\_base 见[表3](#_table16578980)。
+
+```
 static void vi_bt1120_mode_mux(void)
-{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0158, 0x0206); sys_writel(iocfg2_base + 0x016C, 0x0006); sys_writel(iocfg2_base + 0x0178, 0x0006); sys_writel(iocfg2_base + 0x017C, 0x0006); sys_writel(iocfg2_base + 0x0174, 0x0006); sys_writel(iocfg2_base + 0x0160, 0x0206); sys_writel(iocfg2_base + 0x015C, 0x0206); sys_writel(iocfg2_base + 0x0164, 0x0206); sys_writel(iocfg2_base + 0x0154, 0x0206); sys_writel(iocfg2_base + 0x0194, 0x0006); sys_writel(iocfg2_base + 0x0190, 0x0006); sys_writel(iocfg2_base + 0x0184, 0x0006); sys_writel(iocfg2_base + 0x0180, 0x0006); sys_writel(iocfg2_base + 0x0188, 0x0006); sys_writel(iocfg2_base + 0x018C, 0x0006); sys_writel(iocfg2_base + 0x0170, 0x0006); sys_writel(iocfg2_base + 0x0168, 0x0006);
+{
+    void *iocfg2_base = sys_config_get_reg_iocfg2();
+    sys_writel(iocfg2_base + 0x0158, 0x0206);
+    sys_writel(iocfg2_base + 0x016C, 0x0006);
+    sys_writel(iocfg2_base + 0x0178, 0x0006);
+    sys_writel(iocfg2_base + 0x017C, 0x0006);
+    sys_writel(iocfg2_base + 0x0174, 0x0006);
+    sys_writel(iocfg2_base + 0x0160, 0x0206);
+    sys_writel(iocfg2_base + 0x015C, 0x0206);
+    sys_writel(iocfg2_base + 0x0164, 0x0206);
+    sys_writel(iocfg2_base + 0x0154, 0x0206);
+    sys_writel(iocfg2_base + 0x0194, 0x0006);
+    sys_writel(iocfg2_base + 0x0190, 0x0006);
+    sys_writel(iocfg2_base + 0x0184, 0x0006);
+    sys_writel(iocfg2_base + 0x0180, 0x0006);
+    sys_writel(iocfg2_base + 0x0188, 0x0006);
+    sys_writel(iocfg2_base + 0x018C, 0x0006);
+    sys_writel(iocfg2_base + 0x0170, 0x0006);
+    sys_writel(iocfg2_base + 0x0168, 0x0006);
 }
-``` 【描述说明】 原理图如[图1](#_toc51764063)所示。 **图 1** VI BT.1120原理图<a name="_toc51764063"></a> ![](figures/VI-BT-1120原理图.png "VI-BT-1120原理图") 当VI视频采集接口为BT.1120接口采集时,需要配置上图中对应的管脚为对应的BT.1120的相关功能，BT.1120接口的管脚分为时钟管脚和16根DATA（VI\_DATA0\~ VI\_DATA15）管脚。 - 时钟管脚配置（以AK22复用为VI\_CLK为例说明）： **表 1** AK22管脚控制寄存器 <a name="table2030mcpsimp"></a>
+```
+
+【描述说明】
+
+原理图如[图1](#_toc51764063)所示。
+
+**图 1**  VI BT.1120原理图<a name="_toc51764063"></a>  
+![](figures/VI-BT-1120原理图.png "VI-BT-1120原理图")
+
+当VI视频采集接口为BT.1120接口采集时,需要配置上图中对应的管脚为对应的BT.1120的相关功能，BT.1120接口的管脚分为时钟管脚和16根DATA（VI\_DATA0\~ VI\_DATA15）管脚。
+
+-   时钟管脚配置（以AK22复用为VI\_CLK为例说明）：
+
+**表 1**  AK22管脚控制寄存器
+
+<a name="table2030mcpsimp"></a>
 <table><thead align="left"><tr id="row2041mcpsimp"><th class="cellrowborder" valign="top" width="13.727254549090182%" id="mcps1.2.8.1.1"><p id="p2043mcpsimp"><a name="p2043mcpsimp"></a><a name="p2043mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.74745050989802%" id="mcps1.2.8.1.2"><p id="p2045mcpsimp"><a name="p2045mcpsimp"></a><a name="p2045mcpsimp"></a>Pin Number</p>
@@ -1198,6 +2134,47 @@ static void vi_bt1120_mode_mux(void)
 <td class="cellrowborder" valign="top" width="6.85862827434513%" headers="mcps1.2.8.1.6 "><p id="p2069mcpsimp"><a name="p2069mcpsimp"></a><a name="p2069mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.46470705858828%" headers="mcps1.2.8.1.7 "><p id="p2071mcpsimp"><a name="p2071mcpsimp"></a><a name="p2071mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2072mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2074mcpsimp"><a name="p2074mcpsimp"></a><a name="p2074mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2076mcpsimp"><a name="p2076mcpsimp"></a><a name="p2076mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2077mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2079mcpsimp"><a name="p2079mcpsimp"></a><a name="p2079mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2081mcpsimp"><a name="p2081mcpsimp"></a><a name="p2081mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2082mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2084mcpsimp"><a name="p2084mcpsimp"></a><a name="p2084mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2086mcpsimp"><a name="p2086mcpsimp"></a><a name="p2086mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2087mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2089mcpsimp"><a name="p2089mcpsimp"></a><a name="p2089mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2091mcpsimp"><a name="p2091mcpsimp"></a><a name="p2091mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2092mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2094mcpsimp"><a name="p2094mcpsimp"></a><a name="p2094mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2096mcpsimp"><a name="p2096mcpsimp"></a><a name="p2096mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p2097mcpsimp"><a name="p2097mcpsimp"></a><a name="p2097mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p2098mcpsimp"><a name="p2098mcpsimp"></a><a name="p2098mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row2099mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2101mcpsimp"><a name="p2101mcpsimp"></a><a name="p2101mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2103mcpsimp"><a name="p2103mcpsimp"></a><a name="p2103mcpsimp"></a>管脚下拉控制：</p>
+<p id="p2104mcpsimp"><a name="p2104mcpsimp"></a><a name="p2104mcpsimp"></a>0x0：关闭；</p>
+<p id="p2105mcpsimp"><a name="p2105mcpsimp"></a><a name="p2105mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row2106mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2108mcpsimp"><a name="p2108mcpsimp"></a><a name="p2108mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2110mcpsimp"><a name="p2110mcpsimp"></a><a name="p2110mcpsimp"></a>管脚上拉控制：</p>
+<p id="p2111mcpsimp"><a name="p2111mcpsimp"></a><a name="p2111mcpsimp"></a>0x0：关闭；</p>
+<p id="p2112mcpsimp"><a name="p2112mcpsimp"></a><a name="p2112mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row2113mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2115mcpsimp"><a name="p2115mcpsimp"></a><a name="p2115mcpsimp"></a>7:4</p>
@@ -1237,7 +2214,21 @@ static void vi_bt1120_mode_mux(void)
 </td>
 </tr>
 </tbody>
-</table> 管脚存在8种复用情形：HT\_SD2/VI\_CLK/SENSOR2\_HS/SENSOR1\_HS/SENSOR0\_HS/I2C4\_SDA/SPI1\_CSN0/GPIO12\_3。 配置值为0x0206:Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_CLK。 - DATA管脚配置： VI\_DATA0\~VI\_DATA7为对应的BT.656接口的相关功能，可参考“[BT.656管脚复用](#ZH-CN_TOPIC_0000002408102278)”章节的相关描述进行配置。 AK26复用为VI\_DATA8为例进行说明。 **表 2** AK26管脚控制寄存器 <a name="table2156mcpsimp"></a>
+</table>
+
+管脚存在8种复用情形：HT\_SD2/VI\_CLK/SENSOR2\_HS/SENSOR1\_HS/SENSOR0\_HS/I2C4\_SDA/SPI1\_CSN0/GPIO12\_3。
+
+配置值为0x0206:Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_CLK。
+
+-   DATA管脚配置：
+
+    VI\_DATA0\~VI\_DATA7为对应的BT.656接口的相关功能，可参考“[BT.656管脚复用](#ZH-CN_TOPIC_0000002408102278)”章节的相关描述进行配置。
+
+    AK26复用为VI\_DATA8为例进行说明。
+
+**表 2**  AK26管脚控制寄存器
+
+<a name="table2156mcpsimp"></a>
 <table><thead align="left"><tr id="row2167mcpsimp"><th class="cellrowborder" valign="top" width="13.271327132713273%" id="mcps1.2.8.1.1"><p id="p2169mcpsimp"><a name="p2169mcpsimp"></a><a name="p2169mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.241224122412241%" id="mcps1.2.8.1.2"><p id="p2171mcpsimp"><a name="p2171mcpsimp"></a><a name="p2171mcpsimp"></a>Pin Number</p>
@@ -1269,6 +2260,41 @@ static void vi_bt1120_mode_mux(void)
 <td class="cellrowborder" valign="top" width="26.532653265326534%" headers="mcps1.2.8.1.7 "><p id="p2197mcpsimp"><a name="p2197mcpsimp"></a><a name="p2197mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row2198mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2200mcpsimp"><a name="p2200mcpsimp"></a><a name="p2200mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2202mcpsimp"><a name="p2202mcpsimp"></a><a name="p2202mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2203mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2205mcpsimp"><a name="p2205mcpsimp"></a><a name="p2205mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2207mcpsimp"><a name="p2207mcpsimp"></a><a name="p2207mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2208mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2210mcpsimp"><a name="p2210mcpsimp"></a><a name="p2210mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2212mcpsimp"><a name="p2212mcpsimp"></a><a name="p2212mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2213mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2215mcpsimp"><a name="p2215mcpsimp"></a><a name="p2215mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2217mcpsimp"><a name="p2217mcpsimp"></a><a name="p2217mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2218mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2220mcpsimp"><a name="p2220mcpsimp"></a><a name="p2220mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2222mcpsimp"><a name="p2222mcpsimp"></a><a name="p2222mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2223mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2225mcpsimp"><a name="p2225mcpsimp"></a><a name="p2225mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2227mcpsimp"><a name="p2227mcpsimp"></a><a name="p2227mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2228mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2230mcpsimp"><a name="p2230mcpsimp"></a><a name="p2230mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2232mcpsimp"><a name="p2232mcpsimp"></a><a name="p2232mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row2233mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2235mcpsimp"><a name="p2235mcpsimp"></a><a name="p2235mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2237mcpsimp"><a name="p2237mcpsimp"></a><a name="p2237mcpsimp"></a>保留。</p>
@@ -1285,20 +2311,64 @@ static void vi_bt1120_mode_mux(void)
 </td>
 </tr>
 </tbody>
-</table> 管脚存在4种复用情形：HT\_CLK\_OUT/VI\_DATA8/GPIO14\_2/MIPI\_RX1\_D3P。配置值为0x0006: Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_DATA8。 其他管脚复用关系配置和以上示例管脚配置情况类似，在此不做详细描述。 【注意事项】 Hi3403V100只有1个BT.656接口，在配置BT.1120接口时，除了配置BT.656为相关功能外\(VI\_DATA0\~DATA7\)，需要另外配置8根管脚为VI\_DATA8\~DATA15为相关功能。 #### SENSOR参考时钟管脚<a name="ZH-CN_TOPIC_0000002441661473"></a> SENSOR管脚用于连接外接SENSOR，主芯片提供参考时钟给SENSOR使用。 【配置】 g\_reg\_iocfg\_base 见[表3](#_table16578980)。 SENSOR0-3: ```
+</table>
+
+管脚存在4种复用情形：HT\_CLK\_OUT/VI\_DATA8/GPIO14\_2/MIPI\_RX1\_D3P。配置值为0x0006: Bits\[3:0\]=0x6，管脚复用为6，配置复用为VI\_DATA8。
+
+其他管脚复用关系配置和以上示例管脚配置情况类似，在此不做详细描述。
+
+【注意事项】
+
+Hi3403V100只有1个BT.656接口，在配置BT.1120接口时，除了配置BT.656为相关功能外\(VI\_DATA0\~DATA7\)，需要另外配置8根管脚为VI\_DATA8\~DATA15为相关功能。
+
+#### SENSOR参考时钟管脚<a name="ZH-CN_TOPIC_0000002441661473"></a>
+
+SENSOR管脚用于连接外接SENSOR，主芯片提供参考时钟给SENSOR使用。
+
+【配置】
+
+g\_reg\_iocfg\_base 见[表3](#_table16578980)。
+
+SENSOR0-3:
+
+```
 static void sensor0_pin_mux(void)
-{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01C8, 0x02d1); sys_writel(iocfg2_base + 0x01CC, 0x0101);
+{
+    void *iocfg2_base = sys_config_get_reg_iocfg2();
+    sys_writel(iocfg2_base + 0x01C8, 0x02d1);
+    sys_writel(iocfg2_base + 0x01CC, 0x0101);
 }
 static void sensor1_pin_mux(void)
-{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0150, 0x02d1); sys_writel(iocfg2_base + 0x014C, 0x0201);
+{
+    void *iocfg2_base = sys_config_get_reg_iocfg2();
+    sys_writel(iocfg2_base + 0x0150, 0x02d1);
+    sys_writel(iocfg2_base + 0x014C, 0x0201);
 }
 static void sensor2_pin_mux(void)
-{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01E8, 0x02d4); sys_writel(iocfg2_base + 0x0160, 0x0205);
+{
+    void *iocfg2_base = sys_config_get_reg_iocfg2();
+    sys_writel(iocfg2_base + 0x01E8, 0x02d4);
+    sys_writel(iocfg2_base + 0x0160, 0x0205);
 }
 static void sensor3_pin_mux(void)
-{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0154, 0x02d2);
+{
+    void *iocfg2_base = sys_config_get_reg_iocfg2();
+    sys_writel(iocfg2_base + 0x0154, 0x02d2);
 }
-``` 【描述说明】 SENSOR0\_CLK（AL32），SENSOR0\_RSTN（AM32）原理图如[图1](#_toc51764064)所示。 **图 1** SENSOR0原理图<a name="_toc51764064"></a> ![](figures/SENSOR0原理图.png "SENSOR0原理图") 以AL32管脚的复用关系配置为例进行描述，SENSOR0\_CLK（AL32）管脚控制寄存器如[表1](#_table20274582)所示。 **表 1** AL32管脚控制寄存器 <a name="_table20274582"></a>
+```
+
+【描述说明】
+
+SENSOR0\_CLK（AL32），SENSOR0\_RSTN（AM32）原理图如[图1](#_toc51764064)所示。
+
+**图 1**  SENSOR0原理图<a name="_toc51764064"></a>  
+![](figures/SENSOR0原理图.png "SENSOR0原理图")
+
+以AL32管脚的复用关系配置为例进行描述，SENSOR0\_CLK（AL32）管脚控制寄存器如[表1](#_table20274582)所示。
+
+**表 1**  AL32管脚控制寄存器
+
+<a name="_table20274582"></a>
 <table><thead align="left"><tr id="row2297mcpsimp"><th class="cellrowborder" valign="top" width="14.29%" id="mcps1.2.8.1.1"><p id="p2299mcpsimp"><a name="p2299mcpsimp"></a><a name="p2299mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.120000000000001%" id="mcps1.2.8.1.2"><p id="p2301mcpsimp"><a name="p2301mcpsimp"></a><a name="p2301mcpsimp"></a>Pin Number</p>
@@ -1328,6 +2398,47 @@ static void sensor3_pin_mux(void)
 <td class="cellrowborder" valign="top" width="10.2%" headers="mcps1.2.8.1.6 "><p id="p2325mcpsimp"><a name="p2325mcpsimp"></a><a name="p2325mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.55%" headers="mcps1.2.8.1.7 "><p id="p2327mcpsimp"><a name="p2327mcpsimp"></a><a name="p2327mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2328mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2330mcpsimp"><a name="p2330mcpsimp"></a><a name="p2330mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2332mcpsimp"><a name="p2332mcpsimp"></a><a name="p2332mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2333mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2335mcpsimp"><a name="p2335mcpsimp"></a><a name="p2335mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2337mcpsimp"><a name="p2337mcpsimp"></a><a name="p2337mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2338mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2340mcpsimp"><a name="p2340mcpsimp"></a><a name="p2340mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2342mcpsimp"><a name="p2342mcpsimp"></a><a name="p2342mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2343mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2345mcpsimp"><a name="p2345mcpsimp"></a><a name="p2345mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2347mcpsimp"><a name="p2347mcpsimp"></a><a name="p2347mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2348mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2350mcpsimp"><a name="p2350mcpsimp"></a><a name="p2350mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2352mcpsimp"><a name="p2352mcpsimp"></a><a name="p2352mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p2353mcpsimp"><a name="p2353mcpsimp"></a><a name="p2353mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p2354mcpsimp"><a name="p2354mcpsimp"></a><a name="p2354mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row2355mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2357mcpsimp"><a name="p2357mcpsimp"></a><a name="p2357mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2359mcpsimp"><a name="p2359mcpsimp"></a><a name="p2359mcpsimp"></a>管脚下拉控制：</p>
+<p id="p2360mcpsimp"><a name="p2360mcpsimp"></a><a name="p2360mcpsimp"></a>0x0：关闭；</p>
+<p id="p2361mcpsimp"><a name="p2361mcpsimp"></a><a name="p2361mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row2362mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2364mcpsimp"><a name="p2364mcpsimp"></a><a name="p2364mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2366mcpsimp"><a name="p2366mcpsimp"></a><a name="p2366mcpsimp"></a>管脚上拉控制：</p>
+<p id="p2367mcpsimp"><a name="p2367mcpsimp"></a><a name="p2367mcpsimp"></a>0x0：关闭；</p>
+<p id="p2368mcpsimp"><a name="p2368mcpsimp"></a><a name="p2368mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row2369mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2371mcpsimp"><a name="p2371mcpsimp"></a><a name="p2371mcpsimp"></a>7:4</p>
@@ -1364,11 +2475,56 @@ static void sensor3_pin_mux(void)
 </td>
 </tr>
 </tbody>
-</table> AL32存在4种功能复用：GPIO15\_7/ SENSOR0\_CLK/ SENSOR1\_CLK/ SENSOR2\_CLK AL32管脚配置：0x02d1 - Bits\[3:0\]=1，表示AL32复用为SENSOR0\_CLK
-- Bits\[7:4\]=d，表示选择驱动能力档位14
-- Bits\[9\]=1，表示管脚下拉控制：打开 【注意事项】 无。 ## VO管脚复用<a name="ZH-CN_TOPIC_0000002408102214"></a> ### HDMI管脚复用<a name="ZH-CN_TOPIC_0000002408262158"></a> 【配置】（以Hi3403V100为例） g\_reg\_iocfg2\_base 见[表3](#_table16578980)。 ```
-static void hdmi_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x00E4, 0x2801); sys_writel(iocfg2_base + 0x00E8, 0x6801); sys_writel(iocfg2_base + 0x00EC, 0x6801); }
-``` 【描述说明】 HDMI\_HOTPLUG（AK11），HDMI\_SDA （AL11），HDMI\_SCL（AL12）原理如[图1](#_fig1554832315140)所示。 **图 1** HDMI原理图<a name="_fig1554832315140"></a> ![](figures/HDMI原理图.jpg "HDMI原理图") 以AK11管脚的复用关系配置为例进行描述，HDMI\_HOTPLUG（AK11）管脚控制寄存器如[表1](#_table161131023191416)所示。 **表 1** AK11管脚控制寄存器 <a name="_table161131023191416"></a>
+</table>
+
+AL32存在4种功能复用：GPIO15\_7/ SENSOR0\_CLK/ SENSOR1\_CLK/ SENSOR2\_CLK
+
+AL32管脚配置：0x02d1
+
+-   Bits\[3:0\]=1，表示AL32复用为SENSOR0\_CLK
+-   Bits\[7:4\]=d，表示选择驱动能力档位14
+-   Bits\[9\]=1，表示管脚下拉控制：打开
+
+【注意事项】
+
+无。
+
+## VO管脚复用<a name="ZH-CN_TOPIC_0000002408102214"></a>
+
+
+
+
+
+
+### HDMI管脚复用<a name="ZH-CN_TOPIC_0000002408262158"></a>
+
+【配置】（以Hi3403V100为例）
+
+g\_reg\_iocfg2\_base 见[表3](#_table16578980)。
+
+```
+static void hdmi_pin_mux(void) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+  
+    sys_writel(iocfg2_base + 0x00E4, 0x2801); 
+    sys_writel(iocfg2_base + 0x00E8, 0x6801); 
+    sys_writel(iocfg2_base + 0x00EC, 0x6801); 
+}
+```
+
+【描述说明】
+
+HDMI\_HOTPLUG（AK11），HDMI\_SDA （AL11），HDMI\_SCL（AL12）原理如[图1](#_fig1554832315140)所示。
+
+**图 1**  HDMI原理图<a name="_fig1554832315140"></a>  
+![](figures/HDMI原理图.jpg "HDMI原理图")
+
+以AK11管脚的复用关系配置为例进行描述，HDMI\_HOTPLUG（AK11）管脚控制寄存器如[表1](#_table161131023191416)所示。
+
+**表 1**  AK11管脚控制寄存器
+
+<a name="_table161131023191416"></a>
 <table><thead align="left"><tr id="row2432mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.8.1.1"><p id="p2434mcpsimp"><a name="p2434mcpsimp"></a><a name="p2434mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="10%" id="mcps1.2.8.1.2"><p id="p2436mcpsimp"><a name="p2436mcpsimp"></a><a name="p2436mcpsimp"></a>Pin Number</p>
@@ -1400,6 +2556,47 @@ static void hdmi_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; 
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.8.1.7 "><p id="p2462mcpsimp"><a name="p2462mcpsimp"></a><a name="p2462mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row2463mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2465mcpsimp"><a name="p2465mcpsimp"></a><a name="p2465mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2467mcpsimp"><a name="p2467mcpsimp"></a><a name="p2467mcpsimp"></a>输入电平域值选择2：</p>
+<p id="p2468mcpsimp"><a name="p2468mcpsimp"></a><a name="p2468mcpsimp"></a>0x0：Vil/ViH=1.1V/1.7V for 3.3V/5V PAD tolerant input；</p>
+<p id="p2469mcpsimp"><a name="p2469mcpsimp"></a><a name="p2469mcpsimp"></a>0x1：Vil/ViH=1.5V/2.5V for 3.3V/5V PAD tolerant input。</p>
+</td>
+</tr>
+<tr id="row2470mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2472mcpsimp"><a name="p2472mcpsimp"></a><a name="p2472mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2474mcpsimp"><a name="p2474mcpsimp"></a><a name="p2474mcpsimp"></a>输入电平域值选择1：</p>
+<p id="p2475mcpsimp"><a name="p2475mcpsimp"></a><a name="p2475mcpsimp"></a>0x0：1.8V PAD input；</p>
+<p id="p2476mcpsimp"><a name="p2476mcpsimp"></a><a name="p2476mcpsimp"></a>0x1：3.3V /5V PAD  tolerant input。</p>
+</td>
+</tr>
+<tr id="row2477mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2479mcpsimp"><a name="p2479mcpsimp"></a><a name="p2479mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2481mcpsimp"><a name="p2481mcpsimp"></a><a name="p2481mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2482mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2484mcpsimp"><a name="p2484mcpsimp"></a><a name="p2484mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2486mcpsimp"><a name="p2486mcpsimp"></a><a name="p2486mcpsimp"></a>管脚施密特输入控制：</p>
+<p id="p2487mcpsimp"><a name="p2487mcpsimp"></a><a name="p2487mcpsimp"></a>0x0：关闭；</p>
+<p id="p2488mcpsimp"><a name="p2488mcpsimp"></a><a name="p2488mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row2489mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2491mcpsimp"><a name="p2491mcpsimp"></a><a name="p2491mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2493mcpsimp"><a name="p2493mcpsimp"></a><a name="p2493mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2494mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2496mcpsimp"><a name="p2496mcpsimp"></a><a name="p2496mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2498mcpsimp"><a name="p2498mcpsimp"></a><a name="p2498mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2499mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2501mcpsimp"><a name="p2501mcpsimp"></a><a name="p2501mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2503mcpsimp"><a name="p2503mcpsimp"></a><a name="p2503mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row2504mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2506mcpsimp"><a name="p2506mcpsimp"></a><a name="p2506mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2508mcpsimp"><a name="p2508mcpsimp"></a><a name="p2508mcpsimp"></a>管脚驱动能力选择：</p>
@@ -1419,12 +2616,58 @@ static void hdmi_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; 
 </td>
 </tr>
 </tbody>
-</table> AK11存在两种功能复用：GPIO9\_2/ HDMI\_HOTPLUG AK11管脚配置：0x2801 - Bits\[3:0\]=1，表示AK11复用为HDMI\_HOTPLUG
-- Bits\[7:4\]=0，表示选择驱动能力档位1
-- Bits\[11\]=1，表示管脚施密特输入控制：打开
-- Bits\[13\]=1，表示输入电平域值选择3.3V /5V PAD。 【注意事项】 无。 ### MIPI\_TX管脚复用<a name="ZH-CN_TOPIC_0000002408102166"></a> 【配置】（以Hi3403V100为例） g\_reg\_iocfg2\_base 见[表3](#_table16578980)。 ```
-static void vo_mipi_tx_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x00D8, 0x0201); sys_writel(iocfg2_base + 0x00A0, 0x0000); sys_writel(iocfg2_base + 0x00A4, 0x0000); sys_writel(iocfg2_base + 0x00A8, 0x0000); sys_writel(iocfg2_base + 0x00AC, 0x0000); sys_writel(iocfg2_base + 0x00B0, 0x0000); sys_writel(iocfg2_base + 0x00B4, 0x0000); sys_writel(iocfg2_base + 0x00B8, 0x0000); sys_writel(iocfg2_base + 0x00BC, 0x0000); sys_writel(iocfg2_base + 0x00C0, 0x0000); sys_writel(iocfg2_base + 0x00C4, 0x0000); }
-``` 【描述说明】 参考硬件设计原理图，VSYNC\_TE\_MIPITX（AL4）、DSI\_D3N（AH1）、DSI\_D3P（AH2）、DSI\_D1N（AL1）、DSI\_D1P（AL2）、DSI\_CKN（AK1）、DSI\_CKP（AK2）、DSI\_D0N（AM1）、DSI\_D0P（AM2）、DSI\_D2N（AJ1）、DSI\_D2P（AJ2）管脚如[图1](#_fig1954917234140)所示。 **图 1** MIPI\_TX原理图<a name="_fig1954917234140"></a> ![](figures/MIPI_TX原理图.jpg "MIPI_TX原理图") 以AL4管脚的复用关系配置为例进行描述，VSYNC\_TE\_MIPITX（AL4）管脚控制寄存器如[表1](#_table101432023181417)所示。 **表 1** AL4管脚控制寄存器 <a name="_table101432023181417"></a>
+</table>
+
+AK11存在两种功能复用：GPIO9\_2/ HDMI\_HOTPLUG
+
+AK11管脚配置：0x2801
+
+-   Bits\[3:0\]=1，表示AK11复用为HDMI\_HOTPLUG
+-   Bits\[7:4\]=0，表示选择驱动能力档位1
+-   Bits\[11\]=1，表示管脚施密特输入控制：打开
+-   Bits\[13\]=1，表示输入电平域值选择3.3V /5V PAD。
+
+【注意事项】
+
+无。
+
+### MIPI\_TX管脚复用<a name="ZH-CN_TOPIC_0000002408102166"></a>
+
+【配置】（以Hi3403V100为例）
+
+g\_reg\_iocfg2\_base 见[表3](#_table16578980)。
+
+```
+static void vo_mipi_tx_pin_mux(void) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+  
+    sys_writel(iocfg2_base + 0x00D8, 0x0201); 
+    sys_writel(iocfg2_base + 0x00A0, 0x0000); 
+    sys_writel(iocfg2_base + 0x00A4, 0x0000); 
+    sys_writel(iocfg2_base + 0x00A8, 0x0000); 
+    sys_writel(iocfg2_base + 0x00AC, 0x0000); 
+    sys_writel(iocfg2_base + 0x00B0, 0x0000); 
+    sys_writel(iocfg2_base + 0x00B4, 0x0000); 
+    sys_writel(iocfg2_base + 0x00B8, 0x0000); 
+    sys_writel(iocfg2_base + 0x00BC, 0x0000); 
+    sys_writel(iocfg2_base + 0x00C0, 0x0000); 
+    sys_writel(iocfg2_base + 0x00C4, 0x0000); 
+}
+```
+
+【描述说明】
+
+参考硬件设计原理图，VSYNC\_TE\_MIPITX（AL4）、DSI\_D3N（AH1）、DSI\_D3P（AH2）、DSI\_D1N（AL1）、DSI\_D1P（AL2）、DSI\_CKN（AK1）、DSI\_CKP（AK2）、DSI\_D0N（AM1）、DSI\_D0P（AM2）、DSI\_D2N（AJ1）、DSI\_D2P（AJ2）管脚如[图1](#_fig1954917234140)所示。
+
+**图 1**  MIPI\_TX原理图<a name="_fig1954917234140"></a>  
+![](figures/MIPI_TX原理图.jpg "MIPI_TX原理图")
+
+以AL4管脚的复用关系配置为例进行描述，VSYNC\_TE\_MIPITX（AL4）管脚控制寄存器如[表1](#_table101432023181417)所示。
+
+**表 1**  AL4管脚控制寄存器
+
+<a name="_table101432023181417"></a>
 <table><thead align="left"><tr id="row2552mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000004%" id="mcps1.2.8.1.1"><p id="p2554mcpsimp"><a name="p2554mcpsimp"></a><a name="p2554mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.000000000000002%" id="mcps1.2.8.1.2"><p id="p2556mcpsimp"><a name="p2556mcpsimp"></a><a name="p2556mcpsimp"></a>Pin Number</p>
@@ -1454,6 +2697,47 @@ static void vo_mipi_tx_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_io
 <td class="cellrowborder" valign="top" width="8.000000000000002%" headers="mcps1.2.8.1.6 "><p id="p2580mcpsimp"><a name="p2580mcpsimp"></a><a name="p2580mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.000000000000004%" headers="mcps1.2.8.1.7 "><p id="p2582mcpsimp"><a name="p2582mcpsimp"></a><a name="p2582mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2583mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2585mcpsimp"><a name="p2585mcpsimp"></a><a name="p2585mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2587mcpsimp"><a name="p2587mcpsimp"></a><a name="p2587mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2588mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2590mcpsimp"><a name="p2590mcpsimp"></a><a name="p2590mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2592mcpsimp"><a name="p2592mcpsimp"></a><a name="p2592mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2593mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2595mcpsimp"><a name="p2595mcpsimp"></a><a name="p2595mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2597mcpsimp"><a name="p2597mcpsimp"></a><a name="p2597mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2598mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2600mcpsimp"><a name="p2600mcpsimp"></a><a name="p2600mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2602mcpsimp"><a name="p2602mcpsimp"></a><a name="p2602mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2603mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2605mcpsimp"><a name="p2605mcpsimp"></a><a name="p2605mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2607mcpsimp"><a name="p2607mcpsimp"></a><a name="p2607mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p2608mcpsimp"><a name="p2608mcpsimp"></a><a name="p2608mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p2609mcpsimp"><a name="p2609mcpsimp"></a><a name="p2609mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row2610mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2612mcpsimp"><a name="p2612mcpsimp"></a><a name="p2612mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2614mcpsimp"><a name="p2614mcpsimp"></a><a name="p2614mcpsimp"></a>管脚下拉控制：</p>
+<p id="p2615mcpsimp"><a name="p2615mcpsimp"></a><a name="p2615mcpsimp"></a>0x0：关闭；</p>
+<p id="p2616mcpsimp"><a name="p2616mcpsimp"></a><a name="p2616mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row2617mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2619mcpsimp"><a name="p2619mcpsimp"></a><a name="p2619mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2621mcpsimp"><a name="p2621mcpsimp"></a><a name="p2621mcpsimp"></a>管脚上拉控制：</p>
+<p id="p2622mcpsimp"><a name="p2622mcpsimp"></a><a name="p2622mcpsimp"></a>0x0：关闭；</p>
+<p id="p2623mcpsimp"><a name="p2623mcpsimp"></a><a name="p2623mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row2624mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2626mcpsimp"><a name="p2626mcpsimp"></a><a name="p2626mcpsimp"></a>7:4</p>
@@ -1490,12 +2774,70 @@ static void vo_mipi_tx_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_io
 </td>
 </tr>
 </tbody>
-</table> AL4存在两种功能复用：GPIO0\_2/ VSYNC\_TE\_MIPITX/ VO\_BT1120\_DATA13/ RGB\_DATA17/ PWM0\_OUT15\_0\_N AL4管脚配置：0x0201 - Bits \[3:0\]=1，表示AL4复用为VSYNC\_TE\_MIPITX
-- Bits\[7:4\]=0，表示选择档位1
-- Bits\[9\]=0，表示管脚下拉控制：打开 【注意事项】 除VSYNC\_TE\_MIPITX 管脚外，其他MIPI\_TX管脚的驱动能力由MIPI\_TX控制PHY寄存器0x68来配置，当前采用寄存器默认值0x05。 ### BT.1120管脚复用<a name="ZH-CN_TOPIC_0000002408262142"></a> 【配置】（以Hi3403V100为例） g\_reg\_iocfg2\_base 见[表3](#_table16578980)，g\_reg\_mipi\_tx\_base见[表7](#_table071427174311)。 ```
-static void vo_bt_pin_mux(int vo_bt_mode) { void *iocfg2_base = sys_config_get_reg_iocfg2; vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); sys_writel(iocfg2_base + 0x00C8, 0x0682); sys_writel(iocfg2_base + 0x00A8, 0x2); sys_writel(iocfg2_base + 0x00AC, 0x2); sys_writel(iocfg2_base + 0x00B0, 0x2); sys_writel(iocfg2_base + 0x00B4, 0x2); sys_writel(iocfg2_base + 0x00B8, 0x2); sys_writel(iocfg2_base + 0x00C0, 0x2); sys_writel(iocfg2_base + 0x00C4, 0x2); sys_writel(iocfg2_base + 0x00BC, 0x2); if (vo_bt_mode == VO_BT656_MODE) { return; } sys_writel(iocfg2_base + 0x00D4, 0x0242); sys_writel(iocfg2_base + 0x00A0, 0x2); sys_writel(iocfg2_base + 0x00A4, 0x2); sys_writel(iocfg2_base + 0x00D0, 0x0242); sys_writel(iocfg2_base + 0x00CC, 0x0242); sys_writel(iocfg2_base + 0x00D8, 0x0242); sys_writel(iocfg2_base + 0x00E0, 0x0242); sys_writel(iocfg2_base + 0x00DC, 0x0242); }
-``` 【描述说明】 参考实际硬件设计原理图，VO\_BT1120\_CLK、VO\_BT1120\_DATA0、VO\_BT1120\_DATA1、……、VO\_BT1120\_DATA15通过AH4、AL1、AL2、……、AL6进行输出，BT.1120相关管脚如[图1](#_fig1455072321410)所示（以实际原理图为准）。 **图 1** VO BT.1120原理图<a name="_fig1455072321410"></a> ![](figures/VO-BT-1120原理图.jpg "VO-BT-1120原理图")
-![](figures/zh-cn_image_0000002441661705.jpg) 以AH4、AL1管脚的复用关系配置为例进行描述，VO\_BT1120\_CLK（AH4），VO\_BT1120\_DATA0（AL1）管脚控制寄存器如[表1](#_table1318817235141)所示。 **表 1** AH4, AL1管脚控制寄存器 <a name="_table1318817235141"></a>
+</table>
+
+AL4存在两种功能复用：GPIO0\_2/ VSYNC\_TE\_MIPITX/ VO\_BT1120\_DATA13/ RGB\_DATA17/ PWM0\_OUT15\_0\_N
+
+AL4管脚配置：0x0201
+
+-   Bits \[3:0\]=1，表示AL4复用为VSYNC\_TE\_MIPITX
+-   Bits\[7:4\]=0，表示选择档位1
+-   Bits\[9\]=0，表示管脚下拉控制：打开
+
+【注意事项】
+
+除VSYNC\_TE\_MIPITX 管脚外，其他MIPI\_TX管脚的驱动能力由MIPI\_TX控制PHY寄存器0x68来配置，当前采用寄存器默认值0x05。
+
+### BT.1120管脚复用<a name="ZH-CN_TOPIC_0000002408262142"></a>
+
+【配置】（以Hi3403V100为例）
+
+g\_reg\_iocfg2\_base 见[表3](#_table16578980)，g\_reg\_mipi\_tx\_base见[表7](#_table071427174311)。
+
+```
+static void vo_bt_pin_mux(int vo_bt_mode) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+  
+    vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); 
+  
+    sys_writel(iocfg2_base + 0x00C8, 0x0682); 
+    sys_writel(iocfg2_base + 0x00A8,    0x2); 
+    sys_writel(iocfg2_base + 0x00AC,    0x2); 
+    sys_writel(iocfg2_base + 0x00B0,    0x2); 
+    sys_writel(iocfg2_base + 0x00B4,    0x2); 
+    sys_writel(iocfg2_base + 0x00B8,    0x2); 
+    sys_writel(iocfg2_base + 0x00C0,    0x2); 
+    sys_writel(iocfg2_base + 0x00C4,    0x2); 
+    sys_writel(iocfg2_base + 0x00BC,    0x2); 
+  
+    if (vo_bt_mode == VO_BT656_MODE) { 
+        return; 
+    } 
+     sys_writel(iocfg2_base + 0x00D4, 0x0242);  
+     sys_writel(iocfg2_base + 0x00A0,    0x2);  
+     sys_writel(iocfg2_base + 0x00A4,    0x2);  
+     sys_writel(iocfg2_base + 0x00D0, 0x0242);  
+     sys_writel(iocfg2_base + 0x00CC, 0x0242);  
+     sys_writel(iocfg2_base + 0x00D8, 0x0242);  
+     sys_writel(iocfg2_base + 0x00E0, 0x0242);  
+     sys_writel(iocfg2_base + 0x00DC, 0x0242); 
+}
+```
+
+【描述说明】
+
+参考实际硬件设计原理图，VO\_BT1120\_CLK、VO\_BT1120\_DATA0、VO\_BT1120\_DATA1、……、VO\_BT1120\_DATA15通过AH4、AL1、AL2、……、AL6进行输出，BT.1120相关管脚如[图1](#_fig1455072321410)所示（以实际原理图为准）。
+
+**图 1**  VO BT.1120原理图<a name="_fig1455072321410"></a>  
+![](figures/VO-BT-1120原理图.jpg "VO-BT-1120原理图")
+![](figures/zh-cn_image_0000002441661705.jpg)
+
+以AH4、AL1管脚的复用关系配置为例进行描述，VO\_BT1120\_CLK（AH4），VO\_BT1120\_DATA0（AL1）管脚控制寄存器如[表1](#_table1318817235141)所示。
+
+**表 1**  AH4, AL1管脚控制寄存器
+
+<a name="_table1318817235141"></a>
 <table><thead align="left"><tr id="row2688mcpsimp"><th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.8.1.1"><p id="p2690mcpsimp"><a name="p2690mcpsimp"></a><a name="p2690mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.871287128712872%" id="mcps1.2.8.1.2"><p id="p2692mcpsimp"><a name="p2692mcpsimp"></a><a name="p2692mcpsimp"></a>Pin Number</p>
@@ -1525,6 +2867,47 @@ static void vo_bt_pin_mux(int vo_bt_mode) { void *iocfg2_base = sys_config_get_r
 <td class="cellrowborder" valign="top" width="7.920792079207921%" headers="mcps1.2.8.1.6 "><p id="p2716mcpsimp"><a name="p2716mcpsimp"></a><a name="p2716mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.742574257425744%" headers="mcps1.2.8.1.7 "><p id="p2718mcpsimp"><a name="p2718mcpsimp"></a><a name="p2718mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2719mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2721mcpsimp"><a name="p2721mcpsimp"></a><a name="p2721mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2723mcpsimp"><a name="p2723mcpsimp"></a><a name="p2723mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2724mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2726mcpsimp"><a name="p2726mcpsimp"></a><a name="p2726mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2728mcpsimp"><a name="p2728mcpsimp"></a><a name="p2728mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2729mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2731mcpsimp"><a name="p2731mcpsimp"></a><a name="p2731mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2733mcpsimp"><a name="p2733mcpsimp"></a><a name="p2733mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2734mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2736mcpsimp"><a name="p2736mcpsimp"></a><a name="p2736mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2738mcpsimp"><a name="p2738mcpsimp"></a><a name="p2738mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2739mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2741mcpsimp"><a name="p2741mcpsimp"></a><a name="p2741mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2743mcpsimp"><a name="p2743mcpsimp"></a><a name="p2743mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p2744mcpsimp"><a name="p2744mcpsimp"></a><a name="p2744mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p2745mcpsimp"><a name="p2745mcpsimp"></a><a name="p2745mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row2746mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2748mcpsimp"><a name="p2748mcpsimp"></a><a name="p2748mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2750mcpsimp"><a name="p2750mcpsimp"></a><a name="p2750mcpsimp"></a>管脚下拉控制：</p>
+<p id="p2751mcpsimp"><a name="p2751mcpsimp"></a><a name="p2751mcpsimp"></a>0x0：关闭；</p>
+<p id="p2752mcpsimp"><a name="p2752mcpsimp"></a><a name="p2752mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row2753mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2755mcpsimp"><a name="p2755mcpsimp"></a><a name="p2755mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2757mcpsimp"><a name="p2757mcpsimp"></a><a name="p2757mcpsimp"></a>管脚上拉控制：</p>
+<p id="p2758mcpsimp"><a name="p2758mcpsimp"></a><a name="p2758mcpsimp"></a>0x0：关闭；</p>
+<p id="p2759mcpsimp"><a name="p2759mcpsimp"></a><a name="p2759mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row2760mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2762mcpsimp"><a name="p2762mcpsimp"></a><a name="p2762mcpsimp"></a>7:4</p>
@@ -1574,6 +2957,41 @@ static void vo_bt_pin_mux(int vo_bt_mode) { void *iocfg2_base = sys_config_get_r
 <td class="cellrowborder" valign="top" width="25.742574257425744%" headers="mcps1.2.8.1.7 "><p id="p2806mcpsimp"><a name="p2806mcpsimp"></a><a name="p2806mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row2807mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2809mcpsimp"><a name="p2809mcpsimp"></a><a name="p2809mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2811mcpsimp"><a name="p2811mcpsimp"></a><a name="p2811mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2812mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2814mcpsimp"><a name="p2814mcpsimp"></a><a name="p2814mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2816mcpsimp"><a name="p2816mcpsimp"></a><a name="p2816mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2817mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2819mcpsimp"><a name="p2819mcpsimp"></a><a name="p2819mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2821mcpsimp"><a name="p2821mcpsimp"></a><a name="p2821mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2822mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2824mcpsimp"><a name="p2824mcpsimp"></a><a name="p2824mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2826mcpsimp"><a name="p2826mcpsimp"></a><a name="p2826mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2827mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2829mcpsimp"><a name="p2829mcpsimp"></a><a name="p2829mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2831mcpsimp"><a name="p2831mcpsimp"></a><a name="p2831mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2832mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2834mcpsimp"><a name="p2834mcpsimp"></a><a name="p2834mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2836mcpsimp"><a name="p2836mcpsimp"></a><a name="p2836mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2837mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2839mcpsimp"><a name="p2839mcpsimp"></a><a name="p2839mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2841mcpsimp"><a name="p2841mcpsimp"></a><a name="p2841mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row2842mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2844mcpsimp"><a name="p2844mcpsimp"></a><a name="p2844mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2846mcpsimp"><a name="p2846mcpsimp"></a><a name="p2846mcpsimp"></a>管脚驱动能力选择：</p>
@@ -1598,19 +3016,260 @@ static void vo_bt_pin_mux(int vo_bt_mode) { void *iocfg2_base = sys_config_get_r
 </td>
 </tr>
 </tbody>
-</table> - AH4存在4种功能复用：GPIO8\_6/SPI2\_SCLK/VO\_BT1120\_CLK/RGB\_DATA10 AH4管脚配置：0x06f2 - Bits \[3:0\]=2，表示AH4复用为VO\_BT1120\_CLK - Bits\[7:4\]=0xf，表示选择档位16 - Bits\[9\]=0x1，表示管脚下拉打开 - Bits\[10\]=0x1，表示管脚电平转换速率：慢沿输出。 - AL1存在6种功能复用：DSI\_D1N/GPIO7\_6/VO\_BT1120\_DATA0/RGB\_DATA7/PWM1\_OUT1\_0\_N/PWM1\_OUT7\_0\_P AL1管脚配置：0x0002 Bits \[3:0\]=2，表示AL1复用为VO\_BT1120\_DATA0 【注意事项】 DATA0\~DATA7，DATA9，DATA10引脚的管脚驱动能力由MIPI\_TX控制器来配置，可使用的档位0\~3，驱动能力大小关系：档位0<档位1<档位2<档位3，默认档位3，PHY的写入和读取方法如下： 写入配置方法： ```
-PHY_REG_CFG1 = 0x100XX（XX为PHY的寄存器地址） PHY_REG_CFG0 = 0x2 PHY_REG_CFG0 = 0x0 PHY_REG_CFG1 = 0xYY（YY为PHY的寄存器XX的配置值） PHY_REG_CFG0 = 0x2 PHY_REG_CFG0 = 0x0
-``` 写入示例： ``` static void vo_mipi_tx_enable(void) { void *crg_base = sys_config_get_reg_crg; unsigned long addr = (unsigned long)(crg_base + 0x8140); /* mipi_tx gate clk enable */ write_reg32(addr, 1, 0x1); /* bit 0 */ /* unreset */ write_reg32(addr, 0 << 1, 0x1 << 1); /* 1: bit 1 */ /* select ref clk 27MHz */ write_reg32(addr, 1 << 2, 0x3 << 2); /* 2: bit 2 */ } static inline void set_phy_reg_isb(void) { isb; #ifdef CONFIG_64BIT dsb(sy); #else dsb; #endif #ifdef CONFIG_64BIT dmb(sy); #else dmb; #endif } static void set_phy_reg(unsigned int addr, unsigned char value) { void *mipi_tx_base = sys_config_get_reg_mipi_tx; set_phy_reg_isb; sys_writel(mipi_tx_base + 0xb8, 0x10000 + addr); set_phy_reg_isb; sys_writel(mipi_tx_base + 0xb4, 0x2); set_phy_reg_isb; sys_writel(mipi_tx_base + 0xb4, 0x0); set_phy_reg_isb; sys_writel(mipi_tx_base + 0xb8, value); set_phy_reg_isb; sys_writel(mipi_tx_base + 0xb4, 0x2); set_phy_reg_isb; sys_writel(mipi_tx_base + 0xb4, 0x0); set_phy_reg_isb; } static void vo_cmos_set_pin_drive_cap(mipi_tx_drive_cap cap) { vo_mipi_tx_enable; switch (cap) { case MIPI_TX_DRIVE_CAP_LEVEL0: set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL0_VALUE); break; case MIPI_TX_DRIVE_CAP_LEVEL1: set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL1_VALUE); break; case MIPI_TX_DRIVE_CAP_LEVEL2: set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL2_VALUE); break; case MIPI_TX_DRIVE_CAP_LEVEL3: set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL3_VALUE); break; default: break; } } static void vo_bt_pin_mux(int vo_bt_mode) { …… /* some bt pins' drv cap set by mipi_tx controller */ vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); …… }
-``` 读取配置方法：读配置即读MIPI\_TX PHY的寄存器时，对PHY\_REG\_CFG1\(g\_reg\_mipi\_tx\_base+0x00b8\)和PHY\_REG\_CFG0\(g\_reg\_mipi\_tx\_base+0x00b4\)寄存器执行下面的配置后，读 PHY\_REG\_CFG1寄存器的值，该寄存器的 bit15\~bit8 即是 PHY XX 寄存器的值。 ```
-PHY_REG_CFG1 = 0x100XX（XX为PHY的寄存器地址） PHY_REG_CFG0 = 0x2 PHY_REG_CFG0 = 0x0
-``` 读取示例： ```
-bspmm g_reg_mipi_tx_base+0x00b8 0x10066 bspmm g_reg_mipi_tx_base+0x00b4 0x2 bspmm g_reg_mipi_tx_base+0x00b4 0x0
+</table>
+
+-   AH4存在4种功能复用：GPIO8\_6/SPI2\_SCLK/VO\_BT1120\_CLK/RGB\_DATA10
+
+    AH4管脚配置：0x06f2
+
+    -   Bits \[3:0\]=2，表示AH4复用为VO\_BT1120\_CLK
+    -   Bits\[7:4\]=0xf，表示选择档位16
+    -   Bits\[9\]=0x1，表示管脚下拉打开
+    -   Bits\[10\]=0x1，表示管脚电平转换速率：慢沿输出。
+
+-   AL1存在6种功能复用：DSI\_D1N/GPIO7\_6/VO\_BT1120\_DATA0/RGB\_DATA7/PWM1\_OUT1\_0\_N/PWM1\_OUT7\_0\_P
+
+    AL1管脚配置：0x0002
+
+    Bits \[3:0\]=2，表示AL1复用为VO\_BT1120\_DATA0
+
+【注意事项】
+
+DATA0\~DATA7，DATA9，DATA10引脚的管脚驱动能力由MIPI\_TX控制器来配置，可使用的档位0\~3，驱动能力大小关系：档位0<档位1<档位2<档位3，默认档位3，PHY的写入和读取方法如下：
+
+写入配置方法：
+
+```
+PHY_REG_CFG1 = 0x100XX（XX为PHY的寄存器地址） 
+PHY_REG_CFG0 = 0x2 
+PHY_REG_CFG0 = 0x0 
+PHY_REG_CFG1 = 0xYY（YY为PHY的寄存器XX的配置值） 
+PHY_REG_CFG0 = 0x2 
+PHY_REG_CFG0 = 0x0
+```
+
+写入示例：
+
+```
+  
+static void vo_mipi_tx_enable(void) 
+{ 
+    void *crg_base = sys_config_get_reg_crg(); 
+    unsigned long addr = (unsigned long)(crg_base + 0x8140); 
+  
+    /* mipi_tx gate clk enable */ 
+    write_reg32(addr, 1, 0x1); /* bit 0 */ 
+  
+    /* unreset */ 
+    write_reg32(addr, 0 << 1, 0x1 << 1);  /* 1: bit 1 */ 
+  
+    /* select ref clk 27MHz */ 
+    write_reg32(addr, 1 << 2, 0x3 << 2); /* 2: bit 2 */ 
+} 
+  
+static inline void set_phy_reg_isb(void) 
+{ 
+    isb(); 
+#ifdef CONFIG_64BIT 
+    dsb(sy); 
+#else 
+    dsb(); 
+#endif 
+#ifdef CONFIG_64BIT 
+    dmb(sy); 
+#else 
+    dmb(); 
+#endif 
+} 
+  
+static void set_phy_reg(unsigned int addr, unsigned char value) 
+{ 
+    void *mipi_tx_base = sys_config_get_reg_mipi_tx(); 
+  
+    set_phy_reg_isb(); 
+    sys_writel(mipi_tx_base + 0xb8, 0x10000 + addr); 
+    set_phy_reg_isb(); 
+    sys_writel(mipi_tx_base + 0xb4, 0x2); 
+    set_phy_reg_isb(); 
+    sys_writel(mipi_tx_base + 0xb4, 0x0); 
+    set_phy_reg_isb(); 
+    sys_writel(mipi_tx_base + 0xb8, value); 
+    set_phy_reg_isb(); 
+    sys_writel(mipi_tx_base + 0xb4, 0x2); 
+    set_phy_reg_isb(); 
+    sys_writel(mipi_tx_base + 0xb4, 0x0); 
+    set_phy_reg_isb(); 
+} 
+  
+static void vo_cmos_set_pin_drive_cap(mipi_tx_drive_cap cap) 
+{ 
+    vo_mipi_tx_enable(); 
+    switch (cap) { 
+        case MIPI_TX_DRIVE_CAP_LEVEL0: 
+            set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL0_VALUE); 
+            break; 
+  
+        case MIPI_TX_DRIVE_CAP_LEVEL1: 
+            set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL1_VALUE); 
+            break; 
+  
+        case MIPI_TX_DRIVE_CAP_LEVEL2: 
+            set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL2_VALUE); 
+            break; 
+  
+        case MIPI_TX_DRIVE_CAP_LEVEL3: 
+            set_phy_reg(MIPI_TX_DRIVE_CAP_PHY_REG, MIPI_TX_DRIVE_CAP_LEVEL3_VALUE); 
+            break; 
+        default: 
+            break; 
+    } 
+} 
+  
+static void vo_bt_pin_mux(int vo_bt_mode) 
+{ 
+    …… 
+    /* some bt pins' drv cap set by mipi_tx controller */ 
+vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); 
+…… 
+}
+```
+
+读取配置方法：读配置即读MIPI\_TX PHY的寄存器时，对PHY\_REG\_CFG1\(g\_reg\_mipi\_tx\_base+0x00b8\)和PHY\_REG\_CFG0\(g\_reg\_mipi\_tx\_base+0x00b4\)寄存器执行下面的配置后，读 PHY\_REG\_CFG1寄存器的值，该寄存器的 bit15\~bit8 即是 PHY XX 寄存器的值。
+
+```
+PHY_REG_CFG1 = 0x100XX（XX为PHY的寄存器地址） 
+PHY_REG_CFG0 = 0x2 
+PHY_REG_CFG0 = 0x0
+```
+
+读取示例：
+
+```
+bspmm g_reg_mipi_tx_base+0x00b8 0x10066 
+bspmm g_reg_mipi_tx_base+0x00b4 0x2 
+bspmm g_reg_mipi_tx_base+0x00b4 0x0
 bspmd.l g_reg_mipi_tx_base+0x00b8
-``` ### BT.656管脚复用<a name="ZH-CN_TOPIC_0000002408102278"></a> 【配置示例】（以Hi3403V100为例） g\_reg\_iocfg\_base2 见[表3](#_table16578980)。 ```
-static void vo_bt_pin_mux(int vo_bt_mode) { void *iocfg2_base = sys_config_get_reg_iocfg2; vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); sys_writel(iocfg2_base + 0x00C8, 0x0682); sys_writel(iocfg2_base + 0x00A8, 0x2); sys_writel(iocfg2_base + 0x00AC, 0x2); sys_writel(iocfg2_base + 0x00B0, 0x2); sys_writel(iocfg2_base + 0x00B4, 0x2); sys_writel(iocfg2_base + 0x00B8, 0x2); sys_writel(iocfg2_base + 0x00C0, 0x2); sys_writel(iocfg2_base + 0x00C4, 0x2); sys_writel(iocfg2_base + 0x00BC, 0x2); if (vo_bt_mode == VO_BT656_MODE) { return; } }
-``` 【描述说明】 参考实际硬件设计原理图，VO\_BT656\_CLK、VO\_BT656\_DATA0、VO\_BT656\_DATA1、……、VO\_BT656\_DATA7通过AH4、AL1、AL2、……、AM2进行输出，BT.656相关管脚[图1](#_fig355162313143)所示。 **图 1** VO BT.656原理图<a name="_fig355162313143"></a> ![](figures/VO-BT-656原理图.jpg "VO-BT-656原理图") 【注意事项】 VO BT.656接口功能管脚采用VO BT.1120接口的DATA0\~DATA7，这些管脚的驱动能力由MIPI\_TX控制寄存器来配置，方法可参考“[BT.1120管脚复用](#_table16578980)。 ```
-static void vo_rgb_pin_mux(int vo_rgb_mode) { void *iocfg2_base = sys_config_get_reg_iocfg2; vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL2); sys_writel(iocfg2_base + 0x0098, 0x0223); sys_writel(iocfg2_base + 0x0080, 0x0213); sys_writel(iocfg2_base + 0x008C, 0x0213); sys_writel(iocfg2_base + 0x0090, 0x0213); sys_writel(iocfg2_base + 0x00C0, 0x3); sys_writel(iocfg2_base + 0x00B8, 0x3); sys_writel(iocfg2_base + 0x00CC, 0x0233); sys_writel(iocfg2_base + 0x00D0, 0x0233); sys_writel(iocfg2_base + 0x00AC, 0x3); sys_writel(iocfg2_base + 0x00B4, 0x3); if (vo_rgb_mode == VO_RGB_6BIT_MODE) { return; } sys_writel(iocfg2_base + 0x00B0, 0x3); sys_writel(iocfg2_base + 0x00A8, 0x3); if (vo_rgb_mode == VO_RGB_8BIT_MODE) { return; } sys_writel(iocfg2_base + 0x00A0, 0x3); sys_writel(iocfg2_base + 0x00A4, 0x3); sys_writel(iocfg2_base + 0x00C8, 0x0233); sys_writel(iocfg2_base + 0x00D4, 0x0233); sys_writel(iocfg2_base + 0x0084, 0x0213); sys_writel(iocfg2_base + 0x0094, 0x0213); sys_writel(iocfg2_base + 0x0088, 0x0213); sys_writel(iocfg2_base + 0x009C, 0x0213); if (vo_rgb_mode == VO_RGB_16BIT_MODE) { return; } sys_writel(iocfg2_base + 0x00E0, 0x0233); sys_writel(iocfg2_base + 0x00D8, 0x0233); if (vo_rgb_mode == VO_RGB_18BIT_MODE) { return; } sys_writel(iocfg2_base + 0x00BC, 0x3); sys_writel(iocfg2_base + 0x00C4, 0x3); sys_writel(iocfg2_base + 0x0068, 0x0203); sys_writel(iocfg2_base + 0x006C, 0x0203); sys_writel(iocfg2_base + 0x0064, 0x0203); sys_writel(iocfg2_base + 0x0060, 0x0213); }
-``` 【描述说明】 参考实际硬件设计原理图，RGB\_CLK、RGB\_DE、RGB\_HS、RGB\_VS、RGB \_DATA0、RGB \_DATA1、……、RGB \_DATA23通过AF2、AD2、AD3、AD1、AJ1、AM1、……、AD4进行输出，RGB接口管脚如[图1](#_fig15552162361413)至[图4](#_fig12552112391412)所示。 **图 1** RGB\_CLK、RGB\_DE、RGB\_HS、RGB\_VS、RGB\_DATA12、RGB\_DATA13、RGB\_DATA14、RGB\_DATA15<a name="_fig15552162361413"></a> ![](figures/RGB_CLK-RGB_DE-RGB_HS-RGB_VS-RGB_DATA12-RGB_DATA13-RGB_DATA14-RGB_DATA15.jpg "RGB_CLK-RGB_DE-RGB_HS-RGB_VS-RGB_DATA12-RGB_DATA13-RGB_DATA14-RGB_DATA15") **图 2** RGB\_DATA0、RGB\_DATA1、RGB\_DATA2、RGB\_DATA3、RGB\_DATA4、RGB\_DATA5、RGB\_DATA6、RGB\_DATA7、RGB\_DATA8、RGB\_DATA9、RGB\_DATA10、RGB\_DATA11、RGB\_DATA17、RGB\_DATA18、RGB\_DATA19<a name="fig2909mcpsimp"></a> ![](figures/RGB_DATA0-RGB_DATA1-RGB_DATA2-RGB_DATA3-RGB_DATA4-RGB_DATA5-RGB_DATA6-RGB_DATA7-RGB_DATA8-RGB_DATA9.jpg "RGB_DATA0-RGB_DATA1-RGB_DATA2-RGB_DATA3-RGB_DATA4-RGB_DATA5-RGB_DATA6-RGB_DATA7-RGB_DATA8-RGB_DATA9") **图 3** RGB\_DATA16<a name="fig2911mcpsimp"></a> ![](figures/RGB_DATA16.jpg "RGB_DATA16") **图 4** RGB\_DATA20、RGB\_DATA21、RGB\_DATA22、RGB\_DATA23<a name="_fig12552112391412"></a> ![](figures/RGB_DATA20-RGB_DATA21-RGB_DATA22-RGB_DATA23.jpg "RGB_DATA20-RGB_DATA21-RGB_DATA22-RGB_DATA23") 以AF2、AJ1管脚的复用关系配置为例进行描述，RGB\_CLK（AF2），RGB\_DATA0（AJ1）管脚控制寄存器如[表1](#_table162701523171418)所示。 **表 1** AF2, AJ1管脚控制寄存器 <a name="_table162701523171418"></a>
+```
+
+### BT.656管脚复用<a name="ZH-CN_TOPIC_0000002408102278"></a>
+
+【配置示例】（以Hi3403V100为例）
+
+g\_reg\_iocfg\_base2 见[表3](#_table16578980)。
+
+```
+static void vo_bt_pin_mux(int vo_bt_mode) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+  
+    vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); 
+  
+    sys_writel(iocfg2_base + 0x00C8, 0x0682); 
+    sys_writel(iocfg2_base + 0x00A8,    0x2); 
+    sys_writel(iocfg2_base + 0x00AC,    0x2); 
+    sys_writel(iocfg2_base + 0x00B0,    0x2); 
+    sys_writel(iocfg2_base + 0x00B4,    0x2); 
+    sys_writel(iocfg2_base + 0x00B8,    0x2); 
+    sys_writel(iocfg2_base + 0x00C0,    0x2); 
+    sys_writel(iocfg2_base + 0x00C4,    0x2); 
+    sys_writel(iocfg2_base + 0x00BC,    0x2); 
+  
+    if (vo_bt_mode == VO_BT656_MODE) { 
+        return; 
+    } 
+}
+```
+
+【描述说明】
+
+参考实际硬件设计原理图，VO\_BT656\_CLK、VO\_BT656\_DATA0、VO\_BT656\_DATA1、……、VO\_BT656\_DATA7通过AH4、AL1、AL2、……、AM2进行输出，BT.656相关管脚[图1](#_fig355162313143)所示。
+
+**图 1**  VO BT.656原理图<a name="_fig355162313143"></a>  
+![](figures/VO-BT-656原理图.jpg "VO-BT-656原理图")
+
+【注意事项】
+
+VO BT.656接口功能管脚采用VO BT.1120接口的DATA0\~DATA7，这些管脚的驱动能力由MIPI\_TX控制寄存器来配置，方法可参考“[BT.1120管脚复用](#_table16578980)。
+
+```
+static void vo_rgb_pin_mux(int vo_rgb_mode) 
+{ 
+    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
+  
+    vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL2); 
+  
+    sys_writel(iocfg2_base + 0x0098, 0x0223); 
+    sys_writel(iocfg2_base + 0x0080, 0x0213); 
+    sys_writel(iocfg2_base + 0x008C, 0x0213); 
+    sys_writel(iocfg2_base + 0x0090, 0x0213); 
+    sys_writel(iocfg2_base + 0x00C0,    0x3); 
+    sys_writel(iocfg2_base + 0x00B8,    0x3); 
+    sys_writel(iocfg2_base + 0x00CC, 0x0233); 
+    sys_writel(iocfg2_base + 0x00D0, 0x0233); 
+    sys_writel(iocfg2_base + 0x00AC,    0x3); 
+    sys_writel(iocfg2_base + 0x00B4,    0x3); 
+  
+    if (vo_rgb_mode == VO_RGB_6BIT_MODE) { 
+        return; 
+    } 
+  
+    sys_writel(iocfg2_base + 0x00B0,    0x3); 
+    sys_writel(iocfg2_base + 0x00A8,    0x3); 
+  
+    if (vo_rgb_mode == VO_RGB_8BIT_MODE) { 
+        return; 
+    } 
+  
+    sys_writel(iocfg2_base + 0x00A0,    0x3); 
+    sys_writel(iocfg2_base + 0x00A4,    0x3); 
+    sys_writel(iocfg2_base + 0x00C8, 0x0233); 
+    sys_writel(iocfg2_base + 0x00D4, 0x0233); 
+    sys_writel(iocfg2_base + 0x0084, 0x0213); 
+    sys_writel(iocfg2_base + 0x0094, 0x0213); 
+    sys_writel(iocfg2_base + 0x0088, 0x0213); 
+    sys_writel(iocfg2_base + 0x009C, 0x0213); 
+  
+    if (vo_rgb_mode == VO_RGB_16BIT_MODE) { 
+        return; 
+    } 
+  
+    sys_writel(iocfg2_base + 0x00E0, 0x0233); 
+    sys_writel(iocfg2_base + 0x00D8, 0x0233); 
+  
+    if (vo_rgb_mode == VO_RGB_18BIT_MODE) { 
+        return; 
+    } 
+  
+    sys_writel(iocfg2_base + 0x00BC,    0x3); 
+    sys_writel(iocfg2_base + 0x00C4,    0x3); 
+    sys_writel(iocfg2_base + 0x0068, 0x0203); 
+    sys_writel(iocfg2_base + 0x006C, 0x0203); 
+    sys_writel(iocfg2_base + 0x0064, 0x0203); 
+    sys_writel(iocfg2_base + 0x0060, 0x0213); 
+}
+```
+
+【描述说明】
+
+参考实际硬件设计原理图，RGB\_CLK、RGB\_DE、RGB\_HS、RGB\_VS、RGB \_DATA0、RGB \_DATA1、……、RGB \_DATA23通过AF2、AD2、AD3、AD1、AJ1、AM1、……、AD4进行输出，RGB接口管脚如[图1](#_fig15552162361413)至[图4](#_fig12552112391412)所示。
+
+**图 1**  RGB\_CLK、RGB\_DE、RGB\_HS、RGB\_VS、RGB\_DATA12、RGB\_DATA13、RGB\_DATA14、RGB\_DATA15<a name="_fig15552162361413"></a>  
+![](figures/RGB_CLK-RGB_DE-RGB_HS-RGB_VS-RGB_DATA12-RGB_DATA13-RGB_DATA14-RGB_DATA15.jpg "RGB_CLK-RGB_DE-RGB_HS-RGB_VS-RGB_DATA12-RGB_DATA13-RGB_DATA14-RGB_DATA15")
+
+**图 2**  RGB\_DATA0、RGB\_DATA1、RGB\_DATA2、RGB\_DATA3、RGB\_DATA4、RGB\_DATA5、RGB\_DATA6、RGB\_DATA7、RGB\_DATA8、RGB\_DATA9、RGB\_DATA10、RGB\_DATA11、RGB\_DATA17、RGB\_DATA18、RGB\_DATA19<a name="fig2909mcpsimp"></a>  
+![](figures/RGB_DATA0-RGB_DATA1-RGB_DATA2-RGB_DATA3-RGB_DATA4-RGB_DATA5-RGB_DATA6-RGB_DATA7-RGB_DATA8-RGB_DATA9.jpg "RGB_DATA0-RGB_DATA1-RGB_DATA2-RGB_DATA3-RGB_DATA4-RGB_DATA5-RGB_DATA6-RGB_DATA7-RGB_DATA8-RGB_DATA9")
+
+**图 3**  RGB\_DATA16<a name="fig2911mcpsimp"></a>  
+![](figures/RGB_DATA16.jpg "RGB_DATA16")
+
+**图 4**  RGB\_DATA20、RGB\_DATA21、RGB\_DATA22、RGB\_DATA23<a name="_fig12552112391412"></a>  
+![](figures/RGB_DATA20-RGB_DATA21-RGB_DATA22-RGB_DATA23.jpg "RGB_DATA20-RGB_DATA21-RGB_DATA22-RGB_DATA23")
+
+以AF2、AJ1管脚的复用关系配置为例进行描述，RGB\_CLK（AF2），RGB\_DATA0（AJ1）管脚控制寄存器如[表1](#_table162701523171418)所示。
+
+**表 1**  AF2, AJ1管脚控制寄存器
+
+<a name="_table162701523171418"></a>
 <table><thead align="left"><tr id="row2926mcpsimp"><th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.8.1.1"><p id="p2928mcpsimp"><a name="p2928mcpsimp"></a><a name="p2928mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.900990099009901%" id="mcps1.2.8.1.2"><p id="p2930mcpsimp"><a name="p2930mcpsimp"></a><a name="p2930mcpsimp"></a>Pin Number</p>
@@ -1640,6 +3299,49 @@ static void vo_rgb_pin_mux(int vo_rgb_mode) { void *iocfg2_base = sys_config_get
 <td class="cellrowborder" valign="top" width="8.91089108910891%" headers="mcps1.2.8.1.6 "><p id="p2954mcpsimp"><a name="p2954mcpsimp"></a><a name="p2954mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.772277227722775%" headers="mcps1.2.8.1.7 "><p id="p2956mcpsimp"><a name="p2956mcpsimp"></a><a name="p2956mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2957mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2959mcpsimp"><a name="p2959mcpsimp"></a><a name="p2959mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2961mcpsimp"><a name="p2961mcpsimp"></a><a name="p2961mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2962mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2964mcpsimp"><a name="p2964mcpsimp"></a><a name="p2964mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2966mcpsimp"><a name="p2966mcpsimp"></a><a name="p2966mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2967mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2969mcpsimp"><a name="p2969mcpsimp"></a><a name="p2969mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2971mcpsimp"><a name="p2971mcpsimp"></a><a name="p2971mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row2972mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2974mcpsimp"><a name="p2974mcpsimp"></a><a name="p2974mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2976mcpsimp"><a name="p2976mcpsimp"></a><a name="p2976mcpsimp"></a>管脚施密特输入控制：</p>
+<p id="p2977mcpsimp"><a name="p2977mcpsimp"></a><a name="p2977mcpsimp"></a>0x0：关闭；</p>
+<p id="p2978mcpsimp"><a name="p2978mcpsimp"></a><a name="p2978mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row2979mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2981mcpsimp"><a name="p2981mcpsimp"></a><a name="p2981mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2983mcpsimp"><a name="p2983mcpsimp"></a><a name="p2983mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p2984mcpsimp"><a name="p2984mcpsimp"></a><a name="p2984mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p2985mcpsimp"><a name="p2985mcpsimp"></a><a name="p2985mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row2986mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2988mcpsimp"><a name="p2988mcpsimp"></a><a name="p2988mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2990mcpsimp"><a name="p2990mcpsimp"></a><a name="p2990mcpsimp"></a>管脚下拉控制：</p>
+<p id="p2991mcpsimp"><a name="p2991mcpsimp"></a><a name="p2991mcpsimp"></a>0x0：关闭；</p>
+<p id="p2992mcpsimp"><a name="p2992mcpsimp"></a><a name="p2992mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row2993mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p2995mcpsimp"><a name="p2995mcpsimp"></a><a name="p2995mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p2997mcpsimp"><a name="p2997mcpsimp"></a><a name="p2997mcpsimp"></a>管脚上拉控制：</p>
+<p id="p2998mcpsimp"><a name="p2998mcpsimp"></a><a name="p2998mcpsimp"></a>0x0：关闭；</p>
+<p id="p2999mcpsimp"><a name="p2999mcpsimp"></a><a name="p2999mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row3000mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3002mcpsimp"><a name="p3002mcpsimp"></a><a name="p3002mcpsimp"></a>7:4</p>
@@ -1688,6 +3390,41 @@ static void vo_rgb_pin_mux(int vo_rgb_mode) { void *iocfg2_base = sys_config_get
 <td class="cellrowborder" valign="top" width="22.772277227722775%" headers="mcps1.2.8.1.7 "><p id="p3045mcpsimp"><a name="p3045mcpsimp"></a><a name="p3045mcpsimp"></a>保留。</p>
 </td>
 </tr>
+<tr id="row3046mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3048mcpsimp"><a name="p3048mcpsimp"></a><a name="p3048mcpsimp"></a>14</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3050mcpsimp"><a name="p3050mcpsimp"></a><a name="p3050mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3051mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3053mcpsimp"><a name="p3053mcpsimp"></a><a name="p3053mcpsimp"></a>13</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3055mcpsimp"><a name="p3055mcpsimp"></a><a name="p3055mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3056mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3058mcpsimp"><a name="p3058mcpsimp"></a><a name="p3058mcpsimp"></a>12</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3060mcpsimp"><a name="p3060mcpsimp"></a><a name="p3060mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3061mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3063mcpsimp"><a name="p3063mcpsimp"></a><a name="p3063mcpsimp"></a>11</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3065mcpsimp"><a name="p3065mcpsimp"></a><a name="p3065mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3066mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3068mcpsimp"><a name="p3068mcpsimp"></a><a name="p3068mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3070mcpsimp"><a name="p3070mcpsimp"></a><a name="p3070mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3071mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3073mcpsimp"><a name="p3073mcpsimp"></a><a name="p3073mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3075mcpsimp"><a name="p3075mcpsimp"></a><a name="p3075mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3076mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3078mcpsimp"><a name="p3078mcpsimp"></a><a name="p3078mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3080mcpsimp"><a name="p3080mcpsimp"></a><a name="p3080mcpsimp"></a>保留</p>
+</td>
+</tr>
 <tr id="row3081mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3083mcpsimp"><a name="p3083mcpsimp"></a><a name="p3083mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3085mcpsimp"><a name="p3085mcpsimp"></a><a name="p3085mcpsimp"></a>管脚驱动能力选择：</p>
@@ -1712,9 +3449,60 @@ static void vo_rgb_pin_mux(int vo_rgb_mode) { void *iocfg2_base = sys_config_get
 </td>
 </tr>
 </tbody>
-</table> - AF2存在4种功能复用：GPIO7\_2/SDIO0\_CDATA3/RGB\_CLK AF2管脚配置：0x02d3 - Bits \[3:0\]=3，表示AF2复用为RGB\_CLK - Bits\[7:4\]=0xd，表示驱动能力选择档位14 - Bits\[9\]=0x1，表示管脚下拉：打开。 - AJ1存在6种功能复用：DSI\_D2N/GPIO8\_4/VO\_BT1120\_DATA5/RGB\_DATA0/PWM1\_OUT0\_0\_N/PWM1\_OUT1\_0\_P AJ1管脚配置：0x0003 - Bits \[3:0\]=3，表示AJ1复用为RGB\_DATA0 - Bits\[7:4\]=0，表示驱动能力选择档位1 【注意事项】 RGB\_DATA0、RGB\_DATA1、RGB\_DATA4、RGB\_DATA5、RGB\_DATA6、RGB\_DATA7 RGB\_DATA8、RGB\_DATA9、RGB\_DATA18、RGB\_DATA19这些管脚的驱动能力由MIPI\_TX控制寄存器来配置，方法可参考“[BT.1120管脚复用](#ZH-CN_TOPIC_0000002408262142)”小节，默认配置为档位2。 ## Audio管脚复用<a name="ZH-CN_TOPIC_0000002408262062"></a> AIAO模块对接外置CODEC时，需要使能I2S相关的管脚复用。AIAO模块对接内置CODEC时，需要使能功放芯片的GPIO管脚复用，用于解除静音。 I2S管脚复用 【配置】（以Hi3403V100的I2S为例） ```
-static void i2s_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; sys_writel(iocfg2_base + 0x010C, 0x0232); /* I2S_BCLK */ sys_writel(iocfg2_base + 0x0108, 0x0152); /* I2S_WS */ sys_writel(iocfg2_base + 0x0100, 0x0202); /* I2S_SD_RX */ sys_writel(iocfg2_base + 0x0104, 0x0252); /* I2S_SD_TX */ sys_writel(iocfg2_base + 0x0110, 0x0142); /* I2S_MCLK */ }
-``` 【描述说明】 I2S原理图如[图1](#_toc51764073)所示。 **图 1** I2S原理图<a name="_toc51764073"></a> ![](figures/I2S原理图.png "I2S原理图") 以I2S\_MCLK为例，对应芯片管脚编号为AK15 \(寄存器：0x0102F0110\)。 **表 1** AK15管脚控制寄存器 <a name="table3129mcpsimp"></a>
+</table>
+
+-   AF2存在4种功能复用：GPIO7\_2/SDIO0\_CDATA3/RGB\_CLK
+
+    AF2管脚配置：0x02d3
+
+    -   Bits \[3:0\]=3，表示AF2复用为RGB\_CLK
+    -   Bits\[7:4\]=0xd，表示驱动能力选择档位14
+    -   Bits\[9\]=0x1，表示管脚下拉：打开。
+
+-   AJ1存在6种功能复用：DSI\_D2N/GPIO8\_4/VO\_BT1120\_DATA5/RGB\_DATA0/PWM1\_OUT0\_0\_N/PWM1\_OUT1\_0\_P
+
+    AJ1管脚配置：0x0003
+
+    -   Bits \[3:0\]=3，表示AJ1复用为RGB\_DATA0
+    -   Bits\[7:4\]=0，表示驱动能力选择档位1
+
+【注意事项】
+
+RGB\_DATA0、RGB\_DATA1、RGB\_DATA4、RGB\_DATA5、RGB\_DATA6、RGB\_DATA7 RGB\_DATA8、RGB\_DATA9、RGB\_DATA18、RGB\_DATA19这些管脚的驱动能力由MIPI\_TX控制寄存器来配置，方法可参考“[BT.1120管脚复用](#ZH-CN_TOPIC_0000002408262142)”小节，默认配置为档位2。
+
+## Audio管脚复用<a name="ZH-CN_TOPIC_0000002408262062"></a>
+
+AIAO模块对接外置CODEC时，需要使能I2S相关的管脚复用。AIAO模块对接内置CODEC时，需要使能功放芯片的GPIO管脚复用，用于解除静音。
+
+I2S管脚复用
+
+【配置】（以Hi3403V100的I2S为例）
+
+```
+static void i2s_pin_mux(void) 
+{ 
+void * iocfg2_base = get_reg_iocfg2(); 
+ 
+sys_writel(iocfg2_base + 0x010C, 0x0232); /* I2S_BCLK */  
+sys_writel(iocfg2_base + 0x0108, 0x0152); /* I2S_WS */  
+sys_writel(iocfg2_base + 0x0100, 0x0202); /* I2S_SD_RX */  
+sys_writel(iocfg2_base + 0x0104, 0x0252); /* I2S_SD_TX */  
+sys_writel(iocfg2_base + 0x0110, 0x0142); /* I2S_MCLK */ 
+}
+```
+
+【描述说明】
+
+I2S原理图如[图1](#_toc51764073)所示。
+
+**图 1**  I2S原理图<a name="_toc51764073"></a>  
+![](figures/I2S原理图.png "I2S原理图")
+
+以I2S\_MCLK为例，对应芯片管脚编号为AK15 \(寄存器：0x0102F0110\)。
+
+**表 1**  AK15管脚控制寄存器
+
+<a name="table3129mcpsimp"></a>
 <table><thead align="left"><tr id="row3140mcpsimp"><th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.8.1.1"><p id="p3142mcpsimp"><a name="p3142mcpsimp"></a><a name="p3142mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.2.8.1.2"><p id="p3144mcpsimp"><a name="p3144mcpsimp"></a><a name="p3144mcpsimp"></a>Pin Number</p>
@@ -1744,6 +3532,27 @@ static void i2s_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; sys_writel(
 <td class="cellrowborder" valign="top" width="7.920792079207921%" headers="mcps1.2.8.1.6 "><p id="p3168mcpsimp"><a name="p3168mcpsimp"></a><a name="p3168mcpsimp"></a>31:11</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.722772277227726%" headers="mcps1.2.8.1.7 "><p id="p3170mcpsimp"><a name="p3170mcpsimp"></a><a name="p3170mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3171mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3173mcpsimp"><a name="p3173mcpsimp"></a><a name="p3173mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3175mcpsimp"><a name="p3175mcpsimp"></a><a name="p3175mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p3176mcpsimp"><a name="p3176mcpsimp"></a><a name="p3176mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p3177mcpsimp"><a name="p3177mcpsimp"></a><a name="p3177mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row3178mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3180mcpsimp"><a name="p3180mcpsimp"></a><a name="p3180mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3182mcpsimp"><a name="p3182mcpsimp"></a><a name="p3182mcpsimp"></a>管脚下拉控制：</p>
+<p id="p3183mcpsimp"><a name="p3183mcpsimp"></a><a name="p3183mcpsimp"></a>0x0：关闭；</p>
+<p id="p3184mcpsimp"><a name="p3184mcpsimp"></a><a name="p3184mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row3185mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3187mcpsimp"><a name="p3187mcpsimp"></a><a name="p3187mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3189mcpsimp"><a name="p3189mcpsimp"></a><a name="p3189mcpsimp"></a>管脚上拉控制：</p>
+<p id="p3190mcpsimp"><a name="p3190mcpsimp"></a><a name="p3190mcpsimp"></a>0x0：关闭；</p>
+<p id="p3191mcpsimp"><a name="p3191mcpsimp"></a><a name="p3191mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row3192mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3194mcpsimp"><a name="p3194mcpsimp"></a><a name="p3194mcpsimp"></a>7:4</p>
@@ -1780,12 +3589,55 @@ static void i2s_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; sys_writel(
 </td>
 </tr>
 </tbody>
-</table> 管脚存在5种复用情形：JTAG\_TDI / GPIO10\_5 / I2S\_MCLK / SPI3\_SCLK / PWM0\_OUT10\_0\_P。 AK15配置值为0x000001C2： - Bits\[3:0\]=0x2表示管脚功能选择为I2S\_MCLK；
-- Bits\[7:4\]=0xC表示管脚驱动能力配置为档位13，档位值越大，对应的驱动能力越大；
-- Bits\[9:8\]=0x1表示管脚上拉控制打开, 下拉控制关闭，结合实际电路配置；
-- Bits\[10\]=0x0表示电平转换速率为快沿输出。 【注意事项】 无。 ### 功放GPIO管脚复用<a name="ZH-CN_TOPIC_0000002441661489"></a> 【配置】（以Hi3403V100为例） ```
-static void amp_unmute_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; void * gpio_base = get_reg_gpio; /* GPIO10_0 */ sys_writel(iocfg2_base + 0x00FC, 0x0201); /* output high */ sys_writel(gpio_base + 0xA400, 0x01); sys_writel(gpio_base + 0xA004, 0x01); }
-``` 【描述说明】 功放芯片的使能通过GPIO10\_0管脚进行控制，原理图如[图1](#_toc51764074)所示。 **图 1** GPIO10\_0原理图<a name="_toc51764074"></a> ![](figures/GPIO10_0原理图.png "GPIO10_0原理图") 功放芯片使能控制的具体配置为： - GPIO10\_0管脚对应芯片管脚编号为AP17 \(寄存器：0x0102F00FC\)。 **表 1** AP17管脚控制寄存器 <a name="table3244mcpsimp"></a>
+</table>
+
+管脚存在5种复用情形：JTAG\_TDI / GPIO10\_5 / I2S\_MCLK / SPI3\_SCLK / PWM0\_OUT10\_0\_P。
+
+AK15配置值为0x000001C2：
+
+-   Bits\[3:0\]=0x2表示管脚功能选择为I2S\_MCLK；
+-   Bits\[7:4\]=0xC表示管脚驱动能力配置为档位13，档位值越大，对应的驱动能力越大；
+-   Bits\[9:8\]=0x1表示管脚上拉控制打开, 下拉控制关闭，结合实际电路配置；
+-   Bits\[10\]=0x0表示电平转换速率为快沿输出。
+
+【注意事项】
+
+无。
+
+
+### 功放GPIO管脚复用<a name="ZH-CN_TOPIC_0000002441661489"></a>
+
+【配置】（以Hi3403V100为例）
+
+```
+static void amp_unmute_pin_mux(void) 
+{ 
+void * iocfg2_base = get_reg_iocfg2(); 
+void * gpio_base = get_reg_gpio(); 
+ 
+/* GPIO10_0 */ 
+sys_writel(iocfg2_base + 0x00FC, 0x0201); 
+ 
+/* output high */ 
+sys_writel(gpio_base + 0xA400, 0x01); 
+sys_writel(gpio_base + 0xA004, 0x01); 
+}
+```
+
+【描述说明】
+
+功放芯片的使能通过GPIO10\_0管脚进行控制，原理图如[图1](#_toc51764074)所示。
+
+**图 1**  GPIO10\_0原理图<a name="_toc51764074"></a>  
+![](figures/GPIO10_0原理图.png "GPIO10_0原理图")
+
+功放芯片使能控制的具体配置为：
+
+-   GPIO10\_0管脚对应芯片管脚编号为AP17 \(寄存器：0x0102F00FC\)。
+
+**表 1**  AP17管脚控制寄存器
+
+<a name="table3244mcpsimp"></a>
 <table><thead align="left"><tr id="row3255mcpsimp"><th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.8.1.1"><p id="p3257mcpsimp"><a name="p3257mcpsimp"></a><a name="p3257mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.871287128712872%" id="mcps1.2.8.1.2"><p id="p3259mcpsimp"><a name="p3259mcpsimp"></a><a name="p3259mcpsimp"></a>Pin Number</p>
@@ -1815,6 +3667,27 @@ static void amp_unmute_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; void
 <td class="cellrowborder" valign="top" width="7.920792079207921%" headers="mcps1.2.8.1.6 "><p id="p3283mcpsimp"><a name="p3283mcpsimp"></a><a name="p3283mcpsimp"></a>31:11</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.722772277227726%" headers="mcps1.2.8.1.7 "><p id="p3285mcpsimp"><a name="p3285mcpsimp"></a><a name="p3285mcpsimp"></a>保留。</p>
+</td>
+</tr>
+<tr id="row3286mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3288mcpsimp"><a name="p3288mcpsimp"></a><a name="p3288mcpsimp"></a>10</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3290mcpsimp"><a name="p3290mcpsimp"></a><a name="p3290mcpsimp"></a>管脚电平转换速率控制：</p>
+<p id="p3291mcpsimp"><a name="p3291mcpsimp"></a><a name="p3291mcpsimp"></a>0x0：快沿输出；</p>
+<p id="p3292mcpsimp"><a name="p3292mcpsimp"></a><a name="p3292mcpsimp"></a>0x1：慢沿输出。</p>
+</td>
+</tr>
+<tr id="row3293mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3295mcpsimp"><a name="p3295mcpsimp"></a><a name="p3295mcpsimp"></a>9</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3297mcpsimp"><a name="p3297mcpsimp"></a><a name="p3297mcpsimp"></a>管脚下拉控制：</p>
+<p id="p3298mcpsimp"><a name="p3298mcpsimp"></a><a name="p3298mcpsimp"></a>0x0：关闭；</p>
+<p id="p3299mcpsimp"><a name="p3299mcpsimp"></a><a name="p3299mcpsimp"></a>0x1：打开。</p>
+</td>
+</tr>
+<tr id="row3300mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3302mcpsimp"><a name="p3302mcpsimp"></a><a name="p3302mcpsimp"></a>8</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p3304mcpsimp"><a name="p3304mcpsimp"></a><a name="p3304mcpsimp"></a>管脚上拉控制：</p>
+<p id="p3305mcpsimp"><a name="p3305mcpsimp"></a><a name="p3305mcpsimp"></a>0x0：关闭；</p>
+<p id="p3306mcpsimp"><a name="p3306mcpsimp"></a><a name="p3306mcpsimp"></a>0x1：打开。</p>
 </td>
 </tr>
 <tr id="row3307mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p3309mcpsimp"><a name="p3309mcpsimp"></a><a name="p3309mcpsimp"></a>7:4</p>
@@ -1849,10 +3722,22 @@ static void amp_unmute_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; void
 </td>
 </tr>
 </tbody>
-</table> 管脚存在3种复用情形：LSADC\_CH3 / GPIO10\_0 / PCIE\_RST\_N。 AP17配置值为0x00000201： - Bits\[3:0\]=0x1表示管脚功能选择为GPIO10\_0；
-- Bits\[7:4\]=0x0表示管脚驱动能力配置为档位1，档位值越大，对应的驱动能力越大；
-- Bits\[9:8\]=0x2表示管脚上拉控制关闭, 下拉控制打开，结合实际电路配置；
-- Bits\[10\]=0x0表示电平转换速率为快沿输出。 GPIO\_DIR为GPIO方向控制寄存器，配置寄存器0x1109A400的Bits \[7:0\]为0x01，表示配置GPIO10\_0为输出方向。 Offset Address: 400 Total Reset Value: 0x00 <a name="table3348mcpsimp"></a>
+</table>
+
+管脚存在3种复用情形：LSADC\_CH3 / GPIO10\_0 / PCIE\_RST\_N。
+
+AP17配置值为0x00000201：
+
+-   Bits\[3:0\]=0x1表示管脚功能选择为GPIO10\_0；
+-   Bits\[7:4\]=0x0表示管脚驱动能力配置为档位1，档位值越大，对应的驱动能力越大；
+-   Bits\[9:8\]=0x2表示管脚上拉控制关闭, 下拉控制打开，结合实际电路配置；
+-   Bits\[10\]=0x0表示电平转换速率为快沿输出。
+
+GPIO\_DIR为GPIO方向控制寄存器，配置寄存器0x1109A400的Bits \[7:0\]为0x01，表示配置GPIO10\_0为输出方向。
+
+Offset Address: 400   Total Reset Value: 0x00
+
+<a name="table3348mcpsimp"></a>
 <table><thead align="left"><tr id="row3356mcpsimp"><th class="cellrowborder" valign="top" width="10.101010101010102%" id="mcps1.1.6.1.1"><p id="p3358mcpsimp"><a name="p3358mcpsimp"></a><a name="p3358mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.13131313131313%" id="mcps1.1.6.1.2"><p id="p3360mcpsimp"><a name="p3360mcpsimp"></a><a name="p3360mcpsimp"></a>Access</p>
@@ -1879,7 +3764,13 @@ static void amp_unmute_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; void
 </td>
 </tr>
 </tbody>
-</table> GPIO\_DATA为GPIO数据寄存器，配置寄存器0x1109A004的Bits \[7:0\]为0x01，表示配置GPIO10\_0为输出高电平。 Offset Address: 0x000～0x3FC Total Reset Value: 0x00 <a name="table3384mcpsimp"></a>
+</table>
+
+GPIO\_DATA为GPIO数据寄存器，配置寄存器0x1109A004的Bits \[7:0\]为0x01，表示配置GPIO10\_0为输出高电平。
+
+Offset Address: 0x000～0x3FC   Total Reset Value: 0x00
+
+<a name="table3384mcpsimp"></a>
 <table><thead align="left"><tr id="row3392mcpsimp"><th class="cellrowborder" valign="top" width="10.101010101010102%" id="mcps1.1.6.1.1"><p id="p3394mcpsimp"><a name="p3394mcpsimp"></a><a name="p3394mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.13131313131313%" id="mcps1.1.6.1.2"><p id="p3396mcpsimp"><a name="p3396mcpsimp"></a><a name="p3396mcpsimp"></a>Access</p>
@@ -1904,5 +3795,12 @@ static void amp_unmute_pin_mux(void) { void * iocfg2_base = get_reg_iocfg2; void
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无。 # 其他
-无。 
+</table>
+
+【注意事项】
+
+无。
+
+# 其他
+无。
+

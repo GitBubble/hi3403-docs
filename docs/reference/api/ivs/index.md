@@ -1,8 +1,18 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API参考/IVS API参考.md
---- # 前言
-**概述<a name="section122282764510"></a>** 本文档为使用IVS进行_识别_分析方案开发的程序员而写，目的是供您在开发过程中查阅IVS支持的各种参考信息，包括API、头文件、错误码等。 **产品版本<a name="section12318719459"></a>** 与本文档相对应的产品版本如下。 <a name="table1324247124515"></a>
+---
+
+# 前言
+**概述<a name="section122282764510"></a>**
+
+本文档为使用IVS进行_识别_分析方案开发的程序员而写，目的是供您在开发过程中查阅IVS支持的各种参考信息，包括API、头文件、错误码等。
+
+**产品版本<a name="section12318719459"></a>**
+
+与本文档相对应的产品版本如下。
+
+<a name="table1324247124515"></a>
 <table><thead align="left"><tr id="row8283167154518"><th class="cellrowborder" valign="top" width="31.759999999999998%" id="mcps1.1.3.1.1"><p id="p1728315720455"><a name="p1728315720455"></a><a name="p1728315720455"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.24%" id="mcps1.1.3.1.2"><p id="p92831478451"><a name="p92831478451"></a><a name="p92831478451"></a>产品版本</p>
@@ -14,9 +24,26 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API�
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p152841577456"><a name="p152841577456"></a><a name="p152841577456"></a>V100</p>
 </td>
 </tr>
+<tr id="row09316491432"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
+</td>
+</tr>
 </tbody>
-</table> **读者对象<a name="section1924037154519"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
-- 软件开发工程师 **符号约定<a name="section133020216410"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table2622507016410"></a>
+</table>
+
+**读者对象<a name="section1924037154519"></a>**
+
+本文档（本指南）主要适用于以下工程师：
+
+-   技术支持工程师
+-   软件开发工程师
+
+**符号约定<a name="section133020216410"></a>**
+
+在本文中可能出现下列标志，它们所代表的含义如下。
+
+<a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a><strong id="b2136615816410"><a name="b2136615816410"></a><a name="b2136615816410"></a>符号</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a><strong id="b5941558116410"><a name="b5941558116410"></a><a name="b5941558116410"></a>说明</strong></p>
@@ -28,8 +55,34 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API�
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441733653.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408294304.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441853733.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
+<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
+</td>
+</tr>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408134440.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
+<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
+</td>
+</tr>
 </tbody>
-</table> **修改记录<a name="section2467512116410"></a>** <a name="table1557726816410"></a>
+</table>
+
+**修改记录<a name="section2467512116410"></a>**
+
+<a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>发布日期</strong></p>
@@ -46,18 +99,85 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API�
 </td>
 </tr>
 </tbody>
-</table> # 概述
-## 概述<a name="ZH-CN_TOPIC_0000002408134140"></a> IVS（Intelligent Video Surveillance）比IVE（Intelligent Video Engine，识别加速引擎）更高层次的识别视频采集应用API。用户基于IVS可以快速开发出相关识别应用。当前IVS支持的识别应用有：MD（Motion Detection，移动侦测）。 # MD
-## 功能描述<a name="ZH-CN_TOPIC_0000002441733317"></a> ### 移动侦测<a name="ZH-CN_TOPIC_0000002408134128"></a> 移动侦测通过检测视频的亮度变化，侦测视频的运动状态，得出视频侦测分析结果。 #### 基本概念<a name="ZH-CN_TOPIC_0000002408294084"></a> - MD 算法 MD 算法包含帧差法（MD\_ALG\_MODE\_REF）和背景法（MD\_ALG\_MODE\_BG）两种。 - 帧差法（MD\_ALG\_MODE\_REF） 直接以用户指定的图像为参考帧，得出视频侦测分析结果的算法，称为帧差法。 - 背景法（MD\_ALG\_MODE\_BG） 在MD 处理的过程中，将产生当前视频的背景图像。然后以背景图像为参考帧，得出视频侦测分析结果的算法，称为背景法。 - 背景更新权重 当MD 算法选择为背景法时，每次MD 处理都会产生静止部分图像，这部分图像和背景会作一次像素值叠加，新背景 = （静止部分图像的叠加权重x×静止部分图像 + 动态部分图像的叠加权重y× 旧背景）\>\> 16。 >![](public_sys-resources/icon-notice.gif) **须知：** >如果是使用64位操作系统，需要使用到的MMZ地址必须是在一个4GB空间内，否则会出现异常。 ## API 参考<a name="ZH-CN_TOPIC_0000002441733361"></a> MD API提供了初始化、退出、获取句柄、释放句柄、获取背景和侦测处理基本接口。 该功能模块提供以下API： - [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)：初始化。
-- [ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148)：退出。
-- [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)：创建MD通道。
-- [ss\_ivs\_md\_destroy\_chn](#ZH-CN_TOPIC_0000002441853505)：销毁MD通道。
-- [ss\_ivs\_md\_set\_chn\_attr](#ZH-CN_TOPIC_0000002408294068)：设置MD通道属性。
-- [ss\_ivs\_md\_get\_chn\_attr](#ZH-CN_TOPIC_0000002408294052)：获取MD通道属性。
-- [ss\_ivs\_md\_get\_bg](#ZH-CN_TOPIC_0000002408134192)：获取背景。
-- [ss\_ivs\_md\_proc](#ZH-CN_TOPIC_0000002441733297)：侦测处理。 ### ss\_ivs\_md\_init<a name="ZH-CN_TOPIC_0000002441733309"></a> 【描述】 移动侦测初始化。 【语法】 ```
+</table>
+
+# 概述
+## 概述<a name="ZH-CN_TOPIC_0000002408134140"></a>
+
+IVS（Intelligent Video Surveillance）比IVE（Intelligent Video Engine，识别加速引擎）更高层次的识别视频采集应用API。用户基于IVS可以快速开发出相关识别应用。当前IVS支持的识别应用有：MD（Motion Detection，移动侦测）。
+
+# MD
+## 功能描述<a name="ZH-CN_TOPIC_0000002441733317"></a>
+
+
+### 移动侦测<a name="ZH-CN_TOPIC_0000002408134128"></a>
+
+移动侦测通过检测视频的亮度变化，侦测视频的运动状态，得出视频侦测分析结果。
+
+
+#### 基本概念<a name="ZH-CN_TOPIC_0000002408294084"></a>
+
+-   MD 算法
+
+    MD 算法包含帧差法（MD\_ALG\_MODE\_REF）和背景法（MD\_ALG\_MODE\_BG）两种。
+
+    -   帧差法（MD\_ALG\_MODE\_REF）
+
+        直接以用户指定的图像为参考帧，得出视频侦测分析结果的算法，称为帧差法。
+
+    -   背景法（MD\_ALG\_MODE\_BG）
+
+        在MD 处理的过程中，将产生当前视频的背景图像。然后以背景图像为参考帧，得出视频侦测分析结果的算法，称为背景法。
+
+-   背景更新权重
+
+    当MD 算法选择为背景法时，每次MD 处理都会产生静止部分图像，这部分图像和背景会作一次像素值叠加，新背景 = （静止部分图像的叠加权重x×静止部分图像 + 动态部分图像的叠加权重y× 旧背景）\>\> 16。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>如果是使用64位操作系统，需要使用到的MMZ地址必须是在一个4GB空间内，否则会出现异常。
+
+## API 参考<a name="ZH-CN_TOPIC_0000002441733361"></a>
+
+MD API提供了初始化、退出、获取句柄、释放句柄、获取背景和侦测处理基本接口。
+
+该功能模块提供以下API：
+
+-   [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)：初始化。
+-   [ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148)：退出。
+-   [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)：创建MD通道。
+-   [ss\_ivs\_md\_destroy\_chn](#ZH-CN_TOPIC_0000002441853505)：销毁MD通道。
+-   [ss\_ivs\_md\_set\_chn\_attr](#ZH-CN_TOPIC_0000002408294068)：设置MD通道属性。
+-   [ss\_ivs\_md\_get\_chn\_attr](#ZH-CN_TOPIC_0000002408294052)：获取MD通道属性。
+-   [ss\_ivs\_md\_get\_bg](#ZH-CN_TOPIC_0000002408134192)：获取背景。
+-   [ss\_ivs\_md\_proc](#ZH-CN_TOPIC_0000002441733297)：侦测处理。
+
+
+
+
+
+
+
+
+
+### ss\_ivs\_md\_init<a name="ZH-CN_TOPIC_0000002441733309"></a>
+
+【描述】
+
+移动侦测初始化。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_init(td_void)；
-``` 【参数】 无。 【返回值】 <a name="table288mcpsimp"></a>
+```
+
+【参数】
+
+无。
+
+【返回值】
+
+<a name="table288mcpsimp"></a>
 <table><thead align="left"><tr id="row293mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p295mcpsimp"><a name="p295mcpsimp"></a><a name="p295mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p297mcpsimp"><a name="p297mcpsimp"></a><a name="p297mcpsimp"></a>描述</p>
@@ -69,12 +189,51 @@ td_s32 ss_ivs_md_init(td_void)；
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p303mcpsimp"><a name="p303mcpsimp"></a><a name="p303mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row304mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p306mcpsimp"><a name="p306mcpsimp"></a><a name="p306mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p308mcpsimp"><a name="p308mcpsimp"></a><a name="p308mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph311mcpsimp"><a name="ph311mcpsimp"></a><a name="ph311mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 - 调用MD其他接口前必须先调用此接口进行初始化，而且只需调用一次即可，否则返回错误。
-- 该接口必须和[ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148)配套使用。 【举例】 无。 【相关主题】 [ss\_ivs\_md\_exit](#ss_ivs_md_exit) ### ss\_ivs\_md\_exit<a name="ZH-CN_TOPIC_0000002408134148"></a> 【描述】 移动侦测退出。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+-   调用MD其他接口前必须先调用此接口进行初始化，而且只需调用一次即可，否则返回错误。
+-   该接口必须和[ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148)配套使用。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_ivs\_md\_exit](#ss_ivs_md_exit)
+
+### ss\_ivs\_md\_exit<a name="ZH-CN_TOPIC_0000002408134148"></a>
+
+【描述】
+
+移动侦测退出。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_exit(td_void);
-``` 【参数】 无。 【返回值】 <a name="table333mcpsimp"></a>
+```
+
+【参数】
+
+无。
+
+【返回值】
+
+<a name="table333mcpsimp"></a>
 <table><thead align="left"><tr id="row338mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p340mcpsimp"><a name="p340mcpsimp"></a><a name="p340mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p342mcpsimp"><a name="p342mcpsimp"></a><a name="p342mcpsimp"></a>描述</p>
@@ -86,11 +245,46 @@ td_s32 ss_ivs_md_exit(td_void);
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p348mcpsimp"><a name="p348mcpsimp"></a><a name="p348mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row349mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p351mcpsimp"><a name="p351mcpsimp"></a><a name="p351mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p353mcpsimp"><a name="p353mcpsimp"></a><a name="p353mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph356mcpsimp"><a name="ph356mcpsimp"></a><a name="ph356mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化才能调用此接口退出，否则返回错误。 【举例】 无。 【相关主题】 [ss\_ivs\_md\_init](#ss_ivs_md_init) ### ss\_ivs\_md\_create\_chn<a name="ZH-CN_TOPIC_0000002441733333"></a> 【描述】 创建MD通道。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化才能调用此接口退出，否则返回错误。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_ivs\_md\_init](#ss_ivs_md_init)
+
+### ss\_ivs\_md\_create\_chn<a name="ZH-CN_TOPIC_0000002441733333"></a>
+
+【描述】
+
+创建MD通道。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_create_chn(ot_md_chn md_chn, ot_md_attr *md_attr);
-``` 【参数】 <a name="table376mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table376mcpsimp"></a>
 <table><thead align="left"><tr id="row382mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p384mcpsimp"><a name="p384mcpsimp"></a><a name="p384mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p386mcpsimp"><a name="p386mcpsimp"></a><a name="p386mcpsimp"></a>描述</p>
@@ -115,7 +309,11 @@ td_s32 ss_ivs_md_create_chn(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table406mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table406mcpsimp"></a>
 <table><thead align="left"><tr id="row411mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p413mcpsimp"><a name="p413mcpsimp"></a><a name="p413mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p415mcpsimp"><a name="p415mcpsimp"></a><a name="p415mcpsimp"></a>描述</p>
@@ -127,15 +325,50 @@ td_s32 ss_ivs_md_create_chn(ot_md_chn md_chn, ot_md_attr *md_attr);
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p421mcpsimp"><a name="p421mcpsimp"></a><a name="p421mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row422mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p424mcpsimp"><a name="p424mcpsimp"></a><a name="p424mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p426mcpsimp"><a name="p426mcpsimp"></a><a name="p426mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph429mcpsimp"><a name="ph429mcpsimp"></a><a name="ph429mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。 【举例】 无。 【相关主题】 - [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_destroy\_chn<a name="ZH-CN_TOPIC_0000002441853505"></a> 【描述】 销毁MD通道。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_destroy\_chn<a name="ZH-CN_TOPIC_0000002441853505"></a>
+
+【描述】
+
+销毁MD通道。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_destroy_chn(ot_md_chn md_chn);
-``` 【参数】 <a name="table457mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table457mcpsimp"></a>
 <table><thead align="left"><tr id="row463mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p465mcpsimp"><a name="p465mcpsimp"></a><a name="p465mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p467mcpsimp"><a name="p467mcpsimp"></a><a name="p467mcpsimp"></a>描述</p>
@@ -152,7 +385,11 @@ td_s32 ss_ivs_md_destroy_chn(ot_md_chn md_chn);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table479mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table479mcpsimp"></a>
 <table><thead align="left"><tr id="row484mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p486mcpsimp"><a name="p486mcpsimp"></a><a name="p486mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p488mcpsimp"><a name="p488mcpsimp"></a><a name="p488mcpsimp"></a>描述</p>
@@ -164,16 +401,51 @@ td_s32 ss_ivs_md_destroy_chn(ot_md_chn md_chn);
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p494mcpsimp"><a name="p494mcpsimp"></a><a name="p494mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row495mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p499mcpsimp"><a name="p499mcpsimp"></a><a name="p499mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph502mcpsimp"><a name="ph502mcpsimp"></a><a name="ph502mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 - 必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
-- md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号,否则返回错误。 【举例】 无。 【相关主题】 - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_set\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294068"></a> 【描述】 设置MD通道属性。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+-   必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
+-   md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号,否则返回错误。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_set\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294068"></a>
+
+【描述】
+
+设置MD通道属性。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_set_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
-``` 【参数】 <a name="table534mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table534mcpsimp"></a>
 <table><thead align="left"><tr id="row540mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p544mcpsimp"><a name="p544mcpsimp"></a><a name="p544mcpsimp"></a>描述</p>
@@ -198,7 +470,11 @@ td_s32 ss_ivs_md_set_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table564mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table564mcpsimp"></a>
 <table><thead align="left"><tr id="row569mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p571mcpsimp"><a name="p571mcpsimp"></a><a name="p571mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p573mcpsimp"><a name="p573mcpsimp"></a><a name="p573mcpsimp"></a>描述</p>
@@ -210,17 +486,52 @@ td_s32 ss_ivs_md_set_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p579mcpsimp"><a name="p579mcpsimp"></a><a name="p579mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row580mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p582mcpsimp"><a name="p582mcpsimp"></a><a name="p582mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p584mcpsimp"><a name="p584mcpsimp"></a><a name="p584mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph587mcpsimp"><a name="ph587mcpsimp"></a><a name="ph587mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 - 必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
-- md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号,否则返回错误。
-- 通道静态属性\(alg\_mode、sad\_mode、width、height\)不能更改，必须与创建通道时相等，否则返回错误。 【举例】 无。 【相关主题】 - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_get\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294052"></a> 【描述】 获取MD通道属性。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+-   必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
+-   md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号,否则返回错误。
+-   通道静态属性\(alg\_mode、sad\_mode、width、height\)不能更改，必须与创建通道时相等，否则返回错误。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_get\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294052"></a>
+
+【描述】
+
+获取MD通道属性。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_get_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
-``` 【参数】 <a name="table620mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table620mcpsimp"></a>
 <table><thead align="left"><tr id="row626mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p628mcpsimp"><a name="p628mcpsimp"></a><a name="p628mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p630mcpsimp"><a name="p630mcpsimp"></a><a name="p630mcpsimp"></a>描述</p>
@@ -245,7 +556,11 @@ td_s32 ss_ivs_md_get_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table650mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table650mcpsimp"></a>
 <table><thead align="left"><tr id="row655mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p657mcpsimp"><a name="p657mcpsimp"></a><a name="p657mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p659mcpsimp"><a name="p659mcpsimp"></a><a name="p659mcpsimp"></a>描述</p>
@@ -257,16 +572,51 @@ td_s32 ss_ivs_md_get_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p665mcpsimp"><a name="p665mcpsimp"></a><a name="p665mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row666mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p668mcpsimp"><a name="p668mcpsimp"></a><a name="p668mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p670mcpsimp"><a name="p670mcpsimp"></a><a name="p670mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph673mcpsimp"><a name="ph673mcpsimp"></a><a name="ph673mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 - 必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
-- md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号,否则返回错误。 【举例】 无。 【相关主题】 - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_get\_bg<a name="ZH-CN_TOPIC_0000002408134192"></a> 【描述】 获取移动侦测背景。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+-   必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
+-   md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号,否则返回错误。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_get\_bg<a name="ZH-CN_TOPIC_0000002408134192"></a>
+
+【描述】
+
+获取移动侦测背景。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
-``` 【参数】 <a name="table704mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table704mcpsimp"></a>
 <table><thead align="left"><tr id="row710mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p712mcpsimp"><a name="p712mcpsimp"></a><a name="p712mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.4.1.2"><p id="p714mcpsimp"><a name="p714mcpsimp"></a><a name="p714mcpsimp"></a>描述</p>
@@ -282,8 +632,18 @@ td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.1.4.1.3 "><p id="p724mcpsimp"><a name="p724mcpsimp"></a><a name="p724mcpsimp"></a>输入</p>
 </td>
 </tr>
+<tr id="row725mcpsimp"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.1 "><p id="p727mcpsimp"><a name="p727mcpsimp"></a><a name="p727mcpsimp"></a>bg</p>
+</td>
+<td class="cellrowborder" valign="top" width="67%" headers="mcps1.1.4.1.2 "><p id="p729mcpsimp"><a name="p729mcpsimp"></a><a name="p729mcpsimp"></a>背景图像指针；不能为空。</p>
+<p id="p730mcpsimp"><a name="p730mcpsimp"></a><a name="p730mcpsimp"></a>详细定义请参见《IVE API参考》的3.1章节</p>
+</td>
+<td class="cellrowborder" valign="top" width="17%" headers="mcps1.1.4.1.3 "><p id="p732mcpsimp"><a name="p732mcpsimp"></a><a name="p732mcpsimp"></a>输出</p>
+</td>
+</tr>
 </tbody>
-</table> <a name="table733mcpsimp"></a>
+</table>
+
+<a name="table733mcpsimp"></a>
 <table><thead align="left"><tr id="row740mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.5.1.1"><p id="p742mcpsimp"><a name="p742mcpsimp"></a><a name="p742mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.5.1.2"><p id="p744mcpsimp"><a name="p744mcpsimp"></a><a name="p744mcpsimp"></a>支持图像类型</p>
@@ -304,7 +664,11 @@ td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table760mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table760mcpsimp"></a>
 <table><thead align="left"><tr id="row765mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p767mcpsimp"><a name="p767mcpsimp"></a><a name="p767mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p769mcpsimp"><a name="p769mcpsimp"></a><a name="p769mcpsimp"></a>描述</p>
@@ -316,16 +680,51 @@ td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p775mcpsimp"><a name="p775mcpsimp"></a><a name="p775mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row776mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p778mcpsimp"><a name="p778mcpsimp"></a><a name="p778mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p780mcpsimp"><a name="p780mcpsimp"></a><a name="p780mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph783mcpsimp"><a name="ph783mcpsimp"></a><a name="ph783mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 - 必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
-- md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号，否则返回错误。
-- 只有背景法时，才能获取背景数据，否则返回错误。 【举例】 无。 【相关主题】 - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_proc<a name="ZH-CN_TOPIC_0000002441733297"></a> 【描述】 移动侦测处理。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+-   必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
+-   md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号，否则返回错误。
+-   只有背景法时，才能获取背景数据，否则返回错误。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_proc<a name="ZH-CN_TOPIC_0000002441733297"></a>
+
+【描述】
+
+移动侦测处理。
+
+【语法】
+
+```
 td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref, ot_svp_dst_img *sad, ot_svp_dst_mem_info *blob)；
-``` 【参数】 <a name="table815mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table815mcpsimp"></a>
 <table><thead align="left"><tr id="row821mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.4.1.1"><p id="p823mcpsimp"><a name="p823mcpsimp"></a><a name="p823mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.4.1.2"><p id="p825mcpsimp"><a name="p825mcpsimp"></a><a name="p825mcpsimp"></a>描述</p>
@@ -376,7 +775,9 @@ td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref
 </td>
 </tr>
 </tbody>
-</table> <a name="table870mcpsimp"></a>
+</table>
+
+<a name="table870mcpsimp"></a>
 <table><thead align="left"><tr id="row877mcpsimp"><th class="cellrowborder" valign="top" width="8.91089108910891%" id="mcps1.1.5.1.1"><p id="p879mcpsimp"><a name="p879mcpsimp"></a><a name="p879mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.56435643564357%" id="mcps1.1.5.1.2"><p id="p881mcpsimp"><a name="p881mcpsimp"></a><a name="p881mcpsimp"></a>支持图像类型</p>
@@ -424,7 +825,11 @@ td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table924mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table924mcpsimp"></a>
 <table><thead align="left"><tr id="row929mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p931mcpsimp"><a name="p931mcpsimp"></a><a name="p931mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p933mcpsimp"><a name="p933mcpsimp"></a><a name="p933mcpsimp"></a>描述</p>
@@ -436,18 +841,60 @@ td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p939mcpsimp"><a name="p939mcpsimp"></a><a name="p939mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row940mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p942mcpsimp"><a name="p942mcpsimp"></a><a name="p942mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p944mcpsimp"><a name="p944mcpsimp"></a><a name="p944mcpsimp"></a>失败，参见<a href="#ZH-CN_TOPIC_0000002408294036">错误码</a><span xml:lang="fr-FR" id="ph947mcpsimp"><a name="ph947mcpsimp"></a><a name="ph947mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
-- 库文件：libss\_md.a 【注意】 - 必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
-- md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号，否则返回错误。
-- 最多输出区域信息个数为254，区域信息请参见《IVE API参考》第3章节数据类型中的ot\_ive\_ccblob。ot\_ive\_ccblob的成员info中的cur\_area\_threshold是分块后的面积阈值信息。在这里输出的连通区域信息是连续储存。
-- 在同一个线程中，完成初始化和通道创建之后，对同一通道只调用一次ss\_ivs\_md\_proc接口。 【举例】 无。 【相关主题】 - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg) ## MD数据类型<a name="ZH-CN_TOPIC_0000002441853461"></a> ### ot\_md\_alg\_mode<a name="ZH-CN_TOPIC_0000002441733345"></a> 【说明】 定义MD算法模式。 【定义】 ```
-typedef enum { OT_MD_ALG_MODE_BG	= 0x0,/*Base on background img*/ OT_MD_ALG_MODE_REF	= 0x1,/*Base on reference img*/ OT_MD_ALG_MODE_BUTT
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_svp.h、ot\_common\_md.h、ss\_ivs\_md.h
+-   库文件：libss\_md.a
+
+【注意】
+
+-   必须先调用[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309)初始化，否则返回错误。
+-   md\_chn必须为[ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333)已创建的通道号，否则返回错误。
+-   最多输出区域信息个数为254，区域信息请参见《IVE API参考》第3章节数据类型中的ot\_ive\_ccblob。ot\_ive\_ccblob的成员info中的cur\_area\_threshold是分块后的面积阈值信息。在这里输出的连通区域信息是连续储存。
+-   在同一个线程中，完成初始化和通道创建之后，对同一通道只调用一次ss\_ivs\_md\_proc接口。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+
+## MD数据类型<a name="ZH-CN_TOPIC_0000002441853461"></a>
+
+
+
+### ot\_md\_alg\_mode<a name="ZH-CN_TOPIC_0000002441733345"></a>
+
+【说明】
+
+定义MD算法模式。
+
+【定义】
+
+```
+typedef enum {
+    OT_MD_ALG_MODE_BG	= 0x0,/*Base on background img*/
+    OT_MD_ALG_MODE_REF	= 0x1,/*Base on reference img*/
+    OT_MD_ALG_MODE_BUTT
 }ot_md_alg_mode;
-``` 【成员】 <a name="table984mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table984mcpsimp"></a>
 <table><thead align="left"><tr id="row989mcpsimp"><th class="cellrowborder" valign="top" width="72%" id="mcps1.1.3.1.1"><p id="p991mcpsimp"><a name="p991mcpsimp"></a><a name="p991mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.3.1.2"><p id="p993mcpsimp"><a name="p993mcpsimp"></a><a name="p993mcpsimp"></a>描述</p>
@@ -465,10 +912,40 @@ typedef enum { OT_MD_ALG_MODE_BG	= 0x0,/*Base on background img*/ OT_MD_ALG_MODE
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_md\_attr<a name="ZH-CN_TOPIC_0000002408134180"></a> 【说明】 定义MD通道属性。 【定义】 ```
-typedef struct { ot_md_alg_mode alg_mode; /*Md algorithm mode*/ ot_ive_sad_mode sad_mode; /*Sad mode*/ ot_ive_sad_out_ctrl sad_out_ctrl; /*Sad output ctrl*/ td_u32 width; /*Img width*/ td_u32 height; /*Img height*/ td_u16 sad_threshold; /*Sad thresh*/ ot_ive_ccl_ctrl ccl_ctrl; /*Ccl ctrl*/ ot_ive_add_ctrl add_ctrl; /*Add ctrl*/
+</table>
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### ot\_md\_attr<a name="ZH-CN_TOPIC_0000002408134180"></a>
+
+【说明】
+
+定义MD通道属性。
+
+【定义】
+
+```
+typedef struct {
+         ot_md_alg_mode                alg_mode;            /*Md algorithm mode*/
+         ot_ive_sad_mode               sad_mode;            /*Sad mode*/
+         ot_ive_sad_out_ctrl           sad_out_ctrl;        /*Sad output ctrl*/
+         td_u32                        width;               /*Img width*/
+         td_u32                        height;              /*Img height*/
+         td_u16                        sad_threshold;       /*Sad thresh*/
+         ot_ive_ccl_ctrl               ccl_ctrl;            /*Ccl ctrl*/
+         ot_ive_add_ctrl               add_ctrl;            /*Add ctrl*/
 }ot_md_attr
-``` 【成员】 <a name="table1026mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1026mcpsimp"></a>
 <table><thead align="left"><tr id="row1031mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.1.3.1.1"><p id="p1033mcpsimp"><a name="p1033mcpsimp"></a><a name="p1033mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="81%" id="mcps1.1.3.1.2"><p id="p1035mcpsimp"><a name="p1035mcpsimp"></a><a name="p1035mcpsimp"></a>描述</p>
@@ -519,7 +996,23 @@ typedef struct { ot_md_alg_mode alg_mode; /*Md algorithm mode*/ ot_ive_sad_mode 
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ## 错误码<a name="ZH-CN_TOPIC_0000002408294036"></a> IVS的错误码与IVE的错误码大部分共用，IVS 错误码表所示中前面部分与《IVE API参考》中相同，其他特殊的列在表后面。 **表 1** IVS 错误码 <a name="_Ref248310770"></a>
+</table>
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+## 错误码<a name="ZH-CN_TOPIC_0000002408294036"></a>
+
+IVS的错误码与IVE的错误码大部分共用，IVS 错误码表所示中前面部分与《IVE API参考》中相同，其他特殊的列在表后面。
+
+**表 1**  IVS 错误码
+
+<a name="_Ref248310770"></a>
 <table><thead align="left"><tr id="row1100mcpsimp"><th class="cellrowborder" valign="top" width="22.54%" id="mcps1.2.4.1.1"><p id="p1102mcpsimp"><a name="p1102mcpsimp"></a><a name="p1102mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.03%" id="mcps1.2.4.1.2"><p id="p1104mcpsimp"><a name="p1104mcpsimp"></a><a name="p1104mcpsimp"></a>宏定义</p>
@@ -718,15 +1211,52 @@ typedef struct { ot_md_alg_mode alg_mode; /*Md algorithm mode*/ ot_ive_sad_mode 
 </td>
 </tr>
 </tbody>
-</table> ## Proc调试信息<a name="ZH-CN_TOPIC_0000002408294100"></a> ### 概述<a name="ZH-CN_TOPIC_0000002441853473"></a> 调试信息采用了Linux下的proc文件系统，可实时反映当前系统的运行状态，所记录的信息可供问题定位及分析时使用。 【文件目录】 /proc/umap 【信息查看方法】 - 在控制台上可以使用cat命令查看信息，cat /proc/umap/md 可以查看MD的proc信息；也可以使用其他常用的文件操作命令，例如 cp /proc/umap/md ./，将文件拷贝到当前目录。
-- 在应用程序中可以将上述文件当作普通只读文件进行读操作，例如fopen、fread等。 >![](public_sys-resources/icon-note.gif) **说明：** >参数在描述时有以下2种情况需要注意：
->- 取值为\{0, 1\}的参数，如未列出具体取值和含义的对应关系，则参数为1时表示肯定，为0时表示否定。
->- 取值为\{aaa, bbb, ccc\}的参数，未列出具体取值和含义的对应关系，但可直接根据取值aaa、bbb或ccc判断参数含义。 ### MD Proc信息说明<a name="ZH-CN_TOPIC_0000002441853441"></a> 【调试信息】 ```
+</table>
+
+## Proc调试信息<a name="ZH-CN_TOPIC_0000002408294100"></a>
+
+
+
+### 概述<a name="ZH-CN_TOPIC_0000002441853473"></a>
+
+调试信息采用了Linux下的proc文件系统，可实时反映当前系统的运行状态，所记录的信息可供问题定位及分析时使用。
+
+【文件目录】
+
+/proc/umap
+
+【信息查看方法】
+
+-   在控制台上可以使用cat命令查看信息，cat /proc/umap/md 可以查看MD的proc信息；也可以使用其他常用的文件操作命令，例如 cp /proc/umap/md ./，将文件拷贝到当前目录。
+-   在应用程序中可以将上述文件当作普通只读文件进行读操作，例如fopen、fread等。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>参数在描述时有以下2种情况需要注意：
+>-   取值为\{0, 1\}的参数，如未列出具体取值和含义的对应关系，则参数为1时表示肯定，为0时表示否定。
+>-   取值为\{aaa, bbb, ccc\}的参数，未列出具体取值和含义的对应关系，但可直接根据取值aaa、bbb或ccc判断参数含义。
+
+### MD Proc信息说明<a name="ZH-CN_TOPIC_0000002441853441"></a>
+
+【调试信息】
+
+```
 ~ # cat /proc/umap/md
-[MD] Version: [Vx.x.x.x B0xx Release], Build Time[Feb 20 2020, 16:42:49] ---------------------------md chn attr-----------------------------------
-no. w h alg sad_mode sad_out_ctrl sad_thr ccl_mode ccl_init_thr 0 720 576 0 0 0 200 1 16 ccl_step xwt ywt frm_rate cost_tm_per_frm
-4 32768 32768 0 2625
-``` 【调试信息分析】 记录MD的工作状态信息。 【参数说明】 <a name="table1330mcpsimp"></a>
+[MD] Version: [Vx.x.x.x B0xx Release], Build Time[Feb 20 2020, 16:42:49]
+
+---------------------------md chn attr-----------------------------------
+no.    w    h   alg   sad_mode  sad_out_ctrl   sad_thr    ccl_mode  ccl_init_thr   
+0     720   576   0         0           0         200         1      16 
+ccl_step    xwt      ywt        frm_rate  cost_tm_per_frm
+4          32768     32768          0          2625
+```
+
+【调试信息分析】
+
+记录MD的工作状态信息。
+
+【参数说明】
+
+<a name="table1330mcpsimp"></a>
 <table><thead align="left"><tr id="row1336mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p1338mcpsimp"><a name="p1338mcpsimp"></a><a name="p1338mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p1340mcpsimp"><a name="p1340mcpsimp"></a><a name="p1340mcpsimp"></a>描述</p>
@@ -739,6 +1269,16 @@ no. w h alg sad_mode sad_out_ctrl sad_thr ccl_mode ccl_init_thr 0 720 576 0 0 0 
 <td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.1.4.1.1 "><p id="p1347mcpsimp"><a name="p1347mcpsimp"></a><a name="p1347mcpsimp"></a>no.</p>
 </td>
 <td class="cellrowborder" valign="top" width="59.35%" headers="mcps1.1.4.1.2 "><p id="p1349mcpsimp"><a name="p1349mcpsimp"></a><a name="p1349mcpsimp"></a>通道号。</p>
+</td>
+</tr>
+<tr id="row1350mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1352mcpsimp"><a name="p1352mcpsimp"></a><a name="p1352mcpsimp"></a>w</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1354mcpsimp"><a name="p1354mcpsimp"></a><a name="p1354mcpsimp"></a>通道宽度（单位：像素）。</p>
+</td>
+</tr>
+<tr id="row1355mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1357mcpsimp"><a name="p1357mcpsimp"></a><a name="p1357mcpsimp"></a>h</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1359mcpsimp"><a name="p1359mcpsimp"></a><a name="p1359mcpsimp"></a>通道高度（单位：像素）。</p>
 </td>
 </tr>
 <tr id="row1360mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1362mcpsimp"><a name="p1362mcpsimp"></a><a name="p1362mcpsimp"></a>alg</p>
@@ -808,4 +1348,5 @@ no. w h alg sad_mode sad_out_ctrl sad_thr ccl_mode ccl_init_thr 0 720 576 0 0 0 
 </td>
 </tr>
 </tbody>
-</table> 
+</table>
+

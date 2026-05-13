@@ -1,8 +1,14 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/抓拍使用指南/抓拍 使用指南.md
---- # 前言
-**产品版本<a name="section2422mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table2425mcpsimp"></a>
+---
+
+# 前言
+**产品版本<a name="section2422mcpsimp"></a>**
+
+与本文档相对应的产品版本如下。
+
+<a name="table2425mcpsimp"></a>
 <table><thead align="left"><tr id="row2430mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p2432mcpsimp"><a name="p2432mcpsimp"></a><a name="p2432mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p2434mcpsimp"><a name="p2434mcpsimp"></a><a name="p2434mcpsimp"></a>产品版本</p>
@@ -14,8 +20,22 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/抓拍�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p2440mcpsimp"><a name="p2440mcpsimp"></a><a name="p2440mcpsimp"></a>V100</p>
 </td>
 </tr>
+<tr id="row22121948133617"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p368135114363"><a name="p368135114363"></a><a name="p368135114363"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p16681151103616"><a name="p16681151103616"></a><a name="p16681151103616"></a>V100</p>
+</td>
+</tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >本文以Hi3403V100描述为例，未有特殊说明，与Hi3403V100内容一致。 **修订记录<a name="section2441mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table126443203200"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
+
+**修订记录<a name="section2441mcpsimp"></a>**
+
+修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
+
+<a name="table126443203200"></a>
 <table><thead align="left"><tr id="row264516207203"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p146456203200"><a name="p146456203200"></a><a name="p146456203200"></a><strong id="b8645172022010"><a name="b8645172022010"></a><a name="b8645172022010"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p364512062019"><a name="p364512062019"></a><a name="p364512062019"></a><strong id="b1464512200200"><a name="b1464512200200"></a><a name="b1464512200200"></a>发布日期</strong></p>
@@ -32,18 +52,148 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/抓拍�
 </td>
 </tr>
 </tbody>
-</table> # 消费类抓拍方案使用指南
-## 概述<a name="ZH-CN_TOPIC_0000002441723221"></a> 消费类抓拍方案主要面向消费类电子产品中的拍照功能，支持Normal、PRO的抓拍模式，可以抓拍单张或者多张不同曝光时间的照片。消费类抓拍方案也支持HDR、SFNR、MFNR和DE的后处理算法。 抓拍的数据通路分为单pipe和双pipe，每个pipe可以在线，也可以离线，每种数据通路适用的场景都有些差异。 ## 重要概念<a name="ZH-CN_TOPIC_0000002441683353"></a> - 单pipe模式 拍照和预览使用同一ISP通路。 - 双pipe模式 拍照和预览使用不同的ISP通路。 - PRO\(Professional\)模式 专业模式拍照，这种模式下ISP会控制sensor曝光，得到多张曝光时间和增益可调的图片。可以用于HDR算法做多张不同曝光的照片合成，也可以用于拍摄固定曝光时间的照片。 - ZSL\(Zero Shutter Lag\) 零延时拍照。可以减少因为快门延迟或其他因素导致的延时，可以拍摄到触发拍照瞬间的图像。 ## 抓拍数据通路<a name="ZH-CN_TOPIC_0000002408124058"></a> VI的pipe工作模式分为离线模式、在线模式，拍照的数据通路建立在VI之上，所以也分这两种模式。 在拍照的场景中，一般视频预览和抓拍的分辨率是不一样的；而且拍照的ISP效果处理要对人脸肤色等做优化处理，也会和视频预览通路的不一样。所以拍照的数据通路又分为单pipe和双pipe两种。 另外消费类电子产品中还有ZSL模式拍照这种特殊场景下的拍照通路。 >![](public_sys-resources/icon-notice.gif) **须知：** >VI和VPSS之间的在线、离线关系只影响拍照的YUV输出的位置，不影响拍照的控制流，所以下文说的在线和离线，都是指的拍照的那个VI pipe是在线或者离线。 综上，拍照的数据通路就会有很多种，每种数据通路的适用场景不一样，我们推荐客户采用双pipe离线模式的拍照方案，这种方案在功耗控制上是最优的，拍照的耗时也较短。 下面介绍每种数据通路的优缺点。 ### 双pipe离线模式拍照<a name="ZH-CN_TOPIC_0000002441683357"></a> 双pipe离线模式拍照的数据通路如[图1](#fig1159101162512)所示。 **图 1** 双pipe离线拍照数据通路<a name="fig1159101162512"></a> ![](figures/双pipe离线拍照数据通路.png "双pipe离线拍照数据通路") [图1](#fig1159101162512)所标示的分辨率只是示意分辨率，实际分辨率根据客户不同的场景可能会有差异。后面的数据通路中所标示分辨率也是同样的意思。 双pipe离线的数据通路是一个sensor进来的数据，经过VI Dev时序解析后，分别绑定到2个不同的pipe，上面的pipe用于视频预览和录像，下面的pipe用于拍照。视频预览和录像的pipe是离线的；拍照的pipe也是离线的。 预览和录像的分辨率一般比较小，所以经过了BAS，做了Bayer Scale，主要目的是减小上面的pipe处理的分辨率，从而降低功耗。DV产品中预览用的LCD屏分辨率一般都很小，但需要预览通路一直存在。 拍照的分辨率一般都比较大，但用户并不会一直拍照，所以下面的pipe用于拍照，一般是在客户需要拍照时才启动下面的pipe的通路。 Sensor的曝光控制是由上面的视频pipe的ISP来控制的。 用户设置拍照相关的属性和触发拍照接口，用的pipe号都是下面那个拍照用的pipe，内部的数据同步由VI和ISP的驱动来完成。 这种数据通路可以用于NORMAL和PRO模式的拍照。PRO模式是在用户调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口之后才开始控制sensor进行长短曝光的。 - 双pipe离线时，拍照的pipe在用户调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口时才打开中断做数据处理，并且只处理抓拍的那几帧数据，抓拍完成后可以调用[ss\_mpi\_snap\_disable\_pipe](#ZH-CN_TOPIC_0000002408283910)停止数据处理。这样处理是为了降低拍照那个pipe的功耗。
-- 双pipe离线时，用户拍摄正常曝光的照片，从调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口到VI输出第一张正常YUV数据，理论上的耗时在3帧左右，可以满足大部分客户场景的需求。所以，我们推荐客户采用双pipe离线的数据通路来实现拍照的方案。 ### 单pipe离线模式拍照<a name="ZH-CN_TOPIC_0000002408124062"></a> 单pipe离线模式拍照的数据通路如[图1](#fig7254193145214)所示。 **图 1** 单pipe离线拍照数据通路<a name="fig7254193145214"></a> ![](figures/单pipe离线拍照数据通路.png "单pipe离线拍照数据通路")
-- 单pipe离线数据通路是视频预览和拍照共用一个pipe。
-- 单pipe离线模式拍照使用的方法是平时只有视频预览时整个通路可以采用比较小的分辨率，只有切换到拍照模式时才将sensor和VI等通路切换到大的拍照分辨率。这样可以节省一定的功耗。
-- 单pipe离线模式拍照应用的场景是当客户的产品有多个sensor同时输入将VI pipe全部占用，无法做到一个sensor输入绑定两个pipe时，就需要用这种模式来拍照。 这种数据通路可以拍摄NORMAL和PRO模式的照片。 当录像和拍照的分辨率一样，客户又不需要对拍照的ISP做特殊的调节时，可以从单pipe的视频流里面取YUV编成jpeg来实现拍照的方案。这种方案并不需要VI和ISP的驱动做额外的事情，所以不需要调拍照相关的MPI接口。 ### 单pipe在线模式拍照<a name="ZH-CN_TOPIC_0000002441683349"></a> 单pipe在线模式拍照的数据通路如[图1](#fig442419812542)所示。 **图 1** 单pipe在线拍照数据通路<a name="fig442419812542"></a> ![](figures/单pipe在线拍照数据通路.png "单pipe在线拍照数据通路") 单pipe在线拍照的数据通路和单pipe离线的类似，区别是数据通路是在线的。这种数据通路可以拍摄NORMAL和PRO模式的照片。 >![](public_sys-resources/icon-notice.gif) **须知：** >Hi3403V100的VI模块目前只支持1个pipe在线，如果多于1个sensor输入的场景，所有sensor要离线处理。 ### ZSL模式拍照<a name="ZH-CN_TOPIC_0000002441723225"></a> ZSL模式的拍照通路和双pipe离线模式的拍照通路一样，区别是VI驱动内部会缓存一个RAW数据的队列。在调用[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)接口后，VI内部就开始缓存RAW数据，调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口会选择ZSL的拍照帧，然后将拍照的帧送给ISP做处理。 ZSL模式拍照，只支持拍摄NORMAL模式的照片。 ## 功能描述<a name="ZH-CN_TOPIC_0000002408283970"></a> ### 连拍时的帧率控制<a name="ZH-CN_TOPIC_0000002441723157"></a> 连拍时可以做帧率控制，是通过ss\_mpi\_vi\_create\_pipe或者ss\_mpi\_vi\_set\_pipe\_attr接口设置的ot\_vi\_pipe\_attr中的帧率控制来实现的。 >![](public_sys-resources/icon-note.gif) **说明：** >以上接口请参考《MPP 媒体处理软件V5.0 开发参考》“视频输入”章节。 ## API参考<a name="ZH-CN_TOPIC_0000002441683297"></a> 该模块提供以下MPI： - [ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034)：设置拍照属性。
-- [ss\_mpi\_snap\_get\_pipe\_attr](#ZH-CN_TOPIC_0000002408283902)：获取拍照属性。
-- [ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)：使能拍照的pipe。
-- [ss\_mpi\_snap\_disable\_pipe](#ZH-CN_TOPIC_0000002408283910)：停止拍照的pipe。
-- [ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)：触发抓拍。 ### ss\_mpi\_snap\_set\_pipe\_attr<a name="ZH-CN_TOPIC_0000002408124034"></a> 【描述】 设置拍照的属性。 【语法】 ```
+</table>
+
+# 消费类抓拍方案使用指南
+## 概述<a name="ZH-CN_TOPIC_0000002441723221"></a>
+
+消费类抓拍方案主要面向消费类电子产品中的拍照功能，支持Normal、PRO的抓拍模式，可以抓拍单张或者多张不同曝光时间的照片。消费类抓拍方案也支持HDR、SFNR、MFNR和DE的后处理算法。
+
+抓拍的数据通路分为单pipe和双pipe，每个pipe可以在线，也可以离线，每种数据通路适用的场景都有些差异。
+
+## 重要概念<a name="ZH-CN_TOPIC_0000002441683353"></a>
+
+-   单pipe模式
+
+    拍照和预览使用同一ISP通路。
+
+-   双pipe模式
+
+    拍照和预览使用不同的ISP通路。
+
+-   PRO\(Professional\)模式
+
+    专业模式拍照，这种模式下ISP会控制sensor曝光，得到多张曝光时间和增益可调的图片。可以用于HDR算法做多张不同曝光的照片合成，也可以用于拍摄固定曝光时间的照片。
+
+-   ZSL\(Zero Shutter Lag\)
+
+    零延时拍照。可以减少因为快门延迟或其他因素导致的延时，可以拍摄到触发拍照瞬间的图像。
+
+## 抓拍数据通路<a name="ZH-CN_TOPIC_0000002408124058"></a>
+
+VI的pipe工作模式分为离线模式、在线模式，拍照的数据通路建立在VI之上，所以也分这两种模式。
+
+在拍照的场景中，一般视频预览和抓拍的分辨率是不一样的；而且拍照的ISP效果处理要对人脸肤色等做优化处理，也会和视频预览通路的不一样。所以拍照的数据通路又分为单pipe和双pipe两种。
+
+另外消费类电子产品中还有ZSL模式拍照这种特殊场景下的拍照通路。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>VI和VPSS之间的在线、离线关系只影响拍照的YUV输出的位置，不影响拍照的控制流，所以下文说的在线和离线，都是指的拍照的那个VI pipe是在线或者离线。
+
+综上，拍照的数据通路就会有很多种，每种数据通路的适用场景不一样，我们推荐客户采用双pipe离线模式的拍照方案，这种方案在功耗控制上是最优的，拍照的耗时也较短。
+
+下面介绍每种数据通路的优缺点。
+
+
+
+
+
+### 双pipe离线模式拍照<a name="ZH-CN_TOPIC_0000002441683357"></a>
+
+双pipe离线模式拍照的数据通路如[图1](#fig1159101162512)所示。
+
+**图 1**  双pipe离线拍照数据通路<a name="fig1159101162512"></a>  
+![](figures/双pipe离线拍照数据通路.png "双pipe离线拍照数据通路")
+
+[图1](#fig1159101162512)所标示的分辨率只是示意分辨率，实际分辨率根据客户不同的场景可能会有差异。后面的数据通路中所标示分辨率也是同样的意思。
+
+双pipe离线的数据通路是一个sensor进来的数据，经过VI Dev时序解析后，分别绑定到2个不同的pipe，上面的pipe用于视频预览和录像，下面的pipe用于拍照。视频预览和录像的pipe是离线的；拍照的pipe也是离线的。
+
+预览和录像的分辨率一般比较小，所以经过了BAS，做了Bayer Scale，主要目的是减小上面的pipe处理的分辨率，从而降低功耗。DV产品中预览用的LCD屏分辨率一般都很小，但需要预览通路一直存在。
+
+拍照的分辨率一般都比较大，但用户并不会一直拍照，所以下面的pipe用于拍照，一般是在客户需要拍照时才启动下面的pipe的通路。
+
+Sensor的曝光控制是由上面的视频pipe的ISP来控制的。
+
+用户设置拍照相关的属性和触发拍照接口，用的pipe号都是下面那个拍照用的pipe，内部的数据同步由VI和ISP的驱动来完成。
+
+这种数据通路可以用于NORMAL和PRO模式的拍照。PRO模式是在用户调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口之后才开始控制sensor进行长短曝光的。
+
+-   双pipe离线时，拍照的pipe在用户调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口时才打开中断做数据处理，并且只处理抓拍的那几帧数据，抓拍完成后可以调用[ss\_mpi\_snap\_disable\_pipe](#ZH-CN_TOPIC_0000002408283910)停止数据处理。这样处理是为了降低拍照那个pipe的功耗。
+-   双pipe离线时，用户拍摄正常曝光的照片，从调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口到VI输出第一张正常YUV数据，理论上的耗时在3帧左右，可以满足大部分客户场景的需求。所以，我们推荐客户采用双pipe离线的数据通路来实现拍照的方案。
+
+### 单pipe离线模式拍照<a name="ZH-CN_TOPIC_0000002408124062"></a>
+
+单pipe离线模式拍照的数据通路如[图1](#fig7254193145214)所示。
+
+**图 1**  单pipe离线拍照数据通路<a name="fig7254193145214"></a>  
+![](figures/单pipe离线拍照数据通路.png "单pipe离线拍照数据通路")
+-   单pipe离线数据通路是视频预览和拍照共用一个pipe。
+-   单pipe离线模式拍照使用的方法是平时只有视频预览时整个通路可以采用比较小的分辨率，只有切换到拍照模式时才将sensor和VI等通路切换到大的拍照分辨率。这样可以节省一定的功耗。
+-   单pipe离线模式拍照应用的场景是当客户的产品有多个sensor同时输入将VI pipe全部占用，无法做到一个sensor输入绑定两个pipe时，就需要用这种模式来拍照。
+
+这种数据通路可以拍摄NORMAL和PRO模式的照片。
+
+当录像和拍照的分辨率一样，客户又不需要对拍照的ISP做特殊的调节时，可以从单pipe的视频流里面取YUV编成jpeg来实现拍照的方案。这种方案并不需要VI和ISP的驱动做额外的事情，所以不需要调拍照相关的MPI接口。
+
+### 单pipe在线模式拍照<a name="ZH-CN_TOPIC_0000002441683349"></a>
+
+单pipe在线模式拍照的数据通路如[图1](#fig442419812542)所示。
+
+**图 1**  单pipe在线拍照数据通路<a name="fig442419812542"></a>  
+![](figures/单pipe在线拍照数据通路.png "单pipe在线拍照数据通路")
+
+单pipe在线拍照的数据通路和单pipe离线的类似，区别是数据通路是在线的。这种数据通路可以拍摄NORMAL和PRO模式的照片。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>Hi3403V100的VI模块目前只支持1个pipe在线，如果多于1个sensor输入的场景，所有sensor要离线处理。
+
+### ZSL模式拍照<a name="ZH-CN_TOPIC_0000002441723225"></a>
+
+ZSL模式的拍照通路和双pipe离线模式的拍照通路一样，区别是VI驱动内部会缓存一个RAW数据的队列。在调用[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)接口后，VI内部就开始缓存RAW数据，调用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口会选择ZSL的拍照帧，然后将拍照的帧送给ISP做处理。
+
+ZSL模式拍照，只支持拍摄NORMAL模式的照片。
+
+## 功能描述<a name="ZH-CN_TOPIC_0000002408283970"></a>
+
+
+### 连拍时的帧率控制<a name="ZH-CN_TOPIC_0000002441723157"></a>
+
+连拍时可以做帧率控制，是通过ss\_mpi\_vi\_create\_pipe或者ss\_mpi\_vi\_set\_pipe\_attr接口设置的ot\_vi\_pipe\_attr中的帧率控制来实现的。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>以上接口请参考《MPP 媒体处理软件V5.0 开发参考》“视频输入”章节。
+
+## API参考<a name="ZH-CN_TOPIC_0000002441683297"></a>
+
+该模块提供以下MPI：
+
+-   [ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034)：设置拍照属性。
+-   [ss\_mpi\_snap\_get\_pipe\_attr](#ZH-CN_TOPIC_0000002408283902)：获取拍照属性。
+-   [ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)：使能拍照的pipe。
+-   [ss\_mpi\_snap\_disable\_pipe](#ZH-CN_TOPIC_0000002408283910)：停止拍照的pipe。
+-   [ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)：触发抓拍。
+
+
+
+
+
+
+### ss\_mpi\_snap\_set\_pipe\_attr<a name="ZH-CN_TOPIC_0000002408124034"></a>
+
+【描述】
+
+设置拍照的属性。
+
+【语法】
+
+```
 td_s32 ss_mpi_snap_set_pipe_attr(ot_vi_pipe vi_pipe, const ot_snap_attr *snap_attr);
-``` 【参数】 <a name="table1182mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table1182mcpsimp"></a>
 <table><thead align="left"><tr id="row1188mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1190mcpsimp"><a name="p1190mcpsimp"></a><a name="p1190mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1192mcpsimp"><a name="p1192mcpsimp"></a><a name="p1192mcpsimp"></a>描述</p>
@@ -69,7 +219,11 @@ td_s32 ss_mpi_snap_set_pipe_attr(ot_vi_pipe vi_pipe, const ot_snap_attr *snap_at
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table1213mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table1213mcpsimp"></a>
 <table><thead align="left"><tr id="row1218mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1220mcpsimp"><a name="p1220mcpsimp"></a><a name="p1220mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1222mcpsimp"><a name="p1222mcpsimp"></a><a name="p1222mcpsimp"></a>描述</p>
@@ -81,16 +235,55 @@ td_s32 ss_mpi_snap_set_pipe_attr(ot_vi_pipe vi_pipe, const ot_snap_attr *snap_at
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1228mcpsimp"><a name="p1228mcpsimp"></a><a name="p1228mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row1229mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1231mcpsimp"><a name="p1231mcpsimp"></a><a name="p1231mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1233mcpsimp"><a name="p1233mcpsimp"></a><a name="p1233mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002441723193">错误码</a><span xml:lang="fr-FR" id="ph1235mcpsimp"><a name="ph1235mcpsimp"></a><a name="ph1235mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
-- 库文件：libss\_snap.a 【注意】 - PIPE必须已创建。
-- 拍照参数必须合法，具体请参见[ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)。
-- 双pipe离线模式下，若拍照参数设置的重复送帧数不为0，在调用ss\_mpi\_vpss\_get\_chn\_frame及ss\_mpi\_vpss\_get\_grp\_frame接口（具体请参考《MPP媒体处理软件V5.0开发参考》“视频处理子系统”章节）从抓拍通路中获取帧时，会获取到重复帧。若将获取到的帧用于编码，VENC模块会自动删除重复帧，但若将获取到的帧用于图像处理，则需要手动删除重复帧。
-- WDR模式不支持拍照。
-- ZSL拍照模式下，设置的depth需要大于重复送帧的次数，否则可能因为VI处理不及时缓存队列里面的帧被冲掉而导致丢帧。
-- 在调用[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)接口之后，再次调用[ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000001218750347)接口时，只能修改成员[ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)的pro\_attr属性，修改其他属性都会报错。 【举例】 无 【相关主题】 [ss\_mpi\_snap\_get\_pipe\_attr](#ZH-CN_TOPIC_0000002408283902) ### ss\_mpi\_snap\_get\_pipe\_attr<a name="ZH-CN_TOPIC_0000002408283902"></a> 【描述】 获取拍照的属性。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
+-   库文件：libss\_snap.a
+
+【注意】
+
+-   PIPE必须已创建。
+-   拍照参数必须合法，具体请参见[ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)。
+-   双pipe离线模式下，若拍照参数设置的重复送帧数不为0，在调用ss\_mpi\_vpss\_get\_chn\_frame及ss\_mpi\_vpss\_get\_grp\_frame接口（具体请参考《MPP媒体处理软件V5.0开发参考》“视频处理子系统”章节）从抓拍通路中获取帧时，会获取到重复帧。若将获取到的帧用于编码，VENC模块会自动删除重复帧，但若将获取到的帧用于图像处理，则需要手动删除重复帧。
+-   WDR模式不支持拍照。
+-   ZSL拍照模式下，设置的depth需要大于重复送帧的次数，否则可能因为VI处理不及时缓存队列里面的帧被冲掉而导致丢帧。
+-   在调用[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)接口之后，再次调用[ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000001218750347)接口时，只能修改成员[ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)的pro\_attr属性，修改其他属性都会报错。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_snap\_get\_pipe\_attr](#ZH-CN_TOPIC_0000002408283902)
+
+### ss\_mpi\_snap\_get\_pipe\_attr<a name="ZH-CN_TOPIC_0000002408283902"></a>
+
+【描述】
+
+获取拍照的属性。
+
+【语法】
+
+```
 td_s32 ss_mpi_snap_get_pipe_attr(ot_vi_pipe vi_pipe, ot_snap_attr *snap_attr);
-``` 【参数】 <a name="table990mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table990mcpsimp"></a>
 <table><thead align="left"><tr id="row996mcpsimp"><th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.1"><p id="p998mcpsimp"><a name="p998mcpsimp"></a><a name="p998mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.4.1.2"><p id="p1000mcpsimp"><a name="p1000mcpsimp"></a><a name="p1000mcpsimp"></a>描述</p>
@@ -115,7 +308,11 @@ td_s32 ss_mpi_snap_get_pipe_attr(ot_vi_pipe vi_pipe, ot_snap_attr *snap_attr);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table1021mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table1021mcpsimp"></a>
 <table><thead align="left"><tr id="row1026mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1028mcpsimp"><a name="p1028mcpsimp"></a><a name="p1028mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1030mcpsimp"><a name="p1030mcpsimp"></a><a name="p1030mcpsimp"></a>描述</p>
@@ -127,12 +324,51 @@ td_s32 ss_mpi_snap_get_pipe_attr(ot_vi_pipe vi_pipe, ot_snap_attr *snap_attr);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1036mcpsimp"><a name="p1036mcpsimp"></a><a name="p1036mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row1037mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1039mcpsimp"><a name="p1039mcpsimp"></a><a name="p1039mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1041mcpsimp"><a name="p1041mcpsimp"></a><a name="p1041mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408283958">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
-- 库文件：libss\_snap.a 【注意】 - PIPE必须已创建。
-- snap属性已设置。 【举例】 无 【相关主题】 [ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034) ### ss\_mpi\_snap\_enable\_pipe<a name="ZH-CN_TOPIC_0000002408124010"></a> 【描述】 使能拍照的pipe。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
+-   库文件：libss\_snap.a
+
+【注意】
+
+-   PIPE必须已创建。
+-   snap属性已设置。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034)
+
+### ss\_mpi\_snap\_enable\_pipe<a name="ZH-CN_TOPIC_0000002408124010"></a>
+
+【描述】
+
+使能拍照的pipe。
+
+【语法】
+
+```
 td_s32 ss_mpi_snap_enable_pipe(ot_vi_pipe vi_pipe);
-``` 【参数】 <a name="table1789mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table1789mcpsimp"></a>
 <table><thead align="left"><tr id="row1795mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p1797mcpsimp"><a name="p1797mcpsimp"></a><a name="p1797mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p1799mcpsimp"><a name="p1799mcpsimp"></a><a name="p1799mcpsimp"></a>描述</p>
@@ -150,7 +386,11 @@ td_s32 ss_mpi_snap_enable_pipe(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table1813mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table1813mcpsimp"></a>
 <table><thead align="left"><tr id="row1818mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1820mcpsimp"><a name="p1820mcpsimp"></a><a name="p1820mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1822mcpsimp"><a name="p1822mcpsimp"></a><a name="p1822mcpsimp"></a>描述</p>
@@ -162,17 +402,56 @@ td_s32 ss_mpi_snap_enable_pipe(ot_vi_pipe vi_pipe);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1828mcpsimp"><a name="p1828mcpsimp"></a><a name="p1828mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row1829mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1831mcpsimp"><a name="p1831mcpsimp"></a><a name="p1831mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1833mcpsimp"><a name="p1833mcpsimp"></a><a name="p1833mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408283958">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
-- 库文件：libss\_snap.a 【注意】 - PIPE必须已创建。
-- 拍照的属性必须已经设置。
-- 此接口不支持单PIPE拍照场景，调用ss\_mpi\_vi\_start\_pipe之后直接使用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口即可拍照。
-- 双pipe拍照场景，使能拍照PIPE只能调用[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000001218948863)，而不能调用ss\_mpi\_vi\_start\_pipe接口，ss\_mpi\_vi\_start\_pipe的详细功能描述，请参考《MPP 媒体处理软件V5.0 开发参考》中“视频输入”章节的说明。
-- 不支持重复使能拍照的PIPE。
-- 双PIPE拍照时，[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000001218948863)和[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)两个接口的调用间隔要大于2帧的曝光时间，才能使拍照的ISP处理效果正常。
-- PRO模式拍照时，[ss\_mpi\_snap\_disable\_pipe](#ZH-CN_TOPIC_0000002408283910)和[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000001218948863)两个接口的调用间隔要大于4帧，即两次拍照的间隔，在低帧率下间隔过小，第二次拍照的帧可能不是期望的曝光帧。 【举例】 无 【相关主题】 [ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034) ### ss\_mpi\_snap\_disable\_pipe<a name="ZH-CN_TOPIC_0000002408283910"></a> 【描述】 停止拍照的pipe，也可以用于中断正在拍照的数据流。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
+-   库文件：libss\_snap.a
+
+【注意】
+
+-   PIPE必须已创建。
+-   拍照的属性必须已经设置。
+-   此接口不支持单PIPE拍照场景，调用ss\_mpi\_vi\_start\_pipe之后直接使用[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)接口即可拍照。
+-   双pipe拍照场景，使能拍照PIPE只能调用[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000001218948863)，而不能调用ss\_mpi\_vi\_start\_pipe接口，ss\_mpi\_vi\_start\_pipe的详细功能描述，请参考《MPP 媒体处理软件V5.0 开发参考》中“视频输入”章节的说明。
+-   不支持重复使能拍照的PIPE。
+-   双PIPE拍照时，[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000001218948863)和[ss\_mpi\_snap\_trigger\_pipe](#ZH-CN_TOPIC_0000002441683321)两个接口的调用间隔要大于2帧的曝光时间，才能使拍照的ISP处理效果正常。
+-   PRO模式拍照时，[ss\_mpi\_snap\_disable\_pipe](#ZH-CN_TOPIC_0000002408283910)和[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000001218948863)两个接口的调用间隔要大于4帧，即两次拍照的间隔，在低帧率下间隔过小，第二次拍照的帧可能不是期望的曝光帧。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034)
+
+### ss\_mpi\_snap\_disable\_pipe<a name="ZH-CN_TOPIC_0000002408283910"></a>
+
+【描述】
+
+停止拍照的pipe，也可以用于中断正在拍照的数据流。
+
+【语法】
+
+```
 td_s32 ss_mpi_snap_disable_pipe(ot_vi_pipe vi_pipe);
-``` 【参数】 <a name="table823mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table823mcpsimp"></a>
 <table><thead align="left"><tr id="row829mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p831mcpsimp"><a name="p831mcpsimp"></a><a name="p831mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p833mcpsimp"><a name="p833mcpsimp"></a><a name="p833mcpsimp"></a>描述</p>
@@ -190,7 +469,11 @@ td_s32 ss_mpi_snap_disable_pipe(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table847mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table847mcpsimp"></a>
 <table><thead align="left"><tr id="row852mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p854mcpsimp"><a name="p854mcpsimp"></a><a name="p854mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p856mcpsimp"><a name="p856mcpsimp"></a><a name="p856mcpsimp"></a>描述</p>
@@ -202,13 +485,52 @@ td_s32 ss_mpi_snap_disable_pipe(ot_vi_pipe vi_pipe);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p862mcpsimp"><a name="p862mcpsimp"></a><a name="p862mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row863mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p865mcpsimp"><a name="p865mcpsimp"></a><a name="p865mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p867mcpsimp"><a name="p867mcpsimp"></a><a name="p867mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408283958">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
-- 库文件：libss\_snap.a 【注意】 - PIPE必须已创建。
-- 单pipe拍照场景，不支持此接口。
-- 抓拍场景需保证VI通路有帧数据，否则会出现抓拍数据流内部死等帧数据，造成退出抓拍时异常卡住。 【举例】 无 【相关主题】 [ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010) ### ss\_mpi\_snap\_trigger\_pipe<a name="ZH-CN_TOPIC_0000002441683321"></a> 【描述】 触发拍照。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
+-   库文件：libss\_snap.a
+
+【注意】
+
+-   PIPE必须已创建。
+-   单pipe拍照场景，不支持此接口。
+-   抓拍场景需保证VI通路有帧数据，否则会出现抓拍数据流内部死等帧数据，造成退出抓拍时异常卡住。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)
+
+### ss\_mpi\_snap\_trigger\_pipe<a name="ZH-CN_TOPIC_0000002441683321"></a>
+
+【描述】
+
+触发拍照。
+
+【语法】
+
+```
 td_s32 ss_mpi_snap_trigger_pipe(ot_vi_pipe vi_pipe);
-``` 【参数】 <a name="table2647mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2647mcpsimp"></a>
 <table><thead align="left"><tr id="row2653mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p2655mcpsimp"><a name="p2655mcpsimp"></a><a name="p2655mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p2657mcpsimp"><a name="p2657mcpsimp"></a><a name="p2657mcpsimp"></a>描述</p>
@@ -226,7 +548,11 @@ td_s32 ss_mpi_snap_trigger_pipe(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table2671mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table2671mcpsimp"></a>
 <table><thead align="left"><tr id="row2676mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2678mcpsimp"><a name="p2678mcpsimp"></a><a name="p2678mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2680mcpsimp"><a name="p2680mcpsimp"></a><a name="p2680mcpsimp"></a>描述</p>
@@ -238,21 +564,79 @@ td_s32 ss_mpi_snap_trigger_pipe(ot_vi_pipe vi_pipe);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2686mcpsimp"><a name="p2686mcpsimp"></a><a name="p2686mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2687mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2689mcpsimp"><a name="p2689mcpsimp"></a><a name="p2689mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2691mcpsimp"><a name="p2691mcpsimp"></a><a name="p2691mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408283958">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
-- 库文件：libss\_snap.a 【注意】 - PIPE必须已创建。
-- 拍照 PIPE必须已使能，单pipe模式下拍照的属性必须已经设置。
-- 正在拍照过程中，不能再次触发拍照。
-- 双pipe Pro模式拍照时，由于调节曝光会导致视频通路拍照过程中有几帧闪烁，可参考《MPP 媒体处理软件 V5.0 开发参考》“视频输入”章节 ss\_mpi\_vi\_get\_pipe\_param设置抓拍时丢弃曝光帧，减弱闪烁效果。 【举例】 无 【相关主题】 [ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010) ## 数据类型<a name="ZH-CN_TOPIC_0000002408124030"></a> 拍照相关数据类型定义如下： - [ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)：定义拍照参数的结构体。
-- [ot\_snap\_type](#ZH-CN_TOPIC_0000002441683313)：定义拍照类型的枚举。
-- [ot\_snap\_norm\_attr](#ZH-CN_TOPIC_0000002408124046)：定义Normal类型拍照参数的结构体。
-- [ot\_snap\_pro\_attr](#ZH-CN_TOPIC_0000002408283930)：定义PRO类型拍照参数的结构体。
-- [ot\_snap\_pro\_param](#ZH-CN_TOPIC_0000002441683333)：定义PRO类型ISP相关参数结构体。
-- [ot\_snap\_pro\_auto\_param](#ZH-CN_TOPIC_0000002441723173)：定义PRO类型ISP自动模式参数结构体。
-- [ot\_snap\_pro\_manual\_param](#ZH-CN_TOPIC_0000002408283966)：定义PRO类型ISP手动模式参数结构体。 ### ot\_snap\_attr<a name="ZH-CN_TOPIC_0000002441723169"></a> 【说明】 定义拍照参数的结构体。 【定义】 ```
-typedef struct { ot_snap_type snap_type; td_bool load_ccm_en; union { ot_snap_norm_attr norm_attr; ot_snap_pro_attr pro_attr; };
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_snap.h、ss\_mpi\_snap.h
+-   库文件：libss\_snap.a
+
+【注意】
+
+-   PIPE必须已创建。
+-   拍照 PIPE必须已使能，单pipe模式下拍照的属性必须已经设置。
+-   正在拍照过程中，不能再次触发拍照。
+-   双pipe Pro模式拍照时，由于调节曝光会导致视频通路拍照过程中有几帧闪烁，可参考《MPP 媒体处理软件 V5.0 开发参考》“视频输入”章节 ss\_mpi\_vi\_get\_pipe\_param设置抓拍时丢弃曝光帧，减弱闪烁效果。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_snap\_enable\_pipe](#ZH-CN_TOPIC_0000002408124010)
+
+## 数据类型<a name="ZH-CN_TOPIC_0000002408124030"></a>
+
+拍照相关数据类型定义如下：
+
+-   [ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)：定义拍照参数的结构体。
+-   [ot\_snap\_type](#ZH-CN_TOPIC_0000002441683313)：定义拍照类型的枚举。
+-   [ot\_snap\_norm\_attr](#ZH-CN_TOPIC_0000002408124046)：定义Normal类型拍照参数的结构体。
+-   [ot\_snap\_pro\_attr](#ZH-CN_TOPIC_0000002408283930)：定义PRO类型拍照参数的结构体。
+-   [ot\_snap\_pro\_param](#ZH-CN_TOPIC_0000002441683333)：定义PRO类型ISP相关参数结构体。
+-   [ot\_snap\_pro\_auto\_param](#ZH-CN_TOPIC_0000002441723173)：定义PRO类型ISP自动模式参数结构体。
+-   [ot\_snap\_pro\_manual\_param](#ZH-CN_TOPIC_0000002408283966)：定义PRO类型ISP手动模式参数结构体。
+
+
+
+
+
+
+
+
+### ot\_snap\_attr<a name="ZH-CN_TOPIC_0000002441723169"></a>
+
+【说明】
+
+定义拍照参数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_snap_type snap_type;
+    td_bool      load_ccm_en;
+    union {
+        ot_snap_norm_attr norm_attr;
+        ot_snap_pro_attr  pro_attr;
+    };
 } ot_snap_attr;
-``` 【成员】 <a name="table1618mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1618mcpsimp"></a>
 <table><thead align="left"><tr id="row1623mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1625mcpsimp"><a name="p1625mcpsimp"></a><a name="p1625mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1627mcpsimp"><a name="p1627mcpsimp"></a><a name="p1627mcpsimp"></a>描述</p>
@@ -281,11 +665,36 @@ typedef struct { ot_snap_type snap_type; td_bool load_ccm_en; union { ot_snap_no
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 - [ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034)
-- [ss\_mpi\_snap\_get\_pipe\_attr](#ZH-CN_TOPIC_0000002408283902) ### ot\_snap\_type<a name="ZH-CN_TOPIC_0000002441683313"></a> 【说明】 定义拍照类型的枚举。 【定义】 ```
-typedef enum { OT_SNAP_TYPE_NORM, OT_SNAP_TYPE_PRO, OT_SNAP_TYPE_BUTT
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+-   [ss\_mpi\_snap\_set\_pipe\_attr](#ZH-CN_TOPIC_0000002408124034)
+-   [ss\_mpi\_snap\_get\_pipe\_attr](#ZH-CN_TOPIC_0000002408283902)
+
+### ot\_snap\_type<a name="ZH-CN_TOPIC_0000002441683313"></a>
+
+【说明】
+
+定义拍照类型的枚举。
+
+【定义】
+
+```
+typedef enum {
+    OT_SNAP_TYPE_NORM,
+    OT_SNAP_TYPE_PRO,
+    OT_SNAP_TYPE_BUTT
 } ot_snap_type;
-``` 【成员】 <a name="table1342mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1342mcpsimp"></a>
 <table><thead align="left"><tr id="row1347mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1349mcpsimp"><a name="p1349mcpsimp"></a><a name="p1349mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1351mcpsimp"><a name="p1351mcpsimp"></a><a name="p1351mcpsimp"></a>描述</p>
@@ -303,10 +712,38 @@ typedef enum { OT_SNAP_TYPE_NORM, OT_SNAP_TYPE_PRO, OT_SNAP_TYPE_BUTT
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169) ### ot\_snap\_norm\_attr<a name="ZH-CN_TOPIC_0000002408124046"></a> 【说明】 定义Normal类型拍照参数的结构体。 【定义】 ```
-typedef struct { td_u32 frame_cnt; td_u32 repeat_send_times; td_bool zsl_en; td_u32 frame_depth; td_u32 rollback_ms; td_u32 interval;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)
+
+### ot\_snap\_norm\_attr<a name="ZH-CN_TOPIC_0000002408124046"></a>
+
+【说明】
+
+定义Normal类型拍照参数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_u32  frame_cnt;
+    td_u32  repeat_send_times;
+    td_bool  zsl_en;
+    td_u32  frame_depth;
+    td_u32  rollback_ms;
+    td_u32  interval;
 } ot_snap_norm_attr;
-``` 【成员】 <a name="table1275mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1275mcpsimp"></a>
 <table><thead align="left"><tr id="row1280mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1282mcpsimp"><a name="p1282mcpsimp"></a><a name="p1282mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1284mcpsimp"><a name="p1284mcpsimp"></a><a name="p1284mcpsimp"></a>描述</p>
@@ -353,10 +790,35 @@ typedef struct { td_u32 frame_cnt; td_u32 repeat_send_times; td_bool zsl_en; td_
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169) ### ot\_snap\_pro\_attr<a name="ZH-CN_TOPIC_0000002408283930"></a> 【说明】 定义PRO类型拍照参数的结构体。 【定义】 ```
-typedef struct { td_u32 frame_cnt; td_u32 repeat_send_times; ot_snap_pro_param pro_param;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)
+
+### ot\_snap\_pro\_attr<a name="ZH-CN_TOPIC_0000002408283930"></a>
+
+【说明】
+
+定义PRO类型拍照参数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_u32  frame_cnt;
+    td_u32  repeat_send_times;
+    ot_snap_pro_param  pro_param;
 } ot_snap_pro_attr;
-``` 【成员】 <a name="table2810mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2810mcpsimp"></a>
 <table><thead align="left"><tr id="row2815mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p2817mcpsimp"><a name="p2817mcpsimp"></a><a name="p2817mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p2819mcpsimp"><a name="p2819mcpsimp"></a><a name="p2819mcpsimp"></a>描述</p>
@@ -383,10 +845,35 @@ typedef struct { td_u32 frame_cnt; td_u32 repeat_send_times; ot_snap_pro_param p
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169) ### ot\_snap\_pro\_param<a name="ZH-CN_TOPIC_0000002441683333"></a> 【说明】 定义PRO类型中ISP参数的结构体。 【定义】 ```
-typedef struct { ot_op_mode op_mode; ot_snap_pro_auto_param auto_param; ot_snap_pro_manual_param manual_param;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_snap\_attr](#ZH-CN_TOPIC_0000002441723169)
+
+### ot\_snap\_pro\_param<a name="ZH-CN_TOPIC_0000002441683333"></a>
+
+【说明】
+
+定义PRO类型中ISP参数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_op_mode               op_mode;
+    ot_snap_pro_auto_param    auto_param;
+    ot_snap_pro_manual_param  manual_param;
 } ot_snap_pro_param;
-``` 【成员】 <a name="table1751mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1751mcpsimp"></a>
 <table><thead align="left"><tr id="row1756mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1758mcpsimp"><a name="p1758mcpsimp"></a><a name="p1758mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1760mcpsimp"><a name="p1760mcpsimp"></a><a name="p1760mcpsimp"></a>描述</p>
@@ -410,10 +897,33 @@ typedef struct { ot_op_mode op_mode; ot_snap_pro_auto_param auto_param; ot_snap_
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_snap\_pro\_attr](#ZH-CN_TOPIC_0000002408283930) ### ot\_snap\_pro\_auto\_param<a name="ZH-CN_TOPIC_0000002441723173"></a> 【说明】 定义PRO类型ISP自动模式参数结构体。 【定义】 ```
-typedef struct { td_u16 exp_step[OT_ISP_PRO_MAX_FRAME_NUM];
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_snap\_pro\_attr](#ZH-CN_TOPIC_0000002408283930)
+
+### ot\_snap\_pro\_auto\_param<a name="ZH-CN_TOPIC_0000002441723173"></a>
+
+【说明】
+
+定义PRO类型ISP自动模式参数结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_u16 exp_step[OT_ISP_PRO_MAX_FRAME_NUM];
 } ot_snap_pro_auto_param;
-``` 【成员】 <a name="table1432mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1432mcpsimp"></a>
 <table><thead align="left"><tr id="row1437mcpsimp"><th class="cellrowborder" valign="top" width="34%" id="mcps1.1.3.1.1"><p id="p1439mcpsimp"><a name="p1439mcpsimp"></a><a name="p1439mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.3.1.2"><p id="p1441mcpsimp"><a name="p1441mcpsimp"></a><a name="p1441mcpsimp"></a>描述</p>
@@ -428,10 +938,42 @@ typedef struct { td_u16 exp_step[OT_ISP_PRO_MAX_FRAME_NUM];
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 - exp\_step是以当前预览通道的曝光量为基准，增益保持不变，根据曝光等级调整曝光时间。 ExpTime\_i = ExpTime\_base\* exp\_step\[i\]/256 ExpTime\_base代表基准曝光时间，ExpTime\_i代表专业拍照第i帧的曝光时间。 - 当ExpTime\_i大于当前设置的最大曝光时间时，ISP会自动进入慢快门模式，使曝光时间等于ExpTime\_i； - 当ExpTime\_i小于设置的最小曝光时间时，实际曝光时间等于设置的最小曝光时间。 - 当前预览通路的基准曝光量是指AE在自动模式下的曝光量，不支持手动AE设置基准曝光量。 【相关数据类型及接口】 [ot\_snap\_pro\_param](#ZH-CN_TOPIC_0000002441683333) ### ot\_snap\_pro\_manual\_param<a name="ZH-CN_TOPIC_0000002408283966"></a> 【说明】 定义PRO类型ISP手动模式参数结构体。 【定义】 ```
-typedef struct { td_u32 exp_time[OT_ISP_PRO_MAX_FRAME_NUM]; td_u32 sys_gain[OT_ISP_PRO_MAX_FRAME_NUM];
+</table>
+
+【注意事项】
+
+-   exp\_step是以当前预览通道的曝光量为基准，增益保持不变，根据曝光等级调整曝光时间。
+
+    ExpTime\_i = ExpTime\_base\* exp\_step\[i\]/256
+
+    ExpTime\_base代表基准曝光时间，ExpTime\_i代表专业拍照第i帧的曝光时间。
+
+    -   当ExpTime\_i大于当前设置的最大曝光时间时，ISP会自动进入慢快门模式，使曝光时间等于ExpTime\_i；
+    -   当ExpTime\_i小于设置的最小曝光时间时，实际曝光时间等于设置的最小曝光时间。
+    -   当前预览通路的基准曝光量是指AE在自动模式下的曝光量，不支持手动AE设置基准曝光量。
+
+【相关数据类型及接口】
+
+[ot\_snap\_pro\_param](#ZH-CN_TOPIC_0000002441683333)
+
+### ot\_snap\_pro\_manual\_param<a name="ZH-CN_TOPIC_0000002408283966"></a>
+
+【说明】
+
+定义PRO类型ISP手动模式参数结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_u32 exp_time[OT_ISP_PRO_MAX_FRAME_NUM];
+    td_u32 sys_gain[OT_ISP_PRO_MAX_FRAME_NUM];
 } ot_snap_pro_manual_param;
-``` 【成员】 <a name="table1899mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1899mcpsimp"></a>
 <table><thead align="left"><tr id="row1904mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1906mcpsimp"><a name="p1906mcpsimp"></a><a name="p1906mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1908mcpsimp"><a name="p1908mcpsimp"></a><a name="p1908mcpsimp"></a>描述</p>
@@ -451,7 +993,23 @@ typedef struct { td_u32 exp_time[OT_ISP_PRO_MAX_FRAME_NUM]; td_u32 sys_gain[OT_I
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_snap\_pro\_param](#ZH-CN_TOPIC_0000002441683333) ## 错误码<a name="ZH-CN_TOPIC_0000002408283958"></a> SNAP模块API错误码如下所示。 **表 1** SNAP模块API错误码 <a name="_Ref69914150"></a>
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_snap\_pro\_param](#ZH-CN_TOPIC_0000002441683333)
+
+## 错误码<a name="ZH-CN_TOPIC_0000002408283958"></a>
+
+SNAP模块API错误码如下所示。
+
+**表 1**  SNAP模块API错误码
+
+<a name="_Ref69914150"></a>
 <table><thead align="left"><tr id="row648mcpsimp"><th class="cellrowborder" valign="top" width="19.801980198019802%" id="mcps1.2.4.1.1"><p id="p650mcpsimp"><a name="p650mcpsimp"></a><a name="p650mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="48.51485148514851%" id="mcps1.2.4.1.2"><p id="p652mcpsimp"><a name="p652mcpsimp"></a><a name="p652mcpsimp"></a>宏定义</p>
@@ -510,22 +1068,77 @@ typedef struct { td_u32 exp_time[OT_ISP_PRO_MAX_FRAME_NUM]; td_u32 sys_gain[OT_I
 </td>
 </tr>
 </tbody>
-</table> # 拍照后处理算法
-## 概述<a name="ZH-CN_TOPIC_0000002441683337"></a> PHOTO代表消费类抓拍方案中的拍照后处理算法，包括HDR、MFNR、SFNR、DE这几种。 拍照后，运行于CPU和DSP上的软件处理算法。 ## 重要概念<a name="ZH-CN_TOPIC_0000002408124006"></a> - HDR\(High Dynamic Range\) HDR图像后处理算法，能提升图像的动态范围；通过拍照的PRO模式拍照，得到多张曝光时间和增益可调的图片，然后经过HDR算法模块合成一张具有高动态范围的图像，相比普通的图像，HDR可以提供更多的动态范围和图像细节。 - SFNR\(Single frame noise reduction\) 单帧降噪。 - MFNR\(Multi-frame noise reduction\) 多帧降噪。 - DE\(Detail enhancement\) 细节增强。ISP中的BNR处理，会造成图像中一些细节信息的丢失，DE算法可以补偿这些丢失的图像细节信息。DE算法的输入是一张YUV和BNR写出的RAW，输出是一张细节增强过的YUV。 ## 功能描述<a name="ZH-CN_TOPIC_0000002408283942"></a> PHOTO模块的运行依赖DSP的资源，PHOTO的库默认编译到DSP0的镜像中，所以在调用PHOTO的接口之前，请确保已经调用了ss\_mpi\_svp\_dsp\_load\_bin接口加载了DSP0的镜像。（ss\_mpi\_svp\_dsp\_load\_bin的具体描述，请参考《SVP2.0 API 参考》） - HDR合成当前仅支持三合一，就是输入三帧不同曝光的连续YUV，输出一帧高动态范围的YUV。三帧的输入顺序依次是短曝光的YUV，正常曝光的YUV，长曝光的YUV。
-- HDR算法支持对人脸区域的图像效果做特殊优化处理。图像中的人脸区域坐标需要提前通过人脸检测的智能算法检测出来。
-- MFNR当前仅支持四合一，输入是四帧连续的正常曝光的YUV，输出是一帧经过时域和空域降噪的YUV。
-- DE算法需要BNR RAW数据，Hi3403V100暂不支持获取BNR RAW数据
-- MFNR算法做完后，可以再对输出后的YUV做一次DE算法处理。DE算法需要的BNR RAW数据可以是MFNR输入的四帧YUV里面任意一帧YUV对应的BNR RAW；Hi3403V100暂不支持获取BNR RAW数据，因此不支持MFNR+DE的算法处理。
-- 算法处理输入和输出帧数据的Stride必须是128Byte对齐，并且帧数据的像素宽高必须是8的倍数。
-- 算法处理的输入YUV数据，仅支持处理NV21格式（也就是OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420格式）的非压缩数据，输入图像的动态范围仅支持OT\_DYNAMIC\_RANGE\_SDR8的。
-- 拍照后处理是一个原子任务，该原子任务包含完整的init-\>process-\>deinit流程（不同算法需要调用的process次数可能不同），仅支持在同一个进程或线程中以原子任务为单位串行处理，不支持多个原子任务并行处理，不支持前一个原子任务未结束就启动下一个原子任务。
-- PHOTO中算法运行依赖DSP，由于当前DSP使用32bit地址总线，只能访问4GB的内存地址空间。所以，PHOTO算法使用的Public内存，输入、输出帧存都必须位于4GB的内存地址空间中。详细的地址范围限制说明请参考《SVP2.0 开发指南》。 ## API参考<a name="ZH-CN_TOPIC_0000002441683345"></a> 该模块提供以下MPI： - [ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022)：初始化某个PHOTO算法。
-- [ss\_mpi\_photo\_alg\_deinit](#ZH-CN_TOPIC_0000002408123998)：去初始化某个PHOTO算法。
-- [ss\_mpi\_photo\_alg\_process](#ZH-CN_TOPIC_0000002408123990)：启动某个PHOTO算法的处理。
-- [ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341)：设置某个PHOTO算法的图像效果调节系数。
-- [ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285)：获取某个PHOTO算法的图像效果调节系数。 ### ss\_mpi\_photo\_alg\_init<a name="ZH-CN_TOPIC_0000002408124022"></a> 【描述】 初始化某个PHOTO算法。 【语法】 ```
+</table>
+
+# 拍照后处理算法
+## 概述<a name="ZH-CN_TOPIC_0000002441683337"></a>
+
+PHOTO代表消费类抓拍方案中的拍照后处理算法，包括HDR、MFNR、SFNR、DE这几种。
+
+拍照后，运行于CPU和DSP上的软件处理算法。
+
+## 重要概念<a name="ZH-CN_TOPIC_0000002408124006"></a>
+
+-   HDR\(High Dynamic Range\)
+
+    HDR图像后处理算法，能提升图像的动态范围；通过拍照的PRO模式拍照，得到多张曝光时间和增益可调的图片，然后经过HDR算法模块合成一张具有高动态范围的图像，相比普通的图像，HDR可以提供更多的动态范围和图像细节。
+
+-   SFNR\(Single frame noise reduction\)
+
+    单帧降噪。
+
+-   MFNR\(Multi-frame noise reduction\)
+
+    多帧降噪。
+
+-   DE\(Detail enhancement\)
+
+    细节增强。ISP中的BNR处理，会造成图像中一些细节信息的丢失，DE算法可以补偿这些丢失的图像细节信息。DE算法的输入是一张YUV和BNR写出的RAW，输出是一张细节增强过的YUV。
+
+## 功能描述<a name="ZH-CN_TOPIC_0000002408283942"></a>
+
+PHOTO模块的运行依赖DSP的资源，PHOTO的库默认编译到DSP0的镜像中，所以在调用PHOTO的接口之前，请确保已经调用了ss\_mpi\_svp\_dsp\_load\_bin接口加载了DSP0的镜像。（ss\_mpi\_svp\_dsp\_load\_bin的具体描述，请参考《SVP2.0 API 参考》）
+
+-   HDR合成当前仅支持三合一，就是输入三帧不同曝光的连续YUV，输出一帧高动态范围的YUV。三帧的输入顺序依次是短曝光的YUV，正常曝光的YUV，长曝光的YUV。
+-   HDR算法支持对人脸区域的图像效果做特殊优化处理。图像中的人脸区域坐标需要提前通过人脸检测的智能算法检测出来。
+-   MFNR当前仅支持四合一，输入是四帧连续的正常曝光的YUV，输出是一帧经过时域和空域降噪的YUV。
+-   DE算法需要BNR RAW数据，Hi3403V100暂不支持获取BNR RAW数据
+-   MFNR算法做完后，可以再对输出后的YUV做一次DE算法处理。DE算法需要的BNR RAW数据可以是MFNR输入的四帧YUV里面任意一帧YUV对应的BNR RAW；Hi3403V100暂不支持获取BNR RAW数据，因此不支持MFNR+DE的算法处理。
+-   算法处理输入和输出帧数据的Stride必须是128Byte对齐，并且帧数据的像素宽高必须是8的倍数。
+-   算法处理的输入YUV数据，仅支持处理NV21格式（也就是OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420格式）的非压缩数据，输入图像的动态范围仅支持OT\_DYNAMIC\_RANGE\_SDR8的。
+-   拍照后处理是一个原子任务，该原子任务包含完整的init-\>process-\>deinit流程（不同算法需要调用的process次数可能不同），仅支持在同一个进程或线程中以原子任务为单位串行处理，不支持多个原子任务并行处理，不支持前一个原子任务未结束就启动下一个原子任务。
+-   PHOTO中算法运行依赖DSP，由于当前DSP使用32bit地址总线，只能访问4GB的内存地址空间。所以，PHOTO算法使用的Public内存，输入、输出帧存都必须位于4GB的内存地址空间中。详细的地址范围限制说明请参考《SVP2.0 开发指南》。
+
+## API参考<a name="ZH-CN_TOPIC_0000002441683345"></a>
+
+该模块提供以下MPI：
+
+-   [ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022)：初始化某个PHOTO算法。
+-   [ss\_mpi\_photo\_alg\_deinit](#ZH-CN_TOPIC_0000002408123998)：去初始化某个PHOTO算法。
+-   [ss\_mpi\_photo\_alg\_process](#ZH-CN_TOPIC_0000002408123990)：启动某个PHOTO算法的处理。
+-   [ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341)：设置某个PHOTO算法的图像效果调节系数。
+-   [ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285)：获取某个PHOTO算法的图像效果调节系数。
+
+
+
+
+
+
+### ss\_mpi\_photo\_alg\_init<a name="ZH-CN_TOPIC_0000002408124022"></a>
+
+【描述】
+
+初始化某个PHOTO算法。
+
+【语法】
+
+```
 td_s32 ss_mpi_photo_alg_init(ot_photo_alg_type alg_type, const ot_photo_alg_init *photo_init);
-``` 【参数】 <a name="table2201mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2201mcpsimp"></a>
 <table><thead align="left"><tr id="row2207mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2209mcpsimp"><a name="p2209mcpsimp"></a><a name="p2209mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2211mcpsimp"><a name="p2211mcpsimp"></a><a name="p2211mcpsimp"></a>描述</p>
@@ -549,7 +1162,11 @@ td_s32 ss_mpi_photo_alg_init(ot_photo_alg_type alg_type, const ot_photo_alg_init
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table2230mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table2230mcpsimp"></a>
 <table><thead align="left"><tr id="row2235mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2237mcpsimp"><a name="p2237mcpsimp"></a><a name="p2237mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2239mcpsimp"><a name="p2239mcpsimp"></a><a name="p2239mcpsimp"></a>描述</p>
@@ -561,13 +1178,52 @@ td_s32 ss_mpi_photo_alg_init(ot_photo_alg_type alg_type, const ot_photo_alg_init
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2245mcpsimp"><a name="p2245mcpsimp"></a><a name="p2245mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2246mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2248mcpsimp"><a name="p2248mcpsimp"></a><a name="p2248mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2250mcpsimp"><a name="p2250mcpsimp"></a><a name="p2250mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002441723193">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
-- 库文件：libss\_photo.a 【注意】 - 调用该接口之前需要确保DSP端的bin文件已经加载成功。
-- 该接口传入的内存是已经从MMZ中分配好的。
-- 不同算法，不同分辨率需要的Public内存大小不同，建议使用ot\_common\_photo.h中定义的hdr\_get\_public\_mem\_size，mfnr\_get\_public\_mem\_size，sfnr\_get\_public\_mem\_size，de\_get\_public\_mem\_size这几个函数来获取不同分辨率对应的算法Public内存大小。 【举例】 无 【相关主题】 [ss\_mpi\_photo\_alg\_deinit](#ZH-CN_TOPIC_0000002408123998) ### ss\_mpi\_photo\_alg\_deinit<a name="ZH-CN_TOPIC_0000002408123998"></a> 【描述】 去初始化某个PHOTO算法。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
+-   库文件：libss\_photo.a
+
+【注意】
+
+-   调用该接口之前需要确保DSP端的bin文件已经加载成功。
+-   该接口传入的内存是已经从MMZ中分配好的。
+-   不同算法，不同分辨率需要的Public内存大小不同，建议使用ot\_common\_photo.h中定义的hdr\_get\_public\_mem\_size，mfnr\_get\_public\_mem\_size，sfnr\_get\_public\_mem\_size，de\_get\_public\_mem\_size这几个函数来获取不同分辨率对应的算法Public内存大小。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_photo\_alg\_deinit](#ZH-CN_TOPIC_0000002408123998)
+
+### ss\_mpi\_photo\_alg\_deinit<a name="ZH-CN_TOPIC_0000002408123998"></a>
+
+【描述】
+
+去初始化某个PHOTO算法。
+
+【语法】
+
+```
 td_s32 ss_mpi_photo_alg_deinit(ot_photo_alg_type alg_type);
-``` 【参数】 <a name="table576mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table576mcpsimp"></a>
 <table><thead align="left"><tr id="row582mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p584mcpsimp"><a name="p584mcpsimp"></a><a name="p584mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p586mcpsimp"><a name="p586mcpsimp"></a><a name="p586mcpsimp"></a>描述</p>
@@ -584,7 +1240,11 @@ td_s32 ss_mpi_photo_alg_deinit(ot_photo_alg_type alg_type);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table598mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table598mcpsimp"></a>
 <table><thead align="left"><tr id="row603mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p605mcpsimp"><a name="p605mcpsimp"></a><a name="p605mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p607mcpsimp"><a name="p607mcpsimp"></a><a name="p607mcpsimp"></a>描述</p>
@@ -596,11 +1256,52 @@ td_s32 ss_mpi_photo_alg_deinit(ot_photo_alg_type alg_type);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p613mcpsimp"><a name="p613mcpsimp"></a><a name="p613mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row614mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p616mcpsimp"><a name="p616mcpsimp"></a><a name="p616mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p618mcpsimp"><a name="p618mcpsimp"></a><a name="p618mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002441723193">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无 【需求】 - 头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
-- 库文件：libss\_photo.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022) ### ss\_mpi\_photo\_alg\_process<a name="ZH-CN_TOPIC_0000002408123990"></a> 【描述】 启动某个PHOTO算法的处理。这个接口是阻塞接口，当前帧处理完成之后才返回。 多帧合成的算法需要调用多次，比如HDR三合一需要调用三次这个接口，每次传一帧输入的帧数据信息，调用后当前帧就开始处理。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无
+
+【需求】
+
+-   头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
+-   库文件：libss\_photo.a
+
+【注意】
+
+无
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022)
+
+### ss\_mpi\_photo\_alg\_process<a name="ZH-CN_TOPIC_0000002408123990"></a>
+
+【描述】
+
+启动某个PHOTO算法的处理。这个接口是阻塞接口，当前帧处理完成之后才返回。
+
+多帧合成的算法需要调用多次，比如HDR三合一需要调用三次这个接口，每次传一帧输入的帧数据信息，调用后当前帧就开始处理。
+
+【语法】
+
+```
 td_s32 ss_mpi_photo_alg_process(ot_photo_alg_type alg_type, const ot_photo_alg_attr *photo_attr);
-``` 【参数】 <a name="table2060mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2060mcpsimp"></a>
 <table><thead align="left"><tr id="row2066mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2068mcpsimp"><a name="p2068mcpsimp"></a><a name="p2068mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2070mcpsimp"><a name="p2070mcpsimp"></a><a name="p2070mcpsimp"></a>描述</p>
@@ -624,7 +1325,11 @@ td_s32 ss_mpi_photo_alg_process(ot_photo_alg_type alg_type, const ot_photo_alg_a
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table2089mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table2089mcpsimp"></a>
 <table><thead align="left"><tr id="row2094mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2096mcpsimp"><a name="p2096mcpsimp"></a><a name="p2096mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2098mcpsimp"><a name="p2098mcpsimp"></a><a name="p2098mcpsimp"></a>描述</p>
@@ -636,11 +1341,52 @@ td_s32 ss_mpi_photo_alg_process(ot_photo_alg_type alg_type, const ot_photo_alg_a
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2104mcpsimp"><a name="p2104mcpsimp"></a><a name="p2104mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2105mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2107mcpsimp"><a name="p2107mcpsimp"></a><a name="p2107mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2109mcpsimp"><a name="p2109mcpsimp"></a><a name="p2109mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002441723193">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
-- 库文件：libss\_photo.a 【注意】 对应算法必须初始化成功后，才能调用该接口。 【举例】 无 【相关主题】 [ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022) ### ss\_mpi\_photo\_set\_alg\_coef<a name="ZH-CN_TOPIC_0000002441683341"></a> 【描述】 设置某个PHOTO算法的图像效果调节系数。 这个接口不是必设的接口，PHOTO内部保存了一套默认的系数，如果不设置，就使用默认的值。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
+-   库文件：libss\_photo.a
+
+【注意】
+
+对应算法必须初始化成功后，才能调用该接口。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022)
+
+### ss\_mpi\_photo\_set\_alg\_coef<a name="ZH-CN_TOPIC_0000002441683341"></a>
+
+【描述】
+
+设置某个PHOTO算法的图像效果调节系数。
+
+这个接口不是必设的接口，PHOTO内部保存了一套默认的系数，如果不设置，就使用默认的值。
+
+【语法】
+
+```
 td_s32 ss_mpi_photo_set_alg_coef(ot_photo_alg_type alg_type, const ot_photo_alg_coef *alg_coef);
-``` 【参数】 <a name="table2506mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2506mcpsimp"></a>
 <table><thead align="left"><tr id="row2512mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2514mcpsimp"><a name="p2514mcpsimp"></a><a name="p2514mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2516mcpsimp"><a name="p2516mcpsimp"></a><a name="p2516mcpsimp"></a>描述</p>
@@ -664,7 +1410,11 @@ td_s32 ss_mpi_photo_set_alg_coef(ot_photo_alg_type alg_type, const ot_photo_alg_
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table2535mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table2535mcpsimp"></a>
 <table><thead align="left"><tr id="row2540mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2542mcpsimp"><a name="p2542mcpsimp"></a><a name="p2542mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2544mcpsimp"><a name="p2544mcpsimp"></a><a name="p2544mcpsimp"></a>描述</p>
@@ -676,11 +1426,50 @@ td_s32 ss_mpi_photo_set_alg_coef(ot_photo_alg_type alg_type, const ot_photo_alg_
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2550mcpsimp"><a name="p2550mcpsimp"></a><a name="p2550mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2551mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2553mcpsimp"><a name="p2553mcpsimp"></a><a name="p2553mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2555mcpsimp"><a name="p2555mcpsimp"></a><a name="p2555mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002441723193">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
-- 库文件：libss\_photo.a 【注意】 该接口可在算法处理第一帧之前，初始化之后调用。 【举例】 无 【相关主题】 [ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285) ### ss\_mpi\_photo\_get\_alg\_coef<a name="ZH-CN_TOPIC_0000002441683285"></a> 【描述】 获取某个PHOTO算法的图像效果调节系数。 【语法】 ```
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
+-   库文件：libss\_photo.a
+
+【注意】
+
+该接口可在算法处理第一帧之前，初始化之后调用。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285)
+
+### ss\_mpi\_photo\_get\_alg\_coef<a name="ZH-CN_TOPIC_0000002441683285"></a>
+
+【描述】
+
+获取某个PHOTO算法的图像效果调节系数。
+
+【语法】
+
+```
 td_s32 ss_mpi_photo_get_alg_coef(ot_photo_alg_type alg_type, ot_photo_alg_coef *alg_coef);
-``` 【参数】 <a name="table185mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table185mcpsimp"></a>
 <table><thead align="left"><tr id="row191mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p193mcpsimp"><a name="p193mcpsimp"></a><a name="p193mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p195mcpsimp"><a name="p195mcpsimp"></a><a name="p195mcpsimp"></a>描述</p>
@@ -704,7 +1493,11 @@ td_s32 ss_mpi_photo_get_alg_coef(ot_photo_alg_type alg_type, ot_photo_alg_coef *
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table214mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table214mcpsimp"></a>
 <table><thead align="left"><tr id="row219mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p221mcpsimp"><a name="p221mcpsimp"></a><a name="p221mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p223mcpsimp"><a name="p223mcpsimp"></a><a name="p223mcpsimp"></a>描述</p>
@@ -716,43 +1509,127 @@ td_s32 ss_mpi_photo_get_alg_coef(ot_photo_alg_type alg_type, ot_photo_alg_coef *
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row230mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p232mcpsimp"><a name="p232mcpsimp"></a><a name="p232mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002441723193">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 无。 【需求】 - 头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
-- 库文件：libss\_photo.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341) ## 数据类型<a name="ZH-CN_TOPIC_0000002441683317"></a> PHOTO相关数据类型定义如下： - [ot\_photo\_alg\_type](#ZH-CN_TOPIC_0000002441723205)：定义PHOTO算法类型的枚举。
-- [ot\_photo\_alg\_init](#ZH-CN_TOPIC_0000002441683293)：定义PHOTO算法初始化的结构体。
-- [ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201)：定义PHOTO算法处理的属性结构体。
-- [ot\_photo\_hdr\_attr](#ZH-CN_TOPIC_0000002441723177)：定义HDR算法处理的结构体。
-- [ot\_photo\_sfnr\_attr](#ZH-CN_TOPIC_0000002408283918)：定义SFNR算法处理的结构体。
-- [ot\_photo\_mfnr\_attr](#ZH-CN_TOPIC_0000002441683289)：定义MFNR算法处理的结构体。
-- [ot\_photo\_de\_attr](#ZH-CN_TOPIC_0000002408124002)：定义DE算法处理的结构体。
-- [ot\_photo\_face\_info](#ZH-CN_TOPIC_0000002408283950)：定义人脸区域信息的结构体。
-- [ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153)：定义PHOTO算法系数的结构体。
-- [ot\_photo\_hdr\_coef](#ZH-CN_TOPIC_0000002408283926)：定义HDR算法系数的结构体。
-- [ot\_photo\_image\_fusion\_param](#ZH-CN_TOPIC_0000002441723213)：定义图像融合参数的结构体。
-- [ot\_photo\_dark\_motion\_detection\_param](#ZH-CN_TOPIC_0000002408124026)：定义HDR中鬼影检测参数的结构体。
-- [ot\_photo\_sfnr\_coef](#ZH-CN_TOPIC_0000002408283934)：定义SFNR算法系数的结构体。
-- [ot\_photo\_sfnr\_iso\_strategy](#ZH-CN_TOPIC_0000002441683301)：定义SFNR算法ISO策略的结构体。
-- [ot\_photo\_mfnr\_coef](#ZH-CN_TOPIC_0000002408124018)：定义MFNR算法系数的结构体。
-- [ot\_photo\_mfnr\_3dnr\_param](#ZH-CN_TOPIC_0000002408283962)：定义MFNR算法中时域降噪系数的结构体。
-- [ot\_photo\_mfnr\_3dnr\_iso\_strategy](#ZH-CN_TOPIC_0000002441723165)：定义MFNR算法时域降噪系数中每个ISO档位的结构体。
-- [ot\_photo\_mfnr\_2dnr\_param](#ZH-CN_TOPIC_0000002441723189)：定义MFNR算法中空域降噪系数的结构体。
-- [ot\_photo\_mfnr\_2dnr\_iso\_strategy](#ZH-CN_TOPIC_0000002441723161)：定义MFNR算法空域降噪系数中每个ISO档位的结构体。
-- [ot\_photo\_de\_coef](#ZH-CN_TOPIC_0000002408283954)：定义DE算法系数的结构体。
-- [ot\_photo\_de\_iso\_strategy](#ZH-CN_TOPIC_0000002408283946)：定义DE算法每个ISO档位对应策略的结构体。
-- [OT\_PHOTO\_HDR\_FRAME\_NUM](#ZH-CN_TOPIC_0000002441723185)：定义HDR合成的帧数目。
-- [OT\_PHOTO\_MFNR\_FRAME\_NUM](#ZH-CN_TOPIC_0000002441683325)：定义MFNR合成的帧数目。
-- [OT\_PHOTO\_HDR\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002408123994)：定义调节HDR图像效果的ISO档位数目。
-- [OT\_PHOTO\_SFNR\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002441723181)：定义调节SFNR图像效果的ISO档位数目。
-- [OT\_PHOTO\_MFNR\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002408124038)：定义调节MFNR图像效果的ISO档位数目。
-- [OT\_PHOTO\_DE\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002441683305)：定义调节DE图像效果的ISO档位数目。
-- [OT\_PHOTO\_MAX\_FACE\_NUM](#ZH-CN_TOPIC_0000002441723217)：定义算法处理中最大的人脸区域的数目。
-- [OT\_PHOTO\_MIN\_WIDTH](#ZH-CN_TOPIC_0000002441723209)：定义算法处理支持的最小图像分辨率的宽。
-- [OT\_PHOTO\_MIN\_HEIGHT](#ZH-CN_TOPIC_0000002441683329)：定义算法处理支持的最小图像分辨率的高。
-- [OT\_PHOTO\_MAX\_WIDTH](#ZH-CN_TOPIC_0000002408124042)：定义算法处理支持的最大图像分辨率的宽。
-- [OT\_PHOTO\_MAX\_HEIGHT](#ZH-CN_TOPIC_0000002408283922)：定义算法处理支持的最大图像分辨率的高。 ### ot\_photo\_alg\_type<a name="ZH-CN_TOPIC_0000002441723205"></a> 【说明】 定义PHOTO算法类型的枚举。 【定义】 ```
-typedef enum { OT_PHOTO_ALG_TYPE_HDR = 0x0, OT_PHOTO_ALG_TYPE_SFNR = 0x1, OT_PHOTO_ALG_TYPE_MFNR = 0x2, OT_PHOTO_ALG_TYPE_DE = 0x3, OT_PHOTO_ALG_TYPE_BUTT
+</table>
+
+【解决方案差异】
+
+无。
+
+【需求】
+
+-   头文件：ot\_common\_photo.h、ss\_mpi\_photo.h
+-   库文件：libss\_photo.a
+
+【注意】
+
+无
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341)
+
+## 数据类型<a name="ZH-CN_TOPIC_0000002441683317"></a>
+
+PHOTO相关数据类型定义如下：
+
+-   [ot\_photo\_alg\_type](#ZH-CN_TOPIC_0000002441723205)：定义PHOTO算法类型的枚举。
+-   [ot\_photo\_alg\_init](#ZH-CN_TOPIC_0000002441683293)：定义PHOTO算法初始化的结构体。
+-   [ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201)：定义PHOTO算法处理的属性结构体。
+-   [ot\_photo\_hdr\_attr](#ZH-CN_TOPIC_0000002441723177)：定义HDR算法处理的结构体。
+-   [ot\_photo\_sfnr\_attr](#ZH-CN_TOPIC_0000002408283918)：定义SFNR算法处理的结构体。
+-   [ot\_photo\_mfnr\_attr](#ZH-CN_TOPIC_0000002441683289)：定义MFNR算法处理的结构体。
+-   [ot\_photo\_de\_attr](#ZH-CN_TOPIC_0000002408124002)：定义DE算法处理的结构体。
+-   [ot\_photo\_face\_info](#ZH-CN_TOPIC_0000002408283950)：定义人脸区域信息的结构体。
+-   [ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153)：定义PHOTO算法系数的结构体。
+-   [ot\_photo\_hdr\_coef](#ZH-CN_TOPIC_0000002408283926)：定义HDR算法系数的结构体。
+-   [ot\_photo\_image\_fusion\_param](#ZH-CN_TOPIC_0000002441723213)：定义图像融合参数的结构体。
+-   [ot\_photo\_dark\_motion\_detection\_param](#ZH-CN_TOPIC_0000002408124026)：定义HDR中鬼影检测参数的结构体。
+-   [ot\_photo\_sfnr\_coef](#ZH-CN_TOPIC_0000002408283934)：定义SFNR算法系数的结构体。
+-   [ot\_photo\_sfnr\_iso\_strategy](#ZH-CN_TOPIC_0000002441683301)：定义SFNR算法ISO策略的结构体。
+-   [ot\_photo\_mfnr\_coef](#ZH-CN_TOPIC_0000002408124018)：定义MFNR算法系数的结构体。
+-   [ot\_photo\_mfnr\_3dnr\_param](#ZH-CN_TOPIC_0000002408283962)：定义MFNR算法中时域降噪系数的结构体。
+-   [ot\_photo\_mfnr\_3dnr\_iso\_strategy](#ZH-CN_TOPIC_0000002441723165)：定义MFNR算法时域降噪系数中每个ISO档位的结构体。
+-   [ot\_photo\_mfnr\_2dnr\_param](#ZH-CN_TOPIC_0000002441723189)：定义MFNR算法中空域降噪系数的结构体。
+-   [ot\_photo\_mfnr\_2dnr\_iso\_strategy](#ZH-CN_TOPIC_0000002441723161)：定义MFNR算法空域降噪系数中每个ISO档位的结构体。
+-   [ot\_photo\_de\_coef](#ZH-CN_TOPIC_0000002408283954)：定义DE算法系数的结构体。
+-   [ot\_photo\_de\_iso\_strategy](#ZH-CN_TOPIC_0000002408283946)：定义DE算法每个ISO档位对应策略的结构体。
+-   [OT\_PHOTO\_HDR\_FRAME\_NUM](#ZH-CN_TOPIC_0000002441723185)：定义HDR合成的帧数目。
+-   [OT\_PHOTO\_MFNR\_FRAME\_NUM](#ZH-CN_TOPIC_0000002441683325)：定义MFNR合成的帧数目。
+-   [OT\_PHOTO\_HDR\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002408123994)：定义调节HDR图像效果的ISO档位数目。
+-   [OT\_PHOTO\_SFNR\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002441723181)：定义调节SFNR图像效果的ISO档位数目。
+-   [OT\_PHOTO\_MFNR\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002408124038)：定义调节MFNR图像效果的ISO档位数目。
+-   [OT\_PHOTO\_DE\_ISO\_LEVEL\_CNT](#ZH-CN_TOPIC_0000002441683305)：定义调节DE图像效果的ISO档位数目。
+-   [OT\_PHOTO\_MAX\_FACE\_NUM](#ZH-CN_TOPIC_0000002441723217)：定义算法处理中最大的人脸区域的数目。
+-   [OT\_PHOTO\_MIN\_WIDTH](#ZH-CN_TOPIC_0000002441723209)：定义算法处理支持的最小图像分辨率的宽。
+-   [OT\_PHOTO\_MIN\_HEIGHT](#ZH-CN_TOPIC_0000002441683329)：定义算法处理支持的最小图像分辨率的高。
+-   [OT\_PHOTO\_MAX\_WIDTH](#ZH-CN_TOPIC_0000002408124042)：定义算法处理支持的最大图像分辨率的宽。
+-   [OT\_PHOTO\_MAX\_HEIGHT](#ZH-CN_TOPIC_0000002408283922)：定义算法处理支持的最大图像分辨率的高。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### ot\_photo\_alg\_type<a name="ZH-CN_TOPIC_0000002441723205"></a>
+
+【说明】
+
+定义PHOTO算法类型的枚举。
+
+【定义】
+
+```
+typedef enum {
+    OT_PHOTO_ALG_TYPE_HDR = 0x0,
+    OT_PHOTO_ALG_TYPE_SFNR = 0x1,
+    OT_PHOTO_ALG_TYPE_MFNR = 0x2,
+    OT_PHOTO_ALG_TYPE_DE = 0x3,
+    OT_PHOTO_ALG_TYPE_BUTT
 } ot_photo_alg_type;
-``` 【成员】 <a name="table2899mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2899mcpsimp"></a>
 <table><thead align="left"><tr id="row2904mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p2906mcpsimp"><a name="p2906mcpsimp"></a><a name="p2906mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p2908mcpsimp"><a name="p2908mcpsimp"></a><a name="p2908mcpsimp"></a>描述</p>
@@ -780,14 +1657,40 @@ typedef enum { OT_PHOTO_ALG_TYPE_HDR = 0x0, OT_PHOTO_ALG_TYPE_SFNR = 0x1, OT_PHO
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 - [ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022)
-- [ss\_mpi\_photo\_alg\_deinit](#ZH-CN_TOPIC_0000002408123998)
-- [ss\_mpi\_photo\_alg\_process](#ZH-CN_TOPIC_0000002408123990)
-- [ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341)
-- [ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285) ### ot\_photo\_alg\_init<a name="ZH-CN_TOPIC_0000002441683293"></a> 【说明】 定义PHOTO算法初始化的结构体。 【定义】 ```
-typedef struct { td_u64 public_mem_phy_addr; td_u64 public_mem_vir_addr; td_u32 public_mem_size; td_bool print_debug_info;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+-   [ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022)
+-   [ss\_mpi\_photo\_alg\_deinit](#ZH-CN_TOPIC_0000002408123998)
+-   [ss\_mpi\_photo\_alg\_process](#ZH-CN_TOPIC_0000002408123990)
+-   [ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341)
+-   [ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285)
+
+### ot\_photo\_alg\_init<a name="ZH-CN_TOPIC_0000002441683293"></a>
+
+【说明】
+
+定义PHOTO算法初始化的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_u64 public_mem_phy_addr;
+    td_u64 public_mem_vir_addr;
+    td_u32 public_mem_size;
+    td_bool print_debug_info;
 } ot_photo_alg_init;
-``` 【成员】 <a name="table906mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table906mcpsimp"></a>
 <table><thead align="left"><tr id="row911mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p913mcpsimp"><a name="p913mcpsimp"></a><a name="p913mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p915mcpsimp"><a name="p915mcpsimp"></a><a name="p915mcpsimp"></a>描述</p>
@@ -817,10 +1720,36 @@ typedef struct { td_u64 public_mem_phy_addr; td_u64 public_mem_vir_addr; td_u32 
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022) ### ot\_photo\_alg\_attr<a name="ZH-CN_TOPIC_0000002441723201"></a> 【说明】 定义PHOTO算法处理的属性结构体。 ```
-typedef struct { union { ot_photo_hdr_attr hdr_attr; ot_photo_sfnr_attr sfnr_attr; ot_photo_mfnr_attr mfnr_attr; ot_photo_de_attr de_attr; };
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ss\_mpi\_photo\_alg\_init](#ZH-CN_TOPIC_0000002408124022)
+
+### ot\_photo\_alg\_attr<a name="ZH-CN_TOPIC_0000002441723201"></a>
+
+【说明】
+
+定义PHOTO算法处理的属性结构体。
+
+```
+typedef struct {
+    union {
+        ot_photo_hdr_attr hdr_attr;
+        ot_photo_sfnr_attr sfnr_attr;
+        ot_photo_mfnr_attr mfnr_attr;
+        ot_photo_de_attr de_attr;
+    };
 } ot_photo_alg_attr;
-``` 【成员】 <a name="table2142mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2142mcpsimp"></a>
 <table><thead align="left"><tr id="row2147mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2149mcpsimp"><a name="p2149mcpsimp"></a><a name="p2149mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2151mcpsimp"><a name="p2151mcpsimp"></a><a name="p2151mcpsimp"></a>描述</p>
@@ -848,10 +1777,38 @@ typedef struct { union { ot_photo_hdr_attr hdr_attr; ot_photo_sfnr_attr sfnr_att
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ss\_mpi\_photo\_alg\_process](#ZH-CN_TOPIC_0000002408123990) ### ot\_photo\_hdr\_attr<a name="ZH-CN_TOPIC_0000002441723177"></a> 【说明】 定义HDR算法处理的结构体。 【定义】 ```
-typedef struct { ot_video_frame_info src_frm; ot_video_frame_info des_frm; td_u32 frm_index; td_u32 iso; td_u32 face_num; ot_photo_face_info face_info[OT_PHOTO_MAX_FACE_NUM];
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ss\_mpi\_photo\_alg\_process](#ZH-CN_TOPIC_0000002408123990)
+
+### ot\_photo\_hdr\_attr<a name="ZH-CN_TOPIC_0000002441723177"></a>
+
+【说明】
+
+定义HDR算法处理的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_video_frame_info src_frm;
+    ot_video_frame_info des_frm;
+    td_u32 frm_index;
+    td_u32 iso;
+    td_u32 face_num;
+    ot_photo_face_info face_info[OT_PHOTO_MAX_FACE_NUM];
 } ot_photo_hdr_attr;
-``` 【成员】 <a name="table2284mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2284mcpsimp"></a>
 <table><thead align="left"><tr id="row2289mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p2291mcpsimp"><a name="p2291mcpsimp"></a><a name="p2291mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p2293mcpsimp"><a name="p2293mcpsimp"></a><a name="p2293mcpsimp"></a>描述</p>
@@ -892,10 +1849,34 @@ typedef struct { ot_video_frame_info src_frm; ot_video_frame_info des_frm; td_u3
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201) ### ot\_photo\_sfnr\_attr<a name="ZH-CN_TOPIC_0000002408283918"></a> 【说明】 定义SFNR算法处理的结构体。 【定义】 ```
-typedef struct { ot_video_frame_info frm; /* src & des */ td_u32 iso;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201)
+
+### ot\_photo\_sfnr\_attr<a name="ZH-CN_TOPIC_0000002408283918"></a>
+
+【说明】
+
+定义SFNR算法处理的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_video_frame_info frm;  /* src & des */
+    td_u32 iso;
 } ot_photo_sfnr_attr;
-``` 【成员】 <a name="table954mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table954mcpsimp"></a>
 <table><thead align="left"><tr id="row959mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p961mcpsimp"><a name="p961mcpsimp"></a><a name="p961mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p963mcpsimp"><a name="p963mcpsimp"></a><a name="p963mcpsimp"></a>描述</p>
@@ -915,10 +1896,37 @@ typedef struct { ot_video_frame_info frm; /* src & des */ td_u32 iso;
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201) ### ot\_photo\_mfnr\_attr<a name="ZH-CN_TOPIC_0000002441683289"></a> 【说明】 定义MFNR算法处理的结构体。 【定义】 ```
-typedef struct { ot_video_frame_info src_frm; ot_video_frame_info des_frm; ot_video_frame_info raw_frm; td_u32 frm_index; td_u32 iso;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201)
+
+### ot\_photo\_mfnr\_attr<a name="ZH-CN_TOPIC_0000002441683289"></a>
+
+【说明】
+
+定义MFNR算法处理的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_video_frame_info src_frm;
+    ot_video_frame_info des_frm;
+    ot_video_frame_info raw_frm;
+    td_u32 frm_index;
+    td_u32 iso;
 } ot_photo_mfnr_attr;
-``` 【成员】 <a name="table2970mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2970mcpsimp"></a>
 <table><thead align="left"><tr id="row2975mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p2977mcpsimp"><a name="p2977mcpsimp"></a><a name="p2977mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p2979mcpsimp"><a name="p2979mcpsimp"></a><a name="p2979mcpsimp"></a>描述</p>
@@ -956,10 +1964,35 @@ typedef struct { ot_video_frame_info src_frm; ot_video_frame_info des_frm; ot_vi
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201) ### ot\_photo\_de\_attr<a name="ZH-CN_TOPIC_0000002408124002"></a> 【说明】 定义DE算法处理的结构体。 【定义】 ```
-typedef struct { ot_video_frame_info frm; /* src & des */ ot_video_frame_info raw_frm; td_u32 iso;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201)
+
+### ot\_photo\_de\_attr<a name="ZH-CN_TOPIC_0000002408124002"></a>
+
+【说明】
+
+定义DE算法处理的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_video_frame_info frm;  /* src & des */
+    ot_video_frame_info raw_frm;
+    td_u32 iso;
 } ot_photo_de_attr;
-``` 【成员】 <a name="table1069mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1069mcpsimp"></a>
 <table><thead align="left"><tr id="row1074mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p1076mcpsimp"><a name="p1076mcpsimp"></a><a name="p1076mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p1078mcpsimp"><a name="p1078mcpsimp"></a><a name="p1078mcpsimp"></a>描述</p>
@@ -983,10 +2016,38 @@ typedef struct { ot_video_frame_info frm; /* src & des */ ot_video_frame_info ra
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201) ### ot\_photo\_face\_info<a name="ZH-CN_TOPIC_0000002408283950"></a> 【说明】 定义人脸区域信息的结构体。 【定义】 ```
-typedef struct { td_u32 id; ot_rect face_rect; ot_rect left_eye_rect; ot_rect right_eye_rect; td_u32 blink_score; td_u32 smile_score;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_attr](#ZH-CN_TOPIC_0000002441723201)
+
+### ot\_photo\_face\_info<a name="ZH-CN_TOPIC_0000002408283950"></a>
+
+【说明】
+
+定义人脸区域信息的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_u32 id;
+    ot_rect face_rect;
+    ot_rect left_eye_rect;
+    ot_rect right_eye_rect;
+    td_u32 blink_score;
+    td_u32 smile_score;
 } ot_photo_face_info;
-``` 【成员】 <a name="table2584mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2584mcpsimp"></a>
 <table><thead align="left"><tr id="row2589mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2591mcpsimp"><a name="p2591mcpsimp"></a><a name="p2591mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2593mcpsimp"><a name="p2593mcpsimp"></a><a name="p2593mcpsimp"></a>描述</p>
@@ -1025,10 +2086,38 @@ typedef struct { td_u32 id; ot_rect face_rect; ot_rect left_eye_rect; ot_rect ri
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_hdr\_attr](#ZH-CN_TOPIC_0000002441723177) ### ot\_photo\_alg\_coef<a name="ZH-CN_TOPIC_0000002441723153"></a> 【说明】 定义PHOTO算法系数的结构体。 【定义】 ```
-typedef struct { union { ot_photo_hdr_coef hdr_coef; ot_photo_sfnr_coef sfnr_coef; ot_photo_mfnr_coef mfnr_coef; ot_photo_de_coef de_coef; };
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_hdr\_attr](#ZH-CN_TOPIC_0000002441723177)
+
+### ot\_photo\_alg\_coef<a name="ZH-CN_TOPIC_0000002441723153"></a>
+
+【说明】
+
+定义PHOTO算法系数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    union {
+        ot_photo_hdr_coef hdr_coef;
+        ot_photo_sfnr_coef sfnr_coef;
+        ot_photo_mfnr_coef mfnr_coef;
+        ot_photo_de_coef de_coef;
+    };
 } ot_photo_alg_coef;
-``` 【成员】 <a name="table405mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table405mcpsimp"></a>
 <table><thead align="left"><tr id="row410mcpsimp"><th class="cellrowborder" valign="top" width="30.55%" id="mcps1.1.3.1.1"><p id="p412mcpsimp"><a name="p412mcpsimp"></a><a name="p412mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69.45%" id="mcps1.1.3.1.2"><p id="p414mcpsimp"><a name="p414mcpsimp"></a><a name="p414mcpsimp"></a>描述</p>
@@ -1039,37 +2128,131 @@ typedef struct { union { ot_photo_hdr_coef hdr_coef; ot_photo_sfnr_coef sfnr_coe
 </td>
 <td class="cellrowborder" valign="top" width="69.45%" headers="mcps1.1.3.1.2 "><p id="p420mcpsimp"><a name="p420mcpsimp"></a><a name="p420mcpsimp"></a>HDR算法系数的结构体，默认参数：</p>
 <pre class="codeblock" id="codeblock19374182012232"><a name="codeblock19374182012232"></a><a name="codeblock19374182012232"></a>#define FLOAT_INT_SHIFT (1ULL&lt;&lt;32)
-ot_photo_hdr_coef g_hdr_coef = { .ajust_ratio =128, .image_scale_method =1, .motion_detection_param = { {160, 10, 20, 6.0* FLOAT_INT_SHIFT, 15}, {240, 10, 20, 6.0* FLOAT_INT_SHIFT, 15}, {320, 10, 20, 6.0* FLOAT_INT_SHIFT, 15}, {640, 10, 20, 6.0* FLOAT_INT_SHIFT, 15}, {960, 10, 20, 6.0* FLOAT_INT_SHIFT, 15}, {1280, 15, 25, 6.0* FLOAT_INT_SHIFT, 15}, {1600, 20, 30, 6.0* FLOAT_INT_SHIFT, 15}, {1920, 25, 35, 6.0* FLOAT_INT_SHIFT, 15}, {2560, 30, 40, 6.0* FLOAT_INT_SHIFT, 15}, {6400, 30, 50, 6.0* FLOAT_INT_SHIFT, 15}, }, .hdr_image_fusion_param = { {160, 16, 1, 0, 160, 128, 128, 0.25* FLOAT_INT_SHIFT}, {240, 16, 1, 0, 150, 128, 128, 0.25* FLOAT_INT_SHIFT}, {320, 16, 1, 0, 140, 128, 128, 0.25* FLOAT_INT_SHIFT}, {640, 16, 1, 0, 130, 128, 128, 0.25* FLOAT_INT_SHIFT}, {960, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT}, {1280, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT}, {1600, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT}, {1920, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT}, {2560, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT}, {6400, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT} }
+ot_photo_hdr_coef g_hdr_coef = {
+    .ajust_ratio =128,
+    .image_scale_method =1,
+    .motion_detection_param = {
+        {160,  10, 20, 6.0* FLOAT_INT_SHIFT, 15},
+        {240,  10, 20, 6.0* FLOAT_INT_SHIFT, 15},
+        {320,  10, 20, 6.0* FLOAT_INT_SHIFT, 15},
+        {640,  10, 20, 6.0* FLOAT_INT_SHIFT, 15},
+        {960,  10, 20, 6.0* FLOAT_INT_SHIFT, 15},
+        {1280, 15, 25, 6.0* FLOAT_INT_SHIFT, 15},
+        {1600, 20, 30, 6.0* FLOAT_INT_SHIFT, 15},
+        {1920, 25, 35, 6.0* FLOAT_INT_SHIFT, 15},
+        {2560, 30, 40, 6.0* FLOAT_INT_SHIFT, 15},
+        {6400, 30, 50, 6.0* FLOAT_INT_SHIFT, 15},
+    },
+    .hdr_image_fusion_param = {
+        {160,  16, 1, 0, 160, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {240,  16, 1, 0, 150, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {320,  16, 1, 0, 140, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {640,  16, 1, 0, 130, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {960,  16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {1280, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {1600, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {1920, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {2560, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT},
+        {6400, 16, 1, 0, 128, 128, 128, 0.25* FLOAT_INT_SHIFT}
+    }
 };</pre>
 </td>
 </tr>
 <tr id="row421mcpsimp"><td class="cellrowborder" valign="top" width="30.55%" headers="mcps1.1.3.1.1 "><p xml:lang="sv-SE" id="p423mcpsimp"><a name="p423mcpsimp"></a><a name="p423mcpsimp"></a>sfnr_coef</p>
 </td>
 <td class="cellrowborder" valign="top" width="69.45%" headers="mcps1.1.3.1.2 "><p id="p425mcpsimp"><a name="p425mcpsimp"></a><a name="p425mcpsimp"></a>SFNR算法系数的结构体，默认参数：</p>
-<pre class="codeblock" id="codeblock1414318367311"><a name="codeblock1414318367311"></a><a name="codeblock1414318367311"></a>ot_photo_sfnr_coef g_sfnr_coef = { .ast_iso_strat = { {100, -100, -85, -85, -90}, {200, -95, -85, -75, -85}, {400, -90, -75, -75, -80}, {600, -80, -70, -65, -70}, {800, -70, -60, -60, -65}, {1200, -65, -60, -55, -60}, {1600, -60, -60, -50, -55}, {3200, -50, -40, -45, -50} }
+<pre class="codeblock" id="codeblock1414318367311"><a name="codeblock1414318367311"></a><a name="codeblock1414318367311"></a>ot_photo_sfnr_coef g_sfnr_coef = {
+    .ast_iso_strat = {
+        {100,  -100, -85, -85, -90},
+        {200,  -95,  -85, -75, -85},
+        {400,  -90,  -75, -75, -80},
+        {600,  -80,  -70, -65, -70},
+        {800,  -70,  -60, -60, -65},
+        {1200, -65,  -60, -55, -60},
+        {1600, -60,  -60, -50, -55},
+        {3200, -50,  -40, -45, -50}
+    }
 };</pre>
 </td>
 </tr>
 <tr id="row426mcpsimp"><td class="cellrowborder" valign="top" width="30.55%" headers="mcps1.1.3.1.1 "><p xml:lang="sv-SE" id="p428mcpsimp"><a name="p428mcpsimp"></a><a name="p428mcpsimp"></a>mfnr_coef</p>
 </td>
 <td class="cellrowborder" valign="top" width="69.45%" headers="mcps1.1.3.1.2 "><p id="p430mcpsimp"><a name="p430mcpsimp"></a><a name="p430mcpsimp"></a>MFNR算法系数的结构体，默认参数：</p>
-<pre class="codeblock" id="codeblock13191159143113"><a name="codeblock13191159143113"></a><a name="codeblock13191159143113"></a>ot_photo_mfnr_coef g_mfnr_coef = { .de_enable = TD_FALSE, .image_scale = TD_TRUE, .mfnr_2dnr.iso_2dnr_param= { {100, -90, -90, -90, 3}, {200, -90, -85, -90, 3}, {400, -90, -85, -90, 3}, {800, -80, -80, -90, 3}, {1600, -80, -78, -60, 3}, {3200, -80, -75, -60, 3}, {4800, -80, -75, -55, 3}, {6400, -80, -65, -50, 1}, }, .mfnr_3dnr.iso_3dnr_param= { {100, 240, 4, 0, 80, 12, 4, 12, 3}, {200, 210, 4, 0, 100, 12, 5, 12, 3}, {400, 180, 4, 0, 130, 12, 6, 12, 4}, {800, 160, 4, 0, 160, 12, 7, 12, 4}, {1600, 150, 4, 0, 190, 12, 8, 12, 5}, {3200, 136, 4, 32, 220, 12, 9, 12, 5}, {6400, 128, 4, 48, 255, 12, 10, 12, 6}, {12800, 128, 4, 64, 255, 12, 12, 12, 8} }
+<pre class="codeblock" id="codeblock13191159143113"><a name="codeblock13191159143113"></a><a name="codeblock13191159143113"></a>ot_photo_mfnr_coef g_mfnr_coef = {
+    .de_enable = TD_FALSE,
+    .image_scale = TD_TRUE,
+    .mfnr_2dnr.iso_2dnr_param= {
+        {100,  -90, -90, -90, 3},
+        {200,  -90, -85, -90, 3},
+        {400,  -90, -85, -90, 3},
+        {800,  -80, -80, -90, 3},
+        {1600, -80, -78, -60, 3},
+        {3200, -80, -75, -60, 3},
+        {4800, -80, -75, -55, 3},
+        {6400, -80, -65, -50, 1},
+    },
+    .mfnr_3dnr.iso_3dnr_param= {
+        {100,   240, 4, 0,  80,  12, 4,  12, 3},
+        {200,   210, 4, 0,  100, 12, 5,  12, 3},
+        {400,   180, 4, 0,  130, 12, 6,  12, 4},
+        {800,   160, 4, 0,  160, 12, 7,  12, 4},
+        {1600,  150, 4, 0,  190, 12, 8,  12, 5},
+        {3200,  136, 4, 32, 220, 12, 9,  12, 5},
+        {6400,  128, 4, 48, 255, 12, 10, 12, 6},
+        {12800, 128, 4, 64, 255, 12, 12, 12, 8}
+    }
 };</pre>
 </td>
 </tr>
 <tr id="row431mcpsimp"><td class="cellrowborder" valign="top" width="30.55%" headers="mcps1.1.3.1.1 "><p xml:lang="sv-SE" id="p433mcpsimp"><a name="p433mcpsimp"></a><a name="p433mcpsimp"></a>de_coef</p>
 </td>
 <td class="cellrowborder" valign="top" width="69.45%" headers="mcps1.1.3.1.2 "><p id="p435mcpsimp"><a name="p435mcpsimp"></a><a name="p435mcpsimp"></a>DE算法系数的结构体，默认参数：</p>
-<pre class="codeblock" id="codeblock115571213193216"><a name="codeblock115571213193216"></a><a name="codeblock115571213193216"></a>ot_photo_de_coef g_de_coef = { .de_iso_strat = { {100, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}, {200, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}, {400, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}, {800, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}, {1600, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}, {3200, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}, {4800, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}, {6400, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160} }
+<pre class="codeblock" id="codeblock115571213193216"><a name="codeblock115571213193216"></a><a name="codeblock115571213193216"></a>ot_photo_de_coef g_de_coef = {
+    .de_iso_strat = {
+        {100,  164, 9, 9, 9, 70, 210, 32, 140, 200, 160},
+        {200,  164, 9, 9, 9, 70, 210, 32, 140, 200, 160},
+        {400,  164, 9, 9, 9, 70, 210, 32, 140, 200, 160},
+        {800,  164, 9, 9, 9, 70, 210, 32, 140, 200, 160},
+        {1600, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160},
+        {3200, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160},
+        {4800, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160},
+        {6400, 164, 9, 9, 9, 70, 210, 32, 140, 200, 160}
+    }
 };</pre>
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 - [ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341)
-- [ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285) ### ot\_photo\_hdr\_coef<a name="ZH-CN_TOPIC_0000002408283926"></a> 【说明】 定义HDR算法系数的结构体。 【定义】 ```
-typedef struct { td_s32 ajust_ratio; td_s32 image_scale_method; ot_photo_dark_motion_detection_param motion_detection_param[OT_PHOTO_HDR_ISO_LEVEL_CNT]; ot_photo_image_fusion_param hdr_image_fusion_param[OT_PHOTO_HDR_ISO_LEVEL_CNT];
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+-   [ss\_mpi\_photo\_set\_alg\_coef](#ZH-CN_TOPIC_0000002441683341)
+-   [ss\_mpi\_photo\_get\_alg\_coef](#ZH-CN_TOPIC_0000002441683285)
+
+### ot\_photo\_hdr\_coef<a name="ZH-CN_TOPIC_0000002408283926"></a>
+
+【说明】
+
+定义HDR算法系数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_s32 ajust_ratio;
+    td_s32 image_scale_method;
+    ot_photo_dark_motion_detection_param motion_detection_param[OT_PHOTO_HDR_ISO_LEVEL_CNT];
+    ot_photo_image_fusion_param hdr_image_fusion_param[OT_PHOTO_HDR_ISO_LEVEL_CNT];
 } ot_photo_hdr_coef;
-``` 【成员】 <a name="table1384mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1384mcpsimp"></a>
 <table><thead align="left"><tr id="row1389mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1391mcpsimp"><a name="p1391mcpsimp"></a><a name="p1391mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1393mcpsimp"><a name="p1393mcpsimp"></a><a name="p1393mcpsimp"></a>描述</p>
@@ -1100,10 +2283,41 @@ typedef struct { td_s32 ajust_ratio; td_s32 image_scale_method; ot_photo_dark_mo
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153) ### ot\_photo\_image\_fusion\_param<a name="ZH-CN_TOPIC_0000002441723213"></a> 【说明】 定义图像融合参数的结构体。 【定义】 ```
-typedef struct { td_s32 iso_speed; td_s32 pyramid_top_size; td_s32 weight_curve_method; td_s32 weight_calc_method; td_s32 blend_uv_gain; td_s32 detail_enhance_ratio_l0; td_s32 detail_enhance_ratio_l1; td_float blend_sigma; ot_photo_hdr_fusion_mode fusion_mode;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153)
+
+### ot\_photo\_image\_fusion\_param<a name="ZH-CN_TOPIC_0000002441723213"></a>
+
+【说明】
+
+定义图像融合参数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_s32 iso_speed;
+    td_s32 pyramid_top_size;
+    td_s32 weight_curve_method;
+    td_s32 weight_calc_method;
+    td_s32 blend_uv_gain;
+    td_s32 detail_enhance_ratio_l0;
+    td_s32 detail_enhance_ratio_l1;
+    td_float blend_sigma;
+    ot_photo_hdr_fusion_mode fusion_mode;
 } ot_photo_image_fusion_param;
-``` 【成员】 <a name="table2726mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2726mcpsimp"></a>
 <table><thead align="left"><tr id="row2731mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2733mcpsimp"><a name="p2733mcpsimp"></a><a name="p2733mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2735mcpsimp"><a name="p2735mcpsimp"></a><a name="p2735mcpsimp"></a>描述</p>
@@ -1171,13 +2385,52 @@ typedef struct { td_s32 iso_speed; td_s32 pyramid_top_size; td_s32 weight_curve_
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【调试建议】 **图 1** 公用曲线<a name="fig1346618112128"></a> ![](figures/公用曲线.png "公用曲线") **图 2** 各自曲线<a name="fig16968388141"></a> ![](figures/各自曲线.png "各自曲线") 融合模式\(weight\_curve\_method, weight\_calc\_method\) 1. 当融合模式为\(weight\_curve\_method = 0, weight\_calc\_method = 0\) 选择公用曲线，短帧，中帧，长帧分别以公用曲线算对应融合权重。
-2. 当融合模式为\(weight\_curve\_method = 0, weight\_calc\_method = 1\) 选择公用曲线，只用中帧算对应权重，相当于短帧，中帧，长帧的平均，短帧，中帧，长帧权重都一样。注意：当blend\_sigma值非常小时（如小于0.1时），融合权重会以中帧为主。
-3. 当融合模式为\(weight\_curve\_method = 1, weight\_calc\_method = 0\) 选择各自曲线，短帧选择high曲线，中帧选择mid曲线，长帧选择dark曲线得到融合权重。
-4. 当融合模式为\(weight\_curve\_method = 1, weight\_calc\_method = 1\) 选择各自曲线，只用中帧计算融合权重，中帧选择high曲线作为短帧权重，中帧选择mid曲线作为中帧权重，中帧选择dark曲线作为长帧权重。 【相关数据类型及接口】 [ot\_photo\_hdr\_coef](#ZH-CN_TOPIC_0000002408283926) ### ot\_photo\_dark\_motion\_detection\_param<a name="ZH-CN_TOPIC_0000002408124026"></a> 【说明】 定义HDR中鬼影检测参数的结构体。 【定义】 ```
-typedef struct { td_s32 iso_speed; td_s32 motion_low_gray; td_s32 motion_high_gray; td_float motion_ratio; td_s32 night_average_luma;
+</table>
+
+【注意事项】
+
+无
+
+【调试建议】
+
+**图 1**  公用曲线<a name="fig1346618112128"></a>  
+![](figures/公用曲线.png "公用曲线")
+
+**图 2**  各自曲线<a name="fig16968388141"></a>  
+![](figures/各自曲线.png "各自曲线")
+
+融合模式\(weight\_curve\_method, weight\_calc\_method\)
+
+1.  当融合模式为\(weight\_curve\_method = 0, weight\_calc\_method = 0\) 选择公用曲线，短帧，中帧，长帧分别以公用曲线算对应融合权重。
+2.  当融合模式为\(weight\_curve\_method = 0, weight\_calc\_method = 1\) 选择公用曲线，只用中帧算对应权重，相当于短帧，中帧，长帧的平均，短帧，中帧，长帧权重都一样。注意：当blend\_sigma值非常小时（如小于0.1时），融合权重会以中帧为主。
+3.  当融合模式为\(weight\_curve\_method = 1, weight\_calc\_method = 0\) 选择各自曲线，短帧选择high曲线，中帧选择mid曲线，长帧选择dark曲线得到融合权重。
+4.  当融合模式为\(weight\_curve\_method = 1, weight\_calc\_method = 1\) 选择各自曲线，只用中帧计算融合权重，中帧选择high曲线作为短帧权重，中帧选择mid曲线作为中帧权重，中帧选择dark曲线作为长帧权重。
+
+【相关数据类型及接口】
+
+[ot\_photo\_hdr\_coef](#ZH-CN_TOPIC_0000002408283926)
+
+### ot\_photo\_dark\_motion\_detection\_param<a name="ZH-CN_TOPIC_0000002408124026"></a>
+
+【说明】
+
+定义HDR中鬼影检测参数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_s32 iso_speed;
+    td_s32 motion_low_gray;
+    td_s32 motion_high_gray;
+    td_float motion_ratio;
+    td_s32 night_average_luma;
 } ot_photo_dark_motion_detection_param;
-``` 【成员】 <a name="table477mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table477mcpsimp"></a>
 <table><thead align="left"><tr id="row482mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p484mcpsimp"><a name="p484mcpsimp"></a><a name="p484mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p486mcpsimp"><a name="p486mcpsimp"></a><a name="p486mcpsimp"></a>描述</p>
@@ -1215,10 +2468,33 @@ typedef struct { td_s32 iso_speed; td_s32 motion_low_gray; td_s32 motion_high_gr
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_hdr\_coef](#ZH-CN_TOPIC_0000002408283926) ### ot\_photo\_sfnr\_coef<a name="ZH-CN_TOPIC_0000002408283934"></a> 【说明】 定义SFNR算法系数的结构体。 【定义】 ```
-typedef struct { ot_photo_sfnr_iso_strategy ast_iso_strat[OT_PHOTO_SFNR_ISO_LEVEL_CNT];
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_hdr\_coef](#ZH-CN_TOPIC_0000002408283926)
+
+### ot\_photo\_sfnr\_coef<a name="ZH-CN_TOPIC_0000002408283934"></a>
+
+【说明】
+
+定义SFNR算法系数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_photo_sfnr_iso_strategy  ast_iso_strat[OT_PHOTO_SFNR_ISO_LEVEL_CNT];
 } ot_photo_sfnr_coef;
-``` 【成员】 <a name="table2864mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2864mcpsimp"></a>
 <table><thead align="left"><tr id="row2869mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2871mcpsimp"><a name="p2871mcpsimp"></a><a name="p2871mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2873mcpsimp"><a name="p2873mcpsimp"></a><a name="p2873mcpsimp"></a>描述</p>
@@ -1231,10 +2507,37 @@ typedef struct { ot_photo_sfnr_iso_strategy ast_iso_strat[OT_PHOTO_SFNR_ISO_LEVE
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153) ### ot\_photo\_sfnr\_iso\_strategy<a name="ZH-CN_TOPIC_0000002441683301"></a> 【说明】 定义SFNR算法ISO策略的结构体。 【定义】 ```
-typedef struct { td_s32 iso_value; td_s32 luma; td_s32 chroma; td_s32 luma_hf; td_s32 chroma_hf;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153)
+
+### ot\_photo\_sfnr\_iso\_strategy<a name="ZH-CN_TOPIC_0000002441683301"></a>
+
+【说明】
+
+定义SFNR算法ISO策略的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_s32 iso_value;
+    td_s32 luma;
+    td_s32 chroma;
+    td_s32 luma_hf;
+    td_s32 chroma_hf;
 } ot_photo_sfnr_iso_strategy;
-``` 【成员】 <a name="table114mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table114mcpsimp"></a>
 <table><thead align="left"><tr id="row119mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>描述</p>
@@ -1272,10 +2575,37 @@ typedef struct { td_s32 iso_value; td_s32 luma; td_s32 chroma; td_s32 luma_hf; t
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_sfnr\_coef](#ZH-CN_TOPIC_0000002408283934) ### ot\_photo\_mfnr\_coef<a name="ZH-CN_TOPIC_0000002408124018"></a> 【说明】 定义MFNR算法系数的结构体。 【定义】 ```
-typedef struct { td_bool image_scale; ot_photo_mfnr_3dnr_param mfnr_3dnr; ot_photo_mfnr_2dnr_param mfnr_2dnr; td_bool de_enable; ot_photo_de_coef mfnr_de_coef;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_sfnr\_coef](#ZH-CN_TOPIC_0000002408283934)
+
+### ot\_photo\_mfnr\_coef<a name="ZH-CN_TOPIC_0000002408124018"></a>
+
+【说明】
+
+定义MFNR算法系数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_bool image_scale;
+    ot_photo_mfnr_3dnr_param mfnr_3dnr;
+    ot_photo_mfnr_2dnr_param mfnr_2dnr;
+    td_bool de_enable;
+    ot_photo_de_coef mfnr_de_coef;
 } ot_photo_mfnr_coef;
-``` 【成员】 <a name="table1131mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1131mcpsimp"></a>
 <table><thead align="left"><tr id="row1136mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1138mcpsimp"><a name="p1138mcpsimp"></a><a name="p1138mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1140mcpsimp"><a name="p1140mcpsimp"></a><a name="p1140mcpsimp"></a>描述</p>
@@ -1310,10 +2640,33 @@ typedef struct { td_bool image_scale; ot_photo_mfnr_3dnr_param mfnr_3dnr; ot_pho
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153) ### ot\_photo\_mfnr\_3dnr\_param<a name="ZH-CN_TOPIC_0000002408283962"></a> 【说明】 定义MFNR算法中时域降噪系数的结构体。 【定义】 ```
-typedef struct { ot_photo_mfnr_3dnr_iso_strategy iso_3dnr_param[OT_PHOTO_MFNR_ISO_LEVEL_CNT];
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153)
+
+### ot\_photo\_mfnr\_3dnr\_param<a name="ZH-CN_TOPIC_0000002408283962"></a>
+
+【说明】
+
+定义MFNR算法中时域降噪系数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_photo_mfnr_3dnr_iso_strategy  iso_3dnr_param[OT_PHOTO_MFNR_ISO_LEVEL_CNT];
 } ot_photo_mfnr_3dnr_param;
-``` 【成员】 <a name="table260mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table260mcpsimp"></a>
 <table><thead align="left"><tr id="row265mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p269mcpsimp"><a name="p269mcpsimp"></a><a name="p269mcpsimp"></a>描述</p>
@@ -1326,10 +2679,41 @@ typedef struct { ot_photo_mfnr_3dnr_iso_strategy iso_3dnr_param[OT_PHOTO_MFNR_IS
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_mfnr\_coef](#ZH-CN_TOPIC_0000002408124018) ### ot\_photo\_mfnr\_3dnr\_iso\_strategy<a name="ZH-CN_TOPIC_0000002441723165"></a> 【说明】 定义MFNR算法时域降噪系数中每个ISO档位的结构体。 【定义】 ```
-typedef struct { td_s32 iso_value; td_s32 stnr; td_s32 tnr_frm_num; td_s32 stnr_dark_less; td_s32 stnr_ghost_less; td_s32 luma_alpha; td_s32 luma_delta; td_s32 chroma_alpha; td_s32 chroma_delta;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_mfnr\_coef](#ZH-CN_TOPIC_0000002408124018)
+
+### ot\_photo\_mfnr\_3dnr\_iso\_strategy<a name="ZH-CN_TOPIC_0000002441723165"></a>
+
+【说明】
+
+定义MFNR算法时域降噪系数中每个ISO档位的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_s32 iso_value;
+    td_s32 stnr;
+    td_s32 tnr_frm_num;
+    td_s32 stnr_dark_less;
+    td_s32 stnr_ghost_less;
+    td_s32 luma_alpha;
+    td_s32 luma_delta;
+    td_s32 chroma_alpha;
+    td_s32 chroma_delta;
 } ot_photo_mfnr_3dnr_iso_strategy;
-``` 【成员】 <a name="table2350mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table2350mcpsimp"></a>
 <table><thead align="left"><tr id="row2355mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p2357mcpsimp"><a name="p2357mcpsimp"></a><a name="p2357mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p2359mcpsimp"><a name="p2359mcpsimp"></a><a name="p2359mcpsimp"></a>描述</p>
@@ -1391,10 +2775,33 @@ typedef struct { td_s32 iso_value; td_s32 stnr; td_s32 tnr_frm_num; td_s32 stnr_
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_mfnr\_3dnr\_param](#ZH-CN_TOPIC_0000002408283962) ### ot\_photo\_mfnr\_2dnr\_param<a name="ZH-CN_TOPIC_0000002441723189"></a> 【说明】 定义MFNR算法中空域降噪系数的结构体。 【定义】 ```
-typedef struct { ot_photo_mfnr_2dnr_iso_strategy iso_2dnr_param[OT_PHOTO_MFNR_ISO_LEVEL_CNT];
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_mfnr\_3dnr\_param](#ZH-CN_TOPIC_0000002408283962)
+
+### ot\_photo\_mfnr\_2dnr\_param<a name="ZH-CN_TOPIC_0000002441723189"></a>
+
+【说明】
+
+定义MFNR算法中空域降噪系数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_photo_mfnr_2dnr_iso_strategy  iso_2dnr_param[OT_PHOTO_MFNR_ISO_LEVEL_CNT];
 } ot_photo_mfnr_2dnr_param;
-``` 【成员】 <a name="table366mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table366mcpsimp"></a>
 <table><thead align="left"><tr id="row371mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p373mcpsimp"><a name="p373mcpsimp"></a><a name="p373mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p375mcpsimp"><a name="p375mcpsimp"></a><a name="p375mcpsimp"></a>描述</p>
@@ -1407,10 +2814,37 @@ typedef struct { ot_photo_mfnr_2dnr_iso_strategy iso_2dnr_param[OT_PHOTO_MFNR_IS
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_mfnr\_coef](#ZH-CN_TOPIC_0000002408124018) ### ot\_photo\_mfnr\_2dnr\_iso\_strategy<a name="ZH-CN_TOPIC_0000002441723161"></a> 【说明】 定义MFNR算法空域降噪系数中每个ISO档位的结构体。 【定义】 ```
-typedef struct { td_s32 iso_value; td_s32 luma; td_s32 chroma; td_s32 luma_hf2; td_s32 detail_min;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_mfnr\_coef](#ZH-CN_TOPIC_0000002408124018)
+
+### ot\_photo\_mfnr\_2dnr\_iso\_strategy<a name="ZH-CN_TOPIC_0000002441723161"></a>
+
+【说明】
+
+定义MFNR算法空域降噪系数中每个ISO档位的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_s32 iso_value;
+    td_s32 luma;
+    td_s32 chroma;
+    td_s32 luma_hf2;
+    td_s32 detail_min;
 } ot_photo_mfnr_2dnr_iso_strategy;
-``` 【成员】 <a name="table1675mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1675mcpsimp"></a>
 <table><thead align="left"><tr id="row1680mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1682mcpsimp"><a name="p1682mcpsimp"></a><a name="p1682mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1684mcpsimp"><a name="p1684mcpsimp"></a><a name="p1684mcpsimp"></a>描述</p>
@@ -1448,10 +2882,33 @@ typedef struct { td_s32 iso_value; td_s32 luma; td_s32 chroma; td_s32 luma_hf2; 
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_mfnr\_2dnr\_param](#ZH-CN_TOPIC_0000002441723189) ### ot\_photo\_de\_coef<a name="ZH-CN_TOPIC_0000002408283954"></a> 【说明】 定义DE算法系数的结构体。 【定义】 ```
-typedef struct { ot_photo_de_iso_strategy de_iso_strat[OT_PHOTO_DE_ISO_LEVEL_CNT];
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_mfnr\_2dnr\_param](#ZH-CN_TOPIC_0000002441723189)
+
+### ot\_photo\_de\_coef<a name="ZH-CN_TOPIC_0000002408283954"></a>
+
+【说明】
+
+定义DE算法系数的结构体。
+
+【定义】
+
+```
+typedef struct {
+    ot_photo_de_iso_strategy  de_iso_strat[OT_PHOTO_DE_ISO_LEVEL_CNT];
 } ot_photo_de_coef;
-``` 【成员】 <a name="table292mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table292mcpsimp"></a>
 <table><thead align="left"><tr id="row297mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p299mcpsimp"><a name="p299mcpsimp"></a><a name="p299mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p301mcpsimp"><a name="p301mcpsimp"></a><a name="p301mcpsimp"></a>描述</p>
@@ -1464,10 +2921,43 @@ typedef struct { ot_photo_de_iso_strategy de_iso_strat[OT_PHOTO_DE_ISO_LEVEL_CNT
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153) ### ot\_photo\_de\_iso\_strategy<a name="ZH-CN_TOPIC_0000002408283946"></a> 【说明】 定义DE算法每个ISO档位对应策略的结构体。 【定义】 ```
-typedef struct { td_s32 iso_value; td_s32 global_gain; td_s32 gain_lf; td_s32 gain_hf_pos; td_s32 gain_hf_neg; td_s32 luma_scale_x0; td_s32 luma_scale_x1; td_s32 luma_scale_y1; td_s32 satu_gain_x0; td_s32 satu_gain_x1; td_s32 satu_gain_y1;
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_alg\_coef](#ZH-CN_TOPIC_0000002441723153)
+
+### ot\_photo\_de\_iso\_strategy<a name="ZH-CN_TOPIC_0000002408283946"></a>
+
+【说明】
+
+定义DE算法每个ISO档位对应策略的结构体。
+
+【定义】
+
+```
+typedef struct {
+    td_s32 iso_value;
+    td_s32 global_gain;
+    td_s32 gain_lf;
+    td_s32 gain_hf_pos;
+    td_s32 gain_hf_neg;
+    td_s32 luma_scale_x0;
+    td_s32 luma_scale_x1;
+    td_s32 luma_scale_y1;
+    td_s32 satu_gain_x0;
+    td_s32 satu_gain_x1;
+    td_s32 satu_gain_y1;
 } ot_photo_de_iso_strategy;
-``` 【成员】 <a name="table1956mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1956mcpsimp"></a>
 <table><thead align="left"><tr id="row1961mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1963mcpsimp"><a name="p1963mcpsimp"></a><a name="p1963mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1965mcpsimp"><a name="p1965mcpsimp"></a><a name="p1965mcpsimp"></a>描述</p>
@@ -1541,10 +3031,37 @@ typedef struct { td_s32 iso_value; td_s32 global_gain; td_s32 gain_lf; td_s32 ga
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_photo\_de\_coef](#ZH-CN_TOPIC_0000002408283954) ### ot\_photo\_hdr\_fusion\_mode<a name="ZH-CN_TOPIC_0000002441683309"></a> 【说明】 定义HDR融合模式。 【定义】 ```
-typedef enum { OT_PHOTO_HDR_FUSION_AUTO = 0, OT_PHOTO_HDR_FUSION_SHORT_MEDIAN = 1, OT_PHOTO_HDR_FUSION_MEDIAN_LONG = 2, OT_PHOTO_HDR_FUSION_ALL = 3, OT_PHOTO_HDR_FUSION_BUTT
+</table>
+
+【注意事项】
+
+无
+
+【相关数据类型及接口】
+
+[ot\_photo\_de\_coef](#ZH-CN_TOPIC_0000002408283954)
+
+### ot\_photo\_hdr\_fusion\_mode<a name="ZH-CN_TOPIC_0000002441683309"></a>
+
+【说明】
+
+定义HDR融合模式。
+
+【定义】
+
+```
+typedef enum {
+    OT_PHOTO_HDR_FUSION_AUTO = 0,
+    OT_PHOTO_HDR_FUSION_SHORT_MEDIAN = 1,
+    OT_PHOTO_HDR_FUSION_MEDIAN_LONG = 2,
+    OT_PHOTO_HDR_FUSION_ALL = 3,
+    OT_PHOTO_HDR_FUSION_BUTT
 } ot_photo_hdr_fusion_mode;
-``` 【成员】 <a name="table1956mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table1956mcpsimp"></a>
 <table><thead align="left"><tr id="row1961mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1963mcpsimp"><a name="p1963mcpsimp"></a><a name="p1963mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1965mcpsimp"><a name="p1965mcpsimp"></a><a name="p1965mcpsimp"></a>描述</p>
@@ -1572,31 +3089,265 @@ typedef enum { OT_PHOTO_HDR_FUSION_AUTO = 0, OT_PHOTO_HDR_FUSION_SHORT_MEDIAN = 
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 1. 当自动模式选择不做融合，直接输出中帧时，如果暗区亮度不足时，可以选择使用OT\_PHOTO\_HDR\_FUSION\_MEDIAN\_LONG，OT\_PHOTO\_HDR\_FUSION\_ALL模式提高暗区亮度。
-2. 当自动模式选择不做融合，直接输出中帧时，如果亮区过亮时，可以选择使用OT\_PHOTO\_HDR\_FUSION\_SHORT\_MEDIAN模式压制亮区亮度。
-3. 具体融合权重参考weight\_curve\_method, weight\_calc\_method参数的调试建议。 【相关数据类型及接口】 [ot\_photo\_image\_fusion\_param](#ZH-CN_TOPIC_0000002441723213) ### OT\_PHOTO\_HDR\_FRAME\_NUM<a name="ZH-CN_TOPIC_0000002441723185"></a> 【说明】 定义HDR合成的帧数目。 【定义】 ```
+</table>
+
+【注意事项】
+
+1.  当自动模式选择不做融合，直接输出中帧时，如果暗区亮度不足时，可以选择使用OT\_PHOTO\_HDR\_FUSION\_MEDIAN\_LONG，OT\_PHOTO\_HDR\_FUSION\_ALL模式提高暗区亮度。
+2.  当自动模式选择不做融合，直接输出中帧时，如果亮区过亮时，可以选择使用OT\_PHOTO\_HDR\_FUSION\_SHORT\_MEDIAN模式压制亮区亮度。
+3.  具体融合权重参考weight\_curve\_method, weight\_calc\_method参数的调试建议。
+
+【相关数据类型及接口】
+
+[ot\_photo\_image\_fusion\_param](#ZH-CN_TOPIC_0000002441723213)
+
+### OT\_PHOTO\_HDR\_FRAME\_NUM<a name="ZH-CN_TOPIC_0000002441723185"></a>
+
+【说明】
+
+定义HDR合成的帧数目。
+
+【定义】
+
+```
 #define OT_PHOTO_HDR_FRAME_NUM 3
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_MFNR\_FRAME\_NUM<a name="ZH-CN_TOPIC_0000002441683325"></a> 【说明】 定义MFNR合成的帧数目。 【定义】 ```
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_MFNR\_FRAME\_NUM<a name="ZH-CN_TOPIC_0000002441683325"></a>
+
+【说明】
+
+定义MFNR合成的帧数目。
+
+【定义】
+
+```
 #define OT_PHOTO_MFNR_FRAME_NUM 4
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_HDR\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002408123994"></a> 【说明】 定义调节HDR图像效果的ISO档位数目。 【定义】 ```
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_HDR\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002408123994"></a>
+
+【说明】
+
+定义调节HDR图像效果的ISO档位数目。
+
+【定义】
+
+```
 #define OT_PHOTO_HDR_ISO_LEVEL_CNT 10
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_SFNR\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002441723181"></a> 【说明】 定义调节SFNR图像效果的ISO档位数目。 【定义】 ```
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_SFNR\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002441723181"></a>
+
+【说明】
+
+定义调节SFNR图像效果的ISO档位数目。
+
+【定义】
+
+```
 #define OT_PHOTO_SFNR_ISO_LEVEL_CNT 8
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_MFNR\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002408124038"></a> 【说明】 定义调节MFNR图像效果的ISO档位数目。 【定义】 ```
-#define OT_PHOTO_MFNR_ISO_LEVEL_CNT 8
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_DE\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002441683305"></a> 【说明】 定义调节DE图像效果的ISO档位数目。 【定义】 ```
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_MFNR\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002408124038"></a>
+
+【说明】
+
+定义调节MFNR图像效果的ISO档位数目。
+
+【定义】
+
+```
+#define OT_PHOTO_MFNR_ISO_LEVEL_CNT    8
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_DE\_ISO\_LEVEL\_CNT<a name="ZH-CN_TOPIC_0000002441683305"></a>
+
+【说明】
+
+定义调节DE图像效果的ISO档位数目。
+
+【定义】
+
+```
 #define OT_PHOTO_DE_ISO_LEVEL_CNT 8
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_MAX\_FACE\_NUM<a name="ZH-CN_TOPIC_0000002441723217"></a> 【说明】 定义算法处理中最大的人脸区域的数目。 【定义】 ```
-#define OT_PHOTO_MAX_FACE_NUM 10
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_MIN\_WIDTH<a name="ZH-CN_TOPIC_0000002441723209"></a> 【说明】 定义算法处理支持的最小图像分辨率的宽。 【定义】 ```
-#define OT_PHOTO_MIN_WIDTH 1280
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_MIN\_HEIGHT<a name="ZH-CN_TOPIC_0000002441683329"></a> 【说明】 定义算法处理支持的最小图像分辨率的高。 【定义】 ```
-#define OT_PHOTO_MIN_HEIGHT 720
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_MAX\_WIDTH<a name="ZH-CN_TOPIC_0000002408124042"></a> 【说明】 定义算法处理支持的最大图像分辨率的宽。 【定义】 ```
-#define OT_PHOTO_MAX_WIDTH 8192
-``` 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_MAX\_HEIGHT<a name="ZH-CN_TOPIC_0000002408283922"></a> 【说明】 定义算法处理支持的最大图像分辨率的高。 【定义】 ```
-#define OT_PHOTO_MAX_HEIGHT 6144 ``` 【注意事项】 HDR算法的最大图像分辨率的高由OT\_PHOTO\_HDR\_MAX\_HEIGHT定义。 【相关数据类型及接口】 无。 ### OT\_PHOTO\_HDR\_MAX\_HEIGHT<a name="ZH-CN_TOPIC_0000002408124014"></a> 【说明】 定义HDR算法处理支持的最大图像分辨率的高。 【定义】 ```
-#define OT_PHOTO_HDR_MAX_HEIGHT 8192 ``` 【注意事项】 无。 【相关数据类型及接口】 无。 ## 错误码<a name="ZH-CN_TOPIC_0000002441723193"></a> PHOTO模块API错误码如下所示。 **表 1** PHOTO模块API错误码 <a name="_Ref505591466"></a>
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_MAX\_FACE\_NUM<a name="ZH-CN_TOPIC_0000002441723217"></a>
+
+【说明】
+
+定义算法处理中最大的人脸区域的数目。
+
+【定义】
+
+```
+#define OT_PHOTO_MAX_FACE_NUM  10
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_MIN\_WIDTH<a name="ZH-CN_TOPIC_0000002441723209"></a>
+
+【说明】
+
+定义算法处理支持的最小图像分辨率的宽。
+
+【定义】
+
+```
+#define OT_PHOTO_MIN_WIDTH     1280
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_MIN\_HEIGHT<a name="ZH-CN_TOPIC_0000002441683329"></a>
+
+【说明】
+
+定义算法处理支持的最小图像分辨率的高。
+
+【定义】
+
+```
+#define OT_PHOTO_MIN_HEIGHT    720
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_MAX\_WIDTH<a name="ZH-CN_TOPIC_0000002408124042"></a>
+
+【说明】
+
+定义算法处理支持的最大图像分辨率的宽。
+
+【定义】
+
+```
+#define OT_PHOTO_MAX_WIDTH     8192
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_MAX\_HEIGHT<a name="ZH-CN_TOPIC_0000002408283922"></a>
+
+【说明】
+
+定义算法处理支持的最大图像分辨率的高。
+
+【定义】
+
+```
+#define OT_PHOTO_MAX_HEIGHT    6144 
+```
+
+【注意事项】
+
+HDR算法的最大图像分辨率的高由OT\_PHOTO\_HDR\_MAX\_HEIGHT定义。
+
+【相关数据类型及接口】
+
+无。
+
+### OT\_PHOTO\_HDR\_MAX\_HEIGHT<a name="ZH-CN_TOPIC_0000002408124014"></a>
+
+【说明】
+
+定义HDR算法处理支持的最大图像分辨率的高。
+
+【定义】
+
+```
+#define OT_PHOTO_HDR_MAX_HEIGHT    8192 
+```
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+无。
+
+## 错误码<a name="ZH-CN_TOPIC_0000002441723193"></a>
+
+PHOTO模块API错误码如下所示。
+
+**表 1**  PHOTO模块API错误码
+
+<a name="_Ref505591466"></a>
 <table><thead align="left"><tr id="row1471mcpsimp"><th class="cellrowborder" valign="top" width="19.801980198019802%" id="mcps1.2.4.1.1"><p id="p1473mcpsimp"><a name="p1473mcpsimp"></a><a name="p1473mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="48.51485148514851%" id="mcps1.2.4.1.2"><p id="p1475mcpsimp"><a name="p1475mcpsimp"></a><a name="p1475mcpsimp"></a>宏定义</p>
@@ -1704,5 +3455,35 @@ typedef enum { OT_PHOTO_HDR_FUSION_AUTO = 0, OT_PHOTO_HDR_FUSION_SHORT_MEDIAN = 
 </td>
 </tr>
 </tbody>
-</table> # 视频采集类抓拍方案使用指南
-## 概述<a name="ZH-CN_TOPIC_0000002408283938"></a> 视频采集类抓拍方案主要是面向视频采集产品中的电子警察、卡口视频采集等场景下的抓拍解决方案。视频采集类抓拍方案和消费类抓拍的显著区别是客户的定制化程度较高，与外设的交互也很多。 ## 数据通路<a name="ZH-CN_TOPIC_0000002408283914"></a> 视频采集类抓拍机的产品形态较多，典型的数据通路如[图1](#fig1831003823016)所示。 **图 1** 视频采集类抓拍机典型数据通路<a name="fig1831003823016"></a> ![](figures/视频采集类抓拍机典型数据通路.png "视频采集类抓拍机典型数据通路") 视频采集类抓拍机需要控制外部设备爆闪灯和频闪灯，同时需要接收交通信号灯信号、抓拍触发信号等。sensor的时序控制和AE调节需要和交通信号灯保持同步，因此需要使用客户自定义的ISP 3A算法。 实时性要求较高的场景，一般是由客户实现的FPGA来完成sensor时序的控制，爆闪灯和频闪灯的控制等。抓拍帧的标记也是由FPGA来完成，一般是在sensor输入的有效数据后额外增加几行有效数据，在里面标识是否是抓拍帧，以及其他一些客户需要的自定义信息。 从Pipe0-FE采集的RAW数据需要识别抓拍帧，同时送给不同的Pipe做后续处理。在送BE做处理之前，需要客户自己将RAW数据中额外增加的那几行自定义信息裁剪掉，防止对BE处理的图像效果有影响。当前VI Pipe要求FE写出的宽高和BE处理的宽高必须一致，所以Pipe0那一路FE写出的RAW经过裁剪后无法再送到Pipe0那一路的BE做处理，可以再起一个新的Pipe来替代Pipe0-BE。 抓拍帧的处理和视频帧不同，视频帧的ISP图像效果参数配置可以参考前一帧的统计信息计算当前帧的配置。但是抓拍帧只有一帧，没用参考帧，因此需要将抓拍帧的RAW送到Pipe2-BE两次，第一次用于生成抓拍帧的统计信息，然后根据统计信息计算出ISP的参数配置信息，再用正确的参数配置信息和抓拍帧RAW数据再做一次BE的处理，才能生成正确的抓拍帧YUV数据。 ISP算法的运行一般是由每帧的帧起始中断来驱动，但是在抓拍机的场景中都是离线送RAW数据给BE做处理的，并不适合用帧起始中断，因此需要用户程序来驱动ISP运行。在每次送RAW数据给BE做处理之前，需要调用ss\_mpi\_isp\_run\_once生成当前帧需要的寄存器配置信息，替代ss\_mpi\_isp\_run函数做的处理。 ss\_mpi\_isp\_run\_once会获取ISP处理完上一帧图像时生成的统计信息，因此，需要保证上一帧图像已经处理完成，才调用ss\_mpi\_isp\_run\_once，否则获取ISP统计信息是旧的，可能导致图像效果不符合预期。如何保证？我们可以调用ss\_mpi\_vi\_get\_chn\_frame\(VPSS离线\)或者ss\_mpi\_vpss\_get\_chn\_frame\(VPSS在线\)接口获取通道数据成功来保证上一帧已经处理完成。 ## 程序调用流程<a name="ZH-CN_TOPIC_0000002408283906"></a> 程序调用流程请参考mpp/sample/ traffic\_capture中的代码实现。 程序中用到的接口请参考《ISP 开发参考》和《MPP 媒体处理软件V5.0 开发参考》。 
+</table>
+
+# 视频采集类抓拍方案使用指南
+## 概述<a name="ZH-CN_TOPIC_0000002408283938"></a>
+
+视频采集类抓拍方案主要是面向视频采集产品中的电子警察、卡口视频采集等场景下的抓拍解决方案。视频采集类抓拍方案和消费类抓拍的显著区别是客户的定制化程度较高，与外设的交互也很多。
+
+## 数据通路<a name="ZH-CN_TOPIC_0000002408283914"></a>
+
+视频采集类抓拍机的产品形态较多，典型的数据通路如[图1](#fig1831003823016)所示。
+
+**图 1**  视频采集类抓拍机典型数据通路<a name="fig1831003823016"></a>  
+![](figures/视频采集类抓拍机典型数据通路.png "视频采集类抓拍机典型数据通路")
+
+视频采集类抓拍机需要控制外部设备爆闪灯和频闪灯，同时需要接收交通信号灯信号、抓拍触发信号等。sensor的时序控制和AE调节需要和交通信号灯保持同步，因此需要使用客户自定义的ISP 3A算法。
+
+实时性要求较高的场景，一般是由客户实现的FPGA来完成sensor时序的控制，爆闪灯和频闪灯的控制等。抓拍帧的标记也是由FPGA来完成，一般是在sensor输入的有效数据后额外增加几行有效数据，在里面标识是否是抓拍帧，以及其他一些客户需要的自定义信息。
+
+从Pipe0-FE采集的RAW数据需要识别抓拍帧，同时送给不同的Pipe做后续处理。在送BE做处理之前，需要客户自己将RAW数据中额外增加的那几行自定义信息裁剪掉，防止对BE处理的图像效果有影响。当前VI Pipe要求FE写出的宽高和BE处理的宽高必须一致，所以Pipe0那一路FE写出的RAW经过裁剪后无法再送到Pipe0那一路的BE做处理，可以再起一个新的Pipe来替代Pipe0-BE。
+
+抓拍帧的处理和视频帧不同，视频帧的ISP图像效果参数配置可以参考前一帧的统计信息计算当前帧的配置。但是抓拍帧只有一帧，没用参考帧，因此需要将抓拍帧的RAW送到Pipe2-BE两次，第一次用于生成抓拍帧的统计信息，然后根据统计信息计算出ISP的参数配置信息，再用正确的参数配置信息和抓拍帧RAW数据再做一次BE的处理，才能生成正确的抓拍帧YUV数据。
+
+ISP算法的运行一般是由每帧的帧起始中断来驱动，但是在抓拍机的场景中都是离线送RAW数据给BE做处理的，并不适合用帧起始中断，因此需要用户程序来驱动ISP运行。在每次送RAW数据给BE做处理之前，需要调用ss\_mpi\_isp\_run\_once生成当前帧需要的寄存器配置信息，替代ss\_mpi\_isp\_run函数做的处理。
+
+ss\_mpi\_isp\_run\_once会获取ISP处理完上一帧图像时生成的统计信息，因此，需要保证上一帧图像已经处理完成，才调用ss\_mpi\_isp\_run\_once，否则获取ISP统计信息是旧的，可能导致图像效果不符合预期。如何保证？我们可以调用ss\_mpi\_vi\_get\_chn\_frame\(VPSS离线\)或者ss\_mpi\_vpss\_get\_chn\_frame\(VPSS在线\)接口获取通道数据成功来保证上一帧已经处理完成。
+
+## 程序调用流程<a name="ZH-CN_TOPIC_0000002408283906"></a>
+
+程序调用流程请参考mpp/sample/ traffic\_capture中的代码实现。
+
+程序中用到的接口请参考《ISP 开发参考》和《MPP 媒体处理软件V5.0 开发参考》。
+

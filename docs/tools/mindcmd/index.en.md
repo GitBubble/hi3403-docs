@@ -1,8 +1,18 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd User Guide/MindCmd User Guide.md
---- # Preface
-**Overview<a name="section4537382116410"></a>** This document describes how to use the MindCmd tool and how to perform one-click inference, data preprocessing, open-source framework inference, model compression, model conversion, functional simulation, instruction simulation, on-board inference, accuracy comparison, and performance analysis through the tool. **Product Version<a name="section300mcpsimp"></a>** The product versions corresponding to this document are as follows. <a name="table303mcpsimp"></a>
+---
+
+# Preface
+**Overview<a name="section4537382116410"></a>**
+
+This document describes how to use the MindCmd tool and how to perform one-click inference, data preprocessing, open-source framework inference, model compression, model conversion, functional simulation, instruction simulation, on-board inference, accuracy comparison, and performance analysis through the tool.
+
+**Product Version<a name="section300mcpsimp"></a>**
+
+The product versions corresponding to this document are as follows.
+
+<a name="table303mcpsimp"></a>
 <table><thead align="left"><tr id="row308mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p310mcpsimp"><a name="p310mcpsimp"></a><a name="p310mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p312mcpsimp"><a name="p312mcpsimp"></a><a name="p312mcpsimp"></a>Product Version</p>
@@ -14,15 +24,31 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
+<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-notice.gif) **Notice:** >MindCmd is only intended as a development and debugging tool. It is not recommended for integration into actual products.
->Unless otherwise specified in this document, the content for Hi3403V100 and is identical. **Target Audience<a name="section4378592816410"></a>** This document (guide) is primarily applicable to the following engineers: - Algorithm Engineer
-- Technical Support Engineer
-- Software Development Engineer **Symbol Conventions<a name="section133020216410"></a>** The following symbols may appear in this document, and their meanings are as follows. <a name="table2622507016410"></a>
+</table>
+
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
+>MindCmd is only intended as a development and debugging tool. It is not recommended for integration into actual products.
+>Unless otherwise specified in this document, the content for Hi3403V100 and Hi3519AV200 is identical.
+
+**Target Audience<a name="section4378592816410"></a>**
+
+This document (guide) is primarily applicable to the following engineers:
+
+-   Algorithm Engineer
+-   Technical Support Engineer
+-   Software Development Engineer
+
+**Symbol Conventions<a name="section133020216410"></a>**
+
+The following symbols may appear in this document, and their meanings are as follows.
+
+<a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a><strong id="b2136615816410"><a name="b2136615816410"></a><a name="b2136615816410"></a>Symbol</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a><strong id="b5941558116410"><a name="b5941558116410"></a><a name="b5941558116410"></a>Description</strong></p>
@@ -34,8 +60,34 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>Indicates a high-level risk hazard that, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441981441.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>Indicates a medium-level risk hazard that, if not avoided, could result in death or serious injury.</p>
+</td>
+</tr>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442021309.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>Indicates a low-level risk hazard that, if not avoided, could result in minor or moderate injury.</p>
+</td>
+</tr>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408422122.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>Conveys device or environmental safety alert information. If not avoided, it may result in equipment damage, data loss, performance degradation, or other unpredictable consequences.</p>
+<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>"Caution" does not involve personal injury.</p>
+</td>
+</tr>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442021221.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>Provides supplementary explanations for key information in the main text.</p>
+<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>"Note" is not a safety warning and does not involve personal, equipment, or environmental injury information.</p>
+</td>
+</tr>
 </tbody>
-</table> **Revision History<a name="section2467512116410"></a>** <a name="table1557726816410"></a>
+</table>
+
+**Revision History<a name="section2467512116410"></a>**
+
+<a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="24.75%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>Release Date</strong></p>
@@ -60,19 +112,59 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 </td>
 </tr>
 </tbody>
-</table> # Introduction
-The MindCmd command-line tool focuses on one-click operation and automation, aiming to significantly improve end-to-end development efficiency on the deployment side. For network model development, MindCmd integrates offline model conversion tools, model quantization tools, model accuracy comparison tools, and model performance analysis tools, improving the efficiency of network model porting, analysis, and optimization. ## Functional Architecture Diagram<a name="ZH-CN_TOPIC_0000002442020637"></a> As shown in [Figure 1](#fig109661225380), the tool currently includes data preprocessing, open-source framework inference, model compression, model conversion, functional simulation, instruction simulation, on-board inference, performance analysis, accuracy comparison, and One-click inference. **Figure 1** MindCmd Functional Architecture<a name="fig109661225380"></a> ![](figures/MindCmd functional architecture.png "MindCmd functional architecture") ## Tool Functions<a name="ZH-CN_TOPIC_0000002442020581"></a> The main functional features of MindCmd are as follows. - One-click Inference: Provides one-click inference functionality for end-to-end execution of data preprocessing, open-source framework inference, model compression, model conversion, functional simulation, instruction simulation, on-board inference, Dump, accuracy comparison, and performance analysis. See [One-click Inference](#ZH-CN_TOPIC_0000002408581326).
-- Data Preprocessing: Provides data preprocessing functionality. Before performing model compression, model conversion, etc., preprocess data to match the model. See [Data Preprocessing](#ZH-CN_TOPIC_0000002441980729).
-- Open-source Framework Inference: Provides open-source framework inference functionality. Obtains Ground Truth data. See [Open-source Framework Inference](#ZH-CN_TOPIC_0000002442020541).
-- Model Compression: Provides model compression functionality for low-bit processing of model weights and activations, making the final network model more lightweight, saving storage space, reducing transmission latency, improving computing efficiency, and achieving performance improvement and optimization. See [Model Compression](#ZH-CN_TOPIC_0000002408421470).
-- Model Conversion: Provides model conversion functionality to convert trained models into offline models. See [Model Conversion](#ZH-CN_TOPIC_0000002408581442).
-- Functional Simulation: Provides functional simulation inference functionality. See [Application Engineering](#ZH-CN_TOPIC_0000002408421530).
-- Instruction Simulation: Provides instruction simulation inference functionality. See [Application Engineering](#ZH-CN_TOPIC_0000002408421530).
-- On-board Inference: Provides on-board inference functionality. See [Application Engineering](#ZH-CN_TOPIC_0000002408421530).
-- Accuracy Comparison: Provides accuracy comparison functionality to compare the operation results of SoC-supported operators after model conversion with standard operator results, to identify the causes of calculation errors. See [Accuracy Comparison](#ZH-CN_TOPIC_0000002441980581).
-- Performance Analysis: Provides performance analysis functionality for collecting and analyzing key performance indicators at various runtime stages of SoC inference services. See [Performance Analysis](#ZH-CN_TOPIC_0000002442020517).
-- Tool Modules: Provides individually callable tools, including original Caffe model subnet export, data format conversion, model Uninplace, ATC command line to cfg file conversion. See [Tools](#ZH-CN_TOPIC_0000002408421486). # Installation
-The MindCmd software package can be installed on a Linux server. It can be installed using the native desktop terminal gnome-terminal on the Linux server, or by SSHing into a Linux server from a Windows server. **Figure 1** Linux Distributed Deployment<a name="fig14199047421"></a> ![](figures/Linux distributed deployment.png "Linux distributed deployment") **Figure 2** Linux Co-deployment<a name="fig4886192317319"></a> ![](figures/Linux co-deployment.png "Linux co-deployment") The MindCmd installation process is shown in [Figure 3](#fig194332362414). **Figure 3** Installation Process<a name="fig194332362414"></a> ![](figures/Installation process.png "Installation process") ## Obtaining the Software Package<a name="ZH-CN_TOPIC_0000002442020661"></a> The MindCmd tool only supports installation on 18.04 x86\_64 architecture servers. Before installation, obtain the MindCmd tool software package. The MindCmd tool's model conversion and model inference depend on the CANN software package. Model compression depends on the AMCT software package. See [Table 1](#table136510451990) for details. **Table 1** Software Package Description <a name="table136510451990"></a>
+</table>
+
+# Introduction
+The MindCmd command-line tool focuses on one-click operation and automation, aiming to significantly improve end-to-end development efficiency on the deployment side.
+
+For network model development, MindCmd integrates offline model conversion tools, model quantization tools, model accuracy comparison tools, and model performance analysis tools, improving the efficiency of network model porting, analysis, and optimization.
+
+## Functional Architecture Diagram<a name="ZH-CN_TOPIC_0000002442020637"></a>
+
+As shown in [Figure 1](#fig109661225380), the tool currently includes data preprocessing, open-source framework inference, model compression, model conversion, functional simulation, instruction simulation, on-board inference, performance analysis, accuracy comparison, and One-click inference.
+
+**Figure 1** MindCmd Functional Architecture<a name="fig109661225380"></a>  
+![](figures/MindCmd functional architecture.png "MindCmd functional architecture")
+
+## Tool Functions<a name="ZH-CN_TOPIC_0000002442020581"></a>
+
+The main functional features of MindCmd are as follows.
+
+-   One-click Inference: Provides one-click inference functionality for end-to-end execution of data preprocessing, open-source framework inference, model compression, model conversion, functional simulation, instruction simulation, on-board inference, Dump, accuracy comparison, and performance analysis. See [One-click Inference](#ZH-CN_TOPIC_0000002408581326).
+-   Data Preprocessing: Provides data preprocessing functionality. Before performing model compression, model conversion, etc., preprocess data to match the model. See [Data Preprocessing](#ZH-CN_TOPIC_0000002441980729).
+-   Open-source Framework Inference: Provides open-source framework inference functionality. Obtains Ground Truth data. See [Open-source Framework Inference](#ZH-CN_TOPIC_0000002442020541).
+-   Model Compression: Provides model compression functionality for low-bit processing of model weights and activations, making the final network model more lightweight, saving storage space, reducing transmission latency, improving computing efficiency, and achieving performance improvement and optimization. See [Model Compression](#ZH-CN_TOPIC_0000002408421470).
+-   Model Conversion: Provides model conversion functionality to convert trained models into offline models. See [Model Conversion](#ZH-CN_TOPIC_0000002408581442).
+-   Functional Simulation: Provides functional simulation inference functionality. See [Application Engineering](#ZH-CN_TOPIC_0000002408421530).
+-   Instruction Simulation: Provides instruction simulation inference functionality. See [Application Engineering](#ZH-CN_TOPIC_0000002408421530).
+-   On-board Inference: Provides on-board inference functionality. See [Application Engineering](#ZH-CN_TOPIC_0000002408421530).
+-   Accuracy Comparison: Provides accuracy comparison functionality to compare the operation results of SoC-supported operators after model conversion with standard operator results, to identify the causes of calculation errors. See [Accuracy Comparison](#ZH-CN_TOPIC_0000002441980581).
+-   Performance Analysis: Provides performance analysis functionality for collecting and analyzing key performance indicators at various runtime stages of SoC inference services. See [Performance Analysis](#ZH-CN_TOPIC_0000002442020517).
+-   Tool Modules: Provides individually callable tools, including original Caffe model subnet export, data format conversion, model Uninplace, ATC command line to cfg file conversion. See [Tools](#ZH-CN_TOPIC_0000002408421486).
+
+# Installation
+The MindCmd software package can be installed on a Linux server. It can be installed using the native desktop terminal gnome-terminal on the Linux server, or by SSHing into a Linux server from a Windows server.
+
+**Figure 1** Linux Distributed Deployment<a name="fig14199047421"></a>  
+![](figures/Linux distributed deployment.png "Linux distributed deployment")
+
+**Figure 2** Linux Co-deployment<a name="fig4886192317319"></a>  
+![](figures/Linux co-deployment.png "Linux co-deployment")
+
+The MindCmd installation process is shown in [Figure 3](#fig194332362414).
+
+**Figure 3** Installation Process<a name="fig194332362414"></a>  
+![](figures/Installation process.png "Installation process")
+
+## Obtaining the Software Package<a name="ZH-CN_TOPIC_0000002442020661"></a>
+
+The MindCmd tool only supports installation on 18.04 x86\_64 architecture servers. Before installation, obtain the MindCmd tool software package.
+
+The MindCmd tool's model conversion and model inference depend on the CANN software package. Model compression depends on the AMCT software package. See [Table 1](#table136510451990) for details.
+
+**Table 1** Software Package Description
+
+<a name="table136510451990"></a>
 <table><thead align="left"><tr id="row203664451395"><th class="cellrowborder" valign="top" width="32.78%" id="mcps1.2.4.1.1"><p id="p43661845797"><a name="p43661845797"></a><a name="p43661845797"></a>Software Package</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.62%" id="mcps1.2.4.1.2"><p id="p1760173584117"><a name="p1760173584117"></a><a name="p1760173584117"></a>Mandatory/Optional</p>
@@ -109,7 +201,21 @@ The MindCmd software package can be installed on a Linux server. It can be insta
 </td>
 </tr>
 </tbody>
-</table> Where _<version>_ indicates the software version number. ## Pre-installation Preparation<a name="ZH-CN_TOPIC_0000002441980749"></a> ### Ubuntu18.04-x86\_64 System<a name="ZH-CN_TOPIC_0000002441980633"></a> **Environment Requirements<a name="section13831110592"></a>** The environment for installing MindCmd must meet the following hardware and operating system requirements. **Table 1** Ubuntu System Version Compatibility Information <a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_table1515616482231"></a>
+</table>
+
+Where _<version>_ indicates the software version number.
+
+## Pre-installation Preparation<a name="ZH-CN_TOPIC_0000002441980749"></a>
+
+### Ubuntu18.04-x86\_64 System<a name="ZH-CN_TOPIC_0000002441980633"></a>
+
+**Environment Requirements<a name="section13831110592"></a>**
+
+The environment for installing MindCmd must meet the following hardware and operating system requirements.
+
+**Table 1** Ubuntu System Version Compatibility Information
+
+<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_table1515616482231"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_row8157124812317"><th class="cellrowborder" valign="top" width="11.35%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p17157194842316"><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p17157194842316"></a><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p17157194842316"></a>Category</p>
 </th>
 <th class="cellrowborder" valign="top" width="26.029999999999998%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p31575485237"><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p31575485237"></a><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p31575485237"></a>Version Requirements</p>
@@ -130,7 +236,7 @@ The MindCmd software package can be installed on a Linux server. It can be insta
 </td>
 <td class="cellrowborder" valign="top" width="26.029999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p1315824812319"><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p1315824812319"></a><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p1315824812319"></a>Version: 18.04 64-bit x86 OS</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.62%" headers="mcps1.2.4.1.3 "><a name="ul15849131271419"></a><a name="ul15849131271419"></a><ul id="ul15849131271419"><li>Download the corresponding version software from <a href="http:/releases.ubuntu.com/releases/" target="_blank" rel="noopener noreferrer">http:/releases.ubuntu.com/releases/</a> for installation.</li></ul>
+<td class="cellrowborder" valign="top" width="62.62%" headers="mcps1.2.4.1.3 "><a name="ul15849131271419"></a><a name="ul15849131271419"></a><ul id="ul15849131271419"><li>Download the corresponding version software from <a href="http://releases.ubuntu.com/releases/" target="_blank" rel="noopener noreferrer">http://releases.ubuntu.com/releases/</a> for installation.</li></ul>
 </td>
 </tr>
 <tr id="row860491181012"><td class="cellrowborder" valign="top" width="11.35%" headers="mcps1.2.4.1.1 "><p id="p860514171019"><a name="p860514171019"></a><a name="p860514171019"></a>Python</p>
@@ -148,12 +254,81 @@ The MindCmd software package can be installed on a Linux server. It can be insta
 </td>
 </tr>
 </tbody>
-</table> **Preparing the Installation User (Optional)<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section14553441011"></a>** - If the Ascend-cann-toolkit development kit is already installed, use the installation user of the Ascend-cann-toolkit development kit to install MindCmd.
-- If the Ascend-cann-toolkit development kit is not installed, refer to the following example to prepare the installation user. You can use any user (including root or non-root user) for installation. - If using the root user for installation, you do not need to perform the operations in this section, and no settings are required for the root user.
-- If using an existing non-root user for installation, ensure the user has read, write, and execute permissions on the $HOME directory.
-- If using a new non-root user for installation, refer to the following steps to create one. The following operations should be performed as the root user. This manual uses this scenario as an example for MindCmd installation. 1. Run the following commands to create a user group and the MindCmd installation user, and set the $HOME directory. ``` groupadd usergroup useradd -g usergroup -d /home/username -m username -s /bin/bash ``` For example, using the MindCmdUser group: ``` groupadd MindCmdUser useradd -g MindCmdUser -d /home/username -m username -s /bin/bash ``` >![](public_sys-resources/icon-note.gif) **Note:** >The group of the user must be the same as the group of the Driver running user. If different, the user must be added to the Driver running user's group. 2. Run the following command to set the password. ``` passwd username ``` _username_ is the username for installing MindCmd. The umask value for this user is 0027: - To view the umask value, run the command: **umask** - To modify the umask value, run the command: **umask _new value_** If the user modifies the umask value by this method, the modification will only take effect in the current window. To set a permanent umask value, modify the \~/.bashrc file: 1. Run the following command in any directory to open the **.bashrc** file: ``` vi ~/.bashrc ``` Add **umask _new value_** after the last line of the file. 2. Run :wq! to save and exit. 3. Run **source \~/.bashrc** to make it take effect immediately. **Checking the Source<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section126972561207"></a>** The installation process requires downloading related dependencies. Ensure the server can connect to the network. Run the following command as the root user to check if the source is available. ```
+</table>
+
+**Preparing the Installation User (Optional)<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section14553441011"></a>**
+
+-   If the Ascend-cann-toolkit development kit is already installed, use the installation user of the Ascend-cann-toolkit development kit to install MindCmd.
+-   If the Ascend-cann-toolkit development kit is not installed, refer to the following example to prepare the installation user.
+
+You can use any user (including root or non-root user) for installation.
+
+-   If using the root user for installation, you do not need to perform the operations in this section, and no settings are required for the root user.
+-   If using an existing non-root user for installation, ensure the user has read, write, and execute permissions on the $HOME directory.
+-   If using a new non-root user for installation, refer to the following steps to create one. The following operations should be performed as the root user. This manual uses this scenario as an example for MindCmd installation.
+    1.  Run the following commands to create a user group and the MindCmd installation user, and set the $HOME directory.
+
+        ```
+        groupadd usergroup
+        useradd -g usergroup -d /home/username -m username -s /bin/bash
+        ```
+
+        For example, using the MindCmdUser group:
+
+        ```
+        groupadd MindCmdUser
+        useradd -g MindCmdUser -d /home/username -m username -s /bin/bash
+        ```
+
+        >![](public_sys-resources/icon-note.gif) **Note:** 
+        >The group of the user must be the same as the group of the Driver running user. If different, the user must be added to the Driver running user's group.
+
+    2.  Run the following command to set the password.
+
+        ```
+        passwd username
+        ```
+
+        _username_ is the username for installing MindCmd. The umask value for this user is 0027:
+
+        -   To view the umask value, run the command: **umask**
+        -   To modify the umask value, run the command: **umask _new value_**
+
+            If the user modifies the umask value by this method, the modification will only take effect in the current window. To set a permanent umask value, modify the \~/.bashrc file:
+
+            1.  Run the following command in any directory to open the **.bashrc** file:
+
+                ```
+                vi ~/.bashrc
+                ```
+
+                Add **umask _new value_** after the last line of the file.
+
+            2.  Run :wq! to save and exit.
+            3.  Run **source \~/.bashrc** to make it take effect immediately.
+
+**Checking the Source<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section126972561207"></a>**
+
+The installation process requires downloading related dependencies. Ensure the server can connect to the network.
+
+Run the following command as the root user to check if the source is available.
+
+```
 apt-get update
-``` >![](public_sys-resources/icon-note.gif) **Note:** >If the command reports an error, check whether the network is connected or replace the source in /etc/apt/sources.list with an available source. **Installing Dependencies<a name="section11128423175910"></a>** Before using the MindCmd tool, the related environment must be set up. Developers can set up the environment based on the usage needs of different components. Using one-click inference requires the full environment setup for all components. MindCmd can be used in Docker. The solution provides a Dockerfile. For building images, refer to the "Container Image Building" chapter in the Driver and Development Environment Installation Guide. For starting containers, refer to [Using MindCmd in Docker Containers](#ZH-CN_TOPIC_0000002408581214). **Table 2** Component Dependencies <a name="table124736349520"></a>
+```
+
+>![](public_sys-resources/icon-note.gif) **Note:** 
+>If the command reports an error, check whether the network is connected or replace the source in /etc/apt/sources.list with an available source.
+
+**Installing Dependencies<a name="section11128423175910"></a>**
+
+Before using the MindCmd tool, the related environment must be set up. Developers can set up the environment based on the usage needs of different components. Using one-click inference requires the full environment setup for all components.
+
+MindCmd can be used in Docker. The solution provides a Dockerfile. For building images, refer to the "Container Image Building" chapter in the Driver and Development Environment Installation Guide. For starting containers, refer to [Using MindCmd in Docker Containers](#ZH-CN_TOPIC_0000002408581214).
+
+**Table 2** Component Dependencies
+
+<a name="table124736349520"></a>
 <table><thead align="left"><tr id="row14474133412524"><th class="cellrowborder" valign="top" width="17.4%" id="mcps1.2.3.1.1"><p id="p4474193485213"><a name="p4474193485213"></a><a name="p4474193485213"></a>Component</p>
 </th>
 <th class="cellrowborder" valign="top" width="82.6%" id="mcps1.2.3.1.2"><p id="p647453465212"><a name="p647453465212"></a><a name="p647453465212"></a>Dependencies</p>
@@ -212,18 +387,101 @@ apt-get update
 </td>
 </tr>
 </tbody>
-</table> ## Installing MindCmd<a name="ZH-CN_TOPIC_0000002408581230"></a> 1. In the directory where the MindCmd tool software package is located, run the following command to install. ``` pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz --user ``` 2. If the following information appears, the tool installation is successful. ``` Successfully installed mindcmd-<version> ``` Users can view the installed MindCmd tool in the Python 3.7.5 package path (e.g., _$HOME/.local/lib/python3.7.5/site-packages_), for example: ``` drwxr-xr-x 9 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd/ drwxr-xr-x 2 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd-<version>.dist-info/ ``` Where mindcmd is the installation path of the MindCmd tool, referred to as \{MINDCMD\_INSTALL\_PATH\} throughout this document. >![](public_sys-resources/icon-note.gif) **Note:** >**Uninstallation** >After successfully installing the MindCmd tool, users can run the following command to uninstall it. >``` >pip3.7.5 uninstall mindcmd >``` >If the following information appears, the uninstallation is successful. >``` >Successfully uninstalled mindcmd-<version> >``` >To upgrade the MindCmd tool, you can uninstall it and then reinstall: >``` >pip3.7.5 uninstall mindcmd >pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz >``` >![](public_sys-resources/icon-note.gif) **Note:** >- If a download dependency connection timeout occurs during installation, check whether the pip environment is working properly. Configure a network proxy or change the mirror source as needed.
->- After installing MindCmd, use the following commands to configure the default settings for the open-source ecosystem version:
+</table>
+
+## Installing MindCmd<a name="ZH-CN_TOPIC_0000002408581230"></a>
+
+1.  In the directory where the MindCmd tool software package is located, run the following command to install.
+
+    ```
+    pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz --user
+    ```
+
+2.  If the following information appears, the tool installation is successful.
+
+    ```
+    Successfully installed mindcmd-<version>
+    ```
+
+    Users can view the installed MindCmd tool in the Python 3.7.5 package path (e.g., _$HOME/.local/lib/python3.7.5/site-packages_), for example:
+
+    ```
+    drwxr-xr-x 9 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd/ 
+    drwxr-xr-x 2 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd-<version>.dist-info/
+    ```
+
+    Where mindcmd is the installation path of the MindCmd tool, referred to as \{MINDCMD\_INSTALL\_PATH\} throughout this document.
+
+    >![](public_sys-resources/icon-note.gif) **Note:** 
+    >**Uninstallation**
+    >After successfully installing the MindCmd tool, users can run the following command to uninstall it.
+    >```
+    >pip3.7.5 uninstall mindcmd
+    >```
+    >If the following information appears, the uninstallation is successful.
+    >```
+    >Successfully uninstalled mindcmd-<version>
+    >```
+    >To upgrade the MindCmd tool, you can uninstall it and then reinstall:
+    >```
+    >pip3.7.5 uninstall mindcmd
+    >pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz
+    >```
+
+>![](public_sys-resources/icon-note.gif) **Note:** 
+>-   If a download dependency connection timeout occurs during installation, check whether the pip environment is working properly. Configure a network proxy or change the mirror source as needed.
+>-   After installing MindCmd, use the following commands to configure the default settings for the open-source ecosystem version:
 >```
 >mindcmd config --global base_config.target_version=Hi3403V100
 >mindcmd config --global base_config.cross_compiler=musl_clang
->``` ## Global Configuration<a name="ZH-CN_TOPIC_0000002442020665"></a> MindCmd provides subcommands for viewing and modifying global configuration. View the global configuration list. The result is shown in [Figure 1](#fig1034913271220). ```
+>```
+
+## Global Configuration<a name="ZH-CN_TOPIC_0000002442020665"></a>
+
+MindCmd provides subcommands for viewing and modifying global configuration.
+
+View the global configuration list. The result is shown in [Figure 1](#fig1034913271220).
+
+```
 mindcmd config --list
-``` **Figure 1** Global Configuration List<a name="fig1034913271220"></a> ![](figures/zh-cn_image_0000002442021525.png) View the value of a configuration item (using "base\_config.cann\_install\_path" as an example). The result is shown in [Figure 2](#fig163181430103). ```
+```
+
+**Figure 1** Global Configuration List<a name="fig1034913271220"></a>  
+
+![](figures/zh-cn_image_0000002442021525.png)
+
+View the value of a configuration item (using "base\_config.cann\_install\_path" as an example). The result is shown in [Figure 2](#fig163181430103).
+
+```
 mindcmd config --global base_config.cann_install_path
-``` **Figure 2** Viewing a Configuration Item Value<a name="fig163181430103"></a> ![](figures/Viewing a configuration item value.png "Viewing a configuration item value") Modify the value of a configuration item (using "base\_config.cann\_install\_path" as an example). The result is shown in [Figure 3](#fig52432531624). ```
+```
+
+**Figure 2** Viewing a Configuration Item Value<a name="fig163181430103"></a>  
+![](figures/Viewing a configuration item value.png "Viewing a configuration item value")
+
+Modify the value of a configuration item (using "base\_config.cann\_install\_path" as an example). The result is shown in [Figure 3](#fig52432531624).
+
+```
 mindcmd config --global base_config.cann_install_path=~/Ascend/ascend-toolkit/svp_latest
-``` **Figure 3** Modifying a Configuration Item Value<a name="fig52432531624"></a> ![](figures/Modifying a configuration item value.png "Modifying a configuration item value") >![](public_sys-resources/icon-note.gif) **Note:** >The mindcmd config subcommand does not display configuration parameters in the atc_args_append section, and does not support modifying atc_args_append configuration parameters from the command line. The MindCmd command-line tool provides a global configuration file at: \{MINDCMD\_INSTALL\_PATH\}/mindcmd.ini. Alternatively, run `mindcmd config --list` and the console will print the configuration file path, as highlighted in [Figure 4](#fig4452502120). **Figure 4** Viewing the Global Configuration File<a name="fig4452502120"></a> ![](figures/zh-cn_image_0000002408582282.png) After the tool is installed, specify the CANN software package installation path in the MindCmd global configuration file, as shown in [Table 1](#table73353166121). **Table 1** MindCmd Configuration <a name="table73353166121"></a>
+```
+
+**Figure 3** Modifying a Configuration Item Value<a name="fig52432531624"></a>  
+![](figures/Modifying a configuration item value.png "Modifying a configuration item value")
+
+>![](public_sys-resources/icon-note.gif) **Note:** 
+>The mindcmd config subcommand does not display configuration parameters in the atc_args_append section, and does not support modifying atc_args_append configuration parameters from the command line.
+
+The MindCmd command-line tool provides a global configuration file at: \{MINDCMD\_INSTALL\_PATH\}/mindcmd.ini. Alternatively, run `mindcmd config --list` and the console will print the configuration file path, as highlighted in [Figure 4](#fig4452502120).
+
+**Figure 4** Viewing the Global Configuration File<a name="fig4452502120"></a>  
+
+![](figures/zh-cn_image_0000002408582282.png)
+
+After the tool is installed, specify the CANN software package installation path in the MindCmd global configuration file, as shown in [Table 1](#table73353166121).
+
+**Table 1** MindCmd Configuration
+
+<a name="table73353166121"></a>
 <table><thead align="left"><tr id="row5335151611127"><th class="cellrowborder" valign="top" width="16.39%" id="mcps1.2.6.1.1"><p id="p1633531641213"><a name="p1633531641213"></a><a name="p1633531641213"></a><strong id="b3139153053516"><a name="b3139153053516"></a><a name="b3139153053516"></a>Configuration</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="13.690000000000001%" id="mcps1.2.6.1.2"><p id="p14335516191211"><a name="p14335516191211"></a><a name="p14335516191211"></a><strong id="b191491330143516"><a name="b191491330143516"></a><a name="b191491330143516"></a>Description</strong></p>
@@ -373,12 +631,49 @@ mindcmd config --global base_config.cann_install_path=~/Ascend/ascend-toolkit/sv
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **Note:** >- No spaces are allowed before any configuration item in mindcmd.ini.
->- Parameter value format: Supports lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), underscores (\_), hyphens (-), and periods (.). # Sample Introduction
-The tool includes a built-in PyTorch model pooling operator quick-start use case at \{MINDCMD\_INSTALL\_PATH\}/testcase. Please refer to [Installing MindCmd](#ZH-CN_TOPIC_0000002408581230) to complete the installation, and then refer to [Global Configuration](#ZH-CN_TOPIC_0000002442020665) to complete the MindCmd tool configuration. Refer to the following command: ```
-mindcmd oneclick pytorch -m mindcmd.testcase.pooling.Model --input_shape 1,3,224,224 ``` # One-click Inference
-## Function Introduction<a name="ZH-CN_TOPIC_0000002441980765"></a> Supports end-to-end one-click execution of model data preprocessing, AMCT (model compression), GT (Ground Truth), ATC, simulation, on-board inference, Dump, accuracy comparison, and Profiling functions. Currently supported open-source framework models include: Caffe, PyTorch, and ONNX. >![](public_sys-resources/icon-note.gif) **Note:** >The AMCT submodule currently only supports Post-Training Quantization (PTQ) scenarios. ## Caffe Model One-click Inference<a name="ZH-CN_TOPIC_0000002408421546"></a> The Caffe model one-click inference process is shown in [Figure 1](#fig15202155618339). **Figure 1** Caffe Model One-click Inference Flowchart<a name="fig15202155618339"></a> ![](figures/Caffe model one-click inference flowchart.png "Caffe model one-click inference flowchart") ### Command Line Format Description<a name="ZH-CN_TOPIC_0000002442020649"></a> The command line format for Caffe model one-click inference is as follows. ```
-mindcmd oneclick caffe -m MODEL -w WEIGHT ``` The command line parameter description for Caffe model one-click inference is shown in [Table 1](#table117mcpsimp). **Table 1** Caffe Model One-click Inference Command Line Parameter Description <a name="table117mcpsimp"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **Note:** 
+>-   No spaces are allowed before any configuration item in mindcmd.ini.
+>-   Parameter value format: Supports lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), underscores (\_), hyphens (-), and periods (.).
+
+# Sample Introduction
+The tool includes a built-in PyTorch model pooling operator quick-start use case at \{MINDCMD\_INSTALL\_PATH\}/testcase. Please refer to [Installing MindCmd](#ZH-CN_TOPIC_0000002408581230) to complete the installation, and then refer to [Global Configuration](#ZH-CN_TOPIC_0000002442020665) to complete the MindCmd tool configuration.
+
+Refer to the following command:
+
+```
+mindcmd oneclick pytorch -m mindcmd.testcase.pooling.Model --input_shape 1,3,224,224 
+```
+
+# One-click Inference
+## Function Introduction<a name="ZH-CN_TOPIC_0000002441980765"></a>
+
+Supports end-to-end one-click execution of model data preprocessing, AMCT (model compression), GT (Ground Truth), ATC, simulation, on-board inference, Dump, accuracy comparison, and Profiling functions. Currently supported open-source framework models include: Caffe, PyTorch, and ONNX.
+
+>![](public_sys-resources/icon-note.gif) **Note:** 
+>The AMCT submodule currently only supports Post-Training Quantization (PTQ) scenarios.
+
+## Caffe Model One-click Inference<a name="ZH-CN_TOPIC_0000002408421546"></a>
+
+The Caffe model one-click inference process is shown in [Figure 1](#fig15202155618339).
+
+**Figure 1** Caffe Model One-click Inference Flowchart<a name="fig15202155618339"></a>  
+![](figures/Caffe model one-click inference flowchart.png "Caffe model one-click inference flowchart")
+
+### Command Line Format Description<a name="ZH-CN_TOPIC_0000002442020649"></a>
+
+The command line format for Caffe model one-click inference is as follows.
+
+```
+mindcmd oneclick caffe -m MODEL -w WEIGHT 
+```
+
+The command line parameter description for Caffe model one-click inference is shown in [Table 1](#table117mcpsimp).
+
+**Table 1** Caffe Model One-click Inference Command Line Parameter Description
+
+<a name="table117mcpsimp"></a>
 <table><thead align="left"><tr id="row122mcpsimp"><th class="cellrowborder" valign="top" width="18.34%" id="mcps1.2.4.1.1"><p id="p13167158205117"><a name="p13167158205117"></a><a name="p13167158205117"></a><strong id="b898781855614"><a name="b898781855614"></a><a name="b898781855614"></a>Parameter</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.58%" id="mcps1.2.4.1.2"><p id="p1916910167529"><a name="p1916910167529"></a><a name="p1916910167529"></a>Mandatory/Optional</p>
@@ -407,4 +702,121 @@ mindcmd oneclick caffe -m MODEL -w WEIGHT ``` The command line parameter descrip
 </td>
 </tr>
 </tbody>
-</table> ### Execution Example<a name="ZH-CN_TOPIC_0000002442020417"></a> - Model and data preparation. Upload the Caffe model file (.prototxt), weight file (.caffemodel), and required data to any path in the development environment. The reference directory structure is as follows. ``` ├── test_case │ ├── ssh.cfg │ ├── caffe_resnet50 │ │ ├── resnet50.prototxt │ │ └── resnet50.caffemodel │ ├── data │ │ ├── dog1_1024_683.jpg │ │ ├── dog2_1024_683.jpg │ │ ├── insert_op.cfg │ │ └── image_ref_list.txt ``` >![](public_sys-resources/icon-note.gif) **Note:** >- The shape of the inference data should match the input shape required by the model. For example, if the model resnet50 shape is (3, 224, 224), the image shape should also be (3, 224, 224). Otherwise, a custom data preprocessing method needs to be defined using the --aapp parameter to specify the [data preprocessing configuration file example](#ZH-CN_TOPIC_0000002408421442). For the complete data preprocessing configuration, please refer to the "ATC Tool User Guide" chapter "--insert_op_conf". >- When the inference data is images and no data preprocessing configuration file is specified, the tool will automatically resize all images to the input shape required by the model. - Select the one-click inference scenario Before executing one-click inference, configure the one-click inference scenario switches in [Global Configuration](#ZH-CN_TOPIC_0000002442020665). ``` [oneclick_switch] # Whether to clean historical output results in the current working directory IS_CLEAN_PREVIOUS_OUTPUT=1 # Whether to enable model compression IS_AMCT_RUN=1 # Whether to enable GT inference, supports Caffe, ONNX IS_GT_RUN=1 # Whether to enable on-board inference, requires ssh configuration IS_NNN_RUN=0 # Whether to enable functional simulation IS_FUNC_RUN=1 # Whether to enable instruction simulation IS_INST_RUN=0 # Whether to enable Dump of network intermediate results during model inference, affects functional simulation, instruction simulation, on-board inference IS_DUMP_OPEN=1 # Whether to enable Dump data accuracy comparison IS_COMPARE_OPEN=1 # Whether to enable on-board performance data collection IS_BOARD_PROFILING_OPEN=1 # Whether to display performance data report on the console IS_PROFILE_DISPLAY_OPEN=0 # Whether to print detailed execution logs on the console IS_PRINT_PROCESS_DETAIL=0 ``` - Execute one-click inference Run the following command for one-click inference: ``` cd test_case mindcmd oneclick caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt ``` - Execution results After the Caffe model one-click inference is completed, corresponding files will be generated in the workspace path. The main directory structure is as follows. ``` ├── work_space │ ├── bin # Executable file path │ ├── data │ │ ├── inference_data_XXX.txt # Image data/inference data │ │ ├── insert_op.cfg # aapp configuration │ ├── model # om offline model save path │ ├── output │ │ ├── project_XXX │ │ │ ├── amct # Model compression output path │ │ │ ├── atc # Model conversion output path │ │ │ ├── cmp # Accuracy comparison result save path │ │ │ ├── dump # Dump result save path │ │ │ │ ├── float # Original model float dump data, for accuracy comparison │ │ │ │ ├── fake_quant # Quantized model dump data, for accuracy comparison │ │ │ │ ├── funcsim # Offline model functional simulation dump data, for accuracy comparison │ │ │ │ │ └── trap │ │ │ │ ├── instsim # Offline model instruction simulation dump data, for accuracy comparison │ │ │ │ │ └── trap │ │ │ │ └── nnn # Offline model on-board inference dump data, for accuracy comparison │ │ │ │ │ └── trap │ │ │ ├── log # One-click inference execution log folder │ │ │ ├── profiling # Performance analysis result save path │ │ │ └── preprocess # Data preprocessing result save path │ │ └── latest_result # Last oneclick output path │ ├── acl_dump_XXX.json # acl configuration file (dump configuration) │ ├── acl_XXX.json # acl configuration file (release configuration) │ ├── acl_profiling_XXX.json # acl configuration file (profiling configuration) │ └── project.cfg # Project parameter configuration file ``` >![](public_sys-resources/icon-note.gif) **Note:** >When IS\_DUMP\_OPEN value is 0, only the model tail layer output will be saved in the trap directory. ## PyTorch Model One-click Inference<a name="ZH-CN_TOPIC_0000002408581310"></a> The PyTorch model one-click inference process is shown in [Figure 1](#fig204223548810). **Figure 1** PyTorch Model One-click Inference Flowchart<a name="fig204223548810"></a> ![](figures/PyTorch model one-click inference flowchart.png "PyTorch model one-click inference flowchart")
+</table>
+
+### Execution Example<a name="ZH-CN_TOPIC_0000002442020417"></a>
+
+-   Model and data preparation.
+
+    Upload the Caffe model file (.prototxt), weight file (.caffemodel), and required data to any path in the development environment. The reference directory structure is as follows.
+
+    ```
+    ├── test_case
+    │   ├── ssh.cfg
+    │   ├── caffe_resnet50
+    │   │   ├── resnet50.prototxt
+    │   │   └── resnet50.caffemodel
+    │   ├── data
+    │   │   ├── dog1_1024_683.jpg
+    │   │   ├── dog2_1024_683.jpg
+    │   │   ├── insert_op.cfg
+    │   │   └── image_ref_list.txt
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **Note:** 
+    >-   The shape of the inference data should match the input shape required by the model. For example, if the model resnet50 shape is (3, 224, 224), the image shape should also be (3, 224, 224). Otherwise, a custom data preprocessing method needs to be defined using the --aapp parameter to specify the [data preprocessing configuration file example](#ZH-CN_TOPIC_0000002408421442). For the complete data preprocessing configuration, please refer to the "ATC Tool User Guide" chapter "--insert_op_conf".
+    >-   When the inference data is images and no data preprocessing configuration file is specified, the tool will automatically resize all images to the input shape required by the model.
+
+-   Select the one-click inference scenario
+
+    Before executing one-click inference, configure the one-click inference scenario switches in [Global Configuration](#ZH-CN_TOPIC_0000002442020665).
+
+    ```
+    [oneclick_switch]
+    # Whether to clean historical output results in the current working directory
+    IS_CLEAN_PREVIOUS_OUTPUT=1
+    
+    # Whether to enable model compression
+    IS_AMCT_RUN=1
+    
+    # Whether to enable GT inference, supports Caffe, ONNX
+    IS_GT_RUN=1
+    
+    # Whether to enable on-board inference, requires ssh configuration
+    IS_NNN_RUN=0
+    
+    # Whether to enable functional simulation
+    IS_FUNC_RUN=1
+    
+    # Whether to enable instruction simulation
+    IS_INST_RUN=0
+    
+    # Whether to enable Dump of network intermediate results during model inference, affects functional simulation, instruction simulation, on-board inference
+    IS_DUMP_OPEN=1
+    
+    # Whether to enable Dump data accuracy comparison
+    IS_COMPARE_OPEN=1
+    
+    # Whether to enable on-board performance data collection
+    IS_BOARD_PROFILING_OPEN=1
+    
+    # Whether to display performance data report on the console
+    IS_PROFILE_DISPLAY_OPEN=0
+    
+    # Whether to print detailed execution logs on the console
+    IS_PRINT_PROCESS_DETAIL=0
+    ```
+
+-   Execute one-click inference
+
+    Run the following command for one-click inference:
+
+    ```
+    cd test_case
+    mindcmd oneclick caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt
+    ```
+
+-   Execution results
+
+    After the Caffe model one-click inference is completed, corresponding files will be generated in the workspace path. The main directory structure is as follows.
+
+    ```
+    ├── work_space
+    │   ├── bin                                   # Executable file path
+    │   ├── data                                  
+    │   │   ├── inference_data_XXX.txt           # Image data/inference data
+    │   │   ├── insert_op.cfg                    # aapp configuration
+    │   ├── model                                 # om offline model save path
+    │   ├── output                
+    │   │   ├── project_XXX                
+    │   │   │   ├── amct                        # Model compression output path
+    │   │   │   ├── atc                         # Model conversion output path
+    │   │   │   ├── cmp                         # Accuracy comparison result save path
+    │   │   │   ├── dump                        # Dump result save path
+    │   │   │   │    ├── float                 # Original model float dump data, for accuracy comparison
+    │   │   │   │    ├── fake_quant            # Quantized model dump data, for accuracy comparison
+    │   │   │   │    ├── funcsim               # Offline model functional simulation dump data, for accuracy comparison
+    │   │   │   │    │    └── trap
+    │   │   │   │    ├── instsim               # Offline model instruction simulation dump data, for accuracy comparison
+    │   │   │   │    │    └── trap
+    │   │   │   │    └── nnn                   # Offline model on-board inference dump data, for accuracy comparison
+    │   │   │   │    │    └── trap
+    │   │   │   ├── log                         # One-click inference execution log folder
+    │   │   │   ├── profiling                   # Performance analysis result save path
+    │   │   │   └── preprocess                  # Data preprocessing result save path
+    │   │   └── latest_result                    # Last oneclick output path 
+    │   ├── acl_dump_XXX.json                     # acl configuration file (dump configuration)     
+    │   ├── acl_XXX.json                          # acl configuration file (release configuration)
+    │   ├── acl_profiling_XXX.json                # acl configuration file (profiling configuration)
+    │   └── project.cfg                           # Project parameter configuration file
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **Note:** 
+    >When IS\_DUMP\_OPEN value is 0, only the model tail layer output will be saved in the trap directory.
+
+## PyTorch Model One-click Inference<a name="ZH-CN_TOPIC_0000002408581310"></a>
+
+The PyTorch model one-click inference process is shown in [Figure 1](#fig204223548810).
+
+**Figure 1** PyTorch Model One-click Inference Flowchart<a name="fig204223548810"></a>  
+![](figures/PyTorch model one-click inference flowchart.png "PyTorch model one-click inference flowchart")

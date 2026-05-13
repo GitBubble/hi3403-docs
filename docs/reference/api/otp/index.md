@@ -1,8 +1,21 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OTP API 参考/OTP API 参考.md
---- # 前言
-**概述<a name="section279mcpsimp"></a>** OTP是一种非易失性存储器。其主要特性是对应存储空间的位内容由0写为1后，或根据锁机制，锁定对应的区域后，就不能再修改。OTP主要用于保存一些特定的数据，如用于CIPHER模块的root key，安全使能标志等信息。 >![](public_sys-resources/icon-note.gif) **说明：** >未有特殊说明，与、与、与Hi3403V100内容一致。 **产品版本<a name="section286mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table289mcpsimp"></a>
+---
+
+# 前言
+**概述<a name="section279mcpsimp"></a>**
+
+OTP是一种非易失性存储器。其主要特性是对应存储空间的位内容由0写为1后，或根据锁机制，锁定对应的区域后，就不能再修改。OTP主要用于保存一些特定的数据，如用于CIPHER模块的root key，安全使能标志等信息。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>未有特殊说明，SS528V100与SS625V100、SS524V100与SS522V100、Hi3519AV200与Hi3403V100内容一致。
+
+**产品版本<a name="section286mcpsimp"></a>**
+
+与本文档相对应的产品版本如下。
+
+<a name="table289mcpsimp"></a>
 <table><thead align="left"><tr id="row294mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p296mcpsimp"><a name="p296mcpsimp"></a><a name="p296mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p298mcpsimp"><a name="p298mcpsimp"></a><a name="p298mcpsimp"></a>产品版本</p>
@@ -14,9 +27,51 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OTP API 
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p304mcpsimp"><a name="p304mcpsimp"></a><a name="p304mcpsimp"></a>V100</p>
 </td>
 </tr>
+<tr id="row305mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p307mcpsimp"><a name="p307mcpsimp"></a><a name="p307mcpsimp"></a>SS626</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p309mcpsimp"><a name="p309mcpsimp"></a><a name="p309mcpsimp"></a>V100</p>
+</td>
+</tr>
+<tr id="row098721511379"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>SS524</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p34921898474"><a name="p34921898474"></a><a name="p34921898474"></a>V100</p>
+</td>
+</tr>
+<tr id="row055711773717"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p255718172371"><a name="p255718172371"></a><a name="p255718172371"></a>SS522</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p18557131714372"><a name="p18557131714372"></a><a name="p18557131714372"></a>V100</p>
+</td>
+</tr>
+<tr id="row14680716155410"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p191707516282"><a name="p191707516282"></a><a name="p191707516282"></a>SS528</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p14171957287"><a name="p14171957287"></a><a name="p14171957287"></a>V100</p>
+</td>
+</tr>
+<tr id="row547716911288"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p4477491286"><a name="p4477491286"></a><a name="p4477491286"></a>SS625</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p647779132814"><a name="p647779132814"></a><a name="p647779132814"></a>V100</p>
+</td>
+</tr>
+<tr id="row766620218412"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
+</td>
+</tr>
 </tbody>
-</table> **读者对象<a name="section310mcpsimp"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
-- 软件开发工程师 **符号约定<a name="section316mcpsimp"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table319mcpsimp"></a>
+</table>
+
+**读者对象<a name="section310mcpsimp"></a>**
+
+本文档（本指南）主要适用于以下工程师：
+
+-   技术支持工程师
+-   软件开发工程师
+
+**符号约定<a name="section316mcpsimp"></a>**
+
+在本文中可能出现下列标志，它们所代表的含义如下。
+
+<a name="table319mcpsimp"></a>
 <table><thead align="left"><tr id="row324mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.3.1.1"><p id="p326mcpsimp"><a name="p326mcpsimp"></a><a name="p326mcpsimp"></a>符号</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.1.3.1.2"><p id="p328mcpsimp"><a name="p328mcpsimp"></a><a name="p328mcpsimp"></a>说明</p>
@@ -28,8 +83,36 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OTP API 
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p334mcpsimp"><a name="p334mcpsimp"></a><a name="p334mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
+<tr id="row335mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p337mcpsimp"><a name="p337mcpsimp"></a><a name="p337mcpsimp"></a><a name="image109"></a><a name="image109"></a><span><img id="image109" src="figures/zh-cn_image_0000002457828821.png" height="27.93" width="75.81"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p339mcpsimp"><a name="p339mcpsimp"></a><a name="p339mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row340mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p342mcpsimp"><a name="p342mcpsimp"></a><a name="p342mcpsimp"></a><a name="image110"></a><a name="image110"></a><span><img id="image110" src="figures/zh-cn_image_0000002457828813.png" height="27.93" width="75.81"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p344mcpsimp"><a name="p344mcpsimp"></a><a name="p344mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row345mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p347mcpsimp"><a name="p347mcpsimp"></a><a name="p347mcpsimp"></a><a name="image111"></a><a name="image111"></a><span><img id="image111" src="figures/zh-cn_image_0000002424350002.png" height="27.93" width="75.81"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p349mcpsimp"><a name="p349mcpsimp"></a><a name="p349mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
+<p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>“须知”不涉及人身伤害。</p>
+</td>
+</tr>
+<tr id="row351mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p353mcpsimp"><a name="p353mcpsimp"></a><a name="p353mcpsimp"></a><a name="image112"></a><a name="image112"></a><span><img id="image112" src="figures/zh-cn_image_0000002424190170.png" height="27.93" width="75.81"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p355mcpsimp"><a name="p355mcpsimp"></a><a name="p355mcpsimp"></a>对正文中重点信息的补充说明。</p>
+<p id="p356mcpsimp"><a name="p356mcpsimp"></a><a name="p356mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
+</td>
+</tr>
 </tbody>
-</table> **修订记录<a name="section357mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table1557726816410"></a>
+</table>
+
+**修订记录<a name="section357mcpsimp"></a>**
+
+修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
+
+<a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>发布日期</strong></p>
@@ -46,21 +129,72 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OTP API 
 </td>
 </tr>
 </tbody>
-</table> # 概述
-OTP模块提供驱动一次性编程的MPI接口，实现CIPHER模块root key烧写，jtag key烧写，key烧写状态校验，用户预留空间数据读写等功能。 ## OTP中密钥使用机制<a name="ZH-CN_TOPIC_0000002457868861"></a> **图 1** 、 OTP中密钥使用机制<a name="fig46402535464"></a> ![](figures--OTP中密钥使用机制.png "--OTP中密钥使用机制") **图 2** Hi3403V100、 OTP中密钥使用机制<a name="fig12487132617471"></a> ![](figures/Hi3403V100--OTP中密钥使用机制.png "Hi3403V100--OTP中密钥使用机制")
-## OTP使用注意事项<a name="ZH-CN_TOPIC_0000002424349942"></a> OTP部署在不同场景下时，使用方式可能会有所不同。 - 在Linux环境下 - 用户态使用OTP可以通过链接静态库libss\_otp.a或动态库libss\_otp.so的方式，依赖libsecurec.a或libsecurec.so。 - 内核态OTP使用模块插入方式，即insmod ot\_otp.ko，需要依赖ot\_osal.ko，ot\_base.ko，sys\_config.ko，ot\_sys.ko。 - 在OPTEE环境下，用户态调用OTP对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应更改为ot\_tee\_xxx。
-- 在UBOOT环境下，用户态调用OTP对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应变更为ot\_mpi\_xxx。 # API参考
-OTP提供以下API： - [ss\_mpi\_otp\_init](#ZH-CN_TOPIC_0000002457868853)：初始化OTP模块。
-- [ss\_mpi\_otp\_deinit](#ZH-CN_TOPIC_0000002457828757)：去初始化OTP模块。
-- [ss\_mpi\_otp\_set\_user\_data](#ZH-CN_TOPIC_0000002457828753)：设置OTP用户空间数据。
-- [ss\_mpi\_otp\_get\_user\_data](#ZH-CN_TOPIC_0000002424349934)：读取OTP用户空间数据。
-- [ss\_mpi\_otp\_set\_user\_data\_lock](#ZH-CN_TOPIC_0000002424349926)：设置OTP用户数据锁
-- [ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865)：获取OTP用户数据锁
-- [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)：烧写PV的数据和锁标志到芯片内部OTP。
-- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)：获取芯片内部OTP的PV数据或锁标志。
-- [ss\_mpi\_otp\_get\_key\_verify\_status](#ZH-CN_TOPIC_0000002457828745)：获取芯片内部OTP中存储KEY的校验状态。 ## ss\_mpi\_otp\_init<a name="ZH-CN_TOPIC_0000002457868853"></a> 【描述】 初始化OTP模块。 【语法】 ```
+</table>
+
+# 概述
+OTP模块提供驱动一次性编程的MPI接口，实现CIPHER模块root key烧写，jtag key烧写，key烧写状态校验，用户预留空间数据读写等功能。
+
+
+
+## OTP中密钥使用机制<a name="ZH-CN_TOPIC_0000002457868861"></a>
+
+**图 1**  SS528V100、SS524V100 OTP中密钥使用机制<a name="fig46402535464"></a>  
+![](figures/SS528V100-SS524V100-OTP中密钥使用机制.png "SS528V100-SS524V100-OTP中密钥使用机制")
+
+**图 2**  Hi3403V100、SS626V100 OTP中密钥使用机制<a name="fig12487132617471"></a>  
+![](figures/Hi3403V100-SS626V100-OTP中密钥使用机制.png "Hi3403V100-SS626V100-OTP中密钥使用机制")
+## OTP使用注意事项<a name="ZH-CN_TOPIC_0000002424349942"></a>
+
+OTP部署在不同场景下时，使用方式可能会有所不同。
+
+-   在Linux环境下
+    -   用户态使用OTP可以通过链接静态库libss\_otp.a或动态库libss\_otp.so的方式，依赖libsecurec.a或libsecurec.so。
+    -   内核态OTP使用模块插入方式，即insmod ot\_otp.ko，需要依赖ot\_osal.ko，ot\_base.ko，sys\_config.ko，ot\_sys.ko。
+
+-   在OPTEE环境下，用户态调用OTP对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应更改为ot\_tee\_xxx。
+-   在UBOOT环境下，用户态调用OTP对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应变更为ot\_mpi\_xxx。
+
+# API参考
+OTP提供以下API：
+
+-   [ss\_mpi\_otp\_init](#ZH-CN_TOPIC_0000002457868853)：初始化OTP模块。
+-   [ss\_mpi\_otp\_deinit](#ZH-CN_TOPIC_0000002457828757)：去初始化OTP模块。
+-   [ss\_mpi\_otp\_set\_user\_data](#ZH-CN_TOPIC_0000002457828753)：设置OTP用户空间数据。
+-   [ss\_mpi\_otp\_get\_user\_data](#ZH-CN_TOPIC_0000002424349934)：读取OTP用户空间数据。
+-   [ss\_mpi\_otp\_set\_user\_data\_lock](#ZH-CN_TOPIC_0000002424349926)：设置OTP用户数据锁
+-   [ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865)：获取OTP用户数据锁
+-   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)：烧写PV的数据和锁标志到芯片内部OTP。
+-   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)：获取芯片内部OTP的PV数据或锁标志。
+-   [ss\_mpi\_otp\_get\_key\_verify\_status](#ZH-CN_TOPIC_0000002457828745)：获取芯片内部OTP中存储KEY的校验状态。
+
+
+
+
+
+
+
+
+
+
+## ss\_mpi\_otp\_init<a name="ZH-CN_TOPIC_0000002457868853"></a>
+
+【描述】
+
+初始化OTP模块。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_init(td_void);
-``` 【参数】 无。 【返回值】 <a name="table551mcpsimp"></a>
+```
+
+【参数】
+
+无。
+
+【返回值】
+
+<a name="table551mcpsimp"></a>
 <table><thead align="left"><tr id="row556mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p558mcpsimp"><a name="p558mcpsimp"></a><a name="p558mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p560mcpsimp"><a name="p560mcpsimp"></a><a name="p560mcpsimp"></a>描述</p>
@@ -72,11 +206,46 @@ td_s32 ss_mpi_otp_init(td_void);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p566mcpsimp"><a name="p566mcpsimp"></a><a name="p566mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row567mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p569mcpsimp"><a name="p569mcpsimp"></a><a name="p569mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p571mcpsimp"><a name="p571mcpsimp"></a><a name="p571mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 初始化和去初始化必须成对存在。 【举例】 无。 ## ss\_mpi\_otp\_deinit<a name="ZH-CN_TOPIC_0000002457828757"></a> 【描述】 去初始化OTP模块。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+初始化和去初始化必须成对存在。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_deinit<a name="ZH-CN_TOPIC_0000002457828757"></a>
+
+【描述】
+
+去初始化OTP模块。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_deinit(td_void);
-``` 【参数】 无。 【返回值】 <a name="table1153mcpsimp"></a>
+```
+
+【参数】
+
+无。
+
+【返回值】
+
+<a name="table1153mcpsimp"></a>
 <table><thead align="left"><tr id="row1158mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1160mcpsimp"><a name="p1160mcpsimp"></a><a name="p1160mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1162mcpsimp"><a name="p1162mcpsimp"></a><a name="p1162mcpsimp"></a>描述</p>
@@ -88,11 +257,42 @@ td_s32 ss_mpi_otp_deinit(td_void);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1168mcpsimp"><a name="p1168mcpsimp"></a><a name="p1168mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row1169mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1171mcpsimp"><a name="p1171mcpsimp"></a><a name="p1171mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1173mcpsimp"><a name="p1173mcpsimp"></a><a name="p1173mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 初始化和去初始化必须成对存在。 【举例】 无。 ## ss\_mpi\_otp\_set\_user\_data<a name="ZH-CN_TOPIC_0000002457828753"></a> 【描述】 设置OTP用户空间数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+初始化和去初始化必须成对存在。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_set\_user\_data<a name="ZH-CN_TOPIC_0000002457828753"></a>
+
+【描述】
+
+设置OTP用户空间数据。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const td_u8 *value, td_u32 value_len);
-``` 【参数】 <a name="table181mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table181mcpsimp"></a>
 <table><thead align="left"><tr id="row187mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p189mcpsimp"><a name="p189mcpsimp"></a><a name="p189mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.4.1.2"><p id="p191mcpsimp"><a name="p191mcpsimp"></a><a name="p191mcpsimp"></a>描述</p>
@@ -130,7 +330,11 @@ td_s32 ss_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const 
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table224mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table224mcpsimp"></a>
 <table><thead align="left"><tr id="row229mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p231mcpsimp"><a name="p231mcpsimp"></a><a name="p231mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p233mcpsimp"><a name="p233mcpsimp"></a><a name="p233mcpsimp"></a>描述</p>
@@ -142,14 +346,45 @@ td_s32 ss_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p239mcpsimp"><a name="p239mcpsimp"></a><a name="p239mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row240mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p242mcpsimp"><a name="p242mcpsimp"></a><a name="p242mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p244mcpsimp"><a name="p244mcpsimp"></a><a name="p244mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 - 参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
-- offset必须 4 字节对齐。
-- value\_len为value的字节长度。
-- 参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。offset + value\_len不能大于最大字节长度。 【举例】 无。 ## ss\_mpi\_otp\_get\_user\_data<a name="ZH-CN_TOPIC_0000002424349934"></a> 【描述】 获取OTP用户空间数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+-   参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
+-   offset必须 4 字节对齐。
+-   value\_len为value的字节长度。
+-   参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。offset + value\_len不能大于最大字节长度。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_get\_user\_data<a name="ZH-CN_TOPIC_0000002424349934"></a>
+
+【描述】
+
+获取OTP用户空间数据。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 *value, td_u32 value_len);
-``` 【参数】 <a name="table587mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table587mcpsimp"></a>
 <table><thead align="left"><tr id="row593mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p595mcpsimp"><a name="p595mcpsimp"></a><a name="p595mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p597mcpsimp"><a name="p597mcpsimp"></a><a name="p597mcpsimp"></a>描述</p>
@@ -187,7 +422,11 @@ td_s32 ss_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table629mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table629mcpsimp"></a>
 <table><thead align="left"><tr id="row634mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p636mcpsimp"><a name="p636mcpsimp"></a><a name="p636mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p638mcpsimp"><a name="p638mcpsimp"></a><a name="p638mcpsimp"></a>描述</p>
@@ -199,14 +438,45 @@ td_s32 ss_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p644mcpsimp"><a name="p644mcpsimp"></a><a name="p644mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row645mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p647mcpsimp"><a name="p647mcpsimp"></a><a name="p647mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p649mcpsimp"><a name="p649mcpsimp"></a><a name="p649mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 - 参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
-- offset 必须 4 字节对齐。
-- value\_len 为value字节长度。
-- 参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。offset + value\_len 不能大于最大取值。 【举例】 无。 ## ss\_mpi\_otp\_set\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002424349926"></a> 【描述】 设置OTP用户空间数据锁。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+-   参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
+-   offset 必须 4 字节对齐。
+-   value\_len 为value字节长度。
+-   参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。offset + value\_len 不能大于最大取值。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_set\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002424349926"></a>
+
+【描述】
+
+设置OTP用户空间数据锁。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len);
-``` 【参数】 <a name="table366mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table366mcpsimp"></a>
 <table><thead align="left"><tr id="row372mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p374mcpsimp"><a name="p374mcpsimp"></a><a name="p374mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p376mcpsimp"><a name="p376mcpsimp"></a><a name="p376mcpsimp"></a>描述</p>
@@ -237,7 +507,11 @@ td_s32 ss_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, t
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table401mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table401mcpsimp"></a>
 <table><thead align="left"><tr id="row406mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p408mcpsimp"><a name="p408mcpsimp"></a><a name="p408mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p410mcpsimp"><a name="p410mcpsimp"></a><a name="p410mcpsimp"></a>描述</p>
@@ -249,13 +523,45 @@ td_s32 ss_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, t
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p416mcpsimp"><a name="p416mcpsimp"></a><a name="p416mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row417mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p419mcpsimp"><a name="p419mcpsimp"></a><a name="p419mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p421mcpsimp"><a name="p421mcpsimp"></a><a name="p421mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 - 参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
-- offset 必须 4 字节对齐。
-- 参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义定义”中“位宽”列。offset + value\_len 不能大于最大取值。 【举例】 无。 ## ss\_mpi\_otp\_get\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002457868865"></a> 【描述】 获取OTP用户空间数据锁。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+-   参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
+-   offset 必须 4 字节对齐。
+-   参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义定义”中“位宽”列。offset + value\_len 不能大于最大取值。
+-   SS528V100、SS524V100 不支持该接口。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_get\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002457868865"></a>
+
+【描述】
+
+获取OTP用户空间数据锁。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len, ot_otp_lock_status *lock);
-``` 【参数】 <a name="table741mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table741mcpsimp"></a>
 <table><thead align="left"><tr id="row747mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p749mcpsimp"><a name="p749mcpsimp"></a><a name="p749mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p751mcpsimp"><a name="p751mcpsimp"></a><a name="p751mcpsimp"></a>描述</p>
@@ -293,7 +599,11 @@ td_s32 ss_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, t
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table783mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table783mcpsimp"></a>
 <table><thead align="left"><tr id="row788mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p790mcpsimp"><a name="p790mcpsimp"></a><a name="p790mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p792mcpsimp"><a name="p792mcpsimp"></a><a name="p792mcpsimp"></a>描述</p>
@@ -305,13 +615,45 @@ td_s32 ss_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, t
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p798mcpsimp"><a name="p798mcpsimp"></a><a name="p798mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row799mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p801mcpsimp"><a name="p801mcpsimp"></a><a name="p801mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p803mcpsimp"><a name="p803mcpsimp"></a><a name="p803mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 - 参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
-- offset 必须 4 字节对齐。
-- 参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。offset + value\_len 不能大于最大取值。 【举例】 无。 ## ss\_mpi\_otp\_burn\_product\_pv<a name="ZH-CN_TOPIC_0000002424190098"></a> 【描述】 烧写PV的数据和锁标志到芯片内部OTP。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+-   参数field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
+-   offset 必须 4 字节对齐。
+-   参数offset，value\_len取值范围参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。offset + value\_len 不能大于最大取值。
+-   SS528V100、SS524V100 不支持该接口。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_burn\_product\_pv<a name="ZH-CN_TOPIC_0000002424190098"></a>
+
+【描述】
+
+烧写PV的数据和锁标志到芯片内部OTP。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);
-``` 【参数】 <a name="table670mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table670mcpsimp"></a>
 <table><thead align="left"><tr id="row676mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p678mcpsimp"><a name="p678mcpsimp"></a><a name="p678mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p680mcpsimp"><a name="p680mcpsimp"></a><a name="p680mcpsimp"></a>描述</p>
@@ -335,7 +677,11 @@ td_s32 ss_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table699mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table699mcpsimp"></a>
 <table><thead align="left"><tr id="row704mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p706mcpsimp"><a name="p706mcpsimp"></a><a name="p706mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p708mcpsimp"><a name="p708mcpsimp"></a><a name="p708mcpsimp"></a>描述</p>
@@ -347,16 +693,47 @@ td_s32 ss_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p714mcpsimp"><a name="p714mcpsimp"></a><a name="p714mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row715mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p717mcpsimp"><a name="p717mcpsimp"></a><a name="p717mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p719mcpsimp"><a name="p719mcpsimp"></a><a name="p719mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 - 参数pv的成员burn必须设为TD\_TRUE。
-- 参数pv的成员field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
-- 参数pv的成员value\_len为 value 的位长度，取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。
-- 参数pv的成员value取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“说明”列。
-- 参数pv的成员lock取值为TD\_TRUE或TD\_FALSE，《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“说明”列，自动lock的field\_name配置任何值均会锁定。
-- 参数num有效取值范围是1\~500。 【举例】 无。 ## ss\_mpi\_otp\_read\_product\_pv<a name="ZH-CN_TOPIC_0000002424349922"></a> 【描述】 获取芯片内部OTP的PV数据或锁标志。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+-   参数pv的成员burn必须设为TD\_TRUE。
+-   参数pv的成员field\_name设定参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
+-   参数pv的成员value\_len为 value 的位长度，取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。
+-   参数pv的成员value取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“说明”列。
+-   参数pv的成员lock取值为TD\_TRUE或TD\_FALSE，《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“说明”列，自动lock的field\_name配置任何值均会锁定。
+-   参数num有效取值范围是1\~500。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_read\_product\_pv<a name="ZH-CN_TOPIC_0000002424349922"></a>
+
+【描述】
+
+获取芯片内部OTP的PV数据或锁标志。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
-``` 【参数】 <a name="table824mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table824mcpsimp"></a>
 <table><thead align="left"><tr id="row830mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p832mcpsimp"><a name="p832mcpsimp"></a><a name="p832mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p834mcpsimp"><a name="p834mcpsimp"></a><a name="p834mcpsimp"></a>描述</p>
@@ -380,7 +757,11 @@ td_s32 ss_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table853mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table853mcpsimp"></a>
 <table><thead align="left"><tr id="row858mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p860mcpsimp"><a name="p860mcpsimp"></a><a name="p860mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p862mcpsimp"><a name="p862mcpsimp"></a><a name="p862mcpsimp"></a>描述</p>
@@ -392,15 +773,46 @@ td_s32 ss_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p868mcpsimp"><a name="p868mcpsimp"></a><a name="p868mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row869mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p871mcpsimp"><a name="p871mcpsimp"></a><a name="p871mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p873mcpsimp"><a name="p873mcpsimp"></a><a name="p873mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 - 参数pv的成员burn必须设为TD\_FALSE。
-- 参数pv的成员field\_name设定《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
-- 参数pv的成员value\_len为value的位长度，取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。
-- 参数pv的成员value取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“说明”列。
-- 参数num有效取值范围是1\~500。 【举例】 无。 ## ss\_mpi\_otp\_get\_key\_verify\_status<a name="ZH-CN_TOPIC_0000002457828745"></a> 【描述】 获取芯片内部OTP中存储KEY的校验状态。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+-   参数pv的成员burn必须设为TD\_FALSE。
+-   参数pv的成员field\_name设定《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
+-   参数pv的成员value\_len为value的位长度，取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“位宽”列。
+-   参数pv的成员value取值参考《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“说明”列。
+-   参数num有效取值范围是1\~500。
+
+【举例】
+
+无。
+
+## ss\_mpi\_otp\_get\_key\_verify\_status<a name="ZH-CN_TOPIC_0000002457828745"></a>
+
+【描述】
+
+获取芯片内部OTP中存储KEY的校验状态。
+
+【语法】
+
+```
 td_s32 ss_mpi_otp_get_key_verify_status(const td_char *key_name, td_bool *status);
-``` 【参数】 <a name="table1050mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table1050mcpsimp"></a>
 <table><thead align="left"><tr id="row1056mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p1058mcpsimp"><a name="p1058mcpsimp"></a><a name="p1058mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p1060mcpsimp"><a name="p1060mcpsimp"></a><a name="p1060mcpsimp"></a>描述</p>
@@ -424,7 +836,11 @@ td_s32 ss_mpi_otp_get_key_verify_status(const td_char *key_name, td_bool *status
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table1079mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table1079mcpsimp"></a>
 <table><thead align="left"><tr id="row1084mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1086mcpsimp"><a name="p1086mcpsimp"></a><a name="p1086mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1088mcpsimp"><a name="p1088mcpsimp"></a><a name="p1088mcpsimp"></a>描述</p>
@@ -436,16 +852,60 @@ td_s32 ss_mpi_otp_get_key_verify_status(const td_char *key_name, td_bool *status
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1094mcpsimp"><a name="p1094mcpsimp"></a><a name="p1094mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row1095mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1097mcpsimp"><a name="p1097mcpsimp"></a><a name="p1097mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1099mcpsimp"><a name="p1099mcpsimp"></a><a name="p1099mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002424349930">错误码</a>。</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
-- 库文件：libss\_otp.a 【注意】 参数key\_name设定《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。 【举例】 无。 # 数据类型
-相关数据类型、数据结构定义如下： - [ot\_otp\_burn\_pv\_item](#ZH-CN_TOPIC_0000002457868869)：OTP PV数据类型。
-- [ot\_otp\_lock\_status](#ZH-CN_TOPIC_0000002424190110)：定义OTP数据锁状态。
-- [OT\_OTP\_PV\_NAME\_MAX\_LEN](#ZH-CN_TOPIC_0000002457828749)：字段名称最大字节长度（单位：byte）。
-- [OT\_OTP\_PV\_VALUE\_MAX\_LEN](#ZH-CN_TOPIC_0000002424349938)：ot\_otp\_burn\_pv\_item成员value最大字节长度（单位：byte）。 ## ot\_otp\_burn\_pv\_item<a name="ZH-CN_TOPIC_0000002457868869"></a> 【说明】 OTP PV数据类型。 【定义】 ```
-typedef struct { td_bool burn; td_char field_name[OT_OTP_PV_NAME_MAX_LEN]; td_u32 value_len; td_u8 value[OT_OTP_PV_VALUE_MAX_LEN]; td_bool lock;
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_otp.h、ss\_mpi\_otp.h
+-   库文件：libss\_otp.a
+
+【注意】
+
+参数key\_name设定《安全子系统使用说明》2.2章节“SSxxxx OTP字段定义”中“字段名称”列。
+
+【举例】
+
+无。
+
+# 数据类型
+相关数据类型、数据结构定义如下：
+
+-   [ot\_otp\_burn\_pv\_item](#ZH-CN_TOPIC_0000002457868869)：OTP PV数据类型。
+-   [ot\_otp\_lock\_status](#ZH-CN_TOPIC_0000002424190110)：定义OTP数据锁状态。
+-   [OT\_OTP\_PV\_NAME\_MAX\_LEN](#ZH-CN_TOPIC_0000002457828749)：字段名称最大字节长度（单位：byte）。
+-   [OT\_OTP\_PV\_VALUE\_MAX\_LEN](#ZH-CN_TOPIC_0000002424349938)：ot\_otp\_burn\_pv\_item成员value最大字节长度（单位：byte）。
+
+
+
+
+
+## ot\_otp\_burn\_pv\_item<a name="ZH-CN_TOPIC_0000002457868869"></a>
+
+【说明】
+
+OTP PV数据类型。
+
+【定义】
+
+```
+typedef struct {
+    td_bool burn;
+    td_char field_name[OT_OTP_PV_NAME_MAX_LEN];
+    td_u32  value_len;
+    td_u8   value[OT_OTP_PV_VALUE_MAX_LEN];
+    td_bool lock;
 } ot_otp_burn_pv_item;
-``` 【成员】 <a name="table989mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table989mcpsimp"></a>
 <table><thead align="left"><tr id="row994mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p996mcpsimp"><a name="p996mcpsimp"></a><a name="p996mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p998mcpsimp"><a name="p998mcpsimp"></a><a name="p998mcpsimp"></a>描述</p>
@@ -478,11 +938,37 @@ typedef struct { td_bool burn; td_char field_name[OT_OTP_PV_NAME_MAX_LEN]; td_u3
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 value\_len指向value的位宽长度。 【相关数据类型及接口】 - [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
-- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922) ## ot\_otp\_lock\_status<a name="ZH-CN_TOPIC_0000002424190110"></a> 【说明】 定义OTP数据锁状态。 【定义】 ```
-typedef enum { OT_OTP_STA_ALL_UNLOCKED = 0, /**< user data area is all unlock. */ OT_OTP_STA_PARTIAL_LOCKED, /**< user data area is partial unlock. */ OT_OTP_STA_ALL_LOCKED, /**< user data area is all lock. */ OT_OTP_STA_BUTT, /**< invalid param. */
+</table>
+
+【注意事项】
+
+value\_len指向value的位宽长度。
+
+【相关数据类型及接口】
+
+-   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
+-   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)
+
+## ot\_otp\_lock\_status<a name="ZH-CN_TOPIC_0000002424190110"></a>
+
+【说明】
+
+定义OTP数据锁状态。
+
+【定义】
+
+```
+typedef enum {
+    OT_OTP_STA_ALL_UNLOCKED = 0,                    /**< user data area is all unlock. */
+    OT_OTP_STA_PARTIAL_LOCKED,                      /**< user data area is partial unlock. */
+    OT_OTP_STA_ALL_LOCKED,                          /**< user data area is all lock. */
+    OT_OTP_STA_BUTT,                                /**< invalid param. */
 } ot_otp_lock_status;
-``` 【成员】 <a name="table939mcpsimp"></a>
+```
+
+【成员】
+
+<a name="table939mcpsimp"></a>
 <table><thead align="left"><tr id="row944mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.1"><p id="p946mcpsimp"><a name="p946mcpsimp"></a><a name="p946mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.2"><p id="p948mcpsimp"><a name="p948mcpsimp"></a><a name="p948mcpsimp"></a>描述</p>
@@ -510,14 +996,72 @@ typedef enum { OT_OTP_STA_ALL_UNLOCKED = 0, /**< user data area is all unlock. *
 </td>
 </tr>
 </tbody>
-</table> 【注意事项】 无。 【相关数据类型及接口】 [ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865) ## OT\_OTP\_PV\_NAME\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002457828749"></a> 【说明】 字段名称最大字节长度（单位：byte）。 【定义】 ```
-#define OT_OTP_PV_NAME_MAX_LEN 32
-``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 - [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
-- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922) ## OT\_OTP\_PV\_VALUE\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002424349938"></a> 【说明】 ot\_otp\_burn\_pv\_item成员value最大字节长度（单位：byte）。 【定义】 ```
-#define OT_OTP_PV_VALUE_MAX_LEN 32
-``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 - [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
-- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922) # 错误码
-OTP提供的错误码如下所示。 **表 1** OTP模块的错误码 <a name="_Ref448994233"></a>
+</table>
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+[ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865)
+
+## OT\_OTP\_PV\_NAME\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002457828749"></a>
+
+【说明】
+
+字段名称最大字节长度（单位：byte）。
+
+【定义】
+
+```
+#define OT_OTP_PV_NAME_MAX_LEN                           32
+```
+
+【成员】
+
+无。
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+-   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
+-   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)
+
+## OT\_OTP\_PV\_VALUE\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002424349938"></a>
+
+【说明】
+
+ot\_otp\_burn\_pv\_item成员value最大字节长度（单位：byte）。
+
+【定义】
+
+```
+#define OT_OTP_PV_VALUE_MAX_LEN                          32
+```
+
+【成员】
+
+无。
+
+【注意事项】
+
+无。
+
+【相关数据类型及接口】
+
+-   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
+-   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)
+
+# 错误码
+OTP提供的错误码如下所示。
+
+**表 1**  OTP模块的错误码
+
+<a name="_Ref448994233"></a>
 <table><thead align="left"><tr id="row444mcpsimp"><th class="cellrowborder" valign="top" width="18.98%" id="mcps1.2.4.1.1"><p id="p446mcpsimp"><a name="p446mcpsimp"></a><a name="p446mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="52.019999999999996%" id="mcps1.2.4.1.2"><p id="p448mcpsimp"><a name="p448mcpsimp"></a><a name="p448mcpsimp"></a>宏定义</p>
@@ -618,7 +1162,9 @@ OTP提供的错误码如下所示。 **表 1** OTP模块的错误码 <a name="_R
 </td>
 </tr>
 </tbody>
-</table> # 缩略语
+</table>
+
+# 缩略语
 <a name="table104mcpsimp"></a>
 <table><tbody><tr id="row110mcpsimp"><td class="cellrowborder" colspan="3" valign="top"><p id="p112mcpsimp"><a name="p112mcpsimp"></a><a name="p112mcpsimp"></a><strong id="b113mcpsimp"><a name="b113mcpsimp"></a><a name="b113mcpsimp"></a>A</strong></p>
 </td>
@@ -661,4 +1207,5 @@ OTP提供的错误码如下所示。 **表 1** OTP模块的错误码 <a name="_R
 </td>
 </tr>
 </tbody>
-</table> 
+</table>
+

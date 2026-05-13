@@ -1,8 +1,18 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API参考/IVS API参考.md
---- # Preface
-**Overview<a name="section122282764510"></a>** This document is written for programmers developing recognition analysis solutions using IVS. It is intended to provide reference information supported by IVS during development, including AP Is, header files, error codes, etc. **Product Version<a name="section12318719459"></a>** The product versions corresponding to this document are as follows. <a name="table1324247124515"></a>
+---
+
+# Preface
+**Overview<a name="section122282764510"></a>**
+
+This document is written for programmers developing recognition analysis solutions using IVS. It is intended to provide reference information supported by IVS during development, including APIs, header files, error codes, etc.
+
+**Product Version<a name="section12318719459"></a>**
+
+The product versions corresponding to this document are as follows.
+
+<a name="table1324247124515"></a>
 <table><thead align="left"><tr id="row8283167154518"><th class="cellrowborder" valign="top" width="31.759999999999998%" id="mcps1.1.3.1.1"><p id="p1728315720455"><a name="p1728315720455"></a><a name="p1728315720455"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.24%" id="mcps1.1.3.1.2"><p id="p92831478451"><a name="p92831478451"></a><a name="p92831478451"></a>Product Version</p>
@@ -14,13 +24,26 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API�
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p152841577456"><a name="p152841577456"></a><a name="p152841577456"></a>V100</p>
 </td>
 </tr>
+<tr id="row09316491432"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table> **Intended Audience<a name="section1924037154519"></a>** This document (guide) is primarily intended for the following engineers: - Technical Support Engineers
-- Software Development Engineers **Symbol Conventions<a name="section133020216410"></a>** The following symbols may appear in this document, and their meanings are described below. <a name="table2622507016410"></a>
+</table>
+
+**Intended Audience<a name="section1924037154519"></a>**
+
+This document (guide) is primarily intended for the following engineers:
+
+-   Technical Support Engineers
+-   Software Development Engineers
+
+**Symbol Conventions<a name="section133020216410"></a>**
+
+The following symbols may appear in this document, and their meanings are described below.
+
+<a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a><strong id="b2136615816410"><a name="b2136615816410"></a><a name="b2136615816410"></a>Symbol</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a><strong id="b5941558116410"><a name="b5941558116410"></a><a name="b5941558116410"></a>Description</strong></p>
@@ -32,8 +55,34 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API�
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>Indicates a high-level hazard which, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441733653.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>Indicates a medium-level hazard which, if not avoided, could result in death or serious injury.</p>
+</td>
+</tr>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408294304.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>Indicates a low-level hazard which, if not avoided, could result in minor or moderate injury.</p>
+</td>
+</tr>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441853733.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>Used to convey device or environmental safety alert information. If not avoided, it may result in equipment damage, data loss, reduced equipment performance, or other unpredictable consequences.</p>
+<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>"Caution" does not involve personal injury.</p>
+</td>
+</tr>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408134440.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>Supplementary explanation of key information in the main text.</p>
+<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>"Note" is not safety warning information and does not involve personal, equipment, or environmental injury.</p>
+</td>
+</tr>
 </tbody>
-</table> **Revision History<a name="section2467512116410"></a>** <a name="table1557726816410"></a>
+</table>
+
+**Revision History<a name="section2467512116410"></a>**
+
+<a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>Release Date</strong></p>
@@ -50,19 +99,75 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVS API�
 </td>
 </tr>
 </tbody>
-</table> # Overview
-## Overview<a name="ZH-CN_TOPIC_0000002408134140"></a> IVS (Intelligent Video Surveillance) is a higher-level recognition video capture application API compared to IVE (Intelligent Video Engine). Users can quickly develop related recognition applications based on IVS. The recognition applications currently supported by IVS include: MD (Motion Detection). # MD
-## Functional Description<a name="ZH-CN_TOPIC_0000002441733317"></a> ### Motion Detection<a name="ZH-CN_TOPIC_0000002408134128"></a> Motion detection detects the motion state of a video by detecting changes in video brightness, producing video detection analysis results. #### Basic Concepts<a name="ZH-CN_TOPIC_0000002408294084"></a> - MD Algorithm The MD algorithm includes two types: frame difference method (MD\_ALG\_MODE\_REF) and background method (MD\_ALG\_MODE\_BG). - Frame Difference Method (MD\_ALG\_MODE\_REF) An algorithm that directly uses the user-specified image as a reference frame to produce video detection analysis results is called the frame difference method. - Background Method (MD\_ALG\_MODE\_BG) During MD processing, a background image of the current video is generated. An algorithm that then uses the background image as a reference frame to produce video detection analysis results is called the background method. - Background Update Weight When the MD algorithm is set to the background method, each MD process generates a static partial image. This partial image and the background undergo a pixel value overlay. New background = (static partial image overlay weight x static partial image + dynamic partial image overlay weight y old background) >> 16. >![](public_sys-resources/icon-notice.gif) **Caution:**
->If using a 64-bit operating system, the MMZ address used must be within a 4 GB space, otherwise exceptions may occur. ## API Reference<a name="ZH-CN_TOPIC_0000002441733361"></a> The MD API provides basic interfaces for initialization, exit, handle acquisition, handle release, background acquisition, and detection processing. This functional module provides the following AP Is: - [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309): Initialization.
-- [ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148): Exit.
-- [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333): Creates an MD channel.
-- [ss\_ivs\_md\_destroy\_chn](#ZH-CN_TOPIC_0000002441853505): Destroys an MD channel.
-- [ss\_ivs\_md\_set\_chn\_attr](#ZH-CN_TOPIC_0000002408294068): Sets MD channel attributes.
-- [ss\_ivs\_md\_get\_chn\_attr](#ZH-CN_TOPIC_0000002408294052): Gets MD channel attributes.
-- [ss\_ivs\_md\_get\_bg](#ZH-CN_TOPIC_0000002408134192): Gets the background.
-- [ss\_ivs\_md\_proc](#ZH-CN_TOPIC_0000002441733297): Detection processing. ### ss\_ivs\_md\_init<a name="ZH-CN_TOPIC_0000002441733309"></a> [Description] Initializes motion detection. [Syntax] ```
+</table>
+
+# Overview
+## Overview<a name="ZH-CN_TOPIC_0000002408134140"></a>
+
+IVS (Intelligent Video Surveillance) is a higher-level recognition video capture application API compared to IVE (Intelligent Video Engine). Users can quickly develop related recognition applications based on IVS. The recognition applications currently supported by IVS include: MD (Motion Detection).
+
+# MD
+## Functional Description<a name="ZH-CN_TOPIC_0000002441733317"></a>
+
+### Motion Detection<a name="ZH-CN_TOPIC_0000002408134128"></a>
+
+Motion detection detects the motion state of a video by detecting changes in video brightness, producing video detection analysis results.
+
+#### Basic Concepts<a name="ZH-CN_TOPIC_0000002408294084"></a>
+
+-   MD Algorithm
+
+    The MD algorithm includes two types: frame difference method (MD\_ALG\_MODE\_REF) and background method (MD\_ALG\_MODE\_BG).
+
+    -   Frame Difference Method (MD\_ALG\_MODE\_REF)
+
+        An algorithm that directly uses the user-specified image as a reference frame to produce video detection analysis results is called the frame difference method.
+
+    -   Background Method (MD\_ALG\_MODE\_BG)
+
+        During MD processing, a background image of the current video is generated. An algorithm that then uses the background image as a reference frame to produce video detection analysis results is called the background method.
+
+-   Background Update Weight
+
+    When the MD algorithm is set to the background method, each MD process generates a static partial image. This partial image and the background undergo a pixel value overlay. New background = (static partial image overlay weight x static partial image + dynamic partial image overlay weight y old background) >> 16.
+
+>![](public_sys-resources/icon-notice.gif) **Caution:**
+>If using a 64-bit operating system, the MMZ address used must be within a 4 GB space, otherwise exceptions may occur.
+
+## API Reference<a name="ZH-CN_TOPIC_0000002441733361"></a>
+
+The MD API provides basic interfaces for initialization, exit, handle acquisition, handle release, background acquisition, and detection processing.
+
+This functional module provides the following APIs:
+
+-   [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309): Initialization.
+-   [ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148): Exit.
+-   [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333): Creates an MD channel.
+-   [ss\_ivs\_md\_destroy\_chn](#ZH-CN_TOPIC_0000002441853505): Destroys an MD channel.
+-   [ss\_ivs\_md\_set\_chn\_attr](#ZH-CN_TOPIC_0000002408294068): Sets MD channel attributes.
+-   [ss\_ivs\_md\_get\_chn\_attr](#ZH-CN_TOPIC_0000002408294052): Gets MD channel attributes.
+-   [ss\_ivs\_md\_get\_bg](#ZH-CN_TOPIC_0000002408134192): Gets the background.
+-   [ss\_ivs\_md\_proc](#ZH-CN_TOPIC_0000002441733297): Detection processing.
+
+### ss\_ivs\_md\_init<a name="ZH-CN_TOPIC_0000002441733309"></a>
+
+[Description]
+
+Initializes motion detection.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_init(td_void)；
-``` [Parameters] None. [Return Values] <a name="table288mcpsimp"></a>
+```
+
+[Parameters]
+
+None.
+
+[Return Values]
+
+<a name="table288mcpsimp"></a>
 <table><thead align="left"><tr id="row293mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p295mcpsimp"><a name="p295mcpsimp"></a><a name="p295mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p297mcpsimp"><a name="p297mcpsimp"></a><a name="p297mcpsimp"></a>Description</p>
@@ -80,11 +185,45 @@ td_s32 ss_ivs_md_init(td_void)；
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] - Before calling other MD interfaces, this interface must be called first for initialization, and it only needs to be called once. Otherwise, an error is returned.
-- This interface must be used together with [ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148). [Example] None. [Related Topics] [ss\_ivs\_md\_exit](#ss_ivs_md_exit) ### ss\_ivs\_md\_exit<a name="ZH-CN_TOPIC_0000002408134148"></a> [Description] Exits motion detection. [Syntax] ```
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+-   Before calling other MD interfaces, this interface must be called first for initialization, and it only needs to be called once. Otherwise, an error is returned.
+-   This interface must be used together with [ss\_ivs\_md\_exit](#ZH-CN_TOPIC_0000002408134148).
+
+[Example]
+
+None.
+
+[Related Topics]
+
+[ss\_ivs\_md\_exit](#ss_ivs_md_exit)
+
+### ss\_ivs\_md\_exit<a name="ZH-CN_TOPIC_0000002408134148"></a>
+
+[Description]
+
+Exits motion detection.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_exit(td_void);
-``` [Parameters] None. [Return Values] <a name="table333mcpsimp"></a>
+```
+
+[Parameters]
+
+None.
+
+[Return Values]
+
+<a name="table333mcpsimp"></a>
 <table><thead align="left"><tr id="row338mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p340mcpsimp"><a name="p340mcpsimp"></a><a name="p340mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p342mcpsimp"><a name="p342mcpsimp"></a><a name="p342mcpsimp"></a>Description</p>
@@ -102,10 +241,40 @@ td_s32 ss_ivs_md_exit(td_void);
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization before calling this interface to exit. Otherwise, an error is returned. [Example] None. [Related Topics] [ss\_ivs\_md\_init](#ss_ivs_md_init) ### ss\_ivs\_md\_create\_chn<a name="ZH-CN_TOPIC_0000002441733333"></a> [Description] Creates an MD channel. [Syntax] ```
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization before calling this interface to exit. Otherwise, an error is returned.
+
+[Example]
+
+None.
+
+[Related Topics]
+
+[ss\_ivs\_md\_init](#ss_ivs_md_init)
+
+### ss\_ivs\_md\_create\_chn<a name="ZH-CN_TOPIC_0000002441733333"></a>
+
+[Description]
+
+Creates an MD channel.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_create_chn(ot_md_chn md_chn, ot_md_attr *md_attr);
-``` [Parameters] <a name="table376mcpsimp"></a>
+```
+
+[Parameters]
+
+<a name="table376mcpsimp"></a>
 <table><thead align="left"><tr id="row382mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p384mcpsimp"><a name="p384mcpsimp"></a><a name="p384mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p386mcpsimp"><a name="p386mcpsimp"></a><a name="p386mcpsimp"></a>Description</p>
@@ -130,7 +299,11 @@ td_s32 ss_ivs_md_create_chn(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> [Return Values] <a name="table406mcpsimp"></a>
+</table>
+
+[Return Values]
+
+<a name="table406mcpsimp"></a>
 <table><thead align="left"><tr id="row411mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p413mcpsimp"><a name="p413mcpsimp"></a><a name="p413mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p415mcpsimp"><a name="p415mcpsimp"></a><a name="p415mcpsimp"></a>Description</p>
@@ -148,14 +321,44 @@ td_s32 ss_ivs_md_create_chn(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned. [Example] None. [Related Topics] - [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_destroy\_chn<a name="ZH-CN_TOPIC_0000002441853505"></a> [Description] Destroys an MD channel. [Syntax] ```
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+[ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
+
+[Example]
+
+None.
+
+[Related Topics]
+
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_destroy\_chn<a name="ZH-CN_TOPIC_0000002441853505"></a>
+
+[Description]
+
+Destroys an MD channel.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_destroy_chn(ot_md_chn md_chn);
-``` [Parameters] <a name="table457mcpsimp"></a>
+```
+
+[Parameters]
+
+<a name="table457mcpsimp"></a>
 <table><thead align="left"><tr id="row463mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p465mcpsimp"><a name="p465mcpsimp"></a><a name="p465mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p467mcpsimp"><a name="p467mcpsimp"></a><a name="p467mcpsimp"></a>Description</p>
@@ -172,7 +375,11 @@ td_s32 ss_ivs_md_destroy_chn(ot_md_chn md_chn);
 </td>
 </tr>
 </tbody>
-</table> [Return Values] <a name="table479mcpsimp"></a>
+</table>
+
+[Return Values]
+
+<a name="table479mcpsimp"></a>
 <table><thead align="left"><tr id="row484mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p486mcpsimp"><a name="p486mcpsimp"></a><a name="p486mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p488mcpsimp"><a name="p488mcpsimp"></a><a name="p488mcpsimp"></a>Description</p>
@@ -190,15 +397,45 @@ td_s32 ss_ivs_md_destroy_chn(ot_md_chn md_chn);
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] - [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
-- md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned. [Example] None. [Related Topics] - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_set\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294068"></a> [Description] Sets MD channel attributes. [Syntax] ```
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+-   [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
+-   md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
+
+[Example]
+
+None.
+
+[Related Topics]
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_set\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294068"></a>
+
+[Description]
+
+Sets MD channel attributes.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_set_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
-``` [Parameters] <a name="table534mcpsimp"></a>
+```
+
+[Parameters]
+
+<a name="table534mcpsimp"></a>
 <table><thead align="left"><tr id="row540mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p544mcpsimp"><a name="p544mcpsimp"></a><a name="p544mcpsimp"></a>Description</p>
@@ -223,7 +460,11 @@ td_s32 ss_ivs_md_set_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> [Return Values] <a name="table564mcpsimp"></a>
+</table>
+
+[Return Values]
+
+<a name="table564mcpsimp"></a>
 <table><thead align="left"><tr id="row569mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p571mcpsimp"><a name="p571mcpsimp"></a><a name="p571mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p573mcpsimp"><a name="p573mcpsimp"></a><a name="p573mcpsimp"></a>Description</p>
@@ -241,16 +482,46 @@ td_s32 ss_ivs_md_set_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] - [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
-- md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
-- Static channel attributes (alg\_mode, sad\_mode, width, height) cannot be changed; they must match the values used when the channel was created. Otherwise, an error is returned. [Example] None. [Related Topics] - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_get\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294052"></a> [Description] Gets MD channel attributes. [Syntax] ```
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+-   [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
+-   md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
+-   Static channel attributes (alg\_mode, sad\_mode, width, height) cannot be changed; they must match the values used when the channel was created. Otherwise, an error is returned.
+
+[Example]
+
+None.
+
+[Related Topics]
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_get\_chn\_attr](#ss_ivs_md_get_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_get\_chn\_attr<a name="ZH-CN_TOPIC_0000002408294052"></a>
+
+[Description]
+
+Gets MD channel attributes.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_get_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
-``` [Parameters] <a name="table620mcpsimp"></a>
+```
+
+[Parameters]
+
+<a name="table620mcpsimp"></a>
 <table><thead align="left"><tr id="row626mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p628mcpsimp"><a name="p628mcpsimp"></a><a name="p628mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p630mcpsimp"><a name="p630mcpsimp"></a><a name="p630mcpsimp"></a>Description</p>
@@ -275,7 +546,11 @@ td_s32 ss_ivs_md_get_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> [Return Values] <a name="table650mcpsimp"></a>
+</table>
+
+[Return Values]
+
+<a name="table650mcpsimp"></a>
 <table><thead align="left"><tr id="row655mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p657mcpsimp"><a name="p657mcpsimp"></a><a name="p657mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p659mcpsimp"><a name="p659mcpsimp"></a><a name="p659mcpsimp"></a>Description</p>
@@ -293,15 +568,45 @@ td_s32 ss_ivs_md_get_chn_attr(ot_md_chn md_chn, ot_md_attr *md_attr);
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] - [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
-- md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned. [Example] None. [Related Topics] - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_get\_bg<a name="ZH-CN_TOPIC_0000002408134192"></a> [Description] Gets the motion detection background. [Syntax] ```
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+-   [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
+-   md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
+
+[Example]
+
+None.
+
+[Related Topics]
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_get\_bg<a name="ZH-CN_TOPIC_0000002408134192"></a>
+
+[Description]
+
+Gets the motion detection background.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
-``` [Parameters] <a name="table704mcpsimp"></a>
+```
+
+[Parameters]
+
+<a name="table704mcpsimp"></a>
 <table><thead align="left"><tr id="row710mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p712mcpsimp"><a name="p712mcpsimp"></a><a name="p712mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.4.1.2"><p id="p714mcpsimp"><a name="p714mcpsimp"></a><a name="p714mcpsimp"></a>Description</p>
@@ -317,8 +622,18 @@ td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.1.4.1.3 "><p id="p724mcpsimp"><a name="p724mcpsimp"></a><a name="p724mcpsimp"></a>Input</p>
 </td>
 </tr>
+<tr id="row725mcpsimp"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.1 "><p id="p727mcpsimp"><a name="p727mcpsimp"></a><a name="p727mcpsimp"></a>bg</p>
+</td>
+<td class="cellrowborder" valign="top" width="67%" headers="mcps1.1.4.1.2 "><p id="p729mcpsimp"><a name="p729mcpsimp"></a><a name="p729mcpsimp"></a>Background image pointer; must not be NULL.</p>
+<p id="p730mcpsimp"><a name="p730mcpsimp"></a><a name="p730mcpsimp"></a>For detailed definitions, see Section 3.1 of the "IVE API Reference".</p>
+</td>
+<td class="cellrowborder" valign="top" width="17%" headers="mcps1.1.4.1.3 "><p id="p732mcpsimp"><a name="p732mcpsimp"></a><a name="p732mcpsimp"></a>Output</p>
+</td>
+</tr>
 </tbody>
-</table> <a name="table733mcpsimp"></a>
+</table>
+
+<a name="table733mcpsimp"></a>
 <table><thead align="left"><tr id="row740mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.5.1.1"><p id="p742mcpsimp"><a name="p742mcpsimp"></a><a name="p742mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.5.1.2"><p id="p744mcpsimp"><a name="p744mcpsimp"></a><a name="p744mcpsimp"></a>Supported Image Type</p>
@@ -339,7 +654,11 @@ td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
 </td>
 </tr>
 </tbody>
-</table> [Return Values] <a name="table760mcpsimp"></a>
+</table>
+
+[Return Values]
+
+<a name="table760mcpsimp"></a>
 <table><thead align="left"><tr id="row765mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p767mcpsimp"><a name="p767mcpsimp"></a><a name="p767mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p769mcpsimp"><a name="p769mcpsimp"></a><a name="p769mcpsimp"></a>Description</p>
@@ -357,15 +676,45 @@ td_s32 ss_ivs_md_get_bg(ot_md_chn md_chn, ot_svp_dst_img *bg);
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] - [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
-- md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
-- Background data can only be retrieved when using the background method. Otherwise, an error is returned. [Example] None. [Related Topics] - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_proc](#ss_ivs_md_proc) ### ss\_ivs\_md\_proc<a name="ZH-CN_TOPIC_0000002441733297"></a> [Description] Motion detection processing. [Syntax] ```
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+-   [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
+-   md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
+-   Background data can only be retrieved when using the background method. Otherwise, an error is returned.
+
+[Example]
+
+None.
+
+[Related Topics]
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_proc](#ss_ivs_md_proc)
+
+### ss\_ivs\_md\_proc<a name="ZH-CN_TOPIC_0000002441733297"></a>
+
+[Description]
+
+Motion detection processing.
+
+[Syntax]
+
+```
 td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref, ot_svp_dst_img *sad, ot_svp_dst_mem_info *blob)；
-``` [Parameters] <a name="table815mcpsimp"></a>
+```
+
+[Parameters]
+
+<a name="table815mcpsimp"></a>
 <table><thead align="left"><tr id="row821mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.4.1.1"><p id="p823mcpsimp"><a name="p823mcpsimp"></a><a name="p823mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.4.1.2"><p id="p825mcpsimp"><a name="p825mcpsimp"></a><a name="p825mcpsimp"></a>Description</p>
@@ -410,13 +759,15 @@ td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.4.1.2 "><p id="p865mcpsimp"><a name="p865mcpsimp"></a><a name="p865mcpsimp"></a>Region information pointer.</p>
 <p id="p866mcpsimp"><a name="p866mcpsimp"></a><a name="p866mcpsimp"></a>Must not be NULL.</p>
-<p id="p867mcpsimp"><a name="p867mcpsimp"></a><a name="p867mcpsimp"></a>For detailed definitions, see Section 1.4 of the "SV Px.0 API Reference".</p>
+<p id="p867mcpsimp"><a name="p867mcpsimp"></a><a name="p867mcpsimp"></a>For detailed definitions, see Section 1.4 of the "SVPx.0 API Reference".</p>
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.1.4.1.3 "><p id="p869mcpsimp"><a name="p869mcpsimp"></a><a name="p869mcpsimp"></a>Output</p>
 </td>
 </tr>
 </tbody>
-</table> <a name="table870mcpsimp"></a>
+</table>
+
+<a name="table870mcpsimp"></a>
 <table><thead align="left"><tr id="row877mcpsimp"><th class="cellrowborder" valign="top" width="8.91089108910891%" id="mcps1.1.5.1.1"><p id="p879mcpsimp"><a name="p879mcpsimp"></a><a name="p879mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.56435643564357%" id="mcps1.1.5.1.2"><p id="p881mcpsimp"><a name="p881mcpsimp"></a><a name="p881mcpsimp"></a>Supported Image Type</p>
@@ -464,7 +815,11 @@ td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref
 </td>
 </tr>
 </tbody>
-</table> [Return Values] <a name="table924mcpsimp"></a>
+</table>
+
+[Return Values]
+
+<a name="table924mcpsimp"></a>
 <table><thead align="left"><tr id="row929mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p931mcpsimp"><a name="p931mcpsimp"></a><a name="p931mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p933mcpsimp"><a name="p933mcpsimp"></a><a name="p933mcpsimp"></a>Description</p>
@@ -482,17 +837,52 @@ td_s32 ss_ivs_md_proc(ot_md_chn md_chn, ot_svp_src_img *cur, ot_svp_src_img *ref
 </td>
 </tr>
 </tbody>
-</table> [Requirements] - Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
-- Library file: libss\_md.a [Notes] - [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
-- md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
-- The maximum number of output region information entries is 254. For region information, see the data type ot\_ive\_ccblob in Section 3 of the "IVE API Reference". The cur\_area\_threshold in the info member of ot\_ive\_ccblob is the area threshold information after block division. The connected region information output here is stored contiguously.
-- In the same thread, after completing initialization and channel creation, call the ss\_ivs\_md\_proc interface only once for the same channel. [Example] None. [Related Topics] - [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
-- [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
-- [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
-- [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg) ## MD Data Types<a name="ZH-CN_TOPIC_0000002441853461"></a> ### ot\_md\_alg\_mode<a name="ZH-CN_TOPIC_0000002441733345"></a> [Description] Defines the MD algorithm mode. [Definition] ```
-typedef enum { OT_MD_ALG_MODE_BG	= 0x0,/*Base on background img*/ OT_MD_ALG_MODE_REF	= 0x1,/*Base on reference img*/ OT_MD_ALG_MODE_BUTT
+</table>
+
+[Requirements]
+
+-   Header files: ot\_common\_svp.h, ot\_common\_md.h, ss\_ivs\_md.h
+-   Library file: libss\_md.a
+
+[Notes]
+
+-   [ss\_ivs\_md\_init](#ZH-CN_TOPIC_0000002441733309) must be called first for initialization. Otherwise, an error is returned.
+-   md\_chn must be a channel number already created by [ss\_ivs\_md\_create\_chn](#ZH-CN_TOPIC_0000002441733333). Otherwise, an error is returned.
+-   The maximum number of output region information entries is 254. For region information, see the data type ot\_ive\_ccblob in Section 3 of the "IVE API Reference". The cur\_area\_threshold in the info member of ot\_ive\_ccblob is the area threshold information after block division. The connected region information output here is stored contiguously.
+-   In the same thread, after completing initialization and channel creation, call the ss\_ivs\_md\_proc interface only once for the same channel.
+
+[Example]
+
+None.
+
+[Related Topics]
+
+-   [ss\_ivs\_md\_create\_chn](#ss_ivs_md_create_chn)
+-   [ss\_ivs\_md\_destroy\_chn](#ss_ivs_md_destroy_chn)
+-   [ss\_ivs\_md\_set\_chn\_attr](#ss_ivs_md_set_chn_attr)
+-   [ss\_ivs\_md\_get\_bg](#ss_ivs_md_get_bg)
+
+## MD Data Types<a name="ZH-CN_TOPIC_0000002441853461"></a>
+
+### ot\_md\_alg\_mode<a name="ZH-CN_TOPIC_0000002441733345"></a>
+
+[Description]
+
+Defines the MD algorithm mode.
+
+[Definition]
+
+```
+typedef enum {
+    OT_MD_ALG_MODE_BG	= 0x0,/*Base on background img*/
+    OT_MD_ALG_MODE_REF	= 0x1,/*Base on reference img*/
+    OT_MD_ALG_MODE_BUTT
 }ot_md_alg_mode;
-``` [Members] <a name="table984mcpsimp"></a>
+```
+
+[Members]
+
+<a name="table984mcpsimp"></a>
 <table><thead align="left"><tr id="row989mcpsimp"><th class="cellrowborder" valign="top" width="72%" id="mcps1.1.3.1.1"><p id="p991mcpsimp"><a name="p991mcpsimp"></a><a name="p991mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.3.1.2"><p id="p993mcpsimp"><a name="p993mcpsimp"></a><a name="p993mcpsimp"></a>Description</p>
@@ -510,10 +900,40 @@ typedef enum { OT_MD_ALG_MODE_BG	= 0x0,/*Base on background img*/ OT_MD_ALG_MODE
 </td>
 </tr>
 </tbody>
-</table> [Notes] None. [Related Data Types and Interfaces] None. ### ot\_md\_attr<a name="ZH-CN_TOPIC_0000002408134180"></a> [Description] Defines MD channel attributes. [Definition] ```
-typedef struct { ot_md_alg_mode alg_mode; /*Md algorithm mode*/ ot_ive_sad_mode sad_mode; /*Sad mode*/ ot_ive_sad_out_ctrl sad_out_ctrl; /*Sad output ctrl*/ td_u32 width; /*Img width*/ td_u32 height; /*Img height*/ td_u16 sad_threshold; /*Sad thresh*/ ot_ive_ccl_ctrl ccl_ctrl; /*Ccl ctrl*/ ot_ive_add_ctrl add_ctrl; /*Add ctrl*/
+</table>
+
+[Notes]
+
+None.
+
+[Related Data Types and Interfaces]
+
+None.
+
+### ot\_md\_attr<a name="ZH-CN_TOPIC_0000002408134180"></a>
+
+[Description]
+
+Defines MD channel attributes.
+
+[Definition]
+
+```
+typedef struct {
+         ot_md_alg_mode                alg_mode;            /*Md algorithm mode*/
+         ot_ive_sad_mode               sad_mode;            /*Sad mode*/
+         ot_ive_sad_out_ctrl           sad_out_ctrl;        /*Sad output ctrl*/
+         td_u32                        width;               /*Img width*/
+         td_u32                        height;              /*Img height*/
+         td_u16                        sad_threshold;       /*Sad thresh*/
+         ot_ive_ccl_ctrl               ccl_ctrl;            /*Ccl ctrl*/
+         ot_ive_add_ctrl               add_ctrl;            /*Add ctrl*/
 }ot_md_attr
-``` [Members] <a name="table1026mcpsimp"></a>
+```
+
+[Members]
+
+<a name="table1026mcpsimp"></a>
 <table><thead align="left"><tr id="row1031mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.1.3.1.1"><p id="p1033mcpsimp"><a name="p1033mcpsimp"></a><a name="p1033mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="81%" id="mcps1.1.3.1.2"><p id="p1035mcpsimp"><a name="p1035mcpsimp"></a><a name="p1035mcpsimp"></a>Description</p>
@@ -564,7 +984,23 @@ typedef struct { ot_md_alg_mode alg_mode; /*Md algorithm mode*/ ot_ive_sad_mode 
 </td>
 </tr>
 </tbody>
-</table> [Notes] None. [Related Data Types and Interfaces] None. ## Error Codes<a name="ZH-CN_TOPIC_0000002408294036"></a> IVS error codes mostly share the same definitions as IVE error codes. The first part of the IVS error code table is identical to that in the "IVE API Reference", with additional special codes listed at the end. **Table 1** IVS error codes <a name="_Ref248310770"></a>
+</table>
+
+[Notes]
+
+None.
+
+[Related Data Types and Interfaces]
+
+None.
+
+## Error Codes<a name="ZH-CN_TOPIC_0000002408294036"></a>
+
+IVS error codes mostly share the same definitions as IVE error codes. The first part of the IVS error code table is identical to that in the "IVE API Reference", with additional special codes listed at the end.
+
+**Table 1**  IVS error codes
+
+<a name="_Ref248310770"></a>
 <table><thead align="left"><tr id="row1100mcpsimp"><th class="cellrowborder" valign="top" width="22.54%" id="mcps1.2.4.1.1"><p id="p1102mcpsimp"><a name="p1102mcpsimp"></a><a name="p1102mcpsimp"></a>Error Code</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.03%" id="mcps1.2.4.1.2"><p id="p1104mcpsimp"><a name="p1104mcpsimp"></a><a name="p1104mcpsimp"></a>Macro Definition</p>
@@ -763,16 +1199,50 @@ typedef struct { ot_md_alg_mode alg_mode; /*Md algorithm mode*/ ot_ive_sad_mode 
 </td>
 </tr>
 </tbody>
-</table> ## Proc Debug Information<a name="ZH-CN_TOPIC_0000002408294100"></a> ### Overview<a name="ZH-CN_TOPIC_0000002441853473"></a> Debug information uses the proc file system under Linux, which can reflect the current operating status of the system in real time. The recorded information can be used for problembitbit and analysis. [File Directory] /proc/umap [Information Viewing Method] - On the console, you can use the cat command to view information. `cat /proc/umap/md` can view the MD proc information. Other commonly used file operation commands can also be used, for example, `cp /proc/umap/md ./` to copy the file to the current directory.
-- In an application, the above files can be treated as ordinary read-only files for read operations, such as fopen, fread, etc. >![](public_sys-resources/icon-note.gif) **Note:**
+</table>
+
+## Proc Debug Information<a name="ZH-CN_TOPIC_0000002408294100"></a>
+
+### Overview<a name="ZH-CN_TOPIC_0000002441853473"></a>
+
+Debug information uses the proc file system under Linux, which can reflect the current operating status of the system in real time. The recorded information can be used for problem定位定位 and analysis.
+
+[File Directory]
+
+/proc/umap
+
+[Information Viewing Method]
+
+-   On the console, you can use the cat command to view information. `cat /proc/umap/md` can view the MD proc information. Other commonly used file operation commands can also be used, for example, `cp /proc/umap/md ./` to copy the file to the current directory.
+-   In an application, the above files can be treated as ordinary read-only files for read operations, such as fopen, fread, etc.
+
+>![](public_sys-resources/icon-note.gif) **Note:**
 >The following 2 situations should be noted when describing parameters:
->- For parameters with values of {0, 1}, if the specific mapping between values and meanings is not listed, a value of 1 indicates affirmative, and 0 indicates negative.
->- For parameters with values of {aaa, bbb, ccc}, if the specific mapping between values and meanings is not listed, the parameter meaning can be directly determined based on the values aaa, bbb, or ccc. ### MD Proc Information Description<a name="ZH-CN_TOPIC_0000002441853441"></a> [Debug Information] ```
+>-   For parameters with values of {0, 1}, if the specific mapping between values and meanings is not listed, a value of 1 indicates affirmative, and 0 indicates negative.
+>-   For parameters with values of {aaa, bbb, ccc}, if the specific mapping between values and meanings is not listed, the parameter meaning can be directly determined based on the values aaa, bbb, or ccc.
+
+### MD Proc Information Description<a name="ZH-CN_TOPIC_0000002441853441"></a>
+
+[Debug Information]
+
+```
 ~ # cat /proc/umap/md
-[MD] Version: [Vx.x.x.x B0xx Release], Build Time[Feb 20 2020, 16:42:49] ---------------------------md chn attr-----------------------------------
-no. w h alg sad_mode sad_out_ctrl sad_thr ccl_mode ccl_init_thr 0 720 576 0 0 0 200 1 16 ccl_step xwt ywt frm_rate cost_tm_per_frm
-4 32768 32768 0 2625
-``` [Debug Information Analysis] Records the working status information of MD. [Parameter Description] <a name="table1330mcpsimp"></a>
+[MD] Version: [Vx.x.x.x B0xx Release], Build Time[Feb 20 2020, 16:42:49]
+
+---------------------------md chn attr-----------------------------------
+no.    w    h   alg   sad_mode  sad_out_ctrl   sad_thr    ccl_mode  ccl_init_thr   
+0     720   576   0         0           0         200         1      16 
+ccl_step    xwt      ywt        frm_rate  cost_tm_per_frm
+4          32768     32768          0          2625
+```
+
+[Debug Information Analysis]
+
+Records the working status information of MD.
+
+[Parameter Description]
+
+<a name="table1330mcpsimp"></a>
 <table><thead align="left"><tr id="row1336mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p1338mcpsimp"><a name="p1338mcpsimp"></a><a name="p1338mcpsimp"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p1340mcpsimp"><a name="p1340mcpsimp"></a><a name="p1340mcpsimp"></a>Description</p>
@@ -785,6 +1255,16 @@ no. w h alg sad_mode sad_out_ctrl sad_thr ccl_mode ccl_init_thr 0 720 576 0 0 0 
 <td class="cellrowborder" valign="top" width="19.439999999999998%" headers="mcps1.1.4.1.1 "><p id="p1347mcpsimp"><a name="p1347mcpsimp"></a><a name="p1347mcpsimp"></a>no.</p>
 </td>
 <td class="cellrowborder" valign="top" width="59.35%" headers="mcps1.1.4.1.2 "><p id="p1349mcpsimp"><a name="p1349mcpsimp"></a><a name="p1349mcpsimp"></a>Channel number.</p>
+</td>
+</tr>
+<tr id="row1350mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1352mcpsimp"><a name="p1352mcpsimp"></a><a name="p1352mcpsimp"></a>w</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1354mcpsimp"><a name="p1354mcpsimp"></a><a name="p1354mcpsimp"></a>Channel width (unit: pixel).</p>
+</td>
+</tr>
+<tr id="row1355mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1357mcpsimp"><a name="p1357mcpsimp"></a><a name="p1357mcpsimp"></a>h</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1359mcpsimp"><a name="p1359mcpsimp"></a><a name="p1359mcpsimp"></a>Channel height (unit: pixel).</p>
 </td>
 </tr>
 <tr id="row1360mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1362mcpsimp"><a name="p1362mcpsimp"></a><a name="p1362mcpsimp"></a>alg</p>

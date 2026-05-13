@@ -1,8 +1,18 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC工具使用指南/ATC工具使用指南.md
---- # 前言
-**概述<a name="section236mcpsimp"></a>** 本文介绍如何将开源框架的网络模型（如Caffe、Onnx等），通过ATC（Advanced Tensor Compiler）将其转换成图像分析引擎支持的离线模型，模型转换过程中可以实现算子调度的优化、权值数据重排、内存使用优化等，可以脱离设备完成模型的预处理。 **产品版本<a name="section300mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table303mcpsimp"></a>
+---
+
+# 前言
+**概述<a name="section236mcpsimp"></a>**
+
+本文介绍如何将开源框架的网络模型（如Caffe、Onnx等），通过ATC（Advanced Tensor Compiler）将其转换成图像分析引擎支持的离线模型，模型转换过程中可以实现算子调度的优化、权值数据重排、内存使用优化等，可以脱离设备完成模型的预处理。
+
+**产品版本<a name="section300mcpsimp"></a>**
+
+与本文档相对应的产品版本如下。
+
+<a name="table303mcpsimp"></a>
 <table><thead align="left"><tr id="row308mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p310mcpsimp"><a name="p310mcpsimp"></a><a name="p310mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p312mcpsimp"><a name="p312mcpsimp"></a><a name="p312mcpsimp"></a>产品版本</p>
@@ -14,10 +24,31 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC工�
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
+<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
+</td>
+</tr>
 </tbody>
-</table> **读者对象<a name="section239mcpsimp"></a>** 本文档主要适用于以下工程师： - 技术支持工程师
-- 软件开发工程师 掌握以下经验和技能可以更好地理解本文档： - 熟悉Linux基本命令。
-- 对机器学习、图像分析方法有一定的了解。 **符号约定<a name="section133020216410"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table2622507016410"></a>
+</table>
+
+**读者对象<a name="section239mcpsimp"></a>**
+
+本文档主要适用于以下工程师：
+
+-   技术支持工程师
+-   软件开发工程师
+
+掌握以下经验和技能可以更好地理解本文档：
+
+-   熟悉Linux基本命令。
+-   对机器学习、图像分析方法有一定的了解。
+
+**符号约定<a name="section133020216410"></a>**
+
+在本文中可能出现下列标志，它们所代表的含义如下。
+
+<a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a>符号</p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a>说明</p>
@@ -29,8 +60,36 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC工�
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441982213.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408422942.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408582858.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
+<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
+</td>
+</tr>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442022069.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
+<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
+</td>
+</tr>
 </tbody>
-</table> **修订记录<a name="section249mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table1557726816410"></a>
+</table>
+
+**修订记录<a name="section249mcpsimp"></a>**
+
+修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
+
+<a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="17.23%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a>文档版本</p>
 </th>
 <th class="cellrowborder" valign="top" width="22.919999999999998%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a>发布日期</p>
@@ -55,78 +114,531 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC工�
 </td>
 </tr>
 </tbody>
-</table> # 简介
-## 工具功能架构<a name="ZH-CN_TOPIC_0000002442020833"></a> ATC工具功能架构如[图1](#fig16910569311)所示。从[图1](#fig16910569311)中可以看出，用户可以将开源框架网络模型通过ATC工具转换成适配图像分析引擎的离线模型，也可以将转换后的离线模型转成json文件，方便文件查看。用户也可以直接将开源框架网络模型文件通过ATC工具转成json文件。 **图 1** ATC工具功能架构<a name="fig16910569311"></a> ![](figures/ATC工具功能架构.png "ATC工具功能架构")
-## 工具运行流程<a name="ZH-CN_TOPIC_0000002408581678"></a> 使用ATC工具进行模型转换的总体流程如[图1](#fig125822392014)所示。 **图 1** 运行流程<a name="fig125822392014"></a> ![](figures/运行流程.png "运行流程") 详细流程说明如下。 - 使用ATC工具之前，请先在开发环境安装ATC，获取相关路径下的ATC工具，详细说明请参见[获取ATC工具](#ZH-CN_TOPIC_0000002441981281)中的环境准备。
-- 准备要进行转换的模型，并上传到开发环境，详细说明请参见[转换样例](#ZH-CN_TOPIC_0000002442021333)。
-- 使用ATC工具进行模型转换，在配置相关参数时，根据实际情况选择是否进行[量化选项](#ZH-CN_TOPIC_0000002441981037)。图像预处理是图像分析引擎提供的硬件图像预处理模块，包括色域转换，图像归一化（减均值/乘系数）功能。 # 使用入门
-## 准备动作<a name="ZH-CN_TOPIC_0000002408422174"></a> ### 获取ATC工具<a name="ZH-CN_TOPIC_0000002441981281"></a> 独立安装CANN包，详请请参见《驱动和开发环境安装指南》"2.3.4 软件包安装"。 本手册以ATC独立安装CANN包为例进行说明。 ### 设置环境变量<a name="ZH-CN_TOPIC_0000002408422110"></a> >![](public_sys-resources/icon-notice.gif) **须知：** >- 使用export方式设置环境变量后，环境变量只在当前窗口有效。如果用户之前在.bashrc文件中设置过ATC安装路径的环境变量，则在执行上述命令之前，需要先手动删除原来设置的ATC安装路径环境变量。
->- 如果用户之前在.bashrc文件中设置过之前版本ATC安装路径的环境变量，则在执行atc命令之前，需要先手动删除原来设置的ATC安装路径环境变量，然后设置如下环境变量。设置完成后，切换到新窗口执行atc模型转换命令。 **必选环境变量**（如下环境变量中$\{install\_path\}以软件包使用默认安装路径为例进行说明） ```
-export PATH=${install_path}/Ascend/ascend-toolkit/{software version}/atc/bin:$PATH export LD_LIBRARY_PATH=${install_path}/Ascend/ascend-toolkit/{software version}/atc/third_party_lib:$LD_LIBRARY_PATH
-``` 或者执行如下命令配置环境变量。 ```
+</table>
+
+# 简介
+## 工具功能架构<a name="ZH-CN_TOPIC_0000002442020833"></a>
+
+ATC工具功能架构如[图1](#fig16910569311)所示。从[图1](#fig16910569311)中可以看出，用户可以将开源框架网络模型通过ATC工具转换成适配图像分析引擎的离线模型，也可以将转换后的离线模型转成json文件，方便文件查看。用户也可以直接将开源框架网络模型文件通过ATC工具转成json文件。
+
+**图 1**  ATC工具功能架构<a name="fig16910569311"></a>  
+![](figures/ATC工具功能架构.png "ATC工具功能架构")
+## 工具运行流程<a name="ZH-CN_TOPIC_0000002408581678"></a>
+
+使用ATC工具进行模型转换的总体流程如[图1](#fig125822392014)所示。
+
+**图 1**  运行流程<a name="fig125822392014"></a>  
+![](figures/运行流程.png "运行流程")
+
+详细流程说明如下。
+
+-   使用ATC工具之前，请先在开发环境安装ATC，获取相关路径下的ATC工具，详细说明请参见[获取ATC工具](#ZH-CN_TOPIC_0000002441981281)中的环境准备。
+-   准备要进行转换的模型，并上传到开发环境，详细说明请参见[转换样例](#ZH-CN_TOPIC_0000002442021333)。
+-   使用ATC工具进行模型转换，在配置相关参数时，根据实际情况选择是否进行[量化选项](#ZH-CN_TOPIC_0000002441981037)。图像预处理是图像分析引擎提供的硬件图像预处理模块，包括色域转换，图像归一化（减均值/乘系数）功能。
+
+# 使用入门
+## 准备动作<a name="ZH-CN_TOPIC_0000002408422174"></a>
+
+
+
+### 获取ATC工具<a name="ZH-CN_TOPIC_0000002441981281"></a>
+
+独立安装CANN包，详请请参见《驱动和开发环境安装指南》"2.3.4 软件包安装"。
+
+本手册以ATC独立安装CANN包为例进行说明。
+
+### 设置环境变量<a name="ZH-CN_TOPIC_0000002408422110"></a>
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   使用export方式设置环境变量后，环境变量只在当前窗口有效。如果用户之前在.bashrc文件中设置过ATC安装路径的环境变量，则在执行上述命令之前，需要先手动删除原来设置的ATC安装路径环境变量。
+>-   如果用户之前在.bashrc文件中设置过之前版本ATC安装路径的环境变量，则在执行atc命令之前，需要先手动删除原来设置的ATC安装路径环境变量，然后设置如下环境变量。设置完成后，切换到新窗口执行atc模型转换命令。
+
+**必选环境变量**（如下环境变量中$\{install\_path\}以软件包使用默认安装路径为例进行说明）
+
+```
+export PATH=${install_path}/Ascend/ascend-toolkit/{software version}/atc/bin:$PATH 
+export LD_LIBRARY_PATH=${install_path}/Ascend/ascend-toolkit/{software version}/atc/third_party_lib:$LD_LIBRARY_PATH
+```
+
+或者执行如下命令配置环境变量。
+
+```
 source ${install_path}/Ascend/ascend-toolkit/{software version}/x86_64-linux/script/setenv.sh
-``` ## 转换样例<a name="ZH-CN_TOPIC_0000002442021333"></a> >![](public_sys-resources/icon-notice.gif) **须知：** >使用高版本ATC工具转换的模型，在低版本环境上使用可能会出现不兼容问题，建议使用匹配的版本重新进行模型转换。 **开源框架的Caffe网络模型转换成离线模型<a name="section205191754136"></a>** 1. 以ATC运行用户登录开发环境，并将模型转换过程中用到的模型文件（\*.prototxt）、权重文件（\*.caffemodel）等上传到开发环境任意路径，例如上传到$HOME_/_test_/_目录下。
-2. 执行如下命令生成离线模型。（如下命令中使用的目录以及文件均为样例，请以实际为准） ``` atc --model=$HOME/test/xxx.prototxt --weight=$HOME/test/xxx.caffemodel --framework=0 --output=$HOME/test/out/xxx --image_list="data:$HOME/test/xxx_image_list.txt" --insert_op_conf="$HOME/test/image_preprocess.txt" ``` 关于参数的详细解释以及使用方法请参见[参数说明](#ZH-CN_TOPIC_0000002408421982)。 3. 若提示如下信息，则说明模型转换成功。 ``` end binary code generating ``` 成功执行命令后，在output参数指定的路径下，可查看离线模型（如：xxx.om）。 >![](public_sys-resources/icon-note.gif) **说明：** >如果用户使用Faster RCNN、YOLOv3、YOLOv2、SSD等Caffe框架网络模型进行模型转换，由于此类网络中包含了一些原始Caffe框架中没有定义的算子结构，如ROIPooling、Normalize、PSROI Pooling和Upsample等。为了使图像分析引擎能支持这些网络，需要对原始的Caffe框架网络模型进行扩展，降低开发者开发自定义算子/开发后处理代码的工作量，详细扩展方法请参见[检测网硬化加速prototxt示例](#ZH-CN_TOPIC_0000002408582182)。 **开源框架的Onnx网络模型转换成离线模型<a name="section6529754537"></a>** 1. 以ATC运行用户登录开发环境，并将模型转换过程中使用到的模型文件（\*.onnx）等上传到开发环境任意路径，例如$HOME_/_test_/_目录下。
-2. 执行如下命令生成离线模型。（如下命令中使用的目录以及文件均为样例，请以实际为准） ``` atc --model=$HOME/test/xxx.onnx --framework=5 --output=$HOME/test/out/xxx.om –image_list=”data:$HOME/test/xxx_image_list.txt” ``` 关于参数的详细解释以及使用方法请参见[参数说明](#ZH-CN_TOPIC_0000002408421982)。 3. 若提示如下信息，则说明模型转换成功。 ``` end binary code generating ``` 成功执行命令后，在output参数指定的路径下，可查看离线模型（如：xxx.om）。 ## 输出文件说明<a name="ZH-CN_TOPIC_0000002408582014"></a> - \*.om: 转换后的模型文件，文件名通过[--output](#ZH-CN_TOPIC_0000002408422394)配置。
-- atc\_perf.csv: 预估模型在板端运算时实际计算量。
-- calibration\_param.txt: 模型使用的量化参数。
-- cnn\_net\_tree\_parser.dot：原始模型解析后的算子信息。
-- cnn\_net\_tree\_adapt.dot：网络适配后的算子信息。
-- cnn\_net\_tree.dot：网络优化后的算子信息。
-- cnn\_net\_tree\_after\_tiling\_seg\_0.dot：网络深度融合后的算子信息。 >![](public_sys-resources/icon-note.gif) **说明：** >通过命令dot把\*.dot 文件转为pdf文件方便查看，如：dot -Tpdf cnn\_net\_tree.dot -o cnn\_net\_tree.pdf。 >安装dot命令：apt install graphviz - mapper\_debug.log：转换模型的调试日志。
-- mapper\_error.log：转换模型的错误日志。
-- layer.json：输出原始模型的算子信息，见命令行参数[--json](#ZH-CN_TOPIC_0000002441981241)。
-- shape.json：输出原始模型每个算子的shape信息，见命令行参数[--json](#ZH-CN_TOPIC_0000002441981241)。
-- om.json：输出转换后的模型信息，见命令行参数[--json](#ZH-CN_TOPIC_0000002441981241)。 - 模型信息包括但不限于： - tmp\_buf\_size：板端运行模型时图像分析引擎算子需要的临时缓存。 - aacpu\_buf\_size：板端运行模型时CPU算子需要的缓存。 - dump\_buf\_size: 板端运行模型时, dump算子数据时需要的缓存。 - model\_param\_size：om模型的参数大小。 - atc\_version：转换模型时用的ATC版本号。 - batch\_num：支持的动态batch数，见命令行参数[--batch\_num](#ZH-CN_TOPIC_0000002408581538)。 - 算子信息包括但不限于： - name: 算子名。 - type: 算子类型。 - device\_type：算子类型是CPU或图像分析引擎。 - input\_desc：算子输入信息。 - output\_desc：算子输出信息。 - data\_flow：算子输入、计算、输出的数据类型。 # 参数说明
-## 概览<a name="ZH-CN_TOPIC_0000002408421822"></a> ### 总体约束<a name="ZH-CN_TOPIC_0000002408581554"></a> 在进行模型转换前，请务必查看如下约束要求。 - 如果要将Faster RCNN等网络模型转成适配图像分析引擎的离线模型，则务必参见[定制网络修改（Caffe）](#ZH-CN_TOPIC_0000002442021401)先修改prototxt模型文件。
-- 支持原始框架类型为Caffe、Onnx的模型转换，输入数据类型为FP32、FP16、INT16、UINT16、INT8、UINT8。
-- 当原始框架类型为Caffe时，模型文件（.prototxt）和权重文件（.caffemodel）的层名、层类型必须保持名称一致（包括大小写）。
-- 不支持动态shape的输入，例如：NCHW输入为\[?,3,?,?\]多个维度可任意指定数值。模型转换时需指定固定数值。
-- 输入数据最大支持四维，转维算子（reshape等）不能输出五维。
-- 模型中的所有层算子除const算子外，输入和输出需要满足每个维度不为零。
-- 只支持[算子规格说明](#ZH-CN_TOPIC_0000002442021001)中的算子，并需满足算子限制条件。不支持的算子需用户在板端使用CPU实现，把网络切分编译多个om，然后调用板端ACL API串通网络。
-- 当模型输入是4维或2维，且第0维\>1时，ATC识别第0维为batch，为节省work buffer，把第0维改为1。 ### 参数配置方式<a name="ZH-CN_TOPIC_0000002408581658"></a> ATC 支持2种配置方式，命令行支持的参数，文件参数都支持。 - 文件参数方式： atc cfg\_file 示例：atc test.cfg - 文件参数格式： \[param1\] value1 \[param2\] value2 … 文件参数格式示例： ```
+```
+
+## 转换样例<a name="ZH-CN_TOPIC_0000002442021333"></a>
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>使用高版本ATC工具转换的模型，在低版本环境上使用可能会出现不兼容问题，建议使用匹配的版本重新进行模型转换。
+
+**开源框架的Caffe网络模型转换成离线模型<a name="section205191754136"></a>**
+
+1.  以ATC运行用户登录开发环境，并将模型转换过程中用到的模型文件（\*.prototxt）、权重文件（\*.caffemodel）等上传到开发环境任意路径，例如上传到$HOME_/_test_/_目录下。
+2.  执行如下命令生成离线模型。（如下命令中使用的目录以及文件均为样例，请以实际为准）
+
+    ```
+    atc --model=$HOME/test/xxx.prototxt --weight=$HOME/test/xxx.caffemodel --framework=0 --output=$HOME/test/out/xxx --image_list="data:$HOME/test/xxx_image_list.txt" --insert_op_conf="$HOME/test/image_preprocess.txt"
+    ```
+
+    关于参数的详细解释以及使用方法请参见[参数说明](#ZH-CN_TOPIC_0000002408421982)。
+
+3.  若提示如下信息，则说明模型转换成功。
+
+    ```
+    end binary code generating
+    ```
+
+    成功执行命令后，在output参数指定的路径下，可查看离线模型（如：xxx.om）。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果用户使用Faster RCNN、YOLOv3、YOLOv2、SSD等Caffe框架网络模型进行模型转换，由于此类网络中包含了一些原始Caffe框架中没有定义的算子结构，如ROIPooling、Normalize、PSROI Pooling和Upsample等。为了使图像分析引擎能支持这些网络，需要对原始的Caffe框架网络模型进行扩展，降低开发者开发自定义算子/开发后处理代码的工作量，详细扩展方法请参见[检测网硬化加速prototxt示例](#ZH-CN_TOPIC_0000002408582182)。
+
+**开源框架的Onnx网络模型转换成离线模型<a name="section6529754537"></a>**
+
+1.  以ATC运行用户登录开发环境，并将模型转换过程中使用到的模型文件（\*.onnx）等上传到开发环境任意路径，例如$HOME_/_test_/_目录下。
+2.  执行如下命令生成离线模型。（如下命令中使用的目录以及文件均为样例，请以实际为准）
+
+    ```
+    atc --model=$HOME/test/xxx.onnx --framework=5 --output=$HOME/test/out/xxx.om –image_list=”data:$HOME/test/xxx_image_list.txt”
+    ```
+
+    关于参数的详细解释以及使用方法请参见[参数说明](#ZH-CN_TOPIC_0000002408421982)。
+
+3.  若提示如下信息，则说明模型转换成功。
+
+    ```
+    end binary code generating
+    ```
+
+    成功执行命令后，在output参数指定的路径下，可查看离线模型（如：xxx.om）。
+
+## 输出文件说明<a name="ZH-CN_TOPIC_0000002408582014"></a>
+
+-   \*.om: 转换后的模型文件，文件名通过[--output](#ZH-CN_TOPIC_0000002408422394)配置。
+-   atc\_perf.csv: 预估模型在板端运算时实际计算量。
+-   calibration\_param.txt: 模型使用的量化参数。
+-   cnn\_net\_tree\_parser.dot：原始模型解析后的算子信息。
+-   cnn\_net\_tree\_adapt.dot：网络适配后的算子信息。
+-   cnn\_net\_tree.dot：网络优化后的算子信息。
+-   cnn\_net\_tree\_after\_tiling\_seg\_0.dot：网络深度融合后的算子信息。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >通过命令dot把\*.dot 文件转为pdf文件方便查看，如：dot -Tpdf cnn\_net\_tree.dot -o cnn\_net\_tree.pdf。
+    >安装dot命令：apt install graphviz
+
+-   mapper\_debug.log：转换模型的调试日志。
+-   mapper\_error.log：转换模型的错误日志。
+-   layer.json：输出原始模型的算子信息，见命令行参数[--json](#ZH-CN_TOPIC_0000002441981241)。
+-   shape.json：输出原始模型每个算子的shape信息，见命令行参数[--json](#ZH-CN_TOPIC_0000002441981241)。
+-   om.json：输出转换后的模型信息，见命令行参数[--json](#ZH-CN_TOPIC_0000002441981241)。
+    -   模型信息包括但不限于：
+        -   tmp\_buf\_size：板端运行模型时图像分析引擎算子需要的临时缓存。
+        -   aacpu\_buf\_size：板端运行模型时CPU算子需要的缓存。
+        -   dump\_buf\_size: 板端运行模型时, dump算子数据时需要的缓存。
+        -   model\_param\_size：om模型的参数大小。
+        -   atc\_version：转换模型时用的ATC版本号。
+        -   batch\_num：支持的动态batch数，见命令行参数[--batch\_num](#ZH-CN_TOPIC_0000002408581538)。
+
+    -   算子信息包括但不限于：
+        -   name: 算子名。
+        -   type: 算子类型。
+        -   device\_type：算子类型是CPU或图像分析引擎。
+        -   input\_desc：算子输入信息。
+        -   output\_desc：算子输出信息。
+        -   data\_flow：算子输入、计算、输出的数据类型。
+
+# 参数说明
+## 概览<a name="ZH-CN_TOPIC_0000002408421822"></a>
+
+
+
+
+### 总体约束<a name="ZH-CN_TOPIC_0000002408581554"></a>
+
+在进行模型转换前，请务必查看如下约束要求。
+
+-   如果要将Faster RCNN等网络模型转成适配图像分析引擎的离线模型，则务必参见[定制网络修改（Caffe）](#ZH-CN_TOPIC_0000002442021401)先修改prototxt模型文件。
+-   支持原始框架类型为Caffe、Onnx的模型转换，输入数据类型为FP32、FP16、INT16、UINT16、INT8、UINT8。
+-   当原始框架类型为Caffe时，模型文件（.prototxt）和权重文件（.caffemodel）的层名、层类型必须保持名称一致（包括大小写）。
+-   不支持动态shape的输入，例如：NCHW输入为\[?,3,?,?\]多个维度可任意指定数值。模型转换时需指定固定数值。
+-   输入数据最大支持四维，转维算子（reshape等）不能输出五维。
+-   模型中的所有层算子除const算子外，输入和输出需要满足每个维度不为零。
+-   只支持[算子规格说明](#ZH-CN_TOPIC_0000002442021001)中的算子，并需满足算子限制条件。不支持的算子需用户在板端使用CPU实现，把网络切分编译多个om，然后调用板端ACL API串通网络。
+-   当模型输入是4维或2维，且第0维\>1时，ATC识别第0维为batch，为节省work buffer，把第0维改为1。
+
+### 参数配置方式<a name="ZH-CN_TOPIC_0000002408581658"></a>
+
+ATC 支持2种配置方式，命令行支持的参数，文件参数都支持。
+
+-   文件参数方式：
+
+    atc cfg\_file
+
+示例：atc test.cfg
+
+-   文件参数格式：
+
+    \[param1\] value1
+
+    \[param2\] value2
+
+    …
+
+文件参数格式示例：
+
+```
 [model] test.prototxt
 [weight] test.caffemodel
 [image_list] image_list.txt
 [insert_op_conf] image_preprocess.txt
-``` - 命令行参数方式： atc param1=value1 param2=value2 ... 示例： ```
+```
+
+-   命令行参数方式：
+
+    atc param1=value1 param2=value2 ...
+
+示例：
+
+```
 --model=$HOME/test/resnet50.prototxt --weight=$HOME/test/resnet50.caffemodel --image_list=image_list.txt --insert_op_conf=image_preprocess.txt
-``` ### 参数概览<a name="ZH-CN_TOPIC_0000002408582298"></a> 通过atc --help命令查询出所有支持的参数。 ## 基础功能<a name="ZH-CN_TOPIC_0000002408422094"></a> 以下介绍部分常用参数选项，更多选项用法请输入--help。 ### 总体选项<a name="ZH-CN_TOPIC_0000002408582274"></a> #### --help<a name="ZH-CN_TOPIC_0000002442021505"></a> 功能说明：显示帮助信息。 关联参数：无 参数取值：无 推荐配置及收益：无 示例：atc --help 依赖约束：无 #### --version<a name="ZH-CN_TOPIC_0000002441980929"></a> 功能说明：显示ATC版本信息。 关联参数：无 参数取值：无 推荐配置及收益：无 示例：atc --version 依赖约束：无 #### --mode<a name="ZH-CN_TOPIC_0000002442021181"></a> 功能说明：运行模式。 关联参数：若--mode取值为1或3，则需要与[ --om](#ZH-CN_TOPIC_0000002442021509)、[--json](#ZH-CN_TOPIC_0000002441981241)参数配合使用。如果将原始模型文件转换成带shape信息的json文件，则还需要与[ --dump\_mode](#ZH-CN_TOPIC_0000002408421858)参数配合使用。 参数取值： - 参数值 - 0：生成离线模型。 - 1：离线模型或原始模型文件转json，方便查看模型中的参数信息。 - 3：仅做预检，检查模型文件的内容是否合法。 - 参数值约束：配置为1或3时不会转换离线模型。
-- 参数默认值：0 推荐配置及收益：无 示例： ```
+```
+
+### 参数概览<a name="ZH-CN_TOPIC_0000002408582298"></a>
+
+通过atc --help命令查询出所有支持的参数。
+
+## 基础功能<a name="ZH-CN_TOPIC_0000002408422094"></a>
+
+以下介绍部分常用参数选项，更多选项用法请输入--help。
+
+
+
+
+
+
+
+
+
+
+### 总体选项<a name="ZH-CN_TOPIC_0000002408582274"></a>
+
+
+
+
+#### --help<a name="ZH-CN_TOPIC_0000002442021505"></a>
+
+功能说明：显示帮助信息。
+
+关联参数：无
+
+参数取值：无
+
+推荐配置及收益：无
+
+示例：atc --help
+
+依赖约束：无
+
+#### --version<a name="ZH-CN_TOPIC_0000002441980929"></a>
+
+功能说明：显示ATC版本信息。
+
+关联参数：无
+
+参数取值：无
+
+推荐配置及收益：无
+
+示例：atc --version
+
+依赖约束：无
+
+#### --mode<a name="ZH-CN_TOPIC_0000002442021181"></a>
+
+功能说明：运行模式。
+
+关联参数：若--mode取值为1或3，则需要与[ --om](#ZH-CN_TOPIC_0000002442021509)、[--json](#ZH-CN_TOPIC_0000002441981241)参数配合使用。如果将原始模型文件转换成带shape信息的json文件，则还需要与[ --dump\_mode](#ZH-CN_TOPIC_0000002408421858)参数配合使用。
+
+参数取值：
+
+-   参数值
+    -   0：生成离线模型。
+    -   1：离线模型或原始模型文件转json，方便查看模型中的参数信息。
+    -   3：仅做预检，检查模型文件的内容是否合法。
+
+-   参数值约束：配置为1或3时不会转换离线模型。
+-   参数默认值：0
+
+推荐配置及收益：无
+
+示例：
+
+```
 --mode=0或--mode 0
-``` >![](public_sys-resources/icon-note.gif) **说明：** >使用atc命令进行模型转换时，命令有两种方式，用户根据实际情况进行选择，本章节以选择第一种方式为例进行说明：
->1. **atc param1=value1 param2=value2 ...**（value值前面不能有空格，否则会导致截断，param取的value值为空）
->2. **atc param1 value1 param2 value2 ...** 依赖约束：无 ### ATC输入选项<a name="ZH-CN_TOPIC_0000002408581818"></a> #### --model<a name="ZH-CN_TOPIC_0000002408421662"></a> 功能说明：原始模型文件路径与文件名。 关联参数：当原始模型为Caffe框架时，需要和[--weight](#ZH-CN_TOPIC_0000002408421790)参数配合使用。 参数取值： - 参数值：模型文件路径与文件名。
-- 参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 示例： ```
+```
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>使用atc命令进行模型转换时，命令有两种方式，用户根据实际情况进行选择，本章节以选择第一种方式为例进行说明：
+>1.  **atc param1=value1 param2=value2 ...**（value值前面不能有空格，否则会导致截断，param取的value值为空）
+>2.  **atc param1 value1 param2 value2 ...**
+
+依赖约束：无
+
+### ATC输入选项<a name="ZH-CN_TOPIC_0000002408581818"></a>
+
+
+
+
+
+
+#### --model<a name="ZH-CN_TOPIC_0000002408421662"></a>
+
+功能说明：原始模型文件路径与文件名。
+
+关联参数：当原始模型为Caffe框架时，需要和[--weight](#ZH-CN_TOPIC_0000002408421790)参数配合使用。
+
+参数取值：
+
+-   参数值：模型文件路径与文件名。
+-   参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --model=$HOME/test/resnet50.prototxt --weight=$HOME/test/resnet50.caffemodel
-``` 依赖约束：无 #### --weight<a name="ZH-CN_TOPIC_0000002408421790"></a> 功能说明： - 权重文件路径与文件名。
-- 当原始模型是Caffe时需要指定。 关联参数：当原始模型为Caffe框架时，需要和[--model](#ZH-CN_TOPIC_0000002408421662)参数配合使用。 参数取值： - 参数值：权重文件路径与文件名。
-- 参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --weight<a name="ZH-CN_TOPIC_0000002408421790"></a>
+
+功能说明：
+
+-   权重文件路径与文件名。
+-   当原始模型是Caffe时需要指定。
+
+关联参数：当原始模型为Caffe框架时，需要和[--model](#ZH-CN_TOPIC_0000002408421662)参数配合使用。
+
+参数取值：
+
+-   参数值：权重文件路径与文件名。
+-   参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --model=$HOME/test/resnet50.prototxt --weight=$HOME/test/resnet50.caffemodel
-``` 依赖约束：无 #### --om<a name="ZH-CN_TOPIC_0000002442021509"></a> 功能说明：需要转换为json格式的离线模型（.om）、原始模型文件（.prototxt、.onnx）。 关联参数：若[--mode](#ZH-CN_TOPIC_0000002442021181)=1，则该参数必填，并且需要与[ --json](#ZH-CN_TOPIC_0000002441981241)参数配合使用。 参数取值： - 参数值：离线模型（.om）、原始模型文件（.prototxt、.onnx）。
-- 参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 示例： - 离线模型转换为json ``` --mode=1 --om=$HOME/test/module/out/caffe_resnet50.om --json=$HOME/test/module/out/result.json ``` - 原始模型文件转换为json ``` --mode=1 --om=$HOME/module/resnet50.prototxt --json=$HOME/module/out/result.json --framework=0 ``` 依赖约束：无 #### --framework<a name="ZH-CN_TOPIC_0000002408421866"></a> 功能说明：原始框架类型。 关联参数：无 参数取值： - 参数值： - 0：Caffe - 5：ONNX - 6：ABSTRACT（使用构图接口） - 参数值约束：当[ --mode](#ZH-CN_TOPIC_0000002442021181)为1时，该参数可选，可以指定Caffe、Onnx、原始模型转成json，不指定时默认为离线模型转json，如果指定时需要保证--om模型和--framework类型对应一致，例如： ``` --mode=1 --framework=0 --om=$HOME/test/resnet18.prototxt --mode=1 --framework=5 --om=$HOME/test/resnet101.onnx ``` 推荐配置及收益：无 示例： ```
---mode=0 --framework=0 --model=$HOME/test/resnet50.prototxt --weight=$HOME/test/resnet50.caffemodel
-``` 依赖约束：无 #### --custom\_ops\_lib<a name="ZH-CN_TOPIC_0000002442021105"></a> 功能说明：自定义算子库文件路径与文件名。如果没有配置--custom\_ops\_lib，默认从环境变量LD\_LIBRARY\_PATH中加载名为libsvp\_custom.so的自定义算子库。如果配置了--custom\_ops\_lib，则优先加载--custom\_ops\_lib。当转换的模型包含自定义算子，而环境变量LD\_LIBRARY\_PATH没有包含libsvp\_custom.so时，必须配置--custom\_ops\_lib指定自定义算子库，否则转换模型失败。 参数取值： - 参数值：自定义算子库文件路径与文件名。绝对路径或相对ATC执行的路径。
-- 参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --om<a name="ZH-CN_TOPIC_0000002442021509"></a>
+
+功能说明：需要转换为json格式的离线模型（.om）、原始模型文件（.prototxt、.onnx）。
+
+关联参数：若[--mode](#ZH-CN_TOPIC_0000002442021181)=1，则该参数必填，并且需要与[ --json](#ZH-CN_TOPIC_0000002441981241)参数配合使用。
+
+参数取值：
+
+-   参数值：离线模型（.om）、原始模型文件（.prototxt、.onnx）。
+-   参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+示例：
+
+-   离线模型转换为json
+
+    ```
+    --mode=1 --om=$HOME/test/module/out/caffe_resnet50.om  --json=$HOME/test/module/out/result.json
+    ```
+
+-   原始模型文件转换为json
+
+    ```
+    --mode=1 --om=$HOME/module/resnet50.prototxt  --json=$HOME/module/out/result.json  --framework=0
+    ```
+
+依赖约束：无
+
+#### --framework<a name="ZH-CN_TOPIC_0000002408421866"></a>
+
+功能说明：原始框架类型。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：
+    -   0：Caffe
+    -   5：ONNX
+    -   6：ABSTRACT（使用构图接口）
+
+-   参数值约束：当[ --mode](#ZH-CN_TOPIC_0000002442021181)为1时，该参数可选，可以指定Caffe、Onnx、原始模型转成json，不指定时默认为离线模型转json，如果指定时需要保证--om模型和--framework类型对应一致，例如：
+
+    ```
+    --mode=1 --framework=0 --om=$HOME/test/resnet18.prototxt  --mode=1 --framework=5 --om=$HOME/test/resnet101.onnx
+    ```
+
+推荐配置及收益：无
+
+示例：
+
+```
+--mode=0  --framework=0  --model=$HOME/test/resnet50.prototxt  --weight=$HOME/test/resnet50.caffemodel
+```
+
+依赖约束：无
+
+#### --custom\_ops\_lib<a name="ZH-CN_TOPIC_0000002442021105"></a>
+
+功能说明：自定义算子库文件路径与文件名。如果没有配置--custom\_ops\_lib，默认从环境变量LD\_LIBRARY\_PATH中加载名为libsvp\_custom.so的自定义算子库。如果配置了--custom\_ops\_lib，则优先加载--custom\_ops\_lib。当转换的模型包含自定义算子，而环境变量LD\_LIBRARY\_PATH没有包含libsvp\_custom.so时，必须配置--custom\_ops\_lib指定自定义算子库，否则转换模型失败。
+
+参数取值：
+
+-   参数值：自定义算子库文件路径与文件名。绝对路径或相对ATC执行的路径。
+-   参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --custom_ops_lib=$HOME/test/libsvp_custom.so
-``` 依赖约束：无 ### ATC输出选项<a name="ZH-CN_TOPIC_0000002442021489"></a> #### --output<a name="ZH-CN_TOPIC_0000002408422394"></a> 功能说明：如果是开源框架的网络模型，存放转换后的离线模型的路径以及文件名，例如：$HOME/test/out/caffe\_resnet18或$HOME/test/out/tf\_resnet18，转换后的模型文件名以指定的文件名为准，自动以.om后缀结尾，例如：caffe\_resnet18.om。 关联参数：无 参数取值： - 参数值：如果是开源框架的网络模型：存放转换后的离线模型的路径以及文件名。
-- 参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+### ATC输出选项<a name="ZH-CN_TOPIC_0000002442021489"></a>
+
+
+
+
+#### --output<a name="ZH-CN_TOPIC_0000002408422394"></a>
+
+功能说明：如果是开源框架的网络模型，存放转换后的离线模型的路径以及文件名，例如：$HOME/test/out/caffe\_resnet18或$HOME/test/out/tf\_resnet18，转换后的模型文件名以指定的文件名为准，自动以.om后缀结尾，例如：caffe\_resnet18.om。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：如果是开源框架的网络模型：存放转换后的离线模型的路径以及文件名。
+-   参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --output=$HOME/test/out/caffe_resnet18
-``` 依赖约束：无 #### --check\_report<a name="ZH-CN_TOPIC_0000002441981385"></a> 功能说明：预检结果保存文件路径和文件名。 关联参数： --mode：当--mode=3仅做预检时，用于生成check\_result.json预检结果文件。 参数取值： - 参数值：预检结果保存文件路径和文件名。
-- 参数默认值：无
-- 参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --check\_report<a name="ZH-CN_TOPIC_0000002441981385"></a>
+
+功能说明：预检结果保存文件路径和文件名。
+
+关联参数：
+
+--mode：当--mode=3仅做预检时，用于生成check\_result.json预检结果文件。
+
+参数取值：
+
+-   参数值：预检结果保存文件路径和文件名。
+-   参数默认值：无
+-   参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --check_report=$HOME/test/out/check_result.json
-``` 依赖约束：无 #### --json<a name="ZH-CN_TOPIC_0000002441981241"></a> 功能说明：离线模型、原始模型文件、转换为json格式文件的路径和文件名。 关联参数： - 离线模型转换为json 该参数需要与[--mode](#ZH-CN_TOPIC_0000002442021181)=1、[--om](#ZH-CN_TOPIC_0000002442021509)参数配合使用。 - 原始模型文件转换为json 该参数需要与[--mode](#ZH-CN_TOPIC_0000002442021181)=1、[--om](#ZH-CN_TOPIC_0000002442021509)参数、[ --framework](#ZH-CN_TOPIC_0000002408421866)配合使用，caffe还需配合[--weight](#ZH-CN_TOPIC_0000002408421790)使用。 参数取值： - 参数值：json格式文件的路径和文件名。
-- 参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 示例： - 离线模型转换为包含模型信息和算子信息的json ``` --mode=1 --om=$HOME/test/module/out/caffe_resnet50.om --json=$HOME/test/module/out/om.json ``` - 原始模型文件转换为包含层信息的json ``` --mode=1 --om=$HOME/module/resnet50.prototxt --json=$HOME/module/out/layer.json --framework=0 ``` - 原始模型文件转换为包含形状信息的json ``` --mode=1 --om=$HOME/module/resnet50.prototxt --weight=$HOME/module/resnet50.caffemodel --json=$HOME/module/out/shape.json --framework=0 --dump_mode=1 ``` 依赖约束：无 ### 模型输入选项<a name="ZH-CN_TOPIC_0000002408581630"></a> #### --insert\_op\_conf<a name="ZH-CN_TOPIC_0000002442020741"></a> 功能说明：插入图像预处理的配置。配置了图像预处理的Data层表示输入数据格式为图像，没有配置的为Feature Map。 关联参数：无 参数取值： - 参数值：插入图像预处理的配置文件路径与文件名。
-- 参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 推荐配置及收益：无 图像预处理配置文件模板： >![](public_sys-resources/icon-notice.gif) **须知：** >1. 图像预处理当前仅支持色域转换、通道数据交换、减均值、乘系数，按顺序执行。
->2. 请按原始模型的图像预处理、板端运行时输入的数据格式配置。
->3. 模板中参数取值都为默认值，实际使用时，如果配置文件中某些参数未配置，则模型转换时自动设置成该模板中相应参数的默认值。
->4. input\_format属性为必选属性，其余属性均为可选配置，如果未配置，则模型转换时自动设置成该模板中相应参数的默认值。
->5. 模型转换时开启或没有AAPP，在进行推理业务时，输入图片数据都要求为NCHW排布。
->6. 若图像输入为YUV400，要求输入channel为1；若图像输入为YUV420SP、YVU420SP、YUV422SP、YVU422SP、BGR\_PLANAR、RGB\_PLANAR、RGB\_PACKAGE、BGR\_PACKAGE，要求输入channel为3；其他输入格式要求输入channel为4。
->7. 图像预处理中的色域转换、通道数据交换根据input\_format和model\_format使能，不支持ax\_swap\_switch和input\_bias等参数配置使能。 ```
-# 图像预处理的配置以aapp_op开始，标识这是AAPP算子的配置，所有输入的配置都在aapp_op里描述。 aapp_op {
+```
+
+依赖约束：无
+
+#### --json<a name="ZH-CN_TOPIC_0000002441981241"></a>
+
+功能说明：离线模型、原始模型文件、转换为json格式文件的路径和文件名。
+
+关联参数：
+
+-   离线模型转换为json
+
+    该参数需要与[--mode](#ZH-CN_TOPIC_0000002442021181)=1、[--om](#ZH-CN_TOPIC_0000002442021509)参数配合使用。
+
+-   原始模型文件转换为json
+
+    该参数需要与[--mode](#ZH-CN_TOPIC_0000002442021181)=1、[--om](#ZH-CN_TOPIC_0000002442021509)参数、[ --framework](#ZH-CN_TOPIC_0000002408421866)配合使用，caffe还需配合[--weight](#ZH-CN_TOPIC_0000002408421790)使用。
+
+参数取值：
+
+-   参数值：json格式文件的路径和文件名。
+-   参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+示例：
+
+-   离线模型转换为包含模型信息和算子信息的json
+
+    ```
+    --mode=1 --om=$HOME/test/module/out/caffe_resnet50.om  --json=$HOME/test/module/out/om.json
+    ```
+
+-   原始模型文件转换为包含层信息的json
+
+    ```
+    --mode=1 --om=$HOME/module/resnet50.prototxt  --json=$HOME/module/out/layer.json  --framework=0
+    ```
+
+-   原始模型文件转换为包含形状信息的json
+
+    ```
+    --mode=1 --om=$HOME/module/resnet50.prototxt  --weight=$HOME/module/resnet50.caffemodel --json=$HOME/module/out/shape.json  --framework=0 --dump_mode=1
+    ```
+
+依赖约束：无
+
+### 模型输入选项<a name="ZH-CN_TOPIC_0000002408581630"></a>
+
+
+
+
+
+#### --insert\_op\_conf<a name="ZH-CN_TOPIC_0000002442020741"></a>
+
+功能说明：插入图像预处理的配置。配置了图像预处理的Data层表示输入数据格式为图像，没有配置的为Feature Map。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：插入图像预处理的配置文件路径与文件名。
+-   参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+推荐配置及收益：无
+
+图像预处理配置文件模板：
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>1.  图像预处理当前仅支持色域转换、通道数据交换、减均值、乘系数，按顺序执行。
+>2.  请按原始模型的图像预处理、板端运行时输入的数据格式配置。
+>3.  模板中参数取值都为默认值，实际使用时，如果配置文件中某些参数未配置，则模型转换时自动设置成该模板中相应参数的默认值。
+>4.  input\_format属性为必选属性，其余属性均为可选配置，如果未配置，则模型转换时自动设置成该模板中相应参数的默认值。
+>5.  模型转换时开启或没有AAPP，在进行推理业务时，输入图片数据都要求为NCHW排布。
+>6.  若图像输入为YUV400，要求输入channel为1；若图像输入为YUV420SP、YVU420SP、YUV422SP、YVU422SP、BGR\_PLANAR、RGB\_PLANAR、RGB\_PACKAGE、BGR\_PACKAGE，要求输入channel为3；其他输入格式要求输入channel为4。
+>7.  图像预处理中的色域转换、通道数据交换根据input\_format和model\_format使能，不支持ax\_swap\_switch和input\_bias等参数配置使能。
+
+```
+# 图像预处理的配置以aapp_op开始，标识这是AAPP算子的配置，所有输入的配置都在aapp_op里描述。 
+aapp_op {
 # related_input_rank参数为可选，标识对模型的第几个输入做图像预处理，从0开始，默认为0。例如模型有两个输入，需要对第2个输入做图像预处理，则配置related_input_rank为1。
 # 类型: 整型
 # 配置范围 >= 0
@@ -159,86 +671,747 @@ var_reci_chn_1 :1.0
 var_reci_chn_2 :1.0
 var_reci_chn_3 :1.0
 }
-``` 示例：下面以插入图像预处理算子为例进行说明，配置文件内容示例如下（文件名举例为：_insert\_op.cfg_）。 ```
-aapp_op { #第一个输入
-related_input_rank:0 input_format:YUV420SP model_format:RGB # 以pytorch的预处理为例，如torchvision.transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])， # 即 y = (x/255 - mean)/std = (x - 255*mean) * 1/(255*std) # 所以 mean_chn_x = 255*mean, var_reci_chn_x = 1/(255*std) mean_chn_0:123.675 mean_chn_1:116.28 mean_chn_2:103.53 var_reci_chn_0:0.01712475 var_reci_chn_1:0.017507002 var_reci_chn_2:0.01742919 # 第二个输入
-related_input_rank:1 input_format: RGB_PLANAR model_format:BGR # 以Caffe 的ImageData层预处理为例： #transform_param { # scale: 0.0078125 # mean_value: 104.0 # mean_value: 117.0 # mean_value: 123.0 #} # 即 y = (x - mean_value) * scale, # 所以 mean_chn_x = mean_value, var_reci_chn_x = scale mean_chn_0:104 mean_chn_1:117 mean_chn_2:126 var_reci_chn_0:0.0078125 var_reci_chn_1:0.0078125 var_reci_chn_2:0.0078125 }
-``` 将配置好的insert\_op.cfg文件上传到ATC工具所在服务器任意目录，例如上传到/home/test /，使用示例如下。 ```
+```
+
+示例：下面以插入图像预处理算子为例进行说明，配置文件内容示例如下（文件名举例为：_insert\_op.cfg_）。
+
+```
+aapp_op { 
+#第一个输入
+related_input_rank:0 
+    input_format:YUV420SP 
+    model_format:RGB
+    # 以pytorch的预处理为例，如torchvision.transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])，
+    # 即 y = (x/255 - mean)/std = (x - 255*mean) * 1/(255*std)
+    # 所以 mean_chn_x = 255*mean, var_reci_chn_x = 1/(255*std)
+    mean_chn_0:123.675
+    mean_chn_1:116.28
+    mean_chn_2:103.53
+    var_reci_chn_0:0.01712475 
+    var_reci_chn_1:0.017507002 
+    var_reci_chn_2:0.01742919 
+ 
+# 第二个输入
+related_input_rank:1 
+    input_format: RGB_PLANAR 
+    model_format:BGR
+    # 以Caffe 的ImageData层预处理为例：
+    #transform_param {
+    #    scale: 0.0078125
+    #    mean_value: 104.0
+    #    mean_value: 117.0
+    #    mean_value: 123.0
+    #}
+    # 即 y = (x - mean_value) * scale,
+    # 所以 mean_chn_x = mean_value, var_reci_chn_x = scale
+    mean_chn_0:104
+    mean_chn_1:117
+    mean_chn_2:126
+    var_reci_chn_0:0.0078125 
+    var_reci_chn_1:0.0078125 
+    var_reci_chn_2:0.0078125
+ }
+```
+
+将配置好的insert\_op.cfg文件上传到ATC工具所在服务器任意目录，例如上传到/home/test /，使用示例如下。
+
+```
 --insert_op_conf=/home/test/insert_op.cfg
-``` 依赖约束：无 #### --input\_type<a name="ZH-CN_TOPIC_0000002442021461"></a> 功能说明：指定网络Data层的输入数据类型，只用于Feature map 输入的Data层，不能用于图片输入的Data层。 关联参数：--insert\_op\_conf未配置Data层输入为图片格式，即输入为Feature map时，才可以指定输入数据类型。 参数取值： - 参数值：格式为op\_name:data\_type - op\_name：指定算子的层名，必须为Data层。 - data\_type：支持数据类型FP16, FP32, INT16, INT8, S16, S8, U16, U8, UINT16, UINT8。 - 参数值约束：指定多个输入数据类型时，使用英文分号隔开，用双引号括住。如：--input\_type="data0:INT8;data1:FP16"。
-- 参数默认值：Feature map未指定数据类型时，默认FP32。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --input\_type<a name="ZH-CN_TOPIC_0000002442021461"></a>
+
+功能说明：指定网络Data层的输入数据类型，只用于Feature map 输入的Data层，不能用于图片输入的Data层。
+
+关联参数：--insert\_op\_conf未配置Data层输入为图片格式，即输入为Feature map时，才可以指定输入数据类型。
+
+参数取值：
+
+-   参数值：格式为op\_name:data\_type
+    -   op\_name：指定算子的层名，必须为Data层。
+    -   data\_type：支持数据类型FP16, FP32, INT16, INT8, S16, S8, U16, U8, UINT16, UINT8。
+
+-   参数值约束：指定多个输入数据类型时，使用英文分号隔开，用双引号括住。如：--input\_type="data0:INT8;data1:FP16"。
+-   参数默认值：Feature map未指定数据类型时，默认FP32。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --input_type="data0:INT8;data1:FP16"
-``` 依赖约束：无 #### --input\_shape<a name="ZH-CN_TOPIC_0000002408581846"></a> 功能说明：指定模型输入数据的shape。 关联参数：[--dynamic\_image\_size](#--dynamic_image_size) 参数取值： - 参数值： 模型输入的shape信息，例如："input\_name1:n1,c1,h1,w1;input\_name2:n2,c2,h2,w2"。指定的节点必须放在双引号中，节点中间使用英文分号分隔。input\_name必须是转换前的网络模型中的节点名称。 - 参数值约束： 设置为固定取值，例如，取值为“1，2，3...”，用于将输入数据某个维度不固定的原始模型转换为固定维度的离线模型。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --input\_shape<a name="ZH-CN_TOPIC_0000002408581846"></a>
+
+功能说明：指定模型输入数据的shape。
+
+关联参数：[--dynamic\_image\_size](#--dynamic_image_size)
+
+参数取值：
+
+-   参数值：
+
+    模型输入的shape信息，例如："input\_name1:n1,c1,h1,w1;input\_name2:n2,c2,h2,w2"。指定的节点必须放在双引号中，节点中间使用英文分号分隔。input\_name必须是转换前的网络模型中的节点名称。
+
+-   参数值约束：
+
+    设置为固定取值，例如，取值为“1，2，3...”，用于将输入数据某个维度不固定的原始模型转换为固定维度的离线模型。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --input_shape="input_name1:n1,c1,h1,w1;input_name2:n2,c2,h2,w2"
-``` 依赖约束：input\_shape需要与image\_list的量化校准文件数据匹配。 #### --input\_format<a name="ZH-CN_TOPIC_0000002408422382"></a> 功能说明：输入数据格式。 关联参数：无 参数取值： - 参数值：只支持NCHW。
-- 参数默认值：默认为NCHW。
-- 参数值约束：无 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：input\_shape需要与image\_list的量化校准文件数据匹配。
+
+#### --input\_format<a name="ZH-CN_TOPIC_0000002408422382"></a>
+
+功能说明：输入数据格式。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：只支持NCHW。
+-   参数默认值：默认为NCHW。
+-   参数值约束：无
+
+推荐配置及收益：无
+
+示例：
+
+```
 --input_format=NCHW
-``` 依赖约束：无 ### 模型输出选项<a name="ZH-CN_TOPIC_0000002408421630"></a> #### --output\_type<a name="ZH-CN_TOPIC_0000002408581794"></a> 功能说明：指定网络输出数据类型或指定输出节点的输出类型。 关联参数： 若指定某个输出节点的输出类型，则需要和[--out\_nodes](#ZH-CN_TOPIC_0000002408422030)参数配合使用。 参数取值： - 参数值：支持两种格式。 格式1：data\_type, 表示指定所有输出节点的输出数据类型。 格式2：op\_name:output\_index:data\_type，表示指定某个输出节点的某个输出的输出数据类型。 - op\_name：指定算子的层名，必须为--out\_nodes指定的输出层。 - output\_index：指定输出层的第几个输出。 - data\_type：支持数据类型FP16, FP32, INT16, INT8, S16, S8, U16, U8, UINT16, UINT8。 - 参数默认值：FP32 推荐配置及收益：无 示例： - 指定网络输出类型 ``` --output_type=FP32 ``` - 指定某个输出节点的输出类型 ``` output_type="conv1:0:FP32" --out_nodes="conv1:0" ``` 依赖约束：CPU算子只支持输出FP32。 #### --out\_nodes<a name="ZH-CN_TOPIC_0000002408422030"></a> 功能说明：指定输出节点。当用户想要查看网络中间某层算子的输出时，则需要指定输出此算子。模型的最后一层默认输出，不需要指定。 关联参数：无 参数取值： - 参数值： - 网络模型中的节点（node\_name）名称。 - 指定的输出节点必须放在双引号中，节点中间使用英文分号分隔。node\_name必须是模型转换前的网络模型中的节点名称，冒号后的数字表示第几个输出，例如node\_name1:0，表示节点名称为node\_name1的第1个输出。 - 参数值约束： - 如果模型转换过程中该算子被离线计算融合掉，则该算子不能作为输出节点，配置不生效。 - 没有实际运算而被优化删除的算子，不能作为输出节点，配置不生效。如Cast, Dropout算子。 - 配置的输出节点的顺序与最后输出的顺序无关。 - 即使最后一层的节点没有被指定，也一定会被输出。 - 输出节点个数最大为32，即--out\_nodes配置的节点加上默认输出的节点个数不能大于32。 推荐配置及收益：无 示例： 参数值取网络模型中的节点（node\_name）名称。 ```
+```
+
+依赖约束：无
+
+### 模型输出选项<a name="ZH-CN_TOPIC_0000002408421630"></a>
+
+
+
+
+#### --output\_type<a name="ZH-CN_TOPIC_0000002408581794"></a>
+
+功能说明：指定网络输出数据类型或指定输出节点的输出类型。
+
+关联参数：
+
+若指定某个输出节点的输出类型，则需要和[--out\_nodes](#ZH-CN_TOPIC_0000002408422030)参数配合使用。
+
+参数取值：
+
+-   参数值：支持两种格式。
+
+    格式1：data\_type, 表示指定所有输出节点的输出数据类型。
+
+    格式2：op\_name:output\_index:data\_type，表示指定某个输出节点的某个输出的输出数据类型。
+
+    -   op\_name：指定算子的层名，必须为--out\_nodes指定的输出层。
+    -   output\_index：指定输出层的第几个输出。
+    -   data\_type：支持数据类型FP16, FP32, INT16, INT8, S16, S8, U16, U8, UINT16, UINT8。
+
+-   参数默认值：FP32
+
+推荐配置及收益：无
+
+示例：
+
+-   指定网络输出类型
+
+    ```
+    --output_type=FP32
+    ```
+
+-   指定某个输出节点的输出类型
+
+    ```
+    output_type="conv1:0:FP32"  --out_nodes="conv1:0"
+    ```
+
+依赖约束：CPU算子只支持输出FP32。
+
+#### --out\_nodes<a name="ZH-CN_TOPIC_0000002408422030"></a>
+
+功能说明：指定输出节点。当用户想要查看网络中间某层算子的输出时，则需要指定输出此算子。模型的最后一层默认输出，不需要指定。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：
+    -   网络模型中的节点（node\_name）名称。
+    -   指定的输出节点必须放在双引号中，节点中间使用英文分号分隔。node\_name必须是模型转换前的网络模型中的节点名称，冒号后的数字表示第几个输出，例如node\_name1:0，表示节点名称为node\_name1的第1个输出。
+
+-   参数值约束：
+    -   如果模型转换过程中该算子被离线计算融合掉，则该算子不能作为输出节点，配置不生效。
+    -   没有实际运算而被优化删除的算子，不能作为输出节点，配置不生效。如Cast, Dropout算子。
+    -   配置的输出节点的顺序与最后输出的顺序无关。
+    -   即使最后一层的节点没有被指定，也一定会被输出。
+    -   输出节点个数最大为32，即--out\_nodes配置的节点加上默认输出的节点个数不能大于32。
+
+推荐配置及收益：无
+
+示例：
+
+参数值取网络模型中的节点（node\_name）名称。
+
+```
 --out_nodes="node_name1:0;node_name1:1;node_name2:0"
-``` 依赖约束：无 #### --output\_reorder<a name="ZH-CN_TOPIC_0000002441981573"></a> 功能说明：转换后的模型输出节点顺序和原始模型是否保持一致。 关联参数：无 参数取值： - 参数值：\[0,1\] - 0：转换后的模型输出节点与原始模式保持一致。 - 1：转换后的模型输出节点重新排列，与原始模式可能不一致。 - 参数默认值：1 示例： ```
+```
+
+依赖约束：无
+
+#### --output\_reorder<a name="ZH-CN_TOPIC_0000002441981573"></a>
+
+功能说明：转换后的模型输出节点顺序和原始模型是否保持一致。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0：转换后的模型输出节点与原始模式保持一致。
+    -   1：转换后的模型输出节点重新排列，与原始模式可能不一致。
+
+-   参数默认值：1
+
+示例：
+
+```
 --output_reorder=1
-``` 依赖约束：包含CPU算子网络时，不支持参数配置为0 ### 量化选项<a name="ZH-CN_TOPIC_0000002441981037"></a> #### --gfpq\_param\_file<a name="ZH-CN_TOPIC_0000002408581570"></a> 功能说明：GFPQ\(Grouped Floating Point Quantization\)分组量化参数配置文件。AMCT校准或retrain输出此文件，如quant\_param\_record.txt。ATC转换模型校准时输出此文件，如calibration\_param.txt。 关联参数： --model：当输入模型为定点模型时，必须配置此参数。定点模型即AMCT校准后输出权重参数为定点的模型。 参数取值：参数值：protobuf格式的文件路径，支持txt和bin格式。 文件格式定义：Proto定义 ```
+```
+
+依赖约束：包含CPU算子网络时，不支持参数配置为0
+
+### 量化选项<a name="ZH-CN_TOPIC_0000002441981037"></a>
+
+
+
+
+
+
+
+
+
+#### --gfpq\_param\_file<a name="ZH-CN_TOPIC_0000002408581570"></a>
+
+功能说明：GFPQ\(Grouped Floating Point Quantization\)分组量化参数配置文件。AMCT校准或retrain输出此文件，如quant\_param\_record.txt。ATC转换模型校准时输出此文件，如calibration\_param.txt。
+
+关联参数：
+
+--model：当输入模型为定点模型时，必须配置此参数。定点模型即AMCT校准后输出权重参数为定点的模型。
+
+参数取值：参数值：protobuf格式的文件路径，支持txt和bin格式。
+
+文件格式定义：Proto定义
+
+```
 syntax = "proto2";
 package calibration;
-enum DataType { S4 = 0; U4 = 1; S8 = 2; U8 = 3; S16 = 4; U16 = 5; F16 = 6; S32 = 7; U32 = 8; F32 = 9;
-} message FactorParam
-{ required DataType data_type = 1 [default = S8]; repeated float scale = 2; repeated float offset = 3; optional bytes params = 4;
-} message QuantParam
-{ repeated FactorParam input = 1; optional FactorParam weight = 2;
-} message LayerParam
-{ required string name = 1; optional DataType calc_data_type = 2 [default = S8]; required QuantParam quant_param = 3;
-} message CalibrationParam
-{ optional uint32 version = 1 [default = 65536]; repeated LayerParam layer = 2;
+enum DataType {
+    S4 = 0;
+    U4 = 1;
+    S8 = 2;
+    U8 = 3;
+    S16 = 4;
+    U16 = 5;
+    F16 = 6;
+    S32 = 7;
+    U32 = 8;
+    F32 = 9;
 }
-``` 示例： ```
+ 
+message FactorParam
+{
+    required DataType data_type = 1 [default = S8];
+    repeated float scale = 2;
+    repeated float offset = 3;
+    optional bytes params = 4;
+}
+ 
+message QuantParam
+{
+    repeated FactorParam input = 1;
+    optional FactorParam weight = 2;
+}
+ 
+message LayerParam
+{
+    required string name = 1;
+    optional DataType calc_data_type = 2 [default = S8];
+    required QuantParam quant_param = 3;
+}
+ 
+message CalibrationParam
+{
+    optional uint32 version = 1 [default = 65536];
+    repeated LayerParam layer = 2;
+}
+```
+
+示例：
+
+```
 version: 65536
-layer { name: "conv1" calc_data_type: S8 quant_param { input { data_type: S8 scale: 12.75 offset: -77 } weight { data_type: S8 scale: 127 } }
+layer {
+  name: "conv1"
+  calc_data_type: S8
+  quant_param {
+    input {
+      data_type: S8
+      scale: 12.75
+      offset: -77
+    }
+    weight {
+      data_type: S8
+      scale: 127
+    }
+  }
 }
-``` 推荐配置及收益： - 配置量化参数后，ATC不需要再校准，节省转换模型的时间。
-- 使用AMCT重训或校准后的quant\_param\_record.txt，精度更好。 示例： ```
+```
+
+推荐配置及收益：
+
+-   配置量化参数后，ATC不需要再校准，节省转换模型的时间。
+-   使用AMCT重训或校准后的quant\_param\_record.txt，精度更好。
+
+示例：
+
+```
 --gfpq_param_file=quant_param_record.txt
-``` 依赖约束：无 #### --image\_list<a name="ZH-CN_TOPIC_0000002408582266"></a> 功能说明：转换模型生成量化参数时用的校准数据。支持Feature map文本和二进制格式文件和图片格式文件。 关联参数： - --model：当输入模型为定点模型时，不需要配置此参数。
-- --gfpq\_param\_file：配置了所有层的量化参数时，不需要配置此参数。已配置量化参数的层，不校准，只使用image\_list做forward。
-- --dump\_data：需要导出校准数据时，必须配置此参数。
-- --input\_type：校准数据使用二进制文件时，需要文件的数据类型和--input\_type匹配，如果没有配置，默认FP32。
-- --insert\_op\_conf：配置了图像预处理的Data层使用图片文件格式，没有则使用Feature map格式。 参数取值： - 参数值：输入的层名和校准数据的文件路径。
-- 参数值格式：多输入时，使用半角分号“;”隔开，用双引号括住。示例： --image\_list="name1:file1;name2:file2" 此外，多输入时，也可以使用多个image\_list分别输入。示例： --image\_list="name1:file1" --image\_list="name2:file2" - 文件格式： --insert\_op\_conf没有配置图像预处理时，即输入为Feature map。 - 文本文件： 文件内容为浮点文本数据，数据间以空格或逗号分隔，一行的数据个数为输入形状channel × height × width。一行表示一个batch。示例： 输入形状 3×2×2，4个batch。即一行12个数据，共4行。feature\_map.txt： ``` 1 2 3 4 5 6 7 8 9 10 11 12 0.46 0.05 -0.01 -0.20 -7 -0.6114 -0.12 0.87 0.553 -0.67 -0.027 0.164082 -0.367 0.373 0.99 -0.0820 0.04 -0.454 -0.311 0.52 -0.033 -0.3 0.731473 0.09 -0.012 0.928 -0.903 0.374 0.7 0.4 -0.48 -0.490 0.473455 -0.146 -0.83 -0.637 ``` - 二进制文件： 文件内容为数据值的二进制，文件名必须以“.bin”为后缀。数据类型需要和--input\_type匹配。 --insert\_op\_conf配置图像预处理，即输入为图片时，文件内容为图片文件路径，一行一个图片文件路径，一行表示一个batch。图片大小不限，ATC根据输入的height × width缩放。 图片文件路径支持以下三种。 1. 绝对路径； 2. 相对--image\_list的路径； 3. 相对ATC执行的路径。 示例：testcase/image\_list.txt，3个batch配置3个图片文件。 ``` /home/xxx/testcase/images/test_1.jpg images/test_2.png testcase/images/test_3.bmp ``` --insert\_op\_conf图像预处理配置的input\_format为YUV420SP、YVU420SP、YUV422SP、YVU422SP、YUV400、BGR\_PLANAR、RGB\_PLANAR、RGB\_PACKAGE、BGR\_PACKAGE、XRGB\_PLANAR、ARGB\_PLANAR、XBGR\_PLANAR、ABGR\_PLANAR、RGBX\_PLANAR、RGBA\_PLANAR、BGRX\_PLANAR、BGRA\_PLANAR、XRGB\_PACKAGE、ARGB\_PACKAGE、XBGR\_PACKAGE、ABGR\_PACKAGE、RGBX\_PACKAGE、RGBA\_PACKAGE、BGRX\_PACKAGE、BGRA\_PACKAGE时，使用图片路径文本格式，支持图片后缀bmp、jpeg、jpg、jpe、jp2、png。 --insert\_op\_conf图像预处理配置的input\_format为RAW\_RGGB、RAW\_GRBG、RAW\_GBRG、RAW\_BGGR时，使用浮点文本格式，数据排列格式为RAW图像通道拆分前的顺序。 示例：输入4×2×2的RAW\_RGGB, 通道拆分前的顺序： ``` 1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16 ``` 通道拆分后的数据： ``` 1	3	9	11	2	4	10	12	5	7	13	15	6	8	14	16 ``` 即： ``` Channel_0:1	3	9	11 Channel_1:2	4	10	12 Channel_2:5	7	13	15 Channel_3:6	8	14	16 ``` 推荐配置及收益：校准时需要的图片是典型场景图片，建议从网络模型的测试场景随机选择3\~5张作为参考图片进行量化，选择的图像要尽量覆盖模型的各个场景（图像要包含分类或检测的目标，如分类网的目标是苹果、梨、桃子，则参考图像至少要包含苹果、梨、桃子。比如检测人、车的模型，参考图像中必须有人、车，不能仅使用人或者无人无车的图像进行量化）。图片影响校准生成量化参数，选择典型场景的图片计算出来的量化参数对典型场景的量化误差越小。所以请不要选择偏僻场景、过度曝光、纯黑、纯白的图片，请选择识别率高，色彩均匀的典型场景图片。 示例： ``` --image_list=”data1:feature_map.txt;data2:images.txt” ``` 依赖约束：无 #### --compile\_mode<a name="ZH-CN_TOPIC_0000002408421998"></a> 功能说明：编译模式，量化后的数据bit位宽，不影响权重量化的bit位宽，权重固定是8bit量化。 关联参数： --gfpq\_param\_file：优先使用配置的量化参数。未配置量化参数时，compile\_mode才生效。 参数取值： - 参数值 - 0：数据和权重量化使用8bit。 - 1：数据量化使用16bit，权重量化使用8bit。 - 5：数据和权重量化使用8bit，且仅对CUBE算子进行量化，非CUBE算子使用fp16格式。 - 6：数据量化使用16bit，权重量化使用8bit，且仅对CUBE算子进行量化，非CUBE算子使用fp16格式。 CUBE算子：Conv、ConvTranspose、DepthwiseConv、InnerProduct、Gemm、MatMul、Pooling系列算子。 - 参数值约束：无
-- 参数默认值：0 推荐配置及收益： - 配置为0时，带宽小，板端缓存小，耗时少，精度损失大。
-- 配置为1时，带宽大，板端缓存大，耗时大，精度损失小。
-- 配置为5时，带宽、板端缓存、耗时比模式0大，比模式1和6小；精度损失比模式0小，与模式1相比则和网络结构相关，若网络中含有大量的非CUBE算子，则此模式可能精度损失更小。
-- 配置为6时，带宽大，板端缓存大，耗时大，精度损失很小。 示例： ```
+```
+
+依赖约束：无
+
+#### --image\_list<a name="ZH-CN_TOPIC_0000002408582266"></a>
+
+功能说明：转换模型生成量化参数时用的校准数据。支持Feature map文本和二进制格式文件和图片格式文件。
+
+关联参数：
+
+-   --model：当输入模型为定点模型时，不需要配置此参数。
+-   --gfpq\_param\_file：配置了所有层的量化参数时，不需要配置此参数。已配置量化参数的层，不校准，只使用image\_list做forward。
+-   --dump\_data：需要导出校准数据时，必须配置此参数。
+-   --input\_type：校准数据使用二进制文件时，需要文件的数据类型和--input\_type匹配，如果没有配置，默认FP32。
+-   --insert\_op\_conf：配置了图像预处理的Data层使用图片文件格式，没有则使用Feature map格式。
+
+参数取值：
+
+-   参数值：输入的层名和校准数据的文件路径。
+-   参数值格式：多输入时，使用半角分号“;”隔开，用双引号括住。示例：
+
+    --image\_list="name1:file1;name2:file2"
+
+    此外，多输入时，也可以使用多个image\_list分别输入。示例：
+
+    --image\_list="name1:file1"
+
+    --image\_list="name2:file2"
+
+-   文件格式：
+
+    --insert\_op\_conf没有配置图像预处理时，即输入为Feature map。
+
+    -   文本文件：
+
+        文件内容为浮点文本数据，数据间以空格或逗号分隔，一行的数据个数为输入形状channel × height × width。一行表示一个batch。示例：
+
+        输入形状 3×2×2，4个batch。即一行12个数据，共4行。feature\_map.txt：
+
+        ```
+        1 2 3 4 5 6 7 8 9 10 11 12
+        0.46 0.05 -0.01 -0.20 -7 -0.6114 -0.12 0.87 0.553 -0.67 -0.027 0.164082
+        -0.367 0.373 0.99 -0.0820 0.04 -0.454 -0.311 0.52 -0.033 -0.3 0.731473 0.09
+        -0.012 0.928 -0.903 0.374 0.7 0.4 -0.48 -0.490 0.473455 -0.146 -0.83 -0.637
+        ```
+
+    -   二进制文件：
+
+        文件内容为数据值的二进制，文件名必须以“.bin”为后缀。数据类型需要和--input\_type匹配。
+
+    --insert\_op\_conf配置图像预处理，即输入为图片时，文件内容为图片文件路径，一行一个图片文件路径，一行表示一个batch。图片大小不限，ATC根据输入的height × width缩放。
+
+    图片文件路径支持以下三种。
+
+    1.  绝对路径；
+    2.  相对--image\_list的路径；
+    3.  相对ATC执行的路径。
+
+    示例：testcase/image\_list.txt，3个batch配置3个图片文件。
+
+    ```
+    /home/xxx/testcase/images/test_1.jpg
+    images/test_2.png
+    testcase/images/test_3.bmp
+    ```
+
+    --insert\_op\_conf图像预处理配置的input\_format为YUV420SP、YVU420SP、YUV422SP、YVU422SP、YUV400、BGR\_PLANAR、RGB\_PLANAR、RGB\_PACKAGE、BGR\_PACKAGE、XRGB\_PLANAR、ARGB\_PLANAR、XBGR\_PLANAR、ABGR\_PLANAR、RGBX\_PLANAR、RGBA\_PLANAR、BGRX\_PLANAR、BGRA\_PLANAR、XRGB\_PACKAGE、ARGB\_PACKAGE、XBGR\_PACKAGE、ABGR\_PACKAGE、RGBX\_PACKAGE、RGBA\_PACKAGE、BGRX\_PACKAGE、BGRA\_PACKAGE时，使用图片路径文本格式，支持图片后缀bmp、jpeg、jpg、jpe、jp2、png。
+
+    --insert\_op\_conf图像预处理配置的input\_format为RAW\_RGGB、RAW\_GRBG、RAW\_GBRG、RAW\_BGGR时，使用浮点文本格式，数据排列格式为RAW图像通道拆分前的顺序。
+
+    示例：输入4×2×2的RAW\_RGGB, 通道拆分前的顺序：
+
+    ```
+    1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16
+    ```
+
+    通道拆分后的数据：
+
+    ```
+    1	3	9	11	2	4	10	12	5	7	13	15	6	8	14	16
+    ```
+
+    即：
+
+    ```
+    Channel_0:1	3	9	11
+    Channel_1:2	4	10	12
+    Channel_2:5	7	13	15
+    Channel_3:6	8	14	16
+    ```
+
+    推荐配置及收益：校准时需要的图片是典型场景图片，建议从网络模型的测试场景随机选择3\~5张作为参考图片进行量化，选择的图像要尽量覆盖模型的各个场景（图像要包含分类或检测的目标，如分类网的目标是苹果、梨、桃子，则参考图像至少要包含苹果、梨、桃子。比如检测人、车的模型，参考图像中必须有人、车，不能仅使用人或者无人无车的图像进行量化）。图片影响校准生成量化参数，选择典型场景的图片计算出来的量化参数对典型场景的量化误差越小。所以请不要选择偏僻场景、过度曝光、纯黑、纯白的图片，请选择识别率高，色彩均匀的典型场景图片。
+
+    示例：
+
+    ```
+    --image_list=”data1:feature_map.txt;data2:images.txt”
+    ```
+
+    依赖约束：无
+
+#### --compile\_mode<a name="ZH-CN_TOPIC_0000002408421998"></a>
+
+功能说明：编译模式，量化后的数据bit位宽，不影响权重量化的bit位宽，权重固定是8bit量化。
+
+关联参数：
+
+--gfpq\_param\_file：优先使用配置的量化参数。未配置量化参数时，compile\_mode才生效。
+
+参数取值：
+
+-   参数值
+
+    -   0：数据和权重量化使用8bit。
+    -   1：数据量化使用16bit，权重量化使用8bit。
+    -   5：数据和权重量化使用8bit，且仅对CUBE算子进行量化，非CUBE算子使用fp16格式。
+    -   6：数据量化使用16bit，权重量化使用8bit，且仅对CUBE算子进行量化，非CUBE算子使用fp16格式。
+
+    CUBE算子：Conv、ConvTranspose、DepthwiseConv、InnerProduct、Gemm、MatMul、Pooling系列算子。
+
+-   参数值约束：无
+-   参数默认值：0
+
+推荐配置及收益：
+
+-   配置为0时，带宽小，板端缓存小，耗时少，精度损失大。
+-   配置为1时，带宽大，板端缓存大，耗时大，精度损失小。
+-   配置为5时，带宽、板端缓存、耗时比模式0大，比模式1和6小；精度损失比模式0小，与模式1相比则和网络结构相关，若网络中含有大量的非CUBE算子，则此模式可能精度损失更小。
+-   配置为6时，带宽大，板端缓存大，耗时大，精度损失很小。
+
+示例：
+
+```
 --compile_mode=0
-``` 依赖约束：无 #### --weight\_quant\_per\_channel<a name="ZH-CN_TOPIC_0000002441981677"></a> 功能说明：权重是否每个卷积单独量化，对应一组量化参数。只有Convolution和Deconvolution 支持。 关联参数： --gfpq\_param\_file：优先使用配置的量化参数。未配置量化参数时, --weight\_quant\_per\_channel才生效。 参数取值： - 参数值 - 0：去使能。 - 1：使能。 - 参数默认值：1 推荐配置及收益：配置为1时，权重量化粒度细，精度更好。 示例： ```
+```
+
+依赖约束：无
+
+#### --weight\_quant\_per\_channel<a name="ZH-CN_TOPIC_0000002441981677"></a>
+
+功能说明：权重是否每个卷积单独量化，对应一组量化参数。只有Convolution和Deconvolution 支持。
+
+关联参数：
+
+--gfpq\_param\_file：优先使用配置的量化参数。未配置量化参数时, --weight\_quant\_per\_channel才生效。
+
+参数取值：
+
+-   参数值
+    -   0：去使能。
+    -   1：使能。
+
+-   参数默认值：1
+
+推荐配置及收益：配置为1时，权重量化粒度细，精度更好。
+
+示例：
+
+```
 --weight_quant_per_channel=1
-``` 依赖约束：无 #### --quant\_mode<a name="ZH-CN_TOPIC_0000002441981413"></a> 功能说明：量化算法模式 - 参数取值： - 0：使用默认量化算法，linear\_quant - 1：数据和权重使用不同的量化算法，其中数据使用ifmr算法进行量化，权重使用arq算法进行量化 - 参数值约束：无
-- 参数默认值：0 示例： --quant\_mode=0 依赖约束：无 #### --high\_precision\_layer<a name="ZH-CN_TOPIC_0000002441981309"></a> 功能说明：高精度层配置。如果配置的层是CUBE算子，该算子会进行量化，数据量化使用16bit，权重量化使用8bit，如果是非CUBE算子，则使用fp16格式。 CUBE算子：Conv,ConvTranspose,DepthwiseConv,InnerProduct,Gemm,MatMul,Pooling系列算子。 - 参数取值：字符串。网络模型中的节点（node\_name）名称的集合。 - 推荐配置及收益：无 - 示例：其中opName0、opName1、opName2为需要配置的节点在网络模型中的名称 ```
+```
+
+依赖约束：无
+
+#### --quant\_mode<a name="ZH-CN_TOPIC_0000002441981413"></a>
+
+功能说明：量化算法模式
+
+-   参数取值：
+    -   0：使用默认量化算法，linear\_quant
+    -   1：数据和权重使用不同的量化算法，其中数据使用ifmr算法进行量化，权重使用arq算法进行量化
+
+-   参数值约束：无
+-   参数默认值：0
+
+示例：
+
+--quant\_mode=0
+
+依赖约束：无
+
+#### --high\_precision\_layer<a name="ZH-CN_TOPIC_0000002441981309"></a>
+
+功能说明：高精度层配置。如果配置的层是CUBE算子，该算子会进行量化，数据量化使用16bit，权重量化使用8bit，如果是非CUBE算子，则使用fp16格式。
+
+CUBE算子：Conv,ConvTranspose,DepthwiseConv,InnerProduct,Gemm,MatMul,Pooling系列算子。
+
+-   参数取值：字符串。网络模型中的节点（node\_name）名称的集合。
+
+-   推荐配置及收益：无
+
+-   示例：其中opName0、opName1、opName2为需要配置的节点在网络模型中的名称
+
+```
 --high_precision_layer=opName0;opName1;opName2
-``` #### --all\_batch\_quant\_together\_enable<a name="ZH-CN_TOPIC_0000002408582122"></a> 功能说明：量化时，是否所有batch一起进行量化参数计算。 参数取值： - 参数值： - 0：去使能 - 1：使能 - 参数默认值：0 示例： ```
+```
+
+#### --all\_batch\_quant\_together\_enable<a name="ZH-CN_TOPIC_0000002408582122"></a>
+
+功能说明：量化时，是否所有batch一起进行量化参数计算。
+
+参数取值：
+
+-   参数值：
+    -   0：去使能
+    -   1：使能
+
+-   参数默认值：0
+
+示例：
+
+```
 --all_batch_quant_together_enable=1
-``` #### --matmul\_per\_channel\_enable<a name="ZH-CN_TOPIC_0000002442020857"></a> 功能说明：权重是否每通道单独量化，对应一组量化参数。只有Matmul、Innerproduct、Gemm 支持。 关联参数： [--gfpq\_param\_file](#ZH-CN_TOPIC_0000002408581570)：优先使用配置的量化参数。未配置量化参数时, --matmul\_per\_channel\_enable才生效。 [--weight\_quant\_per\_channel](#ZH-CN_TOPIC_0000002441981677)：当该配置为0时，--matmul\_per\_channel\_enable不生效 参数取值： - 参数值 - 0：去使能。 - 1：使能。 - 参数默认值：0 推荐配置及收益：配置为1时，权重量化粒度细，精度更好。 示例： ```
+```
+
+#### --matmul\_per\_channel\_enable<a name="ZH-CN_TOPIC_0000002442020857"></a>
+
+功能说明：权重是否每通道单独量化，对应一组量化参数。只有Matmul、Innerproduct、Gemm 支持。
+
+关联参数：
+
+[--gfpq\_param\_file](#ZH-CN_TOPIC_0000002408581570)：优先使用配置的量化参数。未配置量化参数时, --matmul\_per\_channel\_enable才生效。
+
+[--weight\_quant\_per\_channel](#ZH-CN_TOPIC_0000002441981677)：当该配置为0时，--matmul\_per\_channel\_enable不生效
+
+参数取值：
+
+-   参数值
+    -   0：去使能。
+    -   1：使能。
+
+-   参数默认值：0
+
+推荐配置及收益：配置为1时，权重量化粒度细，精度更好。
+
+示例：
+
+```
 --matmul_per_channel_enable=1
-``` 依赖约束：无 ### RPN硬化层选项<a name="ZH-CN_TOPIC_0000002408581578"></a> #### --nms\_threshold<a name="ZH-CN_TOPIC_0000002408421918"></a> 功能说明：Nms层阈值，只用于ATC量化校准时的RPN硬化层，板端推理时不使用此值。 关联参数：无 参数取值： - 参数值：\[0,1\)
-- 参数默认值：0.75 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+### RPN硬化层选项<a name="ZH-CN_TOPIC_0000002408581578"></a>
+
+
+
+
+
+
+
+
+
+
+#### --nms\_threshold<a name="ZH-CN_TOPIC_0000002408421918"></a>
+
+功能说明：Nms层阈值，只用于ATC量化校准时的RPN硬化层，板端推理时不使用此值。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\)
+-   参数默认值：0.75
+
+推荐配置及收益：无
+
+示例：
+
+```
 --nms_threshold=0.75
-``` 依赖约束：无 #### --low\_score\_threshold<a name="ZH-CN_TOPIC_0000002408581990"></a> 功能说明：Filter层最低分数阈值，只用于ATC量化校准时的RPN硬化层，板端推理时不使用此值。 关联参数：无 参数取值： - 参数值：\[0,1\)
-- 参数默认值：0.08 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --low\_score\_threshold<a name="ZH-CN_TOPIC_0000002408581990"></a>
+
+功能说明：Filter层最低分数阈值，只用于ATC量化校准时的RPN硬化层，板端推理时不使用此值。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\)
+-   参数默认值：0.08
+
+推荐配置及收益：无
+
+示例：
+
+```
 --low_score_threshold=0.08
-``` 依赖约束：无 #### --min\_width<a name="ZH-CN_TOPIC_0000002408581754"></a> 功能说明：Filter层最低宽度阈值。 关联参数：无 参数取值： - 参数值：\[1,4096\]
-- 参数默认值：1 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --min\_width<a name="ZH-CN_TOPIC_0000002408581754"></a>
+
+功能说明：Filter层最低宽度阈值。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[1,4096\]
+-   参数默认值：1
+
+推荐配置及收益：无
+
+示例：
+
+```
 --min_width=1
-``` 依赖约束：无 #### --min\_height<a name="ZH-CN_TOPIC_0000002408421678"></a> 功能说明：Filter层最低高度阈值。 关联参数：无 参数取值： - 参数值： \[1,4096\]
-- 参数默认值：1 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --min\_height<a name="ZH-CN_TOPIC_0000002408421678"></a>
+
+功能说明：Filter层最低高度阈值。
+
+关联参数：无
+
+参数取值：
+
+-   参数值： \[1,4096\]
+-   参数默认值：1
+
+推荐配置及收益：无
+
+示例：
+
+```
 --min_height=1
-``` 依赖约束：无 #### --image\_width<a name="ZH-CN_TOPIC_0000002441981513"></a> 功能说明： 网络包含RPN硬化层，输入为Feature map，不是图片时，需指定原图的宽。 关联参数：无 参数取值： - 参数值：\[1,4096\]
-- 参数默认值：0 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --image\_width<a name="ZH-CN_TOPIC_0000002441981513"></a>
+
+功能说明：
+
+网络包含RPN硬化层，输入为Feature map，不是图片时，需指定原图的宽。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[1,4096\]
+-   参数默认值：0
+
+推荐配置及收益：无
+
+示例：
+
+```
 --image_width=224
-``` 依赖约束：无 #### --image\_height<a name="ZH-CN_TOPIC_0000002441981341"></a> 功能说明：网络包含RPN硬化层，输入为Feature map，不是图片时，需指定原图的高。 关联参数：无 参数取值： - 参数值：\[1,4096\]
-- 参数默认值：0 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --image\_height<a name="ZH-CN_TOPIC_0000002441981341"></a>
+
+功能说明：网络包含RPN硬化层，输入为Feature map，不是图片时，需指定原图的高。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[1,4096\]
+-   参数默认值：0
+
+推荐配置及收益：无
+
+示例：
+
+```
 --image_height=224
-``` 依赖约束：无 #### --generate\_anchors\_file<a name="ZH-CN_TOPIC_0000002408582078"></a> 功能说明：锚点坐标文件。使用硬化层的Faster RCNN、RFCN、SSD网络必须配置。 关联参数：无 参数取值： - 参数值：anchors文件路径与文件名。
-- 参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
-- 文件内容的格式： - Faster RCNN和RFCN锚点坐标文件每行内容为“xmin, ymin, xmax, ymax”如下。 ``` -84.000000 -40.000000 99.000000 55.000000 -176.000000 -88.000000 191.000000 103.000000 -360.000000 -184.000000 375.000000 199.000000 -56.000000 -56.000000 71.000000 71.000000 …… ``` 请参考samples/2\_object\_detection/fasterrcnn/fasterrcnn\_alexnet/caffe\_model/anchors.txt和samples/2\_object\_detection/rfcn/rfcn\_resnet50/caffe\_model/anchors.txt 生成anchors.txt的方法，例如Caffe框架在py-faster-rcnn/rpn/proposal\_layer.py保存anchors，如下图。 ![](figures/zh-cn_image_0000002442022093.png) - SSD锚点坐标文件每行内容为“xmin, ymin, xmax, ymax, var0, var1, var2, var3”，如下。 ``` -11.000000 -11.000000 19.000000 19.000000 0.099854 0.099854 0.199951 0.199951 -17.000000 -17.000000 25.000000 25.000000 0.099854 0.099854 0.199951 0.199951 -17.000000 -6.000000 25.000000 14.000000 0.099854 0.099854 0.199951 0.199951 -6.000000 -17.000000 14.000000 25.000000 0.099854 0.099854 0.199951 0.199951 …… ``` 请参考samples/2\_object\_detection/ssd/caffe\_model/anchors.txt 生成anchors.txt方法：例如Caffe框架下保存mbox\_priorbox层的输出，再生成anchors，示例python代码如下。 ```
+```
+
+依赖约束：无
+
+#### --generate\_anchors\_file<a name="ZH-CN_TOPIC_0000002408582078"></a>
+
+功能说明：锚点坐标文件。使用硬化层的Faster RCNN、RFCN、SSD网络必须配置。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：anchors文件路径与文件名。
+-   参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+-   文件内容的格式：
+    -   Faster RCNN和RFCN锚点坐标文件每行内容为“xmin, ymin, xmax, ymax”如下。
+
+        ```
+        -84.000000 -40.000000 99.000000 55.000000
+        -176.000000 -88.000000 191.000000 103.000000
+        -360.000000 -184.000000 375.000000 199.000000
+        -56.000000 -56.000000 71.000000 71.000000
+        ……
+        ```
+
+        请参考samples/2\_object\_detection/fasterrcnn/fasterrcnn\_alexnet/caffe\_model/anchors.txt和samples/2\_object\_detection/rfcn/rfcn\_resnet50/caffe\_model/anchors.txt
+
+        生成anchors.txt的方法，例如Caffe框架在py-faster-rcnn/rpn/proposal\_layer.py保存anchors，如下图。
+
+        ![](figures/zh-cn_image_0000002442022093.png)
+
+-   SSD锚点坐标文件每行内容为“xmin, ymin, xmax, ymax, var0, var1, var2, var3”，如下。
+
+    ```
+    -11.000000 -11.000000 19.000000 19.000000 0.099854 0.099854 0.199951 0.199951
+    -17.000000 -17.000000 25.000000 25.000000 0.099854 0.099854 0.199951 0.199951
+    -17.000000 -6.000000 25.000000 14.000000 0.099854 0.099854 0.199951 0.199951
+    -6.000000 -17.000000 14.000000 25.000000 0.099854 0.099854 0.199951 0.199951
+    ……
+    ```
+
+请参考samples/2\_object\_detection/ssd/caffe\_model/anchors.txt
+
+生成anchors.txt方法：例如Caffe框架下保存mbox\_priorbox层的输出，再生成anchors，示例python代码如下。
+
+```
 import numpy as np
 data = np.loadtxt("mbox_priorbox_output0_2_34928_caffe.float")
 image_width=300
@@ -251,187 +1424,1467 @@ boxes[:,[1,3]] = boxes[:,[1,3]] * image_height
 variance = data[ anchors_num : ]
 anchors = np.hstack((boxes, variance))
 np.savetxt("anchors_txt", anchors, fmt="%.6f")
-``` 推荐配置及收益：无 示例： ```
+```
+
+推荐配置及收益：无
+
+示例：
+
+```
 --generate_anchors_file=anchors.txt
-``` 依赖约束：无 #### --detection\_out\_accuracy<a name="ZH-CN_TOPIC_0000002441980977"></a> 功能说明：RPN层是否输出高精度。 关联参数：无 参数取值： - 参数值：\[0,1\] - 0: 低精度，使用FP16。 - 1：高精度，使用FP32。 - 参数默认值：0。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --detection\_out\_accuracy<a name="ZH-CN_TOPIC_0000002441980977"></a>
+
+功能说明：RPN层是否输出高精度。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0: 低精度，使用FP16。
+    -   1：高精度，使用FP32。
+
+-   参数默认值：0。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --detection_out_accuracy=0
-``` 依赖约束：无 #### --use\_class\_id<a name="ZH-CN_TOPIC_0000002442021117"></a> 功能说明：RPN层输出是否包括class id。 关联参数：无 参数取值： - 参数值：\[0,1\] - 0：不包括class id。 - 1：包括class id。 - 参数默认值：1。 推荐配置及收益：当前版本只支持配1 示例： ```
+```
+
+依赖约束：无
+
+#### --use\_class\_id<a name="ZH-CN_TOPIC_0000002442021117"></a>
+
+功能说明：RPN层输出是否包括class id。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0：不包括class id。
+    -   1：包括class id。
+
+-   参数默认值：1。
+
+推荐配置及收益：当前版本只支持配1
+
+示例：
+
+```
 --use_class_id=1
-``` 依赖约束：无 ### Recurrent网络选项<a name="ZH-CN_TOPIC_0000002442020961"></a> #### --recurrent\_max\_total\_t<a name="ZH-CN_TOPIC_0000002408422154"></a> 功能说明：Recurrent网络（包含LSTM/RNN/GRU层）每一句话的最大帧数，用于板端运行时分配输入内存。 关联参数：无 参数取值： - 参数值：\[1, 1024\]
-- 参数默认值：1024 推荐配置及收益：按板端实际部署运行时每一句话的最大帧数配置，配置越大，分配的输入内存越大。 >![](public_sys-resources/icon-notice.gif) **须知：** >ONNX框架下无需配置该参数。 示例： ```
+```
+
+依赖约束：无
+
+### Recurrent网络选项<a name="ZH-CN_TOPIC_0000002442020961"></a>
+
+
+
+#### --recurrent\_max\_total\_t<a name="ZH-CN_TOPIC_0000002408422154"></a>
+
+功能说明：Recurrent网络（包含LSTM/RNN/GRU层）每一句话的最大帧数，用于板端运行时分配输入内存。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[1, 1024\]
+-   参数默认值：1024
+
+推荐配置及收益：按板端实际部署运行时每一句话的最大帧数配置，配置越大，分配的输入内存越大。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>ONNX框架下无需配置该参数。
+
+示例：
+
+```
 --recurrent_max_total_t=1024
-``` 依赖约束：必须大于等于每一句话的最大帧数，否则输入数据不完整，计算错误。 #### --recurrent\_tmax<a name="ZH-CN_TOPIC_0000002441981021"></a> 功能说明：Recurrent网络（包含LSTM/RNN/GRU层）执行期间，将基于continuous对输入的每一句话进行子句切分，一句话会被切分为若干子句以实现并行处理。该参数表示由切分所产生的若干子句中，子句的最大帧数，用于板端运行时分配临时缓存。假设某Recurrent层第二个输入continuous的数据为 \[0, 1, 0\]，这意味着帧数为3的句子将被切分为帧数为2和1的两个子句，子句的最大帧数为2，故该参数取2。ONNX模式下无该参数。 关联参数：无 参数取值： - 参数值：\[1, 1024\]
-- 参数默认值：1024 推荐配置及收益：按板端实际部署运行时每一句话基于continuous做子句切分后，子句的最大帧数配置，若难以明确子句的最大帧数，则配置为每一句话的最大帧数即可，配置越大占用临时缓存越大。 >![](public_sys-resources/icon-notice.gif) **须知：** >ONNX框架下无需配置该参数。 示例： ```
+```
+
+依赖约束：必须大于等于每一句话的最大帧数，否则输入数据不完整，计算错误。
+
+#### --recurrent\_tmax<a name="ZH-CN_TOPIC_0000002441981021"></a>
+
+功能说明：Recurrent网络（包含LSTM/RNN/GRU层）执行期间，将基于continuous对输入的每一句话进行子句切分，一句话会被切分为若干子句以实现并行处理。该参数表示由切分所产生的若干子句中，子句的最大帧数，用于板端运行时分配临时缓存。假设某Recurrent层第二个输入continuous的数据为 \[0, 1, 0\]，这意味着帧数为3的句子将被切分为帧数为2和1的两个子句，子句的最大帧数为2，故该参数取2。ONNX模式下无该参数。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[1, 1024\]
+-   参数默认值：1024
+
+推荐配置及收益：按板端实际部署运行时每一句话基于continuous做子句切分后，子句的最大帧数配置，若难以明确子句的最大帧数，则配置为每一句话的最大帧数即可，配置越大占用临时缓存越大。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>ONNX框架下无需配置该参数。
+
+示例：
+
+```
 --recurrent_tmax=1024
-``` 依赖约束：必须大于等于每一句话进行子句切分后的子句最大帧数，否则计算错误。 ### 目标解决方案选项<a name="ZH-CN_TOPIC_0000002441981489"></a> #### --soc\_version<a name="ZH-CN_TOPIC_0000002408421750"></a> 功能说明：模型转换时指定解决方案版本。 关联参数：无 参数取值： - 参数值：，Hi3403V100
-- 用户根据具体板端解决方案，选择对应的取值。 推荐配置及收益：无 示例： ```
---soc_version=
-``` 依赖约束：无 ## 高级功能<a name="ZH-CN_TOPIC_0000002408422262"></a> 以下介绍部分常用参数选项，更多选项用法请输入--help。 ### 功能配置选项<a name="ZH-CN_TOPIC_0000002441981185"></a> #### --max\_roi\_frame\_cnt<a name="ZH-CN_TOPIC_0000002408582130"></a> 功能说明：包含ROI/PSROI网络的RPN阶段输出的候选框最大数目。 关联参数：无 参数取值： - 参数值：\[1,2048\]
-- 参数默认值：300 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：必须大于等于每一句话进行子句切分后的子句最大帧数，否则计算错误。
+
+### 目标解决方案选项<a name="ZH-CN_TOPIC_0000002441981489"></a>
+
+
+#### --soc\_version<a name="ZH-CN_TOPIC_0000002408421750"></a>
+
+功能说明：模型转换时指定解决方案版本。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：SS626V100，Hi3403V100
+-   参数默认值：SS626V100
+-   用户根据具体板端解决方案，选择对应的取值。
+
+推荐配置及收益：无
+
+示例：
+
+```
+--soc_version=SS626V100
+```
+
+依赖约束：无
+
+## 高级功能<a name="ZH-CN_TOPIC_0000002408422262"></a>
+
+以下介绍部分常用参数选项，更多选项用法请输入--help。
+
+
+
+
+### 功能配置选项<a name="ZH-CN_TOPIC_0000002441981185"></a>
+
+
+
+
+#### --max\_roi\_frame\_cnt<a name="ZH-CN_TOPIC_0000002408582130"></a>
+
+功能说明：包含ROI/PSROI网络的RPN阶段输出的候选框最大数目。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[1,2048\]
+-   参数默认值：300
+
+推荐配置及收益：无
+
+示例：
+
+```
 --max_roi_frame_cnt=300
-``` 依赖约束：无 #### --online\_model\_type<a name="ZH-CN_TOPIC_0000002442020929"></a> 功能说明：转换生成模型的类型，用于板端执行profiling或dump数据。 关联参数： [--layer\_fusion\_enable](#ZH-CN_TOPIC_0000002408421958)：深度融合的层不支持dump，即\*.om转json文件里，属性is\_dump\_available为0的层不支持dump。 参数取值： - 参数值：\[0,7\]。 0: 没有调试相关的内容，没有网络结构和算子信息。 1: 调试带层信息。 2: 调试带层开始和结束标记，板端profiling 用。 3: 调试带层信息、层开始和结束标记。 4: 调试带层TRAP指令，板端dump数据用。 5: 调试带层信息、层TRAP指令。 6: 调试带层开始和结束标记、层TRAP指令。 7: 调试带层信息、层开始和结束标记、TRAP指令。 - 参数默认值：2 推荐配置及收益： - Release 配置 0。 - Debug for profile配置2。
-- Debug for dump and compare配置4。 示例： ```
+```
+
+依赖约束：无
+
+#### --online\_model\_type<a name="ZH-CN_TOPIC_0000002442020929"></a>
+
+功能说明：转换生成模型的类型，用于板端执行profiling或dump数据。
+
+关联参数：
+
+[--layer\_fusion\_enable](#ZH-CN_TOPIC_0000002408421958)：深度融合的层不支持dump，即\*.om转json文件里，属性is\_dump\_available为0的层不支持dump。
+
+参数取值：
+
+-   参数值：\[0,7\]。
+
+    0: 没有调试相关的内容，没有网络结构和算子信息。
+
+    1: 调试带层信息。
+
+    2: 调试带层开始和结束标记，板端profiling 用。
+
+    3: 调试带层信息、层开始和结束标记。
+
+    4: 调试带层TRAP指令，板端dump数据用。
+
+    5: 调试带层信息、层TRAP指令。
+
+    6: 调试带层开始和结束标记、层TRAP指令。
+
+    7: 调试带层信息、层开始和结束标记、TRAP指令。
+
+-   参数默认值：2
+
+推荐配置及收益：
+
+-   Release 配置 0。
+
+-   Debug for profile配置2。
+-   Debug for dump and compare配置4。
+
+示例：
+
+```
 --online_model_type=2
-``` 依赖约束：不支持dump的层包括：深度融合的层、RoiPooling的第三路代表框个数的输入层。 #### --dynamic\_image\_size<a name="ZH-CN_TOPIC_0000002408582202"></a> 功能说明：设置输入的动态分辨率档位，在板端运行时可选择其中的一个作为输入的大小。 关联参数： [--input\_shape](#ZH-CN_TOPIC_0000002408581846)：当某个输入采用动态分辨率时，需要配置该选项，且将宽、高配置成-1。 参数取值： - 参数值： 模型输入的动态分辨率信息，例如："h1,w1;h2,w2"。指定的分辨率必须放在双引号中，分辨率中间使用英文分号分隔。 - 参数值约束： 可支持设置【2，100】组分辨率。第一组分辨率必须为最大的分辨率。 每组分辨率宽、高的取值范围为【1，16384】。 推荐配置及收益：配置的动态分辨率越多时，生成的OM也会越大，请根据实际需要设置。 示例： ```
+```
+
+依赖约束：不支持dump的层包括：深度融合的层、RoiPooling的第三路代表框个数的输入层。
+
+#### --dynamic\_image\_size<a name="ZH-CN_TOPIC_0000002408582202"></a>
+
+功能说明：设置输入的动态分辨率档位，在板端运行时可选择其中的一个作为输入的大小。
+
+关联参数：
+
+[--input\_shape](#ZH-CN_TOPIC_0000002408581846)：当某个输入采用动态分辨率时，需要配置该选项，且将宽、高配置成-1。
+
+参数取值：
+
+-   参数值：
+
+    模型输入的动态分辨率信息，例如："h1,w1;h2,w2"。指定的分辨率必须放在双引号中，分辨率中间使用英文分号分隔。
+
+-   参数值约束：
+
+    可支持设置【2，100】组分辨率。第一组分辨率必须为最大的分辨率。
+
+    每组分辨率宽、高的取值范围为【1，16384】。
+
+推荐配置及收益：配置的动态分辨率越多时，生成的OM也会越大，请根据实际需要设置。
+
+示例：
+
+```
 --dynamic_image_size="h1,w1;h2,w2"
 --input_shape="input1:1,3,-1,-1"
-``` 表示input1使用动态分辨率，且动态分辨率有两组，分别为【h1, w1】、【h2, w2】。 在运行时，可以指定采用【h1, w1】或【h2, w2】进行推理。若未指定，则使用第一档分辨率【h1,w1】进行推理。 依赖约束：模型本身不支持其他分辨率时，不支持动态分辨率。如模型包含FC层。 ### 模型调优选项<a name="ZH-CN_TOPIC_0000002441981581"></a> #### --batch\_num<a name="ZH-CN_TOPIC_0000002408581538"></a> 功能说明： - 支持batch处理的层单次处理的数据份数。影响性能和临时缓存大小。例如InnerProduct层支持batch处理，当batch\_num配置为0或1时，则分配1份输入和输出所需的内存，单次处理1份数据。
-- 当batch\_num配置为256时，则分配256份的输入和输出所需的内存，单次处理256份数据。 关联参数：无 参数取值： - 参数值：\[0,256\]。 - 0和1：表示single（单张）模式。Batch层一次处理一张图片，临时缓存为一张图片分配。 - 大于1：表示batch（多张）模式。Batch层一次处理batch张图片，临时缓存为batch张图片分配。 - 参数默认值：网络包含CPU层时默认为1。其他情况默认为256。
-- 参数值约束： - 网络包含Recurrent层且Recurrent层连接非FC层时，网络包含ROIPooling/PSROIPooling层、RPN硬化层时，不支持batch，强制设置batch\_num为1。 - 网络包含CPU层时，板端ACL配置的dynamic batch size必须小于等于ATC转模型时配置的batch\_num。 推荐配置及收益：对于batch层，batch模式比single模式性能好，占用内存也会更多。batch层包括InnerProduct、LSTM、RNN、GRU。 示例： ```
+```
+
+表示input1使用动态分辨率，且动态分辨率有两组，分别为【h1, w1】、【h2, w2】。
+
+在运行时，可以指定采用【h1, w1】或【h2, w2】进行推理。若未指定，则使用第一档分辨率【h1,w1】进行推理。
+
+依赖约束：模型本身不支持其他分辨率时，不支持动态分辨率。如模型包含FC层。
+
+### 模型调优选项<a name="ZH-CN_TOPIC_0000002441981581"></a>
+
+
+
+
+
+
+
+
+
+
+#### --batch\_num<a name="ZH-CN_TOPIC_0000002408581538"></a>
+
+功能说明：
+
+-   支持batch处理的层单次处理的数据份数。影响性能和临时缓存大小。例如InnerProduct层支持batch处理，当batch\_num配置为0或1时，则分配1份输入和输出所需的内存，单次处理1份数据。
+-   当batch\_num配置为256时，则分配256份的输入和输出所需的内存，单次处理256份数据。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,256\]。
+    -   0和1：表示single（单张）模式。Batch层一次处理一张图片，临时缓存为一张图片分配。
+    -   大于1：表示batch（多张）模式。Batch层一次处理batch张图片，临时缓存为batch张图片分配。
+
+-   参数默认值：网络包含CPU层时默认为1。其他情况默认为256。
+-   参数值约束：
+    -   网络包含Recurrent层且Recurrent层连接非FC层时，网络包含ROIPooling/PSROIPooling层、RPN硬化层时，不支持batch，强制设置batch\_num为1。
+    -   网络包含CPU层时，板端ACL配置的dynamic batch size必须小于等于ATC转模型时配置的batch\_num。
+
+推荐配置及收益：对于batch层，batch模式比single模式性能好，占用内存也会更多。batch层包括InnerProduct、LSTM、RNN、GRU。
+
+示例：
+
+```
 --batch_num=256
-``` 依赖约束：无 #### --internal\_stride<a name="ZH-CN_TOPIC_0000002441981529"></a> 功能说明：DDR读写对齐字节数。 关联参数：无 参数取值： - 参数值：\{16,32,64,128,256\}。 - 参数默认值：16 推荐配置及收益： - DDR类型为DDR4时，读写32字节对齐性能最好，建议配置为32。
-- 每个width占用的内存对齐到internal\_stride，当width\*sizeof\(data\_type\)不能整除internal\_stride时，internal\_stride越大越占用内存，读写内存越多也越耗时间，所以并不是internal\_stride越大越好。 示例： ```
+```
+
+依赖约束：无
+
+#### --internal\_stride<a name="ZH-CN_TOPIC_0000002441981529"></a>
+
+功能说明：DDR读写对齐字节数。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\{16,32,64,128,256\}。
+
+-   参数默认值：16
+
+推荐配置及收益：
+
+-   DDR类型为DDR4时，读写32字节对齐性能最好，建议配置为32。
+-   每个width占用的内存对齐到internal\_stride，当width\*sizeof\(data\_type\)不能整除internal\_stride时，internal\_stride越大越占用内存，读写内存越多也越耗时间，所以并不是internal\_stride越大越好。
+
+示例：
+
+```
 --internal_stride=16
-``` 依赖约束：无 #### --fusion\_switch\_file<a name="ZH-CN_TOPIC_0000002441981105"></a> 功能说明：融合规则开关配置文件路径以及文件名。 关联参数：--fusion\_switch\_file是控制指定某个图优化开关，--net\_optimize\_enable是控制所有图优化开关。 - 当配置--net\_optimize\_enable=0时，--fusion\_switch\_file不生效。
-- 当配置--net\_optimize\_enable=1时，--fusion\_switch\_file生效。 参数取值： - 参数值：配置文件路径以及文件名。
-- 参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
-- 参数值约束：如果用户想使用经过昇腾模型压缩工具量化后的模型，进行精度比对，则该参数必填。通过配置该文件，关闭融合功能。 推荐配置及收益：无 示例：支持如下融合规则。 - BatchNormMergeToConvWeight: BatchNorm层融合到前一层Conv/Deconv/FC的权重。
-- BatchNormMergeToConvActive: BatchNorm层融合到前一层Conv/Deconv/FC的输出参数。
-- ScaleMergeToConvWeight: Scale层融合到前一层Conv/Deconv/FC的权重。
-- ScaleMergeToConvActive: Scale层融合到前一层Conv/Deconv/FC的输出参数。
-- BiasMergeToConv: Bias层融合到前一层Conv/Deconv/FC的权重。
-- ReluMerge: Relu层融合到前一层的输出参数。
-- PReluMerge: PRelu层融合到前一层的输出参数。
-- AbsMerge: Abs层融合到前一层的输出参数。
-- BatchNormTransfromToDepthwiseConv: BatchNorm层转换为DepthwiseConv层。性能大幅提升，精度略微降低。
-- EltwiseMergeToCube：Eltwise层融合到Cube层，Cube层包括Conv/Deconv/DepthwiseConv/Pool。性能提升，量化参数有溢出风险。
-- PoolMergeToConv：MaxPooling层融合到Conv层。 1. 支持文件配置，配置文件样例如下，冒号前面为融合规则名，后面字段表示融合规则是否开启（文件名举例为fusion\_switch.txt）。 ``` BatchNormMergeToConvWeight:on BatchNormMergeToConvActive:off ScaleMergeToConvWeight:on ScaleMergeToConvActive:off BiasMergeToConv:on ReluMerge:on PReluMerge:on AbsMerge:on BatchNormTransfromToDepthwiseConv:on PoolMergeToConv:on EltwiseMergeToCube:on ``` 将配置好的fusion\_switch.txt文件上传到ATC工具所在服务器任意目录，例如上传到/home/test/，使用示例如下。 ``` --fusion_switch_file=/home/test/fusion_switch.txt ``` 1. 支持直接配置融合规则，使用示例如下。 ``` --fusion_switch_file=BatchNormMergeToConvWeight:off;BatchNormMergeToConvActive:off;ScaleMergeToConvWeight:off;ScaleMergeToConvActive:off ``` 依赖约束：无 #### --net\_optimize\_enable<a name="ZH-CN_TOPIC_0000002442021417"></a> 功能说明：所有融合规则的使能开关。 关联参数：--fusion\_switch\_file是控制指定某个融合规则的开关，--net\_optimize\_enable是控制所有融合规则的开关。 - 当配置--net\_optimize\_enable=0时，关闭所有融合规则，--fusion\_switch\_file不生效。
-- 当配置--net\_optimize\_enable=1时，使能所有融合规则，如果配置了--fusion\_switch\_file，以配置的融合规则文件为准。 参数取值： - 参数值：\[0,1\] - 0：去使能。 - 1：使能。 - 参数默认值：1 推荐配置及收益：融合可以减少算子，提升性能，推荐配置1。 示例： ```
+```
+
+依赖约束：无
+
+#### --fusion\_switch\_file<a name="ZH-CN_TOPIC_0000002441981105"></a>
+
+功能说明：融合规则开关配置文件路径以及文件名。
+
+关联参数：--fusion\_switch\_file是控制指定某个图优化开关，--net\_optimize\_enable是控制所有图优化开关。
+
+-   当配置--net\_optimize\_enable=0时，--fusion\_switch\_file不生效。
+-   当配置--net\_optimize\_enable=1时，--fusion\_switch\_file生效。
+
+参数取值：
+
+-   参数值：配置文件路径以及文件名。
+-   参数值格式：路径和文件名：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+-   参数值约束：如果用户想使用经过昇腾模型压缩工具量化后的模型，进行精度比对，则该参数必填。通过配置该文件，关闭融合功能。
+
+推荐配置及收益：无
+
+示例：支持如下融合规则。
+
+-   BatchNormMergeToConvWeight: BatchNorm层融合到前一层Conv/Deconv/FC的权重。
+-   BatchNormMergeToConvActive: BatchNorm层融合到前一层Conv/Deconv/FC的输出参数。
+-   ScaleMergeToConvWeight: Scale层融合到前一层Conv/Deconv/FC的权重。
+-   ScaleMergeToConvActive: Scale层融合到前一层Conv/Deconv/FC的输出参数。
+-   BiasMergeToConv: Bias层融合到前一层Conv/Deconv/FC的权重。
+-   ReluMerge: Relu层融合到前一层的输出参数。
+-   PReluMerge: PRelu层融合到前一层的输出参数。
+-   AbsMerge: Abs层融合到前一层的输出参数。
+-   BatchNormTransfromToDepthwiseConv: BatchNorm层转换为DepthwiseConv层。性能大幅提升，精度略微降低。
+-   EltwiseMergeToCube：Eltwise层融合到Cube层，Cube层包括Conv/Deconv/DepthwiseConv/Pool。性能提升，量化参数有溢出风险。
+-   PoolMergeToConv：MaxPooling层融合到Conv层。
+
+1.  支持文件配置，配置文件样例如下，冒号前面为融合规则名，后面字段表示融合规则是否开启（文件名举例为fusion\_switch.txt）。
+
+    ```
+    BatchNormMergeToConvWeight:on
+    BatchNormMergeToConvActive:off
+    ScaleMergeToConvWeight:on
+    ScaleMergeToConvActive:off
+    BiasMergeToConv:on
+    ReluMerge:on
+    PReluMerge:on
+    AbsMerge:on
+    BatchNormTransfromToDepthwiseConv:on
+    PoolMergeToConv:on
+    EltwiseMergeToCube:on
+    ```
+
+    将配置好的fusion\_switch.txt文件上传到ATC工具所在服务器任意目录，例如上传到/home/test/，使用示例如下。
+
+    ```
+    --fusion_switch_file=/home/test/fusion_switch.txt
+    ```
+
+1.  支持直接配置融合规则，使用示例如下。
+
+    ```
+    --fusion_switch_file=BatchNormMergeToConvWeight:off;BatchNormMergeToConvActive:off;ScaleMergeToConvWeight:off;ScaleMergeToConvActive:off
+    ```
+
+依赖约束：无
+
+#### --net\_optimize\_enable<a name="ZH-CN_TOPIC_0000002442021417"></a>
+
+功能说明：所有融合规则的使能开关。
+
+关联参数：--fusion\_switch\_file是控制指定某个融合规则的开关，--net\_optimize\_enable是控制所有融合规则的开关。
+
+-   当配置--net\_optimize\_enable=0时，关闭所有融合规则，--fusion\_switch\_file不生效。
+-   当配置--net\_optimize\_enable=1时，使能所有融合规则，如果配置了--fusion\_switch\_file，以配置的融合规则文件为准。
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0：去使能。
+    -   1：使能。
+
+-   参数默认值：1
+
+推荐配置及收益：融合可以减少算子，提升性能，推荐配置1。
+
+示例：
+
+```
 --net_optimize_enable=1
-``` 依赖约束：无 #### --layer\_fusion\_enable<a name="ZH-CN_TOPIC_0000002408421958"></a> 功能说明：层间深度融合的使能开关。层间深度融合是指多层之间融合在一起，切小块循环计算，数据在内部RAM传递，不读写DDR。 关联参数：无 参数取值： - 参数值：\[0,1\] - 0：去使能。 - 1：使能。 - 参数默认值：1 推荐配置及收益：层间深度融合可以减少DDR读写，提升性能，推荐配置1。 示例： ```
+```
+
+依赖约束：无
+
+#### --layer\_fusion\_enable<a name="ZH-CN_TOPIC_0000002408421958"></a>
+
+功能说明：层间深度融合的使能开关。层间深度融合是指多层之间融合在一起，切小块循环计算，数据在内部RAM传递，不读写DDR。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0：去使能。
+    -   1：使能。
+
+-   参数默认值：1
+
+推荐配置及收益：层间深度融合可以减少DDR读写，提升性能，推荐配置1。
+
+示例：
+
+```
 --layer_fusion_enable=1
-``` 依赖约束：无 #### --layer\_m2m\_enable<a name="ZH-CN_TOPIC_0000002442021373"></a> 功能说明：层间数据共享的使能开关。层间数据共享是指两层之间，上一层的输出数据在内部RAM共享给下一层作为输入数据，不读写DDR。 关联参数：无 参数取值： - 参数值：\[0,1\] - 0：去使能。 - 1：使能。 - 参数默认值：1 推荐配置及收益：层间数据共享可以减少DDR读写，提升性能，推荐配置1。 示例： ```
+```
+
+依赖约束：无
+
+#### --layer\_m2m\_enable<a name="ZH-CN_TOPIC_0000002442021373"></a>
+
+功能说明：层间数据共享的使能开关。层间数据共享是指两层之间，上一层的输出数据在内部RAM共享给下一层作为输入数据，不读写DDR。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0：去使能。
+    -   1：使能。
+
+-   参数默认值：1
+
+推荐配置及收益：层间数据共享可以减少DDR读写，提升性能，推荐配置1。
+
+示例：
+
+```
 --layer_m2m_enable=1
-``` 依赖约束：无 #### --force\_to\_cpu<a name="ZH-CN_TOPIC_0000002408581746"></a> 功能说明：强制指定某些层为cpu层。 关联参数：无 参数取值：指定算子的层名。 参数值约束：只能配置支持cpu的算子。 推荐配置及收益：如fp16数据范围精度导致的精度问题下降，可将对应算子设置成cpu算子，提升精度。 示例： 指定gather1和gather2为cpu算子 --force\_to\_cpu=gather1；gather2 #### --softmax\_optimize\_enable<a name="ZH-CN_TOPIC_0000002441980961"></a> 功能说明：softmax性能优化开关。 关联参数：无 参数取值： - 参数值：\[0,1\] - 0：关闭softmax性能优化。 - 1：使能softmax性能优化，axis为-1时性能收益2-4倍。 当（最大值 - 数据）\> 9.010911时，存在精度损失风险。如输入数据\[10, 0.1\]，预期输出\[0.9999498, 0.0000501\]，实际输出\[1.000000, 0.000000\]。 - 参数默认值：0 示例： ```
+```
+
+依赖约束：无
+
+#### --force\_to\_cpu<a name="ZH-CN_TOPIC_0000002408581746"></a>
+
+功能说明：强制指定某些层为cpu层。
+
+关联参数：无
+
+参数取值：指定算子的层名。
+
+参数值约束：只能配置支持cpu的算子。
+
+推荐配置及收益：如fp16数据范围精度导致的精度问题下降，可将对应算子设置成cpu算子，提升精度。
+
+示例：
+
+指定gather1和gather2为cpu算子
+
+--force\_to\_cpu=gather1；gather2
+
+#### --softmax\_optimize\_enable<a name="ZH-CN_TOPIC_0000002441980961"></a>
+
+功能说明：softmax性能优化开关。
+
+关联参数：无
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0：关闭softmax性能优化。
+    -   1：使能softmax性能优化，axis为-1时性能收益2-4倍。
+
+        当（最大值 - 数据）\> 9.010911时，存在精度损失风险。如输入数据\[10, 0.1\]，预期输出\[0.9999498, 0.0000501\]，实际输出\[1.000000, 0.000000\]。
+
+-   参数默认值：0
+
+示例：
+
+```
 --softmax_optimize_enable=1
-``` 依赖约束：无 #### --n\_loop\_enable<a name="ZH-CN_TOPIC_0000002408421734"></a> 功能说明：当n\>1，是否开启n循环。 关联参数：当开启该功能时，[--batch\_num](#ZH-CN_TOPIC_0000002408581538)将强制为1 参数取值： - 参数值：\[0,1\] - 0：去使能。 - 1：使能。 - 参数默认值：0
-- 参数值约束：网络包含Recurrent层、ROIPooling/PSROIPooling层、RPN硬化层、IF/LOOP/SCAN等控制层时，不支持该配置使能 推荐配置及收益：开启n循环可以使网络使用n==1的shape进行指令生成：更小的shape将更易进行片上buffer交互，减少ddr交互，提升性能。但如果网络n\>1的shape不大，算子间在未开启n循环的时候就能使用片上buffer交互，那么该配置将没有收益，或者会有负收益。因此该配置不一定有性能收益，可以先尝试是否有收益再使用。 示例： ```
+```
+
+依赖约束：无
+
+#### --n\_loop\_enable<a name="ZH-CN_TOPIC_0000002408421734"></a>
+
+功能说明：当n\>1，是否开启n循环。
+
+关联参数：当开启该功能时，[--batch\_num](#ZH-CN_TOPIC_0000002408581538)将强制为1
+
+参数取值：
+
+-   参数值：\[0,1\]
+    -   0：去使能。
+    -   1：使能。
+
+-   参数默认值：0
+-   参数值约束：网络包含Recurrent层、ROIPooling/PSROIPooling层、RPN硬化层、IF/LOOP/SCAN等控制层时，不支持该配置使能
+
+推荐配置及收益：开启n循环可以使网络使用n==1的shape进行指令生成：更小的shape将更易进行片上buffer交互，减少ddr交互，提升性能。但如果网络n\>1的shape不大，算子间在未开启n循环的时候就能使用片上buffer交互，那么该配置将没有收益，或者会有负收益。因此该配置不一定有性能收益，可以先尝试是否有收益再使用。
+
+示例：
+
+```
 --n_loop_enable=1
-``` 依赖约束：无 ### 调试选项<a name="ZH-CN_TOPIC_0000002441981145"></a> #### --save\_original\_model<a name="ZH-CN_TOPIC_0000002408582058"></a> 功能说明：是否生成原始模型文件，用于功能仿真。原始模型文件包含了离线模型文件，所以也可用于上板运行。 关联参数：该参数需要与[ --output](#ZH-CN_TOPIC_0000002408422394)参数配合使用。 参数取值： - 参数值 - false：不生成原始模型文件。 - true：生成原始模型文件。 - 参数默认值：false
-- 参数值约束：若设置为true，在--output参数指定路径下生成原始模型文件（以后缀“\*\_original.om”格式结尾），用于功能仿真，也可用于上板运行。 推荐配置及收益：无 示例： ```
---output=/home/test/out/caffe_resnet50 --save_original_model=true
-``` 模型转换成功后，在out目录下生成原始模型文件caffe\_resnet50\_original.om。 依赖约束：无 #### --dump\_mode<a name="ZH-CN_TOPIC_0000002408421858"></a> 功能说明：是否生成带shape信息的json文件。 关联参数：该参数需要与[--json](#ZH-CN_TOPIC_0000002441981241)、[--mode](#ZH-CN_TOPIC_0000002442021181)=1、[--framework](#ZH-CN_TOPIC_0000002408421866)、[--om](#ZH-CN_TOPIC_0000002442021509)参数（需要为原始模型文件，如果为Caffe框架模型文件，还需要增加[--weight](#ZH-CN_TOPIC_0000002408421790)参数）配合使用。 参数取值 - 参数值： - 0：不使能。 - 1：使能。 - 参数默认值：0 推荐配置及收益：无 示例： ```
-atc --mode=1 --om=$HOME/test/resnet50.prototxt --json=$HOME/test/out/resnet50.json --framework=0 --weight=$HOME/test/resnet50.caffemodel --dump_mode=1
-``` 依赖约束：无 #### --dump\_data<a name="ZH-CN_TOPIC_0000002408422274"></a> 功能说明：导出ATC转换模型过程中的数据到文件。 关联参数：无 参数取值 - 参数值：范围\[0,31\] 0：不导出。 1：导出校准量化参数时每层quant-\>dequant-\>forward的数据到mapper\_quant目录。文件为protobuf格式，.dump后缀。 2：导出使用量化参数仿真时每层quant-\>forward-\>dequant的数据到mapper\_simulate目录，文件为protobuf格式，.dump后缀。 4：导出校准量化参数时的权重、模型参数等数据。 8：导出校准量化参数时每层quant-\>dequant-\>forward的数据到mapper\_quant目录，文件为txt格式，.float后缀。 16：导出使用量化参数仿真时每层quant-\>forward-\>dequant的数据到mapper\_simulate目录，文件为txt格式，.float后缀。 值\{1,2,4\}可以组合成\{3,5,6,7\}，如配置3，即1+2，同时导出mapper\_quant和mapper\_simulate。 - 参数默认值：0
-- 参数值约束：mapper\_simulate依赖mapper\_quant，即导出mapper\_simulate时需同时导出mapper\_quant。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+### 调试选项<a name="ZH-CN_TOPIC_0000002441981145"></a>
+
+
+
+
+
+
+
+#### --save\_original\_model<a name="ZH-CN_TOPIC_0000002408582058"></a>
+
+功能说明：是否生成原始模型文件，用于功能仿真。原始模型文件包含了离线模型文件，所以也可用于上板运行。
+
+关联参数：该参数需要与[ --output](#ZH-CN_TOPIC_0000002408422394)参数配合使用。
+
+参数取值：
+
+-   参数值
+    -   false：不生成原始模型文件。
+    -   true：生成原始模型文件。
+
+-   参数默认值：false
+-   参数值约束：若设置为true，在--output参数指定路径下生成原始模型文件（以后缀“\*\_original.om”格式结尾），用于功能仿真，也可用于上板运行。
+
+推荐配置及收益：无
+
+示例：
+
+```
+--output=/home/test/out/caffe_resnet50  --save_original_model=true
+```
+
+模型转换成功后，在out目录下生成原始模型文件caffe\_resnet50\_original.om。
+
+依赖约束：无
+
+#### --dump\_mode<a name="ZH-CN_TOPIC_0000002408421858"></a>
+
+功能说明：是否生成带shape信息的json文件。
+
+关联参数：该参数需要与[--json](#ZH-CN_TOPIC_0000002441981241)、[--mode](#ZH-CN_TOPIC_0000002442021181)=1、[--framework](#ZH-CN_TOPIC_0000002408421866)、[--om](#ZH-CN_TOPIC_0000002442021509)参数（需要为原始模型文件，如果为Caffe框架模型文件，还需要增加[--weight](#ZH-CN_TOPIC_0000002408421790)参数）配合使用。
+
+参数取值
+
+-   参数值：
+    -   0：不使能。
+    -   1：使能。
+
+-   参数默认值：0
+
+推荐配置及收益：无
+
+示例：
+
+```
+atc --mode=1 --om=$HOME/test/resnet50.prototxt  --json=$HOME/test/out/resnet50.json  --framework=0 --weight=$HOME/test/resnet50.caffemodel --dump_mode=1
+```
+
+依赖约束：无
+
+#### --dump\_data<a name="ZH-CN_TOPIC_0000002408422274"></a>
+
+功能说明：导出ATC转换模型过程中的数据到文件。
+
+关联参数：无
+
+参数取值
+
+-   参数值：范围\[0,31\]
+
+    0：不导出。
+
+    1：导出校准量化参数时每层quant-\>dequant-\>forward的数据到mapper\_quant目录。文件为protobuf格式，.dump后缀。
+
+    2：导出使用量化参数仿真时每层quant-\>forward-\>dequant的数据到mapper\_simulate目录，文件为protobuf格式，.dump后缀。
+
+    4：导出校准量化参数时的权重、模型参数等数据。
+
+    8：导出校准量化参数时每层quant-\>dequant-\>forward的数据到mapper\_quant目录，文件为txt格式，.float后缀。
+
+    16：导出使用量化参数仿真时每层quant-\>forward-\>dequant的数据到mapper\_simulate目录，文件为txt格式，.float后缀。
+
+    值\{1,2,4\}可以组合成\{3,5,6,7\}，如配置3，即1+2，同时导出mapper\_quant和mapper\_simulate。
+
+-   参数默认值：0
+-   参数值约束：mapper\_simulate依赖mapper\_quant，即导出mapper\_simulate时需同时导出mapper\_quant。
+
+推荐配置及收益：无
+
+示例：
+
+```
 --image_list=input_data.txt --dump_data=3
-``` 依赖约束：需配置--image\_list才能导出数据，否则编译报错。 #### --is\_precheck<a name="ZH-CN_TOPIC_0000002442020757"></a> 功能说明：预检查输入的参数、模型等是否满足转换离线模型的要求。满足则返回成功，但不会生成离线模型；不满足，则返回失败，用户按提示信息修改参数或模型。 关联参数：无 参数取值 - 参数值：\[0,1\] - 0：关闭预检查。 - 1：使能预检查。 - 参数默认值：0 推荐配置及收益：转换模型需要校准生成量化参数，比较耗时，使能预检查可以跳过校准，快速检查是否可以正常转换模型，节省时间。 示例： ```
+```
+
+依赖约束：需配置--image\_list才能导出数据，否则编译报错。
+
+#### --is\_precheck<a name="ZH-CN_TOPIC_0000002442020757"></a>
+
+功能说明：预检查输入的参数、模型等是否满足转换离线模型的要求。满足则返回成功，但不会生成离线模型；不满足，则返回失败，用户按提示信息修改参数或模型。
+
+关联参数：无
+
+参数取值
+
+-   参数值：\[0,1\]
+    -   0：关闭预检查。
+    -   1：使能预检查。
+
+-   参数默认值：0
+
+推荐配置及收益：转换模型需要校准生成量化参数，比较耗时，使能预检查可以跳过校准，快速检查是否可以正常转换模型，节省时间。
+
+示例：
+
+```
 --is_precheck=1
-``` 依赖约束：无 #### --log\_level<a name="ZH-CN_TOPIC_0000002442021257"></a> 功能说明：ATC的日志级别。 关联参数：无 参数取值 - 参数值：\[0,3\] 0：必要的日志信息。 1：接口级的日志信息。 2：模块级的日志信息。 3：函数级的日志信息。 - 参数默认值：0 推荐配置及收益：配置值越大，输出日志信息越多，转换模型的时间越长，推荐配置为0。 示例： ```
+```
+
+依赖约束：无
+
+#### --log\_level<a name="ZH-CN_TOPIC_0000002442021257"></a>
+
+功能说明：ATC的日志级别。
+
+关联参数：无
+
+参数取值
+
+-   参数值：\[0,3\]
+
+    0：必要的日志信息。
+
+    1：接口级的日志信息。
+
+    2：模块级的日志信息。
+
+    3：函数级的日志信息。
+
+-   参数默认值：0
+
+推荐配置及收益：配置值越大，输出日志信息越多，转换模型的时间越长，推荐配置为0。
+
+示例：
+
+```
 --log_level=0
-``` 依赖约束：无 #### --forward\_quantization\_option<a name="ZH-CN_TOPIC_0000002442021161"></a> 功能说明：ATC转换模型校准时的量化选项。控制推理时是否使能数据量化或权重量化。 关联参数：无 参数取值 - 参数值： 0：关闭数据和权重量化。 1：使能数据量化。 2：使能权重量化。 3：使能数据和权重量化。 - 参数默认值：3 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### --forward\_quantization\_option<a name="ZH-CN_TOPIC_0000002442021161"></a>
+
+功能说明：ATC转换模型校准时的量化选项。控制推理时是否使能数据量化或权重量化。
+
+关联参数：无
+
+参数取值
+
+-   参数值：
+
+    0：关闭数据和权重量化。
+
+    1：使能数据量化。
+
+    2：使能权重量化。
+
+    3：使能数据和权重量化。
+
+-   参数默认值：3
+
+推荐配置及收益：无
+
+示例：
+
+```
 --forward_quantization_option=0
-``` 依赖约束：无 ## 仅文件方式支持的参数<a name="ZH-CN_TOPIC_0000002408422226"></a> 以下参数仅支持以cfg文件方式配置，不支持命令行方式配置，用于兼容使用NNIE的cfg配置文件转模型。cfg文件格式见[参数配置方式](#ZH-CN_TOPIC_0000002408581658)。 ### 模型输入选项<a name="ZH-CN_TOPIC_0000002441981333"></a> 以下配置不能和insert\_op\_conf同时配置。 #### image\_type<a name="ZH-CN_TOPIC_0000002441981689"></a> 功能说明：输入数据格式。 关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。 参数取值： - 参数值：整型数。 - 0：Feature map - 1：BGR\_PLANAR - 2：YUV420SP - 3：YVU420SP - 4：YUV422SP - 5：YVU422SP - 6：YUV400 - 7：RGB\_PLANAR - 8：RGB\_PACKAGE - 9：BGR\_PACKAGE - 10：XRGB\_PLANAR - 11：XBGR\_PLANAR - 12：RGBX\_PLANAR - 13：BGRX\_PLANAR - 14：XRGB\_PACKAGE - 15：XBGR\_PACKAGE - 16：RGBX\_PACKAGE - 17：BGRX\_PACKAGE - 18：RAW\_RGGB - 19：RAW\_GRBG - 20：RAW\_GBRG - 21：RAW\_BGGR - 参数值约束: 不能和insert\_op\_conf同时配置 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+## 仅文件方式支持的参数<a name="ZH-CN_TOPIC_0000002408422226"></a>
+
+以下参数仅支持以cfg文件方式配置，不支持命令行方式配置，用于兼容使用NNIE的cfg配置文件转模型。cfg文件格式见[参数配置方式](#ZH-CN_TOPIC_0000002408581658)。
+
+
+### 模型输入选项<a name="ZH-CN_TOPIC_0000002441981333"></a>
+
+以下配置不能和insert\_op\_conf同时配置。
+
+
+
+
+
+
+#### image\_type<a name="ZH-CN_TOPIC_0000002441981689"></a>
+
+功能说明：输入数据格式。
+
+关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。
+
+参数取值：
+
+-   参数值：整型数。
+    -   0：Feature map
+    -   1：BGR\_PLANAR
+    -   2：YUV420SP
+    -   3：YVU420SP
+    -   4：YUV422SP
+    -   5：YVU422SP
+    -   6：YUV400
+    -   7：RGB\_PLANAR
+    -   8：RGB\_PACKAGE
+    -   9：BGR\_PACKAGE
+    -   10：XRGB\_PLANAR
+    -   11：XBGR\_PLANAR
+    -   12：RGBX\_PLANAR
+    -   13：BGRX\_PLANAR
+    -   14：XRGB\_PACKAGE
+    -   15：XBGR\_PACKAGE
+    -   16：RGBX\_PACKAGE
+    -   17：BGRX\_PACKAGE
+    -   18：RAW\_RGGB
+    -   19：RAW\_GRBG
+    -   20：RAW\_GBRG
+    -   21：RAW\_BGGR
+
+-   参数值约束: 不能和insert\_op\_conf同时配置
+
+推荐配置及收益：无
+
+示例：
+
+```
 [image_type] 1
 [norm_type] 5
 [data_scale] 0.00390625
 [mean_file] mean.txt
-``` 依赖约束：无 #### norm\_type<a name="ZH-CN_TOPIC_0000002408582174"></a> 功能说明：对输入数据的预处理方法。 关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。 参数取值： - 参数值：整型数。 - 0：不做任何预处理； - 1：减图像均值； - 2：减通道均值； - 3：对图像像素值乘以data\_scale； - 4：减图像均值后再乘以data\_scale； - 5：减通道均值后再乘以data\_scale。 - 参数值约束: 不能和insert\_op\_conf同时配置 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### norm\_type<a name="ZH-CN_TOPIC_0000002408582174"></a>
+
+功能说明：对输入数据的预处理方法。
+
+关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。
+
+参数取值：
+
+-   参数值：整型数。
+    -   0：不做任何预处理；
+    -   1：减图像均值；
+    -   2：减通道均值；
+    -   3：对图像像素值乘以data\_scale；
+    -   4：减图像均值后再乘以data\_scale；
+    -   5：减通道均值后再乘以data\_scale。
+
+-   参数值约束: 不能和insert\_op\_conf同时配置
+
+推荐配置及收益：无
+
+示例：
+
+```
 [image_type] 1
 [norm_type] 5
 [data_scale] 0.00390625
 [mean_file] mean.txt
-``` 依赖约束：无 #### data\_scale<a name="ZH-CN_TOPIC_0000002442020791"></a> 功能说明：数据预处理缩放比例，配置为浮点数，配合norm\_type使用。 关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。 参数取值： - 参数值：浮点数。
-- 参数值约束: 不能和insert\_op\_conf同时配置
-- 参数默认值：0.00390625 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### data\_scale<a name="ZH-CN_TOPIC_0000002442020791"></a>
+
+功能说明：数据预处理缩放比例，配置为浮点数，配合norm\_type使用。
+
+关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。
+
+参数取值：
+
+-   参数值：浮点数。
+-   参数值约束: 不能和insert\_op\_conf同时配置
+-   参数默认值：0.00390625
+
+推荐配置及收益：无
+
+示例：
+
+```
 [image_type] 1
 [norm_type] 5
 [data_scale] 0.00390625
 [mean_file] mean.txt
-``` 依赖约束：无 #### mean\_file<a name="ZH-CN_TOPIC_0000002408421854"></a> 功能说明：均值文件。 关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。 参数取值： - 参数值：文件路径与文件名。
-- 参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。 参数值约束: - 不能和insert\_op\_conf同时配置。
-- norm\_type为1、4时，表示均值文件xxx.binaryproto，caffe框架导出的预处理文件，已经过时，不建议使用。
-- norm\_type为2、5时，表示通道均值文件。
-- norm\_type为0、3时，用户也需要配置mean\_file项，但具体内容可以是一个无效路径，比如null；通道均值文件中每一行的浮点数表示对应的通道均值，如单通道只有一个值。 示例：3个通道的mean.txt ``` 123.675 116.28‬ 103.53 ``` 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### mean\_file<a name="ZH-CN_TOPIC_0000002408421854"></a>
+
+功能说明：均值文件。
+
+关联参数：一个输入对应一组image\_type，norm\_type，data\_scale，mean\_file。
+
+参数取值：
+
+-   参数值：文件路径与文件名。
+-   参数值格式：路径和文件名，支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）、中文字符。
+
+参数值约束:
+
+-   不能和insert\_op\_conf同时配置。
+-   norm\_type为1、4时，表示均值文件xxx.binaryproto，caffe框架导出的预处理文件，已经过时，不建议使用。
+-   norm\_type为2、5时，表示通道均值文件。
+-   norm\_type为0、3时，用户也需要配置mean\_file项，但具体内容可以是一个无效路径，比如null；通道均值文件中每一行的浮点数表示对应的通道均值，如单通道只有一个值。
+
+    示例：3个通道的mean.txt
+
+    ```
+    123.675
+    116.28‬
+    103.53
+    ```
+
+推荐配置及收益：无
+
+示例：
+
+```
 [image_type] 1
 [norm_type] 5
 [data_scale] 0.00390625
 [mean_file] mean.txt
-``` 依赖约束：无 #### RGB\_order<a name="ZH-CN_TOPIC_0000002408581546"></a> 功能说明：对输入数据做通道转换，转换后的通道顺序。 关联参数：image\_type。 参数取值： - 参数值：字符串。取值范围\{RGB，BGR，XRGB，RGBX，XBGR，BGRX，RGGB，GRBG，GBRG，BGGR\}
-- 参数值约束: 配置值需和image\_type的类型匹配。多个输入时，共用一个配置。 推荐配置及收益：无 示例： ```
+```
+
+依赖约束：无
+
+#### RGB\_order<a name="ZH-CN_TOPIC_0000002408581546"></a>
+
+功能说明：对输入数据做通道转换，转换后的通道顺序。
+
+关联参数：image\_type。
+
+参数取值：
+
+-   参数值：字符串。取值范围\{RGB，BGR，XRGB，RGBX，XBGR，BGRX，RGGB，GRBG，GBRG，BGGR\}
+-   参数值约束: 配置值需和image\_type的类型匹配。多个输入时，共用一个配置。
+
+推荐配置及收益：无
+
+示例：
+
+```
 [RGB_order] RGB
-``` 依赖约束：image\_type配置的输入为图像格式时才生效。 ## 已废弃参数<a name="ZH-CN_TOPIC_0000002408422390"></a> --recurrent\_cont：仅支持continuous模式，不需要配置。 # 定制网络修改（Caffe）
-## 简介<a name="ZH-CN_TOPIC_0000002442021045"></a> 本章节修改只适用于Caffe网络模型。 网络的算子可以分为如下几类。 - 标准算子：图像分析引擎支持的Caffe标准算子，比如Convolution等。
-- 扩展算子：图像分析引擎支持的公开但非Caffe标准算子，分为 2 种： - 一种是基于Caffe框架进行自定义扩展的算子，比如Faster RCNN中的ROIPooling、SSD中的归一化算子Normalize等。 - 另外一种是来源于其他图像分析方法框架的自定义算子，比如YOLOv2中Passthrough等。 Faster RCNN、SSD等网络模型都包含了一些原始Caffe框架中没有定义的算子结构，如ROIPooling、Normalize、PSROI Pooling和Upsample等。为了使图像分析引擎能支持这些网络，需要对原始的Caffe框架网络模型进行扩展，降低开发者开发自定义算子/开发后处理代码的工作量。若开发者的Caffe框架网络模型中使用了这些扩展算子，在进行模型转换时，需要先在prototxt中修改/添加扩展层的定义，才能成功进行模型转换。 本章节提供了图像分析引擎的扩展算子列表，并给出了如何根据扩展算子修改prototxt文件方法。 ## Recurrent网络prototxt示例<a name="ZH-CN_TOPIC_0000002442021301"></a> >![](public_sys-resources/icon-notice.gif) **须知：** >带continuous模式下：同caffe prototxt一致，data层及Recurrent层包含continuous，但是N维度必须1；
->请参考customer/Software/sample/中lstm、rnn、gru 的sample写法。 ### prototxt针对RNN层书写规范<a name="ZH-CN_TOPIC_0000002442020817"></a> RNN的基本计算公式如下 \(与Caffe一致\)： - 输入: _x_<sub>_t,_</sub>_cont,h_<sub>_t-1_</sub>
-- 输出：_O_<sub>_t_,</sub>_h_<sub>_t_</sub>
-- 隐藏层：h<sub>_t_</sub>=tanh\(_w_<sub>_xh_</sub>_x_<sub>_t_</sub>+_w_<sub>_hh_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_h_</sub>\)
-- 输出层：o<sub>t</sub>=tanh\(_w_<sub>_ho_</sub>_h_<sub>_t_</sub>+_b_<sub>_0_</sub>\) 若有额外固定输入向量 x<sub>_static_</sub>，计算公式变为： - 输入: _x_<sub>_t,_</sub>_cont,h_<sub>_t-1_</sub>
-- 输出：_O_<sub>_t_,</sub>_h_<sub>_t_</sub>
-- 隐藏层：h<sub>_t_</sub>=tanh\(_w_<sub>_xh_</sub>_x_<sub>_t_</sub>+_w_<sub>_hh_</sub>_h_<sub>_t-1_</sub>+w<sub>_sh_</sub>x<sub>_static_</sub>+_b_<sub>_h_</sub>\)
-- 输出层：o<sub>t</sub>=tanh\(_w_<sub>_ho_</sub>_h_<sub>_t_</sub>+_b_<sub>_0_</sub>\) 基于以上计算公式，RNN的prototxt有以下4种场景。 #### 通常场景（expose\_hidden=false，2输入，1输出）<a name="ZH-CN_TOPIC_0000002441981605"></a> _Input: x_<sub>_t_</sub>\(1\~_T_\)__,cont\(1\~T\)__ _Output: o_<sub>_t_</sub>\(1\~_T_\) Prototxt示例如下，有2个bottom和1个top，，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应cont_\(_1_\~T\)_，top\[0\]对应_o_<sub>_t_</sub>_\(_1_\~T\)_： - 若recurrent\_param的expose\_hidden 没配，默认值为false；
-- 不支持recurrent\_param 的debug\_info，配置不会生效。 ```
-layer { name: "rnn1" type: "RNN" bottom: "data0_xt" bottom: "data1_cont" top: "rnn1_ht " recurrent_param { num_output: 1000 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } }
+```
+
+依赖约束：image\_type配置的输入为图像格式时才生效。
+
+## 已废弃参数<a name="ZH-CN_TOPIC_0000002408422390"></a>
+
+--recurrent\_cont：仅支持continuous模式，不需要配置。
+
+# 定制网络修改（Caffe）
+## 简介<a name="ZH-CN_TOPIC_0000002442021045"></a>
+
+本章节修改只适用于Caffe网络模型。
+
+网络的算子可以分为如下几类。
+
+-   标准算子：图像分析引擎支持的Caffe标准算子，比如Convolution等。
+-   扩展算子：图像分析引擎支持的公开但非Caffe标准算子，分为 2 种：
+    -   一种是基于Caffe框架进行自定义扩展的算子，比如Faster RCNN中的ROIPooling、SSD中的归一化算子Normalize等。
+    -   另外一种是来源于其他图像分析方法框架的自定义算子，比如YOLOv2中Passthrough等。
+
+Faster RCNN、SSD等网络模型都包含了一些原始Caffe框架中没有定义的算子结构，如ROIPooling、Normalize、PSROI Pooling和Upsample等。为了使图像分析引擎能支持这些网络，需要对原始的Caffe框架网络模型进行扩展，降低开发者开发自定义算子/开发后处理代码的工作量。若开发者的Caffe框架网络模型中使用了这些扩展算子，在进行模型转换时，需要先在prototxt中修改/添加扩展层的定义，才能成功进行模型转换。
+
+本章节提供了图像分析引擎的扩展算子列表，并给出了如何根据扩展算子修改prototxt文件方法。
+
+## Recurrent网络prototxt示例<a name="ZH-CN_TOPIC_0000002442021301"></a>
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>带continuous模式下：同caffe prototxt一致，data层及Recurrent层包含continuous，但是N维度必须1；
+>请参考customer/Software/sample/中lstm、rnn、gru 的sample写法。
+
+
+
+
+
+### prototxt针对RNN层书写规范<a name="ZH-CN_TOPIC_0000002442020817"></a>
+
+RNN的基本计算公式如下 \(与Caffe一致\)：
+
+-   输入:  _x_<sub>_t,_</sub>_cont,h_<sub>_t-1_</sub>
+-   输出：_O_<sub>_t_,</sub>_h_<sub>_t_</sub>
+-   隐藏层：h<sub>_t_</sub>=tanh\(_w_<sub>_xh_</sub>_x_<sub>_t_</sub>+_w_<sub>_hh_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_h_</sub>\)
+-   输出层：o<sub>t</sub>=tanh\(_w_<sub>_ho_</sub>_h_<sub>_t_</sub>+_b_<sub>_0_</sub>\)
+
+若有额外固定输入向量 x<sub>_static_</sub>，计算公式变为：
+
+-   输入:  _x_<sub>_t,_</sub>_cont,h_<sub>_t-1_</sub>
+-   输出：_O_<sub>_t_,</sub>_h_<sub>_t_</sub>
+-   隐藏层：h<sub>_t_</sub>=tanh\(_w_<sub>_xh_</sub>_x_<sub>_t_</sub>+_w_<sub>_hh_</sub>_h_<sub>_t-1_</sub>+w<sub>_sh_</sub>x<sub>_static_</sub>+_b_<sub>_h_</sub>\)
+-   输出层：o<sub>t</sub>=tanh\(_w_<sub>_ho_</sub>_h_<sub>_t_</sub>+_b_<sub>_0_</sub>\)
+
+基于以上计算公式，RNN的prototxt有以下4种场景。
+
+
+
+
+
+#### 通常场景（expose\_hidden=false，2输入，1输出）<a name="ZH-CN_TOPIC_0000002441981605"></a>
+
+_Input: x_<sub>_t_</sub>\(1\~_T_\)__,cont\(1\~T\)__
+
+_Output: o_<sub>_t_</sub>\(1\~_T_\)
+
+Prototxt示例如下，有2个bottom和1个top，，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应cont_\(_1_\~T\)_，top\[0\]对应_o_<sub>_t_</sub>_\(_1_\~T\)_：
+
+-   若recurrent\_param的expose\_hidden 没配，默认值为false；
+-   不支持recurrent\_param 的debug\_info，配置不会生效。
+
+```
+layer { 
+  name: "rnn1" 
+  type: "RNN" 
+  bottom: "data0_xt" 
+  bottom: "data1_cont" 
+  top: "rnn1_ht " 
+  recurrent_param { 
+    num_output: 1000 
+    weight_filler { 
+      type: "uniform" 
+      min: -0.08 
+      max: 0.08 
+    } 
+    bias_filler { 
+      type: "constant" 
+      value: 0 
+    } 
+ }
 }
-``` #### 隐藏参数显式输入输出（expose\_hidden=true，3输入，2输出）<a name="ZH-CN_TOPIC_0000002441980945"></a> _Input: x_<sub>_t_</sub>_\(_1_\~T\),cont\(1\~T\),h_<sub>0</sub> _Output: o_<sub>_t_</sub>_\(_1_\~T\),h_<sub>_T_</sub> Prototxt示例如下，有3个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应cont_\(_1_\~T\)_，bottom\[2\]对应_h_<sub>0</sub>，top\[0\]对应_o_<sub>_t_</sub>_\(_1_\~T\)_，top\[1\]对应_h_<sub>_T_</sub>； - _h_<sub>0</sub>的向量维度须与recurrent\_param的num\_output一致；
-- 只有前两个bottom与第一个top有时间的维度。
-- expose\_hidden=true配置下，不支持后接InnerProduct层。 ```
-layer { name: "rnn1" type: "RNN" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_h0" top: "rnn1_ht " top: "rnn1_hT" recurrent_param { num_output: 1000 expose_hidden=1 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } }
+```
+
+#### 隐藏参数显式输入输出（expose\_hidden=true，3输入，2输出）<a name="ZH-CN_TOPIC_0000002441980945"></a>
+
+_Input: x_<sub>_t_</sub>_\(_1_\~T\),cont\(1\~T\),h_<sub>0</sub>
+
+_Output: o_<sub>_t_</sub>_\(_1_\~T\),h_<sub>_T_</sub>
+
+Prototxt示例如下，有3个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应cont_\(_1_\~T\)_，bottom\[2\]对应_h_<sub>0</sub>，top\[0\]对应_o_<sub>_t_</sub>_\(_1_\~T\)_，top\[1\]对应_h_<sub>_T_</sub>；
+
+-   _h_<sub>0</sub>的向量维度须与recurrent\_param的num\_output一致；
+-   只有前两个bottom与第一个top有时间的维度。
+-   expose\_hidden=true配置下，不支持后接InnerProduct层。
+
+```
+layer { 
+  name: "rnn1" 
+  type: "RNN" 
+  bottom: "data0_xt" 
+  bottom: "data1_cont" 
+  bottom: "data2_h0" 
+  top: "rnn1_ht " 
+  top: "rnn1_hT" 
+  recurrent_param { 
+    num_output: 1000 
+    expose_hidden=1 
+    weight_filler { 
+      type: "uniform" 
+      min: -0.08 
+      max: 0.08 
+    } 
+    bias_filler { 
+      type: "constant" 
+      value: 0 
+    } 
+  }
 }
-``` #### 具有额外的固定输入（expose\_hidden=false，3输入，1输出）<a name="ZH-CN_TOPIC_0000002441981461"></a> _Input: x_<sub>_t_</sub>_\(1\~T\),cont\(1\~T\),x_<sub>_static_</sub> _Output: o_<sub>_t_</sub>_\(1\~T\)_ Prototxt示例如下，有3个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，bottom\[2\]对应_x_<sub>_static_</sub>，top对应_o_<sub>_t_</sub>_\(1\~T\)_； - _x_<sub>_t_</sub>_\(1\~T\)_和_cont_\(1\~T\)__的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
-- 如果recurrent\_param 的expose\_hidden 没配，默认值为false；
-- 不支持recurrent\_param 的debug\_info，配置不会生效。 ```
-layer { name: "rnn1" type: "RNN" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_xstatic" top: "rnn1_ht " recurrent_param { num_output: 1000 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` #### 既有固定输入，又有显式的隐藏参数（expose\_hidden=true，4输入，2输出）<a name="ZH-CN_TOPIC_0000002441981357"></a> _Input: x_<sub>_t_</sub>_\(1\~T\),cont\(1\~T\),x_<sub>_static_</sub>_,h_<sub>0</sub> _Output: o_<sub>_t_</sub>_\(1\~T\),h_<sub>_T_</sub> Prototxt示例如下，有3个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，bottom\[2\]对应_x_<sub>_static_</sub>，bottom\[3\]对应_h_<sub>0</sub>，top\[0\]对应_o_<sub>_t_</sub>_\(1\~T\)_，top\[1\]对应_h_<sub>_T_</sub>； - _h_<sub>0</sub>的向量维度必须与recurrent\_param的num\_output一致；
-- _x_<sub>_t_</sub>_\(1\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
-- 只有前两个bottom与第一个top有时间的纬度；
-- expose\_hidden=true配置下，不支持后接InnerProduct层。 ```
-layer { name: "rnn1" type: "RNN" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_xstatic" bottom: "data3_h0" top: "rnn1_ht" top: "rnn1_hT" recurrent_param { num_output: 1000 expose_hidden=1 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` ### prototxt针对LSTM层书写规范<a name="ZH-CN_TOPIC_0000002408422326"></a> LSTM的基本计算公式如下 \(与Caffe一致\)： - 输入门：_i_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xi_</sub>_x_<sub>_t_</sub>+_w_<sub>_hi_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_i_</sub>\)
-- 遗忘门：_f_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xf_</sub>_x_<sub>_t_</sub>+_w_<sub>_hf_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_f_</sub>\)
-- 输入值：_g_<sub>_t_</sub>=_tanh_\(_w_<sub>_xg_</sub>_x_<sub>_t_</sub>+_w_<sub>_hg_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_g_</sub>\)
-- 当前cell：_c_<sub>_t_</sub>=_i_<sub>_t_</sub>_\*g_<sub>_t_</sub> +_f_<sub>_t_</sub>_\*c_<sub>_t-1_</sub>
-- 输出门：_o_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xo_</sub>_x_<sub>_t_</sub>+_w_<sub>_ho_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_0_</sub>\) 若有额外固定输入向量_x_<sub>_static_</sub>，计算公式变为： - 输入门：_i_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xi_</sub>_x_<sub>_t_</sub>+_w_<sub>_hi_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_si_</sub>_x_<sub>_static_</sub>+_b_<sub>_i_</sub>\)
-- 遗忘门：_f_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xf_</sub>_x_<sub>_t_</sub>+_w_<sub>_hf_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sf_</sub>_x_<sub>_static_</sub>+_b_<sub>_f_</sub>\)
-- 输入值：_g_<sub>_t_</sub>=_tanh_\(_w_<sub>_xg_</sub>_x_<sub>_t_</sub>+_w_<sub>_hg_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sg_</sub>_x_<sub>_static_</sub>+_b_<sub>_g_</sub>\)
-- 当前cell：_c_<sub>_t_</sub>=_i_<sub>_t_</sub>_\*g_<sub>_t_</sub> +_f_<sub>_t_</sub>_\*c_<sub>_t-1_</sub>
-- 输出门：_o_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xo_</sub>_x_<sub>_t_</sub>+_w_<sub>_ho_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_so_</sub>_x_<sub>_static_</sub>+_b_<sub>_0_</sub>\) 基于以上计算公式，LSTM的prototxt有以下4种场景。 #### 通常场景（expose\_hidden=false，2输入，1输出）<a name="ZH-CN_TOPIC_0000002408581910"></a> _Input: x_<sub>_t_</sub>\(1\~_T_\)_,cont\(1\~T\)_ _Output: h_<sub>_t_</sub>\(1\~_T_\) Prototxt示例如下，有2个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，top\[0\]对应_h_<sub>_t_</sub>\(1\~_T_\)。 - 若recurrent\_param的expose\_hidden 没配，默认值为false；
-- 不支持recurrent\_param 的debug\_info，配置不会生效。 ```
-layer { name: "lstm1" type: "LSTM" bottom: "data0_xt" bottom: "data1_cont" top: "lstm1_ht" recurrent_param { num_output: 1000 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` #### 隐藏参数显式输入输出（expose\_hidden=true，4输入，3输出）<a name="ZH-CN_TOPIC_0000002408422230"></a> _Input: x_<sub>_t_</sub>_\(1\~T\)_,cont\(1\~T\)__,_h_<sub>0</sub>,c<sub>0</sub> _Output: h_<sub>_t_</sub>_\(1\~T\)_,_h_<sub>_T_</sub>,c<sub>T</sub> Prototxt示例如下，有4个bottom和3个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应_cont\(1\~T\)_，bottom\[2\]对应_h_<sub>0</sub>，bottom\[3\]对应c<sub>0</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(1\~T\)_，top\[1\]对应_h_<sub>_T_</sub>，top\[2\]对应c<sub>T</sub>； - _h_<sub>0</sub>,c<sub>0</sub>的向量维度须与recurrent\_param的num\_output一致；
-- 只有前两个bottom与第一个top有时间的维度；
-- 不支持recurrent\_param 的debug\_info，配置不会生效；
-- expose\_hidden=true配置下，不支持后接InnerProduct层。 ```
-layer { name: "lstm1" type: "LSTM" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_h0" bottom: "data3_c0" top: "lstm1_ht" top: "lstm1_hT" top: "lstm1_cT" recurrent_param { num_output: 1000 expose_hidden = 1 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` #### 具有额外的固定输入（expose\_hidden=false，3输入，1输出）<a name="ZH-CN_TOPIC_0000002408421742"></a> _Input: x_<sub>_t_</sub>_\(_1_\~T\),cont\(1\~T\)_,_ x_<sub>_static_</sub> _Output: h_<sub>_t_</sub>_\(_1_\~T\)_ Prototxt示例如下，有3个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont1\(\~T\)，_<sub>_ _</sub>bottom\[2\]对应_x_<sub>_static_</sub>，top对应_h_<sub>_t_</sub>_\(_1_\~T\)_； - _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
-- 只有前两个bottom与第一个top有时间的纬度；
-- 如果recurrent\_param 的expose\_hidden 没配，默认值为false；
-- 不支持recurrent\_param 的debug\_info，配置不会生效。 ```
-layer { name: "lstm1" type: "LSTM" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_xstatic" top: "lstm1_ht" recurrent_param { num_output: 1000 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` #### 既有固定输入，又有显式的隐藏参数（expose\_hidden=true，5输入，3输出）<a name="ZH-CN_TOPIC_0000002441981445"></a> _Input: x_<sub>_t_</sub>_\(_1_\~T\),cont\(1\~T\)_,_x_<sub>_static _</sub>,_h_<sub>_0_</sub>_ , c_<sub>_0_</sub> _Output: h_<sub>_t_</sub>_\(_1_\~T\)_ ,_h_<sub>_T _</sub>, _c_<sub>_T_</sub> Prototxt示例如下，有4个bottom和3个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont\(1\~T\)_，bottom\[2\]对应_x_<sub>_static_</sub>，bottom\[3\]对应_h_<sub>_0_</sub>，bottom\[4\]对应_c_<sub>_0_</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(_1_\~T\)_，top\[1\]对应_h_<sub>_T_</sub>，top\[2\]对应_c_<sub>_T_</sub>； - _h_<sub>_0_</sub>_ ,c_<sub>_0_</sub>的向量维度必须与recurrent\_param的num\_output一致；
-- _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
-- 只有前两个bottom与第一个top有时间的纬度；
-- 不支持recurrent\_param 的debug\_info，配置不会生效；
-- expose\_hidden=true配置下，不支持后接InnerProduct层。 ```
-layer { name: "lstm1" type: "LSTM" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_xstatic" bottom: "data3_h0" bottom: "data4_c0" top: "lstm1_ht" top: "lstm1_hT" top: "lstm1_cT" recurrent_param { num_output: 1000 expose_hidden = 1 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` ### prototxt针对GRU层书写规范<a name="ZH-CN_TOPIC_0000002408421698"></a> GRU的基本计算公式如下 \(与Caffe一致\)： - 重置门：_R_<sub>_t _</sub>= _sigmoid_\(_w_<sub>_xr_</sub>_x_<sub>_t_</sub>+_w_<sub>_hr_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_i_</sub>\)
-- 更新门：_Z_<sub>_t _</sub>= _sigmoid_\(_w_<sub>_xz_</sub>_x_<sub>_t_</sub>+_w_<sub>_hz_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_f_</sub>\)
-- 中间结果：_h_<sub>_hatt _</sub>= _tanh_\(_w_<sub>_hhat_</sub>_\(R_<sub>_t_</sub>_ \* h_<sub>_t-1_</sub>_\)_+_b_<sub>_g_</sub>\)
-- 输出门：_h_<sub>_t _</sub>= _sigmoid_\(_\(1 - Z_<sub>_t_</sub>_\) \* h_<sub>_t-1 _</sub>_+ Z_<sub>_t _</sub>_\* h_<sub>_hatt_</sub>\) 若有额外固定输入向量_x_<sub>_static_</sub>，计算公式变为： - 重置门：_R_<sub>_t_</sub> = _sigmoid_\(_w_<sub>_xr_</sub>_x_<sub>_t_</sub>+_w_<sub>_hr_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sr_</sub>_x_<sub>_static_</sub>+_b_<sub>_i_</sub>\)
-- 更新门：_Z_<sub>_t_</sub> = _sigmoid_\(_w_<sub>_xz_</sub>_x_<sub>_t_</sub>+_w_<sub>_hz_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sz_</sub>_x_<sub>_static_</sub>+_b_<sub>_f_</sub>\)
-- 中间结果：_h_<sub>_hatt_</sub> = _tanh_\(_w_<sub>_hhat_</sub>_\(R_<sub>_t_</sub>_ \* h_<sub>_t-1_</sub>_\)_+_b_<sub>_g_</sub>\)
-- 输出门：_h_<sub>_t _</sub>= _sigmoid_\(_\(1 - Z_<sub>_t_</sub>_\) \* h_<sub>_t-1 _</sub>_+ Z_<sub>_t _</sub>_\* h_<sub>_hatt_</sub>\) 基于以上计算公式，GRU的prototxt有以下4种场景。 #### 通常场景（expose\_hidden=false，2输入，1输出）<a name="ZH-CN_TOPIC_0000002408582146"></a> _Input: x_<sub>_t_</sub>\(1\~_T_\)_,cont\(1\~T\)_ _Output: h_<sub>_t_</sub>\(1\~_T_\) Prototxt示例如下，有2个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，top\[0\]对应_h_<sub>_t_</sub>\(1\~_T_\)： - 若recurrent\_param的expose\_hidden 没配，默认值为false；
-- 不支持recurrent\_param 的debug\_info，配置不会生效。 ```
-layer { name: "GRU1" type: "GRU" bottom: "data0_xt" bottom: "data1_cont" top: "ht" recurrent_param { num_output: 1000 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` #### 隐藏参数显式输入输出（expose\_hidden=true，3输入，2输出）<a name="ZH-CN_TOPIC_0000002442021241"></a> _Input: x_<sub>_t_</sub>_\(1\~T\)__,cont\(1\~T\)_,_h_<sub>0</sub> _Output: h_<sub>_t_</sub>_\(1\~T\)_,_h_<sub>_T_</sub> Prototxt示例如下，有2个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应_cont\(1\~T\)_，bottom\[2\]对应_h_<sub>0</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(1\~T\)_，top\[1\]对应_h_<sub>_T_</sub>； - _h_<sub>0</sub>的向量维度须与recurrent\_param的num\_output一致；
-- 只有前两个bottom与第一个top有时间的维度；
-- 不支持recurrent\_param 的debug\_info，配置不会生效；
-- expose\_hidden=true配置下，不支持后接InnerProduct层。 ```
-layer { name: "GRU1" type: "GRU" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_h0" top: "ht" top: "hT" recurrent_param { num_output: 1000 expose_hidden = 1 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` #### 具有额外的固定输入（expose\_hidden=false，3输入，1输出）<a name="ZH-CN_TOPIC_0000002442021285"></a> _Input: x_<sub>_t_</sub>_\(_1_\~T\)__,cont\(1\~T\)_,_ x_<sub>_static_</sub> _Output: h_<sub>_t_</sub>_\(_1_\~T\)_ Prototxt示例如下，有3个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont\(1\~T\)，_bottom\[2\]对应_x_<sub>_static_</sub>，top对应_h_<sub>_t_</sub>_\(_1_\~T\)_； - _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
-- 只有前两个bottom与第一个top有时间的纬度；
-- 如果recurrent\_param 的expose\_hidden 没配，默认值为false；
-- 不支持recurrent\_param 的debug\_info，配置不会生效。 ```
-layer { name: "GRU1" type: "GRU" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_xstatic" top: "ht" recurrent_param { num_output: 1000 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` #### 既有固定输入，又有显式的隐藏参数（expose\_hidden=true，4输入，2输出）<a name="ZH-CN_TOPIC_0000002408581978"></a> _Input: x_<sub>_t_</sub>_\(_1_\~T\)__,cont\(1\~T\)_,_x_<sub>_static _</sub>,_h_<sub>_0_</sub> _Output: h_<sub>_t_</sub>_\(_1_\~T\)_,_h_<sub>_T_</sub> Prototxt示例如下，有4个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont\(1\~T\)，_bottom\[2\]对应_x_<sub>_static_</sub>，bottom\[3\]对应_h_<sub>_0_</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(_1_\~T\)_，top\[1\]对应_h_<sub>_T_</sub>； - _h_<sub>_0_</sub>的向量维度必须与recurrent\_param的num\_output一致；
-- _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
-- 只有前两个bottom与第一个top有时间的纬度；
-- 不支持recurrent\_param 的debug\_info，配置不会生效；
-- expose\_hidden=true配置下，不支持后接InnerProduct层。 ```
-layer { name: "gru1" type: "GRU" bottom: "data0_xt" bottom: "data1_cont" bottom: "data2_xstatic" bottom: "data3_h0" top: "ht" top: "hT" recurrent_param { num_output: 1000 expose_hidden = 1 weight_filler { type: "uniform" min: -0.08 max: 0.08 } bias_filler { type: "constant" value: 0 } } }
-``` ### Recurrent网络约束<a name="ZH-CN_TOPIC_0000002408581598"></a> 若Recurrent网络中包含诸如Conv等4D规格的算子，则存在如下约束。 - Prototxt首层的N轴为1，即维度为1×C×H×W；
-- 若batch\_num配置为batch（多张）模式，Recurrent算子的第二个输入continuous必须为Data层；
-- 若batch\_num配置为batch（多张）模式，Prototxt构图时，需确保每张图片的计算不存在数据依赖。例如，不同图片所产生的帧数据不能拼接为整体以作为Recurrent第一个输入。 ## 检测网硬化加速prototxt示例<a name="ZH-CN_TOPIC_0000002408582182"></a> 针对Faster RCNN、RFCN、SSD、YOLOV1、YOLOV2、YOLOV3等检测网络，支持对Proposal、SsdDetectionOutput、YoloDetectionOutput等层进行硬化，达到加速目的。本节描述如何把Proposal、SsdDetectionOutput、YoloDetectionOutput改为RPN硬化的[DetectionOutput](#ZH-CN_TOPIC_0000002442020881)层。 注意：DetectionOutput、DecBBox、Sort、Nms、Filter等硬化层不能作为首层；输出的得分是float型。 ### DecBBox、Sort、Nms、Filter层功能说明<a name="ZH-CN_TOPIC_0000002441981089"></a> 针对Faster RCNN、RFCN、SSD、YOLOV1、YOLOV2、YOLOV3等检测网络，DecBBox会根据prototxt里面的calc\_mode的参数配置解析对应的网络模型，将不同个数以及不同格式的tensor转换成统一的格式。因此DecBBox的输入取决于calc\_mode参数的配置，下文会有详细介绍。DecBBox的输出为1×C×6×N的tensor，其中C为检测类别的数量，N为锚点的数量，height等于6表示检测框xmin, ymin, xmax, ymax, score, classID等六个信息，数据类型均为浮点型。当不需要输出类别信息时，DecBBox的输出为1×C×5×N。 Filter层的作用是将DecBBox根据设定的score的阈值将分数小于等于阈值的检测框滤掉，阈值的数据类型为浮点型，输入范围为\[0,1\)。 Sort层的作用是根据分数大小对DecBBox层的输出进行排序，当参数multi\_class\_sorting配置为true时，Sort层采取所有类别混合排序的策略，当参数multi\_class\_sorting配置为true时，Sort层采取每个类别之间根据分数分开排序的策略。Sort层支持top\_k的配置，即保留候选框的最大个数。当实际检测框个数小于top\_k时，按实际检测框的数量输出。阈值top\_k的数据类型为uint型，支持大于1的正整数。 NMS\(Non-Maximum Suppression\)层的作用是当两个候选框交叠面积除以两张图片占用的总面积大于一定阈值的时候过滤掉得分较低的检测框。阈值的数据类型为浮点型，输入的数据范围支持\[0,1\)。 Nms层和Filter层所需要的阈值信息由用户给定的data层输入，输入数据类型为float，一共包含四个点，分别对应nms的阈值、filter层的得分阈值、filter的高度阈值和filter层的宽度阈值。 注意：Filter层、Sort层、Nms层只能接在DecBBox层后面，Filter层、Sort层、Nms层之间的连接顺序和数量任意。 ### 硬化层参数配置<a name="ZH-CN_TOPIC_0000002408422206"></a> >![](public_sys-resources/icon-notice.gif) **须知：** >FilterBox层不支持配置top\_k参数。SSD，FASTRCNN, RFCN网络需配置锚点信息的文件。配置的nms\_threshold, low\_score\_threshold, min\_height, min\_width等参数仅用作ATC推理时使用，实际板端仿真使用参数需通过API接口配置。API配置参数与推理参数建议保持一致。 **表 1** 硬化层参数配置限制 <a name="table1357mcpsimp"></a>
+```
+
+#### 具有额外的固定输入（expose\_hidden=false，3输入，1输出）<a name="ZH-CN_TOPIC_0000002441981461"></a>
+
+_Input: x_<sub>_t_</sub>_\(1\~T\),cont\(1\~T\),x_<sub>_static_</sub>
+
+_Output: o_<sub>_t_</sub>_\(1\~T\)_
+
+Prototxt示例如下，有3个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，bottom\[2\]对应_x_<sub>_static_</sub>，top对应_o_<sub>_t_</sub>_\(1\~T\)_；
+
+-   _x_<sub>_t_</sub>_\(1\~T\)_和_cont_\(1\~T\)__的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
+-   如果recurrent\_param 的expose\_hidden 没配，默认值为false；
+-   不支持recurrent\_param 的debug\_info，配置不会生效。
+
+```
+layer { 
+   name: "rnn1" 
+   type: "RNN" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   bottom: "data2_xstatic"
+   top: "rnn1_ht "
+   recurrent_param { 
+     num_output: 1000 
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+#### 既有固定输入，又有显式的隐藏参数（expose\_hidden=true，4输入，2输出）<a name="ZH-CN_TOPIC_0000002441981357"></a>
+
+_Input: x_<sub>_t_</sub>_\(1\~T\),cont\(1\~T\),x_<sub>_static_</sub>_,h_<sub>0</sub>
+
+_Output: o_<sub>_t_</sub>_\(1\~T\),h_<sub>_T_</sub>
+
+Prototxt示例如下，有3个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，bottom\[2\]对应_x_<sub>_static_</sub>，bottom\[3\]对应_h_<sub>0</sub>，top\[0\]对应_o_<sub>_t_</sub>_\(1\~T\)_，top\[1\]对应_h_<sub>_T_</sub>；
+
+-   _h_<sub>0</sub>的向量维度必须与recurrent\_param的num\_output一致；
+-   _x_<sub>_t_</sub>_\(1\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
+-   只有前两个bottom与第一个top有时间的纬度；
+-   expose\_hidden=true配置下，不支持后接InnerProduct层。
+
+```
+layer { 
+   name: "rnn1" 
+   type: "RNN" 
+   bottom: "data0_xt" 
+   bottom: "data1_cont" 
+   bottom: "data2_xstatic" 
+   bottom: "data3_h0" 
+   top: "rnn1_ht" 
+   top: "rnn1_hT" 
+   recurrent_param { 
+   num_output: 1000 
+   expose_hidden=1 
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+### prototxt针对LSTM层书写规范<a name="ZH-CN_TOPIC_0000002408422326"></a>
+
+LSTM的基本计算公式如下 \(与Caffe一致\)：
+
+-   输入门：_i_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xi_</sub>_x_<sub>_t_</sub>+_w_<sub>_hi_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_i_</sub>\)
+-   遗忘门：_f_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xf_</sub>_x_<sub>_t_</sub>+_w_<sub>_hf_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_f_</sub>\)
+-   输入值：_g_<sub>_t_</sub>=_tanh_\(_w_<sub>_xg_</sub>_x_<sub>_t_</sub>+_w_<sub>_hg_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_g_</sub>\)
+-   当前cell：_c_<sub>_t_</sub>=_i_<sub>_t_</sub>_\*g_<sub>_t_</sub>  +_f_<sub>_t_</sub>_\*c_<sub>_t-1_</sub>
+-   输出门：_o_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xo_</sub>_x_<sub>_t_</sub>+_w_<sub>_ho_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_0_</sub>\)
+
+若有额外固定输入向量_x_<sub>_static_</sub>，计算公式变为：
+
+-   输入门：_i_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xi_</sub>_x_<sub>_t_</sub>+_w_<sub>_hi_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_si_</sub>_x_<sub>_static_</sub>+_b_<sub>_i_</sub>\)
+-   遗忘门：_f_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xf_</sub>_x_<sub>_t_</sub>+_w_<sub>_hf_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sf_</sub>_x_<sub>_static_</sub>+_b_<sub>_f_</sub>\)
+-   输入值：_g_<sub>_t_</sub>=_tanh_\(_w_<sub>_xg_</sub>_x_<sub>_t_</sub>+_w_<sub>_hg_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sg_</sub>_x_<sub>_static_</sub>+_b_<sub>_g_</sub>\)
+-   当前cell：_c_<sub>_t_</sub>=_i_<sub>_t_</sub>_\*g_<sub>_t_</sub>  +_f_<sub>_t_</sub>_\*c_<sub>_t-1_</sub>
+-   输出门：_o_<sub>_t_</sub>=_sigmoid_\(_w_<sub>_xo_</sub>_x_<sub>_t_</sub>+_w_<sub>_ho_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_so_</sub>_x_<sub>_static_</sub>+_b_<sub>_0_</sub>\)
+
+基于以上计算公式，LSTM的prototxt有以下4种场景。
+
+
+
+
+
+#### 通常场景（expose\_hidden=false，2输入，1输出）<a name="ZH-CN_TOPIC_0000002408581910"></a>
+
+_Input: x_<sub>_t_</sub>\(1\~_T_\)_,cont\(1\~T\)_
+
+_Output: h_<sub>_t_</sub>\(1\~_T_\)
+
+Prototxt示例如下，有2个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，top\[0\]对应_h_<sub>_t_</sub>\(1\~_T_\)。
+
+-   若recurrent\_param的expose\_hidden 没配，默认值为false；
+-   不支持recurrent\_param 的debug\_info，配置不会生效。
+
+```
+layer { 
+   name: "lstm1" 
+   type: "LSTM" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   top: "lstm1_ht"
+   recurrent_param { 
+     num_output: 1000 
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+#### 隐藏参数显式输入输出（expose\_hidden=true，4输入，3输出）<a name="ZH-CN_TOPIC_0000002408422230"></a>
+
+_Input: x_<sub>_t_</sub>_\(1\~T\)_,cont\(1\~T\)__,_h_<sub>0</sub>,c<sub>0</sub>
+
+_Output: h_<sub>_t_</sub>_\(1\~T\)_,_h_<sub>_T_</sub>,c<sub>T</sub>
+
+Prototxt示例如下，有4个bottom和3个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应_cont\(1\~T\)_，bottom\[2\]对应_h_<sub>0</sub>，bottom\[3\]对应c<sub>0</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(1\~T\)_，top\[1\]对应_h_<sub>_T_</sub>，top\[2\]对应c<sub>T</sub>；
+
+-   _h_<sub>0</sub>,c<sub>0</sub>的向量维度须与recurrent\_param的num\_output一致；
+-   只有前两个bottom与第一个top有时间的维度；
+-   不支持recurrent\_param 的debug\_info，配置不会生效；
+-   expose\_hidden=true配置下，不支持后接InnerProduct层。
+
+```
+layer { 
+   name: "lstm1" 
+   type: "LSTM" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   bottom: "data2_h0"
+   bottom: "data3_c0"
+   top: "lstm1_ht"
+   top: "lstm1_hT"
+   top: "lstm1_cT"
+   recurrent_param { 
+   num_output: 1000 
+   expose_hidden = 1
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+#### 具有额外的固定输入（expose\_hidden=false，3输入，1输出）<a name="ZH-CN_TOPIC_0000002408421742"></a>
+
+_Input: x_<sub>_t_</sub>_\(_1_\~T\),cont\(1\~T\)_,_ x_<sub>_static_</sub>
+
+_Output: h_<sub>_t_</sub>_\(_1_\~T\)_
+
+Prototxt示例如下，有3个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont1\(\~T\)，_<sub>_ _</sub>bottom\[2\]对应_x_<sub>_static_</sub>，top对应_h_<sub>_t_</sub>_\(_1_\~T\)_；
+
+-   _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
+-   只有前两个bottom与第一个top有时间的纬度；
+-   如果recurrent\_param 的expose\_hidden 没配，默认值为false；
+-   不支持recurrent\_param 的debug\_info，配置不会生效。
+
+```
+layer { 
+   name: "lstm1" 
+   type: "LSTM" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   bottom: "data2_xstatic"
+   top: "lstm1_ht"
+   recurrent_param { 
+   num_output: 1000 
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+#### 既有固定输入，又有显式的隐藏参数（expose\_hidden=true，5输入，3输出）<a name="ZH-CN_TOPIC_0000002441981445"></a>
+
+_Input: x_<sub>_t_</sub>_\(_1_\~T\),cont\(1\~T\)_,_x_<sub>_static _</sub>,_h_<sub>_0_</sub>_ , c_<sub>_0_</sub>
+
+_Output: h_<sub>_t_</sub>_\(_1_\~T\)_  ,_h_<sub>_T _</sub>,  _c_<sub>_T_</sub>
+
+Prototxt示例如下，有4个bottom和3个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont\(1\~T\)_，bottom\[2\]对应_x_<sub>_static_</sub>，bottom\[3\]对应_h_<sub>_0_</sub>，bottom\[4\]对应_c_<sub>_0_</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(_1_\~T\)_，top\[1\]对应_h_<sub>_T_</sub>，top\[2\]对应_c_<sub>_T_</sub>；
+
+-   _h_<sub>_0_</sub>_ ,c_<sub>_0_</sub>的向量维度必须与recurrent\_param的num\_output一致；
+-   _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
+-   只有前两个bottom与第一个top有时间的纬度；
+-   不支持recurrent\_param 的debug\_info，配置不会生效；
+-   expose\_hidden=true配置下，不支持后接InnerProduct层。
+
+```
+layer { 
+   name: "lstm1" 
+   type: "LSTM" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   bottom: "data2_xstatic"
+   bottom: "data3_h0"
+   bottom: "data4_c0"
+   top: "lstm1_ht"
+   top: "lstm1_hT"
+   top: "lstm1_cT"
+   recurrent_param { 
+   num_output: 1000 
+   expose_hidden = 1
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+### prototxt针对GRU层书写规范<a name="ZH-CN_TOPIC_0000002408421698"></a>
+
+GRU的基本计算公式如下 \(与Caffe一致\)：
+
+-   重置门：_R_<sub>_t _</sub>=  _sigmoid_\(_w_<sub>_xr_</sub>_x_<sub>_t_</sub>+_w_<sub>_hr_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_i_</sub>\)
+-   更新门：_Z_<sub>_t _</sub>=  _sigmoid_\(_w_<sub>_xz_</sub>_x_<sub>_t_</sub>+_w_<sub>_hz_</sub>_h_<sub>_t-1_</sub>+_b_<sub>_f_</sub>\)
+-   中间结果：_h_<sub>_hatt _</sub>=  _tanh_\(_w_<sub>_hhat_</sub>_\(R_<sub>_t_</sub>_ \* h_<sub>_t-1_</sub>_\)_+_b_<sub>_g_</sub>\)
+-   输出门：_h_<sub>_t _</sub>=  _sigmoid_\(_\(1 - Z_<sub>_t_</sub>_\) \* h_<sub>_t-1 _</sub>_+ Z_<sub>_t _</sub>_\* h_<sub>_hatt_</sub>\)
+
+若有额外固定输入向量_x_<sub>_static_</sub>，计算公式变为：
+
+-   重置门：_R_<sub>_t_</sub>  =  _sigmoid_\(_w_<sub>_xr_</sub>_x_<sub>_t_</sub>+_w_<sub>_hr_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sr_</sub>_x_<sub>_static_</sub>+_b_<sub>_i_</sub>\)
+-   更新门：_Z_<sub>_t_</sub>  =  _sigmoid_\(_w_<sub>_xz_</sub>_x_<sub>_t_</sub>+_w_<sub>_hz_</sub>_h_<sub>_t-1_</sub>+_w_<sub>_sz_</sub>_x_<sub>_static_</sub>+_b_<sub>_f_</sub>\)
+-   中间结果：_h_<sub>_hatt_</sub>  =  _tanh_\(_w_<sub>_hhat_</sub>_\(R_<sub>_t_</sub>_ \* h_<sub>_t-1_</sub>_\)_+_b_<sub>_g_</sub>\)
+-   输出门：_h_<sub>_t _</sub>=  _sigmoid_\(_\(1 - Z_<sub>_t_</sub>_\) \* h_<sub>_t-1 _</sub>_+ Z_<sub>_t _</sub>_\* h_<sub>_hatt_</sub>\)
+
+基于以上计算公式，GRU的prototxt有以下4种场景。
+
+
+
+
+
+#### 通常场景（expose\_hidden=false，2输入，1输出）<a name="ZH-CN_TOPIC_0000002408582146"></a>
+
+_Input: x_<sub>_t_</sub>\(1\~_T_\)_,cont\(1\~T\)_
+
+_Output: h_<sub>_t_</sub>\(1\~_T_\)
+
+Prototxt示例如下，有2个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应cont_\(1\~T\)_，top\[0\]对应_h_<sub>_t_</sub>\(1\~_T_\)：
+
+-   若recurrent\_param的expose\_hidden 没配，默认值为false；
+-   不支持recurrent\_param 的debug\_info，配置不会生效。
+
+```
+layer { 
+   name: "GRU1" 
+   type: "GRU" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   top: "ht"
+   recurrent_param { 
+     num_output: 1000 
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+#### 隐藏参数显式输入输出（expose\_hidden=true，3输入，2输出）<a name="ZH-CN_TOPIC_0000002442021241"></a>
+
+_Input: x_<sub>_t_</sub>_\(1\~T\)__,cont\(1\~T\)_,_h_<sub>0</sub>
+
+_Output: h_<sub>_t_</sub>_\(1\~T\)_,_h_<sub>_T_</sub>
+
+Prototxt示例如下，有2个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(1\~T\)_，bottom\[1\]对应_cont\(1\~T\)_，bottom\[2\]对应_h_<sub>0</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(1\~T\)_，top\[1\]对应_h_<sub>_T_</sub>；
+
+-   _h_<sub>0</sub>的向量维度须与recurrent\_param的num\_output一致；
+-   只有前两个bottom与第一个top有时间的维度；
+-   不支持recurrent\_param 的debug\_info，配置不会生效；
+-   expose\_hidden=true配置下，不支持后接InnerProduct层。
+
+```
+layer { 
+   name: "GRU1" 
+   type: "GRU" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   bottom: "data2_h0"
+   top: "ht"
+   top: "hT"
+   recurrent_param { 
+   num_output: 1000 
+   expose_hidden = 1
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+#### 具有额外的固定输入（expose\_hidden=false，3输入，1输出）<a name="ZH-CN_TOPIC_0000002442021285"></a>
+
+_Input: x_<sub>_t_</sub>_\(_1_\~T\)__,cont\(1\~T\)_,_ x_<sub>_static_</sub>
+
+_Output: h_<sub>_t_</sub>_\(_1_\~T\)_
+
+Prototxt示例如下，有3个bottom和1个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont\(1\~T\)，_bottom\[2\]对应_x_<sub>_static_</sub>，top对应_h_<sub>_t_</sub>_\(_1_\~T\)_；
+
+-   _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
+-   只有前两个bottom与第一个top有时间的纬度；
+-   如果recurrent\_param 的expose\_hidden 没配，默认值为false；
+-   不支持recurrent\_param 的debug\_info，配置不会生效。
+
+```
+layer { 
+   name: "GRU1" 
+   type: "GRU" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   bottom: "data2_xstatic"
+   top: "ht"
+   recurrent_param { 
+   num_output: 1000 
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+#### 既有固定输入，又有显式的隐藏参数（expose\_hidden=true，4输入，2输出）<a name="ZH-CN_TOPIC_0000002408581978"></a>
+
+_Input: x_<sub>_t_</sub>_\(_1_\~T\)__,cont\(1\~T\)_,_x_<sub>_static _</sub>,_h_<sub>_0_</sub>
+
+_Output: h_<sub>_t_</sub>_\(_1_\~T\)_,_h_<sub>_T_</sub>
+
+Prototxt示例如下，有4个bottom和2个top，其中bottom\[0\]对应_x_<sub>_t_</sub>_\(_1_\~T\)_，bottom\[1\]对应_cont\(1\~T\)，_bottom\[2\]对应_x_<sub>_static_</sub>，bottom\[3\]对应_h_<sub>_0_</sub>，top\[0\]对应_h_<sub>_t_</sub>_\(_1_\~T\)_，top\[1\]对应_h_<sub>_T_</sub>；
+
+-   _h_<sub>_0_</sub>的向量维度必须与recurrent\_param的num\_output一致；
+-   _x_<sub>_t_</sub>_\(_1_\~T\)_和_cont\(1\~T\)_的向量维度，必须与_x_<sub>_static_</sub>的向量维度一致；
+-   只有前两个bottom与第一个top有时间的纬度；
+-   不支持recurrent\_param 的debug\_info，配置不会生效；
+-   expose\_hidden=true配置下，不支持后接InnerProduct层。
+
+```
+layer { 
+   name: "gru1" 
+   type: "GRU" 
+   bottom: "data0_xt"
+   bottom: "data1_cont"
+   bottom: "data2_xstatic"
+   bottom: "data3_h0"
+   top: "ht"
+   top: "hT"
+   recurrent_param { 
+   num_output: 1000 
+   expose_hidden = 1
+     weight_filler { 
+       type: "uniform" 
+       min: -0.08 
+       max: 0.08 
+     } 
+     bias_filler { 
+       type: "constant" 
+       value: 0 
+     } 
+   } 
+ }
+```
+
+### Recurrent网络约束<a name="ZH-CN_TOPIC_0000002408581598"></a>
+
+若Recurrent网络中包含诸如Conv等4D规格的算子，则存在如下约束。
+
+-   Prototxt首层的N轴为1，即维度为1×C×H×W；
+-   若batch\_num配置为batch（多张）模式，Recurrent算子的第二个输入continuous必须为Data层；
+-   若batch\_num配置为batch（多张）模式，Prototxt构图时，需确保每张图片的计算不存在数据依赖。例如，不同图片所产生的帧数据不能拼接为整体以作为Recurrent第一个输入。
+
+## 检测网硬化加速prototxt示例<a name="ZH-CN_TOPIC_0000002408582182"></a>
+
+针对Faster RCNN、RFCN、SSD、YOLOV1、YOLOV2、YOLOV3等检测网络，支持对Proposal、SsdDetectionOutput、YoloDetectionOutput等层进行硬化，达到加速目的。本节描述如何把Proposal、SsdDetectionOutput、YoloDetectionOutput改为RPN硬化的[DetectionOutput](#ZH-CN_TOPIC_0000002442020881)层。
+
+注意：DetectionOutput、DecBBox、Sort、Nms、Filter等硬化层不能作为首层；输出的得分是float型。
+
+
+
+
+
+
+
+
+
+
+### DecBBox、Sort、Nms、Filter层功能说明<a name="ZH-CN_TOPIC_0000002441981089"></a>
+
+针对Faster RCNN、RFCN、SSD、YOLOV1、YOLOV2、YOLOV3等检测网络，DecBBox会根据prototxt里面的calc\_mode的参数配置解析对应的网络模型，将不同个数以及不同格式的tensor转换成统一的格式。因此DecBBox的输入取决于calc\_mode参数的配置，下文会有详细介绍。DecBBox的输出为1×C×6×N的tensor，其中C为检测类别的数量，N为锚点的数量，height等于6表示检测框xmin, ymin, xmax, ymax, score, classID等六个信息，数据类型均为浮点型。当不需要输出类别信息时，DecBBox的输出为1×C×5×N。
+
+Filter层的作用是将DecBBox根据设定的score的阈值将分数小于等于阈值的检测框滤掉，阈值的数据类型为浮点型，输入范围为\[0,1\)。
+
+Sort层的作用是根据分数大小对DecBBox层的输出进行排序，当参数multi\_class\_sorting配置为true时，Sort层采取所有类别混合排序的策略，当参数multi\_class\_sorting配置为true时，Sort层采取每个类别之间根据分数分开排序的策略。Sort层支持top\_k的配置，即保留候选框的最大个数。当实际检测框个数小于top\_k时，按实际检测框的数量输出。阈值top\_k的数据类型为uint型，支持大于1的正整数。
+
+NMS\(Non-Maximum Suppression\)层的作用是当两个候选框交叠面积除以两张图片占用的总面积大于一定阈值的时候过滤掉得分较低的检测框。阈值的数据类型为浮点型，输入的数据范围支持\[0,1\)。
+
+Nms层和Filter层所需要的阈值信息由用户给定的data层输入，输入数据类型为float，一共包含四个点，分别对应nms的阈值、filter层的得分阈值、filter的高度阈值和filter层的宽度阈值。
+
+注意：Filter层、Sort层、Nms层只能接在DecBBox层后面，Filter层、Sort层、Nms层之间的连接顺序和数量任意。
+
+### 硬化层参数配置<a name="ZH-CN_TOPIC_0000002408422206"></a>
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>FilterBox层不支持配置top\_k参数。SSD，FASTRCNN, RFCN网络需配置锚点信息的文件。配置的nms\_threshold, low\_score\_threshold, min\_height, min\_width等参数仅用作ATC推理时使用，实际板端仿真使用参数需通过API接口配置。API配置参数与推理参数建议保持一致。
+
+**表 1**  硬化层参数配置限制
+
+<a name="table1357mcpsimp"></a>
 <table><thead align="left"><tr id="row1369mcpsimp"><th class="cellrowborder" valign="top" width="17.981798179817982%" id="mcps1.2.8.1.1"><p id="p1371mcpsimp"><a name="p1371mcpsimp"></a><a name="p1371mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.851685168516852%" id="mcps1.2.8.1.2"><p id="p1373mcpsimp"><a name="p1373mcpsimp"></a><a name="p1373mcpsimp"></a>参数意义</p>
@@ -509,7 +2962,11 @@ layer { name: "gru1" type: "GRU" bottom: "data0_xt" bottom: "data1_cont" bottom:
 </td>
 </tr>
 </tbody>
-</table> **表 2** Faster RCNN RFCN SSD硬化层参数配置 <a name="_table33079474810"></a>
+</table>
+
+**表 2**  Faster RCNN RFCN SSD硬化层参数配置
+
+<a name="_table33079474810"></a>
 <table><thead align="left"><tr id="row1463mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.2.6.1.1"><p id="p1465mcpsimp"><a name="p1465mcpsimp"></a><a name="p1465mcpsimp"></a>层/参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.6.1.2"><p id="p1467mcpsimp"><a name="p1467mcpsimp"></a><a name="p1467mcpsimp"></a>参数</p>
@@ -663,7 +3120,11 @@ layer { name: "gru1" type: "GRU" bottom: "data0_xt" bottom: "data1_cont" bottom:
 </td>
 </tr>
 </tbody>
-</table> **表 3** YOLOV1 YOLOV2 YOLOV3硬化层参数配置 <a name="_table1334912472810"></a>
+</table>
+
+**表 3**  YOLOV1 YOLOV2 YOLOV3硬化层参数配置
+
+<a name="_table1334912472810"></a>
 <table><thead align="left"><tr id="row1624mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.2.7.1.1"><p id="p1626mcpsimp"><a name="p1626mcpsimp"></a><a name="p1626mcpsimp"></a>层/参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.2.7.1.2"><p id="p1628mcpsimp"><a name="p1628mcpsimp"></a><a name="p1628mcpsimp"></a>参数</p>
@@ -881,22 +3342,256 @@ layer { name: "gru1" type: "GRU" bottom: "data0_xt" bottom: "data1_cont" bottom:
 </td>
 </tr>
 </tbody>
-</table> ### Faster RCNN 网络<a name="ZH-CN_TOPIC_0000002442020889"></a> Faster RCNN Proposal层硬化结构如[图1](#_fig1274671534716)所示，发布包中提供了基于alexnet的sample：samples/2\_object\_detection/fasterrcnn/fasterrcnn\_alexnet，请参考此示例进行适配。 输出给Proposal硬化后的DetectionOutput层的得分数据类型必须是float型，并且此Softmax层和Proposal硬化层之间不能有任何计算层，参考如下所示。 ```
-layer { name: "rpn_cls_prob" type: "Softmax" bottom: "rpn_cls_score_reshape" top: "rpn_cls_prob" }
-``` Proposal硬化层描述请参考samples/2\_object\_detection/fasterrcnn/fasterrcnn\_alexnet/caffe\_model/fasterrcnn\_alexnet.prototxt。 **图 1** Faster RCNN Proposal层硬化结构图<a name="_fig1274671534716"></a> ![](figures/Faster-RCNN-Proposal层硬化结构图.png "Faster-RCNN-Proposal层硬化结构图") Faster RCNN Proposal硬化层的输入为两个tensor，分别对应[图1](#_fig1274671534716)中的bottom0以及bottom1。 假设N为锚点的总数量，则bottom0的维度为的为1×1×1× N，bottom1的维度为的1×1×4×N，输入数据为大于0的浮点型数据。DecBbox层中心点宽高的具体计算公式如下。 - _DecCx_ = _priWidth \* dx\(P\)_ + _priCx_
-- _DecCy_ = _priHeight \* dy\(P\)_ + _priCy_
-- _DecWidth_ = _exp_\(_dw\(P\)_\) \* _priWidth_
-- _DecHeight_ = _exp_\(_dh\(P\)_\) \* _priHeight_ 其中DecCx, DecCy, DecWidth, DecHeight分别对应检测框的中心点和宽高； priWidth, priHeight, priCx, priCy为锚点的宽高和中心点坐标。锚点的坐标由外部输入文件anchor.txt（对应 \[generate\_anchors\_file\]配置项）提供。具体格式为N行4列的数据，N为锚点的数量，4列数据分别对应锚点的xmin, ymin, xmax, ymax， 输入数据为大于0的整数，数据类型为浮点型。其他四组输入dx\(P\), dy\(P\), dw\(P\), dh\(P\)与图中的bottom对应。具体细节可参考sample用例。 Faster RCNN Proposal硬化层的输出信息由两个report层构成。第一个report层的输出信息为检测框的数量，第二个report层的输出信息为：xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层的输出信息为：检测框数量\(300\)；第二个report层的信息为：检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。注意，由于proposal层的类别信息（即classID）仅分为前景和背景，图中bottom0只对应前景的分数信息，因此实际最终的输出信息只有前景的检测框的个数、坐标、分数以及classID。 ### RFCN网络<a name="ZH-CN_TOPIC_0000002442021385"></a> RFCN Proposal层硬化结构如[图1](#_fig1650119331554)所示，发布包中提供了基于resnet50的sample：samples/2\_object\_detection/rfcn/rfcn\_resnet50，请参考此示例进行适配。 输出给Proposal硬化后DetectionOutput层的得分数据类型必须是float型，并且此Softmax层和Proposal硬化层之间不能有任何计算层，如下所示。 ```
-layer { name: "rpn_cls_prob" type: "Softmax" bottom: "rpn_cls_score_reshape" top: "rpn_cls_prob" }
-``` Proposal硬化层描述请参考samples/2\_object\_detection/rfcn/rfcn\_resnet50/caffe\_model/rfcn\_resnet50.prototxt。 **图 1** RFCN Proposal层硬化结构图<a name="_fig1650119331554"></a> ![](figures/RFCN-Proposal层硬化结构图.png "RFCN-Proposal层硬化结构图") RFCN网络Proposal硬化层的输入输出与Faster RCNN Proposal一致，此处不再赘述。 ### SSD网络<a name="ZH-CN_TOPIC_0000002408421894"></a> SSD DetectionOutput层硬化结构如[图1](#fig11445112753313)所示，发布包中提供了sample：sample/samples/2\_object\_detection/ssd，请参考此示例进行适配。 输出给DetectionOutput硬化层的得分数据类型为float，并且此Softmax层和DetectionOutput硬化层之间不能有任何计算层，如下所示。 ```
-layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" top: "mbox_conf_softmax" softmax_param { axis: 1 } }
-``` DetectionOutput硬化层描述请参考sample/samples/2\_object\_detection/ssd/caffe\_model/ssd.prototxt。 **图 1** SSD DetectionOutput层硬化结构图<a name="fig11445112753313"></a> ![](figures/SSD-DetectionOutput层硬化结构图.png "SSD-DetectionOutput层硬化结构图") SSD网络的rpn模块输入由三个部分组成，分别对应上图中的mbox\_conf\_extract、permute层和RPN threshold。具体公式如下。 - _DecCx_ = _Var1_ \* _L0c1_ \* _priWidth_ + _priCx_
-- _DecCy_ = _Var2_ \* _L0c2_ \* _priHeight_ + _priCy_
-- _DecWidth_ = _exp_\(_Var3_ \* _L0c3_\) \* _priWidth_
-- _DecHeight_ = _exp_\(_Var4_ \* _L0c4_\) \* _priHeight_ 其中DecCx, DecCy, DecWidth, DecHeight分别对应检测框的中心点和宽高；Var1, Var2, Var3, Var4为调整系数；L0c1, L0c2, L0c3, L0c4为框的预测信息；priWidth, priHeight, priCx, priCy为锚点的中心点坐标和宽高。锚点的坐标以及调整系数由外部输入文件anchor.txt（对应 \[generate\_anchors\_file\]配置项）提供。具体格式为N行8列的数据，N为锚点的数量，8列数据分别对应锚点的xmin, ymin, xmax, ymax 以及调整系数var1, var2, var3, var4。 permute层提供L0c1, L0c2, L0c3, L0c4坐标信息，维度为1×1\*4×N，N为框的数量。 mbox\_conf\_extract提供分数信息和类别信息，维度为1×（C-1）×1×N,其中C为包含背景的类别数量，减1表示去掉背景，N为锚点数量。如果类别不需要去掉背景，请删除层mbox\_conf\_extract，直接mbox\_conf\_softmax输出给DetectionOutput层，修改DetectionOutput层的num\_classes 为包含背景的类别数。 rpn\_threshold提供4个阈值，分别是nms\_threshold、low\_score\_threshold、min\_height、min\_width，ATC转换模型时自动加的data层，在板端ACL运行时通过data层输入。 SSD的输出信息由两个report层构成，第一个report层的输出信息为检测框输出的数量，第二个report层的信息为xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层输出的信息依次为：检测框数量\(300\)；第二个report层输出的信息为：检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。 ### YOLOV1网络<a name="ZH-CN_TOPIC_0000002441981497"></a> YOLOV1 DetectionOutput层硬化结构如[图1](#_fig10792101614121)所示，发布包中提供了sample： samples/2\_object\_detection/yolo，请参考此示例进行适配。 **图 1** YOLOV1 DetectionOutput层硬化结构图<a name="_fig10792101614121"></a> ![](figures/YOLOV1-DetectionOutput层硬化结构图.png "YOLOV1-DetectionOutput层硬化结构图") Yolov1的输入维度为1×1×（C + 5）× N的tensor，数据类型为浮点型，其中C为类别的数量，N为检测框的个数。[图1](#_fig10792101614121)中直观的显示了rpn层输入的组成部分，左边的permute层对应类别信息，维度为1×1×C×N；中间的permute层对应坐标的信息，维度为1×1×4×N, 对应的取值范围为\[0, 1\]; reshape层对应分数的信息，维度为1×1×1×N。这三个层被concat层连接成1×1×（C+5）×N的tensor作为rpn层的输入。 Yolov1的输出信息由两个report层构成，第一个report层输出各类别检测框输出的数量，第二个report层输出各类别检测框的xmin, ymin, xmax, ymax, 得分以及类别，每一类的排序按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框输出，包括人、猫、狗三种类别各50个，150个，100个，其对应的class ID分别为0，1，2。则第一个report层输出的信息依次为：人、猫、狗的检测框数量\(50，100，150\)；第二个report层输出的信息为：人检测框的xmin（50个xmin），检测框的ymin（50个ymin），检测框的xmax（50个max），检测框的ymax\(50个ymax\)，猫检测框的xmin（150个xmin），检测框的ymin（150个ymin），检测框的xmax（150个max），检测框的ymax\(150个ymax\)，狗检测框的xmin（100个xmin），检测框的ymin（100个ymin），检测框的xmax（100个max），检测框的ymax\(100个ymax\)；人对应的框的得分\(50个分数，由大到小\)，猫对应的框的得分\(150个分数，由大到小\)，狗对应的框的得分\(100个分数，由大到小\)；人对应的框的类别（50个classs ID 0）；猫检测框的xmin（150个xmin），检测框的ymin（150个ymin），检测框的xmax（150个max），检测框的ymax\(150个ymax\)，对应的框的得分\(150个分数，由大到小\)，猫对应的框的类别（150个classs ID 1）；狗检测框的xmin（100个xmin），检测框的ymin（100个ymin），检测框的xmax（100个max），检测框的ymax\(100个ymax\)，对应的框的得分\(100个分数，由大到小\)，狗对应的框的类别（100个classs ID 2）。 ### YOLOV2网络<a name="ZH-CN_TOPIC_0000002408581722"></a> YOLOV2 DetectionOutput层硬化结构如[图1](#_fig9613111741519)所示，发布包中提供了sample：samples/2\_object\_detection/yolo，请参考此示例进行适配。 >![](public_sys-resources/icon-notice.gif) **须知：** >DetectionOutput输出的是1×1×6×top\_k的格式，类别中存放得分最高的分类序号，同YOLOV2/3中的1×class\_num×6×top\_k不同。 **图 1** YOLOV2 DetectionOutput层硬化结构图<a name="_fig9613111741519"></a> ![](figures/YOLOV2-DetectionOutput层硬化结构图.png "YOLOV2-DetectionOutput层硬化结构图") Yolov2相比于Yolov1在计算检测框宽高时增加了bias1, bias2两个参数。其中bias1和bias2的需要在prototxt中配置, bias1和bias2的数量等于每个grid内锚点的数量的两倍，输出顺序依次为每个锚点的bias1以及每个锚点的bias2。假设每个grid内一共有5个锚点，则需要输入的对应的bias顺序为: 锚点0的bias1, bias2; 锚点1的bias1, bias2以及锚点2的bias1,bias2。数据类型为float，取值范围为大于0的浮点数。详细设置可参照sample中的测试用例。Yolov2的输入tensor规格与Yolov1相同，对应图4-5中的最后一个permute层，此处不再赘述。 Yolov2的输出信息由两个report层构成，第一个report层输出检测框输出的的数量，第二个检测框输出xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层为输出检测框数量\(300\)；第二个report层输出检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。 ### YOLOV3/V5/V7网络<a name="ZH-CN_TOPIC_0000002408422298"></a> YOLOV3/V5/V7 Decbbox/DetectionOutput层硬化结构如[图1](#_fig54111139181712)所示，发布包中提供了sample：samples/2\_object\_detection/yolo，请参考此示例进行适配。 **图 1** YOLOV3/V5/V7 Decbbox/DetectionOutput层硬化结构图<a name="_fig54111139181712"></a> ![](figures/YOLOV3-V5-V7-Decbbox-DetectionOutput层硬化结构图.png "YOLOV3-V5-V7-Decbbox-DetectionOutput层硬化结构图") Yolov3的输入tensor规格以及prototxt中bias的规格与Yolov2相同，此处不再赘述。 Yolov3的输出信息由两个report层构成，第一个report层输出检测框输出的数量，第二个检测框输出xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层为输出检测框数量\(300\)；第二个report层输出检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。 YOLOV5/YOLOV7的计算公式如下。 x方向（y方向计算流程与x方向类似）： _cX = \(2 \* sigmoid\(X\) - 0.5 + col\) / gridNumWidth_ \* img\_w _halfW = 2 \* sigmoid\(w\) \* 2 \* sigmoid\(w\) \* bias / gridNumWidth \* 0.5 \* img\_w_ _pMinX = cX__ – __halfW_ _pMaxX = halfW + cX_ score：_finalScore = sigmoid\(objScore\) \* sigmoid\(classScore\)_ 其中col为列索引，gridNumWidth为锚点宽，img\_w为放大系数，x和w为上一层的输出，bias为锚点bias参数，cX为检测框中心点x坐标，halfW为检测框宽\*0.5，pMinX为检测框Xmin，pMaxX为检测框Xmax。objScore和classScore为上一层的输出，finalScore为最终分数。 ### YOLOV8网络<a name="ZH-CN_TOPIC_0000002408582250"></a> YOLOV8DecBBox/Sort/Nms/Filter层硬化结构图如[图1](#fig8562131852)所示，发布包提供了sample:samples/2\_object\_detection/yolo，请参考此示例进行适配。 **图 1** YOLOV8 DecBBox/Sort/Nms/Filter层硬化结构图<a name="fig8562131852"></a> ![](figures/YOLOV8-DecBBox-Sort-Nms-Filter层硬化结构图.jpg "YOLOV8-DecBBox-Sort-Nms-Filter层硬化结构图") YOLOV8的输入tensor规格、输出信息与YOLOV2相同，此处不再赘述。 坐标计算部分由DecBBox之前的算子实现，参考YOLOV8源码，采用DFL损失函数。 score在DecBBox中计算，计算公式：_finalScore = sigmoid\(classScore\)_ # 算子规格说明
->![](public_sys-resources/icon-notice.gif) **须知：** >Caffe与Onnx框架算子规格中，如无特别说明，输入、输出形状支持范围如下。
+</table>
+
+### Faster RCNN 网络<a name="ZH-CN_TOPIC_0000002442020889"></a>
+
+Faster RCNN Proposal层硬化结构如[图1](#_fig1274671534716)所示，发布包中提供了基于alexnet的sample：samples/2\_object\_detection/fasterrcnn/fasterrcnn\_alexnet，请参考此示例进行适配。
+
+输出给Proposal硬化后的DetectionOutput层的得分数据类型必须是float型，并且此Softmax层和Proposal硬化层之间不能有任何计算层，参考如下所示。
+
+```
+layer { 
+   name: "rpn_cls_prob" 
+   type: "Softmax" 
+   bottom: "rpn_cls_score_reshape" 
+   top: "rpn_cls_prob" 
+ }
+```
+
+Proposal硬化层描述请参考samples/2\_object\_detection/fasterrcnn/fasterrcnn\_alexnet/caffe\_model/fasterrcnn\_alexnet.prototxt。
+
+**图 1**  Faster RCNN Proposal层硬化结构图<a name="_fig1274671534716"></a>  
+![](figures/Faster-RCNN-Proposal层硬化结构图.png "Faster-RCNN-Proposal层硬化结构图")
+
+Faster RCNN Proposal硬化层的输入为两个tensor，分别对应[图1](#_fig1274671534716)中的bottom0以及bottom1。 假设N为锚点的总数量，则bottom0的维度为的为1×1×1× N，bottom1的维度为的1×1×4×N，输入数据为大于0的浮点型数据。DecBbox层中心点宽高的具体计算公式如下。
+
+-   _DecCx_  =  _priWidth \* dx\(P\)_  +  _priCx_
+-   _DecCy_  =  _priHeight \* dy\(P\)_  +  _priCy_
+-   _DecWidth_  =  _exp_\(_dw\(P\)_\) \*  _priWidth_
+-   _DecHeight_  =  _exp_\(_dh\(P\)_\) \*  _priHeight_
+
+其中DecCx, DecCy, DecWidth, DecHeight分别对应检测框的中心点和宽高； priWidth, priHeight, priCx, priCy为锚点的宽高和中心点坐标。锚点的坐标由外部输入文件anchor.txt（对应 \[generate\_anchors\_file\]配置项）提供。具体格式为N行4列的数据，N为锚点的数量，4列数据分别对应锚点的xmin, ymin, xmax, ymax， 输入数据为大于0的整数，数据类型为浮点型。其他四组输入dx\(P\), dy\(P\), dw\(P\), dh\(P\)与图中的bottom对应。具体细节可参考sample用例。
+
+Faster RCNN Proposal硬化层的输出信息由两个report层构成。第一个report层的输出信息为检测框的数量，第二个report层的输出信息为：xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层的输出信息为：检测框数量\(300\)；第二个report层的信息为：检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。注意，由于proposal层的类别信息（即classID）仅分为前景和背景，图中bottom0只对应前景的分数信息，因此实际最终的输出信息只有前景的检测框的个数、坐标、分数以及classID。
+
+### RFCN网络<a name="ZH-CN_TOPIC_0000002442021385"></a>
+
+RFCN Proposal层硬化结构如[图1](#_fig1650119331554)所示，发布包中提供了基于resnet50的sample：samples/2\_object\_detection/rfcn/rfcn\_resnet50，请参考此示例进行适配。
+
+输出给Proposal硬化后DetectionOutput层的得分数据类型必须是float型，并且此Softmax层和Proposal硬化层之间不能有任何计算层，如下所示。
+
+```
+layer { 
+   name: "rpn_cls_prob" 
+   type: "Softmax" 
+   bottom: "rpn_cls_score_reshape" 
+   top: "rpn_cls_prob" 
+ }
+```
+
+Proposal硬化层描述请参考samples/2\_object\_detection/rfcn/rfcn\_resnet50/caffe\_model/rfcn\_resnet50.prototxt。
+
+**图 1**  RFCN Proposal层硬化结构图<a name="_fig1650119331554"></a>  
+![](figures/RFCN-Proposal层硬化结构图.png "RFCN-Proposal层硬化结构图")
+
+RFCN网络Proposal硬化层的输入输出与Faster RCNN Proposal一致，此处不再赘述。
+
+### SSD网络<a name="ZH-CN_TOPIC_0000002408421894"></a>
+
+SSD DetectionOutput层硬化结构如[图1](#fig11445112753313)所示，发布包中提供了sample：sample/samples/2\_object\_detection/ssd，请参考此示例进行适配。
+
+输出给DetectionOutput硬化层的得分数据类型为float，并且此Softmax层和DetectionOutput硬化层之间不能有任何计算层，如下所示。
+
+```
+layer { 
+   name: "mbox_conf_softmax" 
+   type: "Softmax" 
+   bottom: "mbox_conf_permute" 
+   top: "mbox_conf_softmax" 
+   softmax_param { 
+     axis: 1 
+   } 
+ }
+```
+
+DetectionOutput硬化层描述请参考sample/samples/2\_object\_detection/ssd/caffe\_model/ssd.prototxt。
+
+**图 1**  SSD DetectionOutput层硬化结构图<a name="fig11445112753313"></a>  
+![](figures/SSD-DetectionOutput层硬化结构图.png "SSD-DetectionOutput层硬化结构图")
+
+SSD网络的rpn模块输入由三个部分组成，分别对应上图中的mbox\_conf\_extract、permute层和RPN threshold。具体公式如下。
+
+-   _DecCx_  =  _Var1_  \*  _L0c1_  \*  _priWidth_  +  _priCx_
+-   _DecCy_  =  _Var2_  \*  _L0c2_  \*  _priHeight_  +  _priCy_
+-   _DecWidth_  =  _exp_\(_Var3_  \*  _L0c3_\) \*  _priWidth_
+-   _DecHeight_  =  _exp_\(_Var4_  \*  _L0c4_\) \*  _priHeight_
+
+其中DecCx, DecCy, DecWidth, DecHeight分别对应检测框的中心点和宽高；Var1, Var2, Var3, Var4为调整系数；L0c1, L0c2, L0c3, L0c4为框的预测信息；priWidth, priHeight, priCx, priCy为锚点的中心点坐标和宽高。锚点的坐标以及调整系数由外部输入文件anchor.txt（对应 \[generate\_anchors\_file\]配置项）提供。具体格式为N行8列的数据，N为锚点的数量，8列数据分别对应锚点的xmin, ymin, xmax, ymax 以及调整系数var1, var2, var3, var4。
+
+permute层提供L0c1, L0c2, L0c3, L0c4坐标信息，维度为1×1\*4×N，N为框的数量。
+
+mbox\_conf\_extract提供分数信息和类别信息，维度为1×（C-1）×1×N,其中C为包含背景的类别数量，减1表示去掉背景，N为锚点数量。如果类别不需要去掉背景，请删除层mbox\_conf\_extract，直接mbox\_conf\_softmax输出给DetectionOutput层，修改DetectionOutput层的num\_classes 为包含背景的类别数。
+
+rpn\_threshold提供4个阈值，分别是nms\_threshold、low\_score\_threshold、min\_height、min\_width，ATC转换模型时自动加的data层，在板端ACL运行时通过data层输入。
+
+SSD的输出信息由两个report层构成，第一个report层的输出信息为检测框输出的数量，第二个report层的信息为xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层输出的信息依次为：检测框数量\(300\)；第二个report层输出的信息为：检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。
+
+### YOLOV1网络<a name="ZH-CN_TOPIC_0000002441981497"></a>
+
+YOLOV1 DetectionOutput层硬化结构如[图1](#_fig10792101614121)所示，发布包中提供了sample： samples/2\_object\_detection/yolo，请参考此示例进行适配。
+
+**图 1**  YOLOV1 DetectionOutput层硬化结构图<a name="_fig10792101614121"></a>  
+![](figures/YOLOV1-DetectionOutput层硬化结构图.png "YOLOV1-DetectionOutput层硬化结构图")
+
+Yolov1的输入维度为1×1×（C + 5）× N的tensor，数据类型为浮点型，其中C为类别的数量，N为检测框的个数。[图1](#_fig10792101614121)中直观的显示了rpn层输入的组成部分，左边的permute层对应类别信息，维度为1×1×C×N；中间的permute层对应坐标的信息，维度为1×1×4×N, 对应的取值范围为\[0, 1\]; reshape层对应分数的信息，维度为1×1×1×N。这三个层被concat层连接成1×1×（C+5）×N的tensor作为rpn层的输入。
+
+Yolov1的输出信息由两个report层构成，第一个report层输出各类别检测框输出的数量，第二个report层输出各类别检测框的xmin, ymin, xmax, ymax, 得分以及类别，每一类的排序按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框输出，包括人、猫、狗三种类别各50个，150个，100个，其对应的class ID分别为0，1，2。则第一个report层输出的信息依次为：人、猫、狗的检测框数量\(50，100，150\)；第二个report层输出的信息为：人检测框的xmin（50个xmin），检测框的ymin（50个ymin），检测框的xmax（50个max），检测框的ymax\(50个ymax\)，猫检测框的xmin（150个xmin），检测框的ymin（150个ymin），检测框的xmax（150个max），检测框的ymax\(150个ymax\)，狗检测框的xmin（100个xmin），检测框的ymin（100个ymin），检测框的xmax（100个max），检测框的ymax\(100个ymax\)；人对应的框的得分\(50个分数，由大到小\)，猫对应的框的得分\(150个分数，由大到小\)，狗对应的框的得分\(100个分数，由大到小\)；人对应的框的类别（50个classs ID 0）；猫检测框的xmin（150个xmin），检测框的ymin（150个ymin），检测框的xmax（150个max），检测框的ymax\(150个ymax\)，对应的框的得分\(150个分数，由大到小\)，猫对应的框的类别（150个classs ID 1）；狗检测框的xmin（100个xmin），检测框的ymin（100个ymin），检测框的xmax（100个max），检测框的ymax\(100个ymax\)，对应的框的得分\(100个分数，由大到小\)，狗对应的框的类别（100个classs ID 2）。
+
+### YOLOV2网络<a name="ZH-CN_TOPIC_0000002408581722"></a>
+
+YOLOV2 DetectionOutput层硬化结构如[图1](#_fig9613111741519)所示，发布包中提供了sample：samples/2\_object\_detection/yolo，请参考此示例进行适配。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>DetectionOutput输出的是1×1×6×top\_k的格式，类别中存放得分最高的分类序号，同YOLOV2/3中的1×class\_num×6×top\_k不同。
+
+**图 1**  YOLOV2 DetectionOutput层硬化结构图<a name="_fig9613111741519"></a>  
+![](figures/YOLOV2-DetectionOutput层硬化结构图.png "YOLOV2-DetectionOutput层硬化结构图")
+
+Yolov2相比于Yolov1在计算检测框宽高时增加了bias1, bias2两个参数。其中bias1和bias2的需要在prototxt中配置, bias1和bias2的数量等于每个grid内锚点的数量的两倍，输出顺序依次为每个锚点的bias1以及每个锚点的bias2。假设每个grid内一共有5个锚点，则需要输入的对应的bias顺序为: 锚点0的bias1, bias2; 锚点1的bias1, bias2以及锚点2的bias1,bias2。数据类型为float，取值范围为大于0的浮点数。详细设置可参照sample中的测试用例。Yolov2的输入tensor规格与Yolov1相同，对应图4-5中的最后一个permute层，此处不再赘述。
+
+Yolov2的输出信息由两个report层构成，第一个report层输出检测框输出的的数量，第二个检测框输出xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层为输出检测框数量\(300\)；第二个report层输出检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。
+
+### YOLOV3/V5/V7网络<a name="ZH-CN_TOPIC_0000002408422298"></a>
+
+YOLOV3/V5/V7 Decbbox/DetectionOutput层硬化结构如[图1](#_fig54111139181712)所示，发布包中提供了sample：samples/2\_object\_detection/yolo，请参考此示例进行适配。
+
+**图 1**  YOLOV3/V5/V7 Decbbox/DetectionOutput层硬化结构图<a name="_fig54111139181712"></a>  
+![](figures/YOLOV3-V5-V7-Decbbox-DetectionOutput层硬化结构图.png "YOLOV3-V5-V7-Decbbox-DetectionOutput层硬化结构图")
+
+Yolov3的输入tensor规格以及prototxt中bias的规格与Yolov2相同，此处不再赘述。
+
+Yolov3的输出信息由两个report层构成，第一个report层输出检测框输出的数量，第二个检测框输出xmin, ymin, xmax, ymax, 得分以及类别，按检测框的输出顺序按分数由大到小排列。假设最终有300个检测框，则第一个report层为输出检测框数量\(300\)；第二个report层输出检测框的xmin（300个xmin），检测框的ymin（300个ymin），检测框的xmax（300个max），检测框的ymax\(300个ymax\)，对应的框的得分\(300个分数，由大到小\)，以及对应的框的类别（300个classs ID）。
+
+YOLOV5/YOLOV7的计算公式如下。
+
+x方向（y方向计算流程与x方向类似）：
+
+_cX = \(2 \* sigmoid\(X\) - 0.5 + col\) / gridNumWidth_  \* img\_w
+
+_halfW = 2 \* sigmoid\(w\) \*  2 \* sigmoid\(w\) \* bias / gridNumWidth \* 0.5 \* img\_w_
+
+_pMinX = cX__ – __halfW_
+
+_pMaxX = halfW + cX_
+
+score：_finalScore = sigmoid\(objScore\) \* sigmoid\(classScore\)_
+
+其中col为列索引，gridNumWidth为锚点宽，img\_w为放大系数，x和w为上一层的输出，bias为锚点bias参数，cX为检测框中心点x坐标，halfW为检测框宽\*0.5，pMinX为检测框Xmin，pMaxX为检测框Xmax。objScore和classScore为上一层的输出，finalScore为最终分数。
+
+### YOLOV8网络<a name="ZH-CN_TOPIC_0000002408582250"></a>
+
+YOLOV8DecBBox/Sort/Nms/Filter层硬化结构图如[图1](#fig8562131852)所示，发布包提供了sample:samples/2\_object\_detection/yolo，请参考此示例进行适配。
+
+**图 1**  YOLOV8 DecBBox/Sort/Nms/Filter层硬化结构图<a name="fig8562131852"></a>  
+![](figures/YOLOV8-DecBBox-Sort-Nms-Filter层硬化结构图.jpg "YOLOV8-DecBBox-Sort-Nms-Filter层硬化结构图")
+
+YOLOV8的输入tensor规格、输出信息与YOLOV2相同，此处不再赘述。
+
+坐标计算部分由DecBBox之前的算子实现，参考YOLOV8源码，采用DFL损失函数。
+
+score在DecBBox中计算，计算公式：_finalScore = sigmoid\(classScore\)_
+
+# 算子规格说明
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>Caffe与Onnx框架算子规格中，如无特别说明，输入、输出形状支持范围如下。
 >向量：channel <= 65535，矩阵：width <= 65535，张量：width <= 65535
->当计算数据类型为FP16时，值超出2048会有精度损失。 ## Caffe框架算子规格<a name="ZH-CN_TOPIC_0000002408422246"></a> 该算子规格仅适用于Caffe框架原生IR定义的网络模型。 其他约束：不支持层名为空。 ### 图像分析引擎<a name="ZH-CN_TOPIC_0000002442021229"></a> #### AbsVal<a name="ZH-CN_TOPIC_0000002408581710"></a> 功能描述：求绝对值。 #### ArgMax<a name="ZH-CN_TOPIC_0000002408422102"></a> 功能描述：沿某轴找出topk值及索引（因硬件限制，当前SVP NNN只支持top 1）。 <a name="table148616412366"></a>
+>当计算数据类型为FP16时，值超出2048会有精度损失。
+
+
+
+
+
+## Caffe框架算子规格<a name="ZH-CN_TOPIC_0000002408422246"></a>
+
+该算子规格仅适用于Caffe框架原生IR定义的网络模型。
+
+其他约束：不支持层名为空。
+
+
+
+### 图像分析引擎<a name="ZH-CN_TOPIC_0000002442021229"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### AbsVal<a name="ZH-CN_TOPIC_0000002408581710"></a>
+
+功能描述：求绝对值。
+
+#### ArgMax<a name="ZH-CN_TOPIC_0000002408422102"></a>
+
+功能描述：沿某轴找出topk值及索引（因硬件限制，当前SVP NNN只支持top 1）。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="9.97%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.770000000000001%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -946,7 +3641,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ArgMin<a name="ZH-CN_TOPIC_0000002441981617"></a> 功能描述：沿某轴找出topk值及索引（因硬件限制，当前pico只支持top 1）。 <a name="table148616412366"></a>
+</table>
+
+#### ArgMin<a name="ZH-CN_TOPIC_0000002441981617"></a>
+
+功能描述：沿某轴找出topk值及索引（因硬件限制，当前pico只支持top 1）。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="9.97%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.770000000000001%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -996,7 +3697,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### BatchNorm<a name="ZH-CN_TOPIC_0000002408422010"></a> 功能描述：数据归一化。 <a name="table148616412366"></a>
+</table>
+
+#### BatchNorm<a name="ZH-CN_TOPIC_0000002408422010"></a>
+
+功能描述：数据归一化。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.21%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.84%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1035,7 +3742,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Bias<a name="ZH-CN_TOPIC_0000002442021029"></a> 功能描述：计算两个输入数据的和。 <a name="table148616412366"></a>
+</table>
+
+#### Bias<a name="ZH-CN_TOPIC_0000002442021029"></a>
+
+功能描述：计算两个输入数据的和。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.21%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.83%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1065,7 +3778,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### BNLL<a name="ZH-CN_TOPIC_0000002408421690"></a> 功能描述：按照一固定公式计算，激活函数。 #### Clip<a name="ZH-CN_TOPIC_0000002408581590"></a> 功能描述：数据截断。 <a name="table148616412366"></a>
+</table>
+
+#### BNLL<a name="ZH-CN_TOPIC_0000002408421690"></a>
+
+功能描述：按照一固定公式计算，激活函数。
+
+#### Clip<a name="ZH-CN_TOPIC_0000002408581590"></a>
+
+功能描述：数据截断。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.21%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.83%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1095,7 +3818,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Concat<a name="ZH-CN_TOPIC_0000002441981321"></a> 功能描述：至少两个输入，将它们在某个维度上拼接起来。 <a name="table17947641195318"></a>
+</table>
+
+#### Concat<a name="ZH-CN_TOPIC_0000002441981321"></a>
+
+功能描述：至少两个输入，将它们在某个维度上拼接起来。
+
+<a name="table17947641195318"></a>
 <table><thead align="left"><tr id="row19764415537"><th class="cellrowborder" valign="top" width="10.489999999999998%" id="mcps1.1.6.1.1"><p id="p2976941165318"><a name="p2976941165318"></a><a name="p2976941165318"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.76%" id="mcps1.1.6.1.2"><p id="p1397612417530"><a name="p1397612417530"></a><a name="p1397612417530"></a>数据类型</p>
@@ -1134,7 +3863,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Convolution<a name="ZH-CN_TOPIC_0000002408581802"></a> 功能描述：对输入做卷积。 规格约束：输入数据类型为NCHW，且N须为1。 <a name="table153414324019"></a>
+</table>
+
+#### Convolution<a name="ZH-CN_TOPIC_0000002408581802"></a>
+
+功能描述：对输入做卷积。
+
+规格约束：输入数据类型为NCHW，且N须为1。
+
+<a name="table153414324019"></a>
 <table><thead align="left"><tr id="row14727104813010"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p2976941165318"><a name="p2976941165318"></a><a name="p2976941165318"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p1397612417530"><a name="p1397612417530"></a><a name="p1397612417530"></a>数据类型</p>
@@ -1272,7 +4009,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### CReLU<a name="ZH-CN_TOPIC_0000002408421846"></a> 功能描述：激活函数CReLU\(x\)=\[ReLU\(x\),ReLU\(−x\)\]。 #### Crop<a name="ZH-CN_TOPIC_0000002408421878"></a> 功能描述：数据裁剪。 <a name="table148616412366"></a>
+</table>
+
+#### CReLU<a name="ZH-CN_TOPIC_0000002408421846"></a>
+
+功能描述：激活函数CReLU\(x\)=\[ReLU\(x\),ReLU\(−x\)\]。
+
+#### Crop<a name="ZH-CN_TOPIC_0000002408421878"></a>
+
+功能描述：数据裁剪。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.21%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.83%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1302,7 +4049,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Deconvolution<a name="ZH-CN_TOPIC_0000002441981561"></a> 功能描述：卷积的反过程，将卷积的前向传播和后向传播置换。 规格约束：\(dilation × \(kernel -1\) 大于等于pad。 <a name="table17457122713"></a>
+</table>
+
+#### Deconvolution<a name="ZH-CN_TOPIC_0000002441981561"></a>
+
+功能描述：卷积的反过程，将卷积的前向传播和后向传播置换。
+
+规格约束：\(dilation × \(kernel -1\) 大于等于pad。
+
+<a name="table17457122713"></a>
 <table><thead align="left"><tr id="row367619171171"><th class="cellrowborder" valign="top" width="15.809999999999999%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.780000000000001%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1440,7 +4195,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### DepthwiseConv<a name="ZH-CN_TOPIC_0000002442020805"></a> 功能描述：对输入做卷积。 <a name="table97872481696"></a>
+</table>
+
+#### DepthwiseConv<a name="ZH-CN_TOPIC_0000002442020805"></a>
+
+功能描述：对输入做卷积。
+
+<a name="table97872481696"></a>
 <table><thead align="left"><tr id="row4684195218912"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1569,7 +4330,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### DetectionOutput<a name="ZH-CN_TOPIC_0000002442020881"></a> 功能描述：RPN 硬化层。 <a name="table2764421219"></a>
+</table>
+
+#### DetectionOutput<a name="ZH-CN_TOPIC_0000002442020881"></a>
+
+功能描述：RPN 硬化层。
+
+<a name="table2764421219"></a>
 <table><thead align="left"><tr id="row12684887121"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1717,7 +4484,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Eltwise<a name="ZH-CN_TOPIC_0000002408421706"></a> 功能描述：进行elementwise的计算操作，包括相加、相乘、求最大。当前不支持标量输入。 <a name="table98522301297"></a>
+</table>
+
+#### Eltwise<a name="ZH-CN_TOPIC_0000002408421706"></a>
+
+功能描述：进行elementwise的计算操作，包括相加、相乘、求最大。当前不支持标量输入。
+
+<a name="table98522301297"></a>
 <table><thead align="left"><tr id="row10742133614291"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1756,7 +4529,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ELU<a name="ZH-CN_TOPIC_0000002442021197"></a> 功能描述：一种固定公式的激活函数。 <a name="table8807636173017"></a>
+</table>
+
+#### ELU<a name="ZH-CN_TOPIC_0000002442021197"></a>
+
+功能描述：一种固定公式的激活函数。
+
+<a name="table8807636173017"></a>
 <table><thead align="left"><tr id="row1013413215319"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1777,7 +4556,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Exp<a name="ZH-CN_TOPIC_0000002441981213"></a> 功能描述：计算exp。 <a name="table999817386316"></a>
+</table>
+
+#### Exp<a name="ZH-CN_TOPIC_0000002441981213"></a>
+
+功能描述：计算exp。
+
+<a name="table999817386316"></a>
 <table><thead align="left"><tr id="row7333161933210"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1816,7 +4601,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Extract<a name="ZH-CN_TOPIC_0000002442020769"></a> 功能描述：沿某个维度切割输入数据，输出1个切割的数据。 <a name="table185121511328"></a>
+</table>
+
+#### Extract<a name="ZH-CN_TOPIC_0000002442020769"></a>
+
+功能描述：沿某个维度切割输入数据，输出1个切割的数据。
+
+<a name="table185121511328"></a>
 <table><thead align="left"><tr id="row05807483331"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1855,7 +4646,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Flatten<a name="ZH-CN_TOPIC_0000002442021065"></a> 功能描述：将输入的blob转成向量。 <a name="table185121511328"></a>
+</table>
+
+#### Flatten<a name="ZH-CN_TOPIC_0000002442021065"></a>
+
+功能描述：将输入的blob转成向量。
+
+<a name="table185121511328"></a>
 <table><thead align="left"><tr id="row05807483331"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1885,7 +4682,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### GRU<a name="ZH-CN_TOPIC_0000002442021433"></a> 功能描述：GRU网络。 <a name="table185121511328"></a>
+</table>
+
+#### GRU<a name="ZH-CN_TOPIC_0000002442021433"></a>
+
+功能描述：GRU网络。
+
+<a name="table185121511328"></a>
 <table><thead align="left"><tr id="row05807483331"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1924,7 +4727,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Hswish<a name="ZH-CN_TOPIC_0000002441980985"></a> 功能描述：激活函数h-swish\(x\)=x\*ReLU6\(x+3\)/6。 <a name="table185121511328"></a>
+</table>
+
+#### Hswish<a name="ZH-CN_TOPIC_0000002441980985"></a>
+
+功能描述：激活函数h-swish\(x\)=x\*ReLU6\(x+3\)/6。
+
+<a name="table185121511328"></a>
 <table><thead align="left"><tr id="row05807483331"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1945,7 +4754,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### InnerProduct<a name="ZH-CN_TOPIC_0000002442020941"></a> 功能描述：全连接层，计算内积。 <a name="table185121511328"></a>
+</table>
+
+#### InnerProduct<a name="ZH-CN_TOPIC_0000002442020941"></a>
+
+功能描述：全连接层，计算内积。
+
+<a name="table185121511328"></a>
 <table><thead align="left"><tr id="row05807483331"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -1993,7 +4808,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Input<a name="ZH-CN_TOPIC_0000002408421650"></a> 功能描述：输入层。 <a name="table185121511328"></a>
+</table>
+
+#### Input<a name="ZH-CN_TOPIC_0000002408421650"></a>
+
+功能描述：输入层。
+
+<a name="table185121511328"></a>
 <table><thead align="left"><tr id="row05807483331"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.93%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2014,7 +4835,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Interp<a name="ZH-CN_TOPIC_0000002442020821"></a> 功能描述：计算双线性插值。 <a name="table45791622123920"></a>
+</table>
+
+#### Interp<a name="ZH-CN_TOPIC_0000002442020821"></a>
+
+功能描述：计算双线性插值。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="18.66%" id="mcps1.1.6.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.97%" id="mcps1.1.6.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2038,7 +4865,7 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="6" valign="top" width="24.77%" headers="mcps1.1.6.1.5 "><p id="p11191413184019"><a name="p11191413184019"></a><a name="p11191413184019"></a>输入width=4096；</p>
 <p id="p201191135409"><a name="p201191135409"></a><a name="p201191135409"></a>输出w &lt; 2048；</p>
 <p id="p131191138403"><a name="p131191138403"></a><a name="p131191138403"></a>Out = In + (In - 1) × (zoom_factor - 1);</p>
-<p id="p51199138408"><a name="p51199138408"></a><a name="p51199138408"></a>Out = (In - 1) / shrink_factor + 1;</p>
+<p id="p51199138408"><a name="p51199138408"></a><a name="p51199138408"></a>Out = (In - 1)  / shrink_factor + 1;</p>
 <p id="p8119141310402"><a name="p8119141310402"></a><a name="p8119141310402"></a>仅支持通过负补边对输入进行裁剪；</p>
 <p id="p411941319403"><a name="p411941319403"></a><a name="p411941319403"></a>仅支持有效输入（加补边）/输出形状height /width同时为1或同时不为1；</p>
 <p id="p1811918133408"><a name="p1811918133408"></a><a name="p1811918133408"></a>仅支持Tensor输入。</p>
@@ -2090,7 +4917,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Log<a name="ZH-CN_TOPIC_0000002408582218"></a> 功能描述：计算log。 <a name="table185121511328"></a>
+</table>
+
+#### Log<a name="ZH-CN_TOPIC_0000002408582218"></a>
+
+功能描述：计算log。
+
+<a name="table185121511328"></a>
 <table><thead align="left"><tr id="row05807483331"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2129,7 +4962,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### LRN<a name="ZH-CN_TOPIC_0000002408421930"></a> 功能描述：一种normalization的方法。 <a name="table45791622123920"></a>
+</table>
+
+#### LRN<a name="ZH-CN_TOPIC_0000002408421930"></a>
+
+功能描述：一种normalization的方法。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.909999999999998%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2176,8 +5015,23 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" width="30.919999999999998%" headers="mcps1.1.5.1.4 "><p id="p827254194210"><a name="p827254194210"></a><a name="p827254194210"></a>只支持ACROSS_CHANNELS</p>
 </td>
 </tr>
+<tr id="row663692293916"><td class="cellrowborder" valign="top" width="20.200000000000003%" headers="mcps1.1.5.1.1 "><p id="p172718547425"><a name="p172718547425"></a><a name="p172718547425"></a>k</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.909999999999998%" headers="mcps1.1.5.1.2 "><p id="p1327175415428"><a name="p1327175415428"></a><a name="p1327175415428"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.97%" headers="mcps1.1.5.1.3 "><p id="p128205464212"><a name="p128205464212"></a><a name="p128205464212"></a>默认为1.0</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.919999999999998%" headers="mcps1.1.5.1.4 "><p id="p828854104218"><a name="p828854104218"></a><a name="p828854104218"></a>不能为负数</p>
+</td>
+</tr>
 </tbody>
-</table> #### LSTM<a name="ZH-CN_TOPIC_0000002442020809"></a> 功能描述：LSTM网络。 <a name="table45791622123920"></a>
+</table>
+
+#### LSTM<a name="ZH-CN_TOPIC_0000002442020809"></a>
+
+功能描述：LSTM网络。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.909999999999998%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2216,7 +5070,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### MatMul<a name="ZH-CN_TOPIC_0000002442021469"></a> 功能描述：两个输入数据做矩阵乘。 <a name="table45791622123920"></a>
+</table>
+
+#### MatMul<a name="ZH-CN_TOPIC_0000002442021469"></a>
+
+功能描述：两个输入数据做矩阵乘。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="19.189999999999998%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.939999999999998%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2256,7 +5116,19 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Mish<a name="ZH-CN_TOPIC_0000002442021209"></a> 功能描述：激活函数mish\(x\)=x\*tanh\(ln\(1+exp\(x\)\)\)。 #### MVN<a name="ZH-CN_TOPIC_0000002408422042"></a> 功能描述：x'=\(x-mean\(x\)\)/std\(x\)。 规格约束：仅支持4D输入。 <a name="table45791622123920"></a>
+</table>
+
+#### Mish<a name="ZH-CN_TOPIC_0000002442021209"></a>
+
+功能描述：激活函数mish\(x\)=x\*tanh\(ln\(1+exp\(x\)\)\)。
+
+#### MVN<a name="ZH-CN_TOPIC_0000002408422042"></a>
+
+功能描述：x'=\(x-mean\(x\)\)/std\(x\)。
+
+规格约束：仅支持4D输入。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.909999999999998%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2295,7 +5167,19 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Nop<a name="ZH-CN_TOPIC_0000002408582198"></a> 功能描述：数据搬移。 #### Normalize<a name="ZH-CN_TOPIC_0000002442020841"></a> 功能描述：一种数据归一化的方法。 规格约束：（只支持tensor输入）。 <a name="table45791622123920"></a>
+</table>
+
+#### Nop<a name="ZH-CN_TOPIC_0000002408582198"></a>
+
+功能描述：数据搬移。
+
+#### Normalize<a name="ZH-CN_TOPIC_0000002442020841"></a>
+
+功能描述：一种数据归一化的方法。
+
+规格约束：（只支持tensor输入）。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.909999999999998%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2343,7 +5227,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Pad<a name="ZH-CN_TOPIC_0000002442021473"></a> 功能描述：对输入的数据进行填充。 <a name="table148616412366"></a>
+</table>
+
+#### Pad<a name="ZH-CN_TOPIC_0000002442021473"></a>
+
+功能描述：对输入的数据进行填充。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -2400,8 +5290,19 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 当mode为"reflect"，pads必须小于对应轴的元素个数。
->- 当pads为负数，pads的绝对值必须小于或等于对应轴的元素个数。 #### PassThrough<a name="ZH-CN_TOPIC_0000002441980965"></a> 功能描述：把height和width的数据展开到channel维度。 规格约束：\(只支持输入数据类型为NCHW\)。 <a name="table45791622123920"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   当mode为"reflect"，pads必须小于对应轴的元素个数。
+>-   当pads为负数，pads的绝对值必须小于或等于对应轴的元素个数。
+
+#### PassThrough<a name="ZH-CN_TOPIC_0000002441980965"></a>
+
+功能描述：把height和width的数据展开到channel维度。
+
+规格约束：\(只支持输入数据类型为NCHW\)。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.28%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2440,7 +5341,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Permute<a name="ZH-CN_TOPIC_0000002408581670"></a> 功能描述：数据转置。 规格约束：order为0312时，输入的width不能大于65535。 <a name="table45791622123920"></a>
+</table>
+
+#### Permute<a name="ZH-CN_TOPIC_0000002408581670"></a>
+
+功能描述：数据转置。
+
+规格约束：order为0312时，输入的width不能大于65535。
+
+<a name="table45791622123920"></a>
 <table><thead align="left"><tr id="row74131134173917"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.28%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2461,7 +5370,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Pooling<a name="ZH-CN_TOPIC_0000002408422138"></a> 功能描述：对输入做pooling。 <a name="table1043514313109"></a>
+</table>
+
+#### Pooling<a name="ZH-CN_TOPIC_0000002408422138"></a>
+
+功能描述：对输入做pooling。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2628,7 +5543,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Power<a name="ZH-CN_TOPIC_0000002408581922"></a> 功能描述：f\(x\)=\(shift+scale∗x\)^power <a name="table1043514313109"></a>
+</table>
+
+#### Power<a name="ZH-CN_TOPIC_0000002408581922"></a>
+
+功能描述：f\(x\)=\(shift+scale∗x\)^power
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2667,7 +5588,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### PReLU<a name="ZH-CN_TOPIC_0000002442020849"></a> 功能描述：带参数的ReLU激活函数。 <a name="table1043514313109"></a>
+</table>
+
+#### PReLU<a name="ZH-CN_TOPIC_0000002442020849"></a>
+
+功能描述：带参数的ReLU激活函数。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2688,7 +5615,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### PSROIPooling<a name="ZH-CN_TOPIC_0000002408582002"></a> 功能描述：位置敏感的候选区域池化。 规格约束：第二路输入仅支持rpn层或者data层。 <a name="table1043514313109"></a>
+</table>
+
+#### PSROIPooling<a name="ZH-CN_TOPIC_0000002408582002"></a>
+
+功能描述：位置敏感的候选区域池化。
+
+规格约束：第二路输入仅支持rpn层或者data层。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2727,7 +5662,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Reduction<a name="ZH-CN_TOPIC_0000002442021449"></a> 功能描述：将输入的blob reduction成一个scalar。 <a name="table1043514313109"></a>
+</table>
+
+#### Reduction<a name="ZH-CN_TOPIC_0000002442021449"></a>
+
+功能描述：将输入的blob reduction成一个scalar。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2766,7 +5707,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReLU/ReLU6/RReLU<a name="ZH-CN_TOPIC_0000002442020897"></a> 功能描述：ReLU激活函数。 <a name="table1043514313109"></a>
+</table>
+
+#### ReLU/ReLU6/RReLU<a name="ZH-CN_TOPIC_0000002442020897"></a>
+
+功能描述：ReLU激活函数。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2787,7 +5734,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Reorg<a name="ZH-CN_TOPIC_0000002408581774"></a> 功能描述：Yolov2算子，Height和Width折叠到Channel的变形操作。 规格约束：\(只支持输入数据类型为NCHW\)。 <a name="table1043514313109"></a>
+</table>
+
+#### Reorg<a name="ZH-CN_TOPIC_0000002408581774"></a>
+
+功能描述：Yolov2算子，Height和Width折叠到Channel的变形操作。
+
+规格约束：\(只支持输入数据类型为NCHW\)。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2808,7 +5763,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Reshape<a name="ZH-CN_TOPIC_0000002408581734"></a> 功能描述：维度变换。 规格约束：reshape 到第0维时，输出维度小于ub\_size/sizeof\(data\_type\)。例如ub\_size为2M， data\_type为int8\_t， 则小于524288‬。 <a name="table1043514313109"></a>
+</table>
+
+#### Reshape<a name="ZH-CN_TOPIC_0000002408581734"></a>
+
+功能描述：维度变换。
+
+规格约束：reshape 到第0维时，输出维度小于ub\_size/sizeof\(data\_type\)。例如ub\_size为2M， data\_type为int8\_t， 则小于524288‬。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.76%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2848,7 +5811,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Reverse<a name="ZH-CN_TOPIC_0000002441981657"></a> 功能描述：将输入在指定的轴上进行反转。 <a name="table5215484010"></a>
+</table>
+
+#### Reverse<a name="ZH-CN_TOPIC_0000002441981657"></a>
+
+功能描述：将输入在指定的轴上进行反转。
+
+<a name="table5215484010"></a>
 <table><thead align="left"><tr id="row1121748401"><th class="cellrowborder" valign="top" width="13.48%" id="mcps1.1.6.1.1"><p id="p4244810017"><a name="p4244810017"></a><a name="p4244810017"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.53%" id="mcps1.1.6.1.2"><p id="p179264131612"><a name="p179264131612"></a><a name="p179264131612"></a>数据类型</p>
@@ -2873,7 +5842,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### RNN<a name="ZH-CN_TOPIC_0000002441981469"></a> 功能描述：RNN网络。 <a name="table1043514313109"></a>
+</table>
+
+#### RNN<a name="ZH-CN_TOPIC_0000002441981469"></a>
+
+功能描述：RNN网络。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.76%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2912,7 +5887,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ROIPooling<a name="ZH-CN_TOPIC_0000002442021185"></a> 功能描述：目标检测的候选框区域池化。 规格约束：第二路输入仅支持rpn层或者data层。 <a name="table1043514313109"></a>
+</table>
+
+#### ROIPooling<a name="ZH-CN_TOPIC_0000002442021185"></a>
+
+功能描述：目标检测的候选框区域池化。
+
+规格约束：第二路输入仅支持rpn层或者data层。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.76%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2951,7 +5934,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Scale<a name="ZH-CN_TOPIC_0000002441981077"></a> 功能描述：计算两个输入数据的乘，支持两个输入维度大小不一致。 规格约束：第一路输入的shape只支持4维或2维；如果存在第二路输入，其shape参考axis属性的配置规格要求。 <a name="table1043514313109"></a>
+</table>
+
+#### Scale<a name="ZH-CN_TOPIC_0000002441981077"></a>
+
+功能描述：计算两个输入数据的乘，支持两个输入维度大小不一致。
+
+规格约束：第一路输入的shape只支持4维或2维；如果存在第二路输入，其shape参考axis属性的配置规格要求。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.76%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -2990,7 +5981,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ShuffleChannel<a name="ZH-CN_TOPIC_0000002441981409"></a> 功能描述：将c分成group个子组，并通过逐一从每个子组中选择元素获得新的顺序。 <a name="table1043514313109"></a>
+</table>
+
+#### ShuffleChannel<a name="ZH-CN_TOPIC_0000002441981409"></a>
+
+功能描述：将c分成group个子组，并通过逐一从每个子组中选择元素获得新的顺序。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="10.93%" id="mcps1.1.6.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.12%" id="mcps1.1.6.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3015,7 +6012,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Sigmoid<a name="ZH-CN_TOPIC_0000002441981625"></a> 功能描述：sigmoid激活函数。 #### Slice<a name="ZH-CN_TOPIC_0000002441981113"></a> 功能描述：沿某个维度切割输入的blob，输出多个切割的blob。 <a name="table1043514313109"></a>
+</table>
+
+#### Sigmoid<a name="ZH-CN_TOPIC_0000002441981625"></a>
+
+功能描述：sigmoid激活函数。
+
+#### Slice<a name="ZH-CN_TOPIC_0000002441981113"></a>
+
+功能描述：沿某个维度切割输入的blob，输出多个切割的blob。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.75%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3054,7 +6061,19 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Silence<a name="ZH-CN_TOPIC_0000002442020745"></a> 功能描述：屏蔽输出。 规格约束：只支持连接Slice，且Slice两个输出，屏蔽Slice的其中一个输出。连接其他层时，删除Silence层，不支持屏蔽。 #### Softmax<a name="ZH-CN_TOPIC_0000002408421802"></a> 功能描述：计算softmax函数。 <a name="table1043514313109"></a>
+</table>
+
+#### Silence<a name="ZH-CN_TOPIC_0000002442020745"></a>
+
+功能描述：屏蔽输出。
+
+规格约束：只支持连接Slice，且Slice两个输出，屏蔽Slice的其中一个输出。连接其他层时，删除Silence层，不支持屏蔽。
+
+#### Softmax<a name="ZH-CN_TOPIC_0000002408421802"></a>
+
+功能描述：计算softmax函数。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="10.93%" id="mcps1.1.6.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.12%" id="mcps1.1.6.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3082,7 +6101,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Split<a name="ZH-CN_TOPIC_0000002408581810"></a> 功能描述：复制输入的blob到多个节点。 #### SPP<a name="ZH-CN_TOPIC_0000002441981521"></a> 功能描述：对不同的输入做金字塔的pooling，输出一样的大小。 <a name="table1043514313109"></a>
+</table>
+
+#### Split<a name="ZH-CN_TOPIC_0000002408581810"></a>
+
+功能描述：复制输入的blob到多个节点。
+
+#### SPP<a name="ZH-CN_TOPIC_0000002441981521"></a>
+
+功能描述：对不同的输入做金字塔的pooling，输出一样的大小。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="10.93%" id="mcps1.1.6.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.12%" id="mcps1.1.6.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3116,7 +6145,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Swish<a name="ZH-CN_TOPIC_0000002408581562"></a> 功能描述：激活函数swish\(x\)=x \* sigmoid \(beta \* x\) 。 <a name="table1043514313109"></a>
+</table>
+
+#### Swish<a name="ZH-CN_TOPIC_0000002408581562"></a>
+
+功能描述：激活函数swish\(x\)=x \* sigmoid \(beta \* x\) 。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="14.48%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.74%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3137,7 +6172,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### TanH<a name="ZH-CN_TOPIC_0000002408582022"></a> 功能描述：tanh激活函数。 #### Threshold<a name="ZH-CN_TOPIC_0000002442020981"></a> 功能描述：输入与一个阈值相比较，大于则输出1，小于等于则输出0。 <a name="table1043514313109"></a>
+</table>
+
+#### TanH<a name="ZH-CN_TOPIC_0000002408582022"></a>
+
+功能描述：tanh激活函数。
+
+#### Threshold<a name="ZH-CN_TOPIC_0000002442020981"></a>
+
+功能描述：输入与一个阈值相比较，大于则输出1，小于等于则输出0。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="14.48%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.74%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3158,7 +6203,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Tile<a name="ZH-CN_TOPIC_0000002441981189"></a> 功能描述：沿某个维度复制。 <a name="table1043514313109"></a>
+</table>
+
+#### Tile<a name="ZH-CN_TOPIC_0000002441981189"></a>
+
+功能描述：沿某个维度复制。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="14.48%" id="mcps1.1.5.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.74%" id="mcps1.1.5.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3188,7 +6239,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Upsample<a name="ZH-CN_TOPIC_0000002408422214"></a> 功能描述：上采样。 <a name="table1043514313109"></a>
+</table>
+
+#### Upsample<a name="ZH-CN_TOPIC_0000002408422214"></a>
+
+功能描述：上采样。
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="13.889999999999999%" id="mcps1.1.6.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.4%" id="mcps1.1.6.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>数据类型</p>
@@ -3220,7 +6277,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### GroupNorm<a name="ZH-CN_TOPIC_0000002408422358"></a> 功能描述：计算 y = scale \* \(x - mean\) / sqrt\(variance + epsilon\) + bias。其中，mean和variance 是根据每个通道组的实例计算的，并且应为每组通道指定比例\(scale\)和偏差\(B\)。 规格约束：scale和B不支持在线输入。 <a name="table148616412366"></a>
+</table>
+
+#### GroupNorm<a name="ZH-CN_TOPIC_0000002408422358"></a>
+
+功能描述：计算 y = scale \* \(x - mean\) / sqrt\(variance + epsilon\) + bias。其中，mean和variance 是根据每个通道组的实例计算的，并且应为每组通道指定比例\(scale\)和偏差\(B\)。
+
+规格约束：scale和B不支持在线输入。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.308669133086692%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3293,8 +6358,18 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Warp<a name="ZH-CN_TOPIC_0000002408422290"></a> 功能描述：根据运动矢量，把输入数据映射到输出数据上。运动矢量包含x和y方向的移动单位， - 在x方向上，正值表示像素点向左移动，负值表示像素点向右移动；
-- 在y方向上，正值表示像素点向上移动，负值表示像素点向下移动。 假设src\_x和src\_y是原始的像素坐标，x和y是运动矢量，则映射后的坐标是dst\_x=src\_x-x，dst\_y=src\_y-y。 <a name="table9125194210354"></a>
+</table>
+
+#### Warp<a name="ZH-CN_TOPIC_0000002408422290"></a>
+
+功能描述：根据运动矢量，把输入数据映射到输出数据上。运动矢量包含x和y方向的移动单位，
+
+-   在x方向上，正值表示像素点向左移动，负值表示像素点向右移动；
+-   在y方向上，正值表示像素点向上移动，负值表示像素点向下移动。
+
+假设src\_x和src\_y是原始的像素坐标，x和y是运动矢量，则映射后的坐标是dst\_x=src\_x-x，dst\_y=src\_y-y。
+
+<a name="table9125194210354"></a>
 <table><thead align="left"><tr id="row6184842183511"><th class="cellrowborder" valign="top" width="16.51669666066787%" id="mcps1.1.7.1.1"><p id="p518494217356"><a name="p518494217356"></a><a name="p518494217356"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.51669666066787%" id="mcps1.1.7.1.2"><p id="p11185134217350"><a name="p11185134217350"></a><a name="p11185134217350"></a>参数/输入</p>
@@ -3350,7 +6425,23 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >warp支持2个或者3个在线输入；当有3个在线输入时，默认3个输入分别对应data、roi、motion\_vector；当有2个在线输入时，默认2个输入分别是data、motion\_vector。 ### CPU<a name="ZH-CN_TOPIC_0000002441981201"></a> #### Unpooling<a name="ZH-CN_TOPIC_0000002408422338"></a> 功能描述：Pooling的部分逆操作。 规格约束：算子为双输入，第一路输入data，第二路输入mask（mask输入的index满足0 <= index < outHeight \* outWidth； 其中 outHeight = \(inHeight - 1\) \* stride\_h - 2 \* pad\_h + kernel\_h， outWidth = \(inWidth - 1\) \* stride\_w - 2 \* pad\_w + kernel\_w <a name="table1043514313109"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>warp支持2个或者3个在线输入；当有3个在线输入时，默认3个输入分别对应data、roi、motion\_vector；当有2个在线输入时，默认2个输入分别是data、motion\_vector。
+
+### CPU<a name="ZH-CN_TOPIC_0000002441981201"></a>
+
+
+#### Unpooling<a name="ZH-CN_TOPIC_0000002408422338"></a>
+
+功能描述：Pooling的部分逆操作。
+
+规格约束：算子为双输入，第一路输入data，第二路输入mask（mask输入的index满足0 <=  index < outHeight \* outWidth；
+
+其中 outHeight = \(inHeight - 1\) \* stride\_h - 2 \* pad\_h + kernel\_h， outWidth = \(inWidth - 1\) \* stride\_w - 2 \* pad\_w + kernel\_w
+
+<a name="table1043514313109"></a>
 <table><thead align="left"><tr id="row93411073107"><th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.5.1.1"><p id="p1644135411378"><a name="p1644135411378"></a><a name="p1644135411378"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.94%" id="mcps1.1.5.1.2"><p id="p2644354133718"><a name="p2644354133718"></a><a name="p2644354133718"></a>数据类型</p>
@@ -3488,7 +6579,109 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> ## Onnx框架算子规格<a name="ZH-CN_TOPIC_0000002442020985"></a> 该算子规格仅适用于Onnx框架原生IR定义的网络模型。 ### 图像分析引擎<a name="ZH-CN_TOPIC_0000002408421758"></a> #### Abs<a name="ZH-CN_TOPIC_0000002441980953"></a> 功能描述：求绝对值。 <a name="table148616412366"></a>
+</table>
+
+## Onnx框架算子规格<a name="ZH-CN_TOPIC_0000002442020985"></a>
+
+该算子规格仅适用于Onnx框架原生IR定义的网络模型。
+
+
+
+### 图像分析引擎<a name="ZH-CN_TOPIC_0000002408421758"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Abs<a name="ZH-CN_TOPIC_0000002441980953"></a>
+
+功能描述：求绝对值。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3517,7 +6710,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Add<a name="ZH-CN_TOPIC_0000002408581694"></a> 功能描述：计算两个输入element-wise的和。 <a name="table148616412366"></a>
+</table>
+
+#### Add<a name="ZH-CN_TOPIC_0000002408581694"></a>
+
+功能描述：计算两个输入element-wise的和。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3544,14 +6743,29 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p12671108966"><a name="p12671108966"></a><a name="p12671108966"></a>1. 在线输入的维度需一致</p>
 <p id="p5282153443612"><a name="p5282153443612"></a><a name="p5282153443612"></a>2. 在线输入不需要C轴H轴及W轴都广</p>
 <p id="p459122912711"><a name="p459122912711"></a><a name="p459122912711"></a>3. 不需要N轴广播</p>
-<p id="p18967918141418"><a name="p18967918141418"></a><a name="p18967918141418"></a>4. 在线输入最多只有一路需要广播</p>
+<p id="p18967918141418"><a name="p18967918141418"></a><a name="p18967918141418"></a>4.  在线输入最多只有一路需要广播</p>
 <p id="p105399811150"><a name="p105399811150"></a><a name="p105399811150"></a>不满足的场景使用CPU实现</p>
 </td>
 <td class="cellrowborder" rowspan="2" valign="top" width="21%" headers="mcps1.1.7.1.6 "><p id="p10735141615150"><a name="p10735141615150"></a><a name="p10735141615150"></a>是</p>
 </td>
 </tr>
+<tr id="row06699914143"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p1773581611511"><a name="p1773581611511"></a><a name="p1773581611511"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p1973561610151"><a name="p1973561610151"></a><a name="p1973561610151"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p9735131616153"><a name="p9735131616153"></a><a name="p9735131616153"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p573516165155"><a name="p573516165155"></a><a name="p573516165155"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### ArgMax<a name="ZH-CN_TOPIC_0000002408422182"></a> 功能描述：返回指定轴上最大值的索引。 <a name="table148616412366"></a>
+</table>
+
+#### ArgMax<a name="ZH-CN_TOPIC_0000002408422182"></a>
+
+功能描述：返回指定轴上最大值的索引。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.73%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.27%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3613,7 +6827,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ArgMin<a name="ZH-CN_TOPIC_0000002442021381"></a> 功能描述：返回指定轴上最小值的索引。 <a name="table148616412366"></a>
+</table>
+
+#### ArgMin<a name="ZH-CN_TOPIC_0000002442021381"></a>
+
+功能描述：返回指定轴上最小值的索引。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="17.37173717371737%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.53115311531153%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3675,7 +6895,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### AveragePool<a name="ZH-CN_TOPIC_0000002441981433"></a> 功能描述：平均池化。 <a name="table148616412366"></a>
+</table>
+
+#### AveragePool<a name="ZH-CN_TOPIC_0000002441981433"></a>
+
+功能描述：平均池化。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.939999999999998%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.879999999999999%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3772,8 +6998,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p17491242163413"><a name="p17491242163413"></a><a name="p17491242163413"></a>支持</p>
 </td>
 </tr>
+<tr id="row7464269504"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p17772183105011"><a name="p17772183105011"></a><a name="p17772183105011"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p57724316500"><a name="p57724316500"></a><a name="p57724316500"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p377213313505"><a name="p377213313505"></a><a name="p377213313505"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p17772143125015"><a name="p17772143125015"></a><a name="p17772143125015"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p77517423345"><a name="p77517423345"></a><a name="p77517423345"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### BatchNormalization<a name="ZH-CN_TOPIC_0000002441981161"></a> 功能描述：计算输入的batch normalization。 <a name="table148616412366"></a>
+</table>
+
+#### BatchNormalization<a name="ZH-CN_TOPIC_0000002441981161"></a>
+
+功能描述：计算输入的batch normalization。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3810,6 +7053,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p12358125891917"><a name="p12358125891917"></a><a name="p12358125891917"></a>scale tensor</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p9358858131911"><a name="p9358858131911"></a><a name="p9358858131911"></a>必须为离线</p>
+</td>
+</tr>
+<tr id="row10565113851917"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p8358165819193"><a name="p8358165819193"></a><a name="p8358165819193"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p235814585198"><a name="p235814585198"></a><a name="p235814585198"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p12358115881918"><a name="p12358115881918"></a><a name="p12358115881918"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p9358158101911"><a name="p9358158101911"></a><a name="p9358158101911"></a>bias tensor</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p835845816195"><a name="p835845816195"></a><a name="p835845816195"></a>必须为离线</p>
 </td>
 </tr>
 <tr id="row2475153917192"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p173585582196"><a name="p173585582196"></a><a name="p173585582196"></a>mean</p>
@@ -3857,7 +7111,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Ceil<a name="ZH-CN_TOPIC_0000002408581642"></a> 功能描述：对输入X元素进行向上取整得到Y。 <a name="table148616412366"></a>
+</table>
+
+#### Ceil<a name="ZH-CN_TOPIC_0000002408581642"></a>
+
+功能描述：对输入X元素进行向上取整得到Y。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3886,7 +7146,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Clip<a name="ZH-CN_TOPIC_0000002408582242"></a> 功能描述：根据上下边界对数据进行裁剪。 <a name="table148616412366"></a>
+</table>
+
+#### Clip<a name="ZH-CN_TOPIC_0000002408582242"></a>
+
+功能描述：根据上下边界对数据进行裁剪。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="10.22%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.780000000000001%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3937,7 +7203,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Compress<a name="ZH-CN_TOPIC_0000002408421902"></a> 功能描述：从输入张量中沿给定轴根据condition中每个索引是否为true来选择切片。 <a name="table148616412366"></a>
+</table>
+
+#### Compress<a name="ZH-CN_TOPIC_0000002408421902"></a>
+
+功能描述：从输入张量中沿给定轴根据condition中每个索引是否为true来选择切片。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -3988,7 +7260,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Concat<a name="ZH-CN_TOPIC_0000002442021149"></a> 功能描述：将多个输入在指定维度拼接。 <a name="table148616412366"></a>
+</table>
+
+#### Concat<a name="ZH-CN_TOPIC_0000002442021149"></a>
+
+功能描述：将多个输入在指定维度拼接。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4030,7 +7308,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Constant<a name="ZH-CN_TOPIC_0000002441981633"></a> 功能描述：生成离线数据。 <a name="table148616412366"></a>
+</table>
+
+#### Constant<a name="ZH-CN_TOPIC_0000002441981633"></a>
+
+功能描述：生成离线数据。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4108,7 +7392,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ConstantOfShape<a name="ZH-CN_TOPIC_0000002441980997"></a> 功能描述：生成离线数据。 <a name="table148616412366"></a>
+</table>
+
+#### ConstantOfShape<a name="ZH-CN_TOPIC_0000002441980997"></a>
+
+功能描述：生成离线数据。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4148,7 +7438,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Conv<a name="ZH-CN_TOPIC_0000002408582318"></a> 功能描述：对输入做卷积计算。 <a name="table148616412366"></a>
+</table>
+
+#### Conv<a name="ZH-CN_TOPIC_0000002408582318"></a>
+
+功能描述：对输入做卷积计算。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4174,6 +7470,28 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" align="left" valign="top" width="19.189999999999998%" headers="mcps1.1.7.1.5 "><p id="p11412193915412"><a name="p11412193915412"></a><a name="p11412193915412"></a>N×C×H×W，N须为1</p>
 </td>
 <td class="cellrowborder" rowspan="9" align="left" valign="top" width="16.81%" headers="mcps1.1.7.1.6 "><p id="p12412039205414"><a name="p12412039205414"></a><a name="p12412039205414"></a>否</p>
+</td>
+</tr>
+<tr id="row141758455525"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p20412173917541"><a name="p20412173917541"></a><a name="p20412173917541"></a>W</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p6412163916547"><a name="p6412163916547"></a><a name="p6412163916547"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p19412113945416"><a name="p19412113945416"></a><a name="p19412113945416"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p16412439145419"><a name="p16412439145419"></a><a name="p16412439145419"></a>权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p635634516817"><a name="p635634516817"></a><a name="p635634516817"></a>必须为离线，M×C/group×kH×kW</p>
+</td>
+</tr>
+<tr id="row4955813125415"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p1741253925411"><a name="p1741253925411"></a><a name="p1741253925411"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p9412183918545"><a name="p9412183918545"></a><a name="p9412183918545"></a>input(optional)</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p64121739115417"><a name="p64121739115417"></a><a name="p64121739115417"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p941293995413"><a name="p941293995413"></a><a name="p941293995413"></a>偏置</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p1841263915547"><a name="p1841263915547"></a><a name="p1841263915547"></a>M(M为Feature map数量)，必须为离线</p>
 </td>
 </tr>
 <tr id="row439215105413"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p541215397545"><a name="p541215397545"></a><a name="p541215397545"></a>auto_pad</p>
@@ -4243,7 +7561,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ConvTranspose<a name="ZH-CN_TOPIC_0000002408422238"></a> 功能描述：对输入做反卷积计算。 规格约束：\(dilations × \(kernel\_shape -1\) 大于等于pads。 <a name="table148616412366"></a>
+</table>
+
+#### ConvTranspose<a name="ZH-CN_TOPIC_0000002408422238"></a>
+
+功能描述：对输入做反卷积计算。
+
+规格约束：\(dilations × \(kernel\_shape -1\) 大于等于pads。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4270,6 +7596,26 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p43481629135616"><a name="p43481629135616"></a><a name="p43481629135616"></a>必须为离线，C×M/group×kH×kW</p>
 </td>
 <td class="cellrowborder" rowspan="11" align="left" valign="top" width="13.239999999999998%" headers="mcps1.1.7.1.6 "><p id="p15348529185611"><a name="p15348529185611"></a><a name="p15348529185611"></a>否</p>
+</td>
+</tr>
+<tr id="row141758455525"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p1434832945612"><a name="p1434832945612"></a><a name="p1434832945612"></a>W</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p83485293568"><a name="p83485293568"></a><a name="p83485293568"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p10348102918563"><a name="p10348102918563"></a><a name="p10348102918563"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p183481629145616"><a name="p183481629145616"></a><a name="p183481629145616"></a>权重</p>
+</td>
+</tr>
+<tr id="row4955813125415"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p12348029175615"><a name="p12348029175615"></a><a name="p12348029175615"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p133488293560"><a name="p133488293560"></a><a name="p133488293560"></a>input(optional)</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p16348229105616"><a name="p16348229105616"></a><a name="p16348229105616"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p734815295564"><a name="p734815295564"></a><a name="p734815295564"></a>偏置</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p1634862910569"><a name="p1634862910569"></a><a name="p1634862910569"></a>必须为离线，M(M为Feature map数量)</p>
 </td>
 </tr>
 <tr id="row439215105413"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p93481129155613"><a name="p93481129155613"></a><a name="p93481129155613"></a>auto_pad</p>
@@ -4361,7 +7707,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Dropout<a name="ZH-CN_TOPIC_0000002408422346"></a> 功能描述：pico中仅将输入复制到输出。 <a name="table148616412366"></a>
+</table>
+
+#### Dropout<a name="ZH-CN_TOPIC_0000002408422346"></a>
+
+功能描述：pico中仅将输入复制到输出。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4423,7 +7775,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Elu<a name="ZH-CN_TOPIC_0000002441981253"></a> 功能描述：一种固定公式的激活函数。 <a name="table148616412366"></a>
+</table>
+
+#### Elu<a name="ZH-CN_TOPIC_0000002441981253"></a>
+
+功能描述：一种固定公式的激活函数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4463,7 +7821,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Equal<a name="ZH-CN_TOPIC_0000002408582258"></a> 功能描述：逐点计算A中元素是否等于B中元素。 <a name="table148616412366"></a>
+</table>
+
+#### Equal<a name="ZH-CN_TOPIC_0000002408582258"></a>
+
+功能描述：逐点计算A中元素是否等于B中元素。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.28%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.28%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4490,15 +7854,30 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p12671108966"><a name="p12671108966"></a><a name="p12671108966"></a>1. 在线输入的维度需一致</p>
 <p id="p5282153443612"><a name="p5282153443612"></a><a name="p5282153443612"></a>2. 在线输入不需要C轴H轴及W轴都广</p>
 <p id="p459122912711"><a name="p459122912711"></a><a name="p459122912711"></a>3. 不需要N轴广播</p>
-<p id="p18967918141418"><a name="p18967918141418"></a><a name="p18967918141418"></a>4. 在线输入最多只有一路需要广播</p>
+<p id="p18967918141418"><a name="p18967918141418"></a><a name="p18967918141418"></a>4.  在线输入最多只有一路需要广播</p>
 <p id="p105399811150"><a name="p105399811150"></a><a name="p105399811150"></a>不满足的场景使用CPU实现</p>
 </td>
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="14.08%" headers="mcps1.1.7.1.6 "><p id="p6211831161318"><a name="p6211831161318"></a><a name="p6211831161318"></a>是</p>
 <p id="p921212319131"><a name="p921212319131"></a><a name="p921212319131"></a></p>
 </td>
 </tr>
+<tr id="row15307278131"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p32117316131"><a name="p32117316131"></a><a name="p32117316131"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p921293118132"><a name="p921293118132"></a><a name="p921293118132"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p1221273111137"><a name="p1221273111137"></a><a name="p1221273111137"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p42121731161315"><a name="p42121731161315"></a><a name="p42121731161315"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### Exp<a name="ZH-CN_TOPIC_0000002408422062"></a> 功能描述：计算exp。 <a name="table148616412366"></a>
+</table>
+
+#### Exp<a name="ZH-CN_TOPIC_0000002408422062"></a>
+
+功能描述：计算exp。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4527,7 +7906,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Expand<a name="ZH-CN_TOPIC_0000002408581618"></a> 功能描述：将输入tensor广播成输出tensor。 <a name="table158121244193812"></a>
+</table>
+
+#### Expand<a name="ZH-CN_TOPIC_0000002408581618"></a>
+
+功能描述：将输入tensor广播成输出tensor。
+
+<a name="table158121244193812"></a>
 <table><thead align="left"><tr id="row181214413384"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p981217449386"><a name="p981217449386"></a><a name="p981217449386"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p781264443819"><a name="p781264443819"></a><a name="p781264443819"></a>参数/输入</p>
@@ -4567,7 +7952,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Erf<a name="ZH-CN_TOPIC_0000002408422050"></a> 功能描述：一种固定公式的误差函数。 <a name="table441218183111"></a>
+</table>
+
+#### Erf<a name="ZH-CN_TOPIC_0000002408422050"></a>
+
+功能描述：一种固定公式的误差函数。
+
+<a name="table441218183111"></a>
 <table><thead align="left"><tr id="row17201118143118"><th class="cellrowborder" valign="top" width="13%" id="mcps1.1.7.1.1"><p id="p0201618103115"><a name="p0201618103115"></a><a name="p0201618103115"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.7.1.2"><p id="p32031863112"><a name="p32031863112"></a><a name="p32031863112"></a>参数/输入</p>
@@ -4596,7 +7987,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Flatten<a name="ZH-CN_TOPIC_0000002408422402"></a> 功能描述：将输入以指定轴为界两边分别拉伸成2D Matrix。 规格约束：输入数据至少为二维 <a name="table148616412366"></a>
+</table>
+
+#### Flatten<a name="ZH-CN_TOPIC_0000002408422402"></a>
+
+功能描述：将输入以指定轴为界两边分别拉伸成2D Matrix。
+
+规格约束：输入数据至少为二维
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4636,7 +8035,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Gather<a name="ZH-CN_TOPIC_0000002408421774"></a> 功能描述：将指定轴方向指定indices的数据聚合在一起。 <a name="table148616412366"></a>
+</table>
+
+#### Gather<a name="ZH-CN_TOPIC_0000002408421774"></a>
+
+功能描述：将指定轴方向指定indices的数据聚合在一起。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4693,7 +8098,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Gemm<a name="ZH-CN_TOPIC_0000002441980937"></a> 功能描述：实现两个矩阵的乘积。 opset version: 13 <a name="table148616412366"></a>
+</table>
+
+#### Gemm<a name="ZH-CN_TOPIC_0000002441980937"></a>
+
+功能描述：实现两个矩阵的乘积。
+
+opset version: 13
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="11.61883811618838%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.61883811618838%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4758,8 +8171,47 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p144571546163410"><a name="p144571546163410"></a><a name="p144571546163410"></a>支持</p>
 </td>
 </tr>
+<tr id="row19987180145414"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p18519171514546"><a name="p18519171514546"></a><a name="p18519171514546"></a>A</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p19519181519547"><a name="p19519181519547"></a><a name="p19519181519547"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p14519131510543"><a name="p14519131510543"></a><a name="p14519131510543"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p451941595413"><a name="p451941595413"></a><a name="p451941595413"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p045964613348"><a name="p045964613348"></a><a name="p045964613348"></a>支持</p>
+</td>
+</tr>
+<tr id="row788691125417"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p351921510542"><a name="p351921510542"></a><a name="p351921510542"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p9519181516542"><a name="p9519181516542"></a><a name="p9519181516542"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p251961575416"><a name="p251961575416"></a><a name="p251961575416"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p651931520548"><a name="p651931520548"></a><a name="p651931520548"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p746154614342"><a name="p746154614342"></a><a name="p746154614342"></a>支持</p>
+</td>
+</tr>
+<tr id="row97213316549"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p251916159544"><a name="p251916159544"></a><a name="p251916159544"></a>C</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p35193156549"><a name="p35193156549"></a><a name="p35193156549"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p551961555419"><a name="p551961555419"></a><a name="p551961555419"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p11519171555410"><a name="p11519171555410"></a><a name="p11519171555410"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p8519415165410"><a name="p8519415165410"></a><a name="p8519415165410"></a>optional</p>
+</td>
+</tr>
 </tbody>
-</table> #### Gelu<a name="ZH-CN_TOPIC_0000002408582050"></a> 功能描述：Transformer网络常用的高斯误差线性单元激活函数。onnx opset v20算子，opset v20以下需以自定义算子形式构造。 <a name="table441218183111"></a>
+</table>
+
+#### Gelu<a name="ZH-CN_TOPIC_0000002408582050"></a>
+
+功能描述：Transformer网络常用的高斯误差线性单元激活函数。onnx opset v20算子，opset v20以下需以自定义算子形式构造。
+
+<a name="table441218183111"></a>
 <table><thead align="left"><tr id="row17201118143118"><th class="cellrowborder" valign="top" width="13.01%" id="mcps1.1.7.1.1"><p id="p0201618103115"><a name="p0201618103115"></a><a name="p0201618103115"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17.810000000000002%" id="mcps1.1.7.1.2"><p id="p32031863112"><a name="p32031863112"></a><a name="p32031863112"></a>参数/输入</p>
@@ -4800,7 +8252,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### GlobalAveragePool<a name="ZH-CN_TOPIC_0000002442020949"></a> 功能描述：实现对同一channel的所有元素平均池化。 <a name="table148616412366"></a>
+</table>
+
+#### GlobalAveragePool<a name="ZH-CN_TOPIC_0000002442020949"></a>
+
+功能描述：实现对同一channel的所有元素平均池化。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="11.761176117611761%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.761176117611761%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4836,7 +8294,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### GlobalMaxPool<a name="ZH-CN_TOPIC_0000002442021277"></a> 功能描述：实现对同一channel的所有元素最大池化。 <a name="table148616412366"></a>
+</table>
+
+#### GlobalMaxPool<a name="ZH-CN_TOPIC_0000002442021277"></a>
+
+功能描述：实现对同一channel的所有元素最大池化。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="11.761176117611761%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.761176117611761%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4872,7 +8336,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Greater<a name="ZH-CN_TOPIC_0000002408422146"></a> 功能描述：逐点计算A中元素是否大于B中元素。 <a name="table148616412366"></a>
+</table>
+
+#### Greater<a name="ZH-CN_TOPIC_0000002408422146"></a>
+
+功能描述：逐点计算A中元素是否大于B中元素。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.3%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.3%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4899,14 +8369,31 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p17291202413451"><a name="p17291202413451"></a><a name="p17291202413451"></a>1. 在线输入的维度需一致</p>
 <p id="p18291122474512"><a name="p18291122474512"></a><a name="p18291122474512"></a>2. 在线输入不需要C轴H轴及W轴都广</p>
 <p id="p82914243452"><a name="p82914243452"></a><a name="p82914243452"></a>3. 不需要N轴广播</p>
-<p id="p1929112240458"><a name="p1929112240458"></a><a name="p1929112240458"></a>4. 在线输入最多只有一路需要广播</p>
+<p id="p1929112240458"><a name="p1929112240458"></a><a name="p1929112240458"></a>4.  在线输入最多只有一路需要广播</p>
 <p id="p02919248455"><a name="p02919248455"></a><a name="p02919248455"></a>不满足的场景使用CPU实现</p>
 </td>
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="20.06%" headers="mcps1.1.7.1.6 "><p id="p1655416592314"><a name="p1655416592314"></a><a name="p1655416592314"></a>是</p>
 </td>
 </tr>
+<tr id="row192319541320"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p855413591533"><a name="p855413591533"></a><a name="p855413591533"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p1855435913314"><a name="p1855435913314"></a><a name="p1855435913314"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p10554859437"><a name="p10554859437"></a><a name="p10554859437"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p11554155919314"><a name="p11554155919314"></a><a name="p11554155919314"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### GroupNorm<a name="ZH-CN_TOPIC_0000002442021081"></a> 功能描述：计算 y = scale \* \(x - mean\) / sqrt\(variance + epsilon\) + B。其中，mean和variance 是根据每个通道组的实例计算的，并且应为每组通道指定比例\(scale\)和偏差\(B\)。 规格约束：scale和B不支持在线输入。 <a name="table148616412366"></a>
+</table>
+
+#### GroupNorm<a name="ZH-CN_TOPIC_0000002442021081"></a>
+
+功能描述：计算 y = scale \* \(x - mean\) / sqrt\(variance + epsilon\) + B。其中，mean和variance 是根据每个通道组的实例计算的，并且应为每组通道指定比例\(scale\)和偏差\(B\)。
+
+规格约束：scale和B不支持在线输入。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.308669133086692%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -4967,8 +8454,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p1990514447128"><a name="p1990514447128"></a><a name="p1990514447128"></a>支持</p>
 </td>
 </tr>
+<tr id="row208434010123"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p109051644101219"><a name="p109051644101219"></a><a name="p109051644101219"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p11905164481217"><a name="p11905164481217"></a><a name="p11905164481217"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p79051644101216"><a name="p79051644101216"></a><a name="p79051644101216"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p6905194416120"><a name="p6905194416120"></a><a name="p6905194416120"></a>偏差</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p1690574419125"><a name="p1690574419125"></a><a name="p1690574419125"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### GRU<a name="ZH-CN_TOPIC_0000002442021441"></a> 功能描述：GRU循环处理。 <a name="table148616412366"></a>
+</table>
+
+#### GRU<a name="ZH-CN_TOPIC_0000002442021441"></a>
+
+功能描述：GRU循环处理。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.03839616038396%" id="mcps1.1.9.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.988901109889012%" id="mcps1.1.9.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5083,6 +8587,58 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p8278165012376"><a name="p8278165012376"></a><a name="p8278165012376"></a>支持</p>
 </td>
 </tr>
+<tr id="row191162416362"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p1114400125"><a name="p1114400125"></a><a name="p1114400125"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1711040111220"><a name="p1711040111220"></a><a name="p1711040111220"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p1317405128"><a name="p1317405128"></a><a name="p1317405128"></a>float</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.4 "><p id="p11134001218"><a name="p11134001218"></a><a name="p11134001218"></a>输入句子序列</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.5 "><p id="p131440191214"><a name="p131440191214"></a><a name="p131440191214"></a>支持</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.6 "><p id="p16154013121"><a name="p16154013121"></a><a name="p16154013121"></a>否</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.7 "><p id="p61221159205"><a name="p61221159205"></a><a name="p61221159205"></a>必填</p>
+</td>
+</tr>
+<tr id="row5447039161713"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p8540014141815"><a name="p8540014141815"></a><a name="p8540014141815"></a>W</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1344719399178"><a name="p1344719399178"></a><a name="p1344719399178"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p144793914175"><a name="p144793914175"></a><a name="p144793914175"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p4448739151714"><a name="p4448739151714"></a><a name="p4448739151714"></a>门权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p044812397171"><a name="p044812397171"></a><a name="p044812397171"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.6 "><p id="p1115821341"><a name="p1115821341"></a><a name="p1115821341"></a>仅为离线</p>
+</td>
+</tr>
+<tr id="row12718449182314"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p171824913235"><a name="p171824913235"></a><a name="p171824913235"></a>R</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p16718204915232"><a name="p16718204915232"></a><a name="p16718204915232"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p9718184972316"><a name="p9718184972316"></a><a name="p9718184972316"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p16719114982315"><a name="p16719114982315"></a><a name="p16719114982315"></a>循环权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p11719104972314"><a name="p11719104972314"></a><a name="p11719104972314"></a>支持</p>
+</td>
+</tr>
+<tr id="row436117512250"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p13362185132513"><a name="p13362185132513"></a><a name="p13362185132513"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p53629511250"><a name="p53629511250"></a><a name="p53629511250"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p53629512256"><a name="p53629512256"></a><a name="p53629512256"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p5362115110251"><a name="p5362115110251"></a><a name="p5362115110251"></a>门偏置</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p836212514253"><a name="p836212514253"></a><a name="p836212514253"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.6 "><p id="p15181666120"><a name="p15181666120"></a><a name="p15181666120"></a>可选</p>
+</td>
+</tr>
 <tr id="row6860185492516"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p8439154911267"><a name="p8439154911267"></a><a name="p8439154911267"></a>sequence_lens</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p12860105416257"><a name="p12860105416257"></a><a name="p12860105416257"></a>input</p>
@@ -5107,6 +8663,21 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p142871258192518"><a name="p142871258192518"></a><a name="p142871258192518"></a>支持</p>
 </td>
 </tr>
+<tr id="row131120221518"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p121121322516"><a name="p121121322516"></a><a name="p121121322516"></a>Y</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1711272217116"><a name="p1711272217116"></a><a name="p1711272217116"></a>output</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p1911202215110"><a name="p1911202215110"></a><a name="p1911202215110"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p1111282210115"><a name="p1111282210115"></a><a name="p1111282210115"></a>所有帧hidden输出的集合</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p13113132219118"><a name="p13113132219118"></a><a name="p13113132219118"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" headers="mcps1.1.9.1.6 "><p id="p1951514310426"><a name="p1951514310426"></a><a name="p1951514310426"></a>不涉及</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.7 "><p id="p1011352214116"><a name="p1011352214116"></a><a name="p1011352214116"></a>必填</p>
+</td>
+</tr>
 <tr id="row153073207315"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p16307172017312"><a name="p16307172017312"></a><a name="p16307172017312"></a>Y_h</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p430711204319"><a name="p430711204319"></a><a name="p430711204319"></a>output</p>
@@ -5121,7 +8692,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Identity<a name="ZH-CN_TOPIC_0000002408582086"></a> 功能描述：将数据复制到输出。 <a name="table148616412366"></a>
+</table>
+
+#### Identity<a name="ZH-CN_TOPIC_0000002408582086"></a>
+
+功能描述：将数据复制到输出。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5150,7 +8727,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### If<a name="ZH-CN_TOPIC_0000002442021393"></a> 功能描述：进行分支判断计算。当子图不包含CPU算子时，If为图像分析引擎算子。 <a name="table148616412366"></a>
+</table>
+
+#### If<a name="ZH-CN_TOPIC_0000002442021393"></a>
+
+功能描述：进行分支判断计算。当子图不包含CPU算子时，If为图像分析引擎算子。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5201,7 +8784,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### LRN<a name="ZH-CN_TOPIC_0000002441981293"></a> 功能描述：计算Local Response Normalization。 <a name="table148616412366"></a>
+</table>
+
+#### LRN<a name="ZH-CN_TOPIC_0000002441981293"></a>
+
+功能描述：计算Local Response Normalization。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5274,7 +8863,16 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >向量：输入width <= 21840 #### LayerNormalization<a name="ZH-CN_TOPIC_0000002408421646"></a> 功能描述：LayerNormalization为层归一化，可以对网络中的每个算子的输出进行归一化，使得网络中每一层的输出都具有相似的分布。当模型的type配置为LayerNormalization时支持的归一化维度为W，HW和CHW；当模型的type配置为LayerNorm或LayerNormal时，支持对单W轴和单C轴进行归一化，不支持对单H轴进行归一化。 <a name="table1787561243019"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>向量：输入width <= 21840
+
+#### LayerNormalization<a name="ZH-CN_TOPIC_0000002408421646"></a>
+
+功能描述：LayerNormalization为层归一化，可以对网络中的每个算子的输出进行归一化，使得网络中每一层的输出都具有相似的分布。当模型的type配置为LayerNormalization时支持的归一化维度为W，HW和CHW；当模型的type配置为LayerNorm或LayerNormal时，支持对单W轴和单C轴进行归一化，不支持对单H轴进行归一化。
+
+<a name="table1787561243019"></a>
 <table><thead align="left"><tr id="row39071212143020"><th class="cellrowborder" valign="top" width="9.51%" id="mcps1.1.7.1.1"><p id="p3907111283012"><a name="p3907111283012"></a><a name="p3907111283012"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.190000000000001%" id="mcps1.1.7.1.2"><p id="p790710125302"><a name="p790710125302"></a><a name="p790710125302"></a>参数/输入</p>
@@ -5316,6 +8914,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p39081812153014"><a name="p39081812153014"></a><a name="p39081812153014"></a>当Scale为离线输入时，如果存在B，B只支持离线输入</p>
 </td>
 </tr>
+<tr id="row189089120302"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p59082120302"><a name="p59082120302"></a><a name="p59082120302"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p690881210307"><a name="p690881210307"></a><a name="p690881210307"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p139081512103019"><a name="p139081512103019"></a><a name="p139081512103019"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p10908191213303"><a name="p10908191213303"></a><a name="p10908191213303"></a>bias tensor</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p16908912173016"><a name="p16908912173016"></a><a name="p16908912173016"></a>支持</p>
+</td>
+</tr>
 <tr id="row16908111243011"><td class="cellrowborder" valign="top" width="9.51%" headers="mcps1.1.7.1.1 "><p id="p89081312133019"><a name="p89081312133019"></a><a name="p89081312133019"></a>axis</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.190000000000001%" headers="mcps1.1.7.1.2 "><p id="p0909101216308"><a name="p0909101216308"></a><a name="p0909101216308"></a>attribute</p>
@@ -5341,7 +8950,16 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >当type配置为LayerNormalization时：当axis==-3或1，Scale和B的shape必须是1\*C\*H\*W；当axis==-2或2，Scale和B的shape必须是1\*1\*H\*W；当axis==-1或3，Scale和B的shape必须是1\*1\*1\*W。 #### LeakyRelu<a name="ZH-CN_TOPIC_0000002441981641"></a> 功能描述：激活函数f\(x\) = alpha \* x for x < 0, f\(x\) = x for x \>= 0。 <a name="table148616412366"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当type配置为LayerNormalization时：当axis==-3或1，Scale和B的shape必须是1\*C\*H\*W；当axis==-2或2，Scale和B的shape必须是1\*1\*H\*W；当axis==-1或3，Scale和B的shape必须是1\*1\*1\*W。
+
+#### LeakyRelu<a name="ZH-CN_TOPIC_0000002441981641"></a>
+
+功能描述：激活函数f\(x\) = alpha \* x for x < 0, f\(x\) = x for x \>= 0。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5381,7 +8999,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Log<a name="ZH-CN_TOPIC_0000002442021173"></a> 功能描述：计算log。 <a name="table148616412366"></a>
+</table>
+
+#### Log<a name="ZH-CN_TOPIC_0000002442021173"></a>
+
+功能描述：计算log。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5410,7 +9034,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### LogSoftmax<a name="ZH-CN_TOPIC_0000002408582030"></a> 功能描述：根据指定公式计算LogSoftmax\(input, axis\) = Log\(Softmax\(input, axis=axis\)\)。 <a name="table148616412366"></a>
+</table>
+
+#### LogSoftmax<a name="ZH-CN_TOPIC_0000002408582030"></a>
+
+功能描述：根据指定公式计算LogSoftmax\(input, axis\) = Log\(Softmax\(input, axis=axis\)\)。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5451,7 +9081,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Loop<a name="ZH-CN_TOPIC_0000002408582314"></a> 功能描述：对子图进行循环计算。当子图不包含CPU算子时，Loop为图像分析引擎算子。 <a name="table148616412366"></a>
+</table>
+
+#### Loop<a name="ZH-CN_TOPIC_0000002408582314"></a>
+
+功能描述：对子图进行循环计算。当子图不包含CPU算子时，Loop为图像分析引擎算子。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5479,6 +9115,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="4" align="left" valign="top" width="17.49%" headers="mcps1.1.7.1.6 "><p id="p42007463112"><a name="p42007463112"></a><a name="p42007463112"></a>是。不支持所有输入同时都为离线输入。</p>
 </td>
 </tr>
+<tr id="row32329311114"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p6200104641113"><a name="p6200104641113"></a><a name="p6200104641113"></a>M</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p142004460119"><a name="p142004460119"></a><a name="p142004460119"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p17200124610117"><a name="p17200124610117"></a><a name="p17200124610117"></a>int64</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p182001446181113"><a name="p182001446181113"></a><a name="p182001446181113"></a>迭代的次数</p>
+</td>
+</tr>
 <tr id="row8259183213119"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p7200144631111"><a name="p7200144631111"></a><a name="p7200144631111"></a>cond</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p920094614115"><a name="p920094614115"></a><a name="p920094614115"></a>input</p>
@@ -5498,7 +9143,16 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >不支持输出中含有scan\_output的输出。 #### LSTM<a name="ZH-CN_TOPIC_0000002442021021"></a> 功能描述：LSTM循环处理单元。 <a name="table148616412366"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>不支持输出中含有scan\_output的输出。
+
+#### LSTM<a name="ZH-CN_TOPIC_0000002442021021"></a>
+
+功能描述：LSTM循环处理单元。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.03839616038396%" id="mcps1.1.9.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.988901109889012%" id="mcps1.1.9.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5614,6 +9268,58 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p2113538153812"><a name="p2113538153812"></a><a name="p2113538153812"></a>不支持配置，默认为0</p>
 </td>
 </tr>
+<tr id="row191162416362"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p1114400125"><a name="p1114400125"></a><a name="p1114400125"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1711040111220"><a name="p1711040111220"></a><a name="p1711040111220"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p1317405128"><a name="p1317405128"></a><a name="p1317405128"></a>float</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.4 "><p id="p11134001218"><a name="p11134001218"></a><a name="p11134001218"></a>输入句子序列</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.5 "><p id="p131440191214"><a name="p131440191214"></a><a name="p131440191214"></a>支持</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.6 "><p id="p16154013121"><a name="p16154013121"></a><a name="p16154013121"></a>否</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.7 "><p id="p61221159205"><a name="p61221159205"></a><a name="p61221159205"></a>必填</p>
+</td>
+</tr>
+<tr id="row5447039161713"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p8540014141815"><a name="p8540014141815"></a><a name="p8540014141815"></a>W</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1344719399178"><a name="p1344719399178"></a><a name="p1344719399178"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p144793914175"><a name="p144793914175"></a><a name="p144793914175"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p4448739151714"><a name="p4448739151714"></a><a name="p4448739151714"></a>门权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p044812397171"><a name="p044812397171"></a><a name="p044812397171"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.6 "><p id="p1123551516307"><a name="p1123551516307"></a><a name="p1123551516307"></a>仅为离线</p>
+</td>
+</tr>
+<tr id="row12718449182314"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p171824913235"><a name="p171824913235"></a><a name="p171824913235"></a>R</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p16718204915232"><a name="p16718204915232"></a><a name="p16718204915232"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p9718184972316"><a name="p9718184972316"></a><a name="p9718184972316"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p16719114982315"><a name="p16719114982315"></a><a name="p16719114982315"></a>循环权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p11719104972314"><a name="p11719104972314"></a><a name="p11719104972314"></a>支持</p>
+</td>
+</tr>
+<tr id="row436117512250"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p13362185132513"><a name="p13362185132513"></a><a name="p13362185132513"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p53629511250"><a name="p53629511250"></a><a name="p53629511250"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p53629512256"><a name="p53629512256"></a><a name="p53629512256"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p5362115110251"><a name="p5362115110251"></a><a name="p5362115110251"></a>门偏置</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p836212514253"><a name="p836212514253"></a><a name="p836212514253"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="5" valign="top" headers="mcps1.1.9.1.6 "><p id="p15181666120"><a name="p15181666120"></a><a name="p15181666120"></a>可选</p>
+</td>
+</tr>
 <tr id="row6860185492516"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p8439154911267"><a name="p8439154911267"></a><a name="p8439154911267"></a>sequence_lens</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p12860105416257"><a name="p12860105416257"></a><a name="p12860105416257"></a>input</p>
@@ -5649,6 +9355,34 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p9611161916308"><a name="p9611161916308"></a><a name="p9611161916308"></a>支持</p>
 </td>
 </tr>
+<tr id="row1531775313019"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p631765320308"><a name="p631765320308"></a><a name="p631765320308"></a>P</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p031705353018"><a name="p031705353018"></a><a name="p031705353018"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p131725317308"><a name="p131725317308"></a><a name="p131725317308"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p13317175318305"><a name="p13317175318305"></a><a name="p13317175318305"></a>peephole权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p11317145315300"><a name="p11317145315300"></a><a name="p11317145315300"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.6 "><p id="p123171536301"><a name="p123171536301"></a><a name="p123171536301"></a>仅为离线</p>
+</td>
+</tr>
+<tr id="row131120221518"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p121121322516"><a name="p121121322516"></a><a name="p121121322516"></a>Y</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1711272217116"><a name="p1711272217116"></a><a name="p1711272217116"></a>output</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p1911202215110"><a name="p1911202215110"></a><a name="p1911202215110"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p1111282210115"><a name="p1111282210115"></a><a name="p1111282210115"></a>所有帧hidden输出的集合</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p13113132219118"><a name="p13113132219118"></a><a name="p13113132219118"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.6 "><p id="p271317910312"><a name="p271317910312"></a><a name="p271317910312"></a>不涉及</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.7 "><p id="p1011352214116"><a name="p1011352214116"></a><a name="p1011352214116"></a>必填</p>
+</td>
+</tr>
 <tr id="row153073207315"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p16307172017312"><a name="p16307172017312"></a><a name="p16307172017312"></a>Y_h</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p430711204319"><a name="p430711204319"></a><a name="p430711204319"></a>output</p>
@@ -5674,7 +9408,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### MatMul<a name="ZH-CN_TOPIC_0000002441981545"></a> 功能描述：支持numpy-style的矩阵相乘。 opset version: 13 <a name="table148616412366"></a>
+</table>
+
+#### MatMul<a name="ZH-CN_TOPIC_0000002441981545"></a>
+
+功能描述：支持numpy-style的矩阵相乘。
+
+opset version: 13
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12.33%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.33%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5706,8 +9448,23 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" valign="top" width="21.22%" headers="mcps1.1.8.1.7 "><a name="ol856418119199"></a><a name="ol856418119199"></a><ol id="ol856418119199"><li>图像分析引擎不支持输入维度<strong id="b13982644142412"><a name="b13982644142412"></a><a name="b13982644142412"></a>大于4维，用CPU实现</strong></li><li>不支持n&gt;1时且仅有c轴broadcast</li></ol>
 </td>
 </tr>
+<tr id="row470841813172"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p1283632121710"><a name="p1283632121710"></a><a name="p1283632121710"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p1836172115172"><a name="p1836172115172"></a><a name="p1836172115172"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p6836102114174"><a name="p6836102114174"></a><a name="p6836102114174"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p2836621151717"><a name="p2836621151717"></a><a name="p2836621151717"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### Max<a name="ZH-CN_TOPIC_0000002442020973"></a> 功能描述：计算多输入element-wise的最大值。 <a name="table148616412366"></a>
+</table>
+
+#### Max<a name="ZH-CN_TOPIC_0000002442020973"></a>
+
+功能描述：计算多输入element-wise的最大值。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5736,7 +9493,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### MaxPool<a name="ZH-CN_TOPIC_0000002441981549"></a> 功能描述：最大池化。 <a name="table148616412366"></a>
+</table>
+
+#### MaxPool<a name="ZH-CN_TOPIC_0000002441981549"></a>
+
+功能描述：最大池化。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="14.831483148314831%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.2010201020102%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5846,8 +9609,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p201677312353"><a name="p201677312353"></a><a name="p201677312353"></a>支持</p>
 </td>
 </tr>
+<tr id="row67551338112"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p12913161116"><a name="p12913161116"></a><a name="p12913161116"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p10931610110"><a name="p10931610110"></a><a name="p10931610110"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p199716415"><a name="p199716415"></a><a name="p199716415"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p4911610115"><a name="p4911610115"></a><a name="p4911610115"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p1117014314358"><a name="p1117014314358"></a><a name="p1117014314358"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### Mean<a name="ZH-CN_TOPIC_0000002408422366"></a> 功能描述：计算多输入element-wise的均值。 <a name="table148616412366"></a>
+</table>
+
+#### Mean<a name="ZH-CN_TOPIC_0000002408422366"></a>
+
+功能描述：计算多输入element-wise的均值。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5876,7 +9656,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### MeanVarianceNormalization<a name="ZH-CN_TOPIC_0000002442021033"></a> 功能描述：计算mvn。 规格约束：仅支持4D输入。 <a name="table148616412366"></a>
+</table>
+
+#### MeanVarianceNormalization<a name="ZH-CN_TOPIC_0000002442021033"></a>
+
+功能描述：计算mvn。
+
+规格约束：仅支持4D输入。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5905,7 +9693,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Min<a name="ZH-CN_TOPIC_0000002441981589"></a> 功能描述：计算多输入element-wise的最小值。 <a name="table148616412366"></a>
+</table>
+
+#### Min<a name="ZH-CN_TOPIC_0000002441981589"></a>
+
+功能描述：计算多输入element-wise的最小值。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5934,7 +9728,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Mul<a name="ZH-CN_TOPIC_0000002408581986"></a> 功能描述：计算两个输入element-wise的乘积。 <a name="table148616412366"></a>
+</table>
+
+#### Mul<a name="ZH-CN_TOPIC_0000002408581986"></a>
+
+功能描述：计算两个输入element-wise的乘积。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.99%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -5965,8 +9765,23 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p89283422216"><a name="p89283422216"></a><a name="p89283422216"></a></p>
 </td>
 </tr>
+<tr id="row71108223226"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p1285134192219"><a name="p1285134192219"></a><a name="p1285134192219"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p15857346228"><a name="p15857346228"></a><a name="p15857346228"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p1185934172213"><a name="p1185934172213"></a><a name="p1185934172213"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p58533418223"><a name="p58533418223"></a><a name="p58533418223"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### Pad<a name="ZH-CN_TOPIC_0000002442021233"></a> 功能描述：对输入的数据进行填充。 <a name="table148616412366"></a>
+</table>
+
+#### Pad<a name="ZH-CN_TOPIC_0000002442021233"></a>
+
+功能描述：对输入的数据进行填充。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6023,8 +9838,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >当mode为"reflect"，pads必须小于对应轴的元素个数。
->当pads为负数，pads的绝对值必须小于或等于对应轴的元素个数。 #### PRelu<a name="ZH-CN_TOPIC_0000002408582286"></a> 功能描述：带参数的ReLU激活函数。 <a name="table148616412366"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当mode为"reflect"，pads必须小于对应轴的元素个数。
+>当pads为负数，pads的绝对值必须小于或等于对应轴的元素个数。
+
+#### PRelu<a name="ZH-CN_TOPIC_0000002408582286"></a>
+
+功能描述：带参数的ReLU激活函数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6063,7 +9887,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Pow<a name="ZH-CN_TOPIC_0000002441981361"></a> 功能描述：计算f\(x\) = x^exponent。 <a name="table148616412366"></a>
+</table>
+
+#### Pow<a name="ZH-CN_TOPIC_0000002441981361"></a>
+
+功能描述：计算f\(x\) = x^exponent。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12.000000000000002%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.000000000000002%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6091,8 +9921,28 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="21.000000000000004%" headers="mcps1.1.7.1.6 "><p id="p03069202246"><a name="p03069202246"></a><a name="p03069202246"></a>是</p>
 </td>
 </tr>
+<tr id="row1326591715245"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p17307192032413"><a name="p17307192032413"></a><a name="p17307192032413"></a>Y</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p1430782012417"><a name="p1430782012417"></a><a name="p1430782012417"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p14307172012244"><a name="p14307172012244"></a><a name="p14307172012244"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p193071720192417"><a name="p193071720192417"></a><a name="p193071720192417"></a>指数</p>
+</td>
+</tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >数据为张量时：width<=16384 #### ReduceMax<a name="ZH-CN_TOPIC_0000002408581650"></a> 功能描述：对指定的轴求最大值。 规格约束：支持高维度，高维度走cpu实现。 <a name="table1164464745115"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>数据为张量时：width<=16384
+
+#### ReduceMax<a name="ZH-CN_TOPIC_0000002408581650"></a>
+
+功能描述：对指定的轴求最大值。
+
+规格约束：支持高维度，高维度走cpu实现。
+
+<a name="table1164464745115"></a>
 <table><thead align="left"><tr id="row664413471512"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p06440478515"><a name="p06440478515"></a><a name="p06440478515"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p19644144719518"><a name="p19644144719518"></a><a name="p19644144719518"></a>参数/输入</p>
@@ -6144,7 +9994,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceMean<a name="ZH-CN_TOPIC_0000002442021409"></a> 功能描述：对指定的轴计算求平均值。 <a name="table1757616925419"></a>
+</table>
+
+#### ReduceMean<a name="ZH-CN_TOPIC_0000002442021409"></a>
+
+功能描述：对指定的轴计算求平均值。
+
+<a name="table1757616925419"></a>
 <table><thead align="left"><tr id="row15764919545"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p16576095543"><a name="p16576095543"></a><a name="p16576095543"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p11576395547"><a name="p11576395547"></a><a name="p11576395547"></a>参数/输入</p>
@@ -6198,7 +10054,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceMin<a name="ZH-CN_TOPIC_0000002408422306"></a> 功能描述：对指定的轴计算最小值。 规格约束：支持高维度，高维度走CPU实现。 <a name="table148616412366"></a>
+</table>
+
+#### ReduceMin<a name="ZH-CN_TOPIC_0000002408422306"></a>
+
+功能描述：对指定的轴计算最小值。
+
+规格约束：支持高维度，高维度走CPU实现。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6249,7 +10113,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceProd<a name="ZH-CN_TOPIC_0000002408582106"></a> 功能描述：对指定的轴计算乘积。 <a name="table148616412366"></a>
+</table>
+
+#### ReduceProd<a name="ZH-CN_TOPIC_0000002408582106"></a>
+
+功能描述：对指定的轴计算乘积。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6300,7 +10170,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceSumSquare<a name="ZH-CN_TOPIC_0000002442021453"></a> 功能描述：对指定的轴计算平方和。 <a name="table148616412366"></a>
+</table>
+
+#### ReduceSumSquare<a name="ZH-CN_TOPIC_0000002442021453"></a>
+
+功能描述：对指定的轴计算平方和。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6351,7 +10227,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceSum/version<=12<a name="ZH-CN_TOPIC_0000002441981613"></a> 功能描述：对指定的轴求和。 <a name="table148616412366"></a>
+</table>
+
+#### ReduceSum/version<=12<a name="ZH-CN_TOPIC_0000002441981613"></a>
+
+功能描述：对指定的轴求和。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6402,7 +10284,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceSum/version13<a name="ZH-CN_TOPIC_0000002441981137"></a> 功能描述：对指定的轴求和。 <a name="table148616412366"></a>
+</table>
+
+#### ReduceSum/version13<a name="ZH-CN_TOPIC_0000002441981137"></a>
+
+功能描述：对指定的轴求和。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12.941294129412938%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.941294129412938%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6464,7 +10352,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Relu<a name="ZH-CN_TOPIC_0000002442021013"></a> 功能描述：ReLU激活函数。 <a name="table148616412366"></a>
+</table>
+
+#### Relu<a name="ZH-CN_TOPIC_0000002442021013"></a>
+
+功能描述：ReLU激活函数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6493,7 +10387,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Resize<a name="ZH-CN_TOPIC_0000002441981453"></a> 功能描述：将输入按指定mode进行缩放。 规格约束：仅支持coordinate\_transformation\_mode为asymmetric且mode为nearest，coordinate\_transformation\_mode为align\_corners且mode为linear。 mode为nearest时，scales仅支持\(1,1,2,2\)、\(1,1,4,4\)和\(1,1,8,8\)。 <a name="table148616412366"></a>
+</table>
+
+#### Resize<a name="ZH-CN_TOPIC_0000002441981453"></a>
+
+功能描述：将输入按指定mode进行缩放。
+
+规格约束：仅支持coordinate\_transformation\_mode为asymmetric且mode为nearest，coordinate\_transformation\_mode为align\_corners且mode为linear。
+
+mode为nearest时，scales仅支持\(1,1,2,2\)、\(1,1,4,4\)和\(1,1,8,8\)。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="18.35%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.88%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6576,6 +10480,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p483012611265"><a name="p483012611265"></a><a name="p483012611265"></a>仅支持配置为floor</p>
 </td>
 </tr>
+<tr id="row199311312192612"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p3830726202617"><a name="p3830726202617"></a><a name="p3830726202617"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p1283016268264"><a name="p1283016268264"></a><a name="p1283016268264"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p1783132692617"><a name="p1783132692617"></a><a name="p1783132692617"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p38311626112615"><a name="p38311626112615"></a><a name="p38311626112615"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p7831152642620"><a name="p7831152642620"></a><a name="p7831152642620"></a>支持</p>
+</td>
+</tr>
 <tr id="row1688181332619"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p138316263264"><a name="p138316263264"></a><a name="p138316263264"></a>roi</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p4831162615268"><a name="p4831162615268"></a><a name="p4831162615268"></a>input</p>
@@ -6608,7 +10523,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Reshape<a name="ZH-CN_TOPIC_0000002441981177"></a> 功能描述：将输入的维度转换为指定维度。 <a name="table148616412366"></a>
+</table>
+
+#### Reshape<a name="ZH-CN_TOPIC_0000002441981177"></a>
+
+功能描述：将输入的维度转换为指定维度。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6651,7 +10572,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### RNN<a name="ZH-CN_TOPIC_0000002408581898"></a> 功能描述：RNN循环处理单元。 <a name="table148616412366"></a>
+</table>
+
+#### RNN<a name="ZH-CN_TOPIC_0000002408581898"></a>
+
+功能描述：RNN循环处理单元。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.03839616038396%" id="mcps1.1.9.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.988901109889012%" id="mcps1.1.9.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6755,6 +10682,58 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p2113538153812"><a name="p2113538153812"></a><a name="p2113538153812"></a>不支持配置，默认为0</p>
 </td>
 </tr>
+<tr id="row191162416362"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p1114400125"><a name="p1114400125"></a><a name="p1114400125"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1711040111220"><a name="p1711040111220"></a><a name="p1711040111220"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p1317405128"><a name="p1317405128"></a><a name="p1317405128"></a>float</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.4 "><p id="p11134001218"><a name="p11134001218"></a><a name="p11134001218"></a>输入句子序列</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.5 "><p id="p131440191214"><a name="p131440191214"></a><a name="p131440191214"></a>支持</p>
+</td>
+<td class="cellrowborder" align="left" valign="top" headers="mcps1.1.9.1.6 "><p id="p16154013121"><a name="p16154013121"></a><a name="p16154013121"></a>否</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.7 "><p id="p61221159205"><a name="p61221159205"></a><a name="p61221159205"></a>必填</p>
+</td>
+</tr>
+<tr id="row5447039161713"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p8540014141815"><a name="p8540014141815"></a><a name="p8540014141815"></a>W</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1344719399178"><a name="p1344719399178"></a><a name="p1344719399178"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p144793914175"><a name="p144793914175"></a><a name="p144793914175"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p4448739151714"><a name="p4448739151714"></a><a name="p4448739151714"></a>门权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p044812397171"><a name="p044812397171"></a><a name="p044812397171"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.6 "><p id="p19211205743215"><a name="p19211205743215"></a><a name="p19211205743215"></a>仅为离线</p>
+</td>
+</tr>
+<tr id="row12718449182314"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p171824913235"><a name="p171824913235"></a><a name="p171824913235"></a>R</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p16718204915232"><a name="p16718204915232"></a><a name="p16718204915232"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p9718184972316"><a name="p9718184972316"></a><a name="p9718184972316"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p16719114982315"><a name="p16719114982315"></a><a name="p16719114982315"></a>循环权重</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p11719104972314"><a name="p11719104972314"></a><a name="p11719104972314"></a>支持</p>
+</td>
+</tr>
+<tr id="row436117512250"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p13362185132513"><a name="p13362185132513"></a><a name="p13362185132513"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p53629511250"><a name="p53629511250"></a><a name="p53629511250"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p53629512256"><a name="p53629512256"></a><a name="p53629512256"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p5362115110251"><a name="p5362115110251"></a><a name="p5362115110251"></a>门偏置</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p836212514253"><a name="p836212514253"></a><a name="p836212514253"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="3" valign="top" headers="mcps1.1.9.1.6 "><p id="p15181666120"><a name="p15181666120"></a><a name="p15181666120"></a>可选</p>
+</td>
+</tr>
 <tr id="row6860185492516"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p8439154911267"><a name="p8439154911267"></a><a name="p8439154911267"></a>sequence_lens</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p12860105416257"><a name="p12860105416257"></a><a name="p12860105416257"></a>input</p>
@@ -6779,6 +10758,21 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p142871258192518"><a name="p142871258192518"></a><a name="p142871258192518"></a>支持</p>
 </td>
 </tr>
+<tr id="row131120221518"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p121121322516"><a name="p121121322516"></a><a name="p121121322516"></a>Y</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p1711272217116"><a name="p1711272217116"></a><a name="p1711272217116"></a>output</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.3 "><p id="p1911202215110"><a name="p1911202215110"></a><a name="p1911202215110"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.4 "><p id="p1111282210115"><a name="p1111282210115"></a><a name="p1111282210115"></a>所有帧hidden输出的集合</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.5 "><p id="p13113132219118"><a name="p13113132219118"></a><a name="p13113132219118"></a>支持</p>
+</td>
+<td class="cellrowborder" rowspan="2" valign="top" headers="mcps1.1.9.1.6 "><p id="p1951514310426"><a name="p1951514310426"></a><a name="p1951514310426"></a>不涉及</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.9.1.7 "><p id="p1011352214116"><a name="p1011352214116"></a><a name="p1011352214116"></a>必填</p>
+</td>
+</tr>
 <tr id="row153073207315"><td class="cellrowborder" valign="top" headers="mcps1.1.9.1.1 "><p id="p16307172017312"><a name="p16307172017312"></a><a name="p16307172017312"></a>Y_h</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.9.1.2 "><p id="p430711204319"><a name="p430711204319"></a><a name="p430711204319"></a>output</p>
@@ -6793,7 +10787,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Scan<a name="ZH-CN_TOPIC_0000002441981649"></a> 功能描述：做需要有时序的计算。 <a name="table148616412366"></a>
+</table>
+
+#### Scan<a name="ZH-CN_TOPIC_0000002441981649"></a>
+
+功能描述：做需要有时序的计算。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="19.11%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.21%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6876,7 +10876,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Scatter/ScatterElements<a name="ZH-CN_TOPIC_0000002526591269"></a> 功能描述：替换输入数据指定位置的值。 <a name="table148616412366"></a>
+</table>
+
+#### Scatter/ScatterElements<a name="ZH-CN_TOPIC_0000002526591269"></a>
+
+功能描述：替换输入数据指定位置的值。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12.328767123287673%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.328767123287673%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -6943,7 +10949,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ScatterBEV<a name="ZH-CN_TOPIC_0000002442021325"></a> 功能描述：沿H轴对first\_input进行max操作，得到shape\(P,1,C\)的张量，一个\(C\)大小的向量就是一个“柱体特征”；根据坐标信息（包含在voxel\_idxs中）将“柱体特征”以二维形式展开，得到BEV特征图。 规格约束：ScatterBEV算子融合了第二、三路输入，且这两路输入只给本算子使用；first\_input可以没有batch维，有batch维时batch维只能为1，voxel\_idxs、voxel\_num不含batch维；voxel\_num的数值必须是正整数，能取到的最大值为柱体数量P；voxel\_idxs包含的是坐标信息，所有数值应是非负整数，y坐标值小于dense\_shape\[0\]，x坐标值小于dense\_shape\[1\]；dense\_shape只能包含两个正整数。 <a name="table3562182534513"></a>
+</table>
+
+#### ScatterBEV<a name="ZH-CN_TOPIC_0000002442021325"></a>
+
+功能描述：沿H轴对first\_input进行max操作，得到shape\(P,1,C\)的张量，一个\(C\)大小的向量就是一个“柱体特征”；根据坐标信息（包含在voxel\_idxs中）将“柱体特征”以二维形式展开，得到BEV特征图。
+
+规格约束：ScatterBEV算子融合了第二、三路输入，且这两路输入只给本算子使用；first\_input可以没有batch维，有batch维时batch维只能为1，voxel\_idxs、voxel\_num不含batch维；voxel\_num的数值必须是正整数，能取到的最大值为柱体数量P；voxel\_idxs包含的是坐标信息，所有数值应是非负整数，y坐标值小于dense\_shape\[0\]，x坐标值小于dense\_shape\[1\]；dense\_shape只能包含两个正整数。
+
+<a name="table3562182534513"></a>
 <table><thead align="left"><tr id="row756282554512"><th class="cellrowborder" valign="top" width="11.737652469506099%" id="mcps1.1.7.1.1"><p id="p55621725134517"><a name="p55621725134517"></a><a name="p55621725134517"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.338132373525294%" id="mcps1.1.7.1.2"><p id="p15562192510456"><a name="p15562192510456"></a><a name="p15562192510456"></a>参数/输入</p>
@@ -7011,7 +11025,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Shape<a name="ZH-CN_TOPIC_0000002442021269"></a> 功能描述：返回上层tensor的shape。 规格约束：不支持将shape层作为网络的最后一层。 <a name="table148616412366"></a>
+</table>
+
+#### Shape<a name="ZH-CN_TOPIC_0000002442021269"></a>
+
+功能描述：返回上层tensor的shape。
+
+规格约束：不支持将shape层作为网络的最后一层。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7040,7 +11062,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Sigmoid<a name="ZH-CN_TOPIC_0000002441981393"></a> 功能描述：计算sigmoid。 <a name="table148616412366"></a>
+</table>
+
+#### Sigmoid<a name="ZH-CN_TOPIC_0000002441981393"></a>
+
+功能描述：计算sigmoid。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7069,7 +11097,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Size<a name="ZH-CN_TOPIC_0000002408582306"></a> 功能描述：返回上层数据个数。 <a name="table148616412366"></a>
+</table>
+
+#### Size<a name="ZH-CN_TOPIC_0000002408582306"></a>
+
+功能描述：返回上层数据个数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7098,7 +11132,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Slice<a name="ZH-CN_TOPIC_0000002441981133"></a> 功能描述：将输入数据按照指定维度切割成多个数据。 <a name="table148616412366"></a>
+</table>
+
+#### Slice<a name="ZH-CN_TOPIC_0000002441981133"></a>
+
+功能描述：将输入数据按照指定维度切割成多个数据。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7172,7 +11212,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### SpaceToDepth<a name="ZH-CN_TOPIC_0000002408422118"></a> 功能描述：重新排列空间数据块,将space数据转移到depth。 <a name="table148616412366"></a>
+</table>
+
+#### SpaceToDepth<a name="ZH-CN_TOPIC_0000002408422118"></a>
+
+功能描述：重新排列空间数据块,将space数据转移到depth。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7210,7 +11256,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Split<a name="ZH-CN_TOPIC_0000002408581862"></a> 功能描述：在指定数据轴对数据进行拆分。 <a name="table148616412366"></a>
+</table>
+
+#### Split<a name="ZH-CN_TOPIC_0000002408581862"></a>
+
+功能描述：在指定数据轴对数据进行拆分。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7261,7 +11313,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Sqrt<a name="ZH-CN_TOPIC_0000002442021249"></a> 功能描述：对输入数据求平方根。 <a name="table148616412366"></a>
+</table>
+
+#### Sqrt<a name="ZH-CN_TOPIC_0000002442021249"></a>
+
+功能描述：对输入数据求平方根。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7290,7 +11348,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Squeeze<a name="ZH-CN_TOPIC_0000002408421946"></a> 功能描述：删除指定下标轴的1。 <a name="table148616412366"></a>
+</table>
+
+#### Squeeze<a name="ZH-CN_TOPIC_0000002408421946"></a>
+
+功能描述：删除指定下标轴的1。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7330,7 +11394,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Sub<a name="ZH-CN_TOPIC_0000002441981537"></a> 功能描述：tensor对应轴作减法。 <a name="table148616412366"></a>
+</table>
+
+#### Sub<a name="ZH-CN_TOPIC_0000002441981537"></a>
+
+功能描述：tensor对应轴作减法。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7360,8 +11430,23 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="17.419999999999998%" headers="mcps1.1.7.1.6 "><p id="p12803174614331"><a name="p12803174614331"></a><a name="p12803174614331"></a>是</p>
 </td>
 </tr>
+<tr id="row0572184315339"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p18803174603316"><a name="p18803174603316"></a><a name="p18803174603316"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p178031246183314"><a name="p178031246183314"></a><a name="p178031246183314"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p4803204653317"><a name="p4803204653317"></a><a name="p4803204653317"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p1180344615332"><a name="p1180344615332"></a><a name="p1180344615332"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### Sum<a name="ZH-CN_TOPIC_0000002441981669"></a> 功能描述：对所有的tensor对应值求和。 <a name="table148616412366"></a>
+</table>
+
+#### Sum<a name="ZH-CN_TOPIC_0000002441981669"></a>
+
+功能描述：对所有的tensor对应值求和。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7393,7 +11478,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Tanh<a name="ZH-CN_TOPIC_0000002442021313"></a> 功能描述：求tanh。 <a name="table148616412366"></a>
+</table>
+
+#### Tanh<a name="ZH-CN_TOPIC_0000002442021313"></a>
+
+功能描述：求tanh。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7422,7 +11513,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Tile<a name="ZH-CN_TOPIC_0000002441980897"></a> 功能描述：对每一个轴的数据进行重复叠加。 <a name="table148616412366"></a>
+</table>
+
+#### Tile<a name="ZH-CN_TOPIC_0000002441980897"></a>
+
+功能描述：对每一个轴的数据进行重复叠加。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7462,7 +11559,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Transpose<a name="ZH-CN_TOPIC_0000002441980905"></a> 功能描述：和numpy的transpose一样转置输入tensor。 <a name="table148616412366"></a>
+</table>
+
+#### Transpose<a name="ZH-CN_TOPIC_0000002441980905"></a>
+
+功能描述：和numpy的transpose一样转置输入tensor。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7500,7 +11603,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Unsqueeze<a name="ZH-CN_TOPIC_0000002442021521"></a> 功能描述：在指定下标轴插入1。 <a name="table148616412366"></a>
+</table>
+
+#### Unsqueeze<a name="ZH-CN_TOPIC_0000002442021521"></a>
+
+功能描述：在指定下标轴插入1。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7540,7 +11649,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Softmax<a name="ZH-CN_TOPIC_0000002408581942"></a> 功能描述： Opset version 11: 计算指定轴往后所有轴的softmax。 Opset version 13: 计算指定轴的softmax。 <a name="table148616412366"></a>
+</table>
+
+#### Softmax<a name="ZH-CN_TOPIC_0000002408581942"></a>
+
+功能描述：
+
+Opset version 11: 计算指定轴往后所有轴的softmax。
+
+Opset version 13: 计算指定轴的softmax。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7581,7 +11700,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### DepthToSpace<a name="ZH-CN_TOPIC_0000002408421810"></a> 功能描述：重新排列空间数据块,将depth数据转移到space。 <a name="table127891831183213"></a>
+</table>
+
+#### DepthToSpace<a name="ZH-CN_TOPIC_0000002408421810"></a>
+
+功能描述：重新排列空间数据块,将depth数据转移到space。
+
+<a name="table127891831183213"></a>
 <table><thead align="left"><tr id="row1678923119325"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p8789133113321"><a name="p8789133113321"></a><a name="p8789133113321"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p878923193219"><a name="p878923193219"></a><a name="p878923193219"></a>参数/输入</p>
@@ -7631,7 +11756,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Sign<a name="ZH-CN_TOPIC_0000002408421834"></a> 功能描述：计算输入tensor的元素符号。 <a name="table148616412366"></a>
+</table>
+
+#### Sign<a name="ZH-CN_TOPIC_0000002408421834"></a>
+
+功能描述：计算输入tensor的元素符号。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7660,7 +11791,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### TopK<a name="ZH-CN_TOPIC_0000002408581834"></a> 功能描述：沿指定轴检索最大或最小的K个元素。 <a name="table148616412366"></a>
+</table>
+
+#### TopK<a name="ZH-CN_TOPIC_0000002408581834"></a>
+
+功能描述：沿指定轴检索最大或最小的K个元素。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7713,8 +11850,36 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p1899514518117"><a name="p1899514518117"></a><a name="p1899514518117"></a>无论sorted为true或false输出都是排序后的</p>
 </td>
 </tr>
+<tr id="row18283144494515"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p8182114812453"><a name="p8182114812453"></a><a name="p8182114812453"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p8182184814512"><a name="p8182184814512"></a><a name="p8182184814512"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p318244819455"><a name="p318244819455"></a><a name="p318244819455"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p1618244818455"><a name="p1618244818455"></a><a name="p1618244818455"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p15996251513"><a name="p15996251513"></a><a name="p15996251513"></a>支持</p>
+</td>
+</tr>
+<tr id="row1926416456459"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p61821148154513"><a name="p61821148154513"></a><a name="p61821148154513"></a>K</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p15182164816455"><a name="p15182164816455"></a><a name="p15182164816455"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p181829483454"><a name="p181829483454"></a><a name="p181829483454"></a>int64</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p1918284884511"><a name="p1918284884511"></a><a name="p1918284884511"></a>就是top元素的个数</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.5 "><p id="p1599695120113"><a name="p1599695120113"></a><a name="p1599695120113"></a>支持，K值须大于0且小于等于数据输入X的axis轴对应的数据量</p>
+</td>
+</tr>
 </tbody>
-</table> #### Warp<a name="ZH-CN_TOPIC_0000002441981265"></a> 功能描述：根据运动矢量，把输入数据映射到输出数据上。运动矢量包含x和y方向的移动单位，在x方向上，正值表示像素点向左移动，负值表示像素点向右移动；在y方向上，正值表示像素点向上移动，负值表示像素点向下移动。假设src\_x和src\_y是原始的像素坐标，x和y是运动矢量，则映射后的坐标是dst\_x=src\_x-x，dst\_y=src\_y-y。 <a name="table14821810103720"></a>
+</table>
+
+#### Warp<a name="ZH-CN_TOPIC_0000002441981265"></a>
+
+功能描述：根据运动矢量，把输入数据映射到输出数据上。运动矢量包含x和y方向的移动单位，在x方向上，正值表示像素点向左移动，负值表示像素点向右移动；在y方向上，正值表示像素点向上移动，负值表示像素点向下移动。假设src\_x和src\_y是原始的像素坐标，x和y是运动矢量，则映射后的坐标是dst\_x=src\_x-x，dst\_y=src\_y-y。
+
+<a name="table14821810103720"></a>
 <table><thead align="left"><tr id="row48541810143712"><th class="cellrowborder" valign="top" width="16.51669666066787%" id="mcps1.1.7.1.1"><p id="p685419105378"><a name="p685419105378"></a><a name="p685419105378"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.51669666066787%" id="mcps1.1.7.1.2"><p id="p9854171013372"><a name="p9854171013372"></a><a name="p9854171013372"></a>参数/输入</p>
@@ -7770,7 +11935,16 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> >![](public_sys-resources/icon-note.gif) **说明：** >warp支持2个或者3个在线输入；当有3个在线输入时，默认3个输入分别对应data、roi、motion\_vector；当有2个在线输入时，默认2个输入分别是data、motion\_vector。 #### Div<a name="ZH-CN_TOPIC_0000002408422334"></a> 功能描述：对输入A、B进行除法运算得到输出C。 <a name="table148616412366"></a>
+</table>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>warp支持2个或者3个在线输入；当有3个在线输入时，默认3个输入分别对应data、roi、motion\_vector；当有2个在线输入时，默认2个输入分别是data、motion\_vector。
+
+#### Div<a name="ZH-CN_TOPIC_0000002408422334"></a>
+
+功能描述：对输入A、B进行除法运算得到输出C。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7797,14 +11971,29 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p12671108966"><a name="p12671108966"></a><a name="p12671108966"></a>1. 在线输入的维度需一致；</p>
 <p id="p5282153443612"><a name="p5282153443612"></a><a name="p5282153443612"></a>2. 在线输入不需要C轴H轴及W轴都广播</p>
 <p id="p459122912711"><a name="p459122912711"></a><a name="p459122912711"></a>3. 不需要N轴广播；</p>
-<p id="p18967918141418"><a name="p18967918141418"></a><a name="p18967918141418"></a>4. 在线输入最多只有一路需要广播。</p>
+<p id="p18967918141418"><a name="p18967918141418"></a><a name="p18967918141418"></a>4.  在线输入最多只有一路需要广播。</p>
 <p id="p105399811150"><a name="p105399811150"></a><a name="p105399811150"></a>不满足的场景使用CPU实现。</p>
 </td>
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="16.478352164783523%" headers="mcps1.1.7.1.6 "><p id="p288103412272"><a name="p288103412272"></a><a name="p288103412272"></a>是</p>
 </td>
 </tr>
+<tr id="row14815192310273"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p58883462713"><a name="p58883462713"></a><a name="p58883462713"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p888193415277"><a name="p888193415277"></a><a name="p888193415277"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p8881234152711"><a name="p8881234152711"></a><a name="p8881234152711"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p488034102719"><a name="p488034102719"></a><a name="p488034102719"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### Sin<a name="ZH-CN_TOPIC_0000002408581874"></a> 功能描述：逐点求sin。 <a name="table148616412366"></a>
+</table>
+
+#### Sin<a name="ZH-CN_TOPIC_0000002408581874"></a>
+
+功能描述：逐点求sin。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7833,7 +12022,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Cos<a name="ZH-CN_TOPIC_0000002441981009"></a> 功能描述：逐点求cos。 <a name="table148616412366"></a>
+</table>
+
+#### Cos<a name="ZH-CN_TOPIC_0000002441981009"></a>
+
+功能描述：逐点求cos。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7862,7 +12057,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Neg<a name="ZH-CN_TOPIC_0000002442021193"></a> 功能描述：逐点求相反数。 <a name="table148616412366"></a>
+</table>
+
+#### Neg<a name="ZH-CN_TOPIC_0000002442021193"></a>
+
+功能描述：逐点求相反数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7891,7 +12092,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### InstanceNormalization<a name="ZH-CN_TOPIC_0000002408421666"></a> 功能描述：计算y = scale \* \(x - mean\) / sqrt\(variance + epsilon\) + B。 <a name="table148616412366"></a>
+</table>
+
+#### InstanceNormalization<a name="ZH-CN_TOPIC_0000002408421666"></a>
+
+功能描述：计算y = scale \* \(x - mean\) / sqrt\(variance + epsilon\) + B。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.308669133086692%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -7942,8 +12149,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p1990514447128"><a name="p1990514447128"></a><a name="p1990514447128"></a>支持</p>
 </td>
 </tr>
+<tr id="row208434010123"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p109051644101219"><a name="p109051644101219"></a><a name="p109051644101219"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p11905164481217"><a name="p11905164481217"></a><a name="p11905164481217"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p79051644101216"><a name="p79051644101216"></a><a name="p79051644101216"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p6905194416120"><a name="p6905194416120"></a><a name="p6905194416120"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p1690574419125"><a name="p1690574419125"></a><a name="p1690574419125"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### Where<a name="ZH-CN_TOPIC_0000002408582234"></a> 功能描述：根据condition确定输出是X还是Y对应的元素。 <a name="table1197119343356"></a>
+</table>
+
+#### Where<a name="ZH-CN_TOPIC_0000002408582234"></a>
+
+功能描述：根据condition确定输出是X还是Y对应的元素。
+
+<a name="table1197119343356"></a>
 <table><thead align="left"><tr id="row159710346352"><th class="cellrowborder" valign="top" id="mcps1.1.8.1.1"><p id="p09712341358"><a name="p09712341358"></a><a name="p09712341358"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.8.1.2"><p id="p12971103416355"><a name="p12971103416355"></a><a name="p12971103416355"></a>参数/输入</p>
@@ -7976,8 +12200,32 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="3" align="left" valign="top" width="17.26%" headers="mcps1.1.8.1.6 "><p id="p1995665016139"><a name="p1995665016139"></a><a name="p1995665016139"></a>是</p>
 </td>
 </tr>
+<tr id="row85404436136"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p49564507131"><a name="p49564507131"></a><a name="p49564507131"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p14956175071310"><a name="p14956175071310"></a><a name="p14956175071310"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p1095665019136"><a name="p1095665019136"></a><a name="p1095665019136"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p69561450101310"><a name="p69561450101310"></a><a name="p69561450101310"></a>condition为True时选定的值</p>
+</td>
+</tr>
+<tr id="row18808454133"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p3956185051317"><a name="p3956185051317"></a><a name="p3956185051317"></a>Y</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p295611501133"><a name="p295611501133"></a><a name="p295611501133"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p0956250101314"><a name="p0956250101314"></a><a name="p0956250101314"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p9956125012136"><a name="p9956125012136"></a><a name="p9956125012136"></a>condition为False时选定的值</p>
+</td>
+</tr>
 </tbody>
-</table> #### ScatterND<a name="ZH-CN_TOPIC_0000002408422126"></a> 功能描述：根据 indices 将 updates 写入 data 的特定位置。 <a name="table17128591531"></a>
+</table>
+
+#### ScatterND<a name="ZH-CN_TOPIC_0000002408422126"></a>
+
+功能描述：根据 indices 将 updates 写入 data 的特定位置。
+
+<a name="table17128591531"></a>
 <table><thead align="left"><tr id="row121211591636"><th class="cellrowborder" valign="top" width="13.331333133313331%" id="mcps1.1.7.1.1"><p id="p131216591436"><a name="p131216591436"></a><a name="p131216591436"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.331333133313331%" id="mcps1.1.7.1.2"><p id="p81212596310"><a name="p81212596310"></a><a name="p81212596310"></a>参数/输入</p>
@@ -8028,7 +12276,63 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> ### CPU<a name="ZH-CN_TOPIC_0000002442021125"></a> #### Acos<a name="ZH-CN_TOPIC_0000002441981597"></a> 功能描述：逐点求arccosine。 <a name="table148616412366"></a>
+</table>
+
+### CPU<a name="ZH-CN_TOPIC_0000002442021125"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Acos<a name="ZH-CN_TOPIC_0000002441981597"></a>
+
+功能描述：逐点求arccosine。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8057,7 +12361,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Acosh<a name="ZH-CN_TOPIC_0000002408422318"></a> 功能描述：逐点求hyperbolic arccosine。 <a name="table148616412366"></a>
+</table>
+
+#### Acosh<a name="ZH-CN_TOPIC_0000002408422318"></a>
+
+功能描述：逐点求hyperbolic arccosine。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8086,7 +12396,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### And<a name="ZH-CN_TOPIC_0000002441981345"></a> 功能描述：对输入A、B进行elementwise逻辑与计算得到输出C。 <a name="table148616412366"></a>
+</table>
+
+#### And<a name="ZH-CN_TOPIC_0000002441981345"></a>
+
+功能描述：对输入A、B进行elementwise逻辑与计算得到输出C。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8114,8 +12430,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p19895291313"><a name="p19895291313"></a><a name="p19895291313"></a>是</p>
 </td>
 </tr>
+<tr id="row189712146311"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p128916291534"><a name="p128916291534"></a><a name="p128916291534"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p6898291231"><a name="p6898291231"></a><a name="p6898291231"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p178918291438"><a name="p178918291438"></a><a name="p178918291438"></a>bool</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p15891929732"><a name="p15891929732"></a><a name="p15891929732"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> 说明：当And算子作为首层，使用--input\_type设置数据类型时，需要设置成Fp32。 #### Asin<a name="ZH-CN_TOPIC_0000002408582070"></a> 功能描述：逐点求arcsine。 <a name="table148616412366"></a>
+</table>
+
+说明：当And算子作为首层，使用--input\_type设置数据类型时，需要设置成Fp32。
+
+#### Asin<a name="ZH-CN_TOPIC_0000002408582070"></a>
+
+功能描述：逐点求arcsine。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8144,7 +12477,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Asinh<a name="ZH-CN_TOPIC_0000002408582154"></a> 功能描述：逐点求hyperbolic arcsine。 <a name="table148616412366"></a>
+</table>
+
+#### Asinh<a name="ZH-CN_TOPIC_0000002408582154"></a>
+
+功能描述：逐点求hyperbolic arcsine。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8173,7 +12512,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Atan<a name="ZH-CN_TOPIC_0000002408422166"></a> 功能描述：逐点求arctangent。 <a name="table148616412366"></a>
+</table>
+
+#### Atan<a name="ZH-CN_TOPIC_0000002408422166"></a>
+
+功能描述：逐点求arctangent。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8202,7 +12547,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Atanh<a name="ZH-CN_TOPIC_0000002441981125"></a> 功能描述：逐点求hyperbolic arctangent。 <a name="table148616412366"></a>
+</table>
+
+#### Atanh<a name="ZH-CN_TOPIC_0000002441981125"></a>
+
+功能描述：逐点求hyperbolic arctangent。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8231,7 +12582,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### BitShift<a name="ZH-CN_TOPIC_0000002442021293"></a> 功能描述：对输入的元素的二进制表示进行移位操作。 <a name="table148616412366"></a>
+</table>
+
+#### BitShift<a name="ZH-CN_TOPIC_0000002442021293"></a>
+
+功能描述：对输入的元素的二进制表示进行移位操作。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8259,8 +12616,32 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="3" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p16101035194812"><a name="p16101035194812"></a><a name="p16101035194812"></a>是</p>
 </td>
 </tr>
+<tr id="row175921005488"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p16523523174815"><a name="p16523523174815"></a><a name="p16523523174815"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p10523523134810"><a name="p10523523134810"></a><a name="p10523523134810"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p052317234489"><a name="p052317234489"></a><a name="p052317234489"></a>int</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p2524023164820"><a name="p2524023164820"></a><a name="p2524023164820"></a>数据</p>
+</td>
+</tr>
+<tr id="row12285211485"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p195248237481"><a name="p195248237481"></a><a name="p195248237481"></a>y</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p105241223194813"><a name="p105241223194813"></a><a name="p105241223194813"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p4524182314819"><a name="p4524182314819"></a><a name="p4524182314819"></a>int</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p652492394812"><a name="p652492394812"></a><a name="p652492394812"></a>移动的数量</p>
+</td>
+</tr>
 </tbody>
-</table> #### Celu<a name="ZH-CN_TOPIC_0000002441981481"></a> 功能描述：一种固定公式的激活函数。 <a name="table148616412366"></a>
+</table>
+
+#### Celu<a name="ZH-CN_TOPIC_0000002441981481"></a>
+
+功能描述：一种固定公式的激活函数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8288,8 +12669,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p269119211086"><a name="p269119211086"></a><a name="p269119211086"></a>是</p>
 </td>
 </tr>
+<tr id="row336813175813"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p8691202112815"><a name="p8691202112815"></a><a name="p8691202112815"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p136917211280"><a name="p136917211280"></a><a name="p136917211280"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p186917211584"><a name="p186917211584"></a><a name="p186917211584"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p8691162115815"><a name="p8691162115815"></a><a name="p8691162115815"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p156919211385"><a name="p156919211385"></a><a name="p156919211385"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### Cosh<a name="ZH-CN_TOPIC_0000002408582094"></a> 功能描述：逐点求hyperbolic cosine。 <a name="table148616412366"></a>
+</table>
+
+#### Cosh<a name="ZH-CN_TOPIC_0000002408582094"></a>
+
+功能描述：逐点求hyperbolic cosine。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8318,7 +12716,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### CumSum<a name="ZH-CN_TOPIC_0000002441981565"></a> 功能描述：计算输入元素沿给定轴的累加和。 <a name="table148616412366"></a>
+</table>
+
+#### CumSum<a name="ZH-CN_TOPIC_0000002441981565"></a>
+
+功能描述：计算输入元素沿给定轴的累加和。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="12.790000000000001%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.790000000000001%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8355,6 +12759,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p3973361214"><a name="p3973361214"></a><a name="p3973361214"></a>指示求和的元素方向</p>
 </td>
 </tr>
+<tr id="row4778165314119"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p997131129"><a name="p997131129"></a><a name="p997131129"></a>x</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p997736124"><a name="p997736124"></a><a name="p997736124"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p09753161212"><a name="p09753161212"></a><a name="p09753161212"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p1997436123"><a name="p1997436123"></a><a name="p1997436123"></a>数据</p>
+</td>
+</tr>
 <tr id="row1450512545113"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p9978361210"><a name="p9978361210"></a><a name="p9978361210"></a>axis</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p297123191210"><a name="p297123191210"></a><a name="p297123191210"></a>input</p>
@@ -8365,7 +12778,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Det<a name="ZH-CN_TOPIC_0000002408581822"></a> 功能描述：求行列式。 <a name="table148616412366"></a>
+</table>
+
+#### Det<a name="ZH-CN_TOPIC_0000002408581822"></a>
+
+功能描述：求行列式。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8394,7 +12813,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Floor<a name="ZH-CN_TOPIC_0000002442021357"></a> 功能描述：对输入X元素进行向下取整得到Y。 <a name="table148616412366"></a>
+</table>
+
+#### Floor<a name="ZH-CN_TOPIC_0000002442021357"></a>
+
+功能描述：对输入X元素进行向下取整得到Y。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8423,7 +12848,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### GatherElements<a name="ZH-CN_TOPIC_0000002408422374"></a> 功能描述：是一种索引操作，通过在由indices的元素确定的索引位置处对输入数据张量进行索引来生成其输出。它的输出形状与索引的形状相同。 <a name="table751251114419"></a>
+</table>
+
+#### GatherElements<a name="ZH-CN_TOPIC_0000002408422374"></a>
+
+功能描述：是一种索引操作，通过在由indices的元素确定的索引位置处对输入数据张量进行索引来生成其输出。它的输出形状与索引的形状相同。
+
+<a name="table751251114419"></a>
 <table><thead align="left"><tr id="row3512811144412"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.1"><p id="p11512201116449"><a name="p11512201116449"></a><a name="p11512201116449"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12%" id="mcps1.1.7.1.2"><p id="p1512611104419"><a name="p1512611104419"></a><a name="p1512611104419"></a>参数/输入</p>
@@ -8474,7 +12905,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### GlobalLpPool<a name="ZH-CN_TOPIC_0000002441981097"></a> 功能描述：实现对同一channel的所有元素Lp norm。 <a name="table148616412366"></a>
+</table>
+
+#### GlobalLpPool<a name="ZH-CN_TOPIC_0000002441981097"></a>
+
+功能描述：实现对同一channel的所有元素Lp norm。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="11.761176117611761%" id="mcps1.1.8.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.761176117611761%" id="mcps1.1.8.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8507,8 +12944,23 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="26.162616261626166%" headers="mcps1.1.8.1.7 "><p id="p10239622135311"><a name="p10239622135311"></a><a name="p10239622135311"></a>-</p>
 </td>
 </tr>
+<tr id="row117911735122919"><td class="cellrowborder" valign="top" headers="mcps1.1.8.1.1 "><p id="p78391939142913"><a name="p78391939142913"></a><a name="p78391939142913"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.2 "><p id="p178396393299"><a name="p178396393299"></a><a name="p178396393299"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.3 "><p id="p783953920292"><a name="p783953920292"></a><a name="p783953920292"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.8.1.4 "><p id="p783913394293"><a name="p783913394293"></a><a name="p783913394293"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### GreaterOrEqual<a name="ZH-CN_TOPIC_0000002408582114"></a> 功能描述：逐点计算A中元素是否大于等于B中元素。 <a name="table148616412366"></a>
+</table>
+
+#### GreaterOrEqual<a name="ZH-CN_TOPIC_0000002408582114"></a>
+
+功能描述：逐点计算A中元素是否大于等于B中元素。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8536,8 +12988,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p123021038161413"><a name="p123021038161413"></a><a name="p123021038161413"></a>是</p>
 </td>
 </tr>
+<tr id="row3284835181419"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p19302143814149"><a name="p19302143814149"></a><a name="p19302143814149"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p6302113891412"><a name="p6302113891412"></a><a name="p6302113891412"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p193021938141414"><a name="p193021938141414"></a><a name="p193021938141414"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p18302193861415"><a name="p18302193861415"></a><a name="p18302193861415"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p11302113871413"><a name="p11302113871413"></a><a name="p11302113871413"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### HardMax<a name="ZH-CN_TOPIC_0000002442021365"></a> 功能描述：如果沿着axis，输入的点是最大的则为1，否则为0。 <a name="table148616412366"></a>
+</table>
+
+#### HardMax<a name="ZH-CN_TOPIC_0000002442021365"></a>
+
+功能描述：如果沿着axis，输入的点是最大的则为1，否则为0。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8577,7 +13046,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### HardSigmoid<a name="ZH-CN_TOPIC_0000002408582158"></a> 功能描述：根据公式进行计算y = max\(0, min\(1, alpha \* x + beta\)\)。 <a name="table148616412366"></a>
+</table>
+
+#### HardSigmoid<a name="ZH-CN_TOPIC_0000002408582158"></a>
+
+功能描述：根据公式进行计算y = max\(0, min\(1, alpha \* x + beta\)\)。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8628,7 +13103,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### If<a name="ZH-CN_TOPIC_0000002408421638"></a> 功能描述：进行分支判断计算。当子图包含CPU算子时，If为CPU算子。 <a name="table148616412366"></a>
+</table>
+
+#### If<a name="ZH-CN_TOPIC_0000002408421638"></a>
+
+功能描述：进行分支判断计算。当子图包含CPU算子时，If为CPU算子。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="16.25%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.78%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8679,7 +13160,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Less<a name="ZH-CN_TOPIC_0000002408422268"></a> 功能描述：逐点计算A中元素是否小于B中元素。 <a name="table148616412366"></a>
+</table>
+
+#### Less<a name="ZH-CN_TOPIC_0000002408422268"></a>
+
+功能描述：逐点计算A中元素是否小于B中元素。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8708,8 +13195,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <p id="p11495039171519"><a name="p11495039171519"></a><a name="p11495039171519"></a></p>
 </td>
 </tr>
+<tr id="row6869234201518"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p6495133917152"><a name="p6495133917152"></a><a name="p6495133917152"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p749573911515"><a name="p749573911515"></a><a name="p749573911515"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p1149573917153"><a name="p1149573917153"></a><a name="p1149573917153"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p104951539151515"><a name="p104951539151515"></a><a name="p104951539151515"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p15495163916153"><a name="p15495163916153"></a><a name="p15495163916153"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### LessOrEqual<a name="ZH-CN_TOPIC_0000002442021341"></a> 功能描述：逐点计算A中元素是否小于等于B中元素。 <a name="table148616412366"></a>
+</table>
+
+#### LessOrEqual<a name="ZH-CN_TOPIC_0000002442021341"></a>
+
+功能描述：逐点计算A中元素是否小于等于B中元素。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8737,8 +13241,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p179401131717"><a name="p179401131717"></a><a name="p179401131717"></a>是</p>
 </td>
 </tr>
+<tr id="row3138759191619"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p59401512176"><a name="p59401512176"></a><a name="p59401512176"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p494011116175"><a name="p494011116175"></a><a name="p494011116175"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p1394011181710"><a name="p1394011181710"></a><a name="p1394011181710"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p199404118172"><a name="p199404118172"></a><a name="p199404118172"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p294011121716"><a name="p294011121716"></a><a name="p294011121716"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### Loop<a name="ZH-CN_TOPIC_0000002408582138"></a> 功能描述：对子图进行循环计算。当子图包含CPU算子时，Loop为CPU算子。 <a name="table148616412366"></a>
+</table>
+
+#### Loop<a name="ZH-CN_TOPIC_0000002408582138"></a>
+
+功能描述：对子图进行循环计算。当子图包含CPU算子时，Loop为CPU算子。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8766,6 +13287,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="4" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p98011745111817"><a name="p98011745111817"></a><a name="p98011745111817"></a>是。不支持所有输入同时都为离线输入。</p>
 </td>
 </tr>
+<tr id="row1838144114188"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p148011945101813"><a name="p148011945101813"></a><a name="p148011945101813"></a>M</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p880116455184"><a name="p880116455184"></a><a name="p880116455184"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p98011845111815"><a name="p98011845111815"></a><a name="p98011845111815"></a>int64</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p10801545171811"><a name="p10801545171811"></a><a name="p10801545171811"></a>迭代的次数</p>
+</td>
+</tr>
 <tr id="row7324104220185"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p178012045131812"><a name="p178012045131812"></a><a name="p178012045131812"></a>cond</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p180114513184"><a name="p180114513184"></a><a name="p180114513184"></a>input</p>
@@ -8785,7 +13315,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### LpNormalization<a name="ZH-CN_TOPIC_0000002408582190"></a> 功能描述：对指定轴进行lp\_norm计算。 <a name="table148616412366"></a>
+</table>
+
+#### LpNormalization<a name="ZH-CN_TOPIC_0000002408582190"></a>
+
+功能描述：对指定轴进行lp\_norm计算。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8824,8 +13360,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p54041710113011"><a name="p54041710113011"></a><a name="p54041710113011"></a>[-r,r-1]，r=rank(input)</p>
 </td>
 </tr>
+<tr id="row341816577289"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p114041810203014"><a name="p114041810203014"></a><a name="p114041810203014"></a>p</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p44048106300"><a name="p44048106300"></a><a name="p44048106300"></a>attribute</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p184041410133013"><a name="p184041410133013"></a><a name="p184041410133013"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p5404131083019"><a name="p5404131083019"></a><a name="p5404131083019"></a>归一化的顺序</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p44041103306"><a name="p44041103306"></a><a name="p44041103306"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### MatMul<a name="ZH-CN_TOPIC_0000002441981033"></a> 功能描述：支持numpy-style的矩阵相乘。 <a name="table148616412366"></a>
+</table>
+
+#### MatMul<a name="ZH-CN_TOPIC_0000002441981033"></a>
+
+功能描述：支持numpy-style的矩阵相乘。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286668%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286668%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8854,8 +13407,23 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="16.68833116688331%" headers="mcps1.1.7.1.6 "><p id="p183617215177"><a name="p183617215177"></a><a name="p183617215177"></a>是</p>
 </td>
 </tr>
+<tr id="row470841813172"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p1283632121710"><a name="p1283632121710"></a><a name="p1283632121710"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p1836172115172"><a name="p1836172115172"></a><a name="p1836172115172"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p6836102114174"><a name="p6836102114174"></a><a name="p6836102114174"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p2836621151717"><a name="p2836621151717"></a><a name="p2836621151717"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### MaxUnPool<a name="ZH-CN_TOPIC_0000002441981057"></a> 功能描述：MaxPool的部分逆操作。 <a name="table148616412366"></a>
+</table>
+
+#### MaxUnPool<a name="ZH-CN_TOPIC_0000002441981057"></a>
+
+功能描述：MaxPool的部分逆操作。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="17.051705170517053%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.23132313231323%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8905,6 +13473,28 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p944873813413"><a name="p944873813413"></a><a name="p944873813413"></a>支持</p>
 </td>
 </tr>
+<tr id="row189238198499"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p19231233164918"><a name="p19231233164918"></a><a name="p19231233164918"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p7235333490"><a name="p7235333490"></a><a name="p7235333490"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p72383364920"><a name="p72383364920"></a><a name="p72383364920"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p123183394920"><a name="p123183394920"></a><a name="p123183394920"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p44501938163414"><a name="p44501938163414"></a><a name="p44501938163414"></a>支持</p>
+</td>
+</tr>
+<tr id="row8774132015492"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p423103354915"><a name="p423103354915"></a><a name="p423103354915"></a>I</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p18231433104912"><a name="p18231433104912"></a><a name="p18231433104912"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p1823153354917"><a name="p1823153354917"></a><a name="p1823153354917"></a>int64</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p323163319496"><a name="p323163319496"></a><a name="p323163319496"></a>对应X中元素的索引</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p4452193863420"><a name="p4452193863420"></a><a name="p4452193863420"></a>支持</p>
+</td>
+</tr>
 <tr id="row19743162154917"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p82493310492"><a name="p82493310492"></a><a name="p82493310492"></a>output_shape</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p74851212134915"><a name="p74851212134915"></a><a name="p74851212134915"></a>input(optional)</p>
@@ -8917,7 +13507,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Mod<a name="ZH-CN_TOPIC_0000002408421622"></a> 功能描述：对输入数据的元素进行取余。 <a name="table148616412366"></a>
+</table>
+
+#### Mod<a name="ZH-CN_TOPIC_0000002408421622"></a>
+
+功能描述：对输入数据的元素进行取余。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8945,8 +13541,32 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="3" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p557041418360"><a name="p557041418360"></a><a name="p557041418360"></a>是</p>
 </td>
 </tr>
+<tr id="row2894171015365"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p1570714193611"><a name="p1570714193611"></a><a name="p1570714193611"></a>A</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p5570171433618"><a name="p5570171433618"></a><a name="p5570171433618"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p14570171453610"><a name="p14570171453610"></a><a name="p14570171453610"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p5570111418367"><a name="p5570111418367"></a><a name="p5570111418367"></a>数据</p>
+</td>
+</tr>
+<tr id="row1490013115367"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p195701114103617"><a name="p195701114103617"></a><a name="p195701114103617"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p3570314103615"><a name="p3570314103615"></a><a name="p3570314103615"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p157011412366"><a name="p157011412366"></a><a name="p157011412366"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p1857061416368"><a name="p1857061416368"></a><a name="p1857061416368"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> #### Neg<a name="ZH-CN_TOPIC_0000002442021497"></a> 功能描述：对输入数据，进行符号翻转。 <a name="table148616412366"></a>
+</table>
+
+#### Neg<a name="ZH-CN_TOPIC_0000002442021497"></a>
+
+功能描述：对输入数据，进行符号翻转。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -8975,7 +13595,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### NonMaxSuppression<a name="ZH-CN_TOPIC_0000002408581766"></a> 功能描述：过滤掉与其它框有高的IOU的框。其输出shape 随在线数据变化，模型转换时按最大shape分配内存和推理。 <a name="table148616412366"></a>
+</table>
+
+#### NonMaxSuppression<a name="ZH-CN_TOPIC_0000002408581766"></a>
+
+功能描述：过滤掉与其它框有高的IOU的框。其输出shape 随在线数据变化，模型转换时按最大shape分配内存和推理。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="18.29%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.41%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9059,7 +13685,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### NonZero<a name="ZH-CN_TOPIC_0000002408582226"></a> 功能描述：返回非零元素的索引。其输出shape 随在线数据变化，模型转换时按最大shape分配内存和推理。 <a name="table148616412366"></a>
+</table>
+
+#### NonZero<a name="ZH-CN_TOPIC_0000002408582226"></a>
+
+功能描述：返回非零元素的索引。其输出shape 随在线数据变化，模型转换时按最大shape分配内存和推理。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9088,7 +13720,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Not<a name="ZH-CN_TOPIC_0000002408581778"></a> 功能描述：对输入X进行逻辑非运算得到输出Y。 <a name="table148616412366"></a>
+</table>
+
+#### Not<a name="ZH-CN_TOPIC_0000002408581778"></a>
+
+功能描述：对输入X进行逻辑非运算得到输出Y。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9117,7 +13755,15 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> 说明：当Not算子作为首层，使用--input\_type设置数据类型时，需要设置成Fp32。 #### OneHot<a name="ZH-CN_TOPIC_0000002441981425"></a> 功能描述：求onehot编码。 <a name="table148616412366"></a>
+</table>
+
+说明：当Not算子作为首层，使用--input\_type设置数据类型时，需要设置成Fp32。
+
+#### OneHot<a name="ZH-CN_TOPIC_0000002441981425"></a>
+
+功能描述：求onehot编码。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9179,7 +13825,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Or<a name="ZH-CN_TOPIC_0000002408422074"></a> 功能描述：对输入A、B进行elementwise逻辑或计算得到输出C。 <a name="table148616412366"></a>
+</table>
+
+#### Or<a name="ZH-CN_TOPIC_0000002408422074"></a>
+
+功能描述：对输入A、B进行elementwise逻辑或计算得到输出C。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9207,8 +13859,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p1584314391775"><a name="p1584314391775"></a><a name="p1584314391775"></a>是</p>
 </td>
 </tr>
+<tr id="row4695123715714"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p168431739078"><a name="p168431739078"></a><a name="p168431739078"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p17843163913714"><a name="p17843163913714"></a><a name="p17843163913714"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p284318399712"><a name="p284318399712"></a><a name="p284318399712"></a>bool</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p1284314399715"><a name="p1284314399715"></a><a name="p1284314399715"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> 说明：当Or算子作为首层，使用--input\_type设置数据类型时，需要设置成Fp32。 #### Range<a name="ZH-CN_TOPIC_0000002441981229"></a> 功能描述：根据起始值，结束值，步长信息计算输出数列。 <a name="table148616412366"></a>
+</table>
+
+说明：当Or算子作为首层，使用--input\_type设置数据类型时，需要设置成Fp32。
+
+#### Range<a name="ZH-CN_TOPIC_0000002441981229"></a>
+
+功能描述：根据起始值，结束值，步长信息计算输出数列。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.340000000000002%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.340000000000002%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9259,7 +13928,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Resize<a name="ZH-CN_TOPIC_0000002408582042"></a> 功能描述：将输入按指定mode进行缩放。 <a name="table148616412366"></a>
+</table>
+
+#### Resize<a name="ZH-CN_TOPIC_0000002408582042"></a>
+
+功能描述：将输入按指定mode进行缩放。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="19.301930193019302%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.401240124012402%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9342,6 +14017,17 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p2089862512015"><a name="p2089862512015"></a><a name="p2089862512015"></a>支持floor,ceil</p>
 </td>
 </tr>
+<tr id="row14591102142012"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p9898325102014"><a name="p9898325102014"></a><a name="p9898325102014"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p1289822517207"><a name="p1289822517207"></a><a name="p1289822517207"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p148981225142011"><a name="p148981225142011"></a><a name="p148981225142011"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p489862562015"><a name="p489862562015"></a><a name="p489862562015"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p3899325112014"><a name="p3899325112014"></a><a name="p3899325112014"></a>仅支持4D</p>
+</td>
+</tr>
 <tr id="row1541513322015"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p58993258204"><a name="p58993258204"></a><a name="p58993258204"></a>roi</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p18991525182012"><a name="p18991525182012"></a><a name="p18991525182012"></a>input</p>
@@ -9376,7 +14062,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Reciprocal<a name="ZH-CN_TOPIC_0000002408581954"></a> 功能描述：对每个点求倒数。 <a name="table148616412366"></a>
+</table>
+
+#### Reciprocal<a name="ZH-CN_TOPIC_0000002408581954"></a>
+
+功能描述：对每个点求倒数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9405,7 +14097,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceLogSum<a name="ZH-CN_TOPIC_0000002408422282"></a> 功能描述：对指定的轴计算log\_sum。 <a name="table148616412366"></a>
+</table>
+
+#### ReduceLogSum<a name="ZH-CN_TOPIC_0000002408422282"></a>
+
+功能描述：对指定的轴计算log\_sum。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9456,7 +14154,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ReduceLogSumExp<a name="ZH-CN_TOPIC_0000002408581886"></a> 功能描述：对指定的轴计算log\_sum\_exp。 <a name="table148616412366"></a>
+</table>
+
+#### ReduceLogSumExp<a name="ZH-CN_TOPIC_0000002408581886"></a>
+
+功能描述：对指定的轴计算log\_sum\_exp。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286668%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286668%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9507,7 +14211,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Round<a name="ZH-CN_TOPIC_0000002498095322"></a> 功能描述：对输入X求Round得到Y。 <a name="table17815184195114"></a>
+</table>
+
+#### Round<a name="ZH-CN_TOPIC_0000002498095322"></a>
+
+功能描述：对输入X求Round得到Y。
+
+<a name="table17815184195114"></a>
 <table><thead align="left"><tr id="row1081554185117"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p18152411513"><a name="p18152411513"></a><a name="p18152411513"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p78151748518"><a name="p78151748518"></a><a name="p78151748518"></a>参数/输入</p>
@@ -9536,7 +14246,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Scatter<a name="ZH-CN_TOPIC_0000002408422254"></a> 功能描述：替换输入数据指定位置的值。 <a name="table148616412366"></a>
+</table>
+
+#### Scatter<a name="ZH-CN_TOPIC_0000002408422254"></a>
+
+功能描述：替换输入数据指定位置的值。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9598,7 +14314,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Selu<a name="ZH-CN_TOPIC_0000002408421970"></a> 功能描述：Selu激活函数。 <a name="table148616412366"></a>
+</table>
+
+#### Selu<a name="ZH-CN_TOPIC_0000002408421970"></a>
+
+功能描述：Selu激活函数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="15.821582158215822%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.821582158215822%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9637,8 +14359,25 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p122211694351"><a name="p122211694351"></a><a name="p122211694351"></a>支持</p>
 </td>
 </tr>
+<tr id="row10414140636"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p192669417312"><a name="p192669417312"></a><a name="p192669417312"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p52661141637"><a name="p52661141637"></a><a name="p52661141637"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p52661942316"><a name="p52661942316"></a><a name="p52661942316"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p4266041031"><a name="p4266041031"></a><a name="p4266041031"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.5 "><p id="p172377914358"><a name="p172377914358"></a><a name="p172377914358"></a>支持</p>
+</td>
+</tr>
 </tbody>
-</table> #### Shrink<a name="ZH-CN_TOPIC_0000002441980921"></a> 功能描述：Shrink激活函数。 <a name="table148616412366"></a>
+</table>
+
+#### Shrink<a name="ZH-CN_TOPIC_0000002441980921"></a>
+
+功能描述：Shrink激活函数。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.33%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.33%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9689,7 +14428,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Sin<a name="ZH-CN_TOPIC_0000002408422202"></a> 功能描述：计算sine。 <a name="table148616412366"></a>
+</table>
+
+#### Sin<a name="ZH-CN_TOPIC_0000002408422202"></a>
+
+功能描述：计算sine。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9718,7 +14463,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Sinh<a name="ZH-CN_TOPIC_0000002408422070"></a> 功能描述：逐点求hyperbolic sine。 <a name="table148616412366"></a>
+</table>
+
+#### Sinh<a name="ZH-CN_TOPIC_0000002408422070"></a>
+
+功能描述：逐点求hyperbolic sine。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9747,7 +14498,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Softplus<a name="ZH-CN_TOPIC_0000002408581606"></a> 功能描述：计算ln\(exp\(x\) + 1\)。 <a name="table148616412366"></a>
+</table>
+
+#### Softplus<a name="ZH-CN_TOPIC_0000002408581606"></a>
+
+功能描述：计算ln\(exp\(x\) + 1\)。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9776,7 +14533,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Softsign<a name="ZH-CN_TOPIC_0000002442021425"></a> 功能描述：计算\(x/\(1+|x|\)\)。 <a name="table148616412366"></a>
+</table>
+
+#### Softsign<a name="ZH-CN_TOPIC_0000002442021425"></a>
+
+功能描述：计算\(x/\(1+|x|\)\)。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9805,7 +14568,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### ThresholdedRelu<a name="ZH-CN_TOPIC_0000002441981509"></a> 功能描述：作为激活函数实现数据变换： y=x for x \> alpha, y=0 otherwise <a name="table148616412366"></a>
+</table>
+
+#### ThresholdedRelu<a name="ZH-CN_TOPIC_0000002441981509"></a>
+
+功能描述：作为激活函数实现数据变换： y=x for x \> alpha, y=0 otherwise
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9833,8 +14602,27 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p18679352194017"><a name="p18679352194017"></a><a name="p18679352194017"></a>不涉及</p>
 </td>
 </tr>
+<tr id="row1194221104010"><td class="cellrowborder" valign="top" width="13.328667133286674%" headers="mcps1.1.7.1.1 "><p id="p253364562013"><a name="p253364562013"></a><a name="p253364562013"></a>X</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.328667133286674%" headers="mcps1.1.7.1.2 "><p id="p1653334512209"><a name="p1653334512209"></a><a name="p1653334512209"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.66893310668933%" headers="mcps1.1.7.1.3 "><p id="p15533545102012"><a name="p15533545102012"></a><a name="p15533545102012"></a>float</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.1.7.1.4 "><p id="p1653310451204"><a name="p1653310451204"></a><a name="p1653310451204"></a>数据</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.007599240075994%" headers="mcps1.1.7.1.5 "><p id="p20533134513202"><a name="p20533134513202"></a><a name="p20533134513202"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p1153324516206"><a name="p1153324516206"></a><a name="p1153324516206"></a>是</p>
+</td>
+</tr>
 </tbody>
-</table> #### Transpose<a name="ZH-CN_TOPIC_0000002442020913"></a> 功能描述：和numpy的transpose一样转置输入tensor。 <a name="table148616412366"></a>
+</table>
+
+#### Transpose<a name="ZH-CN_TOPIC_0000002442020913"></a>
+
+功能描述：和numpy的transpose一样转置输入tensor。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9875,7 +14663,13 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 </td>
 </tr>
 </tbody>
-</table> #### Xor<a name="ZH-CN_TOPIC_0000002408421718"></a> 功能描述：对输入A、B进行elementwise逻辑异或计算得到输出C。 <a name="table148616412366"></a>
+</table>
+
+#### Xor<a name="ZH-CN_TOPIC_0000002408421718"></a>
+
+功能描述：对输入A、B进行elementwise逻辑异或计算得到输出C。
+
+<a name="table148616412366"></a>
 <table><thead align="left"><tr id="row1811634117362"><th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.1"><p id="p611654111369"><a name="p611654111369"></a><a name="p611654111369"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.328667133286674%" id="mcps1.1.7.1.2"><p id="p311624118367"><a name="p311624118367"></a><a name="p311624118367"></a>参数/输入</p>
@@ -9903,7 +14697,70 @@ layer { name: "mbox_conf_softmax" type: "Softmax" bottom: "mbox_conf_permute" to
 <td class="cellrowborder" rowspan="2" align="left" valign="top" width="18.66813318668133%" headers="mcps1.1.7.1.6 "><p id="p129881703118"><a name="p129881703118"></a><a name="p129881703118"></a>是</p>
 </td>
 </tr>
+<tr id="row1630105851017"><td class="cellrowborder" valign="top" headers="mcps1.1.7.1.1 "><p id="p1998818017112"><a name="p1998818017112"></a><a name="p1998818017112"></a>B</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.2 "><p id="p49886011114"><a name="p49886011114"></a><a name="p49886011114"></a>input</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.3 "><p id="p169881404113"><a name="p169881404113"></a><a name="p169881404113"></a>bool</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.7.1.4 "><p id="p19880081114"><a name="p19880081114"></a><a name="p19880081114"></a>数据</p>
+</td>
+</tr>
 </tbody>
-</table> ## Roi/Psroi Pooling算子输入格式<a name="ZH-CN_TOPIC_0000002408582210"></a> 标准Caffe/Onnx的Roi/Psroi Pooling算子都有2个输入，其中第1个输入是维度为N×C×H×W的输入数据，第2个输入是维度为num\_rois×5的ROI区域。本小节描述当Roi/Psroi Pooling算子作为网络首层时，ATC工具和板端需要的第2个输入（板端还需要第3个输入）的数据格式。 ### ATC工具的输入格式<a name="ZH-CN_TOPIC_0000002442021093"></a> ATC工具支持两种ROI输入格式。 1. 与标准Caffe/Onnx的输入格式保持一致；
-2. 与硬化DecBBox层的输出格式保持一致，维度为1×1×H×num\_rois，H \>= 4。Prototxt的写法如[图1](#_Ref77002945)所示。 **图 1** 两种输入格式的prototxt写法<a name="_Ref77002945"></a> ![](figures/两种输入格式的prototxt写法.png "两种输入格式的prototxt写法") 对应两种不同的prototxt写法，相应的量化数据输入格式如[图2](#_Ref77002946)所示。对于格式1），N维度为num\_rois，所以每个ROI区域是一行。对于格式2），N维度为1，所以H×W个点在同一行；需要注意：当H \> 4时，需保证表示ROI区域的坐标排在H0-H3，并且顺序为x0 -\> y0 -\> x1 -\> y1。 **图 2** 两种输入格式的量化数据排布<a name="_Ref77002946"></a> ![](figures/两种输入格式的量化数据排布.png "两种输入格式的量化数据排布")
-### 板端的输入格式<a name="ZH-CN_TOPIC_0000002408582166"></a> 当Roi/Psroi Pooling算子作为网络首层时，最终生成的网络结构如[图1](#_Ref77002947)所示。第1个data层对应feature\_map输入，第2个data层对应ROI区域输入，第3个data层的输入是实际有效ROI的个数，即ActualRoiNum。 **图 1** 首层Roi/Psroi Pooling网络结构图<a name="_Ref77002947"></a> ![](figures/首层Roi-Psroi-Pooling网络结构图.png "首层Roi-Psroi-Pooling网络结构图") 板端只支持1种ROI区域（第2个data层）输入格式，类似ATC工具的第2种输入格式。ATC工具的输入配置为格式1）或2），不影响最终生成的om支持的输入格式。板端需要的ROI输入维度为1×1×H×MaxRoiFrameCnt，其中H等于prototxt中配置的H，MaxRoiFrameCnt等于cfg文件中指定的max\_roi\_frame\_cnt。当ActualRoiNum < MaxRoiFrameCnt，每一行需要补齐到MaxRoiFrameCnt个点。Roi/Psroi Pooling算子会按照min\(MaxRoiFrameCnt, ActualRoiNum\)计算。 ## Recurrent（LSTM/GRU/RNN）算子板端输入输出格式<a name="ZH-CN_TOPIC_0000002441981401"></a> 标准Caffe的Recurrent（LSTM/GRU/RNN）算子都有至少2个输入，其中第1个输入是维度为t×n×d的输入数据，第2个输入是维度为t×n的continuous数据。本小节描述当Recurrent网络包含诸如Conv等4D规格的算子且batch\_num配置为batch（多张）模式时，板端的输入输出数据格式。 ### 板端的输入格式<a name="ZH-CN_TOPIC_0000002408581970"></a> 假设Recurrent网络片段结构如[图1](#fig327845143214)所示，Reshape层和Permute层负责将Conv输出的4D数据转换为3D数据并作为LSTM层的第一个输入，Data（Preprocess）层对应LSTM层的第二个continuous输入。当Prototxt首层N轴为1，即维度为1×C×H×W时，LSTM层的帧数轴t为18，句子轴n为1。 **图 1** Recurrent网络片段结构图<a name="fig327845143214"></a> ![](figures/Recurrent网络片段结构图.jpg "Recurrent网络片段结构图") 若batch\_num配置为batch（多张）模式，针对LSTM层的continuous输入（Data层），板端需准备指定图片张数对应的数据量，并且数据排布等同于标准Caffe下，Prototxt首层N轴为batch\_num时continuous的数据排布。以[图1](#fig327845143214)为例，板端准备的continuous数据应符合标准Caffe下continuous的shape为\[18, batch\_num\]所对应的数据排布。 >![](public_sys-resources/icon-note.gif) **说明：** >在ONNX框架下Recurrent网络的输入是X \[T, N, D\], sequence\_lens \[N\], intial\_h \[num\_directions, N, D\]和intial\_c \[num\_directions\]。sequence\_lens由于仅有batch轴，在准备时无需像上述continuous一样作出特殊输入规定，能保持与用户提供的输入一致。 ### 板端的输出格式<a name="ZH-CN_TOPIC_0000002408421886"></a> 当batch\_num配置为batch（多张）模式时，板端的输出数据将按照图片顺序依次排列，即先排完第一张图片对应的全量数据，再依次排列后续各图片对应的全量数据。该排布可能和Caffe标准框架下Prototxt首层N轴为batch\_num所产生的数据排布不一致。 仍以[图1](#fig327845143214)为例，LSTM层第一个输出shape为\[18, 1, 128\]，板端在该层得到的输出符合shape为\[batch\_num, 18, 1, 128\]对应的数据排布, 即依次排列每张图片对应的计算数据。在标准Caffe下，若Prototxt首层N轴为batch\_num，LSTM层第一个输出符合shape为\[18, batch\_num, 128\]对应的数据排布，即不同图片对应的数据间存在交叉排列。 同理，板端在ONNX框架下的处理也与上述Caffe类似。以输出HT \[T, num\_directions, N, D\]为例，多图片下的板端输出排布为输出第一张图片的HT后再紧接排布下一张图片的HT。 
+</table>
+
+## Roi/Psroi Pooling算子输入格式<a name="ZH-CN_TOPIC_0000002408582210"></a>
+
+标准Caffe/Onnx的Roi/Psroi Pooling算子都有2个输入，其中第1个输入是维度为N×C×H×W的输入数据，第2个输入是维度为num\_rois×5的ROI区域。本小节描述当Roi/Psroi Pooling算子作为网络首层时，ATC工具和板端需要的第2个输入（板端还需要第3个输入）的数据格式。
+
+
+
+### ATC工具的输入格式<a name="ZH-CN_TOPIC_0000002442021093"></a>
+
+ATC工具支持两种ROI输入格式。
+
+1.  与标准Caffe/Onnx的输入格式保持一致；
+2.  与硬化DecBBox层的输出格式保持一致，维度为1×1×H×num\_rois，H \>= 4。Prototxt的写法如[图1](#_Ref77002945)所示。
+
+**图 1**  两种输入格式的prototxt写法<a name="_Ref77002945"></a>  
+![](figures/两种输入格式的prototxt写法.png "两种输入格式的prototxt写法")
+
+对应两种不同的prototxt写法，相应的量化数据输入格式如[图2](#_Ref77002946)所示。对于格式1），N维度为num\_rois，所以每个ROI区域是一行。对于格式2），N维度为1，所以H×W个点在同一行；需要注意：当H \> 4时，需保证表示ROI区域的坐标排在H0-H3，并且顺序为x0 -\> y0 -\> x1 -\> y1。
+
+**图 2**  两种输入格式的量化数据排布<a name="_Ref77002946"></a>  
+![](figures/两种输入格式的量化数据排布.png "两种输入格式的量化数据排布")
+### 板端的输入格式<a name="ZH-CN_TOPIC_0000002408582166"></a>
+
+当Roi/Psroi Pooling算子作为网络首层时，最终生成的网络结构如[图1](#_Ref77002947)所示。第1个data层对应feature\_map输入，第2个data层对应ROI区域输入，第3个data层的输入是实际有效ROI的个数，即ActualRoiNum。
+
+**图 1**  首层Roi/Psroi Pooling网络结构图<a name="_Ref77002947"></a>  
+![](figures/首层Roi-Psroi-Pooling网络结构图.png "首层Roi-Psroi-Pooling网络结构图")
+
+板端只支持1种ROI区域（第2个data层）输入格式，类似ATC工具的第2种输入格式。ATC工具的输入配置为格式1）或2），不影响最终生成的om支持的输入格式。板端需要的ROI输入维度为1×1×H×MaxRoiFrameCnt，其中H等于prototxt中配置的H，MaxRoiFrameCnt等于cfg文件中指定的max\_roi\_frame\_cnt。当ActualRoiNum < MaxRoiFrameCnt，每一行需要补齐到MaxRoiFrameCnt个点。Roi/Psroi Pooling算子会按照min\(MaxRoiFrameCnt, ActualRoiNum\)计算。
+
+## Recurrent（LSTM/GRU/RNN）算子板端输入输出格式<a name="ZH-CN_TOPIC_0000002441981401"></a>
+
+标准Caffe的Recurrent（LSTM/GRU/RNN）算子都有至少2个输入，其中第1个输入是维度为t×n×d的输入数据，第2个输入是维度为t×n的continuous数据。本小节描述当Recurrent网络包含诸如Conv等4D规格的算子且batch\_num配置为batch（多张）模式时，板端的输入输出数据格式。
+
+
+
+### 板端的输入格式<a name="ZH-CN_TOPIC_0000002408581970"></a>
+
+假设Recurrent网络片段结构如[图1](#fig327845143214)所示，Reshape层和Permute层负责将Conv输出的4D数据转换为3D数据并作为LSTM层的第一个输入，Data（Preprocess）层对应LSTM层的第二个continuous输入。当Prototxt首层N轴为1，即维度为1×C×H×W时，LSTM层的帧数轴t为18，句子轴n为1。
+
+**图 1**  Recurrent网络片段结构图<a name="fig327845143214"></a>  
+![](figures/Recurrent网络片段结构图.jpg "Recurrent网络片段结构图")
+
+若batch\_num配置为batch（多张）模式，针对LSTM层的continuous输入（Data层），板端需准备指定图片张数对应的数据量，并且数据排布等同于标准Caffe下，Prototxt首层N轴为batch\_num时continuous的数据排布。以[图1](#fig327845143214)为例，板端准备的continuous数据应符合标准Caffe下continuous的shape为\[18, batch\_num\]所对应的数据排布。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>在ONNX框架下Recurrent网络的输入是X \[T, N, D\], sequence\_lens \[N\], intial\_h \[num\_directions, N, D\]和intial\_c \[num\_directions\]。sequence\_lens由于仅有batch轴，在准备时无需像上述continuous一样作出特殊输入规定，能保持与用户提供的输入一致。
+
+### 板端的输出格式<a name="ZH-CN_TOPIC_0000002408421886"></a>
+
+当batch\_num配置为batch（多张）模式时，板端的输出数据将按照图片顺序依次排列，即先排完第一张图片对应的全量数据，再依次排列后续各图片对应的全量数据。该排布可能和Caffe标准框架下Prototxt首层N轴为batch\_num所产生的数据排布不一致。
+
+仍以[图1](#fig327845143214)为例，LSTM层第一个输出shape为\[18, 1, 128\]，板端在该层得到的输出符合shape为\[batch\_num, 18, 1, 128\]对应的数据排布, 即依次排列每张图片对应的计算数据。在标准Caffe下，若Prototxt首层N轴为batch\_num，LSTM层第一个输出符合shape为\[18, batch\_num, 128\]对应的数据排布，即不同图片对应的数据间存在交叉排列。
+
+同理，板端在ONNX框架下的处理也与上述Caffe类似。以输出HT \[T, num\_directions, N, D\]为例，多图片下的板端输出排布为输出第一张图片的HT后再紧接排布下一张图片的HT。
+

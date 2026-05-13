@@ -1,8 +1,21 @@
 ---
 title: "Sensor Debugging Guide"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensor调试指南/Sensor 调试指南.md
---- # Preface
-**Overview<a name="section97845552224"></a>** This guide is written for engineers integrating new sensors. It covers the steps and considerations involved in sensor integration, including the driver development workflow for a new sensor and the process for adapting a new sensor within the SDK. >![](public_sys-resources/icon-note.gif) **Note:** >This document uses Hi3403V100 as the reference. Unless otherwise stated, and Hi3403V100 are identical. **Product Versions<a name="section1178605582218"></a>** The product versions corresponding to this document are listed below. <a name="table379505512223"></a>
+---
+
+# Preface
+**Overview<a name="section97845552224"></a>**
+
+This guide is written for engineers integrating new sensors. It covers the steps and considerations involved in sensor integration, including the driver development workflow for a new sensor and the process for adapting a new sensor within the SDK.
+
+>![](public_sys-resources/icon-note.gif) **Note:** 
+>This document uses Hi3403V100 as the reference. Unless otherwise stated, Hi3519AV200 and Hi3403V100 are identical.
+
+**Product Versions<a name="section1178605582218"></a>**
+
+The product versions corresponding to this document are listed below.
+
+<a name="table379505512223"></a>
 <table><thead align="left"><tr id="row8883195522214"><th class="cellrowborder" valign="top" width="31.759999999999998%" id="mcps1.1.3.1.1"><p id="p7883955162211"><a name="p7883955162211"></a><a name="p7883955162211"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.24%" id="mcps1.1.3.1.2"><p id="p088365511225"><a name="p088365511225"></a><a name="p088365511225"></a>Product Version</p>
@@ -14,13 +27,26 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensor�
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p138831555152211"><a name="p138831555152211"></a><a name="p138831555152211"></a>V100</p>
 </td>
 </tr>
+<tr id="row144953172313"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p259913572312"><a name="p259913572312"></a><a name="p259913572312"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p185997502317"><a name="p185997502317"></a><a name="p185997502317"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table> **Intended Audience<a name="section07941655172219"></a>** This document is primarily intended for: - Technical support engineers
-- Software development engineers **Symbol Conventions<a name="section133020216410"></a>** The following symbols may appear in this document with the meanings described below. <a name="table2622507016410"></a>
+</table>
+
+**Intended Audience<a name="section07941655172219"></a>**
+
+This document is primarily intended for:
+
+-   Technical support engineers
+-   Software development engineers
+
+**Symbol Conventions<a name="section133020216410"></a>**
+
+The following symbols may appear in this document with the meanings described below.
+
+<a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a><strong id="b2136615816410"><a name="b2136615816410"></a><a name="b2136615816410"></a>Symbol</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a><strong id="b5941558116410"><a name="b5941558116410"></a><a name="b5941558116410"></a>Description</strong></p>
@@ -32,8 +58,36 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensor�
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>Indicates a high-risk hazard that, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457881165.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>Indicates a medium-risk hazard that, if not avoided, could result in death or serious injury.</p>
+</td>
+</tr>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002457841033.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>Indicates a low-risk hazard that, if not avoided, could result in minor or moderate injury.</p>
+</td>
+</tr>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424362270.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>Conveys device or environmental safety warnings. Failure to follow this guidance may result in equipment damage, data loss, performance degradation, or other unpredictable outcomes.</p>
+<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>"Notice" does not involve personal injury.</p>
+</td>
+</tr>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002424202414.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>Provides supplementary information for key content in the text.</p>
+<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>"Note" is not a safety warning and does not involve personal, equipment, or environmental hazards.</p>
+</td>
+</tr>
 </tbody>
-</table> **Revision History<a name="section2467512116410"></a>** The revision history accumulates descriptions of each document update. The latest version of this document incorporates all updates from previous versions. <a name="table126443203200"></a>
+</table>
+
+**Revision History<a name="section2467512116410"></a>**
+
+The revision history accumulates descriptions of each document update. The latest version of this document incorporates all updates from previous versions.
+
+<a name="table126443203200"></a>
 <table><thead align="left"><tr id="row264516207203"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p146456203200"><a name="p146456203200"></a><a name="p146456203200"></a><strong id="b8645172022010"><a name="b8645172022010"></a><a name="b8645172022010"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p364512062019"><a name="p364512062019"></a><a name="p364512062019"></a><strong id="b1464512200200"><a name="b1464512200200"></a><a name="b1464512200200"></a>Release Date</strong></p>
@@ -50,30 +104,326 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Sensor�
 </td>
 </tr>
 </tbody>
-</table> # Sensor Debugging Guide
-## Debugging Workflow<a name="ZH-CN_TOPIC_0000002424361902"></a> Follow the debugging workflow shown in [Figure 1](#fig148028410245). **Figure 1** Sensor debugging flowchart<a name="fig148028410245"></a> ![](figures/Sensoradjustteststreamgraph.png "Sensoradjustteststreamgraph")
-## Preparation<a name="ZH-CN_TOPIC_0000002424202058"></a> ### Verify SoC Specifications<a name="ZH-CN_TOPIC_0000002424361862"></a> Confirm that the SoC supports master mode, the linear and WDR interface modes supported, and the maximum input frequency. ### Sensor Datasheet<a name="ZH-CN_TOPIC_0000002457880841"></a> - Confirm the image transport interface mode and output frequency.
-- Confirm how to configure exposure time and gain, and how to change the frame rate.
-- Confirm the same for WDR mode.
-- For LVDS interfaces, confirm the sync codes. ### Initialize Settings<a name="ZH-CN_TOPIC_0000002457880797"></a> Obtain the sensor initialization settings. At minimum, prepare two sequences: one for the maximum resolution and one for the standard resolution. ## Capturing Images<a name="ZH-CN_TOPIC_0000002424202094"></a> ### Hardware Readiness<a name="ZH-CN_TOPIC_0000002424202010"></a> First, verify that sensor registers can be read and written. Use the `i2c_read`/`i2c_write` or `ssp_read`/`ssp_write` commands to test register access. These commands are integrated into the default filesystem and can be called directly. ### Completing the Initialization Sequence Configuration<a name="ZH-CN_TOPIC_0000002457840681"></a> Configure the initialization sequence. It is recommended to use an existing sensor driver from the release package as a reference for faster development. To simplify debugging at this stage, exclude AE configuration and frame rate configuration. 1. Prepare the sensor driver - Start from a driver for a sensor with similar specifications (master/slave, i2c/spi, wdr/linear) and modify it to compile a sensor library. Refer to the `xxx_cmos.c`, `xxx_cmos.h`, and `xxx_sensor_ctl.c` files in the `isp/../sensor/ssxxxx/xxxx` directory. - Modify the `cmos_set_image_mode` function and update the sensor image width, height, frame rate, and mode parameters in `cmos_get_isp_default` so that the sensor resolution and frame rate are configured correctly. - In `sys_config.c`, modify the sensor clock configuration, I2C/SPI interface pin mux, VI clock, ISP clock, and related registers. Base the modifications on a sensor with similar specs. For slave-mode sensors, add conditional branches to correctly configure slave-mode pin mux. 2. Sensor initialization sequence - Implement the `void sensor_init` function based on the sensor datasheet or the initialization sequence provided by the sensor vendor. For slave-mode sensors, call `ss_mpi_isp_get_sns_slave_attr` inside `sensor_init` to adapt slave-mode registers. The following is an example of `sensor_init` for a slave-mode sensor: ``` void xxx_set_slave_registers(ot_vi_pipe vi_pipe) { td_s32 ret; td_s32 slave_dev; td_u32 data; td_u8 img_mode; ot_mpi_sns_state *pastxxxslave = TD_NULL; pastxxxslave = xxx_slave_get_ctx(vi_pipe); img_mode = pastxxxslave->img_mode; slave_dev = g_xxx_slave_bind_dev[vi_pipe]; data = g_xxx_slave_sensor_mode_time[vi_pipe]; check_ret(ss_mpi_isp_get_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe])); g_xxx_slave_sync[vi_pipe].cfg.bits.bit_h_enable = 0; g_xxx_slave_sync[vi_pipe].cfg.bits.bit_v_enable = 0; g_xxx_slave_sync[vi_pipe].slave_mode_time = data; check_ret(ss_mpi_isp_set_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe])); ret = xxx_slave_i2c_init(vi_pipe); if (ret != TD_SUCCESS) { isp_err_trace("i2c init failed!\n"); return; } check_ret(ss_mpi_isp_get_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe])); g_xxx_slave_sync[vi_pipe].hs_time = g_xxx_slave_mode_tbl[img_mode].inck_per_hs; if (xxx_slave_sns_state[vi_pipe]->regs_info[0].slv_sync.slave_vs_time == 0) { xxx_slave_sync[vi_pipe].vs_time = xxx_slave_mode_tbl[img_mode].inck_per_vs; } else { xxx_slave_sync[vi_pipe].vs_time = xxx_slave_sns_state[vi_pipe]->regs_info[0].slv_sync.slave_vs_time; } g_xxx_slave_sync[vi_pipe].cfg.bytes = 0xc0030000; g_xxx_slave_sync[vi_pipe].hs_cyc = 0x3; g_xxx_slave_sync[vi_pipe].vs_cyc = 0x3; check_ret(ss_mpi_isp_set_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe])); return; } void xxx_slave_init(ot_vi_pipe vi_pipe) { ot_wdr_mode wdr_mode; td_bool init; td_u8 img_mode; ot_mpi_sns_state *pastxxxslave = TD_NULL; pastxxxslave = xxx_slave_get_ctx(vi_pipe); init = pastxxxslave->init; wdr_mode = pastxxxslave->wdr_mode; img_mode = pastxxxslave->img_mode; xxx_set_slave_registers(vi_pipe); /* When sensor first init, config all registers */ if (init == TD_FALSE) { if (OT_WDR_MODE_2To1_LINE == wdr_mode) { if (xxx_SLAVE_8M_30FPS_10BIT_2t1_VC_MODE == img_mode) { /* xxx_SLAVE_VMAX_8M_30FPS_10BIT_2TO1_WDR */ xxx_slave_vc_wdr_2t1_8m30_10bit_init(vi_pipe); } } else { xxx_slave_linear_8m30_12bit_init(vi_pipe); } } else { /* When sensor switch mode(linear<->WDR or resolution), config different registers(if possible) */ if (OT_WDR_MODE_2To1_LINE == wdr_mode) { if (xxx_SLAVE_8M_30FPS_10BIT_2t1_VC_MODE == img_mode) { /* xxx_SLAVE_VMAX_8M_30FPS_10BIT_2TO1_WDR */ xxx_slave_vc_wdr_2t1_8m30_10bit_init(vi_pipe); } } else { xxx_slave_linear_8m30_12bit_init(vi_pipe); } } pastxxxslave->init = TD_TRUE; return; } ``` - In `xxx_sensor_ctl.c` or `xxx_cmos.h`, fill in the sensor register base address `sensor_i2c_addr`, the address bit width `sensor_addr_byte`, and the register data bit width `sensor_data_byte`. - In `xxx_cmos.c`, comment out all `sensor_write_register` calls, and in the `cmos_get_sns_regs_info`/`cmos_comm_sns_reg_info_init` function, set `reg_num` to 0. This prevents AE from configuring the sensor, isolating it from interference during this stage. ### Sensor Output<a name="ZH-CN_TOPIC_0000002457840717"></a> This section describes full pipeline output using the samples under the `mpp` directory, assuming the sensor initialization sequence is complete. The main steps are: MIPI, VI, ISP, and VPSS configuration. These can be adapted from the configuration of an existing sensor. If a pre-integrated environment (such as a PQ Tool startup script) is available, simply configure the corresponding sensor configuration files to run. 1. After completing the initialization configuration, compile under the ISP directory to generate the new sensor library. The library path will be `mpp/lib/libsns_xxx.a` and `mpp/lib/libsns_xxx.so`.
-2. Validate the new sensor using the MPP samples. Add a `SENSOR_TYPE` entry for the new sensor in `sample/Makefile.param`, and include the corresponding `libsns_xxx.a` file.
-3. Add the new sensor type to `sample_sns_type` in `sample_comm.h`, ensuring it matches the `SENSOR_TYPE` added in `sample/Makefile.param`. Then in `sample_comm_isp.c`, add sensor attributes (Bayer pattern, frame rate, width, height) for this sensor type in the `sample_comm_isp_get_pub_attr_by_sns` function.
-4. Configure MIPI attributes by adding them to `sample_comm_vi_get_mipi_attr` in `sample_comm_vi.c`. For MIPI/LVDS debugging, refer to the *MIPI Usage Guide*.
-5. Configure VI attributes by adding them to `sample_comm_vi_get_default_dev_info` in `sample_comm_vi.c`.
-6. Compile and run the sample application `sample_vio`. If everything is correct, the entire system should be running. Check status using `cat /proc/umap/isp` or `cat /proc/umap/mipi_rx`.
-7. If the ISP has no interrupts, first check whether the sensor input clock, output signal, and sensor register configuration are correct. Refer to the chip manual for details.
-8. If MIPI, VI, and ISP all appear normal and you want to tune image quality, migrate the configuration to the corresponding sensor configuration file in PQ Tool (create a sensor directory under the `config` directory and adapt the configuration from a similar sensor), then play back the image. #### Notes<a name="ZH-CN_TOPIC_0000002457880825"></a> When using multiple slave-mode sensors, note that some sensors have strict timing requirements for Vsync and Hsync signal synchronization. - When the VI port enables sync mode, the sensor startup sequence may need special handling. For example, if a sensor operates in slave mode, the Vsync signal is generated by the VI port while the Hsync signal is generated by the sensor itself — these must be strictly synchronized in timing.
-- When the VI port enables sync mode, it adjusts the Vsync timing to synchronize multiple Vsync signals. This timing change may cause a mismatch between Vsync and Hsync, resulting in abnormal sensor data output. For sensors with strict Vsync/Hsync timing requirements, the startup sequence must be modified: before the VI port enables sync mode, first drive the sensor into standby mode; after the VI port completes Vsync synchronization, switch the sensor back to data output mode. Refer to the slave-mode sample code for the specific implementation. ## ISP Basic Functions<a name="ZH-CN_TOPIC_0000002424361882"></a> This chapter involves sensor-specific content. Carefully read the sensor datasheet or consult the sensor manufacturer's FAE. For struct descriptions, refer to the *ISP Developer Reference*. Driver files are generally divided into `xxx_cmos.c`, `xxx_cmos.h`, `xxx_cmos_ex.h`, and `xxx_sensor_ctl.c`. These handle ISP functionality and the initialization sequence respectively. `xxx_cmos_ex.h` stores global variable definitions used in the driver files. The driver provides 3 callback functions as the interface for registering sensor driver functions with the firmware: `ss_mpi_isp_sensor_reg_callback`, `ss_mpi_ae_sensor_reg_callback`, and `ss_mpi_awb_sensor_reg_callback`, corresponding to ISP, AE, and AWB respectively. ### Development Workflow<a name="ZH-CN_TOPIC_0000002424361974"></a> Implement ISP basic functions in the following order: 1. `cmos_set_image_mode`, `cmos_set_wdr_mode`
-2. `sensor_global_init`
-3. `sensor_init`, `sensor_exit`
-4. `cmos_get_isp_default`, `cmos_get_isp_black_level` ### Notes<a name="ZH-CN_TOPIC_0000002424202074"></a> - `cmos_set_image_mode` This function distinguishes between different resolutions. The resolution mode is passed via `img_mode` in `ot_mpi_sns_state`. Pay attention to the return value: returning `0` triggers a sensor reconfiguration and calls `sensor_init`; returning `-2` means no reconfiguration is needed. Note the difference between `fl_std` and `fl` in `ot_mpi_sns_state`. `fl_std` is the total line count at the standard frame rate (typically 30 fps) for the current resolution and WDR mode. `fl` is the actual total line count, which may be modified in other functions based on `fl_std` when frame rate reduction is applied. - `cmos_set_wdr_mode` This function distinguishes between different WDR modes. The WDR mode is passed via `wdr_mode` in `ot_mpi_sns_state`. Different WDR modes generally affect AE-related functions, ISP default parameters, and the initialization sequence. - `sensor_init` Configure different initialization sequences based on resolution and WDR mode. - `sensor_exit` Implement by referring to a similar sensor driver. - `cmos_get_isp_default` This function configures basic tuning and calibration parameters, which can be modified during tuning and calibration. Note that parameters may differ across WDR modes (e.g., Gamma, DRC). Refer to the *ISP Developer Reference* for details. - `cmos_get_isp_black_level` Configure the black level for all four RAW data channels in this function. >![](public_sys-resources/icon-notice.gif) **Notice:** >For some sensors, the black level drifts with gain changes. In such cases, calibrate the black level at different ISO values and implement the corresponding logic in `cmos_get_isp_black_level`. - `sensor_global_init` This function configures sensor initialization settings, including default values for resolution, WDR mode, and `fl_std`, as well as initialization state values and other related state variables. ## Completing AE Configuration<a name="ZH-CN_TOPIC_0000002424202122"></a> Once AE configuration is complete, the image should be essentially correct. ### Development Workflow<a name="ZH-CN_TOPIC_0000002424202030"></a> Implement AE configuration in the following order: 1. `cmos_get_sns_regs_info`
-2. `cmos_get_ae_default`, `cmos_again_calc_table`, `cmos_dgain_calc_table`
-3. `cmos_get_inttime_max`
-4. `cmos_gains_update`, `cmos_inttime_update`
-5. `cmos_fps_set`, `cmos_slow_framerate_set` ### Notes<a name="ZH-CN_TOPIC_0000002424361918"></a> - `cmos_get_sns_regs_info` - This function is used to configure sensor and ISP registers that require synchronization — such as exposure time, gain, and total line count. Although these registers can be set directly via `sensor_write_register`, that approach cannot guarantee synchronization and may cause flickering. Always use this function for these registers. - `delay_frame_num` is the register configuration delay. For example, many sensors apply gain starting from the next frame but exposure time starting from the frame after that. To ensure both take effect simultaneously, gain must be written one frame later. `cfg2_valid_delay_max` controls synchronization between the ISP and sensor; it covers ISP Dgain, WDR exposure ratio, and similar parameters. You can verify correctness by checking whether ISP Dgain is synchronized with the sensor gain. This value represents the effective delay and is typically one greater than the maximum sensor register delay. - `update` controls whether a given register is updated. If no update is needed, set it to false. - `cmos_get_ae_default` - Modify parameters according to the sensor. `accuracy` specifies the precision type; common values are `OT_ISP_AE_ACCURACY_TABLE` and `OT_ISP_AE_ACCURACY_LINEAR`. `OT_ISP_AE_ACCURACY_DB` is generally replaced by TABLE mode due to CPU precision limitations, except for cases requiring very coarse precision. - LINEAR mode means exposure time or gain increases linearly by a fixed step — for example, each step increases by a factor of 0.325, or exposure time increases by 1 per step. The step size is determined by `accuracy`. - TABLE mode is typically used for gain. Each achievable gain step is calculated by looking up a table in `cmos_again_calc_table` or `cmos_dgain_calc_table`. In this mode, `accuracy` has no effect. The default AE computation order provided by the SDK is: exposure time first, then again, then dgain, then ISP dgain. This order can be adjusted by configuring AE Route or AE Route Ex. - `cmos_again_calc_table`, `cmos_dgain_calc_table` These two functions have identical inputs and outputs, corresponding to Again and Dgain in TABLE mode. The following uses Again as an example. - `again_lin` serves as both input and output. As input, it is the target gain computed by AE, where 1024 represents 1x. The function must find the largest gain the sensor can achieve that is still less than or equal to this target, and write that value back to the parameter as the output to AE. - `again_db` is the output. It is not used internally by AE but serves as input to `cmos_gains_update`. It typically carries the sensor register value corresponding to the current gain. Example: a sensor increases gain in 0.3 dB steps. Register values start from 0, and each increment of 1 corresponds to 0 dB, 0.3 dB, 0.6 dB, 0.9 dB, etc. An offline lookup table converts dB to linear scale: 1024, 1060, 1097, 1136, etc. In the function, compare the input gain against the lookup table. If the input is 1082, the closest achievable gain below it is 1060, so the function returns 1060 as the actual effective gain. - `cmos_get_inttime_max` This function is only active in xto1 WDR mode. It calculates the maximum exposure time for different exposure ratios. This is generally required for line-interleaved WDR mode, where the constraint is that the sum of long and short exposure times must be less than one frame period. Therefore, the maximum exposure time varies with different exposure ratios and must be recalculated. - `cmos_gains_update`, `cmos_inttime_update` These functions configure sensor registers based on the input Again, Dgain, or exposure time. When TABLE mode is used, the input values are the `again_db` and `dgain_db` values returned by `cmos_again_calc_table`/`cmos_dgain_calc_table`. When LINEAR mode is used, the input is the effective gain or exposure time divided by `accuracy`. For example, if `accuracy` is 0.0078125 and the effective gain is 1.5x, the input value is 1.5 / 0.0078125 = 192. In Xto1 WDR mode, the exposure time must be configured separately for each frame. `cmos_inttime_update` is called X times, with the short-frame exposure time passed first. - `cmos_fps_set`, `cmos_slow_framerate_set` `cmos_fps_set` is the manual frame rate configuration function. It must configure the appropriate sensor registers based on the input frame rate to change the sensor frame rate, and return the actual effective frame rate and maximum exposure line count. `cmos_slow_framerate_set` is the automatic frame rate reduction function. It must configure sensor registers based on the actual maximum exposure line count required by the current exposure, implementing sensor frame rate reduction, and return the actual effective maximum exposure line count. ## Completing Remaining Functions<a name="ZH-CN_TOPIC_0000002457840753"></a> Implement all remaining functions and verify that all features work correctly. Since synchronization in AE is the most error-prone area, focus verification efforts there. ## Color, Noise Reduction, and Other Calibrations<a name="ZH-CN_TOPIC_0000002457880861"></a> Calibrate sensor parameters according to the *Image Quality Tuning Tool User Guide*. ## Image Quality Tuning<a name="ZH-CN_TOPIC_0000002457840701"></a> For image quality tuning, refer to the corresponding *ISP Image Tuning Guide*. # WDR Sensor Notes
-## Frame-Interleaved WDR Mode<a name="ZH-CN_TOPIC_0000002457840733"></a> ### Sensor Driver<a name="ZH-CN_TOPIC_0000002457840641"></a> - The `sensor_init` function uses the linear mode initialization sequence.
-- For frame WDR sensor drivers, prioritize using an existing driver from the release package as a reference. Adapt `cmos_set_wdr_mode`, `cmos_get_inttime_max`, and `cmos_inttime_update` based on that reference.
-- Pay close attention to the `cmos_get_sns_regs_info` function. In general, the sensor exposure time register is written alternately with long-frame and short-frame exposure time values. Therefore, `cmos_get_sns_regs_info` must ensure the following configuration: An additional set of sensor register configurations is needed for setting the short-frame exposure time. This set uses the same register addresses as the linear mode exposure time registers, so `reg_num` = linear mode `reg_num` + 1 (group), with the same `reg_addr` as linear mode. The `delay_frame_num` for the long-frame exposure time = `delay_frame_num` for the short-frame exposure time + 1. The `update` flag for both long-frame and short-frame exposure times is always set to `TD_TRUE`. >![](public_sys-resources/icon-notice.gif) **Notice:** >In general, for frame WDR, it is recommended to configure the short-frame exposure time first, then the long-frame exposure time. This reduces motion ghosting artifacts. ### Sensor Output<a name="ZH-CN_TOPIC_0000002457880813"></a> Refer to the "[Sensor Output](#ZH-CN_TOPIC_0000002457840717)" section to configure MIPI, VI, ISP, and related settings. Most settings are identical to linear mode. The only differences are: set the VI WDR mode to `OT_WDR_MODE_2To1_FRAME` and the ISP WDR mode to `OT_WDR_MODE_2To1_FRAME`. ## Built-in WDR Mode<a name="ZH-CN_TOPIC_0000002424202110"></a> The sensor outputs RAW data in a compressed format, so the SPLIT or EXPANDER module is needed for decompression. Configure the `ot_isp_expander_attr` struct in `cmos_get_isp_default` for this purpose. See the *ISP Developer Reference* for the detailed description. A reference configuration is shown below: ```
-static const ot_isp_expander_attrg_cmos_expander = { 1, /* en*/ 12, /* bit_depth_in */ 16, /* bit_depth_out */ 4, /* knee_point_num */ /* knee_point_coord */ { {32, 16384}, {48, 32768}, {160, 262144}, {256, 1048576}, },
+</table>
+
+# Sensor Debugging Guide
+## Debugging Workflow<a name="ZH-CN_TOPIC_0000002424361902"></a>
+
+Follow the debugging workflow shown in [Figure 1](#fig148028410245).
+
+**Figure 1** Sensor debugging flowchart<a name="fig148028410245"></a>  
+![](figures/Sensor调试流程图.png "Sensor调试流程图")
+## Preparation<a name="ZH-CN_TOPIC_0000002424202058"></a>
+
+### Verify SoC Specifications<a name="ZH-CN_TOPIC_0000002424361862"></a>
+
+Confirm that the SoC supports master mode, the linear and WDR interface modes supported, and the maximum input frequency.
+
+### Sensor Datasheet<a name="ZH-CN_TOPIC_0000002457880841"></a>
+
+-   Confirm the image transport interface mode and output frequency.
+-   Confirm how to configure exposure time and gain, and how to change the frame rate.
+-   Confirm the same for WDR mode.
+-   For LVDS interfaces, confirm the sync codes.
+
+### Initialize Settings<a name="ZH-CN_TOPIC_0000002457880797"></a>
+
+Obtain the sensor initialization settings. At minimum, prepare two sequences: one for the maximum resolution and one for the standard resolution.
+
+## Capturing Images<a name="ZH-CN_TOPIC_0000002424202094"></a>
+
+### Hardware Readiness<a name="ZH-CN_TOPIC_0000002424202010"></a>
+
+First, verify that sensor registers can be read and written.
+
+Use the `i2c_read`/`i2c_write` or `ssp_read`/`ssp_write` commands to test register access. These commands are integrated into the default filesystem and can be called directly.
+
+### Completing the Initialization Sequence Configuration<a name="ZH-CN_TOPIC_0000002457840681"></a>
+
+Configure the initialization sequence. It is recommended to use an existing sensor driver from the release package as a reference for faster development. To simplify debugging at this stage, exclude AE configuration and frame rate configuration.
+
+1.  Prepare the sensor driver
+    -   Start from a driver for a sensor with similar specifications (master/slave, i2c/spi, wdr/linear) and modify it to compile a sensor library. Refer to the `xxx_cmos.c`, `xxx_cmos.h`, and `xxx_sensor_ctl.c` files in the `isp/../sensor/ssxxxx/xxxx` directory.
+    -   Modify the `cmos_set_image_mode` function and update the sensor image width, height, frame rate, and mode parameters in `cmos_get_isp_default` so that the sensor resolution and frame rate are configured correctly.
+    -   In `sys_config.c`, modify the sensor clock configuration, I2C/SPI interface pin mux, VI clock, ISP clock, and related registers. Base the modifications on a sensor with similar specs. For slave-mode sensors, add conditional branches to correctly configure slave-mode pin mux.
+
+2.  Sensor initialization sequence
+    -   Implement the `void sensor_init()` function based on the sensor datasheet or the initialization sequence provided by the sensor vendor. For slave-mode sensors, call `ss_mpi_isp_get_sns_slave_attr` inside `sensor_init()` to adapt slave-mode registers. The following is an example of `sensor_init` for a slave-mode sensor:
+
+        ```
+        void xxx_set_slave_registers(ot_vi_pipe vi_pipe)
+        {
+            td_s32  ret;
+            td_s32  slave_dev;
+            td_u32  data;
+            td_u8   img_mode;
+            ot_mpi_sns_state *pastxxxslave = TD_NULL;
+         
+            pastxxxslave = xxx_slave_get_ctx(vi_pipe);
+            img_mode    = pastxxxslave->img_mode;
+            slave_dev  = g_xxx_slave_bind_dev[vi_pipe];
+            data       = g_xxx_slave_sensor_mode_time[vi_pipe];
+         
+            check_ret(ss_mpi_isp_get_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe]));
+            g_xxx_slave_sync[vi_pipe].cfg.bits.bit_h_enable = 0;
+            g_xxx_slave_sync[vi_pipe].cfg.bits.bit_v_enable = 0;
+            g_xxx_slave_sync[vi_pipe].slave_mode_time = data;
+            check_ret(ss_mpi_isp_set_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe]));
+            ret = xxx_slave_i2c_init(vi_pipe);
+            if (ret != TD_SUCCESS) {
+                isp_err_trace("i2c init failed!\n");
+                return;
+            }
+            check_ret(ss_mpi_isp_get_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe]));
+            g_xxx_slave_sync[vi_pipe].hs_time = g_xxx_slave_mode_tbl[img_mode].inck_per_hs;
+         
+            if (xxx_slave_sns_state[vi_pipe]->regs_info[0].slv_sync.slave_vs_time == 0) {
+                xxx_slave_sync[vi_pipe].vs_time = xxx_slave_mode_tbl[img_mode].inck_per_vs;
+            } else {
+                xxx_slave_sync[vi_pipe].vs_time = xxx_slave_sns_state[vi_pipe]->regs_info[0].slv_sync.slave_vs_time;
+            }
+            g_xxx_slave_sync[vi_pipe].cfg.bytes = 0xc0030000;
+            g_xxx_slave_sync[vi_pipe].hs_cyc = 0x3;
+            g_xxx_slave_sync[vi_pipe].vs_cyc = 0x3;
+         
+            check_ret(ss_mpi_isp_set_sns_slave_attr(slave_dev, &g_xxx_slave_sync[vi_pipe]));
+            return;
+        }
+         
+        void xxx_slave_init(ot_vi_pipe vi_pipe)
+        {
+            ot_wdr_mode      wdr_mode;
+            td_bool          init;
+            td_u8            img_mode;
+            ot_mpi_sns_state *pastxxxslave = TD_NULL;
+         
+            pastxxxslave = xxx_slave_get_ctx(vi_pipe);
+            init        = pastxxxslave->init;
+            wdr_mode    = pastxxxslave->wdr_mode;
+            img_mode    = pastxxxslave->img_mode;
+         
+            xxx_set_slave_registers(vi_pipe);
+            /* When sensor first init, config all registers */
+            if (init == TD_FALSE) {
+                if (OT_WDR_MODE_2To1_LINE == wdr_mode) {
+                    if (xxx_SLAVE_8M_30FPS_10BIT_2t1_VC_MODE == img_mode) { /* xxx_SLAVE_VMAX_8M_30FPS_10BIT_2TO1_WDR */
+                        xxx_slave_vc_wdr_2t1_8m30_10bit_init(vi_pipe);
+                    }
+                } else {
+                    xxx_slave_linear_8m30_12bit_init(vi_pipe);
+                }
+            } else {
+                /* When sensor switch mode(linear<->WDR or resolution), config different registers(if possible) */
+                if (OT_WDR_MODE_2To1_LINE == wdr_mode) {
+                    if (xxx_SLAVE_8M_30FPS_10BIT_2t1_VC_MODE == img_mode) { /* xxx_SLAVE_VMAX_8M_30FPS_10BIT_2TO1_WDR */
+                        xxx_slave_vc_wdr_2t1_8m30_10bit_init(vi_pipe);
+                    }
+                } else {
+                    xxx_slave_linear_8m30_12bit_init(vi_pipe);
+                }
+            }
+            pastxxxslave->init = TD_TRUE;
+            return;
+        }
+        ```
+
+    -   In `xxx_sensor_ctl.c` or `xxx_cmos.h`, fill in the sensor register base address `sensor_i2c_addr`, the address bit width `sensor_addr_byte`, and the register data bit width `sensor_data_byte`.
+    -   In `xxx_cmos.c`, comment out all `sensor_write_register` calls, and in the `cmos_get_sns_regs_info`/`cmos_comm_sns_reg_info_init` function, set `reg_num` to 0. This prevents AE from configuring the sensor, isolating it from interference during this stage.
+
+### Sensor Output<a name="ZH-CN_TOPIC_0000002457840717"></a>
+
+This section describes full pipeline output using the samples under the `mpp` directory, assuming the sensor initialization sequence is complete. The main steps are: MIPI, VI, ISP, and VPSS configuration. These can be adapted from the configuration of an existing sensor. If a pre-integrated environment (such as a PQTool startup script) is available, simply configure the corresponding sensor configuration files to run.
+
+1.  After completing the initialization configuration, compile under the ISP directory to generate the new sensor library. The library path will be `mpp/lib/libsns_xxx.a` and `mpp/lib/libsns_xxx.so`.
+2.  Validate the new sensor using the MPP samples. Add a `SENSOR_TYPE` entry for the new sensor in `sample/Makefile.param`, and include the corresponding `libsns_xxx.a` file.
+3.  Add the new sensor type to `sample_sns_type` in `sample_comm.h`, ensuring it matches the `SENSOR_TYPE` added in `sample/Makefile.param`. Then in `sample_comm_isp.c`, add sensor attributes (Bayer pattern, frame rate, width, height) for this sensor type in the `sample_comm_isp_get_pub_attr_by_sns` function.
+4.  Configure MIPI attributes by adding them to `sample_comm_vi_get_mipi_attr` in `sample_comm_vi.c`. For MIPI/LVDS debugging, refer to the *MIPI Usage Guide*.
+5.  Configure VI attributes by adding them to `sample_comm_vi_get_default_dev_info` in `sample_comm_vi.c`.
+6.  Compile and run the sample application `sample_vio`. If everything is correct, the entire system should be running. Check status using `cat /proc/umap/isp` or `cat /proc/umap/mipi_rx`.
+7.  If the ISP has no interrupts, first check whether the sensor input clock, output signal, and sensor register configuration are correct. Refer to the chip manual for details.
+8.  If MIPI, VI, and ISP all appear normal and you want to tune image quality, migrate the configuration to the corresponding sensor configuration file in PQTool (create a sensor directory under the `config` directory and adapt the configuration from a similar sensor), then play back the image.
+
+#### Notes<a name="ZH-CN_TOPIC_0000002457880825"></a>
+
+When using multiple slave-mode sensors, note that some sensors have strict timing requirements for Vsync and Hsync signal synchronization.
+
+-   When the VI port enables sync mode, the sensor startup sequence may need special handling. For example, if a sensor operates in slave mode, the Vsync signal is generated by the VI port while the Hsync signal is generated by the sensor itself — these must be strictly synchronized in timing.
+-   When the VI port enables sync mode, it adjusts the Vsync timing to synchronize multiple Vsync signals. This timing change may cause a mismatch between Vsync and Hsync, resulting in abnormal sensor data output. For sensors with strict Vsync/Hsync timing requirements, the startup sequence must be modified: before the VI port enables sync mode, first drive the sensor into standby mode; after the VI port completes Vsync synchronization, switch the sensor back to data output mode. Refer to the slave-mode sample code for the specific implementation.
+
+## ISP Basic Functions<a name="ZH-CN_TOPIC_0000002424361882"></a>
+
+This chapter involves sensor-specific content. Carefully read the sensor datasheet or consult the sensor manufacturer's FAE.
+
+For struct descriptions, refer to the *ISP Developer Reference*.
+
+Driver files are generally divided into `xxx_cmos.c`, `xxx_cmos.h`, `xxx_cmos_ex.h`, and `xxx_sensor_ctl.c`. These handle ISP functionality and the initialization sequence respectively. `xxx_cmos_ex.h` stores global variable definitions used in the driver files.
+
+The driver provides 3 callback functions as the interface for registering sensor driver functions with the firmware: `ss_mpi_isp_sensor_reg_callback()`, `ss_mpi_ae_sensor_reg_callback()`, and `ss_mpi_awb_sensor_reg_callback()`, corresponding to ISP, AE, and AWB respectively.
+
+### Development Workflow<a name="ZH-CN_TOPIC_0000002424361974"></a>
+
+Implement ISP basic functions in the following order:
+
+1.  `cmos_set_image_mode()`, `cmos_set_wdr_mode()`
+2.  `sensor_global_init()`
+3.  `sensor_init()`, `sensor_exit()`
+4.  `cmos_get_isp_default()`, `cmos_get_isp_black_level()`
+
+### Notes<a name="ZH-CN_TOPIC_0000002424202074"></a>
+
+-   `cmos_set_image_mode()`
+
+    This function distinguishes between different resolutions. The resolution mode is passed via `img_mode` in `ot_mpi_sns_state`.
+
+    Pay attention to the return value: returning `0` triggers a sensor reconfiguration and calls `sensor_init()`; returning `-2` means no reconfiguration is needed.
+
+    Note the difference between `fl_std` and `fl` in `ot_mpi_sns_state`. `fl_std` is the total line count at the standard frame rate (typically 30 fps) for the current resolution and WDR mode. `fl` is the actual total line count, which may be modified in other functions based on `fl_std` when frame rate reduction is applied.
+
+-   `cmos_set_wdr_mode()`
+
+    This function distinguishes between different WDR modes. The WDR mode is passed via `wdr_mode` in `ot_mpi_sns_state`.
+
+    Different WDR modes generally affect AE-related functions, ISP default parameters, and the initialization sequence.
+
+-   `sensor_init()`
+
+    Configure different initialization sequences based on resolution and WDR mode.
+
+-   `sensor_exit()`
+
+    Implement by referring to a similar sensor driver.
+
+-   `cmos_get_isp_default()`
+
+    This function configures basic tuning and calibration parameters, which can be modified during tuning and calibration.
+
+    Note that parameters may differ across WDR modes (e.g., Gamma, DRC). Refer to the *ISP Developer Reference* for details.
+
+-   `cmos_get_isp_black_level()`
+
+    Configure the black level for all four RAW data channels in this function.
+
+    >![](public_sys-resources/icon-notice.gif) **Notice:** 
+    >For some sensors, the black level drifts with gain changes. In such cases, calibrate the black level at different ISO values and implement the corresponding logic in `cmos_get_isp_black_level()`.
+
+-   `sensor_global_init()`
+
+    This function configures sensor initialization settings, including default values for resolution, WDR mode, and `fl_std`, as well as initialization state values and other related state variables.
+
+## Completing AE Configuration<a name="ZH-CN_TOPIC_0000002424202122"></a>
+
+Once AE configuration is complete, the image should be essentially correct.
+
+### Development Workflow<a name="ZH-CN_TOPIC_0000002424202030"></a>
+
+Implement AE configuration in the following order:
+
+1.  `cmos_get_sns_regs_info()`
+2.  `cmos_get_ae_default()`, `cmos_again_calc_table()`, `cmos_dgain_calc_table()`
+3.  `cmos_get_inttime_max()`
+4.  `cmos_gains_update()`, `cmos_inttime_update()`
+5.  `cmos_fps_set()`, `cmos_slow_framerate_set()`
+
+### Notes<a name="ZH-CN_TOPIC_0000002424361918"></a>
+
+-   `cmos_get_sns_regs_info()`
+    -   This function is used to configure sensor and ISP registers that require synchronization — such as exposure time, gain, and total line count. Although these registers can be set directly via `sensor_write_register()`, that approach cannot guarantee synchronization and may cause flickering. Always use this function for these registers.
+    -   `delay_frame_num` is the register configuration delay. For example, many sensors apply gain starting from the next frame but exposure time starting from the frame after that. To ensure both take effect simultaneously, gain must be written one frame later. `cfg2_valid_delay_max` controls synchronization between the ISP and sensor; it covers ISP Dgain, WDR exposure ratio, and similar parameters. You can verify correctness by checking whether ISP Dgain is synchronized with the sensor gain. This value represents the effective delay and is typically one greater than the maximum sensor register delay.
+    -   `update` controls whether a given register is updated. If no update is needed, set it to false.
+
+-   `cmos_get_ae_default()`
+
+    -   Modify parameters according to the sensor. `accuracy` specifies the precision type; common values are `OT_ISP_AE_ACCURACY_TABLE` and `OT_ISP_AE_ACCURACY_LINEAR`. `OT_ISP_AE_ACCURACY_DB` is generally replaced by TABLE mode due to CPU precision limitations, except for cases requiring very coarse precision.
+    -   LINEAR mode means exposure time or gain increases linearly by a fixed step — for example, each step increases by a factor of 0.325, or exposure time increases by 1 per step. The step size is determined by `accuracy`.
+    -   TABLE mode is typically used for gain. Each achievable gain step is calculated by looking up a table in `cmos_again_calc_table()` or `cmos_dgain_calc_table()`. In this mode, `accuracy` has no effect.
+
+    The default AE computation order provided by the SDK is: exposure time first, then again, then dgain, then ISP dgain. This order can be adjusted by configuring AE Route or AE RouteEx.
+
+-   `cmos_again_calc_table()`, `cmos_dgain_calc_table()`
+
+    These two functions have identical inputs and outputs, corresponding to Again and Dgain in TABLE mode. The following uses Again as an example.
+
+    -   `again_lin` serves as both input and output. As input, it is the target gain computed by AE, where 1024 represents 1x. The function must find the largest gain the sensor can achieve that is still less than or equal to this target, and write that value back to the parameter as the output to AE.
+    -   `again_db` is the output. It is not used internally by AE but serves as input to `cmos_gains_update()`. It typically carries the sensor register value corresponding to the current gain.
+
+    Example: a sensor increases gain in 0.3 dB steps. Register values start from 0, and each increment of 1 corresponds to 0 dB, 0.3 dB, 0.6 dB, 0.9 dB, etc.
+
+    An offline lookup table converts dB to linear scale: 1024, 1060, 1097, 1136, etc.
+
+    In the function, compare the input gain against the lookup table. If the input is 1082, the closest achievable gain below it is 1060, so the function returns 1060 as the actual effective gain.
+
+-   `cmos_get_inttime_max()`
+
+    This function is only active in xto1 WDR mode. It calculates the maximum exposure time for different exposure ratios.
+
+    This is generally required for line-interleaved WDR mode, where the constraint is that the sum of long and short exposure times must be less than one frame period. Therefore, the maximum exposure time varies with different exposure ratios and must be recalculated.
+
+-   `cmos_gains_update()`, `cmos_inttime_update()`
+
+    These functions configure sensor registers based on the input Again, Dgain, or exposure time. When TABLE mode is used, the input values are the `again_db` and `dgain_db` values returned by `cmos_again_calc_table()`/`cmos_dgain_calc_table()`.
+
+    When LINEAR mode is used, the input is the effective gain or exposure time divided by `accuracy`. For example, if `accuracy` is 0.0078125 and the effective gain is 1.5x, the input value is 1.5 / 0.0078125 = 192.
+
+    In Xto1 WDR mode, the exposure time must be configured separately for each frame. `cmos_inttime_update()` is called X times, with the short-frame exposure time passed first.
+
+-   `cmos_fps_set()`, `cmos_slow_framerate_set()`
+
+    `cmos_fps_set()` is the manual frame rate configuration function. It must configure the appropriate sensor registers based on the input frame rate to change the sensor frame rate, and return the actual effective frame rate and maximum exposure line count.
+
+    `cmos_slow_framerate_set()` is the automatic frame rate reduction function. It must configure sensor registers based on the actual maximum exposure line count required by the current exposure, implementing sensor frame rate reduction, and return the actual effective maximum exposure line count.
+
+## Completing Remaining Functions<a name="ZH-CN_TOPIC_0000002457840753"></a>
+
+Implement all remaining functions and verify that all features work correctly.
+
+Since synchronization in AE is the most error-prone area, focus verification efforts there.
+
+## Color, Noise Reduction, and Other Calibrations<a name="ZH-CN_TOPIC_0000002457880861"></a>
+
+Calibrate sensor parameters according to the *Image Quality Tuning Tool User Guide*.
+
+## Image Quality Tuning<a name="ZH-CN_TOPIC_0000002457840701"></a>
+
+For image quality tuning, refer to the corresponding *ISP Image Tuning Guide*.
+
+# WDR Sensor Notes
+## Frame-Interleaved WDR Mode<a name="ZH-CN_TOPIC_0000002457840733"></a>
+
+### Sensor Driver<a name="ZH-CN_TOPIC_0000002457840641"></a>
+
+-   The `sensor_init` function uses the linear mode initialization sequence.
+-   For frame WDR sensor drivers, prioritize using an existing driver from the release package as a reference. Adapt `cmos_set_wdr_mode`, `cmos_get_inttime_max`, and `cmos_inttime_update` based on that reference.
+-   Pay close attention to the `cmos_get_sns_regs_info` function. In general, the sensor exposure time register is written alternately with long-frame and short-frame exposure time values. Therefore, `cmos_get_sns_regs_info` must ensure the following configuration:
+
+    An additional set of sensor register configurations is needed for setting the short-frame exposure time. This set uses the same register addresses as the linear mode exposure time registers, so `reg_num` = linear mode `reg_num` + 1 (group), with the same `reg_addr` as linear mode.
+
+    The `delay_frame_num` for the long-frame exposure time = `delay_frame_num` for the short-frame exposure time + 1.
+
+    The `update` flag for both long-frame and short-frame exposure times is always set to `TD_TRUE`.
+
+>![](public_sys-resources/icon-notice.gif) **Notice:** 
+>In general, for frame WDR, it is recommended to configure the short-frame exposure time first, then the long-frame exposure time. This reduces motion ghosting artifacts.
+
+### Sensor Output<a name="ZH-CN_TOPIC_0000002457880813"></a>
+
+Refer to the "[Sensor Output](#ZH-CN_TOPIC_0000002457840717)" section to configure MIPI, VI, ISP, and related settings. Most settings are identical to linear mode. The only differences are: set the VI WDR mode to `OT_WDR_MODE_2To1_FRAME` and the ISP WDR mode to `OT_WDR_MODE_2To1_FRAME`.
+
+## Built-in WDR Mode<a name="ZH-CN_TOPIC_0000002424202110"></a>
+
+The sensor outputs RAW data in a compressed format, so the SPLIT or EXPANDER module is needed for decompression. Configure the `ot_isp_expander_attr` struct in `cmos_get_isp_default` for this purpose. See the *ISP Developer Reference* for the detailed description. A reference configuration is shown below:
+
+```
+static const  ot_isp_expander_attrg_cmos_expander = {
+    1, /* en*/
+    12, /* bit_depth_in */
+    16, /* bit_depth_out */
+    4, /* knee_point_num */
+    /* knee_point_coord */
+    {
+        {32,  16384},
+        {48,  32768},
+        {160, 262144},
+        {256, 1048576},
+    },
 };
 ```
