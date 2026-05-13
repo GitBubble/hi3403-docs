@@ -1,21 +1,9 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/KLAD API 参考/KLAD API 参考.md
----
-
-# Preface
-**Overview<a name="section1589mcpsimp"></a>**
-
-KLAD is the key management module, integrating key derivation, plaintext KEY transfer, and ROOTKEY hierarchical transfer.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified in this document, the content for Hi3519AV200 and Hi3403V100 is completely identical.
-
-**Product Version<a name="section1592mcpsimp"></a>**
-
-The product versions corresponding to this document are as follows.
-
-<a name="table1595mcpsimp"></a>
+--- # Preface
+**Overview<a name="section1589mcpsimp"></a>** KLAD is the key management module, integrating key derivation, plaintext KEY transfer, and ROOTKEY hierarchical transfer. >![](public_sys-resources/icon-note.gif) **Note:**
+>Unless otherwise specified in this document, the content for and Hi3403V100 is completely identical. **Product Version<a name="section1592mcpsimp"></a>** The product versions corresponding to this document are as follows. <a name="table1595mcpsimp"></a>
 <table><thead align="left"><tr id="row1600mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p1602mcpsimp"><a name="p1602mcpsimp"></a><a name="p1602mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p1604mcpsimp"><a name="p1604mcpsimp"></a><a name="p1604mcpsimp"></a>Product Version</p>
@@ -27,31 +15,17 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1610mcpsimp"><a name="p1610mcpsimp"></a><a name="p1610mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1611mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1613mcpsimp"><a name="p1613mcpsimp"></a><a name="p1613mcpsimp"></a>SS626</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1615mcpsimp"><a name="p1615mcpsimp"></a><a name="p1615mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row149564818401"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Intended Audience<a name="section1616mcpsimp"></a>**
-
-This document (guide) is primarily intended for the following engineers:
-
--   Technical Support Engineers
--   Software Development Engineers
-
-**Symbol Conventions<a name="section1622mcpsimp"></a>**
-
-The following symbols may appear in this document, and their meanings are described below.
-
-<a name="table1625mcpsimp"></a>
+</table> **Intended Audience<a name="section1616mcpsimp"></a>** This document (guide) is primarily intended for the following engineers: - Technical Support Engineers
+- Software Development Engineers **Symbol Conventions<a name="section1622mcpsimp"></a>** The following symbols may appear in this document, and their meanings are described below. <a name="table1625mcpsimp"></a>
 <table><thead align="left"><tr id="row1630mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.3.1.1"><p id="p1632mcpsimp"><a name="p1632mcpsimp"></a><a name="p1632mcpsimp"></a>Symbol</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.1.3.1.2"><p id="p1634mcpsimp"><a name="p1634mcpsimp"></a><a name="p1634mcpsimp"></a>Description</p>
@@ -63,34 +37,8 @@ The following symbols may appear in this document, and their meanings are descri
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p1640mcpsimp"><a name="p1640mcpsimp"></a><a name="p1640mcpsimp"></a>Indicates a high-level hazard which, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row1641mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1643mcpsimp"><a name="p1643mcpsimp"></a><a name="p1643mcpsimp"></a><a name="image159"></a><a name="image159"></a><span><img id="image159" src="figures/zh-cn_image_0000002457868413.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p1645mcpsimp"><a name="p1645mcpsimp"></a><a name="p1645mcpsimp"></a>Indicates a medium-level hazard which, if not avoided, could result in death or serious injury.</p>
-</td>
-</tr>
-<tr id="row1646mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1648mcpsimp"><a name="p1648mcpsimp"></a><a name="p1648mcpsimp"></a><a name="image160"></a><a name="image160"></a><span><img id="image160" src="figures/zh-cn_image_0000002424189674.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p1650mcpsimp"><a name="p1650mcpsimp"></a><a name="p1650mcpsimp"></a>Indicates a low-level hazard which, if not avoided, could result in minor or moderate injury.</p>
-</td>
-</tr>
-<tr id="row1651mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1653mcpsimp"><a name="p1653mcpsimp"></a><a name="p1653mcpsimp"></a><a name="image161"></a><a name="image161"></a><span><img id="image161" src="figures/zh-cn_image_0000002457828281.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p1655mcpsimp"><a name="p1655mcpsimp"></a><a name="p1655mcpsimp"></a>Used to convey device or environmental safety alert information. If not avoided, it may result in equipment damage, data loss, reduced equipment performance, or other unpredictable consequences.</p>
-<p id="p1656mcpsimp"><a name="p1656mcpsimp"></a><a name="p1656mcpsimp"></a>"Caution" does not involve personal injury.</p>
-</td>
-</tr>
-<tr id="row1657mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p1659mcpsimp"><a name="p1659mcpsimp"></a><a name="p1659mcpsimp"></a><a name="image162"></a><a name="image162"></a><span><img id="image162" src="figures/zh-cn_image_0000002424189678.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p1661mcpsimp"><a name="p1661mcpsimp"></a><a name="p1661mcpsimp"></a>Supplementary explanation of key information in the main text.</p>
-<p id="p1662mcpsimp"><a name="p1662mcpsimp"></a><a name="p1662mcpsimp"></a>"Note" is not safety warning information and does not involve personal, equipment, or environmental injury.</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**Revision History<a name="section182223334015"></a>**
-
-<a name="table1557726816410"></a>
+</table> **Revision History<a name="section182223334015"></a>** <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a>Document Version</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.27%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a>Release Date</p>
@@ -107,112 +55,30 @@ The following symbols may appear in this document, and their meanings are descri
 </td>
 </tr>
 </tbody>
-</table>
-
-# Overview
-## Overview<a name="ZH-CN_TOPIC_0000002457828269"></a>
-
-KLAD is the key management module. It supports key derivation, plaintext KEY transfer, and ROOTKEY hierarchical transfer. It supports 16 KLAD software channels.
-
-### Key Derivation<a name="ZH-CN_TOPIC_0000002424189626"></a>
-
-Users can generate different keys based on different application scenarios, with the ability to derive up to 2<sup>32</sup> ROOTKEYs.
-
-The work key derived from the key can be calculated using the provided derivation tool. For usage instructions, refer to "[Key Derivation Tool Description](#ZH-CN_TOPIC_0000002457828277)".
-
-### Plaintext KEY Transfer<a name="ZH-CN_TOPIC_0000002424349470"></a>
-
-Plaintext KEY refers to the working key used by the encryption/decryption engine, which is securely stored by the user.
-
--   Supports AES 128/192/256 bits encryption/decryption.
--   Supports SM4 128 bits encryption/decryption.
--   Hi3403V100 and SS626V100 do not support SM4.
-
-### ROOTKEY Transfer<a name="ZH-CN_TOPIC_0000002424189630"></a>
-
-ROOTKEY is the key generated from the root key of the OTP module through key de-obfuscation and key derivation. The ROOTKEY is stored in hardware and is not readable by the user. The working key for encryption/decryption is a KEY obtained after multiple levels of KLAD hierarchical transfer. This KEY is also stored in hardware and is not readable by the user. This scheme is mostly used in scenarios with high security requirements. The OTP root key is securely stored by the user.
-
--   Supports AES 128/256 bits encryption/decryption.
--   Supports SM4 128 bits encryption/decryption.
--   Hi3403V100 and SS626V100 do not support SM4.
--   Hi3403V100 and SS626V100 support 2-level KLAD transfer.
-
-### KLAD Usage Notes<a name="ZH-CN_TOPIC_0000002424349494"></a>
-
-When KLAD is deployed in different scenarios, its usage may vary.
-
--   In the Linux environment
-    -   User-mode KLAD can be used by linking the static library libss\_klad.a or the dynamic library libss\_klad.so, depending on libsecurec.a or libsecurec.so.
-    -   Kernel-mode KLAD uses module insertion, i.e., insmod ot\_klad.ko, which depends on ot\_osal.ko, ot\_base.ko, sys\_config.ko, and ot\_sys.ko.
-
--   In the OPTEE environment
-    -   The user-mode KLAD external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_tee\_xxx;
-    -   The kernel-mode KLAD external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_drv\_xxx.
-
--   In the UBOOT environment, the user-mode KLAD external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_mpi\_xxx.
-
-## Usage Flow<a name="ZH-CN_TOPIC_0000002457828241"></a>
-
-### Plaintext KEY Transfer<a name="ZH-CN_TOPIC_0000002424189654"></a>
-
-#### Scenario Description<a name="ZH-CN_TOPIC_0000002457828265"></a>
-
-When the working key used for encryption/decryption is provided by the user, the plaintext KEY related interfaces need to be used. KLAD transfers the working key to a KEYSLOT. During encryption/decryption, the encryption/decryption engine retrieves the KEY from the corresponding KEYSLOT for encryption/decryption.
-
-#### Workflow<a name="ZH-CN_TOPIC_0000002424349466"></a>
-
-The plaintext KEY transfer development steps are as follows:
-
-1.  Initialize the KLAD device. Call the interface [ss\_mpi\_klad\_init](#ZH-CN_TOPIC_0000002457868405).
-2.  Create a KLAD handle. Call the interface [ss\_mpi\_klad\_create](#ZH-CN_TOPIC_0000002457828273).
-3.  Bind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_attach](#ZH-CN_TOPIC_0000002424349510).
-4.  Set KLAD attributes. Call the interface [ss\_mpi\_klad\_set\_attr](#ZH-CN_TOPIC_0000002457868393).
-5.  Set the plaintext KEY. Call the interface [ss\_mpi\_klad\_set\_clear\_key](#ZH-CN_TOPIC_0000002457868373).
-6.  Unbind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_detach](#ZH-CN_TOPIC_0000002424349486).
-7.  Destroy the KLAD handle. Call the interface [ss\_mpi\_klad\_destroy](#ZH-CN_TOPIC_0000002424189642).
-8.  Deinitialize the KLAD device. Call the interface [ss\_mpi\_klad\_deinit](#ZH-CN_TOPIC_0000002424349506).
-
-#### Notes<a name="ZH-CN_TOPIC_0000002457828253"></a>
-
-When using plaintext KEY transfer, please pay special attention to the following points.
-
--   The KEYSLOT handle must be created through the CIPHER module during KLAD configuration.
--   When transferring a plaintext KEY, the KLAD type must be configured as plaintext KLAD (OT\_KLAD\_TYPE\_CLEARCW).
-
-### ROOTKEY Transfer<a name="ZH-CN_TOPIC_0000002457868389"></a>
-
-#### Scenario Description<a name="ZH-CN_TOPIC_0000002457828257"></a>
-
-Used in scenarios with high security requirements. The ROOTKEY is generated after key de-obfuscation and key derivation, and after multiple levels of KLAD transfer, a real working key is obtained. The working key is stored in hardware and is not readable by the user. KLAD transfers the working key to a KEYSLOT. During encryption/decryption, the encryption/decryption engine retrieves the KEY from the corresponding KEYSLOT for encryption/decryption.
-
-#### Workflow<a name="ZH-CN_TOPIC_0000002457868409"></a>
-
-The ROOTKEY transfer development steps are as follows:
-
-1.  Initialize the KLAD device. Call the interface [ss\_mpi\_klad\_init](#ZH-CN_TOPIC_0000002457868405).
-2.  Create a KLAD handle. Call the interface [ss\_mpi\_klad\_create](#ZH-CN_TOPIC_0000002457828273).
-3.  Bind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_attach](#ZH-CN_TOPIC_0000002424349510).
-4.  Set KLAD attributes. Call the interface [ss\_mpi\_klad\_set\_attr](#ZH-CN_TOPIC_0000002457868393).
-5.  Set the 1st to (n-1)th level KLAD key information. Call the interface [ss\_mpi\_klad\_set\_session\_key](#ZH-CN_TOPIC_0000002457868369).
-6.  Set the nth level KLAD key information. Call the interface [ss\_mpi\_klad\_set\_content\_key](#ZH-CN_TOPIC_0000002457828237).
-7.  Unbind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_detach](#ZH-CN_TOPIC_0000002424349486).
-8.  Destroy the KLAD handle. Call the interface [ss\_mpi\_klad\_destroy](#ZH-CN_TOPIC_0000002424189642).
-9.  Deinitialize the KLAD device. Call the interface [ss\_mpi\_klad\_deinit](#ZH-CN_TOPIC_0000002424349506).
-
-#### Notes<a name="ZH-CN_TOPIC_0000002457868377"></a>
-
-When using ROOTKEY transfer, please pay special attention to the following points.
-
--   The KEYSLOT handle must be created through the CIPHER module during KLAD configuration.
--   When transferring ROOTKEY, the KLAD type must be configured as common KLAD (OT\_KLAD\_TYPE\_COMMON).
-
-## Key Derivation Tool Description<a name="ZH-CN_TOPIC_0000002457828277"></a>
-
-The key derivation tool is located in the osdrv/tools/pc/kdf\_customer directory. For usage commands, refer to the readme.txt file in that directory. The following mainly describes the configuration of relevant fields in the key.ini file.
-
-**Table 1**  key.ini field description
-
-<a name="table627mcpsimp"></a>
+</table> # Overview
+## Overview<a name="ZH-CN_TOPIC_0000002457828269"></a> KLAD is the key management module. It supports key derivation, plaintext KEY transfer, and ROOTKEY hierarchical transfer. It supports 16 KLAD software channels. ### Key Derivation<a name="ZH-CN_TOPIC_0000002424189626"></a> Users can generate different keys based on different application scenarios, with the ability to derive up to 2<sup>32</sup> ROOTKE Ys. The work key derived from the key can be calculated using the provided derivation tool. For usage instructions, refer to "[Key Derivation Tool Description](#ZH-CN_TOPIC_0000002457828277)". ### Plaintext KEY Transfer<a name="ZH-CN_TOPIC_0000002424349470"></a> Plaintext KEY refers to the working key used by the encryption/decryption engine, which is securely stored by the user. - Supports AES 128/192/256 bits encryption/decryption.
+- Supports SM4 128 bits encryption/decryption.
+- Hi3403V100 and do not support SM4. ### ROOTKEY Transfer<a name="ZH-CN_TOPIC_0000002424189630"></a> ROOTKEY is the key generated from the root key of the OTP module through key de-obfuscation and key derivation. The ROOTKEY is stored in hardware and is not readable by the user. The working key for encryption/decryption is a KEY obtained after multiple levels of KLAD hierarchical transfer. This KEY is also stored in hardware and is not readable by the user. This scheme is mostly used in scenarios with high security requirements. The OTP root key is securely stored by the user. - Supports AES 128/256 bits encryption/decryption.
+- Supports SM4 128 bits encryption/decryption.
+- Hi3403V100 and do not support SM4.
+- Hi3403V100 and support 2-level KLAD transfer. ### KLAD Usage Notes<a name="ZH-CN_TOPIC_0000002424349494"></a> When KLAD is deployed in different scenarios, its usage may vary. - In the Linux environment - User-mode KLAD can be used by linking the static library libss\_klad.a or the dynamic library libss\_klad.so, depending on libsecurec.a or libsecurec.so. - Kernel-mode KLAD uses module insertion, i.e., insmod ot\_klad.ko, which depends on ot\_osal.ko, ot\_base.ko, sys\_config.ko, and ot\_sys.ko. - In the OPTEE environment - The user-mode KLAD external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_tee\_xxx; - The kernel-mode KLAD external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_drv\_xxx. - In the UBOOT environment, the user-mode KLAD external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_mpi\_xxx. ## Usage Flow<a name="ZH-CN_TOPIC_0000002457828241"></a> ### Plaintext KEY Transfer<a name="ZH-CN_TOPIC_0000002424189654"></a> #### Scenario Description<a name="ZH-CN_TOPIC_0000002457828265"></a> When the working key used for encryption/decryption is provided by the user, the plaintext KEY related interfaces need to be used. KLAD transfers the working key to a KEYSLOT. During encryption/decryption, the encryption/decryption engine retrieves the KEY from the corresponding KEYSLOT for encryption/decryption. #### Workflow<a name="ZH-CN_TOPIC_0000002424349466"></a> The plaintext KEY transfer development steps are as follows: 1. Initialize the KLAD device. Call the interface [ss\_mpi\_klad\_init](#ZH-CN_TOPIC_0000002457868405).
+2. Create a KLAD handle. Call the interface [ss\_mpi\_klad\_create](#ZH-CN_TOPIC_0000002457828273).
+3. Bind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_attach](#ZH-CN_TOPIC_0000002424349510).
+4. Set KLAD attributes. Call the interface [ss\_mpi\_klad\_set\_attr](#ZH-CN_TOPIC_0000002457868393).
+5. Set the plaintext KEY. Call the interface [ss\_mpi\_klad\_set\_clear\_key](#ZH-CN_TOPIC_0000002457868373).
+6. Unbind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_detach](#ZH-CN_TOPIC_0000002424349486).
+7. Destroy the KLAD handle. Call the interface [ss\_mpi\_klad\_destroy](#ZH-CN_TOPIC_0000002424189642).
+8. Deinitialize the KLAD device. Call the interface [ss\_mpi\_klad\_deinit](#ZH-CN_TOPIC_0000002424349506). #### Notes<a name="ZH-CN_TOPIC_0000002457828253"></a> When using plaintext KEY transfer, please pay special attention to the following points. - The KEYSLOT handle must be created through the CIPHER module during KLAD configuration.
+- When transferring a plaintext KEY, the KLAD type must be configured as plaintext KLAD (OT\_KLAD\_TYPE\_CLEARCW). ### ROOTKEY Transfer<a name="ZH-CN_TOPIC_0000002457868389"></a> #### Scenario Description<a name="ZH-CN_TOPIC_0000002457828257"></a> Used in scenarios with high security requirements. The ROOTKEY is generated after key de-obfuscation and key derivation, and after multiple levels of KLAD transfer, a real working key is obtained. The working key is stored in hardware and is not readable by the user. KLAD transfers the working key to a KEYSLOT. During encryption/decryption, the encryption/decryption engine retrieves the KEY from the corresponding KEYSLOT for encryption/decryption. #### Workflow<a name="ZH-CN_TOPIC_0000002457868409"></a> The ROOTKEY transfer development steps are as follows: 1. Initialize the KLAD device. Call the interface [ss\_mpi\_klad\_init](#ZH-CN_TOPIC_0000002457868405).
+2. Create a KLAD handle. Call the interface [ss\_mpi\_klad\_create](#ZH-CN_TOPIC_0000002457828273).
+3. Bind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_attach](#ZH-CN_TOPIC_0000002424349510).
+4. Set KLAD attributes. Call the interface [ss\_mpi\_klad\_set\_attr](#ZH-CN_TOPIC_0000002457868393).
+5. Set the 1st to (n-1)th level KLAD key information. Call the interface [ss\_mpi\_klad\_set\_session\_key](#ZH-CN_TOPIC_0000002457868369).
+6. Set the nth level KLAD key information. Call the interface [ss\_mpi\_klad\_set\_content\_key](#ZH-CN_TOPIC_0000002457828237).
+7. Unbind the KLAD and KEYSLOT handles. Call the interface [ss\_mpi\_klad\_detach](#ZH-CN_TOPIC_0000002424349486).
+8. Destroy the KLAD handle. Call the interface [ss\_mpi\_klad\_destroy](#ZH-CN_TOPIC_0000002424189642).
+9. Deinitialize the KLAD device. Call the interface [ss\_mpi\_klad\_deinit](#ZH-CN_TOPIC_0000002424349506). #### Notes<a name="ZH-CN_TOPIC_0000002457868377"></a> When using ROOTKEY transfer, please pay special attention to the following points. - The KEYSLOT handle must be created through the CIPHER module during KLAD configuration.
+- When transferring ROOTKEY, the KLAD type must be configured as common KLAD (OT\_KLAD\_TYPE\_COMMON). ## Key Derivation Tool Description<a name="ZH-CN_TOPIC_0000002457828277"></a> The key derivation tool is located in the osdrv/tools/pc/kdf\_customer directory. For usage commands, refer to the readme.txt file in that directory. The following mainly describes the configuration of relevant fields in the key.ini file. **Table 1** key.ini field description <a name="table627mcpsimp"></a>
 <table><thead align="left"><tr id="row633mcpsimp"><th class="cellrowborder" valign="top" width="41%" id="mcps1.2.3.1.1"><p id="p635mcpsimp"><a name="p635mcpsimp"></a><a name="p635mcpsimp"></a>Field</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.2.3.1.2"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>Meaning</p>
@@ -260,47 +126,21 @@ The key derivation tool is located in the osdrv/tools/pc/kdf\_customer directory
 </td>
 </tr>
 </tbody>
-</table>
-
-Notes:
-
-1.  Except for the fields mentioned above, no other fields need to be modified.
-2.  If content\_key is 128 bit, work\_key is the first 16 bytes of the generated out.bin file; if content\_key is 256 bit, work\_key is the entire out.bin file generated.
-
-# API Reference
-KLAD provides the following APIs:
-
--   [ss\_mpi\_klad\_init](#ZH-CN_TOPIC_0000002457868405): Initializes the KLAD module.
--   [ss\_mpi\_klad\_deinit](#ZH-CN_TOPIC_0000002424349506): Deinitializes the KLAD module.
--   [ss\_mpi\_klad\_create](#ZH-CN_TOPIC_0000002457828273): Creates a KLAD handle.
--   [ss\_mpi\_klad\_destroy](#ZH-CN_TOPIC_0000002424189642): Destroys an existing KLAD handle.
--   [ss\_mpi\_klad\_attach](#ZH-CN_TOPIC_0000002424349510): Binds a KLAD handle and a KEYSLOT handle.
--   [ss\_mpi\_klad\_detach](#ZH-CN_TOPIC_0000002424349486): Unbinds a KLAD handle and a KEYSLOT handle.
--   [ss\_mpi\_klad\_set\_attr](#ZH-CN_TOPIC_0000002457868393): Sets KLAD attributes.
--   [ss\_mpi\_klad\_get\_attr](#ZH-CN_TOPIC_0000002424189662): Gets KLAD attributes.
--   [ss\_mpi\_klad\_set\_session\_key](#ZH-CN_TOPIC_0000002457868369): Configures the 1st to (n-1)th level KLAD KEY.
--   [ss\_mpi\_klad\_set\_content\_key](#ZH-CN_TOPIC_0000002457828237): Configures the last level KLAD KEY and simultaneously passes the key to KEYSLOT.
--   [ss\_mpi\_klad\_set\_clear\_key](#ZH-CN_TOPIC_0000002457868373): Configures a plaintext KEY and simultaneously passes the key to KEYSLOT.
-
-## ss\_mpi\_klad\_init<a name="ZH-CN_TOPIC_0000002457868405"></a>
-
-[Description]
-
-Initializes the KLAD module.
-
-[Syntax]
-
-```
+</table> Notes: 1. Except for the fields mentioned above, no other fields need to be modified.
+2. If content\_key is 128 bit, work\_key is the first 16 bytes of the generated out.bin file; if content\_key is 256 bit, work\_key is the entire out.bin file generated. # API Reference
+KLAD provides the following AP Is: - [ss\_mpi\_klad\_init](#ZH-CN_TOPIC_0000002457868405): Initializes the KLAD module.
+- [ss\_mpi\_klad\_deinit](#ZH-CN_TOPIC_0000002424349506): Deinitializes the KLAD module.
+- [ss\_mpi\_klad\_create](#ZH-CN_TOPIC_0000002457828273): Creates a KLAD handle.
+- [ss\_mpi\_klad\_destroy](#ZH-CN_TOPIC_0000002424189642): Destroys an existing KLAD handle.
+- [ss\_mpi\_klad\_attach](#ZH-CN_TOPIC_0000002424349510): Binds a KLAD handle and a KEYSLOT handle.
+- [ss\_mpi\_klad\_detach](#ZH-CN_TOPIC_0000002424349486): Unbinds a KLAD handle and a KEYSLOT handle.
+- [ss\_mpi\_klad\_set\_attr](#ZH-CN_TOPIC_0000002457868393): Sets KLAD attributes.
+- [ss\_mpi\_klad\_get\_attr](#ZH-CN_TOPIC_0000002424189662): Gets KLAD attributes.
+- [ss\_mpi\_klad\_set\_session\_key](#ZH-CN_TOPIC_0000002457868369): Configures the 1st to (n-1)th level KLAD KEY.
+- [ss\_mpi\_klad\_set\_content\_key](#ZH-CN_TOPIC_0000002457828237): Configures the last level KLAD KEY and simultaneously passes the key to KEYSLOT.
+- [ss\_mpi\_klad\_set\_clear\_key](#ZH-CN_TOPIC_0000002457868373): Configures a plaintext KEY and simultaneously passes the key to KEYSLOT. ## ss\_mpi\_klad\_init<a name="ZH-CN_TOPIC_0000002457868405"></a> [Description] Initializes the KLAD module. [Syntax] ```
 td_s32 ss_mpi_klad_init(td_void);
-```
-
-[Parameters]
-
-None.
-
-[Return Values]
-
-<a name="table111mcpsimp"></a>
+``` [Parameters] None. [Return Values] <a name="table111mcpsimp"></a>
 <table><thead align="left"><tr id="row116mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p118mcpsimp"><a name="p118mcpsimp"></a><a name="p118mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p120mcpsimp"><a name="p120mcpsimp"></a><a name="p120mcpsimp"></a>Description</p>
@@ -318,41 +158,11 @@ None.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   Supports multiple calls.
--   Initialization and deinitialization must be used in pairs.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_deinit<a name="ZH-CN_TOPIC_0000002424349506"></a>
-
-[Description]
-
-Deinitializes the KLAD module.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - Supports multiple calls.
+- Initialization and deinitialization must be used in pairs. [Example] None. ## ss\_mpi\_klad\_deinit<a name="ZH-CN_TOPIC_0000002424349506"></a> [Description] Deinitializes the KLAD module. [Syntax] ```
 td_s32 ss_mpi_klad_deinit(td_void);
-```
-
-[Parameters]
-
-None.
-
-[Return Values]
-
-<a name="table298mcpsimp"></a>
+``` [Parameters] None. [Return Values] <a name="table298mcpsimp"></a>
 <table><thead align="left"><tr id="row303mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p305mcpsimp"><a name="p305mcpsimp"></a><a name="p305mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p307mcpsimp"><a name="p307mcpsimp"></a><a name="p307mcpsimp"></a>Description</p>
@@ -370,37 +180,11 @@ None.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   Supports multiple calls.
--   Initialization and deinitialization must be used in pairs.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_create<a name="ZH-CN_TOPIC_0000002457828273"></a>
-
-[Description]
-
-Creates a KLAD handle.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - Supports multiple calls.
+- Initialization and deinitialization must be used in pairs. [Example] None. ## ss\_mpi\_klad\_create<a name="ZH-CN_TOPIC_0000002457828273"></a> [Description] Creates a KLAD handle. [Syntax] ```
 td_s32 ss_mpi_klad_create (td_handle *klad);
-```
-
-[Parameters]
-
-<a name="table397mcpsimp"></a>
+``` [Parameters] <a name="table397mcpsimp"></a>
 <table><thead align="left"><tr id="row403mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p405mcpsimp"><a name="p405mcpsimp"></a><a name="p405mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65%" id="mcps1.1.4.1.2"><p id="p407mcpsimp"><a name="p407mcpsimp"></a><a name="p407mcpsimp"></a>Description</p>
@@ -417,11 +201,7 @@ td_s32 ss_mpi_klad_create (td_handle *klad);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table419mcpsimp"></a>
+</table> [Return Values] <a name="table419mcpsimp"></a>
 <table><thead align="left"><tr id="row424mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p426mcpsimp"><a name="p426mcpsimp"></a><a name="p426mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p428mcpsimp"><a name="p428mcpsimp"></a><a name="p428mcpsimp"></a>Description</p>
@@ -439,38 +219,12 @@ td_s32 ss_mpi_klad_create (td_handle *klad);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   klad must not be NULL.
--   After using the channel, the corresponding channel should be destroyed.
--   Channel creation and destruction must be used in pairs.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_destroy<a name="ZH-CN_TOPIC_0000002424189642"></a>
-
-[Description]
-
-Destroys a KLAD.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - klad must not be NULL.
+- After using the channel, the corresponding channel should be destroyed.
+- Channel creation and destruction must be used in pairs. [Example] None. ## ss\_mpi\_klad\_destroy<a name="ZH-CN_TOPIC_0000002424189642"></a> [Description] Destroys a KLAD. [Syntax] ```
 td_s32 ss_mpi_klad_destroy (td_handle klad);
-```
-
-[Parameters]
-
-<a name="table1700mcpsimp"></a>
+``` [Parameters] <a name="table1700mcpsimp"></a>
 <table><thead align="left"><tr id="row1706mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p1708mcpsimp"><a name="p1708mcpsimp"></a><a name="p1708mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65%" id="mcps1.1.4.1.2"><p id="p1710mcpsimp"><a name="p1710mcpsimp"></a><a name="p1710mcpsimp"></a>Description</p>
@@ -487,11 +241,7 @@ td_s32 ss_mpi_klad_destroy (td_handle klad);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table1722mcpsimp"></a>
+</table> [Return Values] <a name="table1722mcpsimp"></a>
 <table><thead align="left"><tr id="row1727mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1729mcpsimp"><a name="p1729mcpsimp"></a><a name="p1729mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1731mcpsimp"><a name="p1731mcpsimp"></a><a name="p1731mcpsimp"></a>Description</p>
@@ -509,37 +259,11 @@ td_s32 ss_mpi_klad_destroy (td_handle klad);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   The KLAD handle must have been created.
--   Channel creation and destruction must be used in pairs.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_attach<a name="ZH-CN_TOPIC_0000002424349510"></a>
-
-[Description]
-
-Binds a KLAD handle and a KEYSLOT handle.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - The KLAD handle must have been created.
+- Channel creation and destruction must be used in pairs. [Example] None. ## ss\_mpi\_klad\_attach<a name="ZH-CN_TOPIC_0000002424349510"></a> [Description] Binds a KLAD handle and a KEYSLOT handle. [Syntax] ```
 td_s32 ss_mpi_klad_attach(td_handle klad, td_handle target);
-```
-
-[Parameters]
-
-<a name="table149mcpsimp"></a>
+``` [Parameters] <a name="table149mcpsimp"></a>
 <table><thead align="left"><tr id="row155mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65%" id="mcps1.1.4.1.2"><p id="p159mcpsimp"><a name="p159mcpsimp"></a><a name="p159mcpsimp"></a>Description</p>
@@ -563,11 +287,7 @@ td_s32 ss_mpi_klad_attach(td_handle klad, td_handle target);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table178mcpsimp"></a>
+</table> [Return Values] <a name="table178mcpsimp"></a>
 <table><thead align="left"><tr id="row183mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p185mcpsimp"><a name="p185mcpsimp"></a><a name="p185mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p187mcpsimp"><a name="p187mcpsimp"></a><a name="p187mcpsimp"></a>Description</p>
@@ -585,37 +305,11 @@ td_s32 ss_mpi_klad_attach(td_handle klad, td_handle target);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   The KLAD and KEYSLOT handles must have been created. If handles are not created, binding between handles may succeed, but functionality will fail.
--   Binding and unbinding must be used in pairs.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_detach<a name="ZH-CN_TOPIC_0000002424349486"></a>
-
-[Description]
-
-Unbinds a KLAD handle and a KEYSLOT handle.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - The KLAD and KEYSLOT handles must have been created. If handles are not created, binding between handles may succeed, but functionality will fail.
+- Binding and unbinding must be used in pairs. [Example] None. ## ss\_mpi\_klad\_detach<a name="ZH-CN_TOPIC_0000002424349486"></a> [Description] Unbinds a KLAD handle and a KEYSLOT handle. [Syntax] ```
 td_s32 ss_mpi_klad_detach(td_handle klad, td_handle target);
-```
-
-[Parameters]
-
-<a name="table1524mcpsimp"></a>
+``` [Parameters] <a name="table1524mcpsimp"></a>
 <table><thead align="left"><tr id="row1530mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p1532mcpsimp"><a name="p1532mcpsimp"></a><a name="p1532mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65%" id="mcps1.1.4.1.2"><p id="p1534mcpsimp"><a name="p1534mcpsimp"></a><a name="p1534mcpsimp"></a>Description</p>
@@ -639,11 +333,7 @@ td_s32 ss_mpi_klad_detach(td_handle klad, td_handle target);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table1553mcpsimp"></a>
+</table> [Return Values] <a name="table1553mcpsimp"></a>
 <table><thead align="left"><tr id="row1558mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1560mcpsimp"><a name="p1560mcpsimp"></a><a name="p1560mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1562mcpsimp"><a name="p1562mcpsimp"></a><a name="p1562mcpsimp"></a>Description</p>
@@ -661,37 +351,11 @@ td_s32 ss_mpi_klad_detach(td_handle klad, td_handle target);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   The KLAD and KEYSLOT handles must have been created.
--   Binding and unbinding must be used in pairs.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_set\_attr<a name="ZH-CN_TOPIC_0000002457868393"></a><a name="ss_mpi_klad_set_attr"></a>
-
-[Description]
-
-Sets KLAD attributes.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - The KLAD and KEYSLOT handles must have been created.
+- Binding and unbinding must be used in pairs. [Example] None. ## ss\_mpi\_klad\_set\_attr<a name="ZH-CN_TOPIC_0000002457868393"></a><a name="ss_mpi_klad_set_attr"></a> [Description] Sets KLAD attributes. [Syntax] ```
 td_s32 ss_mpi_klad_set_attr(td_handle klad, const ot_klad_attr *attr);<a name="ss_mpi_klad_set_attr"></a>
-```
-
-[Parameters]
-
-<a name="table1414mcpsimp"></a>
+``` [Parameters] <a name="table1414mcpsimp"></a>
 <table><thead align="left"><tr id="row1420mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p1422mcpsimp"><a name="p1422mcpsimp"></a><a name="p1422mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p1424mcpsimp"><a name="p1424mcpsimp"></a><a name="p1424mcpsimp"></a>Description</p>
@@ -715,11 +379,7 @@ td_s32 ss_mpi_klad_set_attr(td_handle klad, const ot_klad_attr *attr);<a name="s
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table1443mcpsimp"></a>
+</table> [Return Values] <a name="table1443mcpsimp"></a>
 <table><thead align="left"><tr id="row1448mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1450mcpsimp"><a name="p1450mcpsimp"></a><a name="p1450mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1452mcpsimp"><a name="p1452mcpsimp"></a><a name="p1452mcpsimp"></a>Description</p>
@@ -737,37 +397,11 @@ td_s32 ss_mpi_klad_set_attr(td_handle klad, const ot_klad_attr *attr);<a name="s
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   The KLAD handle must have been created.
--   Can be called multiple times; the last set attributes take effect.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_get\_attr<a name="ZH-CN_TOPIC_0000002424189662"></a><a name="ss_mpi_klad_get_attr"></a>
-
-[Description]
-
-Gets KLAD attributes.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - The KLAD handle must have been created.
+- Can be called multiple times; the last set attributes take effect. [Example] None. ## ss\_mpi\_klad\_get\_attr<a name="ZH-CN_TOPIC_0000002424189662"></a><a name="ss_mpi_klad_get_attr"></a> [Description] Gets KLAD attributes. [Syntax] ```
 td_s32 ss_mpi_klad_get_attr(td_handle klad, ot_klad_attr*attr);<a name="ss_mpi_klad_get_attr"></a>
-```
-
-[Parameters]
-
-<a name="table1814mcpsimp"></a>
+``` [Parameters] <a name="table1814mcpsimp"></a>
 <table><thead align="left"><tr id="row1820mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p1822mcpsimp"><a name="p1822mcpsimp"></a><a name="p1822mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1824mcpsimp"><a name="p1824mcpsimp"></a><a name="p1824mcpsimp"></a>Description</p>
@@ -791,11 +425,7 @@ td_s32 ss_mpi_klad_get_attr(td_handle klad, ot_klad_attr*attr);<a name="ss_mpi_k
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table1843mcpsimp"></a>
+</table> [Return Values] <a name="table1843mcpsimp"></a>
 <table><thead align="left"><tr id="row1848mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1850mcpsimp"><a name="p1850mcpsimp"></a><a name="p1850mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1852mcpsimp"><a name="p1852mcpsimp"></a><a name="p1852mcpsimp"></a>Description</p>
@@ -813,36 +443,10 @@ td_s32 ss_mpi_klad_get_attr(td_handle klad, ot_klad_attr*attr);<a name="ss_mpi_k
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
-The KLAD handle must have been created.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_set\_session\_key<a name="ZH-CN_TOPIC_0000002457868369"></a><a name="ss_mpi_klad_set_session_key"></a>
-
-[Description]
-
-Configures the 1st to (n-1)th level KLAD KEY.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] The KLAD handle must have been created. [Example] None. ## ss\_mpi\_klad\_set\_session\_key<a name="ZH-CN_TOPIC_0000002457868369"></a><a name="ss_mpi_klad_set_session_key"></a> [Description] Configures the 1st to (n-1)th level KLAD KEY. [Syntax] ```
 td_s32 ss_mpi_klad_set_session_key(td_handle klad, const ot_klad_session_key *key);<a name="ss_mpi_klad_set_session_key"></a>
-```
-
-[Parameters]
-
-<a name="table470mcpsimp"></a>
+``` [Parameters] <a name="table470mcpsimp"></a>
 <table><thead align="left"><tr id="row476mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p478mcpsimp"><a name="p478mcpsimp"></a><a name="p478mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p480mcpsimp"><a name="p480mcpsimp"></a><a name="p480mcpsimp"></a>Description</p>
@@ -866,11 +470,7 @@ td_s32 ss_mpi_klad_set_session_key(td_handle klad, const ot_klad_session_key *ke
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table499mcpsimp"></a>
+</table> [Return Values] <a name="table499mcpsimp"></a>
 <table><thead align="left"><tr id="row504mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p506mcpsimp"><a name="p506mcpsimp"></a><a name="p506mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p508mcpsimp"><a name="p508mcpsimp"></a><a name="p508mcpsimp"></a>Description</p>
@@ -888,37 +488,11 @@ td_s32 ss_mpi_klad_set_session_key(td_handle klad, const ot_klad_session_key *ke
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   The KLAD handle must have been created.
--   Cannot be called multiple times.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_set\_content\_key<a name="ZH-CN_TOPIC_0000002457828237"></a><a name="ss_mpi_klad_set_content_key"></a>
-
-[Description]
-
-Configures the last level KLAD KEY and simultaneously passes the key to KEYSLOT.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - The KLAD handle must have been created.
+- Cannot be called multiple times. [Example] None. ## ss\_mpi\_klad\_set\_content\_key<a name="ZH-CN_TOPIC_0000002457828237"></a><a name="ss_mpi_klad_set_content_key"></a> [Description] Configures the last level KLAD KEY and simultaneously passes the key to KEYSLOT. [Syntax] ```
 td_s32 ss_mpi_klad_set_content_key(td_handle klad, const ot_klad_content_key *key);<a name="ss_mpi_klad_set_content_key"></a>
-```
-
-[Parameters]
-
-<a name="table774mcpsimp"></a>
+``` [Parameters] <a name="table774mcpsimp"></a>
 <table><thead align="left"><tr id="row780mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p782mcpsimp"><a name="p782mcpsimp"></a><a name="p782mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p784mcpsimp"><a name="p784mcpsimp"></a><a name="p784mcpsimp"></a>Description</p>
@@ -942,11 +516,7 @@ td_s32 ss_mpi_klad_set_content_key(td_handle klad, const ot_klad_content_key *ke
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table803mcpsimp"></a>
+</table> [Return Values] <a name="table803mcpsimp"></a>
 <table><thead align="left"><tr id="row808mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p810mcpsimp"><a name="p810mcpsimp"></a><a name="p810mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p812mcpsimp"><a name="p812mcpsimp"></a><a name="p812mcpsimp"></a>Description</p>
@@ -964,37 +534,11 @@ td_s32 ss_mpi_klad_set_content_key(td_handle klad, const ot_klad_content_key *ke
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   The KLAD handle must have been created.
--   Cannot be called multiple times.
-
-[Example]
-
-None.
-
-## ss\_mpi\_klad\_set\_clear\_key<a name="ZH-CN_TOPIC_0000002457868373"></a><a name="ss_mpi_klad_set_clear_key"></a>
-
-[Description]
-
-Configures a plaintext KEY and simultaneously passes the key to KEYSLOT.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - The KLAD handle must have been created.
+- Cannot be called multiple times. [Example] None. ## ss\_mpi\_klad\_set\_clear\_key<a name="ZH-CN_TOPIC_0000002457868373"></a><a name="ss_mpi_klad_set_clear_key"></a> [Description] Configures a plaintext KEY and simultaneously passes the key to KEYSLOT. [Syntax] ```
 td_s32 ss_mpi_klad_set_clear_key(td_handle klad, const ot_klad_clear_key *key);<a name="ss_mpi_klad_set_clear_key"></a>
-```
-
-[Parameters]
-
-<a name="table1238mcpsimp"></a>
+``` [Parameters] <a name="table1238mcpsimp"></a>
 <table><thead align="left"><tr id="row1244mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p1246mcpsimp"><a name="p1246mcpsimp"></a><a name="p1246mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1248mcpsimp"><a name="p1248mcpsimp"></a><a name="p1248mcpsimp"></a>Description</p>
@@ -1018,11 +562,7 @@ td_s32 ss_mpi_klad_set_clear_key(td_handle klad, const ot_klad_clear_key *key);<
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table1267mcpsimp"></a>
+</table> [Return Values] <a name="table1267mcpsimp"></a>
 <table><thead align="left"><tr id="row1272mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1274mcpsimp"><a name="p1274mcpsimp"></a><a name="p1274mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1276mcpsimp"><a name="p1276mcpsimp"></a><a name="p1276mcpsimp"></a>Description</p>
@@ -1040,62 +580,24 @@ td_s32 ss_mpi_klad_set_clear_key(td_handle klad, const ot_klad_clear_key *key);<
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
--   Library files: libss\_klad.a, libss\_klad.so
-
-[Notes]
-
--   The KLAD handle must have been created.
--   Can be called multiple times; the last set attributes take effect.
-
-[Example]
-
-None.
-
-# Data Types
-The relevant data types and data structures are defined as follows (for other common data type definitions, refer to ot\_type.h):
-
--   [ot\_klad\_rootkey\_sel](#ZH-CN_TOPIC_0000002424189634): Defines the KLAD ROOTKEY selection enum.
--   [ot\_klad\_rootkey\_secure](#ZH-CN_TOPIC_0000002457868397): Defines the KLAD ROOTKEY static value enum.
--   [ot\_klad\_rootkey\_attr](#ZH-CN_TOPIC_0000002424189658): Defines the KLAD ROOTKEY attribute structure.
--   [ot\_klad\_type](#ZH-CN_TOPIC_0000002457828233): Defines the KLAD type enum.
--   [ot\_klad\_cfg](#ZH-CN_TOPIC_0000002424189638): Defines the KLAD configuration information structure.
--   [ot\_klad\_crypto\_alg](#ZH-CN_TOPIC_0000002457868381): Defines the algorithm for which the KEY is used in the encryption/decryption engine.
--   [ot\_klad\_attr](#ZH-CN_TOPIC_0000002424349482): Defines the KLAD attribute structure.
--   [ot\_klad\_alg\_type](#ZH-CN_TOPIC_0000002457868401): Defines the KLAD algorithm type enum.
--   [ot\_klad\_level](#ZH-CN_TOPIC_0000002457868385): Defines the KLAD level enum.
--   [ot\_klad\_session\_key](#ZH-CN_TOPIC_0000002424349502): Defines the 1st to (n-1)th level KLAD key information structure.
--   [ot\_klad\_content\_key](#ZH-CN_TOPIC_0000002424189666): Defines the nth level KLAD key information structure.
--   [ot\_klad\_clear\_key](#ZH-CN_TOPIC_0000002457828245): Defines the plaintext key information structure.
--   [OT\_KLAD\_MAX\_KEY\_LEN](#ZH-CN_TOPIC_0000002424189646): Defines the KLAD maximum key length.
-
-## ot\_klad\_rootkey\_sel<a name="ZH-CN_TOPIC_0000002424189634"></a>
-
-[Description]
-
-Defines the KLAD ROOTKEY selection enum.
-
-[Definition]
-
-```
-/* klad rootkey select */ 
-typedef enum { 
-    OT_KLAD_ROOTKEY_SEL_OEM0 = 0x00, 
-    OT_KLAD_ROOTKEY_SEL_OEM1, 
-    OT_KLAD_ROOTKEY_SEL_OEM2, 
-    OT_KLAD_ROOTKEY_SEL_OEM3, 
-    OT_KLAD_ROOTKEY_SEL_VENDOR, 
-    OT_KLAD_ROOTKEY_SEL_BUTT, 
-}  ot_klad_rootkey_sel;<a name="ot_klad_rootkey_sel"></a>
-```
-
-[Members]
-
-<a name="table940mcpsimp"></a>
+</table> [Requirements] - Header files: ot\_common\_klad.h, ss\_mpi\_klad.h
+- Library files: libss\_klad.a, libss\_klad.so [Notes] - The KLAD handle must have been created.
+- Can be called multiple times; the last set attributes take effect. [Example] None. # Data Types
+The relevant data types and data structures are defined as follows (for other common data type definitions, refer to ot\_type.h): - [ot\_klad\_rootkey\_sel](#ZH-CN_TOPIC_0000002424189634): Defines the KLAD ROOTKEY selection enum.
+- [ot\_klad\_rootkey\_secure](#ZH-CN_TOPIC_0000002457868397): Defines the KLAD ROOTKEY static value enum.
+- [ot\_klad\_rootkey\_attr](#ZH-CN_TOPIC_0000002424189658): Defines the KLAD ROOTKEY attribute structure.
+- [ot\_klad\_type](#ZH-CN_TOPIC_0000002457828233): Defines the KLAD type enum.
+- [ot\_klad\_cfg](#ZH-CN_TOPIC_0000002424189638): Defines the KLAD configuration information structure.
+- [ot\_klad\_crypto\_alg](#ZH-CN_TOPIC_0000002457868381): Defines the algorithm for which the KEY is used in the encryption/decryption engine.
+- [ot\_klad\_attr](#ZH-CN_TOPIC_0000002424349482): Defines the KLAD attribute structure.
+- [ot\_klad\_alg\_type](#ZH-CN_TOPIC_0000002457868401): Defines the KLAD algorithm type enum.
+- [ot\_klad\_level](#ZH-CN_TOPIC_0000002457868385): Defines the KLAD level enum.
+- [ot\_klad\_session\_key](#ZH-CN_TOPIC_0000002424349502): Defines the 1st to (n-1)th level KLAD key information structure.
+- [ot\_klad\_content\_key](#ZH-CN_TOPIC_0000002424189666): Defines the nth level KLAD key information structure.
+- [ot\_klad\_clear\_key](#ZH-CN_TOPIC_0000002457828245): Defines the plaintext key information structure.
+- [OT\_KLAD\_MAX\_KEY\_LEN](#ZH-CN_TOPIC_0000002424189646): Defines the KLAD maximum key length. ## ot\_klad\_rootkey\_sel<a name="ZH-CN_TOPIC_0000002424189634"></a> [Description] Defines the KLAD ROOTKEY selection enum. [Definition] ```
+/* klad rootkey select */ typedef enum { OT_KLAD_ROOTKEY_SEL_OEM0 = 0x00, OT_KLAD_ROOTKEY_SEL_OEM1, OT_KLAD_ROOTKEY_SEL_OEM2, OT_KLAD_ROOTKEY_SEL_OEM3, OT_KLAD_ROOTKEY_SEL_VENDOR, OT_KLAD_ROOTKEY_SEL_BUTT, } ot_klad_rootkey_sel;<a name="ot_klad_rootkey_sel"></a>
+``` [Members] <a name="table940mcpsimp"></a>
 <table><thead align="left"><tr id="row945mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p947mcpsimp"><a name="p947mcpsimp"></a><a name="p947mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p949mcpsimp"><a name="p949mcpsimp"></a><a name="p949mcpsimp"></a>Description</p>
@@ -1133,39 +635,13 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_rootkey\_attr](#ot_klad_rootkey_attr)
--   [ot\_klad\_cfg](#ot_klad_cfg)
--   [ot\_klad\_attr](#ot_klad_attr)
--   [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
--   [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr)
-
-## ot\_klad\_rootkey\_secure<a name="ZH-CN_TOPIC_0000002457868397"></a>
-
-[Description]
-
-Defines the KLAD ROOTKEY static value enum.
-
-[Definition]
-
-```
-typedef enum { 
-    OT_KLAD_ROOTKEY_SEC_REE = 0x00,     /* REE key, TEE CPU can select ree key */ 
-    OT_KLAD_ROOTKEY_SEC_TEE,           /* TEE key, REE CPU can't select tee key */ 
-    OT_KLAD_ROOTKEY_SEC_BUTT, 
-} ot_klad_rootkey_secure;<a name="ot_klad_rootkey_secure"></a>
-```
-
-[Members]
-
-<a name="table537mcpsimp"></a>
+</table> [Notes] None. [Related Data Types and Interfaces] - [ot\_klad\_rootkey\_attr](#ot_klad_rootkey_attr)
+- [ot\_klad\_cfg](#ot_klad_cfg)
+- [ot\_klad\_attr](#ot_klad_attr)
+- [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
+- [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr) ## ot\_klad\_rootkey\_secure<a name="ZH-CN_TOPIC_0000002457868397"></a> [Description] Defines the KLAD ROOTKEY static value enum. [Definition] ```
+typedef enum { OT_KLAD_ROOTKEY_SEC_REE = 0x00, /* REE key, TEE CPU can select ree key */ OT_KLAD_ROOTKEY_SEC_TEE, /* TEE key, REE CPU can't select tee key */ OT_KLAD_ROOTKEY_SEC_BUTT, } ot_klad_rootkey_secure;<a name="ot_klad_rootkey_secure"></a>
+``` [Members] <a name="table537mcpsimp"></a>
 <table><thead align="left"><tr id="row542mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p544mcpsimp"><a name="p544mcpsimp"></a><a name="p544mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p546mcpsimp"><a name="p546mcpsimp"></a><a name="p546mcpsimp"></a>Description</p>
@@ -1188,41 +664,15 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
--   Non-secure CPU cannot select the TEE key static value.
--   Secure CPU can select the REE key static value.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_rootkey\_attr](#ot_klad_rootkey_attr)
--   [ot\_klad\_cfg](#ot_klad_cfg)
--   [ot\_klad\_attr](#ot_klad_attr)
--   [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
--   [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr)
-
-## ot\_klad\_rootkey\_attr<a name="ZH-CN_TOPIC_0000002424189658"></a><a name="ot_klad_rootkey_attr"></a>
-
-[Description]
-
-Defines the KLAD ROOTKEY attribute structure.
-
-[Definition]
-
-```
-/* only OT_KLAD_TYPE_COMMON is valid */
-    typedef struct {
-    td_u32 owner_id;                 /* Derivative material, used for mcipher */
-    ot_klad_rootkey_sel   key_sel;        /* common klad route select rootkey */
-    ot_klad_rootkey_secure    key_secure;  /* Static value select: for ree key or for tee key */
+</table> [Notes] - Non-secure CPU cannot select the TEE key static value.
+- Secure CPU can select the REE key static value. [Related Data Types and Interfaces] - [ot\_klad\_rootkey\_attr](#ot_klad_rootkey_attr)
+- [ot\_klad\_cfg](#ot_klad_cfg)
+- [ot\_klad\_attr](#ot_klad_attr)
+- [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
+- [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr) ## ot\_klad\_rootkey\_attr<a name="ZH-CN_TOPIC_0000002424189658"></a><a name="ot_klad_rootkey_attr"></a> [Description] Defines the KLAD ROOTKEY attribute structure. [Definition] ```
+/* only OT_KLAD_TYPE_COMMON is valid */ typedef struct { td_u32 owner_id; /* Derivative material, used for mcipher */ ot_klad_rootkey_sel key_sel; /* common klad route select rootkey */ ot_klad_rootkey_secure key_secure; /* Static value select: for ree key or for tee key */
 } ot_klad_rootkey_attr;<a name="ot_klad_rootkey_attr"></a>
-```
-
-[Members]
-
-<a name="table848mcpsimp"></a>
+``` [Members] <a name="table848mcpsimp"></a>
 <table><thead align="left"><tr id="row853mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p855mcpsimp"><a name="p855mcpsimp"></a><a name="p855mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p857mcpsimp"><a name="p857mcpsimp"></a><a name="p857mcpsimp"></a>Description</p>
@@ -1245,39 +695,12 @@ Defines the KLAD ROOTKEY attribute structure.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-Only valid when the KLAD type is OT\_KLAD\_TYPE\_COMMON.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_cfg](#ot_klad_cfg)
--   [ot\_klad\_attr](#ot_klad_attr)
--   [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
--   [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr)
-
-## ot\_klad\_type<a name="ZH-CN_TOPIC_0000002457828233"></a>
-
-[Description]
-
-Defines the KLAD type enum.
-
-[Definition]
-
-```
-/* klad route select */ 
-typedef enum { 
-    OT_KLAD_TYPE_CLEARCW,            /* Used for clear key  */ 
-    OT_KLAD_TYPE_COMMON,            /* Used for root key */ 
-    OT_KLAD_TYPE_BUTT, 
-} ot_klad_type;<a name="ot_klad_type"></a>
-```
-
-[Members]
-
-<a name="table1193mcpsimp"></a>
+</table> [Notes] Only valid when the KLAD type is OT\_KLAD\_TYPE\_COMMON. [Related Data Types and Interfaces] - [ot\_klad\_cfg](#ot_klad_cfg)
+- [ot\_klad\_attr](#ot_klad_attr)
+- [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
+- [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr) ## ot\_klad\_type<a name="ZH-CN_TOPIC_0000002457828233"></a> [Description] Defines the KLAD type enum. [Definition] ```
+/* klad route select */ typedef enum { OT_KLAD_TYPE_CLEARCW, /* Used for clear key */ OT_KLAD_TYPE_COMMON, /* Used for root key */ OT_KLAD_TYPE_BUTT, } ot_klad_type;<a name="ot_klad_type"></a>
+``` [Members] <a name="table1193mcpsimp"></a>
 <table><thead align="left"><tr id="row1198mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1200mcpsimp"><a name="p1200mcpsimp"></a><a name="p1200mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1202mcpsimp"><a name="p1202mcpsimp"></a><a name="p1202mcpsimp"></a>Description</p>
@@ -1300,38 +723,13 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_cfg](#ot_klad_cfg)
--   [ot\_klad\_attr](#ot_klad_attr)
--   [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
--   [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr)
-
-## ot\_klad\_cfg<a name="ZH-CN_TOPIC_0000002424189638"></a><a name="ot_klad_cfg"></a>
-
-[Description]
-
-Defines the KLAD configuration information structure.
-
-[Definition]
-
-```
-/* klad config */
-    typedef struct {
-    ot_klad_type klad_type;             /* klad route select: common/clear */
-    ot_klad_rootkey_attr rootkey_attr;    /* rootkey attr, OT_KLAD_TYPE_COMMON is valid */
+</table> [Notes] None. [Related Data Types and Interfaces] - [ot\_klad\_cfg](#ot_klad_cfg)
+- [ot\_klad\_attr](#ot_klad_attr)
+- [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
+- [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr) ## ot\_klad\_cfg<a name="ZH-CN_TOPIC_0000002424189638"></a><a name="ot_klad_cfg"></a> [Description] Defines the KLAD configuration information structure. [Definition] ```
+/* klad config */ typedef struct { ot_klad_type klad_type; /* klad route select: common/clear */ ot_klad_rootkey_attr rootkey_attr; /* rootkey attr, OT_KLAD_TYPE_COMMON is valid */
 } ot_klad_cfg;
-```
-
-[Members]
-
-<a name="table1487mcpsimp"></a>
+``` [Members] <a name="table1487mcpsimp"></a>
 <table><thead align="left"><tr id="row1492mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.1"><p id="p1494mcpsimp"><a name="p1494mcpsimp"></a><a name="p1494mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.2"><p id="p1496mcpsimp"><a name="p1496mcpsimp"></a><a name="p1496mcpsimp"></a>Description</p>
@@ -1349,38 +747,11 @@ Defines the KLAD configuration information structure.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-rootkey\_attr is only valid when the KLAD type is OT\_KLAD\_TYPE\_COMMON.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_attr](#ot_klad_attr)
--   [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
--   [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr)
-
-## ot\_klad\_crypto\_alg<a name="ZH-CN_TOPIC_0000002457868381"></a>
-
-[Description]
-
-Defines the algorithm for which the KEY is used in the encryption/decryption engine.
-
-[Definition]
-
-```
-/* The key can be used for which algorithm of the crypto engine. */ 
-typedef enum { 
-    OT_KLAD_CRYPTO_ALG_AES = 0, 
-    OT_KLAD_CRYPTO_ALG_SM4, 
-    OT_KLAD_CRYPTO_ALG_BUTT, 
-} ot_klad_crypto_alg;<a name="ot_klad_crypto_alg"></a>
-```
-
-[Members]
-
-<a name="table1001mcpsimp"></a>
+</table> [Notes] rootkey\_attr is only valid when the KLAD type is OT\_KLAD\_TYPE\_COMMON. [Related Data Types and Interfaces] - [ot\_klad\_attr](#ot_klad_attr)
+- [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
+- [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr) ## ot\_klad\_crypto\_alg<a name="ZH-CN_TOPIC_0000002457868381"></a> [Description] Defines the algorithm for which the KEY is used in the encryption/decryption engine. [Definition] ```
+/* The key can be used for which algorithm of the crypto engine. */ typedef enum { OT_KLAD_CRYPTO_ALG_AES = 0, OT_KLAD_CRYPTO_ALG_SM4, OT_KLAD_CRYPTO_ALG_BUTT, } ot_klad_crypto_alg;<a name="ot_klad_crypto_alg"></a>
+``` [Members] <a name="table1001mcpsimp"></a>
 <table><thead align="left"><tr id="row1006mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p1008mcpsimp"><a name="p1008mcpsimp"></a><a name="p1008mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p1010mcpsimp"><a name="p1010mcpsimp"></a><a name="p1010mcpsimp"></a>Description</p>
@@ -1403,35 +774,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-Hi3403V100 and SS626V100 do not support SM4.
-
-[Related Data Types and Interfaces]
-
--   [ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key)
--   [ss\_mpi\_klad\_set\_clear\_key](#ss_mpi_klad_set_clear_key)
-
-## ot\_klad\_attr<a name="ZH-CN_TOPIC_0000002424349482"></a><a name="ot_klad_attr"></a>
-
-[Description]
-
-Defines the KLAD attribute structure.
-
-[Definition]
-
-```
-/* klad attribute */
-    typedef struct {
-    ot_klad_cfg klad_cfg;
+</table> [Notes] Hi3403V100 and do not support SM4. [Related Data Types and Interfaces] - [ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key)
+- [ss\_mpi\_klad\_set\_clear\_key](#ss_mpi_klad_set_clear_key) ## ot\_klad\_attr<a name="ZH-CN_TOPIC_0000002424349482"></a><a name="ot_klad_attr"></a> [Description] Defines the KLAD attribute structure. [Definition] ```
+/* klad attribute */ typedef struct { ot_klad_cfg klad_cfg;
 } ot_klad_attr;<a name="ot_klad_attr"></a>
-```
-
-[Members]
-
-<a name="table1163mcpsimp"></a>
+``` [Members] <a name="table1163mcpsimp"></a>
 <table><thead align="left"><tr id="row1168mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p1170mcpsimp"><a name="p1170mcpsimp"></a><a name="p1170mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p1172mcpsimp"><a name="p1172mcpsimp"></a><a name="p1172mcpsimp"></a>Description</p>
@@ -1444,37 +791,10 @@ Defines the KLAD attribute structure.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
--   [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
--   [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr)
-
-## ot\_klad\_alg\_type<a name="ZH-CN_TOPIC_0000002457868401"></a>
-
-[Description]
-
-Defines the KLAD algorithm type enum.
-
-[Definition]
-
-```
-/* klad algorithm */ 
-typedef enum { 
-   OT_KLAD_ALG_TYPE_AES = 0, 
-   OT_KLAD_ALG_TYPE_SM4, 
-   OT_KLAD_ALG_TYPE_BUTT, 
-} ot_klad_alg_type;<a name="ot_klad_alg_type"></a>
-```
-
-[Members]
-
-<a name="table1760mcpsimp"></a>
+</table> [Notes] None. [Related Data Types and Interfaces] - [ss\_mpi\_klad\_set\_attr](#ss_mpi_klad_set_attr)
+- [ss\_mpi\_klad\_get\_attr](#ss_mpi_klad_get_attr) ## ot\_klad\_alg\_type<a name="ZH-CN_TOPIC_0000002457868401"></a> [Description] Defines the KLAD algorithm type enum. [Definition] ```
+/* klad algorithm */ typedef enum { OT_KLAD_ALG_TYPE_AES = 0, OT_KLAD_ALG_TYPE_SM4, OT_KLAD_ALG_TYPE_BUTT, } ot_klad_alg_type;<a name="ot_klad_alg_type"></a>
+``` [Members] <a name="table1760mcpsimp"></a>
 <table><thead align="left"><tr id="row1765mcpsimp"><th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.1"><p id="p1767mcpsimp"><a name="p1767mcpsimp"></a><a name="p1767mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.2"><p id="p1769mcpsimp"><a name="p1769mcpsimp"></a><a name="p1769mcpsimp"></a>Description</p>
@@ -1497,40 +817,12 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-Hi3403V100 and SS626V100 do not support SM4.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_session\_key](#ot_klad_session_key)
--   [ot\_klad\_content\_key](#ot_klad_content_key)
--   [ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key)
--   [ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key)
-
-## ot\_klad\_level<a name="ZH-CN_TOPIC_0000002457868385"></a>
-
-[Description]
-
-Defines the KLAD level enum.
-
-[Definition]
-
-```
-/* klad level */ 
-typedef enum { 
-    OT_KLAD_LEVEL1 = 0, 
-    OT_KLAD_LEVEL2, 
-    OT_KLAD_LEVEL3, 
-    OT_KLAD_LEVEL_BUTT, 
-} ot_klad_level;<a name="ot_klad_level"></a>
-```
-
-[Members]
-
-<a name="table895mcpsimp"></a>
+</table> [Notes] Hi3403V100 and do not support SM4. [Related Data Types and Interfaces] - [ot\_klad\_session\_key](#ot_klad_session_key)
+- [ot\_klad\_content\_key](#ot_klad_content_key)
+- [ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key)
+- [ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key) ## ot\_klad\_level<a name="ZH-CN_TOPIC_0000002457868385"></a> [Description] Defines the KLAD level enum. [Definition] ```
+/* klad level */ typedef enum { OT_KLAD_LEVEL1 = 0, OT_KLAD_LEVEL2, OT_KLAD_LEVEL3, OT_KLAD_LEVEL_BUTT, } ot_klad_level;<a name="ot_klad_level"></a>
+``` [Members] <a name="table895mcpsimp"></a>
 <table><thead align="left"><tr id="row900mcpsimp"><th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.1"><p id="p902mcpsimp"><a name="p902mcpsimp"></a><a name="p902mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.2"><p id="p904mcpsimp"><a name="p904mcpsimp"></a><a name="p904mcpsimp"></a>Description</p>
@@ -1558,38 +850,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-Hi3403V100 and SS626V100 support 2-level KLAD.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_session\_key](#ot_klad_session_key)
--   [ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key)
-
-## ot\_klad\_session\_key<a name="ZH-CN_TOPIC_0000002424349502"></a><a name="ot_klad_session_key"></a>
-
-[Description]
-
-Defines the 1st to (n-1)th level KLAD key information structure.
-
-[Definition]
-
-```
-/* session key: set 1~n-1 stage common route klad */
-    typedef struct {
-    ot_klad_session_key level;                  /* klad level */
-    ot_klad_alg_type alg;                /* klad algorithm */
-    td_u32 key_size;                    /* klad key size */
-    td_u8 key[OT_KLAD_MAX_KEY_LEN];  /* klad key */
+</table> [Notes] Hi3403V100 and support 2-level KLAD. [Related Data Types and Interfaces] - [ot\_klad\_session\_key](#ot_klad_session_key)
+- [ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key) ## ot\_klad\_session\_key<a name="ZH-CN_TOPIC_0000002424349502"></a><a name="ot_klad_session_key"></a> [Description] Defines the 1st to (n-1)th level KLAD key information structure. [Definition] ```
+/* session key: set 1~n-1 stage common route klad */ typedef struct { ot_klad_session_key level; /* klad level */ ot_klad_alg_type alg; /* klad algorithm */ td_u32 key_size; /* klad key size */ td_u8 key[OT_KLAD_MAX_KEY_LEN]; /* klad key */
 } ot_klad_session_key;<a name="ot_klad_session_key"></a>
-```
-
-[Members]
-
-<a name="table702mcpsimp"></a>
+``` [Members] <a name="table702mcpsimp"></a>
 <table><thead align="left"><tr id="row707mcpsimp"><th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.1"><p id="p709mcpsimp"><a name="p709mcpsimp"></a><a name="p709mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.2"><p id="p711mcpsimp"><a name="p711mcpsimp"></a><a name="p711mcpsimp"></a>Description</p>
@@ -1617,38 +882,12 @@ Defines the 1st to (n-1)th level KLAD key information structure.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
--   key\_size only supports 128 bits, i.e., 16 bytes.
--   For Hi3403V100 and SS626V100, level can only be configured as OT\_KLAD\_LEVEL1.
-
-[Related Data Types and Interfaces]
-
-[ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key)
-
-## ot\_klad\_content\_key<a name="ZH-CN_TOPIC_0000002424189666"></a><a name="ot_klad_content_key"></a>
-
-[Description]
-
-Defines the last level KLAD key information structure.
-
-[Definition]
-
-```
+</table> [Notes] - key\_size only supports 128 bits, i.e., 16 bytes.
+- For Hi3403V100 and , level can only be configured as OT\_KLAD\_LEVEL1. [Related Data Types and Interfaces] [ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key) ## ot\_klad\_content\_key<a name="ZH-CN_TOPIC_0000002424189666"></a><a name="ot_klad_content_key"></a> [Description] Defines the last level KLAD key information structure. [Definition] ```
 /* content key: set n stage common route klad */
-typedef struct {
-    ot_klad_alg_type alg;                /* klad algorithm */
-    ot_klad_crypto_alg crypto_alg;        /* allowed target engine algorithm. */
-    td_u32 key_size;                     /* klad key size */
-    td_u8 key[OT_KLAD_MAX_KEY_LEN];  /* klad key */
+typedef struct { ot_klad_alg_type alg; /* klad algorithm */ ot_klad_crypto_alg crypto_alg; /* allowed target engine algorithm. */ td_u32 key_size; /* klad key size */ td_u8 key[OT_KLAD_MAX_KEY_LEN]; /* klad key */
 } ot_klad_content_key;<a name="ot_klad_content_key"></a>
-```
-
-[Members]
-
-<a name="table225mcpsimp"></a>
+``` [Members] <a name="table225mcpsimp"></a>
 <table><thead align="left"><tr id="row230mcpsimp"><th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.3.1.1"><p id="p232mcpsimp"><a name="p232mcpsimp"></a><a name="p232mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="72%" id="mcps1.1.3.1.2"><p id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a>Description</p>
@@ -1676,36 +915,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
-[ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key)
-
-## ot\_klad\_clear\_key<a name="ZH-CN_TOPIC_0000002457828245"></a><a name="ot_klad_clear_key"></a>
-
-[Description]
-
-Defines the plaintext key information structure.
-
-[Definition]
-
-```
+</table> [Notes] None. [Related Data Types and Interfaces] [ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key) ## ot\_klad\_clear\_key<a name="ZH-CN_TOPIC_0000002457828245"></a><a name="ot_klad_clear_key"></a> [Description] Defines the plaintext key information structure. [Definition] ```
 /* clear key: set clear route klad */
-typedef struct {
-    ot_klad_crypto_alg crypto_alg;        /* allowed target engine algorithm. */
-    td_u32 key_size;                    /* klad key size */
-    td_u8 key[OT_KLAD_MAX_KEY_LEN];  /* klad key */
+typedef struct { ot_klad_crypto_alg crypto_alg; /* allowed target engine algorithm. */ td_u32 key_size; /* klad key size */ td_u8 key[OT_KLAD_MAX_KEY_LEN]; /* klad key */
 } ot_klad_clear_key;<a name="ot_klad_clear_key"></a>
-```
-
-[Members]
-
-<a name="table1122mcpsimp"></a>
+``` [Members] <a name="table1122mcpsimp"></a>
 <table><thead align="left"><tr id="row1127mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p1129mcpsimp"><a name="p1129mcpsimp"></a><a name="p1129mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p1131mcpsimp"><a name="p1131mcpsimp"></a><a name="p1131mcpsimp"></a>Description</p>
@@ -1728,47 +942,15 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
-[ss\_mpi\_klad\_set\_clear\_key](#ss_mpi_klad_set_clear_key)
-
-## OT\_KLAD\_MAX\_KEY\_LEN<a name="ZH-CN_TOPIC_0000002424189646"></a>
-
-[Description]
-
-Defines the KLAD maximum key length.
-
-[Definition]
-
-```
-#define OT_KLAD_MAX_KEY_LEN     32
-```
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
--   [ot\_klad\_session\_key](#ot_klad_session_key)
--   [ot\_klad\_content\_key](#ot_klad_content_key)
--   [ot\_klad\_clear\_key](#ot_klad_clear_key)
--   [ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key)
--   [ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key)
--   [ss\_mpi\_klad\_set\_clear\_key](#ss_mpi_klad_set_clear_key)
-
-# Error Codes
-The error codes provided by KLAD are as follows.
-
-**Table 1**  KLAD module error codes
-
-<a name="_Ref448994233"></a>
+</table> [Notes] None. [Related Data Types and Interfaces] [ss\_mpi\_klad\_set\_clear\_key](#ss_mpi_klad_set_clear_key) ## OT\_KLAD\_MAX\_KEY\_LEN<a name="ZH-CN_TOPIC_0000002424189646"></a> [Description] Defines the KLAD maximum key length. [Definition] ```
+#define OT_KLAD_MAX_KEY_LEN 32
+``` [Notes] None. [Related Data Types and Interfaces] - [ot\_klad\_session\_key](#ot_klad_session_key)
+- [ot\_klad\_content\_key](#ot_klad_content_key)
+- [ot\_klad\_clear\_key](#ot_klad_clear_key)
+- [ss\_mpi\_klad\_set\_session\_key](#ss_mpi_klad_set_session_key)
+- [ss\_mpi\_klad\_set\_content\_key](#ss_mpi_klad_set_content_key)
+- [ss\_mpi\_klad\_set\_clear\_key](#ss_mpi_klad_set_clear_key) # Error Codes
+The error codes provided by KLAD are as follows. **Table 1** KLAD module error codes <a name="_Ref448994233"></a>
 <table><thead align="left"><tr id="row1315mcpsimp"><th class="cellrowborder" valign="top" width="18.81%" id="mcps1.2.4.1.1"><p id="p1317mcpsimp"><a name="p1317mcpsimp"></a><a name="p1317mcpsimp"></a>Error Code</p>
 </th>
 <th class="cellrowborder" valign="top" width="52.480000000000004%" id="mcps1.2.4.1.2"><p id="p1319mcpsimp"><a name="p1319mcpsimp"></a><a name="p1319mcpsimp"></a>Macro Definition</p>
@@ -1862,9 +1044,7 @@ The error codes provided by KLAD are as follows.
 </td>
 </tr>
 </tbody>
-</table>
-
-# Acronyms and Abbreviations
+</table> # Acronyms and Abbreviations
 <a name="table1046mcpsimp"></a>
 <table><tbody><tr id="row1052mcpsimp"><td class="cellrowborder" colspan="3" valign="top"><p id="p1054mcpsimp"><a name="p1054mcpsimp"></a><a name="p1054mcpsimp"></a><strong id="b1055mcpsimp"><a name="b1055mcpsimp"></a><a name="b1055mcpsimp"></a>K</strong></p>
 </td>

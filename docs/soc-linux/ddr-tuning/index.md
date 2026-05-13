@@ -1,28 +1,15 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DDR 小型化指南/DDR 小型化指南.md
----
-
-# 前言
-**概述<a name="section4537382116410"></a>**
-
-本文为进行小型化开发的程序员而写，目的是介绍在单板上进行Linux开发、裁剪、优化及使用注意事项等内容。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
-
-**产品版本<a name="section25718263411"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table1233317181949"></a>
+--- # 前言
+**概述<a name="section4537382116410"></a>** 本文为进行小型化开发的程序员而写，目的是介绍在单板上进行Linux开发、裁剪、优化及使用注意事项等内容。 >![](public_sys-resources/icon-note.gif) **说明：** >未有特殊说明，与Hi3403V100内容完全一致。 **产品版本<a name="section25718263411"></a>** 与本文档相对应的产品版本如下。 <a name="table1233317181949"></a>
 <table><thead align="left"><tr id="row103955189411"><th class="cellrowborder" valign="top" width="31.759999999999998%" id="mcps1.1.3.1.1"><p id="p13395161815412"><a name="p13395161815412"></a><a name="p13395161815412"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.24%" id="mcps1.1.3.1.2"><p id="p33951518144"><a name="p33951518144"></a><a name="p33951518144"></a>产品版本</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row039571815420"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p939510182419"><a name="p939510182419"></a><a name="p939510182419"></a>SS626</p>
+<tbody><tr id="row039571815420"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p939510182419"><a name="p939510182419"></a><a name="p939510182419"></a></p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p93951718242"><a name="p93951718242"></a><a name="p93951718242"></a>V100</p>
 </td>
@@ -32,24 +19,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DDR 小�
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p168061342157"><a name="p168061342157"></a><a name="p168061342157"></a>V100</p>
 </td>
 </tr>
-<tr id="row31204306217"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section51625422047"></a>**
-
-本文档（本指南）主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-**修改记录<a name="section2467512116410"></a>**
-
-<a name="table126443203200"></a>
+</table> **读者对象<a name="section51625422047"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 **修改记录<a name="section2467512116410"></a>** <a name="table126443203200"></a>
 <table><thead align="left"><tr id="row264516207203"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p146456203200"><a name="p146456203200"></a><a name="p146456203200"></a><strong id="b8645172022010"><a name="b8645172022010"></a><a name="b8645172022010"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p364512062019"><a name="p364512062019"></a><a name="p364512062019"></a><strong id="b1464512200200"><a name="b1464512200200"></a><a name="b1464512200200"></a>发布日期</strong></p>
@@ -66,326 +38,58 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DDR 小�
 </td>
 </tr>
 </tbody>
-</table>
-
-# 综述
-DDR小型化可以从多个方向入手：uboot、kernel、filesys、SDK、APP都可以在内存使用上做一定程度的优化。本文主要是对SDK和APP的小型化进行简单的说明。
-
-基于 SS626V100的SDK目前支持运行Linux和liteos双系统或单linux系统，如业务场景只需运行单linux系统，可参考《内存布局调整指南》3.2章节裁剪liteos系统相关MMZ占用。本文中默认以Linux和liteos双系统为基础进行描述。SS626V100的系统小型化基于DEMO单板实现，以容量为2G Bytes的DDR内存为例。
-
-**图 1**  DEMO板中Linux系统内存分配图（仅供参考）<a name="fig58516719710"></a>  
-![](figures/DEMO板中Linux系统内存分配图（仅供参考）.png "DEMO板中Linux系统内存分配图（仅供参考）")
-
-其中基于SS626V100典型场景业务的MMZ内存占用数据，请参考《SS626V100 Memory Usage Statistics Report》。此外，客户业务的具体内存占用，需结合具体场景进行分析，下文介绍各模块MMZ内存占用及小型化可优化手段。
-
-# 主要模块工作占用MMZ情况
-一般业务中MMZ的占用往往是内存消耗的很大一部分，本章节主要介绍一般业务场景中几个主要模块工作时占用MMZ的情况。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## VI<a name="ZH-CN_TOPIC_0000002424361046"></a>
-
-VI采集状态下最多会占用三个视频帧VB。一个用于当前帧采集，一个用于准备给下一帧采集，一个在轮转流程中（主要是后级模块占用）。
-
-Hi3403V100中 MMZ占用：
-
--   vi\(%d\)\_model\_%d：每路pipe需占用两个一定大小模板MMZ内存，大小与通路宽度相关，宽度小于等于4096时大小为16KB。
--   vi\(%d\)\_lmf：每路pipe开启LMF功能时占用MMZ内存，用于存放LMF的系数，固定值4K。
--   vi\(%d\)\_bnr\_mot：每路pipe开启Bayer NR功能时需要占用的motion buffer内存，大小由处理图像大小的宽高决定。
--   vi\(0\)\_bnr\_rnt：每路pipe开启Bayer NR功能时需要占用的rnt内存，大小由处理图像大小的宽高决定；离线时个数由ss\_mpi\_vi\_set\_pipe\_bnr\_buf\_num。
--   接口设置，默认为40块。
--   vi\(0\)\_bnr\_ref%d：每路pipe开启Bayer NR功能时需要占用的时域参考内存，大小由处理图像大小的宽高决定。
-
-## VDEC<a name="ZH-CN_TOPIC_0000002424201210"></a>
-
-VDEC MMZ占用分为buffer占用、轮转占用和设备占用。
-
-**Buffer占用<a name="section389732110912"></a>**
-
--   vdec\(%d\)\_stream：解码码流Buffer相关内存，为用户指定大小和驱动内部分配之和。SS626V100包括PTS数据存放内存。
--   vfmw\(%d\)\_usd\_buf：用户数据Buffer内存，大小根据用户指定的进行分配。
--   vdec\(%d\)\_adp\_ref：用于存储通道使用vb的相关信息。
--   vdec\(%d\)\_adp\_event：用于存储解码过程中产生的event信息。
--   vfmw\(%d\)\_shr\_img：用于存储解码出图像的相关信息。
--   vdec\_adp\_proc：用于存储mdc侧vdec产生的proc信息。
--   vfmw\_mdc\_shr：用于存储mdc侧vfmw产生的proc信息。
-
-**设备占用<a name="section172822554102"></a>**
-
--   vfmw\(%d\)\_seg\_buf：SCD切码流后存放内存，与分辨率相关，与协议无关。
--   vfmw\_scd\_msg：SCD逻辑工作时需要的内存，固定值为44Kbytes。
--   vfmw\(%d\)\_vdh\_msg：VDH逻辑工作时需要的内存，与模块参数中设置最大slice个数相关，默认模块参数（slice 600个）时大小为616KBytes。SS626V100此块内存名称为vfmw\_vdh\_msg。
--   vfmw\_vdh\_ext：VDH逻辑工作时需要的内存，与模块参数中设置的最大宽高相关。SS626V100默认模块参数（宽高8192x8192）时大小572KBytes。
--   vfmw\_mdma\_msg：VDH逻辑工作时需要的内存，固定值44KBytes。
-
-**轮转占用<a name="section32020161117"></a>**
-
--   vdec\(%d\)\_pic\_vb：vb大小和个数都由用户配置。私有vb模式下，大小根据用户配置通道属性中frame\_buf\_size确定，个数根据用户配置通道属性中frame\_buf\_cnt确定。
--   vdec\(%d\)\_tmv\_vb：vb大小和个数都由用户配置。私有vb模式下，大小根据用户配置通道属性中tmv\_buf\_size确定，个数为 “参考帧+1”，其中参考帧个数根据用户配置通道属性中ref\_frame\_num确定。
-
-## VPSS<a name="ZH-CN_TOPIC_0000002457879933"></a>
-
--   vb\_pool: Group占用两块VB \(前级模块送来：当前工作VB+Backup 帧\)，每个使能通道会获取通道大小的VB（通道模式为Auto时，为后端模块获取），硬件处理完成后会发送到后端绑定模块。如果需要做旋转/二级缩放功能，还需申请中间的临时VB（公共VB）。
--   vpss\(%d\)\_src：每组需占用亮度和MMZ内存资源，约4K大小。
--   vpss\(%d\)\_dci：每组开启DCI功能时占用MMZ内存，约4K大小。
--   vpss\(%d\)\_model：每组需占用一定大小模板MMZ内存。大小与模块参数中的split\_node\_num以及组的max\_width有关。split\_node\_num和max\_width越大，占用大小越大。
--   vpss\(%d\)\_lmf：每组开启LMF功能时占用MMZ内存，用于存放LMF的系数，固定值4K。
--   vpss\(%d\)\_rgn\_luma：每组开启通道亮度和功能时占用MMZ内存，用于存放亮度和统计信息，固定值4K。
--   vmallocinfo：每组上下文需占用一定大小OS内存。总大小与组数量相关，组越多占用越大。
-
-## VGS<a name="ZH-CN_TOPIC_0000002457879973"></a>
-
-VGS模块根据job、node、task数目，分配固定的MMZ内存。
-
--   vmallocinfo:根据job、task数目及上下文占用OS内存。数目越多占用越大。
--   vgs\_node\_buf:根据node数目，占用一定大小的MMZ内存。数目越多占用越大。
-
-## VENC<a name="ZH-CN_TOPIC_0000002457879945"></a>
-
--   硬件相关：
-
-    vedu\_hal\_\(%d\)：硬件需要使用的内存，与IP个数相关。
-
--   通道相关内存（以H264为例，H265则前缀为h265e）：
-    -   h264e\(%d\)\_node：寄存器节点配置内存，每个通道一块。
-    -   h264e\(%d\)\_str0：码流buffer，每个通道一块。
-    -   h264e\(%d\)\_rcn\(%d\)：参考帧重构帧内存，个数与编码参考帧个数相关。
-    -   h264e\(%d\)\_info\(%d\)：参考帧重构帧信息内存，个数与编码参考帧个数相关。
-    -   h264e\(%d\)\_deblur：通过ss\_mpi\_venc\_set\_deblur 使能去模糊后，需要相应去模糊处理内存。
-    -   h264e\(%d\)\_md：通过ss\_mpi\_venc\_set\_md使能MD检测，需要相应的MD检测内存。
-    -   venc\(%d\)\_svc：通过ss\_mpi\_venc\_enable\_svc使能SVC，需要相应的SVC内存。
-    -   jpege\(%d\)\_stm：jpege码流buffer，每个通道一块。
-    -   jpege\(%d\)\_roi\_map：通过ss\_mpi\_venc\_set\_jpeg\_roi\_attr使能roi\_map，为jpege的roi\_map分配内存。
-    -   vmallocinfo：各个通道的通道上下文内存；UserData数据；码率控制相关内存。
-
-## VO<a name="ZH-CN_TOPIC_0000002424201194"></a>
-
-VO MMZ占用分为系数MMZ占用、获取亮度和MMZ占用，VB轮转MMZ占用。
-
--   系数MMZ占用：
-
-    vo\_coef\_buf：回写缩放系数\(128KB\)和多区域配置系数\(8KB\)的内存存放占用, 共计136KB。如果芯片不支持回写缩放，则不会申请对应系数，一个多区域占用4KB内存，两个多区域占用8KB.
-
--   获取亮度和MMZ占用：
-
-    vo\(%d,%d\)\_luma：VO模块获取视频层和通道亮度和时动态申请MMZ内存占用，某个通道固定占用4KB。如果芯片不支持获取亮度和，则不申请此内存。
-
--   VB轮转MMZ占用：
-
-    vo\(%d\)\_disp\_buf：vb大小和个数都由用户配置。大小根据用户配置视频层属性img\_size确定，个数根据用户配置视频层属性中display\_buf\_len确定。Single模式下VO会占用3块私有VB用来显示轮转。
-
-    Multi模式下，如果前端绑定VPSS为auto模式，VO会占用4块私有VB用来显示轮转；如果前端为User模式，VO可以不分配VB，此时占用前端模块发送过来的VB，显示完后释放。
-
-## GFBG<a name="ZH-CN_TOPIC_0000002457839817"></a>
-
-加载ko时，用户指定图形层、鼠标层的显示buf大小。支持的图层均可指定，图层id号与vram id号需保证匹配。
-
-例如：insmod gfbg.ko video="gfbg:vram0\_size:32400,vram1\_size:32400,vram2\_size:256,vram3\_size:4052".
-
--   vram0\_size: 对应gfbg0图形层内存大小，单位KB，对应mmz name= gfbg\_layer0。
--   vram1\_size: 对应gfbg1图形层内存大小，单位KB，对应mmz name= gfbg\_layer1。
--   vram2\_size: 对应gfbg2图形层内存大小，单位KB，对应mmz name= gfbg\_layer2。
--   vram3\_size: 对应gfbg3图形层内存大小，单位KB，对应mmz name= gfbg\_layer3。
-
-## AUDIO<a name="ZH-CN_TOPIC_0000002424201218"></a>
-
-**AI<a name="section1478714716237"></a>**
-
--   ai\(%d\)\_frm：AI的通道buffer根据chn\_cnt、frame\_num和point\_num\_per\_frame分配。
--   ai\(%d\)\_dma：AI的DMA缓冲区根据chn\_cnt和point\_num\_per\_frame分配。
-
-**AO<a name="section20436157192318"></a>**
-
--   ao\(%d\)\_dma&frm：AO的DMA缓冲区和通道buffer根据chn\_cnt、frame\_num和point\_num\_per\_frame分配。
--   ao\(%d, %d\)\_cir：音频帧buffer根据frame\_num和point\_num\_per\_frame分配。
-
-**AENC<a name="section339816212241"></a>**
-
--   aenc\(%d\)\_strm：码流buffer根据buf\_size分配。
--   aenc\(%d\)\_cir：环形缓冲区根据编码通道数分配。
-
-## REGION<a name="ZH-CN_TOPIC_0000002457879941"></a>
-
-**区域信息上下文节点<a name="section15813751132413"></a>**
-
-去掉不必要的模块可以减少内存的占用，如：
-
--   模块加载时分配的1024个区域信息上下文节点，占用os内存4kb。区域信息上下文在创建区域时动态分配。
--   如果是overlay或者是overlayex类型的区域，还会创建乒乓buff用于存放位图数据。
--   rgn\_pin\_pon\_\(%d\)：乒乓buff的大小由用户设置的width，height，canvas\_num和颜色格式决定，占用MMZ内存。
-
-**通道管理信息节点<a name="section16571145662413"></a>**
-
-其他模块调用REGION的函数向REGION注册信息时动态分配，占用MMZ内存。
-
-## TDE<a name="ZH-CN_TOPIC_0000002457839825"></a>
-
-通道使用MMZ，为固定值总大小：\(OT\_TDE\_CMD\_NUM\) \* 64 + \(OT\_TDE\_JOB\_NUM\) \* 96 + \(OT\_TDE\_NODE\_NUM\) \* 256 +\(OT\_TDE\_FILTER\_NUM\) \* 1024。
-
-## SVP<a name="ZH-CN_TOPIC_0000002457839801"></a>
-
-**SVP\_NNN<a name="section14631148142915"></a>**
-
-SVP\_NNN内存占用分为MMZ内存和os内存，其中MMZ内存包括任务节点和推理内容内存。
-
--   节点MMZ占用：
-
-    内核态节点的大小，默认值100KB；
-
-    用户态节点的大小，默认值80KB。
-
--   推理MMZ占用（Resnet50 Batch 1典型场景）：
-
-    OM内存大小，值50828KB；
-
-    输入输出数据内存大小，值8596KB；
-
-    模型信息内存大小，值12KB。
-
--   OS内存占用：
-
-    OS内存主要包括两部分：静态全局变量的内存，大小大约5.6KB；动态内存，大小大约0.594KB。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >Hi3519AV200不支持SVP\_NNN模块。
-
-**IVE<a name="section8594155332913"></a>**
-
-IVE内存占用分为MMZ内存和os内存，其中MMZ内存包括任务链表和辅助内存。
-
--   任务链表MMZ占用：
-
-    ive\_queue: IVE任务链表的大小，默认为212KB。
-
--   辅助MMZ内存占用：
-    -   ive\_tmp\_node: IVE的多算子组合任务需要的临时节点，固定值4KB。
-    -   Md\_proc: MDproc信息需要的MMZ内存，固定值8KB。
-    -   ive\_resize\_param: resize算子计算需要的辅助内存，固定值9264Byte.
-    -   ive\_yuv\_to\_hsv\_table: ive颜色空间转换存放table的辅助内存，固定值2048Byte
-    -   ive\_yuv\_to\_lab\_table: ive颜色空间转化存放table的辅助内存，固定值6656Byte
-
--   OS内存占用：
-
-    ive占用的OS内存主要分为kmalloc开辟的内存和静态全局变量占用内存，OS内存加mmz内存不超过235KB。
-
-**KCF<a name="section1226215919298"></a>**
-
-KCF内存占用分为MMZ内存和OS内存，其中MMZ内存包括任务链表和辅助内存。
-
--   任务链表MMZ占用：
-
-    kcf\_queue: KCF任务链表的大小，固定值106688Byte。
-
--   辅助MMZ内存占用：
-
-    kcf\_param: KCF计算需要的辅助内存，固定值45328Byte。
-
--   OS内存占用：
-
-    KCF占用的OS内存主要分为kmalloc开辟的内存和静态全局变量占用内存，OS内存加mmz内存不超过150KB。
-
-**MAU<a name="section4581452303"></a>**
-
-MAU内存主要分为MMZ内存和OS内存，其中MMZ内存为任务链表的内存。
-
--   任务链表占用：
-
-    svp\_mau\_queue: MAU任务链表的大小，默认160KB。
-
--   OS内存占用：
-
-    MAU 占用的os内存主要有mem\_info链表内存使用os内存，mem\_info链表内存占用\(40 \* mau\_max\_mem\_info\_num\)Byte，以及mau上下文的静态全局变量占用的内存。os内存加mmz内存总共不超过163KB。
-
-## PCIV<a name="ZH-CN_TOPIC_0000002457839793"></a>
-
-PCIV MMZ占用分为pcie-mcc消息池占用、window占用、VB轮转占用。
-
--   pcie-mcc消息池占用：
-
-    用于pcie-mcc消息通信，在加载从片pcie驱动时指定位置与大小，大小固定为1M。
-
--   window占用：
-
-    主片发起DMA操作时，从片空间只能在窗口上读写，加载osal驱动时指定mmz名为window，默认大小7M，起始位置紧跟pcie-mcc消息池之后\(pcie-mcc消息池+window连续空间最大8M\)。
-
--   VB轮转占用：
-    -   主片轮转VB：VB大小和个数由用户配置，大小必须保证能接收完整图像，一般根据通道属性中的图像宽高，格式属性等确定；分配释放由用户调用接口控制；接收从片图像时，轮转VB往后传，通过查询后端占用情况决定是否接收下一次轮转。
-    -   从片轮转VB：从片接收前端图像，如果是VPSS使用auto模式送帧，则由pciv获取VB，其他模式则接受图像时占用VB；直通模式\(PCIV透传\)则DMA发送完成释放VB;非直通模式\(OSD、缩放等操作\)，需要获取VGS写出VB，并释放接收图像VB，DMA发送完成后，释放VGS写出VB。
-
-## GDC<a name="ZH-CN_TOPIC_0000002424361082"></a>
-
-GDC模块根据job、node、task数目，分配固定的MMZ内存。
-
--   vmallocinfo:根据job、task数目及上下文占用OS内存。数目越多占用越大。
--   gdc\_node\_buf:根据node数目，占用一定大小的MMZ内存。数目越多占用越大。
--   gdc\_int\_pole\_coef:存储插值系数需要的MMZ内存，固定值4KB。
-
-## CIPHER<a name="ZH-CN_TOPIC_0000002457879957"></a>
-
-固定大小（驱动内部确定申请的MMZ内存的长度）
-
--   Hash初始化：给SHA节点链表分配内存，固定值28 \*255\* 1=7KB；255作为链表最大深度，最小深度为2；HASH消息的DMA内存：逻辑只识别物理内存，需要申请最大的64KB物理内存存储hash消息。
--   Cipher驱动模块初始化：给CIPHER节点链表分配内存entry list size（20KB），用来存放16个通道每个通道CCM GCM aad的物理内存padding buffer（2KB），固定值22KB。
-
-非固定大小（由用户层接口传入的MMZ内存申请的长度）。
-
-cipher加解密：依赖虚拟地址/物理地址加解密接口的参数byte\_len。
-
-## DCC<a name="ZH-CN_TOPIC_0000002424361058"></a>
-
-dcc\_msg\_buf：SS626V100使用，用于双核通信任务。
-
-## VDA<a name="ZH-CN_TOPIC_0000002457879965"></a>
-
-vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果内存、RGN运动区域信息内存和背景。
-
-## ISP<a name="ZH-CN_TOPIC_0000002457839813"></a>
-
--   isp\[%d\].vreg\[%d\]：外部虚拟寄存器内存。
--   isp\[%d\].proc：用户态算法proc调试信息。
--   isp\[%d\].trans：dng, dcf, colorgammut等信息内存。
--   isp\[%d\].ldci：ldci算法内存。
--   isp\[%d\].clut：clut算法内存。
--   be\_lut\_stt\[%d\]：be lut信息内存。
--   pre\_on\_lut\_stt\[%d\]：在线通路ADVANCED模式be lut信息内存。
--   isp\[%d\].stat：统计信息（FE,BE）内存。
--   isp\[%d\].fe\_stat：FE统计信息内存。
--   isp\[%d\].wdr：wdr算法内存。
--   isp\[%d\].drc：drc算法内存。
--   isp\[%d\].be\_cfg：离线通路be config buffer。
--   isp\[%d\].be\_stt\_on：在线通路be统计信息内存。
--   isp\[%d\].fe\_stt：fe统计信息内存。
--   isp\[%d\].be\_stt：离线通路be统计信息内存。
--   isp\[%d\].stit\_fe：拼接通路fe统计信息内存。
--   isp\[%d\].stit\_be：拼接通路be统计信息内存。
-
-## HNR<a name="ZH-CN_TOPIC_0000002424201214"></a>
-
--   hnr\_pqp\_buf\[%d\]：hnr模型文件内存。
--   hnr\_ping\_pong\_buf：hnr模型推理使用的工作内存。
-
-    开启HNR功能参考帧模式需要多占用4\~6个视频帧VB，无参考帧模式需要多占用1个视频帧VB。
-
-# 各模块内存相关可优化配置
-## VB<a name="ZH-CN_TOPIC_0000002424201202"></a>
-
-<a name="table626mcpsimp"></a>
+</table> # 综述
+DDR小型化可以从多个方向入手：uboot、kernel、filesys、SDK、APP都可以在内存使用上做一定程度的优化。本文主要是对SDK和APP的小型化进行简单的说明。 基于 的SDK目前支持运行Linux和liteos双系统或单linux系统，如业务场景只需运行单linux系统，可参考《内存布局调整指南》3.2章节裁剪liteos系统相关MMZ占用。本文中默认以Linux和liteos双系统为基础进行描述。的系统小型化基于DEMO单板实现，以容量为2G Bytes的DDR内存为例。 **图 1** DEMO板中Linux系统内存分配图（仅供参考）<a name="fig58516719710"></a> ![](figures/DEMO板中Linux系统内存分配图（仅供参考）.png "DEMO板中Linux系统内存分配图（仅供参考）") 其中基于典型场景业务的MMZ内存占用数据，请参考《 Memory Usage Statistics Report》。此外，客户业务的具体内存占用，需结合具体场景进行分析，下文介绍各模块MMZ内存占用及小型化可优化手段。 # 主要模块工作占用MMZ情况
+一般业务中MMZ的占用往往是内存消耗的很大一部分，本章节主要介绍一般业务场景中几个主要模块工作时占用MMZ的情况。 ## VI<a name="ZH-CN_TOPIC_0000002424361046"></a> VI采集状态下最多会占用三个视频帧VB。一个用于当前帧采集，一个用于准备给下一帧采集，一个在轮转流程中（主要是后级模块占用）。 Hi3403V100中 MMZ占用： - vi\(%d\)\_model\_%d：每路pipe需占用两个一定大小模板MMZ内存，大小与通路宽度相关，宽度小于等于4096时大小为16KB。
+- vi\(%d\)\_lmf：每路pipe开启LMF功能时占用MMZ内存，用于存放LMF的系数，固定值4K。
+- vi\(%d\)\_bnr\_mot：每路pipe开启Bayer NR功能时需要占用的motion buffer内存，大小由处理图像大小的宽高决定。
+- vi\(0\)\_bnr\_rnt：每路pipe开启Bayer NR功能时需要占用的rnt内存，大小由处理图像大小的宽高决定；离线时个数由ss\_mpi\_vi\_set\_pipe\_bnr\_buf\_num。
+- 接口设置，默认为40块。
+- vi\(0\)\_bnr\_ref%d：每路pipe开启Bayer NR功能时需要占用的时域参考内存，大小由处理图像大小的宽高决定。 ## VDEC<a name="ZH-CN_TOPIC_0000002424201210"></a> VDEC MMZ占用分为buffer占用、轮转占用和设备占用。 **Buffer占用<a name="section389732110912"></a>** - vfmw\(%d\)\_usd\_buf：用户数据Buffer内存，大小根据用户指定的进行分配。
+- vdec\(%d\)\_adp\_ref：用于存储通道使用vb的相关信息。
+- vdec\(%d\)\_adp\_event：用于存储解码过程中产生的event信息。
+- vfmw\(%d\)\_shr\_img：用于存储解码出图像的相关信息。
+- vdec\_adp\_proc：用于存储mdc侧vdec产生的proc信息。
+- vfmw\_mdc\_shr：用于存储mdc侧vfmw产生的proc信息。 **设备占用<a name="section172822554102"></a>** - vfmw\(%d\)\_seg\_buf：SCD切码流后存放内存，与分辨率相关，与协议无关。
+- vfmw\_scd\_msg：SCD逻辑工作时需要的内存，固定值为44Kbytes。
+- vfmw\_mdma\_msg：VDH逻辑工作时需要的内存，固定值44KBytes。 **轮转占用<a name="section32020161117"></a>** - vdec\(%d\)\_pic\_vb：vb大小和个数都由用户配置。私有vb模式下，大小根据用户配置通道属性中frame\_buf\_size确定，个数根据用户配置通道属性中frame\_buf\_cnt确定。
+- vdec\(%d\)\_tmv\_vb：vb大小和个数都由用户配置。私有vb模式下，大小根据用户配置通道属性中tmv\_buf\_size确定，个数为 “参考帧+1”，其中参考帧个数根据用户配置通道属性中ref\_frame\_num确定。 ## VPSS<a name="ZH-CN_TOPIC_0000002457879933"></a> - vb\_pool: Group占用两块VB \(前级模块送来：当前工作VB+Backup 帧\)，每个使能通道会获取通道大小的VB（通道模式为Auto时，为后端模块获取），硬件处理完成后会发送到后端绑定模块。如果需要做旋转/二级缩放功能，还需申请中间的临时VB（公共VB）。
+- vpss\(%d\)\_src：每组需占用亮度和MMZ内存资源，约4K大小。
+- vpss\(%d\)\_dci：每组开启DCI功能时占用MMZ内存，约4K大小。
+- vpss\(%d\)\_model：每组需占用一定大小模板MMZ内存。大小与模块参数中的split\_node\_num以及组的max\_width有关。split\_node\_num和max\_width越大，占用大小越大。
+- vpss\(%d\)\_lmf：每组开启LMF功能时占用MMZ内存，用于存放LMF的系数，固定值4K。
+- vpss\(%d\)\_rgn\_luma：每组开启通道亮度和功能时占用MMZ内存，用于存放亮度和统计信息，固定值4K。
+- vmallocinfo：每组上下文需占用一定大小OS内存。总大小与组数量相关，组越多占用越大。 ## VGS<a name="ZH-CN_TOPIC_0000002457879973"></a> VGS模块根据job、node、task数目，分配固定的MMZ内存。 - vmallocinfo:根据job、task数目及上下文占用OS内存。数目越多占用越大。
+- vgs\_node\_buf:根据node数目，占用一定大小的MMZ内存。数目越多占用越大。 ## VENC<a name="ZH-CN_TOPIC_0000002457879945"></a> - 硬件相关： vedu\_hal\_\(%d\)：硬件需要使用的内存，与IP个数相关。 - 通道相关内存（以H264为例，H265则前缀为h265e）： - h264e\(%d\)\_node：寄存器节点配置内存，每个通道一块。 - h264e\(%d\)\_str0：码流buffer，每个通道一块。 - h264e\(%d\)\_rcn\(%d\)：参考帧重构帧内存，个数与编码参考帧个数相关。 - h264e\(%d\)\_info\(%d\)：参考帧重构帧信息内存，个数与编码参考帧个数相关。 - h264e\(%d\)\_deblur：通过ss\_mpi\_venc\_set\_deblur 使能去模糊后，需要相应去模糊处理内存。 - h264e\(%d\)\_md：通过ss\_mpi\_venc\_set\_md使能MD检测，需要相应的MD检测内存。 - venc\(%d\)\_svc：通过ss\_mpi\_venc\_enable\_svc使能SVC，需要相应的SVC内存。 - jpege\(%d\)\_stm：jpege码流buffer，每个通道一块。 - jpege\(%d\)\_roi\_map：通过ss\_mpi\_venc\_set\_jpeg\_roi\_attr使能roi\_map，为jpege的roi\_map分配内存。 - vmallocinfo：各个通道的通道上下文内存；UserData数据；码率控制相关内存。 ## VO<a name="ZH-CN_TOPIC_0000002424201194"></a> VO MMZ占用分为系数MMZ占用、获取亮度和MMZ占用，VB轮转MMZ占用。 - 系数MMZ占用： vo\_coef\_buf：回写缩放系数\(128KB\)和多区域配置系数\(8KB\)的内存存放占用, 共计136KB。如果芯片不支持回写缩放，则不会申请对应系数，一个多区域占用4KB内存，两个多区域占用8KB. - 获取亮度和MMZ占用： vo\(%d,%d\)\_luma：VO模块获取视频层和通道亮度和时动态申请MMZ内存占用，某个通道固定占用4KB。如果芯片不支持获取亮度和，则不申请此内存。 - VB轮转MMZ占用： vo\(%d\)\_disp\_buf：vb大小和个数都由用户配置。大小根据用户配置视频层属性img\_size确定，个数根据用户配置视频层属性中display\_buf\_len确定。Single模式下VO会占用3块私有VB用来显示轮转。 Multi模式下，如果前端绑定VPSS为auto模式，VO会占用4块私有VB用来显示轮转；如果前端为User模式，VO可以不分配VB，此时占用前端模块发送过来的VB，显示完后释放。 ## GFBG<a name="ZH-CN_TOPIC_0000002457839817"></a> 加载ko时，用户指定图形层、鼠标层的显示buf大小。支持的图层均可指定，图层id号与vram id号需保证匹配。 例如：insmod gfbg.ko video="gfbg:vram0\_size:32400,vram1\_size:32400,vram2\_size:256,vram3\_size:4052". - vram0\_size: 对应gfbg0图形层内存大小，单位KB，对应mmz name= gfbg\_layer0。
+- vram1\_size: 对应gfbg1图形层内存大小，单位KB，对应mmz name= gfbg\_layer1。
+- vram2\_size: 对应gfbg2图形层内存大小，单位KB，对应mmz name= gfbg\_layer2。
+- vram3\_size: 对应gfbg3图形层内存大小，单位KB，对应mmz name= gfbg\_layer3。 ## AUDIO<a name="ZH-CN_TOPIC_0000002424201218"></a> **AI<a name="section1478714716237"></a>** - ai\(%d\)\_frm：AI的通道buffer根据chn\_cnt、frame\_num和point\_num\_per\_frame分配。
+- ai\(%d\)\_dma：AI的DMA缓冲区根据chn\_cnt和point\_num\_per\_frame分配。 **AO<a name="section20436157192318"></a>** - ao\(%d\)\_dma&frm：AO的DMA缓冲区和通道buffer根据chn\_cnt、frame\_num和point\_num\_per\_frame分配。
+- ao\(%d, %d\)\_cir：音频帧buffer根据frame\_num和point\_num\_per\_frame分配。 **AENC<a name="section339816212241"></a>** - aenc\(%d\)\_strm：码流buffer根据buf\_size分配。
+- aenc\(%d\)\_cir：环形缓冲区根据编码通道数分配。 ## REGION<a name="ZH-CN_TOPIC_0000002457879941"></a> **区域信息上下文节点<a name="section15813751132413"></a>** 去掉不必要的模块可以减少内存的占用，如： - 模块加载时分配的1024个区域信息上下文节点，占用os内存4kb。区域信息上下文在创建区域时动态分配。
+- 如果是overlay或者是overlayex类型的区域，还会创建乒乓buff用于存放位图数据。
+- rgn\_pin\_pon\_\(%d\)：乒乓buff的大小由用户设置的width，height，canvas\_num和颜色格式决定，占用MMZ内存。 **通道管理信息节点<a name="section16571145662413"></a>** 其他模块调用REGION的函数向REGION注册信息时动态分配，占用MMZ内存。 ## TDE<a name="ZH-CN_TOPIC_0000002457839825"></a> 通道使用MMZ，为固定值总大小：\(OT\_TDE\_CMD\_NUM\) \* 64 + \(OT\_TDE\_JOB\_NUM\) \* 96 + \(OT\_TDE\_NODE\_NUM\) \* 256 +\(OT\_TDE\_FILTER\_NUM\) \* 1024。 ## SVP<a name="ZH-CN_TOPIC_0000002457839801"></a> **SVP\_NNN<a name="section14631148142915"></a>** SVP\_NNN内存占用分为MMZ内存和os内存，其中MMZ内存包括任务节点和推理内容内存。 - 节点MMZ占用： 内核态节点的大小，默认值100KB； 用户态节点的大小，默认值80KB。 - 推理MMZ占用（Resnet50 Batch 1典型场景）： OM内存大小，值50828KB； 输入输出数据内存大小，值8596KB； 模型信息内存大小，值12KB。 - OS内存占用： OS内存主要包括两部分：静态全局变量的内存，大小大约5.6KB；动态内存，大小大约0.594KB。 >![](public_sys-resources/icon-note.gif) **说明：** **IVE<a name="section8594155332913"></a>** IVE内存占用分为MMZ内存和os内存，其中MMZ内存包括任务链表和辅助内存。 - 任务链表MMZ占用： ive\_queue: IVE任务链表的大小，默认为212KB。 - 辅助MMZ内存占用： - ive\_tmp\_node: IVE的多算子组合任务需要的临时节点，固定值4KB。 - Md\_proc: MDproc信息需要的MMZ内存，固定值8KB。 - ive\_resize\_param: resize算子计算需要的辅助内存，固定值9264Byte. - ive\_yuv\_to\_hsv\_table: ive颜色空间转换存放table的辅助内存，固定值2048Byte - ive\_yuv\_to\_lab\_table: ive颜色空间转化存放table的辅助内存，固定值6656Byte - OS内存占用： ive占用的OS内存主要分为kmalloc开辟的内存和静态全局变量占用内存，OS内存加mmz内存不超过235KB。 **KCF<a name="section1226215919298"></a>** KCF内存占用分为MMZ内存和OS内存，其中MMZ内存包括任务链表和辅助内存。 - 任务链表MMZ占用： kcf\_queue: KCF任务链表的大小，固定值106688Byte。 - 辅助MMZ内存占用： kcf\_param: KCF计算需要的辅助内存，固定值45328Byte。 - OS内存占用： KCF占用的OS内存主要分为kmalloc开辟的内存和静态全局变量占用内存，OS内存加mmz内存不超过150KB。 **MAU<a name="section4581452303"></a>** MAU内存主要分为MMZ内存和OS内存，其中MMZ内存为任务链表的内存。 - 任务链表占用： svp\_mau\_queue: MAU任务链表的大小，默认160KB。 - OS内存占用： MAU 占用的os内存主要有mem\_info链表内存使用os内存，mem\_info链表内存占用\(40 \* mau\_max\_mem\_info\_num\)Byte，以及mau上下文的静态全局变量占用的内存。os内存加mmz内存总共不超过163KB。 ## PCIV<a name="ZH-CN_TOPIC_0000002457839793"></a> PCIV MMZ占用分为pcie-mcc消息池占用、window占用、VB轮转占用。 - pcie-mcc消息池占用： 用于pcie-mcc消息通信，在加载从片pcie驱动时指定位置与大小，大小固定为1M。 - window占用： 主片发起DMA操作时，从片空间只能在窗口上读写，加载osal驱动时指定mmz名为window，默认大小7M，起始位置紧跟pcie-mcc消息池之后\(pcie-mcc消息池+window连续空间最大8M\)。 - VB轮转占用： - 主片轮转VB：VB大小和个数由用户配置，大小必须保证能接收完整图像，一般根据通道属性中的图像宽高，格式属性等确定；分配释放由用户调用接口控制；接收从片图像时，轮转VB往后传，通过查询后端占用情况决定是否接收下一次轮转。 - 从片轮转VB：从片接收前端图像，如果是VPSS使用auto模式送帧，则由pciv获取VB，其他模式则接受图像时占用VB；直通模式\(PCIV透传\)则DMA发送完成释放VB;非直通模式\(OSD、缩放等操作\)，需要获取VGS写出VB，并释放接收图像VB，DMA发送完成后，释放VGS写出VB。 ## GDC<a name="ZH-CN_TOPIC_0000002424361082"></a> GDC模块根据job、node、task数目，分配固定的MMZ内存。 - vmallocinfo:根据job、task数目及上下文占用OS内存。数目越多占用越大。
+- gdc\_node\_buf:根据node数目，占用一定大小的MMZ内存。数目越多占用越大。
+- gdc\_int\_pole\_coef:存储插值系数需要的MMZ内存，固定值4KB。 ## CIPHER<a name="ZH-CN_TOPIC_0000002457879957"></a> 固定大小（驱动内部确定申请的MMZ内存的长度） - Hash初始化：给SHA节点链表分配内存，固定值28 \*255\* 1=7KB；255作为链表最大深度，最小深度为2；HASH消息的DMA内存：逻辑只识别物理内存，需要申请最大的64KB物理内存存储hash消息。
+- Cipher驱动模块初始化：给CIPHER节点链表分配内存entry list size（20KB），用来存放16个通道每个通道CCM GCM aad的物理内存padding buffer（2KB），固定值22KB。 非固定大小（由用户层接口传入的MMZ内存申请的长度）。 cipher加解密：依赖虚拟地址/物理地址加解密接口的参数byte\_len。 ## DCC<a name="ZH-CN_TOPIC_0000002424361058"></a> dcc\_msg\_buf：使用，用于双核通信任务。 ## VDA<a name="ZH-CN_TOPIC_0000002457879965"></a> vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果内存、RGN运动区域信息内存和背景。 ## ISP<a name="ZH-CN_TOPIC_0000002457839813"></a> - isp\[%d\].vreg\[%d\]：外部虚拟寄存器内存。
+- isp\[%d\].proc：用户态算法proc调试信息。
+- isp\[%d\].trans：dng, dcf, colorgammut等信息内存。
+- isp\[%d\].ldci：ldci算法内存。
+- isp\[%d\].clut：clut算法内存。
+- be\_lut\_stt\[%d\]：be lut信息内存。
+- pre\_on\_lut\_stt\[%d\]：在线通路ADVANCED模式be lut信息内存。
+- isp\[%d\].stat：统计信息（FE,BE）内存。
+- isp\[%d\].fe\_stat：FE统计信息内存。
+- isp\[%d\].wdr：wdr算法内存。
+- isp\[%d\].drc：drc算法内存。
+- isp\[%d\].be\_cfg：离线通路be config buffer。
+- isp\[%d\].be\_stt\_on：在线通路be统计信息内存。
+- isp\[%d\].fe\_stt：fe统计信息内存。
+- isp\[%d\].be\_stt：离线通路be统计信息内存。
+- isp\[%d\].stit\_fe：拼接通路fe统计信息内存。
+- isp\[%d\].stit\_be：拼接通路be统计信息内存。 ## HNR<a name="ZH-CN_TOPIC_0000002424201214"></a> - hnr\_pqp\_buf\[%d\]：hnr模型文件内存。
+- hnr\_ping\_pong\_buf：hnr模型推理使用的工作内存。 开启HNR功能参考帧模式需要多占用4\~6个视频帧VB，无参考帧模式需要多占用1个视频帧VB。 # 各模块内存相关可优化配置
+## VB<a name="ZH-CN_TOPIC_0000002424201202"></a> <a name="table626mcpsimp"></a>
 <table><thead align="left"><tr id="row635mcpsimp"><th class="cellrowborder" valign="top" width="10.80897348742352%" id="mcps1.1.7.1.1"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.197436146450421%" id="mcps1.1.7.1.2"><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>相关模块参数/接口</p>
@@ -430,11 +134,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 </tr>
 </tbody>
-</table>
-
-## SYS<a name="ZH-CN_TOPIC_0000002457879949"></a>
-
-<a name="table626mcpsimp"></a>
+</table> ## SYS<a name="ZH-CN_TOPIC_0000002457879949"></a> <a name="table626mcpsimp"></a>
 <table><thead align="left"><tr id="row635mcpsimp"><th class="cellrowborder" valign="top" width="16.6016601660166%" id="mcps1.1.7.1.1"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.56165616561656%" id="mcps1.1.7.1.2"><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>相关模块参数/接口</p>
@@ -470,7 +170,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="5.5205520552055205%" headers="mcps1.1.7.1.4 "><p id="p15930184513162"><a name="p15930184513162"></a><a name="p15930184513162"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul5953174413428"></a><a name="ul5953174413428"></a><ul id="ul5953174413428"><li>在插入xx_base.ko时设置模块参数g_mdc_log_enable=0</li><li>SS626V100 支持</li></ul>
+<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul5953174413428"></a><a name="ul5953174413428"></a><ul id="ul5953174413428"><li>在插入xx_base.ko时设置模块参数g_mdc_log_enable=0</li><li> 支持</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="8.85088508850885%" headers="mcps1.1.7.1.6 "><p id="p1592917457166"><a name="p1592917457166"></a><a name="p1592917457166"></a>-</p>
 </td>
@@ -483,17 +183,13 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 <td class="cellrowborder" valign="top" width="5.5205520552055205%" headers="mcps1.1.7.1.4 "><p id="p2819188142613"><a name="p2819188142613"></a><a name="p2819188142613"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul07781240164419"></a><a name="ul07781240164419"></a><ul id="ul07781240164419"><li>参考文档《内存布局调整指南》</li><li>ss_mpi_vdec_set_chn_config：deployment_mode设置为OT_VDEC_DEPLOYMENT_MODE0</li><li>SS626V100 支持</li></ul>
+<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul07781240164419"></a><a name="ul07781240164419"></a><ul id="ul07781240164419"><li>参考文档《内存布局调整指南》</li><li>ss_mpi_vdec_set_chn_config：deployment_mode设置为OT_VDEC_DEPLOYMENT_MODE0</li><li> 支持</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="8.85088508850885%" headers="mcps1.1.7.1.6 "><p id="p179233459165"><a name="p179233459165"></a><a name="p179233459165"></a>-</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## VI<a name="ZH-CN_TOPIC_0000002457879929"></a>
-
-<a name="table131881116404"></a>
+</table> ## VI<a name="ZH-CN_TOPIC_0000002457879929"></a> <a name="table131881116404"></a>
 <table><thead align="left"><tr id="row1118913161008"><th class="cellrowborder" valign="top" width="17.39%" id="mcps1.1.7.1.1"><p id="p171891516307"><a name="p171891516307"></a><a name="p171891516307"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.259999999999998%" id="mcps1.1.7.1.2"><p id="p181891616508"><a name="p181891616508"></a><a name="p181891616508"></a>相关接口</p>
@@ -618,11 +314,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 </tr>
 </tbody>
-</table>
-
-## VDEC<a name="ZH-CN_TOPIC_0000002457839809"></a>
-
-<a name="table626mcpsimp"></a>
+</table> ## VDEC<a name="ZH-CN_TOPIC_0000002457839809"></a> <a name="table626mcpsimp"></a>
 <table><thead align="left"><tr id="row635mcpsimp"><th class="cellrowborder" valign="top" width="15.521552155215524%" id="mcps1.1.7.1.1"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="19.061906190619062%" id="mcps1.1.7.1.2"><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>相关模块参数/接口</p>
@@ -722,7 +414,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </tr>
 <tr id="row701mcpsimp"><td class="cellrowborder" valign="top" width="15.521552155215524%" headers="mcps1.1.7.1.1 "><p id="p703mcpsimp"><a name="p703mcpsimp"></a><a name="p703mcpsimp"></a>解码模块最大支持的通道数</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.061906190619062%" headers="mcps1.1.7.1.2 "><p id="p705mcpsimp"><a name="p705mcpsimp"></a><a name="p705mcpsimp"></a>g_vdec_max_chn_num  g_vfmw_max_chn_num</p>
+<td class="cellrowborder" valign="top" width="19.061906190619062%" headers="mcps1.1.7.1.2 "><p id="p705mcpsimp"><a name="p705mcpsimp"></a><a name="p705mcpsimp"></a>g_vdec_max_chn_num g_vfmw_max_chn_num</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.851785178517854%" headers="mcps1.1.7.1.3 "><p id="p707mcpsimp"><a name="p707mcpsimp"></a><a name="p707mcpsimp"></a>可节省部分OS内存</p>
 </td>
@@ -777,14 +469,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->具体参见《MPP媒体处理软件V5.0开发参考》"视频解码”章节。
-
-## VPSS<a name="ZH-CN_TOPIC_0000002424201190"></a>
-
-<a name="table451mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >具体参见《MPP媒体处理软件V5.0开发参考》"视频解码”章节。 ## VPSS<a name="ZH-CN_TOPIC_0000002424201190"></a> <a name="table451mcpsimp"></a>
 <table><thead align="left"><tr id="row460mcpsimp"><th class="cellrowborder" valign="top" width="11.111111111111112%" id="mcps1.1.7.1.1"><p id="p462mcpsimp"><a name="p462mcpsimp"></a><a name="p462mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.842184218421842%" id="mcps1.1.7.1.2"><p id="p464mcpsimp"><a name="p464mcpsimp"></a><a name="p464mcpsimp"></a>相关模块参数/接口</p>
@@ -866,14 +551,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->具体使用方法及限制参见《MPP媒体处理软件V5.0开发参考》“视频处理子系统”章节。
-
-## VGS<a name="ZH-CN_TOPIC_0000002424361078"></a>
-
-<a name="table830mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >具体使用方法及限制参见《MPP媒体处理软件V5.0开发参考》“视频处理子系统”章节。 ## VGS<a name="ZH-CN_TOPIC_0000002424361078"></a> <a name="table830mcpsimp"></a>
 <table><thead align="left"><tr id="row839mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.7.1.1"><p id="p841mcpsimp"><a name="p841mcpsimp"></a><a name="p841mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="18%" id="mcps1.1.7.1.2"><p id="p843mcpsimp"><a name="p843mcpsimp"></a><a name="p843mcpsimp"></a>相关模块参数</p>
@@ -928,16 +606,7 @@ vda\(%d\)：通道内部计算结果存储相关内存，主要包括SAD结果�
 </td>
 </tr>
 </tbody>
-</table>
-
-VGS模块主要是OS内存和node用的mmz。考虑场景的减小最大job数、最大task数和最大node数可以降低些OS占用内存以及node占用的MMZ内存。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->具体使用方法及限制参见《MPP媒体处理软件V5.0开发参考》“视频图形子系统”章节。
-
-## VENC<a name="ZH-CN_TOPIC_0000002424361070"></a>
-
-<a name="table97611421161513"></a>
+</table> VGS模块主要是OS内存和node用的mmz。考虑场景的减小最大job数、最大task数和最大node数可以降低些OS占用内存以及node占用的MMZ内存。 >![](public_sys-resources/icon-note.gif) **说明：** >具体使用方法及限制参见《MPP媒体处理软件V5.0开发参考》“视频图形子系统”章节。 ## VENC<a name="ZH-CN_TOPIC_0000002424361070"></a> <a name="table97611421161513"></a>
 <table><thead align="left"><tr id="row127617214151"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.7.1.1"><p id="p117611621171511"><a name="p117611621171511"></a><a name="p117611621171511"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.7.1.2"><p id="p1676192171517"><a name="p1676192171517"></a><a name="p1676192171517"></a>相关模块参数/接口</p>
@@ -1045,14 +714,7 @@ VGS模块主要是OS内存和node用的mmz。考虑场景的减小最大job数�
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->具体参见《MPP媒体处理软件V5.0开发参考》"视频编码”章节。
-
-## VO<a name="ZH-CN_TOPIC_0000002424361042"></a>
-
-<a name="table16803153016127"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >具体参见《MPP媒体处理软件V5.0开发参考》"视频编码”章节。 ## VO<a name="ZH-CN_TOPIC_0000002424361042"></a> <a name="table16803153016127"></a>
 <table><thead align="left"><tr id="row4803153012125"><th class="cellrowborder" valign="top" width="13.171317131713172%" id="mcps1.1.7.1.1"><p id="p98031130121217"><a name="p98031130121217"></a><a name="p98031130121217"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="22.472247224722473%" id="mcps1.1.7.1.2"><p id="p8803173016125"><a name="p8803173016125"></a><a name="p8803173016125"></a>相关接口</p>
@@ -1114,7 +776,7 @@ VGS模块主要是OS内存和node用的mmz。考虑场景的减小最大job数�
 </td>
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.1.7.1.4 "><p id="p580573021218"><a name="p580573021218"></a><a name="p580573021218"></a>聚集模式VO不支持缩放</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p580583071220"><a name="p580583071220"></a><a name="p580583071220"></a>SS626V100支持</p>
+<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p580583071220"><a name="p580583071220"></a><a name="p580583071220"></a>支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.382338233823383%" headers="mcps1.1.7.1.6 "><a name="ul58051130111211"></a><a name="ul58051130111211"></a><ul id="ul58051130111211"><li>vo video layer status 2：cluster_mode_en</li><li>vo chn basic info：disp_x disp_y</li></ul>
 </td>
@@ -1127,7 +789,7 @@ VGS模块主要是OS内存和node用的mmz。考虑场景的减小最大job数�
 </td>
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.1.7.1.4 "><p id="p19805143091213"><a name="p19805143091213"></a><a name="p19805143091213"></a>减少了一块用于显示的buffer</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p198051630101210"><a name="p198051630101210"></a><a name="p198051630101210"></a>SS626V100支持</p>
+<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p198051630101210"><a name="p198051630101210"></a><a name="p198051630101210"></a>支持</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.382338233823383%" headers="mcps1.1.7.1.6 "><a name="ul7805230171213"></a><a name="ul7805230171213"></a><ul id="ul7805230171213"><li>vo video layer status 2：disp_buf_len</li><li>vo interface status:<a name="ul7805103031214"></a><a name="ul7805103031214"></a><ul id="ul7805103031214"><li>vtth less_buf_enable</li><li>less_buf_vtth</li></ul>
 </li></ul>
@@ -1148,34 +810,11 @@ VGS模块主要是OS内存和node用的mmz。考虑场景的减小最大job数�
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->具体参见《MPP媒体处理软件V5.0开发参考》"视频输出”章节。
-
-## GFBG<a name="ZH-CN_TOPIC_0000002457839797"></a>
-
-加载ko时，叠加图形层的显存大小根据像素格式、分辨率大小、buf模式算出，用户可以根据实际使用场景来得出需要的显存大小。
-
-非压缩：按实际UI大小，像素格式，单双BUF计算分配：
-
-例：1080P argb8888 双buf模式，
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >具体参见《MPP媒体处理软件V5.0开发参考》"视频输出”章节。 ## GFBG<a name="ZH-CN_TOPIC_0000002457839797"></a> 加载ko时，叠加图形层的显存大小根据像素格式、分辨率大小、buf模式算出，用户可以根据实际使用场景来得出需要的显存大小。 非压缩：按实际UI大小，像素格式，单双BUF计算分配： 例：1080P argb8888 双buf模式， ```
 buf_size = 1920 * 4 * 1080 * 2 / 1024 = 16200KB
-```
-
-压缩：argb8888像素格式，宽\>=320的情况下，相对于非压缩情况可节省内存45%：
-
-例：1080P argb8888 双buf模式，
-
-```
+``` 压缩：argb8888像素格式，宽\>=320的情况下，相对于非压缩情况可节省内存45%： 例：1080P argb8888 双buf模式， ```
 buf_size = （1920 * 4 * 1080 * 2 / 1024）* 55% = 8910KB
-```
-
-SS626V100在线画框可节省G3的MMZ内存, 若仅G3用作在线画框时可以不分配G3的MMZ。 G4用作在线画框时也一样。
-
-<a name="table950mcpsimp"></a>
+``` 在线画框可节省G3的MMZ内存, 若仅G3用作在线画框时可以不分配G3的MMZ。 G4用作在线画框时也一样。 <a name="table950mcpsimp"></a>
 <table><thead align="left"><tr id="row959mcpsimp"><th class="cellrowborder" valign="top" width="13%" id="mcps1.1.7.1.1"><p id="p961mcpsimp"><a name="p961mcpsimp"></a><a name="p961mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="19.63%" id="mcps1.1.7.1.2"><p id="p963mcpsimp"><a name="p963mcpsimp"></a><a name="p963mcpsimp"></a>相关模块参数/接口</p>
@@ -1224,17 +863,13 @@ SS626V100在线画框可节省G3的MMZ内存, 若仅G3用作在线画框时可�
 </td>
 <td class="cellrowborder" valign="top" width="16.76%" headers="mcps1.1.7.1.4 "><p id="p1006mcpsimp"><a name="p1006mcpsimp"></a><a name="p1006mcpsimp"></a>G3用作标清层显示，需要重新加载KO，分配足够的内存。</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.95%" headers="mcps1.1.7.1.5 "><a name="ul49726222180"></a><a name="ul49726222180"></a><ul id="ul49726222180"><li>仅G3用作在线画框时可以不分配G3的MMZ内存；</li><li>SS626V100支持</li></ul>
+<td class="cellrowborder" valign="top" width="18.95%" headers="mcps1.1.7.1.5 "><a name="ul49726222180"></a><a name="ul49726222180"></a><ul id="ul49726222180"><li>仅G3用作在线画框时可以不分配G3的MMZ内存；</li><li>支持</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.7.1.6 "><p id="p1010mcpsimp"><a name="p1010mcpsimp"></a><a name="p1010mcpsimp"></a>mem_size</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## AUDIO<a name="ZH-CN_TOPIC_0000002457879961"></a>
-
-<a name="table1014mcpsimp"></a>
+</table> ## AUDIO<a name="ZH-CN_TOPIC_0000002457879961"></a> <a name="table1014mcpsimp"></a>
 <table><thead align="left"><tr id="row1023mcpsimp"><th class="cellrowborder" valign="top" width="21.84%" id="mcps1.1.7.1.1"><p id="p1025mcpsimp"><a name="p1025mcpsimp"></a><a name="p1025mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="18.16%" id="mcps1.1.7.1.2"><p id="p1027mcpsimp"><a name="p1027mcpsimp"></a><a name="p1027mcpsimp"></a>相关接口/参数</p>
@@ -1307,19 +942,10 @@ SS626V100在线画框可节省G3的MMZ内存, 若仅G3用作在线画框时可�
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参考文档《MPP 媒体处理软件 V5.0 开发参考》“音频”章节。
-
-## REGION<a name="ZH-CN_TOPIC_0000002457879937"></a>
-
--   用户分配乒乓buff指定的width，height按需要尽可能小。
--   当区域类型为overlay/overlayex格式时，可以设置pixel\_format为CLUT2/CLUT4，CLUT2相比ARGB1555可节省7/8的内存，CLUT4相比1555可节省3/4内存。此方法会降低图像质量。
--   overlay/overlayex可采用单buff模式，方法为把区域属性中的canvas\_num设置为1，当图像需要频繁刷新时可能会出现撕裂效果。
--   参考文档《MPP 媒体处理软件 V5.0 开发参考》“区域管理”章节，proc信息查看命令cat /proc/umap/rgn。
-
-<a name="table895mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >参考文档《MPP 媒体处理软件 V5.0 开发参考》“音频”章节。 ## REGION<a name="ZH-CN_TOPIC_0000002457879937"></a> - 用户分配乒乓buff指定的width，height按需要尽可能小。
+- 当区域类型为overlay/overlayex格式时，可以设置pixel\_format为CLUT2/CLUT4，CLUT2相比ARGB1555可节省7/8的内存，CLUT4相比1555可节省3/4内存。此方法会降低图像质量。
+- overlay/overlayex可采用单buff模式，方法为把区域属性中的canvas\_num设置为1，当图像需要频繁刷新时可能会出现撕裂效果。
+- 参考文档《MPP 媒体处理软件 V5.0 开发参考》“区域管理”章节，proc信息查看命令cat /proc/umap/rgn。 <a name="table895mcpsimp"></a>
 <table><thead align="left"><tr id="row904mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.7.1.1"><p id="p906mcpsimp"><a name="p906mcpsimp"></a><a name="p906mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="18.5%" id="mcps1.1.7.1.2"><p id="p908mcpsimp"><a name="p908mcpsimp"></a><a name="p908mcpsimp"></a>相关模块参数/接口</p>
@@ -1363,72 +989,12 @@ SS626V100在线画框可节省G3的MMZ内存, 若仅G3用作在线画框时可�
 </td>
 </tr>
 </tbody>
-</table>
-
-## SVP<a name="ZH-CN_TOPIC_0000002457839821"></a>
-
-**SVP\_NNN<a name="section72111374332"></a>**
-
-1.  转换模型时配置参数
-    -   ATC --batch\_num参数配置1，可以减少输入输出及workbuf的内存占用。
-    -   ATC --online\_model\_type参数配置为0，此配置使转换的模型不带调试相关信息，减少模型占用内存。
-
-2.  量化参数配置
-
-    -   activation\_quant\_params - num\_bits配置为8
-    -   weight\_quant\_params - num\_bits配置为4
-
-    备注：该配置参数会影响模型精度。
-
-3.  KO模块参数
-
-    可以通过模块参数svp\_nnn\_max\_task\_node\_num来更改任务节点个数，从而减少任务节点占用mmz内存。
-
-4.  workbuf共享
-
-    同一条流上的多个模型之间可以使用同一块workbuf，从而减少mmz内存占用。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >Hi3519AV200不支持SVP\_NNN模块
-
-**NNN<a name="section1727814121310"></a>**
-
-1.  转换模型时配置参数：ATC -enable\_single\_stream=true，使能一个模型使用一条流。
-2.  多个模型串行推理时，使用aclmdlLoadFromFileWithMem或者aclmdlLoadFromMemWithMem加载方式，手动分配workbuf内存，然后多模型共享同一块工作内存，从而减少mmz内存占用。
-
-**IVE<a name="section151011750183319"></a>**
-
-1.  MD的proc信息的内存只有在支持MD的时候才会进行分配。
-2.  用户不调用IVE的resize，kcf和csc这3个算子不会开辟resize，kcf和csc对应的辅助内存。
-3.  可以通过配置模块参数max\_node\_num来控制链表节点个数，减小链表节点占用的MMZ内存。
-
-**KCF<a name="section1668375619333"></a>**
-
-可以减少使用核数，从而减小内存。
-
-**MAU<a name="section15117207183413"></a>**
-
-1.  用户不调用ss\_mpi\_svp\_mau\_add\_mem\_info接口记录mem\_info时，不会分配mem\_info链表内存，如果用户需要调用ss\_mpi\_svp\_mau\_add\_mem\_info接口记录men\_info，可以通过配置模块参数mau\_max\_mem\_info\_num来控制存储mem\_info内存大小。
-2.  可以通过配置模块参数mau\_max\_node\_num来控制链表节点个数，减小链表节点占用的MMZ内存。
-
-## VDA<a name="ZH-CN_TOPIC_0000002424361054"></a>
-
-加载vda模块ko时设置模块参数最大通道数g\_vda\_max\_chn\_num，省OS内存。
-
-## PCIV<a name="ZH-CN_TOPIC_0000002424201186"></a>
-
--   window占用：如果不涉及主片发起的DMA任务，window空间可不用分配，需要注意，如果不分配window空间，需要留意mmz空间完整性，不要被pcie\_mcc的空间分割。
--   VB轮转占用：
-    -   主片轮转VB：用于接收绑定图像，如果只用DMA功能，可不分配；如果传输效率够\(图像小，帧率低\)，可使用单buff，个数只分配一个。
-    -   从片轮转VB：接收绑定图像时，尽量使用直通模式；仅用户DMA传输时，不占用和分配轮转VB。
-
-## GDC<a name="ZH-CN_TOPIC_0000002424201222"></a>
-
-GDC模块主要是OS内存和node用的mmz。考虑场景的减小最大job数、最大task数和最大node数可以降低些OS占用内存以及node占用的MMZ内存。
-
-## CIPHER<a name="ZH-CN_TOPIC_0000002424361050"></a>
-
-<a name="table830mcpsimp"></a>
+</table> ## SVP<a name="ZH-CN_TOPIC_0000002457839821"></a> **SVP\_NNN<a name="section72111374332"></a>** 1. 转换模型时配置参数 - ATC --batch\_num参数配置1，可以减少输入输出及workbuf的内存占用。 - ATC --online\_model\_type参数配置为0，此配置使转换的模型不带调试相关信息，减少模型占用内存。 2. 量化参数配置 - activation\_quant\_params - num\_bits配置为8 - weight\_quant\_params - num\_bits配置为4 备注：该配置参数会影响模型精度。 3. KO模块参数 可以通过模块参数svp\_nnn\_max\_task\_node\_num来更改任务节点个数，从而减少任务节点占用mmz内存。 4. workbuf共享 同一条流上的多个模型之间可以使用同一块workbuf，从而减少mmz内存占用。 >![](public_sys-resources/icon-note.gif) **说明：** **NNN<a name="section1727814121310"></a>** 1. 转换模型时配置参数：ATC -enable\_single\_stream=true，使能一个模型使用一条流。
+2. 多个模型串行推理时，使用aclmdlLoadFromFileWithMem或者aclmdlLoadFromMemWithMem加载方式，手动分配workbuf内存，然后多模型共享同一块工作内存，从而减少mmz内存占用。 **IVE<a name="section151011750183319"></a>** 1. MD的proc信息的内存只有在支持MD的时候才会进行分配。
+2. 用户不调用IVE的resize，kcf和csc这3个算子不会开辟resize，kcf和csc对应的辅助内存。
+3. 可以通过配置模块参数max\_node\_num来控制链表节点个数，减小链表节点占用的MMZ内存。 **KCF<a name="section1668375619333"></a>** 可以减少使用核数，从而减小内存。 **MAU<a name="section15117207183413"></a>** 1. 用户不调用ss\_mpi\_svp\_mau\_add\_mem\_info接口记录mem\_info时，不会分配mem\_info链表内存，如果用户需要调用ss\_mpi\_svp\_mau\_add\_mem\_info接口记录men\_info，可以通过配置模块参数mau\_max\_mem\_info\_num来控制存储mem\_info内存大小。
+2. 可以通过配置模块参数mau\_max\_node\_num来控制链表节点个数，减小链表节点占用的MMZ内存。 ## VDA<a name="ZH-CN_TOPIC_0000002424361054"></a> 加载vda模块ko时设置模块参数最大通道数g\_vda\_max\_chn\_num，省OS内存。 ## PCIV<a name="ZH-CN_TOPIC_0000002424201186"></a> - window占用：如果不涉及主片发起的DMA任务，window空间可不用分配，需要注意，如果不分配window空间，需要留意mmz空间完整性，不要被pcie\_mcc的空间分割。
+- VB轮转占用： - 主片轮转VB：用于接收绑定图像，如果只用DMA功能，可不分配；如果传输效率够\(图像小，帧率低\)，可使用单buff，个数只分配一个。 - 从片轮转VB：接收绑定图像时，尽量使用直通模式；仅用户DMA传输时，不占用和分配轮转VB。 ## GDC<a name="ZH-CN_TOPIC_0000002424201222"></a> GDC模块主要是OS内存和node用的mmz。考虑场景的减小最大job数、最大task数和最大node数可以降低些OS占用内存以及node占用的MMZ内存。 ## CIPHER<a name="ZH-CN_TOPIC_0000002424361050"></a> <a name="table830mcpsimp"></a>
 <table><thead align="left"><tr id="row839mcpsimp"><th class="cellrowborder" valign="top" width="17.419999999999998%" id="mcps1.1.7.1.1"><p id="p841mcpsimp"><a name="p841mcpsimp"></a><a name="p841mcpsimp"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="22.3%" id="mcps1.1.7.1.2"><p id="p843mcpsimp"><a name="p843mcpsimp"></a><a name="p843mcpsimp"></a>相关模块参数</p>
@@ -1485,11 +1051,7 @@ GDC模块主要是OS内存和node用的mmz。考虑场景的减小最大job数�
 </td>
 </tr>
 </tbody>
-</table>
-
-## ISP<a name="ZH-CN_TOPIC_0000002457839833"></a>
-
-<a name="table1014mcpsimp"></a>
+</table> ## ISP<a name="ZH-CN_TOPIC_0000002457839833"></a> <a name="table1014mcpsimp"></a>
 <table><thead align="left"><tr id="row1023mcpsimp"><th class="cellrowborder" valign="top" width="18.85%" id="mcps1.1.7.1.1"><p id="p149138502109"><a name="p149138502109"></a><a name="p149138502109"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.15%" id="mcps1.1.7.1.2"><p id="p791315018106"><a name="p791315018106"></a><a name="p791315018106"></a>相关接口/参数</p>
@@ -1519,11 +1081,7 @@ GDC模块主要是OS内存和node用的mmz。考虑场景的减小最大job数�
 </td>
 </tr>
 </tbody>
-</table>
-
-## HNR<a name="ZH-CN_TOPIC_0000002457879953"></a>
-
-<a name="table779695811439"></a>
+</table> ## HNR<a name="ZH-CN_TOPIC_0000002457879953"></a> <a name="table779695811439"></a>
 <table><thead align="left"><tr id="row12796125817436"><th class="cellrowborder" valign="top" width="18.85%" id="mcps1.1.7.1.1"><p id="p19796115817439"><a name="p19796115817439"></a><a name="p19796115817439"></a>措施</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.15%" id="mcps1.1.7.1.2"><p id="p12796135814312"><a name="p12796135814312"></a><a name="p12796135814312"></a>相关接口/参数</p>
@@ -1552,36 +1110,11 @@ GDC模块主要是OS内存和node用的mmz。考虑场景的减小最大job数�
 </td>
 </tr>
 </tbody>
-</table>
-
-# 其它措施
-## 限制栈大小<a name="ZH-CN_TOPIC_0000002457879969"></a>
-
-默认的栈大小为8192KB，如果内存较小时，会导致线程创建不成功。根据实际的业务需要的栈空间，修改栈的限制大小为1024KB，如果业务更少则可以改成512KB或者更小。
-
-有两种方法可以修改栈大小：
-
--   使用 ulimit –s 1024 命令，在应用程序启动之前调用一次；
--   在main函数最开始调用函数 pthread\_attr\_setstacksize 也可实现对单个应用程序修改栈空间的目的。
-
-## 优化代码中内存使用<a name="ZH-CN_TOPIC_0000002457839805"></a>
-
-优化代码中内存使用，特别是对栈、堆、常量、全局变量的使用，主要需要注意：
-
--   避免应用程序代码中申请后不用的变量；
--   不要随意申请大块的内存，够用即可；
--   冗余的内存使用还包含不用的功能模块的初始化。
-
-## 应用程序中禁用fork、system等进程创建函数<a name="ZH-CN_TOPIC_0000002457839829"></a>
-
-由于主进程的数据段占用内存已经很多，如果fork子进程必定消耗大量内存而且会有大概率失败，那么应用程序中应该禁用fork、system等进程创建函数：如bspmm调用、mkfs.vfat调用等。
-
-## 根据场景去掉不必要的模块<a name="ZH-CN_TOPIC_0000002424361062"></a>
-
-去掉不必要的模块可以减少内存的占用，如：
-
--   使用gfbg 0buffer或者标准模式，TDE可不加载，如果TDE未加载，则REGION使用memcpy进行Overlay/OverlayEx的拷贝；
--   无需音频输入、编码场景，AI、VENC可不加载；
--   无需使用REGION的场景，REGION可不加载；
--   无需使用JPEGE场景，jpege模块可不加载。
-
+</table> # 其它措施
+## 限制栈大小<a name="ZH-CN_TOPIC_0000002457879969"></a> 默认的栈大小为8192KB，如果内存较小时，会导致线程创建不成功。根据实际的业务需要的栈空间，修改栈的限制大小为1024KB，如果业务更少则可以改成512KB或者更小。 有两种方法可以修改栈大小： - 使用 ulimit –s 1024 命令，在应用程序启动之前调用一次；
+- 在main函数最开始调用函数 pthread\_attr\_setstacksize 也可实现对单个应用程序修改栈空间的目的。 ## 优化代码中内存使用<a name="ZH-CN_TOPIC_0000002457839805"></a> 优化代码中内存使用，特别是对栈、堆、常量、全局变量的使用，主要需要注意： - 避免应用程序代码中申请后不用的变量；
+- 不要随意申请大块的内存，够用即可；
+- 冗余的内存使用还包含不用的功能模块的初始化。 ## 应用程序中禁用fork、system等进程创建函数<a name="ZH-CN_TOPIC_0000002457839829"></a> 由于主进程的数据段占用内存已经很多，如果fork子进程必定消耗大量内存而且会有大概率失败，那么应用程序中应该禁用fork、system等进程创建函数：如bspmm调用、mkfs.vfat调用等。 ## 根据场景去掉不必要的模块<a name="ZH-CN_TOPIC_0000002424361062"></a> 去掉不必要的模块可以减少内存的占用，如： - 使用gfbg 0buffer或者标准模式，TDE可不加载，如果TDE未加载，则REGION使用memcpy进行Overlay/OverlayEx的拷贝；
+- 无需音频输入、编码场景，AI、VENC可不加载；
+- 无需使用REGION的场景，REGION可不加载；
+- 无需使用JPEGE场景，jpege模块可不加载。 

@@ -1,18 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 使用指南/MindCmd 使用指南.md
----
-
-# 前言
-**概述<a name="section4537382116410"></a>**
-
-本文介绍如何使用MindCmd工具，以及如何通过工具进行一键推理、数据预处理、开源框架推理、模型压缩、模型转换、仿真推理、上板推理、精度比对、性能分析等功能。
-
-**产品版本<a name="section300mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table303mcpsimp"></a>
+--- # 前言
+**概述<a name="section4537382116410"></a>** 本文介绍如何使用MindCmd工具，以及如何通过工具进行一键推理、数据预处理、开源框架推理、模型压缩、模型转换、仿真推理、上板推理、精度比对、性能分析等功能。 **产品版本<a name="section300mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table303mcpsimp"></a>
 <table><thead align="left"><tr id="row308mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p310mcpsimp"><a name="p310mcpsimp"></a><a name="p310mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p312mcpsimp"><a name="p312mcpsimp"></a><a name="p312mcpsimp"></a>产品版本</p>
@@ -24,31 +14,11 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->MindCmd仅作为开发调试工具，不建议在实际产品中集成。
->本文未有特殊说明，Hi3403V100与Hi3519AV200内容完全一致。
-
-**读者对象<a name="section4378592816410"></a>**
-
-本文档（本指南）主要适用于以下工程师：
-
--   算法工程师
--   技术支持工程师
--   软件开发工程师
-
-**符号约定<a name="section133020216410"></a>**
-
-在本文中可能出现下列标志，它们所代表的含义如下。
-
-<a name="table2622507016410"></a>
+</table> >![](public_sys-resources/icon-notice.gif) **须知：** >MindCmd仅作为开发调试工具，不建议在实际产品中集成。
+>本文未有特殊说明，Hi3403V100与内容完全一致。 **读者对象<a name="section4378592816410"></a>** 本文档（本指南）主要适用于以下工程师： - 算法工程师
+- 技术支持工程师
+- 软件开发工程师 **符号约定<a name="section133020216410"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a><strong id="b2136615816410"><a name="b2136615816410"></a><a name="b2136615816410"></a>符号</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a><strong id="b5941558116410"><a name="b5941558116410"></a><a name="b5941558116410"></a>说明</strong></p>
@@ -60,34 +30,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441981441.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442021309.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408422122.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
-<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
-</td>
-</tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442021221.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
-<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修改记录<a name="section2467512116410"></a>**
-
-<a name="table1557726816410"></a>
+</table> **修改记录<a name="section2467512116410"></a>** <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="24.75%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>发布日期</strong></p>
@@ -112,59 +56,21 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/MindCmd 
 </td>
 </tr>
 </tbody>
-</table>
-
-# 简介
-MindCmd命令行工具主要关注一键化、自动化，聚焦部署侧的全流程开发效率的大幅提升。
-
-针对网络模型的开发，MindCmd集成了离线模型转换工具、模型量化工具、模型精度比对工具、模型性能分析工具，提升了网络模型移植、分析和优化的效率。
-
-
-
-## 功能框架图<a name="ZH-CN_TOPIC_0000002442020637"></a>
-
-如[图1](#fig109661225380)所示，工具目前包含数据预处理、开源框架推理、模型压缩、模型转换、功能仿真、指令仿真、上板推理、性能分析、精度比对以及Oneclick一键推理。
-
-**图 1**  MindCmd功能框架<a name="fig109661225380"></a>  
-![](figures/MindCmd功能框架.png "MindCmd功能框架")
-## 工具功能<a name="ZH-CN_TOPIC_0000002442020581"></a>
-
-MindCmd中主要几个功能特性如下。
-
--   一键推理：提供一键推理功能，一键式端到端执行数据预处理、开源框架推理、模型压缩、模型转换、功能仿真、指令仿真、上板推理、Dump、精度比对、性能分析等功能。参见[一键推理](#ZH-CN_TOPIC_0000002408581326)。
--   数据预处理：提供数据预处理功能，在进行模型压缩、模型转换等功能之前通过数据预处理将数据处理成与模型匹配的数据。参见[数据预处理](#ZH-CN_TOPIC_0000002441980729)。
--   开源框架推理：提供开源框架推理功能。获取Ground Truth数据。参见[开源框架推理](#ZH-CN_TOPIC_0000002442020541)。
--   模型压缩：提供模型压缩功能，对模型的权重（weight）和数据（activation）进行低比特处理，让最终生成的网络模型更加轻量化，从而达到节省网络模型存储空间、降低传输时延、提高计算效率，达到性能提升与优化的目标，参见[模型压缩](#ZH-CN_TOPIC_0000002408421470)。
--   模型转换：提供模型转换功能，将训练好的模型转换为离线模型，参见[模型转换](#ZH-CN_TOPIC_0000002408581442)。
--   功能仿真：提供功能仿真推理功能，参见[应用工程](#ZH-CN_TOPIC_0000002408421530)。
--   指令仿真：提供指令仿真推理功能，参见[应用工程](#ZH-CN_TOPIC_0000002408421530)。
--   上板推理：提供上板推理功能，参见[应用工程](#ZH-CN_TOPIC_0000002408421530)。
--   精度比对：提供精度比对功能，可以用来比对模型转换后SoC支持的算子运行结果与标准算子的运行结果，以便用来确认运算误差发生的原因，参见[精度比对](#ZH-CN_TOPIC_0000002441980581)。
--   性能分析：提供性能分析功能，用于采集和分析SoC推理业务各个运行阶段的关键性能指标，参见[性能分析](#ZH-CN_TOPIC_0000002442020517)。
--   工具模块：提供可单独调用的工具，包括原始Caffe模型子网导出、数据格式转换、模型Uninplace、ATC命令行转cfg文件，参见[Tools](#ZH-CN_TOPIC_0000002408421486)。
-
-# 安装
-MindCmd软件包可以安装在Linux服务器上，可以使用Linux服务器上原生桌面自带的终端gnome-terminal进行安装，也可以在Windows服务器上通过SSH登录到Linux服务器进行安装。
-
-**图 1**  Linux分部署<a name="fig14199047421"></a>  
-![](figures/Linux分部署.png "Linux分部署")
-
-**图 2**  Linux共部署<a name="fig4886192317319"></a>  
-![](figures/Linux共部署.png "Linux共部署")
-
-MindCmd安装流程如[图3](#fig194332362414)所示。
-
-**图 3**  安装流程<a name="fig194332362414"></a>  
-![](figures/安装流程.png "安装流程")
-## 软件包获取<a name="ZH-CN_TOPIC_0000002442020661"></a>
-
-MindCmd工具只支持在18.04 x86\_64架构服务器安装。安装前，请先获取MindCmd工具软件包。
-
-当前MindCmd工具的模型转换、模型推理依赖CANN软件包。模型压缩依赖AMCT软件包。具体说明请参见[表1](#table136510451990)。
-
-**表 1**  软件包说明
-
-<a name="table136510451990"></a>
+</table> # 简介
+MindCmd命令行工具主要关注一键化、自动化，聚焦部署侧的全流程开发效率的大幅提升。 针对网络模型的开发，MindCmd集成了离线模型转换工具、模型量化工具、模型精度比对工具、模型性能分析工具，提升了网络模型移植、分析和优化的效率。 ## 功能框架图<a name="ZH-CN_TOPIC_0000002442020637"></a> 如[图1](#fig109661225380)所示，工具目前包含数据预处理、开源框架推理、模型压缩、模型转换、功能仿真、指令仿真、上板推理、性能分析、精度比对以及Oneclick一键推理。 **图 1** MindCmd功能框架<a name="fig109661225380"></a> ![](figures/MindCmd功能框架.png "MindCmd功能框架")
+## 工具功能<a name="ZH-CN_TOPIC_0000002442020581"></a> MindCmd中主要几个功能特性如下。 - 一键推理：提供一键推理功能，一键式端到端执行数据预处理、开源框架推理、模型压缩、模型转换、功能仿真、指令仿真、上板推理、Dump、精度比对、性能分析等功能。参见[一键推理](#ZH-CN_TOPIC_0000002408581326)。
+- 数据预处理：提供数据预处理功能，在进行模型压缩、模型转换等功能之前通过数据预处理将数据处理成与模型匹配的数据。参见[数据预处理](#ZH-CN_TOPIC_0000002441980729)。
+- 开源框架推理：提供开源框架推理功能。获取Ground Truth数据。参见[开源框架推理](#ZH-CN_TOPIC_0000002442020541)。
+- 模型压缩：提供模型压缩功能，对模型的权重（weight）和数据（activation）进行低比特处理，让最终生成的网络模型更加轻量化，从而达到节省网络模型存储空间、降低传输时延、提高计算效率，达到性能提升与优化的目标，参见[模型压缩](#ZH-CN_TOPIC_0000002408421470)。
+- 模型转换：提供模型转换功能，将训练好的模型转换为离线模型，参见[模型转换](#ZH-CN_TOPIC_0000002408581442)。
+- 功能仿真：提供功能仿真推理功能，参见[应用工程](#ZH-CN_TOPIC_0000002408421530)。
+- 指令仿真：提供指令仿真推理功能，参见[应用工程](#ZH-CN_TOPIC_0000002408421530)。
+- 上板推理：提供上板推理功能，参见[应用工程](#ZH-CN_TOPIC_0000002408421530)。
+- 精度比对：提供精度比对功能，可以用来比对模型转换后SoC支持的算子运行结果与标准算子的运行结果，以便用来确认运算误差发生的原因，参见[精度比对](#ZH-CN_TOPIC_0000002441980581)。
+- 性能分析：提供性能分析功能，用于采集和分析SoC推理业务各个运行阶段的关键性能指标，参见[性能分析](#ZH-CN_TOPIC_0000002442020517)。
+- 工具模块：提供可单独调用的工具，包括原始Caffe模型子网导出、数据格式转换、模型Uninplace、ATC命令行转cfg文件，参见[Tools](#ZH-CN_TOPIC_0000002408421486)。 # 安装
+MindCmd软件包可以安装在Linux服务器上，可以使用Linux服务器上原生桌面自带的终端gnome-terminal进行安装，也可以在Windows服务器上通过SSH登录到Linux服务器进行安装。 **图 1** Linux分部署<a name="fig14199047421"></a> ![](figures/Linux分部署.png "Linux分部署") **图 2** Linux共部署<a name="fig4886192317319"></a> ![](figures/Linux共部署.png "Linux共部署") MindCmd安装流程如[图3](#fig194332362414)所示。 **图 3** 安装流程<a name="fig194332362414"></a> ![](figures/安装流程.png "安装流程")
+## 软件包获取<a name="ZH-CN_TOPIC_0000002442020661"></a> MindCmd工具只支持在18.04 x86\_64架构服务器安装。安装前，请先获取MindCmd工具软件包。 当前MindCmd工具的模型转换、模型推理依赖CANN软件包。模型压缩依赖AMCT软件包。具体说明请参见[表1](#table136510451990)。 **表 1** 软件包说明 <a name="table136510451990"></a>
 <table><thead align="left"><tr id="row203664451395"><th class="cellrowborder" valign="top" width="32.78%" id="mcps1.2.4.1.1"><p id="p43661845797"><a name="p43661845797"></a><a name="p43661845797"></a>软件包</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.62%" id="mcps1.2.4.1.2"><p id="p1760173584117"><a name="p1760173584117"></a><a name="p1760173584117"></a>必选/可选</p>
@@ -201,22 +107,7 @@ MindCmd工具只支持在18.04 x86\_64架构服务器安装。安装前，请先
 </td>
 </tr>
 </tbody>
-</table>
-
-其中_<version\>_表示软件版本号。
-
-## 安装前准备<a name="ZH-CN_TOPIC_0000002441980749"></a>
-
-
-### Ubuntu18.04-x86\_64系统<a name="ZH-CN_TOPIC_0000002441980633"></a>
-
-**环境要求<a name="section13831110592"></a>**
-
-安装MindCmd的环境，所要求的硬件以及操作系统要满足以下条件。
-
-**表 1**  Ubuntu系统配套版本信息
-
-<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_table1515616482231"></a>
+</table> 其中_<version\>_表示软件版本号。 ## 安装前准备<a name="ZH-CN_TOPIC_0000002441980749"></a> ### Ubuntu18.04-x86\_64系统<a name="ZH-CN_TOPIC_0000002441980633"></a> **环境要求<a name="section13831110592"></a>** 安装MindCmd的环境，所要求的硬件以及操作系统要满足以下条件。 **表 1** Ubuntu系统配套版本信息 <a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_table1515616482231"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_row8157124812317"><th class="cellrowborder" valign="top" width="11.35%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p17157194842316"><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p17157194842316"></a><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p17157194842316"></a>类别</p>
 </th>
 <th class="cellrowborder" valign="top" width="26.029999999999998%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p31575485237"><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p31575485237"></a><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p31575485237"></a>版本限制</p>
@@ -237,7 +128,7 @@ MindCmd工具只支持在18.04 x86\_64架构服务器安装。安装前，请先
 </td>
 <td class="cellrowborder" valign="top" width="26.029999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p1315824812319"><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p1315824812319"></a><a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_zh-cn_topic_0189917872_p1315824812319"></a>版本：18.04 64位x86操作系统</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.62%" headers="mcps1.2.4.1.3 "><a name="ul15849131271419"></a><a name="ul15849131271419"></a><ul id="ul15849131271419"><li>请从<a href="http://releases.ubuntu.com/releases/" target="_blank" rel="noopener noreferrer">http://releases.ubuntu.com/releases/</a>下载对应版本软件进行安装。</li></ul>
+<td class="cellrowborder" valign="top" width="62.62%" headers="mcps1.2.4.1.3 "><a name="ul15849131271419"></a><a name="ul15849131271419"></a><ul id="ul15849131271419"><li>请从<a href="http:/releases.ubuntu.com/releases/" target="_blank" rel="noopener noreferrer">http:/releases.ubuntu.com/releases/</a>下载对应版本软件进行安装。</li></ul>
 </td>
 </tr>
 <tr id="row860491181012"><td class="cellrowborder" valign="top" width="11.35%" headers="mcps1.2.4.1.1 "><p id="p860514171019"><a name="p860514171019"></a><a name="p860514171019"></a>Python</p>
@@ -255,81 +146,12 @@ MindCmd工具只支持在18.04 x86\_64架构服务器安装。安装前，请先
 </td>
 </tr>
 </tbody>
-</table>
-
-**准备安装用户（可选）<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section14553441011"></a>**
-
--   如果已安装Ascend-cann-toolkit开发套件包，请使用Ascend-cann-toolkit开发套件包的安装用户安装MindCmd。
--   如果未安装Ascend-cann-toolkit开发套件包，请参考如下示例准备安装用户。
-
-您可以使用任意用户（含root或非root用户）进行安装。
-
--   若使用root用户安装，则不需要操作该章节，不需要对root用户做任何设置。
--   若使用已存在的非root用户安装，须保证该用户对$HOME目录具有读写以及可执行权限。
--   若使用新的非root用户安装，请参考如下步骤进行创建，如下操作请在root用户下执行。本手册以该种场景为例执行MindCmd的安装。
-    1.  执行以下命令创建用户组和MindCmd安装用户并设置该用户的$HOME目录。
-
-        ```
-        groupadd usergroup
-        useradd -g usergroup -d /home/username -m username -s /bin/bash
-        ```
-
-        例如以MindCmdUser群组为例，可执行如下命令创建MindCmd安装用户并加入到群组中。
-
-        ```
-        groupadd MindCmdUser
-        useradd -g MindCmdUser -d /home/username -m username -s /bin/bash
-        ```
-
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >用户所属的属组必须和Driver运行用户所属组相同；如果不同，请用户自行添加到Driver运行用户属组。
-
-    2.  执行以下命令设置密码。
-
-        ```
-        passwd username
-        ```
-
-        _username_为安装MindCmd的用户名，该用户的umask值为0027：
-
-        -   若要查看umask的值，则执行命令：**umask**
-        -   若要修改umask的值，则执行命令：**umask  _新的取值_**
-
-            如果用户通过上述方式修改了umask取值，则修改后的取值只在当前窗口有效，用户也可以通过修改\~/.bashrc文件方式设置永久umask取值：
-
-            1.  在任意目录下执行如下命令，打开.**bashrc**文件：
-
-                ```
-                vi ~/.bashrc
-                ```
-
-                在文件最后一行后面添加**umask  _新的取值_**内容。
-
-            2.  执行:wq!命令保存文件并退出。
-            3.  执行**source \~/.bashrc**命令使其立即生效。
-
-**检查源<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section126972561207"></a>**
-
-安装过程需要下载相关依赖，请确保服务器能够连接网络。
-
-请在root用户下执行如下命令检查源是否可用。
-
-```
+</table> **准备安装用户（可选）<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section14553441011"></a>** - 如果已安装Ascend-cann-toolkit开发套件包，请使用Ascend-cann-toolkit开发套件包的安装用户安装MindCmd。
+- 如果未安装Ascend-cann-toolkit开发套件包，请参考如下示例准备安装用户。 您可以使用任意用户（含root或非root用户）进行安装。 - 若使用root用户安装，则不需要操作该章节，不需要对root用户做任何设置。
+- 若使用已存在的非root用户安装，须保证该用户对$HOME目录具有读写以及可执行权限。
+- 若使用新的非root用户安装，请参考如下步骤进行创建，如下操作请在root用户下执行。本手册以该种场景为例执行MindCmd的安装。 1. 执行以下命令创建用户组和MindCmd安装用户并设置该用户的$HOME目录。 ``` groupadd usergroup useradd -g usergroup -d /home/username -m username -s /bin/bash ``` 例如以MindCmdUser群组为例，可执行如下命令创建MindCmd安装用户并加入到群组中。 ``` groupadd MindCmdUser useradd -g MindCmdUser -d /home/username -m username -s /bin/bash ``` >![](public_sys-resources/icon-note.gif) **说明：** >用户所属的属组必须和Driver运行用户所属组相同；如果不同，请用户自行添加到Driver运行用户属组。 2. 执行以下命令设置密码。 ``` passwd username ``` _username_为安装MindCmd的用户名，该用户的umask值为0027： - 若要查看umask的值，则执行命令：**umask** - 若要修改umask的值，则执行命令：**umask _新的取值_** 如果用户通过上述方式修改了umask取值，则修改后的取值只在当前窗口有效，用户也可以通过修改\~/.bashrc文件方式设置永久umask取值： 1. 在任意目录下执行如下命令，打开.**bashrc**文件： ``` vi ~/.bashrc ``` 在文件最后一行后面添加**umask _新的取值_**内容。 2. 执行:wq!命令保存文件并退出。 3. 执行**source \~/.bashrc**命令使其立即生效。 **检查源<a name="zh-cn_topic_0249939299_zh-cn_topic_0231558615_section126972561207"></a>** 安装过程需要下载相关依赖，请确保服务器能够连接网络。 请在root用户下执行如下命令检查源是否可用。 ```
 apt-get update
-```
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->如果命令执行报错，则检查网络是否连接或者把/etc/apt/sources.list文件中的源更换为可用的源。
-
-**安装依赖<a name="section11128423175910"></a>**
-
-使用MindCmd工具前，需要完成相关环境搭建。开发人员可根据不同组件的使用需求进行环境搭建，使用一键推理，需要完整搭建各组件依赖的环境。
-
-支持在Docker中使用MindCmd，解决方案提供了Dockerfile文件，构建镜像请参考《驱动和开发环境安装指南》“容器镜像构建”章节，启动容器请参考[Docker容器中使用MindCmd](#ZH-CN_TOPIC_0000002408581214)。
-
-**表 2**  各组件依赖
-
-<a name="table124736349520"></a>
+``` >![](public_sys-resources/icon-note.gif) **说明：** >如果命令执行报错，则检查网络是否连接或者把/etc/apt/sources.list文件中的源更换为可用的源。 **安装依赖<a name="section11128423175910"></a>** 使用MindCmd工具前，需要完成相关环境搭建。开发人员可根据不同组件的使用需求进行环境搭建，使用一键推理，需要完整搭建各组件依赖的环境。 支持在Docker中使用MindCmd，解决方案提供了Dockerfile文件，构建镜像请参考《驱动和开发环境安装指南》“容器镜像构建”章节，启动容器请参考[Docker容器中使用MindCmd](#ZH-CN_TOPIC_0000002408581214)。 **表 2** 各组件依赖 <a name="table124736349520"></a>
 <table><thead align="left"><tr id="row14474133412524"><th class="cellrowborder" valign="top" width="17.4%" id="mcps1.2.3.1.1"><p id="p4474193485213"><a name="p4474193485213"></a><a name="p4474193485213"></a>组件</p>
 </th>
 <th class="cellrowborder" valign="top" width="82.6%" id="mcps1.2.3.1.2"><p id="p647453465212"><a name="p647453465212"></a><a name="p647453465212"></a>依赖</p>
@@ -388,100 +210,19 @@ apt-get update
 </td>
 </tr>
 </tbody>
-</table>
-
-## 安装MindCmd<a name="ZH-CN_TOPIC_0000002408581230"></a>
-
-1.  在MindCmd工具软件包所在目录下，执行如下命令安装。
-
-    ```
-    pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz --user
-    ```
-
-2.  若出现如下信息则说明工具安装成功。
-
-    ```
-    Successfully installed mindcmd-<version>
-    ```
-
-    用户可以在python3.7.5软件包所在路径下\(例如：_$HOME/.local/lib/python3.7.5/site-packages_\)查看已经安装的MindCmd工具，例如
-
-    ```
-    drwxr-xr-x 9 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd/ 
-    drwxr-xr-x 2 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd-<version>.dist-info/
-    ```
-
-    其中，mindcmd即为MindCmd工具所在安装路径，下文中均用\{MINDCMD\_INSTALL\_PATH\}表示MindCmd安装路径。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >**卸载**
-    >用户通过如上方式成功安装MindCmd工具后，可执行如下命令卸载MindCmd工具。
-    >```
-    >pip3.7.5 uninstall mindcmd
-    >```
-    >若出现如下信息则说明卸载成功。
-    >```
-    >Successfully uninstalled mindcmd-<version>
-    >```
-    >MindCmd工具升级时可以先卸载再重新安装：
-    >```
-    >pip3.7.5 uninstall mindcmd
-    >pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz
-    >```
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   如果安装过程中出现下载依赖连接超时的情况，请用户检查pip环境是否正常可用，如需网络代理或更换镜像源，请用户自行配置。
->-   安装MindCmd后，请使用如下命令配置到生态开源版本默认配置：
+</table> ## 安装MindCmd<a name="ZH-CN_TOPIC_0000002408581230"></a> 1. 在MindCmd工具软件包所在目录下，执行如下命令安装。 ``` pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz --user ``` 2. 若出现如下信息则说明工具安装成功。 ``` Successfully installed mindcmd-<version> ``` 用户可以在python3.7.5软件包所在路径下\(例如：_$HOME/.local/lib/python3.7.5/site-packages_\)查看已经安装的MindCmd工具，例如 ``` drwxr-xr-x 9 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd/ drwxr-xr-x 2 mindcmd mindcmd 4096 Oct 13 23:16 mindcmd-<version>.dist-info/ ``` 其中，mindcmd即为MindCmd工具所在安装路径，下文中均用\{MINDCMD\_INSTALL\_PATH\}表示MindCmd安装路径。 >![](public_sys-resources/icon-note.gif) **说明：** >**卸载** >用户通过如上方式成功安装MindCmd工具后，可执行如下命令卸载MindCmd工具。 >``` >pip3.7.5 uninstall mindcmd >``` >若出现如下信息则说明卸载成功。 >``` >Successfully uninstalled mindcmd-<version> >``` >MindCmd工具升级时可以先卸载再重新安装： >``` >pip3.7.5 uninstall mindcmd >pip3.7.5 install mindcmd-<version>-py3-none-linux_x86_64.tar.gz >``` >![](public_sys-resources/icon-note.gif) **说明：** >- 如果安装过程中出现下载依赖连接超时的情况，请用户检查pip环境是否正常可用，如需网络代理或更换镜像源，请用户自行配置。
+>- 安装MindCmd后，请使用如下命令配置到生态开源版本默认配置：
 >```
 >mindcmd config --global base_config.target_version=Hi3403V100
 >mindcmd config --global base_config.cross_compiler=musl_clang
->```
-
-## 全局配置<a name="ZH-CN_TOPIC_0000002442020665"></a>
-
-MindCmd提供子命令查看和修改全局配置。
-
-查看全局配置列表，结果如[图1](#fig1034913271220)所示。
-
-```
+>``` ## 全局配置<a name="ZH-CN_TOPIC_0000002442020665"></a> MindCmd提供子命令查看和修改全局配置。 查看全局配置列表，结果如[图1](#fig1034913271220)所示。 ```
 mindcmd config --list
-```
-
-**图 1**  全局配置列表<a name="fig1034913271220"></a>  
-
-![](figures/zh-cn_image_0000002442021525.png)
-
-查看某一个配置项的值\(以查看“base\_config.cann\_install\_path”为例\)，结果如[图2](#fig163181430103)所示。
-
-```
+``` **图 1** 全局配置列表<a name="fig1034913271220"></a> ![](figures/zh-cn_image_0000002442021525.png) 查看某一个配置项的值\(以查看“base\_config.cann\_install\_path”为例\)，结果如[图2](#fig163181430103)所示。 ```
 mindcmd config --global base_config.cann_install_path
-```
-
-**图 2**  查看某一个配置项的值<a name="fig163181430103"></a>  
-![](figures/查看某一个配置项的值.png "查看某一个配置项的值")
-
-修改某一个配置项的值\(以修改“base\_config.cann\_install\_path”为例\)，结果如[图3](#fig52432531624)所示。
-
-```
+``` **图 2** 查看某一个配置项的值<a name="fig163181430103"></a> ![](figures/查看某一个配置项的值.png "查看某一个配置项的值") 修改某一个配置项的值\(以修改“base\_config.cann\_install\_path”为例\)，结果如[图3](#fig52432531624)所示。 ```
 mindcmd config --global base_config.cann_install_path=~/Ascend/ascend-toolkit/svp_latest
-```
-
-**图 3**  修改某一个配置项的值<a name="fig52432531624"></a>  
-![](figures/修改某一个配置项的值.png "修改某一个配置项的值")
->![](public_sys-resources/icon-note.gif) **说明：** 
->mindcmd config 子命令不展示atc\_args\_append部分的配置参数，不支持在命令行修改atc\_args\_append的配置参数。
-
-MindCmd命令行工具为用户提供全局配置文件，配置文件路径为：\{MINDCMD\_INSTALL\_PATH\}/mindcmd.ini，或通过运行命令 mindcmd config --list , 控制台会打印配置文件路径，如[图4](#fig4452502120)中高亮部分所示。
-
-**图 4**  查看全局配置文件<a name="fig4452502120"></a>  
-
-![](figures/zh-cn_image_0000002408582282.png)
-
-工具安装完毕后，需要在MindCmd全局配置文件中指定CANN软件包安装路径，如[表1](#table73353166121)。
-
-**表 1**  MindCmd配置
-
-<a name="table73353166121"></a>
+``` **图 3** 修改某一个配置项的值<a name="fig52432531624"></a> ![](figures/修改某一个配置项的值.png "修改某一个配置项的值")
+>![](public_sys-resources/icon-note.gif) **说明：** >mindcmd config 子命令不展示atc\_args\_append部分的配置参数，不支持在命令行修改atc\_args\_append的配置参数。 MindCmd命令行工具为用户提供全局配置文件，配置文件路径为：\{MINDCMD\_INSTALL\_PATH\}/mindcmd.ini，或通过运行命令 mindcmd config --list , 控制台会打印配置文件路径，如[图4](#fig4452502120)中高亮部分所示。 **图 4** 查看全局配置文件<a name="fig4452502120"></a> ![](figures/zh-cn_image_0000002408582282.png) 工具安装完毕后，需要在MindCmd全局配置文件中指定CANN软件包安装路径，如[表1](#table73353166121)。 **表 1** MindCmd配置 <a name="table73353166121"></a>
 <table><thead align="left"><tr id="row5335151611127"><th class="cellrowborder" valign="top" width="16.39%" id="mcps1.2.6.1.1"><p id="p1633531641213"><a name="p1633531641213"></a><a name="p1633531641213"></a><strong id="b3139153053516"><a name="b3139153053516"></a><a name="b3139153053516"></a>配置</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="13.690000000000001%" id="mcps1.2.6.1.2"><p id="p14335516191211"><a name="p14335516191211"></a><a name="p14335516191211"></a><strong id="b191491330143516"><a name="b191491330143516"></a><a name="b191491330143516"></a>描述</strong></p>
@@ -507,36 +248,6 @@ MindCmd命令行工具为用户提供全局配置文件，配置文件路径为�
 <td class="cellrowborder" valign="top" width="37.81%" headers="mcps1.2.6.1.5 "><p id="p1828434514417"><a name="p1828434514417"></a><a name="p1828434514417"></a>CANN软件包的安装路径，如：CANN_INSTALL_PATH=/home/user/Ascend/ascend-toolkit/&lt;<em id="zh-cn_topic_0000001087679048_zh-cn_topic_0000001079598552_zh-cn_topic_0288515780_i1315612101816"><a name="zh-cn_topic_0000001087679048_zh-cn_topic_0000001079598552_zh-cn_topic_0288515780_i1315612101816"></a><a name="zh-cn_topic_0000001087679048_zh-cn_topic_0000001079598552_zh-cn_topic_0288515780_i1315612101816"></a>version&gt;</em>/</p>
 </td>
 </tr>
-<tr id="row13335161619124"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p146327295488"><a name="p146327295488"></a><a name="p146327295488"></a><strong id="b13441125817362"><a name="b13441125817362"></a><a name="b13441125817362"></a>必选</strong></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p203352168125"><a name="p203352168125"></a><a name="p203352168125"></a>TARGET_VERSION</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p4335121651215"><a name="p4335121651215"></a><a name="p4335121651215"></a>目标解决方案的版本，如：TARGET_VERSION=Hi3403V100</p>
-<p id="p1885014185114"><a name="p1885014185114"></a><a name="p1885014185114"></a>需要根据实际解决方案版本替换。</p>
-</td>
-</tr>
-<tr id="row103354167126"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p0632142918480"><a name="p0632142918480"></a><a name="p0632142918480"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p533591691215"><a name="p533591691215"></a><a name="p533591691215"></a>DEFAULT_WORKSPACE</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p43363161122"><a name="p43363161122"></a><a name="p43363161122"></a>默认工作空间，如：DEFAULT_WORKSPACE=/home/user/mindcmd_workspace</p>
-<p id="p1668523845013"><a name="p1668523845013"></a><a name="p1668523845013"></a>若DEFAULT_WORKSPACE=NA，则会在用户主目录下创建MindCmd-WorkSpace文件夹作为默认工作路径。</p>
-</td>
-</tr>
-<tr id="row148717613212"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p68720682117"><a name="p68720682117"></a><a name="p68720682117"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p687126112118"><a name="p687126112118"></a><a name="p687126112118"></a>SSH_CFG_PATH</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p5873642117"><a name="p5873642117"></a><a name="p5873642117"></a>上板推理默认配置文件，<strong id="b149681840175215"><a name="b149681840175215"></a><a name="b149681840175215"></a>若需要执行上板推理，则需要配置此参数</strong>。详细配置项参考<a href="#ZH-CN_TOPIC_0000002408421542">ssh.cfg文件配置</a>。</p>
-</td>
-</tr>
-<tr id="row523113143017"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p12246311300"><a name="p12246311300"></a><a name="p12246311300"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p14848934141917"><a name="p14848934141917"></a><a name="p14848934141917"></a>CROSS_COMPILER</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1983715210286"><a name="p1983715210286"></a><a name="p1983715210286"></a>交叉编译链选项，可配置上板所用的交叉编译链。可选值包括：Hi3403V100(musl_clang、gnu）</p>
-</td>
-</tr>
 <tr id="row128983510315"><td class="cellrowborder" rowspan="11" valign="top" width="16.39%" headers="mcps1.2.6.1.1 "><p id="p529053510315"><a name="p529053510315"></a><a name="p529053510315"></a>oneclick_switch</p>
 </td>
 <td class="cellrowborder" rowspan="11" valign="top" width="13.690000000000001%" headers="mcps1.2.6.1.2 "><p id="p629013543111"><a name="p629013543111"></a><a name="p629013543111"></a>一键推理场景开关，1表示打开，0表示关闭</p>
@@ -546,76 +257,6 @@ MindCmd命令行工具为用户提供全局配置文件，配置文件路径为�
 <td class="cellrowborder" valign="top" width="21.220000000000002%" headers="mcps1.2.6.1.4 "><p id="p18290113516311"><a name="p18290113516311"></a><a name="p18290113516311"></a>IS_CLEAN_PREVIOUS_OUTPUT</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.81%" headers="mcps1.2.6.1.5 "><p id="p22900358310"><a name="p22900358310"></a><a name="p22900358310"></a>运行前先删除工作路径下<a href="#ZH-CN_TOPIC_0000002408581326">一键推理</a>的历史输出目录，默认值为1。</p>
-</td>
-</tr>
-<tr id="row128683447367"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p0633152994810"><a name="p0633152994810"></a><a name="p0633152994810"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p15869844113614"><a name="p15869844113614"></a><a name="p15869844113614"></a>IS_AMCT_RUN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1386954453611"><a name="p1386954453611"></a><a name="p1386954453611"></a><a href="#ZH-CN_TOPIC_0000002408421470">模型压缩</a>开关，默认值为1。</p>
-</td>
-</tr>
-<tr id="row61717421363"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p66332029124816"><a name="p66332029124816"></a><a name="p66332029124816"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p9172144233614"><a name="p9172144233614"></a><a name="p9172144233614"></a>IS_GT_RUN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1172114233610"><a name="p1172114233610"></a><a name="p1172114233610"></a><a href="#ZH-CN_TOPIC_0000002442020541">开源框架推理</a>开关，默认值为1。</p>
-</td>
-</tr>
-<tr id="row781413915365"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p52631433124914"><a name="p52631433124914"></a><a name="p52631433124914"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p8814143953620"><a name="p8814143953620"></a><a name="p8814143953620"></a>IS_<em id="i1624420333339"><a name="i1624420333339"></a><a name="i1624420333339"></a>NNN</em>_RUN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p181443912363"><a name="p181443912363"></a><a name="p181443912363"></a><a href="#ZH-CN_TOPIC_0000002408581374">上板推理</a>开关，默认值为0。</p>
-</td>
-</tr>
-<tr id="row38527133114"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p2263733124920"><a name="p2263733124920"></a><a name="p2263733124920"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p5842715311"><a name="p5842715311"></a><a name="p5842715311"></a>IS_FUNC_RUN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p11882716319"><a name="p11882716319"></a><a name="p11882716319"></a><a href="#ZH-CN_TOPIC_0000002408421434">功能仿真</a>运行开关，默认值为1。</p>
-</td>
-</tr>
-<tr id="row7656152811406"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p72631733124911"><a name="p72631733124911"></a><a name="p72631733124911"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p20656182817404"><a name="p20656182817404"></a><a name="p20656182817404"></a>IS_INST_RUN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p9656152804018"><a name="p9656152804018"></a><a name="p9656152804018"></a><a href="#ZH-CN_TOPIC_0000002442020485">指令仿真</a>运行开关，默认值为0。</p>
-</td>
-</tr>
-<tr id="row27570383402"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p15198634184915"><a name="p15198634184915"></a><a name="p15198634184915"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p19757193817409"><a name="p19757193817409"></a><a name="p19757193817409"></a>IS_DUMP_OPEN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p97577387404"><a name="p97577387404"></a><a name="p97577387404"></a>推理程序Dump模型中间结果开关，默认值为1。</p>
-</td>
-</tr>
-<tr id="row171973518405"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p7198173413492"><a name="p7198173413492"></a><a name="p7198173413492"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p18719235164016"><a name="p18719235164016"></a><a name="p18719235164016"></a>IS_COMPARE_OPEN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p171943517400"><a name="p171943517400"></a><a name="p171943517400"></a>Dump数据<a href="#ZH-CN_TOPIC_0000002441980581">精度比对</a>开关，默认值为1。</p>
-</td>
-</tr>
-<tr id="row1792313307408"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p119863412493"><a name="p119863412493"></a><a name="p119863412493"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p79231430184010"><a name="p79231430184010"></a><a name="p79231430184010"></a>IS_BOARD_PROFILING_OPEN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1392373094015"><a name="p1392373094015"></a><a name="p1392373094015"></a>Profiling数据采集开关，默认值为1。</p>
-</td>
-</tr>
-<tr id="row16391163314403"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p53814284913"><a name="p53814284913"></a><a name="p53814284913"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p5391163364012"><a name="p5391163364012"></a><a name="p5391163364012"></a>IS_PROFILE_DISPLAY_OPEN</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p1391153344014"><a name="p1391153344014"></a><a name="p1391153344014"></a>Profiling数据展示开关，默认值为0。</p>
-</td>
-</tr>
-<tr id="row05415319413"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="p1638104216498"><a name="p1638104216498"></a><a name="p1638104216498"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.2 "><p id="p1554113164113"><a name="p1554113164113"></a><a name="p1554113164113"></a>IS_PRINT_PROCESS_DETAIL</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.6.1.3 "><p id="p4541344115"><a name="p4541344115"></a><a name="p4541344115"></a>控制台打印详细执行日志开关，默认值为0。</p>
 </td>
 </tr>
 <tr id="row690227144111"><td class="cellrowborder" valign="top" width="16.39%" headers="mcps1.2.6.1.1 "><p id="p490220714415"><a name="p490220714415"></a><a name="p490220714415"></a>atc_args_append</p>
@@ -631,48 +272,13 @@ MindCmd命令行工具为用户提供全局配置文件，配置文件路径为�
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   mindcmd.ini中的所有配置项前不可加空格。
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-# Sample介绍
-工具内置一个PyTorch 模型pooling算子快速上手的用例，位于\{MINDCMD\_INSTALL\_PATH\}/testcase。请参考[安装MindCmd](#ZH-CN_TOPIC_0000002408581230)完成安装，再参考[全局配置](#ZH-CN_TOPIC_0000002442020665)完成MindCmd工具配置。
-
-参考以下命令。
-
-```
-mindcmd oneclick pytorch -m mindcmd.testcase.pooling.Model --input_shape 1,3,224,224 
-```
-
-# 一键推理
-## 功能介绍<a name="ZH-CN_TOPIC_0000002441980765"></a>
-
-支持一键式端到端完成模型的数据预处理、AMCT（模型压缩）、GT（Ground Truth）、ATC、仿真、上板推理、Dump、精度比对和Profiling功能。目前支持的开源框架模型包括：Caffe、PyTorch和ONNX。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->AMCT子模块当前仅支持训练后量化（Post-Training Quantization）场景。
-
-## Caffe模型一键推理<a name="ZH-CN_TOPIC_0000002408421546"></a>
-
-Caffe模型一键推理流程如[图1](#fig15202155618339)所示。
-
-**图 1**  Caffe模型一键推理流程图<a name="fig15202155618339"></a>  
-![](figures/Caffe模型一键推理流程图.png "Caffe模型一键推理流程图")
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020649"></a>
-
-Caffe模型一键推理的命令行格式如下。
-
-```
-mindcmd oneclick caffe -m MODEL -w WEIGHT 
-```
-
-Caffe模型一键推理的命令行参数说明如[表1](#table117mcpsimp)所示。
-
-**表 1**  Caffe模型一键推理命令行参数说明
-
-<a name="table117mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- mindcmd.ini中的所有配置项前不可加空格。
+>- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 # Sample介绍
+工具内置一个PyTorch 模型pooling算子快速上手的用例，位于\{MINDCMD\_INSTALL\_PATH\}/testcase。请参考[安装MindCmd](#ZH-CN_TOPIC_0000002408581230)完成安装，再参考[全局配置](#ZH-CN_TOPIC_0000002442020665)完成MindCmd工具配置。 参考以下命令。 ```
+mindcmd oneclick pytorch -m mindcmd.testcase.pooling.Model --input_shape 1,3,224,224 ``` # 一键推理
+## 功能介绍<a name="ZH-CN_TOPIC_0000002441980765"></a> 支持一键式端到端完成模型的数据预处理、AMCT（模型压缩）、GT（Ground Truth）、ATC、仿真、上板推理、Dump、精度比对和Profiling功能。目前支持的开源框架模型包括：Caffe、PyTorch和ONNX。 >![](public_sys-resources/icon-note.gif) **说明：** >AMCT子模块当前仅支持训练后量化（Post-Training Quantization）场景。 ## Caffe模型一键推理<a name="ZH-CN_TOPIC_0000002408421546"></a> Caffe模型一键推理流程如[图1](#fig15202155618339)所示。 **图 1** Caffe模型一键推理流程图<a name="fig15202155618339"></a> ![](figures/Caffe模型一键推理流程图.png "Caffe模型一键推理流程图")
+### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020649"></a> Caffe模型一键推理的命令行格式如下。 ```
+mindcmd oneclick caffe -m MODEL -w WEIGHT ``` Caffe模型一键推理的命令行参数说明如[表1](#table117mcpsimp)所示。 **表 1** Caffe模型一键推理命令行参数说明 <a name="table117mcpsimp"></a>
 <table><thead align="left"><tr id="row122mcpsimp"><th class="cellrowborder" valign="top" width="18.34%" id="mcps1.2.4.1.1"><p id="p13167158205117"><a name="p13167158205117"></a><a name="p13167158205117"></a><strong id="b898781855614"><a name="b898781855614"></a><a name="b898781855614"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.58%" id="mcps1.2.4.1.2"><p id="p1916910167529"><a name="p1916910167529"></a><a name="p1916910167529"></a>必选/可选</p>
@@ -810,146 +416,16 @@ Caffe模型一键推理的命令行参数说明如[表1](#table117mcpsimp)所示
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   输入各参数的位置要求位于其所属子命令之后，例如：
->    ```
->    mindcmd oneclick -k {WORK_DIR} caffe -m xxx.prototxt
->    ```
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
->-   多输入场景支持feature map和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002442020417"></a>
-
--   模型和数据准备。
-
-    将推理所需的Caffe模型文件\(.prototxt\)、权重文件\(.caffemodel\)以及所需的数据等上传到开发环境任意路径，参考目录结构如下。
-
-    ```
-    ├── test_case
-    │   ├── ssh.cfg # 可选，否则需要关闭上板推理
-    │   ├── caffe_resnet50
-    │   │   ├── resnet50.prototxt   # 必选
-    │   │   └── resnet50.caffemodel  # 可选，否则工具自动创建随机权重
-    │   ├── data # 可选，否则工具自动使用随机数推理
-    │   │   ├── dog1_1024_683.jpg
-    │   │   ├── dog2_1024_683.jpg
-    │   │   ├── insert_op.cfg  # 数据预处理配置文件
-    │   │   └── image_ref_list.txt  # 图片列表
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   推理数据的shape应该与模型所需输入数据的shape相同，如：模型resnet50的shape为（3，224，224），图片的shape也应为（3，224，224）。否则需要自定义数据预处理方式，通过--aapp参数指定[数据预处理配置文件样例](#ZH-CN_TOPIC_0000002408421442)，数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf ”章节。
-    >-   当推理数据为图片且未指定数据预处理配置文件时，工具会自动将所有图片Resize成模型所需输入数据的shape。
-
--   选择一键推理场景
-
-    执行一键推理前在[全局配置](#ZH-CN_TOPIC_0000002442020665)中配置一键推理场景开关
-
-    ```
-    [oneclick_switch]
-    # 是否清理当前工作目录下的历史输出结果
-    IS_CLEAN_PREVIOUS_OUTPUT=1
-    
-    # 是否开启模型压缩
-    IS_AMCT_RUN=1
-    
-    # 是否开启GT推理，支持Caffe、ONNX
-    IS_GT_RUN=1
-    
-    # 是否开启上板推理，开启需要配置ssh
-    IS_NNN_RUN=0
-    
-    # 是否开启功能仿真
-    IS_FUNC_RUN=1
-    
-    # 是否开启指令仿真
-    IS_INST_RUN=0
-    
-    # 是否在模型推理时开启Dump网络中间结果，作用于功能仿真、指令仿真、上板推理
-    IS_DUMP_OPEN=1
-    
-    # 是否开启Dump数据精度比对
-    IS_COMPARE_OPEN=1
-    
-    # 是否开启上板性能数据采集
-    IS_BOARD_PROFILING_OPEN=1
-    
-    # 是否在控制台展示性能数据报告
-    IS_PROFILE_DISPLAY_OPEN=0
-    
-    # 是否在控制台打印详细的执行日志
-    IS_PRINT_PROCESS_DETAIL=0
-    ```
-
--   执行一键推理
-
-    执行以下命令进行一键推理：
-
-    ```
-    cd test_case
-    mindcmd oneclick caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt
-    ```
-
--   执行结果
-
-    Caffe模型一键推理执行结束后会在工作路径下生成相应的文件，主要的目录结构如下。
-
-    ```
-    ├── work_space
-    │   ├── bin                                   # 可执行文件路径
-    │   ├── data                                  
-    │   │   ├── inference_data_XXX.txt           # 图片数据/推理数据
-    │   │   ├── insert_op.cfg                    # aapp配置
-    │   ├── model                                 # om离线模型保存路径
-    │   ├── output                
-    │   │   ├── project_XXX                
-    │   │   │   ├── amct                        # 模型压缩输出路径
-    │   │   │   ├── atc                         # 模型转换输出路径
-    │   │   │   ├── cmp                         # 精度比对结果保存路径
-    │   │   │   ├── dump                        # dump结果保存路径
-    │   │   │   │    ├── float                 # 原始模型浮点dump数据，用于精度比对
-    │   │   │   │    ├── fake_quant            # 量化后模型dump数据，用于精度比对
-    │   │   │   │    ├── funcsim               # 离线模型功能仿真dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   │    ├── instsim               # 离线模型指令仿真dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   │    └── nnn                   # 离线模型上板推理dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   ├── log                         # 一键推理执行日志所在文件夹
-    │   │   │   ├── profiling                   # 性能分析结果保存路径
-    │   │   │   └── preprocess                  # 数据预处理结果保存路径
-    │   │   └── latest_result                    # 最后一次执行的oneclick输出路径 
-    │   ├── acl_dump_XXX.json                     # acl配置文件(下发dump配置)     
-    │   ├── acl_XXX.json                          # acl配置文件(下发release配置)
-    │   ├── acl_profiling_XXX.json                # acl配置文件(下发profiling配置)
-    │   └── project.cfg                           # 工程参数配置文件
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >当IS\_DUMP\_OPEN值为0时，trap目录中只会保存模型尾层输出。
-
-## PyTorch模型一键推理<a name="ZH-CN_TOPIC_0000002408581310"></a>
-
-PyTorch模型一键推理流程如[图1](#fig204223548810)所示。
-
-**图 1**  PyTorch模型一键推理流程图<a name="fig204223548810"></a>  
-![](figures/PyTorch模型一键推理流程图.png "PyTorch模型一键推理流程图")
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020573"></a>
-
-PyTorch模型一键推理的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 输入各参数的位置要求位于其所属子命令之后，例如：
+> ```
+> mindcmd oneclick -k {WORK_DIR} caffe -m xxx.prototxt
+> ```
+>- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
+>- 多输入场景支持feature map和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。 ### 执行样例<a name="ZH-CN_TOPIC_0000002442020417"></a> - 模型和数据准备。 将推理所需的Caffe模型文件\(.prototxt\)、权重文件\(.caffemodel\)以及所需的数据等上传到开发环境任意路径，参考目录结构如下。 ``` ├── test_case │ ├── ssh.cfg # 可选，否则需要关闭上板推理 │ ├── caffe_resnet50 │ │ ├── resnet50.prototxt # 必选 │ │ └── resnet50.caffemodel # 可选，否则工具自动创建随机权重 │ ├── data # 可选，否则工具自动使用随机数推理 │ │ ├── dog1_1024_683.jpg │ │ ├── dog2_1024_683.jpg │ │ ├── insert_op.cfg # 数据预处理配置文件 │ │ └── image_ref_list.txt # 图片列表 ``` >![](public_sys-resources/icon-note.gif) **说明：** >- 推理数据的shape应该与模型所需输入数据的shape相同，如：模型resnet50的shape为（3，224，224），图片的shape也应为（3，224，224）。否则需要自定义数据预处理方式，通过--aapp参数指定[数据预处理配置文件样例](#ZH-CN_TOPIC_0000002408421442)，数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf ”章节。 >- 当推理数据为图片且未指定数据预处理配置文件时，工具会自动将所有图片Resize成模型所需输入数据的shape。 - 选择一键推理场景 执行一键推理前在[全局配置](#ZH-CN_TOPIC_0000002442020665)中配置一键推理场景开关 ``` [oneclick_switch] # 是否清理当前工作目录下的历史输出结果 IS_CLEAN_PREVIOUS_OUTPUT=1 # 是否开启模型压缩 IS_AMCT_RUN=1 # 是否开启GT推理，支持Caffe、ONNX IS_GT_RUN=1 # 是否开启上板推理，开启需要配置ssh IS_NNN_RUN=0 # 是否开启功能仿真 IS_FUNC_RUN=1 # 是否开启指令仿真 IS_INST_RUN=0 # 是否在模型推理时开启Dump网络中间结果，作用于功能仿真、指令仿真、上板推理 IS_DUMP_OPEN=1 # 是否开启Dump数据精度比对 IS_COMPARE_OPEN=1 # 是否开启上板性能数据采集 IS_BOARD_PROFILING_OPEN=1 # 是否在控制台展示性能数据报告 IS_PROFILE_DISPLAY_OPEN=0 # 是否在控制台打印详细的执行日志 IS_PRINT_PROCESS_DETAIL=0 ``` - 执行一键推理 执行以下命令进行一键推理： ``` cd test_case mindcmd oneclick caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt ``` - 执行结果 Caffe模型一键推理执行结束后会在工作路径下生成相应的文件，主要的目录结构如下。 ``` ├── work_space │ ├── bin # 可执行文件路径 │ ├── data │ │ ├── inference_data_XXX.txt # 图片数据/推理数据 │ │ ├── insert_op.cfg # aapp配置 │ ├── model # om离线模型保存路径 │ ├── output │ │ ├── project_XXX │ │ │ ├── amct # 模型压缩输出路径 │ │ │ ├── atc # 模型转换输出路径 │ │ │ ├── cmp # 精度比对结果保存路径 │ │ │ ├── dump # dump结果保存路径 │ │ │ │ ├── float # 原始模型浮点dump数据，用于精度比对 │ │ │ │ ├── fake_quant # 量化后模型dump数据，用于精度比对 │ │ │ │ ├── funcsim # 离线模型功能仿真dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ │ ├── instsim # 离线模型指令仿真dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ │ └── nnn # 离线模型上板推理dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ ├── log # 一键推理执行日志所在文件夹 │ │ │ ├── profiling # 性能分析结果保存路径 │ │ │ └── preprocess # 数据预处理结果保存路径 │ │ └── latest_result # 最后一次执行的oneclick输出路径 │ ├── acl_dump_XXX.json # acl配置文件(下发dump配置) │ ├── acl_XXX.json # acl配置文件(下发release配置) │ ├── acl_profiling_XXX.json # acl配置文件(下发profiling配置) │ └── project.cfg # 工程参数配置文件 ``` >![](public_sys-resources/icon-note.gif) **说明：** >当IS\_DUMP\_OPEN值为0时，trap目录中只会保存模型尾层输出。 ## PyTorch模型一键推理<a name="ZH-CN_TOPIC_0000002408581310"></a> PyTorch模型一键推理流程如[图1](#fig204223548810)所示。 **图 1** PyTorch模型一键推理流程图<a name="fig204223548810"></a> ![](figures/PyTorch模型一键推理流程图.png "PyTorch模型一键推理流程图")
+### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020573"></a> PyTorch模型一键推理的命令行格式如下。 ```
 mindcmd oneclick pytorch -m MODEL -i IMAGE_LIST --input_shape INPUT_SHAPE
-```
-
-PyTorch模型一键推理的命令行参数说明如[表1](#table1529512183117)所示。
-
-**表 1**  PyTorch模型一键推理命令行参数说明
-
-<a name="table1529512183117"></a>
+``` PyTorch模型一键推理的命令行参数说明如[表1](#table1529512183117)所示。 **表 1** PyTorch模型一键推理命令行参数说明 <a name="table1529512183117"></a>
 <table><thead align="left"><tr id="row16295111123117"><th class="cellrowborder" valign="top" width="18.34%" id="mcps1.2.4.1.1"><p id="p1295317317"><a name="p1295317317"></a><a name="p1295317317"></a><strong id="b429521123113"><a name="b429521123113"></a><a name="b429521123113"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="8.32%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -1089,180 +565,21 @@ PyTorch模型一键推理的命令行参数说明如[表1](#table1529512183117)�
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   输入各参数的位置要求位于其所属子命令之后，例如：
->    ```
->    mindcmd oneclick -k {WORK_DIR} pytorch -m {package.model.class} --input_shape {INPUT_SHAPE}
->    ```
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
->-   多输入场景支持featuremap和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408421518"></a>
-
--   模型和数据准备。
-
-    将推理所需的PyTorch模型文件以及所需的数据等上传到开发环境任意路径, 如/home/MindCmdUser/test\_case，参考目录结构如下。
-
-    ```
-    ├── test_case
-    │   ├── ssh.cfg   # 可选，否则需要关闭上板推理
-    │   ├── pytorch_resnet50
-    │   │   ├── __init__.py
-    │   │   ├── resnet.py  # 必选
-    │   │   └── resnet50-19c8e357.pth
-    │   ├── data  # 可选，否则工具自动使用随机数推理
-    │   │   ├── dog1_1024_683.jpg
-    │   │   ├── dog2_1024_683.jpg
-    │   │   ├── insert_op.cfg
-    │   │   └── image_ref_list.txt
-    ```
-
-    **配置PYTHONPATH环境变量**：
-
-    ```
-    export PYTHONPATH=/home/MindCmdUser/test_case:$PYTHONPATH
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   推理数据的shape应该与模型所需输入数据的shape相同，如：模型resnet50的shape为（3， 224， 224），图片的shape也应为（3， 224， 224）。否则需要自定义数据预处理方式，通过--aapp参数指定[数据预处理配置文件样例](#ZH-CN_TOPIC_0000002408421442)，数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf ”章节。
-    >-   当推理数据为图片且未指定数据预处理配置文件时，工具会根据--input\_shape参数值，将所有图片Resize成模型所需输入数据的shape。
-
--   选择一键推理场景
-
-    执行一键推理前可以在mindcmd.ini文件中配置一键推理开关\[oneclick\_switch\]
-
-    ```
-    [oneclick_switch]
-    # 是否清理当前工作目录下的历史输出结果
-    IS_CLEAN_PREVIOUS_OUTPUT=1
-    
-    # 是否开启模型压缩
-    IS_AMCT_RUN=1
-    
-    # 是否开启GT推理，支持Caffe、ONNX
-    IS_GT_RUN=1
-    
-    # 是否开启上板推理，开启需要配置ssh
-    IS_NNN_RUN=0
-    
-    # 是否开启功能仿真
-    IS_FUNC_RUN=1
-    
-    # 是否开启指令仿真
-    IS_INST_RUN=0
-    
-    # 是否在模型推理时开启Dump网络中间结果，作用于功能仿真、指令仿真、上板推理
-    IS_DUMP_OPEN=1
-    
-    # 是否开启Dump数据精度比对
-    IS_COMPARE_OPEN=1
-    
-    # 是否开启上板性能数据采集
-    IS_BOARD_PROFILING_OPEN=1
-    
-    # 是否在控制台展示性能数据报告
-    IS_PROFILE_DISPLAY_OPEN=0
-    
-    # 是否在控制台打印详细的执行日志
-    IS_PRINT_PROCESS_DETAIL=0
-    ```
-
--   执行一键推理
-
-    执行以下命令进行一键推理：
-
-    ```
-    cd test_case
-    mindcmd oneclick pytorch -m pytorch_resnet50.resnet.resnet50 -i ./data/image_ref_list.txt --input_shape 1,3,224,224 --realquant
-    ```
-
--   执行结果
-
-    PyTorch模型一键推理执行结束后会在工作路径下生成相应的文件，主要的目录结构如下。
-
-    ```
-    ├── work_space
-    │   ├── bin                                   # 可执行文件路径
-    │   ├── data                                  
-    │   │   ├── inference_data_XXX.txt           # 推理数据
-    │   │   ├── insert_op.cfg                    # aapp配置
-    │   ├── model                                 # om离线模型保存路径
-    │   ├── output                
-    │   │   ├── project_XXX                
-    │   │   │   ├── amct                        # 模型压缩输出路径
-    │   │   │   ├── atc                         # 模型转换输出路径
-    │   │   │   ├── cmp                         # 精度比对结果保存路径
-    │   │   │   ├── dump                        # dump结果保存路径
-    │   │   │   │    ├── float                 # 原始模型浮点dump数据，用于精度比对
-    │   │   │   │    ├── fake_quant            # 量化后模型假量化dump数据，用于精度比对
-    │   │   │   │    ├── real_quant            # 量化后模型真量化dump数据，用于精度比对
-    │   │   │   │    ├── funcsim               # 离线模型功能仿真dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   │    ├── instsim               # 离线模型指令仿真dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   │    └── nnn                   # 离线模型上板推理dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   ├── log                         # 一键推理执行日志所在文件夹
-    │   │   │   ├── profiling                   # 性能分析结果保存路径
-    │   │   │   └── preprocess                  # 数据预处理结果保存路径
-    │   │   └── latest_result                    # 最后一次执行的oneclick输出路径 
-    │   ├── acl_XXX.json                          # acl配置文件(下发release配置)
-    │   ├── acl_dump_XXX.json                     # acl配置文件(下发dump配置)
-    │   ├── acl_profiling_XXX.json                # acl配置文件(下发profiling配置)
-    │   └── project.cfg                           # 工程参数配置文件
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   当IS\_DUMP\_OPEN值为0时，trap目录中只会保存尾层输出。
-
-### 量化后模型一键推理<a name="ZH-CN_TOPIC_0000002408581354"></a>
-
-工具支持传入量化后的权重文件和量化配置文件执行量化后模型一键推理，流程如[图1](#fig148822420395)所示。命令行格式如下。
-
-```
-mindcmd oneclick pytorch -m MODEL -w WEIGHT  -i IMAGE_LIST --input_shape INPUT_SHAPE --quant_config QUANT_CONFIG
-```
-
-**图 1**  量化后模型一键推理流程图<a name="fig148822420395"></a>  
-![](figures/量化后模型一键推理流程图.png "量化后模型一键推理流程图")
->![](public_sys-resources/icon-note.gif) **说明：** 
->当且仅当同时输入量化后的权重文件和量化配置文件时，才会执行量化后模型一键推理。
-
-### 硬件感知一键推理<a name="ZH-CN_TOPIC_0000002408421494"></a>
-
-工具支持硬件感知一键推理流程，流程如[图1](#fig116795781218)所示。命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 输入各参数的位置要求位于其所属子命令之后，例如：
+> ```
+> mindcmd oneclick -k {WORK_DIR} pytorch -m {package.model.class} --input_shape {INPUT_SHAPE}
+> ```
+>- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
+>- 多输入场景支持featuremap和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408421518"></a> - 模型和数据准备。 将推理所需的PyTorch模型文件以及所需的数据等上传到开发环境任意路径, 如/home/MindCmdUser/test\_case，参考目录结构如下。 ``` ├── test_case │ ├── ssh.cfg # 可选，否则需要关闭上板推理 │ ├── pytorch_resnet50 │ │ ├── __init__.py │ │ ├── resnet.py # 必选 │ │ └── resnet50-19c8e357.pth │ ├── data # 可选，否则工具自动使用随机数推理 │ │ ├── dog1_1024_683.jpg │ │ ├── dog2_1024_683.jpg │ │ ├── insert_op.cfg │ │ └── image_ref_list.txt ``` **配置PYTHONPATH环境变量**： ``` export PYTHONPATH=/home/MindCmdUser/test_case:$PYTHONPATH ``` >![](public_sys-resources/icon-note.gif) **说明：** >- 推理数据的shape应该与模型所需输入数据的shape相同，如：模型resnet50的shape为（3， 224， 224），图片的shape也应为（3， 224， 224）。否则需要自定义数据预处理方式，通过--aapp参数指定[数据预处理配置文件样例](#ZH-CN_TOPIC_0000002408421442)，数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf ”章节。 >- 当推理数据为图片且未指定数据预处理配置文件时，工具会根据--input\_shape参数值，将所有图片Resize成模型所需输入数据的shape。 - 选择一键推理场景 执行一键推理前可以在mindcmd.ini文件中配置一键推理开关\[oneclick\_switch\] ``` [oneclick_switch] # 是否清理当前工作目录下的历史输出结果 IS_CLEAN_PREVIOUS_OUTPUT=1 # 是否开启模型压缩 IS_AMCT_RUN=1 # 是否开启GT推理，支持Caffe、ONNX IS_GT_RUN=1 # 是否开启上板推理，开启需要配置ssh IS_NNN_RUN=0 # 是否开启功能仿真 IS_FUNC_RUN=1 # 是否开启指令仿真 IS_INST_RUN=0 # 是否在模型推理时开启Dump网络中间结果，作用于功能仿真、指令仿真、上板推理 IS_DUMP_OPEN=1 # 是否开启Dump数据精度比对 IS_COMPARE_OPEN=1 # 是否开启上板性能数据采集 IS_BOARD_PROFILING_OPEN=1 # 是否在控制台展示性能数据报告 IS_PROFILE_DISPLAY_OPEN=0 # 是否在控制台打印详细的执行日志 IS_PRINT_PROCESS_DETAIL=0 ``` - 执行一键推理 执行以下命令进行一键推理： ``` cd test_case mindcmd oneclick pytorch -m pytorch_resnet50.resnet.resnet50 -i ./data/image_ref_list.txt --input_shape 1,3,224,224 --realquant ``` - 执行结果 PyTorch模型一键推理执行结束后会在工作路径下生成相应的文件，主要的目录结构如下。 ``` ├── work_space │ ├── bin # 可执行文件路径 │ ├── data │ │ ├── inference_data_XXX.txt # 推理数据 │ │ ├── insert_op.cfg # aapp配置 │ ├── model # om离线模型保存路径 │ ├── output │ │ ├── project_XXX │ │ │ ├── amct # 模型压缩输出路径 │ │ │ ├── atc # 模型转换输出路径 │ │ │ ├── cmp # 精度比对结果保存路径 │ │ │ ├── dump # dump结果保存路径 │ │ │ │ ├── float # 原始模型浮点dump数据，用于精度比对 │ │ │ │ ├── fake_quant # 量化后模型假量化dump数据，用于精度比对 │ │ │ │ ├── real_quant # 量化后模型真量化dump数据，用于精度比对 │ │ │ │ ├── funcsim # 离线模型功能仿真dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ │ ├── instsim # 离线模型指令仿真dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ │ └── nnn # 离线模型上板推理dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ ├── log # 一键推理执行日志所在文件夹 │ │ │ ├── profiling # 性能分析结果保存路径 │ │ │ └── preprocess # 数据预处理结果保存路径 │ │ └── latest_result # 最后一次执行的oneclick输出路径 │ ├── acl_XXX.json # acl配置文件(下发release配置) │ ├── acl_dump_XXX.json # acl配置文件(下发dump配置) │ ├── acl_profiling_XXX.json # acl配置文件(下发profiling配置) │ └── project.cfg # 工程参数配置文件 ``` >![](public_sys-resources/icon-note.gif) **说明：** >- 当IS\_DUMP\_OPEN值为0时，trap目录中只会保存尾层输出。 ### 量化后模型一键推理<a name="ZH-CN_TOPIC_0000002408581354"></a> 工具支持传入量化后的权重文件和量化配置文件执行量化后模型一键推理，流程如[图1](#fig148822420395)所示。命令行格式如下。 ```
+mindcmd oneclick pytorch -m MODEL -w WEIGHT -i IMAGE_LIST --input_shape INPUT_SHAPE --quant_config QUANT_CONFIG
+``` **图 1** 量化后模型一键推理流程图<a name="fig148822420395"></a> ![](figures/量化后模型一键推理流程图.png "量化后模型一键推理流程图")
+>![](public_sys-resources/icon-note.gif) **说明：** >当且仅当同时输入量化后的权重文件和量化配置文件时，才会执行量化后模型一键推理。 ### 硬件感知一键推理<a name="ZH-CN_TOPIC_0000002408421494"></a> 工具支持硬件感知一键推理流程，流程如[图1](#fig116795781218)所示。命令行格式如下。 ```
 mindcmd oneclick pytorch -m MODEL -i IMAGE_LIST --realquant
-```
-
-**图 1**  硬件感知一键推理流程图<a name="fig116795781218"></a>  
-![](figures/硬件感知一键推理流程图.png "硬件感知一键推理流程图")
->![](public_sys-resources/icon-note.gif) **说明：** 
->当参数--quant\_config传入量化配置文件（\*.json）时，不会执行硬件感知一键推理。
-
-## ONNX模型一键推理<a name="ZH-CN_TOPIC_0000002441980689"></a>
-
-ONNX模型一键推理流程如[图1](#fig41101631131215)所示。
-
-**图 1**  ONNX模型一键推理流程图<a name="fig41101631131215"></a>  
-![](figures/ONNX模型一键推理流程图.png "ONNX模型一键推理流程图")
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421390"></a>
-
-ONNX模型一键推理的命令行格式如下。
-
-```
-mindcmd oneclick onnx -m MODEL -i IMAGE_LIST 
-```
-
-ONNX模型一键推理的命令行参数说明如[表1](#table16770184613465)所示。
-
-**表 1**  ONNX模型一键推理命令行参数说明
-
-<a name="table16770184613465"></a>
+``` **图 1** 硬件感知一键推理流程图<a name="fig116795781218"></a> ![](figures/硬件感知一键推理流程图.png "硬件感知一键推理流程图")
+>![](public_sys-resources/icon-note.gif) **说明：** >当参数--quant\_config传入量化配置文件（\*.json）时，不会执行硬件感知一键推理。 ## ONNX模型一键推理<a name="ZH-CN_TOPIC_0000002441980689"></a> ONNX模型一键推理流程如[图1](#fig41101631131215)所示。 **图 1** ONNX模型一键推理流程图<a name="fig41101631131215"></a> ![](figures/ONNX模型一键推理流程图.png "ONNX模型一键推理流程图")
+### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421390"></a> ONNX模型一键推理的命令行格式如下。 ```
+mindcmd oneclick onnx -m MODEL -i IMAGE_LIST ``` ONNX模型一键推理的命令行参数说明如[表1](#table16770184613465)所示。 **表 1** ONNX模型一键推理命令行参数说明 <a name="table16770184613465"></a>
 <table><thead align="left"><tr id="row1777194617463"><th class="cellrowborder" valign="top" width="19.220000000000002%" id="mcps1.2.4.1.1"><p id="p7771184611467"><a name="p7771184611467"></a><a name="p7771184611467"></a><strong id="b5771046134617"><a name="b5771046134617"></a><a name="b5771046134617"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="11.37%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -1374,154 +691,17 @@ ONNX模型一键推理的命令行参数说明如[表1](#table16770184613465)所
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   输入各参数的位置要求位于其所属子命令之后，例如：
->    ```
->    mindcmd oneclick -k {WORK_DIR} onnx -m  *.onnx
->    ```
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
->-   多输入场景支持feature map和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408421422"></a>
-
--   模型和数据准备。
-
-    将推理所需的ONNX模型文件以及所需的数据等上传到开发环境任意路径，参考目录如下。
-
-    ```
-    ├── test_case
-    │   ├── ssh.cfg  # 可选，否则需要关闭上板推理
-    │   ├── onnx_resnet50
-    │   │   └── resnet50.onnx  # 必选
-    │   ├── data  # 可选，否则工具自动使用随机数推理
-    │   │   ├── dog1_1024_683.jpg
-    │   │   ├── dog2_1024_683.jpg
-    │   │   ├── insert_op.cfg
-    │   │   └── image_ref_list.txt
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   推理数据的shape应该与模型所需输入数据的shape相同，如：模型resnet50的shape为（3， 224， 224），图片的shape也应为（3， 224， 224）。否则需要自定义数据预处理方式，通过--aapp参数指定[数据预处理配置文件样例](#ZH-CN_TOPIC_0000002408421442)，数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf ”章节。
-    >-   当推理数据为图片且未指定数据预处理配置文件时，工具会将所有图片Resize成模型所需输入数据的shape大小。
-
--   选择一键推理场景
-
-    执行一键推理前可以在mindcmd.ini文件中配置一键推理开关\[oneclick\_switch\]
-
-    ```
-    [oneclick_switch]
-    # 是否清理当前工作目录下的历史输出结果
-    IS_CLEAN_PREVIOUS_OUTPUT=1
-    
-    # 是否开启模型压缩
-    IS_AMCT_RUN=1
-    
-    # 是否开启GT推理，支持Caffe、ONNX
-    IS_GT_RUN=1
-    
-    # 是否开启上板推理，开启需要配置ssh
-    IS_NNN_RUN=0
-    
-    # 是否开启功能仿真
-    IS_FUNC_RUN=1
-    
-    # 是否开启指令仿真
-    IS_INST_RUN=0
-    
-    # 是否在模型推理时开启Dump网络中间结果，作用于功能仿真、指令仿真、上板推理
-    IS_DUMP_OPEN=1
-    
-    # 是否开启Dump数据精度比对
-    IS_COMPARE_OPEN=1
-    
-    # 是否开启上板性能数据采集
-    IS_BOARD_PROFILING_OPEN=1
-    
-    # 是否在控制台展示性能数据报告
-    IS_PROFILE_DISPLAY_OPEN=0
-    
-    # 是否在控制台打印详细的执行日志
-    IS_PRINT_PROCESS_DETAIL=0
-    ```
-
--   执行一键推理
-
-    执行以下命令进行一键推理：
-
-    ```
-    cd test_case
-    mindcmd oneclick onnx -m ./onnx_resnet50/resnet50.onnx -i ./data/image_ref_list.txt
-    ```
-
--   执行结果
-
-    ONNX模型一键推理执行结束后会在工作路径下生成相应的文件，主要的目录结构如下。
-
-    ```
-    ├── work_space
-    │   ├── bin                                   # 可执行文件路径
-    │   ├── data                                                              
-    │   │   ├── inference_data_XXX.txt           # 推理数据
-    │   │   ├── insert_op.cfg                    # aapp配置
-    │   ├── model                                 # om离线模型保存路径
-    │   ├── output                
-    │   │   ├── project_XXX                
-    │   │   │   ├── atc                         # 模型转换输出路径
-    │   │   │   ├── cmp                         # 精度比对结果保存路径
-    │   │   │   ├── dump                        # dump结果保存路径
-    │   │   │   │    ├── float                 # 原始模型浮点dump数据，用于精度比对
-    │   │   │   │    ├── funcsim               # 离线模型功能仿真dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   │    ├── instsim               # 离线模型指令仿真dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   │    ├── atc_fake_quant        # ATC量化dump数据，用于精度比对
-    │   │   │   │    └── nnn                   # 离线模型上板推理dump数据，用于精度比对
-    │   │   │   │    │    └── trap
-    │   │   │   ├── log                         # 一键推理执行日志所在文件夹
-    │   │   │   ├── profiling                   # 性能分析结果保存路径
-    │   │   │   └── preprocess                  # 数据预处理结果保存路径
-    │   │   └── latest_result                    # 最后一次执行的oneclick输出路径 
-    │   ├── acl_dump_XXX.json                     # acl配置文件(下发dump配置)
-    │   ├── acl_XXX.json                          # acl配置文件(下发release配置)      
-    │   ├── acl_profiling_XXX.json                # acl配置文件(下发profiling配置)
-    │   └── project.cfg                           # 工程参数配置文件
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   当IS\_DUMP\_OPEN值为0时，trap目录中只会保存尾层输出。
-
-## Deployed模型一键推理<a name="ZH-CN_TOPIC_0000002408421374"></a>
-
-针对单独调用AMCT PTQ或QAT生成的定点模型流程如[图1](#fig127401254671)所示。
-
-**图 1**  Deployed一键推理流程图<a name="fig127401254671"></a>  
-![](figures/Deployed一键推理流程图.png "Deployed一键推理流程图")
->![](public_sys-resources/icon-note.gif) **说明：** 
->Deployed模型的一键推理命令格式请参考：[Caffe模型一键推理](#ZH-CN_TOPIC_0000002408421546)、[PyTorch模型一键推理](#ZH-CN_TOPIC_0000002408581310)和[ONNX模型一键推理](#ZH-CN_TOPIC_0000002441980689)。
-
-# 数据预处理
-## 功能介绍<a name="ZH-CN_TOPIC_0000002408581246"></a>
-
-此功能对数据进行预处理，生成AMCT/ATC/仿真/上板的推理数据（.npy 和 .bin格式）。
-
-当前支持图像裁剪（crop）、图像边缘填充（padding）、图像缩放（resize）、色域转换、通道数据交换、减均值、乘系数。
-
-## 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020609"></a>
-
-数据预处理命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 输入各参数的位置要求位于其所属子命令之后，例如：
+> ```
+> mindcmd oneclick -k {WORK_DIR} onnx -m *.onnx
+> ```
+>- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
+>- 多输入场景支持feature map和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408421422"></a> - 模型和数据准备。 将推理所需的ONNX模型文件以及所需的数据等上传到开发环境任意路径，参考目录如下。 ``` ├── test_case │ ├── ssh.cfg # 可选，否则需要关闭上板推理 │ ├── onnx_resnet50 │ │ └── resnet50.onnx # 必选 │ ├── data # 可选，否则工具自动使用随机数推理 │ │ ├── dog1_1024_683.jpg │ │ ├── dog2_1024_683.jpg │ │ ├── insert_op.cfg │ │ └── image_ref_list.txt ``` >![](public_sys-resources/icon-note.gif) **说明：** >- 推理数据的shape应该与模型所需输入数据的shape相同，如：模型resnet50的shape为（3， 224， 224），图片的shape也应为（3， 224， 224）。否则需要自定义数据预处理方式，通过--aapp参数指定[数据预处理配置文件样例](#ZH-CN_TOPIC_0000002408421442)，数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf ”章节。 >- 当推理数据为图片且未指定数据预处理配置文件时，工具会将所有图片Resize成模型所需输入数据的shape大小。 - 选择一键推理场景 执行一键推理前可以在mindcmd.ini文件中配置一键推理开关\[oneclick\_switch\] ``` [oneclick_switch] # 是否清理当前工作目录下的历史输出结果 IS_CLEAN_PREVIOUS_OUTPUT=1 # 是否开启模型压缩 IS_AMCT_RUN=1 # 是否开启GT推理，支持Caffe、ONNX IS_GT_RUN=1 # 是否开启上板推理，开启需要配置ssh IS_NNN_RUN=0 # 是否开启功能仿真 IS_FUNC_RUN=1 # 是否开启指令仿真 IS_INST_RUN=0 # 是否在模型推理时开启Dump网络中间结果，作用于功能仿真、指令仿真、上板推理 IS_DUMP_OPEN=1 # 是否开启Dump数据精度比对 IS_COMPARE_OPEN=1 # 是否开启上板性能数据采集 IS_BOARD_PROFILING_OPEN=1 # 是否在控制台展示性能数据报告 IS_PROFILE_DISPLAY_OPEN=0 # 是否在控制台打印详细的执行日志 IS_PRINT_PROCESS_DETAIL=0 ``` - 执行一键推理 执行以下命令进行一键推理： ``` cd test_case mindcmd oneclick onnx -m ./onnx_resnet50/resnet50.onnx -i ./data/image_ref_list.txt ``` - 执行结果 ONNX模型一键推理执行结束后会在工作路径下生成相应的文件，主要的目录结构如下。 ``` ├── work_space │ ├── bin # 可执行文件路径 │ ├── data │ │ ├── inference_data_XXX.txt # 推理数据 │ │ ├── insert_op.cfg # aapp配置 │ ├── model # om离线模型保存路径 │ ├── output │ │ ├── project_XXX │ │ │ ├── atc # 模型转换输出路径 │ │ │ ├── cmp # 精度比对结果保存路径 │ │ │ ├── dump # dump结果保存路径 │ │ │ │ ├── float # 原始模型浮点dump数据，用于精度比对 │ │ │ │ ├── funcsim # 离线模型功能仿真dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ │ ├── instsim # 离线模型指令仿真dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ │ ├── atc_fake_quant # ATC量化dump数据，用于精度比对 │ │ │ │ └── nnn # 离线模型上板推理dump数据，用于精度比对 │ │ │ │ │ └── trap │ │ │ ├── log # 一键推理执行日志所在文件夹 │ │ │ ├── profiling # 性能分析结果保存路径 │ │ │ └── preprocess # 数据预处理结果保存路径 │ │ └── latest_result # 最后一次执行的oneclick输出路径 │ ├── acl_dump_XXX.json # acl配置文件(下发dump配置) │ ├── acl_XXX.json # acl配置文件(下发release配置) │ ├── acl_profiling_XXX.json # acl配置文件(下发profiling配置) │ └── project.cfg # 工程参数配置文件 ``` >![](public_sys-resources/icon-note.gif) **说明：** >- 当IS\_DUMP\_OPEN值为0时，trap目录中只会保存尾层输出。 ## Deployed模型一键推理<a name="ZH-CN_TOPIC_0000002408421374"></a> 针对单独调用AMCT PTQ或QAT生成的定点模型流程如[图1](#fig127401254671)所示。 **图 1** Deployed一键推理流程图<a name="fig127401254671"></a> ![](figures/Deployed一键推理流程图.png "Deployed一键推理流程图")
+>![](public_sys-resources/icon-note.gif) **说明：** >Deployed模型的一键推理命令格式请参考：[Caffe模型一键推理](#ZH-CN_TOPIC_0000002408421546)、[PyTorch模型一键推理](#ZH-CN_TOPIC_0000002408581310)和[ONNX模型一键推理](#ZH-CN_TOPIC_0000002441980689)。 # 数据预处理
+## 功能介绍<a name="ZH-CN_TOPIC_0000002408581246"></a> 此功能对数据进行预处理，生成AMCT/ATC/仿真/上板的推理数据（.npy 和 .bin格式）。 当前支持图像裁剪（crop）、图像边缘填充（padding）、图像缩放（resize）、色域转换、通道数据交换、减均值、乘系数。 ## 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020609"></a> 数据预处理命令行格式如下。 ```
 mindcmd preprocess --model_input_shape MODEL_INPUT_SHAPE -i IMAGE_LIST
-```
-
-命令行参数说明如[表1](#table328mcpsimp)  所示
-
-**表 1**  数据预处理命令行参数说明
-
-<a name="table328mcpsimp"></a>
+``` 命令行参数说明如[表1](#table328mcpsimp) 所示 **表 1** 数据预处理命令行参数说明 <a name="table328mcpsimp"></a>
 <table><thead align="left"><tr id="row333mcpsimp"><th class="cellrowborder" valign="top" width="22.63%" id="mcps1.2.4.1.1"><p id="p335mcpsimp"><a name="p335mcpsimp"></a><a name="p335mcpsimp"></a><strong id="b758155819249"><a name="b758155819249"></a><a name="b758155819249"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.780000000000001%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -1604,95 +784,12 @@ mindcmd preprocess --model_input_shape MODEL_INPUT_SHAPE -i IMAGE_LIST
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
->-   多输入场景支持feature map和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。
-
-## 执行样例<a name="ZH-CN_TOPIC_0000002441980733"></a>
-
--   模型和数据准备。
-
-    需要进行预处理的数据可进行如下准备：
-
-    ```
-    ├── data
-    │   ├── dog1.jpg
-    │   ├── dog2.jpg
-    │   ├── insert_op.cfg
-    │   └── image_ref_list.txt
-    ```
-
--   执行数据预处理
-
-    执行以下命令进行数据预处理：
-
-    ```
-    cd data
-    mindcmd preprocess --model_input_shape 1,3,224,224 --aapp ./insert_op.cfg -i ./image_ref_list.txt -o ./preprocess_output/
-    ```
-
--   <a name="li137721446144613"></a>执行结果
-
-    数据预处理执行结束后会在指定输出路径下生成数据，主要目录结构如下。
-
-    ```
-    ├── preprocess_output
-    │   ├── calibration_dataset                                    # 校准数据集
-    │   │   ├── bin                                               # bin格式数据
-    │   │   │   └── input_0_dog1_shape_1_3_224_224_FP32.bin
-    │   │   ├── npy                                               # npy格式数据
-    │   │   │   └── input_0_dog1_shape_1_3_224_224_FP32.npy
-    │   │   └── original                                          # 原始输入数据
-    │   │   │   └── dog1.jpg
-    │   ├── validation_dataset                                     # 验证数据集
-    │   │   ├── bin                                               # bin格式数据
-    │   │   │   └── input_0_dog2_bgr_planar_shape_1_3_224_224_U8.bin
-    │   │   ├── npy                                               # npy格式数据
-    │   │   │   └── input_0_dog2_shape_1_3_224_224_FP32.npy
-    │   │   └── original                                          # 原始输入数据
-    │   │   │   └── dog2.jpg
-    │   ├── input_format                                           # 按input_format解析的原始输入数据
-    │   ├── input0_calibration_npy_FP32.txt                        # 保存了npy格式校准数据的路径
-    │   ├── input0_validation_bin_FP32.txt                         # 保存了bin格式验证数据的路径
-    │   ├── input0_validation_npy_FP32.txt                         # 保存了npy格式验证数据的路径
-    │   └── insert_op.cfg                                          # 数据预处理配置文件
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   当用户传入的-i/--image\_list有多组数据且每组的数据个数不等时，MindCmd将采用最小的数据个数作为预处理操作的图片个数。示例：
-    >    ```
-    >    mindcmd preprocess --model_input_shape "1,3,2,2;1,3,4,4" --image_list "./pic1.txt;./pic2.txt"
-    >    ```
-    >    如果pic1.txt中有4张图片，pic2.txt中有2张图片，那么MindCmd执行预处理时pic1.txt中的最后两张图片不会被处理，以保证每路输入的数据个数是相同的。
-    >-   关于校准数据集和验证数据集的说明：
-    >    如果输入为N张图片，那么MindCmd将使用前N-1张数据作为校准集数据，第N张图片作为验证集数据（当只有一张图片时，该图片既作为校准集数据，也作为验证集数据）。
-    >-   预处理的输出生成件命名与实际配置的insert\_op相关，上述[执行结果](#li137721446144613)中的示例仅供参考，生成件文件名描述的shape、input\_format等以实际配置为准。
-
-# 开源框架推理
-## 功能介绍<a name="ZH-CN_TOPIC_0000002442020569"></a>
-
-该功能支持开源框架\(Caffe/ONNX\)推理，生成的dump数据可用于精度比对。
-
-## Caffe模型推理<a name="ZH-CN_TOPIC_0000002442020553"></a>
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980793"></a>
-
-Caffe模型推理的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
+>- 多输入场景支持feature map和图片列表混输，eg. -i="$\{图片列表\};$\{feature\_map\}"。 ## 执行样例<a name="ZH-CN_TOPIC_0000002441980733"></a> - 模型和数据准备。 需要进行预处理的数据可进行如下准备： ``` ├── data │ ├── dog1.jpg │ ├── dog2.jpg │ ├── insert_op.cfg │ └── image_ref_list.txt ``` - 执行数据预处理 执行以下命令进行数据预处理： ``` cd data mindcmd preprocess --model_input_shape 1,3,224,224 --aapp ./insert_op.cfg -i ./image_ref_list.txt -o ./preprocess_output/ ``` - <a name="li137721446144613"></a>执行结果 数据预处理执行结束后会在指定输出路径下生成数据，主要目录结构如下。 ``` ├── preprocess_output │ ├── calibration_dataset # 校准数据集 │ │ ├── bin # bin格式数据 │ │ │ └── input_0_dog1_shape_1_3_224_224_FP32.bin │ │ ├── npy # npy格式数据 │ │ │ └── input_0_dog1_shape_1_3_224_224_FP32.npy │ │ └── original # 原始输入数据 │ │ │ └── dog1.jpg │ ├── validation_dataset # 验证数据集 │ │ ├── bin # bin格式数据 │ │ │ └── input_0_dog2_bgr_planar_shape_1_3_224_224_U8.bin │ │ ├── npy # npy格式数据 │ │ │ └── input_0_dog2_shape_1_3_224_224_FP32.npy │ │ └── original # 原始输入数据 │ │ │ └── dog2.jpg │ ├── input_format # 按input_format解析的原始输入数据 │ ├── input0_calibration_npy_FP32.txt # 保存了npy格式校准数据的路径 │ ├── input0_validation_bin_FP32.txt # 保存了bin格式验证数据的路径 │ ├── input0_validation_npy_FP32.txt # 保存了npy格式验证数据的路径 │ └── insert_op.cfg # 数据预处理配置文件 ``` >![](public_sys-resources/icon-note.gif) **说明：** >- 当用户传入的-i/--image\_list有多组数据且每组的数据个数不等时，MindCmd将采用最小的数据个数作为预处理操作的图片个数。示例： > ``` > mindcmd preprocess --model_input_shape "1,3,2,2;1,3,4,4" --image_list "./pic1.txt;./pic2.txt" > ``` > 如果pic1.txt中有4张图片，pic2.txt中有2张图片，那么MindCmd执行预处理时pic1.txt中的最后两张图片不会被处理，以保证每路输入的数据个数是相同的。 >- 关于校准数据集和验证数据集的说明： > 如果输入为N张图片，那么MindCmd将使用前N-1张数据作为校准集数据，第N张图片作为验证集数据（当只有一张图片时，该图片既作为校准集数据，也作为验证集数据）。 >- 预处理的输出生成件命名与实际配置的insert\_op相关，上述[执行结果](#li137721446144613)中的示例仅供参考，生成件文件名描述的shape、input\_format等以实际配置为准。 # 开源框架推理
+## 功能介绍<a name="ZH-CN_TOPIC_0000002442020569"></a> 该功能支持开源框架\(Caffe/ONNX\)推理，生成的dump数据可用于精度比对。 ## Caffe模型推理<a name="ZH-CN_TOPIC_0000002442020553"></a> ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980793"></a> Caffe模型推理的命令行格式如下。 ```
 mindcmd gt caffe -w WEIGHT -m MODEL -i IMAGE_LIST
-```
-
-命令行参数说明如[表1](#table19209648865)所示
-
-**表 1**  Caffe模型推理命令行参数说明
-
-<a name="table19209648865"></a>
+``` 命令行参数说明如[表1](#table19209648865)所示 **表 1** Caffe模型推理命令行参数说明 <a name="table19209648865"></a>
 <table><thead align="left"><tr id="row82102483610"><th class="cellrowborder" valign="top" width="23.41%" id="mcps1.2.4.1.1"><p id="p921074814615"><a name="p921074814615"></a><a name="p921074814615"></a><strong id="b1121084819610"><a name="b1121084819610"></a><a name="b1121084819610"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="8.52%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -1754,66 +851,10 @@ mindcmd gt caffe -w WEIGHT -m MODEL -i IMAGE_LIST
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408581334"></a>
-
--   数据准备
-
-    执行开源框架前需要提前准备推理数据\(参考[数据预处理](#ZH-CN_TOPIC_0000002441980729)\)，参考文件结构如下。
-
-    ```
-    ├── test_case
-    │  ├── caffe_resnet50
-    │  │   ├── resnet50.caffemodel
-    │  │   └── resnet50.prototxt
-    │  ├── data
-    │  │     ├── data_dog1_shape_1_3_224_224_float32.npy
-    │  │     ├── data_dog2_shape_1_3_224_224_float32.npy
-    │  │     └── image_ref_list.txt
-    ```
-
--   执行模型推理
-
-    执行以下命令进行模型推理：
-
-    ```
-    cd test_case
-    mindcmd gt caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt -o ./gt_output/
-    ```
-
--   执行结果
-
-    执行结束后会在指定输出路径中生成Ground Truth dump数据，主要文件结构示例如下。
-
-    ```
-    ├── gt_output
-    │   ├── ${时间戳}_ops 
-    │   │   ├── 0                          # 第0个推理过程中每一层的dump文件(.npy)
-    │   │   └── 1                          # 第1个推理过程中每一层的dump文件(.npy)
-    ```
-
-## ONNX模型推理<a name="ZH-CN_TOPIC_0000002408421342"></a>
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020437"></a>
-
-ONNX模型推理的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408581334"></a> - 数据准备 执行开源框架前需要提前准备推理数据\(参考[数据预处理](#ZH-CN_TOPIC_0000002441980729)\)，参考文件结构如下。 ``` ├── test_case │ ├── caffe_resnet50 │ │ ├── resnet50.caffemodel │ │ └── resnet50.prototxt │ ├── data │ │ ├── data_dog1_shape_1_3_224_224_float32.npy │ │ ├── data_dog2_shape_1_3_224_224_float32.npy │ │ └── image_ref_list.txt ``` - 执行模型推理 执行以下命令进行模型推理： ``` cd test_case mindcmd gt caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt -o ./gt_output/ ``` - 执行结果 执行结束后会在指定输出路径中生成Ground Truth dump数据，主要文件结构示例如下。 ``` ├── gt_output │ ├── ${时间戳}_ops │ │ ├── 0 # 第0个推理过程中每一层的dump文件(.npy) │ │ └── 1 # 第1个推理过程中每一层的dump文件(.npy) ``` ## ONNX模型推理<a name="ZH-CN_TOPIC_0000002408421342"></a> ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020437"></a> ONNX模型推理的命令行格式如下。 ```
 mindcmd gt onnx -m MODEL -i IMAGE_LIST
-```
-
-命令行参数说明如[表1](#table606mcpsimp)所示
-
-**表 1**  ONNX模型推理命令行参数说明
-
-<a name="table606mcpsimp"></a>
+``` 命令行参数说明如[表1](#table606mcpsimp)所示 **表 1** ONNX模型推理命令行参数说明 <a name="table606mcpsimp"></a>
 <table><thead align="left"><tr id="row611mcpsimp"><th class="cellrowborder" valign="top" width="22.63%" id="mcps1.2.4.1.1"><p id="p613mcpsimp"><a name="p613mcpsimp"></a><a name="p613mcpsimp"></a><strong id="b89241518113311"><a name="b89241518113311"></a><a name="b89241518113311"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.77%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -1859,71 +900,11 @@ mindcmd gt onnx -m MODEL -i IMAGE_LIST
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002441980741"></a>
-
--   数据准备
-
-    执行开源框架前需要提前准备推理数据\(处理方法参考[数据预处理](#ZH-CN_TOPIC_0000002441980729)\)，参考文件结构如下。
-
-    ```
-    ├── test_case
-    │  ├── onnx_resnet50
-    │  │   └── resnet50.onnx
-    │  ├── data
-    │  │     ├── npy_data
-    │  │     ├── data_dog1_shape_1_3_224_224_float32.npy
-    │  │     ├── data_dog2_shape_1_3_224_224_float32.npy
-    │  │     └── image_ref_list.txt
-    ```
-
--   执行模型推理
-
-    执行以下命令进行模型Ground Truth推理：
-
-    ```
-    cd test_case
-    mindcmd gt onnx -m ./onnx_resnet50/resnet50.onnx -i ./data/image_ref_list.txt -o ./gt_output/
-    ```
-
--   执行结果
-
-    执行结束后会在指定输出路径中生成Ground Truth dump数据，主要文件结构示例如下。
-
-    ```
-    ├── gt_output
-    │   ├── ${时间戳}_ops 
-    │   │   ├── 0                          # 第0个推理过程中每一层的dump文件(.npy)
-    │   │   └── 1                          # 第1个推理过程中每一层的dump文件(.npy)
-    ```
-
-# 模型压缩
-## 功能介绍<a name="ZH-CN_TOPIC_0000002441980649"></a>
-
-该功能支持对开源框架\(Caffe/PyTorch\)的模型压缩，从而达到节省网络模型存储空间、降低传输时延、提高计算效率，达到性能提升与优化的目标。
-
-## Caffe模型压缩<a name="ZH-CN_TOPIC_0000002441980713"></a>
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421462"></a>
-
-Caffe模型压缩的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。 ### 执行样例<a name="ZH-CN_TOPIC_0000002441980741"></a> - 数据准备 执行开源框架前需要提前准备推理数据\(处理方法参考[数据预处理](#ZH-CN_TOPIC_0000002441980729)\)，参考文件结构如下。 ``` ├── test_case │ ├── onnx_resnet50 │ │ └── resnet50.onnx │ ├── data │ │ ├── npy_data │ │ ├── data_dog1_shape_1_3_224_224_float32.npy │ │ ├── data_dog2_shape_1_3_224_224_float32.npy │ │ └── image_ref_list.txt ``` - 执行模型推理 执行以下命令进行模型Ground Truth推理： ``` cd test_case mindcmd gt onnx -m ./onnx_resnet50/resnet50.onnx -i ./data/image_ref_list.txt -o ./gt_output/ ``` - 执行结果 执行结束后会在指定输出路径中生成Ground Truth dump数据，主要文件结构示例如下。 ``` ├── gt_output │ ├── ${时间戳}_ops │ │ ├── 0 # 第0个推理过程中每一层的dump文件(.npy) │ │ └── 1 # 第1个推理过程中每一层的dump文件(.npy) ``` # 模型压缩
+## 功能介绍<a name="ZH-CN_TOPIC_0000002441980649"></a> 该功能支持对开源框架\(Caffe/PyTorch\)的模型压缩，从而达到节省网络模型存储空间、降低传输时延、提高计算效率，达到性能提升与优化的目标。 ## Caffe模型压缩<a name="ZH-CN_TOPIC_0000002441980713"></a> ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421462"></a> Caffe模型压缩的命令行格式如下。 ```
 mindcmd amct caffe -w WEIGHT -m MODEL -i IMAGE_LIST -o OUTPUT
-```
-
-Caffe模型压缩的命令行参数说明如[表1](#table117mcpsimp)所示。
-
-**表 1**  Caffe模型压缩命令行参数说明
-
-<a name="table117mcpsimp"></a>
+``` Caffe模型压缩的命令行参数说明如[表1](#table117mcpsimp)所示。 **表 1** Caffe模型压缩命令行参数说明 <a name="table117mcpsimp"></a>
 <table><thead align="left"><tr id="row122mcpsimp"><th class="cellrowborder" valign="top" width="17.75%" id="mcps1.2.4.1.1"><p id="p13167158205117"><a name="p13167158205117"></a><a name="p13167158205117"></a><strong id="b898781855614"><a name="b898781855614"></a><a name="b898781855614"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="11.17%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -2003,158 +984,10 @@ Caffe模型压缩的命令行参数说明如[表1](#table117mcpsimp)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002441980597"></a>
-
--   模型和数据准备。
-
-    将需要进行模型压缩的Caffe模型文件\(.prototxt\)、权重文件\(.caffemodel\)以及所需的数据\(feature\_map\)等上传到服务器工作路径，参考目录结构如下。
-
-    ```
-    ├── test_case
-    │   ├── caffe_resnet50
-    │   │   ├── resnet50.caffemodel
-    │   │   └── resnet50.prototxt
-    │   ├── data
-    │   │   ├── data_dog1_shape_1_3_224_224_float32.npy
-    │   │   ├── data_dog2_shape_1_3_224_224_float32.npy
-    │   │   └── image_ref_list.txt
-    ```
-
--   执行模型压缩
-
-    执行以下命令进行模型压缩：
-
-    ```
-    cd test_case 
-    mindcmd amct caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt -o ./amct_output
-    ```
-
--   执行结果
-
-    Caffe模型压缩执行结束后会在输出路径下生成相应的文件，主要文件结构示例如下。
-
-    ```
-    ├── amct_output
-    │   ├── resnet50_tmp
-    │   ├── amct_log
-    │   │   └── amct_caffe.log
-    │   ├── resnet50_config.json
-    │   ├── resnet50_deploy_model.prototxt
-    │   ├── resnet50_deploy_weights.caffemodel
-    │   ├── resnet50_fake_quant_model.prototxt
-    │   ├── resnet50_fake_quant_weights.caffemodel
-    │   ├── resnet50_quant.json
-    │   ├── resnet50_quant_param_record.bin
-    │   ├── resnet50_quant_param_record.txt
-    │   └── resnet50_uninplace.prototxt
-    ```
-
-    对应文件的描述如[表1](#table1581916410)所示。
-
-    **表 1**  Caffe模型压缩结果文件描述
-
-    <a name="table1581916410"></a>
-    <table><thead align="left"><tr id="row16811018419"><th class="cellrowborder" valign="top" width="34.29%" id="mcps1.2.3.1.1"><p id="p8811911418"><a name="p8811911418"></a><a name="p8811911418"></a>文件</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="65.71000000000001%" id="mcps1.2.3.1.2"><p id="p20810115413"><a name="p20810115413"></a><a name="p20810115413"></a>描述</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row112141441192619"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1691185612267"><a name="p1691185612267"></a><a name="p1691185612267"></a>activation_modified_model.caffemodel</p>
-    </td>
-    <td class="cellrowborder" rowspan="4" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p2215174192612"><a name="p2215174192612"></a><a name="p2215174192612"></a>中间模型文件。</p>
-    </td>
-    </tr>
-    <tr id="row1529545132610"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1029445142617"><a name="p1029445142617"></a><a name="p1029445142617"></a>activation_modified_model.prototxt</p>
-    </td>
-    </tr>
-    <tr id="row16329114311262"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1632974311268"><a name="p1632974311268"></a><a name="p1632974311268"></a>modified_weights.caffemodel</p>
-    </td>
-    </tr>
-    <tr id="row158124020261"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p11834022615"><a name="p11834022615"></a><a name="p11834022615"></a>modified_weights.prototxt</p>
-    </td>
-    </tr>
-    <tr id="row1559611383265"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p7597123822614"><a name="p7597123822614"></a><a name="p7597123822614"></a>scale_offset_record.txt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p11597538102618"><a name="p11597538102618"></a><a name="p11597538102618"></a>记录量化因子的文件（不带BN融合），请参考《AMCT使用指南（Caffe）》“量化因子记录文件说明”。</p>
-    </td>
-    </tr>
-    <tr id="row84411536112616"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p3441193619263"><a name="p3441193619263"></a><a name="p3441193619263"></a>scale_offset_record_update.txt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p644103602615"><a name="p644103602615"></a><a name="p644103602615"></a>记录量化因子的文件（带BN融合），请参考《AMCT使用指南（Caffe）》“量化因子记录文件说明”。</p>
-    </td>
-    </tr>
-    <tr id="row1281911649"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1381111342"><a name="p1381111342"></a><a name="p1381111342"></a>resnet50_config.json</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p17283141931"><a name="p17283141931"></a><a name="p17283141931"></a>描述了如何对模型中的每一层进行量化。</p>
-    </td>
-    </tr>
-    <tr id="row0540174723017"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p155404475300"><a name="p155404475300"></a><a name="p155404475300"></a>resnet50_deploy_model.prototxt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p10540147123016"><a name="p10540147123016"></a><a name="p10540147123016"></a>量化后可在SoC部署的模型文件。</p>
-    </td>
-    </tr>
-    <tr id="row1958094553017"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1758112454309"><a name="p1758112454309"></a><a name="p1758112454309"></a>resnet50_deploy_weights.caffemodel</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p558174517308"><a name="p558174517308"></a><a name="p558174517308"></a>量化后可在SoC部署的权重文件。</p>
-    </td>
-    </tr>
-    <tr id="row6864113913315"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p14864939133117"><a name="p14864939133117"></a><a name="p14864939133117"></a>resnet50_fake_quant_model.prototxt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p138641397319"><a name="p138641397319"></a><a name="p138641397319"></a>量化后可在Caffe环境进行精度仿真模型文件。</p>
-    </td>
-    </tr>
-    <tr id="row1835018323314"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p13350123213113"><a name="p13350123213113"></a><a name="p13350123213113"></a>resnet50_fake_quant_weights.caffemodel</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p13350113217314"><a name="p13350113217314"></a><a name="p13350113217314"></a>量化后可在Caffe环境进行精度仿真权重文件。</p>
-    </td>
-    </tr>
-    <tr id="row77365493326"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p11736144953213"><a name="p11736144953213"></a><a name="p11736144953213"></a>resnet50_quant.json</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p157361949173218"><a name="p157361949173218"></a><a name="p157361949173218"></a>融合文件，记录图在量化前后的节点对应关系，用于浮点与仿真模型精度比对。</p>
-    </td>
-    </tr>
-    <tr id="row34991843310"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1249161883311"><a name="p1249161883311"></a><a name="p1249161883311"></a>resnet50_quant_param_record.bin</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p149151823318"><a name="p149151823318"></a><a name="p149151823318"></a>量化参数文件二进制形式，用于ATC生成om模型。</p>
-    </td>
-    </tr>
-    <tr id="row11395616173319"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p33951716193319"><a name="p33951716193319"></a><a name="p33951716193319"></a>resnet50_quant_param_record.txt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p239514163331"><a name="p239514163331"></a><a name="p239514163331"></a>量化参数文件文本格式(推荐使用)，用于ATC生成om模型。</p>
-    </td>
-    </tr>
-    <tr id="row1019314216331"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1519320423334"><a name="p1519320423334"></a><a name="p1519320423334"></a>resnet50_uninplace.prototxt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p319384233317"><a name="p319384233317"></a><a name="p319384233317"></a>解除inplace后的Caffe模型定义文件。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-## PyTorch模型压缩<a name="ZH-CN_TOPIC_0000002442020617"></a>
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020601"></a>
-
-PyTorch模型压缩的命令行格式如下。
-
-```
-mindcmd amct pytorch -m MODEL  -i IMAGE_LIST -o OUTPUT
-```
-
-PyTorch模型压缩的命令行参数说明如[表1](#table117mcpsimp)所示。
-
-**表 1**  PyTorch模型压缩命令行参数说明
-
-<a name="table117mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。 ### 执行样例<a name="ZH-CN_TOPIC_0000002441980597"></a> - 模型和数据准备。 将需要进行模型压缩的Caffe模型文件\(.prototxt\)、权重文件\(.caffemodel\)以及所需的数据\(feature\_map\)等上传到服务器工作路径，参考目录结构如下。 ``` ├── test_case │ ├── caffe_resnet50 │ │ ├── resnet50.caffemodel │ │ └── resnet50.prototxt │ ├── data │ │ ├── data_dog1_shape_1_3_224_224_float32.npy │ │ ├── data_dog2_shape_1_3_224_224_float32.npy │ │ └── image_ref_list.txt ``` - 执行模型压缩 执行以下命令进行模型压缩： ``` cd test_case mindcmd amct caffe -m ./caffe_resnet50/resnet50.prototxt -w ./caffe_resnet50/resnet50.caffemodel -i ./data/image_ref_list.txt -o ./amct_output ``` - 执行结果 Caffe模型压缩执行结束后会在输出路径下生成相应的文件，主要文件结构示例如下。 ``` ├── amct_output │ ├── resnet50_tmp │ ├── amct_log │ │ └── amct_caffe.log │ ├── resnet50_config.json │ ├── resnet50_deploy_model.prototxt │ ├── resnet50_deploy_weights.caffemodel │ ├── resnet50_fake_quant_model.prototxt │ ├── resnet50_fake_quant_weights.caffemodel │ ├── resnet50_quant.json │ ├── resnet50_quant_param_record.bin │ ├── resnet50_quant_param_record.txt │ └── resnet50_uninplace.prototxt ``` 对应文件的描述如[表1](#table1581916410)所示。 **表 1** Caffe模型压缩结果文件描述 <a name="table1581916410"></a> <table><thead align="left"><tr id="row16811018419"><th class="cellrowborder" valign="top" width="34.29%" id="mcps1.2.3.1.1"><p id="p8811911418"><a name="p8811911418"></a><a name="p8811911418"></a>文件</p> </th> <th class="cellrowborder" valign="top" width="65.71000000000001%" id="mcps1.2.3.1.2"><p id="p20810115413"><a name="p20810115413"></a><a name="p20810115413"></a>描述</p> </th> </tr> </thead> <tbody><tr id="row112141441192619"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1691185612267"><a name="p1691185612267"></a><a name="p1691185612267"></a>activation_modified_model.caffemodel</p> </td> <td class="cellrowborder" rowspan="4" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p2215174192612"><a name="p2215174192612"></a><a name="p2215174192612"></a>中间模型文件。</p> </td> </tr> <tr id="row1529545132610"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1029445142617"><a name="p1029445142617"></a><a name="p1029445142617"></a>activation_modified_model.prototxt</p> </td> </tr> <tr id="row16329114311262"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1632974311268"><a name="p1632974311268"></a><a name="p1632974311268"></a>modified_weights.caffemodel</p> </td> </tr> <tr id="row158124020261"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p11834022615"><a name="p11834022615"></a><a name="p11834022615"></a>modified_weights.prototxt</p> </td> </tr> <tr id="row1559611383265"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p7597123822614"><a name="p7597123822614"></a><a name="p7597123822614"></a>scale_offset_record.txt</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p11597538102618"><a name="p11597538102618"></a><a name="p11597538102618"></a>记录量化因子的文件（不带BN融合），请参考《AMCT使用指南（Caffe）》“量化因子记录文件说明”。</p> </td> </tr> <tr id="row84411536112616"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p3441193619263"><a name="p3441193619263"></a><a name="p3441193619263"></a>scale_offset_record_update.txt</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p644103602615"><a name="p644103602615"></a><a name="p644103602615"></a>记录量化因子的文件（带BN融合），请参考《AMCT使用指南（Caffe）》“量化因子记录文件说明”。</p> </td> </tr> <tr id="row1281911649"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1381111342"><a name="p1381111342"></a><a name="p1381111342"></a>resnet50_config.json</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p17283141931"><a name="p17283141931"></a><a name="p17283141931"></a>描述了如何对模型中的每一层进行量化。</p> </td> </tr> <tr id="row0540174723017"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p155404475300"><a name="p155404475300"></a><a name="p155404475300"></a>resnet50_deploy_model.prototxt</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p10540147123016"><a name="p10540147123016"></a><a name="p10540147123016"></a>量化后可在SoC部署的模型文件。</p> </td> </tr> <tr id="row1958094553017"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1758112454309"><a name="p1758112454309"></a><a name="p1758112454309"></a>resnet50_deploy_weights.caffemodel</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p558174517308"><a name="p558174517308"></a><a name="p558174517308"></a>量化后可在SoC部署的权重文件。</p> </td> </tr> <tr id="row6864113913315"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p14864939133117"><a name="p14864939133117"></a><a name="p14864939133117"></a>resnet50_fake_quant_model.prototxt</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p138641397319"><a name="p138641397319"></a><a name="p138641397319"></a>量化后可在Caffe环境进行精度仿真模型文件。</p> </td> </tr> <tr id="row1835018323314"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p13350123213113"><a name="p13350123213113"></a><a name="p13350123213113"></a>resnet50_fake_quant_weights.caffemodel</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p13350113217314"><a name="p13350113217314"></a><a name="p13350113217314"></a>量化后可在Caffe环境进行精度仿真权重文件。</p> </td> </tr> <tr id="row77365493326"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p11736144953213"><a name="p11736144953213"></a><a name="p11736144953213"></a>resnet50_quant.json</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p157361949173218"><a name="p157361949173218"></a><a name="p157361949173218"></a>融合文件，记录图在量化前后的节点对应关系，用于浮点与仿真模型精度比对。</p> </td> </tr> <tr id="row34991843310"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1249161883311"><a name="p1249161883311"></a><a name="p1249161883311"></a>resnet50_quant_param_record.bin</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p149151823318"><a name="p149151823318"></a><a name="p149151823318"></a>量化参数文件二进制形式，用于ATC生成om模型。</p> </td> </tr> <tr id="row11395616173319"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p33951716193319"><a name="p33951716193319"></a><a name="p33951716193319"></a>resnet50_quant_param_record.txt</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p239514163331"><a name="p239514163331"></a><a name="p239514163331"></a>量化参数文件文本格式(推荐使用)，用于ATC生成om模型。</p> </td> </tr> <tr id="row1019314216331"><td class="cellrowborder" valign="top" width="34.29%" headers="mcps1.2.3.1.1 "><p id="p1519320423334"><a name="p1519320423334"></a><a name="p1519320423334"></a>resnet50_uninplace.prototxt</p> </td> <td class="cellrowborder" valign="top" width="65.71000000000001%" headers="mcps1.2.3.1.2 "><p id="p319384233317"><a name="p319384233317"></a><a name="p319384233317"></a>解除inplace后的Caffe模型定义文件。</p> </td> </tr> </tbody> </table> ## PyTorch模型压缩<a name="ZH-CN_TOPIC_0000002442020617"></a> ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020601"></a> PyTorch模型压缩的命令行格式如下。 ```
+mindcmd amct pytorch -m MODEL -i IMAGE_LIST -o OUTPUT
+``` PyTorch模型压缩的命令行参数说明如[表1](#table117mcpsimp)所示。 **表 1** PyTorch模型压缩命令行参数说明 <a name="table117mcpsimp"></a>
 <table><thead align="left"><tr id="row122mcpsimp"><th class="cellrowborder" valign="top" width="16.68%" id="mcps1.2.4.1.1"><p id="p13167158205117"><a name="p13167158205117"></a><a name="p13167158205117"></a><strong id="b898781855614"><a name="b898781855614"></a><a name="b898781855614"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="9.07%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -2234,117 +1067,11 @@ PyTorch模型压缩的命令行参数说明如[表1](#table117mcpsimp)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408421326"></a>
-
--   模型和数据准备。
-
-    将需要进行模型压缩的PyTorch模型文件以及所需的数据\(.npy\)等上传到服务器工作路径，如/home/MindCmdUser/test\_case，参考目录结构如下。
-
-    ```
-    ├── test_case
-    │   ├── pytorch_resnet50
-    │   │   ├── __pycache__
-    │   │   ├── __init__.py
-    │   │   ├── resnet.py
-    │   │   └── resnet50-19c8e357.pth
-    │   ├── data
-    │   │   ├── data_dog1_shape_1_3_224_224_float32.npy
-    │   │   ├── data_dog2_shape_1_3_224_224_float32.npy
-    │   │   └── image_ref_list.txt
-    ```
-
-    **配置PYTHONPATH环境变量**：
-
-    ```
-    export PYTHONPATH=/home/MindCmdUser/test_case:$PYTHONPATH
-    ```
-
--   执行模型压缩
-
-    执行以下命令进行模型压缩：
-
-    ```
-    cd test_case
-    mindcmd amct pytorch -m pytorch_resnet50.resnet.resnet50 -i ./data/image_ref_list.txt -o ./amct_output
-    ```
-
--   执行结果
-
-    PyTorch模型压缩执行结束后会在指定输出路径下生成相应的文件，主要文件结构示例如下。
-
-    ```
-    ├── amct_output
-    │   ├── tmp
-    │   ├── amct_log
-    │   │   └── hotwheels.amct_pytorch.log
-    │   ├── resnet50_deploy_model.onnx
-    │   ├── resnet50_calibration.pt
-    │   └── resnet50_quant_param_record.txt
-    ```
-
-    对应文件的描述如[表1](#table1581916410)所示。
-
-    **表 1**  模型压缩结果文件描述
-
-    <a name="table1581916410"></a>
-    <table><thead align="left"><tr id="row16811018419"><th class="cellrowborder" valign="top" width="33.35%" id="mcps1.2.3.1.1"><p id="p8811911418"><a name="p8811911418"></a><a name="p8811911418"></a>文件</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="66.64999999999999%" id="mcps1.2.3.1.2"><p id="p20810115413"><a name="p20810115413"></a><a name="p20810115413"></a>描述</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row17753143810538"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p1175319384537"><a name="p1175319384537"></a><a name="p1175319384537"></a>hotwheels.amct_pytorch.log</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p77532038185312"><a name="p77532038185312"></a><a name="p77532038185312"></a>量化日志文件，记录了量化过程的日志信息。</p>
-    </td>
-    </tr>
-    <tr id="row8220171873516"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p1522051863514"><a name="p1522051863514"></a><a name="p1522051863514"></a>resnet50_deploy_model.onnx</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p922018184358"><a name="p922018184358"></a><a name="p922018184358"></a>量化后可在SoC部署的模型文件。</p>
-    </td>
-    </tr>
-    <tr id="row11628161617171"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p206291816191715"><a name="p206291816191715"></a><a name="p206291816191715"></a>resnet50_calibration.pt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p262931611719"><a name="p262931611719"></a><a name="p262931611719"></a>量化模型的权重文件。</p>
-    </td>
-    </tr>
-    <tr id="row162501768369"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p2250206133617"><a name="p2250206133617"></a><a name="p2250206133617"></a>resnet50_quant_param_record.txt</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p132506618366"><a name="p132506618366"></a><a name="p132506618366"></a>量化参数文件。</p>
-    </td>
-    </tr>
-    <tr id="row83361258142920"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p23371758152917"><a name="p23371758152917"></a><a name="p23371758152917"></a>tmp</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p1033745892917"><a name="p1033745892917"></a><a name="p1033745892917"></a>模型压缩临时文件。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-# 模型转换
-## 功能介绍<a name="ZH-CN_TOPIC_0000002441980801"></a>
-
-该功能将开源框架模型\(Caffe/ONNX\)转换成图像分析引擎支持的离线模型，模型转换过程中可以实现算子调度的优化、权值数据重排、内存使用优化等，可以脱离设备完成模型的预处理。
-
-## 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421478"></a>
-
-模型转换功能的命令行格式如下。
-
-```
-mindcmd atc [-c  | -a [[...]]]
-```
-
-命令行参数说明如[表1](#table407mcpsimp)所示。
-
-**表 1**  模型转换命令行参数说明
-
-<a name="table407mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408421326"></a> - 模型和数据准备。 将需要进行模型压缩的PyTorch模型文件以及所需的数据\(.npy\)等上传到服务器工作路径，如/home/MindCmdUser/test\_case，参考目录结构如下。 ``` ├── test_case │ ├── pytorch_resnet50 │ │ ├── __pycache__ │ │ ├── __init__.py │ │ ├── resnet.py │ │ └── resnet50-19c8e357.pth │ ├── data │ │ ├── data_dog1_shape_1_3_224_224_float32.npy │ │ ├── data_dog2_shape_1_3_224_224_float32.npy │ │ └── image_ref_list.txt ``` **配置PYTHONPATH环境变量**： ``` export PYTHONPATH=/home/MindCmdUser/test_case:$PYTHONPATH ``` - 执行模型压缩 执行以下命令进行模型压缩： ``` cd test_case mindcmd amct pytorch -m pytorch_resnet50.resnet.resnet50 -i ./data/image_ref_list.txt -o ./amct_output ``` - 执行结果 PyTorch模型压缩执行结束后会在指定输出路径下生成相应的文件，主要文件结构示例如下。 ``` ├── amct_output │ ├── tmp │ ├── amct_log │ │ └── hotwheels.amct_pytorch.log │ ├── resnet50_deploy_model.onnx │ ├── resnet50_calibration.pt │ └── resnet50_quant_param_record.txt ``` 对应文件的描述如[表1](#table1581916410)所示。 **表 1** 模型压缩结果文件描述 <a name="table1581916410"></a> <table><thead align="left"><tr id="row16811018419"><th class="cellrowborder" valign="top" width="33.35%" id="mcps1.2.3.1.1"><p id="p8811911418"><a name="p8811911418"></a><a name="p8811911418"></a>文件</p> </th> <th class="cellrowborder" valign="top" width="66.64999999999999%" id="mcps1.2.3.1.2"><p id="p20810115413"><a name="p20810115413"></a><a name="p20810115413"></a>描述</p> </th> </tr> </thead> <tbody><tr id="row17753143810538"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p1175319384537"><a name="p1175319384537"></a><a name="p1175319384537"></a>hotwheels.amct_pytorch.log</p> </td> <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p77532038185312"><a name="p77532038185312"></a><a name="p77532038185312"></a>量化日志文件，记录了量化过程的日志信息。</p> </td> </tr> <tr id="row8220171873516"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p1522051863514"><a name="p1522051863514"></a><a name="p1522051863514"></a>resnet50_deploy_model.onnx</p> </td> <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p922018184358"><a name="p922018184358"></a><a name="p922018184358"></a>量化后可在SoC部署的模型文件。</p> </td> </tr> <tr id="row11628161617171"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p206291816191715"><a name="p206291816191715"></a><a name="p206291816191715"></a>resnet50_calibration.pt</p> </td> <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p262931611719"><a name="p262931611719"></a><a name="p262931611719"></a>量化模型的权重文件。</p> </td> </tr> <tr id="row162501768369"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p2250206133617"><a name="p2250206133617"></a><a name="p2250206133617"></a>resnet50_quant_param_record.txt</p> </td> <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p132506618366"><a name="p132506618366"></a><a name="p132506618366"></a>量化参数文件。</p> </td> </tr> <tr id="row83361258142920"><td class="cellrowborder" valign="top" width="33.35%" headers="mcps1.2.3.1.1 "><p id="p23371758152917"><a name="p23371758152917"></a><a name="p23371758152917"></a>tmp</p> </td> <td class="cellrowborder" valign="top" width="66.64999999999999%" headers="mcps1.2.3.1.2 "><p id="p1033745892917"><a name="p1033745892917"></a><a name="p1033745892917"></a>模型压缩临时文件。</p> </td> </tr> </tbody> </table> # 模型转换
+## 功能介绍<a name="ZH-CN_TOPIC_0000002441980801"></a> 该功能将开源框架模型\(Caffe/ONNX\)转换成图像分析引擎支持的离线模型，模型转换过程中可以实现算子调度的优化、权值数据重排、内存使用优化等，可以脱离设备完成模型的预处理。 ## 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421478"></a> 模型转换功能的命令行格式如下。 ```
+mindcmd atc [-c | -a [[...]]]
+``` 命令行参数说明如[表1](#table407mcpsimp)所示。 **表 1** 模型转换命令行参数说明 <a name="table407mcpsimp"></a>
 <table><thead align="left"><tr id="row412mcpsimp"><th class="cellrowborder" valign="top" width="17.49%" id="mcps1.2.4.1.1"><p id="p414mcpsimp"><a name="p414mcpsimp"></a><a name="p414mcpsimp"></a><strong id="b181254390264"><a name="b181254390264"></a><a name="b181254390264"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.38%" id="mcps1.2.4.1.2"><p id="p156711536104512"><a name="p156711536104512"></a><a name="p156711536104512"></a>必选/可选</p>
@@ -2376,82 +1103,11 @@ mindcmd atc [-c  | -a [[...]]]
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-## 执行样例<a name="ZH-CN_TOPIC_0000002441980673"></a>
-
--   数据准备
-
-    执行模型转换前需准备相应的模型和数据\(以Caffe模型为例\)，其文件结构如下。
-
-    ```
-    ├── atc_resoure
-    │   ├── data
-    │   │   └── dog1_1024_683.bin
-    │   ├── caffe_resnet50
-    │   │   ├── resnet50.prototxt
-    │   │   └── resnet50.caffemodel
-    ```
-
--   执行模型转换
-
-    执行以下命令进行模型转换：
-
-    ```
-    cd atc_resoure
-    mindcmd atc -a --model=./caffe_resnet50/resnet50.prototxt --weight=./caffe_resnet50/resnet50.caffemodel --image_list="data:./data/dog1_1024_683.bin" --output=./atc_output/resnet50 --input_type="data:U8"
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >以上执行示例中--image\_list参数和--input\_type的参数值开头的“data”为网络首层节点名称，请根据网络实际情况进行替换。
-
--   执行结果
-
-    模型转换执行结束后会在指定输出路径中生成数据，主要文件结构示例如下。
-
-    ```
-    ├── atc_output
-    │   ├── atc_perf.csv                              # 预估模型在板端运算时实际计算量
-    │   ├── calibration_param.txt                     # 模型使用的量化参数 
-    │   ├── cnn_net_tree.dot                          # 网络优化后的算子信息
-    │   ├── cnn_net_tree_adapt.dot                    # 网络适配后的算子信息
-    │   ├── cnn_net_tree_after_tiling_seg_0.dot       # 网络深度融合后的算子信息
-    │   ├── cnn_net_tree_org.dot                      
-    │   ├── cnn_net_tree_parser.dot                   # 原始模型解析后的算子信息
-    │   ├── cnn_net_tree_shape5d_seg_0.dot            
-    │   ├── resnet50.om                               # 转换后的模型文件
-    │   └── mapper_debug.log                          # 转换模型的调试日志
-    ```
-
-# 应用工程
-## 功能介绍<a name="ZH-CN_TOPIC_0000002408421522"></a>
-
-提供应用工程功能仿真、指令仿真、上板推理、Dump中间结果和Profiling功能。
-
-## 功能仿真<a name="ZH-CN_TOPIC_0000002408421434"></a>
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421314"></a>
-
-功能仿真的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 ## 执行样例<a name="ZH-CN_TOPIC_0000002441980673"></a> - 数据准备 执行模型转换前需准备相应的模型和数据\(以Caffe模型为例\)，其文件结构如下。 ``` ├── atc_resoure │ ├── data │ │ └── dog1_1024_683.bin │ ├── caffe_resnet50 │ │ ├── resnet50.prototxt │ │ └── resnet50.caffemodel ``` - 执行模型转换 执行以下命令进行模型转换： ``` cd atc_resoure mindcmd atc -a --model=./caffe_resnet50/resnet50.prototxt --weight=./caffe_resnet50/resnet50.caffemodel --image_list="data:./data/dog1_1024_683.bin" --output=./atc_output/resnet50 --input_type="data:U8" ``` >![](public_sys-resources/icon-note.gif) **说明：** >以上执行示例中--image\_list参数和--input\_type的参数值开头的“data”为网络首层节点名称，请根据网络实际情况进行替换。 - 执行结果 模型转换执行结束后会在指定输出路径中生成数据，主要文件结构示例如下。 ``` ├── atc_output │ ├── atc_perf.csv # 预估模型在板端运算时实际计算量 │ ├── calibration_param.txt # 模型使用的量化参数 │ ├── cnn_net_tree.dot # 网络优化后的算子信息 │ ├── cnn_net_tree_adapt.dot # 网络适配后的算子信息 │ ├── cnn_net_tree_after_tiling_seg_0.dot # 网络深度融合后的算子信息 │ ├── cnn_net_tree_org.dot │ ├── cnn_net_tree_parser.dot # 原始模型解析后的算子信息 │ ├── cnn_net_tree_shape5d_seg_0.dot │ ├── resnet50.om # 转换后的模型文件 │ └── mapper_debug.log # 转换模型的调试日志 ``` # 应用工程
+## 功能介绍<a name="ZH-CN_TOPIC_0000002408421522"></a> 提供应用工程功能仿真、指令仿真、上板推理、Dump中间结果和Profiling功能。 ## 功能仿真<a name="ZH-CN_TOPIC_0000002408421434"></a> ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408421314"></a> 功能仿真的命令行格式如下。 ```
 mindcmd app funcsim -m OM -i IMAGE_LIST {dump} ...
-```
-
-命令行参数说明如[表1](#table705mcpsimp)所示。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   命令行中的app、funcsim、dump子命令存在父子关系，因此输入需满足先后顺序。
->-   功能仿真要求输入的om模型在经过ATC模型转换时已经设置了--save\_original\_model=true。
-
-**表 1**  功能仿真命令行参数说明
-
-<a name="table705mcpsimp"></a>
+``` 命令行参数说明如[表1](#table705mcpsimp)所示。 >![](public_sys-resources/icon-note.gif) **说明：** >- 命令行中的app、funcsim、dump子命令存在父子关系，因此输入需满足先后顺序。
+>- 功能仿真要求输入的om模型在经过ATC模型转换时已经设置了--save\_original\_model=true。 **表 1** 功能仿真命令行参数说明 <a name="table705mcpsimp"></a>
 <table><thead align="left"><tr id="row710mcpsimp"><th class="cellrowborder" valign="top" width="19.55%" id="mcps1.2.4.1.1"><p id="p712mcpsimp"><a name="p712mcpsimp"></a><a name="p712mcpsimp"></a><strong id="b2563187155612"><a name="b2563187155612"></a><a name="b2563187155612"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="9.049999999999999%" id="mcps1.2.4.1.2"><p id="p167951241104418"><a name="p167951241104418"></a><a name="p167951241104418"></a>必选/可选</p>
@@ -2549,87 +1205,11 @@ mindcmd app funcsim -m OM -i IMAGE_LIST {dump} ...
 <td class="cellrowborder" valign="top" width="71.39999999999999%" headers="mcps1.2.4.1.3 "><p id="p753mcpsimp"><a name="p753mcpsimp"></a><a name="p753mcpsimp"></a>指定想要dump的层。如果指定多层，请使用空格作为分割 eg. --dump_list conv1 pool1。不指定--dump_list时，默认dump所有层。</p>
 </td>
 </tr>
-<tr id="row85071518146"><td class="cellrowborder" valign="top" width="19.55%" headers="mcps1.2.4.1.1 "><p id="p7507451201416"><a name="p7507451201416"></a><a name="p7507451201416"></a>-h</p>
-</td>
-<td class="cellrowborder" valign="top" width="9.049999999999999%" headers="mcps1.2.4.1.2 "><p id="p7507195111417"><a name="p7507195111417"></a><a name="p7507195111417"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" width="71.39999999999999%" headers="mcps1.2.4.1.3 "><p id="p850755131419"><a name="p850755131419"></a><a name="p850755131419"></a>dump子命令help信息，eg. mindcmd app funcsim dump -h。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408421358"></a>
-
--   模型和数据准备
-
-    参考目录结构如下。
-
-    ```
-    ├── test_case
-    │  ├── resnet50
-    │  │   └── resnet50.om
-    │  ├── data
-    │  │   ├── dog1_shape_1_3_224_224_uint8.bin
-    │  │   ├── dog2_shape_1_3_224_224_uint8.bin
-    │  │   └── image_ref_list.txt
-    ```
-
--   配置默认工作路径（可选）
-
-    使用mindcmd.ini文件\[base\_config\] section 下配置的默认工作路径，或通过命令行参数-k/--work\_dir指定工作路径
-
-    ```
-    [base_config]
-    DEFAULT_WORKSPACE=/home/MindCmdUser/workspace/
-    ```
-
--   执行功能仿真
-
-    执行以下命令完成功能仿真：
-
-    ```
-    cd test_case
-    mindcmd app funcsim -m ./resnet50/resnet50.om -i ./data/image_ref_list.txt dump
-    ```
-
--   执行结果
-
-    功能仿真执行结果保存在工作路径下，主要目录结构示例如下。
-
-    ```
-    ├── workspace
-    │   ├── bin 
-    │   ├── data                          
-    │   ├── dump
-    │   ├── model
-    │   └── acl_xxxxxxxx.json      
-    ```
-
-## 指令仿真<a name="ZH-CN_TOPIC_0000002442020485"></a>
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980825"></a>
-
-指令仿真的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408421358"></a> - 模型和数据准备 参考目录结构如下。 ``` ├── test_case │ ├── resnet50 │ │ └── resnet50.om │ ├── data │ │ ├── dog1_shape_1_3_224_224_uint8.bin │ │ ├── dog2_shape_1_3_224_224_uint8.bin │ │ └── image_ref_list.txt ``` - 配置默认工作路径（可选） 使用mindcmd.ini文件\[base\_config\] section 下配置的默认工作路径，或通过命令行参数-k/--work\_dir指定工作路径 ``` [base_config] DEFAULT_WORKSPACE=/home/MindCmdUser/workspace/ ``` - 执行功能仿真 执行以下命令完成功能仿真： ``` cd test_case mindcmd app funcsim -m ./resnet50/resnet50.om -i ./data/image_ref_list.txt dump ``` - 执行结果 功能仿真执行结果保存在工作路径下，主要目录结构示例如下。 ``` ├── workspace │ ├── bin │ ├── data │ ├── dump │ ├── model │ └── acl_xxxxxxxx.json ``` ## 指令仿真<a name="ZH-CN_TOPIC_0000002442020485"></a> ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980825"></a> 指令仿真的命令行格式如下。 ```
 mindcmd app instsim -m OM -i IMAGE_LIST {dump} ...
-```
-
-命令行参数说明如[表1](#table763mcpsimp)所示。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->命令行中的app、instsim、dump子命令存在父子关系，因此输入需满足先后顺序。
-
-**表 1**  指令仿真命令行参数说明
-
-<a name="table763mcpsimp"></a>
+``` 命令行参数说明如[表1](#table763mcpsimp)所示。 >![](public_sys-resources/icon-note.gif) **说明：** >命令行中的app、instsim、dump子命令存在父子关系，因此输入需满足先后顺序。 **表 1** 指令仿真命令行参数说明 <a name="table763mcpsimp"></a>
 <table><thead align="left"><tr id="row768mcpsimp"><th class="cellrowborder" valign="top" width="19.040000000000003%" id="mcps1.2.4.1.1"><p id="p770mcpsimp"><a name="p770mcpsimp"></a><a name="p770mcpsimp"></a><strong id="b16287510132918"><a name="b16287510132918"></a><a name="b16287510132918"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.68%" id="mcps1.2.4.1.2"><p id="p119381957104313"><a name="p119381957104313"></a><a name="p119381957104313"></a>必选/可选</p>
@@ -2727,87 +1307,11 @@ mindcmd app instsim -m OM -i IMAGE_LIST {dump} ...
 <td class="cellrowborder" valign="top" width="70.28%" headers="mcps1.2.4.1.3 "><p id="p811mcpsimp"><a name="p811mcpsimp"></a><a name="p811mcpsimp"></a>指定想要dump的层。如果指定多层，请使用空格作为分割 eg. --dump_list conv1 pool1。不指定--dump_list时，默认dump所有层。</p>
 </td>
 </tr>
-<tr id="row5549033131619"><td class="cellrowborder" valign="top" width="19.040000000000003%" headers="mcps1.2.4.1.1 "><p id="p7507451201416"><a name="p7507451201416"></a><a name="p7507451201416"></a>-h</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.68%" headers="mcps1.2.4.1.2 "><p id="p7507195111417"><a name="p7507195111417"></a><a name="p7507195111417"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" width="70.28%" headers="mcps1.2.4.1.3 "><p id="p850755131419"><a name="p850755131419"></a><a name="p850755131419"></a>dump子命令help信息，eg. mindcmd app instsim  dump -h。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408581282"></a>
-
--   模型和数据准备
-
-    参考目录结构如下。
-
-    ```
-    ├── test_case
-    │  ├── resnet50
-    │  │   └── resnet50.om
-    │  ├── data
-    │  │   ├── dog1_shape_1_3_224_224_uint8.bin
-    │  │   ├── dog2_shape_1_3_224_224_uint8.bin
-    │  │   └── image_ref_list.txt
-    ```
-
--   配置默认工作路径（可选）
-
-    使用mindcmd.ini文件\[base\_config\] section 下配置的默认工作路径，或通过命令行参数-k/--work\_dir指定工作路径。
-
-    ```
-    [base_config]
-    DEFAULT_WORKSPACE=/home/MindCmdUser/workspace/
-    ```
-
--   执行指令仿真
-
-    执行以下命令进行指令仿真：
-
-    ```
-    cd test_case
-    mindcmd app instsim -m ./resnet50/resnet50.om -i ./data/image_ref_list.txt dump
-    ```
-
--   执行结果
-
-    指令仿真执行结果保存在工作路径下，主要目录结构示例如下。
-
-    ```
-    ├── workspace
-    │   ├── bin 
-    │   ├── data                          
-    │   ├── dump
-    │   ├── model
-    │   └── acl_xxxxxxxx.json     
-    ```
-
-## 上板推理<a name="ZH-CN_TOPIC_0000002408581374"></a>
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581426"></a>
-
-上板推理的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408581282"></a> - 模型和数据准备 参考目录结构如下。 ``` ├── test_case │ ├── resnet50 │ │ └── resnet50.om │ ├── data │ │ ├── dog1_shape_1_3_224_224_uint8.bin │ │ ├── dog2_shape_1_3_224_224_uint8.bin │ │ └── image_ref_list.txt ``` - 配置默认工作路径（可选） 使用mindcmd.ini文件\[base\_config\] section 下配置的默认工作路径，或通过命令行参数-k/--work\_dir指定工作路径。 ``` [base_config] DEFAULT_WORKSPACE=/home/MindCmdUser/workspace/ ``` - 执行指令仿真 执行以下命令进行指令仿真： ``` cd test_case mindcmd app instsim -m ./resnet50/resnet50.om -i ./data/image_ref_list.txt dump ``` - 执行结果 指令仿真执行结果保存在工作路径下，主要目录结构示例如下。 ``` ├── workspace │ ├── bin │ ├── data │ ├── dump │ ├── model │ └── acl_xxxxxxxx.json ``` ## 上板推理<a name="ZH-CN_TOPIC_0000002408581374"></a> ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581426"></a> 上板推理的命令行格式如下。 ```
 mindcmd app nnn -s SSH_CONFIG -m OM -i IMAGE_LIST {dump,profile} …
-```
-
-命令行参数说明如[表1](#table822mcpsimp)所示。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->命令行中的app、_nnn_、\{dump，profile\}子命令存在父子关系，因此输入需满足先后顺序。
-
-**表 1**  上板推理命令行参数说明
-
-<a name="table822mcpsimp"></a>
+``` 命令行参数说明如[表1](#table822mcpsimp)所示。 >![](public_sys-resources/icon-note.gif) **说明：** >命令行中的app、_nnn_、\{dump，profile\}子命令存在父子关系，因此输入需满足先后顺序。 **表 1** 上板推理命令行参数说明 <a name="table822mcpsimp"></a>
 <table><thead align="left"><tr id="row835mcpsimp"><th class="cellrowborder" valign="top" width="19.830000000000002%" id="mcps1.2.4.1.1"><p id="p837mcpsimp"><a name="p837mcpsimp"></a><a name="p837mcpsimp"></a><strong id="b1752243873414"><a name="b1752243873414"></a><a name="b1752243873414"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="9.89%" id="mcps1.2.4.1.2"><p id="p998911209396"><a name="p998911209396"></a><a name="p998911209396"></a>必选/可选</p>
@@ -2981,83 +1485,10 @@ mindcmd app nnn -s SSH_CONFIG -m OM -i IMAGE_LIST {dump,profile} …
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
->-   当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002441980757"></a>
-
--   模型和数据准备
-
-    参考目录结构如下。
-
-    ```
-    ├── test_case
-    │  ├── ssh.cfg
-    │  ├── resnet50
-    │  │   └── resnet50.om
-    │  ├── data
-    │  │   ├── dog1_shape_1_3_224_224_uint8.bin
-    │  │   ├── dog2_shape_1_3_224_224_uint8.bin
-    │  │   └── image_ref_list.txt
-    ```
-
--   配置默认工作路径（可选）
-
-    使用[全局配置](#ZH-CN_TOPIC_0000002442020665)文件\[base\_config\] section 下配置的默认工作路径，或通过命令行参数-k/--work\_dir指定工作路径。
-
-    ```
-    [base_config]
-    DEFAULT_WORKSPACE=/home/MindCmdUser/workspace/
-    ```
-
--   准备ssh.cfg文件，参考[ssh.cfg文件配置](#ssh-cfg文件配置)
-
-    ssh.cfg文件配置优先级如下：-s/--ssh\_config参数配置 \> mindcmd.ini中的全局配置（[SSH\_CFG\_PATH](#ZH-CN_TOPIC_0000002442020665)）。
-
--   执行上板推理（以开启dump为例）
-
-    执行以下命令进行上板推理：
-
-    ```
-    cd test_case
-    mindcmd app nnn -m ./resnet50/resnet50.om -i ./image_ref_list.txt dump
-    ```
-
--   执行结果
-
-    上板推理结果保存在工作路径下，主要目录结构示例如下。
-
-    ```
-    ├── workspace
-    │   ├── bin
-    │   ├── data                          
-    │   ├── dump
-    │   ├── model
-    │   ├── project.cfg
-    │   └── acl_xxxxxxxx.json   
-    ```
-
-# 精度比对
-## 功能介绍<a name="ZH-CN_TOPIC_0000002442020529"></a>
-
-该功能将自有模型算子的运算结果与标准算子的运算结果进行比对，以便确认误差发生的算子，目前提供的比对指标有：余弦相似度、最大绝对误差、累计相对误差、相对欧几里德距离、KL散度、标准偏差等。
-
-## 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020589"></a>
-
-精度比对的命令行格式如下。
-
-```
-mindcmd compare -l MY_DUMP_PATH -r GOLDEN_DUMP_PATH 
-```
-
-命令行参数说明如[表1](#table939mcpsimp)所示。
-
-**表 1**  精度比对命令行参数说明
-
-<a name="table939mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- 参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
+>- 当-i/--image\_list指定图片列表的时候，图片列表的内容支持UTF-8编码的中文路径。 ### 执行样例<a name="ZH-CN_TOPIC_0000002441980757"></a> - 模型和数据准备 参考目录结构如下。 ``` ├── test_case │ ├── ssh.cfg │ ├── resnet50 │ │ └── resnet50.om │ ├── data │ │ ├── dog1_shape_1_3_224_224_uint8.bin │ │ ├── dog2_shape_1_3_224_224_uint8.bin │ │ └── image_ref_list.txt ``` - 配置默认工作路径（可选） 使用[全局配置](#ZH-CN_TOPIC_0000002442020665)文件\[base\_config\] section 下配置的默认工作路径，或通过命令行参数-k/--work\_dir指定工作路径。 ``` [base_config] DEFAULT_WORKSPACE=/home/MindCmdUser/workspace/ ``` - 准备ssh.cfg文件，参考[ssh.cfg文件配置](#ssh-cfg文件配置) ssh.cfg文件配置优先级如下：-s/--ssh\_config参数配置 \> mindcmd.ini中的全局配置（[SSH\_CFG\_PATH](#ZH-CN_TOPIC_0000002442020665)）。 - 执行上板推理（以开启dump为例） 执行以下命令进行上板推理： ``` cd test_case mindcmd app nnn -m ./resnet50/resnet50.om -i ./image_ref_list.txt dump ``` - 执行结果 上板推理结果保存在工作路径下，主要目录结构示例如下。 ``` ├── workspace │ ├── bin │ ├── data │ ├── dump │ ├── model │ ├── project.cfg │ └── acl_xxxxxxxx.json ``` # 精度比对
+## 功能介绍<a name="ZH-CN_TOPIC_0000002442020529"></a> 该功能将自有模型算子的运算结果与标准算子的运算结果进行比对，以便确认误差发生的算子，目前提供的比对指标有：余弦相似度、最大绝对误差、累计相对误差、相对欧几里德距离、KL散度、标准偏差等。 ## 命令行格式说明<a name="ZH-CN_TOPIC_0000002442020589"></a> 精度比对的命令行格式如下。 ```
+mindcmd compare -l MY_DUMP_PATH -r GOLDEN_DUMP_PATH ``` 命令行参数说明如[表1](#table939mcpsimp)所示。 **表 1** 精度比对命令行参数说明 <a name="table939mcpsimp"></a>
 <table><thead align="left"><tr id="row944mcpsimp"><th class="cellrowborder" valign="top" width="22.3%" id="mcps1.2.4.1.1"><p id="p946mcpsimp"><a name="p946mcpsimp"></a><a name="p946mcpsimp"></a><strong id="b1571711550386"><a name="b1571711550386"></a><a name="b1571711550386"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.190000000000001%" id="mcps1.2.4.1.2"><p id="p348551911383"><a name="p348551911383"></a><a name="p348551911383"></a>必选/可选</p>
@@ -3131,78 +1562,10 @@ mindcmd compare -l MY_DUMP_PATH -r GOLDEN_DUMP_PATH
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-## 执行样例<a name="ZH-CN_TOPIC_0000002441980613"></a>
-
--   dump数据准备
-
-    参考目录结构如下。
-
-    ```
-    ├── compare_resoure
-    │   ├── func_dump # 功能仿真dump文件所在目录
-    │   └── nnn_dump  # 上板推理dump文件所在目录
-    ```
-
--   执行精度比对
-
-    执行以下命令进行精度比对：
-
-    ```
-    cd compare_resoure
-    mindcmd compare -l ./nnn_dump/ -r ./func_dump -out ./compare_output/
-    ```
-
--   执行结果
-
-    精度比对执行结束后会在指定输出路径中生成对应csv文件，主要文件结构示例如下。
-
-    ```
-    ├── compare_output
-    │   └── result_20221008101324.csv       # result_{时间戳}.csv
-    ```
-
-    文件内容如[图1](#fig2094417371163)所示数据，参数说明请参考《精度比对工具使用指南》。
-
-    控制台会展示精度比对简易的执行结果，如[图2](#fig20745123117434)。
-
-    **图 1**  精度比对执行结果<a name="fig2094417371163"></a>  
-    ![](figures/精度比对执行结果.png "精度比对执行结果")
-
-    **图 2**  精度比对执行结果展示<a name="fig20745123117434"></a>  
-    ![](figures/精度比对执行结果展示.png "精度比对执行结果展示")
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 ## 执行样例<a name="ZH-CN_TOPIC_0000002441980613"></a> - dump数据准备 参考目录结构如下。 ``` ├── compare_resoure │ ├── func_dump # 功能仿真dump文件所在目录 │ └── nnn_dump # 上板推理dump文件所在目录 ``` - 执行精度比对 执行以下命令进行精度比对： ``` cd compare_resoure mindcmd compare -l ./nnn_dump/ -r ./func_dump -out ./compare_output/ ``` - 执行结果 精度比对执行结束后会在指定输出路径中生成对应csv文件，主要文件结构示例如下。 ``` ├── compare_output │ └── result_20221008101324.csv # result_{时间戳}.csv ``` 文件内容如[图1](#fig2094417371163)所示数据，参数说明请参考《精度比对工具使用指南》。 控制台会展示精度比对简易的执行结果，如[图2](#fig20745123117434)。 **图 1** 精度比对执行结果<a name="fig2094417371163"></a> ![](figures/精度比对执行结果.png "精度比对执行结果") **图 2** 精度比对执行结果展示<a name="fig20745123117434"></a> ![](figures/精度比对执行结果展示.png "精度比对执行结果展示")
 # 性能分析
-## 功能介绍<a name="ZH-CN_TOPIC_0000002442020561"></a>
-
-该功能用于分析SOC上的推理业务各个运行阶段的关键性能指标，用户可根据输出的性能数据针对关键性能瓶颈做出优化以实现产品的极致性能。
-
-该功能对硬件和软件性能数据的采集和展示包括以下内容。
-
-硬件：_AA_  Core、_AA_  Vector Core等模块的PMU指标及系统硬件性能指标。
-
-软件：ACL等模块的性能指标数据。
-
-## 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581394"></a>
-
-Profile包含merge、show、collect三种操作。
-
--   merge操作将板端收集到的数据进行解析，导出timeline数据、summary数据、event view数据。
-
-merge的命令行格式如下。
-
-```
-mindcmd profile merge -d COLLECTION_PATH 
-```
-
-命令行参数说明如[表1](#table1277010212152)所示。
-
-**表 1**  性能数据解析命令行参数说明
-
-<a name="table1277010212152"></a>
+## 功能介绍<a name="ZH-CN_TOPIC_0000002442020561"></a> 该功能用于分析SOC上的推理业务各个运行阶段的关键性能指标，用户可根据输出的性能数据针对关键性能瓶颈做出优化以实现产品的极致性能。 该功能对硬件和软件性能数据的采集和展示包括以下内容。 硬件：_AA_ Core、_AA_ Vector Core等模块的PMU指标及系统硬件性能指标。 软件：ACL等模块的性能指标数据。 ## 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581394"></a> Profile包含merge、show、collect三种操作。 - merge操作将板端收集到的数据进行解析，导出timeline数据、summary数据、event view数据。 merge的命令行格式如下。 ```
+mindcmd profile merge -d COLLECTION_PATH ``` 命令行参数说明如[表1](#table1277010212152)所示。 **表 1** 性能数据解析命令行参数说明 <a name="table1277010212152"></a>
 <table><thead align="left"><tr id="row3770192120151"><th class="cellrowborder" valign="top" width="21.14%" id="mcps1.2.4.1.1"><p id="p137707213153"><a name="p137707213153"></a><a name="p137707213153"></a><strong id="b16770172121514"><a name="b16770172121514"></a><a name="b16770172121514"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="11.37%" id="mcps1.2.4.1.2"><p id="p16770202151516"><a name="p16770202151516"></a><a name="p16770202151516"></a>必选/可选</p>
@@ -3218,20 +1581,6 @@ mindcmd profile merge -d COLLECTION_PATH
 <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p68047215169"><a name="p68047215169"></a><a name="p68047215169"></a>性能数据解析。</p>
 </td>
 </tr>
-<tr id="row2771192181515"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p1077182111512"><a name="p1077182111512"></a><a name="p1077182111512"></a>-d</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p177718216159"><a name="p177718216159"></a><a name="p177718216159"></a>必选</p>
-</td>
-<td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p17771142115155"><a name="p17771142115155"></a><a name="p17771142115155"></a>采集的job数据存放目录。</p>
-</td>
-</tr>
-<tr id="row20771521141513"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p1077132121513"><a name="p1077132121513"></a><a name="p1077132121513"></a>-f</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p4771121141510"><a name="p4771121141510"></a><a name="p4771121141510"></a>可选</p>
-</td>
-<td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p1377162110154"><a name="p1377162110154"></a><a name="p1377162110154"></a>结果保存格式[csv,json],默认csv。</p>
-</td>
-</tr>
 <tr id="row32222314110"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p142292314120"><a name="p142292314120"></a><a name="p142292314120"></a>-h, --help</p>
 </td>
 <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p142222374113"><a name="p142222374113"></a><a name="p142222374113"></a>可选</p>
@@ -3240,21 +1589,8 @@ mindcmd profile merge -d COLLECTION_PATH
 </td>
 </tr>
 </tbody>
-</table>
-
--   show操作将解析结果进行展示。
-
-show的命令行格式如下。
-
-```
-mindcmd profile show -d COLLECTION_PATH 
-```
-
-命令行参数说明如[表2](#table1001mcpsimp)所示。
-
-**表 2**  性能数据展示命令行参数说明
-
-<a name="table1001mcpsimp"></a>
+</table> - show操作将解析结果进行展示。 show的命令行格式如下。 ```
+mindcmd profile show -d COLLECTION_PATH ``` 命令行参数说明如[表2](#table1001mcpsimp)所示。 **表 2** 性能数据展示命令行参数说明 <a name="table1001mcpsimp"></a>
 <table><thead align="left"><tr id="row1006mcpsimp"><th class="cellrowborder" valign="top" width="21.14%" id="mcps1.2.4.1.1"><p id="p1008mcpsimp"><a name="p1008mcpsimp"></a><a name="p1008mcpsimp"></a><strong id="b76691110185417"><a name="b76691110185417"></a><a name="b76691110185417"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="9.5%" id="mcps1.2.4.1.2"><p id="p2502227373"><a name="p2502227373"></a><a name="p2502227373"></a>必选/可选</p>
@@ -3270,13 +1606,6 @@ mindcmd profile show -d COLLECTION_PATH
 <td class="cellrowborder" valign="top" width="69.36%" headers="mcps1.2.4.1.3 "><p id="p14591742131615"><a name="p14591742131615"></a><a name="p14591742131615"></a>性能数据展示</p>
 </td>
 </tr>
-<tr id="row1009mcpsimp"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p1011mcpsimp"><a name="p1011mcpsimp"></a><a name="p1011mcpsimp"></a>-d</p>
-</td>
-<td class="cellrowborder" valign="top" width="9.5%" headers="mcps1.2.4.1.2 "><p id="p1450622113715"><a name="p1450622113715"></a><a name="p1450622113715"></a>必选</p>
-</td>
-<td class="cellrowborder" valign="top" width="69.36%" headers="mcps1.2.4.1.3 "><p id="p1013mcpsimp"><a name="p1013mcpsimp"></a><a name="p1013mcpsimp"></a>采集的job数据存放目录。</p>
-</td>
-</tr>
 <tr id="row1956214294313"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p8563104284315"><a name="p8563104284315"></a><a name="p8563104284315"></a>-h, --help</p>
 </td>
 <td class="cellrowborder" valign="top" width="9.5%" headers="mcps1.2.4.1.2 "><p id="p556374213433"><a name="p556374213433"></a><a name="p556374213433"></a>可选</p>
@@ -3285,244 +1614,11 @@ mindcmd profile show -d COLLECTION_PATH
 </td>
 </tr>
 </tbody>
-</table>
-
--   collect操作自动采集性能原始数据，并解析。
-
-    collect的命令行格式如下。
-
-    ```
-    mindcmd profile collect -m MAIN -s SSH_CONFIG
-    ```
-
-    命令行参数说明如[表3](#table11193121816301)所示。
-
-    **表 3**  性能数据采集命令行参数说明
-
-    <a name="table11193121816301"></a>
-    <table><thead align="left"><tr id="row71931518193018"><th class="cellrowborder" valign="top" width="21.14%" id="mcps1.2.4.1.1"><p id="p15193111812306"><a name="p15193111812306"></a><a name="p15193111812306"></a><strong id="b519371823010"><a name="b519371823010"></a><a name="b519371823010"></a>参数</strong></p>
-    </th>
-    <th class="cellrowborder" valign="top" width="11.37%" id="mcps1.2.4.1.2"><p id="p191931418133013"><a name="p191931418133013"></a><a name="p191931418133013"></a>必选/可选</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="67.49000000000001%" id="mcps1.2.4.1.3"><p id="p219317187307"><a name="p219317187307"></a><a name="p219317187307"></a>描述</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row51936188306"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p18193161813011"><a name="p18193161813011"></a><a name="p18193161813011"></a>collect</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p7193118163014"><a name="p7193118163014"></a><a name="p7193118163014"></a>必选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p81931418103016"><a name="p81931418103016"></a><a name="p81931418103016"></a>性能数据采集。</p>
-    </td>
-    </tr>
-    <tr id="row18193141843017"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p141931183302"><a name="p141931183302"></a><a name="p141931183302"></a>-m</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1019381833017"><a name="p1019381833017"></a><a name="p1019381833017"></a>必选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p910918282018"><a name="p910918282018"></a><a name="p910918282018"></a>上板执行项目中的可执行文件main或执行命令。如： -m main或-m "main -xx"</p>
-    </td>
-    </tr>
-    <tr id="row319351811304"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p4193181883016"><a name="p4193181883016"></a><a name="p4193181883016"></a>-s</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p619316182309"><a name="p619316182309"></a><a name="p619316182309"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p8060118"><a name="p8060118"></a><a name="p8060118"></a>ssh配置文件的路径，具体配置内容见<a href="#ZH-CN_TOPIC_0000002408421542">ssh.cfg文件配置</a>。</p>
-    </td>
-    </tr>
-    <tr id="row123713652217"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p109309243226"><a name="p109309243226"></a><a name="p109309243226"></a>--interval</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1323717614228"><a name="p1323717614228"></a><a name="p1323717614228"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p1323715602212"><a name="p1323715602212"></a><a name="p1323715602212"></a>设置interval num 在acl.json上，默认为0</p>
-    </td>
-    </tr>
-    <tr id="row1142331113223"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p1638275345419"><a name="p1638275345419"></a><a name="p1638275345419"></a>--acl_api</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p841115611229"><a name="p841115611229"></a><a name="p841115611229"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p83820537546"><a name="p83820537546"></a><a name="p83820537546"></a>设置是否开启acl_api在acl.json上，默认为on</p>
-    </td>
-    </tr>
-    <tr id="row4406214182210"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p12406714142212"><a name="p12406714142212"></a><a name="p12406714142212"></a>--<em id="i02874497340"><a name="i02874497340"></a><a name="i02874497340"></a>aacpu</em></p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p692965610229"><a name="p692965610229"></a><a name="p692965610229"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p15577105765413"><a name="p15577105765413"></a><a name="p15577105765413"></a>设置<em id="i1410211613812"><a name="i1410211613812"></a><a name="i1410211613812"></a>是</em>否开启<em id="i20432185203414"><a name="i20432185203414"></a><a name="i20432185203414"></a>aa</em><em id="i19432205283417"><a name="i19432205283417"></a><a name="i19432205283417"></a>cpu</em>在acl.json上，默认为on</p>
-    </td>
-    </tr>
-    <tr id="row1526209142213"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p162627962211"><a name="p162627962211"></a><a name="p162627962211"></a>--switch</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p6482857162211"><a name="p6482857162211"></a><a name="p6482857162211"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p364171115512"><a name="p364171115512"></a><a name="p364171115512"></a>设置是否开启switch在acl.json上，默认为on</p>
-    </td>
-    </tr>
-    <tr id="row87013357203"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p727063885714"><a name="p727063885714"></a><a name="p727063885714"></a>--<em id="i16831175573512"><a name="i16831175573512"></a><a name="i16831175573512"></a>aac_metrics</em></p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1966911316541"><a name="p1966911316541"></a><a name="p1966911316541"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p22704380579"><a name="p22704380579"></a><a name="p22704380579"></a>设置<em id="i5538204203615"><a name="i5538204203615"></a><a name="i5538204203615"></a>aac_metrics</em>在acl.json上，默认为ArithmeticUtilization</p>
-    </td>
-    </tr>
-    <tr id="row128761834202411"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p1537718810582"><a name="p1537718810582"></a><a name="p1537718810582"></a>--output</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1887616348249"><a name="p1887616348249"></a><a name="p1887616348249"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p8876234142417"><a name="p8876234142417"></a><a name="p8876234142417"></a>设置生成job的输出路径</p>
-    </td>
-    </tr>
-    <tr id="row12193151833017"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p619418186306"><a name="p619418186306"></a><a name="p619418186306"></a>-h, --help</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p119418183301"><a name="p119418183301"></a><a name="p119418183301"></a>可选</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p21940186307"><a name="p21940186307"></a><a name="p21940186307"></a>性能数据采集子命令help信息，eg: mindcmd profile collect -h。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-## 执行样例<a name="ZH-CN_TOPIC_0000002408581450"></a>
-
--   执行性能分析
-    1.  模型和数据准备
-
-        性能分析前需要准备相应的性能文件，所准备的文件结构可参考如下。
-
-        ```
-        ├── profile_resoure
-        │   ├── JOBXXXXXXXX
-        │   │   ├── data
-        │   │   └── info.json.0
-        ```
-
-    2.  执行以下命令进行性能分析：
-
-        ```
-        cd profile_resoure
-        mindcmd profile merge -d ./JOBXXXXXXXX
-        ```
-
-    3.  执行结果
-
-        性能分析执行结束后会在默认工作路径/home/MindCmdUser/profile\_resoure/JOBXXXXXXXX中生成数据，主要文件结构示例如下。
-
-        ```
-        ├── profile_resoure
-        │  ├── JOBXXXXXXXX
-        │  │   ├── data
-        │  │   ├── eventview
-        │  │   ├── log
-        │  │   ├── sqlite
-        │  │   ├── summary
-        │  │   ├── timeline
-        │  │   └── info.json.0 
-        ```
-
--   执行性能分析展示
-    1.  执行以下命令进行性能分析展示：
-
-        ```
-        cd profile_resoure
-        mindcmd profile show -d ./JOBXXXXXXXX
-        ```
-
-    2.  执行结果
-
-        性能分析结果展示在控制台上，如[图1](#fig1793811366253)，具体结果可参考《Profiling工具使用指南》“展示Profiling数据”章节。
-
-        **图 1**  性能分析展示图<a name="fig1793811366253"></a>  
-        ![](figures/性能分析展示图.png "性能分析展示图")
--   执行性能数据采集
-    1.  文件准备
-
-        请预先准备工程，主要工程目录及文件如下（以新建ACL ResNet50为例）。
-
-        ```
-        ├── 工程名
-        │   ├── .idea                     //IntelliJ IDEA自动创建的，用于存放项目的配置信息。  
-        │   ├── build  
-        │   │    ├──cmake                //存放cmake依赖文件
-        │   ├── data                      //存放data示例 
-        │   ├── inc  
-        │   │    ├── model_process.h     //声明模型处理相关函数的头文件  
-        │   │    ├── sample_process.h    //声明资源初始化/销毁相关函数的头文件  
-        │   │    ├── utils.h             //声明公共函数（例如：文件读取函数）的头文件  
-        │   ├── out                       //存放编译出的可执行文件  
-        │   │    ├── main                
-        │   ├── src  
-        │   │    ├── acl.json            //系统初始化的配置文件  
-        │   │    ├── CMakeLists.txt      //编译脚本  
-        │   │    ├── main.cpp            //主函数，图片分类功能的实现文件 
-        │   │    ├── model_process.cpp   //模型处理相关函数的实现文件  
-        │   │    ├── sample_process.cpp  //资源初始化/销毁相关函数的实现文件  
-        │   │    ├── utils.cpp           //公共函数（例如：文件读取函数）的实现文件 
-        │   ├── .project                  //工程信息文件，包含工程类型、工程描述、运行目标设备类型、CANN版本号等  
-        │   ├── CMakeLists.txt            //编译脚本，调用src目录下的CMakeLists文件
-        ```
-
-        其中，main文件是根据工程编译的板端可执行文件，同时性能数据采集需要配置acl.json，内容如下。
-
-        ```
-        {
-        "profiler":{
-                     "output":"/home/MindCmdUser/profiling",
-                     "aacpu":"on",
-                     "aac_metrics":"ArithmeticUtilization",
-                     "interval":"0",
-                     "acl_api":"on",
-                     "switch":"on"
-                   }
-        }
-        ```
-
-    2.  执行以下命令进行性能数据采集：
-
-        ```
-        mindcmd profile collect -m MAIN
-        ```
-
-        >![](public_sys-resources/icon-caution.gif) **注意：** 
-        >命令中MAIN表示工程中main文件的路径。
-
-    3.  执行结果
-
-        性能数据采集执行结束后会在上板项目目录下的profiling文件夹生成数据，主要文件结构示例如下。
-
-        ```
-        ├── project
-        │  ├──profiling
-        │  │   ├── JOBXXXXXXXX
-        │  │   │   ├── data
-        │  │   │   ├── log
-        │  │   │   ├── sqlite
-        │  │   │   ├── summary
-        │  │   │   ├── timeline
-        │  │   │   └── info.json.0
-        ```
-
-# Tools
-## Caffe模型子网导出<a name="ZH-CN_TOPIC_0000002441980809"></a>
-
-该功能用于原始Caffe网络的剪切。
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980661"></a>
-
-Caffe模型子网导出命令行格式如下。
-
-```
+</table> - collect操作自动采集性能原始数据，并解析。 collect的命令行格式如下。 ``` mindcmd profile collect -m MAIN -s SSH_CONFIG ``` 命令行参数说明如[表3](#table11193121816301)所示。 **表 3** 性能数据采集命令行参数说明 <a name="table11193121816301"></a> <table><thead align="left"><tr id="row71931518193018"><th class="cellrowborder" valign="top" width="21.14%" id="mcps1.2.4.1.1"><p id="p15193111812306"><a name="p15193111812306"></a><a name="p15193111812306"></a><strong id="b519371823010"><a name="b519371823010"></a><a name="b519371823010"></a>参数</strong></p> </th> <th class="cellrowborder" valign="top" width="11.37%" id="mcps1.2.4.1.2"><p id="p191931418133013"><a name="p191931418133013"></a><a name="p191931418133013"></a>必选/可选</p> </th> <th class="cellrowborder" valign="top" width="67.49000000000001%" id="mcps1.2.4.1.3"><p id="p219317187307"><a name="p219317187307"></a><a name="p219317187307"></a>描述</p> </th> </tr> </thead> <tbody><tr id="row51936188306"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p18193161813011"><a name="p18193161813011"></a><a name="p18193161813011"></a>collect</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p7193118163014"><a name="p7193118163014"></a><a name="p7193118163014"></a>必选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p81931418103016"><a name="p81931418103016"></a><a name="p81931418103016"></a>性能数据采集。</p> </td> </tr> <tr id="row18193141843017"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p141931183302"><a name="p141931183302"></a><a name="p141931183302"></a>-m</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1019381833017"><a name="p1019381833017"></a><a name="p1019381833017"></a>必选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p910918282018"><a name="p910918282018"></a><a name="p910918282018"></a>上板执行项目中的可执行文件main或执行命令。如： -m main或-m "main -xx"</p> </td> </tr> <tr id="row319351811304"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p4193181883016"><a name="p4193181883016"></a><a name="p4193181883016"></a>-s</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p619316182309"><a name="p619316182309"></a><a name="p619316182309"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p8060118"><a name="p8060118"></a><a name="p8060118"></a>ssh配置文件的路径，具体配置内容见<a href="#ZH-CN_TOPIC_0000002408421542">ssh.cfg文件配置</a>。</p> </td> </tr> <tr id="row123713652217"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p109309243226"><a name="p109309243226"></a><a name="p109309243226"></a>--interval</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1323717614228"><a name="p1323717614228"></a><a name="p1323717614228"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p1323715602212"><a name="p1323715602212"></a><a name="p1323715602212"></a>设置interval num 在acl.json上，默认为0</p> </td> </tr> <tr id="row1142331113223"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p1638275345419"><a name="p1638275345419"></a><a name="p1638275345419"></a>--acl_api</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p841115611229"><a name="p841115611229"></a><a name="p841115611229"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p83820537546"><a name="p83820537546"></a><a name="p83820537546"></a>设置是否开启acl_api在acl.json上，默认为on</p> </td> </tr> <tr id="row4406214182210"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p12406714142212"><a name="p12406714142212"></a><a name="p12406714142212"></a>--<em id="i02874497340"><a name="i02874497340"></a><a name="i02874497340"></a>aacpu</em></p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p692965610229"><a name="p692965610229"></a><a name="p692965610229"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p15577105765413"><a name="p15577105765413"></a><a name="p15577105765413"></a>设置<em id="i1410211613812"><a name="i1410211613812"></a><a name="i1410211613812"></a>是</em>否开启<em id="i20432185203414"><a name="i20432185203414"></a><a name="i20432185203414"></a>aa</em><em id="i19432205283417"><a name="i19432205283417"></a><a name="i19432205283417"></a>cpu</em>在acl.json上，默认为on</p> </td> </tr> <tr id="row1526209142213"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p162627962211"><a name="p162627962211"></a><a name="p162627962211"></a>--switch</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p6482857162211"><a name="p6482857162211"></a><a name="p6482857162211"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p364171115512"><a name="p364171115512"></a><a name="p364171115512"></a>设置是否开启switch在acl.json上，默认为on</p> </td> </tr> <tr id="row87013357203"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p727063885714"><a name="p727063885714"></a><a name="p727063885714"></a>--<em id="i16831175573512"><a name="i16831175573512"></a><a name="i16831175573512"></a>aac_metrics</em></p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1966911316541"><a name="p1966911316541"></a><a name="p1966911316541"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p22704380579"><a name="p22704380579"></a><a name="p22704380579"></a>设置<em id="i5538204203615"><a name="i5538204203615"></a><a name="i5538204203615"></a>aac_metrics</em>在acl.json上，默认为ArithmeticUtilization</p> </td> </tr> <tr id="row128761834202411"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p1537718810582"><a name="p1537718810582"></a><a name="p1537718810582"></a>--output</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p1887616348249"><a name="p1887616348249"></a><a name="p1887616348249"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p8876234142417"><a name="p8876234142417"></a><a name="p8876234142417"></a>设置生成job的输出路径</p> </td> </tr> <tr id="row12193151833017"><td class="cellrowborder" valign="top" width="21.14%" headers="mcps1.2.4.1.1 "><p id="p619418186306"><a name="p619418186306"></a><a name="p619418186306"></a>-h, --help</p> </td> <td class="cellrowborder" valign="top" width="11.37%" headers="mcps1.2.4.1.2 "><p id="p119418183301"><a name="p119418183301"></a><a name="p119418183301"></a>可选</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.4.1.3 "><p id="p21940186307"><a name="p21940186307"></a><a name="p21940186307"></a>性能数据采集子命令help信息，eg: mindcmd profile collect -h。</p> </td> </tr> </tbody> </table> >![](public_sys-resources/icon-note.gif) **说明：** >参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 ## 执行样例<a name="ZH-CN_TOPIC_0000002408581450"></a> - 执行性能分析 1. 模型和数据准备 性能分析前需要准备相应的性能文件，所准备的文件结构可参考如下。 ``` ├── profile_resoure │ ├── JOBXXXXXXXX │ │ ├── data │ │ └── info.json.0 ``` 2. 执行以下命令进行性能分析： ``` cd profile_resoure mindcmd profile merge -d ./JOBXXXXXXXX ``` 3. 执行结果 性能分析执行结束后会在默认工作路径/home/MindCmdUser/profile\_resoure/JOBXXXXXXXX中生成数据，主要文件结构示例如下。 ``` ├── profile_resoure │ ├── JOBXXXXXXXX │ │ ├── data │ │ ├── eventview │ │ ├── log │ │ ├── sqlite │ │ ├── summary │ │ ├── timeline │ │ └── info.json.0 ``` - 执行性能分析展示 1. 执行以下命令进行性能分析展示： ``` cd profile_resoure mindcmd profile show -d ./JOBXXXXXXXX ``` 2. 执行结果 性能分析结果展示在控制台上，如[图1](#fig1793811366253)，具体结果可参考《Profiling工具使用指南》“展示Profiling数据”章节。 **图 1** 性能分析展示图<a name="fig1793811366253"></a> ![](figures/性能分析展示图.png "性能分析展示图")
+- 执行性能数据采集 1. 文件准备 请预先准备工程，主要工程目录及文件如下（以新建ACL ResNet50为例）。 ``` ├── 工程名 │ ├── .idea /IntelliJ IDEA自动创建的，用于存放项目的配置信息。 │ ├── build │ │ ├──cmake /存放cmake依赖文件 │ ├── data /存放data示例 │ ├── inc │ │ ├── model_process.h /声明模型处理相关函数的头文件 │ │ ├── sample_process.h /声明资源初始化/销毁相关函数的头文件 │ │ ├── utils.h /声明公共函数（例如：文件读取函数）的头文件 │ ├── out /存放编译出的可执行文件 │ │ ├── main │ ├── src │ │ ├── acl.json /系统初始化的配置文件 │ │ ├── CMakeLists.txt /编译脚本 │ │ ├── main.cpp /主函数，图片分类功能的实现文件 │ │ ├── model_process.cpp /模型处理相关函数的实现文件 │ │ ├── sample_process.cpp /资源初始化/销毁相关函数的实现文件 │ │ ├── utils.cpp /公共函数（例如：文件读取函数）的实现文件 │ ├── .project /工程信息文件，包含工程类型、工程描述、运行目标设备类型、CANN版本号等 │ ├── CMakeLists.txt /编译脚本，调用src目录下的CMakeLists文件 ``` 其中，main文件是根据工程编译的板端可执行文件，同时性能数据采集需要配置acl.json，内容如下。 ``` { "profiler":{ "output":"/home/MindCmdUser/profiling", "aacpu":"on", "aac_metrics":"ArithmeticUtilization", "interval":"0", "acl_api":"on", "switch":"on" } } ``` 2. 执行以下命令进行性能数据采集： ``` mindcmd profile collect -m MAIN ``` >![](public_sys-resources/icon-caution.gif) **注意：** >命令中MAIN表示工程中main文件的路径。 3. 执行结果 性能数据采集执行结束后会在上板项目目录下的profiling文件夹生成数据，主要文件结构示例如下。 ``` ├── project │ ├──profiling │ │ ├── JOBXXXXXXXX │ │ │ ├── data │ │ │ ├── log │ │ │ ├── sqlite │ │ │ ├── summary │ │ │ ├── timeline │ │ │ └── info.json.0 ``` # Tools
+## Caffe模型子网导出<a name="ZH-CN_TOPIC_0000002441980809"></a> 该功能用于原始Caffe网络的剪切。 ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980661"></a> Caffe模型子网导出命令行格式如下。 ```
 mindcmd subnet -m MODEL_FILE -w WEIGHT_FILE -s START_LAYER -e END_LAYER
-```
-
-命令行参数说明如[表1](#table19209648865)所示。
-
-**表 1**  Caffe模型子网导出命令参数说明
-
-<a name="table19209648865"></a>
+``` 命令行参数说明如[表1](#table19209648865)所示。 **表 1** Caffe模型子网导出命令参数说明 <a name="table19209648865"></a>
 <table><thead align="left"><tr id="row82102483610"><th class="cellrowborder" valign="top" width="23.51%" id="mcps1.2.4.1.1"><p id="p921074814615"><a name="p921074814615"></a><a name="p921074814615"></a><strong id="b1121084819610"><a name="b1121084819610"></a><a name="b1121084819610"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="9.9%" id="mcps1.2.4.1.2"><p id="p17532133310362"><a name="p17532133310362"></a><a name="p17532133310362"></a>必选/可选</p>
@@ -3581,63 +1677,9 @@ mindcmd subnet -m MODEL_FILE -w WEIGHT_FILE -s START_LAYER -e END_LAYER
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408581266"></a>
-
--   模型和数据准备
-
-    性能分析前需要准备相应的Caffe模型，所准备的文件结构可参考如下。
-
-    ```
-    ├── caffe_model_split
-    │   ├── resnet50
-    │   │   ├── resnet50.caffemodel
-    │   │   └── resnet50.prototxt
-    ```
-
--   执行模型分割
-
-    进入MindCmd工程路径下，执行以下命令。
-
-    ```
-    cd caffe_model_split
-    mindcmd subnet -m ./resnet50/resnet50.prototxt -w ./resnet50/resnet50.caffemodel -s conv1 -e pool1 -o ./split_output
-    ```
-
--   执行结果
-
-    性能分析执行结束后会在默认工作路径中生成数据，主要文件结构示例如下。
-
-    ```
-    ├── split_output
-    │   ├── dump.caffemodel            # 子模型权重
-    │   └── dump.prototxt              # 子模型
-    └── shape_1665740903824.json        # 原始模型.json
-    ```
-
-## cmd命令转换为cfg文件<a name="ZH-CN_TOPIC_0000002442020629"></a>
-
-该功能用于将cmd命令转换为cfg文件保存。
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581458"></a>
-
-cmd命令转换为cfg文件的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408581266"></a> - 模型和数据准备 性能分析前需要准备相应的Caffe模型，所准备的文件结构可参考如下。 ``` ├── caffe_model_split │ ├── resnet50 │ │ ├── resnet50.caffemodel │ │ └── resnet50.prototxt ``` - 执行模型分割 进入MindCmd工程路径下，执行以下命令。 ``` cd caffe_model_split mindcmd subnet -m ./resnet50/resnet50.prototxt -w ./resnet50/resnet50.caffemodel -s conv1 -e pool1 -o ./split_output ``` - 执行结果 性能分析执行结束后会在默认工作路径中生成数据，主要文件结构示例如下。 ``` ├── split_output │ ├── dump.caffemodel # 子模型权重 │ └── dump.prototxt # 子模型 └── shape_1665740903824.json # 原始模型.json ``` ## cmd命令转换为cfg文件<a name="ZH-CN_TOPIC_0000002442020629"></a> 该功能用于将cmd命令转换为cfg文件保存。 ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581458"></a> cmd命令转换为cfg文件的命令行格式如下。 ```
 mindcmd cmdtrans -s CFG_SAVED_PATH -a [ARGS [ARGS ...]]
-```
-
-命令行参数说明如[表1](#table19209648865)所示
-
-**表 1**  cmd命令转cfg文件参数说明
-
-<a name="table19209648865"></a>
+``` 命令行参数说明如[表1](#table19209648865)所示 **表 1** cmd命令转cfg文件参数说明 <a name="table19209648865"></a>
 <table><thead align="left"><tr id="row82102483610"><th class="cellrowborder" valign="top" width="23.02%" id="mcps1.2.4.1.1"><p id="p921074814615"><a name="p921074814615"></a><a name="p921074814615"></a><strong id="b1121084819610"><a name="b1121084819610"></a><a name="b1121084819610"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.39%" id="mcps1.2.4.1.2"><p id="p7691201353519"><a name="p7691201353519"></a><a name="p7691201353519"></a>必选/可选</p>
@@ -3668,52 +1710,10 @@ mindcmd cmdtrans -s CFG_SAVED_PATH -a [ARGS [ARGS ...]]
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002442020645"></a>
-
--   创建cfg文件保存路径，如/home/MindCmdUser/cfg\_output
--   执行cmd命令转换
-
-    进入MindCmd工程路径下，执行以下命令。
-
-    ```
-    mindcmd cmdtrans -s /home/MindCmdUser/cfg_output/resnet50.cfg -a  --model="/home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.prototxt" --weight="/home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.caffemodel" --image_list="/home/MindCmdUser/atc_resoure/data/nnn_dog1_1024_683_uint8.bin"  --output="/home/MindCmdUser/atc_output/resnet50"
-    ```
-
--   执行结果
-
-    cmd命令转换执行结束后会在默认工作路径/home/MindCmdUser/cfg\_output/中生成resnet50.cfg文件，文件结构示例如下。
-
-    ```
-    [model] /home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.prototxt
-    [weight] /home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.caffemodel
-    [image_list] /home/MindCmdUser/atc_resoure/data/nnn_dog1_1024_683_uint8.bin
-    [output] /home/MindCmdUser/atc_output/resnet50
-    ```
-
-## 文件格式转换<a name="ZH-CN_TOPIC_0000002408421294"></a>
-
-该功能可以将.bin，.float，.npy，.dump和.\{时间戳\}文件转换为.bin，.float，.hex和.npy文件。
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581366"></a>
-
-文件格式转换的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 ### 执行样例<a name="ZH-CN_TOPIC_0000002442020645"></a> - 创建cfg文件保存路径，如/home/MindCmdUser/cfg\_output
+- 执行cmd命令转换 进入MindCmd工程路径下，执行以下命令。 ``` mindcmd cmdtrans -s /home/MindCmdUser/cfg_output/resnet50.cfg -a --model="/home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.prototxt" --weight="/home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.caffemodel" --image_list="/home/MindCmdUser/atc_resoure/data/nnn_dog1_1024_683_uint8.bin" --output="/home/MindCmdUser/atc_output/resnet50" ``` - 执行结果 cmd命令转换执行结束后会在默认工作路径/home/MindCmdUser/cfg\_output/中生成resnet50.cfg文件，文件结构示例如下。 ``` [model] /home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.prototxt [weight] /home/MindCmdUser/atc_resoure/caffe_resnet50/caffe/resnet50.caffemodel [image_list] /home/MindCmdUser/atc_resoure/data/nnn_dog1_1024_683_uint8.bin [output] /home/MindCmdUser/atc_output/resnet50 ``` ## 文件格式转换<a name="ZH-CN_TOPIC_0000002408421294"></a> 该功能可以将.bin，.float，.npy，.dump和.\{时间戳\}文件转换为.bin，.float，.hex和.npy文件。 ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002408581366"></a> 文件格式转换的命令行格式如下。 ```
 mindcmd datatrans -i INPUT -f file_format
-```
-
-命令行参数说明如[表1](#table19209648865)所示
-
-**表 1**  文件格式转换参数说明
-
-<a name="table19209648865"></a>
+``` 命令行参数说明如[表1](#table19209648865)所示 **表 1** 文件格式转换参数说明 <a name="table19209648865"></a>
 <table><thead align="left"><tr id="row82102483610"><th class="cellrowborder" valign="top" width="22.439999999999998%" id="mcps1.2.4.1.1"><p id="p921074814615"><a name="p921074814615"></a><a name="p921074814615"></a><strong id="b1121084819610"><a name="b1121084819610"></a><a name="b1121084819610"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.97%" id="mcps1.2.4.1.2"><p id="p898153418268"><a name="p898153418268"></a><a name="p898153418268"></a>必选/可选</p>
@@ -3758,54 +1758,9 @@ mindcmd datatrans -i INPUT -f file_format
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002442020657"></a>
-
--   数据准备
-
-    性能分析前需要准备相应的caffe模型，所准备的文件结构可参考如下。
-
-    ```
-    ├── transform_resoure
-    │   └── data.npy
-    ```
-
--   执行文件格式转换
-
-    进入MindCmd工程路径下，执行以下命令。
-
-    ```
-    cd transform_resoure
-    mindcmd datatrans -i ./data.npy -f bin -o ./transform_output
-    ```
-
--   执行结果
-
-    文件格式转换执行结束后会在默认工作路径中生成data.bin文件。
-
-## UnInplace<a name="ZH-CN_TOPIC_0000002408581346"></a>
-
-该功能对模型进行uninplace处理，uninplace后仅保存不带phase或者phase为TEST的层。
-
-
-
-### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980701"></a>
-
-uninplace处理的命令行格式如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 ### 执行样例<a name="ZH-CN_TOPIC_0000002442020657"></a> - 数据准备 性能分析前需要准备相应的caffe模型，所准备的文件结构可参考如下。 ``` ├── transform_resoure │ └── data.npy ``` - 执行文件格式转换 进入MindCmd工程路径下，执行以下命令。 ``` cd transform_resoure mindcmd datatrans -i ./data.npy -f bin -o ./transform_output ``` - 执行结果 文件格式转换执行结束后会在默认工作路径中生成data.bin文件。 ## UnInplace<a name="ZH-CN_TOPIC_0000002408581346"></a> 该功能对模型进行uninplace处理，uninplace后仅保存不带phase或者phase为TEST的层。 ### 命令行格式说明<a name="ZH-CN_TOPIC_0000002441980701"></a> uninplace处理的命令行格式如下。 ```
 mindcmd uninplace -i INPUT_FILE_PATH
-```
-
-命令行参数说明如[表1](#table19209648865)所示。
-
-**表 1**  Uninplace命令参数说明
-
-<a name="table19209648865"></a>
+``` 命令行参数说明如[表1](#table19209648865)所示。 **表 1** Uninplace命令参数说明 <a name="table19209648865"></a>
 <table><thead align="left"><tr id="row82102483610"><th class="cellrowborder" valign="top" width="22.24%" id="mcps1.2.4.1.1"><p id="p921074814615"><a name="p921074814615"></a><a name="p921074814615"></a><strong id="b1121084819610"><a name="b1121084819610"></a><a name="b1121084819610"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="11.17%" id="mcps1.2.4.1.2"><p id="p898153418268"><a name="p898153418268"></a><a name="p898153418268"></a>必选/可选</p>
@@ -3836,50 +1791,10 @@ mindcmd uninplace -i INPUT_FILE_PATH
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。
-
-### 执行样例<a name="ZH-CN_TOPIC_0000002408581294"></a>
-
--   模型和数据准备
-
-    性能分析前需要准备相应的caffe模型，所准备的文件结构可参考如下。
-
-    ```
-    ├── uninplace_resoure
-    │   ├── resnet50
-    │   │   └── resnet50_deploy.prototxt
-    ```
-
--   执行uninplace
-
-    进入MindCmd工程路径下，执行以下命令。
-
-    ```
-    cd uninplace_resoure
-    mindcmd uninplace -i ./resnet50/resnet50_deploy.prototxt -o=./uninplace_output/resnet50_uninplace.prototxt
-    ```
-
--   执行结果
-
-    执行结束后会在指定路径中生成resnet50\_uninplace.prototxt文件。
-
-# 附录
-## MindCmd子命令<a name="ZH-CN_TOPIC_0000002408581406"></a>
-
-MindCmd工具可以在任意路径下通过mindcmd命令使用，命令行如下。
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >参数值格式：支持大小写字母（a-z，A-Z）、数字（0-9）、下划线（\_）、中划线（-）、句点（.）。 ### 执行样例<a name="ZH-CN_TOPIC_0000002408581294"></a> - 模型和数据准备 性能分析前需要准备相应的caffe模型，所准备的文件结构可参考如下。 ``` ├── uninplace_resoure │ ├── resnet50 │ │ └── resnet50_deploy.prototxt ``` - 执行uninplace 进入MindCmd工程路径下，执行以下命令。 ``` cd uninplace_resoure mindcmd uninplace -i ./resnet50/resnet50_deploy.prototxt -o=./uninplace_output/resnet50_uninplace.prototxt ``` - 执行结果 执行结束后会在指定路径中生成resnet50\_uninplace.prototxt文件。 # 附录
+## MindCmd子命令<a name="ZH-CN_TOPIC_0000002408581406"></a> MindCmd工具可以在任意路径下通过mindcmd命令使用，命令行如下。 ```
 mindcmd {config,oneclick,preprocess,atc,amct,gt,app,compare,profile} ...
-```
-
-命令参数说明如[表1](#table19209648865)所示。
-
-**表 1**  MindCmd子命令参数说明
-
-<a name="table19209648865"></a>
+``` 命令参数说明如[表1](#table19209648865)所示。 **表 1** MindCmd子命令参数说明 <a name="table19209648865"></a>
 <table><thead align="left"><tr id="row82102483610"><th class="cellrowborder" valign="top" width="18.42%" id="mcps1.2.4.1.1"><p id="p10985350112516"><a name="p10985350112516"></a><a name="p10985350112516"></a><strong id="b259515459268"><a name="b259515459268"></a><a name="b259515459268"></a>参数</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="10.14%" id="mcps1.2.4.1.2"><p id="p898153418268"><a name="p898153418268"></a><a name="p898153418268"></a>必选/可选</p>
@@ -3914,13 +1829,6 @@ mindcmd {config,oneclick,preprocess,atc,amct,gt,app,compare,profile} ...
 <td class="cellrowborder" valign="top" width="10.14%" headers="mcps1.2.4.1.2 "><p id="p1550232062913"><a name="p1550232062913"></a><a name="p1550232062913"></a>必选</p>
 </td>
 <td class="cellrowborder" valign="top" width="71.44%" headers="mcps1.2.4.1.3 "><p id="p5502142010295"><a name="p5502142010295"></a><a name="p5502142010295"></a>使用模型压缩功能，与其他功能命令互斥。</p>
-</td>
-</tr>
-<tr id="row27225188292"><td class="cellrowborder" valign="top" width="18.42%" headers="mcps1.2.4.1.1 "><p id="p372215182296"><a name="p372215182296"></a><a name="p372215182296"></a>gt</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.14%" headers="mcps1.2.4.1.2 "><p id="p1972251814295"><a name="p1972251814295"></a><a name="p1972251814295"></a>必选</p>
-</td>
-<td class="cellrowborder" valign="top" width="71.44%" headers="mcps1.2.4.1.3 "><p id="p0722818112917"><a name="p0722818112917"></a><a name="p0722818112917"></a>使用开源框架推理功能，与其他功能命令互斥。</p>
 </td>
 </tr>
 <tr id="row16210124812618"><td class="cellrowborder" valign="top" width="18.42%" headers="mcps1.2.4.1.1 "><p id="p14758152182518"><a name="p14758152182518"></a><a name="p14758152182518"></a>app</p>
@@ -3994,324 +1902,24 @@ mindcmd {config,oneclick,preprocess,atc,amct,gt,app,compare,profile} ...
 </td>
 </tr>
 </tbody>
-</table>
-
-## NFS环境搭建<a name="ZH-CN_TOPIC_0000002441980773"></a>
-
-1.  在Host侧安装NFS软件包
-
-    执行以下命令安装NFS服务器和NFS客户端
-
-    ```
-    sudo apt-get install nfs-kernel-server 
-    sudo apt-get install nfs-common 
-    ```
-
-2.  在Host侧新建共享目录$\{SHARE\_DIR\}，并为该目录设置权限，参考：
-
-    ```
-    sudo mkdir ${SHARE_DIR}  # 若使用已有目录作为共享目录，此命令不执行
-    sudo chmod -R 777 ${SHARE_DIR} 
-    sudo chown user:group ${SHARE_DIR} -R     # user用户，group为用户组，-R 表示递归更改该目录下所有文件
-    ```
-
-3.  在Host侧添加NFS共享目录
-
-    ```
-    sudo vim /etc/exports 
-    ```
-
-    在该文件末尾添加下面一行内容，用于把 $\{SHARE\_DIR\} 添加到NFS共享目录。请将其中的$\{SHARE\_DIR\}替换为实际需要共享的目录：
-
-    ```
-    ${SHARE_DIR} *(rw,sync,no_root_squash,no_subtree_check)     # * 表示允许任何网段 IP 的系统访问该 NFS 目录
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >请设置安全权限范围的目录作为SHARE\_DIR，避免mount提权风险。
-
-4.  在Host侧启动NFS服务
-
-    可参考以下两条命令
-
-    ```
-    sudo /etc/init.d/nfs-kernel-server start
-    sudo /etc/init.d/nfs-kernel-server restart
-    ```
-
-5.  测试NFS环境是否成功搭建
-
-    在板端上参考以下命令进行挂载
-
-    ```
-    mount -t nfs x.x.x.x:${SHARE_DIR} /home/MindCmdUser/board_workspace -o nolock
-    ```
-
-    在板端上执行以下命令进行卸载
-
-    ```
-    umount /home/MindCmdUser/board_workspace 
-    ```
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->$\{SHARE\_DIR\}表示NFS共享路径，其与工作路径、挂载路径、数据卷路径的关联关系详见[关于工作路径、挂载路径、数据卷路径和NFS共享路径](#ZH-CN_TOPIC_0000002408421510)。
-
-## ssh.cfg文件配置<a name="ZH-CN_TOPIC_0000002408421542"></a>
-
-工具运行上板推理需要指定此文件，用于描述板端IP、板端挂载路径、服务器挂载路径等信息，文件格式和详细内容如下。
-
-```
+</table> ## NFS环境搭建<a name="ZH-CN_TOPIC_0000002441980773"></a> 1. 在Host侧安装NFS软件包 执行以下命令安装NFS服务器和NFS客户端 ``` sudo apt-get install nfs-kernel-server sudo apt-get install nfs-common ``` 2. 在Host侧新建共享目录$\{SHARE\_DIR\}，并为该目录设置权限，参考： ``` sudo mkdir ${SHARE_DIR} # 若使用已有目录作为共享目录，此命令不执行 sudo chmod -R 777 ${SHARE_DIR} sudo chown user:group ${SHARE_DIR} -R # user用户，group为用户组，-R 表示递归更改该目录下所有文件 ``` 3. 在Host侧添加NFS共享目录 ``` sudo vim /etc/exports ``` 在该文件末尾添加下面一行内容，用于把 $\{SHARE\_DIR\} 添加到NFS共享目录。请将其中的$\{SHARE\_DIR\}替换为实际需要共享的目录： ``` ${SHARE_DIR} *(rw,sync,no_root_squash,no_subtree_check) # * 表示允许任何网段 IP 的系统访问该 NFS 目录 ``` >![](public_sys-resources/icon-note.gif) **说明：** >请设置安全权限范围的目录作为SHARE\_DIR，避免mount提权风险。 4. 在Host侧启动NFS服务 可参考以下两条命令 ``` sudo /etc/init.d/nfs-kernel-server start sudo /etc/init.d/nfs-kernel-server restart ``` 5. 测试NFS环境是否成功搭建 在板端上参考以下命令进行挂载 ``` mount -t nfs x.x.x.x:${SHARE_DIR} /home/MindCmdUser/board_workspace -o nolock ``` 在板端上执行以下命令进行卸载 ``` umount /home/MindCmdUser/board_workspace ``` >![](public_sys-resources/icon-note.gif) **说明：** >$\{SHARE\_DIR\}表示NFS共享路径，其与工作路径、挂载路径、数据卷路径的关联关系详见[关于工作路径、挂载路径、数据卷路径和NFS共享路径](#ZH-CN_TOPIC_0000002408421510)。 ## ssh.cfg文件配置<a name="ZH-CN_TOPIC_0000002408421542"></a> 工具运行上板推理需要指定此文件，用于描述板端IP、板端挂载路径、服务器挂载路径等信息，文件格式和详细内容如下。 ```
 [ssh_config]
 # board ip
-BOARD_IP=x.x.x.x
-
-# board work directory, automatically mount to $HOST_MOUNT_PATH
-BOARD_MOUNT_PATH=/home/MindCmdUser/board_workspace/
-
-# board work directory
+BOARD_IP=x.x.x.x # board work directory, automatically mount to $HOST_MOUNT_PATH
+BOARD_MOUNT_PATH=/home/MindCmdUser/board_workspace/ # board work directory
 # to avoid bottlenecks caused by copying test resources, store test resources in this path as much as possible.
-HOST_MOUNT_PATH=${SHARE_DIR}/host_workspace
-
-# board user name
-USER=${username}
-
-# board user's password
-PASSWORD=${password}
-
-# default port is 22
+HOST_MOUNT_PATH=${SHARE_DIR}/host_workspace # board user name
+USER=${username} # board user's password
+PASSWORD=${password} # default port is 22
 PORT=22
-```
-
-ssh.cfg配置文件路径可写入MindCmd全局配置文件的[SSH\_CFG\_PATH](#ZH-CN_TOPIC_0000002442020665)配置项，或作为工具命令行参数--ssh\_config的值。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   MindCmd工具上板推理时会根据以上配置文件提供的信息，自动执行mount、umount操作。
->-   HOST\_MOUNT\_PATH配置的路径不能超出[2](#ZH-CN_TOPIC_0000002441980773)所配置的NFS共享目录范围，否则可能会导致mount失败。
->-   示例中的$\{SHARE\_DIR\}、$\{username\}、$\{password\}请根据实际情况替换。
->-   板端ssh环境搭建请参考《驱动和开发环境安装指南》“OpenSSH服务搭建”章节。
-
-## 数据预处理配置文件样例<a name="ZH-CN_TOPIC_0000002408421442"></a>
-
-自定义输入数据的预处理方式需要指定此文件，创建inset\_op.cfg配置文件，文件格式和内容参考如下。
-
-```
-aapp_op { 
-    related_input_rank : 0
-    aapp_mode : static
-    input_format : BGR_PLANAR
-    model_format : BGR
-    mean_chn_0 : 0
-    mean_chn_1 : 0
-    mean_chn_2 : 0
-    var_reci_chn_0 : 1.0
-    var_reci_chn_1 : 1.0
-    var_reci_chn_2 : 1.0
+``` ssh.cfg配置文件路径可写入MindCmd全局配置文件的[SSH\_CFG\_PATH](#ZH-CN_TOPIC_0000002442020665)配置项，或作为工具命令行参数--ssh\_config的值。 >![](public_sys-resources/icon-note.gif) **说明：** >- MindCmd工具上板推理时会根据以上配置文件提供的信息，自动执行mount、umount操作。
+>- HOST\_MOUNT\_PATH配置的路径不能超出[2](#ZH-CN_TOPIC_0000002441980773)所配置的NFS共享目录范围，否则可能会导致mount失败。
+>- 示例中的$\{SHARE\_DIR\}、$\{username\}、$\{password\}请根据实际情况替换。
+>- 板端ssh环境搭建请参考《驱动和开发环境安装指南》“OpenSSH服务搭建”章节。 ## 数据预处理配置文件样例<a name="ZH-CN_TOPIC_0000002408421442"></a> 自定义输入数据的预处理方式需要指定此文件，创建inset\_op.cfg配置文件，文件格式和内容参考如下。 ```
+aapp_op { related_input_rank : 0 aapp_mode : static input_format : BGR_PLANAR model_format : BGR mean_chn_0 : 0 mean_chn_1 : 0 mean_chn_2 : 0 var_reci_chn_0 : 1.0 var_reci_chn_1 : 1.0 var_reci_chn_2 : 1.0
 }
-```
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   以上配置内容仅供参考，实际使用请根据输入数据以及预处理方式进行调整。
->-   数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf” 章节。
-
-## Docker容器中使用MindCmd<a name="ZH-CN_TOPIC_0000002408581214"></a>
-
-如果采用默认方式启动 Docker 容器，会产生一块虚拟网卡，可以理解为这块网卡连接着一个虚拟交换机。每个Docker容器拥有自己单独的网卡和IP，并且所有Docker容器也连接在这个虚拟交换机之下。当在 Docker 容器内运行 MindCmd 挂载板端时，容器内分配的是一个不对外网暴露的虚拟IP（如172.17.0.2），因此会导致在 Docker 内无法执行上板操作。为解决该问题，本章节提供在Docker容器中使用MindCmd的方法供用户参考。
-
-1.  使用挂载数据卷和共享主机ip的方式启动容器，相关命令参数说明如[表1](#table194044179542)所示。
-
-    ```
-    docker run -itd --gpus all -v /tmp/.X11-unix:/tmp/.X11-unix -v ${host_mount_dir}:${host_mount_dir} --net=host --name ${container_name} ${image_name:tag}
-    ```
-
-    **表 1**  启动容器参数说明
-
-    <a name="table194044179542"></a>
-    <table><thead align="left"><tr id="row10403171712542"><th class="cellrowborder" valign="top" width="32.51%" id="mcps1.2.3.1.1"><p id="p1640315177541"><a name="p1640315177541"></a><a name="p1640315177541"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="67.49000000000001%" id="mcps1.2.3.1.2"><p id="p12403151716546"><a name="p12403151716546"></a><a name="p12403151716546"></a>说明</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row1533018219142"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p13330172101416"><a name="p13330172101416"></a><a name="p13330172101416"></a>-itd</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p533082116146"><a name="p533082116146"></a><a name="p533082116146"></a>-i：以交互模式运行容器。</p>
-    <p id="p1459116353142"><a name="p1459116353142"></a><a name="p1459116353142"></a>-t：为容器重新分配一个伪输入终端。</p>
-    <p id="p85349384147"><a name="p85349384147"></a><a name="p85349384147"></a>-d：容器在后台运行，不占用当前终端。</p>
-    </td>
-    </tr>
-    <tr id="row540318174547"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p14403717115410"><a name="p14403717115410"></a><a name="p14403717115410"></a>--gpus all</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p124031817185415"><a name="p124031817185415"></a><a name="p124031817185415"></a>gpu编译模式下，初始化cuda容器，非必输。</p>
-    </td>
-    </tr>
-    <tr id="row11403121775411"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p1240351715416"><a name="p1240351715416"></a><a name="p1240351715416"></a>-v /tmp/.X11-unix:/tmp/.X11-unix</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p1403131755417"><a name="p1403131755417"></a><a name="p1403131755417"></a>设置容器共享主机unix套接字。</p>
-    </td>
-    </tr>
-    <tr id="row104031917135413"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p54039175542"><a name="p54039175542"></a><a name="p54039175542"></a>-v ${host_mount_dir}:${host_mount_dir}</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p7403101785411"><a name="p7403101785411"></a><a name="p7403101785411"></a>格式为“Docker挂载数据卷路径:宿主机文件夹路径”。</p>
-    <div class="note" id="note10129102718714"><a name="note10129102718714"></a><a name="note10129102718714"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul1244482219531"></a><a name="ul1244482219531"></a><ul id="ul1244482219531"><li>${host_mount_dir}路径要求为服务器侧已存在路径，且前后${host_mount_dir}填写的路径应该保持一致，且不能超出<a href="#ZH-CN_TOPIC_0000002408421542">ssh.cfg文件配置</a>中配置的“HOST_MOUNT_PATH”。</li></ul>
-    </div></div>
-    </td>
-    </tr>
-    <tr id="row940317175548"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p18403191775416"><a name="p18403191775416"></a><a name="p18403191775416"></a>--net=host</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p64031170547"><a name="p64031170547"></a><a name="p64031170547"></a>共享主机ip。</p>
-    </td>
-    </tr>
-    <tr id="row54031017185416"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p3403151715544"><a name="p3403151715544"></a><a name="p3403151715544"></a>--name ${container_name}</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p44036171540"><a name="p44036171540"></a><a name="p44036171540"></a>自定义容器名。</p>
-    </td>
-    </tr>
-    <tr id="row1940441745411"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p124035175548"><a name="p124035175548"></a><a name="p124035175548"></a>${image_name:tag}</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p24041917125410"><a name="p24041917125410"></a><a name="p24041917125410"></a>镜像名:标签。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   上下文参数中以变量符"$\{ \}"形式描述的参数需要用户根据自己的环境进行填写，其他参数直接添加到执行命令中即可。
-    >    示例：如果用户挂载的数据卷为“/home/xxx”，那么对应填写的参数 -v $\{host\_mount\_dir\}:$\{host\_mount\_dir\}为“-v /home/xxx:/home/xxx”。
-    >    类似--gpus all、--net=host等参数则直接拼接到命令当中，无需进行修改。
-    >-   当在容器上板执行过程中出现挂载失败或报错提示“Permission denied”，请参考[NFS环境搭建](#ZH-CN_TOPIC_0000002441980773)  检查宿主机的数据卷路径是否在宿主机NFS共享目录下。
-    >-   构建解决方案镜像，请参考《驱动和开发环境安装指南》“容器镜像构建”章节。
-
-2.  进入容器
-
-    ```
-    docker exec -it ${container_name} /bin/bash
-    ```
-
-3.  <a name="li1404101713543"></a>修改容器的ssh默认端口
-
-    1. 查询分配的端口是否被占用，其中$\{port\}为自定义端口
-
-    ```
-    netstat -anp |grep ${port}
-    ```
-
-    2.将ssh默认端口22修改为自定义端口（如[图1](#fig1286420152318)所示，端口被修改为40001）
-
-    ```
-    vim /etc/ssh/sshd_config
-    ```
-
-    **图 1**  修改ssh默认端口<a name="fig1286420152318"></a>  
-    ![](figures/修改ssh默认端口.png "修改ssh默认端口")
-
-4.  设置容器的密码并重启容器SSH服务
-
-    ```
-    passwd ${user_name}
-    service ssh start 
-    ```
-
-5.  在容器中使用工具。
-
-    使用Xserver新建ssh连接，ip填写docker宿主机的ip，端口选择[3](#li1404101713543)中配置的端口号。（可选）
-
->![](public_sys-resources/icon-caution.gif) **注意：** 
->当容器中没有配置与宿主机同uid、gid的用户时，挂载目录会被修改权限，可通过“sudo chown -R $\{user\}:$\{group\} $\{mount\_path\}”的方式修改挂载目录权限。
-
-## 安装Python3.7.5（Ubuntu）<a name="ZH-CN_TOPIC_0000002408421450"></a>
-
-1.  检查系统是否安装python3.7.5开发环境。
-
-    分别使用命令**python3.7.5 --version**、**python3.7 --version**、**pip3.7.5 --version、pip3.7 --version**检查是否已经安装，如果返回如下信息则说明已经安装，否则请参见下一步。
-
-    ```
-    Python 3.7.5 
-    pip 19.2.3 from /usr/local/python3.7.5/lib/python3.7/site-packages/pip (python 3.7)
-    ```
-
-2.  安装python3.7.5依赖的包。
-
-    ```
-    sudo apt-get install -y make zlib1g zlib1g-dev build-essential libbz2-dev libsqlite3-dev libssl-dev libxslt1-dev libffi-dev openssl python3-tk
-    ```
-
-    libsqlite3-dev需要在python安装之前安装，如果用户操作系统已经安装python3.7.5环境，在此之后再安装libsqlite3-dev，则需要重新编译python环境。如果安装python3-tk失败，请参见《AMCT使用指南（PyTorch）》中”安装python3-tk时提示错误信息”小节。
-
-3.  安装python3.7.5。
-    1.  使用wget下载python3.7.5源码包，可以下载到模型压缩工具所在服务器任意目录，命令为：
-
-        ```
-        wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
-        ```
-
-    2.  进入下载后的目录，解压源码包，命令为：
-
-        ```
-        tar -zxvf Python-3.7.5.tgz
-        ```
-
-    3.  进入解压后的文件夹，执行配置、编译和安装命令：
-
-        ```
-        cd Python-3.7.5
-        ./configure --prefix=/usr/local/python3.7.5 --enable-loadable-sqlite-extensions --enable-shared
-        make
-        sudo make install
-        ```
-
-        其中“--prefix”参数用于指定python安装路径，用户根据实际情况进行修改，“--enable-shared”参数用于编译出libpython3.7m.so.1.0动态库，“--enable-loadable-sqlite-extensions”参数用于加载sqlite-devel依赖。
-
-        本手册以--prefix=/usr/local/python3.7.5路径为例进行说明。执行配置、编译和安装命令后，安装包在/usr/local/python3.7.5路径，libpython3.7m.so.1.0动态库在/usr/local/python3.7.5/lib/libpython3.7m.so.1.0路径。
-
-    4.  执行如下命令设置软链接：
-
-        ```
-        sudo ln -s /usr/local/python3.7.5/bin/python3 /usr/local/python3.7.5/bin/python3.7.5
-        sudo ln -s /usr/local/python3.7.5/bin/pip3 /usr/local/python3.7.5/bin/pip3.7.5
-        ```
-
-    5.  设置python3.7.5环境变量。
-        -   如果python安装用户为root：
-
-            该场景下模型压缩工具使用root用户进行安装，请在当前终端窗口直接执行如下命令设置环境变量。
-
-            ```
-            #用于设置python3.7.5库文件路径
-            export LD_LIBRARY_PATH=/usr/local/python3.7.5/lib:$LD_LIBRARY_PATH
-            #如果用户环境存在多个python3版本，则指定使用python3.7.5版本
-            export PATH=/usr/local/python3.7.5/bin:$PATH
-            ```
-
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
-            >运行用户是root，不建议修改.bashrc，否则可能会影响其它系统提供的python工具的使用，如果仍想使用系统默认工具，则请重新开启终端窗口。
-
-    -   如果python安装用户为非root：
-
-        该场景下模型压缩工具使用非root用户进行安装，请以非root用户在任意目录下执行**vi \~/.bashrc**命令，打开**.bashrc**文件，在文件最后一行后面添加如下内容。
-
-        ```
-        #用于设置python3.7.5库文件路径
-        export LD_LIBRARY_PATH=/usr/local/python3.7.5/lib:$LD_LIBRARY_PATH
-        #如果用户环境存在多个python3版本，则指定使用python3.7.5版本
-        export PATH=/usr/local/python3.7.5/bin:$PATH
-        ```
-
-        执行**:wq!**命令保存文件并退出，执行**source \~/.bashrc**命令使其立即生效。
-
-1.  安装完成之后，执行如下命令查看安装版本，如果返回相关版本信息，则说明安装成功。
-
-    ```
-    python3.7.5 --version
-    pip3.7.5  --version
-    python3.7 --version
-    pip3.7  --version
-    ```
-
-## 公网URL<a name="ZH-CN_TOPIC_0000002408581362"></a>
-
-**表 1**  公网URL 说明
-
-<a name="table464517672712"></a>
+``` >![](public_sys-resources/icon-note.gif) **说明：** >- 以上配置内容仅供参考，实际使用请根据输入数据以及预处理方式进行调整。
+>- 数据预处理完整配置方式请参考《ATC工具使用指南》“--insert\_op\_conf” 章节。 ## Docker容器中使用MindCmd<a name="ZH-CN_TOPIC_0000002408581214"></a> 如果采用默认方式启动 Docker 容器，会产生一块虚拟网卡，可以理解为这块网卡连接着一个虚拟交换机。每个Docker容器拥有自己单独的网卡和IP，并且所有Docker容器也连接在这个虚拟交换机之下。当在 Docker 容器内运行 MindCmd 挂载板端时，容器内分配的是一个不对外网暴露的虚拟IP（如172.17.0.2），因此会导致在 Docker 内无法执行上板操作。为解决该问题，本章节提供在Docker容器中使用MindCmd的方法供用户参考。 1. 使用挂载数据卷和共享主机ip的方式启动容器，相关命令参数说明如[表1](#table194044179542)所示。 ``` docker run -itd --gpus all -v /tmp/.X11-unix:/tmp/.X11-unix -v ${host_mount_dir}:${host_mount_dir} --net=host --name ${container_name} ${image_name:tag} ``` **表 1** 启动容器参数说明 <a name="table194044179542"></a> <table><thead align="left"><tr id="row10403171712542"><th class="cellrowborder" valign="top" width="32.51%" id="mcps1.2.3.1.1"><p id="p1640315177541"><a name="p1640315177541"></a><a name="p1640315177541"></a>参数</p> </th> <th class="cellrowborder" valign="top" width="67.49000000000001%" id="mcps1.2.3.1.2"><p id="p12403151716546"><a name="p12403151716546"></a><a name="p12403151716546"></a>说明</p> </th> </tr> </thead> <tbody><tr id="row1533018219142"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p13330172101416"><a name="p13330172101416"></a><a name="p13330172101416"></a>-itd</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p533082116146"><a name="p533082116146"></a><a name="p533082116146"></a>-i：以交互模式运行容器。</p> <p id="p1459116353142"><a name="p1459116353142"></a><a name="p1459116353142"></a>-t：为容器重新分配一个伪输入终端。</p> <p id="p85349384147"><a name="p85349384147"></a><a name="p85349384147"></a>-d：容器在后台运行，不占用当前终端。</p> </td> </tr> <tr id="row540318174547"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p14403717115410"><a name="p14403717115410"></a><a name="p14403717115410"></a>--gpus all</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p124031817185415"><a name="p124031817185415"></a><a name="p124031817185415"></a>gpu编译模式下，初始化cuda容器，非必输。</p> </td> </tr> <tr id="row11403121775411"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p1240351715416"><a name="p1240351715416"></a><a name="p1240351715416"></a>-v /tmp/.X11-unix:/tmp/.X11-unix</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p1403131755417"><a name="p1403131755417"></a><a name="p1403131755417"></a>设置容器共享主机unix套接字。</p> </td> </tr> <tr id="row104031917135413"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p54039175542"><a name="p54039175542"></a><a name="p54039175542"></a>-v ${host_mount_dir}:${host_mount_dir}</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p7403101785411"><a name="p7403101785411"></a><a name="p7403101785411"></a>格式为“Docker挂载数据卷路径:宿主机文件夹路径”。</p> <div class="note" id="note10129102718714"><a name="note10129102718714"></a><a name="note10129102718714"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul1244482219531"></a><a name="ul1244482219531"></a><ul id="ul1244482219531"><li>${host_mount_dir}路径要求为服务器侧已存在路径，且前后${host_mount_dir}填写的路径应该保持一致，且不能超出<a href="#ZH-CN_TOPIC_0000002408421542">ssh.cfg文件配置</a>中配置的“HOST_MOUNT_PATH”。</li></ul> </div></div> </td> </tr> <tr id="row940317175548"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p18403191775416"><a name="p18403191775416"></a><a name="p18403191775416"></a>--net=host</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p64031170547"><a name="p64031170547"></a><a name="p64031170547"></a>共享主机ip。</p> </td> </tr> <tr id="row54031017185416"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p3403151715544"><a name="p3403151715544"></a><a name="p3403151715544"></a>--name ${container_name}</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p44036171540"><a name="p44036171540"></a><a name="p44036171540"></a>自定义容器名。</p> </td> </tr> <tr id="row1940441745411"><td class="cellrowborder" valign="top" width="32.51%" headers="mcps1.2.3.1.1 "><p id="p124035175548"><a name="p124035175548"></a><a name="p124035175548"></a>${image_name:tag}</p> </td> <td class="cellrowborder" valign="top" width="67.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p24041917125410"><a name="p24041917125410"></a><a name="p24041917125410"></a>镜像名:标签。</p> </td> </tr> </tbody> </table> >![](public_sys-resources/icon-note.gif) **说明：** >- 上下文参数中以变量符"$\{ \}"形式描述的参数需要用户根据自己的环境进行填写，其他参数直接添加到执行命令中即可。 > 示例：如果用户挂载的数据卷为“/home/xxx”，那么对应填写的参数 -v $\{host\_mount\_dir\}:$\{host\_mount\_dir\}为“-v /home/xxx:/home/xxx”。 > 类似--gpus all、--net=host等参数则直接拼接到命令当中，无需进行修改。 >- 当在容器上板执行过程中出现挂载失败或报错提示“Permission denied”，请参考[NFS环境搭建](#ZH-CN_TOPIC_0000002441980773) 检查宿主机的数据卷路径是否在宿主机NFS共享目录下。 >- 构建解决方案镜像，请参考《驱动和开发环境安装指南》“容器镜像构建”章节。 2. 进入容器 ``` docker exec -it ${container_name} /bin/bash ``` 3. <a name="li1404101713543"></a>修改容器的ssh默认端口 1. 查询分配的端口是否被占用，其中$\{port\}为自定义端口 ``` netstat -anp |grep ${port} ``` 2.将ssh默认端口22修改为自定义端口（如[图1](#fig1286420152318)所示，端口被修改为40001） ``` vim /etc/ssh/sshd_config ``` **图 1** 修改ssh默认端口<a name="fig1286420152318"></a> ![](figures/修改ssh默认端口.png "修改ssh默认端口") 4. 设置容器的密码并重启容器SSH服务 ``` passwd ${user_name} service ssh start ``` 5. 在容器中使用工具。 使用Xserver新建ssh连接，ip填写docker宿主机的ip，端口选择[3](#li1404101713543)中配置的端口号。（可选） >![](public_sys-resources/icon-caution.gif) **注意：** >当容器中没有配置与宿主机同uid、gid的用户时，挂载目录会被修改权限，可通过“sudo chown -R $\{user\}:$\{group\} $\{mount\_path\}”的方式修改挂载目录权限。 ## 安装Python3.7.5（Ubuntu）<a name="ZH-CN_TOPIC_0000002408421450"></a> 1. 检查系统是否安装python3.7.5开发环境。 分别使用命令**python3.7.5 --version**、**python3.7 --version**、**pip3.7.5 --version、pip3.7 --version**检查是否已经安装，如果返回如下信息则说明已经安装，否则请参见下一步。 ``` Python 3.7.5 pip 19.2.3 from /usr/local/python3.7.5/lib/python3.7/site-packages/pip (python 3.7) ``` 2. 安装python3.7.5依赖的包。 ``` sudo apt-get install -y make zlib1g zlib1g-dev build-essential libbz2-dev libsqlite3-dev libssl-dev libxslt1-dev libffi-dev openssl python3-tk ``` libsqlite3-dev需要在python安装之前安装，如果用户操作系统已经安装python3.7.5环境，在此之后再安装libsqlite3-dev，则需要重新编译python环境。如果安装python3-tk失败，请参见《AMCT使用指南（PyTorch）》中”安装python3-tk时提示错误信息”小节。 3. 安装python3.7.5。 1. 使用wget下载python3.7.5源码包，可以下载到模型压缩工具所在服务器任意目录，命令为： ``` wget https:/www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz ``` 2. 进入下载后的目录，解压源码包，命令为： ``` tar -zxvf Python-3.7.5.tgz ``` 3. 进入解压后的文件夹，执行配置、编译和安装命令： ``` cd Python-3.7.5 ./configure --prefix=/usr/local/python3.7.5 --enable-loadable-sqlite-extensions --enable-shared make sudo make install ``` 其中“--prefix”参数用于指定python安装路径，用户根据实际情况进行修改，“--enable-shared”参数用于编译出libpython3.7m.so.1.0动态库，“--enable-loadable-sqlite-extensions”参数用于加载sqlite-devel依赖。 本手册以--prefix=/usr/local/python3.7.5路径为例进行说明。执行配置、编译和安装命令后，安装包在/usr/local/python3.7.5路径，libpython3.7m.so.1.0动态库在/usr/local/python3.7.5/lib/libpython3.7m.so.1.0路径。 4. 执行如下命令设置软链接： ``` sudo ln -s /usr/local/python3.7.5/bin/python3 /usr/local/python3.7.5/bin/python3.7.5 sudo ln -s /usr/local/python3.7.5/bin/pip3 /usr/local/python3.7.5/bin/pip3.7.5 ``` 5. 设置python3.7.5环境变量。 - 如果python安装用户为root： 该场景下模型压缩工具使用root用户进行安装，请在当前终端窗口直接执行如下命令设置环境变量。 ``` #用于设置python3.7.5库文件路径 export LD_LIBRARY_PATH=/usr/local/python3.7.5/lib:$LD_LIBRARY_PATH #如果用户环境存在多个python3版本，则指定使用python3.7.5版本 export PATH=/usr/local/python3.7.5/bin:$PATH ``` >![](public_sys-resources/icon-notice.gif) **须知：** >运行用户是root，不建议修改.bashrc，否则可能会影响其它系统提供的python工具的使用，如果仍想使用系统默认工具，则请重新开启终端窗口。 - 如果python安装用户为非root： 该场景下模型压缩工具使用非root用户进行安装，请以非root用户在任意目录下执行**vi \~/.bashrc**命令，打开**.bashrc**文件，在文件最后一行后面添加如下内容。 ``` #用于设置python3.7.5库文件路径 export LD_LIBRARY_PATH=/usr/local/python3.7.5/lib:$LD_LIBRARY_PATH #如果用户环境存在多个python3版本，则指定使用python3.7.5版本 export PATH=/usr/local/python3.7.5/bin:$PATH ``` 执行**:wq!**命令保存文件并退出，执行**source \~/.bashrc**命令使其立即生效。 1. 安装完成之后，执行如下命令查看安装版本，如果返回相关版本信息，则说明安装成功。 ``` python3.7.5 --version pip3.7.5 --version python3.7 --version pip3.7 --version ``` ## 公网URL<a name="ZH-CN_TOPIC_0000002408581362"></a> **表 1** 公网URL 说明 <a name="table464517672712"></a>
 <table><thead align="left"><tr id="row1164615672716"><th class="cellrowborder" valign="top" width="14.371437143714372%" id="mcps1.2.4.1.1"><p id="p186462617271"><a name="p186462617271"></a><a name="p186462617271"></a>序号</p>
 </th>
 <th class="cellrowborder" valign="top" width="52.295229522952305%" id="mcps1.2.4.1.2"><p id="p36468652716"><a name="p36468652716"></a><a name="p36468652716"></a>URL地址</p>
@@ -4322,88 +1930,32 @@ aapp_op {
 </thead>
 <tbody><tr id="row1339111313103"><td class="cellrowborder" valign="top" width="14.371437143714372%" headers="mcps1.2.4.1.1 "><p id="p18401513121013"><a name="p18401513121013"></a><a name="p18401513121013"></a>1</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.295229522952305%" headers="mcps1.2.4.1.2 "><p id="p6401013181015"><a name="p6401013181015"></a><a name="p6401013181015"></a><a href="http://releases.ubuntu.com/releases/" target="_blank" rel="noopener noreferrer">http://releases.ubuntu.com/releases/</a></p>
+<td class="cellrowborder" valign="top" width="52.295229522952305%" headers="mcps1.2.4.1.2 "><p id="p6401013181015"><a name="p6401013181015"></a><a name="p6401013181015"></a><a href="http:/releases.ubuntu.com/releases/" target="_blank" rel="noopener noreferrer">http:/releases.ubuntu.com/releases/</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1640181381014"><a name="p1640181381014"></a><a name="p1640181381014"></a>Ubuntu系统下载参考地址</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## 使用alias别名简化输入命令<a name="ZH-CN_TOPIC_0000002441980721"></a>
-
-常用命令可通过配置alias别名进行简化，示例如下。
-
-```
+</table> ## 使用alias别名简化输入命令<a name="ZH-CN_TOPIC_0000002441980721"></a> 常用命令可通过配置alias别名进行简化，示例如下。 ```
 alias mind_caffe="mindcmd oneclick caffe"
 alias mind_torch="mindcmd oneclick pytorch"
 alias mind_onnx="mindcmd oneclick onnx"
-```
-
-配置别名后，一键推理的简化命令为。
-
-```
+``` 配置别名后，一键推理的简化命令为。 ```
 mind_caffe -m MODEL -w WEIGHT
 mind_torch -m MODEL -i IMAGE_LIST --input_shape INPUT_SHAPE
 mind_onnx -m MODEL -i IMAGE_LIST
-```
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->alias取名并非固定名称，用户可按需取名，简化MindCmd输入命令，也可将alias别名配置到\~/.bashrc中。
-
-## FAQ<a name="ZH-CN_TOPIC_0000002442020469"></a>
-
-
-
-
-
-
-
-### 挂载命令中的ip与服务器ip不符<a name="ZH-CN_TOPIC_0000002442020501"></a>
-
-**问题描述<a name="section814174893417"></a>**
-
-执行一键推理或上板推理时挂载失败，且挂载命令中的ip地址与服务器的ip不符。
-
-如：服务器ip为xxx.xxx.xxx.xxx，挂载ip为127.0.1.1
-
-出现如下报错：
-
-```
+``` >![](public_sys-resources/icon-note.gif) **说明：** >alias取名并非固定名称，用户可按需取名，简化MindCmd输入命令，也可将alias别名配置到\~/.bashrc中。 ## FAQ<a name="ZH-CN_TOPIC_0000002442020469"></a> ### 挂载命令中的ip与服务器ip不符<a name="ZH-CN_TOPIC_0000002442020501"></a> **问题描述<a name="section814174893417"></a>** 执行一键推理或上板推理时挂载失败，且挂载命令中的ip地址与服务器的ip不符。 如：服务器ip为xxx.xxx.xxx.xxx，挂载ip为127.0.1.1 出现如下报错： ```
 RuntimeError: [Mount] Mount failed: mount: mounting 127.0.1.1:${MOUNT_PATH} on ${BOARD_PATH} failed: Connection timed out
-```
-
-**问题原因<a name="section1651035633412"></a>**
-
-/etc/hosts 文件中配置了回环地址如：
-
-```
+``` **问题原因<a name="section1651035633412"></a>** /etc/hosts 文件中配置了回环地址如： ```
 127.0.0.1 localhost
 127.0.1.1 ${hostname}
-```
-
-**解决方法<a name="section4878283512"></a>**
-
-方法一：
-
-将服务器侧的/etc/hosts 文件参考修改如下。
-
-```
+``` **解决方法<a name="section4878283512"></a>** 方法一： 将服务器侧的/etc/hosts 文件参考修改如下。 ```
 127.0.0.1 localhost
 # 127.0.1.1 ${hostname}
-```
-
-方法二：
-
-将hostname对应的ip修改为正确的ip。
-
-```
+``` 方法二： 将hostname对应的ip修改为正确的ip。 ```
 127.0.0.1 localhost
 xxx.xxx.xxx.xxx ${hostname}
-```
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->hostname可通过以下两种方法获取。
+``` >![](public_sys-resources/icon-note.gif) **说明：** >hostname可通过以下两种方法获取。
 >方法一，执行hostname获取。
 >```
 >hostname
@@ -4411,118 +1963,22 @@ xxx.xxx.xxx.xxx ${hostname}
 >方法二，查看/etc/hostname文件。
 >```
 >vi /etc/hostname
->```
-
-### 找不到mindcmd命令<a name="ZH-CN_TOPIC_0000002442020449"></a>
-
-**问题描述<a name="section19224203143516"></a>**
-
-执行mindcmd命令出现以下信息。
-
-```
+>``` ### 找不到mindcmd命令<a name="ZH-CN_TOPIC_0000002442020449"></a> **问题描述<a name="section19224203143516"></a>** 执行mindcmd命令出现以下信息。 ```
 bash: mindcmd: command not found
-```
-
-**问题原因<a name="section71217393352"></a>**
-
-python路径未配置到环境变量PATH中。mindcmd安装完成后会出现如下信息。
-
-```
+``` **问题原因<a name="section71217393352"></a>** python路径未配置到环境变量PATH中。mindcmd安装完成后会出现如下信息。 ```
 WARNING：The script mindcmd is installed in $HOME/.local/bin which is not on PATH.
-```
-
-**解决方法<a name="section1452244493519"></a>**
-
-用户可通过以下命令进行配置环境变量。
-
-```
+``` **解决方法<a name="section1452244493519"></a>** 用户可通过以下命令进行配置环境变量。 ```
 export PATH=$PATH:$HOME/.local/bin
-```
-
-### 关于工作路径、挂载路径、数据卷路径和NFS共享路径<a name="ZH-CN_TOPIC_0000002408421510"></a>
-
-对于工作路径、挂载路径、数据卷路径、NFS共享路径的描述如下。
-
--   工作路径确定MindCmd执行的工作空间，MindCmd生成的output文件等都会保存在该路径下。
--   挂载路径是由于板端硬件存储资源有限，因此需要将板端的某个目录挂载到服务器侧达到板端存储扩容的作用。在MindCmd上板执行过程中，此路径还用于服务器与板端的资源同步，上板执行所需要的输入和输出文件会被同步到该路径下。
--   数据卷路径标识宿主机（服务器）和Docker容器文件资源共享的范围，在此范围内，容器和宿主机都能访问该路径下的内容。
--   NFS共享路径是宿主机（服务器）配置的允许通过NFS服务共享宿主机资源的范围。
-
-为了保证上板成功并能在容器中读取到上板生成的dump、profile等数据，要求配置上述路径的包含关系如下。
-
-**NFS共享路径 \>= 数据卷路径 \>= 挂载路径 \>= 工作路径**
-
-### MindCmd安装失败，找不到Rust编译器<a name="ZH-CN_TOPIC_0000002408581462"></a>
-
-**问题描述<a name="section129959455713"></a>**
-
-执行如下命令安装MindCmd。
-
-```
+``` ### 关于工作路径、挂载路径、数据卷路径和NFS共享路径<a name="ZH-CN_TOPIC_0000002408421510"></a> 对于工作路径、挂载路径、数据卷路径、NFS共享路径的描述如下。 - 工作路径确定MindCmd执行的工作空间，MindCmd生成的output文件等都会保存在该路径下。
+- 挂载路径是由于板端硬件存储资源有限，因此需要将板端的某个目录挂载到服务器侧达到板端存储扩容的作用。在MindCmd上板执行过程中，此路径还用于服务器与板端的资源同步，上板执行所需要的输入和输出文件会被同步到该路径下。
+- 数据卷路径标识宿主机（服务器）和Docker容器文件资源共享的范围，在此范围内，容器和宿主机都能访问该路径下的内容。
+- NFS共享路径是宿主机（服务器）配置的允许通过NFS服务共享宿主机资源的范围。 为了保证上板成功并能在容器中读取到上板生成的dump、profile等数据，要求配置上述路径的包含关系如下。 **NFS共享路径 \>= 数据卷路径 \>= 挂载路径 \>= 工作路径** ### MindCmd安装失败，找不到Rust编译器<a name="ZH-CN_TOPIC_0000002408581462"></a> **问题描述<a name="section129959455713"></a>** 执行如下命令安装MindCmd。 ```
 pip install mindcmd-<version>-py3-none-linux_x86_64.tar.gz --user
-```
-
-提示以下错误，具体[图1](#fig1886312335)所示。
-
-```
+``` 提示以下错误，具体[图1](#fig1886312335)所示。 ```
 error: can't find Rust compiler
-```
-
-**图 1**  MindCmd安装失败，找不到Rust编译器<a name="fig1886312335"></a>  
-![](figures/MindCmd安装失败-找不到Rust编译器.png "MindCmd安装失败-找不到Rust编译器")
-
-**问题原因<a name="section1012513370576"></a>**
-
-MindCmd安装需要依赖Rust编译器。
-
-**解决方法<a name="section10771439195116"></a>**
-
-通过升级pip解决，命令如下。
-
-```
+``` **图 1** MindCmd安装失败，找不到Rust编译器<a name="fig1886312335"></a> ![](figures/MindCmd安装失败-找不到Rust编译器.png "MindCmd安装失败-找不到Rust编译器") **问题原因<a name="section1012513370576"></a>** MindCmd安装需要依赖Rust编译器。 **解决方法<a name="section10771439195116"></a>** 通过升级pip解决，命令如下。 ```
 pip install --upgrade pip
-```
-
-重新安装MindCmd
-
-```
+``` 重新安装MindCmd ```
 pip install mindcmd-<version>-py3-none-linux_x86_64.tar.gz --user
-```
-
-### PyTorch模型推理失败<a name="ZH-CN_TOPIC_0000002408421502"></a>
-
-**问题描述<a name="section1270017492296"></a>**
-
-PyTorch模型执行模型压缩的过程中模型推理失败，如[图1](#fig136999494298)所示。
-
-**图 1**  PyTorch模型推理失败<a name="fig136999494298"></a>  
-![](figures/PyTorch模型推理失败.png "PyTorch模型推理失败")
-
-**问题原因<a name="section16316145615297"></a>**
-
-可能是因为输入数据与模型的输入不符。
-
-**解决方法<a name="section451938142019"></a>**
-
-1.  使用原始模型进行推理，保证模型的正确性。
-2.  调整输入数据，保证传入的数据与模型的输入相符。
-
-### Pytorch模型推理报错<a name="ZH-CN_TOPIC_0000002408421410"></a>
-
-**问题描述<a name="section1270017492296"></a>**
-
-用户在Python脚本使用了argparse解析参数，调用MindCmd一键推理Pytorch模型时报错。
-
-**问题原因<a name="section16316145615297"></a>**
-
-用户使用自己的Python脚本，main方法中调用了argparse解析，与MindCmd的命令行参数产生冲突，导致MindCmd解析参数产生异常。如[图1](#fig224415441139)所示。
-
-**图 1**  Python脚本中使用了argparse进行参数解析<a name="fig224415441139"></a>  
-![](figures/Python脚本中使用了argparse进行参数解析.png "Python脚本中使用了argparse进行参数解析")
-
-**解决方法<a name="section451938142019"></a>**
-
-用户如果在Python脚本中有特定的参数传入需求，可以通过构造参数类传入，代替原有通过argparese解析的方式。如[图2](#fig49161240743)所示。
-
-**图 2**  使用构造参数类传入参数<a name="fig49161240743"></a>  
-![](figures/使用构造参数类传入参数.png "使用构造参数类传入参数")
+``` ### PyTorch模型推理失败<a name="ZH-CN_TOPIC_0000002408421502"></a> **问题描述<a name="section1270017492296"></a>** PyTorch模型执行模型压缩的过程中模型推理失败，如[图1](#fig136999494298)所示。 **图 1** PyTorch模型推理失败<a name="fig136999494298"></a> ![](figures/PyTorch模型推理失败.png "PyTorch模型推理失败") **问题原因<a name="section16316145615297"></a>** 可能是因为输入数据与模型的输入不符。 **解决方法<a name="section451938142019"></a>** 1. 使用原始模型进行推理，保证模型的正确性。
+2. 调整输入数据，保证传入的数据与模型的输入相符。 ### Pytorch模型推理报错<a name="ZH-CN_TOPIC_0000002408421410"></a> **问题描述<a name="section1270017492296"></a>** 用户在Python脚本使用了argparse解析参数，调用MindCmd一键推理Pytorch模型时报错。 **问题原因<a name="section16316145615297"></a>** 用户使用自己的Python脚本，main方法中调用了argparse解析，与MindCmd的命令行参数产生冲突，导致MindCmd解析参数产生异常。如[图1](#fig224415441139)所示。 **图 1** Python脚本中使用了argparse进行参数解析<a name="fig224415441139"></a> ![](figures/Python脚本中使用了argparse进行参数解析.png "Python脚本中使用了argparse进行参数解析") **解决方法<a name="section451938142019"></a>** 用户如果在Python脚本中有特定的参数传入需求，可以通过构造参数类传入，代替原有通过argparese解析的方式。如[图2](#fig49161240743)所示。 **图 2** 使用构造参数类传入参数<a name="fig49161240743"></a> ![](figures/使用构造参数类传入参数.png "使用构造参数类传入参数")

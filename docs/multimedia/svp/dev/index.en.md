@@ -1,21 +1,8 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SVP2.0开发指南/SVP2.0 开发指南.md
----
-
-# Preface
-**Overview<a name="section182mcpsimp"></a>**
-
-This document is intended to help users understand the hardware features, toolchain, and development workflow of the SVP \(Smart Vision Platform\) 2.0 platform, enabling rapid onboarding and the development of recognition solutions that fully exploit SVP 2.0 capabilities.
-
->![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses Hi3403V100 as the reference. Unless otherwise specified, the content for Hi3519AV200 is identical to Hi3403V100.
-
-**Product Version<a name="section186mcpsimp"></a>**
-
-The product versions corresponding to this document are listed below.
-
-<a name="table189mcpsimp"></a>
+--- # Preface
+**Overview<a name="section182mcpsimp"></a>** This document is intended to help users understand the hardware features, toolchain, and development workflow of the SVP \(Smart Vision Platform\) 2.0 platform, enabling rapid onboarding and the development of recognition solutions that fully exploit SVP 2.0 capabilities. >![](public_sys-resources/icon-note.gif) **Note:** >This document uses Hi3403V100 as the reference. Unless otherwise specified, the content for is identical to Hi3403V100. **Product Version<a name="section186mcpsimp"></a>** The product versions corresponding to this document are listed below. <a name="table189mcpsimp"></a>
 <table><thead align="left"><tr id="row194mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.1.3.1.1"><p id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.3.1.2"><p id="p198mcpsimp"><a name="p198mcpsimp"></a><a name="p198mcpsimp"></a>Product Version</p>
@@ -27,26 +14,13 @@ The product versions corresponding to this document are listed below.
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p204mcpsimp"><a name="p204mcpsimp"></a><a name="p204mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1795219203403"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p3421112315406"><a name="p3421112315406"></a><a name="p3421112315406"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p20421423114012"><a name="p20421423114012"></a><a name="p20421423114012"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Intended Audience<a name="section205mcpsimp"></a>**
-
-This document (guide) is primarily intended for the following engineers:
-
--   Technical support engineers
--   Software development engineers
-
-**Symbol Conventions<a name="section211mcpsimp"></a>**
-
-The following symbols may appear in this document with the meanings described below.
-
-<a name="table214mcpsimp"></a>
+</table> **Intended Audience<a name="section205mcpsimp"></a>** This document (guide) is primarily intended for the following engineers: - Technical support engineers
+- Software development engineers **Symbol Conventions<a name="section211mcpsimp"></a>** The following symbols may appear in this document with the meanings described below. <a name="table214mcpsimp"></a>
 <table><thead align="left"><tr id="row219mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p221mcpsimp"><a name="p221mcpsimp"></a><a name="p221mcpsimp"></a><strong id="b222mcpsimp"><a name="b222mcpsimp"></a><a name="b222mcpsimp"></a>Symbol</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p224mcpsimp"><a name="p224mcpsimp"></a><a name="p224mcpsimp"></a><strong id="b225mcpsimp"><a name="b225mcpsimp"></a><a name="b225mcpsimp"></a>Description</strong></p>
@@ -58,34 +32,8 @@ The following symbols may appear in this document with the meanings described be
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p231mcpsimp"><a name="p231mcpsimp"></a><a name="p231mcpsimp"></a>Indicates a high-risk hazard that, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row232mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a><a name="image127"></a><a name="image127"></a><span><img id="image127" src="figures/zh-cn_image_0000002441691713.png" height="25.270000000000003" width="66.5"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p236mcpsimp"><a name="p236mcpsimp"></a><a name="p236mcpsimp"></a>Indicates a medium-risk hazard that, if not avoided, could result in death or serious injury.</p>
-</td>
-</tr>
-<tr id="row237mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p239mcpsimp"><a name="p239mcpsimp"></a><a name="p239mcpsimp"></a><a name="image128"></a><a name="image128"></a><span><img id="image128" src="figures/zh-cn_image_0000002441691709.png" height="25.270000000000003" width="66.5"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p241mcpsimp"><a name="p241mcpsimp"></a><a name="p241mcpsimp"></a>Indicates a low-risk hazard that, if not avoided, could result in minor or moderate injury.</p>
-</td>
-</tr>
-<tr id="row242mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p244mcpsimp"><a name="p244mcpsimp"></a><a name="p244mcpsimp"></a><a name="image129"></a><a name="image129"></a><span><img id="image129" src="figures/zh-cn_image_0000002441731553.png" height="25.270000000000003" width="66.5"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p246mcpsimp"><a name="p246mcpsimp"></a><a name="p246mcpsimp"></a>Conveys device or environmental safety information. Failure to follow this notice may result in equipment damage, data loss, performance degradation, or other unpredictable consequences.</p>
-<p id="p247mcpsimp"><a name="p247mcpsimp"></a><a name="p247mcpsimp"></a>"Notice" does not involve personal injury.</p>
-</td>
-</tr>
-<tr id="row248mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p250mcpsimp"><a name="p250mcpsimp"></a><a name="p250mcpsimp"></a><a name="image130"></a><a name="image130"></a><span><img id="image130" src="figures/zh-cn_image_0000002441691705.png" height="25.270000000000003" width="66.5"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p252mcpsimp"><a name="p252mcpsimp"></a><a name="p252mcpsimp"></a>Provides supplementary information for key content in the text.</p>
-<p id="p253mcpsimp"><a name="p253mcpsimp"></a><a name="p253mcpsimp"></a>"Note" is not a safety warning and does not involve personal, equipment, or environmental harm.</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**Revision History<a name="section254mcpsimp"></a>**
-
-<a name="table256mcpsimp"></a>
+</table> **Revision History<a name="section254mcpsimp"></a>** <a name="table256mcpsimp"></a>
 <table><thead align="left"><tr id="row262mcpsimp"><th class="cellrowborder" valign="top" width="20.97%" id="mcps1.1.4.1.1"><p id="p264mcpsimp"><a name="p264mcpsimp"></a><a name="p264mcpsimp"></a><strong id="b265mcpsimp"><a name="b265mcpsimp"></a><a name="b265mcpsimp"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.029999999999998%" id="mcps1.1.4.1.2"><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a><strong id="b268mcpsimp"><a name="b268mcpsimp"></a><a name="b268mcpsimp"></a>Release Date</strong></p>
@@ -102,30 +50,9 @@ The following symbols may appear in this document with the meanings described be
 </td>
 </tr>
 </tbody>
-</table>
-
-# Overview
-## SVP Introduction<a name="ZH-CN_TOPIC_0000002441731509"></a>
-
-SVP \(Smart Vision Platform\) is a heterogeneous acceleration platform for vision recognition. The platform includes multiple hardware processing units such as CPU, DSP, and NNIE \(Neural Network Inference Engine\), along with an SDK development environment running on these hardware units and an accompanying toolchain development environment.
-
-This document primarily introduces the hardware features, toolchain, and development workflow of SVP, aimed at helping users get started quickly and develop recognition applications that fully leverage SVP hardware capabilities. For software development API references, see the *SVP2.0 API Reference* document.
-
-## Development Framework<a name="ZH-CN_TOPIC_0000002441731505"></a>
-
-The SVP development framework is shown in [Figure 1](#__fig46510526497). SVP currently contains hardware processing units including CPU, vision DSP, and NNIE, some of which may be multi-core.
-
-Different hardware units come with different toolchains; user applications must be developed using these tools.
-
-**Figure 1**  SVP Development Framework<a name="__fig46510526497"></a>  
-![](figures/SVP开发框架.png "SVP开发框架")
-## Hardware Resources<a name="ZH-CN_TOPIC_0000002408132350"></a>
-
-Different solutions use different SVP hardware resources, as shown in [Table 1](#__toc3205560).
-
-**Table 1**  SVP hardware resources for different solutions
-
-<a name="__toc3205560"></a>
+</table> # Overview
+## SVP Introduction<a name="ZH-CN_TOPIC_0000002441731509"></a> SVP \(Smart Vision Platform\) is a heterogeneous acceleration platform for vision recognition. The platform includes multiple hardware processing units such as CPU, DSP, and NNIE \(Neural Network Inference Engine\), along with an SDK development environment running on these hardware units and an accompanying toolchain development environment. This document primarily introduces the hardware features, toolchain, and development workflow of SVP, aimed at helping users get started quickly and develop recognition applications that fully leverage SVP hardware capabilities. For software development API references, see the *SVP2.0 API Reference* document. ## Development Framework<a name="ZH-CN_TOPIC_0000002441731505"></a> The SVP development framework is shown in [Figure 1](#__fig46510526497). SVP currently contains hardware processing units including CPU, vision DSP, and NNIE, some of which may be multi-core. Different hardware units come with different toolchains; user applications must be developed using these tools. **Figure 1** SVP Development Framework<a name="__fig46510526497"></a> ![](figures/SV Popen.png "SV Popen")
+## Hardware Resources<a name="ZH-CN_TOPIC_0000002408132350"></a> Different solutions use different SVP hardware resources, as shown in [Table 1](#__toc3205560). **Table 1** SVP hardware resources for different solutions <a name="__toc3205560"></a>
 <table><thead align="left"><tr id="row340mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.2.4.1.1"><p id="p342mcpsimp"><a name="p342mcpsimp"></a><a name="p342mcpsimp"></a>Solution Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="40%" id="mcps1.2.4.1.2"><p id="p344mcpsimp"><a name="p344mcpsimp"></a><a name="p344mcpsimp"></a>CPU</p>
@@ -141,7 +68,6 @@ Different solutions use different SVP hardware resources, as shown in [Table 1](
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.4.1.3 "><p id="p354mcpsimp"><a name="p354mcpsimp"></a><a name="p354mcpsimp"></a>2</p>
 </td>
 </tr>
-<tr id="row9294425145618"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.1 "><p id="p1753616261569"><a name="p1753616261569"></a><a name="p1753616261569"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.4.1.2 "><p id="p553702619566"><a name="p553702619566"></a><a name="p553702619566"></a>Quad-core A55</p>
 </td>
@@ -149,26 +75,7 @@ Different solutions use different SVP hardware resources, as shown in [Table 1](
 </td>
 </tr>
 </tbody>
-</table>
-
-For detailed CPU specifications, refer to the official ARM documentation.
-
-For DSP hardware specifications, refer to the corresponding chip manual.
-
->![](public_sys-resources/icon-notice.gif) **Notice:** 
->Different solutions may use different SVP hardware resources. Even when using the same hardware model, the hardware configuration may differ.
-
-## Software Development<a name="ZH-CN_TOPIC_0000002441691653"></a>
-
-SVP is a recognition acceleration platform and must be used together with the MPP platform for software development. Refer to the *MPP Media Processing Software Vx.0 Development Reference* for more information. Users can develop vision processing applications that maximize the utilization of SVP hardware resources based on its software and hardware features.
-
-## Development Environment<a name="ZH-CN_TOPIC_0000002408132354"></a>
-
-Different solutions run SVP in different environments, as shown in [Table 1](#__toc3205561).
-
-**Table 1**  SVP runtime environment for different solutions
-
-<a name="__toc3205561"></a>
+</table> For detailed CPU specifications, refer to the official ARM documentation. For DSP hardware specifications, refer to the corresponding chip manual. >![](public_sys-resources/icon-notice.gif) **Notice:** >Different solutions may use different SVP hardware resources. Even when using the same hardware model, the hardware configuration may differ. ## Software Development<a name="ZH-CN_TOPIC_0000002441691653"></a> SVP is a recognition acceleration platform and must be used together with the MPP platform for software development. Refer to the *MPP Media Processing Software Vx.0 Development Reference* for more information. Users can develop vision processing applications that maximize the utilization of SVP hardware resources based on its software and hardware features. ## Development Environment<a name="ZH-CN_TOPIC_0000002408132354"></a> Different solutions run SVP in different environments, as shown in [Table 1](#__toc3205561). **Table 1** SVP runtime environment for different solutions <a name="__toc3205561"></a>
 <table><thead align="left"><tr id="row578mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.2.3.1.1"><p id="p580mcpsimp"><a name="p580mcpsimp"></a><a name="p580mcpsimp"></a>Solution Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.2.3.1.2"><p id="p582mcpsimp"><a name="p582mcpsimp"></a><a name="p582mcpsimp"></a>System Architecture</p>
@@ -180,41 +87,13 @@ Different solutions run SVP in different environments, as shown in [Table 1](#__
 <td class="cellrowborder" valign="top" width="56.00000000000001%" headers="mcps1.2.3.1.2 "><p id="p588mcpsimp"><a name="p588mcpsimp"></a><a name="p588mcpsimp"></a>SMP(Linux)</p>
 </td>
 </tr>
-<tr id="row15850154019567"><td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.3.1.1 "><p id="p352014216560"><a name="p352014216560"></a><a name="p352014216560"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.00000000000001%" headers="mcps1.2.3.1.2 "><p id="p152054265616"><a name="p152054265616"></a><a name="p152054265616"></a>SMP(Linux)</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## Related Documents<a name="ZH-CN_TOPIC_0000002441691665"></a>
-
-*SVP2.0 API Reference*
-
-*MPP Media Processing Software Vx.0 Development Reference*
-
-# DSP Development Guide
->![](public_sys-resources/icon-notice.gif) **Notice:** 
->This chapter is not currently supported for the open-source ecosystem versions Hi3403V100/Hi3519AV200.
-
-## Development Tool Introduction<a name="ZH-CN_TOPIC_0000002441691649"></a>
-
-Xtensa Xplorer is an integrated development environment provided by Cadence for software development targeting its DSP. It includes functions for software development, compilation, debugging, simulation, profiling, and hardware trace.
-
-For installation and usage of Xtensa Xplorer, refer to the official Cadence documentation. It is referred to simply as Xplorer throughout this document.
-
-Since SVP may use different DSPs across different solutions — and even the same DSP model may have different hardware configurations — the development package for solutions with a DSP provides a configuration core matching the hardware configuration for simulation-based development in Xplorer.
-
-The configuration core is located in the directory matching the DSP model used in the solution under the `tool` directory of `DSP_PC_Vx.x.x.x`, for example `tools/vq6`. Files with names `*_linux_*.tgz` and `*_win32_*.tgz` represent the Xplorer configuration cores for Linux and Windows environments, respectively.
-
-## DSP Toolchain and Configuration Core Versions<a name="ZH-CN_TOPIC_0000002441691669"></a>
-
-[Table 1](#__toc3205562) describes the DSP toolchain and configuration core for each solution. Note that `linux` and `win32` refer to the corresponding toolchain and configuration core for Linux and Windows environments, respectively.
-
-**Table 1**  DSP toolchain and configuration core for different solutions
-
-<a name="__toc3205562"></a>
+</table> ## Related Documents<a name="ZH-CN_TOPIC_0000002441691665"></a> *SVP2.0 API Reference* *MPP Media Processing Software Vx.0 Development Reference* # DSP Development Guide
+>![](public_sys-resources/icon-notice.gif) **Notice:** >This chapter is not currently supported for the open-source ecosystem versions Hi3403V100. ## Development Tool Introduction<a name="ZH-CN_TOPIC_0000002441691649"></a> Xtensa Xplorer is an integrated development environment provided by Cadence for software development targeting its DSP. It includes functions for software development, compilation, debugging, simulation, profiling, and hardware trace. For installation and usage of Xtensa Xplorer, refer to the official Cadence documentation. It is referred to simply as Xplorer throughout this document. Since SVP may use different DS Ps across different solutions — and even the same DSP model may have different hardware configurations — the development package for solutions with a DSP provides a configuration core matching the hardware configuration for simulation-based development in Xplorer. The configuration core is located in the directory matching the DSP model used in the solution under the `tool` directory of `DSP_PC_Vx.x.x.x`, for example `tools/vq6`. Files with names `*_linux_*.tgz` and `*_win32_*.tgz` represent the Xplorer configuration cores for Linux and Windows environments, respectively. ## DSP Toolchain and Configuration Core Versions<a name="ZH-CN_TOPIC_0000002441691669"></a> [Table 1](#__toc3205562) describes the DSP toolchain and configuration core for each solution. Note that `linux` and `win32` refer to the corresponding toolchain and configuration core for Linux and Windows environments, respectively. **Table 1** DSP toolchain and configuration core for different solutions <a name="__toc3205562"></a>
 <table><thead align="left"><tr id="row311mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.1"><p id="p313mcpsimp"><a name="p313mcpsimp"></a><a name="p313mcpsimp"></a>Solution Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="42%" id="mcps1.2.4.1.2"><p id="p315mcpsimp"><a name="p315mcpsimp"></a><a name="p315mcpsimp"></a>Toolchain</p>
@@ -223,7 +102,7 @@ The configuration core is located in the directory matching the DSP model used i
 </th>
 </tr>
 </thead>
-<tbody><tr id="row319mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.1 "><p id="p321mcpsimp"><a name="p321mcpsimp"></a><a name="p321mcpsimp"></a>Hi3403V100/Hi3519AV200</p>
+<tbody><tr id="row319mcpsimp"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.1 "><p id="p321mcpsimp"><a name="p321mcpsimp"></a><a name="p321mcpsimp"></a>Hi3403V100</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.4.1.2 "><p id="p323mcpsimp"><a name="p323mcpsimp"></a><a name="p323mcpsimp"></a>XtensaTools_RH_2018_7_linux.tgz</p>
 <p id="p324mcpsimp"><a name="p324mcpsimp"></a><a name="p324mcpsimp"></a>XtensaTools_RH_2018_7_win32.tgz</p>
@@ -233,19 +112,8 @@ The configuration core is located in the directory matching the DSP model used i
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-notice.gif) **Notice:** 
->-   The toolchain can be downloaded within Xplorer and is therefore not included in the release package.
->-   The `tool` directory of `DSP_PC_Vx.x.x.x` provides only one DSP configuration core per DSP configuration. If more than one is present, the solution contains DSPs with different configurations.
-
-## DSP Specification Differences<a name="ZH-CN_TOPIC_0000002408292254"></a>
-
-[Table 1](#_table115661432114018) describes the DSP specification differences for each solution.
-
-**Table 1**  DSP specification differences for different solutions
-
-<a name="_table115661432114018"></a>
+</table> >![](public_sys-resources/icon-notice.gif) **Notice:** >- The toolchain can be downloaded within Xplorer and is therefore not included in the release package.
+>- The `tool` directory of `DSP_PC_Vx.x.x.x` provides only one DSP configuration core per DSP configuration. If more than one is present, the solution contains DS Ps with different configurations. ## DSP Specification Differences<a name="ZH-CN_TOPIC_0000002408292254"></a> [Table 1](#_table115661432114018) describes the DSP specification differences for each solution. **Table 1** DSP specification differences for different solutions <a name="_table115661432114018"></a>
 <table><thead align="left"><tr id="row522mcpsimp"><th class="cellrowborder" valign="top" width="17%" id="mcps1.2.8.1.1"><p id="p524mcpsimp"><a name="p524mcpsimp"></a><a name="p524mcpsimp"></a>Solution Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.999999999999996%" id="mcps1.2.8.1.2"><p id="p526mcpsimp"><a name="p526mcpsimp"></a><a name="p526mcpsimp"></a>DSP Version</p>
@@ -262,7 +130,7 @@ The configuration core is located in the directory matching the DSP model used i
 </th>
 </tr>
 </thead>
-<tbody><tr id="row538mcpsimp"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p540mcpsimp"><a name="p540mcpsimp"></a><a name="p540mcpsimp"></a>SS919V100</p>
+<tbody><tr id="row538mcpsimp"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p540mcpsimp"><a name="p540mcpsimp"></a><a name="p540mcpsimp"></a></p>
 </td>
 <td class="cellrowborder" valign="top" width="10.999999999999996%" headers="mcps1.2.8.1.2 "><p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>VP6</p>
 </td>
@@ -292,7 +160,6 @@ The configuration core is located in the directory matching the DSP model used i
 <td class="cellrowborder" valign="top" width="9.999999999999998%" headers="mcps1.2.8.1.7 "><p id="p567mcpsimp"><a name="p567mcpsimp"></a><a name="p567mcpsimp"></a>2</p>
 </td>
 </tr>
-<tr id="row7370181914570"><td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.8.1.1 "><p id="p231112165710"><a name="p231112165710"></a><a name="p231112165710"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.999999999999996%" headers="mcps1.2.8.1.2 "><p id="p6311172185713"><a name="p6311172185713"></a><a name="p6311172185713"></a>VQ6</p>
 </td>
@@ -308,457 +175,17 @@ The configuration core is located in the directory matching the DSP model used i
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **Note:** 
->For additional differences, refer to the section "Vision Q6 DSP Enhancements and Differences vs Vision P6 DSP" on page 203 of *visionq6_ug.pdf*. This document is available in the installation directory after the toolchain is installed.
-
-## Installing the DSP Toolchain and Configuration Core on Windows<a name="ZH-CN_TOPIC_0000002408292262"></a>
-
-This section assumes that Xplorer 8.0.7 has already been installed on Windows and uses the Hi3403V100 VQ6 configuration core Otechn\_VisionQ6\_v3 as an example. The installation procedure for other solutions and configuration cores in different Xplorer versions is similar.
-
->![](public_sys-resources/icon-notice.gif) **Notice:** 
->The Hi3403V100 VQ6 configuration core Otechn\_VisionQ6\_v3 must be used with the RH-2018.7 toolchain (see Table 1, XtensaTools\_RH\_2018\_7\_win32.tgz). Xplorer 8.0.7 bundles the RG2016.4 toolchain by default. If using another Xplorer version, the RH-2018.7 toolchain must be installed separately.
-
-1.  Open Xplorer 8.0.7, right-click **Configurations** in the System Overview panel (as shown in [Figure 1](#fig31925394563)), and click **Find and Install a Configuration Build**.
-
-    **Figure 1**  System Overview<a name="fig31925394563"></a>  
-    ![](figures/System-Overview.png "System-Overview")
-
-2.  In the Find and Install a Configuration Build window, click **Browse**, select the configuration core to install (in this example, Otechn\_VisionQ6\_v3\_win32\_redist), and click **OK** to begin installation.
-
-    **Figure 2**  Find and Install a Configuration Build<a name="fig72876154572"></a>  
-    ![](figures/Find-and-Install-a-Configuration-Build.png "Find-and-Install-a-Configuration-Build")
-
-    After installation, the newly installed configuration core appears under **Configurations** in the System Overview panel, as shown in [Figure 3](#fig1742717500572). The Otechn\_VisionQ6\_v3 configuration core is now installed successfully.
-
-    **Figure 3**  Viewing the installed configuration core<a name="fig1742717500572"></a>  
-    ![](figures/查看安装好的配置核.png "查看安装好的配置核")
-
-3.  When running a project (using HelloWorld as an example), select **C: Otechn\_VisionQ6\_v3** as shown in [Figure 4](#fig185297106715) to use the Otechn\_VisionQ6\_v3 configuration core.
-
-    **Figure 4**  Project creation window<a name="fig185297106715"></a>  
-    ![](figures/创建的工程界面.png "创建的工程界面")
-## memmap Configuration<a name="ZH-CN_TOPIC_0000002408292238"></a>
-
-The memmap.xmm file is located in the `dsp_liteos/dspxx/liteos/dspxx_ldscripts` directory of the release package, where `xx` represents a number. The DSP memory layout is generated from the memmap.xmm configuration file; users can use this file to understand and analyze the DSP memory layout. The memory map can be modified to suit the development environment. Refer to the *Xtensa® Linker Support Packages (LSPs) Reference Manual* for details on memmap.xmm.
-
-## Viewing Stack Usage<a name="ZH-CN_TOPIC_0000002408292242"></a>
-
-Procedure:
-
-1.  Click **Tools -> Stack Usage** in Xplorer.
-
-    **Figure 1**  Stack usage inspection interface<a name="fig19428194743813"></a>  
-    ![](figures/查看栈信息操作界面.png "查看栈信息操作界面")
-
-2.  A Stack Usage window appears. Select a project, right-click the compiled executable file, select **Binary File Info**, then select **Stack Usage** to view the stack usage for that file.
-
-    **Figure 2**  Stack usage display window<a name="fig1931604853914"></a>  
-    ![](figures/显示栈信息窗口.png "显示栈信息窗口")
-## Installing the DSP Toolchain and Configuration Core on Linux<a name="ZH-CN_TOPIC_0000002441731497"></a>
-
-For installing the Cadence DSP toolchain and configuration core on Linux, refer to the official Cadence document `dev_tools_install_guide.pdf`. When developing board-side DSP programs using the accompanying SDK package, it is recommended to install the DSP toolchain and configuration core as described below.
-
-### Installing the DSP Toolchain<a name="ZH-CN_TOPIC_0000002408132358"></a>
-
-The following procedure uses Xplorer-8.0.7-linux-x64-installer.bin as an example:
-
-1.  Create the directory `/opt/xtensa` on the server with root privileges.
-2.  Copy the Xplorer-8.0.7-linux-x64-installer.bin installation package to `/opt/xtensa` and run the installer as follows:
-
-    ```
-    root@XXX:/opt/xtensa# ./Xplorer-8.0.7-linux-x64-installer.bin 
-     ---------------------------------------------------------------------------- 
-     Welcome to the Xtensa Xplorer Setup Wizard. 
-     ---------------------------------------------------------------------------- 
-     Please read the following License Agreement. You must accept the terms of this 
-     agreement before continuing with the installation. 
-     Press [Enter] to continue: 
-     Cadence Tools Software Use Agreement 
-     Your use of the software you are about to install is subject to one or more 
-     licensing agreements. 
-     Portions of this software are subject to the terms of either (1) a technology 
-     license agreement between Cadence and the user ("you") - a direct Cadence 
-     licensee, (2) an end user license agreement between an existing Cadence licensee 
-     and you, or (3) a limited use evaluation agreement between Cadence and you.  In 
-     addition, each directory contains files that identify any open source licenses 
-     or copyrights that apply to each component. 
-     For a copy of the license agreement that applies to your use of this software, 
-     please make an inquiry to the organization that provided this copy of the 
-     software to you. 
-     Press [Enter] to continue:
-     Do you accept this license? [y/n]: y
-     ---------------------------------------------------------------------------- 
-     Xtensa Xplorer Installation Directory 
-     Please enter the path to the Xtensa Xplorer root directory.  The Xtensa Xplorer 
-     8.0.7 and XtDevTools directories will be installed in this directory. 
-     It is recommended that you use the same Xplorer root directory as your previous 
-     installations of Xplorer so that the XtDevTools directory can be shared, which 
-     will allow this version of Xplorer to use all previous installations of Xtensa 
-     configurations and tools. 
-     Xtensa Xplorer Root Directory [/opt/xtensa]: 
-     ---------------------------------------------------------------------------- 
-     Select the components you want to install; clear the components you do not want 
-     to install. Click Next when you are ready to continue. 
-     Xplorer and Xtensa Development Tools  : Y (Cannot be edited)
-     Is the selection above correct? [Y/n]: y
-     ---------------------------------------------------------------------------- 
-     Xplorer components selected 
-     Selected the following components: 
-     + Xtensa Xplorer and Development Tools 
-     Press [Enter] to continue: 
-     ---------------------------------------------------------------------------- 
-     Disk Space Report 
-     Installation space report 
-     Required disk space is :  3850 MB 
-     Current disk has free space : 8851 MB 
-     Press [Enter] to continue: 
-     ---------------------------------------------------------------------------- 
-     Installation Summary 
-     Xtensa products will be installed as follows 
-     Xtensa Xplorer will be installed to: 
-     /opt/xtensa/Xplorer-8.0.7 
-     Xtensa Tools will be installed to: 
-     /opt/xtensa/XtDevTools/install/tools/RH-2018.7 
-     Xtensa Tools and samples bundles will be stored at: 
-     /opt/xtensa/XtDevTools/downloads/RH-2018.7 
-     Xtensa Xplorer workspace default location: 
-     /opt/xtensa/Xplorer-8.0.7-workspaces 
-     Press [Enter] to continue: 
-     ---------------------------------------------------------------------------- 
-     Pre-installation Message 
-     The Xplorer installer runs in 2 phases.  The last phase (post-installation) is 
-     installing tools and any configurations selected, and may run for several 
-     minutes without appearing to make progress.  Please be patient. 
-     Press [Enter] to continue: 
-     ---------------------------------------------------------------------------- 
-     Setup is now ready to begin installing Xtensa Xplorer on your computer. 
-     Do you want to continue? [Y/n]: y
-     ---------------------------------------------------------------------------- 
-     Please wait while Setup installs Xtensa Xplorer on your computer. 
-     Installing 
-     0% ______________ 50% ______________ 100% 
-     ######################################### 
-     Post Installation Script Result 
-     Congratulations !! You have finished installing Xplorer-8.0.7 
-     Please review the following message log to make sure of the success of the 
-     installation. 
-     ================================================================================= 
-     INSTALLING XtensaTools 
-     ====== LOCATE utils plugin ====== 
-     WHERE_UTILS_RESULT=/opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external. 
-     utils_8.0.7.2000 
-     INSTALL XTTOOLS COMMAND :: /opt/xtensa/Xplorer-8.0.7/eclipse/jre/bin/java -cp 
-     /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000/ut 
-     ils.jar other.xide.external.utils.io.Unpack 
-     /opt/xtensa/XtDevTools/downloads/RH-2018.7/tools/XtensaTools_RH_2018_7_linux.tgz 
-     /opt/xtensa/XtDevTools/install/tools/ 
-     /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000 
-     INSTALL XtensaTools RESULT :: 0 , SUCCESS 
-     ====== LOCATE dynamic plugin files ====== 
-     INSTALL XOS Document Plugin 
-     WHERE_XOS_RESULT=/opt/xtensa/XtDevTools/install/tools/RH-2018.7-linux/XtensaTools 
-     /doc/xos-2.02.zip 
-     INSTALL XOS COMMAND :: /opt/xtensa/Xplorer-8.0.7/eclipse/jre/bin/java -cp 
-     /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000/ut 
-     Press [Enter] to continue: 
-     ils.jar other.xide.external.utils.io.Unpack 
-     /opt/xtensa/XtDevTools/install/tools/RH-2018.7-linux/XtensaTools/doc/xos-2.02.zip 
-     /opt/xtensa/Xplorer-8.0.7/eclipse/dropins/ 
-     /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000 
-     INSTALL XOS HELP PLUGIN RESULT :: 0 , SUCCESS 
-     Checking XtensaRegistry dir... 
-     Check XtensaRegistry RH-2018.7 DIR 
-     DONE:: /opt/xtensa/XtDevTools/XtensaRegistry/RH-2018.7-linux 
-     INSTALLING User selected Xtensa config builds from 
-     XtDevTools/downloads/RH-2018.7/builds IF EXISTS 
-     Setting Xplorer configuration and then initializing configuration cache 
-     INITIALIZE Xtensa Xplorer RESULT :: 0, SUCCESS 
-     Press [Enter] to continue: 
-     ---------------------------------------------------------------------------- 
-     Setup has finished installing Xtensa Xplorer on your computer. 
-     Run Xtensa Xplorer now (Recommended) 
-     (This initializes workspace location defaults) [Y/n]: n
-    ```
-
->![](public_sys-resources/icon-note.gif) **Note:** 
->On some Linux environments, a graphical (Gtk) interface may appear during installation. Follow the installation method described in this section.
-
-### Installing the DSP Configuration Core<a name="ZH-CN_TOPIC_0000002441691673"></a>
-
-The following uses the Otechn\_VisionQ6\_v3 core as a reference. The process for other configuration cores is similar.
-
-1.  With root privileges, copy the Otechn\_VisionQ6\_v3\_linux\_redist.tgz package to the previously created `/opt/xtensa` directory and extract it using the command `tar -zxf Otechn_VisionQ6_v3_linux_redist.tgz`. This extracts the `/opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3/` directory.
-2.  Navigate to `/opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3/` and run `./install` to install the configuration core.
-
-    Example output:
-
-    ```
-    root@XXX:/opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3# ./install 
-     Xtensa Processor Configuration Installation Tool 
-     Copyright (c) 2001-2018 Tensilica Inc. 
-     For Xtensa Tools Version 13.0.7 
-     Before you can use a new Xtensa processor configuration, you must run 
-     this tool to complete the installation.  Two separate packages are 
-     required: 
-     1) The Xtensa Tools cross-development software toolkit package.  These 
-     tools are configuration-independent and are shared by all your Xtensa 
-     processor configurations.  You do not need a separate copy for each 
-     configuration. 
-     2) The configured Xtensa processor files, of which this script is a 
-     part. 
-     You must have already downloaded both packages and extracted the files 
-     on your system before you can continue. 
-     Are you ready to proceed? [y] y 
-     Continuing... 
-     Enter the path to the Xtensa Tools directory:
-     /opt/xtensa/XtDevTools/install/tools/RH-2018.7-linux/XtensaTools 
-     The files for this Xtensa processor configuration will now be set up 
-     to work with the installation directories that you have chosen.  This 
-     process will take a few minutes, and once it has begun the 
-     installation directories cannot be changed.  If you abort this script 
-     after this point, or if you need to change the installation 
-     directories for some reason, you will need to start over with the 
-     original files that you downloaded for this configuration.  (The 
-     Xtensa Tools files are not modified in this process so you do not need 
-     to reinstall the Xtensa Tools package.)  The directories to be used are: 
-     Xtensa Tools:         /opt/xtensa/XtDevTools/install/tools/RH-2018.7-linux/XtensaTools 
-     Configured Processor: /opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3/. 
-     Do you want to continue? [y] y 
-     The files for this processor configuration have now been set to use 
-     the directory names you have chosen. 
-     The next installation step is to add this processor configuration to 
-     the list of available configurations in a registry of Xtensa cores. 
-     The configuration will be registered with the default name, which is 
-     the Core ID from the Xtensa Processor Generator. You must ensure that 
-     each core in the registry has a unique name. Please refer to the 
-     "Xtensa Software Development Toolkit User's Guide" to learn how to 
-     register this configuration with a different name. 
-     This script will update only one registry of Xtensa cores, and in most 
-     cases, you should use the default Xtensa registry.  If you are sharing 
-     the Xtensa Tools installation with others, and you do not want this 
-     processor configuration to be shared, you can specify an alternate 
-     registry.  Please refer to the "Xtensa Software Development Toolkit 
-     User's Guide" for instructions on adding this configuration to 
-     additional Xtensa core registries. 
-     The default registry is: 
-     /opt/xtensa/XtDevTools/install/tools/RH-2018.7-linux/XtensaTools/config 
-     What registry would you like to use? [default] /opt/xtensa/XtDevTools/XtensaRegistry/RH-2018.7-linux 
-     Do you want to make "Otechn_VisionQ6_v3" the default Xtensa core? [y] y 
-     The installation process is now complete.
-    ```
-
->![](public_sys-resources/icon-notice.gif) **Notice:** 
->-   When developing with the SDK, it is best to specify the configuration core path according to the installation path shown above. Otherwise, when developing DSP programs, you must modify the Makefile to specify the actual toolchain and configuration core paths (refer to the Cadence document *xtensa_xcc_compiler_ug.pdf* at `/opt/xtensa/XtDevTools/downloads/RH-2018.7/docs`).
->-   Official Cadence documents are available at `/opt/xtensa/XtDevTools/downloads/RH-2018.7/docs`.
->-   **If different solutions require different Xtensa Tools versions for their DSPs, extract the required XtensaTools package to `/opt/xtensa/XtDevTools/install/tools` and select that path when installing the configuration core.**
-
-### Configuring Environment Variables<a name="ZH-CN_TOPIC_0000002408132334"></a>
-
-Open the `/etc/profile` file and add the following environment variable settings:
-
--   Set the Cadence license:
-
-    export XTENSAD\_LICENSE\_FILE=port@serverip
-
-    Example: port is 28001, serverip is 192.168.1.100
-
--   Set the configuration core registry path:
-
-    export XTENSA\_SYSTEM=/opt/xtensa/XtDevTools/XtensaRegistry/RH-2018.7-linux
-
--   Set the default configuration core:
-
-    export XTENSA\_CORE=Otechn\_VisionQ6\_v3
-
--   Set the cross-compilation toolchain path:
-
-    export PATH="/opt/xtensa/XtDevTools/install/tools/RH-2018.7-linux/XtensaTools/bin:$PATH"
-
-## Development Workflow<a name="ZH-CN_TOPIC_0000002441731501"></a>
-
-DSP development is divided into PC-side and board-side environments:
-
--   PC-side environment: Use Xplorer for DSP algorithm development. The Xplorer simulation environment enables rapid algorithm development and verification. Code developed on the PC can be directly ported to the board for compilation and debugging. Refer to the previous sections for Xplorer setup.
--   Board-side environment: Develop board-side programs using the accompanying SDK package.
-
-### Board-Side Development Workflow<a name="ZH-CN_TOPIC_0000002441731517"></a>
-
-The DSP application development block diagram is shown in [Figure 1](#__fig11884284184).
-
-**Figure 1**  DSP application development block diagram<a name="__fig11884284184"></a>  
-![](figures/DSP应用程序开发框图.png "DSP应用程序开发框图")
-
-As shown in [Figure 1](#__fig11884284184), DSP program development and usage consists of the following parts:
-
--   CPU side
-    -   Load DSP Binary: Call ss\_mpi\_svp\_dsp\_load\_bin to load the DSP executable, then call ss\_mpi\_svp\_dsp\_enable\_core to enable the DSP.
-    -   MPI: DSP MPI interface.
-    -   DRV: Driver module.
-    -   IPCM: Inter-core communication module.
-
--   DSP side
-    -   Runtime: Operator scheduling and management on the DSP.
-    -   ALGO: Parse parameters and invoke DSP operators.
-    -   Lib: DSP operator library.
-    -   IPCM: Inter-core communication module.
-
->![](public_sys-resources/icon-caution.gif) **Caution:** 
->To accelerate compilation, the DSP-side library/code does not include optimization flags (-O). Users can add these during the performance tuning phase. The example below adds -O2 in the `Hi3403V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/Makefile.param` file (using Hi3403V100 SMP as an example, where XX is the DSP core number).![](figures/zh-cn_image_0000002441731525.png)
-
-#### Adapting TileManager<a name="ZH-CN_TOPIC_0000002408292250"></a>
-
-The TileManager software package provided by Cadence must be adapted for wide-address operations before use. After adapting the code, copy the TileManager source to the `Hi3403V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/tm/vendor` directory (using Hi3403V100 SMP as an example, where XX is the DSP core number). Only then is the TileManager adaptation complete.
-
-In the adaptation code diagrams in the following sections, the left side shows the original code and the right side shows the modified code.
-
-##### Adapting tileManager.h<a name="ZH-CN_TOPIC_0000002408132338"></a>
-
-Adaptation point 1: Enable the wide-address macro
-
-![](figures/zh-cn_image_0000002441691685.png)
-
-Adaptation point 2: Adapt the pFrameBuffer/pFrameData fields of the frame structure to 64-bit operations
-
-![](figures/zh-cn_image_0000002408292270.png)
-
-Adaptation point 3: Adapt the DRAM address validity check
-
-![](figures/zh-cn_image_0000002441731533.png)
-
-Adaptation point 4: Add type-conversion macros and high/low 32-bit operation macros
-
-![](figures/zh-cn_image_0000002408132366.png)
-
-##### Adapting tileManager\_api.h<a name="ZH-CN_TOPIC_0000002441691657"></a>
-
-Adaptation point 1: Modify the bank count
-
-![](figures/zh-cn_image_0000002441731541.png)
-
-Adaptation point 2: Adapt pFrameBuffer/pFrameData fields of the frame structure to 64-bit operations
-
-![](figures/zh-cn_image_0000002441731537.png)
-
-Adaptation point 3: Adapt pFrameBuffer/pFrameData fields of the frame structure to 64-bit
-
-![](figures/zh-cn_image_0000002408292278.png)
-
-Adaptation point 4: Adapt destination and source pointer types of xvAddIdmaRequestMultiChannel to 64-bit
-
-![](figures/zh-cn_image_0000002441691689.png)
-
-Adaptation point 5: Adapt the frame address pointer type of xvCreateFrame to 64-bit
-
-![](figures/zh-cn_image_0000002441691693.png)
-
-##### Adapting tileManager.c<a name="ZH-CN_TOPIC_0000002408132346"></a>
-
-Adaptation point 1: Adapt the DRAM validation in xvInitMemAllocator
-
-![](figures/zh-cn_image_0000002408132378.png)
-
-Adaptation point 2: Adapt the frame address pointer type and validation in xvCreateFrame to 64-bit
-
-![](figures/zh-cn_image_0000002408132374.png)
-
-Adaptation point 3: Adapt the inline function addIdmaRequestInlineMultiChannel for wide-address operations and move it before the xvAddIdmaRequestMultiChannel implementation
-
-![](figures/zh-cn_image_0000002441731545.png)
-
-Adaptation point 4: Adapt destination and source pointer types of xvAddIdmaRequestMultiChannel to 64-bit
-
-![](figures/zh-cn_image_0000002441731565.png)
-
-Adaptation point 5: Adapt destination/source address validation and copy operations in xvAddIdmaRequestMultiChannel, replacing them with the inline function addIdmaRequestInlineMultiChannel
-
-![](figures/zh-cn_image_0000002441731549.png)
-
-Adaptation point 6: Adapt solveForX for 64-bit source and wide-address operations
-
-![](figures/zh-cn_image_0000002408132382.png)
-
-![](figures/zh-cn_image_0000002408292290.png)
-
-Adaptation point 7: Adapt xvReqTileTransferInMultiChannel for 64-bit source and wide-address operations
-
-![](figures/zh-cn_image_0000002408132394.png)
-
-![](figures/zh-cn_image_0000002441691701.png)
-
-![](figures/zh-cn_image_0000002408292286.png)
-
-Adaptation point 8: Add inline IDMA wide-address 2D copy operations
-
-![](figures/zh-cn_image_0000002408132390.png)
-
-Adaptation point 9: Adapt xvReqTileTransferInFastMultiChannel for 64-bit source and wide-address operations
-
-![](figures/zh-cn_image_0000002408292282.png)
-
-![](figures/zh-cn_image_0000002408132398.png)
-
-Adaptation point 10: Adapt xvReqTileTransferInFast16MultiChannel for 64-bit source and wide-address operations
-
-![](figures/zh-cn_image_0000002408292294.png)
-
-![](figures/zh-cn_image_0000002408292298.png)
-
-Adaptation point 11: Adapt xvReqTileTransferOutMultiChannel for 64-bit destination and wide-address operations
-
-![](figures/zh-cn_image_0000002441691717.png)
-
-![](figures/zh-cn_image_0000002408292302.png)
-
-Adaptation point 12: Adapt xvReqTileTransferOutFastMultiChannel for 64-bit destination and wide-address operations
-
-![](figures/zh-cn_image_0000002408132386.png)
-
-Adaptation point 13: Adapt xvReqTileTransferOutFast16MultiChannel for 64-bit destination and wide-address operations
-
-![](figures/zh-cn_image_0000002408292306.png)
-
-Adaptation point 14: Adapt the frame pointer field validity check in xvPadEdges
-
-![](figures/zh-cn_image_0000002441691697.png)
-
-Adaptation point 15: Adapt the frame pointer field validity check in xvPadEdges16
-
-![](figures/zh-cn_image_0000002408132402.png)
-
-Adaptation point 16: Remove the index < 0 validation for the xvCheckForIdmaIndexMultiChannel function parameter
-
-![](figures/zh-cn_image_0000002441731561.png)
-
-#### Developing Custom Operators<a name="ZH-CN_TOPIC_0000002408132342"></a>
-
-On the CPU side:
-
-1.  Call ss\_mpi\_svp\_dsp\_power\_on to power on the DSP during program initialization.
-2.  Call ss\_mpi\_svp\_dsp\_load\_bin to load the four binaries (ot\_iram.bin, ot\_sram.bin, ot\_dram0.bin, ot\_dram1.bin) to their respective locations.
-3.  Call ss\_mpi\_svp\_dsp\_enable\_core to enable the DSP.
-
-    Develop custom operators by wrapping the ss\_mpi\_svp\_dsp\_rpc / ss\_mpi\_svp\_dsp\_query interfaces.
-
-    >![](public_sys-resources/icon-note.gif) **Note:** 
-    >Refer to the sample (sample\_svp\_dsp\_enca\_dilate\_3x3 / sample\_svp\_dsp\_enca\_erode\_3x3 wrappers) and the *SVP2.0 API Reference* for the ss\_mpi\_svp\_dsp\_rpc / ss\_mpi\_svp\_dsp\_query interface descriptions.
-
-On the DSP side:
-
-1.  Develop frame-level or tile-level operators under the `algo/include/int` directory in the release package.
-
-    >![](public_sys-resources/icon-note.gif) **Note:** 
-    >Users can refer to `algo/include/int/svp_dsp_frm.h` and `algo/src/svp_dsp_frm.c` to develop frame-level operators.
-
-2.  Add calls to custom operators in the `svp_dsp_algo_process` function in `algo/src/svp_dsp_algo.c`.
-3.  Run `algo/Makefile` to recompile the code under the `algo` directory into a library.
-4.  Run `runtime/obj/Makefile` to compile the .o and .a files into an ELF file and convert it into four binaries.
-
-    >![](public_sys-resources/icon-note.gif) **Note:** 
-    >The four binaries are ot\_iram.bin, ot\_sram.bin, ot\_dram0.bin, and ot\_dram1.bin, and are placed in `runtime/obj/bin`.
-
->![](public_sys-resources/icon-notice.gif) **Notice:** 
->-   The number of DSPs and the IRAM/SRAM/DRAM addressing differ across solutions. Refer to the corresponding chip manual for details.
->-   Due to the ReorderBuf logic, there is a constraint on IDMA usage: the idma\_init programming interface can only use MAX\_BLOCK\_2 / MAX\_BLOCK\_4 / MAX\_BLOCK\_8, not MAX\_BLOCK\_16.
->-   On Hi3403V100/Hi3519AV200, the CPU accesses DDR in the address range \[0x40000000, 0x2FFFFFFFF\]. On the DSP side, IDMA maps this to \[0x440000000, 0x6FFFFFFFF\] for access — i.e., the IDMA DDR address must have offset 0x400000000 added (the idma\_offset value). This mapping framework is already built into the SDK; users can simply refer to the framework sample for usage.
+</table> >![](public_sys-resources/icon-note.gif) **Note:** >For additional differences, refer to the section "Vision Q6 DSP Enhancements and Differences vs Vision P6 DSP" on page 203 of *visionq6_ug.pdf*. This document is available in the installation directory after the toolchain is installed. ## Installing the DSP Toolchain and Configuration Core on Windows<a name="ZH-CN_TOPIC_0000002408292262"></a> This section assumes that Xplorer 8.0.7 has already been installed on Windows and uses the Hi3403V100 VQ6 configuration core Otechn\_VisionQ6\_v3 as an example. The installation procedure for other solutions and configuration cores in different Xplorer versions is similar. >![](public_sys-resources/icon-notice.gif) **Notice:** >The Hi3403V100 VQ6 configuration core Otechn\_VisionQ6\_v3 must be used with the RH-2018.7 toolchain (see Table 1, XtensaTools\_RH\_2018\_7\_win32.tgz). Xplorer 8.0.7 bundles the RG2016.4 toolchain by default. If using another Xplorer version, the RH-2018.7 toolchain must be installed separately. 1. Open Xplorer 8.0.7, right-click **Configurations** in the System Overview panel (as shown in [Figure 1](#fig31925394563)), and click **Find and Install a Configuration Build**. **Figure 1** System Overview<a name="fig31925394563"></a> ![](figures/System-Overview.png "System-Overview") 2. In the Find and Install a Configuration Build window, click **Browse**, select the configuration core to install (in this example, Otechn\_VisionQ6\_v3\_win32\_redist), and click **OK** to begin installation. **Figure 2** Find and Install a Configuration Build<a name="fig72876154572"></a> ![](figures/Find-and-Install-a-Configuration-Build.png "Find-and-Install-a-Configuration-Build") After installation, the newly installed configuration core appears under **Configurations** in the System Overview panel, as shown in [Figure 3](#fig1742717500572). The Otechn\_VisionQ6\_v3 configuration core is now installed successfully. **Figure 3** Viewing the installed configuration core<a name="fig1742717500572"></a> ![](figures/seen Installgood Configuration.png "seen Installgood Configuration") 3. When running a project (using Hello World as an example), select **C: Otechn\_VisionQ6\_v3** as shown in [Figure 4](#fig185297106715) to use the Otechn\_VisionQ6\_v3 configuration core. **Figure 4** Project creation window<a name="fig185297106715"></a> ![](figures/createboundary.png "createboundary")
+## memmap Configuration<a name="ZH-CN_TOPIC_0000002408292238"></a> The memmap.xmm file is located in the `dsp_liteos/dspxx/liteos/dspxx_ldscripts` directory of the release package, where `xx` represents a number. The DSP memory layout is generated from the memmap.xmm configuration file; users can use this file to understand and analyze the DSP memory layout. The memory map can be modified to suit the development environment. Refer to the *Xtensa® Linker Support Packages (LS Ps) Reference Manual* for details on memmap.xmm. ## Viewing Stack Usage<a name="ZH-CN_TOPIC_0000002408292242"></a> Procedure: 1. Click **Tools -> Stack Usage** in Xplorer. **Figure 1** Stack usage inspection interface<a name="fig19428194743813"></a> ![](figures/seenstack Information Operationboundary.png "seenstack Information Operationboundary") 2. A Stack Usage window appears. Select a project, right-click the compiled executable file, select **Binary File Info**, then select **Stack Usage** to view the stack usage for that file. **Figure 2** Stack usage display window<a name="fig1931604853914"></a> ![](figures/Displaystack Informationwindow.png "Displaystack Informationwindow")
+## Installing the DSP Toolchain and Configuration Core on Linux<a name="ZH-CN_TOPIC_0000002441731497"></a> For installing the Cadence DSP toolchain and configuration core on Linux, refer to the official Cadence document `dev_tools_install_guide.pdf`. When developing board-side DSP programs using the accompanying SDK package, it is recommended to install the DSP toolchain and configuration core as described below. ### Installing the DSP Toolchain<a name="ZH-CN_TOPIC_0000002408132358"></a> The following procedure uses Xplorer-8.0.7-linux-x64-installer.bin as an example: 1. Create the directory `/opt/xtensa` on the server with root privileges.
+2. Copy the Xplorer-8.0.7-linux-x64-installer.bin installation package to `/opt/xtensa` and run the installer as follows: ``` root@XXX:/opt/xtensa# ./Xplorer-8.0.7-linux-x64-installer.bin ---------------------------------------------------------------------------- Welcome to the Xtensa Xplorer Setup Wizard. ---------------------------------------------------------------------------- Please read the following License Agreement. You must accept the terms of this agreement before continuing with the installation. Press [Enter] to continue: Cadence Tools Software Use Agreement Your use of the software you are about to install is subject to one or more licensing agreements. Portions of this software are subject to the terms of either (1) a technology license agreement between Cadence and the user ("you") - a direct Cadence licensee, (2) an end user license agreement between an existing Cadence licensee and you, or (3) a limited use evaluation agreement between Cadence and you. In addition, each directory contains files that identify any open source licenses or copyrights that apply to each component. For a copy of the license agreement that applies to your use of this software, please make an inquiry to the organization that provided this copy of the software to you. Press [Enter] to continue: Do you accept this license? [y/n]: y ---------------------------------------------------------------------------- Xtensa Xplorer Installation Directory Please enter the path to the Xtensa Xplorer root directory. The Xtensa Xplorer 8.0.7 and Xt Dev Tools directories will be installed in this directory. It is recommended that you use the same Xplorer root directory as your previous installations of Xplorer so that the Xt Dev Tools directory can be shared, which will allow this version of Xplorer to use all previous installations of Xtensa configurations and tools. Xtensa Xplorer Root Directory [/opt/xtensa]: ---------------------------------------------------------------------------- Select the components you want to install; clear the components you do not want to install. Click Next when you are ready to continue. Xplorer and Xtensa Development Tools : Y (Cannot be edited) Is the selection above correct? [Y/n]: y ---------------------------------------------------------------------------- Xplorer components selected Selected the following components: + Xtensa Xplorer and Development Tools Press [Enter] to continue: ---------------------------------------------------------------------------- Disk Space Report Installation space report Required disk space is : 3850 MB Current disk has free space : 8851 MB Press [Enter] to continue: ---------------------------------------------------------------------------- Installation Summary Xtensa products will be installed as follows Xtensa Xplorer will be installed to: /opt/xtensa/Xplorer-8.0.7 Xtensa Tools will be installed to: /opt/xtensa/Xt Dev Tools/install/tools/RH-2018.7 Xtensa Tools and samples bundles will be stored at: /opt/xtensa/Xt Dev Tools/downloads/RH-2018.7 Xtensa Xplorer workspace default location: /opt/xtensa/Xplorer-8.0.7-workspaces Press [Enter] to continue: ---------------------------------------------------------------------------- Pre-installation Message The Xplorer installer runs in 2 phases. The last phase (post-installation) is installing tools and any configurations selected, and may run for several minutes without appearing to make progress. Please be patient. Press [Enter] to continue: ---------------------------------------------------------------------------- Setup is now ready to begin installing Xtensa Xplorer on your computer. Do you want to continue? [Y/n]: y ---------------------------------------------------------------------------- Please wait while Setup installs Xtensa Xplorer on your computer. Installing 0% ______________ 50% ______________ 100% ######################################### Post Installation Script Result Congratulations !! You have finished installing Xplorer-8.0.7 Please review the following message log to make sure of the success of the installation. ================================================================================= INSTALLING Xtensa Tools ====== LOCATE utils plugin ====== WHERE_UTILS_RESULT=/opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external. utils_8.0.7.2000 INSTALL XTTOOLS COMMAND :: /opt/xtensa/Xplorer-8.0.7/eclipse/jre/bin/java -cp /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000/ut ils.jar other.xide.external.utils.io.Unpack /opt/xtensa/Xt Dev Tools/downloads/RH-2018.7/tools/XtensaTools_RH_2018_7_linux.tgz /opt/xtensa/Xt Dev Tools/install/tools/ /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000 INSTALL Xtensa Tools RESULT :: 0 , SUCCESS ====== LOCATE dynamic plugin files ====== INSTALL XOS Document Plugin WHERE_XOS_RESULT=/opt/xtensa/XtDevTools/install/tools/RH-2018.7-linux/Xtensa Tools /doc/xos-2.02.zip INSTALL XOS COMMAND :: /opt/xtensa/Xplorer-8.0.7/eclipse/jre/bin/java -cp /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000/ut Press [Enter] to continue: ils.jar other.xide.external.utils.io.Unpack /opt/xtensa/Xt Dev Tools/install/tools/RH-2018.7-linux/Xtensa Tools/doc/xos-2.02.zip /opt/xtensa/Xplorer-8.0.7/eclipse/dropins/ /opt/xtensa/Xplorer-8.0.7/eclipse/plugins/other.xide.external.utils_8.0.7.2000 INSTALL XOS HELP PLUGIN RESULT :: 0 , SUCCESS Checking Xtensa Registry dir... Check Xtensa Registry RH-2018.7 DIR DONE:: /opt/xtensa/Xt Dev Tools/Xtensa Registry/RH-2018.7-linux INSTALLING User selected Xtensa config builds from Xt Dev Tools/downloads/RH-2018.7/builds IF EXISTS Setting Xplorer configuration and then initializing configuration cache INITIALIZE Xtensa Xplorer RESULT :: 0, SUCCESS Press [Enter] to continue: ---------------------------------------------------------------------------- Setup has finished installing Xtensa Xplorer on your computer. Run Xtensa Xplorer now (Recommended) (This initializes workspace location defaults) [Y/n]: n ``` >![](public_sys-resources/icon-note.gif) **Note:** >On some Linux environments, a graphical (Gtk) interface may appear during installation. Follow the installation method described in this section. ### Installing the DSP Configuration Core<a name="ZH-CN_TOPIC_0000002441691673"></a> The following uses the Otechn\_VisionQ6\_v3 core as a reference. The process for other configuration cores is similar. 1. With root privileges, copy the Otechn\_VisionQ6\_v3\_linux\_redist.tgz package to the previously created `/opt/xtensa` directory and extract it using the command `tar -zxf Otechn_VisionQ6_v3_linux_redist.tgz`. This extracts the `/opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3/` directory.
+2. Navigate to `/opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3/` and run `./install` to install the configuration core. Example output: ``` root@XXX:/opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3# ./install Xtensa Processor Configuration Installation Tool Copyright (c) 2001-2018 Tensilica Inc. For Xtensa Tools Version 13.0.7 Before you can use a new Xtensa processor configuration, you must run this tool to complete the installation. Two separate packages are required: 1) The Xtensa Tools cross-development software toolkit package. These tools are configuration-independent and are shared by all your Xtensa processor configurations. You do not need a separate copy for each configuration. 2) The configured Xtensa processor files, of which this script is a part. You must have already downloaded both packages and extracted the files on your system before you can continue. Are you ready to proceed? [y] y Continuing... Enter the path to the Xtensa Tools directory: /opt/xtensa/Xt Dev Tools/install/tools/RH-2018.7-linux/Xtensa Tools The files for this Xtensa processor configuration will now be set up to work with the installation directories that you have chosen. This process will take a few minutes, and once it has begun the installation directories cannot be changed. If you abort this script after this point, or if you need to change the installation directories for some reason, you will need to start over with the original files that you downloaded for this configuration. (The Xtensa Tools files are not modified in this process so you do not need to reinstall the Xtensa Tools package.) The directories to be used are: Xtensa Tools: /opt/xtensa/Xt Dev Tools/install/tools/RH-2018.7-linux/Xtensa Tools Configured Processor: /opt/xtensa/RH-2018.7-linux/Otechn_VisionQ6_v3/. Do you want to continue? [y] y The files for this processor configuration have now been set to use the directory names you have chosen. The next installation step is to add this processor configuration to the list of available configurations in a registry of Xtensa cores. The configuration will be registered with the default name, which is the Core ID from the Xtensa Processor Generator. You must ensure that each core in the registry has a unique name. Please refer to the "Xtensa Software Development Toolkit User's Guide" to learn how to register this configuration with a different name. This script will update only one registry of Xtensa cores, and in most cases, you should use the default Xtensa registry. If you are sharing the Xtensa Tools installation with others, and you do not want this processor configuration to be shared, you can specify an alternate registry. Please refer to the "Xtensa Software Development Toolkit User's Guide" for instructions on adding this configuration to additional Xtensa core registries. The default registry is: /opt/xtensa/Xt Dev Tools/install/tools/RH-2018.7-linux/Xtensa Tools/config What registry would you like to use? [default] /opt/xtensa/Xt Dev Tools/Xtensa Registry/RH-2018.7-linux Do you want to make "Otechn_VisionQ6_v3" the default Xtensa core? [y] y The installation process is now complete. ``` >![](public_sys-resources/icon-notice.gif) **Notice:** >- When developing with the SDK, it is best to specify the configuration core path according to the installation path shown above. Otherwise, when developing DSP programs, you must modify the Makefile to specify the actual toolchain and configuration core paths (refer to the Cadence document *xtensa_xcc_compiler_ug.pdf* at `/opt/xtensa/XtDevTools/downloads/RH-2018.7/docs`).
+>- Official Cadence documents are available at `/opt/xtensa/Xt Dev Tools/downloads/RH-2018.7/docs`.
+>- **If different solutions require different Xtensa Tools versions for their DS Ps, extract the required Xtensa Tools package to `/opt/xtensa/Xt Dev Tools/install/tools` and select that path when installing the configuration core.** ### Configuring Environment Variables<a name="ZH-CN_TOPIC_0000002408132334"></a> Open the `/etc/profile` file and add the following environment variable settings: - Set the Cadence license: export XTENSAD\_LICENSE\_FILE=port@serverip Example: port is 28001, serverip is 192.168.1.100 - Set the configuration core registry path: export XTENSA\_SYSTEM=/opt/xtensa/XtDevTools/Xtensa Registry/RH-2018.7-linux - Set the default configuration core: export XTENSA\_CORE=Otechn\_VisionQ6\_v3 - Set the cross-compilation toolchain path: export PATH="/opt/xtensa/Xt Dev Tools/install/tools/RH-2018.7-linux/Xtensa Tools/bin:$PATH" ## Development Workflow<a name="ZH-CN_TOPIC_0000002441731501"></a> DSP development is divided into PC-side and board-side environments: - PC-side environment: Use Xplorer for DSP algorithm development. The Xplorer simulation environment enables rapid algorithm development and verification. Code developed on the PC can be directly ported to the board for compilation and debugging. Refer to the previous sections for Xplorer setup.
+- Board-side environment: Develop board-side programs using the accompanying SDK package. ### Board-Side Development Workflow<a name="ZH-CN_TOPIC_0000002441731517"></a> The DSP application development block diagram is shown in [Figure 1](#__fig11884284184). **Figure 1** DSP application development block diagram<a name="__fig11884284184"></a> ![](figures/DSP Applicationopengraph.png "DSP Applicationopengraph") As shown in [Figure 1](#__fig11884284184), DSP program development and usage consists of the following parts: - CPU side - Load DSP Binary: Call ss\_mpi\_svp\_dsp\_load\_bin to load the DSP executable, then call ss\_mpi\_svp\_dsp\_enable\_core to enable the DSP. - MPI: DSP MPI interface. - DRV: Driver module. - IPCM: Inter-core communication module. - DSP side - Runtime: Operator scheduling and management on the DSP. - ALGO: Parse parameters and invoke DSP operators. - Lib: DSP operator library. - IPCM: Inter-core communication module. >![](public_sys-resources/icon-caution.gif) **Caution:** >To accelerate compilation, the DSP-side library/code does not include optimization flags (-O). Users can add these during the performance tuning phase. The example below adds -O2 in the `Hi3403V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/Makefile.param` file (using Hi3403V100 SMP as an example, where XX is the DSP core number).![](figures/zh-cn_image_0000002441731525.png) #### Adapting TileManager<a name="ZH-CN_TOPIC_0000002408292250"></a> The Tile Manager software package provided by Cadence must be adapted for wide-address operations before use. After adapting the code, copy the Tile Manager source to the `Hi3403V100_SDK_V2.0.0.3_B020/smp/dsp_liteos/dspXX/tm/vendor` directory (using Hi3403V100 SMP as an example, where XX is the DSP core number). Only then is the Tile Manager adaptation complete. In the adaptation code diagrams in the following sections, the left side shows the original code and the right side shows the modified code. ##### Adapting tileManager.h<a name="ZH-CN_TOPIC_0000002408132338"></a> Adaptation point 1: Enable the wide-address macro ![](figures/zh-cn_image_0000002441691685.png) Adaptation point 2: Adapt the p Frame Buffer/p Frame Data fields of the frame structure to 64-bit operations ![](figures/zh-cn_image_0000002408292270.png) Adaptation point 3: Adapt the DRAM address validity check ![](figures/zh-cn_image_0000002441731533.png) Adaptation point 4: Add type-conversion macros and high/low 32-bit operation macros ![](figures/zh-cn_image_0000002408132366.png) ##### Adapting tileManager\_api.h<a name="ZH-CN_TOPIC_0000002441691657"></a> Adaptation point 1: Modify the bank count ![](figures/zh-cn_image_0000002441731541.png) Adaptation point 2: Adapt p Frame Buffer/p Frame Data fields of the frame structure to 64-bit operations ![](figures/zh-cn_image_0000002441731537.png) Adaptation point 3: Adapt p Frame Buffer/p Frame Data fields of the frame structure to 64-bit ![](figures/zh-cn_image_0000002408292278.png) Adaptation point 4: Adapt destination and source pointer types of xv Add Idma Request Multi Channel to 64-bit ![](figures/zh-cn_image_0000002441691689.png) Adaptation point 5: Adapt the frame address pointer type of xv Create Frame to 64-bit ![](figures/zh-cn_image_0000002441691693.png) ##### Adapting tileManager.c<a name="ZH-CN_TOPIC_0000002408132346"></a> Adaptation point 1: Adapt the DRAM validation in xv Init Mem Allocator ![](figures/zh-cn_image_0000002408132378.png) Adaptation point 2: Adapt the frame address pointer type and validation in xv Create Frame to 64-bit ![](figures/zh-cn_image_0000002408132374.png) Adaptation point 3: Adapt the inline function add Idma Request Inline Multi Channel for wide-address operations and move it before the xv Add Idma Request Multi Channel implementation ![](figures/zh-cn_image_0000002441731545.png) Adaptation point 4: Adapt destination and source pointer types of xv Add Idma Request Multi Channel to 64-bit ![](figures/zh-cn_image_0000002441731565.png) Adaptation point 5: Adapt destination/source address validation and copy operations in xv Add Idma Request Multi Channel, replacing them with the inline function add Idma Request Inline Multi Channel ![](figures/zh-cn_image_0000002441731549.png) Adaptation point 6: Adapt solve ForX for 64-bit source and wide-address operations ![](figures/zh-cn_image_0000002408132382.png) ![](figures/zh-cn_image_0000002408292290.png) Adaptation point 7: Adapt xv Req Tile Transfer In Multi Channel for 64-bit source and wide-address operations ![](figures/zh-cn_image_0000002408132394.png) ![](figures/zh-cn_image_0000002441691701.png) ![](figures/zh-cn_image_0000002408292286.png) Adaptation point 8: Add inline IDMA wide-address 2D copy operations ![](figures/zh-cn_image_0000002408132390.png) Adaptation point 9: Adapt xv Req Tile Transfer In Fast Multi Channel for 64-bit source and wide-address operations ![](figures/zh-cn_image_0000002408292282.png) ![](figures/zh-cn_image_0000002408132398.png) Adaptation point 10: Adapt xv Req Tile Transfer In Fast16Multi Channel for 64-bit source and wide-address operations ![](figures/zh-cn_image_0000002408292294.png) ![](figures/zh-cn_image_0000002408292298.png) Adaptation point 11: Adapt xv Req Tile Transfer Out Multi Channel for 64-bit destination and wide-address operations ![](figures/zh-cn_image_0000002441691717.png) ![](figures/zh-cn_image_0000002408292302.png) Adaptation point 12: Adapt xv Req Tile Transfer Out Fast Multi Channel for 64-bit destination and wide-address operations ![](figures/zh-cn_image_0000002408132386.png) Adaptation point 13: Adapt xv Req Tile Transfer Out Fast16Multi Channel for 64-bit destination and wide-address operations ![](figures/zh-cn_image_0000002408292306.png) Adaptation point 14: Adapt the frame pointer field validity check in xv Pad Edges ![](figures/zh-cn_image_0000002441691697.png) Adaptation point 15: Adapt the frame pointer field validity check in xv Pad Edges16 ![](figures/zh-cn_image_0000002408132402.png) Adaptation point 16: Remove the index < 0 validation for the xv Check For Idma Index Multi Channel function parameter ![](figures/zh-cn_image_0000002441731561.png) #### Developing Custom Operators<a name="ZH-CN_TOPIC_0000002408132342"></a> On the CPU side: 1. Call ss\_mpi\_svp\_dsp\_power\_on to power on the DSP during program initialization.
+2. Call ss\_mpi\_svp\_dsp\_load\_bin to load the four binaries (ot\_iram.bin, ot\_sram.bin, ot\_dram0.bin, ot\_dram1.bin) to their respective locations.
+3. Call ss\_mpi\_svp\_dsp\_enable\_core to enable the DSP. Develop custom operators by wrapping the ss\_mpi\_svp\_dsp\_rpc / ss\_mpi\_svp\_dsp\_query interfaces. >![](public_sys-resources/icon-note.gif) **Note:** >Refer to the sample (sample\_svp\_dsp\_enca\_dilate\_3x3 / sample\_svp\_dsp\_enca\_erode\_3x3 wrappers) and the *SVP2.0 API Reference* for the ss\_mpi\_svp\_dsp\_rpc / ss\_mpi\_svp\_dsp\_query interface descriptions. On the DSP side: 1. Develop frame-level or tile-level operators under the `algo/include/int` directory in the release package. >![](public_sys-resources/icon-note.gif) **Note:** >Users can refer to `algo/include/int/svp_dsp_frm.h` and `algo/src/svp_dsp_frm.c` to develop frame-level operators. 2. Add calls to custom operators in the `svp_dsp_algo_process` function in `algo/src/svp_dsp_algo.c`.
+3. Run `algo/Makefile` to recompile the code under the `algo` directory into a library.
+4. Run `runtime/obj/Makefile` to compile the .o and .a files into an ELF file and convert it into four binaries. >![](public_sys-resources/icon-note.gif) **Note:** >The four binaries are ot\_iram.bin, ot\_sram.bin, ot\_dram0.bin, and ot\_dram1.bin, and are placed in `runtime/obj/bin`. >![](public_sys-resources/icon-notice.gif) **Notice:** >- The number of DS Ps and the IRAM/SRAM/DRAM addressing differ across solutions. Refer to the corresponding chip manual for details.
+>- Due to the Reorder Buf logic, there is a constraint on IDMA usage: the idma\_init programming interface can only use MAX\_BLOCK\_2 / MAX\_BLOCK\_4 / MAX\_BLOCK\_8, not MAX\_BLOCK\_16.
+>- On Hi3403V100, the CPU accesses DDR in the address range \[0x40000000, 0x2FFFFFFFF\]. On the DSP side, IDMA maps this to \[0x440000000, 0x6FFFFFFFF\] for access — i.e., the IDMA DDR address must have offset 0x400000000 added (the idma\_offset value). This mapping framework is already built into the SDK; users can simply refer to the framework sample for usage.

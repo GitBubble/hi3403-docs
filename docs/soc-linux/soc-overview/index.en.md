@@ -1,227 +1,61 @@
 ---
 title: "Hi3403V100 Ultra-HD Intelligent NVR SoC Product Overview"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/Hi3403V100 超高清智能网络录像机 SoC 产品简介/Hi3403V100 超高清智能网络录像机 SoC 产品简介.md
----
-
-# General Introduction
-Hi3403V100 is a professional ultra-HD intelligent network video recorder (NVR) SoC. The chip supports up to four sensor inputs and up to 4K60 ISP image processing, along with 3-frame WDR, multi-level noise reduction, 6-axis electronic image stabilization, hardware stitching, and other image enhancement algorithms, delivering exceptional image processing capability.
-
-Hi3403V100 integrates a quad-core A55 processor, providing efficient and flexible CPU resources for compute and control requirements. An embedded single-core MCU meets the needs of low-latency scenarios.
-
-Hi3403V100 integrates a high-efficiency AI inference engine with up to 10.4 TOPS INT8, supporting mainstream AI frameworks. Dual-core Vision DSP is embedded to address differentiated CV compute requirements.
-
-Hi3403V100 is manufactured on an advanced 12 nm low-power process with a 0.65 mm pitch package, and supports LPDDR4/LPDDR4x/DDR4 memory, enabling compact product designs and rapid mass production.
-
-Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer product deployment.
-
-# Key Features
--   AI Acceleration
-    -   10.4 TOPS INT8 dual NN acceleration engines
-    -   Dual-core Vision Q6 DSP processing
-
--   4K60 Encode/Decode
-    -   H.265/H.264 encoding at 4K60.
-    -   10-channel 1080p30 H.265/H.264 decoding.
-
--   4-Channel 4M Real-Time Stitching
-
-    Supports 4-channel 4 Mp30 in-device real-time hardware stitching.
-
--   High-Speed Interfaces
-
-    Supports USB 3.0 and PCIe 2.0 high-speed interfaces.
-
--   Compact Package
-
-    23 mm x 23 mm FC-BGA package.
-
-# Key Specifications
-## Processor Core<a name="ZH-CN_TOPIC_0000002494991445"></a>
-
--   Quad-core ARM Cortex-A55 @ 1.4 GHz
-    -   32 KB I-Cache, 32 KB D-Cache / 512 KB L3 cache
-    -   NEON acceleration, integrated FPU
-
--   Embedded 32-bit MCU @ 500 MHz
-    -   32 KB I-Cache, 32 KB D-Cache / 64 KB TCM
-
-## Intelligent Video Analytics<a name="ZH-CN_TOPIC_0000002461672396"></a>
-
--   AI acceleration engine, up to 10.4 TOPS @ INT8
-    -   Dual-core heterogeneous engine
-    -   Engine 1: 4.8 TOPS, supports INT4/INT8/FP16
-    -   Engine 2: 5.6 TOPS, supports INT8/INT16
-    -   Full API and toolchain support for easy development
-
--   Dual-core Vision Q6 DSP
-    -   32 KB I-Cache / 32 KB D-Cache / 32 KB IRAM / 320 KB DRAM
-
--   Embedded intelligent compute acceleration engine
--   Embedded binocular depth acceleration unit
--   Embedded matrix compute acceleration unit
-
-## Video Codec<a name="ZH-CN_TOPIC_0000002494871485"></a>
-
--   H.264 BP/MP/HP
--   H.265 Main Profile
--   H.264/H.265 maximum encode/decode resolution: 8192 x 8192
--   H.264/H.265 encoding supports I/P frames
--   H.264/H.265 multi-stream encoding capability:
-    -   3840 x 2160 @ 60 fps + 1280 x 720 @ 30 fps
-    -   7680 x 4320 @ 15 fps
-
--   H.264/H.265/MPEG-4 multi-stream decoding capability:
-    -   3840 x 2160 @ 60 fps + 1920 x 1080 @ 60 fps
-
--   Supports up to 8-region pre-encoding OSD overlay
--   Supports CBR/VBR/AVBR/FIXQP/QPMAP bitrate control modes
--   Maximum output bitrate: 160 Mbps
--   Supports 8 regions of interest (ROI) encoding
--   Supports JPEG Baseline encode/decode
--   JPEG maximum resolution: 16384 x 16384
--   JPEG maximum performance:
-    -   Encode: 3840 x 2160 @ 60 fps (YUV420)
-    -   Decode: 3840 x 2160 @ 75 fps (YUV420)
-
-## Video Input Interface<a name="ZH-CN_TOPIC_0000002461831988"></a>
-
--   8-lane image sensor serial input; supports MIPI/LVDS/Sub-LVDS/HiSPi interfaces
--   Supports 2x4-lane or 4x2-lane combinations; up to 4 sensor serial inputs
--   Maximum resolution: 8192 x 8192
--   Supports 8/10/12/14-bit RGB Bayer DC timing video input at up to 150 MHz
--   Supports BT.601, BT.656, BT.1120 video input interfaces
--   Supports mainstream CMOS-level thermal imaging sensors
-
-## Digital Image Processing (ISP)<a name="ZH-CN_TOPIC_0000002494991449"></a>
-
--   ISP time-division multiplexed processing for multiple sensor inputs
--   Supports 3A (AE/AWB/AF) with user-adjustable control
--   Fixed pattern noise (FPN) correction
--   Bad pixel correction and lens shading correction
--   Up to 3-frame WDR and Advanced Local Tone Mapping
--   Multi-level 3D noise reduction, image edge enhancement, defog, and dynamic contrast enhancement
--   3D-LUT color adjustment
--   Lens geometric distortion correction and fisheye correction
--   6-DoF digital image stabilization (DIS) and Rolling Shutter correction
--   Image mirror, flip, 90°/270° rotation
--   PC-side ISP tuning tool
--   High-sensitivity noise reduction (HNR)
-
-## Video and Graphics Processing<a name="ZH-CN_TOPIC_0000002461672400"></a>
-
--   1/15.5 to 16x graphics and image scaling
--   Up to 4-channel panoramic video stitching
-    -   Input: 2 channels at 3840 x 2160 @ 30 fps; output: 4320 x 3840 @ 30 fps
-    -   Input: 4 channels at 2688 x 1520 @ 30 fps; output: 6080 x 2688 @ 30 fps
-
--   Video layer and graphics layer compositing
--   Color space conversion
-
-## Video Output<a name="ZH-CN_TOPIC_0000002494871489"></a>
-
--   HDMI 2.0 output
--   4-lane MIPI DSI/CSI output at up to 2.5 Gbps/lane
--   Built-in analog SD CVBS output
--   Supports 8/16/24-bit RGB, BT.656, BT.1120 digital interfaces
--   Two independent HD video outputs simultaneously
-    -   Supports any two interfaces with non-synchronized output
-    -   One output supports PIP (Picture in Picture)
-
--   Maximum output: 3840 x 2160 @ 60 fps + 1920 x 1080 @ 60 fps
-
-## Audio Interface and Processing<a name="ZH-CN_TOPIC_0000002461831992"></a>
-
--   Built-in audio codec supporting 16-bit audio input and output
--   I2S interface
-    -   Supports multi-channel time division multiplexing (TDM)
-
--   HDMI audio output
--   Software-based multi-protocol audio codec
--   Audio 3A processing (AEC/ANR/ALC)
--   Supports G.711/G.726/AAC and other audio encoding formats
-
-## Security Isolation and Engine<a name="ZH-CN_TOPIC_0000002494991453"></a>
-
--   Secure boot
--   TrustZone-based REE/TEE hardware isolation
--   Hardware AES symmetric encryption
--   Hardware RSA2048/3072/4096 signature verification
--   Hardware SHA-256/384/512 and HMAC\_SHA256/384/512
--   Hardware random number generator (RNG)
--   30 Kbit OTP storage available to customers
-
-## Network Interface<a name="ZH-CN_TOPIC_0000002461672404"></a>
-
--   2 Gigabit Ethernet interfaces
-    -   Supports RGMII and RMII interface modes
-    -   Supports TSO, UFO, COE acceleration units
-    -   Supports Jumbo Frames
-
-## Peripheral Interfaces<a name="ZH-CN_TOPIC_0000002494871493"></a>
-
--   Power-on reset (POR) and external reset input
--   4-channel LSADC
--   Multiple UART, I<sup>2</sup>C, SPI, and GPIO interfaces
--   2 SDIO 3.0 interfaces
-    -   SDIO0 supports SDXC cards up to 2 TB
-    -   SDIO1 supports Wi-Fi module connection
-
--   2 USB 3.0/USB 2.0 interfaces
-    -   USB0: host only
-    -   USB1: switchable between host and device
-
--   2-lane PCIe 2.0 high-speed interface
-    -   Supports RC/EP mode
-    -   Configurable as 2-lane PCIe 2.0
-    -   Configurable as 1-lane PCIe 2.0 + USB 3.0
-
-## External Memory Interface<a name="ZH-CN_TOPIC_0000002461831996"></a>
-
--   DDR4/LPDDR4/LPDDR4x interface
-    -   Supports 4 x 16-bit DDR4
-    -   Supports 2 x 32-bit LPDDR4/LPDDR4x
-    -   DDR4 max speed: 3200 Mbps
-    -   LPDDR4/LPDDR4x max speed: 3733 Mbps
-    -   Maximum capacity: 8 GB
-
--   SPI Nor/SPI NAND Flash interface
-    -   Supports 1, 2, and 4-wire modes
-    -   SPI Nor Flash supports 3-byte and 4-byte address modes
-
--   NAND Flash interface
-    -   Supports SLC and MLC asynchronous devices
-    -   Supports 2/4/8/16 KB page sizes
-    -   Supports 8/16/24/28/40/64-bit ECC (per 1 KB unit)
-
--   eMMC 5.1 interface, maximum capacity 2 TB
--   Boot from eMMC, SPI Nor/SPI NAND Flash, NAND Flash, or PCIe slave
-
-## SDK<a name="ZH-CN_TOPIC_0000002494991457"></a>
-
--   ARM CPU supports Linux SMP
--   DSP/MCU supports LiteOS
-
-## Physical Specifications<a name="ZH-CN_TOPIC_0000002461672408"></a>
-
--   Power consumption
-    -   5.2 W typical (4K30 + 4 TOPS)
-
--   Operating voltage
-    -   Core voltage: 0.8 V
-    -   IO voltage: 1.8/3.3 V
-    -   DDR4/LPDDR4/LPDDR4x interface voltage: 1.2/1.1/0.6 V respectively
-
--   Package
-    -   RoHS, FC-BGA 23 mm x 23 mm
-    -   Pin pitch: 0.65 mm
-
-# Block Diagram
-![](figures/zh-cn_image_0000002495024793.png)
-
-# Hi3403V100 Professional Intelligent IP Camera Solution
-![](figures/zh-cn_image_0000002462025394.png)
-
-# Acronyms and Abbreviations
+--- # General Introduction
+Hi3403V100 is a professional ultra-HD intelligent network video recorder (NVR) SoC. The chip supports up to four sensor inputs and up to 4K60 ISP image processing, along with 3-frame WDR, multi-level noise reduction, 6-axis electronic image stabilization, hardware stitching, and other image enhancement algorithms, delivering exceptional image processing capability. Hi3403V100 integrates a quad-core A55 processor, providing efficient and flexible CPU resources for compute and control requirements. An embedded single-core MCU meets the needs of low-latency scenarios. Hi3403V100 integrates a high-efficiency AI inference engine with up to 10.4 TOPS INT8, supporting mainstream AI frameworks. Dual-core Vision DSP is embedded to address differentiated CV compute requirements. Hi3403V100 is manufactured on an advanced 12 nm low-power process with a 0.65 mm pitch package, and supports LPDDR4/LPDDR4x/DDR4 memory, enabling compact product designs and rapid mass production. Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer product deployment. # Key Features
+- AI Acceleration - 10.4 TOPS INT8 dual NN acceleration engines - Dual-core Vision Q6 DSP processing - 4K60 Encode/Decode - H.265/H.264 encoding at 4K60. - 10-channel 1080p30 H.265/H.264 decoding. - 4-Channel 4M Real-Time Stitching Supports 4-channel 4 Mp30 in-device real-time hardware stitching. - High-Speed Interfaces Supports USB 3.0 and PC Ie 2.0 high-speed interfaces. - Compact Package 23 mm x 23 mm FC-BGA package. # Key Specifications
+## Processor Core<a name="ZH-CN_TOPIC_0000002494991445"></a> - Quad-core ARM Cortex-A55 @ 1.4 G Hz - 32 KB I-Cache, 32 KB D-Cache / 512 KB L3 cache - NEON acceleration, integrated FPU - Embedded 32-bit MCU @ 500 M Hz - 32 KB I-Cache, 32 KB D-Cache / 64 KB TCM ## Intelligent Video Analytics<a name="ZH-CN_TOPIC_0000002461672396"></a> - AI acceleration engine, up to 10.4 TOPS @ INT8 - Dual-core heterogeneous engine - Engine 1: 4.8 TOPS, supports INT4/INT8/FP16 - Engine 2: 5.6 TOPS, supports INT8/INT16 - Full API and toolchain support for easy development - Dual-core Vision Q6 DSP - 32 KB I-Cache / 32 KB D-Cache / 32 KB IRAM / 320 KB DRAM - Embedded intelligent compute acceleration engine
+- Embedded binocular depth acceleration unit
+- Embedded matrix compute acceleration unit ## Video Codec<a name="ZH-CN_TOPIC_0000002494871485"></a> - H.264 BP/MP/HP
+- H.265 Main Profile
+- H.264/H.265 maximum encode/decode resolution: 8192 x 8192
+- H.264/H.265 encoding supports I/P frames
+- H.264/H.265 multi-stream encoding capability: - 3840 x 2160 @ 60 fps + 1280 x 720 @ 30 fps - 7680 x 4320 @ 15 fps - H.264/H.265/MPEG-4 multi-stream decoding capability: - 3840 x 2160 @ 60 fps + 1920 x 1080 @ 60 fps - Supports up to 8-region pre-encoding OSD overlay
+- Supports CBR/VBR/AVBR/FIXQP/QPMAP bitrate control modes
+- Maximum output bitrate: 160 Mbps
+- Supports 8 regions of interest (ROI) encoding
+- Supports JPEG Baseline encode/decode
+- JPEG maximum resolution: 16384 x 16384
+- JPEG maximum performance: - Encode: 3840 x 2160 @ 60 fps (YUV420) - Decode: 3840 x 2160 @ 75 fps (YUV420) ## Video Input Interface<a name="ZH-CN_TOPIC_0000002461831988"></a> - 8-lane image sensor serial input; supports MIPI/LVDS/Sub-LVDS/HiS Pi interfaces
+- Supports 2x4-lane or 4x2-lane combinations; up to 4 sensor serial inputs
+- Maximum resolution: 8192 x 8192
+- Supports 8/10/12/14-bit RGB Bayer DC timing video input at up to 150 M Hz
+- Supports BT.601, BT.656, BT.1120 video input interfaces
+- Supports mainstream CMOS-level thermal imaging sensors ## Digital Image Processing (ISP)<a name="ZH-CN_TOPIC_0000002494991449"></a> - ISP time-division multiplexed processing for multiple sensor inputs
+- Supports 3A (AE/AWB/AF) with user-adjustable control
+- Fixed pattern noise (FPN) correction
+- Bad pixel correction and lens shading correction
+- Up to 3-frame WDR and Advanced Local Tone Mapping
+- Multi-level 3D noise reduction, image edge enhancement, defog, and dynamic contrast enhancement
+- 3D-LUT color adjustment
+- Lens geometric distortion correction and fisheye correction
+- 6-DoF digital image stabilization (DIS) and Rolling Shutter correction
+- Image mirror, flip, 90°/270° rotation
+- PC-side ISP tuning tool
+- High-sensitivity noise reduction (HNR) ## Video and Graphics Processing<a name="ZH-CN_TOPIC_0000002461672400"></a> - 1/15.5 to 16x graphics and image scaling
+- Up to 4-channel panoramic video stitching - Input: 2 channels at 3840 x 2160 @ 30 fps; output: 4320 x 3840 @ 30 fps - Input: 4 channels at 2688 x 1520 @ 30 fps; output: 6080 x 2688 @ 30 fps - Video layer and graphics layer compositing
+- Color space conversion ## Video Output<a name="ZH-CN_TOPIC_0000002494871489"></a> - HDMI 2.0 output
+- 4-lane MIPI DSI/CSI output at up to 2.5 Gbps/lane
+- Built-in analog SD CVBS output
+- Supports 8/16/24-bit RGB, BT.656, BT.1120 digital interfaces
+- Two independent HD video outputs simultaneously - Supports any two interfaces with non-synchronized output - One output supports PIP (Picture in Picture) - Maximum output: 3840 x 2160 @ 60 fps + 1920 x 1080 @ 60 fps ## Audio Interface and Processing<a name="ZH-CN_TOPIC_0000002461831992"></a> - Built-in audio codec supporting 16-bit audio input and output
+- I2S interface - Supports multi-channel time division multiplexing (TDM) - HDMI audio output
+- Software-based multi-protocol audio codec
+- Audio 3A processing (AEC/ANR/ALC)
+- Supports G.711/G.726/AAC and other audio encoding formats ## Security Isolation and Engine<a name="ZH-CN_TOPIC_0000002494991453"></a> - Secure boot
+- Trust Zone-based REE/TEE hardware isolation
+- Hardware AES symmetric encryption
+- Hardware RSA2048/3072/4096 signature verification
+- Hardware SHA-256/384/512 and HMAC\_SHA256/384/512
+- Hardware random number generator (RNG)
+- 30 Kbit OTP storage available to customers ## Network Interface<a name="ZH-CN_TOPIC_0000002461672404"></a> - 2 Gigabit Ethernet interfaces - Supports RGMII and RMII interface modes - Supports TSO, UFO, COE acceleration units - Supports Jumbo Frames ## Peripheral Interfaces<a name="ZH-CN_TOPIC_0000002494871493"></a> - Power-on reset (POR) and external reset input
+- 4-channel LSADC
+- Multiple UART, I<sup>2</sup>C, SPI, and GPIO interfaces
+- 2 SDIO 3.0 interfaces - SDIO0 supports SDXC cards up to 2 TB - SDIO1 supports Wi-Fi module connection - 2 USB 3.0/USB 2.0 interfaces - USB0: host only - USB1: switchable between host and device - 2-lane PC Ie 2.0 high-speed interface - Supports RC/EP mode - Configurable as 2-lane PC Ie 2.0 - Configurable as 1-lane PC Ie 2.0 + USB 3.0 ## External Memory Interface<a name="ZH-CN_TOPIC_0000002461831996"></a> - DDR4/LPDDR4/LPDDR4x interface - Supports 4 x 16-bit DDR4 - Supports 2 x 32-bit LPDDR4/LPDDR4x - DDR4 max speed: 3200 Mbps - LPDDR4/LPDDR4x max speed: 3733 Mbps - Maximum capacity: 8 GB - SPI Nor/SPI NAND Flash interface - Supports 1, 2, and 4-wire modes - SPI Nor Flash supports 3-byte and 4-byte address modes - NAND Flash interface - Supports SLC and MLC asynchronous devices - Supports 2/4/8/16 KB page sizes - Supports 8/16/24/28/40/64-bit ECC (per 1 KB unit) - e MMC 5.1 interface, maximum capacity 2 TB
+- Boot from e MMC, SPI Nor/SPI NAND Flash, NAND Flash, or PC Ie slave ## SDK<a name="ZH-CN_TOPIC_0000002494991457"></a> - ARM CPU supports Linux SMP
+- DSP/MCU supports Lite OS ## Physical Specifications<a name="ZH-CN_TOPIC_0000002461672408"></a> - Power consumption - 5.2 W typical (4K30 + 4 TOPS) - Operating voltage - Core voltage: 0.8 V - IO voltage: 1.8/3.3 V - DDR4/LPDDR4/LPDDR4x interface voltage: 1.2/1.1/0.6 V respectively - Package - Ro HS, FC-BGA 23 mm x 23 mm - Pin pitch: 0.65 mm # Block Diagram
+![](figures/zh-cn_image_0000002495024793.png) # Hi3403V100 Professional Intelligent IP Camera Solution
+![](figures/zh-cn_image_0000002462025394.png) # Acronyms and Abbreviations
 <a name="table123mcpsimp"></a>
 <table><tbody><tr id="row128mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p130mcpsimp"><a name="p130mcpsimp"></a><a name="p130mcpsimp"></a>3DNR</p>
 </td>
@@ -233,11 +67,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p137mcpsimp"><a name="p137mcpsimp"></a><a name="p137mcpsimp"></a>advanced audio coding</p>
 </td>
 </tr>
-<tr id="row138mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p140mcpsimp"><a name="p140mcpsimp"></a><a name="p140mcpsimp"></a>AE</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p142mcpsimp"><a name="p142mcpsimp"></a><a name="p142mcpsimp"></a>automatic exposure</p>
-</td>
-</tr>
 <tr id="row143mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p145mcpsimp"><a name="p145mcpsimp"></a><a name="p145mcpsimp"></a>AEC</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p147mcpsimp"><a name="p147mcpsimp"></a><a name="p147mcpsimp"></a>acoustic echo control</p>
@@ -246,11 +75,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <tr id="row148mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p150mcpsimp"><a name="p150mcpsimp"></a><a name="p150mcpsimp"></a>AES</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p152mcpsimp"><a name="p152mcpsimp"></a><a name="p152mcpsimp"></a>advanced encryption standard</p>
-</td>
-</tr>
-<tr id="row153mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>AF</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>automatic focus</p>
 </td>
 </tr>
 <tr id="row158mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p160mcpsimp"><a name="p160mcpsimp"></a><a name="p160mcpsimp"></a>ALC</p>
@@ -298,11 +122,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a>complementary metal-oxide-semiconductor</p>
 </td>
 </tr>
-<tr id="row203mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p205mcpsimp"><a name="p205mcpsimp"></a><a name="p205mcpsimp"></a>CV</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a>computer vision</p>
-</td>
-</tr>
 <tr id="row208mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p210mcpsimp"><a name="p210mcpsimp"></a><a name="p210mcpsimp"></a>codec</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p212mcpsimp"><a name="p212mcpsimp"></a><a name="p212mcpsimp"></a>coder/decoder</p>
@@ -311,11 +130,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <tr id="row213mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p215mcpsimp"><a name="p215mcpsimp"></a><a name="p215mcpsimp"></a>CSI</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p217mcpsimp"><a name="p217mcpsimp"></a><a name="p217mcpsimp"></a>camera serial interface</p>
-</td>
-</tr>
-<tr id="row218mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p220mcpsimp"><a name="p220mcpsimp"></a><a name="p220mcpsimp"></a>DC</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p222mcpsimp"><a name="p222mcpsimp"></a><a name="p222mcpsimp"></a>digital camera</p>
 </td>
 </tr>
 <tr id="row223mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p225mcpsimp"><a name="p225mcpsimp"></a><a name="p225mcpsimp"></a>DCI</p>
@@ -358,14 +172,9 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p262mcpsimp"><a name="p262mcpsimp"></a><a name="p262mcpsimp"></a>error-correcting code</p>
 </td>
 </tr>
-<tr id="row263mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p265mcpsimp"><a name="p265mcpsimp"></a><a name="p265mcpsimp"></a>eMMC</p>
+<tr id="row263mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p265mcpsimp"><a name="p265mcpsimp"></a><a name="p265mcpsimp"></a>e MMC</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a>embedded multimedia card</p>
-</td>
-</tr>
-<tr id="row268mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p270mcpsimp"><a name="p270mcpsimp"></a><a name="p270mcpsimp"></a>EP</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p272mcpsimp"><a name="p272mcpsimp"></a><a name="p272mcpsimp"></a>endpoint</p>
 </td>
 </tr>
 <tr id="row273mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p275mcpsimp"><a name="p275mcpsimp"></a><a name="p275mcpsimp"></a>FCCSP</p>
@@ -383,11 +192,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p287mcpsimp"><a name="p287mcpsimp"></a><a name="p287mcpsimp"></a>floating-point unit</p>
 </td>
 </tr>
-<tr id="row288mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p290mcpsimp"><a name="p290mcpsimp"></a><a name="p290mcpsimp"></a>GE</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p292mcpsimp"><a name="p292mcpsimp"></a><a name="p292mcpsimp"></a>gigabit Ethernet</p>
-</td>
-</tr>
 <tr id="row293mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p295mcpsimp"><a name="p295mcpsimp"></a><a name="p295mcpsimp"></a>GMAC</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p297mcpsimp"><a name="p297mcpsimp"></a><a name="p297mcpsimp"></a>Gigabit Ethernet Media Access Controller</p>
@@ -403,12 +207,7 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p307mcpsimp"><a name="p307mcpsimp"></a><a name="p307mcpsimp"></a>graphical user interface</p>
 </td>
 </tr>
-<tr id="row308mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p310mcpsimp"><a name="p310mcpsimp"></a><a name="p310mcpsimp"></a>HD</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p312mcpsimp"><a name="p312mcpsimp"></a><a name="p312mcpsimp"></a>high definition</p>
-</td>
-</tr>
-<tr id="row313mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p315mcpsimp"><a name="p315mcpsimp"></a><a name="p315mcpsimp"></a>HiSPI</p>
+<tr id="row313mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p315mcpsimp"><a name="p315mcpsimp"></a><a name="p315mcpsimp"></a>Hi SPI</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p317mcpsimp"><a name="p317mcpsimp"></a><a name="p317mcpsimp"></a>high-speed serial pixel interface</p>
 </td>
@@ -483,11 +282,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p389mcpsimp"><a name="p389mcpsimp"></a><a name="p389mcpsimp"></a>mobile industry processor interface</p>
 </td>
 </tr>
-<tr id="row390mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p392mcpsimp"><a name="p392mcpsimp"></a><a name="p392mcpsimp"></a>NR</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p394mcpsimp"><a name="p394mcpsimp"></a><a name="p394mcpsimp"></a>noise reduction</p>
-</td>
-</tr>
 <tr id="row395mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p397mcpsimp"><a name="p397mcpsimp"></a><a name="p397mcpsimp"></a>OSD</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p399mcpsimp"><a name="p399mcpsimp"></a><a name="p399mcpsimp"></a>on-screen display</p>
@@ -498,7 +292,7 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p404mcpsimp"><a name="p404mcpsimp"></a><a name="p404mcpsimp"></a>one-time programming</p>
 </td>
 </tr>
-<tr id="row405mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p407mcpsimp"><a name="p407mcpsimp"></a><a name="p407mcpsimp"></a>PCIe</p>
+<tr id="row405mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p407mcpsimp"><a name="p407mcpsimp"></a><a name="p407mcpsimp"></a>PC Ie</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p409mcpsimp"><a name="p409mcpsimp"></a><a name="p409mcpsimp"></a>peripheral component interconnect express</p>
 </td>
@@ -523,11 +317,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p429mcpsimp"><a name="p429mcpsimp"></a><a name="p429mcpsimp"></a>random access memory</p>
 </td>
 </tr>
-<tr id="row430mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p432mcpsimp"><a name="p432mcpsimp"></a><a name="p432mcpsimp"></a>RC</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p434mcpsimp"><a name="p434mcpsimp"></a><a name="p434mcpsimp"></a>root complex</p>
-</td>
-</tr>
 <tr id="row435mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p437mcpsimp"><a name="p437mcpsimp"></a><a name="p437mcpsimp"></a>RGB</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p439mcpsimp"><a name="p439mcpsimp"></a><a name="p439mcpsimp"></a>red-green-blue</p>
@@ -543,7 +332,7 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p449mcpsimp"><a name="p449mcpsimp"></a><a name="p449mcpsimp"></a>reduced media-independent interface</p>
 </td>
 </tr>
-<tr id="row450mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p452mcpsimp"><a name="p452mcpsimp"></a><a name="p452mcpsimp"></a>RoHS</p>
+<tr id="row450mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p452mcpsimp"><a name="p452mcpsimp"></a><a name="p452mcpsimp"></a>Ro HS</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p454mcpsimp"><a name="p454mcpsimp"></a><a name="p454mcpsimp"></a>restriction of hazardous substances</p>
 </td>
@@ -561,11 +350,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <tr id="row465mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p467mcpsimp"><a name="p467mcpsimp"></a><a name="p467mcpsimp"></a>RNG</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p469mcpsimp"><a name="p469mcpsimp"></a><a name="p469mcpsimp"></a>random number generator</p>
-</td>
-</tr>
-<tr id="row470mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p472mcpsimp"><a name="p472mcpsimp"></a><a name="p472mcpsimp"></a>SD</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p474mcpsimp"><a name="p474mcpsimp"></a><a name="p474mcpsimp"></a>secure digital</p>
 </td>
 </tr>
 <tr id="row475mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p477mcpsimp"><a name="p477mcpsimp"></a><a name="p477mcpsimp"></a>SDIO</p>
@@ -618,11 +402,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <td class="cellrowborder" valign="top" width="84%"><p id="p524mcpsimp"><a name="p524mcpsimp"></a><a name="p524mcpsimp"></a>TCP segmentation offload</p>
 </td>
 </tr>
-<tr id="row525mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p527mcpsimp"><a name="p527mcpsimp"></a><a name="p527mcpsimp"></a>TX</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p529mcpsimp"><a name="p529mcpsimp"></a><a name="p529mcpsimp"></a>transmit</p>
-</td>
-</tr>
 <tr id="row530mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p532mcpsimp"><a name="p532mcpsimp"></a><a name="p532mcpsimp"></a>UART</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p534mcpsimp"><a name="p534mcpsimp"></a><a name="p534mcpsimp"></a>universal asynchronous receiver transmitter</p>
@@ -636,16 +415,6 @@ Hi3403V100 comes with a stable, easy-to-use SDK to support rapid customer produc
 <tr id="row540mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>VBR</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%"><p id="p544mcpsimp"><a name="p544mcpsimp"></a><a name="p544mcpsimp"></a>variable bit rate</p>
-</td>
-</tr>
-<tr id="row545mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p547mcpsimp"><a name="p547mcpsimp"></a><a name="p547mcpsimp"></a>VI</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p549mcpsimp"><a name="p549mcpsimp"></a><a name="p549mcpsimp"></a>video input</p>
-</td>
-</tr>
-<tr id="row550mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p552mcpsimp"><a name="p552mcpsimp"></a><a name="p552mcpsimp"></a>VO</p>
-</td>
-<td class="cellrowborder" valign="top" width="84%"><p id="p554mcpsimp"><a name="p554mcpsimp"></a><a name="p554mcpsimp"></a>video output</p>
 </td>
 </tr>
 <tr id="row555mcpsimp"><td class="cellrowborder" valign="top" width="16%"><p id="p557mcpsimp"><a name="p557mcpsimp"></a><a name="p557mcpsimp"></a>VQE</p>

@@ -1,14 +1,8 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/en/Security Subsystem User Guide/Security Subsystem User Guide.md
----
-
-# Preface
-**Product Version<a name="section18702155413353"></a>**
-
-The product versions corresponding to this document are as follows.
-
-<a name="table187251254193511"></a>
+--- # Preface
+**Product Version<a name="section18702155413353"></a>** The product versions corresponding to this document are as follows. <a name="table187251254193511"></a>
 <table><thead align="left"><tr id="row13800185412357"><th class="cellrowborder" valign="top" width="31%" id="mcps1.1.3.1.1"><p id="p1680011544355"><a name="p1680011544355"></a><a name="p1680011544355"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.3.1.2"><p id="p38006546351"><a name="p38006546351"></a><a name="p38006546351"></a>Product Version</p>
@@ -20,31 +14,17 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p14800145403519"><a name="p14800145403519"></a><a name="p14800145403519"></a>V100</p>
 </td>
 </tr>
-<tr id="row1814825163714"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p111491650373"><a name="p111491650373"></a><a name="p111491650373"></a>SS626</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p114975173716"><a name="p114975173716"></a><a name="p114975173716"></a>V100</p>
 </td>
 </tr>
-<tr id="row203262171414"><td class="cellrowborder" valign="top" width="31%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="69%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Intended Audience<a name="section8711125463519"></a>**
-
-This document (this guide) is mainly intended for the following engineers:
-
--   Technical support engineers
--   Software development engineers
-
-**Symbol Conventions<a name="section27127546353"></a>**
-
-The following symbols may appear in this document. Their meanings are as follows.
-
-<a name="table18726165483514"></a>
+</table> **Intended Audience<a name="section8711125463519"></a>** This document (this guide) is mainly intended for the following engineers: - Technical support engineers
+- Software development engineers **Symbol Conventions<a name="section27127546353"></a>** The following symbols may appear in this document. Their meanings are as follows. <a name="table18726165483514"></a>
 <table><thead align="left"><tr id="row16800195493519"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p178005548352"><a name="p178005548352"></a><a name="p178005548352"></a><strong id="b7800155433510"><a name="b7800155433510"></a><a name="b7800155433510"></a>Symbol</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p2800105483516"><a name="p2800105483516"></a><a name="p2800105483516"></a><strong id="b1800554193519"><a name="b1800554193519"></a><a name="b1800554193519"></a>Description</strong></p>
@@ -56,34 +36,8 @@ The following symbols may appear in this document. Their meanings are as follows
 <td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p58002541356"><a name="p58002541356"></a><a name="p58002541356"></a>Indicates a high-risk hazard which, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row9800135483510"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p191mcpsimp"><a name="p191mcpsimp"></a><a name="p191mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002457868937.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p3800145419357"><a name="p3800145419357"></a><a name="p3800145419357"></a>Indicates a medium-risk hazard which, if not avoided, may result in death or serious injury.</p>
-</td>
-</tr>
-<tr id="row1080055419355"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002457828817.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p15801155433513"><a name="p15801155433513"></a><a name="p15801155433513"></a>Indicates a low-risk hazard which, if not avoided, may result in minor or moderate injury.</p>
-</td>
-</tr>
-<tr id="row2801054103511"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p201mcpsimp"><a name="p201mcpsimp"></a><a name="p201mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002424349998.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p128011954183510"><a name="p128011954183510"></a><a name="p128011954183510"></a>Used to convey equipment or environmental safety alert information. If not avoided, it may result in equipment damage, data loss, performance degradation, or other unpredictable results.</p>
-<p id="p18010545352"><a name="p18010545352"></a><a name="p18010545352"></a>"Caution" does not involve personal injury.</p>
-</td>
-</tr>
-<tr id="row17801145414351"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002457868929.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="80%" headers="mcps1.1.3.1.2 "><p id="p16801145418351"><a name="p16801145418351"></a><a name="p16801145418351"></a>Supplemental information to key points in the main text.</p>
-<p id="p2801054163520"><a name="p2801054163520"></a><a name="p2801054163520"></a>"Note" is not a safety warning and does not contain information about personal injury, equipment, or environmental damage.</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**Revision History<a name="section2467512116410"></a>**
-
-<a name="table256mcpsimp"></a>
+</table> **Revision History<a name="section2467512116410"></a>** <a name="table256mcpsimp"></a>
 <table><thead align="left"><tr id="row262mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p264mcpsimp"><a name="p264mcpsimp"></a><a name="p264mcpsimp"></a><strong id="b265mcpsimp"><a name="b265mcpsimp"></a><a name="b265mcpsimp"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26%" id="mcps1.1.4.1.2"><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a><strong id="b268mcpsimp"><a name="b268mcpsimp"></a><a name="b268mcpsimp"></a>Release Date</strong></p>
@@ -100,64 +54,19 @@ The following symbols may appear in this document. Their meanings are as follows
 </td>
 </tr>
 </tbody>
-</table>
-
-# Overview
-The SSxxxx SoC provides a comprehensive set of security features, including a series of hardware, firmware, and software components to support customers in building secure and trusted devices. The main security features are as follows:
-
--   One Time Programmable (OTP), used for storing RSA public key hashes for device secure boot verification, multiple groups of symmetric root keys, various SoC security-related control information, and user-defined data.
--   The chip supports three-level key derivation based on OTP symmetric root keys. It supports scrambling protection for root keys flashed into OTP. All plaintext keys during the key derivation process are invisible to software.
--   Hardware true random number generator.
--   Asymmetric cryptographic algorithm RSA module.
--   SPACC module supporting multiple general hash algorithms and symmetric cryptographic algorithms.
--   Hardware root-of-trust-based secure boot: supports secure image step-by-step verification; supports optional image encryption; supports TEE/REE trust chain separation; secure boot and non-secure boot images have a unified format, meaning that when secure boot is not enabled, non-encrypted secure boot images can still boot normally.
--   Supports ARM TrustZone, supporting secure and non-secure memory address isolation. Customers can build TEE security solutions.
--   Supports secure JTAG.
-
-# OTP
-## Introduction<a name="ZH-CN_TOPIC_0000002457828777"></a>
-
-OTP is a non-volatile memory. Its main characteristic is that once a storage space content is written from 0 to 1, or locked after writing, it cannot be changed again. The SSxxxx OTP includes the following major areas:
-
-1.  Key storage area for various SoC keys: includes storing the root public key hash for secure boot (restricted readable), and storing multiple symmetric cipher algorithm root keys. Once the write operation is initiated on a key area, it locks itself and cannot be changed.
-
-    The chip can store multiple groups of root public key hashes for secure boot verification. These include: chip manufacturer root public key hash (pre-programmed), OEM root public key hash, and third-party dual-signature root public key hash. Customers can select the appropriate root public key based on actual product requirements (via OTP selection).
-
-    Encryption/decryption root keys: The chip reserves 4 OEM-writable symmetric cipher root key OTP spaces, oem\_root\_symc\_key0 through oem\_root\_symc\_key3. OEM can use one or more of these root keys to derive different key encryption keys and working keys. These key areas can be written through the corresponding OTP Flashing interface. Once written, the hardware locks them automatically and they cannot be changed. The written content cannot be read through software or JTAG interfaces.
-
-    The chip is pre-programmed with one chip manufacturer TEE symmetric cipher algorithm encryption/decryption root key. Users can choose whether to use it based on actual needs (via OTP selection).
-
-2.  SoC important feature/function switch control area (including single-bit control area and multi-bit control area): Most important SoC features can be controlled through OTP to improve product application flexibility. For example: secure boot enable, whether the secure boot image is encrypted, whether secure boot uses redundant backup, whether to enable TEE, JTAG working mode selection, etc. After the target values for the feature/function switch control area are flashed, they can be locked to prevent subsequent illegal tampering.
-
-    **It is strongly recommended that customers set all feature/function switch bit values before final product release and force lock them! Even if the default values meet requirements, locking is required.**
-
-3.  User-defined area: The chip integrates approximately 25 Kbits of user-defined OTP area for storing user data.
-
-    The user-defined area also includes a 128-bit version control area: Used for storing important version identifiers to prevent version rollback attacks. That is, preventing attackers from using old legitimate images with security vulnerabilities for re-upgrading, implementing replay attacks. The version control area cannot be locked. Each control bit can only be written from 0 to 1. Once written to 1, it cannot be changed (one-way mode).
-
-    In the SSxxxx SDK package, OTP-related read/write interfaces are provided. For details, refer to the "[SSxxxx OTP Field Definitions](#ZH-CN_TOPIC_0000002457868877)" section and the document "OTP API Reference."
-
-    > **Note:**
-    > For all OTP control bits, regardless of whether the default values meet the actual application requirements, please re-burn and lock them all to ensure device security.
-
-## SSxxxx OTP Field Definitions<a name="ZH-CN_TOPIC_0000002457868877"></a>
-
-### OTP Bit Field Attribute Description<a name="ZH-CN_TOPIC_0000002424190150"></a>
-
-#### LOCK Attribute Description<a name="ZH-CN_TOPIC_0000002457828801"></a>
-
--   **Oneway attribute**: Bit fields with this attribute that have not been flashed to 1 can be flashed again in subsequent operations until all bits are flashed to 1. The lock enable bit does not lock bit fields with this attribute.
--   **lockable attribute**: Bit fields with the lockable attribute behave identically to the oneway attribute before locking. After Flashing the corresponding lock bit, even bits that have not been flashed cannot be flashed again. **It is recommended that for lockable attribute bit fields, the corresponding bit fields should be locked after Flashing the value to prevent modification.**
--   **wrlock attribute**: As long as a write operation has been performed, the corresponding bit field is locked and cannot be changed.
-
-#### Load Shadow Attribute Description<a name="ZH-CN_TOPIC_0000002457868889"></a>
-
--   After a chip power-on hard reset, OTP values are automatically loaded into the corresponding registers (shadow registers). After each OTP burn, the power must be cycled to read the refreshed values from the shadow registers.
--   OTP bit fields do not have corresponding shadow registers.
-
-### Key Area<a name="ZH-CN_TOPIC_0000002457828785"></a>
-
-<a name="table1869mcpsimp"></a>
+</table> # Overview
+The SSxxxx SoC provides a comprehensive set of security features, including a series of hardware, firmware, and software components to support customers in building secure and trusted devices. The main security features are as follows: - One Time Programmable (OTP), used for storing RSA public key hashes for device secure boot verification, multiple groups of symmetric root keys, various SoC security-related control information, and user-defined data.
+- The chip supports three-level key derivation based on OTP symmetric root keys. It supports scrambling protection for root keys flashed into OTP. All plaintext keys during the key derivation process are invisible to software.
+- Hardware true random number generator.
+- Asymmetric cryptographic algorithm RSA module.
+- SPACC module supporting multiple general hash algorithms and symmetric cryptographic algorithms.
+- Hardware root-of-trust-based secure boot: supports secure image step-by-step verification; supports optional image encryption; supports TEE/REE trust chain separation; secure boot and non-secure boot images have a unified format, meaning that when secure boot is not enabled, non-encrypted secure boot images can still boot normally.
+- Supports ARM TrustZone, supporting secure and non-secure memory address isolation. Customers can build TEE security solutions.
+- Supports secure JTAG. # OTP
+## Introduction<a name="ZH-CN_TOPIC_0000002457828777"></a> OTP is a non-volatile memory. Its main characteristic is that once a storage space content is written from 0 to 1, or locked after writing, it cannot be changed again. The SSxxxx OTP includes the following major areas: 1. Key storage area for various SoC keys: includes storing the root public key hash for secure boot (restricted readable), and storing multiple symmetric cipher algorithm root keys. Once the write operation is initiated on a key area, it locks itself and cannot be changed. The chip can store multiple groups of root public key hashes for secure boot verification. These include: chip manufacturer root public key hash (pre-programmed), OEM root public key hash, and third-party dual-signature root public key hash. Customers can select the appropriate root public key based on actual product requirements (via OTP selection). Encryption/decryption root keys: The chip reserves 4 OEM-writable symmetric cipher root key OTP spaces, oem\_root\_symc\_key0 through oem\_root\_symc\_key3. OEM can use one or more of these root keys to derive different key encryption keys and working keys. These key areas can be written through the corresponding OTP Flashing interface. Once written, the hardware locks them automatically and they cannot be changed. The written content cannot be read through software or JTAG interfaces. The chip is pre-programmed with one chip manufacturer TEE symmetric cipher algorithm encryption/decryption root key. Users can choose whether to use it based on actual needs (via OTP selection). 2. SoC important feature/function switch control area (including single-bit control area and multi-bit control area): Most important SoC features can be controlled through OTP to improve product application flexibility. For example: secure boot enable, whether the secure boot image is encrypted, whether secure boot uses redundant backup, whether to enable TEE, JTAG working mode selection, etc. After the target values for the feature/function switch control area are flashed, they can be locked to prevent subsequent illegal tampering. **It is strongly recommended that customers set all feature/function switch bit values before final product release and force lock them! Even if the default values meet requirements, locking is required.** 3. User-defined area: The chip integrates approximately 25 Kbits of user-defined OTP area for storing user data. The user-defined area also includes a 128-bit version control area: Used for storing important version identifiers to prevent version rollback attacks. That is, preventing attackers from using old legitimate images with security vulnerabilities for re-upgrading, implementing replay attacks. The version control area cannot be locked. Each control bit can only be written from 0 to 1. Once written to 1, it cannot be changed (one-way mode). In the SSxxxx SDK package, OTP-related read/write interfaces are provided. For details, refer to the "[SSxxxx OTP Field Definitions](#ZH-CN_TOPIC_0000002457868877)" section and the document "OTP API Reference." > **Note:** > For all OTP control bits, regardless of whether the default values meet the actual application requirements, please re-burn and lock them all to ensure device security. ## SSxxxx OTP Field Definitions<a name="ZH-CN_TOPIC_0000002457868877"></a> ### OTP Bit Field Attribute Description<a name="ZH-CN_TOPIC_0000002424190150"></a> #### LOCK Attribute Description<a name="ZH-CN_TOPIC_0000002457828801"></a> - **Oneway attribute**: Bit fields with this attribute that have not been flashed to 1 can be flashed again in subsequent operations until all bits are flashed to 1. The lock enable bit does not lock bit fields with this attribute.
+- **lockable attribute**: Bit fields with the lockable attribute behave identically to the oneway attribute before locking. After Flashing the corresponding lock bit, even bits that have not been flashed cannot be flashed again. **It is recommended that for lockable attribute bit fields, the corresponding bit fields should be locked after Flashing the value to prevent modification.**
+- **wrlock attribute**: As long as a write operation has been performed, the corresponding bit field is locked and cannot be changed. #### Load Shadow Attribute Description<a name="ZH-CN_TOPIC_0000002457868889"></a> - After a chip power-on hard reset, OTP values are automatically loaded into the corresponding registers (shadow registers). After each OTP burn, the power must be cycled to read the refreshed values from the shadow registers.
+- OTP bit fields do not have corresponding shadow registers. ### Key Area<a name="ZH-CN_TOPIC_0000002457828785"></a> <a name="table1869mcpsimp"></a>
 <table><thead align="left"><tr id="row1877mcpsimp"><th class="cellrowborder" valign="top" width="28%" id="mcps1.1.6.1.1"><p id="p1879mcpsimp"><a name="p1879mcpsimp"></a><a name="p1879mcpsimp"></a>Field Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="9%" id="mcps1.1.6.1.2"><p id="p1881mcpsimp"><a name="p1881mcpsimp"></a><a name="p1881mcpsimp"></a>Bit Width</p>
@@ -237,21 +146,9 @@ OTP is a non-volatile memory. Its main characteristic is that once a storage spa
 </td>
 </tr>
 </tbody>
-</table>
-
-The key area can be accessed through the following OTP API interface:
-
-```
-td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
-```
-
-For details, refer to "OTP API Reference."
-
-The content of the key area cannot be read. Therefore, the ot\_mpi\_otp\_read\_product\_pv interface only returns the lock status of the corresponding area (locked areas cannot be written again) and cannot obtain the area content.
-
-### Single-Bit Control Area<a name="ZH-CN_TOPIC_0000002424349982"></a>
-
-<a name="table1960mcpsimp"></a>
+</table> The key area can be accessed through the following OTP API interface: ```
+td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num); td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
+``` For details, refer to "OTP API Reference." The content of the key area cannot be read. Therefore, the ot\_mpi\_otp\_read\_product\_pv interface only returns the lock status of the corresponding area (locked areas cannot be written again) and cannot obtain the area content. ### Single-Bit Control Area<a name="ZH-CN_TOPIC_0000002424349982"></a> <a name="table1960mcpsimp"></a>
 <table><thead align="left"><tr id="row1968mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.6.1.1"><p id="p1970mcpsimp"><a name="p1970mcpsimp"></a><a name="p1970mcpsimp"></a>Field Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="8%" id="mcps1.1.6.1.2"><p id="p1972mcpsimp"><a name="p1972mcpsimp"></a><a name="p1972mcpsimp"></a>Bit Width</p>
@@ -405,21 +302,9 @@ The content of the key area cannot be read. Therefore, the ot\_mpi\_otp\_read\_p
 </td>
 </tr>
 </tbody>
-</table>
-
-The single-bit control area can be accessed through the following OTP API interface:
-
-```
-td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
-```
-
-For details, refer to "OTP API Reference."
-
-The OTP values of the single-bit control area are reflected in their corresponding shadow registers. The ot\_mpi\_otp\_read\_product\_pv interface only returns the lock status of the control bit (locked positions cannot be written again) and cannot directly obtain the value of the control bit.
-
-### Multi-Bit Control Area<a name="ZH-CN_TOPIC_0000002424349994"></a>
-
-<a name="table2125mcpsimp"></a>
+</table> The single-bit control area can be accessed through the following OTP API interface: ```
+td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num); td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
+``` For details, refer to "OTP API Reference." The OTP values of the single-bit control area are reflected in their corresponding shadow registers. The ot\_mpi\_otp\_read\_product\_pv interface only returns the lock status of the control bit (locked positions cannot be written again) and cannot directly obtain the value of the control bit. ### Multi-Bit Control Area<a name="ZH-CN_TOPIC_0000002424349994"></a> <a name="table2125mcpsimp"></a>
 <table><thead align="left"><tr id="row2133mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.6.1.1"><p id="p2135mcpsimp"><a name="p2135mcpsimp"></a><a name="p2135mcpsimp"></a>Field Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="8%" id="mcps1.1.6.1.2"><p id="p2137mcpsimp"><a name="p2137mcpsimp"></a><a name="p2137mcpsimp"></a>Bit Width</p>
@@ -791,8 +676,4 @@ The OTP values of the single-bit control area are reflected in their correspondi
 </td>
 </tr>
 </tbody>
-</table>
-
-## User-Defined Area<a name="ZH-CN_TOPIC_0000002424190146"></a>
-
-...
+</table> ## User-Defined Area<a name="ZH-CN_TOPIC_0000002424190146"></a> ...

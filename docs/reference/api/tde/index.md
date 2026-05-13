@@ -1,22 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/TDE API参考/TDE API参考.md
----
-
-# 前言
-**概述<a name="section102mcpsimp"></a>**
-
-本文档主要介绍TDE的API和数据类型以及Proc调试信息。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   本文以SS528V100为例，未有特殊说明，SS625V100、SS524V100、SS522V100、SS626V100与SS528V100内容一致；
->-   未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
-
-**产品版本<a name="section105mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table108mcpsimp"></a>
+--- # 前言
+**概述<a name="section102mcpsimp"></a>** 本文档主要介绍TDE的API和数据类型以及Proc调试信息。 >![](public_sys-resources/icon-note.gif) **说明：** >- 未有特殊说明，与Hi3403V100内容一致。 **产品版本<a name="section105mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table108mcpsimp"></a>
 <table><thead align="left"><tr id="row113mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p115mcpsimp"><a name="p115mcpsimp"></a><a name="p115mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p117mcpsimp"><a name="p117mcpsimp"></a><a name="p117mcpsimp"></a>产品版本</p>
@@ -28,51 +14,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/TDE API�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row124mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p126mcpsimp"><a name="p126mcpsimp"></a><a name="p126mcpsimp"></a>SS626</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p128mcpsimp"><a name="p128mcpsimp"></a><a name="p128mcpsimp"></a>V100</p>
-</td>
-</tr>
-<tr id="row12175630191918"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>SS524</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p34921898474"><a name="p34921898474"></a><a name="p34921898474"></a>V100</p>
-</td>
-</tr>
-<tr id="row6539113711611"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p653993731616"><a name="p653993731616"></a><a name="p653993731616"></a>SS522</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p25392377163"><a name="p25392377163"></a><a name="p25392377163"></a>V100</p>
-</td>
-</tr>
-<tr id="row199441051135716"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p175361749141815"><a name="p175361749141815"></a><a name="p175361749141815"></a>SS528</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p13835920181"><a name="p13835920181"></a><a name="p13835920181"></a>V100</p>
-</td>
-</tr>
-<tr id="row66912387424"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p769273818422"><a name="p769273818422"></a><a name="p769273818422"></a>SS625</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p17692193818426"><a name="p17692193818426"></a><a name="p17692193818426"></a>V100</p>
-</td>
-</tr>
-<tr id="row3972248661"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section131mcpsimp"></a>**
-
-本文档（本指南）主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-**符号约定<a name="section137mcpsimp"></a>**
-
-在本文中可能出现下列标志，它们所代表的含义如下。
-
-<a name="table140mcpsimp"></a>
+</table> **读者对象<a name="section131mcpsimp"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 **符号约定<a name="section137mcpsimp"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table140mcpsimp"></a>
 <table><thead align="left"><tr id="row145mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.3.1.1"><p id="p147mcpsimp"><a name="p147mcpsimp"></a><a name="p147mcpsimp"></a>符号</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.1.3.1.2"><p id="p149mcpsimp"><a name="p149mcpsimp"></a><a name="p149mcpsimp"></a>说明</p>
@@ -84,36 +28,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/TDE API�
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row156mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p158mcpsimp"><a name="p158mcpsimp"></a><a name="p158mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002408279254.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p160mcpsimp"><a name="p160mcpsimp"></a><a name="p160mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row161mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002441718501.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p165mcpsimp"><a name="p165mcpsimp"></a><a name="p165mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row166mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p168mcpsimp"><a name="p168mcpsimp"></a><a name="p168mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002441678637.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p170mcpsimp"><a name="p170mcpsimp"></a><a name="p170mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
-<p id="p171mcpsimp"><a name="p171mcpsimp"></a><a name="p171mcpsimp"></a>“须知”不涉及人身伤害。</p>
-</td>
-</tr>
-<tr id="row172mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p174mcpsimp"><a name="p174mcpsimp"></a><a name="p174mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002408279250.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p176mcpsimp"><a name="p176mcpsimp"></a><a name="p176mcpsimp"></a>对正文中重点信息的补充说明。</p>
-<p id="p177mcpsimp"><a name="p177mcpsimp"></a><a name="p177mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修订记录<a name="section178mcpsimp"></a>**
-
-修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
-
-<a name="table1557726816410"></a>
+</table> **修订记录<a name="section178mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>发布日期</strong></p>
@@ -130,63 +46,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/TDE API�
 </td>
 </tr>
 </tbody>
-</table>
-
-# 概述
-## 概述<a name="ZH-CN_TOPIC_0000002408119226"></a>
-
-TDE（Two Dimensional Engine）利用硬件为OSD（On Screen Display）和GUI（Graphics User Interface）提供快速的图形绘制功能，主要有快速位图搬移、快速色彩填充、快速抗闪搬移、快速位图缩放、画点、画水平/垂直线、位图格式转换、位图alpha叠加、位图按位布尔运算、ColorKey操作。
-
-## 模块加载<a name="ZH-CN_TOPIC_0000002441718473"></a>
-
-
-
-### 加载的命令<a name="ZH-CN_TOPIC_0000002441678589"></a>
-
-加载命令为insmod ssxx\_tde.ko参数。
-
-### 参数<a name="ZH-CN_TOPIC_0000002441718437"></a>
-
-
-
-
-
-#### 参数g\_is\_resize\_filter<a name="ZH-CN_TOPIC_0000002408279214"></a>
-
-在接口[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)运行的过程当中，内部计算如果有需要做滤波会做滤波，而有些图片数据点不够导致Resize滤波后效果比较差，可以配置该参数为0，内部不做滤波。为1时开启滤波，在需要滤波时内部会有滤波操作。
-
-#### 参数g\_max\_node\_num<a name="ZH-CN_TOPIC_0000002408279198"></a>
-
-该参数决定TDE最大节点数。g\_max\_node\_num 默认值为200，最大值为500，最小值为2。当g\_max\_node\_num设置值大于最大值时，g\_max\_node\_num置为最大值，当g\_max\_node\_num设置值小于最小值时，g\_max\_node\_num置为最小值。内部会根据g\_max\_node\_num的值重新计算TDE实际使用的内存大小。
-
-以SS528V100举例，使用方法如下：
-
--   insmod SS528V100\_tde.ko g\_max\_node\_num=1 异常测试（按最小值2配置）
--   insmod SS528V100\_tde.ko 默认测试 （按默认值200配置）
--   insmod SS528V100\_tde.ko g\_max\_node\_num=300正常测试（按设置值300配置）
--   insmod SS528V100\_tde.ko g\_max\_node\_num=600 异常测试 （按最大值500配置）
--   insmod SS528V100\_tde.ko g\_max\_node\_num=-1 异常测试 （报错加载ko失败）
--   insmod SS528V100\_tde.ko g\_max\_node\_num=a 异常测试（报错加载ko失败）
-
-#### 参数g\_tde\_tmp\_buf<a name="ZH-CN_TOPIC_0000002441678557"></a>
-
-该参数仅用于ss\_tde\_bitmap\_mask\_rop与ss\_tde\_bitmap\_mask\_blend接口，充当临时buffer，如需使用上述两接口则在加载ko时要配置参数g\_tde\_tmp\_buf的大小，大小配置为前景位图大小，例如：对于前景格式为ARGB8888分辨率大小为720\*576的图片则需要配置为：720\*576\*4= 1658880
-
-#### 参数g\_rgb\_truncation\_mode<a name="ZH-CN_TOPIC_0000002408119254"></a>
-
-该参数为rgb截位模式的参数，可配置成0或者是1。g\_rgb\_truncation\_mode默认为1，表示内部采用一种抖动的算法处理数据；g\_rgb\_truncation\_mode配成0时，表示内部使用四舍五入的方式处理数据。备注：如果配成1时，有网格的效果，可将该参数配成0。最终参数的使用根据所需要的效果确定。
-
-## 参考域说明<a name="ZH-CN_TOPIC_0000002408279174"></a>
-
-
-
-### API参考域<a name="ZH-CN_TOPIC_0000002408119210"></a>
-
-本手册使用9个参考域描述API的相关信息，它们的作用如[表1](#_Ref177443220)所示。
-
-**表 1**  API参考域说明
-
-<a name="_Ref177443220"></a>
+</table> # 概述
+## 概述<a name="ZH-CN_TOPIC_0000002408119226"></a> TDE（Two Dimensional Engine）利用硬件为OSD（On Screen Display）和GUI（Graphics User Interface）提供快速的图形绘制功能，主要有快速位图搬移、快速色彩填充、快速抗闪搬移、快速位图缩放、画点、画水平/垂直线、位图格式转换、位图alpha叠加、位图按位布尔运算、ColorKey操作。 ## 模块加载<a name="ZH-CN_TOPIC_0000002441718473"></a> ### 加载的命令<a name="ZH-CN_TOPIC_0000002441678589"></a> 加载命令为insmod ssxx\_tde.ko参数。 ### 参数<a name="ZH-CN_TOPIC_0000002441718437"></a> #### 参数g\_is\_resize\_filter<a name="ZH-CN_TOPIC_0000002408279214"></a> 在接口[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)运行的过程当中，内部计算如果有需要做滤波会做滤波，而有些图片数据点不够导致Resize滤波后效果比较差，可以配置该参数为0，内部不做滤波。为1时开启滤波，在需要滤波时内部会有滤波操作。 #### 参数g\_max\_node\_num<a name="ZH-CN_TOPIC_0000002408279198"></a> 该参数决定TDE最大节点数。g\_max\_node\_num 默认值为200，最大值为500，最小值为2。当g\_max\_node\_num设置值大于最大值时，g\_max\_node\_num置为最大值，当g\_max\_node\_num设置值小于最小值时，g\_max\_node\_num置为最小值。内部会根据g\_max\_node\_num的值重新计算TDE实际使用的内存大小。 以举例，使用方法如下： #### 参数g\_tde\_tmp\_buf<a name="ZH-CN_TOPIC_0000002441678557"></a> 该参数仅用于ss\_tde\_bitmap\_mask\_rop与ss\_tde\_bitmap\_mask\_blend接口，充当临时buffer，如需使用上述两接口则在加载ko时要配置参数g\_tde\_tmp\_buf的大小，大小配置为前景位图大小，例如：对于前景格式为ARGB8888分辨率大小为720\*576的图片则需要配置为：720\*576\*4= 1658880 #### 参数g\_rgb\_truncation\_mode<a name="ZH-CN_TOPIC_0000002408119254"></a> 该参数为rgb截位模式的参数，可配置成0或者是1。g\_rgb\_truncation\_mode默认为1，表示内部采用一种抖动的算法处理数据；g\_rgb\_truncation\_mode配成0时，表示内部使用四舍五入的方式处理数据。备注：如果配成1时，有网格的效果，可将该参数配成0。最终参数的使用根据所需要的效果确定。 ## 参考域说明<a name="ZH-CN_TOPIC_0000002408279174"></a> ### API参考域<a name="ZH-CN_TOPIC_0000002408119210"></a> 本手册使用9个参考域描述API的相关信息，它们的作用如[表1](#_Ref177443220)所示。 **表 1** API参考域说明 <a name="_Ref177443220"></a>
 <table><thead align="left"><tr id="row219mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.3.1.1"><p id="p221mcpsimp"><a name="p221mcpsimp"></a><a name="p221mcpsimp"></a>参考域</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.2.3.1.2"><p id="p223mcpsimp"><a name="p223mcpsimp"></a><a name="p223mcpsimp"></a>含义</p>
@@ -198,39 +59,9 @@ TDE（Two Dimensional Engine）利用硬件为OSD（On Screen Display）和GUI�
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p229mcpsimp"><a name="p229mcpsimp"></a><a name="p229mcpsimp"></a>简要描述API的主要功能。</p>
 </td>
 </tr>
-<tr id="row230mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p232mcpsimp"><a name="p232mcpsimp"></a><a name="p232mcpsimp"></a>语法</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a>列出调用API应包括的头文件以及API的原型声明。</p>
-</td>
-</tr>
-<tr id="row235mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p237mcpsimp"><a name="p237mcpsimp"></a><a name="p237mcpsimp"></a>参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p239mcpsimp"><a name="p239mcpsimp"></a><a name="p239mcpsimp"></a>列出API的参数、参数说明及参数属性。</p>
-</td>
-</tr>
-<tr id="row240mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p242mcpsimp"><a name="p242mcpsimp"></a><a name="p242mcpsimp"></a>描述</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p244mcpsimp"><a name="p244mcpsimp"></a><a name="p244mcpsimp"></a>简要描述API的工作过程。</p>
-</td>
-</tr>
 <tr id="row245mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p247mcpsimp"><a name="p247mcpsimp"></a><a name="p247mcpsimp"></a>返回值</p>
 </td>
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p249mcpsimp"><a name="p249mcpsimp"></a><a name="p249mcpsimp"></a>列出API所有可能的返回值及其含义。</p>
-</td>
-</tr>
-<tr id="row250mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p252mcpsimp"><a name="p252mcpsimp"></a><a name="p252mcpsimp"></a>需求</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p254mcpsimp"><a name="p254mcpsimp"></a><a name="p254mcpsimp"></a>列出API包含的头文件和API编译时要链接的库文件。</p>
-</td>
-</tr>
-<tr id="row255mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p257mcpsimp"><a name="p257mcpsimp"></a><a name="p257mcpsimp"></a>注意</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p259mcpsimp"><a name="p259mcpsimp"></a><a name="p259mcpsimp"></a>列出使用API时应注意的事项。</p>
-</td>
-</tr>
-<tr id="row260mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p262mcpsimp"><a name="p262mcpsimp"></a><a name="p262mcpsimp"></a>举例</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p264mcpsimp"><a name="p264mcpsimp"></a><a name="p264mcpsimp"></a>列出使用API的实例。</p>
 </td>
 </tr>
 <tr id="row265mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a>相关接口</p>
@@ -239,15 +70,7 @@ TDE（Two Dimensional Engine）利用硬件为OSD（On Screen Display）和GUI�
 </td>
 </tr>
 </tbody>
-</table>
-
-### 数据类型参考域<a name="ZH-CN_TOPIC_0000002408119290"></a>
-
-本手册使用5个参考域描述数据类型的相关信息，它们的作用如[表1](#_Ref177443225)所示。
-
-**表 1**  数据类型参考域说明
-
-<a name="_Ref177443225"></a>
+</table> ### 数据类型参考域<a name="ZH-CN_TOPIC_0000002408119290"></a> 本手册使用5个参考域描述数据类型的相关信息，它们的作用如[表1](#_Ref177443225)所示。 **表 1** 数据类型参考域说明 <a name="_Ref177443225"></a>
 <table><thead align="left"><tr id="row278mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.3.1.1"><p id="p280mcpsimp"><a name="p280mcpsimp"></a><a name="p280mcpsimp"></a>参考域</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.2.3.1.2"><p id="p282mcpsimp"><a name="p282mcpsimp"></a><a name="p282mcpsimp"></a>含义</p>
@@ -257,16 +80,6 @@ TDE（Two Dimensional Engine）利用硬件为OSD（On Screen Display）和GUI�
 <tbody><tr id="row284mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p286mcpsimp"><a name="p286mcpsimp"></a><a name="p286mcpsimp"></a>说明</p>
 </td>
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p288mcpsimp"><a name="p288mcpsimp"></a><a name="p288mcpsimp"></a>简要描述数据类型的主要功能。</p>
-</td>
-</tr>
-<tr id="row289mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p291mcpsimp"><a name="p291mcpsimp"></a><a name="p291mcpsimp"></a>定义</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p293mcpsimp"><a name="p293mcpsimp"></a><a name="p293mcpsimp"></a>列出数据类型的定义语句。</p>
-</td>
-</tr>
-<tr id="row294mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p296mcpsimp"><a name="p296mcpsimp"></a><a name="p296mcpsimp"></a>成员</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.2.3.1.2 "><p id="p298mcpsimp"><a name="p298mcpsimp"></a><a name="p298mcpsimp"></a>列出数据结构的成员及含义。</p>
 </td>
 </tr>
 <tr id="row299mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.2.3.1.1 "><p id="p301mcpsimp"><a name="p301mcpsimp"></a><a name="p301mcpsimp"></a>注意事项</p>
@@ -280,99 +93,38 @@ TDE（Two Dimensional Engine）利用硬件为OSD（On Screen Display）和GUI�
 </td>
 </tr>
 </tbody>
-</table>
-
-# API参考
-## API概述<a name="ZH-CN_TOPIC_0000002408119214"></a>
-
-TDE（Two Dimension Engine）功能函数参考提供2D加速相关操作。
-
-该功能模块提供以下API：
-
--   [ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)：打开TDE设备。
--   [ss\_tde\_close](#ZH-CN_TOPIC_0000002441718445)：关闭TDE设备。
--   [ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)：创建1个TDE任务。
--   [ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)：提交添加操作完成的TDE任务。
--   [ss\_tde\_cancel\_job](#ZH-CN_TOPIC_0000002408119222)：取消指定的TDE任务。
--   [ss\_tde\_wait\_for\_done](#ZH-CN_TOPIC_0000002408279142)：等待指定的TDE任务完成。
--   [ss\_tde\_wait\_all\_done](#ZH-CN_TOPIC_0000002408279162)：等待TDE的所有任务完成。
--   [ss\_tde\_reset](#ZH-CN_TOPIC_0000002441678533)：复位TDE所有状态。
--   [ss\_tde\_quick\_fill](#ZH-CN_TOPIC_0000002408279206)：向任务中添加快速填充操作。
--   [ss\_tde\_quick\_draw\_rect](#ZH-CN_TOPIC_0000002408279218)：向任务中添加绘制角框操作。
--   [ss\_tde\_draw\_multi\_rect](#ZH-CN_TOPIC_0000002408119278)：向任务中添加绘制复数角框操作。
--   [ss\_tde\_draw\_line](#ZH-CN_TOPIC_0000002408119246)：向任务中添加绘制线条\(含直线、斜线\)操作。
--   [ss\_tde\_quick\_copy](#ZH-CN_TOPIC_0000002441718413)：向任务中添加快速拷贝操作。
--   [ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)：向任务中添加光栅位图缩放操作。
--   [ss\_tde\_quick\_deflicker](#ZH-CN_TOPIC_0000002408119250)：向任务中添加光栅位图抗闪烁操作。
--   [ss\_tde\_solid\_draw](#ZH-CN_TOPIC_0000002408119234)：向任务中添加对光栅位图进行有附加操作的填充搬移操作。
--   [ss\_tde\_rotate](#ZH-CN_TOPIC_0000002408279222)：向任务中添加对光栅位图的旋转操作。
--   [ss\_tde\_bit\_blit](#ZH-CN_TOPIC_0000002408279150)：向任务中添加对光栅位图进行有附加功能的搬移操作。
--   [ss\_tde\_pattern\_fill](#ZH-CN_TOPIC_0000002408119294)：模式填充。
--   [ss\_tde\_mb\_blit](#ZH-CN_TOPIC_0000002441678577)：向任务中添加对宏块位图进行有附加功能的搬移操作。
--   [ss\_tde\_bitmap\_mask\_rop](#ZH-CN_TOPIC_0000002408279186)：向任务中添加对光栅位图进行Mask Rop搬移操作。
--   [ss\_tde\_bitmap\_mask\_blend](#ZH-CN_TOPIC_0000002408279178)：向任务中添加对光栅位图进行Mask Blend搬移操作。
--   [ss\_tde\_get\_deflicker\_level](#ZH-CN_TOPIC_0000002408119266)：获取抗闪烁级别。
--   [ss\_tde\_set\_deflicker\_level](#ZH-CN_TOPIC_0000002441718425)：设置抗闪烁级别。
--   [ss\_tde\_get\_alpha\_threshold\_value](#ZH-CN_TOPIC_0000002408279154)：获取alpha判决阈值。
--   [ss\_tde\_set\_alpha\_threshold\_value](#ZH-CN_TOPIC_0000002441678553)：设置alpha判决阈值。
--   [ss\_tde\_get\_alpha\_threshold\_state](#ZH-CN_TOPIC_0000002441718401)：获取alpha判决开关。
--   [ss\_tde\_set\_alpha\_threshold\_state](#ZH-CN_TOPIC_0000002408279210)：设置alpha判决开关。
--   [ss\_tde\_enable\_rgn\_deflicker](#ZH-CN_TOPIC_0000002408119274)：使能/去使能局部抗闪烁。
-
-## 功能函数参考<a name="ZH-CN_TOPIC_0000002408119286"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### ss\_tde\_open<a name="ZH-CN_TOPIC_0000002408119258"></a>
-
-【目的】
-
-打开TDE设备。
-
-【语法】
-
-```
+</table> # API参考
+## API概述<a name="ZH-CN_TOPIC_0000002408119214"></a> TDE（Two Dimension Engine）功能函数参考提供2D加速相关操作。 该功能模块提供以下API： - [ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)：打开TDE设备。
+- [ss\_tde\_close](#ZH-CN_TOPIC_0000002441718445)：关闭TDE设备。
+- [ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)：创建1个TDE任务。
+- [ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)：提交添加操作完成的TDE任务。
+- [ss\_tde\_cancel\_job](#ZH-CN_TOPIC_0000002408119222)：取消指定的TDE任务。
+- [ss\_tde\_wait\_for\_done](#ZH-CN_TOPIC_0000002408279142)：等待指定的TDE任务完成。
+- [ss\_tde\_wait\_all\_done](#ZH-CN_TOPIC_0000002408279162)：等待TDE的所有任务完成。
+- [ss\_tde\_reset](#ZH-CN_TOPIC_0000002441678533)：复位TDE所有状态。
+- [ss\_tde\_quick\_fill](#ZH-CN_TOPIC_0000002408279206)：向任务中添加快速填充操作。
+- [ss\_tde\_quick\_draw\_rect](#ZH-CN_TOPIC_0000002408279218)：向任务中添加绘制角框操作。
+- [ss\_tde\_draw\_multi\_rect](#ZH-CN_TOPIC_0000002408119278)：向任务中添加绘制复数角框操作。
+- [ss\_tde\_draw\_line](#ZH-CN_TOPIC_0000002408119246)：向任务中添加绘制线条\(含直线、斜线\)操作。
+- [ss\_tde\_quick\_copy](#ZH-CN_TOPIC_0000002441718413)：向任务中添加快速拷贝操作。
+- [ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)：向任务中添加光栅位图缩放操作。
+- [ss\_tde\_quick\_deflicker](#ZH-CN_TOPIC_0000002408119250)：向任务中添加光栅位图抗闪烁操作。
+- [ss\_tde\_solid\_draw](#ZH-CN_TOPIC_0000002408119234)：向任务中添加对光栅位图进行有附加操作的填充搬移操作。
+- [ss\_tde\_rotate](#ZH-CN_TOPIC_0000002408279222)：向任务中添加对光栅位图的旋转操作。
+- [ss\_tde\_bit\_blit](#ZH-CN_TOPIC_0000002408279150)：向任务中添加对光栅位图进行有附加功能的搬移操作。
+- [ss\_tde\_pattern\_fill](#ZH-CN_TOPIC_0000002408119294)：模式填充。
+- [ss\_tde\_mb\_blit](#ZH-CN_TOPIC_0000002441678577)：向任务中添加对宏块位图进行有附加功能的搬移操作。
+- [ss\_tde\_bitmap\_mask\_rop](#ZH-CN_TOPIC_0000002408279186)：向任务中添加对光栅位图进行Mask Rop搬移操作。
+- [ss\_tde\_bitmap\_mask\_blend](#ZH-CN_TOPIC_0000002408279178)：向任务中添加对光栅位图进行Mask Blend搬移操作。
+- [ss\_tde\_get\_deflicker\_level](#ZH-CN_TOPIC_0000002408119266)：获取抗闪烁级别。
+- [ss\_tde\_set\_deflicker\_level](#ZH-CN_TOPIC_0000002441718425)：设置抗闪烁级别。
+- [ss\_tde\_get\_alpha\_threshold\_value](#ZH-CN_TOPIC_0000002408279154)：获取alpha判决阈值。
+- [ss\_tde\_set\_alpha\_threshold\_value](#ZH-CN_TOPIC_0000002441678553)：设置alpha判决阈值。
+- [ss\_tde\_get\_alpha\_threshold\_state](#ZH-CN_TOPIC_0000002441718401)：获取alpha判决开关。
+- [ss\_tde\_set\_alpha\_threshold\_state](#ZH-CN_TOPIC_0000002408279210)：设置alpha判决开关。
+- [ss\_tde\_enable\_rgn\_deflicker](#ZH-CN_TOPIC_0000002408119274)：使能/去使能局部抗闪烁。 ## 功能函数参考<a name="ZH-CN_TOPIC_0000002408119286"></a> ### ss\_tde\_open<a name="ZH-CN_TOPIC_0000002408119258"></a> 【目的】 打开TDE设备。 【语法】 ```
 td_s32 ss_tde_open(td_void);
-```
-
-【描述】
-
-调用此接口打开TDE设备。
-
-【参数】
-
-无。
-
-【返回值】
-
-<a name="table6654mcpsimp"></a>
+``` 【描述】 调用此接口打开TDE设备。 【参数】 无。 【返回值】 <a name="table6654mcpsimp"></a>
 <table><thead align="left"><tr id="row6659mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.3.1.1"><p id="p6661mcpsimp"><a name="p6661mcpsimp"></a><a name="p6661mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="78%" id="mcps1.1.3.1.2"><p id="p6663mcpsimp"><a name="p6663mcpsimp"></a><a name="p6663mcpsimp"></a>描述</p>
@@ -384,17 +136,8 @@ td_s32 ss_tde_open(td_void);
 <td class="cellrowborder" valign="top" width="78%" headers="mcps1.1.3.1.2 "><p id="p6669mcpsimp"><a name="p6669mcpsimp"></a><a name="p6669mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row6670mcpsimp"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.1.3.1.1 "><p id="p6672mcpsimp"><a name="p6672mcpsimp"></a><a name="p6672mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="78%" headers="mcps1.1.3.1.2 "><p id="p6674mcpsimp"><a name="p6674mcpsimp"></a><a name="p6674mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table6677mcpsimp"></a>
+</table> 【错误码】 <a name="table6677mcpsimp"></a>
 <table><thead align="left"><tr id="row6682mcpsimp"><th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.1"><p id="p6684mcpsimp"><a name="p6684mcpsimp"></a><a name="p6684mcpsimp"></a>接口返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.2"><p id="p6686mcpsimp"><a name="p6686mcpsimp"></a><a name="p6686mcpsimp"></a>含义</p>
@@ -412,97 +155,22 @@ td_s32 ss_tde_open(td_void);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   在进行TDE相关操作前应该首先调用此接口，保证TDE设备处于打开状态。
--   TDE设备允许多进程重复打开。
-
-【举例】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 在进行TDE相关操作前应该首先调用此接口，保证TDE设备处于打开状态。
+- TDE设备允许多进程重复打开。 【举例】 ```
 /*declaration*/
-td_s32 ret = 0;
- 
-/* open TDE device*/
-ret = ss_tde_open ();
-if (ret != TD_SUCCESS) {
-         return -1;
+td_s32 ret = 0; /* open TDE device*/
+ret = ss_tde_open ;
+if (ret != TD_SUCCESS) { return -1;
 }
 /* close TDE device*/
-ss_tde_close ();
-```
-
-### ss\_tde\_close<a name="ZH-CN_TOPIC_0000002441718445"></a>
-
-【目的】
-
-关闭TDE设备。
-
-【语法】
-
-```
+ss_tde_close ;
+``` ### ss\_tde\_close<a name="ZH-CN_TOPIC_0000002441718445"></a> 【目的】 关闭TDE设备。 【语法】 ```
 td_void ss_tde_close(td_void);
-```
-
-【描述】
-
-调用此接口关闭TDE设备。
-
-【参数】
-
-无。
-
-【返回值】
-
-无。
-
-【错误码】
-
-无。
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)与ss\_tde\_close的次数需要对应。
-
-【举例】
-
-无。
-
-### ss\_tde\_begin\_job<a name="ZH-CN_TOPIC_0000002408279190"></a>
-
-【目的】
-
-创建1个TDE任务。
-
-【语法】
-
-```
+``` 【描述】 调用此接口关闭TDE设备。 【参数】 无。 【返回值】 无。 【错误码】 无。 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)与ss\_tde\_close的次数需要对应。 【举例】 无。 ### ss\_tde\_begin\_job<a name="ZH-CN_TOPIC_0000002408279190"></a> 【目的】 创建1个TDE任务。 【语法】 ```
 td_s32 ss_tde_begin_job(td_void);
-```
-
-【描述】
-
-调用此接口创建1个TDE任务（Job）。TDE以任务的形式管理TDE命令：1个TDE任务是一系列TDE命令的集合，它可以包含1个或多个TDE操作；一个TDE命令对应一个TDE操作；成功创建TDE任务添加完TDE操作后，通过[ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)提交该Job；同一任务中的TDE命令是顺序执行。
-
-【参数】
-
-无。
-
-【返回值】
-
-<a name="table6751mcpsimp"></a>
+``` 【描述】 调用此接口创建1个TDE任务（Job）。TDE以任务的形式管理TDE命令：1个TDE任务是一系列TDE命令的集合，它可以包含1个或多个TDE操作；一个TDE命令对应一个TDE操作；成功创建TDE任务添加完TDE操作后，通过[ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)提交该Job；同一任务中的TDE命令是顺序执行。 【参数】 无。 【返回值】 <a name="table6751mcpsimp"></a>
 <table><thead align="left"><tr id="row6756mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p6758mcpsimp"><a name="p6758mcpsimp"></a><a name="p6758mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p6760mcpsimp"><a name="p6760mcpsimp"></a><a name="p6760mcpsimp"></a>描述</p>
@@ -520,11 +188,7 @@ td_s32 ss_tde_begin_job(td_void);
 </td>
 </tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table6774mcpsimp"></a>
+</table> 【错误码】 <a name="table6774mcpsimp"></a>
 <table><thead align="left"><tr id="row6779mcpsimp"><th class="cellrowborder" valign="top" width="47%" id="mcps1.1.3.1.1"><p id="p6781mcpsimp"><a name="p6781mcpsimp"></a><a name="p6781mcpsimp"></a>接口返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="53%" id="mcps1.1.3.1.2"><p id="p6783mcpsimp"><a name="p6783mcpsimp"></a><a name="p6783mcpsimp"></a>含义</p>
@@ -547,73 +211,16 @@ td_s32 ss_tde_begin_job(td_void);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   在调用此接口前应确保TDE设备处于打开状态。
--   应判断返回值，确保获得1个正确的任务句柄。
--   TDE能够缓存的任务数由TDE的内存大小决定，当内存不够时会出现分配任务失败的情况，建议任务数最多不要超过200。
--   ss\_tde\_begin\_job必须和[ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)配套使用，否则会造成内存泄漏。
-
-【举例】
-
-```
-/* declaration */
-    td_s32  ret;
-    td_s32 handle;
- 
-    /* create a TDE job */
-    handle = ss_tde_begin_job ();
-    if(handle == OT_ERR_TDE_INVALID_HANDLE || handle  == OT_ERR_TDE_DEV_NOT_OPEN) {
-        return -1;
-    }
- 
-    /* submit the job */
-    ret = ss_tde_end_job (handle, TD_FALSE, TD_TRUE, 20);
-    if(ret != TD_SUCCESS) {
-        return -1;
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 在调用此接口前应确保TDE设备处于打开状态。
+- 应判断返回值，确保获得1个正确的任务句柄。
+- TDE能够缓存的任务数由TDE的内存大小决定，当内存不够时会出现分配任务失败的情况，建议任务数最多不要超过200。
+- ss\_tde\_begin\_job必须和[ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)配套使用，否则会造成内存泄漏。 【举例】 ```
+/* declaration */ td_s32 ret; td_s32 handle; /* create a TDE job */ handle = ss_tde_begin_job ; if(handle == OT_ERR_TDE_INVALID_HANDLE || handle == OT_ERR_TDE_DEV_NOT_OPEN) { return -1; } /* submit the job */ ret = ss_tde_end_job (handle, TD_FALSE, TD_TRUE, 20); if(ret != TD_SUCCESS) { return -1;
 }
-```
-
-### ss\_tde\_end\_job<a name="ZH-CN_TOPIC_0000002408279158"></a>
-
-【目的】
-
-提交已创建的TDE任务。
-
-【语法】
-
-```
+``` ### ss\_tde\_end\_job<a name="ZH-CN_TOPIC_0000002408279158"></a> 【目的】 提交已创建的TDE任务。 【语法】 ```
 td_s32 ss_tde_end_job(td_s32 handle, td_bool is_sync, td_bool is_block, td_u32 time_out);
-```
-
-【描述】
-
-调用此接口提交1个TDE任务。可以指定为阻塞还是非阻塞，阻塞时可以设置超时时间。
-
--   阻塞
-
-    指该函数调用不会立刻返回，只有在以下情况下才会返回：
-
-    -   TDE任务中的命令都完成
-    -   等待超时
-    -   等待被打断
-
--   非阻塞
-
-    指该函数调用会立刻返回，而不关心TDE任务中的命令是否已经完成。
-
-阻塞时可以设置一个最长等待时间，如果等待时间到了，TDE任务中的命令还没有完成，函数就会提前返回，但是任务中的命令还是会在未来的某个时刻完成。
-
-【参数】
-
-<a name="table6843mcpsimp"></a>
+``` 【描述】 调用此接口提交1个TDE任务。可以指定为阻塞还是非阻塞，阻塞时可以设置超时时间。 - 阻塞 指该函数调用不会立刻返回，只有在以下情况下才会返回： - TDE任务中的命令都完成 - 等待超时 - 等待被打断 - 非阻塞 指该函数调用会立刻返回，而不关心TDE任务中的命令是否已经完成。 阻塞时可以设置一个最长等待时间，如果等待时间到了，TDE任务中的命令还没有完成，函数就会提前返回，但是任务中的命令还是会在未来的某个时刻完成。 【参数】 <a name="table6843mcpsimp"></a>
 <table><thead align="left"><tr id="row6849mcpsimp"><th class="cellrowborder" valign="top" width="21.000000000000004%" id="mcps1.1.4.1.1"><p id="p6851mcpsimp"><a name="p6851mcpsimp"></a><a name="p6851mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.00000000000001%" id="mcps1.1.4.1.2"><p id="p6853mcpsimp"><a name="p6853mcpsimp"></a><a name="p6853mcpsimp"></a>描述</p>
@@ -653,11 +260,7 @@ td_s32 ss_tde_end_job(td_s32 handle, td_bool is_sync, td_bool is_block, td_u32 t
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table6890mcpsimp"></a>
+</table> 【返回值】 <a name="table6890mcpsimp"></a>
 <table><thead align="left"><tr id="row6895mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p6897mcpsimp"><a name="p6897mcpsimp"></a><a name="p6897mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p6899mcpsimp"><a name="p6899mcpsimp"></a><a name="p6899mcpsimp"></a>描述</p>
@@ -669,17 +272,8 @@ td_s32 ss_tde_end_job(td_s32 handle, td_bool is_sync, td_bool is_block, td_u32 t
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p6905mcpsimp"><a name="p6905mcpsimp"></a><a name="p6905mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row6906mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p6908mcpsimp"><a name="p6908mcpsimp"></a><a name="p6908mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p6910mcpsimp"><a name="p6910mcpsimp"></a><a name="p6910mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table6913mcpsimp"></a>
+</table> 【错误码】 <a name="table6913mcpsimp"></a>
 <table><thead align="left"><tr id="row6918mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p6920mcpsimp"><a name="p6920mcpsimp"></a><a name="p6920mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p6922mcpsimp"><a name="p6922mcpsimp"></a><a name="p6922mcpsimp"></a>描述</p>
@@ -723,42 +317,12 @@ td_s32 ss_tde_end_job(td_s32 handle, td_bool is_sync, td_bool is_block, td_u32 t
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
--   若设置为阻塞操作，函数超时返回或被中断返回时应该注意：此时TDE操作的API函数提前返回，但执行的操作仍会完成。
--   提交任务后，此任务对应的handle会变为无效，再次提交会出现错误码OT\_ERR\_TDE\_INVALID\_HANDLE。
-
-【举例】
-
-无。
-
-### ss\_tde\_cancel\_job<a name="ZH-CN_TOPIC_0000002408119222"></a>
-
-【目的】
-
-取消TDE任务及已经成功加入到该任务中的操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
+- 若设置为阻塞操作，函数超时返回或被中断返回时应该注意：此时TDE操作的API函数提前返回，但执行的操作仍会完成。
+- 提交任务后，此任务对应的handle会变为无效，再次提交会出现错误码OT\_ERR\_TDE\_INVALID\_HANDLE。 【举例】 无。 ### ss\_tde\_cancel\_job<a name="ZH-CN_TOPIC_0000002408119222"></a> 【目的】 取消TDE任务及已经成功加入到该任务中的操作。 【语法】 ```
 td_s32 ss_tde_cancel_job(td_s32 handle);
-```
-
-【描述】
-
-向TDE任务添加操作时，如果出现当前的操作参数非法等错误，程序需要返回退出时，可调用此接口取消当前任务及其下的所有操作。
-
-【参数】
-
-<a name="table6989mcpsimp"></a>
+``` 【描述】 向TDE任务添加操作时，如果出现当前的操作参数非法等错误，程序需要返回退出时，可调用此接口取消当前任务及其下的所有操作。 【参数】 <a name="table6989mcpsimp"></a>
 <table><thead align="left"><tr id="row6995mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p6997mcpsimp"><a name="p6997mcpsimp"></a><a name="p6997mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p6999mcpsimp"><a name="p6999mcpsimp"></a><a name="p6999mcpsimp"></a>描述</p>
@@ -775,11 +339,7 @@ td_s32 ss_tde_cancel_job(td_s32 handle);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table7011mcpsimp"></a>
+</table> 【返回值】 <a name="table7011mcpsimp"></a>
 <table><thead align="left"><tr id="row7016mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p7018mcpsimp"><a name="p7018mcpsimp"></a><a name="p7018mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p7020mcpsimp"><a name="p7020mcpsimp"></a><a name="p7020mcpsimp"></a>描述</p>
@@ -791,17 +351,8 @@ td_s32 ss_tde_cancel_job(td_s32 handle);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7026mcpsimp"><a name="p7026mcpsimp"></a><a name="p7026mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row7027mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p7029mcpsimp"><a name="p7029mcpsimp"></a><a name="p7029mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7031mcpsimp"><a name="p7031mcpsimp"></a><a name="p7031mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table7034mcpsimp"></a>
+</table> 【错误码】 <a name="table7034mcpsimp"></a>
 <table><thead align="left"><tr id="row7039mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p7041mcpsimp"><a name="p7041mcpsimp"></a><a name="p7041mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p7043mcpsimp"><a name="p7043mcpsimp"></a><a name="p7043mcpsimp"></a>描述</p>
@@ -819,72 +370,18 @@ td_s32 ss_tde_cancel_job(td_s32 handle);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   在调用此接口前应保证调用ss\_tde\_open打开TDE设备，并且调用ss\_tde\_begin\_job获得了有效的任务句柄，否则返回值无效。
--   已经提交的任务不能够再取消。
--   取消后的任务不再有效，故不能再向其添加操作，也不能提交该任务。
--   在向TDE任务中添加操作（如操作A）时出错可以有以下两种处理方式：
-    -   忽略出错的操作A，继续向TDE任务中添加其余命令，并提交该任务。若该任务成功执行，则说明所有成功添加的操作都完成了，A操作因未添加成功而没有执行。
-    -   因添加操作A出错而取消整个任务，则说明该任务连同其下所有已成功添加的操作都被取消。
-
-【举例】
-
-```
-/* declaration */
-    td_s32 ret;
-    td_s32 handle;
-    ot_tde_surface src_surface;
-    ot_tde_surface dst_surface;
-    ot_tde_opt opt = {0};
- 
-    /* create a TDE job */
-    handle = ss_tde_begin_job();
-    if(handle == OT_ERR_TDE_INVALID_HANDLE) {
-        return -1;
-    }
-         
-         /* add serival commands to job successfully */
-...
- 
-    /* prepare arguments of bitblit command */
-    
-    /* if fail to add one more bitblt command to the job, cancel the job */
-    ret = ss_tde_bit_blit(handle, &src_surface, &dst_surface, &opt);
-    if(ret != TD_SUCCESS) {
-        printf("add bitlit command failed!\n");
-            ss_tde_cancel_job(handle);
-            return -1;
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 在调用此接口前应保证调用ss\_tde\_open打开TDE设备，并且调用ss\_tde\_begin\_job获得了有效的任务句柄，否则返回值无效。
+- 已经提交的任务不能够再取消。
+- 取消后的任务不再有效，故不能再向其添加操作，也不能提交该任务。
+- 在向TDE任务中添加操作（如操作A）时出错可以有以下两种处理方式： - 忽略出错的操作A，继续向TDE任务中添加其余命令，并提交该任务。若该任务成功执行，则说明所有成功添加的操作都完成了，A操作因未添加成功而没有执行。 - 因添加操作A出错而取消整个任务，则说明该任务连同其下所有已成功添加的操作都被取消。 【举例】 ```
+/* declaration */ td_s32 ret; td_s32 handle; ot_tde_surface src_surface; ot_tde_surface dst_surface; ot_tde_opt opt = {0}; /* create a TDE job */ handle = ss_tde_begin_job; if(handle == OT_ERR_TDE_INVALID_HANDLE) { return -1; } /* add serival commands to job successfully */
+... /* prepare arguments of bitblit command */ /* if fail to add one more bitblt command to the job, cancel the job */ ret = ss_tde_bit_blit(handle, &src_surface, &dst_surface, &opt); if(ret != TD_SUCCESS) { printf("add bitlit command failed!\n"); ss_tde_cancel_job(handle); return -1;
 }
-```
-
-### ss\_tde\_wait\_for\_done<a name="ZH-CN_TOPIC_0000002408279142"></a>
-
-【目的】
-
-等待指定的任务完成。
-
-【语法】
-
-```
+``` ### ss\_tde\_wait\_for\_done<a name="ZH-CN_TOPIC_0000002408279142"></a> 【目的】 等待指定的任务完成。 【语法】 ```
 td_s32 ss_tde_wait_for_done(td_s32 handle);
-```
-
-【描述】
-
--   当使用非阻塞方式提交TDE任务后，可以使用此接口等待指定的TDE任务完成。此接口为阻塞调用。
--   该接口一般用于TDE对一块显存进行非阻塞操作后，软件再对该显存进行操作，这样就存在前面的TDE和软件同时操作同一块显存的风险。这时，用户可以先调用此接口确保之前的TDE任务已经完成，然后再进行软件的操作。
-
-【参数】
-
-<a name="table7101mcpsimp"></a>
+``` 【描述】 - 当使用非阻塞方式提交TDE任务后，可以使用此接口等待指定的TDE任务完成。此接口为阻塞调用。
+- 该接口一般用于TDE对一块显存进行非阻塞操作后，软件再对该显存进行操作，这样就存在前面的TDE和软件同时操作同一块显存的风险。这时，用户可以先调用此接口确保之前的TDE任务已经完成，然后再进行软件的操作。 【参数】 <a name="table7101mcpsimp"></a>
 <table><thead align="left"><tr id="row7107mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p7109mcpsimp"><a name="p7109mcpsimp"></a><a name="p7109mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p7111mcpsimp"><a name="p7111mcpsimp"></a><a name="p7111mcpsimp"></a>描述</p>
@@ -901,11 +398,7 @@ td_s32 ss_tde_wait_for_done(td_s32 handle);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table7123mcpsimp"></a>
+</table> 【返回值】 <a name="table7123mcpsimp"></a>
 <table><thead align="left"><tr id="row7128mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p7130mcpsimp"><a name="p7130mcpsimp"></a><a name="p7130mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p7132mcpsimp"><a name="p7132mcpsimp"></a><a name="p7132mcpsimp"></a>描述</p>
@@ -917,17 +410,8 @@ td_s32 ss_tde_wait_for_done(td_s32 handle);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7138mcpsimp"><a name="p7138mcpsimp"></a><a name="p7138mcpsimp"></a>指定的TDE任务完成。</p>
 </td>
 </tr>
-<tr id="row7139mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p7141mcpsimp"><a name="p7141mcpsimp"></a><a name="p7141mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7143mcpsimp"><a name="p7143mcpsimp"></a><a name="p7143mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table7146mcpsimp"></a>
+</table> 【错误码】 <a name="table7146mcpsimp"></a>
 <table><thead align="left"><tr id="row7151mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p7153mcpsimp"><a name="p7153mcpsimp"></a><a name="p7153mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p7155mcpsimp"><a name="p7155mcpsimp"></a><a name="p7155mcpsimp"></a>描述</p>
@@ -955,45 +439,11 @@ td_s32 ss_tde_wait_for_done(td_s32 handle);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   此接口为阻塞接口，会阻塞等待指定的任务完成。
--   不允许等待一个未提交的任务，否则返回错误码OT\_ERR\_TDE\_INVALID\_HANDLE。
-
-【举例】
-
-无。
-
-### ss\_tde\_wait\_all\_done<a name="ZH-CN_TOPIC_0000002408279162"></a>
-
-【目的】
-
-等待TDE的所有任务完成。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 此接口为阻塞接口，会阻塞等待指定的任务完成。
+- 不允许等待一个未提交的任务，否则返回错误码OT\_ERR\_TDE\_INVALID\_HANDLE。 【举例】 无。 ### ss\_tde\_wait\_all\_done<a name="ZH-CN_TOPIC_0000002408279162"></a> 【目的】 等待TDE的所有任务完成。 【语法】 ```
 td_s32 ss_tde_wait_all_done(td_void);
-```
-
-【描述】
-
-在调用此接口等待TDE的所有任务完成
-
-【参数】
-
-无
-
-【返回值】
-
-<a name="table7204mcpsimp"></a>
+``` 【描述】 在调用此接口等待TDE的所有任务完成 【参数】 无 【返回值】 <a name="table7204mcpsimp"></a>
 <table><thead align="left"><tr id="row7209mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p7211mcpsimp"><a name="p7211mcpsimp"></a><a name="p7211mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p7213mcpsimp"><a name="p7213mcpsimp"></a><a name="p7213mcpsimp"></a>描述</p>
@@ -1005,17 +455,8 @@ td_s32 ss_tde_wait_all_done(td_void);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7219mcpsimp"><a name="p7219mcpsimp"></a><a name="p7219mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row7220mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p7222mcpsimp"><a name="p7222mcpsimp"></a><a name="p7222mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7224mcpsimp"><a name="p7224mcpsimp"></a><a name="p7224mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table7227mcpsimp"></a>
+</table> 【错误码】 <a name="table7227mcpsimp"></a>
 <table><thead align="left"><tr id="row7232mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p7234mcpsimp"><a name="p7234mcpsimp"></a><a name="p7234mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p7236mcpsimp"><a name="p7236mcpsimp"></a><a name="p7236mcpsimp"></a>描述</p>
@@ -1033,44 +474,10 @@ td_s32 ss_tde_wait_all_done(td_void);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-此接口为阻塞接口，会阻塞等待所有的TDE任务完成。
-
-【举例】
-
-无。
-
-### ss\_tde\_reset<a name="ZH-CN_TOPIC_0000002441678533"></a>
-
-【目的】
-
-复位TDE所有状态。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 此接口为阻塞接口，会阻塞等待所有的TDE任务完成。 【举例】 无。 ### ss\_tde\_reset<a name="ZH-CN_TOPIC_0000002441678533"></a> 【目的】 复位TDE所有状态。 【语法】 ```
 td_s32 ss_tde_reset(td_void);
-```
-
-【描述】
-
-在调用此接口复位TDE所有状态。
-
-【参数】
-
-无。
-
-【返回值】
-
-<a name="table7268mcpsimp"></a>
+``` 【描述】 在调用此接口复位TDE所有状态。 【参数】 无。 【返回值】 <a name="table7268mcpsimp"></a>
 <table><thead align="left"><tr id="row7273mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p7275mcpsimp"><a name="p7275mcpsimp"></a><a name="p7275mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p7277mcpsimp"><a name="p7277mcpsimp"></a><a name="p7277mcpsimp"></a>描述</p>
@@ -1082,17 +489,8 @@ td_s32 ss_tde_reset(td_void);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7283mcpsimp"><a name="p7283mcpsimp"></a><a name="p7283mcpsimp"></a>指定的TDE任务未完成</p>
 </td>
 </tr>
-<tr id="row7284mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p7286mcpsimp"><a name="p7286mcpsimp"></a><a name="p7286mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7288mcpsimp"><a name="p7288mcpsimp"></a><a name="p7288mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table7291mcpsimp"></a>
+</table> 【错误码】 <a name="table7291mcpsimp"></a>
 <table><thead align="left"><tr id="row7296mcpsimp"><th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.1"><p id="p7298mcpsimp"><a name="p7298mcpsimp"></a><a name="p7298mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.2"><p id="p7300mcpsimp"><a name="p7300mcpsimp"></a><a name="p7300mcpsimp"></a>描述</p>
@@ -1105,40 +503,10 @@ td_s32 ss_tde_reset(td_void);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-此接口一般用于待机唤醒软硬件不匹配时出现超时错误时调用，用于复位软硬件。
-
-【举例】
-
-无。
-
-### ss\_tde\_quick\_fill<a name="ZH-CN_TOPIC_0000002408279206"></a>
-
-【目的】
-
-向任务中添加快速填充操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 此接口一般用于待机唤醒软硬件不匹配时出现超时错误时调用，用于复位软硬件。 【举例】 无。 ### ss\_tde\_quick\_fill<a name="ZH-CN_TOPIC_0000002408279206"></a> 【目的】 向任务中添加快速填充操作。 【语法】 ```
 td_s32 ss_tde_quick_fill(td_s32 handle, const ot_tde_none_src *none_src, td_u32 fill_data);
-```
-
-【描述】
-
-将数据值fill\_data填充到none\_src中以dst\_surface为目的地址、dst\_rect为输出区域的内存中，可实现颜色填充的功能。
-
-【参数】
-
-<a name="table7326mcpsimp"></a>
+``` 【描述】 将数据值fill\_data填充到none\_src中以dst\_surface为目的地址、dst\_rect为输出区域的内存中，可实现颜色填充的功能。 【参数】 <a name="table7326mcpsimp"></a>
 <table><thead align="left"><tr id="row7332mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p7334mcpsimp"><a name="p7334mcpsimp"></a><a name="p7334mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p7336mcpsimp"><a name="p7336mcpsimp"></a><a name="p7336mcpsimp"></a>描述</p>
@@ -1169,11 +537,7 @@ td_s32 ss_tde_quick_fill(td_s32 handle, const ot_tde_none_src *none_src, td_u32 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table7362mcpsimp"></a>
+</table> 【返回值】 <a name="table7362mcpsimp"></a>
 <table><thead align="left"><tr id="row7367mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p7369mcpsimp"><a name="p7369mcpsimp"></a><a name="p7369mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p7371mcpsimp"><a name="p7371mcpsimp"></a><a name="p7371mcpsimp"></a>描述</p>
@@ -1185,17 +549,8 @@ td_s32 ss_tde_quick_fill(td_s32 handle, const ot_tde_none_src *none_src, td_u32 
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7377mcpsimp"><a name="p7377mcpsimp"></a><a name="p7377mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row7378mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p7380mcpsimp"><a name="p7380mcpsimp"></a><a name="p7380mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p7382mcpsimp"><a name="p7382mcpsimp"></a><a name="p7382mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table7385mcpsimp"></a>
+</table> 【错误码】 <a name="table7385mcpsimp"></a>
 <table><thead align="left"><tr id="row7390mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p7392mcpsimp"><a name="p7392mcpsimp"></a><a name="p7392mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p7394mcpsimp"><a name="p7394mcpsimp"></a><a name="p7394mcpsimp"></a>描述</p>
@@ -1238,55 +593,17 @@ td_s32 ss_tde_quick_fill(td_s32 handle, const ot_tde_none_src *none_src, td_u32 
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式（目标位图格式）如下：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD
-
--   由于该操作直接将fill\_data填充在位图的指定区域内，调用者欲填充蓝色到指定位图，应按照位图格式指定相应的蓝色填充值。
--   如位图格式为ARGB1555，欲填充为蓝色，则应指定fill\_data为0x801F（其中alpha位为1）。
-
-【举例】
-
-无。
-
-### ss\_tde\_quick\_draw\_rect<a name="ZH-CN_TOPIC_0000002408279218"></a>
-
-【目的】
-
-向任务中添加快速绘制角框操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式（目标位图格式）如下： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD - 由于该操作直接将fill\_data填充在位图的指定区域内，调用者欲填充蓝色到指定位图，应按照位图格式指定相应的蓝色填充值。
+- 如位图格式为ARGB1555，欲填充为蓝色，则应指定fill\_data为0x801F（其中alpha位为1）。 【举例】 无。 ### ss\_tde\_quick\_draw\_rect<a name="ZH-CN_TOPIC_0000002408279218"></a> 【目的】 向任务中添加快速绘制角框操作。 【语法】 ```
 td_s32 ss_tde_quick_draw_rect(td_s32 handle, const ot_tde_none_src *none_src, const ot_tde_corner_rect_info *corner_rect_info);
-```
-
-【描述】
-
-填充好角框的属性结构体corner\_rect\_info，将之绘制到none\_src中以dst\_surface为目的地址、dst\_rect为输出区域的内存中，可实现快速绘制角框，具体如[图1](#fig49824962518)所示。
-
-**图 1**  智能角框属性<a name="fig49824962518"></a>  
-![](figures/智能角框属性.png "智能角框属性")
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   1.角框坐标\(x,y\)：
->    x = none\_src-\>dst\_rect-\>pos\_x;
->    y = none\_src-\>dst\_rect-\>pos\_y;
->-   2.角框外颜色：corner\_rect\_info -\>outer\_color
->-   3.角框内颜色：corner\_rect\_info -\>inner\_color
->-   4.角框形状由w与h决定：corner\_rect\_info -\>width，corner\_rect\_info -\>height
-
-【参数】
-
-<a name="table7481mcpsimp"></a>
+``` 【描述】 填充好角框的属性结构体corner\_rect\_info，将之绘制到none\_src中以dst\_surface为目的地址、dst\_rect为输出区域的内存中，可实现快速绘制角框，具体如[图1](#fig49824962518)所示。 **图 1** 智能角框属性<a name="fig49824962518"></a> ![](figures/智能角框属性.png "智能角框属性")
+>![](public_sys-resources/icon-note.gif) **说明：** >- 1.角框坐标\(x,y\)：
+> x = none\_src-\>dst\_rect-\>pos\_x;
+> y = none\_src-\>dst\_rect-\>pos\_y;
+>- 2.角框外颜色：corner\_rect\_info -\>outer\_color
+>- 3.角框内颜色：corner\_rect\_info -\>inner\_color
+>- 4.角框形状由w与h决定：corner\_rect\_info -\>width，corner\_rect\_info -\>height 【参数】 <a name="table7481mcpsimp"></a>
 <table><thead align="left"><tr id="row7487mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p7489mcpsimp"><a name="p7489mcpsimp"></a><a name="p7489mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p7491mcpsimp"><a name="p7491mcpsimp"></a><a name="p7491mcpsimp"></a>描述</p>
@@ -1317,11 +634,7 @@ td_s32 ss_tde_quick_draw_rect(td_s32 handle, const ot_tde_none_src *none_src, co
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table7517mcpsimp"></a>
+</table> 【返回值】 <a name="table7517mcpsimp"></a>
 <table><thead align="left"><tr id="row7522mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p7524mcpsimp"><a name="p7524mcpsimp"></a><a name="p7524mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p7526mcpsimp"><a name="p7526mcpsimp"></a><a name="p7526mcpsimp"></a>描述</p>
@@ -1333,17 +646,8 @@ td_s32 ss_tde_quick_draw_rect(td_s32 handle, const ot_tde_none_src *none_src, co
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p7532mcpsimp"><a name="p7532mcpsimp"></a><a name="p7532mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row7533mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p id="p7535mcpsimp"><a name="p7535mcpsimp"></a><a name="p7535mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p7537mcpsimp"><a name="p7537mcpsimp"></a><a name="p7537mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table7540mcpsimp"></a>
+</table> 【错误码】 <a name="table7540mcpsimp"></a>
 <table><thead align="left"><tr id="row7545mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p7547mcpsimp"><a name="p7547mcpsimp"></a><a name="p7547mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p7549mcpsimp"><a name="p7549mcpsimp"></a><a name="p7549mcpsimp"></a>描述</p>
@@ -1386,62 +690,19 @@ td_s32 ss_tde_quick_draw_rect(td_s32 handle, const ot_tde_none_src *none_src, co
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-支持的格式（目标位图格式）如下：
-
-OT\_TDE\_COLOR\_FORMAT\_CLUT2、OT\_TDE\_COLOR\_FORMAT\_CLUT4
-
-注：仅SS626V100除了支持上述两个格式外，新增支持以下格式：
-
-OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8,OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr888
-
-使用限制：
-
--   CLUT1格式画框，目标区域起始横坐标按8像素对齐，宽度按8像素对齐。
--   CLUT2格式画框，目标区域起始横坐标按4像素对齐，宽度按4像素对齐。
--   CLUT4格式画框，目标区域起始横坐标按2像素对齐，宽度按2像素对齐。
-
-【举例】
-
-无。
-
-### ss\_tde\_draw\_multi\_rect<a name="ZH-CN_TOPIC_0000002408119278"></a>
-
-【目的】
-
-向任务中添加绘制复数角框操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 支持的格式（目标位图格式）如下： OT\_TDE\_COLOR\_FORMAT\_CLUT2、OT\_TDE\_COLOR\_FORMAT\_CLUT4 注：仅除了支持上述两个格式外，新增支持以下格式： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8,OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr888 使用限制： - CLUT1格式画框，目标区域起始横坐标按8像素对齐，宽度按8像素对齐。
+- CLUT2格式画框，目标区域起始横坐标按4像素对齐，宽度按4像素对齐。
+- CLUT4格式画框，目标区域起始横坐标按2像素对齐，宽度按2像素对齐。 【举例】 无。 ### ss\_tde\_draw\_multi\_rect<a name="ZH-CN_TOPIC_0000002408119278"></a> 【目的】 向任务中添加绘制复数角框操作。 【语法】 ```
 td_s32 ss_tde_draw_multi_rect(td_s32 handle, const ot_tde_surface *dst_surface, const ot_tde_corner_rect *corner_rect, td_u32 num);
-```
-
-【描述】
-
-填充好结构体corner\_rect与角框个数num，将之绘制到以dst\_surface为目的地址、corner\_rect\_region为输出区域的内存中，可实现快速绘制复数个角框。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   1.角框坐标\(x,y\)及角框大小\(w,h\)：
->    x = corner\_rect -\> corner\_rect\_region -\>pos\_x;
->    y = corner\_rect -\> corner\_rect\_region -\>pos\_y;
->    w = corner\_rect -\> corner\_rect\_region -\>width;
->    h = corner\_rect -\> corner\_rect\_region -\>height;
->-   2.角框外颜色：corner\_rect-\> corner\_rect\_info-\>outer\_color
->-   3.角框内颜色：corner\_rect-\> corner\_rect\_info-\>inner\_color
->-   4.角框形状由w与h决定：corner\_rect-\> corner\_rect\_info -\>width，corner\_rect-\> corner\_rect\_info -\>height
-
-【参数】
-
-<a name="table7643mcpsimp"></a>
+``` 【描述】 填充好结构体corner\_rect与角框个数num，将之绘制到以dst\_surface为目的地址、corner\_rect\_region为输出区域的内存中，可实现快速绘制复数个角框。 >![](public_sys-resources/icon-note.gif) **说明：** >- 1.角框坐标\(x,y\)及角框大小\(w,h\)：
+> x = corner\_rect -\> corner\_rect\_region -\>pos\_x;
+> y = corner\_rect -\> corner\_rect\_region -\>pos\_y;
+> w = corner\_rect -\> corner\_rect\_region -\>width;
+> h = corner\_rect -\> corner\_rect\_region -\>height;
+>- 2.角框外颜色：corner\_rect-\> corner\_rect\_info-\>outer\_color
+>- 3.角框内颜色：corner\_rect-\> corner\_rect\_info-\>inner\_color
+>- 4.角框形状由w与h决定：corner\_rect-\> corner\_rect\_info -\>width，corner\_rect-\> corner\_rect\_info -\>height 【参数】 <a name="table7643mcpsimp"></a>
 <table><thead align="left"><tr id="row7649mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p7651mcpsimp"><a name="p7651mcpsimp"></a><a name="p7651mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p7653mcpsimp"><a name="p7653mcpsimp"></a><a name="p7653mcpsimp"></a>描述</p>
@@ -1479,11 +740,7 @@ td_s32 ss_tde_draw_multi_rect(td_s32 handle, const ot_tde_surface *dst_surface, 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table7686mcpsimp"></a>
+</table> 【返回值】 <a name="table7686mcpsimp"></a>
 <table><thead align="left"><tr id="row7691mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p7693mcpsimp"><a name="p7693mcpsimp"></a><a name="p7693mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p7695mcpsimp"><a name="p7695mcpsimp"></a><a name="p7695mcpsimp"></a>描述</p>
@@ -1495,17 +752,8 @@ td_s32 ss_tde_draw_multi_rect(td_s32 handle, const ot_tde_surface *dst_surface, 
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p7701mcpsimp"><a name="p7701mcpsimp"></a><a name="p7701mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row7702mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p id="p7704mcpsimp"><a name="p7704mcpsimp"></a><a name="p7704mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p7706mcpsimp"><a name="p7706mcpsimp"></a><a name="p7706mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table7709mcpsimp"></a>
+</table> 【错误码】 <a name="table7709mcpsimp"></a>
 <table><thead align="left"><tr id="row7714mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p7716mcpsimp"><a name="p7716mcpsimp"></a><a name="p7716mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p7718mcpsimp"><a name="p7718mcpsimp"></a><a name="p7718mcpsimp"></a>描述</p>
@@ -1548,82 +796,32 @@ td_s32 ss_tde_draw_multi_rect(td_s32 handle, const ot_tde_surface *dst_surface, 
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-支持的格式（目标位图格式）如下：
-
--   OT\_TDE\_COLOR\_FORMAT\_CLUT2
--   OT\_TDE\_COLOR\_FORMAT\_CLUT4
-
-使用限制：
-
--   CLUT2格式画框，目标区域起始横坐标按4像素对齐，宽度按4像素对齐。
--   CLUT4格式画框，目标区域起始横坐标按2像素对齐，宽度按2像素对齐。
--   最多一次绘制128个框。
--   如果配置128个框，当第10个框配置有误，则会停止配置返回对应错误码。此时客户有以下两种处理方式：
-    -   通过[ss\_tde\_cancel\_job](#ZH-CN_TOPIC_0000002408119222)取消该任务，重新正确配置。
-    -   直接通过[ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)提交该任务，正确绘制前9个框。
-
-【举例】
-
-一次绘制64个框代码片段：
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 支持的格式（目标位图格式）如下： - OT\_TDE\_COLOR\_FORMAT\_CLUT2
+- OT\_TDE\_COLOR\_FORMAT\_CLUT4 使用限制： - CLUT2格式画框，目标区域起始横坐标按4像素对齐，宽度按4像素对齐。
+- CLUT4格式画框，目标区域起始横坐标按2像素对齐，宽度按2像素对齐。
+- 最多一次绘制128个框。
+- 如果配置128个框，当第10个框配置有误，则会停止配置返回对应错误码。此时客户有以下两种处理方式： - 通过[ss\_tde\_cancel\_job](#ZH-CN_TOPIC_0000002408119222)取消该任务，重新正确配置。 - 直接通过[ss\_tde\_end\_job](#ZH-CN_TOPIC_0000002408279158)提交该任务，正确绘制前9个框。 【举例】 一次绘制64个框代码片段： ```
 td_s32 handle;
 ot_tde_corner_rect multi_corner = {0};
 /* 分配64个框的属性值的空间 */
 multi_corner. corner_rect_info = (ot_tde_corner_rect_info *)malloc(sizeof(ot_tde_corner_rect_info) * 64);
 multi_corner.corner_rect_region = (ot_tde_rect*)malloc(sizeof(ot_tde_rect) * 64);
 /* 配置需要画的框与位置 */
-for (i = 1; i < 64; i++) {
-        multi_corner. corner_rect_info [i].width = 4;
-        multi_corner. corner_rect_info [i].height = 1;
-        multi_corner. corner_rect_info [i].inner_color = 0x1;
-        multi_corner. corner_rect_info [i].outer_color = 0x3;
-        multi_corner.corner_rect_region [i].height = 10;
-        multi_corner.corner_rect_region [i].width = 10;
-        multi_corner.corner_rect_region [i].pos_x = rect_list[i - 1].pos_x + 4;
-        multi_corner.corner_rect_region [i].pos_y = rect_list[i - 1].pos_y + 2;
+for (i = 1; i < 64; i++) { multi_corner. corner_rect_info [i].width = 4; multi_corner. corner_rect_info [i].height = 1; multi_corner. corner_rect_info [i].inner_color = 0x1; multi_corner. corner_rect_info [i].outer_color = 0x3; multi_corner.corner_rect_region [i].height = 10; multi_corner.corner_rect_region [i].width = 10; multi_corner.corner_rect_region [i].pos_x = rect_list[i - 1].pos_x + 4; multi_corner.corner_rect_region [i].pos_y = rect_list[i - 1].pos_y + 2;
 }
 /* 获取TDE有效句柄 */
-handle = ss_tde_begin_job();
+handle = ss_tde_begin_job;
 /* 添加复数角框任务。dst_surface需要有效 */
 ss_tde_draw_multi_rect(handle, &dst_surface, &multi_corner, 64);
 /* 提交任务给硬件 */
 ss_tde_end_job(handle, is_sync, is_block, time_out);
 free(multi_corner.corner_rect_info);
 free(multi_corner.corner_rect_region);
-ss_tde_close();
-```
-
-### ss\_tde\_draw\_line<a name="ZH-CN_TOPIC_0000002408119246"></a>
-
-【目的】
-
-向任务中添加drd画线操作，支持画直线、斜线。
-
-【语法】
-
-```
+ss_tde_close;
+``` ### ss\_tde\_draw\_line<a name="ZH-CN_TOPIC_0000002408119246"></a> 【目的】 向任务中添加drd画线操作，支持画直线、斜线。 【语法】 ```
 td_s32 ss_tde_draw_line(td_s32 handle, const ot_tde_surface *dst_surface, const ot_tde_line *line, td_u32 num);
-```
-
-【描述】
-
-将num条line绘制在以dst\_surface为目的地址的内存中，可实现绘制1条或多条斜线（最多可绘制的线数为100条）。
-
-可设置的线宽为1\~256；package格式（OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888）要求线宽为偶数。
-
-【参数】
-
-<a name="table384mcpsimp"></a>
+``` 【描述】 将num条line绘制在以dst\_surface为目的地址的内存中，可实现绘制1条或多条斜线（最多可绘制的线数为100条）。 可设置的线宽为1\~256；package格式（OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888）要求线宽为偶数。 【参数】 <a name="table384mcpsimp"></a>
 <table><thead align="left"><tr id="row390mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p392mcpsimp"><a name="p392mcpsimp"></a><a name="p392mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p394mcpsimp"><a name="p394mcpsimp"></a><a name="p394mcpsimp"></a>描述</p>
@@ -1661,11 +859,7 @@ td_s32 ss_tde_draw_line(td_s32 handle, const ot_tde_surface *dst_surface, const 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table427mcpsimp"></a>
+</table> 【返回值】 <a name="table427mcpsimp"></a>
 <table><thead align="left"><tr id="row432mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p434mcpsimp"><a name="p434mcpsimp"></a><a name="p434mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p436mcpsimp"><a name="p436mcpsimp"></a><a name="p436mcpsimp"></a>描述</p>
@@ -1677,17 +871,8 @@ td_s32 ss_tde_draw_line(td_s32 handle, const ot_tde_surface *dst_surface, const 
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p442mcpsimp"><a name="p442mcpsimp"></a><a name="p442mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row443mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p445mcpsimp"><a name="p445mcpsimp"></a><a name="p445mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p447mcpsimp"><a name="p447mcpsimp"></a><a name="p447mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table450mcpsimp"></a>
+</table> 【错误码】 <a name="table450mcpsimp"></a>
 <table><thead align="left"><tr id="row455mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p457mcpsimp"><a name="p457mcpsimp"></a><a name="p457mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p459mcpsimp"><a name="p459mcpsimp"></a><a name="p459mcpsimp"></a>描述</p>
@@ -1730,60 +915,12 @@ td_s32 ss_tde_draw_line(td_s32 handle, const ot_tde_surface *dst_surface, const 
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-支持的格式（目标位图格式）如下：
-
-OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888
-
-【举例】
-
-无。
-
-### ss\_tde\_quick\_copy<a name="ZH-CN_TOPIC_0000002441718413"></a>
-
-【目的】
-
-向指定任务中添加快速拷贝操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 支持的格式（目标位图格式）如下： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888 【举例】 无。 ### ss\_tde\_quick\_copy<a name="ZH-CN_TOPIC_0000002441718413"></a> 【目的】 向指定任务中添加快速拷贝操作。 【语法】 ```
 td_s32 ss_tde_quick_copy(td_s32 handle, const ot_tde_single_src *single_src);
-```
-
-【描述】
-
-将single\_src中基地址为src\_surface的位图的指定区域src\_rect拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中。
-
-位图、操作区域及两者的的关系描述如下：
-
--   位图信息由ot\_tde\_surface表示，它描述位图的基本信息，包括：位图的像素宽度、像素高度、位图每行的跨度、颜色格式、位图存放的物理地址等。
--   操作区域由ot\_tde\_rect表示，它描述位图中参与本次操作的矩形范围，包括：起始位置和尺寸信息。
--   位图及位图操作区域的关系如[图1](#fig41526365582)所示。
-
-    通过指定不同的操作区域，用户可指定位图的全部或部分参与操作。
-
-    -   若希望整个位图都参与操作，则指定操作区域起点为（0，0），宽高分别为位图的宽高。
-    -   若希望位图的部分区域参与操作，则指定适当的操作区域大小。如[图1](#fig41526365582)中的情况（a），指定的操作区域即为有效的操作区域。注意：如果指定的操作区域与位图部分相交，如情况\(b\)，则自动裁剪指定操作区域，故有效的操作区域为灰色相交部分。
-    -   若指定的操作区域与位图不相交，如情况\(c\)，则认为配置错误，返回错误码OT\_ERR\_TDE\_INVALID\_PARAM。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->有效操作区域：指调用者指定的操作区域与位图的相交部分。
-
-**图 1**  位图与位图中的操作区域的关系<a name="fig41526365582"></a>  
-![](figures/位图与位图中的操作区域的关系.png "位图与位图中的操作区域的关系")
-
-【参数】
-
-<a name="table536mcpsimp"></a>
+``` 【描述】 将single\_src中基地址为src\_surface的位图的指定区域src\_rect拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中。 位图、操作区域及两者的的关系描述如下： - 位图信息由ot\_tde\_surface表示，它描述位图的基本信息，包括：位图的像素宽度、像素高度、位图每行的跨度、颜色格式、位图存放的物理地址等。
+- 操作区域由ot\_tde\_rect表示，它描述位图中参与本次操作的矩形范围，包括：起始位置和尺寸信息。
+- 位图及位图操作区域的关系如[图1](#fig41526365582)所示。 通过指定不同的操作区域，用户可指定位图的全部或部分参与操作。 - 若希望整个位图都参与操作，则指定操作区域起点为（0，0），宽高分别为位图的宽高。 - 若希望位图的部分区域参与操作，则指定适当的操作区域大小。如[图1](#fig41526365582)中的情况（a），指定的操作区域即为有效的操作区域。注意：如果指定的操作区域与位图部分相交，如情况\(b\)，则自动裁剪指定操作区域，故有效的操作区域为灰色相交部分。 - 若指定的操作区域与位图不相交，如情况\(c\)，则认为配置错误，返回错误码OT\_ERR\_TDE\_INVALID\_PARAM。 >![](public_sys-resources/icon-note.gif) **说明：** >有效操作区域：指调用者指定的操作区域与位图的相交部分。 **图 1** 位图与位图中的操作区域的关系<a name="fig41526365582"></a> ![](figures/位图与位图中的操作区域的关系.png "位图与位图中的操作区域的关系") 【参数】 <a name="table536mcpsimp"></a>
 <table><thead align="left"><tr id="row542mcpsimp"><th class="cellrowborder" valign="top" width="21.000000000000004%" id="mcps1.1.4.1.1"><p id="p544mcpsimp"><a name="p544mcpsimp"></a><a name="p544mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.00000000000001%" id="mcps1.1.4.1.2"><p id="p546mcpsimp"><a name="p546mcpsimp"></a><a name="p546mcpsimp"></a>描述</p>
@@ -1807,11 +944,7 @@ td_s32 ss_tde_quick_copy(td_s32 handle, const ot_tde_single_src *single_src);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table565mcpsimp"></a>
+</table> 【返回值】 <a name="table565mcpsimp"></a>
 <table><thead align="left"><tr id="row570mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p572mcpsimp"><a name="p572mcpsimp"></a><a name="p572mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p574mcpsimp"><a name="p574mcpsimp"></a><a name="p574mcpsimp"></a>描述</p>
@@ -1823,17 +956,8 @@ td_s32 ss_tde_quick_copy(td_s32 handle, const ot_tde_single_src *single_src);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p580mcpsimp"><a name="p580mcpsimp"></a><a name="p580mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row581mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p583mcpsimp"><a name="p583mcpsimp"></a><a name="p583mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p585mcpsimp"><a name="p585mcpsimp"></a><a name="p585mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table588mcpsimp"></a>
+</table> 【错误码】 <a name="table588mcpsimp"></a>
 <table><thead align="left"><tr id="row593mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p595mcpsimp"><a name="p595mcpsimp"></a><a name="p595mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p597mcpsimp"><a name="p597mcpsimp"></a><a name="p597mcpsimp"></a>描述</p>
@@ -1876,56 +1000,16 @@ td_s32 ss_tde_quick_copy(td_s32 handle, const ot_tde_single_src *single_src);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式如下：
-
-    **源位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD
-
-    **目标位图格式：**
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD
-
--   此接口使用的是直接DMA搬移，因此性能优于[ss\_tde\_bit\_blit](#ZH-CN_TOPIC_0000002408279150)搬移。
--   快速拷贝操作不支持格式转换，源位图和目标位图格式必须一致。
--   快速拷贝不支持缩放功能，因此如果源和目的的操作区域尺寸不一致，则按照两者最小的公共区域进行拷贝搬移。
--   指定的操作区域要和指定的位图有公共区域，否则会返回错误；其他操作均有此要求。
--   像素格式大于等于BYTE的位图格式的基地址和位图的Stride必须按照像素格式对齐，像素格式不足BYTE的位图格式的基地址和Stride需要按照BYTE对齐；其他操作均有此要求。
--   像素格式不足BYTE的位图格式的水平起始位置和宽度必须按照特定个数像素对齐。如clut2按照4像素对齐，clut4按照2像素对齐。
--   YCbCr422格式的位图的水平起始位置和宽度必须为偶数；其他操作均有此要求。
-
-【举例】
-
-无。
-
-### ss\_tde\_quick\_resize<a name="ZH-CN_TOPIC_0000002408119230"></a>
-
-【目的】
-
-向任务中添加光栅位图缩放操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式如下： **源位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD **目标位图格式：** OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD - 此接口使用的是直接DMA搬移，因此性能优于[ss\_tde\_bit\_blit](#ZH-CN_TOPIC_0000002408279150)搬移。
+- 快速拷贝操作不支持格式转换，源位图和目标位图格式必须一致。
+- 快速拷贝不支持缩放功能，因此如果源和目的的操作区域尺寸不一致，则按照两者最小的公共区域进行拷贝搬移。
+- 指定的操作区域要和指定的位图有公共区域，否则会返回错误；其他操作均有此要求。
+- 像素格式大于等于BYTE的位图格式的基地址和位图的Stride必须按照像素格式对齐，像素格式不足BYTE的位图格式的基地址和Stride需要按照BYTE对齐；其他操作均有此要求。
+- 像素格式不足BYTE的位图格式的水平起始位置和宽度必须按照特定个数像素对齐。如clut2按照4像素对齐，clut4按照2像素对齐。
+- YCbCr422格式的位图的水平起始位置和宽度必须为偶数；其他操作均有此要求。 【举例】 无。 ### ss\_tde\_quick\_resize<a name="ZH-CN_TOPIC_0000002408119230"></a> 【目的】 向任务中添加光栅位图缩放操作。 【语法】 ```
 td_s32 ss_tde_quick_resize(td_s32 handle, const ot_tde_single_src *single_src);
-```
-
-【描述】
-
-将single\_src中基地址为src\_surface的位图以区域src\_rect指定的尺寸缩放至dst\_rect的尺寸，将结果拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中。
-
-【参数】
-
-<a name="table672mcpsimp"></a>
+``` 【描述】 将single\_src中基地址为src\_surface的位图以区域src\_rect指定的尺寸缩放至dst\_rect的尺寸，将结果拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中。 【参数】 <a name="table672mcpsimp"></a>
 <table><thead align="left"><tr id="row678mcpsimp"><th class="cellrowborder" valign="top" width="21.000000000000004%" id="mcps1.1.4.1.1"><p id="p680mcpsimp"><a name="p680mcpsimp"></a><a name="p680mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.00000000000001%" id="mcps1.1.4.1.2"><p id="p682mcpsimp"><a name="p682mcpsimp"></a><a name="p682mcpsimp"></a>描述</p>
@@ -1949,11 +1033,7 @@ td_s32 ss_tde_quick_resize(td_s32 handle, const ot_tde_single_src *single_src);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table701mcpsimp"></a>
+</table> 【返回值】 <a name="table701mcpsimp"></a>
 <table><thead align="left"><tr id="row706mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p708mcpsimp"><a name="p708mcpsimp"></a><a name="p708mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p710mcpsimp"><a name="p710mcpsimp"></a><a name="p710mcpsimp"></a>描述</p>
@@ -1965,17 +1045,8 @@ td_s32 ss_tde_quick_resize(td_s32 handle, const ot_tde_single_src *single_src);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p716mcpsimp"><a name="p716mcpsimp"></a><a name="p716mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row717mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p719mcpsimp"><a name="p719mcpsimp"></a><a name="p719mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p721mcpsimp"><a name="p721mcpsimp"></a><a name="p721mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table724mcpsimp"></a>
+</table> 【错误码】 <a name="table724mcpsimp"></a>
 <table><thead align="left"><tr id="row729mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p731mcpsimp"><a name="p731mcpsimp"></a><a name="p731mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p733mcpsimp"><a name="p733mcpsimp"></a><a name="p733mcpsimp"></a>描述</p>
@@ -2028,59 +1099,19 @@ td_s32 ss_tde_quick_resize(td_s32 handle, const ot_tde_single_src *single_src);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式如下：
-
-    **源位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888
-
-    **目标位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888
-
--   缩小倍数小于等于255倍，放大倍数则没有限制\(不超过最大分辨率\)。其他接口的缩放倍数限制与此一致，不另作说明。
--   缩放时源位图和目标位图可以为同一位图，但操作区域不能有重叠，否则效果会异常。
--   缩放对目标区域宽度的限制：
-
-<a name="table804mcpsimp"></a>
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式如下： **源位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 **目标位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 - 缩小倍数小于等于255倍，放大倍数则没有限制\(不超过最大分辨率\)。其他接口的缩放倍数限制与此一致，不另作说明。
+- 缩放时源位图和目标位图可以为同一位图，但操作区域不能有重叠，否则效果会异常。
+- 缩放对目标区域宽度的限制： <a name="table804mcpsimp"></a>
 <table><thead align="left"><tr id="row809mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p811mcpsimp"><a name="p811mcpsimp"></a><a name="p811mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p813mcpsimp"><a name="p813mcpsimp"></a><a name="p813mcpsimp"></a>ZME_MAX_LENGTH</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row815mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p817mcpsimp"><a name="p817mcpsimp"></a><a name="p817mcpsimp"></a>SS528V100</p>
+<tbody><tr id="row815mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p817mcpsimp"><a name="p817mcpsimp"></a><a name="p817mcpsimp"></a></p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p819mcpsimp"><a name="p819mcpsimp"></a><a name="p819mcpsimp"></a>1920</p>
-</td>
-</tr>
-<tr id="row820mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p822mcpsimp"><a name="p822mcpsimp"></a><a name="p822mcpsimp"></a>SS625V100</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p824mcpsimp"><a name="p824mcpsimp"></a><a name="p824mcpsimp"></a>1920</p>
-</td>
-</tr>
-<tr id="row444263194713"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1244223116476"><a name="p1244223116476"></a><a name="p1244223116476"></a>SS626V100</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p154421314470"><a name="p154421314470"></a><a name="p154421314470"></a>1920</p>
-</td>
-</tr>
-<tr id="row825mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p827mcpsimp"><a name="p827mcpsimp"></a><a name="p827mcpsimp"></a>SS524V100</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p829mcpsimp"><a name="p829mcpsimp"></a><a name="p829mcpsimp"></a>1920</p>
-</td>
-</tr>
-<tr id="row830mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p832mcpsimp"><a name="p832mcpsimp"></a><a name="p832mcpsimp"></a>SS522V100</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p834mcpsimp"><a name="p834mcpsimp"></a><a name="p834mcpsimp"></a>1920</p>
 </td>
 </tr>
 <tr id="row835mcpsimp"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p837mcpsimp"><a name="p837mcpsimp"></a><a name="p837mcpsimp"></a>Hi3403V100</p>
@@ -2088,39 +1119,10 @@ td_s32 ss_tde_quick_resize(td_s32 handle, const ot_tde_single_src *single_src);
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p839mcpsimp"><a name="p839mcpsimp"></a><a name="p839mcpsimp"></a>2048</p>
 </td>
 </tr>
-<tr id="row7386112917158"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p1238620299155"><a name="p1238620299155"></a><a name="p1238620299155"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p193869292158"><a name="p193869292158"></a><a name="p193869292158"></a>2048</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-注：当输入侧，输出侧，两侧宽度均大于ZME\_MAX\_LENGTH时，不支持缩放。
-
-【举例】
-
-无。
-
-### ss\_tde\_quick\_deflicker<a name="ZH-CN_TOPIC_0000002408119250"></a>
-
-【目的】
-
-向任务中添加抗闪烁操作。
-
-【语法】
-
-```
+</table> 注：当输入侧，输出侧，两侧宽度均大于ZME\_MAX\_LENGTH时，不支持缩放。 【举例】 无。 ### ss\_tde\_quick\_deflicker<a name="ZH-CN_TOPIC_0000002408119250"></a> 【目的】 向任务中添加抗闪烁操作。 【语法】 ```
 td_s32 ss_tde_quick_deflicker(td_s32 handle, const ot_tde_single_src *single_src);
-```
-
-【描述】
-
-将single\_src中基地址为src\_surface的位图以指定的区域src\_rect进行抗闪烁，将结果拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中。
-
-【参数】
-
-<a name="table853mcpsimp"></a>
+``` 【描述】 将single\_src中基地址为src\_surface的位图以指定的区域src\_rect进行抗闪烁，将结果拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中。 【参数】 <a name="table853mcpsimp"></a>
 <table><thead align="left"><tr id="row859mcpsimp"><th class="cellrowborder" valign="top" width="21.000000000000004%" id="mcps1.1.4.1.1"><p id="p861mcpsimp"><a name="p861mcpsimp"></a><a name="p861mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.00000000000001%" id="mcps1.1.4.1.2"><p id="p863mcpsimp"><a name="p863mcpsimp"></a><a name="p863mcpsimp"></a>描述</p>
@@ -2144,11 +1146,7 @@ td_s32 ss_tde_quick_deflicker(td_s32 handle, const ot_tde_single_src *single_src
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table882mcpsimp"></a>
+</table> 【返回值】 <a name="table882mcpsimp"></a>
 <table><thead align="left"><tr id="row887mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p889mcpsimp"><a name="p889mcpsimp"></a><a name="p889mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p891mcpsimp"><a name="p891mcpsimp"></a><a name="p891mcpsimp"></a>描述</p>
@@ -2160,17 +1158,8 @@ td_s32 ss_tde_quick_deflicker(td_s32 handle, const ot_tde_single_src *single_src
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p897mcpsimp"><a name="p897mcpsimp"></a><a name="p897mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row898mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p900mcpsimp"><a name="p900mcpsimp"></a><a name="p900mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p902mcpsimp"><a name="p902mcpsimp"></a><a name="p902mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table905mcpsimp"></a>
+</table> 【错误码】 <a name="table905mcpsimp"></a>
 <table><thead align="left"><tr id="row910mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p912mcpsimp"><a name="p912mcpsimp"></a><a name="p912mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p914mcpsimp"><a name="p914mcpsimp"></a><a name="p914mcpsimp"></a>描述</p>
@@ -2223,53 +1212,13 @@ td_s32 ss_tde_quick_deflicker(td_s32 handle, const ot_tde_single_src *single_src
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式如下：
-
-    **源位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888
-
-    **目标位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888
-
--   抗闪烁只按垂直方向进行滤波。
--   抗闪烁源位图和目标位图可以为同一位图，但操作区域不能有重叠，否则效果会异常。
--   如果指定的输入区域与输出不一致，则会进行缩放处理。
--   如果源位图和目标位图的格式不相同，则会进行格式转换处理。
-
-【举例】
-
-无。
-
-### ss\_tde\_solid\_draw<a name="ZH-CN_TOPIC_0000002408119234"></a>
-
-【目的】
-
-向任务中添加对光栅位图进行有附加操作的填充搬移操作。实现在surface上画点、画线、色块填充或内存填充等功能。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式如下： **源位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 **目标位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 - 抗闪烁只按垂直方向进行滤波。
+- 抗闪烁源位图和目标位图可以为同一位图，但操作区域不能有重叠，否则效果会异常。
+- 如果指定的输入区域与输出不一致，则会进行缩放处理。
+- 如果源位图和目标位图的格式不相同，则会进行格式转换处理。 【举例】 无。 ### ss\_tde\_solid\_draw<a name="ZH-CN_TOPIC_0000002408119234"></a> 【目的】 向任务中添加对光栅位图进行有附加操作的填充搬移操作。实现在surface上画点、画线、色块填充或内存填充等功能。 【语法】 ```
 td_s32 ss_tde_solid_draw(td_s32 handle, const ot_tde_single_src *single_src, const ot_tde_fill_color *fill_color, const ot_tde_opt *opt);
-```
-
-【描述】
-
-该接口实现背景surface操作区域和填充色运算后输出到目标surface的操作区域。该运算可以是alpha叠加运算或ROP运算，中间可以伴随着clip操作。
-
-【参数】
-
-<a name="table1001mcpsimp"></a>
+``` 【描述】 该接口实现背景surface操作区域和填充色运算后输出到目标surface的操作区域。该运算可以是alpha叠加运算或ROP运算，中间可以伴随着clip操作。 【参数】 <a name="table1001mcpsimp"></a>
 <table><thead align="left"><tr id="row1007mcpsimp"><th class="cellrowborder" valign="top" width="23.76%" id="mcps1.1.4.1.1"><p id="p1009mcpsimp"><a name="p1009mcpsimp"></a><a name="p1009mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.42%" id="mcps1.1.4.1.2"><p id="p1011mcpsimp"><a name="p1011mcpsimp"></a><a name="p1011mcpsimp"></a>描述</p>
@@ -2307,11 +1256,7 @@ td_s32 ss_tde_solid_draw(td_s32 handle, const ot_tde_single_src *single_src, con
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1044mcpsimp"></a>
+</table> 【返回值】 <a name="table1044mcpsimp"></a>
 <table><thead align="left"><tr id="row1049mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p1051mcpsimp"><a name="p1051mcpsimp"></a><a name="p1051mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p1053mcpsimp"><a name="p1053mcpsimp"></a><a name="p1053mcpsimp"></a>描述</p>
@@ -2323,17 +1268,8 @@ td_s32 ss_tde_solid_draw(td_s32 handle, const ot_tde_single_src *single_src, con
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1059mcpsimp"><a name="p1059mcpsimp"></a><a name="p1059mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1060mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p1062mcpsimp"><a name="p1062mcpsimp"></a><a name="p1062mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1064mcpsimp"><a name="p1064mcpsimp"></a><a name="p1064mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table1067mcpsimp"></a>
+</table> 【错误码】 <a name="table1067mcpsimp"></a>
 <table><thead align="left"><tr id="row1072mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p1074mcpsimp"><a name="p1074mcpsimp"></a><a name="p1074mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p1076mcpsimp"><a name="p1076mcpsimp"></a><a name="p1076mcpsimp"></a>描述</p>
@@ -2391,71 +1327,11 @@ td_s32 ss_tde_solid_draw(td_s32 handle, const ot_tde_single_src *single_src, con
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式如下：
-
-    **背景位图格式：**
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888
-
-    **目标位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888
-
--   在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
--   当背景位图src\_suface与src\_rect为NULL且操作结构opt为NULL时，该接口可实现单纯的色彩填充功能，即与[ss\_tde\_quick\_fill](#ZH-CN_TOPIC_0000002408279206)实现的功能一样。接口调用形式如下：
-
-    ```
-    single_src.src_surface = NULL;
-    single_src.src_rect = NULL;
-    ss_tde_solid_draw(handle, &single_src, &fill_color,NULL);
-    ```
-
--   当背景位图src\_suface与src\_rect不为NULL时（此时操作属性opt一定不能为NULL），可实现背景位图的指定区域与填充色做alpha叠加或ROP等操作，结果输出到目的位图的指定区域。接口调用形式如下：
-
-    ```
-    ss_tde_solid_draw (handle, &single_src, &fill_color, opt);
-    ```
-
-    注：single\_src中的值为有效值
-
--   调用者可将填充色与指定位图做alpha叠加、ROP、colorkey、输出结果的镜像mirror和输出结果的剪切clip。
-    -   当指定ROP操作时，ROP操作对象填充色作为前景S2，single\_src.src\_surface作为背景S1。
-    -   当指定colorkey操作时，只能对前景S2做colorkey。
-
--   Solid Draw绘制矩形或者水平/垂直直线的方法是通过设置填充矩形的宽/高来完成。例如：垂直直线就是绘制宽度为1像素的矩形。
-
-【举例】
-
-无。
-
-### ss\_tde\_rotate<a name="ZH-CN_TOPIC_0000002408279222"></a>
-
-【目的】
-
-向任务中添加光栅位图旋转操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式如下： **背景位图格式：** OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888 **目标位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 - 在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
+- 当背景位图src\_suface与src\_rect为NULL且操作结构opt为NULL时，该接口可实现单纯的色彩填充功能，即与[ss\_tde\_quick\_fill](#ZH-CN_TOPIC_0000002408279206)实现的功能一样。接口调用形式如下： ``` single_src.src_surface = NULL; single_src.src_rect = NULL; ss_tde_solid_draw(handle, &single_src, &fill_color,NULL); ``` - 当背景位图src\_suface与src\_rect不为NULL时（此时操作属性opt一定不能为NULL），可实现背景位图的指定区域与填充色做alpha叠加或ROP等操作，结果输出到目的位图的指定区域。接口调用形式如下： ``` ss_tde_solid_draw (handle, &single_src, &fill_color, opt); ``` 注：single\_src中的值为有效值 - 调用者可将填充色与指定位图做alpha叠加、ROP、colorkey、输出结果的镜像mirror和输出结果的剪切clip。 - 当指定ROP操作时，ROP操作对象填充色作为前景S2，single\_src.src\_surface作为背景S1。 - 当指定colorkey操作时，只能对前景S2做colorkey。 - Solid Draw绘制矩形或者水平/垂直直线的方法是通过设置填充矩形的宽/高来完成。例如：垂直直线就是绘制宽度为1像素的矩形。 【举例】 无。 ### ss\_tde\_rotate<a name="ZH-CN_TOPIC_0000002408279222"></a> 【目的】 向任务中添加光栅位图旋转操作。 【语法】 ```
 td_s32 ss_tde_rotate(td_s32 handle, const ot_tde_single_src *single_src, ot_tde_rotate_angle rotate);
-```
-
-【描述】
-
-将single\_src中基地址为src\_surface的位图以区域src\_rect指定的尺寸旋转至dst\_rect的尺寸，将结果拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中，可以做90度，180度和270度顺时针旋转。
-
-【参数】
-
-<a name="table1179mcpsimp"></a>
+``` 【描述】 将single\_src中基地址为src\_surface的位图以区域src\_rect指定的尺寸旋转至dst\_rect的尺寸，将结果拷贝到以dst\_surface为目的地址、dst\_rect为输出区域的内存中，可以做90度，180度和270度顺时针旋转。 【参数】 <a name="table1179mcpsimp"></a>
 <table><thead align="left"><tr id="row1185mcpsimp"><th class="cellrowborder" valign="top" width="21.000000000000004%" id="mcps1.1.4.1.1"><p id="p1187mcpsimp"><a name="p1187mcpsimp"></a><a name="p1187mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.00000000000001%" id="mcps1.1.4.1.2"><p id="p1189mcpsimp"><a name="p1189mcpsimp"></a><a name="p1189mcpsimp"></a>描述</p>
@@ -2486,11 +1362,7 @@ td_s32 ss_tde_rotate(td_s32 handle, const ot_tde_single_src *single_src, ot_tde_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1215mcpsimp"></a>
+</table> 【返回值】 <a name="table1215mcpsimp"></a>
 <table><thead align="left"><tr id="row1220mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p1222mcpsimp"><a name="p1222mcpsimp"></a><a name="p1222mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p1224mcpsimp"><a name="p1224mcpsimp"></a><a name="p1224mcpsimp"></a>描述</p>
@@ -2502,17 +1374,8 @@ td_s32 ss_tde_rotate(td_s32 handle, const ot_tde_single_src *single_src, ot_tde_
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1230mcpsimp"><a name="p1230mcpsimp"></a><a name="p1230mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1231mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p1233mcpsimp"><a name="p1233mcpsimp"></a><a name="p1233mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1235mcpsimp"><a name="p1235mcpsimp"></a><a name="p1235mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table1238mcpsimp"></a>
+</table> 【错误码】 <a name="table1238mcpsimp"></a>
 <table><thead align="left"><tr id="row1243mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p1245mcpsimp"><a name="p1245mcpsimp"></a><a name="p1245mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p1247mcpsimp"><a name="p1247mcpsimp"></a><a name="p1247mcpsimp"></a>描述</p>
@@ -2555,78 +1418,15 @@ td_s32 ss_tde_rotate(td_s32 handle, const ot_tde_single_src *single_src, ot_tde_
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   SS528V100、SS625V100、SS524V100、SS522V100不支持该功能。
--   Hi3403V100支持该功能。
--   支持的像素格式：
-
-    OT\_TDE\_COLOR\_FORMAT\_ARGB1555，
-
-    OT\_TDE\_COLOR\_FORMAT\_ARGB4444，
-
-    OT\_TDE\_COLOR\_FORMAT\_ARGB8888，
-
-    OT\_TDE\_COLOR\_FORMAT\_YCbCr422。
-
--   旋转的同时不支持格式转换，即输入输出像素格式需一致。
--   当像素格式是YCbCr422时，操作区域宽、高需要偶对齐。
--   位图物理地址与行间距需要16对齐。
--   旋转的同时不叠加任何其余规格。
--   输入格式为OT\_TDE\_COLOR\_FORMAT\_YCbCr422时，做180度旋转，不能超过zme的行buffer约束，具体约束见[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)接口中的约束描述。
-
-【举例】
-
-无。
-
-### ss\_tde\_bit\_blit<a name="ZH-CN_TOPIC_0000002408279150"></a>
-
-【目的】
-
-向任务中添加对光栅位图进行有附加功能的搬移操作。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - Hi3403V100支持该功能。
+- 支持的像素格式： OT\_TDE\_COLOR\_FORMAT\_ARGB1555， OT\_TDE\_COLOR\_FORMAT\_ARGB4444， OT\_TDE\_COLOR\_FORMAT\_ARGB8888， OT\_TDE\_COLOR\_FORMAT\_YCbCr422。 - 旋转的同时不支持格式转换，即输入输出像素格式需一致。
+- 当像素格式是YCbCr422时，操作区域宽、高需要偶对齐。
+- 位图物理地址与行间距需要16对齐。
+- 旋转的同时不叠加任何其余规格。
+- 输入格式为OT\_TDE\_COLOR\_FORMAT\_YCbCr422时，做180度旋转，不能超过zme的行buffer约束，具体约束见[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)接口中的约束描述。 【举例】 无。 ### ss\_tde\_bit\_blit<a name="ZH-CN_TOPIC_0000002408279150"></a> 【目的】 向任务中添加对光栅位图进行有附加功能的搬移操作。 【语法】 ```
 td_s32 ss_tde_bit_blit(td_s32 handle, const ot_tde_double_src *double_src, const ot_tde_opt *opt);
-```
-
-【描述】
-
-将double\_src中前景位图（fg\_surface）与背景位图（bg\_surface）的指定区域（fg\_rect、bg\_rect）进行运算，将运算后的位图拷贝到目标位图（dst\_surface）的指定区域（dst\_rect）中。其中当前景位图不为NULL时，背景位图（bg\_surface）的指定区域（bg\_rect）和目标位图（dst\_surface）的指定区域（dst\_rect）必须一致。
-
-ot\_tde\_opt结构中存放有TDE运算功能的配置信息，如：是否进行ROP操作及ROP命令码；是否作色键（colorkey）及colorkey的配置值；是否作区域裁减（clip操作）及指定clip区域；是否缩放、是否抗闪烁、是否镜像、是否进行alpha混合等信息。上述的操作可以同时使能。
-
-[ot\_tde\_opt](#ZH-CN_TOPIC_0000002441718469)结构中的配置项涉及到的概念解释，具体参考【[功能说明](#ot_tde_opt)】：
-
--   单源或双源的图形操作
-
-    单源操作指只有一个位图来源（如仅指定背景位图和目的位图，前景位图为NULL），针对该位图可以做以下处理：
-
-    -   位图搬移
-    -   位图格式转换
-    -   位图缩放
-    -   位图抗闪烁
-    -   位图颜色扩展或颜色校正
-    -   位图输出结果裁减，即clip
-
-    双源操作指有两个位图来源（背景位图和前景位图），两个位图的运算结果输出到目的位图指定的区域。其中，背景位图可以与目标位图为同一位图，此操作的含义为：将前景位图与背景位图进行运算，将结果直接输出覆盖到背景位图中。双源类的操作包括以下处理：
-
-    -   前景和背景的ROP操作
-    -   前景和背景的alpha叠加操作
-    -   ColorKey操作
-    -   前景位图指定区域缩放/抗闪烁处理后，再与背景做alpha叠加等操作
-
-【参数】
-
-<a name="table1357mcpsimp"></a>
+``` 【描述】 将double\_src中前景位图（fg\_surface）与背景位图（bg\_surface）的指定区域（fg\_rect、bg\_rect）进行运算，将运算后的位图拷贝到目标位图（dst\_surface）的指定区域（dst\_rect）中。其中当前景位图不为NULL时，背景位图（bg\_surface）的指定区域（bg\_rect）和目标位图（dst\_surface）的指定区域（dst\_rect）必须一致。 ot\_tde\_opt结构中存放有TDE运算功能的配置信息，如：是否进行ROP操作及ROP命令码；是否作色键（colorkey）及colorkey的配置值；是否作区域裁减（clip操作）及指定clip区域；是否缩放、是否抗闪烁、是否镜像、是否进行alpha混合等信息。上述的操作可以同时使能。 [ot\_tde\_opt](#ZH-CN_TOPIC_0000002441718469)结构中的配置项涉及到的概念解释，具体参考【[功能说明](#ot_tde_opt)】： - 单源或双源的图形操作 单源操作指只有一个位图来源（如仅指定背景位图和目的位图，前景位图为NULL），针对该位图可以做以下处理： - 位图搬移 - 位图格式转换 - 位图缩放 - 位图抗闪烁 - 位图颜色扩展或颜色校正 - 位图输出结果裁减，即clip 双源操作指有两个位图来源（背景位图和前景位图），两个位图的运算结果输出到目的位图指定的区域。其中，背景位图可以与目标位图为同一位图，此操作的含义为：将前景位图与背景位图进行运算，将结果直接输出覆盖到背景位图中。双源类的操作包括以下处理： - 前景和背景的ROP操作 - 前景和背景的alpha叠加操作 - ColorKey操作 - 前景位图指定区域缩放/抗闪烁处理后，再与背景做alpha叠加等操作 【参数】 <a name="table1357mcpsimp"></a>
 <table><thead align="left"><tr id="row1363mcpsimp"><th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.4.1.1"><p id="p1365mcpsimp"><a name="p1365mcpsimp"></a><a name="p1365mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="47%" id="mcps1.1.4.1.2"><p id="p1367mcpsimp"><a name="p1367mcpsimp"></a><a name="p1367mcpsimp"></a>描述</p>
@@ -2657,11 +1457,7 @@ ot\_tde\_opt结构中存放有TDE运算功能的配置信息，如：是否进�
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1393mcpsimp"></a>
+</table> 【返回值】 <a name="table1393mcpsimp"></a>
 <table><thead align="left"><tr id="row1398mcpsimp"><th class="cellrowborder" valign="top" width="17.18%" id="mcps1.1.3.1.1"><p id="p1400mcpsimp"><a name="p1400mcpsimp"></a><a name="p1400mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="82.82000000000001%" id="mcps1.1.3.1.2"><p id="p1402mcpsimp"><a name="p1402mcpsimp"></a><a name="p1402mcpsimp"></a>描述</p>
@@ -2673,17 +1469,8 @@ ot\_tde\_opt结构中存放有TDE运算功能的配置信息，如：是否进�
 <td class="cellrowborder" valign="top" width="82.82000000000001%" headers="mcps1.1.3.1.2 "><p id="p1408mcpsimp"><a name="p1408mcpsimp"></a><a name="p1408mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1409mcpsimp"><td class="cellrowborder" valign="top" width="17.18%" headers="mcps1.1.3.1.1 "><p id="p1411mcpsimp"><a name="p1411mcpsimp"></a><a name="p1411mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="82.82000000000001%" headers="mcps1.1.3.1.2 "><p id="p1413mcpsimp"><a name="p1413mcpsimp"></a><a name="p1413mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table1416mcpsimp"></a>
+</table> 【错误码】 <a name="table1416mcpsimp"></a>
 <table><thead align="left"><tr id="row1421mcpsimp"><th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.3.1.1"><p id="p1423mcpsimp"><a name="p1423mcpsimp"></a><a name="p1423mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="42%" id="mcps1.1.3.1.2"><p id="p1425mcpsimp"><a name="p1425mcpsimp"></a><a name="p1425mcpsimp"></a>描述</p>
@@ -2741,75 +1528,21 @@ ot\_tde\_opt结构中存放有TDE运算功能的配置信息，如：是否进�
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式如下：
-
-    **背景位图格式：**
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD
-
-    **前景位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_YCbCr422, OT\_TDE\_COLOR\_FORMAT\_PKGVYUY, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr444MBP
-
-    **目标位图格式：**
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD
-
--   Clut格式作为输出时，输入格式需与输出格式保持一致，且只能做拷贝操作。且不能两个源同为Clut格式。
--   只有单源操作且操作项为NULL时，支持前景和目标为A1、A8、BYTE和HALFWORD格式，但前景和目标的格式必须相同，其余操作均不支持A1、A8、BYTE和HALFWORD格式。
--   在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
--   目标位图必须与背景位图的颜色空间一致，前景位图的颜色空间可以与背景/目标位图不一致，这种情况下会进行颜色空间转换功能。
--   当前景源位图与目标位图尺寸不一致时，如果设置了缩放则按照设定的区域进行缩放，否则按照设置公共区域的最小值进行裁减搬移。
--   global\_alpha和alpha0、alpha1的设置值统一按照\[0, 255\]的范围进行设置。
--   背景位图可以与目标位图为同一位图。
--   当只需要使用单源搬移操作时（比如只对源位图进行ROP取非操作），可以将背景或背景位图的结构信息和操作区域结构指针设置为空。
--   clip操作时
-    -   若为区域内clip，则裁减区域必须与操作区域有公共交集，否则会返回错误。
-    -   若为区域外clip，则裁减区域不可完全覆盖操作区域，否则会返回错误码。也就是说，实际更新区域不能为空。
-
--   在第一次作颜色扩展操作（源为Clut格式，目的为ARGB/AYCbCr格式）时，需要打开clut\_reload标记。
--   ROP操作时，通过操作结构体[ot\_tde\_opt](#ZH-CN_TOPIC_0000002441718469)中的成员rop\_color和rop\_alpha分别指定颜色和alpha分量进行的ROP操作。其中，ROP操作类型中的S1指背景位图bg\_surface，S2指前景位图fg\_surface。
--   伴随缩放的情况下需满足[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)对宽高的限制。
-
-【举例】
-
-无。
-
-### ss\_tde\_pattern\_fill<a name="ZH-CN_TOPIC_0000002408119294"></a>
-
-【目的】
-
-模式填充。
-
-【语法】
-
-```
-td_s32 ss_tde_pattern_fill(td_s32 handle, const ot_tde_double_src *double_src, 
-const ot_tde_pattern_fill_opt *fill_opt);
-```
-
-【描述】
-
-将前景位图（fg\_surface）的指定区域（fg\_rect）平铺到背景位图（bg\_surface）的指定区域（bg\_rect），平铺的过程中可以实现colorkey，ROP，clip，颜色扩展，位图格式转换等操作，将操作后的结果搬移到目标位图（dst\_surface）的指定区域（dst\_rect）。将前景位图往背景位图模式填充时，前景位图的指定区域不会进行缩放，前景位图会平铺到整个背景位图的指定区域。若前景位图的指定区域大于背景位图的指定区域，则自动进行裁减。
-
--   当只需要使用单源操作时，可以将背景位图和指定区域置空或前景位图和指定区域置空，此时可以直接将前景位图或背景位图平铺到目的位图的指定区域。平铺过程可以实现位图格式转换，位图颜色扩展或颜色校正，位图输出结果裁减，即 clip。
--   当使用双源操作时，前景位图的指定区域填充到背景位图的指定区域中时，两个位图可以先做运算，将运算结果输出到目的位图指定的区域。双源的操作包括以下处理：
-    -   前景和背景的ROP操作
-    -   前景和背景的alpha叠加操作
-    -   ColorKey操作
-
-【参数】
-
-<a name="table1542mcpsimp"></a>
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式如下： **背景位图格式：** OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD **前景位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_YCbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_YCbCr422, OT\_TDE\_COLOR\_FORMAT\_PKGVYUY, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr444MBP **目标位图格式：** OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD - Clut格式作为输出时，输入格式需与输出格式保持一致，且只能做拷贝操作。且不能两个源同为Clut格式。
+- 只有单源操作且操作项为NULL时，支持前景和目标为A1、A8、BYTE和HALFWORD格式，但前景和目标的格式必须相同，其余操作均不支持A1、A8、BYTE和HALFWORD格式。
+- 在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
+- 目标位图必须与背景位图的颜色空间一致，前景位图的颜色空间可以与背景/目标位图不一致，这种情况下会进行颜色空间转换功能。
+- 当前景源位图与目标位图尺寸不一致时，如果设置了缩放则按照设定的区域进行缩放，否则按照设置公共区域的最小值进行裁减搬移。
+- global\_alpha和alpha0、alpha1的设置值统一按照\[0, 255\]的范围进行设置。
+- 背景位图可以与目标位图为同一位图。
+- 当只需要使用单源搬移操作时（比如只对源位图进行ROP取非操作），可以将背景或背景位图的结构信息和操作区域结构指针设置为空。
+- clip操作时 - 若为区域内clip，则裁减区域必须与操作区域有公共交集，否则会返回错误。 - 若为区域外clip，则裁减区域不可完全覆盖操作区域，否则会返回错误码。也就是说，实际更新区域不能为空。 - 在第一次作颜色扩展操作（源为Clut格式，目的为ARGB/AYCbCr格式）时，需要打开clut\_reload标记。
+- ROP操作时，通过操作结构体[ot\_tde\_opt](#ZH-CN_TOPIC_0000002441718469)中的成员rop\_color和rop\_alpha分别指定颜色和alpha分量进行的ROP操作。其中，ROP操作类型中的S1指背景位图bg\_surface，S2指前景位图fg\_surface。
+- 伴随缩放的情况下需满足[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)对宽高的限制。 【举例】 无。 ### ss\_tde\_pattern\_fill<a name="ZH-CN_TOPIC_0000002408119294"></a> 【目的】 模式填充。 【语法】 ```
+td_s32 ss_tde_pattern_fill(td_s32 handle, const ot_tde_double_src *double_src, const ot_tde_pattern_fill_opt *fill_opt);
+``` 【描述】 将前景位图（fg\_surface）的指定区域（fg\_rect）平铺到背景位图（bg\_surface）的指定区域（bg\_rect），平铺的过程中可以实现colorkey，ROP，clip，颜色扩展，位图格式转换等操作，将操作后的结果搬移到目标位图（dst\_surface）的指定区域（dst\_rect）。将前景位图往背景位图模式填充时，前景位图的指定区域不会进行缩放，前景位图会平铺到整个背景位图的指定区域。若前景位图的指定区域大于背景位图的指定区域，则自动进行裁减。 - 当只需要使用单源操作时，可以将背景位图和指定区域置空或前景位图和指定区域置空，此时可以直接将前景位图或背景位图平铺到目的位图的指定区域。平铺过程可以实现位图格式转换，位图颜色扩展或颜色校正，位图输出结果裁减，即 clip。
+- 当使用双源操作时，前景位图的指定区域填充到背景位图的指定区域中时，两个位图可以先做运算，将运算结果输出到目的位图指定的区域。双源的操作包括以下处理： - 前景和背景的ROP操作 - 前景和背景的alpha叠加操作 - ColorKey操作 【参数】 <a name="table1542mcpsimp"></a>
 <table><thead align="left"><tr id="row1548mcpsimp"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.1.4.1.1"><p id="p1550mcpsimp"><a name="p1550mcpsimp"></a><a name="p1550mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.559999999999995%" id="mcps1.1.4.1.2"><p id="p1552mcpsimp"><a name="p1552mcpsimp"></a><a name="p1552mcpsimp"></a>描述</p>
@@ -2840,11 +1573,7 @@ const ot_tde_pattern_fill_opt *fill_opt);
 </td>
 </tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table1578mcpsimp"></a>
+</table> 【错误码】 <a name="table1578mcpsimp"></a>
 <table><thead align="left"><tr id="row1583mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p1585mcpsimp"><a name="p1585mcpsimp"></a><a name="p1585mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p1587mcpsimp"><a name="p1587mcpsimp"></a><a name="p1587mcpsimp"></a>描述</p>
@@ -2897,66 +1626,22 @@ const ot_tde_pattern_fill_opt *fill_opt);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式如下：
-
-    **背景位图格式**：
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_YcbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888
-
-    **前景位图格式：**
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_YcbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888
-
-    **目标位图格式：**
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_YcbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888
-
--   在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
--   若背景位图为NULL时，则当前景位图指定区域大于目标位图指定区域，进行裁减。
--   若背景位图指定区域没超过背景位图最大宽高且目标位图指定区域没超过目标位图最大宽高，则背景位图指定区域大小和目标位图指定区域大小必须一致。
--   若目标位图的指定区域大于目标位图的最大宽高，则自动裁减；而前景位图或背景位图的宽高超过其对应位图的最大宽高，则不会进行裁减，格式填充不成功。
--   若前景位图的指定区域大于背景位图的指定区域，则自动裁减。
--   若背景与前景的像素格式不一致，则目的位图可以为除clut格式外的其他格式。且背景位图和目标位图的颜色空间可以不一致。
--   源和目标位图的格式都不能为BYTE格式。
--   若前景位图和背景位图均不为NULL，则在将前景位图的指定区域往背景位图的指定区域填充的过程中不可做缩放，抗闪和镜像操作，其他操作和Bitblit中两幅位图可做的操作相同。
--   作clip操作时，裁减区域必须与操作区域有公共交集，否则会返回错误。
--   在第一次作颜色扩展操作（源为Clut格式，目的为ARGB/AYCbCr格式），需要打开Clut Reload标记。
--   ROP操作时，通过操作结构体ot\_tde\_opt中的成员rop\_color和rop\_alpha分别指定颜色和alpha分量进行的ROP操作。其中，ROP操作类型中的S1指背景位图bg\_surface，S2指前景位图fg\_surface。
--   该操作不能做缩放。
--   当单源操作时，无论是背景或是前景，其指定区域的宽不可超过256；当双源操作时，前景指定区域的宽不可超过256。
-
-【举例】
-
-无。
-
-### ss\_tde\_mb\_blit<a name="ZH-CN_TOPIC_0000002441678577"></a>
-
-【目的】
-
-向任务中添加对宏块位图进行有附加功能的搬移操作。将亮度和色度宏块数据合并成光栅格式，可以伴随缩放、抗闪烁、clip处理。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式如下： **背景位图格式**： OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_YcbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888 **前景位图格式：** OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_YcbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888 **目标位图格式：** OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888, OT\_TDE\_COLOR\_FORMAT\_YcbCr888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888 - 在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
+- 若背景位图为NULL时，则当前景位图指定区域大于目标位图指定区域，进行裁减。
+- 若背景位图指定区域没超过背景位图最大宽高且目标位图指定区域没超过目标位图最大宽高，则背景位图指定区域大小和目标位图指定区域大小必须一致。
+- 若目标位图的指定区域大于目标位图的最大宽高，则自动裁减；而前景位图或背景位图的宽高超过其对应位图的最大宽高，则不会进行裁减，格式填充不成功。
+- 若前景位图的指定区域大于背景位图的指定区域，则自动裁减。
+- 若背景与前景的像素格式不一致，则目的位图可以为除clut格式外的其他格式。且背景位图和目标位图的颜色空间可以不一致。
+- 源和目标位图的格式都不能为BYTE格式。
+- 若前景位图和背景位图均不为NULL，则在将前景位图的指定区域往背景位图的指定区域填充的过程中不可做缩放，抗闪和镜像操作，其他操作和Bitblit中两幅位图可做的操作相同。
+- 作clip操作时，裁减区域必须与操作区域有公共交集，否则会返回错误。
+- 在第一次作颜色扩展操作（源为Clut格式，目的为ARGB/AYCbCr格式），需要打开Clut Reload标记。
+- ROP操作时，通过操作结构体ot\_tde\_opt中的成员rop\_color和rop\_alpha分别指定颜色和alpha分量进行的ROP操作。其中，ROP操作类型中的S1指背景位图bg\_surface，S2指前景位图fg\_surface。
+- 该操作不能做缩放。
+- 当单源操作时，无论是背景或是前景，其指定区域的宽不可超过256；当双源操作时，前景指定区域的宽不可超过256。 【举例】 无。 ### ss\_tde\_mb\_blit<a name="ZH-CN_TOPIC_0000002441678577"></a> 【目的】 向任务中添加对宏块位图进行有附加功能的搬移操作。将亮度和色度宏块数据合并成光栅格式，可以伴随缩放、抗闪烁、clip处理。 【语法】 ```
 td_s32 ss_tde_mb_blit(td_s32 handle, const ot_tde_mb_src *mb_src, const ot_tde_mb_opt *opt));
-```
-
-【描述】
-
-宏块surface指定区域的亮度和色度数据合并成光栅格式输出到目标surface的指定区域。在合并的过程中可以伴随缩放操作，由opt的resize\_en参数指定。如果没有指定缩放，将直接将宏块数据合并的结果输出到目标surface上，超出的部分将剪切掉。当clip开关打开时，将做剪切拷贝；合并过程中也支持抗闪烁处理。
-
-【参数】
-
-<a name="table1686mcpsimp"></a>
+``` 【描述】 宏块surface指定区域的亮度和色度数据合并成光栅格式输出到目标surface的指定区域。在合并的过程中可以伴随缩放操作，由opt的resize\_en参数指定。如果没有指定缩放，将直接将宏块数据合并的结果输出到目标surface上，超出的部分将剪切掉。当clip开关打开时，将做剪切拷贝；合并过程中也支持抗闪烁处理。 【参数】 <a name="table1686mcpsimp"></a>
 <table><thead align="left"><tr id="row1692mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p1694mcpsimp"><a name="p1694mcpsimp"></a><a name="p1694mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p1696mcpsimp"><a name="p1696mcpsimp"></a><a name="p1696mcpsimp"></a>描述</p>
@@ -2987,11 +1672,7 @@ td_s32 ss_tde_mb_blit(td_s32 handle, const ot_tde_mb_src *mb_src, const ot_tde_m
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1722mcpsimp"></a>
+</table> 【返回值】 <a name="table1722mcpsimp"></a>
 <table><thead align="left"><tr id="row1727mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p1729mcpsimp"><a name="p1729mcpsimp"></a><a name="p1729mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p1731mcpsimp"><a name="p1731mcpsimp"></a><a name="p1731mcpsimp"></a>描述</p>
@@ -3003,17 +1684,8 @@ td_s32 ss_tde_mb_blit(td_s32 handle, const ot_tde_mb_src *mb_src, const ot_tde_m
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1737mcpsimp"><a name="p1737mcpsimp"></a><a name="p1737mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1738mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p1740mcpsimp"><a name="p1740mcpsimp"></a><a name="p1740mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1742mcpsimp"><a name="p1742mcpsimp"></a><a name="p1742mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table1745mcpsimp"></a>
+</table> 【错误码】 <a name="table1745mcpsimp"></a>
 <table><thead align="left"><tr id="row1750mcpsimp"><th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.1"><p id="p1752mcpsimp"><a name="p1752mcpsimp"></a><a name="p1752mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.2"><p id="p1754mcpsimp"><a name="p1754mcpsimp"></a><a name="p1754mcpsimp"></a>描述</p>
@@ -3066,56 +1738,13 @@ td_s32 ss_tde_mb_blit(td_s32 handle, const ot_tde_mb_src *mb_src, const ot_tde_m
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持的格式如下：
-
-    **前景位图格式：**
-
-    OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_MB\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr444MBP
-
-    **目标位图格式：**
-
-    OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888
-
--   在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
--   对于YCbCr422格式的宏块，若采用的是水平方向采样，则操作区域起始点水平坐标必须是偶数。若垂直方向采样，无此限制。
--   伴随缩放的情况下需满足[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)对宽高的限制。
-
-【举例】
-
-无。
-
-### ss\_tde\_bitmap\_mask\_rop<a name="ZH-CN_TOPIC_0000002408279186"></a>
-
-【目的】
-
-向任务中添加对光栅位图进行Mask Rop搬移操作。根据mask位图实现前景位图和背景位图ROP的效果。
-
-【语法】
-
-```
-td_s32 ss_tde_bitmap_mask_rop(td_s32 handle,const ot_tde_triple_src *triple_src, 
-ot_tde_rop_mode rop_code_color,  ot_tde_rop_mode rop_code_alpha);
-```
-
-【描述】
-
--   Mask位图必须为A1位图，在Mask位图为0的地方输出背景像素值，为1的地方输出前景和背景的ROP运算结果值。
--   MaskRop与普通的Rop操作的不同之处有以下两点：
-    -   普通的ROP操作是两幅图像的操作区域中的每个像素点都参与ROP操作，无法实现部分区域做ROP操作，部分不做（保留背景）。
-    -   MaskRop操作通过构造合适的Mask位图可实现：输出图像的部分区域是前背景的ROP结果，部分区域是背景图象，就像是对前背景ROP的结果做了一个clip剪切。通过构造Mask位图，还可实现任意形状的clip剪切。
-
-【参数】
-
-<a name="table1852mcpsimp"></a>
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持的格式如下： **前景位图格式：** OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_MB\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_MB\_COLOR\_FORMAT\_JPG\_YCbCr444MBP **目标位图格式：** OT\_TDE\_COLOR\_FORMAT\_RGB444, OT\_TDE\_COLOR\_FORMAT\_BGR444, OT\_TDE\_COLOR\_FORMAT\_RGB555, OT\_TDE\_COLOR\_FORMAT\_BGR555, OT\_TDE\_COLOR\_FORMAT\_RGB565, OT\_TDE\_COLOR\_FORMAT\_BGR565, OT\_TDE\_COLOR\_FORMAT\_RGB888, OT\_TDE\_COLOR\_FORMAT\_BGR888, OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 - 在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
+- 对于YCbCr422格式的宏块，若采用的是水平方向采样，则操作区域起始点水平坐标必须是偶数。若垂直方向采样，无此限制。
+- 伴随缩放的情况下需满足[ss\_tde\_quick\_resize](#ZH-CN_TOPIC_0000002408119230)对宽高的限制。 【举例】 无。 ### ss\_tde\_bitmap\_mask\_rop<a name="ZH-CN_TOPIC_0000002408279186"></a> 【目的】 向任务中添加对光栅位图进行Mask Rop搬移操作。根据mask位图实现前景位图和背景位图ROP的效果。 【语法】 ```
+td_s32 ss_tde_bitmap_mask_rop(td_s32 handle,const ot_tde_triple_src *triple_src, ot_tde_rop_mode rop_code_color, ot_tde_rop_mode rop_code_alpha);
+``` 【描述】 - Mask位图必须为A1位图，在Mask位图为0的地方输出背景像素值，为1的地方输出前景和背景的ROP运算结果值。
+- MaskRop与普通的Rop操作的不同之处有以下两点： - 普通的ROP操作是两幅图像的操作区域中的每个像素点都参与ROP操作，无法实现部分区域做ROP操作，部分不做（保留背景）。 - MaskRop操作通过构造合适的Mask位图可实现：输出图像的部分区域是前背景的ROP结果，部分区域是背景图象，就像是对前背景ROP的结果做了一个clip剪切。通过构造Mask位图，还可实现任意形状的clip剪切。 【参数】 <a name="table1852mcpsimp"></a>
 <table><thead align="left"><tr id="row1858mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.4.1.1"><p id="p1860mcpsimp"><a name="p1860mcpsimp"></a><a name="p1860mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1862mcpsimp"><a name="p1862mcpsimp"></a><a name="p1862mcpsimp"></a>描述</p>
@@ -3153,11 +1782,7 @@ ot_tde_rop_mode rop_code_color,  ot_tde_rop_mode rop_code_alpha);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1895mcpsimp"></a>
+</table> 【返回值】 <a name="table1895mcpsimp"></a>
 <table><thead align="left"><tr id="row1900mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p1902mcpsimp"><a name="p1902mcpsimp"></a><a name="p1902mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p1904mcpsimp"><a name="p1904mcpsimp"></a><a name="p1904mcpsimp"></a>描述</p>
@@ -3169,17 +1794,8 @@ ot_tde_rop_mode rop_code_color,  ot_tde_rop_mode rop_code_alpha);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1910mcpsimp"><a name="p1910mcpsimp"></a><a name="p1910mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1911mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p1913mcpsimp"><a name="p1913mcpsimp"></a><a name="p1913mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p1915mcpsimp"><a name="p1915mcpsimp"></a><a name="p1915mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table1918mcpsimp"></a>
+</table> 【错误码】 <a name="table1918mcpsimp"></a>
 <table><thead align="left"><tr id="row1923mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.1"><p id="p1925mcpsimp"><a name="p1925mcpsimp"></a><a name="p1925mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.2"><p id="p1927mcpsimp"><a name="p1927mcpsimp"></a><a name="p1927mcpsimp"></a>描述</p>
@@ -3217,90 +1833,32 @@ ot_tde_rop_mode rop_code_color,  ot_tde_rop_mode rop_code_alpha);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持或不支持的格式如下：
-
-    **背景位图格式和目标位图格式不支持**：
-
-    OT\_TDE\_COLOR\_FORMAT\_CLUT1,OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4,OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44,OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1,OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr444MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422, OT\_TDE\_COLOR\_FORMAT\_PKGVYUY
-
-    **前景位图格式只支持**：
-
-    OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888
-
-    Mask位图格式只支持OT\_TDE\_COLOR\_FORMAT\_A1。
-
--   调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
--   前景位图、背景位图、mask位图、目的位图分别和其操作区域求得有效操作区域，4个有效操作区域的大小必须一致。
--   Mask位图必须是A1格式的位图。
--   目标位图和背景位图必须位于同一颜色空间。
--   此接口需要用到临时buffer，在加载ko时要配置参数g\_tde\_tmp\_buf的大小，大小配置为前景位图大小，例如：对于前景格式为ARGB8888分辨率大小为720\*576的图片则需要配置为：720\*576\*4= 1658880。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->有效操作区域：指调用者指定的操作区域与位图的相交部分。
-
-【举例】
-
-使用接口代码片段如下：
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持或不支持的格式如下： **背景位图格式和目标位图格式不支持**： OT\_TDE\_COLOR\_FORMAT\_CLUT1,OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4,OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44,OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1,OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr444MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422, OT\_TDE\_COLOR\_FORMAT\_PKGVYUY **前景位图格式只支持**： OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 Mask位图格式只支持OT\_TDE\_COLOR\_FORMAT\_A1。 - 调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
+- 前景位图、背景位图、mask位图、目的位图分别和其操作区域求得有效操作区域，4个有效操作区域的大小必须一致。
+- Mask位图必须是A1格式的位图。
+- 目标位图和背景位图必须位于同一颜色空间。
+- 此接口需要用到临时buffer，在加载ko时要配置参数g\_tde\_tmp\_buf的大小，大小配置为前景位图大小，例如：对于前景格式为ARGB8888分辨率大小为720\*576的图片则需要配置为：720\*576\*4= 1658880。 >![](public_sys-resources/icon-note.gif) **说明：** >有效操作区域：指调用者指定的操作区域与位图的相交部分。 【举例】 使用接口代码片段如下： ```
 td_s32 handle;
-ot_tde_surface  bg_surface, fg_surface, mask_surface, dst_surface;
-ot_tde_rect  bg_rect, fg_rect, mask_rect, dst_rect;
+ot_tde_surface bg_surface, fg_surface, mask_surface, dst_surface;
+ot_tde_rect bg_rect, fg_rect, mask_rect, dst_rect;
 ot_tde_triple_src triple_src = {0};
 /* 配置有效的surface与rect */
 ……
-ss_tde_open();
-handle  =  ss_tde_begin_job();
+ss_tde_open;
+handle = ss_tde_begin_job;
 /* 使用三源rop接口 */
-triple_src.bg_surface = & bg_surface;
-    triple_src.fg_surface = & fg_surface;
-    triple_src.mask_surface = & mask_surface;
-    triple_src.dst_surface = & dst_surface;
-    triple_src.bg_rect = &bg_rect;
-    triple_src.fg_rect = &fg_rect;
-    triple_src.mask_rect = &mask_rect;
-    triple_src.dst_rect = &dst_rect;
-    ss_tde_bitmap_mask_rop(handle, &triple_src, OT_TDE_ROP_MASKPEN,
-        OT_TDE_ROP_MASKPEN);
+triple_src.bg_surface = & bg_surface; triple_src.fg_surface = & fg_surface; triple_src.mask_surface = & mask_surface; triple_src.dst_surface = & dst_surface; triple_src.bg_rect = &bg_rect; triple_src.fg_rect = &fg_rect; triple_src.mask_rect = &mask_rect; triple_src.dst_rect = &dst_rect; ss_tde_bitmap_mask_rop(handle, &triple_src, OT_TDE_ROP_MASKPEN, OT_TDE_ROP_MASKPEN);
 /* 提交任务给硬件 */
 ss_tde_end_job(handle, ……);
-ss_tde_close();
-```
-
-### ss\_tde\_bitmap\_mask\_blend<a name="ZH-CN_TOPIC_0000002408279178"></a>
-
-【目的】
-
-向任务中添加对光栅位图进行Mask Blend搬移操作。根据Mask位图实现前景位图和背景位图带Mask位图的叠加效果。
-
-【语法】
-
-```
+ss_tde_close;
+``` ### ss\_tde\_bitmap\_mask\_blend<a name="ZH-CN_TOPIC_0000002408279178"></a> 【目的】 向任务中添加对光栅位图进行Mask Blend搬移操作。根据Mask位图实现前景位图和背景位图带Mask位图的叠加效果。 【语法】 ```
 td_s32 ss_tde_bitmap_mask_blend(td_s32 handle,
 const ot_tde_triple_src *triple_src,
 td_u8 alpha,
 ot_tde_alpha_blending blend_mode);
-```
-
-【描述】
-
--   Mask是A1的位图，在Mask位图为0的地方输出背景像素值，为1的地方输出前景和背景的blending叠加结果。
--   MaskBlending与普通的blending叠加操作的不同之处有以下两点：
-    -   普通的blending叠加操作是两幅图像的操作区域中的每个像素点都参与叠加，无法实现部分区域做Blending操作，部分不做（保留背景）。
-    -   MaksBlending操作通过构造合适的Mask位图可实现：输出图像的部分区域是前背景的叠加结果，部分区域是背景图象，就像是对前背景Blending的结果做了一个clip剪切。通过构造Mask位图，还可实现任意形状的clip剪切。
-
-【参数】
-
-<a name="table2042mcpsimp"></a>
+``` 【描述】 - Mask是A1的位图，在Mask位图为0的地方输出背景像素值，为1的地方输出前景和背景的blending叠加结果。
+- MaskBlending与普通的blending叠加操作的不同之处有以下两点： - 普通的blending叠加操作是两幅图像的操作区域中的每个像素点都参与叠加，无法实现部分区域做Blending操作，部分不做（保留背景）。 - MaksBlending操作通过构造合适的Mask位图可实现：输出图像的部分区域是前背景的叠加结果，部分区域是背景图象，就像是对前背景Blending的结果做了一个clip剪切。通过构造Mask位图，还可实现任意形状的clip剪切。 【参数】 <a name="table2042mcpsimp"></a>
 <table><thead align="left"><tr id="row2048mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.4.1.1"><p id="p2050mcpsimp"><a name="p2050mcpsimp"></a><a name="p2050mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.4.1.2"><p id="p2052mcpsimp"><a name="p2052mcpsimp"></a><a name="p2052mcpsimp"></a>描述</p>
@@ -3338,11 +1896,7 @@ ot_tde_alpha_blending blend_mode);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2085mcpsimp"></a>
+</table> 【返回值】 <a name="table2085mcpsimp"></a>
 <table><thead align="left"><tr id="row2090mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p2092mcpsimp"><a name="p2092mcpsimp"></a><a name="p2092mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p2094mcpsimp"><a name="p2094mcpsimp"></a><a name="p2094mcpsimp"></a>描述</p>
@@ -3354,17 +1908,8 @@ ot_tde_alpha_blending blend_mode);
 <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p2100mcpsimp"><a name="p2100mcpsimp"></a><a name="p2100mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2101mcpsimp"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.1.3.1.1 "><p id="p2103mcpsimp"><a name="p2103mcpsimp"></a><a name="p2103mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p2105mcpsimp"><a name="p2105mcpsimp"></a><a name="p2105mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2108mcpsimp"></a>
+</table> 【错误码】 <a name="table2108mcpsimp"></a>
 <table><thead align="left"><tr id="row2113mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.1"><p id="p2115mcpsimp"><a name="p2115mcpsimp"></a><a name="p2115mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.2"><p id="p2117mcpsimp"><a name="p2117mcpsimp"></a><a name="p2117mcpsimp"></a>描述</p>
@@ -3402,56 +1947,16 @@ ot_tde_alpha_blending blend_mode);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   支持或不支持的格式如下：
-
-    **背景位图格式和目标位图格式不支持**：
-
-    OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr444MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422, OT\_TDE\_COLOR\_FORMAT\_PKGVYUY
-
-    **前景位图格式只支持**：
-
-    OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 Mask位图格式只支持OT\_TDE\_COLOR\_FORMAT\_A1和OT\_TDE\_COLOR\_FORMAT\_A8。
-
--   在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
--   目标位图和背景位图必须位于同一颜色空间。
--   如果芯片支持预乘模式，且前景位图是预乘了的数据，Alpha叠加模式应该选择预乘模式；否则选择非预乘模式。
--   blend\_mode只支持OT\_TDE\_ALPHA\_BLENDING\_BLEND模式。
--   前景位图、背景位图、mask位图、目的位图分别和其操作区域求得有效操作区域，4个有效操作区域的大小必须一致。
--   Mask位图必须是A1或A8格式的位图。
--   此接口需要用到临时buffer，在加载ko时要配置参数g\_tde\_tmp\_buf的大小，大小配置为前景位图大小，例如：对于前景格式为ARGB8888分辨率大小为720\*576的图片则需要配置为：720\*576\*4=1658880。
-
-【举例】
-
-使用方式可参考[ss\_tde\_bitmap\_mask\_rop](#ZH-CN_TOPIC_0000002408279186)使用方式。
-
-### ss\_tde\_get\_deflicker\_level<a name="ZH-CN_TOPIC_0000002408119266"></a>
-
-【目的】
-
-获取抗闪烁级别。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 支持或不支持的格式如下： **背景位图格式和目标位图格式不支持**： OT\_TDE\_COLOR\_FORMAT\_CLUT1, OT\_TDE\_COLOR\_FORMAT\_CLUT2, OT\_TDE\_COLOR\_FORMAT\_CLUT4, OT\_TDE\_COLOR\_FORMAT\_CLUT8, OT\_TDE\_COLOR\_FORMAT\_ACLUT44, OT\_TDE\_COLOR\_FORMAT\_ACLUT88, OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE, OT\_TDE\_COLOR\_FORMAT\_HALFWORD, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_MP1\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_MP2\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_JPG\_YCbCr444MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422, OT\_TDE\_COLOR\_FORMAT\_PKGVYUY **前景位图格式只支持**： OT\_TDE\_COLOR\_FORMAT\_ARGB4444, OT\_TDE\_COLOR\_FORMAT\_ABGR4444, OT\_TDE\_COLOR\_FORMAT\_RGBA4444, OT\_TDE\_COLOR\_FORMAT\_BGRA4444, OT\_TDE\_COLOR\_FORMAT\_ARGB1555, OT\_TDE\_COLOR\_FORMAT\_ABGR1555, OT\_TDE\_COLOR\_FORMAT\_RGBA1555, OT\_TDE\_COLOR\_FORMAT\_BGRA1555, OT\_TDE\_COLOR\_FORMAT\_ARGB8565, OT\_TDE\_COLOR\_FORMAT\_ABGR8565, OT\_TDE\_COLOR\_FORMAT\_RGBA8565, OT\_TDE\_COLOR\_FORMAT\_BGRA8565, OT\_TDE\_COLOR\_FORMAT\_ARGB8888, OT\_TDE\_COLOR\_FORMAT\_ABGR8888, OT\_TDE\_COLOR\_FORMAT\_RGBA8888, OT\_TDE\_COLOR\_FORMAT\_BGRA8888, OT\_TDE\_COLOR\_FORMAT\_AYCbCr8888, OT\_TDE\_COLOR\_FORMAT\_RABG8888 Mask位图格式只支持OT\_TDE\_COLOR\_FORMAT\_A1和OT\_TDE\_COLOR\_FORMAT\_A8。 - 在调用此接口前应保证调用[ss\_tde\_open](#ZH-CN_TOPIC_0000002408119258)打开TDE设备，并且调用[ss\_tde\_begin\_job](#ZH-CN_TOPIC_0000002408279190)获得了有效的任务句柄。
+- 目标位图和背景位图必须位于同一颜色空间。
+- 如果芯片支持预乘模式，且前景位图是预乘了的数据，Alpha叠加模式应该选择预乘模式；否则选择非预乘模式。
+- blend\_mode只支持OT\_TDE\_ALPHA\_BLENDING\_BLEND模式。
+- 前景位图、背景位图、mask位图、目的位图分别和其操作区域求得有效操作区域，4个有效操作区域的大小必须一致。
+- Mask位图必须是A1或A8格式的位图。
+- 此接口需要用到临时buffer，在加载ko时要配置参数g\_tde\_tmp\_buf的大小，大小配置为前景位图大小，例如：对于前景格式为ARGB8888分辨率大小为720\*576的图片则需要配置为：720\*576\*4=1658880。 【举例】 使用方式可参考[ss\_tde\_bitmap\_mask\_rop](#ZH-CN_TOPIC_0000002408279186)使用方式。 ### ss\_tde\_get\_deflicker\_level<a name="ZH-CN_TOPIC_0000002408119266"></a> 【目的】 获取抗闪烁级别。 【语法】 ```
 td_s32 ss_tde_get_deflicker_level(ot_tde_deflicker_level *deflicker_level);
-```
-
-【描述】
-
-获取抗闪烁级别。
-
-【参数】
-
-<a name="table2189mcpsimp"></a>
+``` 【描述】 获取抗闪烁级别。 【参数】 <a name="table2189mcpsimp"></a>
 <table><thead align="left"><tr id="row2195mcpsimp"><th class="cellrowborder" valign="top" width="21.000000000000004%" id="mcps1.1.4.1.1"><p id="p2197mcpsimp"><a name="p2197mcpsimp"></a><a name="p2197mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.00000000000001%" id="mcps1.1.4.1.2"><p id="p2199mcpsimp"><a name="p2199mcpsimp"></a><a name="p2199mcpsimp"></a>描述</p>
@@ -3468,11 +1973,7 @@ td_s32 ss_tde_get_deflicker_level(ot_tde_deflicker_level *deflicker_level);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2211mcpsimp"></a>
+</table> 【返回值】 <a name="table2211mcpsimp"></a>
 <table><thead align="left"><tr id="row2216mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p2218mcpsimp"><a name="p2218mcpsimp"></a><a name="p2218mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p2220mcpsimp"><a name="p2220mcpsimp"></a><a name="p2220mcpsimp"></a>描述</p>
@@ -3484,17 +1985,8 @@ td_s32 ss_tde_get_deflicker_level(ot_tde_deflicker_level *deflicker_level);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2226mcpsimp"><a name="p2226mcpsimp"></a><a name="p2226mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2227mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p2229mcpsimp"><a name="p2229mcpsimp"></a><a name="p2229mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2231mcpsimp"><a name="p2231mcpsimp"></a><a name="p2231mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2234mcpsimp"></a>
+</table> 【错误码】 <a name="table2234mcpsimp"></a>
 <table><thead align="left"><tr id="row2239mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p2241mcpsimp"><a name="p2241mcpsimp"></a><a name="p2241mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p2243mcpsimp"><a name="p2243mcpsimp"></a><a name="p2243mcpsimp"></a>描述</p>
@@ -3527,40 +2019,10 @@ td_s32 ss_tde_get_deflicker_level(ot_tde_deflicker_level *deflicker_level);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-### ss\_tde\_set\_deflicker\_level<a name="ZH-CN_TOPIC_0000002441718425"></a>
-
-【目的】
-
-设置抗闪烁级别。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 无。 【举例】 无。 ### ss\_tde\_set\_deflicker\_level<a name="ZH-CN_TOPIC_0000002441718425"></a> 【目的】 设置抗闪烁级别。 【语法】 ```
 td_s32 ss_tde_set_deflicker_level(ot_tde_deflicker_level deflicker_level);
-```
-
-【描述】
-
-设置抗闪烁级别。
-
-【参数】
-
-<a name="table2291mcpsimp"></a>
+``` 【描述】 设置抗闪烁级别。 【参数】 <a name="table2291mcpsimp"></a>
 <table><thead align="left"><tr id="row2297mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p2299mcpsimp"><a name="p2299mcpsimp"></a><a name="p2299mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p2301mcpsimp"><a name="p2301mcpsimp"></a><a name="p2301mcpsimp"></a>描述</p>
@@ -3577,11 +2039,7 @@ td_s32 ss_tde_set_deflicker_level(ot_tde_deflicker_level deflicker_level);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2313mcpsimp"></a>
+</table> 【返回值】 <a name="table2313mcpsimp"></a>
 <table><thead align="left"><tr id="row2318mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p2320mcpsimp"><a name="p2320mcpsimp"></a><a name="p2320mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p2322mcpsimp"><a name="p2322mcpsimp"></a><a name="p2322mcpsimp"></a>描述</p>
@@ -3593,17 +2051,8 @@ td_s32 ss_tde_set_deflicker_level(ot_tde_deflicker_level deflicker_level);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2328mcpsimp"><a name="p2328mcpsimp"></a><a name="p2328mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2329mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p2331mcpsimp"><a name="p2331mcpsimp"></a><a name="p2331mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2333mcpsimp"><a name="p2333mcpsimp"></a><a name="p2333mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2336mcpsimp"></a>
+</table> 【错误码】 <a name="table2336mcpsimp"></a>
 <table><thead align="left"><tr id="row2341mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p2343mcpsimp"><a name="p2343mcpsimp"></a><a name="p2343mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p2345mcpsimp"><a name="p2345mcpsimp"></a><a name="p2345mcpsimp"></a>描述</p>
@@ -3631,40 +2080,10 @@ td_s32 ss_tde_set_deflicker_level(ot_tde_deflicker_level deflicker_level);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-### ss\_tde\_get\_alpha\_threshold\_value<a name="ZH-CN_TOPIC_0000002408279154"></a>
-
-【目的】
-
-获取alpha判决阈值。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 无。 【举例】 无。 ### ss\_tde\_get\_alpha\_threshold\_value<a name="ZH-CN_TOPIC_0000002408279154"></a> 【目的】 获取alpha判决阈值。 【语法】 ```
 td_s32 ss_tde_get_alpha_threshold_value(td_u8 *threshold_value);
-```
-
-【描述】
-
-获取alpha判决阈值。用于结果图片像素格式为ARGB1555的情况。若前景位图和背景位图的alpha运算结果小于此阈值，结果像素的alpha位取0；大于或等于此阈值，像素的alpha位取1。
-
-【参数】
-
-<a name="table2386mcpsimp"></a>
+``` 【描述】 获取alpha判决阈值。用于结果图片像素格式为ARGB1555的情况。若前景位图和背景位图的alpha运算结果小于此阈值，结果像素的alpha位取0；大于或等于此阈值，像素的alpha位取1。 【参数】 <a name="table2386mcpsimp"></a>
 <table><thead align="left"><tr id="row2392mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.4.1.1"><p id="p2394mcpsimp"><a name="p2394mcpsimp"></a><a name="p2394mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p2396mcpsimp"><a name="p2396mcpsimp"></a><a name="p2396mcpsimp"></a>描述</p>
@@ -3681,11 +2100,7 @@ td_s32 ss_tde_get_alpha_threshold_value(td_u8 *threshold_value);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2408mcpsimp"></a>
+</table> 【返回值】 <a name="table2408mcpsimp"></a>
 <table><thead align="left"><tr id="row2413mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p2415mcpsimp"><a name="p2415mcpsimp"></a><a name="p2415mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p2417mcpsimp"><a name="p2417mcpsimp"></a><a name="p2417mcpsimp"></a>描述</p>
@@ -3697,17 +2112,8 @@ td_s32 ss_tde_get_alpha_threshold_value(td_u8 *threshold_value);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2423mcpsimp"><a name="p2423mcpsimp"></a><a name="p2423mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2424mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p2426mcpsimp"><a name="p2426mcpsimp"></a><a name="p2426mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2428mcpsimp"><a name="p2428mcpsimp"></a><a name="p2428mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2431mcpsimp"></a>
+</table> 【错误码】 <a name="table2431mcpsimp"></a>
 <table><thead align="left"><tr id="row2436mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p2438mcpsimp"><a name="p2438mcpsimp"></a><a name="p2438mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p2440mcpsimp"><a name="p2440mcpsimp"></a><a name="p2440mcpsimp"></a>描述</p>
@@ -3730,40 +2136,10 @@ td_s32 ss_tde_get_alpha_threshold_value(td_u8 *threshold_value);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-### ss\_tde\_set\_alpha\_threshold\_value<a name="ZH-CN_TOPIC_0000002441678553"></a>
-
-【目的】
-
-设置alpha判决阈值。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 无。 【举例】 无。 ### ss\_tde\_set\_alpha\_threshold\_value<a name="ZH-CN_TOPIC_0000002441678553"></a> 【目的】 设置alpha判决阈值。 【语法】 ```
 td_s32 ss_tde_set_alpha_threshold_value(td_u8 threshold_value);
-```
-
-【描述】
-
-设置alpha判决阈值。当前景和背景做bitblit操作时，不管前景位图和背景位图的格式是什么，硬件都会生成ARGB8888的中间位图格式，若目标图片像素格式为ARGB1555的情况，则前景位图和背景位图的alpha运算结果小于此阈值，结果像素的alpha位取0；大于或等于此阈值，像素的alpha位取1。
-
-【参数】
-
-<a name="table2475mcpsimp"></a>
+``` 【描述】 设置alpha判决阈值。当前景和背景做bitblit操作时，不管前景位图和背景位图的格式是什么，硬件都会生成ARGB8888的中间位图格式，若目标图片像素格式为ARGB1555的情况，则前景位图和背景位图的alpha运算结果小于此阈值，结果像素的alpha位取0；大于或等于此阈值，像素的alpha位取1。 【参数】 <a name="table2475mcpsimp"></a>
 <table><thead align="left"><tr id="row2481mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p2483mcpsimp"><a name="p2483mcpsimp"></a><a name="p2483mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p2485mcpsimp"><a name="p2485mcpsimp"></a><a name="p2485mcpsimp"></a>描述</p>
@@ -3780,11 +2156,7 @@ td_s32 ss_tde_set_alpha_threshold_value(td_u8 threshold_value);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2497mcpsimp"></a>
+</table> 【返回值】 <a name="table2497mcpsimp"></a>
 <table><thead align="left"><tr id="row2502mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p2504mcpsimp"><a name="p2504mcpsimp"></a><a name="p2504mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p2506mcpsimp"><a name="p2506mcpsimp"></a><a name="p2506mcpsimp"></a>描述</p>
@@ -3796,17 +2168,8 @@ td_s32 ss_tde_set_alpha_threshold_value(td_u8 threshold_value);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2512mcpsimp"><a name="p2512mcpsimp"></a><a name="p2512mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2513mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p2515mcpsimp"><a name="p2515mcpsimp"></a><a name="p2515mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2517mcpsimp"><a name="p2517mcpsimp"></a><a name="p2517mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2520mcpsimp"></a>
+</table> 【错误码】 <a name="table2520mcpsimp"></a>
 <table><thead align="left"><tr id="row2525mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p2527mcpsimp"><a name="p2527mcpsimp"></a><a name="p2527mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p2529mcpsimp"><a name="p2529mcpsimp"></a><a name="p2529mcpsimp"></a>描述</p>
@@ -3829,40 +2192,10 @@ td_s32 ss_tde_set_alpha_threshold_value(td_u8 threshold_value);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-### ss\_tde\_get\_alpha\_threshold\_state<a name="ZH-CN_TOPIC_0000002441718401"></a>
-
-【目的】
-
-获取alpha判决开关状态。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 无。 【举例】 无。 ### ss\_tde\_get\_alpha\_threshold\_state<a name="ZH-CN_TOPIC_0000002441718401"></a> 【目的】 获取alpha判决开关状态。 【语法】 ```
 td_s32 ss_tde_get_alpha_threshold_state(td_bool *threshold_en);
-```
-
-【描述】
-
-获取alpha判决开关状态。
-
-【参数】
-
-<a name="table2564mcpsimp"></a>
+``` 【描述】 获取alpha判决开关状态。 【参数】 <a name="table2564mcpsimp"></a>
 <table><thead align="left"><tr id="row2570mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2572mcpsimp"><a name="p2572mcpsimp"></a><a name="p2572mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p2574mcpsimp"><a name="p2574mcpsimp"></a><a name="p2574mcpsimp"></a>描述</p>
@@ -3879,11 +2212,7 @@ td_s32 ss_tde_get_alpha_threshold_state(td_bool *threshold_en);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2586mcpsimp"></a>
+</table> 【返回值】 <a name="table2586mcpsimp"></a>
 <table><thead align="left"><tr id="row2591mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p2593mcpsimp"><a name="p2593mcpsimp"></a><a name="p2593mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p2595mcpsimp"><a name="p2595mcpsimp"></a><a name="p2595mcpsimp"></a>描述</p>
@@ -3895,17 +2224,8 @@ td_s32 ss_tde_get_alpha_threshold_state(td_bool *threshold_en);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2601mcpsimp"><a name="p2601mcpsimp"></a><a name="p2601mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2602mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p2604mcpsimp"><a name="p2604mcpsimp"></a><a name="p2604mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2606mcpsimp"><a name="p2606mcpsimp"></a><a name="p2606mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2609mcpsimp"></a>
+</table> 【错误码】 <a name="table2609mcpsimp"></a>
 <table><thead align="left"><tr id="row2614mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p2616mcpsimp"><a name="p2616mcpsimp"></a><a name="p2616mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p2618mcpsimp"><a name="p2618mcpsimp"></a><a name="p2618mcpsimp"></a>描述</p>
@@ -3928,40 +2248,10 @@ td_s32 ss_tde_get_alpha_threshold_state(td_bool *threshold_en);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-### ss\_tde\_set\_alpha\_threshold\_state<a name="ZH-CN_TOPIC_0000002408279210"></a>
-
-【目的】
-
-设置alpha判决开关状态。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 无。 【举例】 无。 ### ss\_tde\_set\_alpha\_threshold\_state<a name="ZH-CN_TOPIC_0000002408279210"></a> 【目的】 设置alpha判决开关状态。 【语法】 ```
 td_s32 ss_tde_set_alpha_threshold_state(td_bool threshold_en);
-```
-
-【描述】
-
-设置alpha判决开关状态。在开关开的状态下，阈值为用户自己设置的值，否则阈值为0xFF。
-
-【参数】
-
-<a name="table2653mcpsimp"></a>
+``` 【描述】 设置alpha判决开关状态。在开关开的状态下，阈值为用户自己设置的值，否则阈值为0xFF。 【参数】 <a name="table2653mcpsimp"></a>
 <table><thead align="left"><tr id="row2659mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p2661mcpsimp"><a name="p2661mcpsimp"></a><a name="p2661mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p2663mcpsimp"><a name="p2663mcpsimp"></a><a name="p2663mcpsimp"></a>描述</p>
@@ -3980,11 +2270,7 @@ td_s32 ss_tde_set_alpha_threshold_state(td_bool threshold_en);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2677mcpsimp"></a>
+</table> 【返回值】 <a name="table2677mcpsimp"></a>
 <table><thead align="left"><tr id="row2682mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.3.1.1"><p id="p2684mcpsimp"><a name="p2684mcpsimp"></a><a name="p2684mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="88%" id="mcps1.1.3.1.2"><p id="p2686mcpsimp"><a name="p2686mcpsimp"></a><a name="p2686mcpsimp"></a>描述</p>
@@ -3996,17 +2282,8 @@ td_s32 ss_tde_set_alpha_threshold_state(td_bool threshold_en);
 <td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2692mcpsimp"><a name="p2692mcpsimp"></a><a name="p2692mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2693mcpsimp"><td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.3.1.1 "><p id="p2695mcpsimp"><a name="p2695mcpsimp"></a><a name="p2695mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="88%" headers="mcps1.1.3.1.2 "><p id="p2697mcpsimp"><a name="p2697mcpsimp"></a><a name="p2697mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408279226">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2700mcpsimp"></a>
+</table> 【错误码】 <a name="table2700mcpsimp"></a>
 <table><thead align="left"><tr id="row2705mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p2707mcpsimp"><a name="p2707mcpsimp"></a><a name="p2707mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p2709mcpsimp"><a name="p2709mcpsimp"></a><a name="p2709mcpsimp"></a>描述</p>
@@ -4024,40 +2301,10 @@ td_s32 ss_tde_set_alpha_threshold_state(td_bool threshold_en);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-### ss\_tde\_enable\_rgn\_deflicker<a name="ZH-CN_TOPIC_0000002408119274"></a>
-
-【目的】
-
-使能局部抗闪烁。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 无。 【举例】 无。 ### ss\_tde\_enable\_rgn\_deflicker<a name="ZH-CN_TOPIC_0000002408119274"></a> 【目的】 使能局部抗闪烁。 【语法】 ```
 td_s32 ss_tde_enable_rgn_deflicker(td_bool rgn_deflicker_en);
-```
-
-【描述】
-
-使能或去使能局部抗闪烁。
-
-【参数】
-
-<a name="table2738mcpsimp"></a>
+``` 【描述】 使能或去使能局部抗闪烁。 【参数】 <a name="table2738mcpsimp"></a>
 <table><thead align="left"><tr id="row2744mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p2746mcpsimp"><a name="p2746mcpsimp"></a><a name="p2746mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p2748mcpsimp"><a name="p2748mcpsimp"></a><a name="p2748mcpsimp"></a>描述</p>
@@ -4076,11 +2323,7 @@ td_s32 ss_tde_enable_rgn_deflicker(td_bool rgn_deflicker_en);
 </td>
 </tr>
 </tbody>
-</table>
-
-【错误码】
-
-<a name="table2762mcpsimp"></a>
+</table> 【错误码】 <a name="table2762mcpsimp"></a>
 <table><thead align="left"><tr id="row2767mcpsimp"><th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.1"><p id="p2769mcpsimp"><a name="p2769mcpsimp"></a><a name="p2769mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.2"><p id="p2771mcpsimp"><a name="p2771mcpsimp"></a><a name="p2771mcpsimp"></a>描述</p>
@@ -4098,30 +2341,10 @@ td_s32 ss_tde_enable_rgn_deflicker(td_bool rgn_deflicker_en);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_tde.h
--   库文件：libss\_tde.a
-
-【注意】
-
--   在不使能局部抗闪烁的情况下，ss\_tde\_quick\_deflicker或ss\_tde\_bit\_blit在对指定的区域进行抗闪烁时，不会参考区域周边的像素值；否则会参考。所以使能和不使能局部抗闪烁会使区域边缘得到不同的结果。当抗闪区域是整幅图片时，两者的效果相同。
--   在使能局部抗闪烁的情况下，不支持源操作区域与目标操作区域位置和宽高不一样的搬移和缩放操作。
-
-【举例】
-
-无。
-
-# 数据类型
-## 映射表<a name="ZH-CN_TOPIC_0000002441678613"></a>
-
-本章详细描述了API中涉及的数据结构，如[表1](#_Ref172373136)所示。
-
-**表 1**  TDE数据结构映射表
-
-<a name="_Ref172373136"></a>
+</table> 【需求】 - 头文件：ss\_mpi\_tde.h
+- 库文件：libss\_tde.a 【注意】 - 在不使能局部抗闪烁的情况下，ss\_tde\_quick\_deflicker或ss\_tde\_bit\_blit在对指定的区域进行抗闪烁时，不会参考区域周边的像素值；否则会参考。所以使能和不使能局部抗闪烁会使区域边缘得到不同的结果。当抗闪区域是整幅图片时，两者的效果相同。
+- 在使能局部抗闪烁的情况下，不支持源操作区域与目标操作区域位置和宽高不一样的搬移和缩放操作。 【举例】 无。 # 数据类型
+## 映射表<a name="ZH-CN_TOPIC_0000002441678613"></a> 本章详细描述了API中涉及的数据结构，如[表1](#_Ref172373136)所示。 **表 1** TDE数据结构映射表 <a name="_Ref172373136"></a>
 <table><thead align="left"><tr id="row2802mcpsimp"><th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.2.3.1.1"><p id="p2804mcpsimp"><a name="p2804mcpsimp"></a><a name="p2804mcpsimp"></a>函数</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.3.1.2"><p id="p2806mcpsimp"><a name="p2806mcpsimp"></a><a name="p2806mcpsimp"></a>说明</p>
@@ -4299,108 +2522,10 @@ td_s32 ss_tde_enable_rgn_deflicker(td_bool rgn_deflicker_en);
 </td>
 </tr>
 </tbody>
-</table>
-
-## 详细描述<a name="ZH-CN_TOPIC_0000002441678585"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### ot\_tde\_color\_format<a name="ZH-CN_TOPIC_0000002408119242"></a>
-
-【说明】
-
-TDE支持的所有像素格式。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_COLOR_FORMAT_RGB444 = 0,       /* RGB444 format */
-    OT_TDE_COLOR_FORMAT_BGR444,           /* BGR444 format */
-    OT_TDE_COLOR_FORMAT_RGB555,           /* RGB555 format */
-    OT_TDE_COLOR_FORMAT_BGR555,           /* BGR555 format */
-    OT_TDE_COLOR_FORMAT_RGB565,           /* RGB565 format */
-    OT_TDE_COLOR_FORMAT_BGR565,           /* BGR565 format */
-    OT_TDE_COLOR_FORMAT_RGB888,           /* RGB888 format */
-    OT_TDE_COLOR_FORMAT_BGR888,           /* BGR888 format */
-    OT_TDE_COLOR_FORMAT_ARGB4444,         /* ARGB4444 format */
-    OT_TDE_COLOR_FORMAT_ABGR4444,         /* ABGR4444 format */
-    OT_TDE_COLOR_FORMAT_RGBA4444,         /* RGBA4444 format */
-    OT_TDE_COLOR_FORMAT_BGRA4444,         /* BGRA4444 format */
-    OT_TDE_COLOR_FORMAT_ARGB1555,         /* ARGB1555 format */
-    OT_TDE_COLOR_FORMAT_ABGR1555,         /* ABGR1555 format */
-    OT_TDE_COLOR_FORMAT_RGBA1555,         /* RGBA1555 format */
-    OT_TDE_COLOR_FORMAT_BGRA1555,         /* BGRA1555 format */
-    OT_TDE_COLOR_FORMAT_ARGB8565,         /* ARGB8565 format */
-    OT_TDE_COLOR_FORMAT_ABGR8565,         /* ABGR8565 format */
-    OT_TDE_COLOR_FORMAT_RGBA8565,         /* RGBA8565 format */
-    OT_TDE_COLOR_FORMAT_BGRA8565,         /* BGRA8565 format */
-    OT_TDE_COLOR_FORMAT_ARGB8888,         /* ARGB8888 format */
-    OT_TDE_COLOR_FORMAT_ABGR8888,         /* ABGR8888 format */
-    OT_TDE_COLOR_FORMAT_RGBA8888,         /* RGBA8888 format */
-    OT_TDE_COLOR_FORMAT_BGRA8888,         /* BGRA8888 format */
-    OT_TDE_COLOR_FORMAT_RABG8888,         /* RABG8888 format */
-    OT_TDE_COLOR_FORMAT_CLUT1,
-    OT_TDE_COLOR_FORMAT_CLUT2,
-    OT_TDE_COLOR_FORMAT_CLUT4,
-    OT_TDE_COLOR_FORMAT_CLUT8,
-    OT_TDE_COLOR_FORMAT_ACLUT44,
-    OT_TDE_COLOR_FORMAT_ACLUT88,
-    OT_TDE_COLOR_FORMAT_A1, 
-    OT_TDE_COLOR_FORMAT_A8, 
-    OT_TDE_COLOR_FORMAT_YCbCr888, 
-    OT_TDE_COLOR_FORMAT_AYCbCr8888, 
-    OT_TDE_COLOR_FORMAT_YCbCr422,
-    OT_TDE_COLOR_FORMAT_PKGVYUY, 
-    OT_TDE_COLOR_FORMAT_BYTE,
-    OT_TDE_COLOR_FORMAT_HALFWORD,
-    OT_TDE_COLOR_FORMAT_JPG_YCbCr400MBP,
-    OT_TDE_COLOR_FORMAT_JPG_YCbCr422MBHP,
-    OT_TDE_COLOR_FORMAT_JPG_YCbCr422MBVP, 
-    OT_TDE_COLOR_FORMAT_MP1_YCbCr420MBP,
-    OT_TDE_COLOR_FORMAT_MP2_YCbCr420MBP,
-    OT_TDE_COLOR_FORMAT_MP2_YCbCr420MBI,
-    OT_TDE_COLOR_FORMAT_JPG_YCbCr420MBP,
-    OT_TDE_COLOR_FORMAT_JPG_YCbCr444MBP,
-    OT_TDE_COLOR_FORMAT_MAX
+</table> ## 详细描述<a name="ZH-CN_TOPIC_0000002441678585"></a> ### ot\_tde\_color\_format<a name="ZH-CN_TOPIC_0000002408119242"></a> 【说明】 TDE支持的所有像素格式。 【定义】 ```
+typedef enum { OT_TDE_COLOR_FORMAT_RGB444 = 0, /* RGB444 format */ OT_TDE_COLOR_FORMAT_BGR444, /* BGR444 format */ OT_TDE_COLOR_FORMAT_RGB555, /* RGB555 format */ OT_TDE_COLOR_FORMAT_BGR555, /* BGR555 format */ OT_TDE_COLOR_FORMAT_RGB565, /* RGB565 format */ OT_TDE_COLOR_FORMAT_BGR565, /* BGR565 format */ OT_TDE_COLOR_FORMAT_RGB888, /* RGB888 format */ OT_TDE_COLOR_FORMAT_BGR888, /* BGR888 format */ OT_TDE_COLOR_FORMAT_ARGB4444, /* ARGB4444 format */ OT_TDE_COLOR_FORMAT_ABGR4444, /* ABGR4444 format */ OT_TDE_COLOR_FORMAT_RGBA4444, /* RGBA4444 format */ OT_TDE_COLOR_FORMAT_BGRA4444, /* BGRA4444 format */ OT_TDE_COLOR_FORMAT_ARGB1555, /* ARGB1555 format */ OT_TDE_COLOR_FORMAT_ABGR1555, /* ABGR1555 format */ OT_TDE_COLOR_FORMAT_RGBA1555, /* RGBA1555 format */ OT_TDE_COLOR_FORMAT_BGRA1555, /* BGRA1555 format */ OT_TDE_COLOR_FORMAT_ARGB8565, /* ARGB8565 format */ OT_TDE_COLOR_FORMAT_ABGR8565, /* ABGR8565 format */ OT_TDE_COLOR_FORMAT_RGBA8565, /* RGBA8565 format */ OT_TDE_COLOR_FORMAT_BGRA8565, /* BGRA8565 format */ OT_TDE_COLOR_FORMAT_ARGB8888, /* ARGB8888 format */ OT_TDE_COLOR_FORMAT_ABGR8888, /* ABGR8888 format */ OT_TDE_COLOR_FORMAT_RGBA8888, /* RGBA8888 format */ OT_TDE_COLOR_FORMAT_BGRA8888, /* BGRA8888 format */ OT_TDE_COLOR_FORMAT_RABG8888, /* RABG8888 format */ OT_TDE_COLOR_FORMAT_CLUT1, OT_TDE_COLOR_FORMAT_CLUT2, OT_TDE_COLOR_FORMAT_CLUT4, OT_TDE_COLOR_FORMAT_CLUT8, OT_TDE_COLOR_FORMAT_ACLUT44, OT_TDE_COLOR_FORMAT_ACLUT88, OT_TDE_COLOR_FORMAT_A1, OT_TDE_COLOR_FORMAT_A8, OT_TDE_COLOR_FORMAT_YCbCr888, OT_TDE_COLOR_FORMAT_AYCbCr8888, OT_TDE_COLOR_FORMAT_YCbCr422, OT_TDE_COLOR_FORMAT_PKGVYUY, OT_TDE_COLOR_FORMAT_BYTE, OT_TDE_COLOR_FORMAT_HALFWORD, OT_TDE_COLOR_FORMAT_JPG_YCbCr400MBP, OT_TDE_COLOR_FORMAT_JPG_YCbCr422MBHP, OT_TDE_COLOR_FORMAT_JPG_YCbCr422MBVP, OT_TDE_COLOR_FORMAT_MP1_YCbCr420MBP, OT_TDE_COLOR_FORMAT_MP2_YCbCr420MBP, OT_TDE_COLOR_FORMAT_MP2_YCbCr420MBI, OT_TDE_COLOR_FORMAT_JPG_YCbCr420MBP, OT_TDE_COLOR_FORMAT_JPG_YCbCr444MBP, OT_TDE_COLOR_FORMAT_MAX
 } ot_tde_color_format;
-```
-
-【成员】
-
-<a name="table3068mcpsimp"></a>
+``` 【成员】 <a name="table3068mcpsimp"></a>
 <table><thead align="left"><tr id="row3073mcpsimp"><th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.1"><p id="p3075mcpsimp"><a name="p3075mcpsimp"></a><a name="p3075mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.2"><p id="p3077mcpsimp"><a name="p3077mcpsimp"></a><a name="p3077mcpsimp"></a>描述</p>
@@ -4648,44 +2773,13 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   目标格式不支持OT\_TDE\_COLOR\_FORMAT\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_YCbCr444MBP。
--   OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE只支持DMA搬移，且不能转成其他格式。
--   CLUT格式作为输出时，输入格式只能与输出保持一致，且只能做拷贝操作。且不能两个源同为CLUT格式。
--   上述提供的420宏块格式排列一致，与[ot\_tde\_mb\_color\_format](#ZH-CN_TOPIC_0000002441718429)的420宏块格式无区别。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_mb\_color\_format<a name="ZH-CN_TOPIC_0000002441718429"></a>
-
-【说明】
-
-TDE支持的宏块格式类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr400MBP = 0,
-    OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr422MBHP,
-    OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr422MBVP,
-    OT_TDE_MB_COLOR_FORMAT_MP1_YCbCr420MBP,
-    OT_TDE_MB_COLOR_FORMAT_MP2_YCbCr420MBP,
-    OT_TDE_MB_COLOR_FORMAT_MP2_YCbCr420MBI,
-    OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr420MBP, 
-    OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr444MBP,
-    OT_TDE_MB_COLOR_FORMAT_MAX
+</table> 【注意事项】 - 目标格式不支持OT\_TDE\_COLOR\_FORMAT\_YCbCr400MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422MBHP, OT\_TDE\_COLOR\_FORMAT\_YCbCr422MBVP, OT\_TDE\_COLOR\_FORMAT\_YCbCr420MBP, OT\_TDE\_COLOR\_FORMAT\_YCbCr420MBI, OT\_TDE\_COLOR\_FORMAT\_YCbCr444MBP。
+- OT\_TDE\_COLOR\_FORMAT\_A1, OT\_TDE\_COLOR\_FORMAT\_A8, OT\_TDE\_COLOR\_FORMAT\_BYTE只支持DMA搬移，且不能转成其他格式。
+- CLUT格式作为输出时，输入格式只能与输出保持一致，且只能做拷贝操作。且不能两个源同为CLUT格式。
+- 上述提供的420宏块格式排列一致，与[ot\_tde\_mb\_color\_format](#ZH-CN_TOPIC_0000002441718429)的420宏块格式无区别。 【相关数据类型和接口】 无。 ### ot\_tde\_mb\_color\_format<a name="ZH-CN_TOPIC_0000002441718429"></a> 【说明】 TDE支持的宏块格式类型。 【定义】 ```
+typedef enum { OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr400MBP = 0, OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr422MBHP, OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr422MBVP, OT_TDE_MB_COLOR_FORMAT_MP1_YCbCr420MBP, OT_TDE_MB_COLOR_FORMAT_MP2_YCbCr420MBP, OT_TDE_MB_COLOR_FORMAT_MP2_YCbCr420MBI, OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr420MBP, OT_TDE_MB_COLOR_FORMAT_JPG_YCbCr444MBP, OT_TDE_MB_COLOR_FORMAT_MAX
 } ot_tde_mb_color_format;
-```
-
-【成员】
-
-<a name="table3345mcpsimp"></a>
+``` 【成员】 <a name="table3345mcpsimp"></a>
 <table><thead align="left"><tr id="row3350mcpsimp"><th class="cellrowborder" valign="top" width="72%" id="mcps1.1.3.1.1"><p id="p3352mcpsimp"><a name="p3352mcpsimp"></a><a name="p3352mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.3.1.2"><p id="p3354mcpsimp"><a name="p3354mcpsimp"></a><a name="p3354mcpsimp"></a>描述</p>
@@ -4733,48 +2827,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-上述提供的420宏块格式排列一致，与[ot\_tde\_color\_format](#ZH-CN_TOPIC_0000002408119242)的420宏块格式无区别。具体使用看使用的功能接口的参数类型。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_surface<a name="ZH-CN_TOPIC_0000002441678561"></a>
-
-【说明】
-
-位图surface结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_phys_addr_t phys_addr;
-    td_u32 phys_len;
-    ot_tde_color_formatcolor_format;
-    td_u32 height;
-    td_u32 width;
-    td_u32 stride;
-    td_bool is_ycbcr_clut;
-    td_bool alpha_max_is_255;
-    td_bool support_alpha_ex_1555;
-    td_u8 alpha0;
-    td_u8 alpha1;
-    td_phys_addr_t cbcr_phys_addr;
-    td_u32 cbcr_phys_len;
-    td_u32 cbcr_stride;
-    td_phys_addr_t clut_phys_addr;
-    td_u32 clut_phys_len;
+</table> 【注意事项】 上述提供的420宏块格式排列一致，与[ot\_tde\_color\_format](#ZH-CN_TOPIC_0000002408119242)的420宏块格式无区别。具体使用看使用的功能接口的参数类型。 【相关数据类型和接口】 无。 ### ot\_tde\_surface<a name="ZH-CN_TOPIC_0000002441678561"></a> 【说明】 位图surface结构体。 【定义】 ```
+typedef struct { td_phys_addr_t phys_addr; td_u32 phys_len; ot_tde_color_formatcolor_format; td_u32 height; td_u32 width; td_u32 stride; td_bool is_ycbcr_clut; td_bool alpha_max_is_255; td_bool support_alpha_ex_1555; td_u8 alpha0; td_u8 alpha1; td_phys_addr_t cbcr_phys_addr; td_u32 cbcr_phys_len; td_u32 cbcr_stride; td_phys_addr_t clut_phys_addr; td_u32 clut_phys_len;
 } ot_tde_surface;
-```
-
-【成员】
-
-<a name="table3425mcpsimp"></a>
+``` 【成员】 <a name="table3425mcpsimp"></a>
 <table><thead align="left"><tr id="row3430mcpsimp"><th class="cellrowborder" valign="top" width="38%" id="mcps1.1.3.1.1"><p id="p3432mcpsimp"><a name="p3432mcpsimp"></a><a name="p3432mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.3.1.2"><p id="p3434mcpsimp"><a name="p3434mcpsimp"></a><a name="p3434mcpsimp"></a>描述</p>
@@ -4870,45 +2926,14 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   像素格式大于等于BYTE的位图格式的位图首地址和Stride必须按照像素格式对齐，像素格式不足BYTE的位图格式的位图首地址和Stride需要按照BYTE对齐。
--   像素格式不足BYTE的位图格式的水平起始位置和宽度必须按照BYTE对齐。
--   YCbCr422格式的位图的水平起始位置和宽度必须为偶数。
--   CLUT到真彩色ARGB的扩展是依靠检索CLUT表来实现的。故颜色扩展功能（如CLUT1格式位图扩展到ARGB8888格式位图）或颜色校正时，需要配置Clut表首地址clut\_phys\_addr，且其指向的CLUT表内存必须是物理连续的。
--   stride最大不超过65535。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_mb\_surface<a name="ZH-CN_TOPIC_0000002441718385"></a>
-
-【说明】
-
-宏块Surface结构体，描述宏块格式的图像的基本信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_tde_mb_color_format mb_color_format;
-    td_phys_addr_t y_addr;
-    td_u32 y_len;
-    td_u32 y_width;
-    td_u32 y_height;
-    td_u32 y_stride;
-    td_phys_addr_t cbcr_phys_addr;
-    td_u32 cbcr_phys_len;
-    td_u32 cbcr_stride;
+</table> 【注意事项】 - 像素格式大于等于BYTE的位图格式的位图首地址和Stride必须按照像素格式对齐，像素格式不足BYTE的位图格式的位图首地址和Stride需要按照BYTE对齐。
+- 像素格式不足BYTE的位图格式的水平起始位置和宽度必须按照BYTE对齐。
+- YCbCr422格式的位图的水平起始位置和宽度必须为偶数。
+- CLUT到真彩色ARGB的扩展是依靠检索CLUT表来实现的。故颜色扩展功能（如CLUT1格式位图扩展到ARGB8888格式位图）或颜色校正时，需要配置Clut表首地址clut\_phys\_addr，且其指向的CLUT表内存必须是物理连续的。
+- stride最大不超过65535。 【相关数据类型和接口】 无。 ### ot\_tde\_mb\_surface<a name="ZH-CN_TOPIC_0000002441718385"></a> 【说明】 宏块Surface结构体，描述宏块格式的图像的基本信息。 【定义】 ```
+typedef struct { ot_tde_mb_color_format mb_color_format; td_phys_addr_t y_addr; td_u32 y_len; td_u32 y_width; td_u32 y_height; td_u32 y_stride; td_phys_addr_t cbcr_phys_addr; td_u32 cbcr_phys_len; td_u32 cbcr_stride;
 } ot_tde_mb_surface;
-```
-
-【成员】
-
-<a name="table3551mcpsimp"></a>
+``` 【成员】 <a name="table3551mcpsimp"></a>
 <table><thead align="left"><tr id="row3556mcpsimp"><th class="cellrowborder" valign="top" width="35%" id="mcps1.1.3.1.1"><p id="p3558mcpsimp"><a name="p3558mcpsimp"></a><a name="p3558mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="65%" id="mcps1.1.3.1.2"><p id="p3560mcpsimp"><a name="p3560mcpsimp"></a><a name="p3560mcpsimp"></a>描述</p>
@@ -4961,36 +2986,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_rect<a name="ZH-CN_TOPIC_0000002441718465"></a>
-
-【说明】
-
-TDE操作区域属性。
-
-【定义】
-
-```
-typedef struct {
-    td_s32 pos_x;   /* Horizontal coordinate */
-    td_s32 pos_y;   /* Vertical coordinate */
-    td_u32 width;  /* Width */
-    td_u32 height; /* Height */
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_rect<a name="ZH-CN_TOPIC_0000002441718465"></a> 【说明】 TDE操作区域属性。 【定义】 ```
+typedef struct { td_s32 pos_x; /* Horizontal coordinate */ td_s32 pos_y; /* Vertical coordinate */ td_u32 width; /* Width */ td_u32 height; /* Height */
 } ot_tde_rect;
-```
-
-【成员】
-
-<a name="table3622mcpsimp"></a>
+``` 【成员】 <a name="table3622mcpsimp"></a>
 <table><thead align="left"><tr id="row3627mcpsimp"><th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.1"><p id="p3629mcpsimp"><a name="p3629mcpsimp"></a><a name="p3629mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.2"><p id="p3631mcpsimp"><a name="p3631mcpsimp"></a><a name="p3631mcpsimp"></a>描述</p>
@@ -5022,35 +3021,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   操作区域与位图的关系如[图1](#ss_tde_quick_copy)所示。
--   若操作区域与位图部分相交，则取相交部分为实际参与操作的区域；若操作区域与位图不相交，则返回相应错误码。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_none\_src<a name="ZH-CN_TOPIC_0000002441718457"></a>
-
-【说明】
-
-TDE操作组合类型（按源的个数区分）。此为0源操作。
-
-【定义】
-
-```
-typedef struct {
-      ot_tde_surface  *dst_surface;
-      ot_tde_rect *dst_rect;
+</table> 【注意事项】 - 操作区域与位图的关系如[图1](#ss_tde_quick_copy)所示。
+- 若操作区域与位图部分相交，则取相交部分为实际参与操作的区域；若操作区域与位图不相交，则返回相应错误码。 【相关数据类型和接口】 无。 ### ot\_tde\_none\_src<a name="ZH-CN_TOPIC_0000002441718457"></a> 【说明】 TDE操作组合类型（按源的个数区分）。此为0源操作。 【定义】 ```
+typedef struct { ot_tde_surface *dst_surface; ot_tde_rect *dst_rect;
 } ot_tde_none_src;
-```
-
-【成员】
-
-<a name="table3675mcpsimp"></a>
+``` 【成员】 <a name="table3675mcpsimp"></a>
 <table><thead align="left"><tr id="row3680mcpsimp"><th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.1"><p id="p3682mcpsimp"><a name="p3682mcpsimp"></a><a name="p3682mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.2"><p id="p3684mcpsimp"><a name="p3684mcpsimp"></a><a name="p3684mcpsimp"></a>描述</p>
@@ -5068,36 +3043,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_single\_src<a name="ZH-CN_TOPIC_0000002441718389"></a>
-
-【说明】
-
-TDE操作组合类型（按源的个数区分）。此为单源操作。
-
-【定义】
-
-```
-typedef struct {
-      ot_tde_surface *src_surface;
-      ot_tde_surface *dst_surface;
-      ot_tde_rect *src_rect;
-      ot_tde_rect *dst_rect;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_single\_src<a name="ZH-CN_TOPIC_0000002441718389"></a> 【说明】 TDE操作组合类型（按源的个数区分）。此为单源操作。 【定义】 ```
+typedef struct { ot_tde_surface *src_surface; ot_tde_surface *dst_surface; ot_tde_rect *src_rect; ot_tde_rect *dst_rect;
 } ot_tde_single_src;
-```
-
-【成员】
-
-<a name="table3715mcpsimp"></a>
+``` 【成员】 <a name="table3715mcpsimp"></a>
 <table><thead align="left"><tr id="row3720mcpsimp"><th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.1"><p id="p3722mcpsimp"><a name="p3722mcpsimp"></a><a name="p3722mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.2"><p id="p3724mcpsimp"><a name="p3724mcpsimp"></a><a name="p3724mcpsimp"></a>描述</p>
@@ -5125,36 +3074,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_mb\_src<a name="ZH-CN_TOPIC_0000002441718461"></a>
-
-【说明】
-
-TDE操作组合类型（按源的个数区分）。此为双源操作。
-
-【定义】
-
-```
-typedef struct {
-      ot_tde_mb_surface *mb_surface;
-      ot_tde_surface *dst_surface;
-      ot_tde_rect*src_rect;
-      ot_tde_rect*dst_rect;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_mb\_src<a name="ZH-CN_TOPIC_0000002441718461"></a> 【说明】 TDE操作组合类型（按源的个数区分）。此为双源操作。 【定义】 ```
+typedef struct { ot_tde_mb_surface *mb_surface; ot_tde_surface *dst_surface; ot_tde_rect*src_rect; ot_tde_rect*dst_rect;
 } ot_tde_mb_src;
-```
-
-【成员】
-
-<a name="table3765mcpsimp"></a>
+``` 【成员】 <a name="table3765mcpsimp"></a>
 <table><thead align="left"><tr id="row3770mcpsimp"><th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.1"><p id="p3772mcpsimp"><a name="p3772mcpsimp"></a><a name="p3772mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.2"><p id="p3774mcpsimp"><a name="p3774mcpsimp"></a><a name="p3774mcpsimp"></a>描述</p>
@@ -5182,38 +3105,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_double\_src<a name="ZH-CN_TOPIC_0000002441718433"></a>
-
-【说明】
-
-TDE操作组合类型（按源的个数区分）。此为双源操作。
-
-【定义】
-
-```
-typedef struct {
-      ot_tde_surface *bg_surface;
-      ot_tde_surface *fg_surface;
-      ot_tde_surface *dst_surface;
-      ot_tde_rect *bg_rect;
-      ot_tde_rect *fg_rect;
-      ot_tde_rect *dst_rect;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_double\_src<a name="ZH-CN_TOPIC_0000002441718433"></a> 【说明】 TDE操作组合类型（按源的个数区分）。此为双源操作。 【定义】 ```
+typedef struct { ot_tde_surface *bg_surface; ot_tde_surface *fg_surface; ot_tde_surface *dst_surface; ot_tde_rect *bg_rect; ot_tde_rect *fg_rect; ot_tde_rect *dst_rect;
 } ot_tde_double_src;
-```
-
-【成员】
-
-<a name="table3819mcpsimp"></a>
+``` 【成员】 <a name="table3819mcpsimp"></a>
 <table><thead align="left"><tr id="row3824mcpsimp"><th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.1"><p id="p3826mcpsimp"><a name="p3826mcpsimp"></a><a name="p3826mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.2"><p id="p3828mcpsimp"><a name="p3828mcpsimp"></a><a name="p3828mcpsimp"></a>描述</p>
@@ -5251,40 +3146,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_triple\_src<a name="ZH-CN_TOPIC_0000002408279202"></a>
-
-【说明】
-
-TDE操作组合类型（按源的个数区分）。此为三源操作。
-
-【定义】
-
-```
-typedef struct {
-      ot_tde_surface *bg_surface;
-      ot_tde_surface *fg_surface;
-      ot_tde_surface *dst_surface;
-      ot_tde_surface *mask_surface;
-      ot_tde_rect *bg_rect;
-      ot_tde_rect *fg_rect;
-      ot_tde_rect *mask_rect;
-      ot_tde_rect *dst_rect;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_triple\_src<a name="ZH-CN_TOPIC_0000002408279202"></a> 【说明】 TDE操作组合类型（按源的个数区分）。此为三源操作。 【定义】 ```
+typedef struct { ot_tde_surface *bg_surface; ot_tde_surface *fg_surface; ot_tde_surface *dst_surface; ot_tde_surface *mask_surface; ot_tde_rect *bg_rect; ot_tde_rect *fg_rect; ot_tde_rect *mask_rect; ot_tde_rect *dst_rect;
 } ot_tde_triple_src;
-```
-
-【成员】
-
-<a name="table3887mcpsimp"></a>
+``` 【成员】 <a name="table3887mcpsimp"></a>
 <table><thead align="left"><tr id="row3892mcpsimp"><th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.1"><p id="p3894mcpsimp"><a name="p3894mcpsimp"></a><a name="p3894mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.2"><p id="p3896mcpsimp"><a name="p3896mcpsimp"></a><a name="p3896mcpsimp"></a>描述</p>
@@ -5332,37 +3197,9 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_alpha\_blending<a name="ZH-CN_TOPIC_0000002408119298"></a>
-
-【说明】
-
-逻辑运算类型属性。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_ALPHA_BLENDING_NONE = 0x0,
-    OT_TDE_ALPHA_BLENDING_BLEND = 0x1,
-    OT_TDE_ALPHA_BLENDING_ROP = 0x2,
-    OT_TDE_ALPHA_BLENDING_COLORIZE = 0x4,
-    OT_TDE_ALPHA_BLENDING_MAX = 0x8
-} ot_tde_alpha_blending; 
-```
-
-【成员】
-
-<a name="table3954mcpsimp"></a>
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_alpha\_blending<a name="ZH-CN_TOPIC_0000002408119298"></a> 【说明】 逻辑运算类型属性。 【定义】 ```
+typedef enum { OT_TDE_ALPHA_BLENDING_NONE = 0x0, OT_TDE_ALPHA_BLENDING_BLEND = 0x1, OT_TDE_ALPHA_BLENDING_ROP = 0x2, OT_TDE_ALPHA_BLENDING_COLORIZE = 0x4, OT_TDE_ALPHA_BLENDING_MAX = 0x8
+} ot_tde_alpha_blending; ``` 【成员】 <a name="table3954mcpsimp"></a>
 <table><thead align="left"><tr id="row3959mcpsimp"><th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.1"><p id="p3961mcpsimp"><a name="p3961mcpsimp"></a><a name="p3961mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.2"><p id="p3963mcpsimp"><a name="p3963mcpsimp"></a><a name="p3963mcpsimp"></a>描述</p>
@@ -5395,49 +3232,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-若进行两个位图的alpha叠加运算，请选择OT\_TDE\_ALPHA\_BLENDING\_BLEND，若进行Colorize操作，请选择OT\_TDE\_ALPHA\_BLENDING\_COLORIZE。如选择OT\_TDE\_ALPHA\_BLENDING\_ROP，指进行布尔逻辑运算类型。通过指定ot\_tde\_opt结构中的rop\_color和rop\_alpha成员，分别指定颜色和alpha分量的ROP运算类型。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_rop\_mode<a name="ZH-CN_TOPIC_0000002441678545"></a>
-
-【说明】
-
-TDE支持的ROP操作类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_ROP_BLACK = 0,   /* Blackness */
-    OT_TDE_ROP_NOTMERGEPEN, /* ~(S2 | S1) */
-    OT_TDE_ROP_MASKNOTPEN,  /* ~S2&S1 */
-    OT_TDE_ROP_NOTCOPYPEN,  /* ~S2 */
-    OT_TDE_ROP_MASKPENNOT,  /* S2&~S1 */
-    OT_TDE_ROP_NOT,         /* ~S1 */
-    OT_TDE_ROP_XORPEN,      /* S2^S1 */
-    OT_TDE_ROP_NOTMASKPEN,  /* ~(S2 & S1) */
-    OT_TDE_ROP_MASKPEN,     /* S2&S1 */
-    OT_TDE_ROP_NOTXORPEN,   /* ~(S2^S1) */
-    OT_TDE_ROP_NOP,         /* S1 */
-    OT_TDE_ROP_MERGENOTPEN, /* ~S2|S1 */
-    OT_TDE_ROP_COPYPEN,     /* S2 */
-    OT_TDE_ROP_MERGEPENNOT, /* S2|~S1 */
-    OT_TDE_ROP_MERGEPEN,    /* S2|S1 */
-    OT_TDE_ROP_WHITE,       /* Whiteness */
-    OT_TDE_ROP_MAX
+</table> 【注意事项】 若进行两个位图的alpha叠加运算，请选择OT\_TDE\_ALPHA\_BLENDING\_BLEND，若进行Colorize操作，请选择OT\_TDE\_ALPHA\_BLENDING\_COLORIZE。如选择OT\_TDE\_ALPHA\_BLENDING\_ROP，指进行布尔逻辑运算类型。通过指定ot\_tde\_opt结构中的rop\_color和rop\_alpha成员，分别指定颜色和alpha分量的ROP运算类型。 【相关数据类型和接口】 无。 ### ot\_tde\_rop\_mode<a name="ZH-CN_TOPIC_0000002441678545"></a> 【说明】 TDE支持的ROP操作类型。 【定义】 ```
+typedef enum { OT_TDE_ROP_BLACK = 0, /* Blackness */ OT_TDE_ROP_NOTMERGEPEN, /* ~(S2 | S1) */ OT_TDE_ROP_MASKNOTPEN, /* ~S2&S1 */ OT_TDE_ROP_NOTCOPYPEN, /* ~S2 */ OT_TDE_ROP_MASKPENNOT, /* S2&~S1 */ OT_TDE_ROP_NOT, /* ~S1 */ OT_TDE_ROP_XORPEN, /* S2^S1 */ OT_TDE_ROP_NOTMASKPEN, /* ~(S2 & S1) */ OT_TDE_ROP_MASKPEN, /* S2&S1 */ OT_TDE_ROP_NOTXORPEN, /* ~(S2^S1) */ OT_TDE_ROP_NOP, /* S1 */ OT_TDE_ROP_MERGENOTPEN, /* ~S2|S1 */ OT_TDE_ROP_COPYPEN, /* S2 */ OT_TDE_ROP_MERGEPENNOT, /* S2|~S1 */ OT_TDE_ROP_MERGEPEN, /* S2|S1 */ OT_TDE_ROP_WHITE, /* Whiteness */ OT_TDE_ROP_MAX
 } ot_tde_rop_mode;
-```
-
-【成员】
-
-<a name="table4034mcpsimp"></a>
+``` 【成员】 <a name="table4034mcpsimp"></a>
 <table><thead align="left"><tr id="row4039mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p4041mcpsimp"><a name="p4041mcpsimp"></a><a name="p4041mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p4043mcpsimp"><a name="p4043mcpsimp"></a><a name="p4043mcpsimp"></a>描述</p>
@@ -5530,45 +3328,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-注意：S1表示背景位图，S2表示位前景位图。
-
-【注意事项】
-
-不同操作时，S1、S2具体所指的位图不同，详见每个接口的说明部分。如果对两幅位图进行的操作类型选择为OT\_TDE\_ALPHA\_BLENDING\_ROP，则可以分别对颜色空间和Alpha指定不同的ROP操作。例如：设前景位图和背景位图均为ARGB8888格式的位图。前景位图的像素值为foreground，背景位图的像素值为background，经过运算后的像素的值为pixel，取Alpha的ROP操作为Whiteness，取颜色空间的ROP操作为Blackness，则经过运算之后的像素值pixel计算如下：
-
-pixel. alpha＝0xff；
-
-pixel.r＝pixel.g＝pixel.b＝0x00；
-
-其中pixel. alpha，pixel.r，pixel.g，pixel.b分别代表运算后位图的各个分量。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_mirror\_mode<a name="ZH-CN_TOPIC_0000002441718397"></a>
-
-【说明】
-
-图像镜像属性。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_MIRROR_NONE = 0,
-    OT_TDE_MIRROR_HOR,
-    OT_TDE_MIRROR_VER,
-    OT_TDE_MIRROR_BOTH,
-    OT_TDE_MIRROR_MAX
+</table> 注意：S1表示背景位图，S2表示位前景位图。 【注意事项】 不同操作时，S1、S2具体所指的位图不同，详见每个接口的说明部分。如果对两幅位图进行的操作类型选择为OT\_TDE\_ALPHA\_BLENDING\_ROP，则可以分别对颜色空间和Alpha指定不同的ROP操作。例如：设前景位图和背景位图均为ARGB8888格式的位图。前景位图的像素值为foreground，背景位图的像素值为background，经过运算后的像素的值为pixel，取Alpha的ROP操作为Whiteness，取颜色空间的ROP操作为Blackness，则经过运算之后的像素值pixel计算如下： pixel. alpha＝0xff； pixel.r＝pixel.g＝pixel.b＝0x00； 其中pixel. alpha，pixel.r，pixel.g，pixel.b分别代表运算后位图的各个分量。 【相关数据类型和接口】 无。 ### ot\_tde\_mirror\_mode<a name="ZH-CN_TOPIC_0000002441718397"></a> 【说明】 图像镜像属性。 【定义】 ```
+typedef enum { OT_TDE_MIRROR_NONE = 0, OT_TDE_MIRROR_HOR, OT_TDE_MIRROR_VER, OT_TDE_MIRROR_BOTH, OT_TDE_MIRROR_MAX
 } ot_tde_mirror_mode;
-```
-
-【成员】
-
-<a name="table4150mcpsimp"></a>
+``` 【成员】 <a name="table4150mcpsimp"></a>
 <table><thead align="left"><tr id="row4155mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p4157mcpsimp"><a name="p4157mcpsimp"></a><a name="p4157mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4159mcpsimp"><a name="p4159mcpsimp"></a><a name="p4159mcpsimp"></a>描述</p>
@@ -5601,36 +3364,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_clip\_mode<a name="ZH-CN_TOPIC_0000002441678529"></a>
-
-【说明】
-
-剪切操作类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_CLIP_MODE_NONE = 0,
-    OT_TDE_CLIP_MODE_INSIDE,
-    OT_TDE_CLIP_MODE_OUTSIDE,
-    OT_TDE_CLIP_MODE_MAX
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_clip\_mode<a name="ZH-CN_TOPIC_0000002441678529"></a> 【说明】 剪切操作类型。 【定义】 ```
+typedef enum { OT_TDE_CLIP_MODE_NONE = 0, OT_TDE_CLIP_MODE_INSIDE, OT_TDE_CLIP_MODE_OUTSIDE, OT_TDE_CLIP_MODE_MAX
 } ot_tde_clip_mode;
-```
-
-【成员】
-
-<a name="table4201mcpsimp"></a>
+``` 【成员】 <a name="table4201mcpsimp"></a>
 <table><thead align="left"><tr id="row4206mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p4208mcpsimp"><a name="p4208mcpsimp"></a><a name="p4208mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p4210mcpsimp"><a name="p4210mcpsimp"></a><a name="p4210mcpsimp"></a>描述</p>
@@ -5658,37 +3395,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_mb\_resize<a name="ZH-CN_TOPIC_0000002441678549"></a>
-
-【说明】
-
-宏块格式缩放类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_MB_RESIZE_NONE = 0,
-    OT_TDE_MB_RESIZE_QUALITY_LOW,
-    OT_TDE_MB_RESIZE_QUALITY_MIDDLE,
-    OT_TDE_MB_RESIZE_QUALITY_HIGH,
-    OT_TDE_MB_RESIZE_MAX
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_mb\_resize<a name="ZH-CN_TOPIC_0000002441678549"></a> 【说明】 宏块格式缩放类型。 【定义】 ```
+typedef enum { OT_TDE_MB_RESIZE_NONE = 0, OT_TDE_MB_RESIZE_QUALITY_LOW, OT_TDE_MB_RESIZE_QUALITY_MIDDLE, OT_TDE_MB_RESIZE_QUALITY_HIGH, OT_TDE_MB_RESIZE_MAX
 } ot_tde_mb_resize;
-```
-
-【成员】
-
-<a name="table4249mcpsimp"></a>
+``` 【成员】 <a name="table4249mcpsimp"></a>
 <table><thead align="left"><tr id="row4254mcpsimp"><th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.1"><p id="p4256mcpsimp"><a name="p4256mcpsimp"></a><a name="p4256mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.2"><p id="p4258mcpsimp"><a name="p4258mcpsimp"></a><a name="p4258mcpsimp"></a>描述</p>
@@ -5721,34 +3431,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_fill\_color<a name="ZH-CN_TOPIC_0000002408119218"></a>
-
-【说明】
-
-图像填充色属性结构。
-
-【定义】
-
-```
-typedef struct {
-     ot_tde_color_format color_format;
-     td_u32 color_value;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_fill\_color<a name="ZH-CN_TOPIC_0000002408119218"></a> 【说明】 图像填充色属性结构。 【定义】 ```
+typedef struct { ot_tde_color_format color_format; td_u32 color_value;
 } ot_tde_fill_color;
-```
-
-【成员】
-
-<a name="table4300mcpsimp"></a>
+``` 【成员】 <a name="table4300mcpsimp"></a>
 <table><thead align="left"><tr id="row4305mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p4307mcpsimp"><a name="p4307mcpsimp"></a><a name="p4307mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4309mcpsimp"><a name="p4309mcpsimp"></a><a name="p4309mcpsimp"></a>描述</p>
@@ -5766,36 +3452,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-填充值必须与填充格式相匹配，如某位图需填充为蓝色，可指定填充色格式为ARGB1555，填充值为0x801F（此处alpha位为1）。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_colorkey\_mode<a name="ZH-CN_TOPIC_0000002441678593"></a>
-
-【说明】
-
-TDE colorkey模式属性。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_COLORKEY_MODE_NONE = 0,
-    OT_TDE_COLORKEY_MODE_FG,
-    OT_TDE_COLORKEY_MODE_BG,
-    OT_TDE_COLORKEY_MODE_MAX
+</table> 【注意事项】 填充值必须与填充格式相匹配，如某位图需填充为蓝色，可指定填充色格式为ARGB1555，填充值为0x801F（此处alpha位为1）。 【相关数据类型和接口】 无。 ### ot\_tde\_colorkey\_mode<a name="ZH-CN_TOPIC_0000002441678593"></a> 【说明】 TDE colorkey模式属性。 【定义】 ```
+typedef enum { OT_TDE_COLORKEY_MODE_NONE = 0, OT_TDE_COLORKEY_MODE_FG, OT_TDE_COLORKEY_MODE_BG, OT_TDE_COLORKEY_MODE_MAX
 } ot_tde_colorkey_mode;
-```
-
-【成员】
-
-<a name="table4336mcpsimp"></a>
+``` 【成员】 <a name="table4336mcpsimp"></a>
 <table><thead align="left"><tr id="row4341mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p4343mcpsimp"><a name="p4343mcpsimp"></a><a name="p4343mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p4345mcpsimp"><a name="p4345mcpsimp"></a><a name="p4345mcpsimp"></a>描述</p>
@@ -5823,40 +3483,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-对前景位图进行colorkey时，对于颜色扩展，在CLUT前做colorkey；对于颜色校正，在CLUT后做colorkey。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_colorkey\_component<a name="ZH-CN_TOPIC_0000002441678605"></a>
-
-【说明】
-
-单个颜色分量的关键色属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 min_component;
-    td_u8 max_component;
-    td_u8 is_component_out;
-    td_u8 is_component_ignore;
-    td_u8 component_mask;
-    td_u8 component_reserved;
-    td_u8 component_reserved1;
-    td_u8 component_reserved2;
+</table> 【注意事项】 对前景位图进行colorkey时，对于颜色扩展，在CLUT前做colorkey；对于颜色校正，在CLUT后做colorkey。 【相关数据类型和接口】 无。 ### ot\_tde\_colorkey\_component<a name="ZH-CN_TOPIC_0000002441678605"></a> 【说明】 单个颜色分量的关键色属性。 【定义】 ```
+typedef struct { td_u8 min_component; td_u8 max_component; td_u8 is_component_out; td_u8 is_component_ignore; td_u8 component_mask; td_u8 component_reserved; td_u8 component_reserved1; td_u8 component_reserved2;
 } ot_tde_colorkey_component;
-```
-
-【成员】
-
-<a name="table4386mcpsimp"></a>
+``` 【成员】 <a name="table4386mcpsimp"></a>
 <table><thead align="left"><tr id="row4391mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p4393mcpsimp"><a name="p4393mcpsimp"></a><a name="p4393mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p4395mcpsimp"><a name="p4395mcpsimp"></a><a name="p4395mcpsimp"></a>描述</p>
@@ -5894,54 +3524,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   结构成员is\_component\_ignore指关键色比较时是否忽略该分量的比较，而总是认为其满足关键色要求。
-    -   若is\_component\_ignore为TRUE，表示关键色比较时，忽略该分量的比较，认为该分量总是满足关键色要求。
-    -   若is\_component\_ignore为FALSE，表示需要根据\[最小关键色，最大关键色\]范围以及属性is\_component\_out判断该分量的值是否符合关键色要求。
-
--   结构体成员component\_mask控制分量中的哪些bit位有效，即分量会和component\_mask做与运算。若component\_mask为0则分量的值为0，若component\_mask为0xFF则分量的值为该像素点的分量值，以此类推。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_colorkey<a name="ZH-CN_TOPIC_0000002441718453"></a>
-
-【说明】
-
-关键色属性。
-
-【定义】
-
-```
-typedef union {
-    struct {
-        ot_tde_colorkey_component alpha;
-        ot_tde_colorkey_component red;
-        ot_tde_colorkey_component green;
-        ot_tde_colorkey_component blue;
-    } argb_colorkey;
-    struct {
-        ot_tde_colorkey_component alpha;
-        ot_tde_colorkey_component y;
-        ot_tde_colorkey_component cb;
-        ot_tde_colorkey_component cr;
-    } ycbcr_colorkey;
-    struct {
-        ot_tde_colorkey_component alpha;
-        ot_tde_colorkey_component clut;
-    } clut_colorkey;
+</table> 【注意事项】 - 结构成员is\_component\_ignore指关键色比较时是否忽略该分量的比较，而总是认为其满足关键色要求。 - 若is\_component\_ignore为TRUE，表示关键色比较时，忽略该分量的比较，认为该分量总是满足关键色要求。 - 若is\_component\_ignore为FALSE，表示需要根据\[最小关键色，最大关键色\]范围以及属性is\_component\_out判断该分量的值是否符合关键色要求。 - 结构体成员component\_mask控制分量中的哪些bit位有效，即分量会和component\_mask做与运算。若component\_mask为0则分量的值为0，若component\_mask为0xFF则分量的值为该像素点的分量值，以此类推。 【相关数据类型和接口】 无。 ### ot\_tde\_colorkey<a name="ZH-CN_TOPIC_0000002441718453"></a> 【说明】 关键色属性。 【定义】 ```
+typedef union { struct { ot_tde_colorkey_component alpha; ot_tde_colorkey_component red; ot_tde_colorkey_component green; ot_tde_colorkey_component blue; } argb_colorkey; struct { ot_tde_colorkey_component alpha; ot_tde_colorkey_component y; ot_tde_colorkey_component cb; ot_tde_colorkey_component cr; } ycbcr_colorkey; struct { ot_tde_colorkey_component alpha; ot_tde_colorkey_component clut; } clut_colorkey;
 } ot_tde_colorkey;
-```
-
-【成员】
-
-结构argb\_colorkey成员：表示位图格式为ARGB类型时各分量的关键色属性。
-
-<a name="table4470mcpsimp"></a>
+``` 【成员】 结构argb\_colorkey成员：表示位图格式为ARGB类型时各分量的关键色属性。 <a name="table4470mcpsimp"></a>
 <table><thead align="left"><tr id="row4475mcpsimp"><th class="cellrowborder" valign="top" width="42%" id="mcps1.1.3.1.1"><p id="p4477mcpsimp"><a name="p4477mcpsimp"></a><a name="p4477mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.3.1.2"><p id="p4479mcpsimp"><a name="p4479mcpsimp"></a><a name="p4479mcpsimp"></a>描述</p>
@@ -5969,11 +3555,7 @@ typedef union {
 </td>
 </tr>
 </tbody>
-</table>
-
-结构ycbcr\_colorkey成员：表示位图格式为AYCbCr类型时，各分量的关键色属性。
-
-<a name="table4502mcpsimp"></a>
+</table> 结构ycbcr\_colorkey成员：表示位图格式为AYCbCr类型时，各分量的关键色属性。 <a name="table4502mcpsimp"></a>
 <table><thead align="left"><tr id="row4507mcpsimp"><th class="cellrowborder" valign="top" width="42%" id="mcps1.1.3.1.1"><p id="p4509mcpsimp"><a name="p4509mcpsimp"></a><a name="p4509mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.3.1.2"><p id="p4511mcpsimp"><a name="p4511mcpsimp"></a><a name="p4511mcpsimp"></a>描述</p>
@@ -5985,27 +3567,8 @@ typedef union {
 <td class="cellrowborder" valign="top" width="57.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p4517mcpsimp"><a name="p4517mcpsimp"></a><a name="p4517mcpsimp"></a>alpha分量关键色属性</p>
 </td>
 </tr>
-<tr id="row4518mcpsimp"><td class="cellrowborder" valign="top" width="42%" headers="mcps1.1.3.1.1 "><p id="p4520mcpsimp"><a name="p4520mcpsimp"></a><a name="p4520mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p4522mcpsimp"><a name="p4522mcpsimp"></a><a name="p4522mcpsimp"></a>Y分量关键色属性</p>
-</td>
-</tr>
-<tr id="row4523mcpsimp"><td class="cellrowborder" valign="top" width="42%" headers="mcps1.1.3.1.1 "><p id="p4525mcpsimp"><a name="p4525mcpsimp"></a><a name="p4525mcpsimp"></a>cb</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p4527mcpsimp"><a name="p4527mcpsimp"></a><a name="p4527mcpsimp"></a>Cb分量关键色属性</p>
-</td>
-</tr>
-<tr id="row4528mcpsimp"><td class="cellrowborder" valign="top" width="42%" headers="mcps1.1.3.1.1 "><p id="p4530mcpsimp"><a name="p4530mcpsimp"></a><a name="p4530mcpsimp"></a>cr</p>
-</td>
-<td class="cellrowborder" valign="top" width="57.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p4532mcpsimp"><a name="p4532mcpsimp"></a><a name="p4532mcpsimp"></a>Cr分量关键色属性</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-结构clut\_colorkey成员：表示位图格式为CLUT类型时，各分量的关键色属性。
-
-<a name="table4534mcpsimp"></a>
+</table> 结构clut\_colorkey成员：表示位图格式为CLUT类型时，各分量的关键色属性。 <a name="table4534mcpsimp"></a>
 <table><thead align="left"><tr id="row4539mcpsimp"><th class="cellrowborder" valign="top" width="42%" id="mcps1.1.3.1.1"><p id="p4541mcpsimp"><a name="p4541mcpsimp"></a><a name="p4541mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.3.1.2"><p id="p4543mcpsimp"><a name="p4543mcpsimp"></a><a name="p4543mcpsimp"></a>描述</p>
@@ -6023,11 +3586,7 @@ typedef union {
 </td>
 </tr>
 </tbody>
-</table>
-
-联合类型ot\_tde\_colorkey成员，各分量的关键色属性。
-
-<a name="table4556mcpsimp"></a>
+</table> 联合类型ot\_tde\_colorkey成员，各分量的关键色属性。 <a name="table4556mcpsimp"></a>
 <table><thead align="left"><tr id="row4561mcpsimp"><th class="cellrowborder" valign="top" width="42%" id="mcps1.1.3.1.1"><p id="p4563mcpsimp"><a name="p4563mcpsimp"></a><a name="p4563mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.3.1.2"><p id="p4565mcpsimp"><a name="p4565mcpsimp"></a><a name="p4565mcpsimp"></a>描述</p>
@@ -6050,37 +3609,10 @@ typedef union {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-不管当前位图是什么格式，color space颜色上限值和下限值都应该是ARGB8888格式的值。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_out\_alpha\_from<a name="ZH-CN_TOPIC_0000002441718421"></a>
-
-【说明】
-
-输出alpha来源类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_OUT_ALPHA_FROM_NORM = 0,
-    OT_TDE_OUT_ALPHA_FROM_BG,
-    OT_TDE_OUT_ALPHA_FROM_FG,
-    OT_TDE_OUT_ALPHA_FROM_GLOBALALPHA,
-    OT_TDE_OUT_ALPHA_FROM_MAX
+</table> 【注意事项】 不管当前位图是什么格式，color space颜色上限值和下限值都应该是ARGB8888格式的值。 【相关数据类型和接口】 无。 ### ot\_tde\_out\_alpha\_from<a name="ZH-CN_TOPIC_0000002441718421"></a> 【说明】 输出alpha来源类型。 【定义】 ```
+typedef enum { OT_TDE_OUT_ALPHA_FROM_NORM = 0, OT_TDE_OUT_ALPHA_FROM_BG, OT_TDE_OUT_ALPHA_FROM_FG, OT_TDE_OUT_ALPHA_FROM_GLOBALALPHA, OT_TDE_OUT_ALPHA_FROM_MAX
 } ot_tde_out_alpha_from;
-```
-
-【成员】
-
-<a name="table4598mcpsimp"></a>
+``` 【成员】 <a name="table4598mcpsimp"></a>
 <table><thead align="left"><tr id="row4603mcpsimp"><th class="cellrowborder" valign="top" width="65%" id="mcps1.1.3.1.1"><p id="p4605mcpsimp"><a name="p4605mcpsimp"></a><a name="p4605mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="35%" id="mcps1.1.3.1.2"><p id="p4607mcpsimp"><a name="p4607mcpsimp"></a><a name="p4607mcpsimp"></a>描述</p>
@@ -6113,37 +3645,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_filter\_mode<a name="ZH-CN_TOPIC_0000002408279170"></a>
-
-【说明】
-
-图像滤波模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_FILTER_MODE_COLOR = 0,
-    OT_TDE_FILTER_MODE_ALPHA,
-    OT_TDE_FILTER_MODE_BOTH,
-    OT_TDE_FILTER_MODE_NONE,
-    OT_TDE_FILTER_MODE_MAX
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_filter\_mode<a name="ZH-CN_TOPIC_0000002408279170"></a> 【说明】 图像滤波模式。 【定义】 ```
+typedef enum { OT_TDE_FILTER_MODE_COLOR = 0, OT_TDE_FILTER_MODE_ALPHA, OT_TDE_FILTER_MODE_BOTH, OT_TDE_FILTER_MODE_NONE, OT_TDE_FILTER_MODE_MAX
 } ot_tde_filter_mode;
-```
-
-【成员】
-
-<a name="table4650mcpsimp"></a>
+``` 【成员】 <a name="table4650mcpsimp"></a>
 <table><thead align="left"><tr id="row4655mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p4657mcpsimp"><a name="p4657mcpsimp"></a><a name="p4657mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p4659mcpsimp"><a name="p4659mcpsimp"></a><a name="p4659mcpsimp"></a>描述</p>
@@ -6176,36 +3681,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-图像的缩放或抗闪都是一种滤波，故在图像缩放或（和）抗闪操作时，需要指明滤波模式。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_deflicker\_mode<a name="ZH-CN_TOPIC_0000002441718405"></a>
-
-【说明】
-
-抗闪烁处理通道配置。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_DEFLICKER_LEVEL_MODE_NONE = 0,
-    OT_TDE_DEFLICKER_LEVEL_MODE_RGB,
-    OT_TDE_DEFLICKER_LEVEL_MODE_BOTH,
-    OT_TDE_DEFLICKER_LEVEL_MODE_MAX
+</table> 【注意事项】 图像的缩放或抗闪都是一种滤波，故在图像缩放或（和）抗闪操作时，需要指明滤波模式。 【相关数据类型和接口】 无。 ### ot\_tde\_deflicker\_mode<a name="ZH-CN_TOPIC_0000002441718405"></a> 【说明】 抗闪烁处理通道配置。 【定义】 ```
+typedef enum { OT_TDE_DEFLICKER_LEVEL_MODE_NONE = 0, OT_TDE_DEFLICKER_LEVEL_MODE_RGB, OT_TDE_DEFLICKER_LEVEL_MODE_BOTH, OT_TDE_DEFLICKER_LEVEL_MODE_MAX
 } ot_tde_deflicker_mode;
-```
-
-【成员】
-
-<a name="table4702mcpsimp"></a>
+``` 【成员】 <a name="table4702mcpsimp"></a>
 <table><thead align="left"><tr id="row4707mcpsimp"><th class="cellrowborder" valign="top" width="67%" id="mcps1.1.3.1.1"><p id="p4709mcpsimp"><a name="p4709mcpsimp"></a><a name="p4709mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="33%" id="mcps1.1.3.1.2"><p id="p4711mcpsimp"><a name="p4711mcpsimp"></a><a name="p4711mcpsimp"></a>描述</p>
@@ -6233,58 +3712,20 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_blend\_mode<a name="ZH-CN_TOPIC_0000002441718441"></a>
-
-【说明】
-
-用户自定义alpha混合模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_BLEND_ZERO = 0x0,
-    OT_TDE_BLEND_ONE,
-    OT_TDE_BLEND_SRC2COLOR,
-    OT_TDE_BLEND_INVSRC2COLOR,
-    OT_TDE_BLEND_SRC2ALPHA,
-    OT_TDE_BLEND_INVSRC2ALPHA,
-    OT_TDE_BLEND_SRC1COLOR,
-    OT_TDE_BLEND_INVSRC1COLOR,
-    OT_TDE_BLEND_SRC1ALPHA,
-    OT_TDE_BLEND_INVSRC1ALPHA,
-    OT_TDE_BLEND_SRC2ALPHASAT,
-    OT_TDE_BLEND_MAX
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_blend\_mode<a name="ZH-CN_TOPIC_0000002441718441"></a> 【说明】 用户自定义alpha混合模式。 【定义】 ```
+typedef enum { OT_TDE_BLEND_ZERO = 0x0, OT_TDE_BLEND_ONE, OT_TDE_BLEND_SRC2COLOR, OT_TDE_BLEND_INVSRC2COLOR, OT_TDE_BLEND_SRC2ALPHA, OT_TDE_BLEND_INVSRC2ALPHA, OT_TDE_BLEND_SRC1COLOR, OT_TDE_BLEND_INVSRC1COLOR, OT_TDE_BLEND_SRC1ALPHA, OT_TDE_BLEND_INVSRC1ALPHA, OT_TDE_BLEND_SRC2ALPHASAT, OT_TDE_BLEND_MAX
 } ot_tde_blend_mode;
-```
-
-【成员】
-
-pixel = \(foreground x fs + background x fd\)，其中：
-
--   fs：foreground blend coefficient。
--   fd：destination blend coefficient。
--   pixel：运算以后的像素值。
--   foreground：前景位图的像素值。
--   background：背景位图的像素值。
--   sa：forground alpha。
--   da：background alpha。
--   sc：forground color。
--   dc：background color。
--   sc为颜色值归一化后的值，各分量分开计算。即颜色分量归一化值计算公式为:各分量颜色值/255
--   fs和fd分别为源位图像素和目的位图像素的系数，选择下表中不同的项代表不同的系数。
-
-<a name="table4769mcpsimp"></a>
+``` 【成员】 pixel = \(foreground x fs + background x fd\)，其中： - fs：foreground blend coefficient。
+- fd：destination blend coefficient。
+- pixel：运算以后的像素值。
+- foreground：前景位图的像素值。
+- background：背景位图的像素值。
+- sa：forground alpha。
+- da：background alpha。
+- sc：forground color。
+- dc：background color。
+- sc为颜色值归一化后的值，各分量分开计算。即颜色分量归一化值计算公式为:各分量颜色值/255
+- fs和fd分别为源位图像素和目的位图像素的系数，选择下表中不同的项代表不同的系数。 <a name="table4769mcpsimp"></a>
 <table><thead align="left"><tr id="row4774mcpsimp"><th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.1"><p id="p4776mcpsimp"><a name="p4776mcpsimp"></a><a name="p4776mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.2"><p id="p4778mcpsimp"><a name="p4778mcpsimp"></a><a name="p4778mcpsimp"></a>描述</p>
@@ -6352,58 +3793,16 @@ pixel = \(foreground x fs + background x fd\)，其中：
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-在前景位图和背景位图作叠加运算时，可以分别设置Src1通道和Src2通道的叠加模式。现在支持11种叠加模式。当ot\_tde\_blend\_mode取[ot\_tde\_blend\_cmd](#ZH-CN_TOPIC_0000002441718409)时，可通过取ot\_tde\_blend\_mode里面不同的项实现不同类型的叠加。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_blend\_cmd<a name="ZH-CN_TOPIC_0000002441718409"></a>
-
-【说明】
-
-Alpha混合命令。用于计算进行alpha混合以后的像素值。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_BLEND_CMD_NONE = 0x0, /* fs: sa      fd: 1.0-sa */
-    OT_TDE_BLEND_CMD_CLEAR,      /* fs: 0.0     fd: 0.0 */
-    OT_TDE_BLEND_CMD_SRC,        /* fs: 1.0     fd: 0.0 */
-    OT_TDE_BLEND_CMD_SRCOVER,    /* fs: 1.0     fd: 1.0-sa */
-    OT_TDE_BLEND_CMD_DSTOVER,    /* fs: 1.0-da  fd: 1.0 */
-    OT_TDE_BLEND_CMD_SRCIN,      /* fs: da      fd: 0.0 */
-    OT_TDE_BLEND_CMD_DSTIN,      /* fs: 0.0     fd: sa */
-    OT_TDE_BLEND_CMD_SRCOUT,     /* fs: 1.0-da  fd: 0.0 */
-    OT_TDE_BLEND_CMD_DSTOUT,     /* fs: 0.0     fd: 1.0-sa */
-    OT_TDE_BLEND_CMD_SRCATOP,    /* fs: da      fd: 1.0-sa */
-    OT_TDE_BLEND_CMD_DSTATOP,    /* fs: 1.0-da  fd: sa */
-    OT_TDE_BLEND_CMD_ADD,        /* fs: 1.0     fd: 1.0 */
-    OT_TDE_BLEND_CMD_XOR,        /* fs: 1.0-da  fd: 1.0-sa */
-    OT_TDE_BLEND_CMD_DST,        /* fs: 0.0     fd: 1.0 */
-    OT_TDE_BLEND_CMD_CONFIG,     /* You can set the parameteres. */
-    OT_TDE_BLEND_CMD_MAX
+</table> 【注意事项】 在前景位图和背景位图作叠加运算时，可以分别设置Src1通道和Src2通道的叠加模式。现在支持11种叠加模式。当ot\_tde\_blend\_mode取[ot\_tde\_blend\_cmd](#ZH-CN_TOPIC_0000002441718409)时，可通过取ot\_tde\_blend\_mode里面不同的项实现不同类型的叠加。 【相关数据类型和接口】 无。 ### ot\_tde\_blend\_cmd<a name="ZH-CN_TOPIC_0000002441718409"></a> 【说明】 Alpha混合命令。用于计算进行alpha混合以后的像素值。 【定义】 ```
+typedef enum { OT_TDE_BLEND_CMD_NONE = 0x0, /* fs: sa fd: 1.0-sa */ OT_TDE_BLEND_CMD_CLEAR, /* fs: 0.0 fd: 0.0 */ OT_TDE_BLEND_CMD_SRC, /* fs: 1.0 fd: 0.0 */ OT_TDE_BLEND_CMD_SRCOVER, /* fs: 1.0 fd: 1.0-sa */ OT_TDE_BLEND_CMD_DSTOVER, /* fs: 1.0-da fd: 1.0 */ OT_TDE_BLEND_CMD_SRCIN, /* fs: da fd: 0.0 */ OT_TDE_BLEND_CMD_DSTIN, /* fs: 0.0 fd: sa */ OT_TDE_BLEND_CMD_SRCOUT, /* fs: 1.0-da fd: 0.0 */ OT_TDE_BLEND_CMD_DSTOUT, /* fs: 0.0 fd: 1.0-sa */ OT_TDE_BLEND_CMD_SRCATOP, /* fs: da fd: 1.0-sa */ OT_TDE_BLEND_CMD_DSTATOP, /* fs: 1.0-da fd: sa */ OT_TDE_BLEND_CMD_ADD, /* fs: 1.0 fd: 1.0 */ OT_TDE_BLEND_CMD_XOR, /* fs: 1.0-da fd: 1.0-sa */ OT_TDE_BLEND_CMD_DST, /* fs: 0.0 fd: 1.0 */ OT_TDE_BLEND_CMD_CONFIG, /* You can set the parameteres. */ OT_TDE_BLEND_CMD_MAX
 } ot_tde_blend_cmd;
-```
-
-【成员】
-
-pixel = \(foreground x fs + background x fd\)，其中：
-
--   fs：foreground blend coefficient。
--   fd：destination blend coefficient。
--   pixel：运算以后的像素值。
--   foreground：前景位图的像素值。
--   background：背景位图的像素值。
--   sa：forground alpha。
--   da：background alpha。
-
-<a name="table4879mcpsimp"></a>
+``` 【成员】 pixel = \(foreground x fs + background x fd\)，其中： - fs：foreground blend coefficient。
+- fd：destination blend coefficient。
+- pixel：运算以后的像素值。
+- foreground：前景位图的像素值。
+- background：背景位图的像素值。
+- sa：forground alpha。
+- da：background alpha。 <a name="table4879mcpsimp"></a>
 <table><thead align="left"><tr id="row4884mcpsimp"><th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.1"><p id="p4886mcpsimp"><a name="p4886mcpsimp"></a><a name="p4886mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.2"><p id="p4888mcpsimp"><a name="p4888mcpsimp"></a><a name="p4888mcpsimp"></a>描述</p>
@@ -6491,56 +3890,10 @@ pixel = \(foreground x fs + background x fd\)，其中：
 </td>
 </tr>
 </tbody>
-</table>
-
-【举例】
-
-**图 1**  blend操作的效果图<a name="fig128504521400"></a>  
-![](figures/blend操作的效果图.png "blend操作的效果图")
-
-foreground = 0xffff0000; background = 0xff0000ff; 操作OT\_TDE\_BLEND\_CMD\_SRCOVER
-
-fs = 1; fd = 1-sa;
-
-sa = 1; （0xff/255归一化）
-
-pixel = \(foreground x fs + background x fd\)
-
-= \(0xffff0000 x 1 + 0xff0000ff x \(1-1\)\)
-
-= 0xffff0000
-
-【注意事项】
-
-clut相关格式不支持alpha混合。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_blend\_opt<a name="ZH-CN_TOPIC_0000002441678609"></a>
-
-【说明】
-
-alpha混合操作选项。
-
-【定义】
-
-```
-typedef struct {
-    td_bool global_alpha_en;
-    td_bool pixel_alpha_en;
-    td_bool src1_alpha_premulti;
-    td_bool src2_alpha_premulti;
-    ot_tde_blend_cmd blend_cmd;
-    ot_tde_blend_mode src1_blend_mode;
-    ot_tde_blend_mode src2_blend_mode;
+</table> 【举例】 **图 1** blend操作的效果图<a name="fig128504521400"></a> ![](figures/blend操作的效果图.png "blend操作的效果图") foreground = 0xffff0000; background = 0xff0000ff; 操作OT\_TDE\_BLEND\_CMD\_SRCOVER fs = 1; fd = 1-sa; sa = 1; （0xff/255归一化） pixel = \(foreground x fs + background x fd\) = \(0xffff0000 x 1 + 0xff0000ff x \(1-1\)\) = 0xffff0000 【注意事项】 clut相关格式不支持alpha混合。 【相关数据类型和接口】 无。 ### ot\_tde\_blend\_opt<a name="ZH-CN_TOPIC_0000002441678609"></a> 【说明】 alpha混合操作选项。 【定义】 ```
+typedef struct { td_bool global_alpha_en; td_bool pixel_alpha_en; td_bool src1_alpha_premulti; td_bool src2_alpha_premulti; ot_tde_blend_cmd blend_cmd; ot_tde_blend_mode src1_blend_mode; ot_tde_blend_mode src2_blend_mode;
 } ot_tde_blend_opt;
-```
-
-【成员】
-
-<a name="table5002mcpsimp"></a>
+``` 【成员】 <a name="table5002mcpsimp"></a>
 <table><thead align="left"><tr id="row5007mcpsimp"><th class="cellrowborder" valign="top" width="33%" id="mcps1.1.3.1.1"><p id="p5009mcpsimp"><a name="p5009mcpsimp"></a><a name="p5009mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.3.1.2"><p id="p5011mcpsimp"><a name="p5011mcpsimp"></a><a name="p5011mcpsimp"></a>描述</p>
@@ -6583,41 +3936,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   clut相关格式不支持alpha混合。
--   源1（Src1）是背景。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_csc\_opt<a name="ZH-CN_TOPIC_0000002441678537"></a>
-
-【说明】
-
-CSC参数选项。
-
-【定义】
-
-```
-typedef struct {
-    td_bool src_csc_user_en;
-    td_bool src_csc_param_reload_en;
-    td_bool dst_csc_user_en;
-    td_bool dst_csc_param_reload_en;
-    td_phys_addr_t src_csc_param_addr;
-    td_s32 src_csc_param_len;
-    td_phys_addr_t dst_csc_param_addr;
-    td_s32 dst_csc_param_len;
+</table> 【注意事项】 - clut相关格式不支持alpha混合。
+- 源1（Src1）是背景。 【相关数据类型和接口】 无。 ### ot\_tde\_csc\_opt<a name="ZH-CN_TOPIC_0000002441678537"></a> 【说明】 CSC参数选项。 【定义】 ```
+typedef struct { td_bool src_csc_user_en; td_bool src_csc_param_reload_en; td_bool dst_csc_user_en; td_bool dst_csc_param_reload_en; td_phys_addr_t src_csc_param_addr; td_s32 src_csc_param_len; td_phys_addr_t dst_csc_param_addr; td_s32 dst_csc_param_len;
 } ot_tde_csc_opt;
-```
-
-【成员】
-
-<a name="table5069mcpsimp"></a>
+``` 【成员】 <a name="table5069mcpsimp"></a>
 <table><thead align="left"><tr id="row5074mcpsimp"><th class="cellrowborder" valign="top" width="34%" id="mcps1.1.3.1.1"><p id="p5076mcpsimp"><a name="p5076mcpsimp"></a><a name="p5076mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.3.1.2"><p id="p5078mcpsimp"><a name="p5078mcpsimp"></a><a name="p5078mcpsimp"></a>描述</p>
@@ -6665,51 +3988,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_opt<a name="ZH-CN_TOPIC_0000002441718469"></a>
-
-【说明】
-
-TDE操作属性结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_tde_alpha_blending alpha_blending_cmd;
-    ot_tde_rop_mode rop_color;
-    ot_tde_rop_mode rop_alpha;
-    ot_tde_colorkey_mode colorkey_mode;
-    ot_tde_colorkey colorkey_value;
-    ot_tde_clip_mode clip_mode;
-    ot_tde_rect clip_rect;
-    ot_tde_deflicker_mode deflicker_mode;
-    td_bool resize;
-    ot_tde_filter_mode filter_mode;
-    ot_tde_mirror_mode mirror;
-    td_bool clut_reload;
-    td_u8 global_alpha;
-    ot_tde_out_alpha_from out_alpha_from;
-    td_u32 color_resize;
-    ot_tde_blend_opt blend_opt;
-    ot_tde_csc_opt csc_opt;
-    td_bool is_compress;
-    td_bool is_decompress;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_opt<a name="ZH-CN_TOPIC_0000002441718469"></a> 【说明】 TDE操作属性结构体。 【定义】 ```
+typedef struct { ot_tde_alpha_blending alpha_blending_cmd; ot_tde_rop_mode rop_color; ot_tde_rop_mode rop_alpha; ot_tde_colorkey_mode colorkey_mode; ot_tde_colorkey colorkey_value; ot_tde_clip_mode clip_mode; ot_tde_rect clip_rect; ot_tde_deflicker_mode deflicker_mode; td_bool resize; ot_tde_filter_mode filter_mode; ot_tde_mirror_mode mirror; td_bool clut_reload; td_u8 global_alpha; ot_tde_out_alpha_from out_alpha_from; td_u32 color_resize; ot_tde_blend_opt blend_opt; ot_tde_csc_opt csc_opt; td_bool is_compress; td_bool is_decompress;
 } ot_tde_opt;
-```
-
-【成员】
-
-<a name="table5167mcpsimp"></a>
+``` 【成员】 <a name="table5167mcpsimp"></a>
 <table><thead align="left"><tr id="row5172mcpsimp"><th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.1"><p id="p5174mcpsimp"><a name="p5174mcpsimp"></a><a name="p5174mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.2"><p id="p5176mcpsimp"><a name="p5176mcpsimp"></a><a name="p5176mcpsimp"></a>描述</p>
@@ -6813,147 +4095,20 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【功能说明】
-
--   按位布尔运算，即ROP
-
-    ROP操作是指在将前景位图的RGB颜色分量和alpha分量值与背景位图的RGB颜色分量值和alpha分量值进行按位的布尔运算（包括按位与，按位或等），将结果输出，如ROP运算的搬移操作示意图（src1：R,G,B=0xFF,0xFF,0；src2：R,G,B=0,0,0xFF）图所示。
-
-**图 1**  ROP运算的搬移操作示意图（src1：R,G,B=0xFF,0xFF,0；src2：R,G,B=0,0,0xFF）<a name="fig5134112815911"></a>  
-![](figures/ROP运算的搬移操作示意图（src1-R-G-B-0xFF-0xFF-0-src2-R-G-B-0-0-0xFF）.png "ROP运算的搬移操作示意图（src1-R-G-B-0xFF-0xFF-0-src2-R-G-B-0-0-0xFF）")
-
-注：单源rop运算仅支持S2,即单源S1的rop运算不支持。
-
--   Alpha混合操作
-
-    Alpha混合操作是指将前景位图和背景位图的像素值按照前景位图的alpha值进行加权求和，得到1个alpha混和后的输出位图，达到两个位图按照一定透明度叠加的效果。输出位图的alpha值取决于用户设置的alpha混合命令，具体的计算方法参考[ot\_tde\_blend\_cmd](#ZH-CN_TOPIC_0000002441718409)里的介绍。这里有两种叠加方式：
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->无论哪种模式，全局alpha都要参与叠加。
->-   前景或背景位图数据是alpha预乘后的数据，这时需要选择前景或背景预乘alpha叠加模式。
->-   前景或背景位图数据没有预乘，这时需要选择前景或背景非预乘alpha叠加模式。
-
--   ColorKey操作
-
-    Colorkey操作是指满足关键色范围的像素不参与TDE运算。Colorkey设置需要根据像素格式对每个分量单独设置过滤条件。所有分量满足过滤条件的颜色称为关键色。Colorkey操作有2种模式：
-
-    -   对前景进行colorkey，其设置的含义是前景位图中的关键色不参与运算，将背景位图保留，即背景位图相应区域直接拷贝至输出位图，如[图2](#fig117276613136)所示。
-    -   对背景进行colorkey，其设置的含义是背景位图中的关键色区域直接拷贝至输出位图，其他区域是运算结果，如[图3](#fig197841835191313)所示。
-
-**图 2**  对前景位图进行colorkey运算的搬移操作示意图<a name="fig117276613136"></a>  
-![](figures/对前景位图进行colorkey运算的搬移操作示意图.png "对前景位图进行colorkey运算的搬移操作示意图")
-
-**图 3**  对背景位图进行colorkey运算的搬移操作示意图<a name="fig197841835191313"></a>  
-![](figures/对背景位图进行colorkey运算的搬移操作示意图.png "对背景位图进行colorkey运算的搬移操作示意图")
--   缩放操作
-
-    当前景位图中的操作区域若和目的位图的操作区域大小不一致时，有以下两种情况：
-
-    -   若指定ot\_tde\_opt中resize为TRUE，即将前景的操作区域缩放到目的位图的操作区域大小，再和背景做其他运算。
-    -   若指定ot\_tde\_opt中resize为FALSE，则不会进行前景操作区域的缩放，而是将前景、背景和目的位图的操作区域（fg\_rect、bg\_rect、dst\_rect）三者求最小，并将该最小区域作为三个位图的真正操作区域。
-
--   抗闪烁操作
-
-    抗闪烁操作指是否对前景位图的操作区域做抗闪处理，然后再和背景alpha叠加等运算，可通过ot\_tde\_opt中deflicker\_mode指定。
-
--   镜像功能
-
-    镜像功能指将输出结果做水平（或/和垂直）方向上的反向。调用者可通过ot\_tde\_opt中mirror配置项指定。镜像可以分为：
-
-    -   水平镜像，按照水平方向进行对称拷贝。
-    -   垂直镜像，按照垂直方向进行对称拷贝。
-    -   水平垂直同时镜像，水平垂直同时对称拷贝。
-
--   颜色扩展或校正功能
-
-    颜色扩展功能指将精度低的色彩格式通过调色板（称为CLUT表）扩展到真彩色。如CLUT8格式的位图仅有256色，调用者可通过构造合适的CLUT表，将CLUT表首地址配置给位图SURFACE的clut\_phys\_addr属性，TDE就可以依靠检索CLUT表来实现CLUT8到真彩色ARGB的扩展。
-
-    为了实现颜色扩展，调用者需要配置的选项为：
-
-    -   位图SURFACE结构中的CLUT表首地址clut\_phys\_addr，该地址指向的内存必须物理连续。
-    -   位图SURFACE结构中的is\_ycbcr\_clut项，设置该CLUT表在RGB空间还是YC空间。
-    -   操作结构ot\_tde\_opt中的clut\_reload项，表明是否需要硬件重新加载CLUT表。在第一次作颜色扩展操作（源为Clut格式，目的为ARGB/AYCbCr格式）时，需要打开Clut Reload标记。
-
--   输出图像的剪切功能，即clip功能
-
-    经过TDE处理的图像直接输出到目的位图的指定区域。而clip功能则可以在输出图像时，指定输出其中的一部分到目的位图，即对输出结果做了裁剪后才输出。clip支持两种裁剪模式：
-
-    -   区域内裁剪：指仅更新clip指定范围内的区域为TDE运算结果。如[图4](#fig191309558186)所示，clip区域与目的位图的操作区域相交，区域内裁剪就导致仅将灰色区域更新为TDE运算结果，目标操作区域的其它地方保持不变。
-    -   区域外裁剪：指TDE运算结果仅更新clip指定范围外的区域。如[图5](#fig13127121218197)所示，clip区域与目的位图的操作区域相交，区域外裁剪就导致仅将灰色区域更新为TDE运算结果，clip区域内部的地方保持不变。
-
-**图 4**  区域内clip示意图<a name="fig191309558186"></a>  
-![](figures/区域内clip示意图.png "区域内clip示意图")
-
-**图 5**  区域外clip示意图<a name="fig13127121218197"></a>  
-![](figures/区域外clip示意图.png "区域外clip示意图")
--   输出alpha来源
-
-    有4种模式供选择：
-
-    -   来源于运算结果
-    -   来源于前景位图
-    -   来源于背景位图
-    -   来源于全局alpha
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->对于alpha叠加运算，则需要选择来源于运算结果模式。
-
--   color\_resize色度调整
-
-TDE支持在搬移过程中设置colorize功能，也就是给位图着色，相当于给每个分量乘以了一个系数。这个功能只对Src2有效。处理过程如下： Src.r = \(Src.r \* \(colorize.r + 1\)\) \>\> 8 Src.g = \(Src.g \* \(colorize.g + 1\)\) \>\> 8
-
-Src.b = \(Src.b \* \(colorize.b + 1\)\) \>\> 8 colorize为一个32bit的值，
-
-colorize.r =（colorize\>\> 16\)&0xff
-
-colorize.g =（colorize\>\> 8\)&0xff
-
-colorize.b = colorize&0xff
-
-注：前景位图、背景位图和目标位图信息。只支持光栅格式。
-
-代码使用片段：
-
-```
+</table> 【功能说明】 - 按位布尔运算，即ROP ROP操作是指在将前景位图的RGB颜色分量和alpha分量值与背景位图的RGB颜色分量值和alpha分量值进行按位的布尔运算（包括按位与，按位或等），将结果输出，如ROP运算的搬移操作示意图（src1：R,G,B=0xFF,0xFF,0；src2：R,G,B=0,0,0xFF）图所示。 **图 1** ROP运算的搬移操作示意图（src1：R,G,B=0xFF,0xFF,0；src2：R,G,B=0,0,0xFF）<a name="fig5134112815911"></a> ![](figures/ROP运算的搬移操作示意图（src1-R-G-B-0xFF-0xFF-0-src2-R-G-B-0-0-0xFF）.png "ROP运算的搬移操作示意图（src1-R-G-B-0xFF-0xFF-0-src2-R-G-B-0-0-0xFF）") 注：单源rop运算仅支持S2,即单源S1的rop运算不支持。 - Alpha混合操作 Alpha混合操作是指将前景位图和背景位图的像素值按照前景位图的alpha值进行加权求和，得到1个alpha混和后的输出位图，达到两个位图按照一定透明度叠加的效果。输出位图的alpha值取决于用户设置的alpha混合命令，具体的计算方法参考[ot\_tde\_blend\_cmd](#ZH-CN_TOPIC_0000002441718409)里的介绍。这里有两种叠加方式： >![](public_sys-resources/icon-note.gif) **说明：** >无论哪种模式，全局alpha都要参与叠加。
+>- 前景或背景位图数据是alpha预乘后的数据，这时需要选择前景或背景预乘alpha叠加模式。
+>- 前景或背景位图数据没有预乘，这时需要选择前景或背景非预乘alpha叠加模式。 - ColorKey操作 Colorkey操作是指满足关键色范围的像素不参与TDE运算。Colorkey设置需要根据像素格式对每个分量单独设置过滤条件。所有分量满足过滤条件的颜色称为关键色。Colorkey操作有2种模式： - 对前景进行colorkey，其设置的含义是前景位图中的关键色不参与运算，将背景位图保留，即背景位图相应区域直接拷贝至输出位图，如[图2](#fig117276613136)所示。 - 对背景进行colorkey，其设置的含义是背景位图中的关键色区域直接拷贝至输出位图，其他区域是运算结果，如[图3](#fig197841835191313)所示。 **图 2** 对前景位图进行colorkey运算的搬移操作示意图<a name="fig117276613136"></a> ![](figures/对前景位图进行colorkey运算的搬移操作示意图.png "对前景位图进行colorkey运算的搬移操作示意图") **图 3** 对背景位图进行colorkey运算的搬移操作示意图<a name="fig197841835191313"></a> ![](figures/对背景位图进行colorkey运算的搬移操作示意图.png "对背景位图进行colorkey运算的搬移操作示意图")
+- 缩放操作 当前景位图中的操作区域若和目的位图的操作区域大小不一致时，有以下两种情况： - 若指定ot\_tde\_opt中resize为TRUE，即将前景的操作区域缩放到目的位图的操作区域大小，再和背景做其他运算。 - 若指定ot\_tde\_opt中resize为FALSE，则不会进行前景操作区域的缩放，而是将前景、背景和目的位图的操作区域（fg\_rect、bg\_rect、dst\_rect）三者求最小，并将该最小区域作为三个位图的真正操作区域。 - 抗闪烁操作 抗闪烁操作指是否对前景位图的操作区域做抗闪处理，然后再和背景alpha叠加等运算，可通过ot\_tde\_opt中deflicker\_mode指定。 - 镜像功能 镜像功能指将输出结果做水平（或/和垂直）方向上的反向。调用者可通过ot\_tde\_opt中mirror配置项指定。镜像可以分为： - 水平镜像，按照水平方向进行对称拷贝。 - 垂直镜像，按照垂直方向进行对称拷贝。 - 水平垂直同时镜像，水平垂直同时对称拷贝。 - 颜色扩展或校正功能 颜色扩展功能指将精度低的色彩格式通过调色板（称为CLUT表）扩展到真彩色。如CLUT8格式的位图仅有256色，调用者可通过构造合适的CLUT表，将CLUT表首地址配置给位图SURFACE的clut\_phys\_addr属性，TDE就可以依靠检索CLUT表来实现CLUT8到真彩色ARGB的扩展。 为了实现颜色扩展，调用者需要配置的选项为： - 位图SURFACE结构中的CLUT表首地址clut\_phys\_addr，该地址指向的内存必须物理连续。 - 位图SURFACE结构中的is\_ycbcr\_clut项，设置该CLUT表在RGB空间还是YC空间。 - 操作结构ot\_tde\_opt中的clut\_reload项，表明是否需要硬件重新加载CLUT表。在第一次作颜色扩展操作（源为Clut格式，目的为ARGB/AYCbCr格式）时，需要打开Clut Reload标记。 - 输出图像的剪切功能，即clip功能 经过TDE处理的图像直接输出到目的位图的指定区域。而clip功能则可以在输出图像时，指定输出其中的一部分到目的位图，即对输出结果做了裁剪后才输出。clip支持两种裁剪模式： - 区域内裁剪：指仅更新clip指定范围内的区域为TDE运算结果。如[图4](#fig191309558186)所示，clip区域与目的位图的操作区域相交，区域内裁剪就导致仅将灰色区域更新为TDE运算结果，目标操作区域的其它地方保持不变。 - 区域外裁剪：指TDE运算结果仅更新clip指定范围外的区域。如[图5](#fig13127121218197)所示，clip区域与目的位图的操作区域相交，区域外裁剪就导致仅将灰色区域更新为TDE运算结果，clip区域内部的地方保持不变。 **图 4** 区域内clip示意图<a name="fig191309558186"></a> ![](figures/区域内clip示意图.png "区域内clip示意图") **图 5** 区域外clip示意图<a name="fig13127121218197"></a> ![](figures/区域外clip示意图.png "区域外clip示意图")
+- 输出alpha来源 有4种模式供选择： - 来源于运算结果 - 来源于前景位图 - 来源于背景位图 - 来源于全局alpha >![](public_sys-resources/icon-note.gif) **说明：** >对于alpha叠加运算，则需要选择来源于运算结果模式。 - color\_resize色度调整 TDE支持在搬移过程中设置colorize功能，也就是给位图着色，相当于给每个分量乘以了一个系数。这个功能只对Src2有效。处理过程如下： Src.r = \(Src.r \* \(colorize.r + 1\)\) \>\> 8 Src.g = \(Src.g \* \(colorize.g + 1\)\) \>\> 8 Src.b = \(Src.b \* \(colorize.b + 1\)\) \>\> 8 colorize为一个32bit的值， colorize.r =（colorize\>\> 16\)&0xff colorize.g =（colorize\>\> 8\)&0xff colorize.b = colorize&0xff 注：前景位图、背景位图和目标位图信息。只支持光栅格式。 代码使用片段： ```
 ……
-opt. alpha_blending_cmd = OT_TDE_ALPHA_BLENDING_COLORIZE; //使能color_resize功能
-opt. color_resize = 0xffffff;  //设置color_resize值
+opt. alpha_blending_cmd = OT_TDE_ALPHA_BLENDING_COLORIZE; /使能color_resize功能
+opt. color_resize = 0xffffff; /设置color_resize值
 ss_tde_bit_blit(handle, &double_src, &opt);
 ……
-```
-
-【注意事项】
-
-所有对光栅格式的运算，内部均转换为32位数据进行运算，再按照指定格式输出。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_mb\_opt<a name="ZH-CN_TOPIC_0000002408119262"></a>
-
-【说明】
-
-宏块Surface的操作属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_tde_clip_mode clip_mode;
-    ot_tde_rect clip_rect;
-    td_bool is_deflicker;
-    ot_tde_mb_resize resize_en;
-    td_bool is_set_out_alpha;
-    td_u8 out_alpha;
+``` 【注意事项】 所有对光栅格式的运算，内部均转换为32位数据进行运算，再按照指定格式输出。 【相关数据类型和接口】 无。 ### ot\_tde\_mb\_opt<a name="ZH-CN_TOPIC_0000002408119262"></a> 【说明】 宏块Surface的操作属性。 【定义】 ```
+typedef struct { ot_tde_clip_mode clip_mode; ot_tde_rect clip_rect; td_bool is_deflicker; ot_tde_mb_resize resize_en; td_bool is_set_out_alpha; td_u8 out_alpha;
 } ot_tde_mb_opt;
-```
-
-【成员】
-
-<a name="table5375mcpsimp"></a>
+``` 【成员】 <a name="table5375mcpsimp"></a>
 <table><thead align="left"><tr id="row5380mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p5382mcpsimp"><a name="p5382mcpsimp"></a><a name="p5382mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p5384mcpsimp"><a name="p5384mcpsimp"></a><a name="p5384mcpsimp"></a>描述</p>
@@ -6992,45 +4147,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_pattern\_fill\_opt<a name="ZH-CN_TOPIC_0000002441678573"></a>
-
-【说明】
-
-模式填充操作信息定义。
-
-【定义】
-
-```
-typedef struct {
-    ot_tde_alpha_blending alpha_blending_cmd; 
-    ot_tde_rop_mode rop_color; 
-    ot_tde_rop_mode rop_alpha; 
-    ot_tde_colorkey_mode colorkey_mode;
-    ot_tde_colorkey colorkey_value;
-    ot_tde_clip_mode clip_mode; 
-    ot_tde_rect clip_rect;
-    td_bool clut_reload;
-    td_u8 global_alpha;
-    ot_tde_out_alpha_from out_alpha_from;
-    td_u32 color_resize;
-    ot_tde_blend_opt blend_opt;
-    ot_tde_csc_opt csc_opt;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_pattern\_fill\_opt<a name="ZH-CN_TOPIC_0000002441678573"></a> 【说明】 模式填充操作信息定义。 【定义】 ```
+typedef struct { ot_tde_alpha_blending alpha_blending_cmd; ot_tde_rop_mode rop_color; ot_tde_rop_mode rop_alpha; ot_tde_colorkey_mode colorkey_mode; ot_tde_colorkey colorkey_value; ot_tde_clip_mode clip_mode; ot_tde_rect clip_rect; td_bool clut_reload; td_u8 global_alpha; ot_tde_out_alpha_from out_alpha_from; td_u32 color_resize; ot_tde_blend_opt blend_opt; ot_tde_csc_opt csc_opt;
 } ot_tde_pattern_fill_opt;
-```
-
-【成员】
-
-<a name="table5455mcpsimp"></a>
+``` 【成员】 <a name="table5455mcpsimp"></a>
 <table><thead align="left"><tr id="row5460mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.1.3.1.1"><p id="p5462mcpsimp"><a name="p5462mcpsimp"></a><a name="p5462mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.3.1.2"><p id="p5464mcpsimp"><a name="p5464mcpsimp"></a><a name="p5464mcpsimp"></a>描述</p>
@@ -7103,36 +4223,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_rotate\_angle<a name="ZH-CN_TOPIC_0000002441678565"></a>
-
-【说明】
-
-旋转角度。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_ROTATE_CLOCKWISE_90 = 0, /* Rotate 90 degree clockwise */
-    OT_TDE_ROTATE_CLOCKWISE_180,    /* Rotate 180 degree clockwise */
-    OT_TDE_ROTATE_CLOCKWISE_270,    /* Rotate 270 degree clockwise */
-    OT_TDE_ROTATE_MAX
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_rotate\_angle<a name="ZH-CN_TOPIC_0000002441678565"></a> 【说明】 旋转角度。 【定义】 ```
+typedef enum { OT_TDE_ROTATE_CLOCKWISE_90 = 0, /* Rotate 90 degree clockwise */ OT_TDE_ROTATE_CLOCKWISE_180, /* Rotate 180 degree clockwise */ OT_TDE_ROTATE_CLOCKWISE_270, /* Rotate 270 degree clockwise */ OT_TDE_ROTATE_MAX
 } ot_tde_rotate_angle;
-```
-
-【成员】
-
-<a name="table5546mcpsimp"></a>
+``` 【成员】 <a name="table5546mcpsimp"></a>
 <table><thead align="left"><tr id="row5551mcpsimp"><th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.1"><p id="p5553mcpsimp"><a name="p5553mcpsimp"></a><a name="p5553mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.2"><p id="p5555mcpsimp"><a name="p5555mcpsimp"></a><a name="p5555mcpsimp"></a>描述</p>
@@ -7160,37 +4254,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_deflicker\_level<a name="ZH-CN_TOPIC_0000002441678601"></a>
-
-【说明】
-
-抗闪烁级别定义。
-
-【定义】
-
-```
-typedef enum {
-    OT_TDE_DEFLICKER_LEVEL_AUTO = 0,
-    OT_TDE_DEFLICKER_LEVEL_LOW,
-    OT_TDE_DEFLICKER_LEVEL_MIDDLE,
-    OT_TDE_DEFLICKER_LEVEL_HIGH,
-    OT_TDE_DEFLICKER_LEVEL_MAX
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_deflicker\_level<a name="ZH-CN_TOPIC_0000002441678601"></a> 【说明】 抗闪烁级别定义。 【定义】 ```
+typedef enum { OT_TDE_DEFLICKER_LEVEL_AUTO = 0, OT_TDE_DEFLICKER_LEVEL_LOW, OT_TDE_DEFLICKER_LEVEL_MIDDLE, OT_TDE_DEFLICKER_LEVEL_HIGH, OT_TDE_DEFLICKER_LEVEL_MAX
 } ot_tde_deflicker_level;
-```
-
-【成员】
-
-<a name="table5593mcpsimp"></a>
+``` 【成员】 <a name="table5593mcpsimp"></a>
 <table><thead align="left"><tr id="row5598mcpsimp"><th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.1"><p id="p5600mcpsimp"><a name="p5600mcpsimp"></a><a name="p5600mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.2"><p id="p5602mcpsimp"><a name="p5602mcpsimp"></a><a name="p5602mcpsimp"></a>描述</p>
@@ -7223,36 +4290,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_corner\_rect\_info<a name="ZH-CN_TOPIC_0000002408279182"></a>
-
-【说明】
-
-角框属性信息定义。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 width;
-    td_u32 height;
-    td_u32 inner_color;
-    td_u32 outer_color;
+</table> 【注意事项】 无。 【相关数据类型和接口】 无。 ### ot\_tde\_corner\_rect\_info<a name="ZH-CN_TOPIC_0000002408279182"></a> 【说明】 角框属性信息定义。 【定义】 ```
+typedef struct { td_u32 width; td_u32 height; td_u32 inner_color; td_u32 outer_color;
 } ot_tde_corner_rect_info;
-```
-
-【成员】
-
-<a name="table5644mcpsimp"></a>
+``` 【成员】 <a name="table5644mcpsimp"></a>
 <table><thead align="left"><tr id="row5649mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p5651mcpsimp"><a name="p5651mcpsimp"></a><a name="p5651mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p5653mcpsimp"><a name="p5653mcpsimp"></a><a name="p5653mcpsimp"></a>描述</p>
@@ -7280,34 +4321,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-角框内颜色和角框外颜色根据图像的格式填入一个像素值。
-
-【相关数据类型和接口】
-
-无。
-
-### ot\_tde\_corner\_rect<a name="ZH-CN_TOPIC_0000002441678541"></a>
-
-【说明】
-
-角框属性与角框绘制位置的定义。
-
-【定义】
-
-```
-typedef struct {
-    ot_tde_rect *corner_rect_region;
-    ot_tde_corner_rect_info *corner_rect_info;
+</table> 【注意事项】 角框内颜色和角框外颜色根据图像的格式填入一个像素值。 【相关数据类型和接口】 无。 ### ot\_tde\_corner\_rect<a name="ZH-CN_TOPIC_0000002441678541"></a> 【说明】 角框属性与角框绘制位置的定义。 【定义】 ```
+typedef struct { ot_tde_rect *corner_rect_region; ot_tde_corner_rect_info *corner_rect_info;
 } ot_tde_corner_rect;
-```
-
-【成员】
-
-<a name="table5692mcpsimp"></a>
+``` 【成员】 <a name="table5692mcpsimp"></a>
 <table><thead align="left"><tr id="row5697mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p5699mcpsimp"><a name="p5699mcpsimp"></a><a name="p5699mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p5701mcpsimp"><a name="p5701mcpsimp"></a><a name="p5701mcpsimp"></a>描述</p>
@@ -7329,38 +4346,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型和接口】
-
-无
-
-### ot\_tde\_line<a name="ZH-CN_TOPIC_0000002408119238"></a>
-
-【说明】
-
-Drd画线功能线条属性的定义。
-
-【定义】
-
-```
-typedef struct {
-    td_s32 start_x;
-    td_s32 start_y;
-    td_s32 end_x;
-    td_s32 end_y;
-    td_u32 thick;
-    td_u32 color;
+</table> 【注意事项】 无 【相关数据类型和接口】 无 ### ot\_tde\_line<a name="ZH-CN_TOPIC_0000002408119238"></a> 【说明】 Drd画线功能线条属性的定义。 【定义】 ```
+typedef struct { td_s32 start_x; td_s32 start_y; td_s32 end_x; td_s32 end_y; td_u32 thick; td_u32 color;
 } ot_tde_line;
-```
-
-【成员】
-
-<a name="table5736mcpsimp"></a>
+``` 【成员】 <a name="table5736mcpsimp"></a>
 <table><thead align="left"><tr id="row5741mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p5743mcpsimp"><a name="p5743mcpsimp"></a><a name="p5743mcpsimp"></a>成员</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p5745mcpsimp"><a name="p5745mcpsimp"></a><a name="p5745mcpsimp"></a>描述</p>
@@ -7398,23 +4387,8 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   颜色值：根据图像的格式填入一个像素值
--   仅SS626V100支持该接口。
-
-【相关数据类型和接口】
-
-[ss\_tde\_draw\_line](#ss_tde_draw_line)
-
-# 错误码
-TDE API错误码如下所示。
-
-**表 1**  TDE API错误码
-
-<a name="_Ref248290030"></a>
+</table> 【注意事项】 - 颜色值：根据图像的格式填入一个像素值 【相关数据类型和接口】 [ss\_tde\_draw\_line](#ss_tde_draw_line) # 错误码
+TDE API错误码如下所示。 **表 1** TDE API错误码 <a name="_Ref248290030"></a>
 <table><thead align="left"><tr id="row5791mcpsimp"><th class="cellrowborder" valign="top" width="19.801980198019802%" id="mcps1.2.4.1.1"><p id="p5793mcpsimp"><a name="p5793mcpsimp"></a><a name="p5793mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.52445244524452%" id="mcps1.2.4.1.2"><p id="p5795mcpsimp"><a name="p5795mcpsimp"></a><a name="p5795mcpsimp"></a>宏定义</p>
@@ -7515,144 +4489,126 @@ TDE API错误码如下所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-# Proc调试信息
-## 调试命令<a name="ZH-CN_TOPIC_0000002441718449"></a>
-
-可通过命令cat /proc/umap/tde查看内存池使用状况与节点状态。
-
-## 调试信息<a name="ZH-CN_TOPIC_0000002441678581"></a>
-
-```
+</table> # Proc调试信息
+## 调试命令<a name="ZH-CN_TOPIC_0000002441718449"></a> 可通过命令cat /proc/umap/tde查看内存池使用状况与节点状态。 ## 调试信息<a name="ZH-CN_TOPIC_0000002441678581"></a> ```
 # cat /proc/umap/tde
 [TDE] Version: [V1.0.0.0 B00 Release], Build Time[Apr 14 2020, 16:15:57]
 --------- tde memory pool info ---------
-type            total    used
-[unit 64]        68      1
-[unit 96]        68      0
-[unit 1664]      68      0
-[unit 1792]      3       3
-[total]          126K    5K
- 
---------- tde node params info ---------
-(src1_ctrl            ):        0xa0180000
-(src1_ch0_addr_high   ):        0x00000000
-(src1_ch0_addr_low    ):        0x544ee000
-(src1_ch1_addr_high   ):        0x00000000
-(src1_ch1_addr_low    ):        0x00000000
-(src1_ch0_stride      ):        0x00000200
-(src1_ch1_stride      ):        0x00000000
-(src1_imgsize         ):        0x007f007f
-(src1_fill            ):        0x00000000
-(src1_alpha           ):        0x00000000
-(src1_pix_offset      ):        0x00000000
-(src2_ctrl            ):        0x00000000
-(src2_ch0_addr_high   ):        0x00000000
-(src2_ch0_addr_low    ):        0x00000000
-(src2_ch1_addr_high   ):        0x00000000
-(src2_ch1_addr_low    ):        0x00000000
-(src2_ch0_stride      ):        0x00000000
-(src2_ch1_stride      ):        0x00000000
-(src2_imgsize         ):        0x00000000
-(src2_fill            ):        0x00000000
-(src2_alpha           ):        0x00000000
-(src2_pix_offset      ):        0x00000000
-(des_ctrl             ):        0x801a0000
-(des_ch0_addr_high    ):        0x00000000
-(des_ch0_addr_low     ):        0x544fe000
-(des_ch1_addr_high    ):        0x00000000
-(des_ch1_addr_low     ):        0x00000000
-(des_ch0_stride       ):        0x00000200
-(des_ch1_stride       ):        0x00000200
-(des_imgsize          ):        0x007f007f
-(des_alpha            ):        0x000000ff
-(des_crop_pos_st      ):        0x00000000
-(des_crop_pos_ed      ):        0x00000000
-(des_pix_offset       ):        0x00000000
-(src1_hsp             ):        0x00000000
-(src1_hloffset        ):        0x00000000
-(src1_hcoffset        ):        0x00000000
-(src1_vsp             ):        0x00000000
-(src1_vsr             ):        0x00000000
-(src1_voffset         ):        0x00000000
-(src1_zmeoreso        ):        0x00000000
-(src1_zmeireso        ):        0x00000000
-(src1_hpzme           ):        0x00000000
-(src1_hpzme_size      ):        0x00000000
-(src1_csc_idc0        ):        0x00000000
-(src1_csc_idc1        ):        0x00000000
-(src1_csc_odc0        ):        0x00000000
-(src1_csc_odc1        ):        0x00000000
-(src1_csc_p0          ):        0x00000000
-(src1_csc_p1          ):        0x00000000
-(src1_csc_p2          ):        0x00000000
-(src1_csc_p3          ):        0x00000000
-(src1_csc_p4          ):        0x00000000
-(src1_dither_ctrl     ):        0x00000000
-(src2_hsp             ):        0x00000000
-(src2_hloffset        ):        0x00000000
-(src2_hcoffset        ):        0x00000000
-(src2_vsp             ):        0x00000000
-(src2_vsr             ):        0x00000000
-(src2_voffset         ):        0x00000000
-(src2_zmeoreso        ):        0x00000000
-(src2_zmeireso        ):        0x00000000
-(src2_hpzme           ):        0x00000000
-(src2_hpzme_size      ):        0x00000000
-(src2_csc_mux         ):        0x00000000
-(des_csc_idc0         ):        0x00000000
-(des_csc_idc1         ):        0x00000000
-(des_csc_odc0         ):        0x00000000
-(des_csc_odc1         ):        0x00000000
-(des_csc_p0           ):        0x00000000
-(des_csc_p1           ):        0x00000000
-(des_csc_p2           ):        0x00000000
-(des_csc_p3           ):        0x00000000
-(des_csc_p4           ):        0x00000000
-(des_dither_ctrl      ):        0x00000000
-(des_dswn             ):        0x00000000
-(src2_rtt_ctrl        ):        0x00000000
-(cbmctrl              ):        0x00000000
-(cbmbkg               ):        0x00000000
-(cbmcolorize          ):        0x00000000
-(cbmalupara           ):        0x00000000
-(cbmkeypara           ):        0x00000000
-(cbmkeymin            ):        0x00000000
-(cbmkeymax            ):        0x00000000
-(cbmkeymask           ):        0x00000000
-(src1_cbmpara         ):        0x00000000
-(src1_cbmstpos        ):        0x00000000
-(src2_cbmpara         ):        0x00000000
-(src2_cbmstpos        ):        0x00000000
-(src1_zme_lhaddr_high ):        0x00000000
-(src1_zme_lhaddr_low  ):        0x00000000
-(src1_zme_lvaddr_high ):        0x00000000
-(src1_zme_lvaddr_low  ):        0x00000000
-(src1_zme_chaddr_high ):        0x00000000
-(src1_zme_chaddr_low  ):        0x00000000
-(src1_zme_cvaddr_high ):        0x00000000
-(src1_zme_cvaddr_low  ):        0x00000000
-(src2_zme_lhaddr_high ):        0x00000000
-(src2_zme_lhaddr_low  ):        0x00000000
-(src2_zme_lvaddr_high ):        0x00000000
-(src2_zme_lvaddr_low  ):        0x00000000
-(src2_zme_chaddr_high ):        0x00000000
-(src2_zme_chaddr_low  ):        0x00000000
-(src2_zme_cvaddr_high ):        0x00000000
-(src2_zme_cvaddr_low  ):        0x00000000
-(clut_addr_high       ):        0x00000000
-```
-
-```
-(clut_addr_low        ):        0x00000000
-```
-
-【参数说明】
-
-**表 1**  内存池信息
-
-<a name="table6007mcpsimp"></a>
+type total used
+[unit 64] 68 1
+[unit 96] 68 0
+[unit 1664] 68 0
+[unit 1792] 3 3
+[total] 126K 5K --------- tde node params info ---------
+(src1_ctrl ): 0xa0180000
+(src1_ch0_addr_high ): 0x00000000
+(src1_ch0_addr_low ): 0x544ee000
+(src1_ch1_addr_high ): 0x00000000
+(src1_ch1_addr_low ): 0x00000000
+(src1_ch0_stride ): 0x00000200
+(src1_ch1_stride ): 0x00000000
+(src1_imgsize ): 0x007f007f
+(src1_fill ): 0x00000000
+(src1_alpha ): 0x00000000
+(src1_pix_offset ): 0x00000000
+(src2_ctrl ): 0x00000000
+(src2_ch0_addr_high ): 0x00000000
+(src2_ch0_addr_low ): 0x00000000
+(src2_ch1_addr_high ): 0x00000000
+(src2_ch1_addr_low ): 0x00000000
+(src2_ch0_stride ): 0x00000000
+(src2_ch1_stride ): 0x00000000
+(src2_imgsize ): 0x00000000
+(src2_fill ): 0x00000000
+(src2_alpha ): 0x00000000
+(src2_pix_offset ): 0x00000000
+(des_ctrl ): 0x801a0000
+(des_ch0_addr_high ): 0x00000000
+(des_ch0_addr_low ): 0x544fe000
+(des_ch1_addr_high ): 0x00000000
+(des_ch1_addr_low ): 0x00000000
+(des_ch0_stride ): 0x00000200
+(des_ch1_stride ): 0x00000200
+(des_imgsize ): 0x007f007f
+(des_alpha ): 0x000000ff
+(des_crop_pos_st ): 0x00000000
+(des_crop_pos_ed ): 0x00000000
+(des_pix_offset ): 0x00000000
+(src1_hsp ): 0x00000000
+(src1_hloffset ): 0x00000000
+(src1_hcoffset ): 0x00000000
+(src1_vsp ): 0x00000000
+(src1_vsr ): 0x00000000
+(src1_voffset ): 0x00000000
+(src1_zmeoreso ): 0x00000000
+(src1_zmeireso ): 0x00000000
+(src1_hpzme ): 0x00000000
+(src1_hpzme_size ): 0x00000000
+(src1_csc_idc0 ): 0x00000000
+(src1_csc_idc1 ): 0x00000000
+(src1_csc_odc0 ): 0x00000000
+(src1_csc_odc1 ): 0x00000000
+(src1_csc_p0 ): 0x00000000
+(src1_csc_p1 ): 0x00000000
+(src1_csc_p2 ): 0x00000000
+(src1_csc_p3 ): 0x00000000
+(src1_csc_p4 ): 0x00000000
+(src1_dither_ctrl ): 0x00000000
+(src2_hsp ): 0x00000000
+(src2_hloffset ): 0x00000000
+(src2_hcoffset ): 0x00000000
+(src2_vsp ): 0x00000000
+(src2_vsr ): 0x00000000
+(src2_voffset ): 0x00000000
+(src2_zmeoreso ): 0x00000000
+(src2_zmeireso ): 0x00000000
+(src2_hpzme ): 0x00000000
+(src2_hpzme_size ): 0x00000000
+(src2_csc_mux ): 0x00000000
+(des_csc_idc0 ): 0x00000000
+(des_csc_idc1 ): 0x00000000
+(des_csc_odc0 ): 0x00000000
+(des_csc_odc1 ): 0x00000000
+(des_csc_p0 ): 0x00000000
+(des_csc_p1 ): 0x00000000
+(des_csc_p2 ): 0x00000000
+(des_csc_p3 ): 0x00000000
+(des_csc_p4 ): 0x00000000
+(des_dither_ctrl ): 0x00000000
+(des_dswn ): 0x00000000
+(src2_rtt_ctrl ): 0x00000000
+(cbmctrl ): 0x00000000
+(cbmbkg ): 0x00000000
+(cbmcolorize ): 0x00000000
+(cbmalupara ): 0x00000000
+(cbmkeypara ): 0x00000000
+(cbmkeymin ): 0x00000000
+(cbmkeymax ): 0x00000000
+(cbmkeymask ): 0x00000000
+(src1_cbmpara ): 0x00000000
+(src1_cbmstpos ): 0x00000000
+(src2_cbmpara ): 0x00000000
+(src2_cbmstpos ): 0x00000000
+(src1_zme_lhaddr_high ): 0x00000000
+(src1_zme_lhaddr_low ): 0x00000000
+(src1_zme_lvaddr_high ): 0x00000000
+(src1_zme_lvaddr_low ): 0x00000000
+(src1_zme_chaddr_high ): 0x00000000
+(src1_zme_chaddr_low ): 0x00000000
+(src1_zme_cvaddr_high ): 0x00000000
+(src1_zme_cvaddr_low ): 0x00000000
+(src2_zme_lhaddr_high ): 0x00000000
+(src2_zme_lhaddr_low ): 0x00000000
+(src2_zme_lvaddr_high ): 0x00000000
+(src2_zme_lvaddr_low ): 0x00000000
+(src2_zme_chaddr_high ): 0x00000000
+(src2_zme_chaddr_low ): 0x00000000
+(src2_zme_cvaddr_high ): 0x00000000
+(src2_zme_cvaddr_low ): 0x00000000
+(clut_addr_high ): 0x00000000
+``` ```
+(clut_addr_low ): 0x00000000
+``` 【参数说明】 **表 1** 内存池信息 <a name="table6007mcpsimp"></a>
 <table><thead align="left"><tr id="row6013mcpsimp"><th class="cellrowborder" valign="top" width="26%" id="mcps1.2.3.1.1"><p id="p6015mcpsimp"><a name="p6015mcpsimp"></a><a name="p6015mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="74%" id="mcps1.2.3.1.2"><p id="p6017mcpsimp"><a name="p6017mcpsimp"></a><a name="p6017mcpsimp"></a>描述</p>
@@ -7685,11 +4641,7 @@ type            total    used
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 2**  节点信息
-
-<a name="table6043mcpsimp"></a>
+</table> **表 2** 节点信息 <a name="table6043mcpsimp"></a>
 <table><thead align="left"><tr id="row6049mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.2.3.1.1"><p id="p6051mcpsimp"><a name="p6051mcpsimp"></a><a name="p6051mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.2.3.1.2"><p id="p6053mcpsimp"><a name="p6053mcpsimp"></a><a name="p6053mcpsimp"></a>描述</p>
@@ -8232,26 +5184,6 @@ type            total    used
 </td>
 </tr>
 </tbody>
-</table>
-
-# 实例
-## 软件流程<a name="ZH-CN_TOPIC_0000002408119270"></a>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->本章以利用bitblit和color space实现图片动画旋转效果为例。在应用TDE前应保证TDE和GFBG驱动已经加载，视频输出设备处于工作状态。运行本示例至少需要给叠加图像层0分配1658880字节的显存，有关GFBG的加载请参见《GFBG开发指南》。
-
-该例的软件实现流程如[图1](#fig8964192515515)所示。
-
-**图 1**  软件实现的流程图（主流程）<a name="fig8964192515515"></a>  
-![](figures/软件实现的流程图（主流程）.png "软件实现的流程图（主流程）")
-
-注：“调用TDE刷新两个屏幕surface”的详细流程请参见[图2](#fig1821212212612)。
-
-调用TDE刷新两个屏幕surface函数的实现过程如[图2](#fig1821212212612)所示。
-
-**图 2**  调用TDE刷新两个屏幕surface函数的实现过程<a name="fig1821212212612"></a>  
-![](figures/调用TDE刷新两个屏幕surface函数的实现过程.png "调用TDE刷新两个屏幕surface函数的实现过程")
-## 代码参考<a name="ZH-CN_TOPIC_0000002441718417"></a>
-
-详细的代码实现请见SDK的sample目录下的tde/sample\_tde.c。
-
+</table> # 实例
+## 软件流程<a name="ZH-CN_TOPIC_0000002408119270"></a> >![](public_sys-resources/icon-note.gif) **说明：** >本章以利用bitblit和color space实现图片动画旋转效果为例。在应用TDE前应保证TDE和GFBG驱动已经加载，视频输出设备处于工作状态。运行本示例至少需要给叠加图像层0分配1658880字节的显存，有关GFBG的加载请参见《GFBG开发指南》。 该例的软件实现流程如[图1](#fig8964192515515)所示。 **图 1** 软件实现的流程图（主流程）<a name="fig8964192515515"></a> ![](figures/软件实现的流程图（主流程）.png "软件实现的流程图（主流程）") 注：“调用TDE刷新两个屏幕surface”的详细流程请参见[图2](#fig1821212212612)。 调用TDE刷新两个屏幕surface函数的实现过程如[图2](#fig1821212212612)所示。 **图 2** 调用TDE刷新两个屏幕surface函数的实现过程<a name="fig1821212212612"></a> ![](figures/调用TDE刷新两个屏幕surface函数的实现过程.png "调用TDE刷新两个屏幕surface函数的实现过程")
+## 代码参考<a name="ZH-CN_TOPIC_0000002441718417"></a> 详细的代码实现请见SDK的sample目录下的tde/sample\_tde.c。 

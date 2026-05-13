@@ -1,18 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频组件API参考/音频组件 API参考.md
----
-
-# 前言
-**概述<a name="section143mcpsimp"></a>**
-
-本文档为使用媒体处理芯片的音频进行智能分析方案开发的程序员而写，目的是供您在开发过程中查阅音频支持的各种参考信息，包括各项协议说明、API、错误码等。
-
-**产品版本<a name="section146mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table149mcpsimp"></a>
+--- # 前言
+**概述<a name="section143mcpsimp"></a>** 本文档为使用媒体处理芯片的音频进行智能分析方案开发的程序员而写，目的是供您在开发过程中查阅音频支持的各种参考信息，包括各项协议说明、API、错误码等。 **产品版本<a name="section146mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table149mcpsimp"></a>
 <table><thead align="left"><tr id="row154mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p158mcpsimp"><a name="p158mcpsimp"></a><a name="p158mcpsimp"></a>产品版本</p>
@@ -24,51 +14,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row165mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p167mcpsimp"><a name="p167mcpsimp"></a><a name="p167mcpsimp"></a>SS626</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p169mcpsimp"><a name="p169mcpsimp"></a><a name="p169mcpsimp"></a>V100</p>
-</td>
-</tr>
-<tr id="row7709132215363"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>SS524</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p34921898474"><a name="p34921898474"></a><a name="p34921898474"></a>V100</p>
-</td>
-</tr>
-<tr id="row8236125812712"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p119117210287"><a name="p119117210287"></a><a name="p119117210287"></a>SS522</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p89152122811"><a name="p89152122811"></a><a name="p89152122811"></a>V100</p>
-</td>
-</tr>
-<tr id="row12260172910419"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p175361749141815"><a name="p175361749141815"></a><a name="p175361749141815"></a>SS528</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p13835920181"><a name="p13835920181"></a><a name="p13835920181"></a>V100</p>
-</td>
-</tr>
-<tr id="row151529352446"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p3152113524414"><a name="p3152113524414"></a><a name="p3152113524414"></a>SS625</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p715215356441"><a name="p715215356441"></a><a name="p715215356441"></a>V100</p>
-</td>
-</tr>
-<tr id="row32641658179"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section170mcpsimp"></a>**
-
-本文档（本指南）主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-**符号约定<a name="section176mcpsimp"></a>**
-
-在本文中可能出现下列标志，它们所代表的含义如下。
-
-<a name="table179mcpsimp"></a>
+</table> **读者对象<a name="section170mcpsimp"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 **符号约定<a name="section176mcpsimp"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table179mcpsimp"></a>
 <table><thead align="left"><tr id="row184mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p186mcpsimp"><a name="p186mcpsimp"></a><a name="p186mcpsimp"></a>符号</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p188mcpsimp"><a name="p188mcpsimp"></a><a name="p188mcpsimp"></a>说明</p>
@@ -80,36 +28,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频�
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row195mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p197mcpsimp"><a name="p197mcpsimp"></a><a name="p197mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002441674929.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p199mcpsimp"><a name="p199mcpsimp"></a><a name="p199mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row200mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p202mcpsimp"><a name="p202mcpsimp"></a><a name="p202mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002441714825.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p204mcpsimp"><a name="p204mcpsimp"></a><a name="p204mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row205mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002408275514.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p209mcpsimp"><a name="p209mcpsimp"></a><a name="p209mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
-<p id="p210mcpsimp"><a name="p210mcpsimp"></a><a name="p210mcpsimp"></a>“须知”不涉及人身伤害。</p>
-</td>
-</tr>
-<tr id="row211mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p213mcpsimp"><a name="p213mcpsimp"></a><a name="p213mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002408115650.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p215mcpsimp"><a name="p215mcpsimp"></a><a name="p215mcpsimp"></a>对正文中重点信息的补充说明。</p>
-<p id="p216mcpsimp"><a name="p216mcpsimp"></a><a name="p216mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修订记录<a name="section217mcpsimp"></a>**
-
-修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
-
-<a name="table126443203200"></a>
+</table> **修订记录<a name="section217mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table126443203200"></a>
 <table><thead align="left"><tr id="row264516207203"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p146456203200"><a name="p146456203200"></a><a name="p146456203200"></a><strong id="b8645172022010"><a name="b8645172022010"></a><a name="b8645172022010"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p364512062019"><a name="p364512062019"></a><a name="p364512062019"></a><strong id="b1464512200200"><a name="b1464512200200"></a><a name="b1464512200200"></a>发布日期</strong></p>
@@ -126,27 +46,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频�
 </td>
 </tr>
 </tbody>
-</table>
-
-# 音频组件
-## 概述<a name="ZH-CN_TOPIC_0000002408275386"></a>
-
-音频组件集成了AAC编解码协议，并开放接口，以便于用户集成第三方提供的编解码协议。AAC编解码使用示例代码在sample/audio目录。
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->客户如果需要使用AAC格式的专利，必须从版权权利人处获取授权，并缴纳Licensing Fee。
-
-## 重要概念<a name="ZH-CN_TOPIC_0000002441674813"></a>
-
--   音频编解码协议
-
-    音频组件提供的编解码功能基于独立封装的AAC编解码库，核心编解码器工作在用户态，使用CPU软件编解码。
-
-    AAC编解码协议说明如[表1](#_Ref224548251)所示。
-
-**表 1**  音频编解码协议说明
-
-<a name="_Ref224548251"></a>
+</table> # 音频组件
+## 概述<a name="ZH-CN_TOPIC_0000002408275386"></a> 音频组件集成了AAC编解码协议，并开放接口，以便于用户集成第三方提供的编解码协议。AAC编解码使用示例代码在sample/audio目录。 >![](public_sys-resources/icon-notice.gif) **须知：** >客户如果需要使用AAC格式的专利，必须从版权权利人处获取授权，并缴纳Licensing Fee。 ## 重要概念<a name="ZH-CN_TOPIC_0000002441674813"></a> - 音频编解码协议 音频组件提供的编解码功能基于独立封装的AAC编解码库，核心编解码器工作在用户态，使用CPU软件编解码。 AAC编解码协议说明如[表1](#_Ref224548251)所示。 **表 1** 音频编解码协议说明 <a name="_Ref224548251"></a>
 <table><thead align="left"><tr id="row261mcpsimp"><th class="cellrowborder" valign="top" width="10.341034103410342%" id="mcps1.2.8.1.1"><p id="p263mcpsimp"><a name="p263mcpsimp"></a><a name="p263mcpsimp"></a>协议</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.86098609860986%" id="mcps1.2.8.1.2"><p id="p265mcpsimp"><a name="p265mcpsimp"></a><a name="p265mcpsimp"></a>采样率</p>
@@ -197,13 +98,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频�
 </td>
 </tr>
 </tbody>
-</table>
-
-注：“cpu消耗”的结果值基于ARM9 288MHz环境，2/2 MHz表示编码和解码分别占有2M和2M CPU。
-
-**表 2**  AAC Encoder各协议码率设置（码率单位为kbps）
-
-<a name="_Ref342555172"></a>
+</table> 注：“cpu消耗”的结果值基于ARM9 288MHz环境，2/2 MHz表示编码和解码分别占有2M和2M CPU。 **表 2** AAC Encoder各协议码率设置（码率单位为kbps） <a name="_Ref342555172"></a>
 <table><thead align="left"><tr id="row332mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.9.1.1"><p id="p334mcpsimp"><a name="p334mcpsimp"></a><a name="p334mcpsimp"></a>采样率</p>
 </th>
 <th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.9.1.2"><p id="p336mcpsimp"><a name="p336mcpsimp"></a><a name="p336mcpsimp"></a>声道</p>
@@ -454,13 +349,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频�
 </td>
 </tr>
 </tbody>
-</table>
-
-注：“—”表示不支持这种情况。
-
-**表 3**  AAC Encoder Low Delay协议码率设置（码率单位为kbps）
-
-<a name="_Ref224621074"></a>
+</table> 注：“—”表示不支持这种情况。 **表 3** AAC Encoder Low Delay协议码率设置（码率单位为kbps） <a name="_Ref224621074"></a>
 <table><thead align="left"><tr id="row592mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.7.1.1"><p id="p594mcpsimp"><a name="p594mcpsimp"></a><a name="p594mcpsimp"></a>采样率</p>
 </th>
 <th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.7.1.2"><p id="p596mcpsimp"><a name="p596mcpsimp"></a><a name="p596mcpsimp"></a>声道</p>
@@ -649,80 +538,24 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/音频�
 </td>
 </tr>
 </tbody>
-</table>
-
--   音频编解码集成接口
-
-    SDK发布包中开放接口用于注册和注销编码器和解码器，音频组件根据这些接口，提供了注册AAC编解码器的示例。用户既可以参考示例，注册自有的第三方编解码器，也可直接使用音频组件提供的示例来注册并使用组件中的AAC编解码器。
-
-【注意】
-
--   AAC编解码器的使用支持静态库注册的形式，相关库包括libaac\_comm.a、libaac\_enc.a、libaac\_sbr\_enc.a、libaac\_dec.a、libaac\_sbr\_dec.a。其中，libaac\_sbr\_enc.a在AAC编码器不使用EAAC、EAACPLUS、AACELD类型编码时可裁剪；libaac\_sbr\_dec.a在AAC解码器不使用EAAC、EAACPLUS、AACELD类型解码时可裁剪。当使用EAAC、EAACPLUS、AACELD编解码类型时，须在注册编解码器之前进行SBRENC、SBRDEC功能模块的静态注册。
--   AAC编解码器的使用还支持动态库调用的形式，相关库包括libaac\_comm.so、libaac\_enc.so、libaac\_sbr\_enc.so、libaac\_dec.so、libaac\_sbr\_dec.so。其中，libaac\_sbr\_enc.so在AAC编码器不使用EAAC、EAACPLUS、AACELD类型编码时可裁剪；libaac\_sbr\_dec.so在AAC解码器不使用EAAC、EAACPLUS、AACELD类型解码时可裁剪。
--   AAC编解码器不支持同时使用静态库注册和动态库调用。
--   AAC编解码器的静态库注册只允许成功调用一次，不支持重复注册。
-
-【举例】
-
-下面的代码实现静态注册AAC的SBRENC和SBRDEC模块。
-
-```
-td_s32 ret;
- 
-td_void* sbr_enc_handle = ss_aac_sbrenc_get_handle();
+</table> - 音频编解码集成接口 SDK发布包中开放接口用于注册和注销编码器和解码器，音频组件根据这些接口，提供了注册AAC编解码器的示例。用户既可以参考示例，注册自有的第三方编解码器，也可直接使用音频组件提供的示例来注册并使用组件中的AAC编解码器。 【注意】 - AAC编解码器的使用支持静态库注册的形式，相关库包括libaac\_comm.a、libaac\_enc.a、libaac\_sbr\_enc.a、libaac\_dec.a、libaac\_sbr\_dec.a。其中，libaac\_sbr\_enc.a在AAC编码器不使用EAAC、EAACPLUS、AACELD类型编码时可裁剪；libaac\_sbr\_dec.a在AAC解码器不使用EAAC、EAACPLUS、AACELD类型解码时可裁剪。当使用EAAC、EAACPLUS、AACELD编解码类型时，须在注册编解码器之前进行SBRENC、SBRDEC功能模块的静态注册。
+- AAC编解码器的使用还支持动态库调用的形式，相关库包括libaac\_comm.so、libaac\_enc.so、libaac\_sbr\_enc.so、libaac\_dec.so、libaac\_sbr\_dec.so。其中，libaac\_sbr\_enc.so在AAC编码器不使用EAAC、EAACPLUS、AACELD类型编码时可裁剪；libaac\_sbr\_dec.so在AAC解码器不使用EAAC、EAACPLUS、AACELD类型解码时可裁剪。
+- AAC编解码器不支持同时使用静态库注册和动态库调用。
+- AAC编解码器的静态库注册只允许成功调用一次，不支持重复注册。 【举例】 下面的代码实现静态注册AAC的SBRENC和SBRDEC模块。 ```
+td_s32 ret; td_void* sbr_enc_handle = ss_aac_sbrenc_get_handle;
 /* register SBRENC module. */
-ret = ss_aacenc_register_mod(sbr_enc_handle);    
-if (ret != TD_SUCCESS) {
-    printf("[func]:%s [line]:%d [info]:%s\n",
-        __FUNCTION__, __LINE__, "init sbr_enc lib fail!\n");
-    return OT_ERR_AENC_NOT_SUPPORT;
-}
- 
-td_void* sbr_dec_handle = ss_aac_sbrdec_get_handle();
+ret = ss_aacenc_register_mod(sbr_enc_handle); if (ret != TD_SUCCESS) { printf("[func]:%s [line]:%d [info]:%s\n", __FUNCTION__, __LINE__, "init sbr_enc lib fail!\n"); return OT_ERR_AENC_NOT_SUPPORT;
+} td_void* sbr_dec_handle = ss_aac_sbrdec_get_handle;
 /* register SBRDEC module. */
-ret = ss_aacdec_register_mod(sbr_dec_handle);    
-if (ret != TD_SUCCESS) {
-    printf("[func]:%s [line]:%d [info]:%s\n",
-        __FUNCTION__, __LINE__, "init sbr_dec lib fail!\n");
-    return OT_ERR_ADEC_NOT_SUPPORT;
+ret = ss_aacdec_register_mod(sbr_dec_handle); if (ret != TD_SUCCESS) { printf("[func]:%s [line]:%d [info]:%s\n", __FUNCTION__, __LINE__, "init sbr_dec lib fail!\n"); return OT_ERR_ADEC_NOT_SUPPORT;
 }
-```
-
-## API参考<a name="ZH-CN_TOPIC_0000002441714649"></a>
-
-SDK发布包中的以下API用于注册和注销编码器和解码器。
-
--   [ss\_mpi\_aenc\_register\_encoder](#ZH-CN_TOPIC_0000002408115490)：注册编码器。
--   [ss\_mpi\_aenc\_unregister\_encoder](#ZH-CN_TOPIC_0000002441714653)：注销编码器。
--   [ss\_mpi\_adec\_register\_decoder](#ZH-CN_TOPIC_0000002408115474)：注册解码器。
--   [ss\_mpi\_adec\_unregister\_decoder](#ZH-CN_TOPIC_0000002408275418)：注销解码器。
-
-音频组件中提供的注册示例：
-
--   [ss\_mpi\_aenc\_aac\_init](#ZH-CN_TOPIC_0000002408275398)：注册AAC编码器。
--   [ss\_mpi\_adec\_aac\_init](#ZH-CN_TOPIC_0000002441714637)：注册AAC解码器。
-
-
-
-
-
-
-
-### ss\_mpi\_aenc\_register\_encoder<a name="ZH-CN_TOPIC_0000002408115490"></a>
-
-【描述】
-
-注册编码器。
-
-【语法】
-
-```
+``` ## API参考<a name="ZH-CN_TOPIC_0000002441714649"></a> SDK发布包中的以下API用于注册和注销编码器和解码器。 - [ss\_mpi\_aenc\_register\_encoder](#ZH-CN_TOPIC_0000002408115490)：注册编码器。
+- [ss\_mpi\_aenc\_unregister\_encoder](#ZH-CN_TOPIC_0000002441714653)：注销编码器。
+- [ss\_mpi\_adec\_register\_decoder](#ZH-CN_TOPIC_0000002408115474)：注册解码器。
+- [ss\_mpi\_adec\_unregister\_decoder](#ZH-CN_TOPIC_0000002408275418)：注销解码器。 音频组件中提供的注册示例： - [ss\_mpi\_aenc\_aac\_init](#ZH-CN_TOPIC_0000002408275398)：注册AAC编码器。
+- [ss\_mpi\_adec\_aac\_init](#ZH-CN_TOPIC_0000002441714637)：注册AAC解码器。 ### ss\_mpi\_aenc\_register\_encoder<a name="ZH-CN_TOPIC_0000002408115490"></a> 【描述】 注册编码器。 【语法】 ```
 td_s32 ss_mpi_aenc_register_encoder(td_s32 *handle, const ot_aenc_encoder *encoder);
-```
-
-【参数】
-
-<a name="table837mcpsimp"></a>
+``` 【参数】 <a name="table837mcpsimp"></a>
 <table><thead align="left"><tr id="row843mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p845mcpsimp"><a name="p845mcpsimp"></a><a name="p845mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.4.1.2"><p id="p847mcpsimp"><a name="p847mcpsimp"></a><a name="p847mcpsimp"></a>描述</p>
@@ -746,11 +579,7 @@ td_s32 ss_mpi_aenc_register_encoder(td_s32 *handle, const ot_aenc_encoder *encod
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table866mcpsimp"></a>
+</table> 【返回值】 <a name="table866mcpsimp"></a>
 <table><thead align="left"><tr id="row871mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p873mcpsimp"><a name="p873mcpsimp"></a><a name="p873mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p875mcpsimp"><a name="p875mcpsimp"></a><a name="p875mcpsimp"></a>描述</p>
@@ -762,111 +591,27 @@ td_s32 ss_mpi_aenc_register_encoder(td_s32 *handle, const ot_aenc_encoder *encod
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p881mcpsimp"><a name="p881mcpsimp"></a><a name="p881mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row882mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p884mcpsimp"><a name="p884mcpsimp"></a><a name="p884mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p886mcpsimp"><a name="p886mcpsimp"></a><a name="p886mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408115506">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_comm\_aenc.h、ss\_mpi\_audio.h
--   库文件：libss\_mpi.a
-
-【注意】
-
--   用户通过传入编码器属性结构体，向AENC模块注册一个编码器，并返回注册句柄，用户可以最后通过注册句柄来注销该编码器。
--   AENC模块最大可注册20个编码器，且自身已注册LPCM、G711a、G711u、G726、ADPCM五个编码器。
--   同一种编码协议不允许重复注册编码器，例如假如已注册AAC编码器，不允许另外再注册一个AAC编码器。
--   编码器属性包括编码器类型、最大码流长度、编码器名称、打开编码器的函数指针、进行编码的函数指针、关闭编码器的函数指针。
-    -   编码器类型
-
-        SDK以枚举标识编码协议，注册时应选择相关协议的编码器类型。
-
-    -   最大码流长度
-
-        每帧编码后码流的最大长度，AENC模块将根据注册的最大码流长度分配内存大小。
-
-    -   编码器名称
-
-        编码器名称用字符串表示，用于在proc信息中显示。
-
-    -   打开编码器的函数指针
-
-        SDK封装的一个函数指针，其函数原型为：
-
-        td\_s32  \(\*func\_open\_encoder\)\(td\_void \*encoder\_attr, td\_void \*\*encoder\);
-
-        其中第一个参数是编码器属性，用于传入不同类型的编码器的特定属性；第二个参数是编码器句柄，用于返回可用于操作编码器的句柄。这两个参数均由用户封装，用户封装第二个参数时需要注意分配内存，因为编码器句柄还将用于编码和关闭编码器。
-
-    -   进行编码的函数指针
-
-        SDK封装的一个函数指针，其函数原型为：
-
-        td\_s32  \(\*func\_enc\_frame\)\(td\_void \*encoder, const ot\_audio\_frame \*data, td\_u8 \*out\_buf, td\_u32 \*out\_len\);
-
-        第一个参数是上一个函数打开编码器时返回的编码器句柄；第二个参数是SDK的音频帧数据结构体的指针，用于传入音频帧数据；第三个参数是输出缓存指针；第四个参数是输出缓存长度。
-
-    -   关闭编码器的函数指针
-
-        SDK封装的一个函数指针，其函数原型为：
-
-        td\_s32  \(\*func\_close\_encoder\)\(td\_void \*encoder\);
-
-        参数是打开编码器时返回的编码器句柄。
-
-    -   用户需根据这几个函数原型封装第三方编码器，并通过编码器属性结构体注册给AENC模块，从而实现第三方编码器的集成。
-
--   必须在创建编码通道前注册相关类型的编码器，编码器不需要重复注册。
-
-【举例】
-
-下面的代码举例AAC编码器的注册：
-
-```
+</table> 【需求】 - 头文件：ot\_comm\_aenc.h、ss\_mpi\_audio.h
+- 库文件：libss\_mpi.a 【注意】 - 用户通过传入编码器属性结构体，向AENC模块注册一个编码器，并返回注册句柄，用户可以最后通过注册句柄来注销该编码器。
+- AENC模块最大可注册20个编码器，且自身已注册LPCM、G711a、G711u、G726、ADPCM五个编码器。
+- 同一种编码协议不允许重复注册编码器，例如假如已注册AAC编码器，不允许另外再注册一个AAC编码器。
+- 编码器属性包括编码器类型、最大码流长度、编码器名称、打开编码器的函数指针、进行编码的函数指针、关闭编码器的函数指针。 - 编码器类型 SDK以枚举标识编码协议，注册时应选择相关协议的编码器类型。 - 最大码流长度 每帧编码后码流的最大长度，AENC模块将根据注册的最大码流长度分配内存大小。 - 编码器名称 编码器名称用字符串表示，用于在proc信息中显示。 - 打开编码器的函数指针 SDK封装的一个函数指针，其函数原型为： td\_s32 \(\*func\_open\_encoder\)\(td\_void \*encoder\_attr, td\_void \*\*encoder\); 其中第一个参数是编码器属性，用于传入不同类型的编码器的特定属性；第二个参数是编码器句柄，用于返回可用于操作编码器的句柄。这两个参数均由用户封装，用户封装第二个参数时需要注意分配内存，因为编码器句柄还将用于编码和关闭编码器。 - 进行编码的函数指针 SDK封装的一个函数指针，其函数原型为： td\_s32 \(\*func\_enc\_frame\)\(td\_void \*encoder, const ot\_audio\_frame \*data, td\_u8 \*out\_buf, td\_u32 \*out\_len\); 第一个参数是上一个函数打开编码器时返回的编码器句柄；第二个参数是SDK的音频帧数据结构体的指针，用于传入音频帧数据；第三个参数是输出缓存指针；第四个参数是输出缓存长度。 - 关闭编码器的函数指针 SDK封装的一个函数指针，其函数原型为： td\_s32 \(\*func\_close\_encoder\)\(td\_void \*encoder\); 参数是打开编码器时返回的编码器句柄。 - 用户需根据这几个函数原型封装第三方编码器，并通过编码器属性结构体注册给AENC模块，从而实现第三方编码器的集成。 - 必须在创建编码通道前注册相关类型的编码器，编码器不需要重复注册。 【举例】 下面的代码举例AAC编码器的注册： ```
 td_s32 handle, ret;
-aenc_encoder aac;
- 
-ret = aac_init_enc_lib();
-if (ret) {
-    return ret;
-}
- 
-aac.type = OT_PT_AAC;
+aenc_encoder aac; ret = aac_init_enc_lib;
+if (ret) { return ret;
+} aac.type = OT_PT_AAC;
 snprintf(aac.name, sizeof(aac.name), "aac");
 aac.max_frame_len = MAX_AAC_MAINBUF_SIZE;
 aac.func_open_encoder = open_aac_encoder;
 aac.func_enc_frame = encode_aac_frm;
 aac.func_close_encoder = close_aac_encoder;
 ret = ss_mpi_aenc_register_encoder(&handle, &aac);
-if (ret) {
-    return ret;
-}
-    
- return TD_SUCCESS;
-```
-
-【相关主题】
-
-无。
-
-### ss\_mpi\_aenc\_unregister\_encoder<a name="ZH-CN_TOPIC_0000002441714653"></a>
-
-【描述】
-
-注销解码器。
-
-【语法】
-
-```
+if (ret) { return ret;
+} return TD_SUCCESS;
+``` 【相关主题】 无。 ### ss\_mpi\_aenc\_unregister\_encoder<a name="ZH-CN_TOPIC_0000002441714653"></a> 【描述】 注销解码器。 【语法】 ```
 td_s32 ss_mpi_aenc_unregister_encoder(td_s32 handle);
-```
-
-【参数】
-
-<a name="table947mcpsimp"></a>
+``` 【参数】 <a name="table947mcpsimp"></a>
 <table><thead align="left"><tr id="row953mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p955mcpsimp"><a name="p955mcpsimp"></a><a name="p955mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66.34%" id="mcps1.1.4.1.2"><p id="p957mcpsimp"><a name="p957mcpsimp"></a><a name="p957mcpsimp"></a>描述</p>
@@ -883,11 +628,7 @@ td_s32 ss_mpi_aenc_unregister_encoder(td_s32 handle);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table969mcpsimp"></a>
+</table> 【返回值】 <a name="table969mcpsimp"></a>
 <table><thead align="left"><tr id="row974mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p976mcpsimp"><a name="p976mcpsimp"></a><a name="p976mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p978mcpsimp"><a name="p978mcpsimp"></a><a name="p978mcpsimp"></a>描述</p>
@@ -899,46 +640,11 @@ td_s32 ss_mpi_aenc_unregister_encoder(td_s32 handle);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p984mcpsimp"><a name="p984mcpsimp"></a><a name="p984mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row985mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p987mcpsimp"><a name="p987mcpsimp"></a><a name="p987mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p989mcpsimp"><a name="p989mcpsimp"></a><a name="p989mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408115506">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_comm\_aenc.h、ss\_mpi\_audio.h
--   库文件：libss\_mpi.a
-
-【注意】
-
-通常不需要注销编码器。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-### ss\_mpi\_adec\_register\_decoder<a name="ZH-CN_TOPIC_0000002408115474"></a>
-
-【描述】
-
-注册解码器。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_comm\_aenc.h、ss\_mpi\_audio.h
+- 库文件：libss\_mpi.a 【注意】 通常不需要注销编码器。 【举例】 无 【相关主题】 无 ### ss\_mpi\_adec\_register\_decoder<a name="ZH-CN_TOPIC_0000002408115474"></a> 【描述】 注册解码器。 【语法】 ```
 td_s32 ss_mpi_adec_register_decoder(td_s32 *handle, const ot_adec_decoder *decoder);
-```
-
-【参数】
-
-<a name="table1010mcpsimp"></a>
+``` 【参数】 <a name="table1010mcpsimp"></a>
 <table><thead align="left"><tr id="row1016mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p1018mcpsimp"><a name="p1018mcpsimp"></a><a name="p1018mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65%" id="mcps1.1.4.1.2"><p id="p1020mcpsimp"><a name="p1020mcpsimp"></a><a name="p1020mcpsimp"></a>描述</p>
@@ -962,11 +668,7 @@ td_s32 ss_mpi_adec_register_decoder(td_s32 *handle, const ot_adec_decoder *decod
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1039mcpsimp"></a>
+</table> 【返回值】 <a name="table1039mcpsimp"></a>
 <table><thead align="left"><tr id="row1044mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1046mcpsimp"><a name="p1046mcpsimp"></a><a name="p1046mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1048mcpsimp"><a name="p1048mcpsimp"></a><a name="p1048mcpsimp"></a>描述</p>
@@ -978,75 +680,16 @@ td_s32 ss_mpi_adec_register_decoder(td_s32 *handle, const ot_adec_decoder *decod
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1054mcpsimp"><a name="p1054mcpsimp"></a><a name="p1054mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1055mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1057mcpsimp"><a name="p1057mcpsimp"></a><a name="p1057mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1059mcpsimp"><a name="p1059mcpsimp"></a><a name="p1059mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408115506">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_comm\_adec.h、ss\_mpi\_audio.h
--   库文件：libss\_mpi.a
-
-【注意】
-
--   用户通过传入解码器属性结构体，向ADEC模块注册一个解码器，并返回注册句柄，用户可以最后通过注册句柄来注销该解码器。
--   ADEC模块最大可注册20个解码器，且自身已注册LPCM、G711a、G711u、G726、ADPCM五个解码器。
--   同一种解码协议不允许重复注册解码器，例如假如已注册AAC解码器，不允许另外再注册一个AAC解码器。
--   解码器属性包括解码器类型、解码器名称、打开解码器的函数指针、进行解码的函数指针、获取音频帧信息的函数指针、关闭解码器的函数指针。
-    -   解码器类型
-
-        SDK以枚举标识解码协议，注册时应选择相关协议的解码器类型。
-
-    -   解码器名称
-
-        解码器名称用字符串表示，用于在proc信息中显示。
-
-    -   打开解码器的函数指针
-
-        SDK封装的一个函数指针，其函数原型为：
-
-        td\_s32  \(\*func\_open\_decoder\)\(td\_void \*decoder\_attr, td\_void \*\*decoder\)；其中第一个参数是解码器属性，用于传入不同类型的解码器的特定属性；第二个参数是解码器句柄，用于返回可用于操作解码器的句柄。这两个参数均由用户封装，用户封装第二个参数时需要注意分配内存，因为解码器句柄还将用于解码和关闭解码器。
-
-    -   进行解码的函数指针
-
-        SDK封装的一个函数指针，其函数原型为：
-
-        td\_s32  \(\*func\_dec\_frame\)\(td\_void \*decoder, td\_u8 \*\*in\_buf, td\_s32 \*left\_byte, td\_u16 \*out\_buf, td\_u32 \*out\_len, td\_u32 \*chns\)；第一个参数是上一个函数打开解码器时返回的解码器句柄；第二个参数是输入缓存，用于传入音频帧数据；第三个参数用于返回剩余字节数，用于流式解码，即每次送入的音频帧数据不是完整的一帧的情形；第四个参数是输出缓存；第五个参数是输出数据的单声道长度；第六个参数是输出的通道数，码流数据经解码后，可能输出单声道，也可能输出立体声。
-
-    -   获取音频帧信息的函数指针
-
-        SDK封装的一个函数指针，其函数原型为：
-
-        td\_s32 \(\*func\_get\_frame\_info\)\(td\_void \*decoder, td\_void \*info\)；第一个参数是打开解码器时返回的解码器句柄；第二个参数是用户封装的音频帧信息，有的解码器解析码流时会获取解码后音频数据的采样点、采样率等信息；如果用户解码器不需要此函数，可以为该函数原型封装一个空函数。
-
-    -   关闭解码器的函数指针
-
-        SDK封装的一个函数指针，其函数原型为：
-
-        td\_s32  \(\*func\_close\_decoder\)\(td\_void \*decoder\)；参数是打开解码器时返回的解码器句柄。
-
-    -   用户需根据这几个函数原型封装第三方解码器，并通过解码器属性结构体注册给ADEC模块，从而实现第三方解码器的集成。
-
--   必须在创建解码通道前注册相关类型的解码器，解码器不需要重复注册。
-
-【举例】
-
-下面的代码举例AAC解码器的注册：
-
-```
+</table> 【需求】 - 头文件：ot\_comm\_adec.h、ss\_mpi\_audio.h
+- 库文件：libss\_mpi.a 【注意】 - 用户通过传入解码器属性结构体，向ADEC模块注册一个解码器，并返回注册句柄，用户可以最后通过注册句柄来注销该解码器。
+- ADEC模块最大可注册20个解码器，且自身已注册LPCM、G711a、G711u、G726、ADPCM五个解码器。
+- 同一种解码协议不允许重复注册解码器，例如假如已注册AAC解码器，不允许另外再注册一个AAC解码器。
+- 解码器属性包括解码器类型、解码器名称、打开解码器的函数指针、进行解码的函数指针、获取音频帧信息的函数指针、关闭解码器的函数指针。 - 解码器类型 SDK以枚举标识解码协议，注册时应选择相关协议的解码器类型。 - 解码器名称 解码器名称用字符串表示，用于在proc信息中显示。 - 打开解码器的函数指针 SDK封装的一个函数指针，其函数原型为： td\_s32 \(\*func\_open\_decoder\)\(td\_void \*decoder\_attr, td\_void \*\*decoder\)；其中第一个参数是解码器属性，用于传入不同类型的解码器的特定属性；第二个参数是解码器句柄，用于返回可用于操作解码器的句柄。这两个参数均由用户封装，用户封装第二个参数时需要注意分配内存，因为解码器句柄还将用于解码和关闭解码器。 - 进行解码的函数指针 SDK封装的一个函数指针，其函数原型为： td\_s32 \(\*func\_dec\_frame\)\(td\_void \*decoder, td\_u8 \*\*in\_buf, td\_s32 \*left\_byte, td\_u16 \*out\_buf, td\_u32 \*out\_len, td\_u32 \*chns\)；第一个参数是上一个函数打开解码器时返回的解码器句柄；第二个参数是输入缓存，用于传入音频帧数据；第三个参数用于返回剩余字节数，用于流式解码，即每次送入的音频帧数据不是完整的一帧的情形；第四个参数是输出缓存；第五个参数是输出数据的单声道长度；第六个参数是输出的通道数，码流数据经解码后，可能输出单声道，也可能输出立体声。 - 获取音频帧信息的函数指针 SDK封装的一个函数指针，其函数原型为： td\_s32 \(\*func\_get\_frame\_info\)\(td\_void \*decoder, td\_void \*info\)；第一个参数是打开解码器时返回的解码器句柄；第二个参数是用户封装的音频帧信息，有的解码器解析码流时会获取解码后音频数据的采样点、采样率等信息；如果用户解码器不需要此函数，可以为该函数原型封装一个空函数。 - 关闭解码器的函数指针 SDK封装的一个函数指针，其函数原型为： td\_s32 \(\*func\_close\_decoder\)\(td\_void \*decoder\)；参数是打开解码器时返回的解码器句柄。 - 用户需根据这几个函数原型封装第三方解码器，并通过解码器属性结构体注册给ADEC模块，从而实现第三方解码器的集成。 - 必须在创建解码通道前注册相关类型的解码器，解码器不需要重复注册。 【举例】 下面的代码举例AAC解码器的注册： ```
 td_s32 handle, ret;
-adec_decoder aac;
- 
-ret = aac_init_dec_lib();
-if (ret) {
-    return ret;
-}
- 
-aac.type = OT_PT_AAC;
+adec_decoder aac; ret = aac_init_dec_lib;
+if (ret) { return ret;
+} aac.type = OT_PT_AAC;
 snprintf(aac.name, sizeof(aac.name), "aac");
 aac.func_open_decoder = open_aac_decoder;
 aac.func_dec_frame = decode_aac_frm;
@@ -1054,32 +697,11 @@ aac.func_get_frame_info = get_aac_frm_info;
 aac.func_close_decoder = close_aac_decoder;
 aac.func_reset_decoder = reset_aac_decoder;
 ret = ss_mpi_adec_register_decoder(&handle, &aac);
-if (ret) {
-    return ret;
-}
-
-return TD_SUCCESS;
-```
-
-【相关主题】
-
-无。
-
-### ss\_mpi\_adec\_unregister\_decoder<a name="ZH-CN_TOPIC_0000002408275418"></a>
-
-【描述】
-
-注销解码器。
-
-【语法】
-
-```
+if (ret) { return ret;
+} return TD_SUCCESS;
+``` 【相关主题】 无。 ### ss\_mpi\_adec\_unregister\_decoder<a name="ZH-CN_TOPIC_0000002408275418"></a> 【描述】 注销解码器。 【语法】 ```
 td_s32 ss_mpi_adec_unregister_decoder(td_s32 handle);
-```
-
-【参数】
-
-<a name="table1119mcpsimp"></a>
+``` 【参数】 <a name="table1119mcpsimp"></a>
 <table><thead align="left"><tr id="row1125mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p1127mcpsimp"><a name="p1127mcpsimp"></a><a name="p1127mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66.34%" id="mcps1.1.4.1.2"><p id="p1129mcpsimp"><a name="p1129mcpsimp"></a><a name="p1129mcpsimp"></a>描述</p>
@@ -1096,11 +718,7 @@ td_s32 ss_mpi_adec_unregister_decoder(td_s32 handle);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1141mcpsimp"></a>
+</table> 【返回值】 <a name="table1141mcpsimp"></a>
 <table><thead align="left"><tr id="row1146mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1148mcpsimp"><a name="p1148mcpsimp"></a><a name="p1148mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1150mcpsimp"><a name="p1150mcpsimp"></a><a name="p1150mcpsimp"></a>描述</p>
@@ -1112,50 +730,11 @@ td_s32 ss_mpi_adec_unregister_decoder(td_s32 handle);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1156mcpsimp"><a name="p1156mcpsimp"></a><a name="p1156mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1157mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1159mcpsimp"><a name="p1159mcpsimp"></a><a name="p1159mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1161mcpsimp"><a name="p1161mcpsimp"></a><a name="p1161mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408115506">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_comm\_adec.h、ss\_mpi\_audio.h
--   库文件：libss\_mpi.a
-
-【注意】
-
-通常不需要注销解码器。
-
-【举例】
-
-无
-
-【相关主题】
-
-无。
-
-### ss\_mpi\_aenc\_aac\_init<a name="ZH-CN_TOPIC_0000002408275398"></a>
-
-【描述】
-
-注册AAC编码器。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_comm\_adec.h、ss\_mpi\_audio.h
+- 库文件：libss\_mpi.a 【注意】 通常不需要注销解码器。 【举例】 无 【相关主题】 无。 ### ss\_mpi\_aenc\_aac\_init<a name="ZH-CN_TOPIC_0000002408275398"></a> 【描述】 注册AAC编码器。 【语法】 ```
 td_s32 ss_mpi_aenc_aac_init(td_void);
-```
-
-【参数】
-
-无
-
-【返回值】
-
-<a name="table1182mcpsimp"></a>
+``` 【参数】 无 【返回值】 <a name="table1182mcpsimp"></a>
 <table><thead align="left"><tr id="row1187mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1189mcpsimp"><a name="p1189mcpsimp"></a><a name="p1189mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1191mcpsimp"><a name="p1191mcpsimp"></a><a name="p1191mcpsimp"></a>描述</p>
@@ -1167,51 +746,12 @@ td_s32 ss_mpi_aenc_aac_init(td_void);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1197mcpsimp"><a name="p1197mcpsimp"></a><a name="p1197mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1198mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1200mcpsimp"><a name="p1200mcpsimp"></a><a name="p1200mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1202mcpsimp"><a name="p1202mcpsimp"></a><a name="p1202mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408115506">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   源文件：audio\_aac\_adp.c
--   头文件：audio\_aac\_adp.h
--   库文件：libaac\_comm.so、libaac\_enc.so
-
-【注意】
-
-此接口在audio\_aac\_adp.c里实现，而audio\_aac\_adp.c并没有封装成库，所以在使用此接口时，需要包含audio\_aac\_adp.c和audio\_aac\_adp.h才能编译通过。这两个文件默认放置在sample/audio/adp文件夹中。此外，在需要使用到SBRENC功能时，需要添加libaac\_sbr\_enc.so库。
-
-【举例】
-
-无。
-
-【相关主题】
-
-无。
-
-### ss\_mpi\_adec\_aac\_init<a name="ZH-CN_TOPIC_0000002441714637"></a>
-
-【描述】
-
-注册AAC解码器。
-
-【语法】
-
-```
+</table> 【需求】 - 源文件：audio\_aac\_adp.c
+- 头文件：audio\_aac\_adp.h
+- 库文件：libaac\_comm.so、libaac\_enc.so 【注意】 此接口在audio\_aac\_adp.c里实现，而audio\_aac\_adp.c并没有封装成库，所以在使用此接口时，需要包含audio\_aac\_adp.c和audio\_aac\_adp.h才能编译通过。这两个文件默认放置在sample/audio/adp文件夹中。此外，在需要使用到SBRENC功能时，需要添加libaac\_sbr\_enc.so库。 【举例】 无。 【相关主题】 无。 ### ss\_mpi\_adec\_aac\_init<a name="ZH-CN_TOPIC_0000002441714637"></a> 【描述】 注册AAC解码器。 【语法】 ```
 td_s32 ss_mpi_adec_aac_init(td_void);
-```
-
-【参数】
-
-无
-
-【返回值】
-
-<a name="table1224mcpsimp"></a>
+``` 【参数】 无 【返回值】 <a name="table1224mcpsimp"></a>
 <table><thead align="left"><tr id="row1229mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1231mcpsimp"><a name="p1231mcpsimp"></a><a name="p1231mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1233mcpsimp"><a name="p1233mcpsimp"></a><a name="p1233mcpsimp"></a>描述</p>
@@ -1223,73 +763,19 @@ td_s32 ss_mpi_adec_aac_init(td_void);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1239mcpsimp"><a name="p1239mcpsimp"></a><a name="p1239mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1240mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1242mcpsimp"><a name="p1242mcpsimp"></a><a name="p1242mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1244mcpsimp"><a name="p1244mcpsimp"></a><a name="p1244mcpsimp"></a>失败，其值为<a href="#ZH-CN_TOPIC_0000002408115506">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   源文件：aduio\_aac\_adp.h
--   头文件：audio\_aac\_adp.h
--   库文件：libaac\_comm.so、libaac\_dec.so
-
-【注意】
-
-请参考ss\_mpi\_aenc\_aac\_init接口注意项的说明。此外，在需要使用到SBRDEC功能时，需要添加libaac\_sbr\_dec.so库。
-
-【举例】
-
-无。
-
-【相关主题】
-
-无。
-
-## 数据类型<a name="ZH-CN_TOPIC_0000002441674769"></a>
-
-音频组件相关数据类型、数据结构定义如下：
-
--   [ot\_aenc\_encoder](#ZH-CN_TOPIC_0000002408275394)：定义编码器属性结构体。
--   [ot\_adec\_decoder](#ZH-CN_TOPIC_0000002441714629)：定义解码器属性结构体。
--   [ot\_aac\_type](#ZH-CN_TOPIC_0000002441674777)：定义AAC音频编解码协议类型。
--   [ot\_aac\_bps](#ZH-CN_TOPIC_0000002408275382)：定义AAC音频编码码率。
--   [ot\_aac\_transport\_type](#ZH-CN_TOPIC_0000002408115466)：定义AAC音频编解码协议传输封装类型。
--   [ot\_aenc\_attr\_aac](#ZH-CN_TOPIC_0000002408115470)：定义AAC编码协议属性结构体。
--   [ot\_adec\_attr\_aac](#ZH-CN_TOPIC_0000002441714625)：定义AAC解码协议属性结构体。
-
-
-
-
-
-
-
-
-### ot\_aenc\_encoder<a name="ZH-CN_TOPIC_0000002408275394"></a>
-
-【说明】
-
-定义编码器属性结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_payload_type type;
-    td_u32          max_frame_len;
-    ot_char         name[OT_MAX_ENCODER_NAME_LEN];    /* encoder type,be used to print proc information */
-    td_s32          (*func_open_encoder)(td_void *encoder_attr, td_void **encoder); /* encoder is the handle to control the encoder */
-    td_s32          (*func_enc_frame)(td_void *encoder, const ot_audio_frame *data, td_u8 *out_buf, td_u32 *out_len);
-    td_s32          (*func_close_encoder)(td_void *encoder);
+</table> 【需求】 - 源文件：aduio\_aac\_adp.h
+- 头文件：audio\_aac\_adp.h
+- 库文件：libaac\_comm.so、libaac\_dec.so 【注意】 请参考ss\_mpi\_aenc\_aac\_init接口注意项的说明。此外，在需要使用到SBRDEC功能时，需要添加libaac\_sbr\_dec.so库。 【举例】 无。 【相关主题】 无。 ## 数据类型<a name="ZH-CN_TOPIC_0000002441674769"></a> 音频组件相关数据类型、数据结构定义如下： - [ot\_aenc\_encoder](#ZH-CN_TOPIC_0000002408275394)：定义编码器属性结构体。
+- [ot\_adec\_decoder](#ZH-CN_TOPIC_0000002441714629)：定义解码器属性结构体。
+- [ot\_aac\_type](#ZH-CN_TOPIC_0000002441674777)：定义AAC音频编解码协议类型。
+- [ot\_aac\_bps](#ZH-CN_TOPIC_0000002408275382)：定义AAC音频编码码率。
+- [ot\_aac\_transport\_type](#ZH-CN_TOPIC_0000002408115466)：定义AAC音频编解码协议传输封装类型。
+- [ot\_aenc\_attr\_aac](#ZH-CN_TOPIC_0000002408115470)：定义AAC编码协议属性结构体。
+- [ot\_adec\_attr\_aac](#ZH-CN_TOPIC_0000002441714625)：定义AAC解码协议属性结构体。 ### ot\_aenc\_encoder<a name="ZH-CN_TOPIC_0000002408275394"></a> 【说明】 定义编码器属性结构体。 【定义】 ```
+typedef struct { ot_payload_type type; td_u32 max_frame_len; ot_char name[OT_MAX_ENCODER_NAME_LEN]; /* encoder type,be used to print proc information */ td_s32 (*func_open_encoder)(td_void *encoder_attr, td_void **encoder); /* encoder is the handle to control the encoder */ td_s32 (*func_enc_frame)(td_void *encoder, const ot_audio_frame *data, td_u8 *out_buf, td_u32 *out_len); td_s32 (*func_close_encoder)(td_void *encoder);
 } ot_aenc_encoder;
-```
-
-【成员】
-
-<a name="table1290mcpsimp"></a>
+``` 【成员】 <a name="table1290mcpsimp"></a>
 <table><thead align="left"><tr id="row1295mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p1297mcpsimp"><a name="p1297mcpsimp"></a><a name="p1297mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p1299mcpsimp"><a name="p1299mcpsimp"></a><a name="p1299mcpsimp"></a>描述</p>
@@ -1327,39 +813,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_aenc\_register\_encoder](#ZH-CN_TOPIC_0000002408115490)
-
-### ot\_adec\_decoder<a name="ZH-CN_TOPIC_0000002441714629"></a>
-
-【说明】
-
-定义解码器属性结构体。
-
-**【**定义**】**
-
-```
-typedef struct {
-    ot_payload_type type;
-    ot_char name[OT_MAX_DECODER_NAME_LEN];
-    td_s32 (*func_open_decoder)(td_void *decoder_attr, td_void **decoder); /* struct decoder is packed by user, user malloc and free memory for this struct */
-    td_s32 (*func_dec_frame)(td_void *decoder, td_u8 **in_buf, td_s32 *left_byte, td_u16 *out_buf, td_u32 *out_len, td_u32 *chns);
-    td_s32 (*func_get_frame_info)(td_void *decoder, td_void *info);
-    td_s32 (*func_close_decoder)(td_void *decoder);
-    td_s32 (*func_reset_decoder)(td_void *decoder);
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ss\_mpi\_aenc\_register\_encoder](#ZH-CN_TOPIC_0000002408115490) ### ot\_adec\_decoder<a name="ZH-CN_TOPIC_0000002441714629"></a> 【说明】 定义解码器属性结构体。 **【**定义**】** ```
+typedef struct { ot_payload_type type; ot_char name[OT_MAX_DECODER_NAME_LEN]; td_s32 (*func_open_decoder)(td_void *decoder_attr, td_void **decoder); /* struct decoder is packed by user, user malloc and free memory for this struct */ td_s32 (*func_dec_frame)(td_void *decoder, td_u8 **in_buf, td_s32 *left_byte, td_u16 *out_buf, td_u32 *out_len, td_u32 *chns); td_s32 (*func_get_frame_info)(td_void *decoder, td_void *info); td_s32 (*func_close_decoder)(td_void *decoder); td_s32 (*func_reset_decoder)(td_void *decoder);
 } ot_adec_decoder;
-```
-
-【成员】
-
-<a name="table1360mcpsimp"></a>
+``` 【成员】 <a name="table1360mcpsimp"></a>
 <table><thead align="left"><tr id="row1365mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p1367mcpsimp"><a name="p1367mcpsimp"></a><a name="p1367mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p1369mcpsimp"><a name="p1369mcpsimp"></a><a name="p1369mcpsimp"></a>描述</p>
@@ -1402,38 +859,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_adec\_register\_decoder](#ZH-CN_TOPIC_0000002408115474)
-
-### ot\_aac\_type<a name="ZH-CN_TOPIC_0000002441674777"></a>
-
-【说明】
-
-定义AAC音频编解码协议类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_AAC_TYPE_AACLC       = 0,
-    OT_AAC_TYPE_EAAC        = 1,
-    OT_AAC_TYPE_EAACPLUS   = 2,
-    OT_AAC_TYPE_AACLD       = 3,
-    OT_AAC_TYPE_AACELD     = 4,
-    OT_AAC_TYPE_BUTT,
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ss\_mpi\_adec\_register\_decoder](#ZH-CN_TOPIC_0000002408115474) ### ot\_aac\_type<a name="ZH-CN_TOPIC_0000002441674777"></a> 【说明】 定义AAC音频编解码协议类型。 【定义】 ```
+typedef enum { OT_AAC_TYPE_AACLC = 0, OT_AAC_TYPE_EAAC = 1, OT_AAC_TYPE_EAACPLUS = 2, OT_AAC_TYPE_AACLD = 3, OT_AAC_TYPE_AACELD = 4, OT_AAC_TYPE_BUTT,
 } ot_aac_type;
-```
-
-【成员】
-
-<a name="table1425mcpsimp"></a>
+``` 【成员】 <a name="table1425mcpsimp"></a>
 <table><thead align="left"><tr id="row1430mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p1432mcpsimp"><a name="p1432mcpsimp"></a><a name="p1432mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p1434mcpsimp"><a name="p1434mcpsimp"></a><a name="p1434mcpsimp"></a>描述</p>
@@ -1466,44 +895,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_aac\_bps<a name="ZH-CN_TOPIC_0000002408275382"></a>
-
-【说明】
-
-定义AAC音频编码码率。
-
-【定义】
-
-```
-typedef enum {
-    OT_AAC_BPS_8K      = 8000,
-    OT_AAC_BPS_16K     = 16000,
-    OT_AAC_BPS_22K     = 22000,
-    OT_AAC_BPS_24K     = 24000,
-    OT_AAC_BPS_32K     = 32000,
-    OT_AAC_BPS_48K     = 48000,
-    OT_AAC_BPS_64K     = 64000,
-    OT_AAC_BPS_96K     = 96000,
-    OT_AAC_BPS_128K    = 128000,
-    OT_AAC_BPS_256K    = 256000,
-    OT_AAC_BPS_320K    = 320000,
-    OT_AAC_BPS_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_aac\_bps<a name="ZH-CN_TOPIC_0000002408275382"></a> 【说明】 定义AAC音频编码码率。 【定义】 ```
+typedef enum { OT_AAC_BPS_8K = 8000, OT_AAC_BPS_16K = 16000, OT_AAC_BPS_22K = 22000, OT_AAC_BPS_24K = 24000, OT_AAC_BPS_32K = 32000, OT_AAC_BPS_48K = 48000, OT_AAC_BPS_64K = 64000, OT_AAC_BPS_96K = 96000, OT_AAC_BPS_128K = 128000, OT_AAC_BPS_256K = 256000, OT_AAC_BPS_320K = 320000, OT_AAC_BPS_BUTT
 } ot_aac_bps;
-```
-
-【成员】
-
-<a name="table1484mcpsimp"></a>
+``` 【成员】 <a name="table1484mcpsimp"></a>
 <table><thead align="left"><tr id="row1489mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p1491mcpsimp"><a name="p1491mcpsimp"></a><a name="p1491mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p1493mcpsimp"><a name="p1493mcpsimp"></a><a name="p1493mcpsimp"></a>描述</p>
@@ -1566,36 +961,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_aac\_transport\_type<a name="ZH-CN_TOPIC_0000002408115466"></a>
-
-【说明】
-
-定义AAC音频编解码协议传输封装类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_AAC_TRANSPORT_TYPE_ADTS = 0,
-    OT_AAC_TRANSPORT_TYPE_LOAS = 1,
-    OT_AAC_TRANSPORT_TYPE_LATM_MCP1 = 2,
-    OT_AAC_TRANSPORT_TYPE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_aac\_transport\_type<a name="ZH-CN_TOPIC_0000002408115466"></a> 【说明】 定义AAC音频编解码协议传输封装类型。 【定义】 ```
+typedef enum { OT_AAC_TRANSPORT_TYPE_ADTS = 0, OT_AAC_TRANSPORT_TYPE_LOAS = 1, OT_AAC_TRANSPORT_TYPE_LATM_MCP1 = 2, OT_AAC_TRANSPORT_TYPE_BUTT
 } ot_aac_transport_type;
-```
-
-【成员】
-
-<a name="table1565mcpsimp"></a>
+``` 【成员】 <a name="table1565mcpsimp"></a>
 <table><thead align="left"><tr id="row1570mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p1572mcpsimp"><a name="p1572mcpsimp"></a><a name="p1572mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p1574mcpsimp"><a name="p1574mcpsimp"></a><a name="p1574mcpsimp"></a>描述</p>
@@ -1618,39 +987,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-LATM1格式由于不具备同步帧头机制，在码流出现问题时无法快速恢复，**不推荐使用**。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_aenc\_attr\_aac<a name="ZH-CN_TOPIC_0000002408115470"></a>
-
-【说明】
-
-定义AAC编码协议属性结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_aac_type          aac_type;
-    ot_aac_bps           bit_rate;
-    ot_audio_sample_rate sample_rate;
-    ot_audio_bit_width   bit_width;
-    ot_audio_snd_mode  snd_mode;
-    ot_aac_transport_type    transport_type;
-    td_s16              band_width;;
+</table> 【注意事项】 LATM1格式由于不具备同步帧头机制，在码流出现问题时无法快速恢复，**不推荐使用**。 【相关数据类型及接口】 无。 ### ot\_aenc\_attr\_aac<a name="ZH-CN_TOPIC_0000002408115470"></a> 【说明】 定义AAC编码协议属性结构体。 【定义】 ```
+typedef struct { ot_aac_type aac_type; ot_aac_bps bit_rate; ot_audio_sample_rate sample_rate; ot_audio_bit_width bit_width; ot_audio_snd_mode snd_mode; ot_aac_transport_type transport_type; td_s16 band_width;;
 } ot_aenc_attr_aac;
-```
-
-【成员】
-
-<a name="table1611mcpsimp"></a>
+``` 【成员】 <a name="table1611mcpsimp"></a>
 <table><thead align="left"><tr id="row1616mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p1618mcpsimp"><a name="p1618mcpsimp"></a><a name="p1618mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p1620mcpsimp"><a name="p1620mcpsimp"></a><a name="p1620mcpsimp"></a>描述</p>
@@ -1712,33 +1052,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_adec\_attr\_aac<a name="ZH-CN_TOPIC_0000002441714625"></a>
-
-【说明】
-
-定义AAC解码协议属性结构体。
-
-【定义】
-
-```
-typedef struct {
-     ot_aac_transport_type  transport_type;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_adec\_attr\_aac<a name="ZH-CN_TOPIC_0000002441714625"></a> 【说明】 定义AAC解码协议属性结构体。 【定义】 ```
+typedef struct { ot_aac_transport_type transport_type;
 } ot_adec_attr_aac;
-```
-
-【成员】
-
-<a name="table1692mcpsimp"></a>
+``` 【成员】 <a name="table1692mcpsimp"></a>
 <table><thead align="left"><tr id="row1697mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p1699mcpsimp"><a name="p1699mcpsimp"></a><a name="p1699mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p1701mcpsimp"><a name="p1701mcpsimp"></a><a name="p1701mcpsimp"></a>描述</p>
@@ -1753,27 +1070,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-## 错误码<a name="ZH-CN_TOPIC_0000002408115506"></a>
-
-
-
-### 音频编码错误码<a name="ZH-CN_TOPIC_0000002441674781"></a>
-
-音频编码API错误码如下所示。
-
-**表 1**  音频编码API错误码
-
-<a name="_Ref268526472"></a>
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ## 错误码<a name="ZH-CN_TOPIC_0000002408115506"></a> ### 音频编码错误码<a name="ZH-CN_TOPIC_0000002441674781"></a> 音频编码API错误码如下所示。 **表 1** 音频编码API错误码 <a name="_Ref268526472"></a>
 <table><thead align="left"><tr id="row1727mcpsimp"><th class="cellrowborder" valign="top" width="20.792079207920793%" id="mcps1.2.4.1.1"><p id="p1729mcpsimp"><a name="p1729mcpsimp"></a><a name="p1729mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="45.54455445544555%" id="mcps1.2.4.1.2"><p id="p1731mcpsimp"><a name="p1731mcpsimp"></a><a name="p1731mcpsimp"></a>宏定义</p>
@@ -1895,15 +1192,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-### 音频解码错误码<a name="ZH-CN_TOPIC_0000002408275374"></a>
-
-音频解码API错误码如下所示。
-
-**表 1**  音频解码API错误码
-
-<a name="_Ref268526500"></a>
+</table> ### 音频解码错误码<a name="ZH-CN_TOPIC_0000002408275374"></a> 音频解码API错误码如下所示。 **表 1** 音频解码API错误码 <a name="_Ref268526500"></a>
 <table><thead align="left"><tr id="row1856mcpsimp"><th class="cellrowborder" valign="top" width="20.792079207920793%" id="mcps1.2.4.1.1"><p id="p1858mcpsimp"><a name="p1858mcpsimp"></a><a name="p1858mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="45.54455445544555%" id="mcps1.2.4.1.2"><p id="p1860mcpsimp"><a name="p1860mcpsimp"></a><a name="p1860mcpsimp"></a>宏定义</p>

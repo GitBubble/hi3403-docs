@@ -1,18 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像分析引擎2与图像分析引擎1使用差异说明/图像分析引擎2与图像分析引擎1使用差异说明.md
----
-
-# 前言
-**概述<a name="section145mcpsimp"></a>**
-
-本文档详细描述了_图像分析引擎_2开发和_图像分析引擎_1的开发差异。
-
-**产品版本<a name="section300mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table303mcpsimp"></a>
+--- # 前言
+**概述<a name="section145mcpsimp"></a>** 本文档详细描述了_图像分析引擎_2开发和_图像分析引擎_1的开发差异。 **产品版本<a name="section300mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table303mcpsimp"></a>
 <table><thead align="left"><tr id="row308mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p310mcpsimp"><a name="p310mcpsimp"></a><a name="p310mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p312mcpsimp"><a name="p312mcpsimp"></a><a name="p312mcpsimp"></a>产品版本</p>
@@ -24,26 +14,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像�
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section150mcpsimp"></a>**
-
-本文档主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-**修订记录<a name="section156mcpsimp"></a>**
-
-修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
-
-<a name="table1557726816410"></a>
+</table> **读者对象<a name="section150mcpsimp"></a>** 本文档主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 **修订记录<a name="section156mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="20.22%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>发布日期</strong></p>
@@ -60,18 +33,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像�
 </td>
 </tr>
 </tbody>
-</table>
-
-# SDK接口差异
-## 风格差异<a name="ZH-CN_TOPIC_0000002441980521"></a>
-
-图像分析引擎1为ACL接口，图像分析引擎2为SVP ACL接口。
-
-为了避免编译时符号冲突，SVP ACL使用linux风格，宏定义和枚举采用SVP\_ACL\_前缀；ACL使用的驼峰风格，宏定义和枚举采用ACL\_前缀。函数、宏定义、枚举以及结构体详细差异参见[表1](#table183mcpsimp)。
-
-**表 1**  风格差异示例
-
-<a name="table183mcpsimp"></a>
+</table> # SDK接口差异
+## 风格差异<a name="ZH-CN_TOPIC_0000002441980521"></a> 图像分析引擎1为ACL接口，图像分析引擎2为SVP ACL接口。 为了避免编译时符号冲突，SVP ACL使用linux风格，宏定义和枚举采用SVP\_ACL\_前缀；ACL使用的驼峰风格，宏定义和枚举采用ACL\_前缀。函数、宏定义、枚举以及结构体详细差异参见[表1](#table183mcpsimp)。 **表 1** 风格差异示例 <a name="table183mcpsimp"></a>
 <table><thead align="left"><tr id="row190mcpsimp"><th class="cellrowborder" valign="top" width="11%" id="mcps1.2.4.1.1"><p id="p192mcpsimp"><a name="p192mcpsimp"></a><a name="p192mcpsimp"></a>差异</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.18%" id="mcps1.2.4.1.2"><p id="p194mcpsimp"><a name="p194mcpsimp"></a><a name="p194mcpsimp"></a>ACL接口</p>
@@ -89,61 +52,22 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像�
 </tr>
 <tr id="row205mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a>宏定义</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.18%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock16299115212210"><a name="codeblock16299115212210"></a><a name="codeblock16299115212210"></a>#define ACL_MAX_DIM_CNT          128</pre>
+<td class="cellrowborder" valign="top" width="39.18%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock16299115212210"><a name="codeblock16299115212210"></a><a name="codeblock16299115212210"></a>#define ACL_MAX_DIM_CNT 128</pre>
 </td>
-<td class="cellrowborder" valign="top" width="49.82%" headers="mcps1.2.4.1.3 "><pre class="codeblock" id="codeblock5354175511212"><a name="codeblock5354175511212"></a><a name="codeblock5354175511212"></a>#define SVP_ACL_MAX_DIM_CNT          128</pre>
-</td>
-</tr>
-<tr id="row212mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p214mcpsimp"><a name="p214mcpsimp"></a><a name="p214mcpsimp"></a>枚举</p>
-</td>
-<td class="cellrowborder" valign="top" width="39.18%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock45217611210"><a name="codeblock45217611210"></a><a name="codeblock45217611210"></a>typedef enum aclrtRunMode {
-    ACL_DEVICE,
-    ACL_HOST,
-} aclrtRunMode;</pre>
-</td>
-<td class="cellrowborder" valign="top" width="49.82%" headers="mcps1.2.4.1.3 "><pre class="codeblock" id="codeblock1566414105212"><a name="codeblock1566414105212"></a><a name="codeblock1566414105212"></a>typedef enum svp_acl_rt_run_mode {
-    SVP_ACL_DEVICE,
-    SVP_ACL_HOST,
-} svp_acl_rt_run_mode;</pre>
+<td class="cellrowborder" valign="top" width="49.82%" headers="mcps1.2.4.1.3 "><pre class="codeblock" id="codeblock5354175511212"><a name="codeblock5354175511212"></a><a name="codeblock5354175511212"></a>#define SVP_ACL_MAX_DIM_CNT 128</pre>
 </td>
 </tr>
 <tr id="row225mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p227mcpsimp"><a name="p227mcpsimp"></a><a name="p227mcpsimp"></a>结构体</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.18%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock141280435318"><a name="codeblock141280435318"></a><a name="codeblock141280435318"></a>typedef struct aclmdlIODims {
-    char name[ACL_MAX_TENSOR_NAME_LEN];
-    size_t dimCount;
-    int64_t dims[ACL_MAX_DIM_CNT];
+<td class="cellrowborder" valign="top" width="39.18%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock141280435318"><a name="codeblock141280435318"></a><a name="codeblock141280435318"></a>typedef struct aclmdlIODims { char name[ACL_MAX_TENSOR_NAME_LEN]; size_t dimCount; int64_t dims[ACL_MAX_DIM_CNT];
 } aclmdlIODims;</pre>
 </td>
-<td class="cellrowborder" valign="top" width="49.82%" headers="mcps1.2.4.1.3 "><pre class="codeblock" id="codeblock54308261337"><a name="codeblock54308261337"></a><a name="codeblock54308261337"></a>typedef struct svp_acl_mdl_io_dims {
-    char name[SVP_ACL_MAX_TENSOR_NAME_LEN];
-    size_t dim_count;
-    int64_t dims[SVP_ACL_MAX_DIM_CNT];
+<td class="cellrowborder" valign="top" width="49.82%" headers="mcps1.2.4.1.3 "><pre class="codeblock" id="codeblock54308261337"><a name="codeblock54308261337"></a><a name="codeblock54308261337"></a>typedef struct svp_acl_mdl_io_dims { char name[SVP_ACL_MAX_TENSOR_NAME_LEN]; size_t dim_count; int64_t dims[SVP_ACL_MAX_DIM_CNT];
 } svp_acl_mdl_io_dims;</pre>
 </td>
 </tr>
 </tbody>
-</table>
-
-## 使用差异<a name="ZH-CN_TOPIC_0000002442020361"></a>
-
-
-
-
-
-
-
-
-
-
-
-### 创建databuffer函数<a name="ZH-CN_TOPIC_0000002442020401"></a>
-
-由于_图像分析引擎_2逻辑在执行的时候，输入输出数据需要传入stride，用于逻辑读/写操作时快速跳到下一行，因此在创建和更新data buffer的时候会增加一个stride入参。
-
-**表 1**  创建data buffer函数差异
-
-<a name="table244mcpsimp"></a>
+</table> ## 使用差异<a name="ZH-CN_TOPIC_0000002442020361"></a> ### 创建databuffer函数<a name="ZH-CN_TOPIC_0000002442020401"></a> 由于_图像分析引擎_2逻辑在执行的时候，输入输出数据需要传入stride，用于逻辑读/写操作时快速跳到下一行，因此在创建和更新data buffer的时候会增加一个stride入参。 **表 1** 创建data buffer函数差异 <a name="table244mcpsimp"></a>
 <table><thead align="left"><tr id="row251mcpsimp"><th class="cellrowborder" valign="top" width="9.01%" id="mcps1.2.4.1.1"><p id="p253mcpsimp"><a name="p253mcpsimp"></a><a name="p253mcpsimp"></a>功能</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.99%" id="mcps1.2.4.1.2"><p id="p255mcpsimp"><a name="p255mcpsimp"></a><a name="p255mcpsimp"></a>ACL函数</p>
@@ -159,21 +83,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像�
 <td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><pre class="codeblock" id="codeblock392181515514"><a name="codeblock392181515514"></a><a name="codeblock392181515514"></a>svp_acl_data_buffer *svp_acl_create_data_buffer(void *data, size_t size, size_t stride)</pre>
 </td>
 </tr>
-<tr id="row266mcpsimp"><td class="cellrowborder" valign="top" width="9.01%" headers="mcps1.2.4.1.1 "><p id="p268mcpsimp"><a name="p268mcpsimp"></a><a name="p268mcpsimp"></a>更新</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.99%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock5290177652"><a name="codeblock5290177652"></a><a name="codeblock5290177652"></a>aclUpdateDataBuffer(aclDataBuffer *dataBuffer, void *data, size_t size);</pre>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><pre class="codeblock" id="codeblock1939412173518"><a name="codeblock1939412173518"></a><a name="codeblock1939412173518"></a>svp_acl_update_data_buffer(svp_acl_data_buffer *data_buffer, void *data, size_t size, size_t stride);</pre>
-</td>
-</tr>
 </tbody>
-</table>
-
-由于引入stride，所以SVP ACL接口返回的输入输出size是按照stride对齐后的内存大小，为了方便获取stride，SVP\_ACL接口新增了与stride操作相关的函数，增加函数见下表：
-
-**表 2**  新增stride相关函数
-
-<a name="table274mcpsimp"></a>
+</table> 由于引入stride，所以SVP ACL接口返回的输入输出size是按照stride对齐后的内存大小，为了方便获取stride，SVP\_ACL接口新增了与stride操作相关的函数，增加函数见下表： **表 2** 新增stride相关函数 <a name="table274mcpsimp"></a>
 <table><thead align="left"><tr id="row281mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p283mcpsimp"><a name="p283mcpsimp"></a><a name="p283mcpsimp"></a>功能</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.2.4.1.2"><p id="p285mcpsimp"><a name="p285mcpsimp"></a><a name="p285mcpsimp"></a>SVP_ACL函数</p>
@@ -204,15 +115,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/图像�
 </td>
 </tr>
 </tbody>
-</table>
-
-### 模型加载函数<a name="ZH-CN_TOPIC_0000002408581154"></a>
-
-SVP\_ACL模型加载函数为**svp\_acl\_mdl\_load\_from\_mem**\(\)，其实现与ACL对应接口的差异如下。
-
-**表 1**  模型加载函数差异
-
-<a name="table313mcpsimp"></a>
+</table> ### 模型加载函数<a name="ZH-CN_TOPIC_0000002408581154"></a> SVP\_ACL模型加载函数为**svp\_acl\_mdl\_load\_from\_mem**\(\)，其实现与ACL对应接口的差异如下。 **表 1** 模型加载函数差异 <a name="table313mcpsimp"></a>
 <table><thead align="left"><tr id="row320mcpsimp"><th class="cellrowborder" valign="top" width="23.9%" id="mcps1.2.4.1.1"><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>说明</p>
 </th>
 <th class="cellrowborder" valign="top" width="34.67%" id="mcps1.2.4.1.2"><p id="p324mcpsimp"><a name="p324mcpsimp"></a><a name="p324mcpsimp"></a>函数</p>
@@ -223,7 +126,7 @@ SVP\_ACL模型加载函数为**svp\_acl\_mdl\_load\_from\_mem**\(\)，其实现�
 </thead>
 <tbody><tr id="row328mcpsimp"><td class="cellrowborder" valign="top" width="23.9%" headers="mcps1.2.4.1.1 "><p id="p330mcpsimp"><a name="p330mcpsimp"></a><a name="p330mcpsimp"></a>ACL模型加载函数</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.67%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock48131001269"><a name="codeblock48131001269"></a><a name="codeblock48131001269"></a>aclError aclmdlLoadFromMem(const void *model,  size_t modelSize, uint32_t *modelId);</pre>
+<td class="cellrowborder" valign="top" width="34.67%" headers="mcps1.2.4.1.2 "><pre class="codeblock" id="codeblock48131001269"><a name="codeblock48131001269"></a><a name="codeblock48131001269"></a>aclError aclmdlLoadFromMem(const void *model, size_t modelSize, uint32_t *modelId);</pre>
 </td>
 <td class="cellrowborder" valign="top" width="41.43%" headers="mcps1.2.4.1.3 "><a name="ol334mcpsimp"></a><a name="ol334mcpsimp"></a><ol id="ol334mcpsimp"><li>会将model内存中存储的权重参数拷贝到内部开辟的一块内存，因此该接口调用完后，model内存可以被释放。</li><li>task_buf和work_buf都是内部管理</li></ol>
 </td>
@@ -236,20 +139,7 @@ SVP\_ACL模型加载函数为**svp\_acl\_mdl\_load\_from\_mem**\(\)，其实现�
 </td>
 </tr>
 </tbody>
-</table>
-
-### 获取模型输入个数函数<a name="ZH-CN_TOPIC_0000002408421262"></a>
-
-为了使模型独立于device，context以及stream，SVP ACL将task\_buf和work\_buf独立出来由用户管理，模型执行的时候作为输入传入，在保证task\_buf和work\_buf正确使用的情况下，使得模型可以同时被同步，异步，多线程或者多device执行，输入变化如[图1](#fig046712315474)所示。
-
-**图 1**  模型输入/输出数据<a name="fig046712315474"></a>  
-![](figures/模型输入-输出数据.png "模型输入-输出数据")
-
-因此SVP ACL修改了模型输入接口的特性，差异说明如[表1](#table351mcpsimp)所示。
-
-**表 1**  获取输入个数接口差异
-
-<a name="table351mcpsimp"></a>
+</table> ### 获取模型输入个数函数<a name="ZH-CN_TOPIC_0000002408421262"></a> 为了使模型独立于device，context以及stream，SVP ACL将task\_buf和work\_buf独立出来由用户管理，模型执行的时候作为输入传入，在保证task\_buf和work\_buf正确使用的情况下，使得模型可以同时被同步，异步，多线程或者多device执行，输入变化如[图1](#fig046712315474)所示。 **图 1** 模型输入/输出数据<a name="fig046712315474"></a> ![](figures/模型输入-输出数据.png "模型输入-输出数据") 因此SVP ACL修改了模型输入接口的特性，差异说明如[表1](#table351mcpsimp)所示。 **表 1** 获取输入个数接口差异 <a name="table351mcpsimp"></a>
 <table><thead align="left"><tr id="row358mcpsimp"><th class="cellrowborder" valign="top" width="19.8%" id="mcps1.2.4.1.1"><p id="p360mcpsimp"><a name="p360mcpsimp"></a><a name="p360mcpsimp"></a>说明</p>
 </th>
 <th class="cellrowborder" valign="top" width="50.2%" id="mcps1.2.4.1.2"><p id="p362mcpsimp"><a name="p362mcpsimp"></a><a name="p362mcpsimp"></a>函数</p>
@@ -273,15 +163,7 @@ SVP\_ACL模型加载函数为**svp\_acl\_mdl\_load\_from\_mem**\(\)，其实现�
 </td>
 </tr>
 </tbody>
-</table>
-
-### 依据数据类型获取数据大小<a name="ZH-CN_TOPIC_0000002408581150"></a>
-
-SVP ACL为了支持紧密排布的RAW数据，如输入为12bit或14bit紧密排布。这样数据bit长度就不是8bit的整数倍，无法用Byte为单位表示，因此SVP ACL依据数据类型获取数据大小的时候返回值为bit数，而不是Byte数，差异如[表1](#table383mcpsimp)所示。
-
-**表 1**  获取数据大小接口差异
-
-<a name="table383mcpsimp"></a>
+</table> ### 依据数据类型获取数据大小<a name="ZH-CN_TOPIC_0000002408581150"></a> SVP ACL为了支持紧密排布的RAW数据，如输入为12bit或14bit紧密排布。这样数据bit长度就不是8bit的整数倍，无法用Byte为单位表示，因此SVP ACL依据数据类型获取数据大小的时候返回值为bit数，而不是Byte数，差异如[表1](#table383mcpsimp)所示。 **表 1** 获取数据大小接口差异 <a name="table383mcpsimp"></a>
 <table><thead align="left"><tr id="row390mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.4.1.1"><p id="p392mcpsimp"><a name="p392mcpsimp"></a><a name="p392mcpsimp"></a>说明</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.2.4.1.2"><p id="p394mcpsimp"><a name="p394mcpsimp"></a><a name="p394mcpsimp"></a>函数</p>
@@ -305,63 +187,12 @@ SVP ACL为了支持紧密排布的RAW数据，如输入为12bit或14bit紧密排
 </td>
 </tr>
 </tbody>
-</table>
-
-### 板端环境安装差异<a name="ZH-CN_TOPIC_0000002408581158"></a>
-
-图像分析引擎1需要配置两个环境变量LD\_LIBRARY\_PATH以及ASCEND\_AACPU\_KERNEL\_PATH，以Hi3403V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/nnn，其他解决方案类似，需要强调的是ASCEND\_AACPU\_KERNEL\_PATH不支持路径拼接，因此在设定时需注意不能使用拼接路径。
-
-图像分析引擎2只需要配置环境变量LD\_LIBRARY\_PATH，以Hi3403V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/svp\_nnn，其他解决方案类似。
-
-### Recurrent网络执行<a name="ZH-CN_TOPIC_0000002442020373"></a>
-
-ACL不支持T可变，只支持N可变，也就是输入帧数一定是T的整数倍，SVP ACL支持Recurrent函数T可以变，N只能为1，因此增加接口用于用户配置每次执行中实际的总帧数的接口：
-
-```
+</table> ### 板端环境安装差异<a name="ZH-CN_TOPIC_0000002408581158"></a> 图像分析引擎1需要配置两个环境变量LD\_LIBRARY\_PATH以及ASCEND\_AACPU\_KERNEL\_PATH，以Hi3403V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/nnn，其他解决方案类似，需要强调的是ASCEND\_AACPU\_KERNEL\_PATH不支持路径拼接，因此在设定时需注意不能使用拼接路径。 图像分析引擎2只需要配置环境变量LD\_LIBRARY\_PATH，以Hi3403V100为例，相关库路径为/xxx（客户自定义）/smp/a55\_linux/mpp/out/lib/svp\_nnn，其他解决方案类似。 ### Recurrent网络执行<a name="ZH-CN_TOPIC_0000002442020373"></a> ACL不支持T可变，只支持N可变，也就是输入帧数一定是T的整数倍，SVP ACL支持Recurrent函数T可以变，N只能为1，因此增加接口用于用户配置每次执行中实际的总帧数的接口： ```
 svp_acl_error svp_acl_mdl_set_total_t(uint32_t model_id, svp_acl_mdl_dataset *dataset, uint64_t total_t)
-```
-
-### 动态batch<a name="ZH-CN_TOPIC_0000002442020393"></a>
-
-SVP ACL支持配置任意batch值，只要不超过目前SDK的约束范围，图像最大batch为256，非图像最大batch是5000。在执行前模型前通过**svp\_acl\_mdl\_set\_dynamic\_batch\_size**\(\)函数配置本次执行要处理的实际batch数。可以通过svp\_acl\_mdl\_get\_dynamic\_batch\(\)接口获取模型中配置的batch数（只支持一个档位），注意获取的不是**svp\_acl\_mdl\_set\_dynamic\_batch\_size**\(\)函数配置的batch数。
-
-### 获取模型中模式识别cpu任务个数<a name="ZH-CN_TOPIC_0000002408581182"></a>
-
-如果模型中含有_模式识别_CPU算子，模型执行异步推理的时候需要起一个线程调用_模式识别_CPU任务处理函数，为了对外能感知模型中是否函数_模式识别_CPU算子，从而决定是否要起_模式识别_CPU任务处理线程，SVP ACL增加函数来获取模型中_模式识别_CPU任务个数，如果为0，则不需要起线程，反之则要起_模式识别_CPU任务处理线程，新增接口如下。
-
-```
+``` ### 动态batch<a name="ZH-CN_TOPIC_0000002442020393"></a> SVP ACL支持配置任意batch值，只要不超过目前SDK的约束范围，图像最大batch为256，非图像最大batch是5000。在执行前模型前通过**svp\_acl\_mdl\_set\_dynamic\_batch\_size**\(\)函数配置本次执行要处理的实际batch数。可以通过svp\_acl\_mdl\_get\_dynamic\_batch\(\)接口获取模型中配置的batch数（只支持一个档位），注意获取的不是**svp\_acl\_mdl\_set\_dynamic\_batch\_size**\(\)函数配置的batch数。 ### 获取模型中模式识别cpu任务个数<a name="ZH-CN_TOPIC_0000002408581182"></a> 如果模型中含有_模式识别_CPU算子，模型执行异步推理的时候需要起一个线程调用_模式识别_CPU任务处理函数，为了对外能感知模型中是否函数_模式识别_CPU算子，从而决定是否要起_模式识别_CPU任务处理线程，SVP ACL增加函数来获取模型中_模式识别_CPU任务个数，如果为0，则不需要起线程，反之则要起_模式识别_CPU任务处理线程，新增接口如下。 ```
 svp_acl_error svp_acl_ext_get_mdl_aacpu_task_num(uint32_t model_id, uint32_t *num);
-```
-
-### 数据排布<a name="ZH-CN_TOPIC_0000002408421238"></a>
-
-1.  SVP\_ACL统一输入输出数据格式如[图1](#fig15260105645110)所示（YVU420SP/YUV420SP除外）。
-
-    -   如果是RGB\_PACKAGE格式，data\_xx数据类型为U24，通道数为1。
-    -   如果是XRGB\_PACKAGE格式，data\_xx数据类型为U32，通道数为1。
-
-    **图 1**  模型输入/输出数据排布（2通道，batch为2示意图）<a name="fig15260105645110"></a>  
-    ![](figures/模型输入-输出数据排布（2通道-batch为2示意图）.png "模型输入-输出数据排布（2通道-batch为2示意图）")
-
-2.  YVU420SP/YUV420SP数据排布如[图2](#fig9599144935219)所示。
-
-    **图 2**  YVU420SP数据排布（2通道，frame为2示意图）<a name="fig9599144935219"></a>  
-    ![](figures/YVU420SP数据排布（2通道-frame为2示意图）.png "YVU420SP数据排布（2通道-frame为2示意图）")
-
-3.  在SVP ACL为了让使用者软件开发人员不用感知检测网网络类型，将检测网输出框结果排布统一成如[图3](#fig7652953553)格式。
-
-    **图 3**  检测网输出框结果数据排布（2通道，chn为2示意图）<a name="fig7652953553"></a>  
-    ![](figures/检测网输出框结果数据排布（2通道-chn为2示意图）.png "检测网输出框结果数据排布（2通道-chn为2示意图）")
-
-4.  SVP ACL支持检测网阈值通过data层传入，阈值输入固定长度为4，分别nms\_threshold，score\_threshold，min\_height，min\_width，排布格式如[图4](#fig01731256135515)所示。
-
-    **图 4**  阈值输入数据排布<a name="fig01731256135515"></a>  
-    ![](figures/阈值输入数据排布.png "阈值输入数据排布")
-### 支持的接口<a name="ZH-CN_TOPIC_0000002441980509"></a>
-
-**表 1**  支持的接口差异
-
-<a name="table9473151118548"></a>
+``` ### 数据排布<a name="ZH-CN_TOPIC_0000002408421238"></a> 1. SVP\_ACL统一输入输出数据格式如[图1](#fig15260105645110)所示（YVU420SP/YUV420SP除外）。 - 如果是RGB\_PACKAGE格式，data\_xx数据类型为U24，通道数为1。 - 如果是XRGB\_PACKAGE格式，data\_xx数据类型为U32，通道数为1。 **图 1** 模型输入/输出数据排布（2通道，batch为2示意图）<a name="fig15260105645110"></a> ![](figures/模型输入-输出数据排布（2通道-batch为2示意图）.png "模型输入-输出数据排布（2通道-batch为2示意图）") 2. YVU420SP/YUV420SP数据排布如[图2](#fig9599144935219)所示。 **图 2** YVU420SP数据排布（2通道，frame为2示意图）<a name="fig9599144935219"></a> ![](figures/YVU420SP数据排布（2通道-frame为2示意图）.png "YVU420SP数据排布（2通道-frame为2示意图）") 3. 在SVP ACL为了让使用者软件开发人员不用感知检测网网络类型，将检测网输出框结果排布统一成如[图3](#fig7652953553)格式。 **图 3** 检测网输出框结果数据排布（2通道，chn为2示意图）<a name="fig7652953553"></a> ![](figures/检测网输出框结果数据排布（2通道-chn为2示意图）.png "检测网输出框结果数据排布（2通道-chn为2示意图）") 4. SVP ACL支持检测网阈值通过data层传入，阈值输入固定长度为4，分别nms\_threshold，score\_threshold，min\_height，min\_width，排布格式如[图4](#fig01731256135515)所示。 **图 4** 阈值输入数据排布<a name="fig01731256135515"></a> ![](figures/阈值输入数据排布.png "阈值输入数据排布")
+### 支持的接口<a name="ZH-CN_TOPIC_0000002441980509"></a> **表 1** 支持的接口差异 <a name="table9473151118548"></a>
 <table><thead align="left"><tr id="row11671129544"><th class="cellrowborder" valign="top" width="17.71%" id="mcps1.2.5.1.1"><p id="p166715128544"><a name="p166715128544"></a><a name="p166715128544"></a>目录</p>
 </th>
 <th class="cellrowborder" valign="top" width="32.08%" id="mcps1.2.5.1.2"><p id="p567161216548"><a name="p567161216548"></a><a name="p567161216548"></a>目录或ACL接口或ACL数据类型</p>
@@ -1737,97 +1568,6 @@ svp_acl_error svp_acl_ext_get_mdl_aacpu_task_num(uint32_t model_id, uint32_t *nu
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p5851912185417"><a name="p5851912185417"></a><a name="p5851912185417"></a>否</p>
 </td>
 </tr>
-<tr id="row585111295414"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p4199174694419"><a name="p4199174694419"></a><a name="p4199174694419"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p98591212543"><a name="p98591212543"></a><a name="p98591212543"></a>aclmdlCreate<em id="i15851812185413"><a name="i15851812185413"></a><a name="i15851812185413"></a>AA</em>PP</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1585141210544"><a name="p1585141210544"></a><a name="p1585141210544"></a>否</p>
-</td>
-</tr>
-<tr id="row1385912145417"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p4199134634412"><a name="p4199134634412"></a><a name="p4199134634412"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1285161215412"><a name="p1285161215412"></a><a name="p1285161215412"></a>aclmdlSet<em id="i1685912195414"><a name="i1685912195414"></a><a name="i1685912195414"></a>AA</em>PPCscParams</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1785131214543"><a name="p1785131214543"></a><a name="p1785131214543"></a>否</p>
-</td>
-</tr>
-<tr id="row1485121225417"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p619944616445"><a name="p619944616445"></a><a name="p619944616445"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p985191216544"><a name="p985191216544"></a><a name="p985191216544"></a>aclmdlSet<em id="i98551235410"><a name="i98551235410"></a><a name="i98551235410"></a>AA</em>PPInputFormat</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p285151215418"><a name="p285151215418"></a><a name="p285151215418"></a>否</p>
-</td>
-</tr>
-<tr id="row185612145416"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p7513547114412"><a name="p7513547114412"></a><a name="p7513547114412"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p168511120547"><a name="p168511120547"></a><a name="p168511120547"></a>aclmdlSet<em id="i1485212145416"><a name="i1485212145416"></a><a name="i1485212145416"></a>AA</em>PPRbuvSwapSwitch</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p78512123542"><a name="p78512123542"></a><a name="p78512123542"></a>否</p>
-</td>
-</tr>
-<tr id="row88561275416"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p851314478444"><a name="p851314478444"></a><a name="p851314478444"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1085161218547"><a name="p1085161218547"></a><a name="p1085161218547"></a>aclmdlSet<em id="i985912175419"><a name="i985912175419"></a><a name="i985912175419"></a>AA</em>PPAxSwapSwitch</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p3851612115413"><a name="p3851612115413"></a><a name="p3851612115413"></a>否</p>
-</td>
-</tr>
-<tr id="row138521214549"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p145141947194412"><a name="p145141947194412"></a><a name="p145141947194412"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p1885012175412"><a name="p1885012175412"></a><a name="p1885012175412"></a>aclmdlSet<em id="i1686212135415"><a name="i1686212135415"></a><a name="i1686212135415"></a>AA</em>PPSrcImageSize</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p118671205418"><a name="p118671205418"></a><a name="p118671205418"></a>否</p>
-</td>
-</tr>
-<tr id="row1886151265413"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1259513480449"><a name="p1259513480449"></a><a name="p1259513480449"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p68671213549"><a name="p68671213549"></a><a name="p68671213549"></a>aclmdlSet<em id="i188610126544"><a name="i188610126544"></a><a name="i188610126544"></a>AA</em>PPScfParams</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1986012175418"><a name="p1986012175418"></a><a name="p1986012175418"></a>否</p>
-</td>
-</tr>
-<tr id="row286012105414"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1559511481445"><a name="p1559511481445"></a><a name="p1559511481445"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p686312165410"><a name="p686312165410"></a><a name="p686312165410"></a>aclmdlSet<em id="i1386612135419"><a name="i1386612135419"></a><a name="i1386612135419"></a>AA</em>PPCropParams</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p1386191217548"><a name="p1386191217548"></a><a name="p1386191217548"></a>否</p>
-</td>
-</tr>
-<tr id="row0865124540"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p14595548174414"><a name="p14595548174414"></a><a name="p14595548174414"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p118614121546"><a name="p118614121546"></a><a name="p118614121546"></a>aclmdlSet<em id="i1386151210541"><a name="i1386151210541"></a><a name="i1386151210541"></a>AA</em>PPPaddingParams</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p18865123544"><a name="p18865123544"></a><a name="p18865123544"></a>否</p>
-</td>
-</tr>
-<tr id="row14861812205414"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p6459104994413"><a name="p6459104994413"></a><a name="p6459104994413"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p88631255414"><a name="p88631255414"></a><a name="p88631255414"></a>aclmdlSet<em id="i78691235413"><a name="i78691235413"></a><a name="i78691235413"></a>AA</em>PPDtcPixelMean</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p58615127548"><a name="p58615127548"></a><a name="p58615127548"></a>否</p>
-</td>
-</tr>
-<tr id="row17867123545"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p174591049184420"><a name="p174591049184420"></a><a name="p174591049184420"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p886012105412"><a name="p886012105412"></a><a name="p886012105412"></a>aclmdlSet<em id="i16861412125420"><a name="i16861412125420"></a><a name="i16861412125420"></a>AA</em>PPDtcPixelMin</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p18611123548"><a name="p18611123548"></a><a name="p18611123548"></a>否</p>
-</td>
-</tr>
-<tr id="row886101215547"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p17459549204411"><a name="p17459549204411"></a><a name="p17459549204411"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p7868122542"><a name="p7868122542"></a><a name="p7868122542"></a>aclmdlSet<em id="i17861812125413"><a name="i17861812125413"></a><a name="i17861812125413"></a>AA</em>PPPixelVarReci</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p148671218548"><a name="p148671218548"></a><a name="p148671218548"></a>否</p>
-</td>
-</tr>
-<tr id="row686412145412"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p58671752134410"><a name="p58671752134410"></a><a name="p58671752134410"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p8868121544"><a name="p8868121544"></a><a name="p8868121544"></a>aclmdlDestroy<em id="i17861124541"><a name="i17861124541"></a><a name="i17861124541"></a>AA</em>PP</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p188612122547"><a name="p188612122547"></a><a name="p188612122547"></a>否</p>
-</td>
-</tr>
 <tr id="row48651211548"><td class="cellrowborder" rowspan="2" valign="top" headers="mcps1.2.5.1.1 "><p id="p1686171216541"><a name="p1686171216541"></a><a name="p1686171216541"></a>aclopHandle</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p138610127548"><a name="p138610127548"></a><a name="p138610127548"></a>aclopCreateHandle</p>
@@ -2637,53 +2377,13 @@ svp_acl_error svp_acl_ext_get_mdl_aacpu_task_num(uint32_t model_id, uint32_t *nu
 </td>
 </tr>
 </tbody>
-</table>
-
-# 小型化工具使用差异
-## Caffe小型化工具差异<a name="ZH-CN_TOPIC_0000002441980541"></a>
-
-
-
-
-
-### 支持量化的算子不同<a name="ZH-CN_TOPIC_0000002441980553"></a>
-
-为了实现更低的带宽成本，_图像分析引擎_2小型化工具除了支持带权重层的量化，还支持对不带权重的层做激活量化。
-
--   当前支持的带权重量化层为：全连接层（InnerProduct）、卷积层（Convolution和DepthwiseConv）、反卷积层（Deconvolution）。
--   当前支持的不带权重的量化层为：PassThrough, Pooling, PSROIPooling, ROIPooling, SPP, Upsample, Eltwise, Slice, Concat, Softmax, ROIAlign, AbsVal, BNLL, CReLU, ELU, Exp, Interp, Log, LRN, Mvm, Nms, Normalize, Power, PReLU, Reduction, ReLU, Sigmoid, Sort, Threshold, Scale, BatchNorm, Bias, Reshape, ShuffleChannel, Crop, Axpy, Flatten, Permute, Tile, Split, ArgMax, Clip, Hswish, MVN, Reorg, TanH, MatMul, RReLU, ReLU6
-
-### 支持量化的位宽不同<a name="ZH-CN_TOPIC_0000002408421270"></a>
-
-_图像分析引擎_2小型化工具支持更灵活的量化位宽控制。
-
--   激活量化在Calibration和Retrain时可以配置8\~16之间任意位宽，配置8时最终使用8bit部署，配置大于8时为高精度模式，最终使用16bit部署（一般推荐8或者12）
--   权重量化在Calibration时可以配置4和8两种位宽量化，在Retrain时可以配置8一种量化位宽
-
-### 对外接口和功能差异<a name="ZH-CN_TOPIC_0000002442020385"></a>
-
-_图像分析引擎_2小型化工具的接口和功能都和_图像分析引擎_1存在差异：
-
--   _图像分析引擎_2的Calibration把权重量化和激活量化分离为weights\_quantize\_model和activation\_quantize\_model两个接口；
--   _图像分析引擎_2的Calibration支持权重压缩成4bit，并且支持在权重量化后对BN层的参数进行更新；
--   新增了对推理图的uninplace功能，在Sample中新增中间结果打印脚本，方便中间结果导出和精度比对；
--   _图像分析引擎_2小型化工具不支持auto\_nuq和accuracy\_based\_auto\_calibration功能。
-
-### 量化生成件差异<a name="ZH-CN_TOPIC_0000002408421234"></a>
-
-_图像分析引擎_2小型化工具生成的量化参数单独储存在名为quant\_param\_record.txt或者quant\_param\_record.bin的文件中，deploy模型中仅储存不含量化层的INT定点模型。
-
-## Pytorch小型化工具差异<a name="ZH-CN_TOPIC_0000002408581170"></a>
-
-
-
-
-
-### 支持量化的算子不同<a name="ZH-CN_TOPIC_0000002408421230"></a>
-
-为了实现更低的带宽成本，_图像分析引擎_2小型化工具除了支持带权重层的量化，还支持对不带权重的层做激活量化。
-
-<a name="table2693mcpsimp"></a>
+</table> # 小型化工具使用差异
+## Caffe小型化工具差异<a name="ZH-CN_TOPIC_0000002441980541"></a> ### 支持量化的算子不同<a name="ZH-CN_TOPIC_0000002441980553"></a> 为了实现更低的带宽成本，_图像分析引擎_2小型化工具除了支持带权重层的量化，还支持对不带权重的层做激活量化。 - 当前支持的带权重量化层为：全连接层（InnerProduct）、卷积层（Convolution和DepthwiseConv）、反卷积层（Deconvolution）。
+- 当前支持的不带权重的量化层为：PassThrough, Pooling, PSROIPooling, ROIPooling, SPP, Upsample, Eltwise, Slice, Concat, Softmax, ROIAlign, AbsVal, BNLL, CReLU, ELU, Exp, Interp, Log, LRN, Mvm, Nms, Normalize, Power, PReLU, Reduction, ReLU, Sigmoid, Sort, Threshold, Scale, BatchNorm, Bias, Reshape, ShuffleChannel, Crop, Axpy, Flatten, Permute, Tile, Split, ArgMax, Clip, Hswish, MVN, Reorg, TanH, MatMul, RReLU, ReLU6 ### 支持量化的位宽不同<a name="ZH-CN_TOPIC_0000002408421270"></a> _图像分析引擎_2小型化工具支持更灵活的量化位宽控制。 - 激活量化在Calibration和Retrain时可以配置8\~16之间任意位宽，配置8时最终使用8bit部署，配置大于8时为高精度模式，最终使用16bit部署（一般推荐8或者12）
+- 权重量化在Calibration时可以配置4和8两种位宽量化，在Retrain时可以配置8一种量化位宽 ### 对外接口和功能差异<a name="ZH-CN_TOPIC_0000002442020385"></a> _图像分析引擎_2小型化工具的接口和功能都和_图像分析引擎_1存在差异： - _图像分析引擎_2的Calibration把权重量化和激活量化分离为weights\_quantize\_model和activation\_quantize\_model两个接口；
+- _图像分析引擎_2的Calibration支持权重压缩成4bit，并且支持在权重量化后对BN层的参数进行更新；
+- 新增了对推理图的uninplace功能，在Sample中新增中间结果打印脚本，方便中间结果导出和精度比对；
+- _图像分析引擎_2小型化工具不支持auto\_nuq和accuracy\_based\_auto\_calibration功能。 ### 量化生成件差异<a name="ZH-CN_TOPIC_0000002408421234"></a> _图像分析引擎_2小型化工具生成的量化参数单独储存在名为quant\_param\_record.txt或者quant\_param\_record.bin的文件中，deploy模型中仅储存不含量化层的INT定点模型。 ## Pytorch小型化工具差异<a name="ZH-CN_TOPIC_0000002408581170"></a> ### 支持量化的算子不同<a name="ZH-CN_TOPIC_0000002408421230"></a> 为了实现更低的带宽成本，_图像分析引擎_2小型化工具除了支持带权重层的量化，还支持对不带权重的层做激活量化。 <a name="table2693mcpsimp"></a>
 <table><thead align="left"><tr id="row2700mcpsimp"><th class="cellrowborder" valign="top" width="9%" id="mcps1.1.5.1.1"><p id="entry2701mcpsimpp0"><a name="entry2701mcpsimpp0"></a><a name="entry2701mcpsimpp0"></a>类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.5.1.2"><p id="p2703mcpsimp"><a name="p2703mcpsimp"></a><a name="p2703mcpsimp"></a>层名</p>
@@ -2822,45 +2522,9 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 </td>
 </tr>
 </tbody>
-</table>
-
-### 支持量化的位宽不同<a name="ZH-CN_TOPIC_0000002442020365"></a>
-
-_图像分析引擎_2小型化工具支持更灵活的量化位宽控制。
-
--   激活量化在Calibration和Retrain时可以配置8\~16之间任意位宽，配置8时最终使用8bit部署，配置大于8时为高精度模式，最终使用16bit部署（一般推荐8或者12）。
--   权重量化在Calibration时可以配置4和8两种位宽量化，在Retrain时可以配置4和8两种量化位宽。
-
-### 对外接口和功能差异<a name="ZH-CN_TOPIC_0000002408581198"></a>
-
-_图像分析引擎_2小型化工具的接口和功能都和_图像分析引擎_1存在差异：
-
--   _图像分析引擎_2的Calibration支持权重压缩成4bit，并且支持在权重量化后对BN层的参数进行更新；
-
-    4bit量化需要用到更新BN的接口：
-
-    update\_bn\_status\(calibration\_model, training=True\)
-
--   _图像分析引擎_2在Calibration场景save\_model接口函数原型为：
-
-    save\_model\(modfied\_onnx\_file, record\_file, save\_path, calibration\_torch\_model\)
-
-    _图像分析引擎_1在Calibration场景save\_model接口函数原型为：
-
-    save\_model\(modfied\_onnx\_file, record\_file, save\_path\)
-
--   _图像分析引擎_2小型化工具不支持nuq算法和accuracy\_based\_auto\_calibration功能
-
-### 量化生成件差异<a name="ZH-CN_TOPIC_0000002442020357"></a>
-
-_图像分析引擎_2小型化工具生成的量化参数单独储存在名为quant\_param\_record.txt的文件中，deploy模型中仅储存不含量化层的INT定点模型。
-
-# ATC使用差异
-## SVP ATC特性差异<a name="ZH-CN_TOPIC_0000002441980549"></a>
-
-**表 1**  SVP ATC特性差异
-
-<a name="table173345142211"></a>
+</table> ### 支持量化的位宽不同<a name="ZH-CN_TOPIC_0000002442020365"></a> _图像分析引擎_2小型化工具支持更灵活的量化位宽控制。 - 激活量化在Calibration和Retrain时可以配置8\~16之间任意位宽，配置8时最终使用8bit部署，配置大于8时为高精度模式，最终使用16bit部署（一般推荐8或者12）。
+- 权重量化在Calibration时可以配置4和8两种位宽量化，在Retrain时可以配置4和8两种量化位宽。 ### 对外接口和功能差异<a name="ZH-CN_TOPIC_0000002408581198"></a> _图像分析引擎_2小型化工具的接口和功能都和_图像分析引擎_1存在差异： - _图像分析引擎_2的Calibration支持权重压缩成4bit，并且支持在权重量化后对BN层的参数进行更新； 4bit量化需要用到更新BN的接口： update\_bn\_status\(calibration\_model, training=True\) - _图像分析引擎_2在Calibration场景save\_model接口函数原型为： save\_model\(modfied\_onnx\_file, record\_file, save\_path, calibration\_torch\_model\) _图像分析引擎_1在Calibration场景save\_model接口函数原型为： save\_model\(modfied\_onnx\_file, record\_file, save\_path\) - _图像分析引擎_2小型化工具不支持nuq算法和accuracy\_based\_auto\_calibration功能 ### 量化生成件差异<a name="ZH-CN_TOPIC_0000002442020357"></a> _图像分析引擎_2小型化工具生成的量化参数单独储存在名为quant\_param\_record.txt的文件中，deploy模型中仅储存不含量化层的INT定点模型。 # ATC使用差异
+## SVP ATC特性差异<a name="ZH-CN_TOPIC_0000002441980549"></a> **表 1** SVP ATC特性差异 <a name="table173345142211"></a>
 <table><thead align="left"><tr id="row633125152212"><th class="cellrowborder" valign="top" width="16.34163416341634%" id="mcps1.2.4.1.1"><p id="p20349592215"><a name="p20349592215"></a><a name="p20349592215"></a>差异项</p>
 </th>
 <th class="cellrowborder" valign="top" width="37.463746374637466%" id="mcps1.2.4.1.2"><p id="p898242610483"><a name="p898242610483"></a><a name="p898242610483"></a>图像分析引擎1（NNN）</p>
@@ -2970,11 +2634,7 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 </td>
 </tr>
 </tbody>
-</table>
-
-## SVP ATC 命令行差异<a name="ZH-CN_TOPIC_0000002408581166"></a>
-
-<a name="table1156542002614"></a>
+</table> ## SVP ATC 命令行差异<a name="ZH-CN_TOPIC_0000002408581166"></a> <a name="table1156542002614"></a>
 <table><thead align="left"><tr id="row157282206269"><th class="cellrowborder" valign="top" width="45.51%" id="mcps1.1.3.1.1"><p id="p1728192018261"><a name="p1728192018261"></a><a name="p1728192018261"></a>图像分析引擎1（NNN）</p>
 </th>
 <th class="cellrowborder" valign="top" width="54.49%" id="mcps1.1.3.1.2"><p id="p8728920132612"><a name="p8728920132612"></a><a name="p8728920132612"></a>图像分析引擎2（SVP_NNN）</p>
@@ -3001,11 +2661,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p10728182011262"><a name="p10728182011262"></a><a name="p10728182011262"></a>check_report</p>
 </td>
 </tr>
-<tr id="row107281320152615"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p19729202012269"><a name="p19729202012269"></a><a name="p19729202012269"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p10729182092610"><a name="p10729182092610"></a><a name="p10729182092610"></a>compile_mode</p>
-</td>
-</tr>
 <tr id="row127291720162613"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p19729320152614"><a name="p19729320152614"></a><a name="p19729320152614"></a>compress_weight_conf</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p127295209265"><a name="p127295209265"></a><a name="p127295209265"></a>-</p>
@@ -3016,24 +2671,9 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p17293202269"><a name="p17293202269"></a><a name="p17293202269"></a>-</p>
 </td>
 </tr>
-<tr id="row37291220102617"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p11729172052611"><a name="p11729172052611"></a><a name="p11729172052611"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p16729162032612"><a name="p16729162032612"></a><a name="p16729162032612"></a>cutoff_layer</p>
-</td>
-</tr>
-<tr id="row1582843919341"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p58282394344"><a name="p58282394344"></a><a name="p58282394344"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1482873912344"><a name="p1482873912344"></a><a name="p1482873912344"></a>custom_ops_lib</p>
-</td>
-</tr>
 <tr id="row972952019268"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1172910202267"><a name="p1172910202267"></a><a name="p1172910202267"></a>debug_dir</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p3729720112610"><a name="p3729720112610"></a><a name="p3729720112610"></a>-</p>
-</td>
-</tr>
-<tr id="row11729320132618"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p14729142092611"><a name="p14729142092611"></a><a name="p14729142092611"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p8729192062611"><a name="p8729192062611"></a><a name="p8729192062611"></a>detection_out_accuracy</p>
 </td>
 </tr>
 <tr id="row10729320112620"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1672972016265"><a name="p1672972016265"></a><a name="p1672972016265"></a>disable_reuse_memory</p>
@@ -3044,11 +2684,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <tr id="row0729420132613"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p19729162018265"><a name="p19729162018265"></a><a name="p19729162018265"></a>display_model_info</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p57299209260"><a name="p57299209260"></a><a name="p57299209260"></a>-</p>
-</td>
-</tr>
-<tr id="row11729182072616"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p4729420122614"><a name="p4729420122614"></a><a name="p4729420122614"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1772962013260"><a name="p1772962013260"></a><a name="p1772962013260"></a>dump_data</p>
 </td>
 </tr>
 <tr id="row67294204265"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p57291020192616"><a name="p57291020192616"></a><a name="p57291020192616"></a>dump_mode</p>
@@ -3091,11 +2726,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p167303208264"><a name="p167303208264"></a><a name="p167303208264"></a>-</p>
 </td>
 </tr>
-<tr id="row973032012616"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1973032022619"><a name="p1973032022619"></a><a name="p1973032022619"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p47301820122617"><a name="p47301820122617"></a><a name="p47301820122617"></a>forward_quantization_option</p>
-</td>
-</tr>
 <tr id="row1373082092614"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1173014209262"><a name="p1173014209262"></a><a name="p1173014209262"></a>framework</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p2073002022619"><a name="p2073002022619"></a><a name="p2073002022619"></a>framework</p>
@@ -3109,56 +2739,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <tr id="row4730152092616"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p17730920172613"><a name="p17730920172613"></a><a name="p17730920172613"></a>h/help</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p9730820122619"><a name="p9730820122619"></a><a name="p9730820122619"></a>help</p>
-</td>
-</tr>
-<tr id="row0730122072618"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p873022022619"><a name="p873022022619"></a><a name="p873022022619"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p77301220132614"><a name="p77301220132614"></a><a name="p77301220132614"></a>generate_anchors_file</p>
-</td>
-</tr>
-<tr id="row57305208260"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p12730182012263"><a name="p12730182012263"></a><a name="p12730182012263"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p77304208268"><a name="p77304208268"></a><a name="p77304208268"></a>gfpq_param_file</p>
-</td>
-</tr>
-<tr id="row773062092620"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p5730182042615"><a name="p5730182042615"></a><a name="p5730182042615"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p27301920142618"><a name="p27301920142618"></a><a name="p27301920142618"></a>image_data_bits</p>
-</td>
-</tr>
-<tr id="row77303209264"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p473002072614"><a name="p473002072614"></a><a name="p473002072614"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p0730192016266"><a name="p0730192016266"></a><a name="p0730192016266"></a>image_dcmp_mode</p>
-</td>
-</tr>
-<tr id="row17730142032615"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p473082052617"><a name="p473082052617"></a><a name="p473082052617"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p14730102010262"><a name="p14730102010262"></a><a name="p14730102010262"></a>image_height</p>
-</td>
-</tr>
-<tr id="row1573012205263"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p8730102042611"><a name="p8730102042611"></a><a name="p8730102042611"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p117301520142619"><a name="p117301520142619"></a><a name="p117301520142619"></a>image_list</p>
-</td>
-</tr>
-<tr id="row6730182052615"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p107302208261"><a name="p107302208261"></a><a name="p107302208261"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p11730720102619"><a name="p11730720102619"></a><a name="p11730720102619"></a>image_report_bit</p>
-</td>
-</tr>
-<tr id="row19730520122615"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p11730172062619"><a name="p11730172062619"></a><a name="p11730172062619"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p197311620192611"><a name="p197311620192611"></a><a name="p197311620192611"></a>image_report_name</p>
-</td>
-</tr>
-<tr id="row4731172016266"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p137311720202615"><a name="p137311720202615"></a><a name="p137311720202615"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p9731172002617"><a name="p9731172002617"></a><a name="p9731172002617"></a>image_report_type</p>
-</td>
-</tr>
-<tr id="row273112205268"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1173116202268"><a name="p1173116202268"></a><a name="p1173116202268"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p4731112011262"><a name="p4731112011262"></a><a name="p4731112011262"></a>image_width</p>
 </td>
 </tr>
 <tr id="row273152017264"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p20731162014264"><a name="p20731162014264"></a><a name="p20731162014264"></a>input_format</p>
@@ -3181,29 +2761,14 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p10731520152612"><a name="p10731520152612"></a><a name="p10731520152612"></a>-</p>
 </td>
 </tr>
-<tr id="row2731132052613"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p273117204264"><a name="p273117204264"></a><a name="p273117204264"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p15731192014267"><a name="p15731192014267"></a><a name="p15731192014267"></a>input_type</p>
-</td>
-</tr>
 <tr id="row3731720102620"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p15731122092617"><a name="p15731122092617"></a><a name="p15731122092617"></a>insert_op_conf</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p4731122013268"><a name="p4731122013268"></a><a name="p4731122013268"></a>insert_op_conf</p>
 </td>
 </tr>
-<tr id="row573142042618"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p273122017260"><a name="p273122017260"></a><a name="p273122017260"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p47311820192613"><a name="p47311820192613"></a><a name="p47311820192613"></a>internal_stride</p>
-</td>
-</tr>
 <tr id="row9731122002610"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p773132019266"><a name="p773132019266"></a><a name="p773132019266"></a>is_input_adjust_hw_layout</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1173152062613"><a name="p1173152062613"></a><a name="p1173152062613"></a>-</p>
-</td>
-</tr>
-<tr id="row073142032613"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p8731152015267"><a name="p8731152015267"></a><a name="p8731152015267"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1373152010262"><a name="p1373152010262"></a><a name="p1373152010262"></a>is_precheck</p>
 </td>
 </tr>
 <tr id="row19731142062613"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p273142019268"><a name="p273142019268"></a><a name="p273142019268"></a>is_output_adjust_hw_layout</p>
@@ -3216,16 +2781,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1273232018263"><a name="p1273232018263"></a><a name="p1273232018263"></a>json</p>
 </td>
 </tr>
-<tr id="row4732132052610"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p573213204265"><a name="p573213204265"></a><a name="p573213204265"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p673222062620"><a name="p673222062620"></a><a name="p673222062620"></a>layer_fusion_enable</p>
-</td>
-</tr>
-<tr id="row873282016267"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p973212202266"><a name="p973212202266"></a><a name="p973212202266"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p177321920152617"><a name="p177321920152617"></a><a name="p177321920152617"></a>layer_m2m_enable</p>
-</td>
-</tr>
 <tr id="row873214209262"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p473282002620"><a name="p473282002620"></a><a name="p473282002620"></a>keep_dtype</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p37321920142613"><a name="p37321920142613"></a><a name="p37321920142613"></a>-</p>
@@ -3236,34 +2791,9 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p4732920122619"><a name="p4732920122619"></a><a name="p4732920122619"></a>-</p>
 </td>
 </tr>
-<tr id="row373232016263"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1373252012268"><a name="p1373252012268"></a><a name="p1373252012268"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1873216204262"><a name="p1873216204262"></a><a name="p1873216204262"></a>log_level</p>
-</td>
-</tr>
-<tr id="row87321220132614"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p673292014268"><a name="p673292014268"></a><a name="p673292014268"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p11732112016264"><a name="p11732112016264"></a><a name="p11732112016264"></a>low_score_threshold</p>
-</td>
-</tr>
-<tr id="row273312092617"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p167336203265"><a name="p167336203265"></a><a name="p167336203265"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p5733112010264"><a name="p5733112010264"></a><a name="p5733112010264"></a>max_roi_frame_cnt</p>
-</td>
-</tr>
 <tr id="row073372017265"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p18733220182613"><a name="p18733220182613"></a><a name="p18733220182613"></a>mdl_bank_path</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p8733192012262"><a name="p8733192012262"></a><a name="p8733192012262"></a>-</p>
-</td>
-</tr>
-<tr id="row77331820132611"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1733520202620"><a name="p1733520202620"></a><a name="p1733520202620"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p18733720102619"><a name="p18733720102619"></a><a name="p18733720102619"></a>min_height</p>
-</td>
-</tr>
-<tr id="row5733142022618"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p673317205261"><a name="p673317205261"></a><a name="p673317205261"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p2733142010266"><a name="p2733142010266"></a><a name="p2733142010266"></a>min_width</p>
 </td>
 </tr>
 <tr id="row1073392019262"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p167331020102617"><a name="p167331020102617"></a><a name="p167331020102617"></a>mode</p>
@@ -3279,31 +2809,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <tr id="row373302032616"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p973312203262"><a name="p973312203262"></a><a name="p973312203262"></a>modify_mixlist</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1773322042618"><a name="p1773322042618"></a><a name="p1773322042618"></a>-</p>
-</td>
-</tr>
-<tr id="row157344200269"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p3734182092619"><a name="p3734182092619"></a><a name="p3734182092619"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p873415204269"><a name="p873415204269"></a><a name="p873415204269"></a>net_optimize_enable</p>
-</td>
-</tr>
-<tr id="row17341209266"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p8734192072614"><a name="p8734192072614"></a><a name="p8734192072614"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p57342207260"><a name="p57342207260"></a><a name="p57342207260"></a>nms_threshold</p>
-</td>
-</tr>
-<tr id="row473492022615"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p87347208263"><a name="p87347208263"></a><a name="p87347208263"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1273414201265"><a name="p1273414201265"></a><a name="p1273414201265"></a>num_recurrent_sentences</p>
-</td>
-</tr>
-<tr id="row67345205268"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p11734192020266"><a name="p11734192020266"></a><a name="p11734192020266"></a>om</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p97341120162616"><a name="p97341120162616"></a><a name="p97341120162616"></a>om</p>
-</td>
-</tr>
-<tr id="row173492010260"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p3734162032620"><a name="p3734162032620"></a><a name="p3734162032620"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p973412011266"><a name="p973412011266"></a><a name="p973412011266"></a>online_model_type</p>
 </td>
 </tr>
 <tr id="row13734182062614"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1573462032619"><a name="p1573462032619"></a><a name="p1573462032619"></a>op_bank_path</p>
@@ -3356,11 +2861,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p14735112016263"><a name="p14735112016263"></a><a name="p14735112016263"></a>output</p>
 </td>
 </tr>
-<tr id="row19735132013264"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p18735132016268"><a name="p18735132016268"></a><a name="p18735132016268"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p473515203264"><a name="p473515203264"></a><a name="p473515203264"></a>output_shape</p>
-</td>
-</tr>
 <tr id="row273522018269"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p873510208261"><a name="p873510208261"></a><a name="p873510208261"></a>output_type</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1573517209261"><a name="p1573517209261"></a><a name="p1573517209261"></a>output_type</p>
@@ -3369,21 +2869,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <tr id="row1773562042610"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1073582062618"><a name="p1073582062618"></a><a name="p1073582062618"></a>precision_mode</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p473542020265"><a name="p473542020265"></a><a name="p473542020265"></a>-</p>
-</td>
-</tr>
-<tr id="row1273517202268"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p16735520122613"><a name="p16735520122613"></a><a name="p16735520122613"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1973582015268"><a name="p1973582015268"></a><a name="p1973582015268"></a>recurrent_cont</p>
-</td>
-</tr>
-<tr id="row1473542052619"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p373592010266"><a name="p373592010266"></a><a name="p373592010266"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p7735620172612"><a name="p7735620172612"></a><a name="p7735620172612"></a>recurrent_max_total_t</p>
-</td>
-</tr>
-<tr id="row15735720152615"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p12735162022611"><a name="p12735162022611"></a><a name="p12735162022611"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1735112019263"><a name="p1735112019263"></a><a name="p1735112019263"></a>recurrent_tmax</p>
 </td>
 </tr>
 <tr id="row9735920102610"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p20735420112610"><a name="p20735420112610"></a><a name="p20735420112610"></a>save_original_model</p>
@@ -3406,34 +2891,13 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p87361520132615"><a name="p87361520132615"></a><a name="p87361520132615"></a>soc_version</p>
 </td>
 </tr>
-<tr id="row14736720112615"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p1973632012620"><a name="p1973632012620"></a><a name="p1973632012620"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p1273662042617"><a name="p1273662042617"></a><a name="p1273662042617"></a>use_class_id</p>
-</td>
-</tr>
-<tr id="row1030821611333"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p73088164333"><a name="p73088164333"></a><a name="p73088164333"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p830811620337"><a name="p830811620337"></a><a name="p830811620337"></a>version</p>
-</td>
-</tr>
 <tr id="row07361420152619"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p10736520152611"><a name="p10736520152611"></a><a name="p10736520152611"></a>weight</p>
 </td>
 <td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p0736202062618"><a name="p0736202062618"></a><a name="p0736202062618"></a>weight</p>
 </td>
 </tr>
-<tr id="row8736132022617"><td class="cellrowborder" valign="top" width="45.51%" headers="mcps1.1.3.1.1 "><p id="p137363208267"><a name="p137363208267"></a><a name="p137363208267"></a>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="54.49%" headers="mcps1.1.3.1.2 "><p id="p177366202266"><a name="p177366202266"></a><a name="p177366202266"></a>weight_quant_per_channel</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-## SVP ATC支持的算子规格差异<a name="ZH-CN_TOPIC_0000002408581190"></a>
-
-**表 1**  Caffe扩展算子差异
-
-<a name="table1552412495441"></a>
+</table> ## SVP ATC支持的算子规格差异<a name="ZH-CN_TOPIC_0000002408581190"></a> **表 1** Caffe扩展算子差异 <a name="table1552412495441"></a>
 <table><thead align="left"><tr id="row1524149174414"><th class="cellrowborder" valign="top" width="22.98229822982298%" id="mcps1.2.4.1.1"><p id="p452454994418"><a name="p452454994418"></a><a name="p452454994418"></a>扩展算子</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.652465246524653%" id="mcps1.2.4.1.2"><p id="p35245496441"><a name="p35245496441"></a><a name="p35245496441"></a>图像分析引擎1（NNN）</p>
@@ -3555,21 +3019,6 @@ _图像分析引擎_2小型化工具生成的量化参数单独储存在名为qu
 </td>
 </tr>
 </tbody>
-</table>
-
-详细见《ATC工具使用指南》的“5 算子规格说明”。
-
-# 仿真器差异
-## SVP ACL仿真器说明<a name="ZH-CN_TOPIC_0000002441980529"></a>
-
-在图像分析引擎2 SVP ACL中，提供仿真器Simulator，供用户在非上板的PC/服务器环境执行仿真任务。
-
-仿真器与SVP ACL的SDK共用一套头文件定义，即一套相同的SVP ACL调用实现代码，通过链接仿真库的方法，可在仿真环境中使用编译器编译可执行程序或库，在仿真环境中执行_图像分析引擎_2仿真。
-
--   Simulator\(Function\)表示功能仿真，从功能一致性的角度去模拟硬件，速度较快；
--   Simulator\(Instruction\)表示指令仿真，从指令一致性的角度去模拟硬件，速度较慢。
-
-功能仿真、指令仿真、板端环境三者的推理输出buffer内容保持完全一致。
-
-仿真器的使用，请参考《MindCmd使用指南》“应用工程”章节。
-
+</table> 详细见《ATC工具使用指南》的“5 算子规格说明”。 # 仿真器差异
+## SVP ACL仿真器说明<a name="ZH-CN_TOPIC_0000002441980529"></a> 在图像分析引擎2 SVP ACL中，提供仿真器Simulator，供用户在非上板的PC/服务器环境执行仿真任务。 仿真器与SVP ACL的SDK共用一套头文件定义，即一套相同的SVP ACL调用实现代码，通过链接仿真库的方法，可在仿真环境中使用编译器编译可执行程序或库，在仿真环境中执行_图像分析引擎_2仿真。 - Simulator\(Function\)表示功能仿真，从功能一致性的角度去模拟硬件，速度较快；
+- Simulator\(Instruction\)表示指令仿真，从指令一致性的角度去模拟硬件，速度较慢。 功能仿真、指令仿真、板端环境三者的推理输出buffer内容保持完全一致。 仿真器的使用，请参考《MindCmd使用指南》“应用工程”章节。 

@@ -1,21 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白彩色双路融合 开发参考/黑白彩色双路融合 开发参考.md
----
-
-# 前言
-**概述<a name="section102mcpsimp"></a>**
-
-本文为使用MCF开发的程序员而写，目的是为您在开发过程中遇到的问题提供解决办法和帮助。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
-
-**产品版本<a name="section105mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table108mcpsimp"></a>
+--- # 前言
+**概述<a name="section102mcpsimp"></a>** 本文为使用MCF开发的程序员而写，目的是为您在开发过程中遇到的问题提供解决办法和帮助。 >![](public_sys-resources/icon-note.gif) **说明：** >本文以Hi3403V100描述为例，未有特殊说明，与Hi3403V100内容一致。 **产品版本<a name="section105mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table108mcpsimp"></a>
 <table><thead align="left"><tr id="row113mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p115mcpsimp"><a name="p115mcpsimp"></a><a name="p115mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p117mcpsimp"><a name="p117mcpsimp"></a><a name="p117mcpsimp"></a>产品版本</p>
@@ -27,26 +14,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row4420516474"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p166961419277"><a name="p166961419277"></a><a name="p166961419277"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p869611191071"><a name="p869611191071"></a><a name="p869611191071"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section124mcpsimp"></a>**
-
-本文档（本指南）主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-**符号约定<a name="section130mcpsimp"></a>**
-
-在本文中可能出现下列标志，它们所代表的含义如下。
-
-<a name="table133mcpsimp"></a>
+</table> **读者对象<a name="section124mcpsimp"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 **符号约定<a name="section130mcpsimp"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table133mcpsimp"></a>
 <table><thead align="left"><tr id="row138mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.3.1.1"><p id="p140mcpsimp"><a name="p140mcpsimp"></a><a name="p140mcpsimp"></a>符号</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.1.3.1.2"><p id="p142mcpsimp"><a name="p142mcpsimp"></a><a name="p142mcpsimp"></a>说明</p>
@@ -58,36 +28,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p148mcpsimp"><a name="p148mcpsimp"></a><a name="p148mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row149mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p151mcpsimp"><a name="p151mcpsimp"></a><a name="p151mcpsimp"></a><a name="image103"></a><a name="image103"></a><span><img id="image103" src="figures/zh-cn_image_0000002457869909.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p153mcpsimp"><a name="p153mcpsimp"></a><a name="p153mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row154mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002424351010.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p158mcpsimp"><a name="p158mcpsimp"></a><a name="p158mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row159mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002457869913.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
-<p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>“须知”不涉及人身伤害。</p>
-</td>
-</tr>
-<tr id="row165mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p167mcpsimp"><a name="p167mcpsimp"></a><a name="p167mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002424191174.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p169mcpsimp"><a name="p169mcpsimp"></a><a name="p169mcpsimp"></a>对正文中重点信息的补充说明。</p>
-<p id="p170mcpsimp"><a name="p170mcpsimp"></a><a name="p170mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修订记录<a name="section171mcpsimp"></a>**
-
-修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
-
-<a name="table1557726816410"></a>
+</table> **修订记录<a name="section171mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>发布日期</strong></p>
@@ -104,129 +46,15 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/黑白�
 </td>
 </tr>
 </tbody>
-</table>
-
-# 概述
-在低照度场景下，RGB Sensor捕获的图像往往信噪比非常差，细节丢失严重。基于RGB + Mono双Sensor的新型结构，RGB Sensor获取的可见光图像充分保留了颜色信息，而Mono Sensor配合红外补光技术，获取的红外图像有相对较高的信噪比，且细节表现较好。
-
-黑白彩色双路融合技术（简称MCF技术，即Mono-Color-Fusion技术）用于融合上述可见光图像和红外图像，既保留颜色信息，同时充分提升图像的细节表现和信噪比，从而提高低照度场景下的图像质量。
-
-# 功能描述
-## 基本概念<a name="ZH-CN_TOPIC_0000002424350954"></a>
-
--   MCF
-
-    MCF为Mono-Color-Fusion的简称，即黑白彩色融合技术。
-
--   GROUP
-
-    MCF对用户提供组（GROUP）的概念。最大可用数为[OT\_MCF\_MAX\_GRP\_NUM](#ZH-CN_TOPIC_0000002424191118)个，各GROUP分时复用MCF硬件。每个MCF GROUP包含多个PIPE和多个通道。
-
--   PIPE
-
-    MCF组的PIPE。用于输入黑白彩色双路源图像。PIPE的数目即融合路数，为[OT\_MCF\_PIPE\_NUM](#ZH-CN_TOPIC_0000002424350958)。用户可以通过系统绑定和前端相连或者发送图像到PIPE中融合处理。
-
--   CHN
-
-    MCF组的通道。通道分为2种：物理通道和扩展通道。MCF硬件提供多个物理通道，每个通道具有缩放、裁剪等功能。扩展通道具备裁剪、缩放功能，它通过绑定物理通道，将物理通道输出作为自己的输入，把图像裁剪、缩放成用户设置的目标分辨率输出。
-
--   FRC
-
-    帧率控制，分为2种：组帧率控制和通道帧率控制。
-
-    -   组帧率控制：用于控制各GROUP对输入图像的接收。
-    -   通道帧率控制：用于控制各个物理通道和扩展通道图像的处理。
-
--   CROP
-
-    裁剪，分为3种：组裁剪、物理通道裁剪以及扩展通道裁剪。
-
-    -   组裁剪，MCF对输入图像进行裁剪。
-    -   物理通道裁剪，MCF对各个物理通道的输出图像进行裁剪。
-    -   扩展通道裁剪，MCF调用VGS对扩展通道的输出图像进行裁剪。
-
--   Scale
-
-    缩放，对图像进行缩小放大。缩放倍数指水平、垂直各缩放多少倍。
-
--   Mirror/Flip
-
-    Mirror即水平镜像，Flip即上下翻转。可使用Mirror+Flip实现180°旋转。
-
--   Mosaic
-
-    马赛克，对MCF输出图像在指定区域填充马赛克块。
-
--   MosaicEx
-
-    马赛克，调用VGS对MCF物理通道的输出图像指定区域填充马赛克块。
-
--   Cover
-
-    视频遮挡区域，对MCF的输出图像填充纯色块。
-
-    遮挡区域坐标类型分为绝对坐标遮挡和相对坐标比例遮挡。
-
--   Coverex
-
-    视频遮挡区域，调用VGS对MCF通道的输出图像填充纯色块。
-
-    遮挡区域坐标类型分为绝对坐标遮挡和相对坐标比例遮挡。相对坐标的计算是相对原图，不是通道图像，效果与Cover相对坐标等同。
-
--   OverlayEx
-
-    视频叠加区域，调用VGS对MCF通道的输出图像叠加位图。
-
--   Line
-
-    调用VGS对MCF物理通道的输出图像画线。
-
--   压缩
-
-    MCF支持linear格式的SEG压缩。
-
--   解压
-
-    MCF支持linear格式-SEG解压。
-
--   低延时
-
-    输出低延时，通道向后端模块发送低延时帧，MCF支持VI开启低延时。
-
-## 功能描述<a name="ZH-CN_TOPIC_0000002457829765"></a>
-
-MCF在系统中位置如[图1](#fig1392120333319)所示。
-
-**图 1**  MCF上下文关系<a name="fig1392120333319"></a>  
-![](figures/MCF上下文关系.png "MCF上下文关系")
-
-通过调用SYS模块的绑定接口，可与VI和VO/VENC/SVP等模块进行绑定，其中前者为MCF的输入源，后者为MCF的接收者。用户可通过MPI接口对GROUP进行管理。
-
-
-
-### 处理流程<a name="ZH-CN_TOPIC_0000002457869857"></a>
-
-**图 1**  MCF场景数据流图<a name="fig14625115315323"></a>  
-![](figures/MCF场景数据流图.png "MCF场景数据流图")
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   图示仅说明数据流关系图，不是绑定关系图。
->-   MCF前面的2个VPSS，用作MCF预处理。在VPSS性能不够时，可以设置VPSS组号为VGS组，使用VGS做预处理。
->-   MCF融合时，需要2帧数据pts接近。推荐使用从模式sensor。
->-   MCF融合场景，VI和VPSS必须离线。
-
-**图 2**  MCF内部处理流程图<a name="fig12877101218348"></a>  
-![](figures/MCF内部处理流程图.png "MCF内部处理流程图")
->![](public_sys-resources/icon-note.gif) **说明：** 
->Hi3403V100 MCF支持8个扩展通道，图中仅画一个。扩展通道可以绑定到任意物理通道，图中仅示意性绑定到一个物理通道。
-
-### 输入输出特性<a name="ZH-CN_TOPIC_0000002457829757"></a>
-
--   输入像素格式仅包含OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420、OT\_PIXEL\_FORMAT\_YUV\_400和OT\_PIXEL\_FORMAT\_YUV\_SEMIPLANAR\_420。
--   输出像素格式仅OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_422、OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420、OT\_PIXEL\_FORMAT\_YUV\_400、OT\_PIXEL\_FORMAT\_YUV\_SEMIPLANAR\_422和OT\_PIXEL\_FORMAT\_YUV\_SEMIPLANAR\_420。
-
-**表 1**  MCF输入特性
-
-<a name="table292mcpsimp"></a>
+</table> # 概述
+在低照度场景下，RGB Sensor捕获的图像往往信噪比非常差，细节丢失严重。基于RGB + Mono双Sensor的新型结构，RGB Sensor获取的可见光图像充分保留了颜色信息，而Mono Sensor配合红外补光技术，获取的红外图像有相对较高的信噪比，且细节表现较好。 黑白彩色双路融合技术（简称MCF技术，即Mono-Color-Fusion技术）用于融合上述可见光图像和红外图像，既保留颜色信息，同时充分提升图像的细节表现和信噪比，从而提高低照度场景下的图像质量。 # 功能描述
+## 基本概念<a name="ZH-CN_TOPIC_0000002424350954"></a> - MCF MCF为Mono-Color-Fusion的简称，即黑白彩色融合技术。 - GROUP MCF对用户提供组（GROUP）的概念。最大可用数为[OT\_MCF\_MAX\_GRP\_NUM](#ZH-CN_TOPIC_0000002424191118)个，各GROUP分时复用MCF硬件。每个MCF GROUP包含多个PIPE和多个通道。 - PIPE MCF组的PIPE。用于输入黑白彩色双路源图像。PIPE的数目即融合路数，为[OT\_MCF\_PIPE\_NUM](#ZH-CN_TOPIC_0000002424350958)。用户可以通过系统绑定和前端相连或者发送图像到PIPE中融合处理。 - CHN MCF组的通道。通道分为2种：物理通道和扩展通道。MCF硬件提供多个物理通道，每个通道具有缩放、裁剪等功能。扩展通道具备裁剪、缩放功能，它通过绑定物理通道，将物理通道输出作为自己的输入，把图像裁剪、缩放成用户设置的目标分辨率输出。 - FRC 帧率控制，分为2种：组帧率控制和通道帧率控制。 - 组帧率控制：用于控制各GROUP对输入图像的接收。 - 通道帧率控制：用于控制各个物理通道和扩展通道图像的处理。 - CROP 裁剪，分为3种：组裁剪、物理通道裁剪以及扩展通道裁剪。 - 组裁剪，MCF对输入图像进行裁剪。 - 物理通道裁剪，MCF对各个物理通道的输出图像进行裁剪。 - 扩展通道裁剪，MCF调用VGS对扩展通道的输出图像进行裁剪。 - Scale 缩放，对图像进行缩小放大。缩放倍数指水平、垂直各缩放多少倍。 - Mirror/Flip Mirror即水平镜像，Flip即上下翻转。可使用Mirror+Flip实现180°旋转。 - Mosaic 马赛克，对MCF输出图像在指定区域填充马赛克块。 - MosaicEx 马赛克，调用VGS对MCF物理通道的输出图像指定区域填充马赛克块。 - Cover 视频遮挡区域，对MCF的输出图像填充纯色块。 遮挡区域坐标类型分为绝对坐标遮挡和相对坐标比例遮挡。 - Coverex 视频遮挡区域，调用VGS对MCF通道的输出图像填充纯色块。 遮挡区域坐标类型分为绝对坐标遮挡和相对坐标比例遮挡。相对坐标的计算是相对原图，不是通道图像，效果与Cover相对坐标等同。 - OverlayEx 视频叠加区域，调用VGS对MCF通道的输出图像叠加位图。 - Line 调用VGS对MCF物理通道的输出图像画线。 - 压缩 MCF支持linear格式的SEG压缩。 - 解压 MCF支持linear格式-SEG解压。 - 低延时 输出低延时，通道向后端模块发送低延时帧，MCF支持VI开启低延时。 ## 功能描述<a name="ZH-CN_TOPIC_0000002457829765"></a> MCF在系统中位置如[图1](#fig1392120333319)所示。 **图 1** MCF上下文关系<a name="fig1392120333319"></a> ![](figures/MCF上下文关系.png "MCF上下文关系") 通过调用SYS模块的绑定接口，可与VI和VO/VENC/SVP等模块进行绑定，其中前者为MCF的输入源，后者为MCF的接收者。用户可通过MPI接口对GROUP进行管理。 ### 处理流程<a name="ZH-CN_TOPIC_0000002457869857"></a> **图 1** MCF场景数据流图<a name="fig14625115315323"></a> ![](figures/MCF场景数据流图.png "MCF场景数据流图")
+>![](public_sys-resources/icon-note.gif) **说明：** >- 图示仅说明数据流关系图，不是绑定关系图。
+>- MCF前面的2个VPSS，用作MCF预处理。在VPSS性能不够时，可以设置VPSS组号为VGS组，使用VGS做预处理。
+>- MCF融合时，需要2帧数据pts接近。推荐使用从模式sensor。
+>- MCF融合场景，VI和VPSS必须离线。 **图 2** MCF内部处理流程图<a name="fig12877101218348"></a> ![](figures/MCF内部处理流程图.png "MCF内部处理流程图")
+>![](public_sys-resources/icon-note.gif) **说明：** >Hi3403V100 MCF支持8个扩展通道，图中仅画一个。扩展通道可以绑定到任意物理通道，图中仅示意性绑定到一个物理通道。 ### 输入输出特性<a name="ZH-CN_TOPIC_0000002457829757"></a> - 输入像素格式仅包含OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420、OT\_PIXEL\_FORMAT\_YUV\_400和OT\_PIXEL\_FORMAT\_YUV\_SEMIPLANAR\_420。
+- 输出像素格式仅OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_422、OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420、OT\_PIXEL\_FORMAT\_YUV\_400、OT\_PIXEL\_FORMAT\_YUV\_SEMIPLANAR\_422和OT\_PIXEL\_FORMAT\_YUV\_SEMIPLANAR\_420。 **表 1** MCF输入特性 <a name="table292mcpsimp"></a>
 <table><thead align="left"><tr id="row301mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.6.1.1"><p id="p303mcpsimp"><a name="p303mcpsimp"></a><a name="p303mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.2.6.1.2"><p id="p305mcpsimp"><a name="p305mcpsimp"></a><a name="p305mcpsimp"></a>数据位宽</p>
@@ -256,11 +84,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 2**  MCF输入解压特性
-
-<a name="table329mcpsimp"></a>
+</table> **表 2** MCF输入解压特性 <a name="table329mcpsimp"></a>
 <table><thead align="left"><tr id="row337mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.5.1.1"><p id="p339mcpsimp"><a name="p339mcpsimp"></a><a name="p339mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" colspan="3" valign="top" id="mcps1.2.5.1.2"><p id="p341mcpsimp"><a name="p341mcpsimp"></a><a name="p341mcpsimp"></a>解压缩模式</p>
@@ -284,11 +108,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 3**  MCF输入分辨率
-
-<a name="table359mcpsimp"></a>
+</table> **表 3** MCF输入分辨率 <a name="table359mcpsimp"></a>
 <table><thead align="left"><tr id="row365mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.2.3.1.1"><p id="p367mcpsimp"><a name="p367mcpsimp"></a><a name="p367mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.2.3.1.2"><p id="p369mcpsimp"><a name="p369mcpsimp"></a><a name="p369mcpsimp"></a>分辨率</p>
@@ -305,11 +125,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 4**  MCF物理通道输出格式特性
-
-<a name="table380mcpsimp"></a>
+</table> **表 4** MCF物理通道输出格式特性 <a name="table380mcpsimp"></a>
 <table><thead align="left"><tr id="row390mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.7.1.1"><p id="p392mcpsimp"><a name="p392mcpsimp"></a><a name="p392mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.2.7.1.2"><p id="p394mcpsimp"><a name="p394mcpsimp"></a><a name="p394mcpsimp"></a>数据位宽</p>
@@ -343,11 +159,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 5**  MCF物理通道输出压缩特性
-
-<a name="table422mcpsimp"></a>
+</table> **表 5** MCF物理通道输出压缩特性 <a name="table422mcpsimp"></a>
 <table><thead align="left"><tr id="row431mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.6.1.1"><p id="p433mcpsimp"><a name="p433mcpsimp"></a><a name="p433mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" colspan="4" valign="top" id="mcps1.2.6.1.2"><p id="p435mcpsimp"><a name="p435mcpsimp"></a><a name="p435mcpsimp"></a>压缩输出模式</p>
@@ -375,11 +187,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 6**  MCF物理通道输出分辨率
-
-<a name="table457mcpsimp"></a>
+</table> **表 6** MCF物理通道输出分辨率 <a name="table457mcpsimp"></a>
 <table><thead align="left"><tr id="row463mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.2.3.1.1"><p id="p465mcpsimp"><a name="p465mcpsimp"></a><a name="p465mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.2.3.1.2"><p id="p467mcpsimp"><a name="p467mcpsimp"></a><a name="p467mcpsimp"></a>分辨率</p>
@@ -393,11 +201,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 7**  MCF物理通道压缩输出时功能限制
-
-<a name="table475mcpsimp"></a>
+</table> **表 7** MCF物理通道压缩输出时功能限制 <a name="table475mcpsimp"></a>
 <table><thead align="left"><tr id="row485mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.7.1.1"><p id="p487mcpsimp"><a name="p487mcpsimp"></a><a name="p487mcpsimp"></a>压缩类型</p>
 </th>
 <th class="cellrowborder" colspan="5" valign="top" id="mcps1.2.7.1.2"><p id="p489mcpsimp"><a name="p489mcpsimp"></a><a name="p489mcpsimp"></a>功能</p>
@@ -455,11 +259,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 8**  MCF扩展通道输出格式特性
-
-<a name="table541mcpsimp"></a>
+</table> **表 8** MCF扩展通道输出格式特性 <a name="table541mcpsimp"></a>
 <table><thead align="left"><tr id="row552mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.8.1.1"><p id="p554mcpsimp"><a name="p554mcpsimp"></a><a name="p554mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" colspan="2" valign="top" id="mcps1.2.8.1.2"><p id="p556mcpsimp"><a name="p556mcpsimp"></a><a name="p556mcpsimp"></a>数据位宽</p>
@@ -497,11 +297,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 9**  MCF扩展通道输出压缩特性
-
-<a name="table588mcpsimp"></a>
+</table> **表 9** MCF扩展通道输出压缩特性 <a name="table588mcpsimp"></a>
 <table><thead align="left"><tr id="row597mcpsimp"><th class="cellrowborder" rowspan="2" valign="top" id="mcps1.2.6.1.1"><p id="p599mcpsimp"><a name="p599mcpsimp"></a><a name="p599mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" colspan="4" valign="top" id="mcps1.2.6.1.2"><p id="p601mcpsimp"><a name="p601mcpsimp"></a><a name="p601mcpsimp"></a>压缩输出模式</p>
@@ -529,11 +325,7 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 10**  MCF扩展通道输出分辨率
-
-<a name="table624mcpsimp"></a>
+</table> **表 10** MCF扩展通道输出分辨率 <a name="table624mcpsimp"></a>
 <table><thead align="left"><tr id="row630mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.2.3.1.1"><p id="p632mcpsimp"><a name="p632mcpsimp"></a><a name="p632mcpsimp"></a>方案</p>
 </th>
 <th class="cellrowborder" valign="top" width="78%" id="mcps1.2.3.1.2"><p id="p634mcpsimp"><a name="p634mcpsimp"></a><a name="p634mcpsimp"></a>分辨率</p>
@@ -547,104 +339,45 @@ MCF在系统中位置如[图1](#fig1392120333319)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->Hi3403V100 MCF输入图像宽度大于4096时不支持紧凑段压缩输入/输出，输出宽度大于4096时不支持紧凑段压缩输出。
-
-# API参考
-该功能模块为用户提供以下MPI：
-
--   [ss\_mpi\_mcf\_create\_grp](#ZH-CN_TOPIC_0000002424191126)：创建一个MCF GROUP。
--   [ss\_mpi\_mcf\_destroy\_grp](#ZH-CN_TOPIC_0000002424191154)：销毁一个MCF GROUP。
--   [ss\_mpi\_mcf\_reset\_grp](#ZH-CN_TOPIC_0000002424191170)：复位MCF GROUP。
--   [ss\_mpi\_mcf\_start\_grp](#ZH-CN_TOPIC_0000002424350974)：启用MCF GROUP。
--   [ss\_mpi\_mcf\_stop\_grp](#ZH-CN_TOPIC_0000002457869817)：禁用MCF GROUP。
--   [ss\_mpi\_mcf\_set\_grp\_attr](#ZH-CN_TOPIC_0000002457869877)：设置MCF GROUP属性。
--   [ss\_mpi\_mcf\_get\_grp\_attr](#ZH-CN_TOPIC_0000002424350902)：获取MCF GROUP属性。
--   [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)：设置MCF算法参数。
--   [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146)：获取MCF算法参数。
--   [ss\_mpi\_mcf\_set\_grp\_crop](#ZH-CN_TOPIC_0000002457869813)：设置MCF组CROP功能属性，用来裁剪MCF融合后产生的黑边。
--   [ss\_mpi\_mcf\_get\_grp\_crop](#ZH-CN_TOPIC_0000002424351002)：获取MCF组CROP功能属性。
--   [ss\_mpi\_mcf\_send\_pipe\_frame](#ZH-CN_TOPIC_0000002424350994)：用户向MCFpipe发送数据。
--   [ss\_mpi\_mcf\_set\_chn\_attr](#ZH-CN_TOPIC_0000002457829705)：设置MCF通道属性。
--   [ss\_mpi\_mcf\_get\_chn\_attr](#ZH-CN_TOPIC_0000002457829769)：获取MCF通道属性。
--   [ss\_mpi\_mcf\_enable\_chn](#ZH-CN_TOPIC_0000002424350922)：启用MCF通道。
--   [ss\_mpi\_mcf\_disable\_chn](#ZH-CN_TOPIC_0000002424350990)：禁用MCF通道。
--   [ss\_mpi\_mcf\_get\_chn\_frame](#ZH-CN_TOPIC_0000002457829677)：获取MCF通道帧数据。
--   [ss\_mpi\_mcf\_release\_chn\_frame](#ZH-CN_TOPIC_0000002424350926)：释放 MCF通道帧数据。
--   [ss\_mpi\_mcf\_set\_low\_delay\_attr](#ZH-CN_TOPIC_0000002457869905)：设置低延迟输出属性。
--   [ss\_mpi\_mcf\_get\_low\_delay\_attr](#ZH-CN_TOPIC_0000002424350918)：获取低延迟输出属性。
--   [ss\_mpi\_mcf\_attach\_vb\_pool](#ZH-CN_TOPIC_0000002424350946)：将MCF绑定到某个视频缓存VB池中。
--   [ss\_mpi\_mcf\_detach\_vb\_pool](#ZH-CN_TOPIC_0000002457829693)：将MCF的通道从某个视频缓存VB池中解绑定。
--   [ss\_mpi\_mcf\_set\_chn\_align](#ZH-CN_TOPIC_0000002457869845)：设置MCF通道输出YUV数据的行stride对齐。
--   [ss\_mpi\_mcf\_get\_chn\_align](#ZH-CN_TOPIC_0000002424350914)：获取MCF通道输出YUV数据的行stride对齐。
--   [ss\_mpi\_mcf\_set\_chn\_rotation](#ZH-CN_TOPIC_0000002457829697)：设置MCF通道图像固定角度旋转属性。
--   [ss\_mpi\_mcf\_get\_chn\_rotation](#ZH-CN_TOPIC_0000002457869849)：获取MCF通道图像固定角度旋转属性。
--   [ss\_mpi\_mcf\_set\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869889)：设置MCF GROUP扩展通道属性。
--   [ss\_mpi\_mcf\_get\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869841)：获取MCF GROUP扩展通道属性。
--   [ss\_mpi\_mcf\_set\_chn\_crop](#ZH-CN_TOPIC_0000002424350966)：设置MCF通道裁剪功能属性。
--   [ss\_mpi\_mcf\_get\_chn\_crop](#ZH-CN_TOPIC_0000002424191102)：获取MCF通道裁剪功能属性。
--   [ss\_mpi\_mcf\_get\_chn\_rgn\_luma](#ZH-CN_TOPIC_0000002457829737)：获取指定图像区域的亮度总和。
--   [ss\_mpi\_mcf\_get\_chn\_fd](#ZH-CN_TOPIC_0000002457869837)：获取MCF通道对应的设备文件句柄。
--   [ss\_mpi\_mcf\_close\_fd](#ZH-CN_TOPIC_0000002424191106)：关闭获取的文件句柄。
--   [ss\_mpi\_mcf\_calibration](#ZH-CN_TOPIC_0000002457869861)：标定参数接口。
--   [ss\_mpi\_mcf\_set\_vi\_attr](#ZH-CN_TOPIC_0000002424350998)：设置MCF场景下VI属性。
--   [ss\_mpi\_mcf\_get\_vi\_attr](#ZH-CN_TOPIC_0000002457829729)：获取MCF场景下VI属性。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ss\_mpi\_mcf\_create\_grp<a name="ZH-CN_TOPIC_0000002424191126"></a>
-
-【描述】
-
-创建一个MCF GROUP。
-
-【语法】
-
-```
+</table> >![](public_sys-resources/icon-notice.gif) **须知：** >Hi3403V100 MCF输入图像宽度大于4096时不支持紧凑段压缩输入/输出，输出宽度大于4096时不支持紧凑段压缩输出。 # API参考
+该功能模块为用户提供以下MPI： - [ss\_mpi\_mcf\_create\_grp](#ZH-CN_TOPIC_0000002424191126)：创建一个MCF GROUP。
+- [ss\_mpi\_mcf\_destroy\_grp](#ZH-CN_TOPIC_0000002424191154)：销毁一个MCF GROUP。
+- [ss\_mpi\_mcf\_reset\_grp](#ZH-CN_TOPIC_0000002424191170)：复位MCF GROUP。
+- [ss\_mpi\_mcf\_start\_grp](#ZH-CN_TOPIC_0000002424350974)：启用MCF GROUP。
+- [ss\_mpi\_mcf\_stop\_grp](#ZH-CN_TOPIC_0000002457869817)：禁用MCF GROUP。
+- [ss\_mpi\_mcf\_set\_grp\_attr](#ZH-CN_TOPIC_0000002457869877)：设置MCF GROUP属性。
+- [ss\_mpi\_mcf\_get\_grp\_attr](#ZH-CN_TOPIC_0000002424350902)：获取MCF GROUP属性。
+- [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)：设置MCF算法参数。
+- [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146)：获取MCF算法参数。
+- [ss\_mpi\_mcf\_set\_grp\_crop](#ZH-CN_TOPIC_0000002457869813)：设置MCF组CROP功能属性，用来裁剪MCF融合后产生的黑边。
+- [ss\_mpi\_mcf\_get\_grp\_crop](#ZH-CN_TOPIC_0000002424351002)：获取MCF组CROP功能属性。
+- [ss\_mpi\_mcf\_send\_pipe\_frame](#ZH-CN_TOPIC_0000002424350994)：用户向MCFpipe发送数据。
+- [ss\_mpi\_mcf\_set\_chn\_attr](#ZH-CN_TOPIC_0000002457829705)：设置MCF通道属性。
+- [ss\_mpi\_mcf\_get\_chn\_attr](#ZH-CN_TOPIC_0000002457829769)：获取MCF通道属性。
+- [ss\_mpi\_mcf\_enable\_chn](#ZH-CN_TOPIC_0000002424350922)：启用MCF通道。
+- [ss\_mpi\_mcf\_disable\_chn](#ZH-CN_TOPIC_0000002424350990)：禁用MCF通道。
+- [ss\_mpi\_mcf\_get\_chn\_frame](#ZH-CN_TOPIC_0000002457829677)：获取MCF通道帧数据。
+- [ss\_mpi\_mcf\_release\_chn\_frame](#ZH-CN_TOPIC_0000002424350926)：释放 MCF通道帧数据。
+- [ss\_mpi\_mcf\_set\_low\_delay\_attr](#ZH-CN_TOPIC_0000002457869905)：设置低延迟输出属性。
+- [ss\_mpi\_mcf\_get\_low\_delay\_attr](#ZH-CN_TOPIC_0000002424350918)：获取低延迟输出属性。
+- [ss\_mpi\_mcf\_attach\_vb\_pool](#ZH-CN_TOPIC_0000002424350946)：将MCF绑定到某个视频缓存VB池中。
+- [ss\_mpi\_mcf\_detach\_vb\_pool](#ZH-CN_TOPIC_0000002457829693)：将MCF的通道从某个视频缓存VB池中解绑定。
+- [ss\_mpi\_mcf\_set\_chn\_align](#ZH-CN_TOPIC_0000002457869845)：设置MCF通道输出YUV数据的行stride对齐。
+- [ss\_mpi\_mcf\_get\_chn\_align](#ZH-CN_TOPIC_0000002424350914)：获取MCF通道输出YUV数据的行stride对齐。
+- [ss\_mpi\_mcf\_set\_chn\_rotation](#ZH-CN_TOPIC_0000002457829697)：设置MCF通道图像固定角度旋转属性。
+- [ss\_mpi\_mcf\_get\_chn\_rotation](#ZH-CN_TOPIC_0000002457869849)：获取MCF通道图像固定角度旋转属性。
+- [ss\_mpi\_mcf\_set\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869889)：设置MCF GROUP扩展通道属性。
+- [ss\_mpi\_mcf\_get\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869841)：获取MCF GROUP扩展通道属性。
+- [ss\_mpi\_mcf\_set\_chn\_crop](#ZH-CN_TOPIC_0000002424350966)：设置MCF通道裁剪功能属性。
+- [ss\_mpi\_mcf\_get\_chn\_crop](#ZH-CN_TOPIC_0000002424191102)：获取MCF通道裁剪功能属性。
+- [ss\_mpi\_mcf\_get\_chn\_rgn\_luma](#ZH-CN_TOPIC_0000002457829737)：获取指定图像区域的亮度总和。
+- [ss\_mpi\_mcf\_get\_chn\_fd](#ZH-CN_TOPIC_0000002457869837)：获取MCF通道对应的设备文件句柄。
+- [ss\_mpi\_mcf\_close\_fd](#ZH-CN_TOPIC_0000002424191106)：关闭获取的文件句柄。
+- [ss\_mpi\_mcf\_calibration](#ZH-CN_TOPIC_0000002457869861)：标定参数接口。
+- [ss\_mpi\_mcf\_set\_vi\_attr](#ZH-CN_TOPIC_0000002424350998)：设置MCF场景下VI属性。
+- [ss\_mpi\_mcf\_get\_vi\_attr](#ZH-CN_TOPIC_0000002457829729)：获取MCF场景下VI属性。 ## ss\_mpi\_mcf\_create\_grp<a name="ZH-CN_TOPIC_0000002424191126"></a> 【描述】 创建一个MCF GROUP。 【语法】 ```
 td_s32 ss_mpi_mcf_create_grp(ot_mcf_grp grp, const ot_mcf_grp_attr *grp_attr);
-```
-
-【参数】
-
-<a name="table6242mcpsimp"></a>
+``` 【参数】 <a name="table6242mcpsimp"></a>
 <table><thead align="left"><tr id="row6248mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p6250mcpsimp"><a name="p6250mcpsimp"></a><a name="p6250mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p6252mcpsimp"><a name="p6252mcpsimp"></a><a name="p6252mcpsimp"></a>描述</p>
@@ -669,11 +402,7 @@ td_s32 ss_mpi_mcf_create_grp(ot_mcf_grp grp, const ot_mcf_grp_attr *grp_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table6273mcpsimp"></a>
+</table> 【返回值】 <a name="table6273mcpsimp"></a>
 <table><thead align="left"><tr id="row6278mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p6280mcpsimp"><a name="p6280mcpsimp"></a><a name="p6280mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p6282mcpsimp"><a name="p6282mcpsimp"></a><a name="p6282mcpsimp"></a>描述</p>
@@ -685,49 +414,14 @@ td_s32 ss_mpi_mcf_create_grp(ot_mcf_grp grp, const ot_mcf_grp_attr *grp_attr);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p6288mcpsimp"><a name="p6288mcpsimp"></a><a name="p6288mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row6289mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p6291mcpsimp"><a name="p6291mcpsimp"></a><a name="p6291mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p6293mcpsimp"><a name="p6293mcpsimp"></a><a name="p6293mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   组不支持重复创建。
--   目前仅支持相同幅形比的黑白图像与彩色图像进行融合，如16：9或者4：3。
--   黑白和彩色两路Sensor建议使用slave模式，当是主模式sensor时，两路Sensor的时序有时间差，目前当大于25ms时无法进行融合，丢掉偏差较大的那帧图，保证时间差最短的黑白、彩色各一帧图进行融合。
--   mcf 组输入的2个pipe 宽高可以不一样。但是2个pipe的输入图像的幅形比必须一致。mcf 组输出图像分辨率与2个pipe中大的一路图像分辨率一致。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_destroy\_grp](#ZH-CN_TOPIC_0000002424191154)
-
-## ss\_mpi\_mcf\_destroy\_grp<a name="ZH-CN_TOPIC_0000002424191154"></a>
-
-【描述】
-
-销毁一个MCF GROUP。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - 组不支持重复创建。
+- 目前仅支持相同幅形比的黑白图像与彩色图像进行融合，如16：9或者4：3。
+- 黑白和彩色两路Sensor建议使用slave模式，当是主模式sensor时，两路Sensor的时序有时间差，目前当大于25ms时无法进行融合，丢掉偏差较大的那帧图，保证时间差最短的黑白、彩色各一帧图进行融合。
+- mcf 组输入的2个pipe 宽高可以不一样。但是2个pipe的输入图像的幅形比必须一致。mcf 组输出图像分辨率与2个pipe中大的一路图像分辨率一致。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_destroy\_grp](#ZH-CN_TOPIC_0000002424191154) ## ss\_mpi\_mcf\_destroy\_grp<a name="ZH-CN_TOPIC_0000002424191154"></a> 【描述】 销毁一个MCF GROUP。 【语法】 ```
 td_s32 ss_mpi_mcf_destroy_grp(ot_mcf_grp grp);
-```
-
-【参数】
-
-<a name="table754mcpsimp"></a>
+``` 【参数】 <a name="table754mcpsimp"></a>
 <table><thead align="left"><tr id="row760mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p762mcpsimp"><a name="p762mcpsimp"></a><a name="p762mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p764mcpsimp"><a name="p764mcpsimp"></a><a name="p764mcpsimp"></a>描述</p>
@@ -745,11 +439,7 @@ td_s32 ss_mpi_mcf_destroy_grp(ot_mcf_grp grp);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table778mcpsimp"></a>
+</table> 【返回值】 <a name="table778mcpsimp"></a>
 <table><thead align="left"><tr id="row783mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p785mcpsimp"><a name="p785mcpsimp"></a><a name="p785mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p787mcpsimp"><a name="p787mcpsimp"></a><a name="p787mcpsimp"></a>描述</p>
@@ -761,48 +451,13 @@ td_s32 ss_mpi_mcf_destroy_grp(ot_mcf_grp grp);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p793mcpsimp"><a name="p793mcpsimp"></a><a name="p793mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row794mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p796mcpsimp"><a name="p796mcpsimp"></a><a name="p796mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p798mcpsimp"><a name="p798mcpsimp"></a><a name="p798mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已经创建，如果销毁一个没有创建的组，返回成功。
--   调用此接口时，会一直等待此GROUP当前任务处理结束才会真正销毁。
--   destroy组之前，需先stop组。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_create\_grp](#ZH-CN_TOPIC_0000002424191126)
-
-## ss\_mpi\_mcf\_reset\_grp<a name="ZH-CN_TOPIC_0000002424191170"></a>
-
-【描述】
-
-复位MCF GROUP。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已经创建，如果销毁一个没有创建的组，返回成功。
+- 调用此接口时，会一直等待此GROUP当前任务处理结束才会真正销毁。
+- destroy组之前，需先stop组。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_create\_grp](#ZH-CN_TOPIC_0000002424191126) ## ss\_mpi\_mcf\_reset\_grp<a name="ZH-CN_TOPIC_0000002424191170"></a> 【描述】 复位MCF GROUP。 【语法】 ```
 td_s32 ss_mpi_mcf_reset_grp(ot_mcf_grp grp);
-```
-
-【参数】
-
-<a name="table823mcpsimp"></a>
+``` 【参数】 <a name="table823mcpsimp"></a>
 <table><thead align="left"><tr id="row829mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p831mcpsimp"><a name="p831mcpsimp"></a><a name="p831mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p833mcpsimp"><a name="p833mcpsimp"></a><a name="p833mcpsimp"></a>描述</p>
@@ -820,11 +475,7 @@ td_s32 ss_mpi_mcf_reset_grp(ot_mcf_grp grp);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table847mcpsimp"></a>
+</table> 【返回值】 <a name="table847mcpsimp"></a>
 <table><thead align="left"><tr id="row852mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p854mcpsimp"><a name="p854mcpsimp"></a><a name="p854mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p856mcpsimp"><a name="p856mcpsimp"></a><a name="p856mcpsimp"></a>描述</p>
@@ -836,46 +487,11 @@ td_s32 ss_mpi_mcf_reset_grp(ot_mcf_grp grp);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p862mcpsimp"><a name="p862mcpsimp"></a><a name="p862mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row863mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p865mcpsimp"><a name="p865mcpsimp"></a><a name="p865mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p867mcpsimp"><a name="p867mcpsimp"></a><a name="p867mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已创建。
-
-【举例】
-
-请参见[ss\_mpi\_mcf\_create\_grp](#ZH-CN_TOPIC_0000002424191126)。
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_start\_grp<a name="ZH-CN_TOPIC_0000002424350974"></a>
-
-【描述】
-
-启用MCF GROUP。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已创建。 【举例】 请参见[ss\_mpi\_mcf\_create\_grp](#ZH-CN_TOPIC_0000002424191126)。 【相关主题】 无 ## ss\_mpi\_mcf\_start\_grp<a name="ZH-CN_TOPIC_0000002424350974"></a> 【描述】 启用MCF GROUP。 【语法】 ```
 td_s32 ss_mpi_mcf_start_grp(ot_mcf_grp grp);
-```
-
-【参数】
-
-<a name="table888mcpsimp"></a>
+``` 【参数】 <a name="table888mcpsimp"></a>
 <table><thead align="left"><tr id="row894mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p896mcpsimp"><a name="p896mcpsimp"></a><a name="p896mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p898mcpsimp"><a name="p898mcpsimp"></a><a name="p898mcpsimp"></a>描述</p>
@@ -893,11 +509,7 @@ td_s32 ss_mpi_mcf_start_grp(ot_mcf_grp grp);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table912mcpsimp"></a>
+</table> 【返回值】 <a name="table912mcpsimp"></a>
 <table><thead align="left"><tr id="row917mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p919mcpsimp"><a name="p919mcpsimp"></a><a name="p919mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p921mcpsimp"><a name="p921mcpsimp"></a><a name="p921mcpsimp"></a>描述</p>
@@ -909,47 +521,12 @@ td_s32 ss_mpi_mcf_start_grp(ot_mcf_grp grp);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p927mcpsimp"><a name="p927mcpsimp"></a><a name="p927mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row928mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p930mcpsimp"><a name="p930mcpsimp"></a><a name="p930mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p932mcpsimp"><a name="p932mcpsimp"></a><a name="p932mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已经创建。
--   重复调用该函数启用同一个GROUP返回成功。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_stop\_grp](#ZH-CN_TOPIC_0000002457869817)
-
-## ss\_mpi\_mcf\_stop\_grp<a name="ZH-CN_TOPIC_0000002457869817"></a>
-
-【描述】
-
-禁用MCF GROUP。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已经创建。
+- 重复调用该函数启用同一个GROUP返回成功。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_stop\_grp](#ZH-CN_TOPIC_0000002457869817) ## ss\_mpi\_mcf\_stop\_grp<a name="ZH-CN_TOPIC_0000002457869817"></a> 【描述】 禁用MCF GROUP。 【语法】 ```
 td_s32 ss_mpi_mcf_stop_grp(ot_mcf_grp grp);
-```
-
-【参数】
-
-<a name="table956mcpsimp"></a>
+``` 【参数】 <a name="table956mcpsimp"></a>
 <table><thead align="left"><tr id="row962mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p964mcpsimp"><a name="p964mcpsimp"></a><a name="p964mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p966mcpsimp"><a name="p966mcpsimp"></a><a name="p966mcpsimp"></a>描述</p>
@@ -967,11 +544,7 @@ td_s32 ss_mpi_mcf_stop_grp(ot_mcf_grp grp);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table980mcpsimp"></a>
+</table> 【返回值】 <a name="table980mcpsimp"></a>
 <table><thead align="left"><tr id="row985mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p987mcpsimp"><a name="p987mcpsimp"></a><a name="p987mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p989mcpsimp"><a name="p989mcpsimp"></a><a name="p989mcpsimp"></a>描述</p>
@@ -983,48 +556,13 @@ td_s32 ss_mpi_mcf_stop_grp(ot_mcf_grp grp);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p995mcpsimp"><a name="p995mcpsimp"></a><a name="p995mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row996mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p998mcpsimp"><a name="p998mcpsimp"></a><a name="p998mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1000mcpsimp"><a name="p1000mcpsimp"></a><a name="p1000mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已经创建，并且GROUP已经启动。
--   重复调用该函数禁用同一个GROUP返回成功。
--   结束成功后，再次调用[ss\_mpi\_mcf\_start\_grp](#ZH-CN_TOPIC_0000002424350974)接口可返回成功。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_start\_grp](#ZH-CN_TOPIC_0000002424350974)
-
-## ss\_mpi\_mcf\_set\_grp\_attr<a name="ZH-CN_TOPIC_0000002457869877"></a>
-
-【描述】
-
-设置MCF GROUP属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已经创建，并且GROUP已经启动。
+- 重复调用该函数禁用同一个GROUP返回成功。
+- 结束成功后，再次调用[ss\_mpi\_mcf\_start\_grp](#ZH-CN_TOPIC_0000002424350974)接口可返回成功。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_start\_grp](#ZH-CN_TOPIC_0000002424350974) ## ss\_mpi\_mcf\_set\_grp\_attr<a name="ZH-CN_TOPIC_0000002457869877"></a> 【描述】 设置MCF GROUP属性。 【语法】 ```
 td_s32 ss_mpi_mcf_set_grp_attr(ot_mcf_grp grp, const ot_mcf_grp_attr* grp_attr);
-```
-
-【参数】
-
-<a name="table1028mcpsimp"></a>
+``` 【参数】 <a name="table1028mcpsimp"></a>
 <table><thead align="left"><tr id="row1034mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1036mcpsimp"><a name="p1036mcpsimp"></a><a name="p1036mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1038mcpsimp"><a name="p1038mcpsimp"></a><a name="p1038mcpsimp"></a>描述</p>
@@ -1049,11 +587,7 @@ td_s32 ss_mpi_mcf_set_grp_attr(ot_mcf_grp grp, const ot_mcf_grp_attr* grp_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1059mcpsimp"></a>
+</table> 【返回值】 <a name="table1059mcpsimp"></a>
 <table><thead align="left"><tr id="row1064mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1066mcpsimp"><a name="p1066mcpsimp"></a><a name="p1066mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1068mcpsimp"><a name="p1068mcpsimp"></a><a name="p1068mcpsimp"></a>描述</p>
@@ -1065,48 +599,13 @@ td_s32 ss_mpi_mcf_set_grp_attr(ot_mcf_grp grp, const ot_mcf_grp_attr* grp_attr);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1074mcpsimp"><a name="p1074mcpsimp"></a><a name="p1074mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1075mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1077mcpsimp"><a name="p1077mcpsimp"></a><a name="p1077mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1079mcpsimp"><a name="p1079mcpsimp"></a><a name="p1079mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已经创建。
--   因MCF组属性的静态属性，不支持修改。仅frame\_rate， mcf\_path和depth信息不是静态属性，可修改。
--   GROUP属性必须合法，具体请参见[ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721)。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_get\_grp\_attr](#ZH-CN_TOPIC_0000002424350902)
-
-## ss\_mpi\_mcf\_get\_grp\_attr<a name="ZH-CN_TOPIC_0000002424350902"></a>
-
-【描述】
-
-获取MCF GROUP属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已经创建。
+- 因MCF组属性的静态属性，不支持修改。仅frame\_rate， mcf\_path和depth信息不是静态属性，可修改。
+- GROUP属性必须合法，具体请参见[ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721)。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_get\_grp\_attr](#ZH-CN_TOPIC_0000002424350902) ## ss\_mpi\_mcf\_get\_grp\_attr<a name="ZH-CN_TOPIC_0000002424350902"></a> 【描述】 获取MCF GROUP属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_grp_attr(ot_mcf_grp grp, ot_mcf_grp_attr* grp_attr);
-```
-
-【参数】
-
-<a name="table1107mcpsimp"></a>
+``` 【参数】 <a name="table1107mcpsimp"></a>
 <table><thead align="left"><tr id="row1113mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1115mcpsimp"><a name="p1115mcpsimp"></a><a name="p1115mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1117mcpsimp"><a name="p1117mcpsimp"></a><a name="p1117mcpsimp"></a>描述</p>
@@ -1131,11 +630,7 @@ td_s32 ss_mpi_mcf_get_grp_attr(ot_mcf_grp grp, ot_mcf_grp_attr* grp_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1138mcpsimp"></a>
+</table> 【返回值】 <a name="table1138mcpsimp"></a>
 <table><thead align="left"><tr id="row1143mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1145mcpsimp"><a name="p1145mcpsimp"></a><a name="p1145mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1147mcpsimp"><a name="p1147mcpsimp"></a><a name="p1147mcpsimp"></a>描述</p>
@@ -1147,47 +642,12 @@ td_s32 ss_mpi_mcf_get_grp_attr(ot_mcf_grp grp, ot_mcf_grp_attr* grp_attr);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1153mcpsimp"><a name="p1153mcpsimp"></a><a name="p1153mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1154mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1156mcpsimp"><a name="p1156mcpsimp"></a><a name="p1156mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1158mcpsimp"><a name="p1158mcpsimp"></a><a name="p1158mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已经创建。
--   GROUP必须已设置属性，若未设置则返回默认属性，默认属性在创建时设置。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_set\_grp\_attr](#ZH-CN_TOPIC_0000002457869877)
-
-## ss\_mpi\_mcf\_set\_alg\_param<a name="ZH-CN_TOPIC_0000002457829745"></a>
-
-【描述】
-
-设置MCF算法参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已经创建。
+- GROUP必须已设置属性，若未设置则返回默认属性，默认属性在创建时设置。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_set\_grp\_attr](#ZH-CN_TOPIC_0000002457869877) ## ss\_mpi\_mcf\_set\_alg\_param<a name="ZH-CN_TOPIC_0000002457829745"></a> 【描述】 设置MCF算法参数。 【语法】 ```
 td_s32 ss_mpi_mcf_set_alg_param(ot_mcf_grp grp, const ot_mcf_alg_param *alg_param);
-```
-
-【参数】
-
-<a name="table1183mcpsimp"></a>
+``` 【参数】 <a name="table1183mcpsimp"></a>
 <table><thead align="left"><tr id="row1189mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1191mcpsimp"><a name="p1191mcpsimp"></a><a name="p1191mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1193mcpsimp"><a name="p1193mcpsimp"></a><a name="p1193mcpsimp"></a>描述</p>
@@ -1212,11 +672,7 @@ td_s32 ss_mpi_mcf_set_alg_param(ot_mcf_grp grp, const ot_mcf_alg_param *alg_para
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1214mcpsimp"></a>
+</table> 【返回值】 <a name="table1214mcpsimp"></a>
 <table><thead align="left"><tr id="row1219mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1221mcpsimp"><a name="p1221mcpsimp"></a><a name="p1221mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1223mcpsimp"><a name="p1223mcpsimp"></a><a name="p1223mcpsimp"></a>描述</p>
@@ -1228,48 +684,13 @@ td_s32 ss_mpi_mcf_set_alg_param(ot_mcf_grp grp, const ot_mcf_alg_param *alg_para
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1229mcpsimp"><a name="p1229mcpsimp"></a><a name="p1229mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1230mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1232mcpsimp"><a name="p1232mcpsimp"></a><a name="p1232mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1234mcpsimp"><a name="p1234mcpsimp"></a><a name="p1234mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已经创建。
--   创建MCF组时，会配置默认alg\_param，当需要调试效果时，可调用本接口进行调试。
--   算法参数调节可参考《黑白彩色双路融合 调试指南》
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146)
-
-## ss\_mpi\_mcf\_get\_alg\_param<a name="ZH-CN_TOPIC_0000002424191146"></a>
-
-【描述】
-
-获取MCF算法参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已经创建。
+- 创建MCF组时，会配置默认alg\_param，当需要调试效果时，可调用本接口进行调试。
+- 算法参数调节可参考《黑白彩色双路融合 调试指南》 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146) ## ss\_mpi\_mcf\_get\_alg\_param<a name="ZH-CN_TOPIC_0000002424191146"></a> 【描述】 获取MCF算法参数。 【语法】 ```
 td_s32 ss_mpi_mcf_get_alg_param(ot_mcf_grp grp, ot_mcf_alg_param *alg_param);
-```
-
-【参数】
-
-<a name="table1261mcpsimp"></a>
+``` 【参数】 <a name="table1261mcpsimp"></a>
 <table><thead align="left"><tr id="row1267mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1269mcpsimp"><a name="p1269mcpsimp"></a><a name="p1269mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1271mcpsimp"><a name="p1271mcpsimp"></a><a name="p1271mcpsimp"></a>描述</p>
@@ -1294,11 +715,7 @@ td_s32 ss_mpi_mcf_get_alg_param(ot_mcf_grp grp, ot_mcf_alg_param *alg_param);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1292mcpsimp"></a>
+</table> 【返回值】 <a name="table1292mcpsimp"></a>
 <table><thead align="left"><tr id="row1297mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1299mcpsimp"><a name="p1299mcpsimp"></a><a name="p1299mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1301mcpsimp"><a name="p1301mcpsimp"></a><a name="p1301mcpsimp"></a>描述</p>
@@ -1310,46 +727,11 @@ td_s32 ss_mpi_mcf_get_alg_param(ot_mcf_grp grp, ot_mcf_alg_param *alg_param);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1307mcpsimp"><a name="p1307mcpsimp"></a><a name="p1307mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1308mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1310mcpsimp"><a name="p1310mcpsimp"></a><a name="p1310mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1312mcpsimp"><a name="p1312mcpsimp"></a><a name="p1312mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已经创建。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)
-
-## ss\_mpi\_mcf\_set\_grp\_crop<a name="ZH-CN_TOPIC_0000002457869813"></a>
-
-【描述】
-
-设置MCF 组CROP功能属性，用来裁剪MCF融合后产生的黑边。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已经创建。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745) ## ss\_mpi\_mcf\_set\_grp\_crop<a name="ZH-CN_TOPIC_0000002457869813"></a> 【描述】 设置MCF 组CROP功能属性，用来裁剪MCF融合后产生的黑边。 【语法】 ```
 td_s32 ss_mpi_mcf_set_grp_crop(ot_mcf_grp grp, const ot_crop_info *crop_info);
-```
-
-【参数】
-
-<a name="table1333mcpsimp"></a>
+``` 【参数】 <a name="table1333mcpsimp"></a>
 <table><thead align="left"><tr id="row1339mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1341mcpsimp"><a name="p1341mcpsimp"></a><a name="p1341mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1343mcpsimp"><a name="p1343mcpsimp"></a><a name="p1343mcpsimp"></a>描述</p>
@@ -1375,11 +757,7 @@ td_s32 ss_mpi_mcf_set_grp_crop(ot_mcf_grp grp, const ot_crop_info *crop_info);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1366mcpsimp"></a>
+</table> 【返回值】 <a name="table1366mcpsimp"></a>
 <table><thead align="left"><tr id="row1371mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1373mcpsimp"><a name="p1373mcpsimp"></a><a name="p1373mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1375mcpsimp"><a name="p1375mcpsimp"></a><a name="p1375mcpsimp"></a>描述</p>
@@ -1391,48 +769,13 @@ td_s32 ss_mpi_mcf_set_grp_crop(ot_mcf_grp grp, const ot_crop_info *crop_info);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1381mcpsimp"><a name="p1381mcpsimp"></a><a name="p1381mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1382mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1384mcpsimp"><a name="p1384mcpsimp"></a><a name="p1384mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1386mcpsimp"><a name="p1386mcpsimp"></a><a name="p1386mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已经创建。
--   裁剪图像在图像内。
--   crop\_info需保持2像素对齐。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_get\_grp\_crop](#ZH-CN_TOPIC_0000002424351002)
-
-## ss\_mpi\_mcf\_get\_grp\_crop<a name="ZH-CN_TOPIC_0000002424351002"></a>
-
-【描述】
-
-获取MCF组CROP功能属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已经创建。
+- 裁剪图像在图像内。
+- crop\_info需保持2像素对齐。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_get\_grp\_crop](#ZH-CN_TOPIC_0000002424351002) ## ss\_mpi\_mcf\_get\_grp\_crop<a name="ZH-CN_TOPIC_0000002424351002"></a> 【描述】 获取MCF组CROP功能属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_grp_crop(ot_mcf_grp grp, ot_crop_info *crop_info);
-```
-
-【参数】
-
-<a name="table1410mcpsimp"></a>
+``` 【参数】 <a name="table1410mcpsimp"></a>
 <table><thead align="left"><tr id="row1416mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1418mcpsimp"><a name="p1418mcpsimp"></a><a name="p1418mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1420mcpsimp"><a name="p1420mcpsimp"></a><a name="p1420mcpsimp"></a>描述</p>
@@ -1458,11 +801,7 @@ td_s32 ss_mpi_mcf_get_grp_crop(ot_mcf_grp grp, ot_crop_info *crop_info);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1442mcpsimp"></a>
+</table> 【返回值】 <a name="table1442mcpsimp"></a>
 <table><thead align="left"><tr id="row1447mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1449mcpsimp"><a name="p1449mcpsimp"></a><a name="p1449mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1451mcpsimp"><a name="p1451mcpsimp"></a><a name="p1451mcpsimp"></a>描述</p>
@@ -1474,46 +813,11 @@ td_s32 ss_mpi_mcf_get_grp_crop(ot_mcf_grp grp, ot_crop_info *crop_info);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1457mcpsimp"><a name="p1457mcpsimp"></a><a name="p1457mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1458mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1460mcpsimp"><a name="p1460mcpsimp"></a><a name="p1460mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1462mcpsimp"><a name="p1462mcpsimp"></a><a name="p1462mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已经创建。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_set\_grp\_crop](#ZH-CN_TOPIC_0000002457869813)
-
-## ss\_mpi\_mcf\_send\_pipe\_frame<a name="ZH-CN_TOPIC_0000002424350994"></a>
-
-【描述】
-
-用户向MCFpipe 发送数据。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已经创建。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_set\_grp\_crop](#ZH-CN_TOPIC_0000002457869813) ## ss\_mpi\_mcf\_send\_pipe\_frame<a name="ZH-CN_TOPIC_0000002424350994"></a> 【描述】 用户向MCFpipe 发送数据。 【语法】 ```
 td_s32 ss_mpi_mcf_send_pipe_frame(ot_mcf_grp grp, ot_mcf_pipe mcf_pipe, const ot_video_frame_info *video_frame, td_s32 milli_sec);
-```
-
-【参数】
-
-<a name="table1485mcpsimp"></a>
+``` 【参数】 <a name="table1485mcpsimp"></a>
 <table><thead align="left"><tr id="row1491mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1493mcpsimp"><a name="p1493mcpsimp"></a><a name="p1493mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1495mcpsimp"><a name="p1495mcpsimp"></a><a name="p1495mcpsimp"></a>描述</p>
@@ -1553,11 +857,7 @@ td_s32 ss_mpi_mcf_send_pipe_frame(ot_mcf_grp grp, ot_mcf_pipe mcf_pipe, const ot
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1534mcpsimp"></a>
+</table> 【返回值】 <a name="table1534mcpsimp"></a>
 <table><thead align="left"><tr id="row1539mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1541mcpsimp"><a name="p1541mcpsimp"></a><a name="p1541mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1543mcpsimp"><a name="p1543mcpsimp"></a><a name="p1543mcpsimp"></a>描述</p>
@@ -1569,47 +869,12 @@ td_s32 ss_mpi_mcf_send_pipe_frame(ot_mcf_grp grp, ot_mcf_pipe mcf_pipe, const ot
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1549mcpsimp"><a name="p1549mcpsimp"></a><a name="p1549mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1550mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1552mcpsimp"><a name="p1552mcpsimp"></a><a name="p1552mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1554mcpsimp"><a name="p1554mcpsimp"></a><a name="p1554mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   用户使用此接口时，可以自行进行帧率控制。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_set\_chn\_attr<a name="ZH-CN_TOPIC_0000002457829705"></a>
-
-【描述】
-
-设置MCF通道属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 用户使用此接口时，可以自行进行帧率控制。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_set\_chn\_attr<a name="ZH-CN_TOPIC_0000002457829705"></a> 【描述】 设置MCF通道属性。 【语法】 ```
 td_s32 ss_mpi_mcf_set_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_chn_attr *chn_attr);
-```
-
-【参数】
-
-<a name="table1580mcpsimp"></a>
+``` 【参数】 <a name="table1580mcpsimp"></a>
 <table><thead align="left"><tr id="row1586mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.4.1.1"><p id="p1588mcpsimp"><a name="p1588mcpsimp"></a><a name="p1588mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="72%" id="mcps1.1.4.1.2"><p id="p1590mcpsimp"><a name="p1590mcpsimp"></a><a name="p1590mcpsimp"></a>描述</p>
@@ -1642,11 +907,7 @@ td_s32 ss_mpi_mcf_set_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_chn_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1620mcpsimp"></a>
+</table> 【返回值】 <a name="table1620mcpsimp"></a>
 <table><thead align="left"><tr id="row1625mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1627mcpsimp"><a name="p1627mcpsimp"></a><a name="p1627mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1629mcpsimp"><a name="p1629mcpsimp"></a><a name="p1629mcpsimp"></a>描述</p>
@@ -1658,47 +919,12 @@ td_s32 ss_mpi_mcf_set_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_chn_
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1635mcpsimp"><a name="p1635mcpsimp"></a><a name="p1635mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1636mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1638mcpsimp"><a name="p1638mcpsimp"></a><a name="p1638mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1640mcpsimp"><a name="p1640mcpsimp"></a><a name="p1640mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   扩展通道不支持此接口。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_get\_chn\_attr<a name="ZH-CN_TOPIC_0000002457829769"></a>
-
-【描述】
-
-获取MCF通道属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 扩展通道不支持此接口。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_get\_chn\_attr<a name="ZH-CN_TOPIC_0000002457829769"></a> 【描述】 获取MCF通道属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_chn_attr *chn_attr);
-```
-
-【参数】
-
-<a name="table1666mcpsimp"></a>
+``` 【参数】 <a name="table1666mcpsimp"></a>
 <table><thead align="left"><tr id="row1672mcpsimp"><th class="cellrowborder" valign="top" width="12%" id="mcps1.1.4.1.1"><p id="p1674mcpsimp"><a name="p1674mcpsimp"></a><a name="p1674mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p1676mcpsimp"><a name="p1676mcpsimp"></a><a name="p1676mcpsimp"></a>描述</p>
@@ -1731,11 +957,7 @@ td_s32 ss_mpi_mcf_get_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_chn_attr *
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1706mcpsimp"></a>
+</table> 【返回值】 <a name="table1706mcpsimp"></a>
 <table><thead align="left"><tr id="row1711mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1713mcpsimp"><a name="p1713mcpsimp"></a><a name="p1713mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1715mcpsimp"><a name="p1715mcpsimp"></a><a name="p1715mcpsimp"></a>描述</p>
@@ -1747,47 +969,12 @@ td_s32 ss_mpi_mcf_get_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_chn_attr *
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1721mcpsimp"><a name="p1721mcpsimp"></a><a name="p1721mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1722mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1724mcpsimp"><a name="p1724mcpsimp"></a><a name="p1724mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1726mcpsimp"><a name="p1726mcpsimp"></a><a name="p1726mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   扩展通道不支持此接口。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_enable\_chn<a name="ZH-CN_TOPIC_0000002424350922"></a>
-
-【描述】
-
-启用MCF通道
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 扩展通道不支持此接口。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_enable\_chn<a name="ZH-CN_TOPIC_0000002424350922"></a> 【描述】 启用MCF通道 【语法】 ```
 td_s32 ss_mpi_mcf_enable_chn(ot_mcf_grp grp, ot_mcf_chn chn);
-```
-
-【参数】
-
-<a name="table1750mcpsimp"></a>
+``` 【参数】 <a name="table1750mcpsimp"></a>
 <table><thead align="left"><tr id="row1756mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1758mcpsimp"><a name="p1758mcpsimp"></a><a name="p1758mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1760mcpsimp"><a name="p1760mcpsimp"></a><a name="p1760mcpsimp"></a>描述</p>
@@ -1813,11 +1000,7 @@ td_s32 ss_mpi_mcf_enable_chn(ot_mcf_grp grp, ot_mcf_chn chn);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1783mcpsimp"></a>
+</table> 【返回值】 <a name="table1783mcpsimp"></a>
 <table><thead align="left"><tr id="row1788mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1790mcpsimp"><a name="p1790mcpsimp"></a><a name="p1790mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1792mcpsimp"><a name="p1792mcpsimp"></a><a name="p1792mcpsimp"></a>描述</p>
@@ -1829,47 +1012,12 @@ td_s32 ss_mpi_mcf_enable_chn(ot_mcf_grp grp, ot_mcf_chn chn);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1798mcpsimp"><a name="p1798mcpsimp"></a><a name="p1798mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1799mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1801mcpsimp"><a name="p1801mcpsimp"></a><a name="p1801mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1803mcpsimp"><a name="p1803mcpsimp"></a><a name="p1803mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   多次启用通道返回成功。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_disable\_chn<a name="ZH-CN_TOPIC_0000002424350990"></a>
-
-【描述】
-
-禁用MCF通道。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 多次启用通道返回成功。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_disable\_chn<a name="ZH-CN_TOPIC_0000002424350990"></a> 【描述】 禁用MCF通道。 【语法】 ```
 td_s32 ss_mpi_mcf_disable_chn(ot_mcf_grp grp, ot_mcf_chn chn);
-```
-
-【参数】
-
-<a name="table1827mcpsimp"></a>
+``` 【参数】 <a name="table1827mcpsimp"></a>
 <table><thead align="left"><tr id="row1833mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1835mcpsimp"><a name="p1835mcpsimp"></a><a name="p1835mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1837mcpsimp"><a name="p1837mcpsimp"></a><a name="p1837mcpsimp"></a>描述</p>
@@ -1895,11 +1043,7 @@ td_s32 ss_mpi_mcf_disable_chn(ot_mcf_grp grp, ot_mcf_chn chn);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1860mcpsimp"></a>
+</table> 【返回值】 <a name="table1860mcpsimp"></a>
 <table><thead align="left"><tr id="row1865mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1867mcpsimp"><a name="p1867mcpsimp"></a><a name="p1867mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1869mcpsimp"><a name="p1869mcpsimp"></a><a name="p1869mcpsimp"></a>描述</p>
@@ -1911,47 +1055,12 @@ td_s32 ss_mpi_mcf_disable_chn(ot_mcf_grp grp, ot_mcf_chn chn);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1875mcpsimp"><a name="p1875mcpsimp"></a><a name="p1875mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1876mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1878mcpsimp"><a name="p1878mcpsimp"></a><a name="p1878mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1880mcpsimp"><a name="p1880mcpsimp"></a><a name="p1880mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建并启动。
--   重复禁用通道返回成功。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_get\_chn\_frame<a name="ZH-CN_TOPIC_0000002457829677"></a>
-
-【描述】
-
-获取MCF通道图像数据
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建并启动。
+- 重复禁用通道返回成功。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_get\_chn\_frame<a name="ZH-CN_TOPIC_0000002457829677"></a> 【描述】 获取MCF通道图像数据 【语法】 ```
 td_s32 ss_mpi_mcf_get_chn_frame(ot_mcf_grp grp, ot_mcf_chn chn, ot_video_frame_info *video_frame, td_s32 milli_sec);
-```
-
-【参数】
-
-<a name="table1904mcpsimp"></a>
+``` 【参数】 <a name="table1904mcpsimp"></a>
 <table><thead align="left"><tr id="row1910mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p1912mcpsimp"><a name="p1912mcpsimp"></a><a name="p1912mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p1914mcpsimp"><a name="p1914mcpsimp"></a><a name="p1914mcpsimp"></a>描述</p>
@@ -1991,11 +1100,7 @@ td_s32 ss_mpi_mcf_get_chn_frame(ot_mcf_grp grp, ot_mcf_chn chn, ot_video_frame_i
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1952mcpsimp"></a>
+</table> 【返回值】 <a name="table1952mcpsimp"></a>
 <table><thead align="left"><tr id="row1957mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1959mcpsimp"><a name="p1959mcpsimp"></a><a name="p1959mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1961mcpsimp"><a name="p1961mcpsimp"></a><a name="p1961mcpsimp"></a>描述</p>
@@ -2007,51 +1112,16 @@ td_s32 ss_mpi_mcf_get_chn_frame(ot_mcf_grp grp, ot_mcf_chn chn, ot_video_frame_i
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1967mcpsimp"><a name="p1967mcpsimp"></a><a name="p1967mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1968mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p1970mcpsimp"><a name="p1970mcpsimp"></a><a name="p1970mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p1972mcpsimp"><a name="p1972mcpsimp"></a><a name="p1972mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   该接口适用于MCF所有通道，包括物理通道与扩展通道。
--   该接口只在融合路输出时支持。
--   只有队列深度不为0，才能获取到图像。
--   调用该接口获取图像，不会对后端绑定的模块有影响。如后端绑定VO显示，可以在显示过程中获取图像，VO仍正常显示，不会受到影响。
--   当milli\_sec设为-1时，表示阻塞模式，程序一直等待，直到获取到图像才返回。如果milli\_sec等于0时，表示非阻塞模式。如果milli\_sec大于0时，表示超时等待模式，参数的单位是毫秒，指超时时间，在此时间内如果没有获取到图像，则超时返回。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_release\_chn\_frame<a name="ZH-CN_TOPIC_0000002424350926"></a>
-
-【描述】
-
-用户释放一帧通道图像
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 该接口适用于MCF所有通道，包括物理通道与扩展通道。
+- 该接口只在融合路输出时支持。
+- 只有队列深度不为0，才能获取到图像。
+- 调用该接口获取图像，不会对后端绑定的模块有影响。如后端绑定VO显示，可以在显示过程中获取图像，VO仍正常显示，不会受到影响。
+- 当milli\_sec设为-1时，表示阻塞模式，程序一直等待，直到获取到图像才返回。如果milli\_sec等于0时，表示非阻塞模式。如果milli\_sec大于0时，表示超时等待模式，参数的单位是毫秒，指超时时间，在此时间内如果没有获取到图像，则超时返回。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_release\_chn\_frame<a name="ZH-CN_TOPIC_0000002424350926"></a> 【描述】 用户释放一帧通道图像 【语法】 ```
 td_s32 ss_mpi_mcf_release_chn_frame (ot_mcf_grp grp, ot_mcf_chn chn, ot_video_frame_info *video_frame);
-```
-
-【参数】
-
-<a name="table2002mcpsimp"></a>
+``` 【参数】 <a name="table2002mcpsimp"></a>
 <table><thead align="left"><tr id="row2008mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2010mcpsimp"><a name="p2010mcpsimp"></a><a name="p2010mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2012mcpsimp"><a name="p2012mcpsimp"></a><a name="p2012mcpsimp"></a>描述</p>
@@ -2084,11 +1154,7 @@ td_s32 ss_mpi_mcf_release_chn_frame (ot_mcf_grp grp, ot_mcf_chn chn, ot_video_fr
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2043mcpsimp"></a>
+</table> 【返回值】 <a name="table2043mcpsimp"></a>
 <table><thead align="left"><tr id="row2048mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2050mcpsimp"><a name="p2050mcpsimp"></a><a name="p2050mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2052mcpsimp"><a name="p2052mcpsimp"></a><a name="p2052mcpsimp"></a>描述</p>
@@ -2100,47 +1166,12 @@ td_s32 ss_mpi_mcf_release_chn_frame (ot_mcf_grp grp, ot_mcf_chn chn, ot_video_fr
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2058mcpsimp"><a name="p2058mcpsimp"></a><a name="p2058mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2059mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2061mcpsimp"><a name="p2061mcpsimp"></a><a name="p2061mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2063mcpsimp"><a name="p2063mcpsimp"></a><a name="p2063mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   此接口需与[ss\_mpi\_mcf\_get\_chn\_frame](#ZH-CN_TOPIC_0000002457829677)配对使用。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_set\_low\_delay\_attr<a name="ZH-CN_TOPIC_0000002457869905"></a>
-
-【描述】
-
-设置通道低延时属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 此接口需与[ss\_mpi\_mcf\_get\_chn\_frame](#ZH-CN_TOPIC_0000002457829677)配对使用。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_set\_low\_delay\_attr<a name="ZH-CN_TOPIC_0000002457869905"></a> 【描述】 设置通道低延时属性。 【语法】 ```
 td_s32 ss_mpi_mcf_set_low_delay_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_low_delay_info *low_delay_info);
-```
-
-【参数】
-
-<a name="table2090mcpsimp"></a>
+``` 【参数】 <a name="table2090mcpsimp"></a>
 <table><thead align="left"><tr id="row2096mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2098mcpsimp"><a name="p2098mcpsimp"></a><a name="p2098mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2100mcpsimp"><a name="p2100mcpsimp"></a><a name="p2100mcpsimp"></a>描述</p>
@@ -2173,11 +1204,7 @@ td_s32 ss_mpi_mcf_set_low_delay_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_lo
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2130mcpsimp"></a>
+</table> 【返回值】 <a name="table2130mcpsimp"></a>
 <table><thead align="left"><tr id="row2135mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2137mcpsimp"><a name="p2137mcpsimp"></a><a name="p2137mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2139mcpsimp"><a name="p2139mcpsimp"></a><a name="p2139mcpsimp"></a>描述</p>
@@ -2189,53 +1216,18 @@ td_s32 ss_mpi_mcf_set_low_delay_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_lo
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2145mcpsimp"><a name="p2145mcpsimp"></a><a name="p2145mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2146mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2148mcpsimp"><a name="p2148mcpsimp"></a><a name="p2148mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2150mcpsimp"><a name="p2150mcpsimp"></a><a name="p2150mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   设置低延时参数前必须先设置通道属性。
--   低延时不支持Flip。
--   低延时通道绑编码场景下，当有多个码流时，若设置编码通道优先级，此时低延时通道行数设置不能过小，建议设置128行以上，否则可能会引起非低延时通道阻塞不编码。
--   在低延时通道绑编码场景下，编码不支持软件抽场。在低延时单buffer绑定编码场景下，编码不支持去呼吸效应，不能开启重复编码的功能，包含增帧模式、超大帧重编码、码率波动导致的重编码，用户应把最大重编码次数设置为0。
--   开启通道低延时，图像不会进入通道用户队列，无法获取通道图像。
--   mcf物理通道扩展通道均不支持低延时onebuf。
--   mcf物理通道开启低延时，再开启固定角度旋转/MosaicEx/CoverEx/OverlayEx/Corner\_rectEx/Line，会自适应关闭mcf物理通道低延时。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_get\_low\_delay\_attr<a name="ZH-CN_TOPIC_0000002424350918"></a>
-
-【描述】
-
-获取通道低延时属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 设置低延时参数前必须先设置通道属性。
+- 低延时不支持Flip。
+- 低延时通道绑编码场景下，当有多个码流时，若设置编码通道优先级，此时低延时通道行数设置不能过小，建议设置128行以上，否则可能会引起非低延时通道阻塞不编码。
+- 在低延时通道绑编码场景下，编码不支持软件抽场。在低延时单buffer绑定编码场景下，编码不支持去呼吸效应，不能开启重复编码的功能，包含增帧模式、超大帧重编码、码率波动导致的重编码，用户应把最大重编码次数设置为0。
+- 开启通道低延时，图像不会进入通道用户队列，无法获取通道图像。
+- mcf物理通道扩展通道均不支持低延时onebuf。
+- mcf物理通道开启低延时，再开启固定角度旋转/MosaicEx/CoverEx/OverlayEx/Corner\_rectEx/Line，会自适应关闭mcf物理通道低延时。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_get\_low\_delay\_attr<a name="ZH-CN_TOPIC_0000002424350918"></a> 【描述】 获取通道低延时属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_low_delay_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_low_delay_info *low_delay_info);
-```
-
-【参数】
-
-<a name="table2181mcpsimp"></a>
+``` 【参数】 <a name="table2181mcpsimp"></a>
 <table><thead align="left"><tr id="row2187mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2189mcpsimp"><a name="p2189mcpsimp"></a><a name="p2189mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2191mcpsimp"><a name="p2191mcpsimp"></a><a name="p2191mcpsimp"></a>描述</p>
@@ -2268,11 +1260,7 @@ td_s32 ss_mpi_mcf_get_low_delay_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_low_dela
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2221mcpsimp"></a>
+</table> 【返回值】 <a name="table2221mcpsimp"></a>
 <table><thead align="left"><tr id="row2226mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2228mcpsimp"><a name="p2228mcpsimp"></a><a name="p2228mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2230mcpsimp"><a name="p2230mcpsimp"></a><a name="p2230mcpsimp"></a>描述</p>
@@ -2284,46 +1272,11 @@ td_s32 ss_mpi_mcf_get_low_delay_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_low_dela
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2236mcpsimp"><a name="p2236mcpsimp"></a><a name="p2236mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2237mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2239mcpsimp"><a name="p2239mcpsimp"></a><a name="p2239mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2241mcpsimp"><a name="p2241mcpsimp"></a><a name="p2241mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已创建。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_attach\_vb\_pool<a name="ZH-CN_TOPIC_0000002424350946"></a>
-
-【描述】
-
-将MCF绑定到某个视频缓存VB池中。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已创建。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_attach\_vb\_pool<a name="ZH-CN_TOPIC_0000002424350946"></a> 【描述】 将MCF绑定到某个视频缓存VB池中。 【语法】 ```
 td_s32 ss_mpi_mcf_attach_vb_pool(ot_mcf_grp grp, ot_mcf_chn chn, ot_vb_pool vb_pool);
-```
-
-【参数】
-
-<a name="table2263mcpsimp"></a>
+``` 【参数】 <a name="table2263mcpsimp"></a>
 <table><thead align="left"><tr id="row2269mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2271mcpsimp"><a name="p2271mcpsimp"></a><a name="p2271mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2273mcpsimp"><a name="p2273mcpsimp"></a><a name="p2273mcpsimp"></a>描述</p>
@@ -2356,11 +1309,7 @@ td_s32 ss_mpi_mcf_attach_vb_pool(ot_mcf_grp grp, ot_mcf_chn chn, ot_vb_pool vb_p
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2303mcpsimp"></a>
+</table> 【返回值】 <a name="table2303mcpsimp"></a>
 <table><thead align="left"><tr id="row2308mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2310mcpsimp"><a name="p2310mcpsimp"></a><a name="p2310mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2312mcpsimp"><a name="p2312mcpsimp"></a><a name="p2312mcpsimp"></a>描述</p>
@@ -2372,51 +1321,16 @@ td_s32 ss_mpi_mcf_attach_vb_pool(ot_mcf_grp grp, ot_mcf_chn chn, ot_vb_pool vb_p
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2318mcpsimp"><a name="p2318mcpsimp"></a><a name="p2318mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2319mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2321mcpsimp"><a name="p2321mcpsimp"></a><a name="p2321mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2323mcpsimp"><a name="p2323mcpsimp"></a><a name="p2323mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   必须保证组已创建。用户必须调用接口ss\_mpi\_vb\_create\_pool（具体描述请参见《MPP媒体处理软件V5.0开发参考》“系统控制”章节。）创建一个视频缓存VB池，再通过调用接口[ss\_mpi\_mcf\_attach\_vb\_pool](#ZH-CN_TOPIC_0000002424350946)把当前组的通道绑定到固定PoolId的VB池中。支持多个组的多个通道绑定到同一个VB池中。
--   当要切换当前组绑定的VB池时，只需再调一次接口[ss\_mpi\_mcf\_attach\_vb\_pool](#ZH-CN_TOPIC_0000002424350946)正确配置需要绑定到的VB池即可。
--   pool必须保证是已创建VB池的有效pool\_id。
--   在调用[ss\_mpi\_mcf\_detach\_vb\_pool](#ZH-CN_TOPIC_0000002457829693)后，销毁创建的VB之前，需要保证VB没有被MCF后端绑定的模块使用，可以通过sleep或清除后端模块通道缓存的方式先把VB都释放，再销毁缓存VB池。
--   User\_VB大小根据MCF通道输出图像计算，具体计算公式参考ot\_buffer.h。
--   绑定后，通道申请的VB均是从此VB池中获取，解绑后从公共VB池中获取。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_detach\_vb\_pool<a name="ZH-CN_TOPIC_0000002457829693"></a>
-
-【描述】
-
-将MCF的通道从某个视频缓存VB池中解绑定
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - 必须保证组已创建。用户必须调用接口ss\_mpi\_vb\_create\_pool（具体描述请参见《MPP媒体处理软件V5.0开发参考》“系统控制”章节。）创建一个视频缓存VB池，再通过调用接口[ss\_mpi\_mcf\_attach\_vb\_pool](#ZH-CN_TOPIC_0000002424350946)把当前组的通道绑定到固定PoolId的VB池中。支持多个组的多个通道绑定到同一个VB池中。
+- 当要切换当前组绑定的VB池时，只需再调一次接口[ss\_mpi\_mcf\_attach\_vb\_pool](#ZH-CN_TOPIC_0000002424350946)正确配置需要绑定到的VB池即可。
+- pool必须保证是已创建VB池的有效pool\_id。
+- 在调用[ss\_mpi\_mcf\_detach\_vb\_pool](#ZH-CN_TOPIC_0000002457829693)后，销毁创建的VB之前，需要保证VB没有被MCF后端绑定的模块使用，可以通过sleep或清除后端模块通道缓存的方式先把VB都释放，再销毁缓存VB池。
+- User\_VB大小根据MCF通道输出图像计算，具体计算公式参考ot\_buffer.h。
+- 绑定后，通道申请的VB均是从此VB池中获取，解绑后从公共VB池中获取。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_detach\_vb\_pool<a name="ZH-CN_TOPIC_0000002457829693"></a> 【描述】 将MCF的通道从某个视频缓存VB池中解绑定 【语法】 ```
 td_s32 ss_mpi_mcf_detach_vb_pool(ot_mcf_grp grp, ot_mcf_chn mcf_chn);
-```
-
-【参数】
-
-<a name="table2361mcpsimp"></a>
+``` 【参数】 <a name="table2361mcpsimp"></a>
 <table><thead align="left"><tr id="row2367mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2369mcpsimp"><a name="p2369mcpsimp"></a><a name="p2369mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2371mcpsimp"><a name="p2371mcpsimp"></a><a name="p2371mcpsimp"></a>描述</p>
@@ -2442,11 +1356,7 @@ td_s32 ss_mpi_mcf_detach_vb_pool(ot_mcf_grp grp, ot_mcf_chn mcf_chn);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2394mcpsimp"></a>
+</table> 【返回值】 <a name="table2394mcpsimp"></a>
 <table><thead align="left"><tr id="row2399mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2401mcpsimp"><a name="p2401mcpsimp"></a><a name="p2401mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2403mcpsimp"><a name="p2403mcpsimp"></a><a name="p2403mcpsimp"></a>描述</p>
@@ -2458,46 +1368,11 @@ td_s32 ss_mpi_mcf_detach_vb_pool(ot_mcf_grp grp, ot_mcf_chn mcf_chn);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2409mcpsimp"><a name="p2409mcpsimp"></a><a name="p2409mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2410mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2412mcpsimp"><a name="p2412mcpsimp"></a><a name="p2412mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2414mcpsimp"><a name="p2414mcpsimp"></a><a name="p2414mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已创建。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_set\_chn\_align<a name="ZH-CN_TOPIC_0000002457869845"></a>
-
-【描述】
-
-设置MCF通道输出YUV数据的行stride对齐。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已创建。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_set\_chn\_align<a name="ZH-CN_TOPIC_0000002457869845"></a> 【描述】 设置MCF通道输出YUV数据的行stride对齐。 【语法】 ```
 td_s32 ss_mpi_mcf_set_chn_align(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 align);
-```
-
-【参数】
-
-<a name="table2436mcpsimp"></a>
+``` 【参数】 <a name="table2436mcpsimp"></a>
 <table><thead align="left"><tr id="row2442mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2444mcpsimp"><a name="p2444mcpsimp"></a><a name="p2444mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2446mcpsimp"><a name="p2446mcpsimp"></a><a name="p2446mcpsimp"></a>描述</p>
@@ -2531,11 +1406,7 @@ td_s32 ss_mpi_mcf_set_chn_align(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 align);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2477mcpsimp"></a>
+</table> 【返回值】 <a name="table2477mcpsimp"></a>
 <table><thead align="left"><tr id="row2482mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2484mcpsimp"><a name="p2484mcpsimp"></a><a name="p2484mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2486mcpsimp"><a name="p2486mcpsimp"></a><a name="p2486mcpsimp"></a>描述</p>
@@ -2547,50 +1418,15 @@ td_s32 ss_mpi_mcf_set_chn_align(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 align);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2492mcpsimp"><a name="p2492mcpsimp"></a><a name="p2492mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2493mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2495mcpsimp"><a name="p2495mcpsimp"></a><a name="p2495mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2497mcpsimp"><a name="p2497mcpsimp"></a><a name="p2497mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   align 为0时stride对齐使用自动模式，对齐要求跟随系统。
--   align 为非0时使用指定的stride对齐。
--   当align 小于芯片IP要求的stride对齐时，系统分配buffer和计算stride还是以芯片IP要求stride对齐为准。
--   当align不等于芯片要求的stride对齐倍数时，系统分配buffer和计算stride向上对齐到芯片要求stride对齐的倍数。例：align设置为48，芯片要求32对齐时，系统分配buffer和计算stride时使用64对齐。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_get\_chn\_align](#ZH-CN_TOPIC_0000002424350914)
-
-## ss\_mpi\_mcf\_get\_chn\_align<a name="ZH-CN_TOPIC_0000002424350914"></a>
-
-【描述】
-
-获取MCF通道输出YUV数据的行stride对齐。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- align 为0时stride对齐使用自动模式，对齐要求跟随系统。
+- align 为非0时使用指定的stride对齐。
+- 当align 小于芯片IP要求的stride对齐时，系统分配buffer和计算stride还是以芯片IP要求stride对齐为准。
+- 当align不等于芯片要求的stride对齐倍数时，系统分配buffer和计算stride向上对齐到芯片要求stride对齐的倍数。例：align设置为48，芯片要求32对齐时，系统分配buffer和计算stride时使用64对齐。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_get\_chn\_align](#ZH-CN_TOPIC_0000002424350914) ## ss\_mpi\_mcf\_get\_chn\_align<a name="ZH-CN_TOPIC_0000002424350914"></a> 【描述】 获取MCF通道输出YUV数据的行stride对齐。 【语法】 ```
 td_s32 ss_mpi_mcf_get_chn_align(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 *align);
-```
-
-【参数】
-
-<a name="table2525mcpsimp"></a>
+``` 【参数】 <a name="table2525mcpsimp"></a>
 <table><thead align="left"><tr id="row2531mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2533mcpsimp"><a name="p2533mcpsimp"></a><a name="p2533mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2535mcpsimp"><a name="p2535mcpsimp"></a><a name="p2535mcpsimp"></a>描述</p>
@@ -2623,11 +1459,7 @@ td_s32 ss_mpi_mcf_get_chn_align(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 *align);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2565mcpsimp"></a>
+</table> 【返回值】 <a name="table2565mcpsimp"></a>
 <table><thead align="left"><tr id="row2570mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2572mcpsimp"><a name="p2572mcpsimp"></a><a name="p2572mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2574mcpsimp"><a name="p2574mcpsimp"></a><a name="p2574mcpsimp"></a>描述</p>
@@ -2639,46 +1471,11 @@ td_s32 ss_mpi_mcf_get_chn_align(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 *align);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2580mcpsimp"><a name="p2580mcpsimp"></a><a name="p2580mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2581mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2583mcpsimp"><a name="p2583mcpsimp"></a><a name="p2583mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2585mcpsimp"><a name="p2585mcpsimp"></a><a name="p2585mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已创建。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_set\_chn\_align](#ZH-CN_TOPIC_0000002457869845)
-
-## ss\_mpi\_mcf\_set\_chn\_rotation<a name="ZH-CN_TOPIC_0000002457829697"></a>
-
-【描述】
-
-设置MCF通道图像固定角度旋转属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已创建。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_set\_chn\_align](#ZH-CN_TOPIC_0000002457869845) ## ss\_mpi\_mcf\_set\_chn\_rotation<a name="ZH-CN_TOPIC_0000002457829697"></a> 【描述】 设置MCF通道图像固定角度旋转属性。 【语法】 ```
 td_s32 ss_mpi_mcf_set_chn_rotation(ot_mcf_grp grp, ot_mcf_chn chn, const ot_rotation_attr *rotation_attr);
-```
-
-【参数】
-
-<a name="table2608mcpsimp"></a>
+``` 【参数】 <a name="table2608mcpsimp"></a>
 <table><thead align="left"><tr id="row2614mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2616mcpsimp"><a name="p2616mcpsimp"></a><a name="p2616mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p2618mcpsimp"><a name="p2618mcpsimp"></a><a name="p2618mcpsimp"></a>描述</p>
@@ -2711,11 +1508,7 @@ td_s32 ss_mpi_mcf_set_chn_rotation(ot_mcf_grp grp, ot_mcf_chn chn, const ot_rota
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2648mcpsimp"></a>
+</table> 【返回值】 <a name="table2648mcpsimp"></a>
 <table><thead align="left"><tr id="row2653mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2655mcpsimp"><a name="p2655mcpsimp"></a><a name="p2655mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2657mcpsimp"><a name="p2657mcpsimp"></a><a name="p2657mcpsimp"></a>描述</p>
@@ -2727,47 +1520,16 @@ td_s32 ss_mpi_mcf_set_chn_rotation(ot_mcf_grp grp, ot_mcf_chn chn, const ot_rota
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2663mcpsimp"><a name="p2663mcpsimp"></a><a name="p2663mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2664mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2666mcpsimp"><a name="p2666mcpsimp"></a><a name="p2666mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2668mcpsimp"><a name="p2668mcpsimp"></a><a name="p2668mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   通道属性必须已设置。
--   仅物理通道支持。
--   仅支持YVU semi-planar 420，YUV semi-planar 420和单分量像素格式。
--   仅支持0度、90度、180度、270度的旋转，不支持任意角度旋转。
--   通道旋转不支持压缩写出。
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_get\_chn\_rotation<a name="ZH-CN_TOPIC_0000002457869849"></a>
-
-【描述】
-
-获取MCF通道图像固定角度旋转属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 通道属性必须已设置。
+- 仅物理通道支持。
+- 仅支持YVU semi-planar 420，YUV semi-planar 420和单分量像素格式。
+- 仅支持0度、90度、180度、270度的旋转，不支持任意角度旋转。
+- 通道旋转不支持压缩写出。 【相关主题】 无 ## ss\_mpi\_mcf\_get\_chn\_rotation<a name="ZH-CN_TOPIC_0000002457869849"></a> 【描述】 获取MCF通道图像固定角度旋转属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_chn_rotation(ot_mcf_grp grp, ot_mcf_chn chn, ot_rotation_attr *rotation_attr);
-```
-
-【参数】
-
-<a name="table2694mcpsimp"></a>
+``` 【参数】 <a name="table2694mcpsimp"></a>
 <table><thead align="left"><tr id="row2700mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2702mcpsimp"><a name="p2702mcpsimp"></a><a name="p2702mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p2704mcpsimp"><a name="p2704mcpsimp"></a><a name="p2704mcpsimp"></a>描述</p>
@@ -2800,11 +1562,7 @@ td_s32 ss_mpi_mcf_get_chn_rotation(ot_mcf_grp grp, ot_mcf_chn chn, ot_rotation_a
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2734mcpsimp"></a>
+</table> 【返回值】 <a name="table2734mcpsimp"></a>
 <table><thead align="left"><tr id="row2739mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2741mcpsimp"><a name="p2741mcpsimp"></a><a name="p2741mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2743mcpsimp"><a name="p2743mcpsimp"></a><a name="p2743mcpsimp"></a>描述</p>
@@ -2816,38 +1574,11 @@ td_s32 ss_mpi_mcf_get_chn_rotation(ot_mcf_grp grp, ot_mcf_chn chn, ot_rotation_a
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2749mcpsimp"><a name="p2749mcpsimp"></a><a name="p2749mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2750mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2752mcpsimp"><a name="p2752mcpsimp"></a><a name="p2752mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2754mcpsimp"><a name="p2754mcpsimp"></a><a name="p2754mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_set\_ext\_chn\_attr<a name="ZH-CN_TOPIC_0000002457869889"></a>
-
-【描述】
-
-设置MCF GROUP扩展通道属性，扩展通道的主要应用是进行二次缩放和帧率控制。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【相关主题】 无 ## ss\_mpi\_mcf\_set\_ext\_chn\_attr<a name="ZH-CN_TOPIC_0000002457869889"></a> 【描述】 设置MCF GROUP扩展通道属性，扩展通道的主要应用是进行二次缩放和帧率控制。 【语法】 ```
 td_s32 ss_mpi_mcf_set_ext_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_ext_chn_attr *ext_chn_attr);
-```
-
-【参数】
-
-<a name="table2774mcpsimp"></a>
+``` 【参数】 <a name="table2774mcpsimp"></a>
 <table><thead align="left"><tr id="row2780mcpsimp"><th class="cellrowborder" valign="top" width="17.17%" id="mcps1.1.4.1.1"><p id="p2782mcpsimp"><a name="p2782mcpsimp"></a><a name="p2782mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.69000000000001%" id="mcps1.1.4.1.2"><p id="p2784mcpsimp"><a name="p2784mcpsimp"></a><a name="p2784mcpsimp"></a>描述</p>
@@ -2880,11 +1611,7 @@ td_s32 ss_mpi_mcf_set_ext_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2818mcpsimp"></a>
+</table> 【返回值】 <a name="table2818mcpsimp"></a>
 <table><thead align="left"><tr id="row2823mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2825mcpsimp"><a name="p2825mcpsimp"></a><a name="p2825mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2827mcpsimp"><a name="p2827mcpsimp"></a><a name="p2827mcpsimp"></a>描述</p>
@@ -2896,53 +1623,14 @@ td_s32 ss_mpi_mcf_set_ext_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2833mcpsimp"><a name="p2833mcpsimp"></a><a name="p2833mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2834mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2836mcpsimp"><a name="p2836mcpsimp"></a><a name="p2836mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2838mcpsimp"><a name="p2838mcpsimp"></a><a name="p2838mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   扩展通道的输入绑定源必须为物理通道，宽、高需要满足2对齐，src\_frame\_rate必须大于等于dst\_frame\_rate，若都设置成-1，表示不进行帧率控制。
-
-    **注意**：src\_frame\_rate和dst\_frame\_rate具体描述请参见《MPP媒体处理软件V5.0开发参考》“系统控制”章节数据类型ot\_frame\_rate\_ctrl的成员。
-
--   扩展通道以绑定的方式连接物理通道，每个扩展通道最多绑定一个物理通道。
--   多个扩展通道可以绑定到同一个物理通道。
-
-【举例】
-
-无
-
-【相关主题】
-
--   [ot\_mcf\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002424350934)
--   [ss\_mpi\_mcf\_get\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869841)
-
-## ss\_mpi\_mcf\_get\_ext\_chn\_attr<a name="ZH-CN_TOPIC_0000002457869841"></a>
-
-【描述】
-
-获取MCF GROUP扩展通道属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 扩展通道的输入绑定源必须为物理通道，宽、高需要满足2对齐，src\_frame\_rate必须大于等于dst\_frame\_rate，若都设置成-1，表示不进行帧率控制。 **注意**：src\_frame\_rate和dst\_frame\_rate具体描述请参见《MPP媒体处理软件V5.0开发参考》“系统控制”章节数据类型ot\_frame\_rate\_ctrl的成员。 - 扩展通道以绑定的方式连接物理通道，每个扩展通道最多绑定一个物理通道。
+- 多个扩展通道可以绑定到同一个物理通道。 【举例】 无 【相关主题】 - [ot\_mcf\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002424350934)
+- [ss\_mpi\_mcf\_get\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869841) ## ss\_mpi\_mcf\_get\_ext\_chn\_attr<a name="ZH-CN_TOPIC_0000002457869841"></a> 【描述】 获取MCF GROUP扩展通道属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_ext_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_ext_chn_attr *ext_chn_attr);
-```
-
-【参数】
-
-<a name="table2873mcpsimp"></a>
+``` 【参数】 <a name="table2873mcpsimp"></a>
 <table><thead align="left"><tr id="row2879mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p2881mcpsimp"><a name="p2881mcpsimp"></a><a name="p2881mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p2883mcpsimp"><a name="p2883mcpsimp"></a><a name="p2883mcpsimp"></a>描述</p>
@@ -2975,11 +1663,7 @@ td_s32 ss_mpi_mcf_get_ext_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_ext_ch
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2914mcpsimp"></a>
+</table> 【返回值】 <a name="table2914mcpsimp"></a>
 <table><thead align="left"><tr id="row2919mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p2921mcpsimp"><a name="p2921mcpsimp"></a><a name="p2921mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p2923mcpsimp"><a name="p2923mcpsimp"></a><a name="p2923mcpsimp"></a>描述</p>
@@ -2991,47 +1675,12 @@ td_s32 ss_mpi_mcf_get_ext_chn_attr(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_ext_ch
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2929mcpsimp"><a name="p2929mcpsimp"></a><a name="p2929mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2930mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p2932mcpsimp"><a name="p2932mcpsimp"></a><a name="p2932mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p2934mcpsimp"><a name="p2934mcpsimp"></a><a name="p2934mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已创建。
-
-【举例】
-
-无
-
-【相关主题】
-
--   [ot\_mcf\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002424350934)
--   [ss\_mpi\_mcf\_set\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869889)
-
-## ss\_mpi\_mcf\_set\_chn\_crop<a name="ZH-CN_TOPIC_0000002424350966"></a>
-
-【描述】
-
-设置MCF通道裁剪功能属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已创建。 【举例】 无 【相关主题】 - [ot\_mcf\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002424350934)
+- [ss\_mpi\_mcf\_set\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002457869889) ## ss\_mpi\_mcf\_set\_chn\_crop<a name="ZH-CN_TOPIC_0000002424350966"></a> 【描述】 设置MCF通道裁剪功能属性。 【语法】 ```
 td_s32 ss_mpi_mcf_set_chn_crop(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_crop_info *crop_info);
-```
-
-【参数】
-
-<a name="table2961mcpsimp"></a>
+``` 【参数】 <a name="table2961mcpsimp"></a>
 <table><thead align="left"><tr id="row2967mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2969mcpsimp"><a name="p2969mcpsimp"></a><a name="p2969mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p2971mcpsimp"><a name="p2971mcpsimp"></a><a name="p2971mcpsimp"></a>描述</p>
@@ -3064,11 +1713,7 @@ td_s32 ss_mpi_mcf_set_chn_crop(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_crop
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3002mcpsimp"></a>
+</table> 【返回值】 <a name="table3002mcpsimp"></a>
 <table><thead align="left"><tr id="row3007mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3009mcpsimp"><a name="p3009mcpsimp"></a><a name="p3009mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3011mcpsimp"><a name="p3011mcpsimp"></a><a name="p3011mcpsimp"></a>描述</p>
@@ -3080,51 +1725,16 @@ td_s32 ss_mpi_mcf_set_chn_crop(ot_mcf_grp grp, ot_mcf_chn chn, const ot_mcf_crop
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3017mcpsimp"><a name="p3017mcpsimp"></a><a name="p3017mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3018mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3020mcpsimp"><a name="p3020mcpsimp"></a><a name="p3020mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3022mcpsimp"><a name="p3022mcpsimp"></a><a name="p3022mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   通道使能后才可以设置裁剪功能。
--   物理通道先做缩放后做裁剪；扩展通道先做裁剪后做缩放。
--   物理通道裁剪最小分辨率128x64；扩展通道裁剪最小分辨率64x64。
--   裁剪计算出的坐标和宽高自动向下2像素对齐。
--   如果裁剪区域超出图像范围，丢弃超出部分图像，优先保证裁剪坐标与所设置的参数相同。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_get\_chn\_crop](#ZH-CN_TOPIC_0000002424191102)
-
-## ss\_mpi\_mcf\_get\_chn\_crop<a name="ZH-CN_TOPIC_0000002424191102"></a>
-
-【描述】
-
-获取MCF通道裁剪功能属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 通道使能后才可以设置裁剪功能。
+- 物理通道先做缩放后做裁剪；扩展通道先做裁剪后做缩放。
+- 物理通道裁剪最小分辨率128x64；扩展通道裁剪最小分辨率64x64。
+- 裁剪计算出的坐标和宽高自动向下2像素对齐。
+- 如果裁剪区域超出图像范围，丢弃超出部分图像，优先保证裁剪坐标与所设置的参数相同。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_get\_chn\_crop](#ZH-CN_TOPIC_0000002424191102) ## ss\_mpi\_mcf\_get\_chn\_crop<a name="ZH-CN_TOPIC_0000002424191102"></a> 【描述】 获取MCF通道裁剪功能属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_chn_crop(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_crop_info *crop_info);
-```
-
-【参数】
-
-<a name="table3053mcpsimp"></a>
+``` 【参数】 <a name="table3053mcpsimp"></a>
 <table><thead align="left"><tr id="row3059mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p3061mcpsimp"><a name="p3061mcpsimp"></a><a name="p3061mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p3063mcpsimp"><a name="p3063mcpsimp"></a><a name="p3063mcpsimp"></a>描述</p>
@@ -3157,11 +1767,7 @@ td_s32 ss_mpi_mcf_get_chn_crop(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_crop_info 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3094mcpsimp"></a>
+</table> 【返回值】 <a name="table3094mcpsimp"></a>
 <table><thead align="left"><tr id="row3099mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3101mcpsimp"><a name="p3101mcpsimp"></a><a name="p3101mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3103mcpsimp"><a name="p3103mcpsimp"></a><a name="p3103mcpsimp"></a>描述</p>
@@ -3173,46 +1779,11 @@ td_s32 ss_mpi_mcf_get_chn_crop(ot_mcf_grp grp, ot_mcf_chn chn, ot_mcf_crop_info 
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3109mcpsimp"><a name="p3109mcpsimp"></a><a name="p3109mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3110mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3112mcpsimp"><a name="p3112mcpsimp"></a><a name="p3112mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3114mcpsimp"><a name="p3114mcpsimp"></a><a name="p3114mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-GROUP必须已创建。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_set\_chn\_crop](#ZH-CN_TOPIC_0000002424350966)
-
-## ss\_mpi\_mcf\_get\_chn\_rgn\_luma<a name="ZH-CN_TOPIC_0000002457829737"></a>
-
-【描述】
-
-获取指定图像区域的亮度总和。该接口主要用于对OSD区域进行亮度和统计，根据统计的亮度，进行反色处理，使OSD区域更加明显。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 GROUP必须已创建。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_set\_chn\_crop](#ZH-CN_TOPIC_0000002424350966) ## ss\_mpi\_mcf\_get\_chn\_rgn\_luma<a name="ZH-CN_TOPIC_0000002457829737"></a> 【描述】 获取指定图像区域的亮度总和。该接口主要用于对OSD区域进行亮度和统计，根据统计的亮度，进行反色处理，使OSD区域更加明显。 【语法】 ```
 td_s32 ss_mpi_mcf_get_chn_rgn_luma(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 num, const ot_rect *rgn, td_u64 *luma_data, td_s32 milli_sec);
-```
-
-【参数】
-
-<a name="table3137mcpsimp"></a>
+``` 【参数】 <a name="table3137mcpsimp"></a>
 <table><thead align="left"><tr id="row3143mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p3145mcpsimp"><a name="p3145mcpsimp"></a><a name="p3145mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.4.1.2"><p id="p3147mcpsimp"><a name="p3147mcpsimp"></a><a name="p3147mcpsimp"></a>描述</p>
@@ -3268,11 +1839,7 @@ td_s32 ss_mpi_mcf_get_chn_rgn_luma(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 num, c
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3202mcpsimp"></a>
+</table> 【返回值】 <a name="table3202mcpsimp"></a>
 <table><thead align="left"><tr id="row3207mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3209mcpsimp"><a name="p3209mcpsimp"></a><a name="p3209mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3211mcpsimp"><a name="p3211mcpsimp"></a><a name="p3211mcpsimp"></a>描述</p>
@@ -3284,50 +1851,15 @@ td_s32 ss_mpi_mcf_get_chn_rgn_luma(ot_mcf_grp grp, ot_mcf_chn chn, td_u32 num, c
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3217mcpsimp"><a name="p3217mcpsimp"></a><a name="p3217mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3218mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3220mcpsimp"><a name="p3220mcpsimp"></a><a name="p3220mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3222mcpsimp"><a name="p3222mcpsimp"></a><a name="p3222mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建并且对应的通道已经使能。
--   统计区域的数量范围为\[1, 64\]。
--   统计区域坐标和宽高要求2像素对齐。
--   统计区域宽高最小为2x2，Hi3403V100统计区域宽高最大为8192x8192。
--   亮度和区域不得超出图像。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_set\_chn\_crop](#ZH-CN_TOPIC_0000002424350966)
-
-## ss\_mpi\_mcf\_get\_chn\_fd<a name="ZH-CN_TOPIC_0000002457869837"></a>
-
-【描述】
-
-获取MCF通道对应的设备文件句柄。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建并且对应的通道已经使能。
+- 统计区域的数量范围为\[1, 64\]。
+- 统计区域坐标和宽高要求2像素对齐。
+- 统计区域宽高最小为2x2，Hi3403V100统计区域宽高最大为8192x8192。
+- 亮度和区域不得超出图像。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_set\_chn\_crop](#ZH-CN_TOPIC_0000002424350966) ## ss\_mpi\_mcf\_get\_chn\_fd<a name="ZH-CN_TOPIC_0000002457869837"></a> 【描述】 获取MCF通道对应的设备文件句柄。 【语法】 ```
 td_s32 ss_mpi_mcf_get_chn_fd(ot_mcf_grp grp, ot_mcf_chn chn);
-```
-
-【参数】
-
-<a name="table3250mcpsimp"></a>
+``` 【参数】 <a name="table3250mcpsimp"></a>
 <table><thead align="left"><tr id="row3256mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p3258mcpsimp"><a name="p3258mcpsimp"></a><a name="p3258mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p3260mcpsimp"><a name="p3260mcpsimp"></a><a name="p3260mcpsimp"></a>描述</p>
@@ -3353,11 +1885,7 @@ td_s32 ss_mpi_mcf_get_chn_fd(ot_mcf_grp grp, ot_mcf_chn chn);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3283mcpsimp"></a>
+</table> 【返回值】 <a name="table3283mcpsimp"></a>
 <table><thead align="left"><tr id="row3288mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3290mcpsimp"><a name="p3290mcpsimp"></a><a name="p3290mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3292mcpsimp"><a name="p3292mcpsimp"></a><a name="p3292mcpsimp"></a>描述</p>
@@ -3375,40 +1903,10 @@ td_s32 ss_mpi_mcf_get_chn_fd(ot_mcf_grp grp, ot_mcf_chn chn);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_close\_fd<a name="ZH-CN_TOPIC_0000002424191106"></a>
-
-【描述】
-
-关闭获取的文件句柄。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 无 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_close\_fd<a name="ZH-CN_TOPIC_0000002424191106"></a> 【描述】 关闭获取的文件句柄。 【语法】 ```
 td_s32 ss_mpi_mcf_close_fd(td_void);
-```
-
-【返回值】
-
-<a name="table3321mcpsimp"></a>
+``` 【返回值】 <a name="table3321mcpsimp"></a>
 <table><thead align="left"><tr id="row3326mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3328mcpsimp"><a name="p3328mcpsimp"></a><a name="p3328mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3330mcpsimp"><a name="p3330mcpsimp"></a><a name="p3330mcpsimp"></a>描述</p>
@@ -3426,40 +1924,10 @@ td_s32 ss_mpi_mcf_close_fd(td_void);
 </td>
 </tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
-此接口不能与其他MPI接口同时调用，用户必须保证此接口与其他接口在时间上是串行调用的。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_get\_chn\_fd](#ZH-CN_TOPIC_0000002457869837)
-
-## ss\_mpi\_mcf\_get\_grp\_frame<a name="ZH-CN_TOPIC_0000002457829741"></a>
-
-【描述】
-
-获取mcf组图像数据。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 此接口不能与其他MPI接口同时调用，用户必须保证此接口与其他接口在时间上是串行调用的。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_get\_chn\_fd](#ZH-CN_TOPIC_0000002457869837) ## ss\_mpi\_mcf\_get\_grp\_frame<a name="ZH-CN_TOPIC_0000002457829741"></a> 【描述】 获取mcf组图像数据。 【语法】 ```
 td_s32 ss_mpi_mcf_get_grp_frame(ot_mcf_grp grp, ot_video_frame_info *color_frame, ot_video_frame_info *mono_frame, td_s32 milli_sec);
-```
-
-【参数】
-
-<a name="table3360mcpsimp"></a>
+``` 【参数】 <a name="table3360mcpsimp"></a>
 <table><thead align="left"><tr id="row3366mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p3368mcpsimp"><a name="p3368mcpsimp"></a><a name="p3368mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p3370mcpsimp"><a name="p3370mcpsimp"></a><a name="p3370mcpsimp"></a>描述</p>
@@ -3498,11 +1966,7 @@ td_s32 ss_mpi_mcf_get_grp_frame(ot_mcf_grp grp, ot_video_frame_info *color_frame
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3407mcpsimp"></a>
+</table> 【返回值】 <a name="table3407mcpsimp"></a>
 <table><thead align="left"><tr id="row3412mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3414mcpsimp"><a name="p3414mcpsimp"></a><a name="p3414mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3416mcpsimp"><a name="p3416mcpsimp"></a><a name="p3416mcpsimp"></a>描述</p>
@@ -3514,49 +1978,14 @@ td_s32 ss_mpi_mcf_get_grp_frame(ot_mcf_grp grp, ot_video_frame_info *color_frame
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3421mcpsimp"><a name="p3421mcpsimp"></a><a name="p3421mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3422mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3424mcpsimp"><a name="p3424mcpsimp"></a><a name="p3424mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3426mcpsimp"><a name="p3426mcpsimp"></a><a name="p3426mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   只有队列深度不为0，才能获取到图像。
--   该接口只在融合路输出时支持。
--   当milli\_sec设为-1时，表示阻塞模式，程序一直等待，直到获取到图像才返回。如果milli\_sec等于0时，表示非阻塞模式。如果milli\_sec大于0时，表示超时等待模式，参数的单位是毫秒，指超时时间，在此时间内如果没有获取到图像，则超时返回。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_release\_grp\_frame<a name="ZH-CN_TOPIC_0000002424191074"></a>
-
-【描述】
-
-释放mcf组图像数据。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 只有队列深度不为0，才能获取到图像。
+- 该接口只在融合路输出时支持。
+- 当milli\_sec设为-1时，表示阻塞模式，程序一直等待，直到获取到图像才返回。如果milli\_sec等于0时，表示非阻塞模式。如果milli\_sec大于0时，表示超时等待模式，参数的单位是毫秒，指超时时间，在此时间内如果没有获取到图像，则超时返回。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_release\_grp\_frame<a name="ZH-CN_TOPIC_0000002424191074"></a> 【描述】 释放mcf组图像数据。 【语法】 ```
 td_s32 ss_mpi_mcf_release_grp_frame(ot_mcf_grp grp, ot_video_frame_info *color_frame, ot_video_frame_info *mono_frame);
-```
-
-【参数】
-
-<a name="table3453mcpsimp"></a>
+``` 【参数】 <a name="table3453mcpsimp"></a>
 <table><thead align="left"><tr id="row3459mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p3461mcpsimp"><a name="p3461mcpsimp"></a><a name="p3461mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p3463mcpsimp"><a name="p3463mcpsimp"></a><a name="p3463mcpsimp"></a>描述</p>
@@ -3588,11 +2017,7 @@ td_s32 ss_mpi_mcf_release_grp_frame(ot_mcf_grp grp, ot_video_frame_info *color_f
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3493mcpsimp"></a>
+</table> 【返回值】 <a name="table3493mcpsimp"></a>
 <table><thead align="left"><tr id="row3498mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3500mcpsimp"><a name="p3500mcpsimp"></a><a name="p3500mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3502mcpsimp"><a name="p3502mcpsimp"></a><a name="p3502mcpsimp"></a>描述</p>
@@ -3604,47 +2029,12 @@ td_s32 ss_mpi_mcf_release_grp_frame(ot_mcf_grp grp, ot_video_frame_info *color_f
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3507mcpsimp"><a name="p3507mcpsimp"></a><a name="p3507mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3508mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3510mcpsimp"><a name="p3510mcpsimp"></a><a name="p3510mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3512mcpsimp"><a name="p3512mcpsimp"></a><a name="p3512mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
--   库文件：libss\_mcf.a
-
-【注意】
-
--   GROUP必须已创建。
--   此接口需与[ss\_mpi\_mcf\_get\_grp\_frame](#ZH-CN_TOPIC_0000002457829741)配对使用。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_mcf\_get\_grp\_frame](#ZH-CN_TOPIC_0000002457829741)
-
-## ss\_mpi\_mcf\_calibration<a name="ZH-CN_TOPIC_0000002457869861"></a>
-
-【描述】
-
-标定参数接口。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf.h、ss\_mpi\_mcf.h
+- 库文件：libss\_mcf.a 【注意】 - GROUP必须已创建。
+- 此接口需与[ss\_mpi\_mcf\_get\_grp\_frame](#ZH-CN_TOPIC_0000002457829741)配对使用。 【举例】 无 【相关主题】 [ss\_mpi\_mcf\_get\_grp\_frame](#ZH-CN_TOPIC_0000002457829741) ## ss\_mpi\_mcf\_calibration<a name="ZH-CN_TOPIC_0000002457869861"></a> 【描述】 标定参数接口。 【语法】 ```
 td_s32 ss_mpi_mcf_calibration(const ot_video_frame *pic_in_match, const ot_video_frame *pic_in_refer, ot_mcf_calibration_mode mode, ot_mcf_feature_info *feature_info, ot_mcf_calibration *calibration_info);
-```
-
-【参数】
-
-<a name="table3542mcpsimp"></a>
+``` 【参数】 <a name="table3542mcpsimp"></a>
 <table><thead align="left"><tr id="row3548mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p3550mcpsimp"><a name="p3550mcpsimp"></a><a name="p3550mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p3552mcpsimp"><a name="p3552mcpsimp"></a><a name="p3552mcpsimp"></a>描述</p>
@@ -3691,11 +2081,7 @@ td_s32 ss_mpi_mcf_calibration(const ot_video_frame *pic_in_match, const ot_video
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3596mcpsimp"></a>
+</table> 【返回值】 <a name="table3596mcpsimp"></a>
 <table><thead align="left"><tr id="row3601mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3603mcpsimp"><a name="p3603mcpsimp"></a><a name="p3603mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3605mcpsimp"><a name="p3605mcpsimp"></a><a name="p3605mcpsimp"></a>描述</p>
@@ -3707,79 +2093,17 @@ td_s32 ss_mpi_mcf_calibration(const ot_video_frame *pic_in_match, const ot_video
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3611mcpsimp"><a name="p3611mcpsimp"></a><a name="p3611mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3612mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3614mcpsimp"><a name="p3614mcpsimp"></a><a name="p3614mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3616mcpsimp"><a name="p3616mcpsimp"></a><a name="p3616mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_mcf\_calibration.h、ot\_mpi\_mcf\_calibration.h
--   库文件：libss\_mcfcalibrate.a
-
-【注意】
-
--   标定注意事项可参考《黑白彩色双路融合 调试指南》。
--   标定的两路输入图像宽高不能大于4096\*2160，并且宽高和stride均相等。
--   标定要求输入图像的像素格式是YUV400、YUV420SP、YUV422SP、YUV420P、YUV422P。但MCF的功能通路mono的像素格式仅支持YUV400和YUV420SP，color通路仅支持YUV420SP。
--   标定要求输入图像不支持压缩模式。
--   标定要求输入图像的视频格式为线性模式。
--   标定过程所需系统内存参考下表。当输入分辨率大于2560x1440时，标定库内部会下采样一倍，因此该分辨率下所需内存最大。
-
-    <a name="table3631mcpsimp"></a>
-    <table><thead align="left"><tr id="row3636mcpsimp"><th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.1"><p id="p3638mcpsimp"><a name="p3638mcpsimp"></a><a name="p3638mcpsimp"></a>分辨率</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.2"><p id="p3640mcpsimp"><a name="p3640mcpsimp"></a><a name="p3640mcpsimp"></a>内存</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row3642mcpsimp"><td class="cellrowborder" valign="top" width="49%" headers="mcps1.1.3.1.1 "><p id="p3644mcpsimp"><a name="p3644mcpsimp"></a><a name="p3644mcpsimp"></a>1280x720</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51%" headers="mcps1.1.3.1.2 "><p id="p3646mcpsimp"><a name="p3646mcpsimp"></a><a name="p3646mcpsimp"></a>74M</p>
-    </td>
-    </tr>
-    <tr id="row3647mcpsimp"><td class="cellrowborder" valign="top" width="49%" headers="mcps1.1.3.1.1 "><p id="p3649mcpsimp"><a name="p3649mcpsimp"></a><a name="p3649mcpsimp"></a>1920x1080</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51%" headers="mcps1.1.3.1.2 "><p id="p3651mcpsimp"><a name="p3651mcpsimp"></a><a name="p3651mcpsimp"></a>165M</p>
-    </td>
-    </tr>
-    <tr id="row3652mcpsimp"><td class="cellrowborder" valign="top" width="49%" headers="mcps1.1.3.1.1 "><p id="p3654mcpsimp"><a name="p3654mcpsimp"></a><a name="p3654mcpsimp"></a>2560x1440</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51%" headers="mcps1.1.3.1.2 "><p id="p3656mcpsimp"><a name="p3656mcpsimp"></a><a name="p3656mcpsimp"></a>294M</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
--   标定的有效区域为图像顶部、底部、左侧、右侧剪裁宽度合围成的ROI区域，两路有效区域必须相等才能进行标定。默认全图做进行标定。
--   输入图像的宽高以及图像顶部、底部、左侧、右侧剪裁宽度必须8对齐。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_mcf\_set\_vi\_attr<a name="ZH-CN_TOPIC_0000002424350998"></a>
-
-【描述】
-
-设置MCF 场景下VI属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_mcf\_calibration.h、ot\_mpi\_mcf\_calibration.h
+- 库文件：libss\_mcfcalibrate.a 【注意】 - 标定注意事项可参考《黑白彩色双路融合 调试指南》。
+- 标定的两路输入图像宽高不能大于4096\*2160，并且宽高和stride均相等。
+- 标定要求输入图像的像素格式是YUV400、YUV420SP、YUV422SP、YUV420P、YUV422P。但MCF的功能通路mono的像素格式仅支持YUV400和YUV420SP，color通路仅支持YUV420SP。
+- 标定要求输入图像不支持压缩模式。
+- 标定要求输入图像的视频格式为线性模式。
+- 标定过程所需系统内存参考下表。当输入分辨率大于2560x1440时，标定库内部会下采样一倍，因此该分辨率下所需内存最大。 <a name="table3631mcpsimp"></a> <table><thead align="left"><tr id="row3636mcpsimp"><th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.1"><p id="p3638mcpsimp"><a name="p3638mcpsimp"></a><a name="p3638mcpsimp"></a>分辨率</p> </th> <th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.2"><p id="p3640mcpsimp"><a name="p3640mcpsimp"></a><a name="p3640mcpsimp"></a>内存</p> </th> </tr> </thead> <tbody><tr id="row3642mcpsimp"><td class="cellrowborder" valign="top" width="49%" headers="mcps1.1.3.1.1 "><p id="p3644mcpsimp"><a name="p3644mcpsimp"></a><a name="p3644mcpsimp"></a>1280x720</p> </td> <td class="cellrowborder" valign="top" width="51%" headers="mcps1.1.3.1.2 "><p id="p3646mcpsimp"><a name="p3646mcpsimp"></a><a name="p3646mcpsimp"></a>74M</p> </td> </tr> <tr id="row3647mcpsimp"><td class="cellrowborder" valign="top" width="49%" headers="mcps1.1.3.1.1 "><p id="p3649mcpsimp"><a name="p3649mcpsimp"></a><a name="p3649mcpsimp"></a>1920x1080</p> </td> <td class="cellrowborder" valign="top" width="51%" headers="mcps1.1.3.1.2 "><p id="p3651mcpsimp"><a name="p3651mcpsimp"></a><a name="p3651mcpsimp"></a>165M</p> </td> </tr> <tr id="row3652mcpsimp"><td class="cellrowborder" valign="top" width="49%" headers="mcps1.1.3.1.1 "><p id="p3654mcpsimp"><a name="p3654mcpsimp"></a><a name="p3654mcpsimp"></a>2560x1440</p> </td> <td class="cellrowborder" valign="top" width="51%" headers="mcps1.1.3.1.2 "><p id="p3656mcpsimp"><a name="p3656mcpsimp"></a><a name="p3656mcpsimp"></a>294M</p> </td> </tr> </tbody> </table> - 标定的有效区域为图像顶部、底部、左侧、右侧剪裁宽度合围成的ROI区域，两路有效区域必须相等才能进行标定。默认全图做进行标定。
+- 输入图像的宽高以及图像顶部、底部、左侧、右侧剪裁宽度必须8对齐。 【举例】 无 【相关主题】 无 ## ss\_mpi\_mcf\_set\_vi\_attr<a name="ZH-CN_TOPIC_0000002424350998"></a> 【描述】 设置MCF 场景下VI属性。 【语法】 ```
 td_s32 ss_mpi_mcf_set_vi_attr(ot_mcf_id mcf_id, const ot_mcf_vi_attr *mcf_vi_attr);
-```
-
-【参数】
-
-<a name="table3672mcpsimp"></a>
+``` 【参数】 <a name="table3672mcpsimp"></a>
 <table><thead align="left"><tr id="row3678mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p3680mcpsimp"><a name="p3680mcpsimp"></a><a name="p3680mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p3682mcpsimp"><a name="p3682mcpsimp"></a><a name="p3682mcpsimp"></a>描述</p>
@@ -3803,11 +2127,7 @@ td_s32 ss_mpi_mcf_set_vi_attr(ot_mcf_id mcf_id, const ot_mcf_vi_attr *mcf_vi_att
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3702mcpsimp"></a>
+</table> 【返回值】 <a name="table3702mcpsimp"></a>
 <table><thead align="left"><tr id="row3707mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3709mcpsimp"><a name="p3709mcpsimp"></a><a name="p3709mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3711mcpsimp"><a name="p3711mcpsimp"></a><a name="p3711mcpsimp"></a>描述</p>
@@ -3819,45 +2139,18 @@ td_s32 ss_mpi_mcf_set_vi_attr(ot_mcf_id mcf_id, const ot_mcf_vi_attr *mcf_vi_att
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3717mcpsimp"><a name="p3717mcpsimp"></a><a name="p3717mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3718mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3720mcpsimp"><a name="p3720mcpsimp"></a><a name="p3720mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3722mcpsimp"><a name="p3722mcpsimp"></a><a name="p3722mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_mpi\_mcf\_vi.h
--   库文件：libss\_mcf\_vi.a
-
-【注意】
-
--   退出VI之前，需要调用此接口[ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)的enable设置为FALSE，关闭MCF场景下VI相关属性设置。
--   VB属性需要置为OT\_VB\_SUPPLEMENT\_BNR\_MOT\_MASK，具体描述请参见《MPP媒体处理软件V5.0开发参考》“系统控制”章节。
--   在VI送raw数据场景，在VI停止送raw数据之前，需要调用此接口[ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)的enable设置为FALSE。
--   将[ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)的enable设置为TRUE之后，表示开启MCF预处理功能，该功能建议默认开启，可以更好的优化低照下彩色图像的效果；开启时不建议调用mono\_pipe通路的获取通道帧接口，会导致通路性能异常。
--   本接口在VPSS在线模式下不可用。
--   开启了防抖会影响MCF预处理效果，不建议防抖和MCF预处理功能同时使能。
--   开启压缩会影响MCF预处理效果，仅支持非压缩模式。
--   本接口不支持多进程使用。
-
-## ss\_mpi\_mcf\_get\_vi\_attr<a name="ZH-CN_TOPIC_0000002457829729"></a>
-
-【描述】
-
-获取MCF 场景下VI属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_mpi\_mcf\_vi.h
+- 库文件：libss\_mcf\_vi.a 【注意】 - 退出VI之前，需要调用此接口[ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)的enable设置为FALSE，关闭MCF场景下VI相关属性设置。
+- VB属性需要置为OT\_VB\_SUPPLEMENT\_BNR\_MOT\_MASK，具体描述请参见《MPP媒体处理软件V5.0开发参考》“系统控制”章节。
+- 在VI送raw数据场景，在VI停止送raw数据之前，需要调用此接口[ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)的enable设置为FALSE。
+- 将[ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)的enable设置为TRUE之后，表示开启MCF预处理功能，该功能建议默认开启，可以更好的优化低照下彩色图像的效果；开启时不建议调用mono\_pipe通路的获取通道帧接口，会导致通路性能异常。
+- 本接口在VPSS在线模式下不可用。
+- 开启了防抖会影响MCF预处理效果，不建议防抖和MCF预处理功能同时使能。
+- 开启压缩会影响MCF预处理效果，仅支持非压缩模式。
+- 本接口不支持多进程使用。 ## ss\_mpi\_mcf\_get\_vi\_attr<a name="ZH-CN_TOPIC_0000002457829729"></a> 【描述】 获取MCF 场景下VI属性。 【语法】 ```
 td_s32 ss_mpi_mcf_get_vi_attr(ot_mcf_id mcf_id, ot_mcf_vi_attr *mcf_vi_attr);
-```
-
-【参数】
-
-<a name="table3745mcpsimp"></a>
+``` 【参数】 <a name="table3745mcpsimp"></a>
 <table><thead align="left"><tr id="row3751mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p3753mcpsimp"><a name="p3753mcpsimp"></a><a name="p3753mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p3755mcpsimp"><a name="p3755mcpsimp"></a><a name="p3755mcpsimp"></a>描述</p>
@@ -3881,11 +2174,7 @@ td_s32 ss_mpi_mcf_get_vi_attr(ot_mcf_id mcf_id, ot_mcf_vi_attr *mcf_vi_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table3775mcpsimp"></a>
+</table> 【返回值】 <a name="table3775mcpsimp"></a>
 <table><thead align="left"><tr id="row3780mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3782mcpsimp"><a name="p3782mcpsimp"></a><a name="p3782mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3784mcpsimp"><a name="p3784mcpsimp"></a><a name="p3784mcpsimp"></a>描述</p>
@@ -3897,641 +2186,112 @@ td_s32 ss_mpi_mcf_get_vi_attr(ot_mcf_id mcf_id, ot_mcf_vi_attr *mcf_vi_attr);
 <td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3790mcpsimp"><a name="p3790mcpsimp"></a><a name="p3790mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row3791mcpsimp"><td class="cellrowborder" valign="top" width="46%" headers="mcps1.1.3.1.1 "><p id="p3793mcpsimp"><a name="p3793mcpsimp"></a><a name="p3793mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="54%" headers="mcps1.1.3.1.2 "><p id="p3795mcpsimp"><a name="p3795mcpsimp"></a><a name="p3795mcpsimp"></a>失败，请参见<span xml:lang="fr-FR" id="ph1194611573377"><a name="ph1194611573377"></a><a name="ph1194611573377"></a><a href="#ZH-CN_TOPIC_0000002424191142">错误码</a></span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_mpi\_mcf\_vi.h
--   库文件：libss\_mcf\_vi.a
-
-【注意】
-
-本接口不支持多进程使用。
-
-# 数据类型
-MCF模块相关数据类型定义如下：
-
--   [OT\_MCF\_MAX\_GRP\_NUM](#ZH-CN_TOPIC_0000002424191118)：定义MCF最大GROUP个数。
--   [OT\_MCF\_PIPE\_NUM](#ZH-CN_TOPIC_0000002424350958)：定义MCF PIPE个数。
--   [OT\_MCF\_MAX\_CHN\_NUM](#ZH-CN_TOPIC_0000002424350986)：定义MCF最大通道个数。
--   [OT\_MCF\_MAX\_PHYS\_CHN\_NUM](#ZH-CN_TOPIC_0000002457829701):  定义MCF最大物理通道个数。
--   [OT\_MCF\_MAX\_EXT\_CHN\_NUM](#ZH-CN_TOPIC_0000002457869881):  定义MCF最大扩展通道个数。
--   [OT\_MCF\_MAX\_PIPE\_WIDTH](#ZH-CN_TOPIC_0000002457829689)：定义MCF组的最大宽度。
--   [OT\_MCF\_MAX\_PIPE\_HEIGHT](#ZH-CN_TOPIC_0000002457829749)：定义MCF组的最大高度。
--   [OT\_MCF\_MIN\_PIPE\_WIDTH](#ZH-CN_TOPIC_0000002457869809)：定义MCF组的最小宽度。
--   [OT\_MCF\_MIN\_PIPE\_HEIGHT](#ZH-CN_TOPIC_0000002424191138)：定义MCF组的最小高度。
--   [OT\_MCF\_MAX\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002424350978)：定义MCF物理通道的最大宽度。
--   [OT\_MCF\_MAX\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002457829685)：定义MCF物理通道的最大高度。
--   [OT\_MCF\_MIN\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002424191110)：定义MCF物理通道的最小宽度。
--   [OT\_MCF\_MIN\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002457869901)：定义MCF物理通道的最小高度。
--   [OT\_MCF\_MAX\_EXT\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002424191098)：定义MCF扩展通道的最大宽度。
--   [OT\_MCF\_MAX\_EXT\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002424191162)：定义MCF扩展通道的最大高度。
--   [OT\_MCF\_MIN\_EXT\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002457869829)：定义MCF扩展物理通道的最小宽度。
--   [OT\_MCF\_MIN\_EXT\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002457869897)：定义MCF扩展通道的最小高度。
--   [OT\_MCF\_BIAS\_LUT\_NUM](#ZH-CN_TOPIC_0000002424191070)：定义MCF  算法参数BIAS lut表长度。
--   [OT\_MCF\_WEIGHT\_LUT\_NUM](#ZH-CN_TOPIC_0000002457869833)：定义MCF  算法参数权重 lut表长度。
--   [OT\_MCF\_CC\_UV\_GAIN\_LUT\_NUM](#ZH-CN_TOPIC_0000002424350962)：定义MCF  算法参数颜色校正 lut表长度。
--   [OT\_MCF\_COEF\_NUM](#ZH-CN_TOPIC_0000002457869825)：定义MCF  标定系数长度。
--   [ot\_mcf\_grp](#ZH-CN_TOPIC_0000002457869853)：定义MCF GROUP类型。
--   [ot\_mcf\_id](#ZH-CN_TOPIC_0000002424191086)：定义MCF ID类型。
--   [ot\_mcf\_pipe](#ZH-CN_TOPIC_0000002457829717)：定义MCF PIPE类型。
--   [ot\_mcf\_chn](#ZH-CN_TOPIC_0000002457869821)：定义MCF通道类型。
--   [ot\_mcf\_crop\_info](#ZH-CN_TOPIC_0000002424191090)：定义MCF crop属性。
--   [ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721)：定义MCF GROUP属性。
--   [ot\_mcf\_pipe\_attr](#ZH-CN_TOPIC_0000002457829761)：定义MCF PIPE属性。
--   [ot\_mcf\_chn\_attr](#ZH-CN_TOPIC_0000002457829713)：定义MCF 通道属性。
--   [ot\_mcf\_feature\_info](#ZH-CN_TOPIC_0000002457869873)：定义MCF的标定返回的特征点信息。
--   [ot\_mcf\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002424350934)：定义MCF 扩展通道属性。
--   [ot\_mcf\_calibration\_mode](#ZH-CN_TOPIC_0000002424191130)：定义MCF标定模式。
--   [ot\_mcf\_calibration](#ZH-CN_TOPIC_0000002457829709)：定义MCF的标定参数。
--   [ot\_mcf\_hist\_adj\_mode](#ZH-CN_TOPIC_0000002424350938)：定义MCF亮度调整模式。
--   [ot\_mcf\_fusion\_alpha\_mode](#ZH-CN_TOPIC_0000002424191134)：定义MCF融合模式。
--   [ot\_mcf\_color\_correct\_cfg](#ZH-CN_TOPIC_0000002424350906)：定义MCF颜色校正参数。
--   [ot\_mcf\_color\_hf\_proc\_cfg](#ZH-CN_TOPIC_0000002457829733)：定义MCF可见光亮度高频处理参数。
--   [ot\_mcf\_hist\_adj\_cfg](#ZH-CN_TOPIC_0000002424191158)：定义MCF直方图校正参数。
--   [ot\_mcf\_fusion\_global\_alpha\_mode\_cfg](#ZH-CN_TOPIC_0000002424191122)：定义MCF全局融合参数。
--   [ot\_mcf\_fusion\_adaptive\_alpha\_mode\_cfg](#ZH-CN_TOPIC_0000002424350982)：定义MCF自适应融合参数。
--   [ot\_mcf\_filter\_proc\_cfg](#ZH-CN_TOPIC_0000002424350950)：定义MCF的滤波处理参数。
--   [ot\_mcf\_detail\_proc\_cfg](#ZH-CN_TOPIC_0000002457869865)：定义MCF细节处理参数。
--   [ot\_mcf\_base\_proc\_cfg](#ZH-CN_TOPIC_0000002457869893)：定义MCF融合参数。
--   [ot\_mcf\_each\_freq\_proc\_cfg](#ZH-CN_TOPIC_0000002424191094)：定义MCF各频段的处理参数。
--   [ot\_mcf\_alg\_param](#ZH-CN_TOPIC_0000002457829753)：MCF 算法参数。
--   [ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)：定义MCF VI属性。
--   [ot\_mcf\_path](#ZH-CN_TOPIC_0000002424191114)：定义MCF输出通路。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## OT\_MCF\_MAX\_GRP\_NUM<a name="ZH-CN_TOPIC_0000002424191118"></a>
-
-【说明】
-
-定义MCF最大GROUP个数。
-
-【定义】
-
-```
-#define OT_MCF_MAX_GRP_NUM          2
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_PIPE\_NUM<a name="ZH-CN_TOPIC_0000002424350958"></a>
-
-【说明】
-
-定义MCF PIPE个数。
-
-【定义】
-
-```
-#define OT_MCF_PIPE_NUM             2
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_CHN\_NUM<a name="ZH-CN_TOPIC_0000002424350986"></a>
-
-【说明】
-
-定义MCF最大通道个数。
-
-【定义】
-
-```
-#define OT_MCF_MAX_CHN_NUM 	(OT_MCF_MAX_PHYS_CHN_NUM + OT_MCF_MAX_EXT_CHN_NUM)
-```
-
-【注意事项】
-
-MCF最大通道数为物理通道与扩展通道之和。
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_PHYS\_CHN\_NUM<a name="ZH-CN_TOPIC_0000002457829701"></a>
-
-【说明】
-
-定义MCF物理通道的最大个数。
-
-【定义】
-
-```
-#define  OT_MCF_MAX_PHYS_CHN_NUM	3
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_EXT\_CHN\_NUM<a name="ZH-CN_TOPIC_0000002457869881"></a>
-
-【说明】
-
-定义MCF扩展通道的最大个数。
-
-【定义】
-
-```
-#define OT_MCF_MAX_EXT_CHN_NUM   8
-```
-
-【注意事项】
-
-数目根据方案设计和系统能力而定。
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_PIPE\_WIDTH<a name="ZH-CN_TOPIC_0000002457829689"></a>
-
-【说明】
-
-定义MCF pipe最大宽度。
-
-【定义】
-
-```
-#define  OT_MCF_MAX_PIPE_WIDTH  8192
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_PIPE\_HEIGHT<a name="ZH-CN_TOPIC_0000002457829749"></a>
-
-【说明】
-
-定义MCF pipe的最大高度。
-
-【定义】
-
-```
-#define  OT_MCF_MAX_PIPE_HEIGHT  4096
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MIN\_PIPE\_WIDTH<a name="ZH-CN_TOPIC_0000002457869809"></a>
-
-【说明】
-
-定义MCF pipe的最小宽度。
-
-【定义】
-
-```
-#define  OT_MCF_MIN_PIPE_WIDTH  256
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MIN\_PIPE\_HEIGHT<a name="ZH-CN_TOPIC_0000002424191138"></a>
-
-【说明】
-
-定义MCF pipe组的最小高度。
-
-【定义】
-
-```
-#define  OT_MCF_MIN_PIPE_HEIGHT  256
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002424350978"></a>
-
-【说明】
-
-定义MCF物理通道的最大宽度。
-
-【定义】
-
-```
-#define  OT_MCF_MAX_CHN_WIDTH  16384
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002457829685"></a>
-
-【说明】
-
-定义MCF物理通道的最大高度。
-
-【定义】
-
-```
-#define  OT_MCF_MAX_CHN_HEIGHT  8192
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MIN\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002424191110"></a>
-
-【说明】
-
-定义MCF物理通道的最小宽度。
-
-【定义】
-
-```
-#define  OT_MCF_MIN_CHN_WIDTH  128
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MIN\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002457869901"></a>
-
-【说明】
-
-定义MCF通道的最小高度。
-
-【定义】
-
-```
-#define  OT_MCF_MIN_CHN_HEIGHT  64
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_EXT\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002424191098"></a>
-
-【说明】
-
-定义MCF扩展通道的最大宽度。
-
-【定义】
-
-```
-#define  OT_MCF_MAX_ EXT_CHN_WIDTH  16384
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MAX\_EXT\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002424191162"></a>
-
-【说明】
-
-定义MCF扩展通道的最大高度。
-
-【定义】
-
-```
-#define  OT_MCF_MAX_ EXT_CHN_HEIGHT  8192
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MIN\_EXT\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002457869829"></a>
-
-【说明】
-
-定义MCF扩展物理通道的最小宽度。
-
-【定义】
-
-```
-#define  OT_MCF_MIN_ EXT_CHN_WIDTH  64
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_MIN\_EXT\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002457869897"></a>
-
-【说明】
-
-定义MCF扩展通道的最小高度。
-
-【定义】
-
-```
-#define  OT_MCF_MIN_ EXT_CHN_HEIGHT  64
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## OT\_MCF\_BIAS\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002424191070"></a>
-
-【说明】
-
-定义MCF  算法参数BIAS lut表长度。
-
-【定义】
-
-```
-#define  OT_MCF_BIAS_LUT_NUM  9
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)
--   [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146)
-
-## OT\_MCF\_WEIGHT\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002457869833"></a>
-
-【说明】
-
-定义MCF 算法参数权重 lut表长度。
-
-【定义】
-
-```
-#define  OT_MCF_WEIGHT_LUT_NUM  33
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)
--   [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146)
-
-## OT\_MCF\_CC\_UV\_GAIN\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002424350962"></a>
-
-【说明】
-
-定义MCF 算法参数颜色校正 lut表长度。
-
-【定义】
-
-```
-#define  OT_MCF_CC_UV_GAIN_LUT_NUM  256
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)
--   [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146)
-
-## OT\_MCF\_COEF\_NUM<a name="ZH-CN_TOPIC_0000002457869825"></a>
-
-【说明】
-
-定义MCF 标定系数长度。
-
-【定义】
-
-```
-#define  OT_MCF_COEF_NUM  9
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_mcf\_calibration](#ZH-CN_TOPIC_0000002457829709)
-
-## ot\_mcf\_grp<a name="ZH-CN_TOPIC_0000002457869853"></a>
-
-【说明】
-
-定义MCF GROUP类型。
-
-【定义】
-
-```
-typedef   td_s32 ot_mcf_grp;
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_id<a name="ZH-CN_TOPIC_0000002424191086"></a>
-
-【说明】
-
-定义MCF ID类型。
-
-【定义】
-
-```
-typedef   td_s32 ot_mcf_id;
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_pipe<a name="ZH-CN_TOPIC_0000002457829717"></a>
-
-【说明】
-
-定义MCF PIPE类型。
-
-【定义】
-
-```
-typedef   td_s32 ot_mcf_pipe;
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_chn<a name="ZH-CN_TOPIC_0000002457869821"></a>
-
-【说明】
-
-定义MCF通道类型。
-
-【定义】
-
-```
-typedef   td_s32 ot_mcf_chn;
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_crop\_info<a name="ZH-CN_TOPIC_0000002424191090"></a>
-
-【说明】
-
-定义MCF crop属性。
-
-```
-typedef struct {
-    td_bool enable;
-    ot_coord crop_mode;
-    ot_rect crop_rect;
+</table> 【需求】 - 头文件：ot\_mpi\_mcf\_vi.h
+- 库文件：libss\_mcf\_vi.a 【注意】 本接口不支持多进程使用。 # 数据类型
+MCF模块相关数据类型定义如下： - [OT\_MCF\_MAX\_GRP\_NUM](#ZH-CN_TOPIC_0000002424191118)：定义MCF最大GROUP个数。
+- [OT\_MCF\_PIPE\_NUM](#ZH-CN_TOPIC_0000002424350958)：定义MCF PIPE个数。
+- [OT\_MCF\_MAX\_CHN\_NUM](#ZH-CN_TOPIC_0000002424350986)：定义MCF最大通道个数。
+- [OT\_MCF\_MAX\_PHYS\_CHN\_NUM](#ZH-CN_TOPIC_0000002457829701): 定义MCF最大物理通道个数。
+- [OT\_MCF\_MAX\_EXT\_CHN\_NUM](#ZH-CN_TOPIC_0000002457869881): 定义MCF最大扩展通道个数。
+- [OT\_MCF\_MAX\_PIPE\_WIDTH](#ZH-CN_TOPIC_0000002457829689)：定义MCF组的最大宽度。
+- [OT\_MCF\_MAX\_PIPE\_HEIGHT](#ZH-CN_TOPIC_0000002457829749)：定义MCF组的最大高度。
+- [OT\_MCF\_MIN\_PIPE\_WIDTH](#ZH-CN_TOPIC_0000002457869809)：定义MCF组的最小宽度。
+- [OT\_MCF\_MIN\_PIPE\_HEIGHT](#ZH-CN_TOPIC_0000002424191138)：定义MCF组的最小高度。
+- [OT\_MCF\_MAX\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002424350978)：定义MCF物理通道的最大宽度。
+- [OT\_MCF\_MAX\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002457829685)：定义MCF物理通道的最大高度。
+- [OT\_MCF\_MIN\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002424191110)：定义MCF物理通道的最小宽度。
+- [OT\_MCF\_MIN\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002457869901)：定义MCF物理通道的最小高度。
+- [OT\_MCF\_MAX\_EXT\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002424191098)：定义MCF扩展通道的最大宽度。
+- [OT\_MCF\_MAX\_EXT\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002424191162)：定义MCF扩展通道的最大高度。
+- [OT\_MCF\_MIN\_EXT\_CHN\_WIDTH](#ZH-CN_TOPIC_0000002457869829)：定义MCF扩展物理通道的最小宽度。
+- [OT\_MCF\_MIN\_EXT\_CHN\_HEIGHT](#ZH-CN_TOPIC_0000002457869897)：定义MCF扩展通道的最小高度。
+- [OT\_MCF\_BIAS\_LUT\_NUM](#ZH-CN_TOPIC_0000002424191070)：定义MCF 算法参数BIAS lut表长度。
+- [OT\_MCF\_WEIGHT\_LUT\_NUM](#ZH-CN_TOPIC_0000002457869833)：定义MCF 算法参数权重 lut表长度。
+- [OT\_MCF\_CC\_UV\_GAIN\_LUT\_NUM](#ZH-CN_TOPIC_0000002424350962)：定义MCF 算法参数颜色校正 lut表长度。
+- [OT\_MCF\_COEF\_NUM](#ZH-CN_TOPIC_0000002457869825)：定义MCF 标定系数长度。
+- [ot\_mcf\_grp](#ZH-CN_TOPIC_0000002457869853)：定义MCF GROUP类型。
+- [ot\_mcf\_id](#ZH-CN_TOPIC_0000002424191086)：定义MCF ID类型。
+- [ot\_mcf\_pipe](#ZH-CN_TOPIC_0000002457829717)：定义MCF PIPE类型。
+- [ot\_mcf\_chn](#ZH-CN_TOPIC_0000002457869821)：定义MCF通道类型。
+- [ot\_mcf\_crop\_info](#ZH-CN_TOPIC_0000002424191090)：定义MCF crop属性。
+- [ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721)：定义MCF GROUP属性。
+- [ot\_mcf\_pipe\_attr](#ZH-CN_TOPIC_0000002457829761)：定义MCF PIPE属性。
+- [ot\_mcf\_chn\_attr](#ZH-CN_TOPIC_0000002457829713)：定义MCF 通道属性。
+- [ot\_mcf\_feature\_info](#ZH-CN_TOPIC_0000002457869873)：定义MCF的标定返回的特征点信息。
+- [ot\_mcf\_ext\_chn\_attr](#ZH-CN_TOPIC_0000002424350934)：定义MCF 扩展通道属性。
+- [ot\_mcf\_calibration\_mode](#ZH-CN_TOPIC_0000002424191130)：定义MCF标定模式。
+- [ot\_mcf\_calibration](#ZH-CN_TOPIC_0000002457829709)：定义MCF的标定参数。
+- [ot\_mcf\_hist\_adj\_mode](#ZH-CN_TOPIC_0000002424350938)：定义MCF亮度调整模式。
+- [ot\_mcf\_fusion\_alpha\_mode](#ZH-CN_TOPIC_0000002424191134)：定义MCF融合模式。
+- [ot\_mcf\_color\_correct\_cfg](#ZH-CN_TOPIC_0000002424350906)：定义MCF颜色校正参数。
+- [ot\_mcf\_color\_hf\_proc\_cfg](#ZH-CN_TOPIC_0000002457829733)：定义MCF可见光亮度高频处理参数。
+- [ot\_mcf\_hist\_adj\_cfg](#ZH-CN_TOPIC_0000002424191158)：定义MCF直方图校正参数。
+- [ot\_mcf\_fusion\_global\_alpha\_mode\_cfg](#ZH-CN_TOPIC_0000002424191122)：定义MCF全局融合参数。
+- [ot\_mcf\_fusion\_adaptive\_alpha\_mode\_cfg](#ZH-CN_TOPIC_0000002424350982)：定义MCF自适应融合参数。
+- [ot\_mcf\_filter\_proc\_cfg](#ZH-CN_TOPIC_0000002424350950)：定义MCF的滤波处理参数。
+- [ot\_mcf\_detail\_proc\_cfg](#ZH-CN_TOPIC_0000002457869865)：定义MCF细节处理参数。
+- [ot\_mcf\_base\_proc\_cfg](#ZH-CN_TOPIC_0000002457869893)：定义MCF融合参数。
+- [ot\_mcf\_each\_freq\_proc\_cfg](#ZH-CN_TOPIC_0000002424191094)：定义MCF各频段的处理参数。
+- [ot\_mcf\_alg\_param](#ZH-CN_TOPIC_0000002457829753)：MCF 算法参数。
+- [ot\_mcf\_vi\_attr](#ZH-CN_TOPIC_0000002424191082)：定义MCF VI属性。
+- [ot\_mcf\_path](#ZH-CN_TOPIC_0000002424191114)：定义MCF输出通路。 ## OT\_MCF\_MAX\_GRP\_NUM<a name="ZH-CN_TOPIC_0000002424191118"></a> 【说明】 定义MCF最大GROUP个数。 【定义】 ```
+#define OT_MCF_MAX_GRP_NUM 2
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_PIPE\_NUM<a name="ZH-CN_TOPIC_0000002424350958"></a> 【说明】 定义MCF PIPE个数。 【定义】 ```
+#define OT_MCF_PIPE_NUM 2
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_CHN\_NUM<a name="ZH-CN_TOPIC_0000002424350986"></a> 【说明】 定义MCF最大通道个数。 【定义】 ```
+#define OT_MCF_MAX_CHN_NUM (OT_MCF_MAX_PHYS_CHN_NUM + OT_MCF_MAX_EXT_CHN_NUM)
+``` 【注意事项】 MCF最大通道数为物理通道与扩展通道之和。 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_PHYS\_CHN\_NUM<a name="ZH-CN_TOPIC_0000002457829701"></a> 【说明】 定义MCF物理通道的最大个数。 【定义】 ```
+#define OT_MCF_MAX_PHYS_CHN_NUM	3
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_EXT\_CHN\_NUM<a name="ZH-CN_TOPIC_0000002457869881"></a> 【说明】 定义MCF扩展通道的最大个数。 【定义】 ```
+#define OT_MCF_MAX_EXT_CHN_NUM 8
+``` 【注意事项】 数目根据方案设计和系统能力而定。 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_PIPE\_WIDTH<a name="ZH-CN_TOPIC_0000002457829689"></a> 【说明】 定义MCF pipe最大宽度。 【定义】 ```
+#define OT_MCF_MAX_PIPE_WIDTH 8192
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_PIPE\_HEIGHT<a name="ZH-CN_TOPIC_0000002457829749"></a> 【说明】 定义MCF pipe的最大高度。 【定义】 ```
+#define OT_MCF_MAX_PIPE_HEIGHT 4096
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MIN\_PIPE\_WIDTH<a name="ZH-CN_TOPIC_0000002457869809"></a> 【说明】 定义MCF pipe的最小宽度。 【定义】 ```
+#define OT_MCF_MIN_PIPE_WIDTH 256
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MIN\_PIPE\_HEIGHT<a name="ZH-CN_TOPIC_0000002424191138"></a> 【说明】 定义MCF pipe组的最小高度。 【定义】 ```
+#define OT_MCF_MIN_PIPE_HEIGHT 256
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002424350978"></a> 【说明】 定义MCF物理通道的最大宽度。 【定义】 ```
+#define OT_MCF_MAX_CHN_WIDTH 16384
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002457829685"></a> 【说明】 定义MCF物理通道的最大高度。 【定义】 ```
+#define OT_MCF_MAX_CHN_HEIGHT 8192
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MIN\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002424191110"></a> 【说明】 定义MCF物理通道的最小宽度。 【定义】 ```
+#define OT_MCF_MIN_CHN_WIDTH 128
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MIN\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002457869901"></a> 【说明】 定义MCF通道的最小高度。 【定义】 ```
+#define OT_MCF_MIN_CHN_HEIGHT 64
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_EXT\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002424191098"></a> 【说明】 定义MCF扩展通道的最大宽度。 【定义】 ```
+#define OT_MCF_MAX_ EXT_CHN_WIDTH 16384
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MAX\_EXT\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002424191162"></a> 【说明】 定义MCF扩展通道的最大高度。 【定义】 ```
+#define OT_MCF_MAX_ EXT_CHN_HEIGHT 8192
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MIN\_EXT\_CHN\_WIDTH<a name="ZH-CN_TOPIC_0000002457869829"></a> 【说明】 定义MCF扩展物理通道的最小宽度。 【定义】 ```
+#define OT_MCF_MIN_ EXT_CHN_WIDTH 64
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_MIN\_EXT\_CHN\_HEIGHT<a name="ZH-CN_TOPIC_0000002457869897"></a> 【说明】 定义MCF扩展通道的最小高度。 【定义】 ```
+#define OT_MCF_MIN_ EXT_CHN_HEIGHT 64
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## OT\_MCF\_BIAS\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002424191070"></a> 【说明】 定义MCF 算法参数BIAS lut表长度。 【定义】 ```
+#define OT_MCF_BIAS_LUT_NUM 9
+``` 【注意事项】 无 【相关数据类型及接口】 - [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)
+- [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146) ## OT\_MCF\_WEIGHT\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002457869833"></a> 【说明】 定义MCF 算法参数权重 lut表长度。 【定义】 ```
+#define OT_MCF_WEIGHT_LUT_NUM 33
+``` 【注意事项】 无 【相关数据类型及接口】 - [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)
+- [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146) ## OT\_MCF\_CC\_UV\_GAIN\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002424350962"></a> 【说明】 定义MCF 算法参数颜色校正 lut表长度。 【定义】 ```
+#define OT_MCF_CC_UV_GAIN_LUT_NUM 256
+``` 【注意事项】 无 【相关数据类型及接口】 - [ss\_mpi\_mcf\_set\_alg\_param](#ZH-CN_TOPIC_0000002457829745)
+- [ss\_mpi\_mcf\_get\_alg\_param](#ZH-CN_TOPIC_0000002424191146) ## OT\_MCF\_COEF\_NUM<a name="ZH-CN_TOPIC_0000002457869825"></a> 【说明】 定义MCF 标定系数长度。 【定义】 ```
+#define OT_MCF_COEF_NUM 9
+``` 【注意事项】 无 【相关数据类型及接口】 [ot\_mcf\_calibration](#ZH-CN_TOPIC_0000002457829709) ## ot\_mcf\_grp<a name="ZH-CN_TOPIC_0000002457869853"></a> 【说明】 定义MCF GROUP类型。 【定义】 ```
+typedef td_s32 ot_mcf_grp;
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_mcf\_id<a name="ZH-CN_TOPIC_0000002424191086"></a> 【说明】 定义MCF ID类型。 【定义】 ```
+typedef td_s32 ot_mcf_id;
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_mcf\_pipe<a name="ZH-CN_TOPIC_0000002457829717"></a> 【说明】 定义MCF PIPE类型。 【定义】 ```
+typedef td_s32 ot_mcf_pipe;
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_mcf\_chn<a name="ZH-CN_TOPIC_0000002457869821"></a> 【说明】 定义MCF通道类型。 【定义】 ```
+typedef td_s32 ot_mcf_chn;
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_mcf\_crop\_info<a name="ZH-CN_TOPIC_0000002424191090"></a> 【说明】 定义MCF crop属性。 ```
+typedef struct { td_bool enable; ot_coord crop_mode; ot_rect crop_rect;
 } ot_mcf_crop_info;
-```
-
-【成员】
-
-<a name="table4222mcpsimp"></a>
+``` 【成员】 <a name="table4222mcpsimp"></a>
 <table><thead align="left"><tr id="row4227mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p4229mcpsimp"><a name="p4229mcpsimp"></a><a name="p4229mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p4231mcpsimp"><a name="p4231mcpsimp"></a><a name="p4231mcpsimp"></a>描述</p>
@@ -4556,38 +2316,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_grp\_attr<a name="ZH-CN_TOPIC_0000002457829721"></a>
-
-【说明】
-
-定义MCF GROUP属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool sync_pipe;
-    ot_mcf_pipe_attr mono_pipe_attr;
-    ot_mcf_pipe_attr color_pipe_attr;
-    ot_frame_rate_ctrl frame_rate;
-    td_u32 depth;
-    ot_mcf_path mcf_path;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_mcf\_grp\_attr<a name="ZH-CN_TOPIC_0000002457829721"></a> 【说明】 定义MCF GROUP属性。 【定义】 ```
+typedef struct { td_bool sync_pipe; ot_mcf_pipe_attr mono_pipe_attr; ot_mcf_pipe_attr color_pipe_attr; ot_frame_rate_ctrl frame_rate; td_u32 depth; ot_mcf_path mcf_path;
 } ot_mcf_grp_attr;
-```
-
-【成员】
-
-<a name="table4271mcpsimp"></a>
+``` 【成员】 <a name="table4271mcpsimp"></a>
 <table><thead align="left"><tr id="row4276mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p4278mcpsimp"><a name="p4278mcpsimp"></a><a name="p4278mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p4280mcpsimp"><a name="p4280mcpsimp"></a><a name="p4280mcpsimp"></a>描述</p>
@@ -4628,58 +2360,17 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   当sync\_pipe配置为FALSE时，则不会进行mono和color这两路图像的时间差值进行过滤，可能出现mono和color这两路图像的时间差较大的两帧图进行融合，当这两帧图在各自时间点的图像不一样时，进行MCF融合，图像效果会不好。
--   当sync\_pipe配置为TRUE时，则不支持MCF模式切换成彩色路后销毁黑白路，切换成黑白路后销毁彩色路。
--   mono\_pipe\_attr中的pipe\_id和color\_pipe\_attr的pipe\_id 必须不一样。
--   mono\_pipe\_attr中的vpss\_grp和color\_pipe\_attr的vpss\_grp 必须不一样。
--   mono\_pipe\_attr中的  width、height  和  color\_pipe\_attr中的width、height  可以不一样，但是幅形比必须一致。mcf  组的图像宽高使用  mono\_pipe\_attr和color\_pipe\_attr 2组中数值大的一路。
--   当需要切换到MONO输出的时候， MONO路的VB分配方式需要跟COLOR路的分配方式一样，如果明确不会切换到MONO路输出， 只会在FUSION和COLOR两种输出通道切换，则无此要求。
-
--   若不指定depth，表示不需要系统为该MCF组缓存图像，故用户获取不到该组上的图像数据。系统默认不为组缓存图像，即depth默认为0。
--   若指定depth\>0，系统将为该组缓存depth\*2个图像，用户可通过接口ss\_mpi\_mcf\_get\_grp\_frame获取该通道图像数据。具体分为以下几种情况：
-    -   用户一直不获取图像。
-
-        系统将自动更新最旧的图像数据，保证用户一旦开始获取，就可获取到最近最新的depth\*2个连续图像。
-
-    -   用户连续获取depth次并一直不释放。
-
-        系统因获取不到VB而自动停止缓存新的图像，用户也不能获取新的图像。故建议用户保证获取和释放接口配对使用。
-
-    -   用户获取/释放的速度比MCF组产生图像的速度慢。
-
-        系统将自动更新用户仍未获取的最旧的图像数据，保证缓存的图像队列为最近的新图像。由于用户不能保证获取速度，导致获取的可能不是连续图像。
-
--   系统为MCF组缓存的depth\*2个图像数据，占用MPP内部的缓存块（简称VB）。故用户应通过接口ss\_mpi\_vb\_set\_cfg 置足够的VB，否则可能由于系统缓存图像占用过多VB，从而影响MCF的正常运行。支持动态调整depth。如用户在不需要获取该MCF组数据时，可设置depth为0，以减少占用内部VB的数量；在需要获取时，再设置depth为合适的值，即可获取到设置时刻后的连续图像。组上的图像有黑白和彩色两路，所以占用的VB内存是depth\*2。
--   Hi3519AV200所有的组通道的输入总面积最大为2688x1520x2，Hi3403V100无此限制。
-
-【相关数据类型及接口】
-
-[ot\_mcf\_pipe\_attr](#ZH-CN_TOPIC_0000002457829761)
-
-## ot\_mcf\_pipe\_attr<a name="ZH-CN_TOPIC_0000002457829761"></a>
-
-【说明】
-
-定义MCF PIPE属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_mcf_pipe pipe_id;
-    ot_vpss_grp vpss_grp;
-    td_u32 width;
-    td_u32 height;
+</table> 【注意事项】 - 当sync\_pipe配置为FALSE时，则不会进行mono和color这两路图像的时间差值进行过滤，可能出现mono和color这两路图像的时间差较大的两帧图进行融合，当这两帧图在各自时间点的图像不一样时，进行MCF融合，图像效果会不好。
+- 当sync\_pipe配置为TRUE时，则不支持MCF模式切换成彩色路后销毁黑白路，切换成黑白路后销毁彩色路。
+- mono\_pipe\_attr中的pipe\_id和color\_pipe\_attr的pipe\_id 必须不一样。
+- mono\_pipe\_attr中的vpss\_grp和color\_pipe\_attr的vpss\_grp 必须不一样。
+- mono\_pipe\_attr中的 width、height 和 color\_pipe\_attr中的width、height 可以不一样，但是幅形比必须一致。mcf 组的图像宽高使用 mono\_pipe\_attr和color\_pipe\_attr 2组中数值大的一路。
+- 当需要切换到MONO输出的时候， MONO路的VB分配方式需要跟COLOR路的分配方式一样，如果明确不会切换到MONO路输出， 只会在FUSION和COLOR两种输出通道切换，则无此要求。 - 若不指定depth，表示不需要系统为该MCF组缓存图像，故用户获取不到该组上的图像数据。系统默认不为组缓存图像，即depth默认为0。
+- 若指定depth\>0，系统将为该组缓存depth\*2个图像，用户可通过接口ss\_mpi\_mcf\_get\_grp\_frame获取该通道图像数据。具体分为以下几种情况： - 用户一直不获取图像。 系统将自动更新最旧的图像数据，保证用户一旦开始获取，就可获取到最近最新的depth\*2个连续图像。 - 用户连续获取depth次并一直不释放。 系统因获取不到VB而自动停止缓存新的图像，用户也不能获取新的图像。故建议用户保证获取和释放接口配对使用。 - 用户获取/释放的速度比MCF组产生图像的速度慢。 系统将自动更新用户仍未获取的最旧的图像数据，保证缓存的图像队列为最近的新图像。由于用户不能保证获取速度，导致获取的可能不是连续图像。 - 系统为MCF组缓存的depth\*2个图像数据，占用MPP内部的缓存块（简称VB）。故用户应通过接口ss\_mpi\_vb\_set\_cfg 置足够的VB，否则可能由于系统缓存图像占用过多VB，从而影响MCF的正常运行。支持动态调整depth。如用户在不需要获取该MCF组数据时，可设置depth为0，以减少占用内部VB的数量；在需要获取时，再设置depth为合适的值，即可获取到设置时刻后的连续图像。组上的图像有黑白和彩色两路，所以占用的VB内存是depth\*2。
+- 所有的组通道的输入总面积最大为2688x1520x2，Hi3403V100无此限制。 【相关数据类型及接口】 [ot\_mcf\_pipe\_attr](#ZH-CN_TOPIC_0000002457829761) ## ot\_mcf\_pipe\_attr<a name="ZH-CN_TOPIC_0000002457829761"></a> 【说明】 定义MCF PIPE属性。 【定义】 ```
+typedef struct { ot_mcf_pipe pipe_id; ot_vpss_grp vpss_grp; td_u32 width; td_u32 height;
 } ot_mcf_pipe_attr;
-```
-
-【成员】
-
-<a name="table4343mcpsimp"></a>
+``` 【成员】 <a name="table4343mcpsimp"></a>
 <table><thead align="left"><tr id="row4348mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p4350mcpsimp"><a name="p4350mcpsimp"></a><a name="p4350mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p4352mcpsimp"><a name="p4352mcpsimp"></a><a name="p4352mcpsimp"></a>描述</p>
@@ -4708,41 +2399,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   彩色路和黑白路输入的图像的幅形比必须一致。
--   VPSS的组号设置为\[0, 99\]，使用vpss做预处理，VPSS组号设置为\[100, 127\]时，使用VGS做预处理。如果需要在MCF之后在绑定VPSS，并且VPSS性能不够时，可以使用VGS组做预处理。
-
-【相关数据类型及接口】
-
-[ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721)
-
-## ot\_mcf\_chn\_attr<a name="ZH-CN_TOPIC_0000002457829713"></a>
-
-【说明】
-
-定义MCF 通道属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool mirror_en;
-    td_bool flip_en;
-    td_u32 width;
-    td_u32 height;
-    td_u32 depth;
-    ot_pixel_format pixel_format;
-    ot_compress_mode compress_mode;
-    ot_frame_rate_ctrl frame_rate;
+</table> 【注意事项】 - 彩色路和黑白路输入的图像的幅形比必须一致。
+- VPSS的组号设置为\[0, 99\]，使用vpss做预处理，VPSS组号设置为\[100, 127\]时，使用VGS做预处理。如果需要在MCF之后在绑定VPSS，并且VPSS性能不够时，可以使用VGS组做预处理。 【相关数据类型及接口】 [ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721) ## ot\_mcf\_chn\_attr<a name="ZH-CN_TOPIC_0000002457829713"></a> 【说明】 定义MCF 通道属性。 【定义】 ```
+typedef struct { td_bool mirror_en; td_bool flip_en; td_u32 width; td_u32 height; td_u32 depth; ot_pixel_format pixel_format; ot_compress_mode compress_mode; ot_frame_rate_ctrl frame_rate;
 } ot_mcf_chn _attr;
-```
-
-【成员】
-
-<a name="table4399mcpsimp"></a>
+``` 【成员】 <a name="table4399mcpsimp"></a>
 <table><thead align="left"><tr id="row4404mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p4406mcpsimp"><a name="p4406mcpsimp"></a><a name="p4406mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p4408mcpsimp"><a name="p4408mcpsimp"></a><a name="p4408mcpsimp"></a>描述</p>
@@ -4791,52 +2452,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   源帧率与目标帧率都为-1，则不进行帧率控制。
--   目标帧率不能大于源帧率。
-
--   若不指定depth，表示不需要系统为该MCF通道缓存图像，故用户获取不到该通道的图像数据。系统默认不为通道缓存图像，即depth默认为0。
--   若指定depth\>0，系统将为该通道缓存depth个图像，用户可通过接口ss\_mpi\_mcf\_get\_chn\_frame获取该通道图像数据。具体分为以下几种情况：
-    -   用户一直不获取图像。
-
-        系统将自动更新最旧的图像数据，保证用户一旦开始获取，就可获取到最近最新的depth个连续图像。
-
-    -   用户连续获取depth次并一直不释放。
-
-        系统因获取不到VB而自动停止缓存新的图像，用户也不能获取新的VI图像。故建议用户保证获取和释放接口配对使用。
-
-    -   用户获取/释放的速度比MCF通道产生图像的速度慢。
-
-        系统将自动更新用户仍未获取的最旧的图像数据，保证缓存的图像队列为最近的新图像。由于用户不能保证获取速度，导致获取的可能不是连续图像。
-
--   系统为MCF通道缓存的depth个图像数据，占用MPP内部的缓存块（简称VB）。故用户应通过接口ss\_mpi\_vb\_set\_cfg 置足够的VB，否则可能由于系统缓存图像占用过多VB，从而影响MCF的正常运行。支持动态调整depth。如用户在不需要获取该MCF通道数据时，可设置depth为0，以减少占用内部VB的数量；在需要获取时，再设置depth为合适的值，即可获取到设置时刻后的连续图像。
-
-【相关数据类型及接口】
-
-[ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721)
-
-## ot\_mcf\_feature\_info<a name="ZH-CN_TOPIC_0000002457869873"></a>
-
-【说明】
-
-定义MCF的标定返回的特征点信息。
-
-【定义】
-
-```
-typedef struct {
-    td_s32 refer_feature_num;
-    td_s32 register_feature_num;
-    td_s32 match_feature_num;
+</table> 【注意事项】 - 源帧率与目标帧率都为-1，则不进行帧率控制。
+- 目标帧率不能大于源帧率。 - 若不指定depth，表示不需要系统为该MCF通道缓存图像，故用户获取不到该通道的图像数据。系统默认不为通道缓存图像，即depth默认为0。
+- 若指定depth\>0，系统将为该通道缓存depth个图像，用户可通过接口ss\_mpi\_mcf\_get\_chn\_frame获取该通道图像数据。具体分为以下几种情况： - 用户一直不获取图像。 系统将自动更新最旧的图像数据，保证用户一旦开始获取，就可获取到最近最新的depth个连续图像。 - 用户连续获取depth次并一直不释放。 系统因获取不到VB而自动停止缓存新的图像，用户也不能获取新的VI图像。故建议用户保证获取和释放接口配对使用。 - 用户获取/释放的速度比MCF通道产生图像的速度慢。 系统将自动更新用户仍未获取的最旧的图像数据，保证缓存的图像队列为最近的新图像。由于用户不能保证获取速度，导致获取的可能不是连续图像。 - 系统为MCF通道缓存的depth个图像数据，占用MPP内部的缓存块（简称VB）。故用户应通过接口ss\_mpi\_vb\_set\_cfg 置足够的VB，否则可能由于系统缓存图像占用过多VB，从而影响MCF的正常运行。支持动态调整depth。如用户在不需要获取该MCF通道数据时，可设置depth为0，以减少占用内部VB的数量；在需要获取时，再设置depth为合适的值，即可获取到设置时刻后的连续图像。 【相关数据类型及接口】 [ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721) ## ot\_mcf\_feature\_info<a name="ZH-CN_TOPIC_0000002457869873"></a> 【说明】 定义MCF的标定返回的特征点信息。 【定义】 ```
+typedef struct { td_s32 refer_feature_num; td_s32 register_feature_num; td_s32 match_feature_num;
 } ot_mcf_feature_info;
-```
-
-【成员】
-
-<a name="table4474mcpsimp"></a>
+``` 【成员】 <a name="table4474mcpsimp"></a>
 <table><thead align="left"><tr id="row4479mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.1"><p id="p4481mcpsimp"><a name="p4481mcpsimp"></a><a name="p4481mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.2"><p id="p4483mcpsimp"><a name="p4483mcpsimp"></a><a name="p4483mcpsimp"></a>描述</p>
@@ -4859,39 +2480,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_ext\_chn\_attr<a name="ZH-CN_TOPIC_0000002424350934"></a>
-
-【说明】
-
-定义MCF 扩展通道属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_mcf_chn bind_chn;
-    td_u32 width;
-    td_u32 height;
-    ot_pixel_format pixel_format;
-    ot_compress_mode compress_mode;
-    td_u32 depth;
-    ot_frame_rate_ctrl frame_rate;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_mcf\_ext\_chn\_attr<a name="ZH-CN_TOPIC_0000002424350934"></a> 【说明】 定义MCF 扩展通道属性。 【定义】 ```
+typedef struct { ot_mcf_chn bind_chn; td_u32 width; td_u32 height; ot_pixel_format pixel_format; ot_compress_mode compress_mode; td_u32 depth; ot_frame_rate_ctrl frame_rate;
 } ot_mcf_ext_chn_attr;
-```
-
-【成员】
-
-<a name="table4519mcpsimp"></a>
+``` 【成员】 <a name="table4519mcpsimp"></a>
 <table><thead align="left"><tr id="row4524mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p4526mcpsimp"><a name="p4526mcpsimp"></a><a name="p4526mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p4528mcpsimp"><a name="p4528mcpsimp"></a><a name="p4528mcpsimp"></a>描述</p>
@@ -4935,37 +2527,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   绑定源物理通道必须合法，范围为\[0,  [OT\_MCF\_MAX\_PHYS\_CHN\_NUM](#ZH-CN_TOPIC_0000002457829701)\)。
--   宽、高必须满足2对齐。
--   目标帧率不能大于源帧率，源帧率与目标帧率都为-1，则不进行帧率控制。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_calibration\_mode<a name="ZH-CN_TOPIC_0000002424191130"></a>
-
-【说明】
-
-定义MCF标定模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_MCF_CALIBRATION_AFFINE = 0,      /* affine Transform mode */
-    OT_MCF_CALIBRATION_PROJECTIVE,    /* projective mode */
-    OT_MCF_CALIBRATION_MODE_BUTT
+</table> 【注意事项】 - 绑定源物理通道必须合法，范围为\[0, [OT\_MCF\_MAX\_PHYS\_CHN\_NUM](#ZH-CN_TOPIC_0000002457829701)\)。
+- 宽、高必须满足2对齐。
+- 目标帧率不能大于源帧率，源帧率与目标帧率都为-1，则不进行帧率控制。 【相关数据类型及接口】 无 ## ot\_mcf\_calibration\_mode<a name="ZH-CN_TOPIC_0000002424191130"></a> 【说明】 定义MCF标定模式。 【定义】 ```
+typedef enum { OT_MCF_CALIBRATION_AFFINE = 0, /* affine Transform mode */ OT_MCF_CALIBRATION_PROJECTIVE, /* projective mode */ OT_MCF_CALIBRATION_MODE_BUTT
 } ot_mcf_calibration_mode;
-```
-
-【成员】
-
-<a name="table4590mcpsimp"></a>
+``` 【成员】 <a name="table4590mcpsimp"></a>
 <table><thead align="left"><tr id="row4595mcpsimp"><th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.1"><p id="p4597mcpsimp"><a name="p4597mcpsimp"></a><a name="p4597mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.2"><p id="p4599mcpsimp"><a name="p4599mcpsimp"></a><a name="p4599mcpsimp"></a>描述</p>
@@ -4983,34 +2550,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_calibration<a name="ZH-CN_TOPIC_0000002457829709"></a>
-
-【说明】
-
-定义MCF的标定参数。
-
-【定义】
-
-```
-typedef struct {
-    td_s64 correct_coef[OT_MCF_COEF_NUM];
-    ot_rect region;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_calibration<a name="ZH-CN_TOPIC_0000002457829709"></a> 【说明】 定义MCF的标定参数。 【定义】 ```
+typedef struct { td_s64 correct_coef[OT_MCF_COEF_NUM]; ot_rect region;
 } ot_mcf_calibration;
-```
-
-【成员】
-
-<a name="table4631mcpsimp"></a>
+``` 【成员】 <a name="table4631mcpsimp"></a>
 <table><thead align="left"><tr id="row4636mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p4638mcpsimp"><a name="p4638mcpsimp"></a><a name="p4638mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p4640mcpsimp"><a name="p4640mcpsimp"></a><a name="p4640mcpsimp"></a>描述</p>
@@ -5037,36 +2580,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_hist\_adj\_mode<a name="ZH-CN_TOPIC_0000002424350938"></a>
-
-【说明】
-
-定义MCF亮度调整模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_MCF_NO_HIST_ADJ = 0,
-    OT_MCF_COLOR_HIST_ADJ,
-    OT_MCF_MONO_HIST_ADJ,
-    OT_MCF_HIST_ADJ_MODE_BUTT,
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_hist\_adj\_mode<a name="ZH-CN_TOPIC_0000002424350938"></a> 【说明】 定义MCF亮度调整模式。 【定义】 ```
+typedef enum { OT_MCF_NO_HIST_ADJ = 0, OT_MCF_COLOR_HIST_ADJ, OT_MCF_MONO_HIST_ADJ, OT_MCF_HIST_ADJ_MODE_BUTT,
 } ot_mcf_hist_adj_mode;
-```
-
-【成员】
-
-<a name="table4682mcpsimp"></a>
+``` 【成员】 <a name="table4682mcpsimp"></a>
 <table><thead align="left"><tr id="row4687mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.1"><p id="p4689mcpsimp"><a name="p4689mcpsimp"></a><a name="p4689mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.2"><p id="p4691mcpsimp"><a name="p4691mcpsimp"></a><a name="p4691mcpsimp"></a>描述</p>
@@ -5089,35 +2606,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_fusion\_alpha\_mode<a name="ZH-CN_TOPIC_0000002424191134"></a>
-
-【说明】
-
-定义MCF融合模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_MCF_FUSION_GLOBAL_MODE = 0,
-    OT_MCF_FUSION_ADAPTIVE_MODE,
-    OT_MCF_FUSION_ALPHA_MODE_BUTT,
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_fusion\_alpha\_mode<a name="ZH-CN_TOPIC_0000002424191134"></a> 【说明】 定义MCF融合模式。 【定义】 ```
+typedef enum { OT_MCF_FUSION_GLOBAL_MODE = 0, OT_MCF_FUSION_ADAPTIVE_MODE, OT_MCF_FUSION_ALPHA_MODE_BUTT,
 } ot_mcf_fusion_alpha_mode;
-```
-
-【成员】
-
-<a name="table4722mcpsimp"></a>
+``` 【成员】 <a name="table4722mcpsimp"></a>
 <table><thead align="left"><tr id="row4727mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p4729mcpsimp"><a name="p4729mcpsimp"></a><a name="p4729mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4731mcpsimp"><a name="p4731mcpsimp"></a><a name="p4731mcpsimp"></a>描述</p>
@@ -5135,35 +2627,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_color\_correct\_cfg<a name="ZH-CN_TOPIC_0000002424350906"></a>
-
-【说明】
-
-定义MCF颜色校正参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool color_correct_en;
-    td_u8 cc_thd_y;
-    td_u16 cc_uv_gain_lut[OT_MCF_CC_UV_GAIN_LUT_NUM];
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_color\_correct\_cfg<a name="ZH-CN_TOPIC_0000002424350906"></a> 【说明】 定义MCF颜色校正参数。 【定义】 ```
+typedef struct { td_bool color_correct_en; td_u8 cc_thd_y; td_u16 cc_uv_gain_lut[OT_MCF_CC_UV_GAIN_LUT_NUM];
 } ot_mcf_color_correct_cfg;
-```
-
-【成员】
-
-<a name="table4760mcpsimp"></a>
+``` 【成员】 <a name="table4760mcpsimp"></a>
 <table><thead align="left"><tr id="row4765mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p4767mcpsimp"><a name="p4767mcpsimp"></a><a name="p4767mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p4769mcpsimp"><a name="p4769mcpsimp"></a><a name="p4769mcpsimp"></a>描述</p>
@@ -5186,35 +2653,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_color\_hf\_proc\_cfg<a name="ZH-CN_TOPIC_0000002457829733"></a>
-
-【说明】
-
-定义MCF可见光亮度高频处理参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool color_hf_en;
-    td_u8 color_hf_gain;
-    td_bool color_med_en;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_color\_hf\_proc\_cfg<a name="ZH-CN_TOPIC_0000002457829733"></a> 【说明】 定义MCF可见光亮度高频处理参数。 【定义】 ```
+typedef struct { td_bool color_hf_en; td_u8 color_hf_gain; td_bool color_med_en;
 } ot_mcf_color_hf_proc_cfg;
-```
-
-【成员】
-
-<a name="table4802mcpsimp"></a>
+``` 【成员】 <a name="table4802mcpsimp"></a>
 <table><thead align="left"><tr id="row4807mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p4809mcpsimp"><a name="p4809mcpsimp"></a><a name="p4809mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p4811mcpsimp"><a name="p4811mcpsimp"></a><a name="p4811mcpsimp"></a>描述</p>
@@ -5237,35 +2679,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_hist\_adj\_cfg<a name="ZH-CN_TOPIC_0000002424191158"></a>
-
-【说明】
-
-定义MCF直方图校正参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool hist_adj_en;
-    td_u8 hist_adj_str;
-    ot_mcf_hist_adj_mode hist_adj_mode;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_hist\_adj\_cfg<a name="ZH-CN_TOPIC_0000002424191158"></a> 【说明】 定义MCF直方图校正参数。 【定义】 ```
+typedef struct { td_bool hist_adj_en; td_u8 hist_adj_str; ot_mcf_hist_adj_mode hist_adj_mode;
 } ot_mcf_hist_adj_cfg;
-```
-
-【成员】
-
-<a name="table4843mcpsimp"></a>
+``` 【成员】 <a name="table4843mcpsimp"></a>
 <table><thead align="left"><tr id="row4848mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4850mcpsimp"><a name="p4850mcpsimp"></a><a name="p4850mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4852mcpsimp"><a name="p4852mcpsimp"></a><a name="p4852mcpsimp"></a>描述</p>
@@ -5288,34 +2705,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   算法参数调节可参考《黑白彩色双路融合 调试指南》。
--   当开启分块时，hist\_adj\_en关闭，hist\_adj\_str和hist\_adj\_mode无效果。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_fusion\_global\_alpha\_mode\_cfg<a name="ZH-CN_TOPIC_0000002424191122"></a>
-
-【说明】
-
-定义MCF全局融合参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 fusion_global_alpha;
+</table> 【注意事项】 - 算法参数调节可参考《黑白彩色双路融合 调试指南》。
+- 当开启分块时，hist\_adj\_en关闭，hist\_adj\_str和hist\_adj\_mode无效果。 【相关数据类型及接口】 无 ## ot\_mcf\_fusion\_global\_alpha\_mode\_cfg<a name="ZH-CN_TOPIC_0000002424191122"></a> 【说明】 定义MCF全局融合参数。 【定义】 ```
+typedef struct { td_u8 fusion_global_alpha;
 } ot_mcf_fusion_global_alpha_mode_cfg;
-```
-
-【成员】
-
-<a name="table4883mcpsimp"></a>
+``` 【成员】 <a name="table4883mcpsimp"></a>
 <table><thead align="left"><tr id="row4888mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4890mcpsimp"><a name="p4890mcpsimp"></a><a name="p4890mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4892mcpsimp"><a name="p4892mcpsimp"></a><a name="p4892mcpsimp"></a>描述</p>
@@ -5328,42 +2722,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_fusion\_adaptive\_alpha\_mode\_cfg<a name="ZH-CN_TOPIC_0000002424350982"></a>
-
-【说明】
-
-定义MCF自适应融合参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 fusion_ratio_scale;
-    td_u8 fusion_ratio_bias_lut[OT_MCF_BIAS_LUT_NUM];
-    td_u8 fusion_mono_flat_bias_lut[OT_MCF_BIAS_LUT_NUM];
-    td_bool fusion_mono_ratio_en;
-    td_u8 fusion_mono_ratio_lut[OT_MCF_WEIGHT_LUT_NUM];
-    td_bool fusion_mono_flat_en;
-    td_u8 fusion_mono_flat_lut[OT_MCF_WEIGHT_LUT_NUM];
-    td_bool fusion_color_ratio_en;
-    td_u8 fusion_color_ratio_lut[OT_MCF_WEIGHT_LUT_NUM];
-    td_u8 fusion_alpha_lut[OT_MCF_WEIGHT_LUT_NUM];
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_fusion\_adaptive\_alpha\_mode\_cfg<a name="ZH-CN_TOPIC_0000002424350982"></a> 【说明】 定义MCF自适应融合参数。 【定义】 ```
+typedef struct { td_u8 fusion_ratio_scale; td_u8 fusion_ratio_bias_lut[OT_MCF_BIAS_LUT_NUM]; td_u8 fusion_mono_flat_bias_lut[OT_MCF_BIAS_LUT_NUM]; td_bool fusion_mono_ratio_en; td_u8 fusion_mono_ratio_lut[OT_MCF_WEIGHT_LUT_NUM]; td_bool fusion_mono_flat_en; td_u8 fusion_mono_flat_lut[OT_MCF_WEIGHT_LUT_NUM]; td_bool fusion_color_ratio_en; td_u8 fusion_color_ratio_lut[OT_MCF_WEIGHT_LUT_NUM]; td_u8 fusion_alpha_lut[OT_MCF_WEIGHT_LUT_NUM];
 } ot_mcf_fusion_adaptive_alpha_mode_cfg;
-```
-
-【成员】
-
-<a name="table4932mcpsimp"></a>
+``` 【成员】 <a name="table4932mcpsimp"></a>
 <table><thead align="left"><tr id="row4937mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4939mcpsimp"><a name="p4939mcpsimp"></a><a name="p4939mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4941mcpsimp"><a name="p4941mcpsimp"></a><a name="p4941mcpsimp"></a>描述</p>
@@ -5421,37 +2783,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_filter\_proc\_cfg<a name="ZH-CN_TOPIC_0000002424350950"></a>
-
-【说明】
-
-定义MCF的滤波处理参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 mono_flt_radius;
-    td_u8 mono_flt_bias_lut[OT_MCF_BIAS_LUT_NUM];
-    td_u8 color_flt_radius;
-    td_u8 color_flt_sgms;
-    td_u8 color_flt_sgmr;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_filter\_proc\_cfg<a name="ZH-CN_TOPIC_0000002424350950"></a> 【说明】 定义MCF的滤波处理参数。 【定义】 ```
+typedef struct { td_u8 mono_flt_radius; td_u8 mono_flt_bias_lut[OT_MCF_BIAS_LUT_NUM]; td_u8 color_flt_radius; td_u8 color_flt_sgms; td_u8 color_flt_sgmr;
 } ot_mcf_filter_proc_cfg;
-```
-
-【成员】
-
-<a name="table5011mcpsimp"></a>
+``` 【成员】 <a name="table5011mcpsimp"></a>
 <table><thead align="left"><tr id="row5016mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p5018mcpsimp"><a name="p5018mcpsimp"></a><a name="p5018mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p5020mcpsimp"><a name="p5020mcpsimp"></a><a name="p5020mcpsimp"></a>描述</p>
@@ -5484,35 +2819,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_detail\_proc\_cfg<a name="ZH-CN_TOPIC_0000002457869865"></a>
-
-【说明】
-
-定义MCF细节处理参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool fusion_mono_det_adap_en;
-    td_u8 fusion_mono_det_lut[OT_MCF_WEIGHT_LUT_NUM];
-    td_u8 fusion_det_gain;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_detail\_proc\_cfg<a name="ZH-CN_TOPIC_0000002457869865"></a> 【说明】 定义MCF细节处理参数。 【定义】 ```
+typedef struct { td_bool fusion_mono_det_adap_en; td_u8 fusion_mono_det_lut[OT_MCF_WEIGHT_LUT_NUM]; td_u8 fusion_det_gain;
 } ot_mcf_detail_proc_cfg;
-```
-
-【成员】
-
-<a name="table5063mcpsimp"></a>
+``` 【成员】 <a name="table5063mcpsimp"></a>
 <table><thead align="left"><tr id="row5068mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p5070mcpsimp"><a name="p5070mcpsimp"></a><a name="p5070mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p5072mcpsimp"><a name="p5072mcpsimp"></a><a name="p5072mcpsimp"></a>描述</p>
@@ -5535,35 +2845,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_base\_proc\_cfg<a name="ZH-CN_TOPIC_0000002457869893"></a>
-
-【说明】
-
-定义MCF融合参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_mcf_fusion_alpha_mode fusion_alpha_mode;
-    ot_mcf_fusion_global_alpha_mode_cfg fusion_global_alpha_mode_cfg;
-    ot_mcf_fusion_adaptive_alpha_mode_cfg fusion_adaptive_alpha_mode_cfg;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_base\_proc\_cfg<a name="ZH-CN_TOPIC_0000002457869893"></a> 【说明】 定义MCF融合参数。 【定义】 ```
+typedef struct { ot_mcf_fusion_alpha_mode fusion_alpha_mode; ot_mcf_fusion_global_alpha_mode_cfg fusion_global_alpha_mode_cfg; ot_mcf_fusion_adaptive_alpha_mode_cfg fusion_adaptive_alpha_mode_cfg;
 } ot_mcf_base_proc_cfg;
-```
-
-【成员】
-
-<a name="table5106mcpsimp"></a>
+``` 【成员】 <a name="table5106mcpsimp"></a>
 <table><thead align="left"><tr id="row5111mcpsimp"><th class="cellrowborder" valign="top" width="42%" id="mcps1.1.3.1.1"><p id="p5113mcpsimp"><a name="p5113mcpsimp"></a><a name="p5113mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.3.1.2"><p id="p5115mcpsimp"><a name="p5115mcpsimp"></a><a name="p5115mcpsimp"></a>描述</p>
@@ -5586,35 +2871,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_each\_freq\_proc\_cfg<a name="ZH-CN_TOPIC_0000002424191094"></a>
-
-【说明】
-
-定义MCF各频段的处理参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_mcf_filter_proc_cfg filter_proc_cfg;
-    ot_mcf_detail_proc_cfg detail_proc_cfg;
-    ot_mcf_base_proc_cfg base_prco_cfg;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_each\_freq\_proc\_cfg<a name="ZH-CN_TOPIC_0000002424191094"></a> 【说明】 定义MCF各频段的处理参数。 【定义】 ```
+typedef struct { ot_mcf_filter_proc_cfg filter_proc_cfg; ot_mcf_detail_proc_cfg detail_proc_cfg; ot_mcf_base_proc_cfg base_prco_cfg;
 } ot_mcf_each_freq_proc_cfg;
-```
-
-【成员】
-
-<a name="table5149mcpsimp"></a>
+``` 【成员】 <a name="table5149mcpsimp"></a>
 <table><thead align="left"><tr id="row5154mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p5156mcpsimp"><a name="p5156mcpsimp"></a><a name="p5156mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p5158mcpsimp"><a name="p5158mcpsimp"></a><a name="p5158mcpsimp"></a>描述</p>
@@ -5637,38 +2897,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_alg\_param<a name="ZH-CN_TOPIC_0000002457829753"></a>
-
-【说明】
-
-MCF 算法参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_mcf_color_correct_cfg mcf_color_correct_cfg;
-    ot_mcf_color_hf_proc_cfg mcf_color_hf_proc_cfg;
-    ot_mcf_hist_adj_cfg mcf_hist_adj_cfg;
-    ot_mcf_each_freq_proc_cfg mcf_hf_cfg;
-    ot_mcf_each_freq_proc_cfg mcf_mf_cfg;
-    ot_mcf_each_freq_proc_cfg mcf_lf_cfg;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_alg\_param<a name="ZH-CN_TOPIC_0000002457829753"></a> 【说明】 MCF 算法参数。 【定义】 ```
+typedef struct { ot_mcf_color_correct_cfg mcf_color_correct_cfg; ot_mcf_color_hf_proc_cfg mcf_color_hf_proc_cfg; ot_mcf_hist_adj_cfg mcf_hist_adj_cfg; ot_mcf_each_freq_proc_cfg mcf_hf_cfg; ot_mcf_each_freq_proc_cfg mcf_mf_cfg; ot_mcf_each_freq_proc_cfg mcf_lf_cfg;
 } ot_mcf_alg_param;
-```
-
-【成员】
-
-<a name="table5199mcpsimp"></a>
+``` 【成员】 <a name="table5199mcpsimp"></a>
 <table><thead align="left"><tr id="row5204mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p5206mcpsimp"><a name="p5206mcpsimp"></a><a name="p5206mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p5208mcpsimp"><a name="p5208mcpsimp"></a><a name="p5208mcpsimp"></a>描述</p>
@@ -5706,35 +2938,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-算法参数调节可参考《黑白彩色双路融合 调试指南》。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_mcf\_vi\_attr<a name="ZH-CN_TOPIC_0000002424191082"></a>
-
-【说明】
-
-定义MCF VI属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool enable;
-    ot_vi_pipe mono_pipe;
-    ot_vi_pipe color_pipe;
+</table> 【注意事项】 算法参数调节可参考《黑白彩色双路融合 调试指南》。 【相关数据类型及接口】 无 ## ot\_mcf\_vi\_attr<a name="ZH-CN_TOPIC_0000002424191082"></a> 【说明】 定义MCF VI属性。 【定义】 ```
+typedef struct { td_bool enable; ot_vi_pipe mono_pipe; ot_vi_pipe color_pipe;
 } ot_mcf_vi_attr;
-```
-
-【成员】
-
-<a name="table5269mcpsimp"></a>
+``` 【成员】 <a name="table5269mcpsimp"></a>
 <table><thead align="left"><tr id="row5274mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p5276mcpsimp"><a name="p5276mcpsimp"></a><a name="p5276mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p5278mcpsimp"><a name="p5278mcpsimp"></a><a name="p5278mcpsimp"></a>描述</p>
@@ -5757,36 +2964,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721)
-
-## ot\_mcf\_path<a name="ZH-CN_TOPIC_0000002424191114"></a>
-
-【说明】
-
-定义MCF输出通路。
-
-【定义】
-
-```
-typedef enum {
-    OT_MCF_PATH_FUSION = 0,
-    OT_MCF_PATH_COLOR,
-    OT_MCF_PATH_MONO,
-    OT_MCF_PATH_BUTT,
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_mcf\_grp\_attr](#ZH-CN_TOPIC_0000002457829721) ## ot\_mcf\_path<a name="ZH-CN_TOPIC_0000002424191114"></a> 【说明】 定义MCF输出通路。 【定义】 ```
+typedef enum { OT_MCF_PATH_FUSION = 0, OT_MCF_PATH_COLOR, OT_MCF_PATH_MONO, OT_MCF_PATH_BUTT,
 } ot_mcf_path;
-```
-
-【成员】
-
-<a name="table4843mcpsimp"></a>
+``` 【成员】 <a name="table4843mcpsimp"></a>
 <table><thead align="left"><tr id="row4848mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4850mcpsimp"><a name="p4850mcpsimp"></a><a name="p4850mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4852mcpsimp"><a name="p4852mcpsimp"></a><a name="p4852mcpsimp"></a>描述</p>
@@ -5809,22 +2990,8 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-# 错误码
-MCF API错误码如下所示。
-
-**表 1**  MCF API错误码
-
-<a name="_Ref248290030"></a>
+</table> 【注意事项】 无 【相关数据类型及接口】 无 # 错误码
+MCF API错误码如下所示。 **表 1** MCF API错误码 <a name="_Ref248290030"></a>
 <table><thead align="left"><tr id="row5313mcpsimp"><th class="cellrowborder" valign="top" width="25.53%" id="mcps1.2.4.1.1"><p id="p5315mcpsimp"><a name="p5315mcpsimp"></a><a name="p5315mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.82%" id="mcps1.2.4.1.2"><p id="p5317mcpsimp"><a name="p5317mcpsimp"></a><a name="p5317mcpsimp"></a>宏定义</p>
@@ -6016,60 +3183,25 @@ MCF API错误码如下所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-# Proc 调试信息说明
-【调试信息】
-
-```
+</table> # Proc 调试信息说明
+【调试信息】 ```
 [MCF] version: [V1.0.0.0 B010 Release], build time[Apr 14 2021, 09:52:27]
-----------------------------------------------------------mcf group attr-------------------------------------------------  
-grp    sync    mcf_path     src_frame_rate    dst_frame_rate     depth
- 0       y      fusion              -1              -1     0
------------------------------------------------------mcf group crop attr-------------------------------------------------  
-grp     crop_en     x     y        width     height
- 0        n         0     0         0         0
------------------------------------------------------mcf pipe attr-------------------------------------------------------  
-grp  pipe_id  vpss_grp  color/mono   width   height     pixel_fmt
-    0        1         1       color    3840     2160    YVU-SP420
-    0        0       100        mono    3840     2160    YVU-SP420
------------------------------------------------------mcf pre-process info------------------------------------------------ 
- grp  pipe_id   input_num    send_num    recv_num  output_num
-    0        1         204         204         202         202
-    0        0         204         204         203         203
-----------------------------------------mcf pre-process queue info----------------------------------------
-  grp  pipe_id   input_num  output_num    lost_num    busy_num    free_num
-    0        1         202         200           0           0           8
-    0        0         203         200           0           3           5
------------------------------------------------------mcf fusion info------------------------------------------------------  
-grp  pipe_id   input_num    send_num    recv_num  output_num
-    0        1         202         200         200         200
-    0        0         203         200         200         200
------------------------------------------------------mcf phys chn attr---------------------------------------------------  
-grp  chn   width  height   pixel_fmt    cmp_mode   depth  src_frame_rate  dst_frame_rate  mirror    flip
-  0    0    3840    2160   YVU-SP420        none       0              -1              -1       n       n
------------------------------------------------------mcf phys chn crop attr--------------------------------------------- 
- grp  chn  crop_en    coord     x     y     width    height  trim_x  trim_y  trim_width  trim_height
-  0    0        n      ABS     0     0         0         0
------------------------------------------------------mcf phys chn other attr--------------------------------------------  
-grp  chn  low_delay_en low_delay_line  rotation_en  rotation_fixed      align  pool_id
- 0    0             n              0            n               0         32       -1
------------------------------------------------------mcf ext chn attr-----------------------------------------------------  
-grp  ext_chn   width  height   pixel_fmt    cmp_mode   depth  src_frame_rate  dst_frame_rate   bind_phys_chn
+----------------------------------------------------------mcf group attr------------------------------------------------- grp sync mcf_path src_frame_rate dst_frame_rate depth 0 y fusion -1 -1 0
+-----------------------------------------------------mcf group crop attr------------------------------------------------- grp crop_en x y width height 0 n 0 0 0 0
+-----------------------------------------------------mcf pipe attr------------------------------------------------------- grp pipe_id vpss_grp color/mono width height pixel_fmt 0 1 1 color 3840 2160 YVU-SP420 0 0 100 mono 3840 2160 YVU-SP420
+-----------------------------------------------------mcf pre-process info------------------------------------------------ grp pipe_id input_num send_num recv_num output_num 0 1 204 204 202 202 0 0 204 204 203 203
+----------------------------------------mcf pre-process queue info---------------------------------------- grp pipe_id input_num output_num lost_num busy_num free_num 0 1 202 200 0 0 8 0 0 203 200 0 3 5
+-----------------------------------------------------mcf fusion info------------------------------------------------------ grp pipe_id input_num send_num recv_num output_num 0 1 202 200 200 200 0 0 203 200 200 200
+-----------------------------------------------------mcf phys chn attr--------------------------------------------------- grp chn width height pixel_fmt cmp_mode depth src_frame_rate dst_frame_rate mirror flip 0 0 3840 2160 YVU-SP420 none 0 -1 -1 n n
+-----------------------------------------------------mcf phys chn crop attr--------------------------------------------- grp chn crop_en coord x y width height trim_x trim_y trim_width trim_height 0 0 n ABS 0 0 0 0
+-----------------------------------------------------mcf phys chn other attr-------------------------------------------- grp chn low_delay_en low_delay_line rotation_en rotation_fixed align pool_id 0 0 n 0 n 0 32 -1
+-----------------------------------------------------mcf ext chn attr----------------------------------------------------- grp ext_chn width height pixel_fmt cmp_mode depth src_frame_rate dst_frame_rate bind_phys_chn
 ----------------------------------------mcf ext chn crop attr-----------------------------------------------
-grp  ext_chn  crop_en    coord     x     y     width    height  trim_x  trim_y  trim_width  trim_height
------------------------------------------------------mcf ext chn other attr----------------------------------------------  
-grp ext_chn  low_delay_en low_delay_line      align  pool_id
------------------------------------------------------mcf phys chn run info----------------------------------------------  
-grp  chn     width     height   frame_rate    frame_cnt
- 0    0      3840       2160           29          200
-----------------------------------------mcf ext chn run info------------------------------------------------
-  grp ext_chn     width     height   frame_rate    frame_cnt
-```
-
-【参数说明】
-
-<a name="table5559mcpsimp"></a>
+grp ext_chn crop_en coord x y width height trim_x trim_y trim_width trim_height
+-----------------------------------------------------mcf ext chn other attr---------------------------------------------- grp ext_chn low_delay_en low_delay_line align pool_id
+-----------------------------------------------------mcf phys chn run info---------------------------------------------- grp chn width height frame_rate frame_cnt 0 0 3840 2160 29 200
+----------------------------------------mcf ext chn run info------------------------------------------------ grp ext_chn width height frame_rate frame_cnt
+``` 【参数说明】 <a name="table5559mcpsimp"></a>
 <table><thead align="left"><tr id="row5565mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p5567mcpsimp"><a name="p5567mcpsimp"></a><a name="p5567mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p5569mcpsimp"><a name="p5569mcpsimp"></a><a name="p5569mcpsimp"></a>描述</p>
@@ -6118,16 +3250,6 @@ grp  chn     width     height   frame_rate    frame_cnt
 <tr id="row5610mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5612mcpsimp"><a name="p5612mcpsimp"></a><a name="p5612mcpsimp"></a>crop_en</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5614mcpsimp"><a name="p5614mcpsimp"></a><a name="p5614mcpsimp"></a>表示组属性中的crop使能。</p>
-</td>
-</tr>
-<tr id="row5615mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5617mcpsimp"><a name="p5617mcpsimp"></a><a name="p5617mcpsimp"></a>x</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5619mcpsimp"><a name="p5619mcpsimp"></a><a name="p5619mcpsimp"></a>crop起始位置x。</p>
-</td>
-</tr>
-<tr id="row5620mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5622mcpsimp"><a name="p5622mcpsimp"></a><a name="p5622mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5624mcpsimp"><a name="p5624mcpsimp"></a><a name="p5624mcpsimp"></a>crop起始位置y。</p>
 </td>
 </tr>
 <tr id="row5625mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5627mcpsimp"><a name="p5627mcpsimp"></a><a name="p5627mcpsimp"></a>width</p>
@@ -6362,16 +3484,6 @@ grp  chn     width     height   frame_rate    frame_cnt
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5851mcpsimp"><a name="p5851mcpsimp"></a><a name="p5851mcpsimp"></a>表示crop模式。</p>
 </td>
 </tr>
-<tr id="row5852mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5854mcpsimp"><a name="p5854mcpsimp"></a><a name="p5854mcpsimp"></a>x</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5856mcpsimp"><a name="p5856mcpsimp"></a><a name="p5856mcpsimp"></a>crop起始位置x。</p>
-</td>
-</tr>
-<tr id="row5857mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5859mcpsimp"><a name="p5859mcpsimp"></a><a name="p5859mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5861mcpsimp"><a name="p5861mcpsimp"></a><a name="p5861mcpsimp"></a>crop起始位置y。</p>
-</td>
-</tr>
 <tr id="row5862mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5864mcpsimp"><a name="p5864mcpsimp"></a><a name="p5864mcpsimp"></a>width</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5866mcpsimp"><a name="p5866mcpsimp"></a><a name="p5866mcpsimp"></a>crop后图像宽度。</p>
@@ -6518,16 +3630,6 @@ grp  chn     width     height   frame_rate    frame_cnt
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6009mcpsimp"><a name="p6009mcpsimp"></a><a name="p6009mcpsimp"></a>表示crop模式。</p>
 </td>
 </tr>
-<tr id="row6010mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6012mcpsimp"><a name="p6012mcpsimp"></a><a name="p6012mcpsimp"></a>x</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6014mcpsimp"><a name="p6014mcpsimp"></a><a name="p6014mcpsimp"></a>crop起始位置x。</p>
-</td>
-</tr>
-<tr id="row6015mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6017mcpsimp"><a name="p6017mcpsimp"></a><a name="p6017mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6019mcpsimp"><a name="p6019mcpsimp"></a><a name="p6019mcpsimp"></a>crop起始位置y。</p>
-</td>
-</tr>
 <tr id="row6020mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6022mcpsimp"><a name="p6022mcpsimp"></a><a name="p6022mcpsimp"></a>width</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6024mcpsimp"><a name="p6024mcpsimp"></a><a name="p6024mcpsimp"></a>crop后图像宽度。</p>
@@ -6655,79 +3757,7 @@ grp  chn     width     height   frame_rate    frame_cnt
 </td>
 </tr>
 </tbody>
-</table>
-
-# FAQ
-## 如何消除2组镜头的视差<a name="ZH-CN_TOPIC_0000002457869885"></a>
-
-【现象】
-
-如果2个组镜头存在视差，导致图像融合效果不理想。
-
-【解决方法】
-
-调用mcf标定工具标定，将标定结果的correct\_coef数据，调用ss\_mpi\_vi\_set\_chn\_fov\_correction\_attr（具体请参考《MPP 媒体处理软件 V5.0 开发参考》“视频输入”章节）接口做视差矫正。
-
-## 如何消除视差矫正后黑边情况<a name="ZH-CN_TOPIC_0000002424191078"></a>
-
-【现象】
-
-视差矫正后，黑白2路图像融合后存在黑边情况。
-
-【解决方法】
-
-调用mcf标定工具标定，将标定结果的region数据，调用[ss\_mpi\_mcf\_set\_grp\_crop](#ZH-CN_TOPIC_0000002457869813)接口把黑边裁剪掉。
-
-## 如何正确配置ISP的BNR属性<a name="ZH-CN_TOPIC_0000002424350942"></a>
-
-【现象】
-
-融合后噪声大。
-
-【解决方法】
-
-正确设置VB属性和调用[ss\_mpi\_mcf\_set\_vi\_attr](#ZH-CN_TOPIC_0000002424350998)接口可以提高降噪效果。具体方法请参考mcf sample 1。
-
->![](public_sys-resources/icon-caution.gif) **注意：** 
->VB属性设置一定要设置为OT\_VB\_SUPPLEMENT\_BNR\_MOT\_MASK。
-
-## 黑白彩色双路融合场景和正常场景如何切换<a name="ZH-CN_TOPIC_0000002457829773"></a>
-
-【现象】
-
-白天场景不需要黑白彩色双路融合，夜晚场景需要黑白彩色双路融合。
-
-【解决方法】
-
-方法1：通过调节算法参数中的fusion\_alpha\_lut值，可以做到输出平滑切换。fusion\_alpha\_lut = 0 时输出彩色路图像，fusion\_alpha\_lut = 255 时输出黑白图像。
-
--   优点：软切换，可以做到效果平滑切换。
--   缺点：切换后2路图像都在运行，带宽高，能耗高。
-
-方法2：通过设置组属性中的mcf\_path. 当mcf\_path = OT\_MCF\_PATH\_FUSION 时，MCF模块输出融合后图像，mcf\_path = OT\_MCF\_PATH\_COLOR时，输出彩色路，mcf\_path = OT\_MCF\_PATH\_MONO时，输出黑白路。当设置为OT\_MCF\_PATH\_MONO输出时，要求黑白路输入为420格式。
-
-可分为两种模式：开启帧同步与关闭帧同步模式。
-
--   开启同步模式：参考sample\_mcf \(3\)
-    -   优点：切换过程中帧的pts一直是连续的。
-    -   缺点：切换模式后两路图像都在运行，不支持销毁另外一路图像。
-
--   关闭同步模式：参考sample\_mcf \(4\)
-    -   优点：切换过程中支持销毁另外一路图像，可以关闭一路vi，节省带宽。
-    -   缺点：属于硬切换，切换效果不能平滑，切换过程中帧的pts不能保持连续。
-
-方法3：先取消mcf和mcf后面的vpss绑定关系，再重新vi绑定vpss。
-
--   优点：切换后场景性能最优。
--   缺点：需要设置绑定关系，中间会丢帧。
-
-## 分块场景不支持组和通道裁剪<a name="ZH-CN_TOPIC_0000002424350930"></a>
-
-【现象】
-
-分块时不支持组和通道裁剪。
-
-【解决方法】
-
-分块场景下若要进行裁剪（比如7.2节描述的校正后黑边），建议后面接一个vpss来进行crop，同时前面mcf不建议缩放（放到后面vpss一起做）。
-
+</table> # FAQ
+## 如何消除2组镜头的视差<a name="ZH-CN_TOPIC_0000002457869885"></a> 【现象】 如果2个组镜头存在视差，导致图像融合效果不理想。 【解决方法】 调用mcf标定工具标定，将标定结果的correct\_coef数据，调用ss\_mpi\_vi\_set\_chn\_fov\_correction\_attr（具体请参考《MPP 媒体处理软件 V5.0 开发参考》“视频输入”章节）接口做视差矫正。 ## 如何消除视差矫正后黑边情况<a name="ZH-CN_TOPIC_0000002424191078"></a> 【现象】 视差矫正后，黑白2路图像融合后存在黑边情况。 【解决方法】 调用mcf标定工具标定，将标定结果的region数据，调用[ss\_mpi\_mcf\_set\_grp\_crop](#ZH-CN_TOPIC_0000002457869813)接口把黑边裁剪掉。 ## 如何正确配置ISP的BNR属性<a name="ZH-CN_TOPIC_0000002424350942"></a> 【现象】 融合后噪声大。 【解决方法】 正确设置VB属性和调用[ss\_mpi\_mcf\_set\_vi\_attr](#ZH-CN_TOPIC_0000002424350998)接口可以提高降噪效果。具体方法请参考mcf sample 1。 >![](public_sys-resources/icon-caution.gif) **注意：** >VB属性设置一定要设置为OT\_VB\_SUPPLEMENT\_BNR\_MOT\_MASK。 ## 黑白彩色双路融合场景和正常场景如何切换<a name="ZH-CN_TOPIC_0000002457829773"></a> 【现象】 白天场景不需要黑白彩色双路融合，夜晚场景需要黑白彩色双路融合。 【解决方法】 方法1：通过调节算法参数中的fusion\_alpha\_lut值，可以做到输出平滑切换。fusion\_alpha\_lut = 0 时输出彩色路图像，fusion\_alpha\_lut = 255 时输出黑白图像。 - 优点：软切换，可以做到效果平滑切换。
+- 缺点：切换后2路图像都在运行，带宽高，能耗高。 方法2：通过设置组属性中的mcf\_path. 当mcf\_path = OT\_MCF\_PATH\_FUSION 时，MCF模块输出融合后图像，mcf\_path = OT\_MCF\_PATH\_COLOR时，输出彩色路，mcf\_path = OT\_MCF\_PATH\_MONO时，输出黑白路。当设置为OT\_MCF\_PATH\_MONO输出时，要求黑白路输入为420格式。 可分为两种模式：开启帧同步与关闭帧同步模式。 - 开启同步模式：参考sample\_mcf \(3\) - 优点：切换过程中帧的pts一直是连续的。 - 缺点：切换模式后两路图像都在运行，不支持销毁另外一路图像。 - 关闭同步模式：参考sample\_mcf \(4\) - 优点：切换过程中支持销毁另外一路图像，可以关闭一路vi，节省带宽。 - 缺点：属于硬切换，切换效果不能平滑，切换过程中帧的pts不能保持连续。 方法3：先取消mcf和mcf后面的vpss绑定关系，再重新vi绑定vpss。 - 优点：切换后场景性能最优。
+- 缺点：需要设置绑定关系，中间会丢帧。 ## 分块场景不支持组和通道裁剪<a name="ZH-CN_TOPIC_0000002424350930"></a> 【现象】 分块时不支持组和通道裁剪。 【解决方法】 分块场景下若要进行裁剪（比如7.2节描述的校正后黑边），建议后面接一个vpss来进行crop，同时前面mcf不建议缩放（放到后面vpss一起做）。 

@@ -1,21 +1,9 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/OTP API 参考/OTP API 参考.md
----
-
-# Preface
-**Overview<a name="section279mcpsimp"></a>**
-
-OTP is a non-volatile memory. Its main characteristic is that once the bit content of the corresponding storage space is written from 0 to 1, or after locking the corresponding area according to the lock mechanism, it can no longer be modified. OTP is mainly used to store specific data, such as the root key for the CIPHER module, security enable flags, and other information.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified, the content for SS528V100 and SS625V100, SS524V100 and SS522V100, Hi3519AV200 and Hi3403V100 is identical.
-
-**Product Version<a name="section286mcpsimp"></a>**
-
-The product versions corresponding to this document are as follows.
-
-<a name="table289mcpsimp"></a>
+--- # Preface
+**Overview<a name="section279mcpsimp"></a>** OTP is a non-volatile memory. Its main characteristic is that once the bit content of the corresponding storage space is written from 0 to 1, or after locking the corresponding area according to the lock mechanism, it can no longer be modified. OTP is mainly used to store specific data, such as the root key for the CIPHER module, security enable flags, and other information. >![](public_sys-resources/icon-note.gif) **Note:**
+>Unless otherwise specified, the content for and , and , and Hi3403V100 is identical. **Product Version<a name="section286mcpsimp"></a>** The product versions corresponding to this document are as follows. <a name="table289mcpsimp"></a>
 <table><thead align="left"><tr id="row294mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p296mcpsimp"><a name="p296mcpsimp"></a><a name="p296mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p298mcpsimp"><a name="p298mcpsimp"></a><a name="p298mcpsimp"></a>Product Version</p>
@@ -27,51 +15,33 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p304mcpsimp"><a name="p304mcpsimp"></a><a name="p304mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row305mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p307mcpsimp"><a name="p307mcpsimp"></a><a name="p307mcpsimp"></a>SS626</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p309mcpsimp"><a name="p309mcpsimp"></a><a name="p309mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row098721511379"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p881081984715"><a name="p881081984715"></a><a name="p881081984715"></a>SS524</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p34921898474"><a name="p34921898474"></a><a name="p34921898474"></a>V100</p>
 </td>
 </tr>
-<tr id="row055711773717"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p255718172371"><a name="p255718172371"></a><a name="p255718172371"></a>SS522</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p18557131714372"><a name="p18557131714372"></a><a name="p18557131714372"></a>V100</p>
 </td>
 </tr>
-<tr id="row14680716155410"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p191707516282"><a name="p191707516282"></a><a name="p191707516282"></a>SS528</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p14171957287"><a name="p14171957287"></a><a name="p14171957287"></a>V100</p>
 </td>
 </tr>
-<tr id="row547716911288"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p4477491286"><a name="p4477491286"></a><a name="p4477491286"></a>SS625</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p647779132814"><a name="p647779132814"></a><a name="p647779132814"></a>V100</p>
 </td>
 </tr>
-<tr id="row766620218412"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Intended Audience<a name="section310mcpsimp"></a>**
-
-This document (guide) is primarily intended for the following engineers:
-
--   Technical Support Engineers
--   Software Development Engineers
-
-**Symbol Conventions<a name="section316mcpsimp"></a>**
-
-The following symbols may appear in this document, and their meanings are described below.
-
-<a name="table319mcpsimp"></a>
+</table> **Intended Audience<a name="section310mcpsimp"></a>** This document (guide) is primarily intended for the following engineers: - Technical Support Engineers
+- Software Development Engineers **Symbol Conventions<a name="section316mcpsimp"></a>** The following symbols may appear in this document, and their meanings are described below. <a name="table319mcpsimp"></a>
 <table><thead align="left"><tr id="row324mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.3.1.1"><p id="p326mcpsimp"><a name="p326mcpsimp"></a><a name="p326mcpsimp"></a>Symbol</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.1.3.1.2"><p id="p328mcpsimp"><a name="p328mcpsimp"></a><a name="p328mcpsimp"></a>Description</p>
@@ -83,36 +53,8 @@ The following symbols may appear in this document, and their meanings are descri
 <td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p334mcpsimp"><a name="p334mcpsimp"></a><a name="p334mcpsimp"></a>Indicates a high-level hazard which, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row335mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p337mcpsimp"><a name="p337mcpsimp"></a><a name="p337mcpsimp"></a><a name="image109"></a><a name="image109"></a><span><img id="image109" src="figures/zh-cn_image_0000002457828821.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p339mcpsimp"><a name="p339mcpsimp"></a><a name="p339mcpsimp"></a>Indicates a medium-level hazard which, if not avoided, could result in death or serious injury.</p>
-</td>
-</tr>
-<tr id="row340mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p342mcpsimp"><a name="p342mcpsimp"></a><a name="p342mcpsimp"></a><a name="image110"></a><a name="image110"></a><span><img id="image110" src="figures/zh-cn_image_0000002457828813.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p344mcpsimp"><a name="p344mcpsimp"></a><a name="p344mcpsimp"></a>Indicates a low-level hazard which, if not avoided, could result in minor or moderate injury.</p>
-</td>
-</tr>
-<tr id="row345mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p347mcpsimp"><a name="p347mcpsimp"></a><a name="p347mcpsimp"></a><a name="image111"></a><a name="image111"></a><span><img id="image111" src="figures/zh-cn_image_0000002424350002.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p349mcpsimp"><a name="p349mcpsimp"></a><a name="p349mcpsimp"></a>Used to convey device or environmental safety alert information. If not avoided, it may result in equipment damage, data loss, reduced equipment performance, or other unpredictable consequences.</p>
-<p id="p350mcpsimp"><a name="p350mcpsimp"></a><a name="p350mcpsimp"></a>"Caution" does not involve personal injury.</p>
-</td>
-</tr>
-<tr id="row351mcpsimp"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p353mcpsimp"><a name="p353mcpsimp"></a><a name="p353mcpsimp"></a><a name="image112"></a><a name="image112"></a><span><img id="image112" src="figures/zh-cn_image_0000002424190170.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="82%" headers="mcps1.1.3.1.2 "><p id="p355mcpsimp"><a name="p355mcpsimp"></a><a name="p355mcpsimp"></a>Supplementary explanation of key information in the main text.</p>
-<p id="p356mcpsimp"><a name="p356mcpsimp"></a><a name="p356mcpsimp"></a>"Note" is not safety warning information and does not involve personal, equipment, or environmental injury.</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**Revision History<a name="section357mcpsimp"></a>**
-
-The revision history summarizes the changes made in each document update. The latest version of the document includes updates from all previous document versions.
-
-<a name="table1557726816410"></a>
+</table> **Revision History<a name="section357mcpsimp"></a>** The revision history summarizes the changes made in each document update. The latest version of the document includes updates from all previous document versions. <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>Release Date</strong></p>
@@ -129,62 +71,22 @@ The revision history summarizes the changes made in each document update. The la
 </td>
 </tr>
 </tbody>
-</table>
-
-# Overview
-The OTP module provides MPI interfaces for driving one-time programmable operations, enabling CIPHER module root key Flashing, jtag key Flashing, key Flashing status verification, and user reserved space data read/write.
-
-## Key Usage Mechanism in OTP<a name="ZH-CN_TOPIC_0000002457868861"></a>
-
-**Figure 1**  Key Usage Mechanism in SS528V100, SS524V100 OTP<a name="fig46402535464"></a>
-![](figures/SS528V100-SS524V100-OTP中密钥使用机制.png "SS528V100-SS524V100-OTP中密钥使用机制")
-
-**Figure 2**  Key Usage Mechanism in Hi3403V100, SS626V100 OTP<a name="fig12487132617471"></a>
-![](figures/Hi3403V100-SS626V100-OTP中密钥使用机制.png "Hi3403V100-SS626V100-OTP中密钥使用机制")
-
-## OTP Usage Notes<a name="ZH-CN_TOPIC_0000002424349942"></a>
-
-When OTP is deployed in different scenarios, its usage may vary.
-
--   In the Linux environment
-    -   User-mode OTP can be used by linking the static library libss\_otp.a or the dynamic library libss\_otp.so, depending on libsecurec.a or libsecurec.so.
-    -   Kernel-mode OTP uses module insertion, i.e., insmod ot\_otp.ko, which depends on ot\_osal.ko, ot\_base.ko, sys\_config.ko, and ot\_sys.ko.
-
--   In the OPTEE environment, the user-mode OTP external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_tee\_xxx.
--   In the UBOOT environment, the user-mode OTP external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_mpi\_xxx.
-
-# API Reference
-OTP provides the following APIs:
-
--   [ss\_mpi\_otp\_init](#ZH-CN_TOPIC_0000002457868853): Initializes the OTP module.
--   [ss\_mpi\_otp\_deinit](#ZH-CN_TOPIC_0000002457828757): Deinitializes the OTP module.
--   [ss\_mpi\_otp\_set\_user\_data](#ZH-CN_TOPIC_0000002457828753): Sets OTP user space data.
--   [ss\_mpi\_otp\_get\_user\_data](#ZH-CN_TOPIC_0000002424349934): Reads OTP user space data.
--   [ss\_mpi\_otp\_set\_user\_data\_lock](#ZH-CN_TOPIC_0000002424349926): Sets OTP user data lock.
--   [ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865): Gets OTP user data lock.
--   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098): Burns PV data and lock flags to the chip internal OTP.
--   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922): Reads PV data or lock flags from the chip internal OTP.
--   [ss\_mpi\_otp\_get\_key\_verify\_status](#ZH-CN_TOPIC_0000002457828745): Gets the verification status of the KEY stored in the chip internal OTP.
-
-## ss\_mpi\_otp\_init<a name="ZH-CN_TOPIC_0000002457868853"></a>
-
-[Description]
-
-Initializes the OTP module.
-
-[Syntax]
-
-```
+</table> # Overview
+The OTP module provides MPI interfaces for driving one-time programmable operations, enabling CIPHER module root key Flashing, jtag key Flashing, key Flashing status verification, and user reserved space data read/write. ## Key Usage Mechanism in OTP<a name="ZH-CN_TOPIC_0000002457868861"></a> **Figure 1** Key Usage Mechanism in , OTP<a name="fig46402535464"></a>
+![](figures--OT Pdensekey Uses.png "--OT Pdensekey Uses") **Figure 2** Key Usage Mechanism in Hi3403V100, OTP<a name="fig12487132617471"></a>
+![](figures/Hi3403V100--OT Pdensekey Uses.png "Hi3403V100--OT Pdensekey Uses") ## OTP Usage Notes<a name="ZH-CN_TOPIC_0000002424349942"></a> When OTP is deployed in different scenarios, its usage may vary. - In the Linux environment - User-mode OTP can be used by linking the static library libss\_otp.a or the dynamic library libss\_otp.so, depending on libsecurec.a or libsecurec.so. - Kernel-mode OTP uses module insertion, i.e., insmod ot\_otp.ko, which depends on ot\_osal.ko, ot\_base.ko, sys\_config.ko, and ot\_sys.ko. - In the OPTEE environment, the user-mode OTP external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_tee\_xxx.
+- In the UBOOT environment, the user-mode OTP external interface naming convention changes from ss\_mpi\_xxx in the Linux environment to ot\_mpi\_xxx. # API Reference
+OTP provides the following AP Is: - [ss\_mpi\_otp\_init](#ZH-CN_TOPIC_0000002457868853): Initializes the OTP module.
+- [ss\_mpi\_otp\_deinit](#ZH-CN_TOPIC_0000002457828757): Deinitializes the OTP module.
+- [ss\_mpi\_otp\_set\_user\_data](#ZH-CN_TOPIC_0000002457828753): Sets OTP user space data.
+- [ss\_mpi\_otp\_get\_user\_data](#ZH-CN_TOPIC_0000002424349934): Reads OTP user space data.
+- [ss\_mpi\_otp\_set\_user\_data\_lock](#ZH-CN_TOPIC_0000002424349926): Sets OTP user data lock.
+- [ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865): Gets OTP user data lock.
+- [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098): Burns PV data and lock flags to the chip internal OTP.
+- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922): Reads PV data or lock flags from the chip internal OTP.
+- [ss\_mpi\_otp\_get\_key\_verify\_status](#ZH-CN_TOPIC_0000002457828745): Gets the verification status of the KEY stored in the chip internal OTP. ## ss\_mpi\_otp\_init<a name="ZH-CN_TOPIC_0000002457868853"></a> [Description] Initializes the OTP module. [Syntax] ```
 td_s32 ss_mpi_otp_init(td_void);
-```
-
-[Parameters]
-
-None.
-
-[Return Values]
-
-<a name="table551mcpsimp"></a>
+``` [Parameters] None. [Return Values] <a name="table551mcpsimp"></a>
 <table><thead align="left"><tr id="row556mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p558mcpsimp"><a name="p558mcpsimp"></a><a name="p558mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p560mcpsimp"><a name="p560mcpsimp"></a><a name="p560mcpsimp"></a>Description</p>
@@ -202,40 +104,10 @@ None.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
-Initialization and deinitialization must be paired.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_deinit<a name="ZH-CN_TOPIC_0000002457828757"></a>
-
-[Description]
-
-Deinitializes the OTP module.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] Initialization and deinitialization must be paired. [Example] None. ## ss\_mpi\_otp\_deinit<a name="ZH-CN_TOPIC_0000002457828757"></a> [Description] Deinitializes the OTP module. [Syntax] ```
 td_s32 ss_mpi_otp_deinit(td_void);
-```
-
-[Parameters]
-
-None.
-
-[Return Values]
-
-<a name="table1153mcpsimp"></a>
+``` [Parameters] None. [Return Values] <a name="table1153mcpsimp"></a>
 <table><thead align="left"><tr id="row1158mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1160mcpsimp"><a name="p1160mcpsimp"></a><a name="p1160mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1162mcpsimp"><a name="p1162mcpsimp"></a><a name="p1162mcpsimp"></a>Description</p>
@@ -253,36 +125,10 @@ None.
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
-Initialization and deinitialization must be paired.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_set\_user\_data<a name="ZH-CN_TOPIC_0000002457828753"></a>
-
-[Description]
-
-Sets OTP user space data.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] Initialization and deinitialization must be paired. [Example] None. ## ss\_mpi\_otp\_set\_user\_data<a name="ZH-CN_TOPIC_0000002457828753"></a> [Description] Sets OTP user space data. [Syntax] ```
 td_s32 ss_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const td_u8 *value, td_u32 value_len);
-```
-
-[Parameters]
-
-<a name="table181mcpsimp"></a>
+``` [Parameters] <a name="table181mcpsimp"></a>
 <table><thead align="left"><tr id="row187mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p189mcpsimp"><a name="p189mcpsimp"></a><a name="p189mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.4.1.2"><p id="p191mcpsimp"><a name="p191mcpsimp"></a><a name="p191mcpsimp"></a>Description</p>
@@ -320,11 +166,7 @@ td_s32 ss_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const 
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table224mcpsimp"></a>
+</table> [Return Values] <a name="table224mcpsimp"></a>
 <table><thead align="left"><tr id="row229mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p231mcpsimp"><a name="p231mcpsimp"></a><a name="p231mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p233mcpsimp"><a name="p233mcpsimp"></a><a name="p233mcpsimp"></a>Description</p>
@@ -342,39 +184,13 @@ td_s32 ss_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const 
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
--   The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   offset must be 4-byte aligned.
--   value\_len is the byte length of value.
--   The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum byte length.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_get\_user\_data<a name="ZH-CN_TOPIC_0000002424349934"></a>
-
-[Description]
-
-Gets OTP user space data.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] - The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- offset must be 4-byte aligned.
+- value\_len is the byte length of value.
+- The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum byte length. [Example] None. ## ss\_mpi\_otp\_get\_user\_data<a name="ZH-CN_TOPIC_0000002424349934"></a> [Description] Gets OTP user space data. [Syntax] ```
 td_s32 ss_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 *value, td_u32 value_len);
-```
-
-[Parameters]
-
-<a name="table587mcpsimp"></a>
+``` [Parameters] <a name="table587mcpsimp"></a>
 <table><thead align="left"><tr id="row593mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p595mcpsimp"><a name="p595mcpsimp"></a><a name="p595mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p597mcpsimp"><a name="p597mcpsimp"></a><a name="p597mcpsimp"></a>Description</p>
@@ -412,11 +228,7 @@ td_s32 ss_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table629mcpsimp"></a>
+</table> [Return Values] <a name="table629mcpsimp"></a>
 <table><thead align="left"><tr id="row634mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p636mcpsimp"><a name="p636mcpsimp"></a><a name="p636mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p638mcpsimp"><a name="p638mcpsimp"></a><a name="p638mcpsimp"></a>Description</p>
@@ -434,39 +246,13 @@ td_s32 ss_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
--   The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   offset must be 4-byte aligned.
--   value\_len is the byte length of value.
--   The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum value.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_set\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002424349926"></a>
-
-[Description]
-
-Sets OTP user space data lock.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] - The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- offset must be 4-byte aligned.
+- value\_len is the byte length of value.
+- The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum value. [Example] None. ## ss\_mpi\_otp\_set\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002424349926"></a> [Description] Sets OTP user space data lock. [Syntax] ```
 td_s32 ss_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len);
-```
-
-[Parameters]
-
-<a name="table366mcpsimp"></a>
+``` [Parameters] <a name="table366mcpsimp"></a>
 <table><thead align="left"><tr id="row372mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p374mcpsimp"><a name="p374mcpsimp"></a><a name="p374mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p376mcpsimp"><a name="p376mcpsimp"></a><a name="p376mcpsimp"></a>Description</p>
@@ -497,11 +283,7 @@ td_s32 ss_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, t
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table401mcpsimp"></a>
+</table> [Return Values] <a name="table401mcpsimp"></a>
 <table><thead align="left"><tr id="row406mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p408mcpsimp"><a name="p408mcpsimp"></a><a name="p408mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p410mcpsimp"><a name="p410mcpsimp"></a><a name="p410mcpsimp"></a>Description</p>
@@ -519,39 +301,12 @@ td_s32 ss_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, t
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
--   The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   offset must be 4-byte aligned.
--   The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum value.
--   SS528V100 and SS524V100 do not support this interface.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_get\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002457868865"></a>
-
-[Description]
-
-Gets OTP user space data lock.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] - The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- offset must be 4-byte aligned.
+- The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum value. [Example] None. ## ss\_mpi\_otp\_get\_user\_data\_lock<a name="ZH-CN_TOPIC_0000002457868865"></a> [Description] Gets OTP user space data lock. [Syntax] ```
 td_s32 ss_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len, ot_otp_lock_status *lock);
-```
-
-[Parameters]
-
-<a name="table741mcpsimp"></a>
+``` [Parameters] <a name="table741mcpsimp"></a>
 <table><thead align="left"><tr id="row747mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p749mcpsimp"><a name="p749mcpsimp"></a><a name="p749mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p751mcpsimp"><a name="p751mcpsimp"></a><a name="p751mcpsimp"></a>Description</p>
@@ -589,11 +344,7 @@ td_s32 ss_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, t
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table783mcpsimp"></a>
+</table> [Return Values] <a name="table783mcpsimp"></a>
 <table><thead align="left"><tr id="row788mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p790mcpsimp"><a name="p790mcpsimp"></a><a name="p790mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p792mcpsimp"><a name="p792mcpsimp"></a><a name="p792mcpsimp"></a>Description</p>
@@ -611,39 +362,12 @@ td_s32 ss_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, t
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
--   The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   offset must be 4-byte aligned.
--   The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum value.
--   SS528V100 and SS524V100 do not support this interface.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_burn\_product\_pv<a name="ZH-CN_TOPIC_0000002424190098"></a>
-
-[Description]
-
-Burns PV data and lock flags to the chip internal OTP.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] - The parameter field\_name is set with reference to the "Field Name" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- offset must be 4-byte aligned.
+- The valid ranges for offset and value\_len refer to the "Bit Width" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". offset + value\_len must not exceed the maximum value. [Example] None. ## ss\_mpi\_otp\_burn\_product\_pv<a name="ZH-CN_TOPIC_0000002424190098"></a> [Description] Burns PV data and lock flags to the chip internal OTP. [Syntax] ```
 td_s32 ss_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);
-```
-
-[Parameters]
-
-<a name="table670mcpsimp"></a>
+``` [Parameters] <a name="table670mcpsimp"></a>
 <table><thead align="left"><tr id="row676mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p678mcpsimp"><a name="p678mcpsimp"></a><a name="p678mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p680mcpsimp"><a name="p680mcpsimp"></a><a name="p680mcpsimp"></a>Description</p>
@@ -667,11 +391,7 @@ td_s32 ss_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table699mcpsimp"></a>
+</table> [Return Values] <a name="table699mcpsimp"></a>
 <table><thead align="left"><tr id="row704mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p706mcpsimp"><a name="p706mcpsimp"></a><a name="p706mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p708mcpsimp"><a name="p708mcpsimp"></a><a name="p708mcpsimp"></a>Description</p>
@@ -689,41 +409,15 @@ td_s32 ss_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
--   The burn member of parameter pv must be set to TD\_TRUE.
--   The field\_name member of parameter pv is set with reference to the "Field Name" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   The value\_len member of parameter pv is the bit length of value, refer to the "Bit Width" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   The value member of parameter pv is set with reference to the "Description" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   The lock member of parameter pv takes the value TD\_TRUE or TD\_FALSE. For field\_name entries with auto-lock in the "Description" column of Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide", any configuration will result in locking.
--   The valid range for parameter num is 1 to 500.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_read\_product\_pv<a name="ZH-CN_TOPIC_0000002424349922"></a>
-
-[Description]
-
-Reads PV data or lock flags from the chip internal OTP.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] - The burn member of parameter pv must be set to TD\_TRUE.
+- The field\_name member of parameter pv is set with reference to the "Field Name" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- The value\_len member of parameter pv is the bit length of value, refer to the "Bit Width" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- The value member of parameter pv is set with reference to the "Description" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- The lock member of parameter pv takes the value TD\_TRUE or TD\_FALSE. For field\_name entries with auto-lock in the "Description" column of Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide", any configuration will result in locking.
+- The valid range for parameter num is 1 to 500. [Example] None. ## ss\_mpi\_otp\_read\_product\_pv<a name="ZH-CN_TOPIC_0000002424349922"></a> [Description] Reads PV data or lock flags from the chip internal OTP. [Syntax] ```
 td_s32 ss_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
-```
-
-[Parameters]
-
-<a name="table824mcpsimp"></a>
+``` [Parameters] <a name="table824mcpsimp"></a>
 <table><thead align="left"><tr id="row830mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p832mcpsimp"><a name="p832mcpsimp"></a><a name="p832mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p834mcpsimp"><a name="p834mcpsimp"></a><a name="p834mcpsimp"></a>Description</p>
@@ -747,11 +441,7 @@ td_s32 ss_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table853mcpsimp"></a>
+</table> [Return Values] <a name="table853mcpsimp"></a>
 <table><thead align="left"><tr id="row858mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p860mcpsimp"><a name="p860mcpsimp"></a><a name="p860mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p862mcpsimp"><a name="p862mcpsimp"></a><a name="p862mcpsimp"></a>Description</p>
@@ -769,40 +459,14 @@ td_s32 ss_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
--   The burn member of parameter pv must be set to TD\_FALSE.
--   The field\_name member of parameter pv refers to the "Field Name" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   The value\_len member of parameter pv is the bit length of value, refer to the "Bit Width" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   The value member of parameter pv refers to the "Description" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
--   The valid range for parameter num is 1 to 500.
-
-[Example]
-
-None.
-
-## ss\_mpi\_otp\_get\_key\_verify\_status<a name="ZH-CN_TOPIC_0000002457828745"></a>
-
-[Description]
-
-Gets the verification status of the KEY stored in the chip internal OTP.
-
-[Syntax]
-
-```
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] - The burn member of parameter pv must be set to TD\_FALSE.
+- The field\_name member of parameter pv refers to the "Field Name" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- The value\_len member of parameter pv is the bit length of value, refer to the "Bit Width" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- The value member of parameter pv refers to the "Description" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
+- The valid range for parameter num is 1 to 500. [Example] None. ## ss\_mpi\_otp\_get\_key\_verify\_status<a name="ZH-CN_TOPIC_0000002457828745"></a> [Description] Gets the verification status of the KEY stored in the chip internal OTP. [Syntax] ```
 td_s32 ss_mpi_otp_get_key_verify_status(const td_char *key_name, td_bool *status);
-```
-
-[Parameters]
-
-<a name="table1050mcpsimp"></a>
+``` [Parameters] <a name="table1050mcpsimp"></a>
 <table><thead align="left"><tr id="row1056mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p1058mcpsimp"><a name="p1058mcpsimp"></a><a name="p1058mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p1060mcpsimp"><a name="p1060mcpsimp"></a><a name="p1060mcpsimp"></a>Description</p>
@@ -826,11 +490,7 @@ td_s32 ss_mpi_otp_get_key_verify_status(const td_char *key_name, td_bool *status
 </td>
 </tr>
 </tbody>
-</table>
-
-[Return Values]
-
-<a name="table1079mcpsimp"></a>
+</table> [Return Values] <a name="table1079mcpsimp"></a>
 <table><thead align="left"><tr id="row1084mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1086mcpsimp"><a name="p1086mcpsimp"></a><a name="p1086mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1088mcpsimp"><a name="p1088mcpsimp"></a><a name="p1088mcpsimp"></a>Description</p>
@@ -848,50 +508,15 @@ td_s32 ss_mpi_otp_get_key_verify_status(const td_char *key_name, td_bool *status
 </td>
 </tr>
 </tbody>
-</table>
-
-[Requirements]
-
--   Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
--   Library file: libss\_otp.a
-
-[Notes]
-
-The parameter key\_name refers to the "Field Name" column in Section 2.2 "SSxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide".
-
-[Example]
-
-None.
-
-# Data Types
-The relevant data types and data structures are defined as follows:
-
--   [ot\_otp\_burn\_pv\_item](#ZH-CN_TOPIC_0000002457868869): OTP PV data type.
--   [ot\_otp\_lock\_status](#ZH-CN_TOPIC_0000002424190110): Defines OTP data lock status.
--   [OT\_OTP\_PV\_NAME\_MAX\_LEN](#ZH-CN_TOPIC_0000002457828749): Maximum byte length of field name (unit: byte).
--   [OT\_OTP\_PV\_VALUE\_MAX\_LEN](#ZH-CN_TOPIC_0000002424349938): Maximum byte length of the value member in ot\_otp\_burn\_pv\_item (unit: byte).
-
-## ot\_otp\_burn\_pv\_item<a name="ZH-CN_TOPIC_0000002457868869"></a>
-
-[Description]
-
-OTP PV data type.
-
-[Definition]
-
-```
-typedef struct {
-    td_bool burn;
-    td_char field_name[OT_OTP_PV_NAME_MAX_LEN];
-    td_u32  value_len;
-    td_u8   value[OT_OTP_PV_VALUE_MAX_LEN];
-    td_bool lock;
+</table> [Requirements] - Header files: ot\_common\_otp.h, ss\_mpi\_otp.h
+- Library file: libss\_otp.a [Notes] The parameter key\_name refers to the "Field Name" column in Section 2.2 "S Sxxxx OTP Field Definitions" of the "Security Subsystem Usage Guide". [Example] None. # Data Types
+The relevant data types and data structures are defined as follows: - [ot\_otp\_burn\_pv\_item](#ZH-CN_TOPIC_0000002457868869): OTP PV data type.
+- [ot\_otp\_lock\_status](#ZH-CN_TOPIC_0000002424190110): Defines OTP data lock status.
+- [OT\_OTP\_PV\_NAME\_MAX\_LEN](#ZH-CN_TOPIC_0000002457828749): Maximum byte length of field name (unit: byte).
+- [OT\_OTP\_PV\_VALUE\_MAX\_LEN](#ZH-CN_TOPIC_0000002424349938): Maximum byte length of the value member in ot\_otp\_burn\_pv\_item (unit: byte). ## ot\_otp\_burn\_pv\_item<a name="ZH-CN_TOPIC_0000002457868869"></a> [Description] OTP PV data type. [Definition] ```
+typedef struct { td_bool burn; td_char field_name[OT_OTP_PV_NAME_MAX_LEN]; td_u32 value_len; td_u8 value[OT_OTP_PV_VALUE_MAX_LEN]; td_bool lock;
 } ot_otp_burn_pv_item;
-```
-
-[Members]
-
-<a name="table989mcpsimp"></a>
+``` [Members] <a name="table989mcpsimp"></a>
 <table><thead align="left"><tr id="row994mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p996mcpsimp"><a name="p996mcpsimp"></a><a name="p996mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p998mcpsimp"><a name="p998mcpsimp"></a><a name="p998mcpsimp"></a>Description</p>
@@ -924,37 +549,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-value\_len indicates the bit width length of value.
-
-[Related Data Types and Interfaces]
-
--   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
--   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)
-
-## ot\_otp\_lock\_status<a name="ZH-CN_TOPIC_0000002424190110"></a>
-
-[Description]
-
-Defines OTP data lock status.
-
-[Definition]
-
-```
-typedef enum {
-    OT_OTP_STA_ALL_UNLOCKED = 0,                    /**< user data area is all unlock. */
-    OT_OTP_STA_PARTIAL_LOCKED,                      /**< user data area is partial unlock. */
-    OT_OTP_STA_ALL_LOCKED,                          /**< user data area is all lock. */
-    OT_OTP_STA_BUTT,                                /**< invalid param. */
+</table> [Notes] value\_len indicates the bit width length of value. [Related Data Types and Interfaces] - [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
+- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922) ## ot\_otp\_lock\_status<a name="ZH-CN_TOPIC_0000002424190110"></a> [Description] Defines OTP data lock status. [Definition] ```
+typedef enum { OT_OTP_STA_ALL_UNLOCKED = 0, /**< user data area is all unlock. */ OT_OTP_STA_PARTIAL_LOCKED, /**< user data area is partial unlock. */ OT_OTP_STA_ALL_LOCKED, /**< user data area is all lock. */ OT_OTP_STA_BUTT, /**< invalid param. */
 } ot_otp_lock_status;
-```
-
-[Members]
-
-<a name="table939mcpsimp"></a>
+``` [Members] <a name="table939mcpsimp"></a>
 <table><thead align="left"><tr id="row944mcpsimp"><th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.1"><p id="p946mcpsimp"><a name="p946mcpsimp"></a><a name="p946mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.2"><p id="p948mcpsimp"><a name="p948mcpsimp"></a><a name="p948mcpsimp"></a>Description</p>
@@ -982,72 +581,14 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
-[ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865)
-
-## OT\_OTP\_PV\_NAME\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002457828749"></a>
-
-[Description]
-
-Maximum byte length of field name (unit: byte).
-
-[Definition]
-
-```
-#define OT_OTP_PV_NAME_MAX_LEN                           32
-```
-
-[Members]
-
-None.
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
--   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
--   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)
-
-## OT\_OTP\_PV\_VALUE\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002424349938"></a>
-
-[Description]
-
-Maximum byte length of the value member in ot\_otp\_burn\_pv\_item (unit: byte).
-
-[Definition]
-
-```
-#define OT_OTP_PV_VALUE_MAX_LEN                          32
-```
-
-[Members]
-
-None.
-
-[Notes]
-
-None.
-
-[Related Data Types and Interfaces]
-
--   [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
--   [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922)
-
-# Error Codes
-The error codes provided by OTP are as follows.
-
-**Table 1**  OTP module error codes
-
-<a name="_Ref448994233"></a>
+</table> [Notes] None. [Related Data Types and Interfaces] [ss\_mpi\_otp\_get\_user\_data\_lock](#ZH-CN_TOPIC_0000002457868865) ## OT\_OTP\_PV\_NAME\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002457828749"></a> [Description] Maximum byte length of field name (unit: byte). [Definition] ```
+#define OT_OTP_PV_NAME_MAX_LEN 32
+``` [Members] None. [Notes] None. [Related Data Types and Interfaces] - [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
+- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922) ## OT\_OTP\_PV\_VALUE\_MAX\_LEN<a name="ZH-CN_TOPIC_0000002424349938"></a> [Description] Maximum byte length of the value member in ot\_otp\_burn\_pv\_item (unit: byte). [Definition] ```
+#define OT_OTP_PV_VALUE_MAX_LEN 32
+``` [Members] None. [Notes] None. [Related Data Types and Interfaces] - [ss\_mpi\_otp\_burn\_product\_pv](#ZH-CN_TOPIC_0000002424190098)
+- [ss\_mpi\_otp\_read\_product\_pv](#ZH-CN_TOPIC_0000002424349922) # Error Codes
+The error codes provided by OTP are as follows. **Table 1** OTP module error codes <a name="_Ref448994233"></a>
 <table><thead align="left"><tr id="row444mcpsimp"><th class="cellrowborder" valign="top" width="18.98%" id="mcps1.2.4.1.1"><p id="p446mcpsimp"><a name="p446mcpsimp"></a><a name="p446mcpsimp"></a>Error Code</p>
 </th>
 <th class="cellrowborder" valign="top" width="52.019999999999996%" id="mcps1.2.4.1.2"><p id="p448mcpsimp"><a name="p448mcpsimp"></a><a name="p448mcpsimp"></a>Macro Definition</p>
@@ -1148,9 +689,7 @@ The error codes provided by OTP are as follows.
 </td>
 </tr>
 </tbody>
-</table>
-
-# Acronyms and Abbreviations
+</table> # Acronyms and Abbreviations
 <a name="table104mcpsimp"></a>
 <table><tbody><tr id="row110mcpsimp"><td class="cellrowborder" colspan="3" valign="top"><p id="p112mcpsimp"><a name="p112mcpsimp"></a><a name="p112mcpsimp"></a><strong id="b113mcpsimp"><a name="b113mcpsimp"></a><a name="b113mcpsimp"></a>A</strong></p>
 </td>

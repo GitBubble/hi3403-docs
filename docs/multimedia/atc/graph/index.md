@@ -1,18 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC Graph开发指南/ATC Graph开发指南.md
----
-
-# 前言
-**概述<a name="section2832mcpsimp"></a>**
-
-本文用于指导开发人员，如何使用SVP ATC Graph接口构建网络模型，并将其转换成图像分析引擎支持的离线模型，模型转换过程中可以实现算子调度的优化、权值数据重排、内存使用优化等，可以脱离设备完成模型的预处理。
-
-**产品版本<a name="section5008mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table5011mcpsimp"></a>
+--- # 前言
+**概述<a name="section2832mcpsimp"></a>** 本文用于指导开发人员，如何使用SVP ATC Graph接口构建网络模型，并将其转换成图像分析引擎支持的离线模型，模型转换过程中可以实现算子调度的优化、权值数据重排、内存使用优化等，可以脱离设备完成模型的预处理。 **产品版本<a name="section5008mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table5011mcpsimp"></a>
 <table><thead align="left"><tr id="row5016mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p5018mcpsimp"><a name="p5018mcpsimp"></a><a name="p5018mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p5020mcpsimp"><a name="p5020mcpsimp"></a><a name="p5020mcpsimp"></a>产品版本</p>
@@ -24,31 +14,10 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC Grap
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5026mcpsimp"><a name="p5026mcpsimp"></a><a name="p5026mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row5027mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5029mcpsimp"><a name="p5029mcpsimp"></a><a name="p5029mcpsimp"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5031mcpsimp"><a name="p5031mcpsimp"></a><a name="p5031mcpsimp"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section2835mcpsimp"></a>**
-
-本文档主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-掌握以下经验和技能可以更好地理解本文档。
-
--   熟悉Linux基本命令。
--   对机器学习、图像分析方法有一定的了解。
-
-**符号约定<a name="section133020216410"></a>**
-
-在本文中可能出现下列标志，它们所代表的含义如下。
-
-<a name="table2622507016410"></a>
+</table> **读者对象<a name="section2835mcpsimp"></a>** 本文档主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 掌握以下经验和技能可以更好地理解本文档。 - 熟悉Linux基本命令。
+- 对机器学习、图像分析方法有一定的了解。 **符号约定<a name="section133020216410"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a>符号</p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a>说明</p>
@@ -60,34 +29,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC Grap
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002442022197.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441982341.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408582970.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
-<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
-</td>
-</tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408582962.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
-<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修改记录<a name="section2467512116410"></a>**
-
-<a name="table1557726816410"></a>
+</table> **修改记录<a name="section2467512116410"></a>** <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="17.23%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a>文档版本</p>
 </th>
 <th class="cellrowborder" valign="top" width="22.919999999999998%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a>发布日期</p>
@@ -113,165 +56,19 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ATC Grap
 </td>
 </tr>
 </tbody>
-</table>
-
-# 简介
-## 功能架构<a name="ZH-CN_TOPIC_0000002408422674"></a>
-
-SVP ATC Graph功能架构如[图1](#fig2817181918158)所示。从中可以看出，不局限于Caffe、Onnx等框架，用户可以通过开放的API接口进行构图，并编译为离线模型，用于在板端硬件加速处理器上进行离线推理。
-
-**图 1**  SVP ATC Graph功能架构<a name="fig2817181918158"></a>  
-![](figures/SVP-ATC-Graph功能架构.png "SVP-ATC-Graph功能架构")
-## 运行流程<a name="ZH-CN_TOPIC_0000002408582630"></a>
-
-使用SVP ATC Graph进行模型转换的用户侧调用流程如[图1](#fig11567732171618)所示。
-
-**图 1**  运行流程<a name="fig11567732171618"></a>  
-![](figures/运行流程.png "运行流程")
-
-SVP ATC Graph API接口包含两部分。
-
--   OperatorAPI：构图接口。定义了一套简洁的算子数据结构表达方式，用户可基于此方便的完成构图。
--   GenerateModelAPI：模型转换接口。基于构建的模型图，进行编译转换，生成om知识库文件。
-
-详细流程说明如下。
-
--   使用OperatorAPI依次构造网络中的各个算子节点，生成一系列的operator对象。该对象包含对应算子的属性配置、连接关系、权重数据等信息，所有operator对象共同构成完整的模型图。
--   将所有operator对象与config信息传递给GenerateModelAPI，完成模型编译并最终生成om知识库文件。Config配置信息可以以文件的形式配置，也可以通过map映射的形式配置。具体参数配置与ATC工具一致，可以参考《ATC工具使用指南》。
-
-# 使用入门
-## 准备动作<a name="ZH-CN_TOPIC_0000002441981197"></a>
-
-
-
-### 获取SVP ATC Graph API<a name="ZH-CN_TOPIC_0000002441981973"></a>
-
-与toolkit同时安装，并跟随ATC工具一同部署，该场景下libsvp\_atc\_api.so部署在“$HOME/Ascend/ascend-toolkit/_\{software version\}_/atc/lib”路径下，其中software version为软件版本号。
-
-本手册以SVP ATC Graph API独立安装为例进行说明。
-
-### 设置环境变量<a name="ZH-CN_TOPIC_0000002408422250"></a>
-
-SVP ATC Graph API中包含OperatorAPI与GenerateModelAPI两部分。
-
--   GenerateModelAPI与ATC工具所依赖的第三方库环境相同，请参考《ATC工具使用指南》“设置环境变量”章节进行配置，此处不再赘述。此外，用户工程中需增加头文件svp\_atc\_api.h引用，以及动态链接libsvp\_atc\_api.so库文件。
--   OperatorAPI在用户使用时需引用一系列算子头文件，部署在“$HOME/Ascend/ascend-toolkit/_\{software version\}_/atc/include”路径下。同时需要动态链接libsvp\_atc\_api.so库文件。
-
-## 构图与转换使用示例<a name="ZH-CN_TOPIC_0000002442021593"></a>
-
-1.  构造config配置信息，可以以文件、字符串或map配置表的形式提供，用于指定模型转换过程中所需要的功能配置。以map配置表形式为例，一个简单的config信息可以构造为：
-
-    ```
-    Std::map<string, string> cfgMap{
-    {"framework", "6"},
-    {"image_list", "input:./data.txt"},
-    {"save_original_model", "true"},
-    {"output", "testBaseWithCfgMap"}};
-    ```
-
-    配置项中可能会引用二级配置文件，如量化校准数据image\_list、分组量化参数gfpq\_param\_file等。
-
-2.  构造全部算子节点，并依次插入graph队列，完成构图过程。以构造输入层与卷积层为例。
-
-    构造输入层：
-
-    ```
-    auto opPreprocess = make_unique<PreprocessOperator>();
-    opPreprocess->SetOpName("data_layer");
-    opPreprocess->SetInputNamesVec("data_layer_in");
-    opPreprocess->SetOutputNamesVec("data_layer_out");
-    opPreprocess->SetShapeParamVec({1, 3, 5, 5});
-    ```
-
-    构造卷积层：
-
-    ```
-    auto opConv = make_unique<ConvOperator>();
-    opConv->SetOpName("conv_layer");
-    opConv->SetInputNamesVec("data_layer_out"); // 表示与输入层连接
-    opConv->SetOutputNamesVec("conv_layer_out");
-    opConv->SetOutputChannel(16);
-    opConv->SetKernelHeight(3);
-    opConv->SetKernelWidth(3);
-    opConv->SetPadLeft(1);
-    opConv->SetPadRight(1);
-    opConv->SetPadUp(1);
-    opConv->SetPadDown(1);
-    opConv->SetStrideWidth(1);
-    opConv->SetStrideHeight(1);
-    opConv->SetWeightSize(432);
-    opConv->SetBiasSize(0);
-    opConv->SetWeightDataPtr(GetWeightDataPtr());
-    opConv->SetBiasDataPtr(nullptr);
-    ```
-
-    构造graph队列：
-
-    ```
-    vector<unique_ptr<BaseOperator>> graph;
-    graph.push_back(opPreprocess);
-    graph.push_back(opConv);
-    ```
-
-1.  调用转换接口生成二进制模型文件。生成过程需要依赖前期构造的配置信息与graph图信息。
-
-    ```
-    GenerateModelBinaryWithCfgMap(cfgMap, graph, nullptr);
-    ```
-
-    成功执行命令后，在output参数指定的路径下，可查看离线模型（如：xxx.om）。当需要在内存中获取om数据与输出信息时，可以构造ModelCoreInfo对象，并将其指针作为接口第三个参数，用于获取模型om数据、om长度、输出名称与shape等信息。
-
-# OperatorAPI说明
-## 概览<a name="ZH-CN_TOPIC_0000002408582682"></a>
-
-
-
-### 总体约束<a name="ZH-CN_TOPIC_0000002408582670"></a>
-
-在进行graph构造前，请务必查看如下约束要求。
-
--   当前版本提供的Operator算子接口涵盖支持硬件加速运算的算子和CPU算子。
--   构图后算子依次存放在Vector队列中，存放顺序与解析顺序一致，需要由调用者按照依赖关系保证存放顺序。
--   数据排列格式只支持NCHW模式。
--   权重类参数由ptr内存指针和size（或shape）尺寸两部分组成，接口调用者需要保证内存大小与尺寸参数一致。
-
-### 参数配置方式<a name="ZH-CN_TOPIC_0000002408582486"></a>
-
-每个算子对应一个BaseOperator的派生类，网络中的每个算子节点，均对应一个Operator类对象，该节点的所有信息（包含算子类型、名称、属性、权重、连接关系、量化信息等）均由该对象的相应属性承载，通过相应的函数接口进行配置。构图的过程，就是创建每个Operator类对象并为其配置属性的过程。
-
-创建好的所有Operator类对象，需要按照算子执行的顺序依次存放在Vector队列中，供下一步模型转换使用。
-
-以下着重介绍参数配置接口（即Set函数），对应的参数获取接口（即Get函数）参考对应头文件的描述，不在此文档中进行罗列。
-
-## 算子通用接口<a name="ZH-CN_TOPIC_0000002441981325"></a>
-
-
-
-
-
-
-
-### 基本信息配置接口<a name="ZH-CN_TOPIC_0000002441982017"></a>
-
-
-
-
-
-#### SetOpName<a name="ZH-CN_TOPIC_0000002441981609"></a>
-
-函数功能：
-
-指定本层算子的名称，用于模型构建与优化编译过程中的对象识别，该名称需要保证唯一性，不可与其他算子名称或输入输出节点名称重复。
-
-函数原型：
-
-```
+</table> # 简介
+## 功能架构<a name="ZH-CN_TOPIC_0000002408422674"></a> SVP ATC Graph功能架构如[图1](#fig2817181918158)所示。从中可以看出，不局限于Caffe、Onnx等框架，用户可以通过开放的API接口进行构图，并编译为离线模型，用于在板端硬件加速处理器上进行离线推理。 **图 1** SVP ATC Graph功能架构<a name="fig2817181918158"></a> ![](figures/SVP-ATC-Graph功能架构.png "SVP-ATC-Graph功能架构")
+## 运行流程<a name="ZH-CN_TOPIC_0000002408582630"></a> 使用SVP ATC Graph进行模型转换的用户侧调用流程如[图1](#fig11567732171618)所示。 **图 1** 运行流程<a name="fig11567732171618"></a> ![](figures/运行流程.png "运行流程") SVP ATC Graph API接口包含两部分。 - OperatorAPI：构图接口。定义了一套简洁的算子数据结构表达方式，用户可基于此方便的完成构图。
+- GenerateModelAPI：模型转换接口。基于构建的模型图，进行编译转换，生成om知识库文件。 详细流程说明如下。 - 使用OperatorAPI依次构造网络中的各个算子节点，生成一系列的operator对象。该对象包含对应算子的属性配置、连接关系、权重数据等信息，所有operator对象共同构成完整的模型图。
+- 将所有operator对象与config信息传递给GenerateModelAPI，完成模型编译并最终生成om知识库文件。Config配置信息可以以文件的形式配置，也可以通过map映射的形式配置。具体参数配置与ATC工具一致，可以参考《ATC工具使用指南》。 # 使用入门
+## 准备动作<a name="ZH-CN_TOPIC_0000002441981197"></a> ### 获取SVP ATC Graph API<a name="ZH-CN_TOPIC_0000002441981973"></a> 与toolkit同时安装，并跟随ATC工具一同部署，该场景下libsvp\_atc\_api.so部署在“$HOME/Ascend/ascend-toolkit/_\{software version\}_/atc/lib”路径下，其中software version为软件版本号。 本手册以SVP ATC Graph API独立安装为例进行说明。 ### 设置环境变量<a name="ZH-CN_TOPIC_0000002408422250"></a> SVP ATC Graph API中包含OperatorAPI与GenerateModelAPI两部分。 - GenerateModelAPI与ATC工具所依赖的第三方库环境相同，请参考《ATC工具使用指南》“设置环境变量”章节进行配置，此处不再赘述。此外，用户工程中需增加头文件svp\_atc\_api.h引用，以及动态链接libsvp\_atc\_api.so库文件。
+- OperatorAPI在用户使用时需引用一系列算子头文件，部署在“$HOME/Ascend/ascend-toolkit/_\{software version\}_/atc/include”路径下。同时需要动态链接libsvp\_atc\_api.so库文件。 ## 构图与转换使用示例<a name="ZH-CN_TOPIC_0000002442021593"></a> 1. 构造config配置信息，可以以文件、字符串或map配置表的形式提供，用于指定模型转换过程中所需要的功能配置。以map配置表形式为例，一个简单的config信息可以构造为： ``` Std::map<string, string> cfgMap{ {"framework", "6"}, {"image_list", "input:./data.txt"}, {"save_original_model", "true"}, {"output", "testBaseWithCfgMap"}}; ``` 配置项中可能会引用二级配置文件，如量化校准数据image\_list、分组量化参数gfpq\_param\_file等。 2. 构造全部算子节点，并依次插入graph队列，完成构图过程。以构造输入层与卷积层为例。 构造输入层： ``` auto opPreprocess = make_unique<PreprocessOperator>; opPreprocess->SetOpName("data_layer"); opPreprocess->SetInputNamesVec("data_layer_in"); opPreprocess->SetOutputNamesVec("data_layer_out"); opPreprocess->SetShapeParamVec({1, 3, 5, 5}); ``` 构造卷积层： ``` auto opConv = make_unique<ConvOperator>; opConv->SetOpName("conv_layer"); opConv->SetInputNamesVec("data_layer_out"); / 表示与输入层连接 opConv->SetOutputNamesVec("conv_layer_out"); opConv->SetOutputChannel(16); opConv->SetKernelHeight(3); opConv->SetKernelWidth(3); opConv->SetPadLeft(1); opConv->SetPadRight(1); opConv->SetPadUp(1); opConv->SetPadDown(1); opConv->SetStrideWidth(1); opConv->SetStrideHeight(1); opConv->SetWeightSize(432); opConv->SetBiasSize(0); opConv->SetWeightDataPtr(GetWeightDataPtr); opConv->SetBiasDataPtr(nullptr); ``` 构造graph队列： ``` vector<unique_ptr<BaseOperator>> graph; graph.push_back(opPreprocess); graph.push_back(opConv); ``` 1. 调用转换接口生成二进制模型文件。生成过程需要依赖前期构造的配置信息与graph图信息。 ``` GenerateModelBinaryWithCfgMap(cfgMap, graph, nullptr); ``` 成功执行命令后，在output参数指定的路径下，可查看离线模型（如：xxx.om）。当需要在内存中获取om数据与输出信息时，可以构造ModelCoreInfo对象，并将其指针作为接口第三个参数，用于获取模型om数据、om长度、输出名称与shape等信息。 # OperatorAPI说明
+## 概览<a name="ZH-CN_TOPIC_0000002408582682"></a> ### 总体约束<a name="ZH-CN_TOPIC_0000002408582670"></a> 在进行graph构造前，请务必查看如下约束要求。 - 当前版本提供的Operator算子接口涵盖支持硬件加速运算的算子和CPU算子。
+- 构图后算子依次存放在Vector队列中，存放顺序与解析顺序一致，需要由调用者按照依赖关系保证存放顺序。
+- 数据排列格式只支持NCHW模式。
+- 权重类参数由ptr内存指针和size（或shape）尺寸两部分组成，接口调用者需要保证内存大小与尺寸参数一致。 ### 参数配置方式<a name="ZH-CN_TOPIC_0000002408582486"></a> 每个算子对应一个BaseOperator的派生类，网络中的每个算子节点，均对应一个Operator类对象，该节点的所有信息（包含算子类型、名称、属性、权重、连接关系、量化信息等）均由该对象的相应属性承载，通过相应的函数接口进行配置。构图的过程，就是创建每个Operator类对象并为其配置属性的过程。 创建好的所有Operator类对象，需要按照算子执行的顺序依次存放在Vector队列中，供下一步模型转换使用。 以下着重介绍参数配置接口（即Set函数），对应的参数获取接口（即Get函数）参考对应头文件的描述，不在此文档中进行罗列。 ## 算子通用接口<a name="ZH-CN_TOPIC_0000002441981325"></a> ### 基本信息配置接口<a name="ZH-CN_TOPIC_0000002441982017"></a> #### SetOpName<a name="ZH-CN_TOPIC_0000002441981609"></a> 函数功能： 指定本层算子的名称，用于模型构建与优化编译过程中的对象识别，该名称需要保证唯一性，不可与其他算子名称或输入输出节点名称重复。 函数原型： ```
 void SetOpName(const std::string &opName)
-```
-
-参数说明：
-
-<a name="table1888mcpsimp"></a>
+``` 参数说明： <a name="table1888mcpsimp"></a>
 <table><thead align="left"><tr id="row1894mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1896mcpsimp"><a name="p1896mcpsimp"></a><a name="p1896mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.02%" id="mcps1.1.4.1.2"><p id="p1898mcpsimp"><a name="p1898mcpsimp"></a><a name="p1898mcpsimp"></a>输入/输出</p>
@@ -288,23 +85,9 @@ void SetOpName(const std::string &opName)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetOpName<a name="ZH-CN_TOPIC_0000002408422234"></a>
-
-函数功能：
-
-获取本层算子的名称，用于模型构建与优化编译过程中的对象识别，该名称需要保证唯一性，不可与其他算子名称或输入输出节点名称重复。
-
-函数原型：
-
-```
-const std::string& GetOpName() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetOpName<a name="ZH-CN_TOPIC_0000002408422234"></a> 函数功能： 获取本层算子的名称，用于模型构建与优化编译过程中的对象识别，该名称需要保证唯一性，不可与其他算子名称或输入输出节点名称重复。 函数原型： ```
+const std::string& GetOpName const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -321,23 +104,9 @@ const std::string& GetOpName() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetOpType<a name="ZH-CN_TOPIC_0000002408422522"></a>
-
-函数功能：
-
-指定本层算子的类型。
-
-函数原型：
-
-```
+</table> #### SetOpType<a name="ZH-CN_TOPIC_0000002408422522"></a> 函数功能： 指定本层算子的类型。 函数原型： ```
 void SetOpType(OpType opType)
-```
-
-参数说明：
-
-<a name="table2691mcpsimp"></a>
+``` 参数说明： <a name="table2691mcpsimp"></a>
 <table><thead align="left"><tr id="row2697mcpsimp"><th class="cellrowborder" valign="top" width="27.11%" id="mcps1.1.4.1.1"><p id="p2699mcpsimp"><a name="p2699mcpsimp"></a><a name="p2699mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.72%" id="mcps1.1.4.1.2"><p id="p2701mcpsimp"><a name="p2701mcpsimp"></a><a name="p2701mcpsimp"></a>输入/输出</p>
@@ -354,23 +123,9 @@ void SetOpType(OpType opType)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetOpType<a name="ZH-CN_TOPIC_0000002408422786"></a>
-
-函数功能：
-
-获取本层算子的类型。
-
-函数原型：
-
-```
-OpType GetOpType() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetOpType<a name="ZH-CN_TOPIC_0000002408422786"></a> 函数功能： 获取本层算子的类型。 函数原型： ```
+OpType GetOpType const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -387,31 +142,9 @@ OpType GetOpType() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### 连接关系配置接口<a name="ZH-CN_TOPIC_0000002441982049"></a>
-
-
-
-
-
-
-
-#### AddInputName<a name="ZH-CN_TOPIC_0000002408422706"></a>
-
-函数功能：
-
-添加一路输入算子的输出节点名称，即为本层算子添加一路输入连接。
-
-函数原型：
-
-```
+</table> ### 连接关系配置接口<a name="ZH-CN_TOPIC_0000002441982049"></a> #### AddInputName<a name="ZH-CN_TOPIC_0000002408422706"></a> 函数功能： 添加一路输入算子的输出节点名称，即为本层算子添加一路输入连接。 函数原型： ```
 void AddInputName(const std::string &name)
-```
-
-参数说明：
-
-<a name="table2157mcpsimp"></a>
+``` 参数说明： <a name="table2157mcpsimp"></a>
 <table><thead align="left"><tr id="row2163mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2165mcpsimp"><a name="p2165mcpsimp"></a><a name="p2165mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.98%" id="mcps1.1.4.1.2"><p id="p2167mcpsimp"><a name="p2167mcpsimp"></a><a name="p2167mcpsimp"></a>输入/输出</p>
@@ -428,23 +161,9 @@ void AddInputName(const std::string &name)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInputNamesVec<a name="ZH-CN_TOPIC_0000002441982113"></a>
-
-函数功能：
-
-设置输入算子的输出节点名称集合，即一次性为本层算子添加多个输入连接。
-
-函数原型：
-
-```
+</table> #### SetInputNamesVec<a name="ZH-CN_TOPIC_0000002441982113"></a> 函数功能： 设置输入算子的输出节点名称集合，即一次性为本层算子添加多个输入连接。 函数原型： ```
 void SetInputNamesVec(const std::vector<std::string> &inputNamesVec)
-```
-
-参数说明：
-
-<a name="table2515mcpsimp"></a>
+``` 参数说明： <a name="table2515mcpsimp"></a>
 <table><thead align="left"><tr id="row2521mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2523mcpsimp"><a name="p2523mcpsimp"></a><a name="p2523mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2525mcpsimp"><a name="p2525mcpsimp"></a><a name="p2525mcpsimp"></a>输入/输出</p>
@@ -461,23 +180,9 @@ void SetInputNamesVec(const std::vector<std::string> &inputNamesVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInputNamesVec<a name="ZH-CN_TOPIC_0000002442021917"></a>
-
-函数功能：
-
-获取输入算子的输出节点名称集合，即一次性为本层算子添加多个输入连接。
-
-函数原型：
-
-```
-const std::vector<std::string>& GetInputNamesVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInputNamesVec<a name="ZH-CN_TOPIC_0000002442021917"></a> 函数功能： 获取输入算子的输出节点名称集合，即一次性为本层算子添加多个输入连接。 函数原型： ```
+const std::vector<std::string>& GetInputNamesVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -494,23 +199,9 @@ const std::vector<std::string>& GetInputNamesVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddOutputName<a name="ZH-CN_TOPIC_0000002408422638"></a>
-
-函数功能：
-
-添加一路输出算子的输入节点名称，即为本层算子添加一路输出连接。
-
-函数原型：
-
-```
+</table> #### AddOutputName<a name="ZH-CN_TOPIC_0000002408422638"></a> 函数功能： 添加一路输出算子的输入节点名称，即为本层算子添加一路输出连接。 函数原型： ```
 void AddOutputName(const std::string &name)
-```
-
-参数说明：
-
-<a name="table5117mcpsimp"></a>
+``` 参数说明： <a name="table5117mcpsimp"></a>
 <table><thead align="left"><tr id="row5123mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5125mcpsimp"><a name="p5125mcpsimp"></a><a name="p5125mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5127mcpsimp"><a name="p5127mcpsimp"></a><a name="p5127mcpsimp"></a>输入/输出</p>
@@ -527,23 +218,9 @@ void AddOutputName(const std::string &name)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetOutputNamesVec<a name="ZH-CN_TOPIC_0000002441981257"></a>
-
-函数功能：
-
-设置输出算子的输入节点名称集合，即一次性为本层算子添加多个输出连接。
-
-函数原型：
-
-```
+</table> #### SetOutputNamesVec<a name="ZH-CN_TOPIC_0000002441981257"></a> 函数功能： 设置输出算子的输入节点名称集合，即一次性为本层算子添加多个输出连接。 函数原型： ```
 void SetOutputNamesVec(const std::vector<std::string> &outputNamesVec)
-```
-
-参数说明：
-
-<a name="table4636mcpsimp"></a>
+``` 参数说明： <a name="table4636mcpsimp"></a>
 <table><thead align="left"><tr id="row4642mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4644mcpsimp"><a name="p4644mcpsimp"></a><a name="p4644mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4646mcpsimp"><a name="p4646mcpsimp"></a><a name="p4646mcpsimp"></a>输入/输出</p>
@@ -560,23 +237,9 @@ void SetOutputNamesVec(const std::vector<std::string> &outputNamesVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetOutputNamesVec<a name="ZH-CN_TOPIC_0000002408582046"></a>
-
-函数功能：
-
-获取输出算子的输入节点名称集合，即一次性为本层算子添加多个输出连接。
-
-函数原型：
-
-```
-const std::vector<std::string>& GetOutputNamesVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetOutputNamesVec<a name="ZH-CN_TOPIC_0000002408582046"></a> 函数功能： 获取输出算子的输入节点名称集合，即一次性为本层算子添加多个输出连接。 函数原型： ```
+const std::vector<std::string>& GetOutputNamesVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -593,37 +256,9 @@ const std::vector<std::string>& GetOutputNamesVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### 量化因子配置接口<a name="ZH-CN_TOPIC_0000002442021945"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### AddInputQuantFactor<a name="ZH-CN_TOPIC_0000002441981209"></a>
-
-函数功能：
-
-添加一路输入数据的量化因子。
-
-函数原型：
-
-```
+</table> ### 量化因子配置接口<a name="ZH-CN_TOPIC_0000002442021945"></a> #### AddInputQuantFactor<a name="ZH-CN_TOPIC_0000002441981209"></a> 函数功能： 添加一路输入数据的量化因子。 函数原型： ```
 void AddInputQuantFactor(const OpQuantFactor &quantFactor)
-```
-
-参数说明：
-
-<a name="table3886mcpsimp"></a>
+``` 参数说明： <a name="table3886mcpsimp"></a>
 <table><thead align="left"><tr id="row3892mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3894mcpsimp"><a name="p3894mcpsimp"></a><a name="p3894mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3896mcpsimp"><a name="p3896mcpsimp"></a><a name="p3896mcpsimp"></a>输入/输出</p>
@@ -640,35 +275,15 @@ void AddInputQuantFactor(const OpQuantFactor &quantFactor)
 </td>
 </tr>
 </tbody>
-</table>
-
-OpQuantFactor对象的定义如下所示。
-
-```
+</table> OpQuantFactor对象的定义如下所示。 ```
 struct OpQuantFactor {
 float scale = 0.f;
 int32_t zeroPoint = 0;
 OpDataType dataType = OP_DTYPE_S8;
 }
-```
-
-包含量化因子scale与zeroPint值，以及量化数据类型。
-
-#### GetInputQuantFactor<a name="ZH-CN_TOPIC_0000002441981841"></a>
-
-函数功能：
-
-获取一路输入数据的量化因子。
-
-函数原型：
-
-```
+``` 包含量化因子scale与zeroPint值，以及量化数据类型。 #### GetInputQuantFactor<a name="ZH-CN_TOPIC_0000002441981841"></a> 函数功能： 获取一路输入数据的量化因子。 函数原型： ```
 OpQuantFactor GetInputQuantFactor(uint32_t idx)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -692,23 +307,9 @@ OpQuantFactor GetInputQuantFactor(uint32_t idx)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddOutputQuantFactor<a name="ZH-CN_TOPIC_0000002408422450"></a>
-
-函数功能：
-
-添加一路输出数据的量化因子。
-
-函数原型：
-
-```
+</table> #### AddOutputQuantFactor<a name="ZH-CN_TOPIC_0000002408422450"></a> 函数功能： 添加一路输出数据的量化因子。 函数原型： ```
 void AddOutputQuantFactor(const OpQuantFactor &quantFactor)
-```
-
-参数说明：
-
-<a name="table661mcpsimp"></a>
+``` 参数说明： <a name="table661mcpsimp"></a>
 <table><thead align="left"><tr id="row667mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p669mcpsimp"><a name="p669mcpsimp"></a><a name="p669mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p671mcpsimp"><a name="p671mcpsimp"></a><a name="p671mcpsimp"></a>输入/输出</p>
@@ -725,25 +326,9 @@ void AddOutputQuantFactor(const OpQuantFactor &quantFactor)
 </td>
 </tr>
 </tbody>
-</table>
-
-OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。
-
-#### GetOutputQuantFactor<a name="ZH-CN_TOPIC_0000002442021253"></a>
-
-函数功能：
-
-获取一路输出数据的量化因子。
-
-函数原型：
-
-```
+</table> OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。 #### GetOutputQuantFactor<a name="ZH-CN_TOPIC_0000002442021253"></a> 函数功能： 获取一路输出数据的量化因子。 函数原型： ```
 OpQuantFactor& GetOutputQuantFactor(uint32_t idx)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -767,23 +352,9 @@ OpQuantFactor& GetOutputQuantFactor(uint32_t idx)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddParamQuantFactor<a name="ZH-CN_TOPIC_0000002408582626"></a>
-
-函数功能：
-
-添加一组参数数据的量化因子。仅Conv/Depthwiseconv/Deconv支持Perchannel量化，多组量化参数需要调用多次此接口添加。
-
-函数原型：
-
-```
+</table> #### AddParamQuantFactor<a name="ZH-CN_TOPIC_0000002408582626"></a> 函数功能： 添加一组参数数据的量化因子。仅Conv/Depthwiseconv/Deconv支持Perchannel量化，多组量化参数需要调用多次此接口添加。 函数原型： ```
 void AddParamQuantFactor(const OpQuantFactor &quantFactor)
-```
-
-参数说明：
-
-<a name="table4085mcpsimp"></a>
+``` 参数说明： <a name="table4085mcpsimp"></a>
 <table><thead align="left"><tr id="row4091mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4093mcpsimp"><a name="p4093mcpsimp"></a><a name="p4093mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4095mcpsimp"><a name="p4095mcpsimp"></a><a name="p4095mcpsimp"></a>输入/输出</p>
@@ -800,25 +371,9 @@ void AddParamQuantFactor(const OpQuantFactor &quantFactor)
 </td>
 </tr>
 </tbody>
-</table>
-
-OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。
-
-#### GetParamQuantFactor<a name="ZH-CN_TOPIC_0000002408422542"></a>
-
-函数功能：
-
-获取一组参数数据的量化因子。
-
-函数原型：
-
-```
+</table> OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。 #### GetParamQuantFactor<a name="ZH-CN_TOPIC_0000002408422542"></a> 函数功能： 获取一组参数数据的量化因子。 函数原型： ```
 OpQuantFactor GetParamQuantFactor(uint32_t idx)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -842,23 +397,9 @@ OpQuantFactor GetParamQuantFactor(uint32_t idx)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002408422750"></a>
-
-函数功能：
-
-设置输入数据的量化因子集合。
-
-函数原型：
-
-```
+</table> #### SetInputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002408422750"></a> 函数功能： 设置输入数据的量化因子集合。 函数原型： ```
 void SetInputQuantFactorsVec(const std::vector<OpQuantFactor> &inputQuantFactorsVec)
-```
-
-参数说明：
-
-<a name="table1348mcpsimp"></a>
+``` 参数说明： <a name="table1348mcpsimp"></a>
 <table><thead align="left"><tr id="row1354mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1356mcpsimp"><a name="p1356mcpsimp"></a><a name="p1356mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1358mcpsimp"><a name="p1358mcpsimp"></a><a name="p1358mcpsimp"></a>输入/输出</p>
@@ -875,25 +416,9 @@ void SetInputQuantFactorsVec(const std::vector<OpQuantFactor> &inputQuantFactors
 </td>
 </tr>
 </tbody>
-</table>
-
-OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。
-
-#### GetInputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002441981777"></a>
-
-函数功能：
-
-获取输入数据的量化因子集合。
-
-函数原型：
-
-```
-const std::vector<OpQuantFactor>& GetInputQuantFactorsVec()
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。 #### GetInputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002441981777"></a> 函数功能： 获取输入数据的量化因子集合。 函数原型： ```
+const std::vector<OpQuantFactor>& GetInputQuantFactorsVec
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -910,23 +435,9 @@ const std::vector<OpQuantFactor>& GetInputQuantFactorsVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetOutputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002408582686"></a>
-
-函数功能：
-
-设置输出数据的量化因子集合。
-
-函数原型：
-
-```
+</table> #### SetOutputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002408582686"></a> 函数功能： 设置输出数据的量化因子集合。 函数原型： ```
 void SetOutputQuantFactorsVec(const std::vector<OpQuantFactor> &outputQuantFactorsVec)
-```
-
-参数说明：
-
-<a name="table629mcpsimp"></a>
+``` 参数说明： <a name="table629mcpsimp"></a>
 <table><thead align="left"><tr id="row635mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>输入/输出</p>
@@ -943,25 +454,9 @@ void SetOutputQuantFactorsVec(const std::vector<OpQuantFactor> &outputQuantFacto
 </td>
 </tr>
 </tbody>
-</table>
-
-OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。
-
-#### GetOutputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002408422310"></a>
-
-函数功能：
-
-获取输出数据的量化因子集合。
-
-函数原型：
-
-```
-const std::vector<OpQuantFactor>& GetOutputQuantFactorsVec()
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。 #### GetOutputQuantFactorsVec<a name="ZH-CN_TOPIC_0000002408422310"></a> 函数功能： 获取输出数据的量化因子集合。 函数原型： ```
+const std::vector<OpQuantFactor>& GetOutputQuantFactorsVec
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -978,23 +473,9 @@ const std::vector<OpQuantFactor>& GetOutputQuantFactorsVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetParamQuantFactorsVec<a name="ZH-CN_TOPIC_0000002442021369"></a>
-
-函数功能：
-
-设置参数数据的量化因子集合。仅Conv/Depthwiseconv/Deconv支持Perchannel量化，设置多组量化因子。
-
-函数原型：
-
-```
+</table> #### SetParamQuantFactorsVec<a name="ZH-CN_TOPIC_0000002442021369"></a> 函数功能： 设置参数数据的量化因子集合。仅Conv/Depthwiseconv/Deconv支持Perchannel量化，设置多组量化因子。 函数原型： ```
 void SetParamQuantFactorsVec(const std::vector<OpQuantFactor> &paramQuantFactorsVec)
-```
-
-参数说明：
-
-<a name="table3761mcpsimp"></a>
+``` 参数说明： <a name="table3761mcpsimp"></a>
 <table><thead align="left"><tr id="row3767mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3769mcpsimp"><a name="p3769mcpsimp"></a><a name="p3769mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3771mcpsimp"><a name="p3771mcpsimp"></a><a name="p3771mcpsimp"></a>输入/输出</p>
@@ -1011,25 +492,9 @@ void SetParamQuantFactorsVec(const std::vector<OpQuantFactor> &paramQuantFactors
 </td>
 </tr>
 </tbody>
-</table>
-
-OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。
-
-#### GetParamQuantFactorsVec<a name="ZH-CN_TOPIC_0000002442021949"></a>
-
-函数功能：
-
-获取参数数据的量化因子集合。
-
-函数原型：
-
-```
-const std::vector<OpQuantFactor> GetParamQuantFactorsVec()
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> OpQuantFactor对象的定义参考[AddInputQuantFactor](#ZH-CN_TOPIC_0000002441981209)。 #### GetParamQuantFactorsVec<a name="ZH-CN_TOPIC_0000002442021949"></a> 函数功能： 获取参数数据的量化因子集合。 函数原型： ```
+const std::vector<OpQuantFactor> GetParamQuantFactorsVec
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1046,63 +511,9 @@ const std::vector<OpQuantFactor> GetParamQuantFactorsVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-### Conv/Depthwiseconv/Deconv/Fc通用接口<a name="ZH-CN_TOPIC_0000002408582010"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetOutputChannel<a name="ZH-CN_TOPIC_0000002408582782"></a>
-
-函数功能：
-
-配置算子输出数据通道数。
-
-函数原型：
-
-```
+</table> ### Conv/Depthwiseconv/Deconv/Fc通用接口<a name="ZH-CN_TOPIC_0000002408582010"></a> #### SetOutputChannel<a name="ZH-CN_TOPIC_0000002408582782"></a> 函数功能： 配置算子输出数据通道数。 函数原型： ```
 void SetOutputChannel(uint32_t outputChannel)
-```
-
-参数说明：
-
-<a name="table3254mcpsimp"></a>
+``` 参数说明： <a name="table3254mcpsimp"></a>
 <table><thead align="left"><tr id="row3260mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3262mcpsimp"><a name="p3262mcpsimp"></a><a name="p3262mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3264mcpsimp"><a name="p3264mcpsimp"></a><a name="p3264mcpsimp"></a>输入/输出</p>
@@ -1119,23 +530,9 @@ void SetOutputChannel(uint32_t outputChannel)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetOutputChannel<a name="ZH-CN_TOPIC_0000002441982117"></a>
-
-函数功能：
-
-获取算子输出数据通道数。
-
-函数原型：
-
-```
-uint32_t GetOutputChannel() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetOutputChannel<a name="ZH-CN_TOPIC_0000002441982117"></a> 函数功能： 获取算子输出数据通道数。 函数原型： ```
+uint32_t GetOutputChannel const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1152,23 +549,9 @@ uint32_t GetOutputChannel() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetKernelHeight<a name="ZH-CN_TOPIC_0000002408422378"></a>
-
-函数功能：
-
-配置卷积核或池化核高度。
-
-函数原型：
-
-```
+</table> #### SetKernelHeight<a name="ZH-CN_TOPIC_0000002408422378"></a> 函数功能： 配置卷积核或池化核高度。 函数原型： ```
 void SetKernelHeight(uint32_t kernelHeight)
-```
-
-参数说明：
-
-<a name="table3045mcpsimp"></a>
+``` 参数说明： <a name="table3045mcpsimp"></a>
 <table><thead align="left"><tr id="row3051mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3053mcpsimp"><a name="p3053mcpsimp"></a><a name="p3053mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3055mcpsimp"><a name="p3055mcpsimp"></a><a name="p3055mcpsimp"></a>输入/输出</p>
@@ -1185,23 +568,9 @@ void SetKernelHeight(uint32_t kernelHeight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetKernelHeight<a name="ZH-CN_TOPIC_0000002408582150"></a>
-
-函数功能：
-
-获取卷积核或池化核高度。
-
-函数原型：
-
-```
-uint32_t GetKernelHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetKernelHeight<a name="ZH-CN_TOPIC_0000002408582150"></a> 函数功能： 获取卷积核或池化核高度。 函数原型： ```
+uint32_t GetKernelHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1218,23 +587,9 @@ uint32_t GetKernelHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetKernelWidth<a name="ZH-CN_TOPIC_0000002441981833"></a>
-
-函数功能：
-
-配置卷积核或池化核宽度。
-
-函数原型：
-
-```
+</table> #### SetKernelWidth<a name="ZH-CN_TOPIC_0000002441981833"></a> 函数功能： 配置卷积核或池化核宽度。 函数原型： ```
 void SetKernelWidth(uint32_t kernelWidth)
-```
-
-参数说明：
-
-<a name="table4148mcpsimp"></a>
+``` 参数说明： <a name="table4148mcpsimp"></a>
 <table><thead align="left"><tr id="row4154mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4156mcpsimp"><a name="p4156mcpsimp"></a><a name="p4156mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4158mcpsimp"><a name="p4158mcpsimp"></a><a name="p4158mcpsimp"></a>输入/输出</p>
@@ -1251,23 +606,9 @@ void SetKernelWidth(uint32_t kernelWidth)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetKernelWidth<a name="ZH-CN_TOPIC_0000002441981893"></a>
-
-函数功能：
-
-获取卷积核或池化核宽度。
-
-函数原型：
-
-```
-uint32_t GetKernelWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetKernelWidth<a name="ZH-CN_TOPIC_0000002441981893"></a> 函数功能： 获取卷积核或池化核宽度。 函数原型： ```
+uint32_t GetKernelWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1284,23 +625,9 @@ uint32_t GetKernelWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetStrideHeight<a name="ZH-CN_TOPIC_0000002441981961"></a>
-
-函数功能：
-
-配置高度方向上stride步长。
-
-函数原型：
-
-```
+</table> #### SetStrideHeight<a name="ZH-CN_TOPIC_0000002441981961"></a> 函数功能： 配置高度方向上stride步长。 函数原型： ```
 void SetStrideHeight(uint32_t strideHeight)
-```
-
-参数说明：
-
-<a name="table2186mcpsimp"></a>
+``` 参数说明： <a name="table2186mcpsimp"></a>
 <table><thead align="left"><tr id="row2192mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2194mcpsimp"><a name="p2194mcpsimp"></a><a name="p2194mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2196mcpsimp"><a name="p2196mcpsimp"></a><a name="p2196mcpsimp"></a>输入/输出</p>
@@ -1317,23 +644,9 @@ void SetStrideHeight(uint32_t strideHeight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetStrideHeight<a name="ZH-CN_TOPIC_0000002441982077"></a>
-
-函数功能：
-
-获取高度方向上stride步长。
-
-函数原型：
-
-```
-uint32_t GetStrideHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetStrideHeight<a name="ZH-CN_TOPIC_0000002441982077"></a> 函数功能： 获取高度方向上stride步长。 函数原型： ```
+uint32_t GetStrideHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1350,23 +663,9 @@ uint32_t GetStrideHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetStrideWidth<a name="ZH-CN_TOPIC_0000002442021713"></a>
-
-函数功能：
-
-配置宽度方向上stride步长。
-
-函数原型：
-
-```
+</table> #### SetStrideWidth<a name="ZH-CN_TOPIC_0000002442021713"></a> 函数功能： 配置宽度方向上stride步长。 函数原型： ```
 void SetStrideWidth(uint32_t strideWidth)
-```
-
-参数说明：
-
-<a name="table1317mcpsimp"></a>
+``` 参数说明： <a name="table1317mcpsimp"></a>
 <table><thead align="left"><tr id="row1323mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1325mcpsimp"><a name="p1325mcpsimp"></a><a name="p1325mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1327mcpsimp"><a name="p1327mcpsimp"></a><a name="p1327mcpsimp"></a>输入/输出</p>
@@ -1383,23 +682,9 @@ void SetStrideWidth(uint32_t strideWidth)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetStrideWidth<a name="ZH-CN_TOPIC_0000002441981865"></a>
-
-函数功能：
-
-获取宽度方向上stride步长。
-
-函数原型：
-
-```
-uint32_t GetStrideWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetStrideWidth<a name="ZH-CN_TOPIC_0000002441981865"></a> 函数功能： 获取宽度方向上stride步长。 函数原型： ```
+uint32_t GetStrideWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1416,23 +701,9 @@ uint32_t GetStrideWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPadLeft<a name="ZH-CN_TOPIC_0000002442021937"></a>
-
-函数功能：
-
-配置左侧pad补边宽度值。
-
-函数原型：
-
-```
+</table> #### SetPadLeft<a name="ZH-CN_TOPIC_0000002442021937"></a> 函数功能： 配置左侧pad补边宽度值。 函数原型： ```
 void SetPadLeft(int32_t padLeft)
-```
-
-参数说明：
-
-<a name="table1772mcpsimp"></a>
+``` 参数说明： <a name="table1772mcpsimp"></a>
 <table><thead align="left"><tr id="row1778mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1780mcpsimp"><a name="p1780mcpsimp"></a><a name="p1780mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1782mcpsimp"><a name="p1782mcpsimp"></a><a name="p1782mcpsimp"></a>输入/输出</p>
@@ -1449,23 +720,9 @@ void SetPadLeft(int32_t padLeft)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadLeft<a name="ZH-CN_TOPIC_0000002441981705"></a>
-
-函数功能：
-
-获取左侧pad补边宽度值。
-
-函数原型：
-
-```
-int32_t GetPadLeft() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPadLeft<a name="ZH-CN_TOPIC_0000002441981705"></a> 函数功能： 获取左侧pad补边宽度值。 函数原型： ```
+int32_t GetPadLeft const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1482,23 +739,9 @@ int32_t GetPadLeft() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPadRight<a name="ZH-CN_TOPIC_0000002408581842"></a>
-
-函数功能：
-
-配置右侧pad补边宽度值。
-
-函数原型：
-
-```
+</table> #### SetPadRight<a name="ZH-CN_TOPIC_0000002408581842"></a> 函数功能： 配置右侧pad补边宽度值。 函数原型： ```
 void SetPadRight(int32_t padRight)
-```
-
-参数说明：
-
-<a name="table4815mcpsimp"></a>
+``` 参数说明： <a name="table4815mcpsimp"></a>
 <table><thead align="left"><tr id="row4821mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4823mcpsimp"><a name="p4823mcpsimp"></a><a name="p4823mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4825mcpsimp"><a name="p4825mcpsimp"></a><a name="p4825mcpsimp"></a>输入/输出</p>
@@ -1515,23 +758,9 @@ void SetPadRight(int32_t padRight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadRight<a name="ZH-CN_TOPIC_0000002441981693"></a>
-
-函数功能：
-
-获取右侧pad补边宽度值。
-
-函数原型：
-
-```
-int32_t GetPadRight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPadRight<a name="ZH-CN_TOPIC_0000002441981693"></a> 函数功能： 获取右侧pad补边宽度值。 函数原型： ```
+int32_t GetPadRight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1548,23 +777,9 @@ int32_t GetPadRight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPadUp<a name="ZH-CN_TOPIC_0000002441981473"></a>
-
-函数功能：
-
-配置上侧pad补边高度值。
-
-函数原型：
-
-```
+</table> #### SetPadUp<a name="ZH-CN_TOPIC_0000002441981473"></a> 函数功能： 配置上侧pad补边高度值。 函数原型： ```
 void SetPadUp(int32_t padUp)
-```
-
-参数说明：
-
-<a name="table3587mcpsimp"></a>
+``` 参数说明： <a name="table3587mcpsimp"></a>
 <table><thead align="left"><tr id="row3593mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3595mcpsimp"><a name="p3595mcpsimp"></a><a name="p3595mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3597mcpsimp"><a name="p3597mcpsimp"></a><a name="p3597mcpsimp"></a>输入/输出</p>
@@ -1581,23 +796,9 @@ void SetPadUp(int32_t padUp)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadUp<a name="ZH-CN_TOPIC_0000002442021993"></a>
-
-函数功能：
-
-获取上侧pad补边高度值。
-
-函数原型：
-
-```
-int32_t GetPadUp() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPadUp<a name="ZH-CN_TOPIC_0000002442021993"></a> 函数功能： 获取上侧pad补边高度值。 函数原型： ```
+int32_t GetPadUp const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1614,23 +815,9 @@ int32_t GetPadUp() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPadDown<a name="ZH-CN_TOPIC_0000002442021925"></a>
-
-函数功能：
-
-配置下侧pad补边高度值。
-
-函数原型：
-
-```
+</table> #### SetPadDown<a name="ZH-CN_TOPIC_0000002442021925"></a> 函数功能： 配置下侧pad补边高度值。 函数原型： ```
 void SetPadDown(int32_t padDown)
-```
-
-参数说明：
-
-<a name="table3285mcpsimp"></a>
+``` 参数说明： <a name="table3285mcpsimp"></a>
 <table><thead align="left"><tr id="row3291mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3293mcpsimp"><a name="p3293mcpsimp"></a><a name="p3293mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3295mcpsimp"><a name="p3295mcpsimp"></a><a name="p3295mcpsimp"></a>输入/输出</p>
@@ -1647,23 +834,9 @@ void SetPadDown(int32_t padDown)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadDown<a name="ZH-CN_TOPIC_0000002408582798"></a>
-
-函数功能：
-
-获取下侧pad补边高度值。
-
-函数原型：
-
-```
-int32_t GetOpName() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPadDown<a name="ZH-CN_TOPIC_0000002408582798"></a> 函数功能： 获取下侧pad补边高度值。 函数原型： ```
+int32_t GetOpName const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1680,23 +853,9 @@ int32_t GetOpName() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetDilationWidth<a name="ZH-CN_TOPIC_0000002408582170"></a>
-
-函数功能：
-
-配置卷积膨胀宽度。
-
-函数原型：
-
-```
+</table> #### SetDilationWidth<a name="ZH-CN_TOPIC_0000002408582170"></a> 函数功能： 配置卷积膨胀宽度。 函数原型： ```
 void SetDilationWidth(uint32_t dilationWidth)
-```
-
-参数说明：
-
-<a name="table3408mcpsimp"></a>
+``` 参数说明： <a name="table3408mcpsimp"></a>
 <table><thead align="left"><tr id="row3414mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3416mcpsimp"><a name="p3416mcpsimp"></a><a name="p3416mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3418mcpsimp"><a name="p3418mcpsimp"></a><a name="p3418mcpsimp"></a>输入/输出</p>
@@ -1713,23 +872,9 @@ void SetDilationWidth(uint32_t dilationWidth)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetDilationWidth<a name="ZH-CN_TOPIC_0000002408582230"></a>
-
-函数功能：
-
-获取卷积膨胀宽度。
-
-函数原型：
-
-```
-uint32_t GetDilationWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetDilationWidth<a name="ZH-CN_TOPIC_0000002408582230"></a> 函数功能： 获取卷积膨胀宽度。 函数原型： ```
+uint32_t GetDilationWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1746,23 +891,9 @@ uint32_t GetDilationWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetDilationHeight<a name="ZH-CN_TOPIC_0000002442021721"></a>
-
-函数功能：
-
-配置卷积膨胀高度。
-
-函数原型：
-
-```
+</table> #### SetDilationHeight<a name="ZH-CN_TOPIC_0000002442021721"></a> 函数功能： 配置卷积膨胀高度。 函数原型： ```
 void SetDilationHeight(uint32_t dilationHeight)
-```
-
-参数说明：
-
-<a name="table419mcpsimp"></a>
+``` 参数说明： <a name="table419mcpsimp"></a>
 <table><thead align="left"><tr id="row425mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p427mcpsimp"><a name="p427mcpsimp"></a><a name="p427mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p429mcpsimp"><a name="p429mcpsimp"></a><a name="p429mcpsimp"></a>输入/输出</p>
@@ -1779,23 +910,9 @@ void SetDilationHeight(uint32_t dilationHeight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetDilationHeight<a name="ZH-CN_TOPIC_0000002408582590"></a>
-
-函数功能：
-
-获取卷积膨胀高度。
-
-函数原型：
-
-```
-uint32_t GetDilationHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetDilationHeight<a name="ZH-CN_TOPIC_0000002408582590"></a> 函数功能： 获取卷积膨胀高度。 函数原型： ```
+uint32_t GetDilationHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1812,23 +929,9 @@ uint32_t GetDilationHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetWeightSize<a name="ZH-CN_TOPIC_0000002408582750"></a>
-
-函数功能：
-
-权重数据的元素个数。
-
-函数原型：
-
-```
+</table> #### SetWeightSize<a name="ZH-CN_TOPIC_0000002408582750"></a> 函数功能： 权重数据的元素个数。 函数原型： ```
 void SetWeightSize(uint32_t weightSize)
-```
-
-参数说明：
-
-<a name="table4206mcpsimp"></a>
+``` 参数说明： <a name="table4206mcpsimp"></a>
 <table><thead align="left"><tr id="row4212mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4214mcpsimp"><a name="p4214mcpsimp"></a><a name="p4214mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4216mcpsimp"><a name="p4216mcpsimp"></a><a name="p4216mcpsimp"></a>输入/输出</p>
@@ -1845,23 +948,9 @@ void SetWeightSize(uint32_t weightSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetWeightSize<a name="ZH-CN_TOPIC_0000002408422838"></a>
-
-函数功能：
-
-获取权重数据的元素个数。
-
-函数原型：
-
-```
-uint32_t GetWeightSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetWeightSize<a name="ZH-CN_TOPIC_0000002408422838"></a> 函数功能： 获取权重数据的元素个数。 函数原型： ```
+uint32_t GetWeightSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1878,23 +967,9 @@ uint32_t GetWeightSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBiasSize<a name="ZH-CN_TOPIC_0000002442021773"></a>
-
-函数功能：
-
-偏移量数据的元素个数。
-
-函数原型：
-
-```
+</table> #### SetBiasSize<a name="ZH-CN_TOPIC_0000002442021773"></a> 函数功能： 偏移量数据的元素个数。 函数原型： ```
 void SetBiasSize(uint32_t biasSize)
-```
-
-参数说明：
-
-<a name="table836mcpsimp"></a>
+``` 参数说明： <a name="table836mcpsimp"></a>
 <table><thead align="left"><tr id="row842mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p844mcpsimp"><a name="p844mcpsimp"></a><a name="p844mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p846mcpsimp"><a name="p846mcpsimp"></a><a name="p846mcpsimp"></a>输入/输出</p>
@@ -1911,23 +986,9 @@ void SetBiasSize(uint32_t biasSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBiasSize<a name="ZH-CN_TOPIC_0000002441981921"></a>
-
-函数功能：
-
-获取偏移量数据的元素个数。
-
-函数原型：
-
-```
-uint32_t GetBiasSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBiasSize<a name="ZH-CN_TOPIC_0000002441981921"></a> 函数功能： 获取偏移量数据的元素个数。 函数原型： ```
+uint32_t GetBiasSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -1944,23 +1005,9 @@ uint32_t GetBiasSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetWeightDataPtr<a name="ZH-CN_TOPIC_0000002442021073"></a>
-
-函数功能：
-
-配置权重数据指针，数据为float格式。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。
-
-函数原型：
-
-```
+</table> #### SetWeightDataPtr<a name="ZH-CN_TOPIC_0000002442021073"></a> 函数功能： 配置权重数据指针，数据为float格式。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。 函数原型： ```
 void SetWeightDataPtr(const float *weightDataPtr)
-```
-
-参数说明：
-
-<a name="table2485mcpsimp"></a>
+``` 参数说明： <a name="table2485mcpsimp"></a>
 <table><thead align="left"><tr id="row2491mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2493mcpsimp"><a name="p2493mcpsimp"></a><a name="p2493mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2495mcpsimp"><a name="p2495mcpsimp"></a><a name="p2495mcpsimp"></a>输入/输出</p>
@@ -1977,23 +1024,9 @@ void SetWeightDataPtr(const float *weightDataPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582382"></a>
-
-函数功能：
-
-获取权重数据指针，数据为float格式。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。
-
-函数原型：
-
-```
-const float* GetWeightDataPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582382"></a> 函数功能： 获取权重数据指针，数据为float格式。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。 函数原型： ```
+const float* GetWeightDataPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2010,23 +1043,9 @@ const float* GetWeightDataPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408581974"></a>
-
-函数功能：
-
-配置量化权重数据指针，数据为int8格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。
-
-函数原型：
-
-```
+</table> #### SetWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408581974"></a> 函数功能： 配置量化权重数据指针，数据为int8格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。 函数原型： ```
 void SetWeightQuantPtr(const int8_t *weightQuantPtr)
-```
-
-参数说明：
-
-<a name="table2633mcpsimp"></a>
+``` 参数说明： <a name="table2633mcpsimp"></a>
 <table><thead align="left"><tr id="row2639mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2641mcpsimp"><a name="p2641mcpsimp"></a><a name="p2641mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2643mcpsimp"><a name="p2643mcpsimp"></a><a name="p2643mcpsimp"></a>输入/输出</p>
@@ -2043,23 +1062,9 @@ void SetWeightQuantPtr(const int8_t *weightQuantPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408422278"></a>
-
-函数功能：
-
-获取量化权重数据指针，数据为int8格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。
-
-函数原型：
-
-```
-const int8_t* GetWeightQuantPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408422278"></a> 函数功能： 获取量化权重数据指针，数据为int8格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetWeightDataPtr与SetWeightQuantPtr只能配置一个。 函数原型： ```
+const int8_t* GetWeightQuantPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2076,23 +1081,9 @@ const int8_t* GetWeightQuantPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBiasDataPtr<a name="ZH-CN_TOPIC_0000002441981645"></a>
-
-函数功能：
-
-配置偏移量数据指针，数据为float格式。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。
-
-函数原型：
-
-```
+</table> #### SetBiasDataPtr<a name="ZH-CN_TOPIC_0000002441981645"></a> 函数功能： 配置偏移量数据指针，数据为float格式。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。 函数原型： ```
 void SetBiasDataPtr(const float *biasDataPtr)
-```
-
-参数说明：
-
-<a name="table2545mcpsimp"></a>
+``` 参数说明： <a name="table2545mcpsimp"></a>
 <table><thead align="left"><tr id="row2551mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2553mcpsimp"><a name="p2553mcpsimp"></a><a name="p2553mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2555mcpsimp"><a name="p2555mcpsimp"></a><a name="p2555mcpsimp"></a>输入/输出</p>
@@ -2109,23 +1100,9 @@ void SetBiasDataPtr(const float *biasDataPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBiasDataPtr<a name="ZH-CN_TOPIC_0000002441982085"></a>
-
-函数功能：
-
-获取偏移量数据指针，数据为float格式。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。
-
-函数原型：
-
-```
-const float* GetBiasDataPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBiasDataPtr<a name="ZH-CN_TOPIC_0000002441982085"></a> 函数功能： 获取偏移量数据指针，数据为float格式。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。 函数原型： ```
+const float* GetBiasDataPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2142,23 +1119,9 @@ const float* GetBiasDataPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBiasQuantPtr<a name="ZH-CN_TOPIC_0000002408582698"></a>
-
-函数功能：
-
-配置偏移量数据指针，数据为int32格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。
-
-函数原型：
-
-```
+</table> #### SetBiasQuantPtr<a name="ZH-CN_TOPIC_0000002408582698"></a> 函数功能： 配置偏移量数据指针，数据为int32格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。 函数原型： ```
 void SetBiasQuantPtr(const int32_t *biasQuantPtr)
-```
-
-参数说明：
-
-<a name="table5399mcpsimp"></a>
+``` 参数说明： <a name="table5399mcpsimp"></a>
 <table><thead align="left"><tr id="row5405mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5407mcpsimp"><a name="p5407mcpsimp"></a><a name="p5407mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5409mcpsimp"><a name="p5409mcpsimp"></a><a name="p5409mcpsimp"></a>输入/输出</p>
@@ -2175,23 +1138,9 @@ void SetBiasQuantPtr(const int32_t *biasQuantPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBiasQuantPtr<a name="ZH-CN_TOPIC_0000002441981853"></a>
-
-函数功能：
-
-获取偏移量数据指针，数据为int32格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。
-
-函数原型：
-
-```
-const int32_t* GetBiasQuantPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBiasQuantPtr<a name="ZH-CN_TOPIC_0000002441981853"></a> 函数功能： 获取偏移量数据指针，数据为int32格式，配套AddParamQuantFactor或SetParamQuantFactorsVec使用。SetBiasDataPtr与SetBiasQuantPtr只能配置一个。 函数原型： ```
+const int32_t* GetBiasQuantPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2208,23 +1157,9 @@ const int32_t* GetBiasQuantPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetAutoPadType<a name="ZH-CN_TOPIC_0000002408422330"></a>
-
-函数功能：
-
-配置AutoPad的类型。
-
-函数原型：
-
-```
+</table> #### SetAutoPadType<a name="ZH-CN_TOPIC_0000002408422330"></a> 函数功能： 配置AutoPad的类型。 函数原型： ```
 void SetAutoPadType(AutoPadType val)
-```
-
-参数说明：
-
-<a name="table4844mcpsimp"></a>
+``` 参数说明： <a name="table4844mcpsimp"></a>
 <table><thead align="left"><tr id="row4850mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4852mcpsimp"><a name="p4852mcpsimp"></a><a name="p4852mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4854mcpsimp"><a name="p4854mcpsimp"></a><a name="p4854mcpsimp"></a>输入/输出</p>
@@ -2243,23 +1178,9 @@ void SetAutoPadType(AutoPadType val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAutoPadType<a name="ZH-CN_TOPIC_0000002408422798"></a>
-
-函数功能：
-
-获取AutoPad的类型。
-
-函数原型：
-
-```
-AutoPadType GetAutoPadType() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetAutoPadType<a name="ZH-CN_TOPIC_0000002408422798"></a> 函数功能： 获取AutoPad的类型。 函数原型： ```
+AutoPadType GetAutoPadType const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2278,23 +1199,9 @@ AutoPadType GetAutoPadType() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetGroup<a name="ZH-CN_TOPIC_0000002442021777"></a>
-
-函数功能：
-
-配置卷积输入通道分组个数。
-
-函数原型：
-
-```
+</table> #### SetGroup<a name="ZH-CN_TOPIC_0000002442021777"></a> 函数功能： 配置卷积输入通道分组个数。 函数原型： ```
 void SetGroup(uint32_t val)
-```
-
-参数说明：
-
-<a name="table778mcpsimp"></a>
+``` 参数说明： <a name="table778mcpsimp"></a>
 <table><thead align="left"><tr id="row784mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p786mcpsimp"><a name="p786mcpsimp"></a><a name="p786mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p788mcpsimp"><a name="p788mcpsimp"></a><a name="p788mcpsimp"></a>输入/输出</p>
@@ -2311,23 +1218,9 @@ void SetGroup(uint32_t val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetGroup<a name="ZH-CN_TOPIC_0000002408422406"></a>
-
-函数功能：
-
-获取卷积输入通道分组个数。
-
-函数原型：
-
-```
-uint32_t GetGroup() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetGroup<a name="ZH-CN_TOPIC_0000002408422406"></a> 函数功能： 获取卷积输入通道分组个数。 函数原型： ```
+uint32_t GetGroup const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2344,28 +1237,9 @@ uint32_t GetGroup() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### 离线输入配置接口<a name="ZH-CN_TOPIC_0000002442021997"></a>
-
-
-
-
-#### PushOfflineArgs<a name="ZH-CN_TOPIC_0000002442021685"></a>
-
-函数功能：
-
-添加一路离线输入信息，包含数据与shape。添加的顺序需要与输入节点的顺序一致，在线数据不可跳过，入参配置为空pair。
-
-函数原型：
-
-```
+</table> ### 离线输入配置接口<a name="ZH-CN_TOPIC_0000002442021997"></a> #### PushOfflineArgs<a name="ZH-CN_TOPIC_0000002442021685"></a> 函数功能： 添加一路离线输入信息，包含数据与shape。添加的顺序需要与输入节点的顺序一致，在线数据不可跳过，入参配置为空pair。 函数原型： ```
 void PushOfflineArgs(const pair<vector<float>, vector<int32_t>> &&vec)
-```
-
-参数说明：
-
-<a name="table2009mcpsimp"></a>
+``` 参数说明： <a name="table2009mcpsimp"></a>
 <table><thead align="left"><tr id="row2015mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2017mcpsimp"><a name="p2017mcpsimp"></a><a name="p2017mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2019mcpsimp"><a name="p2019mcpsimp"></a><a name="p2019mcpsimp"></a>输入/输出</p>
@@ -2382,25 +1256,9 @@ void PushOfflineArgs(const pair<vector<float>, vector<int32_t>> &&vec)
 </td>
 </tr>
 </tbody>
-</table>
-
-适用的算子包含：ReluOperator、ClipOperator、ConvOperator、MatrixOperator、ArgmaxOperator、ArgminOperator、BinaryMathOperator、ExpOperator、GatherOperator、LrnOperator、MvnOperator、PowerOperator、ReductionOperator、ScaleOperator、SoftmaxOperator、ConcatOperator、ReshapeOperator、TileOperator、LogOperator、CmpOperator。
-
-#### GetOfflineArgs<a name="ZH-CN_TOPIC_0000002408582662"></a>
-
-函数功能：
-
-获取一路离线输入信息，包含数据与shape。添加的顺序需要与输入节点的顺序一致，在线数据不可跳过，入参配置为空pair。
-
-函数原型：
-
-```
+</table> 适用的算子包含：ReluOperator、ClipOperator、ConvOperator、MatrixOperator、ArgmaxOperator、ArgminOperator、BinaryMathOperator、ExpOperator、GatherOperator、LrnOperator、MvnOperator、PowerOperator、ReductionOperator、ScaleOperator、SoftmaxOperator、ConcatOperator、ReshapeOperator、TileOperator、LogOperator、CmpOperator。 #### GetOfflineArgs<a name="ZH-CN_TOPIC_0000002408582662"></a> 函数功能： 获取一路离线输入信息，包含数据与shape。添加的顺序需要与输入节点的顺序一致，在线数据不可跳过，入参配置为空pair。 函数原型： ```
 pair<vector<float>, vector<int32_t>>& GetOfflineArgs(int32_t i)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2424,23 +1282,9 @@ pair<vector<float>, vector<int32_t>>& GetOfflineArgs(int32_t i)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAllOfflineArgs<a name="ZH-CN_TOPIC_0000002442021929"></a>
-
-函数功能：
-
-获取所有离线输入信息。添加的顺序需要与输入节点的顺序一致，在线数据不可跳过，入参配置为空pair。
-
-函数原型：
-
-```
-vector<pair<vector<float>, vector<int32_t>>>& GetAllOfflineArgs()
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetAllOfflineArgs<a name="ZH-CN_TOPIC_0000002442021929"></a> 函数功能： 获取所有离线输入信息。添加的顺序需要与输入节点的顺序一致，在线数据不可跳过，入参配置为空pair。 函数原型： ```
+vector<pair<vector<float>, vector<int32_t>>>& GetAllOfflineArgs
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2457,27 +1301,9 @@ vector<pair<vector<float>, vector<int32_t>>>& GetAllOfflineArgs()
 </td>
 </tr>
 </tbody>
-</table>
-
-### 部分算子通用接口<a name="ZH-CN_TOPIC_0000002442021201"></a>
-
-
-
-#### SetAxis<a name="ZH-CN_TOPIC_0000002408582294"></a>
-
-函数功能：
-
-配置算子的计算轴。（或开始计算的轴）
-
-函数原型：
-
-```
+</table> ### 部分算子通用接口<a name="ZH-CN_TOPIC_0000002442021201"></a> #### SetAxis<a name="ZH-CN_TOPIC_0000002408582294"></a> 函数功能： 配置算子的计算轴。（或开始计算的轴） 函数原型： ```
 void SetAxis(int32_t axis)
-```
-
-参数说明：
-
-<a name="table1011mcpsimp"></a>
+``` 参数说明： <a name="table1011mcpsimp"></a>
 <table><thead align="left"><tr id="row1017mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1019mcpsimp"><a name="p1019mcpsimp"></a><a name="p1019mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1021mcpsimp"><a name="p1021mcpsimp"></a><a name="p1021mcpsimp"></a>输入/输出</p>
@@ -2496,27 +1322,10 @@ void SetAxis(int32_t axis)
 </td>
 </tr>
 </tbody>
-</table>
-
-适用的算子包含：GatherOperator、BiasOperator、ScaleOperator、ConcatOperator、CropOperator、ReshapeOperator、SliceOperator、ExtractOperator、TileOperator、ArgmaxOperator、ArgminOperator、LayerNormOperator。
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->**请注意ReshapeOperator特殊场景：**
->当axis<0时，实际起始维度为axis+1。如当shape=NCHW时，axis=-2，意味着仅对W轴reshape。
-
-#### GetAxis<a name="ZH-CN_TOPIC_0000002408582278"></a>
-
-函数功能：算子的计算轴。（或开始计算的轴）
-
-函数原型：
-
-```
-int32_t GetAxis() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> 适用的算子包含：GatherOperator、BiasOperator、ScaleOperator、ConcatOperator、CropOperator、ReshapeOperator、SliceOperator、ExtractOperator、TileOperator、ArgmaxOperator、ArgminOperator、LayerNormOperator。 >![](public_sys-resources/icon-notice.gif) **须知：** >**请注意ReshapeOperator特殊场景：**
+>当axis<0时，实际起始维度为axis+1。如当shape=NCHW时，axis=-2，意味着仅对W轴reshape。 #### GetAxis<a name="ZH-CN_TOPIC_0000002408582278"></a> 函数功能：算子的计算轴。（或开始计算的轴） 函数原型： ```
+int32_t GetAxis const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.920000000000002%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2535,120 +1344,9 @@ int32_t GetAxis() const
 </td>
 </tr>
 </tbody>
-</table>
-
-## 算子专用接口<a name="ZH-CN_TOPIC_0000002408422242"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### FcOperator配置接口<a name="ZH-CN_TOPIC_0000002441981857"></a>
-
-
-
-
-
-#### SetFcTransposeFlag<a name="ZH-CN_TOPIC_0000002408422286"></a>
-
-函数功能：
-
-配置参数转置开关。
-
-函数原型：
-
-```
+</table> ## 算子专用接口<a name="ZH-CN_TOPIC_0000002408422242"></a> ### FcOperator配置接口<a name="ZH-CN_TOPIC_0000002441981857"></a> #### SetFcTransposeFlag<a name="ZH-CN_TOPIC_0000002408422286"></a> 函数功能： 配置参数转置开关。 函数原型： ```
 void SetFcTransposeFlag(bool fcTransposeFlag)
-```
-
-参数说明：
-
-<a name="table1714mcpsimp"></a>
+``` 参数说明： <a name="table1714mcpsimp"></a>
 <table><thead align="left"><tr id="row1720mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1722mcpsimp"><a name="p1722mcpsimp"></a><a name="p1722mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1724mcpsimp"><a name="p1724mcpsimp"></a><a name="p1724mcpsimp"></a>输入/输出</p>
@@ -2665,23 +1363,9 @@ void SetFcTransposeFlag(bool fcTransposeFlag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetFcTransposeFlag<a name="ZH-CN_TOPIC_0000002441981885"></a>
-
-函数功能：
-
-获取配置的参数转置开关。
-
-函数原型：
-
-```
-bool GetFcTransposeFlag() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetFcTransposeFlag<a name="ZH-CN_TOPIC_0000002441981885"></a> 函数功能： 获取配置的参数转置开关。 函数原型： ```
+bool GetFcTransposeFlag const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2698,23 +1382,9 @@ bool GetFcTransposeFlag() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumOutput<a name="ZH-CN_TOPIC_0000002441981901"></a>
-
-函数功能：
-
-配置Fc算子输出数据宽度，同时也对应权重数据的宽度（W方向的元素个数）。
-
-函数原型：
-
-```
+</table> #### SetNumOutput<a name="ZH-CN_TOPIC_0000002441981901"></a> 函数功能： 配置Fc算子输出数据宽度，同时也对应权重数据的宽度（W方向的元素个数）。 函数原型： ```
 void SetNumOutput(uint32_t numOutput)
-```
-
-参数说明：
-
-<a name="table1626mcpsimp"></a>
+``` 参数说明： <a name="table1626mcpsimp"></a>
 <table><thead align="left"><tr id="row1632mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1634mcpsimp"><a name="p1634mcpsimp"></a><a name="p1634mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1636mcpsimp"><a name="p1636mcpsimp"></a><a name="p1636mcpsimp"></a>输入/输出</p>
@@ -2731,23 +1401,9 @@ void SetNumOutput(uint32_t numOutput)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumOutput<a name="ZH-CN_TOPIC_0000002408422362"></a>
-
-函数功能：
-
-获取配置的Fc算子输出数据宽度，同时也对应权重数据的宽度（W方向的元素个数）。
-
-函数原型：
-
-```
-uint32_t GetNumOutput() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumOutput<a name="ZH-CN_TOPIC_0000002408422362"></a> 函数功能： 获取配置的Fc算子输出数据宽度，同时也对应权重数据的宽度（W方向的元素个数）。 函数原型： ```
+uint32_t GetNumOutput const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2764,35 +1420,9 @@ uint32_t GetNumOutput() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### MatrixOperator配置接口<a name="ZH-CN_TOPIC_0000002408582770"></a>
-
-
-
-
-
-
-
-
-
-
-
-#### SetMatMulDim1<a name="ZH-CN_TOPIC_0000002408422550"></a>
-
-函数功能：
-
-配置第一个input输入的行数（M值）。
-
-函数原型：
-
-```
+</table> ### MatrixOperator配置接口<a name="ZH-CN_TOPIC_0000002408582770"></a> #### SetMatMulDim1<a name="ZH-CN_TOPIC_0000002408422550"></a> 函数功能： 配置第一个input输入的行数（M值）。 函数原型： ```
 void SetMatMulDim1(uint32_t dim)
-```
-
-参数说明：
-
-<a name="table3104mcpsimp"></a>
+``` 参数说明： <a name="table3104mcpsimp"></a>
 <table><thead align="left"><tr id="row3110mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3112mcpsimp"><a name="p3112mcpsimp"></a><a name="p3112mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3114mcpsimp"><a name="p3114mcpsimp"></a><a name="p3114mcpsimp"></a>输入/输出</p>
@@ -2809,23 +1439,9 @@ void SetMatMulDim1(uint32_t dim)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetMatMulDim1<a name="ZH-CN_TOPIC_0000002442021237"></a>
-
-函数功能：
-
-获取配置的第一个input输入的行数（M值）。
-
-函数原型：
-
-```
-uint32_t GetMatMulDim1() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetMatMulDim1<a name="ZH-CN_TOPIC_0000002442021237"></a> 函数功能： 获取配置的第一个input输入的行数（M值）。 函数原型： ```
+uint32_t GetMatMulDim1 const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2842,23 +1458,9 @@ uint32_t GetMatMulDim1() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetMatMulDim2<a name="ZH-CN_TOPIC_0000002442021289"></a>
-
-函数功能：
-
-配置第一个input输入的列数（K值）。
-
-函数原型：
-
-```
+</table> #### SetMatMulDim2<a name="ZH-CN_TOPIC_0000002442021289"></a> 函数功能： 配置第一个input输入的列数（K值）。 函数原型： ```
 void SetMatMulDim2(uint32_t dim)
-```
-
-参数说明：
-
-<a name="table2397mcpsimp"></a>
+``` 参数说明： <a name="table2397mcpsimp"></a>
 <table><thead align="left"><tr id="row2403mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2405mcpsimp"><a name="p2405mcpsimp"></a><a name="p2405mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2407mcpsimp"><a name="p2407mcpsimp"></a><a name="p2407mcpsimp"></a>输入/输出</p>
@@ -2875,23 +1477,9 @@ void SetMatMulDim2(uint32_t dim)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetMatMulDim2<a name="ZH-CN_TOPIC_0000002441981817"></a>
-
-函数功能：
-
-获取配置第一个input输入的列数（K值）。
-
-函数原型：
-
-```
-uint32_t GetMatMulDim2() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetMatMulDim2<a name="ZH-CN_TOPIC_0000002441981817"></a> 函数功能： 获取配置第一个input输入的列数（K值）。 函数原型： ```
+uint32_t GetMatMulDim2 const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.99%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2908,23 +1496,9 @@ uint32_t GetMatMulDim2() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetMatMulDim3<a name="ZH-CN_TOPIC_0000002408582018"></a>
-
-函数功能：
-
-配置第二个input输入的列数（N值）。
-
-函数原型：
-
-```
+</table> #### SetMatMulDim3<a name="ZH-CN_TOPIC_0000002408582018"></a> 函数功能： 配置第二个input输入的列数（N值）。 函数原型： ```
 void SetMatMulDim3(uint32_t dim)
-```
-
-参数说明：
-
-<a name="table390mcpsimp"></a>
+``` 参数说明： <a name="table390mcpsimp"></a>
 <table><thead align="left"><tr id="row396mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p398mcpsimp"><a name="p398mcpsimp"></a><a name="p398mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p400mcpsimp"><a name="p400mcpsimp"></a><a name="p400mcpsimp"></a>输入/输出</p>
@@ -2941,23 +1515,9 @@ void SetMatMulDim3(uint32_t dim)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetMatMulDim3<a name="ZH-CN_TOPIC_0000002442021653"></a>
-
-函数功能：
-
-获取第二个input输入的列数（N值）。
-
-函数原型：
-
-```
-uint32_t GetMatMulDim3() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetMatMulDim3<a name="ZH-CN_TOPIC_0000002442021653"></a> 函数功能： 获取第二个input输入的列数（N值）。 函数原型： ```
+uint32_t GetMatMulDim3 const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -2974,23 +1534,9 @@ uint32_t GetMatMulDim3() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetTransBFlag<a name="ZH-CN_TOPIC_0000002442021757"></a>
-
-函数功能：
-
-配置第二个输入转置开关。
-
-函数原型：
-
-```
+</table> #### SetTransBFlag<a name="ZH-CN_TOPIC_0000002442021757"></a> 函数功能： 配置第二个输入转置开关。 函数原型： ```
 void SetTransBFlag(bool transB)
-```
-
-参数说明：
-
-<a name="table390mcpsimp"></a>
+``` 参数说明： <a name="table390mcpsimp"></a>
 <table><thead align="left"><tr id="row396mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p398mcpsimp"><a name="p398mcpsimp"></a><a name="p398mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p400mcpsimp"><a name="p400mcpsimp"></a><a name="p400mcpsimp"></a>输入/输出</p>
@@ -3007,23 +1553,9 @@ void SetTransBFlag(bool transB)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetTransBFlag<a name="ZH-CN_TOPIC_0000002442021517"></a>
-
-函数功能：
-
-获取第二个输入转置开关。
-
-函数原型：
-
-```
-bool GetTransBFlag() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetTransBFlag<a name="ZH-CN_TOPIC_0000002442021517"></a> 函数功能： 获取第二个输入转置开关。 函数原型： ```
+bool GetTransBFlag const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3040,23 +1572,9 @@ bool GetTransBFlag() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetWeightQuanted<a name="ZH-CN_TOPIC_0000002441981525"></a>
-
-函数功能：
-
-该接口用于说明权重是否是量化后的数据，true表示量化数据，false表示浮点数据。
-
-函数原型：
-
-```
+</table> #### SetWeightQuanted<a name="ZH-CN_TOPIC_0000002441981525"></a> 函数功能： 该接口用于说明权重是否是量化后的数据，true表示量化数据，false表示浮点数据。 函数原型： ```
 void SetWeightQuanted(bool isWeightQuant)
-```
-
-参数说明：
-
-<a name="table390mcpsimp"></a>
+``` 参数说明： <a name="table390mcpsimp"></a>
 <table><thead align="left"><tr id="row396mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p398mcpsimp"><a name="p398mcpsimp"></a><a name="p398mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p400mcpsimp"><a name="p400mcpsimp"></a><a name="p400mcpsimp"></a>输入/输出</p>
@@ -3073,23 +1591,9 @@ void SetWeightQuanted(bool isWeightQuant)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetWeightQuanted<a name="ZH-CN_TOPIC_0000002442021901"></a>
-
-函数功能：
-
-该接口用于获取权重是否是量化后的数据，true表示量化数据，false表示浮点数据。
-
-函数原型：
-
-```
-bool GetWeightQuanted() const
-```
-
-参数说明：
-
-<a name="table11827194820148"></a>
+</table> #### GetWeightQuanted<a name="ZH-CN_TOPIC_0000002442021901"></a> 函数功能： 该接口用于获取权重是否是量化后的数据，true表示量化数据，false表示浮点数据。 函数原型： ```
+bool GetWeightQuanted const
+``` 参数说明： <a name="table11827194820148"></a>
 <table><thead align="left"><tr id="row148281148151410"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p10828348101411"><a name="p10828348101411"></a><a name="p10828348101411"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p282824811419"><a name="p282824811419"></a><a name="p282824811419"></a>输入/输出</p>
@@ -3106,33 +1610,9 @@ bool GetWeightQuanted() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### PoolOperator配置接口<a name="ZH-CN_TOPIC_0000002408422322"></a>
-
-部分接口参考[算子通用接口](#ZH-CN_TOPIC_0000002441981325)章节。使用SetOpType配置pool类型，支持POOLINGAVE、POOLINGMAX两种模式。使用SetKernelHeight、SetKernelWidth配置kernel尺寸。使用SetStrideHeight、SetStrideWidth配置stride值。使用SetPadLeft、SetPadRight、SetPadUp、SetPadDown配置pad值。
-
-
-
-
-
-
-
-#### SetRoundMode<a name="ZH-CN_TOPIC_0000002442021765"></a>
-
-函数功能：
-
-设置运算取整的方式，目前支持向上取整和向下取整两种。
-
-函数原型：
-
-```
+</table> ### PoolOperator配置接口<a name="ZH-CN_TOPIC_0000002408422322"></a> 部分接口参考[算子通用接口](#ZH-CN_TOPIC_0000002441981325)章节。使用SetOpType配置pool类型，支持POOLINGAVE、POOLINGMAX两种模式。使用SetKernelHeight、SetKernelWidth配置kernel尺寸。使用SetStrideHeight、SetStrideWidth配置stride值。使用SetPadLeft、SetPadRight、SetPadUp、SetPadDown配置pad值。 #### SetRoundMode<a name="ZH-CN_TOPIC_0000002442021765"></a> 函数功能： 设置运算取整的方式，目前支持向上取整和向下取整两种。 函数原型： ```
 void SetRoundMode(PoolingRoundMode roundMode)
-```
-
-参数说明：
-
-<a name="table5577mcpsimp"></a>
+``` 参数说明： <a name="table5577mcpsimp"></a>
 <table><thead align="left"><tr id="row5583mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5585mcpsimp"><a name="p5585mcpsimp"></a><a name="p5585mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5587mcpsimp"><a name="p5587mcpsimp"></a><a name="p5587mcpsimp"></a>输入/输出</p>
@@ -3152,23 +1632,9 @@ void SetRoundMode(PoolingRoundMode roundMode)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRoundMode<a name="ZH-CN_TOPIC_0000002408422858"></a>
-
-函数功能：
-
-获取运算取整的方式，目前支持向上取整和向下取整两种。
-
-函数原型：
-
-```
-PoolingRoundMode GetRoundMode() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRoundMode<a name="ZH-CN_TOPIC_0000002408422858"></a> 函数功能： 获取运算取整的方式，目前支持向上取整和向下取整两种。 函数原型： ```
+PoolingRoundMode GetRoundMode const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3187,23 +1653,9 @@ PoolingRoundMode GetRoundMode() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021273"></a>
-
-函数功能：
-
-配置算子是否为GlobalPool，否则根据SetOpType配置的值为AvgPool（POOLINGAVE）或MaxPool（POOLINGMAX）。
-
-函数原型：
-
-```
+</table> #### SetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021273"></a> 函数功能： 配置算子是否为GlobalPool，否则根据SetOpType配置的值为AvgPool（POOLINGAVE）或MaxPool（POOLINGMAX）。 函数原型： ```
 void SetGlobalPoolingFlag(bool globalPoolingFlag)
-```
-
-参数说明：
-
-<a name="table1743mcpsimp"></a>
+``` 参数说明： <a name="table1743mcpsimp"></a>
 <table><thead align="left"><tr id="row1749mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1751mcpsimp"><a name="p1751mcpsimp"></a><a name="p1751mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1753mcpsimp"><a name="p1753mcpsimp"></a><a name="p1753mcpsimp"></a>输入/输出</p>
@@ -3220,23 +1672,9 @@ void SetGlobalPoolingFlag(bool globalPoolingFlag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021753"></a>
-
-函数功能：
-
-获取算子是否为GlobalPool。
-
-函数原型：
-
-```
-bool GetGlobalPoolingFlag() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021753"></a> 函数功能： 获取算子是否为GlobalPool。 函数原型： ```
+bool GetGlobalPoolingFlag const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3253,23 +1691,9 @@ bool GetGlobalPoolingFlag() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetCountPadFlag<a name="ZH-CN_TOPIC_0000002408421938"></a>
-
-函数功能：
-
-配置计算数值时是否需要计入pad部分。
-
-函数原型：
-
-```
+</table> #### SetCountPadFlag<a name="ZH-CN_TOPIC_0000002408421938"></a> 函数功能： 配置计算数值时是否需要计入pad部分。 函数原型： ```
 void SetCountPadFlag(bool flag)
-```
-
-参数说明：
-
-<a name="table2456mcpsimp"></a>
+``` 参数说明： <a name="table2456mcpsimp"></a>
 <table><thead align="left"><tr id="row2462mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2464mcpsimp"><a name="p2464mcpsimp"></a><a name="p2464mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2466mcpsimp"><a name="p2466mcpsimp"></a><a name="p2466mcpsimp"></a>输入/输出</p>
@@ -3286,23 +1710,9 @@ void SetCountPadFlag(bool flag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetCountPadFlag<a name="ZH-CN_TOPIC_0000002442021129"></a>
-
-函数功能：
-
-获取计算数值时是否需要计入pad部分。
-
-函数原型：
-
-```
-bool GetCountPadFlag() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetCountPadFlag<a name="ZH-CN_TOPIC_0000002442021129"></a> 函数功能： 获取计算数值时是否需要计入pad部分。 函数原型： ```
+bool GetCountPadFlag const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3319,39 +1729,9 @@ bool GetCountPadFlag() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### RoiPoolOperator/PsRoiPoolOperator配置接口<a name="ZH-CN_TOPIC_0000002442021913"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetRoiPooledHeight<a name="ZH-CN_TOPIC_0000002441981873"></a>
-
-函数功能：
-
-配置Roi池化后输出数据的统一高度。
-
-函数原型：
-
-```
+</table> ### RoiPoolOperator/PsRoiPoolOperator配置接口<a name="ZH-CN_TOPIC_0000002442021913"></a> #### SetRoiPooledHeight<a name="ZH-CN_TOPIC_0000002441981873"></a> 函数功能： 配置Roi池化后输出数据的统一高度。 函数原型： ```
 void SetRoiPooledHeight(uint32_t roiPooledHeight)
-```
-
-参数说明：
-
-<a name="table2426mcpsimp"></a>
+``` 参数说明： <a name="table2426mcpsimp"></a>
 <table><thead align="left"><tr id="row2432mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2434mcpsimp"><a name="p2434mcpsimp"></a><a name="p2434mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2436mcpsimp"><a name="p2436mcpsimp"></a><a name="p2436mcpsimp"></a>输入/输出</p>
@@ -3368,23 +1748,9 @@ void SetRoiPooledHeight(uint32_t roiPooledHeight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRoiPooledHeight<a name="ZH-CN_TOPIC_0000002441981937"></a>
-
-函数功能：
-
-获取Roi池化后输出数据的统一高度。
-
-函数原型：
-
-```
-uint32_t GetRoiPooledHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRoiPooledHeight<a name="ZH-CN_TOPIC_0000002441981937"></a> 函数功能： 获取Roi池化后输出数据的统一高度。 函数原型： ```
+uint32_t GetRoiPooledHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3401,23 +1767,9 @@ uint32_t GetRoiPooledHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRoiPooledWidth<a name="ZH-CN_TOPIC_0000002408582038"></a>
-
-函数功能：
-
-配置Roi池化后输出数据的统一宽度。
-
-函数原型：
-
-```
+</table> #### SetRoiPooledWidth<a name="ZH-CN_TOPIC_0000002408582038"></a> 函数功能： 配置Roi池化后输出数据的统一宽度。 函数原型： ```
 void SetRoiPooledWidth(uint32_t roiPooledWidth)
-```
-
-参数说明：
-
-<a name="table5370mcpsimp"></a>
+``` 参数说明： <a name="table5370mcpsimp"></a>
 <table><thead align="left"><tr id="row5376mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5378mcpsimp"><a name="p5378mcpsimp"></a><a name="p5378mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5380mcpsimp"><a name="p5380mcpsimp"></a><a name="p5380mcpsimp"></a>输入/输出</p>
@@ -3434,23 +1786,9 @@ void SetRoiPooledWidth(uint32_t roiPooledWidth)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRoiPooledWidth<a name="ZH-CN_TOPIC_0000002442021353"></a>
-
-函数功能：
-
-Roi池化后输出数据的统一宽度。
-
-函数原型：
-
-```
-uint32_t GetRoiPooledWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRoiPooledWidth<a name="ZH-CN_TOPIC_0000002442021353"></a> 函数功能： Roi池化后输出数据的统一宽度。 函数原型： ```
+uint32_t GetRoiPooledWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3467,23 +1805,9 @@ uint32_t GetRoiPooledWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRoiScale<a name="ZH-CN_TOPIC_0000002441981697"></a>
-
-函数功能：
-
-配置从原始输入图像到roi输入特征图的尺寸缩放系数。
-
-函数原型：
-
-```
+</table> #### SetRoiScale<a name="ZH-CN_TOPIC_0000002441981697"></a> 函数功能： 配置从原始输入图像到roi输入特征图的尺寸缩放系数。 函数原型： ```
 void SetRoiScale(float roiScale)
-```
-
-参数说明：
-
-<a name="table3379mcpsimp"></a>
+``` 参数说明： <a name="table3379mcpsimp"></a>
 <table><thead align="left"><tr id="row3385mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3387mcpsimp"><a name="p3387mcpsimp"></a><a name="p3387mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3389mcpsimp"><a name="p3389mcpsimp"></a><a name="p3389mcpsimp"></a>输入/输出</p>
@@ -3500,23 +1824,9 @@ void SetRoiScale(float roiScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRoiScale<a name="ZH-CN_TOPIC_0000002442021057"></a>
-
-函数功能：
-
-获取从原始输入图像到roi输入特征图的尺寸缩放系数。
-
-函数原型：
-
-```
-float GetRoiScale() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRoiScale<a name="ZH-CN_TOPIC_0000002442021057"></a> 函数功能： 获取从原始输入图像到roi输入特征图的尺寸缩放系数。 函数原型： ```
+float GetRoiScale const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3533,23 +1843,9 @@ float GetRoiScale() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRoiPooledNum<a name="ZH-CN_TOPIC_0000002408582634"></a>
-
-函数功能：
-
-配置输出特征图数量，对应输入roi的个数，同时也对应N值。
-
-函数原型：
-
-```
+</table> #### SetRoiPooledNum<a name="ZH-CN_TOPIC_0000002408582634"></a> 函数功能： 配置输出特征图数量，对应输入roi的个数，同时也对应N值。 函数原型： ```
 void SetRoiPooledNum(uint32_t roiPooledNum)
-```
-
-参数说明：
-
-<a name="table3558mcpsimp"></a>
+``` 参数说明： <a name="table3558mcpsimp"></a>
 <table><thead align="left"><tr id="row3564mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3566mcpsimp"><a name="p3566mcpsimp"></a><a name="p3566mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3568mcpsimp"><a name="p3568mcpsimp"></a><a name="p3568mcpsimp"></a>输入/输出</p>
@@ -3566,23 +1862,9 @@ void SetRoiPooledNum(uint32_t roiPooledNum)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRoiPooledNum<a name="ZH-CN_TOPIC_0000002442021709"></a>
-
-函数功能：
-
-获取输出特征图数量，对应输入roi的个数，同时也对应N值。
-
-函数原型：
-
-```
-uint32_t GetRoiPooledNum() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRoiPooledNum<a name="ZH-CN_TOPIC_0000002442021709"></a> 函数功能： 获取输出特征图数量，对应输入roi的个数，同时也对应N值。 函数原型： ```
+uint32_t GetRoiPooledNum const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3599,23 +1881,9 @@ uint32_t GetRoiPooledNum() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPsroiSpatialScale<a name="ZH-CN_TOPIC_0000002408422742"></a>
-
-函数功能：
-
-配置从原始输入图像到psroi输入特征图的尺寸缩放系数。仅PsRoiPoolOperator支持。
-
-函数原型：
-
-```
+</table> #### SetPsroiSpatialScale<a name="ZH-CN_TOPIC_0000002408422742"></a> 函数功能： 配置从原始输入图像到psroi输入特征图的尺寸缩放系数。仅PsRoiPoolOperator支持。 函数原型： ```
 void SetPsroiSpatialScale(float spatialScale)
-```
-
-参数说明：
-
-<a name="table4531mcpsimp"></a>
+``` 参数说明： <a name="table4531mcpsimp"></a>
 <table><thead align="left"><tr id="row4537mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4539mcpsimp"><a name="p4539mcpsimp"></a><a name="p4539mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4541mcpsimp"><a name="p4541mcpsimp"></a><a name="p4541mcpsimp"></a>输入/输出</p>
@@ -3632,23 +1900,9 @@ void SetPsroiSpatialScale(float spatialScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPsroiSpatialScale<a name="ZH-CN_TOPIC_0000002408582494"></a>
-
-函数功能：
-
-获取从原始输入图像到psroi输入特征图的尺寸缩放系数。仅PsRoiPoolOperator支持。
-
-函数原型：
-
-```
-float  GetPsroiSpatialScale() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPsroiSpatialScale<a name="ZH-CN_TOPIC_0000002408582494"></a> 函数功能： 获取从原始输入图像到psroi输入特征图的尺寸缩放系数。仅PsRoiPoolOperator支持。 函数原型： ```
+float GetPsroiSpatialScale const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3665,23 +1919,9 @@ float  GetPsroiSpatialScale() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPsroiOutputDim<a name="ZH-CN_TOPIC_0000002441981717"></a>
-
-函数功能：
-
-配置输出channel维度大小。仅PsRoiPoolOperator支持。
-
-函数原型：
-
-```
+</table> #### SetPsroiOutputDim<a name="ZH-CN_TOPIC_0000002441981717"></a> 函数功能： 配置输出channel维度大小。仅PsRoiPoolOperator支持。 函数原型： ```
 void SetPsroiOutputDim(int32_t outputDim)
-```
-
-参数说明：
-
-<a name="table5050mcpsimp"></a>
+``` 参数说明： <a name="table5050mcpsimp"></a>
 <table><thead align="left"><tr id="row5056mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5058mcpsimp"><a name="p5058mcpsimp"></a><a name="p5058mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5060mcpsimp"><a name="p5060mcpsimp"></a><a name="p5060mcpsimp"></a>输入/输出</p>
@@ -3698,23 +1938,9 @@ void SetPsroiOutputDim(int32_t outputDim)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPsroiOutputDim<a name="ZH-CN_TOPIC_0000002408581870"></a>
-
-函数功能：
-
-获取输出channel维度大小。仅PsRoiPoolOperator支持。
-
-函数原型：
-
-```
-int32_t GetPsroiOutputDim() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPsroiOutputDim<a name="ZH-CN_TOPIC_0000002408581870"></a> 函数功能： 获取输出channel维度大小。仅PsRoiPoolOperator支持。 函数原型： ```
+int32_t GetPsroiOutputDim const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3731,23 +1957,9 @@ int32_t GetPsroiOutputDim() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPsroiGroupSize<a name="ZH-CN_TOPIC_0000002408581994"></a>
-
-函数功能：
-
-配置输出Feature的高和宽。仅PsRoiPoolOperator支持。
-
-函数原型：
-
-```
+</table> #### SetPsroiGroupSize<a name="ZH-CN_TOPIC_0000002408581994"></a> 函数功能： 配置输出Feature的高和宽。仅PsRoiPoolOperator支持。 函数原型： ```
 void SetPsroiGroupSize(int32_t groupSize)
-```
-
-参数说明：
-
-<a name="table5733mcpsimp"></a>
+``` 参数说明： <a name="table5733mcpsimp"></a>
 <table><thead align="left"><tr id="row5739mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5741mcpsimp"><a name="p5741mcpsimp"></a><a name="p5741mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5743mcpsimp"><a name="p5743mcpsimp"></a><a name="p5743mcpsimp"></a>输入/输出</p>
@@ -3764,23 +1976,9 @@ void SetPsroiGroupSize(int32_t groupSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPsroiGroupSize<a name="ZH-CN_TOPIC_0000002442021809"></a>
-
-函数功能：
-
-获取输出Feature的高和宽。仅PsRoiPoolOperator支持。
-
-函数原型：
-
-```
-int32_t GetPsroiGroupSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPsroiGroupSize<a name="ZH-CN_TOPIC_0000002442021809"></a> 函数功能： 获取输出Feature的高和宽。仅PsRoiPoolOperator支持。 函数原型： ```
+int32_t GetPsroiGroupSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3797,73 +1995,9 @@ int32_t GetPsroiGroupSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### LstmOperator/ GruOperator/ RnnOperator配置接口<a name="ZH-CN_TOPIC_0000002442021953"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetParserMode<a name="ZH-CN_TOPIC_0000002441981929"></a>
-
-函数功能：
-
-配置解析模式，支持Caffe类型解析和Onnx类型解析，默认为Caffe，Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> ### LstmOperator/ GruOperator/ RnnOperator配置接口<a name="ZH-CN_TOPIC_0000002442021953"></a> #### SetParserMode<a name="ZH-CN_TOPIC_0000002441981929"></a> 函数功能： 配置解析模式，支持Caffe类型解析和Onnx类型解析，默认为Caffe，Onnx解析模式支持配置。 函数原型： ```
 void SetParserMode(const RecurrentAbstractParserMode mode)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -3884,23 +2018,9 @@ void SetParserMode(const RecurrentAbstractParserMode mode)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetParserMode<a name="ZH-CN_TOPIC_0000002442021845"></a>
-
-函数功能：
-
-获取配置解析模式，支持Caffe类型解析和Onnx类型解析，默认为Caffe，Onnx解析模式支持配置。
-
-函数原型：
-
-```
-RecurrentAbstractParserMode GetParserMode( ) const
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetParserMode<a name="ZH-CN_TOPIC_0000002442021845"></a> 函数功能： 获取配置解析模式，支持Caffe类型解析和Onnx类型解析，默认为Caffe，Onnx解析模式支持配置。 函数原型： ```
+RecurrentAbstractParserMode GetParserMode const
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -3921,23 +2041,9 @@ RecurrentAbstractParserMode GetParserMode( ) const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRecurrentNumOutput<a name="ZH-CN_TOPIC_0000002441982057"></a>
-
-函数功能：
-
-配置输出特征数，必须大于0。即输出\[T,N,D\]中的D值。
-
-函数原型：
-
-```
+</table> #### SetRecurrentNumOutput<a name="ZH-CN_TOPIC_0000002441982057"></a> 函数功能： 配置输出特征数，必须大于0。即输出\[T,N,D\]中的D值。 函数原型： ```
 void SetRecurrentNumOutput(uint32_t numOutput)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -3954,23 +2060,9 @@ void SetRecurrentNumOutput(uint32_t numOutput)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentNumOutput<a name="ZH-CN_TOPIC_0000002408422098"></a>
-
-函数功能：
-
-获取输出特征数，必须大于0。即输出\[T,N,D\]中的D值。
-
-函数原型：
-
-```
-uint32_t GetRecurrentNumOutput() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRecurrentNumOutput<a name="ZH-CN_TOPIC_0000002408422098"></a> 函数功能： 获取输出特征数，必须大于0。即输出\[T,N,D\]中的D值。 函数原型： ```
+uint32_t GetRecurrentNumOutput const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -3987,23 +2079,9 @@ uint32_t GetRecurrentNumOutput() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRecurrentExposeHidden<a name="ZH-CN_TOPIC_0000002442021345"></a>
-
-函数功能：
-
-配置是否输入输出隐藏层。
-
-函数原型：
-
-```
+</table> #### SetRecurrentExposeHidden<a name="ZH-CN_TOPIC_0000002442021345"></a> 函数功能： 配置是否输入输出隐藏层。 函数原型： ```
 void SetRecurrentExposeHidden(bool recurrentExposeHidden)
-```
-
-参数说明：
-
-<a name="table5548mcpsimp"></a>
+``` 参数说明： <a name="table5548mcpsimp"></a>
 <table><thead align="left"><tr id="row5554mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5556mcpsimp"><a name="p5556mcpsimp"></a><a name="p5556mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5558mcpsimp"><a name="p5558mcpsimp"></a><a name="p5558mcpsimp"></a>输入/输出</p>
@@ -4020,23 +2098,9 @@ void SetRecurrentExposeHidden(bool recurrentExposeHidden)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentExposeHidden<a name="ZH-CN_TOPIC_0000002408582482"></a>
-
-函数功能：
-
-获取是否输入输出隐藏层。
-
-函数原型：
-
-```
-bool GetRecurrentExposeHidden() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRecurrentExposeHidden<a name="ZH-CN_TOPIC_0000002408582482"></a> 函数功能： 获取是否输入输出隐藏层。 函数原型： ```
+bool GetRecurrentExposeHidden const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -4053,23 +2117,9 @@ bool GetRecurrentExposeHidden() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRecurrentContFlag<a name="ZH-CN_TOPIC_0000002408582370"></a>
-
-函数功能：
-
-配置是否使用cont输入。
-
-函数原型：
-
-```
+</table> #### SetRecurrentContFlag<a name="ZH-CN_TOPIC_0000002408582370"></a> 函数功能： 配置是否使用cont输入。 函数原型： ```
 void SetRecurrentContFlag(bool contFlag)
-```
-
-参数说明：
-
-<a name="table4439mcpsimp"></a>
+``` 参数说明： <a name="table4439mcpsimp"></a>
 <table><thead align="left"><tr id="row4445mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4447mcpsimp"><a name="p4447mcpsimp"></a><a name="p4447mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4449mcpsimp"><a name="p4449mcpsimp"></a><a name="p4449mcpsimp"></a>输入/输出</p>
@@ -4086,23 +2136,9 @@ void SetRecurrentContFlag(bool contFlag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentContFlag<a name="ZH-CN_TOPIC_0000002441981593"></a>
-
-函数功能：
-
-获取是否使用cont输入。
-
-函数原型：
-
-```
-bool GetRecurrentContFlag() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRecurrentContFlag<a name="ZH-CN_TOPIC_0000002441981593"></a> 函数功能： 获取是否使用cont输入。 函数原型： ```
+bool GetRecurrentContFlag const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -4119,23 +2155,9 @@ bool GetRecurrentContFlag() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddRecurrentParamVec<a name="ZH-CN_TOPIC_0000002441982037"></a>
-
-函数功能：
-
-添加一组权重数据。
-
-函数原型：
-
-```
+</table> #### AddRecurrentParamVec<a name="ZH-CN_TOPIC_0000002441982037"></a> 函数功能： 添加一组权重数据。 函数原型： ```
 void AddRecurrentParamVec(const float *param)
-```
-
-参数说明：
-
-<a name="table5254mcpsimp"></a>
+``` 参数说明： <a name="table5254mcpsimp"></a>
 <table><thead align="left"><tr id="row5260mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5262mcpsimp"><a name="p5262mcpsimp"></a><a name="p5262mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5264mcpsimp"><a name="p5264mcpsimp"></a><a name="p5264mcpsimp"></a>输入/输出</p>
@@ -4152,23 +2174,9 @@ void AddRecurrentParamVec(const float *param)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentParamVec<a name="ZH-CN_TOPIC_0000002442021189"></a>
-
-函数功能：
-
-获取所有权重数据。
-
-函数原型：
-
-```
-vector<const float *> GetRecurrentParamVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRecurrentParamVec<a name="ZH-CN_TOPIC_0000002442021189"></a> 函数功能： 获取所有权重数据。 函数原型： ```
+vector<const float *> GetRecurrentParamVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -4185,23 +2193,9 @@ vector<const float *> GetRecurrentParamVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddRecurrentParamLengthVec<a name="ZH-CN_TOPIC_0000002441981813"></a>
-
-函数功能：
-
-添加一组权重数据的长度。
-
-函数原型：
-
-```
+</table> #### AddRecurrentParamLengthVec<a name="ZH-CN_TOPIC_0000002441981813"></a> 函数功能： 添加一组权重数据的长度。 函数原型： ```
 void AddRecurrentParamLengthVec(uint32_t length)
-```
-
-参数说明：
-
-<a name="table4665mcpsimp"></a>
+``` 参数说明： <a name="table4665mcpsimp"></a>
 <table><thead align="left"><tr id="row4671mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4673mcpsimp"><a name="p4673mcpsimp"></a><a name="p4673mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4675mcpsimp"><a name="p4675mcpsimp"></a><a name="p4675mcpsimp"></a>输入/输出</p>
@@ -4218,23 +2212,9 @@ void AddRecurrentParamLengthVec(uint32_t length)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentParamLengthVec<a name="ZH-CN_TOPIC_0000002442021769"></a>
-
-函数功能：
-
-获取所有权重数据的长度。
-
-函数原型：
-
-```
-vector<uint32_t> GetRecurrentParamLengthVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRecurrentParamLengthVec<a name="ZH-CN_TOPIC_0000002442021769"></a> 函数功能： 获取所有权重数据的长度。 函数原型： ```
+vector<uint32_t> GetRecurrentParamLengthVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -4251,23 +2231,9 @@ vector<uint32_t> GetRecurrentParamLengthVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInitialHOnlineFlag<a name="ZH-CN_TOPIC_0000002442022005"></a>
-
-函数功能：
-
-配置InitialH是否在线输入，为true时表示在线输入InitialH，Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetInitialHOnlineFlag<a name="ZH-CN_TOPIC_0000002442022005"></a> 函数功能： 配置InitialH是否在线输入，为true时表示在线输入InitialH，Onnx解析模式支持配置。 函数原型： ```
 void SetInitialHOnlineFlag(bool flag)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4284,23 +2250,9 @@ void SetInitialHOnlineFlag(bool flag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInitialHOnlineFlag<a name="ZH-CN_TOPIC_0000002442021673"></a>
-
-函数功能：
-
-获取InitialH是否在线输入，为true时表示在线输入InitialH，Onnx解析模式支持配置。
-
-函数原型：
-
-```
-bool GetInitialHOnlineFlag()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetInitialHOnlineFlag<a name="ZH-CN_TOPIC_0000002442021673"></a> 函数功能： 获取InitialH是否在线输入，为true时表示在线输入InitialH，Onnx解析模式支持配置。 函数原型： ```
+bool GetInitialHOnlineFlag
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4317,23 +2269,9 @@ bool GetInitialHOnlineFlag()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInitialCOnlineFlag<a name="ZH-CN_TOPIC_0000002408422870"></a>
-
-函数功能：
-
-配置InitialC是否在线输入，为true时表示在线输入InitialC，Lstm Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetInitialCOnlineFlag<a name="ZH-CN_TOPIC_0000002408422870"></a> 函数功能： 配置InitialC是否在线输入，为true时表示在线输入InitialC，Lstm Onnx解析模式支持配置。 函数原型： ```
 void SetInitialCOnlineFlag(bool flag)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4350,23 +2288,9 @@ void SetInitialCOnlineFlag(bool flag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInitialCOnlineFlag<a name="ZH-CN_TOPIC_0000002441981417"></a>
-
-函数功能：
-
-获取InitialC是否在线输入，为true时表示在线输入InitialC，Lstm Onnx解析模式支持配置。
-
-函数原型：
-
-```
-bool GetInitialCOnlineFlag()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetInitialCOnlineFlag<a name="ZH-CN_TOPIC_0000002441981417"></a> 函数功能： 获取InitialC是否在线输入，为true时表示在线输入InitialC，Lstm Onnx解析模式支持配置。 函数原型： ```
+bool GetInitialCOnlineFlag
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4383,23 +2307,9 @@ bool GetInitialCOnlineFlag()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetSequenceLensOnlineFlag<a name="ZH-CN_TOPIC_0000002442021793"></a>
-
-函数功能：
-
-配置SequenceLens是否在线输入，为true时表示在线输入SequenceLens，Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetSequenceLensOnlineFlag<a name="ZH-CN_TOPIC_0000002442021793"></a> 函数功能： 配置SequenceLens是否在线输入，为true时表示在线输入SequenceLens，Onnx解析模式支持配置。 函数原型： ```
 void SetSequenceLensOnlineFlag(bool flag)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4416,23 +2326,9 @@ void SetSequenceLensOnlineFlag(bool flag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSequenceLensOnlineFlag<a name="ZH-CN_TOPIC_0000002408422566"></a>
-
-函数功能：
-
-获取SequenceLens是否在线输入，为true时表示在线输入SequenceLens，Onnx解析模式支持配置。
-
-函数原型：
-
-```
-bool GetSequenceLensOnlineFlag()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetSequenceLensOnlineFlag<a name="ZH-CN_TOPIC_0000002408422566"></a> 函数功能： 获取SequenceLens是否在线输入，为true时表示在线输入SequenceLens，Onnx解析模式支持配置。 函数原型： ```
+bool GetSequenceLensOnlineFlag
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4449,23 +2345,9 @@ bool GetSequenceLensOnlineFlag()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRecurrentDirection<a name="ZH-CN_TOPIC_0000002441982041"></a>
-
-函数功能：
-
-配置RNN推导方向，支持正向、逆向以及双向等模式。Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetRecurrentDirection<a name="ZH-CN_TOPIC_0000002441982041"></a> 函数功能： 配置RNN推导方向，支持正向、逆向以及双向等模式。Onnx解析模式支持配置。 函数原型： ```
 void SetRecurrentDirection(RecurrentDirection direction)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4486,23 +2368,9 @@ void SetRecurrentDirection(RecurrentDirection direction)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentDirection<a name="ZH-CN_TOPIC_0000002442021985"></a>
-
-函数功能：
-
-获取配置的RNN推导方向，支持正向、逆向以及双向等模式。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-RecurrentDirection GetRecurrentDirection()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetRecurrentDirection<a name="ZH-CN_TOPIC_0000002442021985"></a> 函数功能： 获取配置的RNN推导方向，支持正向、逆向以及双向等模式。Onnx解析模式支持配置。 函数原型： ```
+RecurrentDirection GetRecurrentDirection
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4523,23 +2391,9 @@ RecurrentDirection GetRecurrentDirection()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetAfClip<a name="ZH-CN_TOPIC_0000002408582618"></a>
-
-函数功能：
-
-配置数据截断范围。截断将张量的元素限制在 \[-阈值， +阈值\] 范围内，并应用于激活的输入。如果未指定，则不截断。Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetAfClip<a name="ZH-CN_TOPIC_0000002408582618"></a> 函数功能： 配置数据截断范围。截断将张量的元素限制在 \[-阈值， +阈值\] 范围内，并应用于激活的输入。如果未指定，则不截断。Onnx解析模式支持配置。 函数原型： ```
 void SetAfClip(float clip)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4557,23 +2411,9 @@ void SetAfClip(float clip)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAfClip<a name="ZH-CN_TOPIC_0000002441981245"></a>
-
-函数功能：
-
-获取配置的数据截断范围。截断将张量的元素限制在 \[-阈值， +阈值\] 范围内，并应用于激活的输入。如果未指定，则不截断。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-float GetAfClip() const
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetAfClip<a name="ZH-CN_TOPIC_0000002441981245"></a> 函数功能： 获取配置的数据截断范围。截断将张量的元素限制在 \[-阈值， +阈值\] 范围内，并应用于激活的输入。如果未指定，则不截断。Onnx解析模式支持配置。 函数原型： ```
+float GetAfClip const
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4590,23 +2430,9 @@ float GetAfClip() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetLinearBeforeResetFlag<a name="ZH-CN_TOPIC_0000002441982125"></a>
-
-函数功能：
-
-配置计算隐藏门的输出时，在乘以复位门的输出之前是否应用线性变换。Onnx GRU解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetLinearBeforeResetFlag<a name="ZH-CN_TOPIC_0000002441982125"></a> 函数功能： 配置计算隐藏门的输出时，在乘以复位门的输出之前是否应用线性变换。Onnx GRU解析模式支持配置。 函数原型： ```
 void SetLinearBeforeResetFlag(bool flag)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4623,23 +2449,9 @@ void SetLinearBeforeResetFlag(bool flag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLinearBeforeResetFlag<a name="ZH-CN_TOPIC_0000002408582478"></a>
-
-函数功能：
-
-获取配置计算隐藏门的输出时，在乘以复位门的输出之前是否应用线性变换。Onnx GRU解析模式支持配置。
-
-函数原型：
-
-```
-bool GetLinearBeforeResetFlag()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetLinearBeforeResetFlag<a name="ZH-CN_TOPIC_0000002408582478"></a> 函数功能： 获取配置计算隐藏门的输出时，在乘以复位门的输出之前是否应用线性变换。Onnx GRU解析模式支持配置。 函数原型： ```
+bool GetLinearBeforeResetFlag
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4656,23 +2468,9 @@ bool GetLinearBeforeResetFlag()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetXtShapeVec<a name="ZH-CN_TOPIC_0000002442021969"></a>
-
-函数功能：
-
-配置权重Xt的shape大小。Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetXtShapeVec<a name="ZH-CN_TOPIC_0000002442021969"></a> 函数功能： 配置权重Xt的shape大小。Onnx解析模式支持配置。 函数原型： ```
 void SetXtShapeVec(const vector<int32_t> &xtShapeVec)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4689,23 +2487,9 @@ void SetXtShapeVec(const vector<int32_t> &xtShapeVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetXtShapeVec<a name="ZH-CN_TOPIC_0000002408422130"></a>
-
-函数功能：
-
-获取配置权重Xt的shape大小。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const vector<int32_t>& GetXtShapeVec()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetXtShapeVec<a name="ZH-CN_TOPIC_0000002408422130"></a> 函数功能： 获取配置权重Xt的shape大小。Onnx解析模式支持配置。 函数原型： ```
+const vector<int32_t>& GetXtShapeVec
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4722,23 +2506,9 @@ const vector<int32_t>& GetXtShapeVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetHtShapeVec<a name="ZH-CN_TOPIC_0000002408582702"></a>
-
-函数功能：
-
-配置权重Ht的shape大小。Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetHtShapeVec<a name="ZH-CN_TOPIC_0000002408582702"></a> 函数功能： 配置权重Ht的shape大小。Onnx解析模式支持配置。 函数原型： ```
 void SetHtShapeVec(const vector<int32_t> &htShapeVec)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4755,23 +2525,9 @@ void SetHtShapeVec(const vector<int32_t> &htShapeVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetHtShapeVec<a name="ZH-CN_TOPIC_0000002408422614"></a>
-
-函数功能：
-
-获取配置权重Ht的shape大小。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const vector<int32_t>& GetHtShapeVec()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetHtShapeVec<a name="ZH-CN_TOPIC_0000002408422614"></a> 函数功能： 获取配置权重Ht的shape大小。Onnx解析模式支持配置。 函数原型： ```
+const vector<int32_t>& GetHtShapeVec
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4788,23 +2544,9 @@ const vector<int32_t>& GetHtShapeVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPeepholesShapeVec<a name="ZH-CN_TOPIC_0000002408582534"></a>
-
-函数功能：
-
-配置Peepholes的shape大小。Lstm Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetPeepholesShapeVec<a name="ZH-CN_TOPIC_0000002408582534"></a> 函数功能： 配置Peepholes的shape大小。Lstm Onnx解析模式支持配置。 函数原型： ```
 void SetPeepholesShapeVec(const vector<int32_t> &peepholesShapeVec)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4821,23 +2563,9 @@ void SetPeepholesShapeVec(const vector<int32_t> &peepholesShapeVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPeepholesShapeVec<a name="ZH-CN_TOPIC_0000002408582518"></a>
-
-函数功能：
-
-获取配置Peepholes的shape大小。Lstm Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const vector<int32_t>& GetPeepholesShapeVec()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetPeepholesShapeVec<a name="ZH-CN_TOPIC_0000002408582518"></a> 函数功能： 获取配置Peepholes的shape大小。Lstm Onnx解析模式支持配置。 函数原型： ```
+const vector<int32_t>& GetPeepholesShapeVec
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4854,23 +2582,9 @@ const vector<int32_t>& GetPeepholesShapeVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRecurrentBiasShapeVec<a name="ZH-CN_TOPIC_0000002442021261"></a>
-
-函数功能：
-
-配置偏移量的shape大小。Onnx解析模式支持配置。
-
-函数原型：
-
-```
+</table> #### SetRecurrentBiasShapeVec<a name="ZH-CN_TOPIC_0000002442021261"></a> 函数功能： 配置偏移量的shape大小。Onnx解析模式支持配置。 函数原型： ```
 void SetRecurrentBiasShapeVec(const vector<int32_t> &biasShapeVec)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4887,23 +2601,9 @@ void SetRecurrentBiasShapeVec(const vector<int32_t> &biasShapeVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentBiasShapeVec<a name="ZH-CN_TOPIC_0000002442021785"></a>
-
-函数功能：
-
-获取配置偏移量的shape大小。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const vector<int32_t>& GetRecurrentBiasShapeVec()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetRecurrentBiasShapeVec<a name="ZH-CN_TOPIC_0000002442021785"></a> 函数功能： 获取配置偏移量的shape大小。Onnx解析模式支持配置。 函数原型： ```
+const vector<int32_t>& GetRecurrentBiasShapeVec
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4920,23 +2620,9 @@ const vector<int32_t>& GetRecurrentBiasShapeVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetXtWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582254"></a>
-
-函数功能：
-
-配置权重Xt的数据指针。Onnx解析模式支持配置。要求配置权重Xt数据的大小要与SetXtShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetXtWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582254"></a> 函数功能： 配置权重Xt的数据指针。Onnx解析模式支持配置。要求配置权重Xt数据的大小要与SetXtShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetXtWeightDataPtr(const float *xtWeightDataPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4953,23 +2639,9 @@ void SetXtWeightDataPtr(const float *xtWeightDataPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetXtWeightDataPtr<a name="ZH-CN_TOPIC_0000002441981313"></a>
-
-函数功能：
-
-获取配置权重Xt的数据指针。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const float* GetXtWeightDataPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetXtWeightDataPtr<a name="ZH-CN_TOPIC_0000002441981313"></a> 函数功能： 获取配置权重Xt的数据指针。Onnx解析模式支持配置。 函数原型： ```
+const float* GetXtWeightDataPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -4986,23 +2658,9 @@ const float* GetXtWeightDataPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetXtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002441982149"></a>
-
-函数功能：
-
-配置权重Xt的量化数据指针。Onnx解析模式支持配置。要求配置权重Xt量化数据的大小要与SetXtShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetXtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002441982149"></a> 函数功能： 配置权重Xt的量化数据指针。Onnx解析模式支持配置。要求配置权重Xt量化数据的大小要与SetXtShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetXtWeightQuantPtr(const int8_t *xtWeightQuantPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5019,23 +2677,9 @@ void SetXtWeightQuantPtr(const int8_t *xtWeightQuantPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetXtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002442021337"></a>
-
-函数功能：
-
-获取配置权重Xt的量化数据指针。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const int8_t* GetXtWeightQuantPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetXtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002442021337"></a> 函数功能： 获取配置权重Xt的量化数据指针。Onnx解析模式支持配置。 函数原型： ```
+const int8_t* GetXtWeightQuantPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5052,23 +2696,9 @@ const int8_t* GetXtWeightQuantPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetHtWeightDataPtr<a name="ZH-CN_TOPIC_0000002408422426"></a>
-
-函数功能：
-
-配置权重Ht的数据指针。Onnx解析模式支持配置。要求配置权重Ht数据的大小要与SetHtShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetHtWeightDataPtr<a name="ZH-CN_TOPIC_0000002408422426"></a> 函数功能： 配置权重Ht的数据指针。Onnx解析模式支持配置。要求配置权重Ht数据的大小要与SetHtShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetHtWeightDataPtr(const float *htWeightDataPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5085,23 +2715,9 @@ void SetHtWeightDataPtr(const float *htWeightDataPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetHtWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582582"></a>
-
-函数功能：
-
-获取配置权重Ht的数据指针。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const float* GetHtWeightDataPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetHtWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582582"></a> 函数功能： 获取配置权重Ht的数据指针。Onnx解析模式支持配置。 函数原型： ```
+const float* GetHtWeightDataPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5118,23 +2734,9 @@ const float* GetHtWeightDataPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetHtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408421962"></a>
-
-函数功能：
-
-配置权重Ht的量化数据指针。Onnx解析模式支持配置。要求配置权重Ht量化数据的大小要与SetHtShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetHtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408421962"></a> 函数功能： 配置权重Ht的量化数据指针。Onnx解析模式支持配置。要求配置权重Ht量化数据的大小要与SetHtShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetHtWeightQuantPtr(const int8_t *htWeightQuantPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5151,23 +2753,9 @@ void SetHtWeightQuantPtr(const int8_t *htWeightQuantPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetHtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408422458"></a>
-
-函数功能：
-
-获取配置权重Ht的量化数据指针。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const int8_t* GetHtWeightQuantPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetHtWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408422458"></a> 函数功能： 获取配置权重Ht的量化数据指针。Onnx解析模式支持配置。 函数原型： ```
+const int8_t* GetHtWeightQuantPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5184,23 +2772,9 @@ const int8_t* GetHtWeightQuantPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPeepholesWeightDataPtr<a name="ZH-CN_TOPIC_0000002441981221"></a>
-
-函数功能：
-
-配置权重Peepholes的数据指针。Lstm Onnx解析模式支持配置。要求配置权重Peepholes数据的大小要与SetPeepholesShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetPeepholesWeightDataPtr<a name="ZH-CN_TOPIC_0000002441981221"></a> 函数功能： 配置权重Peepholes的数据指针。Lstm Onnx解析模式支持配置。要求配置权重Peepholes数据的大小要与SetPeepholesShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetPeepholesWeightDataPtr(const float *peepholesWeightDataPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5217,23 +2791,9 @@ void SetPeepholesWeightDataPtr(const float *peepholesWeightDataPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPeepholesWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582054"></a>
-
-函数功能：
-
-获取配置权重Peepholes的数据指针。Lstm Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const float* GetPeepholesWeightDataPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetPeepholesWeightDataPtr<a name="ZH-CN_TOPIC_0000002408582054"></a> 函数功能： 获取配置权重Peepholes的数据指针。Lstm Onnx解析模式支持配置。 函数原型： ```
+const float* GetPeepholesWeightDataPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5250,23 +2810,9 @@ const float* GetPeepholesWeightDataPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPeepholesWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408422806"></a>
-
-函数功能：
-
-配置权重Peepholes的量化数据指针。目前仅Lstm Onnx解析模式支持配置。要求配置权重Peepholes量化数据的大小要与SetPeepholesShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetPeepholesWeightQuantPtr<a name="ZH-CN_TOPIC_0000002408422806"></a> 函数功能： 配置权重Peepholes的量化数据指针。目前仅Lstm Onnx解析模式支持配置。要求配置权重Peepholes量化数据的大小要与SetPeepholesShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetPeepholesWeightQuantPtr(const int8_t *peepholesWeightQuantPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5283,23 +2829,9 @@ void SetPeepholesWeightQuantPtr(const int8_t *peepholesWeightQuantPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPeepholesWeightQuantPtr<a name="ZH-CN_TOPIC_0000002442021421"></a>
-
-函数功能：
-
-获取配置权重Peepholes的量化数据指针。目前仅Lstm Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const int8_t* GetPeepholesWeightQuantPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetPeepholesWeightQuantPtr<a name="ZH-CN_TOPIC_0000002442021421"></a> 函数功能： 获取配置权重Peepholes的量化数据指针。目前仅Lstm Onnx解析模式支持配置。 函数原型： ```
+const int8_t* GetPeepholesWeightQuantPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5316,23 +2848,9 @@ const int8_t* GetPeepholesWeightQuantPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRecurrentBiasDataPtr<a name="ZH-CN_TOPIC_0000002442021585"></a>
-
-函数功能：
-
-配置偏移量的数据指针。Onnx解析模式支持配置。要求配置偏移量数据的大小要与SetRecurrentBiasShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetRecurrentBiasDataPtr<a name="ZH-CN_TOPIC_0000002442021585"></a> 函数功能： 配置偏移量的数据指针。Onnx解析模式支持配置。要求配置偏移量数据的大小要与SetRecurrentBiasShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetRecurrentBiasDataPtr(const float *biasWeightDataPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5349,23 +2867,9 @@ void SetRecurrentBiasDataPtr(const float *biasWeightDataPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentBiasDataPtr<a name="ZH-CN_TOPIC_0000002408422714"></a>
-
-函数功能：
-
-获取配置偏移量的数据指针。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const float* GetRecurrentBiasDataPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetRecurrentBiasDataPtr<a name="ZH-CN_TOPIC_0000002408422714"></a> 函数功能： 获取配置偏移量的数据指针。Onnx解析模式支持配置。 函数原型： ```
+const float* GetRecurrentBiasDataPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5382,23 +2886,9 @@ const float* GetRecurrentBiasDataPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetRecurrentBiasQuantPtr<a name="ZH-CN_TOPIC_0000002408422086"></a>
-
-函数功能：
-
-配置偏移量的量化数据指针。Onnx解析模式支持配置。要求配置偏移量量化数据的大小要与SetRecurrentBiasShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetRecurrentBiasQuantPtr<a name="ZH-CN_TOPIC_0000002408422086"></a> 函数功能： 配置偏移量的量化数据指针。Onnx解析模式支持配置。要求配置偏移量量化数据的大小要与SetRecurrentBiasShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetRecurrentBiasQuantPtr(const int32_t *biasWeightQuantPtr)
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5415,23 +2905,9 @@ void SetRecurrentBiasQuantPtr(const int32_t *biasWeightQuantPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRecurrentBiasQuantPtr<a name="ZH-CN_TOPIC_0000002442021625"></a>
-
-函数功能：
-
-获取配置偏移量的量化数据指针。Onnx解析模式支持配置。
-
-函数原型：
-
-```
-const int32_t* GetRecurrentBiasQuantPtr()
-```
-
-参数说明：
-
-<a name="table3645mcpsimp"></a>
+</table> #### GetRecurrentBiasQuantPtr<a name="ZH-CN_TOPIC_0000002442021625"></a> 函数功能： 获取配置偏移量的量化数据指针。Onnx解析模式支持配置。 函数原型： ```
+const int32_t* GetRecurrentBiasQuantPtr
+``` 参数说明： <a name="table3645mcpsimp"></a>
 <table><thead align="left"><tr id="row3651mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3653mcpsimp"><a name="p3653mcpsimp"></a><a name="p3653mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p3655mcpsimp"><a name="p3655mcpsimp"></a><a name="p3655mcpsimp"></a>输入/输出</p>
@@ -5448,33 +2924,9 @@ const int32_t* GetRecurrentBiasQuantPtr()
 </td>
 </tr>
 </tbody>
-</table>
-
-### ArgmaxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582350"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-
-
-
-
-
-
-#### SetArgMaxAxis<a name="ZH-CN_TOPIC_0000002442021817"></a>
-
-函数功能：
-
-配置当前算子的Axis属性值。
-
-函数原型：
-
-```
+</table> ### ArgmaxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582350"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 #### SetArgMaxAxis<a name="ZH-CN_TOPIC_0000002442021817"></a> 函数功能： 配置当前算子的Axis属性值。 函数原型： ```
 void SetArgMaxAxis(const int32_t axis);
-```
-
-参数说明：
-
-<a name="table1685mcpsimp"></a>
+``` 参数说明： <a name="table1685mcpsimp"></a>
 <table><thead align="left"><tr id="row1691mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1693mcpsimp"><a name="p1693mcpsimp"></a><a name="p1693mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1695mcpsimp"><a name="p1695mcpsimp"></a><a name="p1695mcpsimp"></a>输入/输出</p>
@@ -5491,23 +2943,9 @@ void SetArgMaxAxis(const int32_t axis);
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetArgMaxAxis<a name="ZH-CN_TOPIC_0000002408582558"></a>
-
-函数功能：
-
-获取当前算子的Axis属性值。
-
-函数原型：
-
-```
-const int32_t GetArgMaxAxis() const;
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetArgMaxAxis<a name="ZH-CN_TOPIC_0000002408582558"></a> 函数功能： 获取当前算子的Axis属性值。 函数原型： ```
+const int32_t GetArgMaxAxis const;
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -5524,23 +2962,9 @@ const int32_t GetArgMaxAxis() const;
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetKeepDims<a name="ZH-CN_TOPIC_0000002408582414"></a>
-
-函数功能：
-
-配置输出是否需要保持维度数量不变。
-
-函数原型：
-
-```
+</table> #### SetKeepDims<a name="ZH-CN_TOPIC_0000002408582414"></a> 函数功能： 配置输出是否需要保持维度数量不变。 函数原型： ```
 void SetKeepDims(bool keepDims)
-```
-
-参数说明：
-
-<a name="table507mcpsimp"></a>
+``` 参数说明： <a name="table507mcpsimp"></a>
 <table><thead align="left"><tr id="row513mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p515mcpsimp"><a name="p515mcpsimp"></a><a name="p515mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p517mcpsimp"><a name="p517mcpsimp"></a><a name="p517mcpsimp"></a>输入/输出</p>
@@ -5557,23 +2981,9 @@ void SetKeepDims(bool keepDims)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetKeepDims<a name="ZH-CN_TOPIC_0000002408581982"></a>
-
-函数功能：
-
-获取输出是否需要保持维度数量不变。
-
-函数原型：
-
-```
-bool GetKeepDims() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetKeepDims<a name="ZH-CN_TOPIC_0000002408581982"></a> 函数功能： 获取输出是否需要保持维度数量不变。 函数原型： ```
+bool GetKeepDims const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -5590,23 +3000,9 @@ bool GetKeepDims() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetSelectLastIndex<a name="ZH-CN_TOPIC_0000002442021977"></a>
-
-函数功能：
-
-当有多个相同的最大值时，配置输出的最大值索引对应的是否为最后一个最大值。
-
-函数原型：
-
-```
+</table> #### SetSelectLastIndex<a name="ZH-CN_TOPIC_0000002442021977"></a> 函数功能： 当有多个相同的最大值时，配置输出的最大值索引对应的是否为最后一个最大值。 函数原型： ```
 void SetSelectLastIndex(bool selectLastIndex)
-```
-
-参数说明：
-
-<a name="table5429mcpsimp"></a>
+``` 参数说明： <a name="table5429mcpsimp"></a>
 <table><thead align="left"><tr id="row5435mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5437mcpsimp"><a name="p5437mcpsimp"></a><a name="p5437mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5439mcpsimp"><a name="p5439mcpsimp"></a><a name="p5439mcpsimp"></a>输入/输出</p>
@@ -5623,23 +3019,9 @@ void SetSelectLastIndex(bool selectLastIndex)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSelectLastIndex<a name="ZH-CN_TOPIC_0000002408582542"></a>
-
-函数功能：
-
-获取输出的最大值索引对应的是否为最后一个最大值。
-
-函数原型：
-
-```
-bool  GetSelectLastIndex() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSelectLastIndex<a name="ZH-CN_TOPIC_0000002408582542"></a> 函数功能： 获取输出的最大值索引对应的是否为最后一个最大值。 函数原型： ```
+bool GetSelectLastIndex const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -5656,27 +3038,9 @@ bool  GetSelectLastIndex() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### BinaryMathOperator配置接口<a name="ZH-CN_TOPIC_0000002408582462"></a>
-
-
-
-#### SetBinaryMathOp<a name="ZH-CN_TOPIC_0000002408422270"></a>
-
-函数功能：
-
-配置算数运算的类型。
-
-函数原型：
-
-```
+</table> ### BinaryMathOperator配置接口<a name="ZH-CN_TOPIC_0000002408582462"></a> #### SetBinaryMathOp<a name="ZH-CN_TOPIC_0000002408422270"></a> 函数功能： 配置算数运算的类型。 函数原型： ```
 void SetBinaryMathOp(BinaryMathOp binaryMathOp)
-```
-
-参数说明：
-
-<a name="table1186mcpsimp"></a>
+``` 参数说明： <a name="table1186mcpsimp"></a>
 <table><thead align="left"><tr id="row1192mcpsimp"><th class="cellrowborder" valign="top" width="10.97%" id="mcps1.1.5.1.1"><p id="p1194mcpsimp"><a name="p1194mcpsimp"></a><a name="p1194mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="8.02%" id="mcps1.1.5.1.2"><p id="p1196mcpsimp"><a name="p1196mcpsimp"></a><a name="p1196mcpsimp"></a>输入/输出</p>
@@ -5710,23 +3074,9 @@ void SetBinaryMathOp(BinaryMathOp binaryMathOp)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBinaryMathOp<a name="ZH-CN_TOPIC_0000002442021529"></a>
-
-函数功能：
-
-获取算数运算的类型。
-
-函数原型：
-
-```
-BinaryMathOp GetBinaryMathOp() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBinaryMathOp<a name="ZH-CN_TOPIC_0000002442021529"></a> 函数功能： 获取算数运算的类型。 函数原型： ```
+BinaryMathOp GetBinaryMathOp const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -5755,39 +3105,9 @@ BinaryMathOp GetBinaryMathOp() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### DecBboxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582402"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetDecBboxParam<a name="ZH-CN_TOPIC_0000002441982061"></a>
-
-函数功能：
-
-设置后处理参数，其paramType需要指定为PROPOSAL\_DECBBOX。
-
-函数原型：
-
-```
+</table> ### DecBboxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582402"></a> #### SetDecBboxParam<a name="ZH-CN_TOPIC_0000002441982061"></a> 函数功能： 设置后处理参数，其paramType需要指定为PROPOSAL\_DECBBOX。 函数原型： ```
 void SetDecBboxParam(struct DetectionOutputParam DecBboxParam)
-```
-
-参数说明：
-
-<a name="table5490mcpsimp"></a>
+``` 参数说明： <a name="table5490mcpsimp"></a>
 <table><thead align="left"><tr id="row5496mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5498mcpsimp"><a name="p5498mcpsimp"></a><a name="p5498mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5500mcpsimp"><a name="p5500mcpsimp"></a><a name="p5500mcpsimp"></a>输入/输出</p>
@@ -5804,23 +3124,9 @@ void SetDecBboxParam(struct DetectionOutputParam DecBboxParam)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetDecBboxParam<a name="ZH-CN_TOPIC_0000002442021281"></a>
-
-函数功能：
-
-获取后处理参数，其paramType需要指定为PROPOSAL\_DECBBOX。
-
-函数原型：
-
-```
-DetectionOutputParam GetDecBboxParam() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetDecBboxParam<a name="ZH-CN_TOPIC_0000002442021281"></a> 函数功能： 获取后处理参数，其paramType需要指定为PROPOSAL\_DECBBOX。 函数原型： ```
+DetectionOutputParam GetDecBboxParam const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -5837,23 +3143,9 @@ DetectionOutputParam GetDecBboxParam() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumGridsWidth<a name="ZH-CN_TOPIC_0000002408422698"></a>
-
-函数功能：
-
-配置宽度方向上grid数量。
-
-函数原型：
-
-```
+</table> #### SetNumGridsWidth<a name="ZH-CN_TOPIC_0000002408422698"></a> 函数功能： 配置宽度方向上grid数量。 函数原型： ```
 void SetNumGridsWidth(uint32_t numGridsWidth)
-```
-
-参数说明：
-
-<a name="table2575mcpsimp"></a>
+``` 参数说明： <a name="table2575mcpsimp"></a>
 <table><thead align="left"><tr id="row2581mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2583mcpsimp"><a name="p2583mcpsimp"></a><a name="p2583mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2585mcpsimp"><a name="p2585mcpsimp"></a><a name="p2585mcpsimp"></a>输入/输出</p>
@@ -5870,23 +3162,9 @@ void SetNumGridsWidth(uint32_t numGridsWidth)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumGridsWidth<a name="ZH-CN_TOPIC_0000002442021681"></a>
-
-函数功能：
-
-获取宽度方向上grid数量。
-
-函数原型：
-
-```
-uint32_t GetNumGridsWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumGridsWidth<a name="ZH-CN_TOPIC_0000002442021681"></a> 函数功能： 获取宽度方向上grid数量。 函数原型： ```
+uint32_t GetNumGridsWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -5903,23 +3181,9 @@ uint32_t GetNumGridsWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumGridsHeight<a name="ZH-CN_TOPIC_0000002408422510"></a>
-
-函数功能：
-
-配置高度方向上grid数量。
-
-函数原型：
-
-```
+</table> #### SetNumGridsHeight<a name="ZH-CN_TOPIC_0000002408422510"></a> 函数功能： 配置高度方向上grid数量。 函数原型： ```
 void SetNumGridsHeight(uint32_t numGridsHeight)
-```
-
-参数说明：
-
-<a name="table4923mcpsimp"></a>
+``` 参数说明： <a name="table4923mcpsimp"></a>
 <table><thead align="left"><tr id="row4929mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4931mcpsimp"><a name="p4931mcpsimp"></a><a name="p4931mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4933mcpsimp"><a name="p4933mcpsimp"></a><a name="p4933mcpsimp"></a>输入/输出</p>
@@ -5936,23 +3200,9 @@ void SetNumGridsHeight(uint32_t numGridsHeight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumGridsHeight<a name="ZH-CN_TOPIC_0000002442021737"></a>
-
-函数功能：
-
-获取高度方向上grid数量。
-
-函数原型：
-
-```
-uint32_t GetNumGridsHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumGridsHeight<a name="ZH-CN_TOPIC_0000002442021737"></a> 函数功能： 获取高度方向上grid数量。 函数原型： ```
+uint32_t GetNumGridsHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -5969,23 +3219,9 @@ uint32_t GetNumGridsHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumAnchors<a name="ZH-CN_TOPIC_0000002442021545"></a>
-
-函数功能：
-
-配置总框数。与SetNumBboxesPerGrid不同时使用。
-
-函数原型：
-
-```
+</table> #### SetNumAnchors<a name="ZH-CN_TOPIC_0000002442021545"></a> 函数功能： 配置总框数。与SetNumBboxesPerGrid不同时使用。 函数原型： ```
 void SetNumAnchors(uint32_t numAnchors)
-```
-
-参数说明：
-
-<a name="table5220mcpsimp"></a>
+``` 参数说明： <a name="table5220mcpsimp"></a>
 <table><thead align="left"><tr id="row5226mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5228mcpsimp"><a name="p5228mcpsimp"></a><a name="p5228mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5230mcpsimp"><a name="p5230mcpsimp"></a><a name="p5230mcpsimp"></a>输入/输出</p>
@@ -6002,23 +3238,9 @@ void SetNumAnchors(uint32_t numAnchors)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumAnchors<a name="ZH-CN_TOPIC_0000002408582090"></a>
-
-函数功能：
-
-获取总框数。与SetNumBboxesPerGrid不同时使用。
-
-函数原型：
-
-```
-uint32_t GetNumAnchors() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumAnchors<a name="ZH-CN_TOPIC_0000002408582090"></a> 函数功能： 获取总框数。与SetNumBboxesPerGrid不同时使用。 函数原型： ```
+uint32_t GetNumAnchors const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6035,23 +3257,9 @@ uint32_t GetNumAnchors() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002441982073"></a>
-
-函数功能：
-
-配置每个grid中框的数量。与SetNumAnchors不同时使用。
-
-函数原型：
-
-```
+</table> #### SetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002441982073"></a> 函数功能： 配置每个grid中框的数量。与SetNumAnchors不同时使用。 函数原型： ```
 void SetNumBboxesPerGrid(uint32_t numBboxesPerGrid)
-```
-
-参数说明：
-
-<a name="table3952mcpsimp"></a>
+``` 参数说明： <a name="table3952mcpsimp"></a>
 <table><thead align="left"><tr id="row3958mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3960mcpsimp"><a name="p3960mcpsimp"></a><a name="p3960mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3962mcpsimp"><a name="p3962mcpsimp"></a><a name="p3962mcpsimp"></a>输入/输出</p>
@@ -6068,23 +3276,9 @@ void SetNumBboxesPerGrid(uint32_t numBboxesPerGrid)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002408582690"></a>
-
-函数功能：
-
-获取每个grid中框的数量。与GetNumAnchors不同时使用。
-
-函数原型：
-
-```
-uint32_t GetNumBboxesPerGrid() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002408582690"></a> 函数功能： 获取每个grid中框的数量。与GetNumAnchors不同时使用。 函数原型： ```
+uint32_t GetNumBboxesPerGrid const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6101,23 +3295,9 @@ uint32_t GetNumBboxesPerGrid() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumCoords<a name="ZH-CN_TOPIC_0000002408422830"></a>
-
-函数功能：
-
-配置Coords的数量。
-
-函数原型：
-
-```
+</table> #### SetNumCoords<a name="ZH-CN_TOPIC_0000002408422830"></a> 函数功能： 配置Coords的数量。 函数原型： ```
 void SetNumCoords(uint32_t numCoords)
-```
-
-参数说明：
-
-<a name="table2749mcpsimp"></a>
+``` 参数说明： <a name="table2749mcpsimp"></a>
 <table><thead align="left"><tr id="row2755mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2757mcpsimp"><a name="p2757mcpsimp"></a><a name="p2757mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2759mcpsimp"><a name="p2759mcpsimp"></a><a name="p2759mcpsimp"></a>输入/输出</p>
@@ -6134,23 +3314,9 @@ void SetNumCoords(uint32_t numCoords)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumCoords<a name="ZH-CN_TOPIC_0000002408582026"></a>
-
-函数功能：
-
-获取Coords的数量。
-
-函数原型：
-
-```
-uint32_t GetNumCoords() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumCoords<a name="ZH-CN_TOPIC_0000002408582026"></a> 函数功能： 获取Coords的数量。 函数原型： ```
+uint32_t GetNumCoords const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6167,23 +3333,9 @@ uint32_t GetNumCoords() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumClasses<a name="ZH-CN_TOPIC_0000002441981629"></a>
-
-函数功能：
-
-配置检测目标类型总数。
-
-函数原型：
-
-```
+</table> #### SetNumClasses<a name="ZH-CN_TOPIC_0000002441981629"></a> 函数功能： 配置检测目标类型总数。 函数原型： ```
 void SetNumClasses(uint32_t numClasses)
-```
-
-参数说明：
-
-<a name="table3822mcpsimp"></a>
+``` 参数说明： <a name="table3822mcpsimp"></a>
 <table><thead align="left"><tr id="row3828mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3830mcpsimp"><a name="p3830mcpsimp"></a><a name="p3830mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3832mcpsimp"><a name="p3832mcpsimp"></a><a name="p3832mcpsimp"></a>输入/输出</p>
@@ -6200,23 +3352,9 @@ void SetNumClasses(uint32_t numClasses)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumClasses<a name="ZH-CN_TOPIC_0000002408421950"></a>
-
-函数功能：
-
-获取检测目标类型总数。
-
-函数原型：
-
-```
-uint32_t GetNumClasses() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumClasses<a name="ZH-CN_TOPIC_0000002408421950"></a> 函数功能： 获取检测目标类型总数。 函数原型： ```
+uint32_t GetNumClasses const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6233,30 +3371,9 @@ uint32_t GetNumClasses() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### EltwiseOperator配置接口<a name="ZH-CN_TOPIC_0000002408422186"></a>
-
-
-
-
-
-
-#### SetEltwiseOp<a name="ZH-CN_TOPIC_0000002408422822"></a>
-
-函数功能：
-
-配置算数运算的类型。
-
-函数原型：
-
-```
+</table> ### EltwiseOperator配置接口<a name="ZH-CN_TOPIC_0000002408422186"></a> #### SetEltwiseOp<a name="ZH-CN_TOPIC_0000002408422822"></a> 函数功能： 配置算数运算的类型。 函数原型： ```
 void SetEltwiseOp(BinaryMathOp eltwiseOp)
-```
-
-参数说明：
-
-<a name="table4724mcpsimp"></a>
+``` 参数说明： <a name="table4724mcpsimp"></a>
 <table><thead align="left"><tr id="row4730mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4732mcpsimp"><a name="p4732mcpsimp"></a><a name="p4732mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4734mcpsimp"><a name="p4734mcpsimp"></a><a name="p4734mcpsimp"></a>输入/输出</p>
@@ -6277,23 +3394,9 @@ void SetEltwiseOp(BinaryMathOp eltwiseOp)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetEltwiseOp<a name="ZH-CN_TOPIC_0000002442021573"></a>
-
-函数功能：
-
-获取算数运算的类型。
-
-函数原型：
-
-```
-BinaryMathOp GetEltwiseOp() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetEltwiseOp<a name="ZH-CN_TOPIC_0000002442021573"></a> 函数功能： 获取算数运算的类型。 函数原型： ```
+BinaryMathOp GetEltwiseOp const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6314,23 +3417,9 @@ BinaryMathOp GetEltwiseOp() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetEltCoeffVec<a name="ZH-CN_TOPIC_0000002408582658"></a>
-
-函数功能：
-
-配置coeff值集合。在sum时，每路输入乘以对应的系数。
-
-函数原型：
-
-```
+</table> #### SetEltCoeffVec<a name="ZH-CN_TOPIC_0000002408582658"></a> 函数功能： 配置coeff值集合。在sum时，每路输入乘以对应的系数。 函数原型： ```
 void SetEltCoeffVec(const vector<float> &eltCoeffVec)
-```
-
-参数说明：
-
-<a name="table2809mcpsimp"></a>
+``` 参数说明： <a name="table2809mcpsimp"></a>
 <table><thead align="left"><tr id="row2815mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2817mcpsimp"><a name="p2817mcpsimp"></a><a name="p2817mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2819mcpsimp"><a name="p2819mcpsimp"></a><a name="p2819mcpsimp"></a>输入/输出</p>
@@ -6347,23 +3436,9 @@ void SetEltCoeffVec(const vector<float> &eltCoeffVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetEltCoeffVec<a name="ZH-CN_TOPIC_0000002408582474"></a>
-
-函数功能：
-
-获取coeff值集合。在sum时，每路输入乘以对应的系数。
-
-函数原型：
-
-```
-const vector<float>& GetEltCoeffVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetEltCoeffVec<a name="ZH-CN_TOPIC_0000002408582474"></a> 函数功能： 获取coeff值集合。在sum时，每路输入乘以对应的系数。 函数原型： ```
+const vector<float>& GetEltCoeffVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6380,23 +3455,9 @@ const vector<float>& GetEltCoeffVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddEltCoeff<a name="ZH-CN_TOPIC_0000002441981889"></a>
-
-函数功能：
-
-添加一组coeff值。在sum时，每路输入乘以对应的系数。
-
-函数原型：
-
-```
+</table> #### AddEltCoeff<a name="ZH-CN_TOPIC_0000002441981889"></a> 函数功能： 添加一组coeff值。在sum时，每路输入乘以对应的系数。 函数原型： ```
 void AddEltCoeff(float eltCoeff)
-```
-
-参数说明：
-
-<a name="table3732mcpsimp"></a>
+``` 参数说明： <a name="table3732mcpsimp"></a>
 <table><thead align="left"><tr id="row3738mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3740mcpsimp"><a name="p3740mcpsimp"></a><a name="p3740mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3742mcpsimp"><a name="p3742mcpsimp"></a><a name="p3742mcpsimp"></a>输入/输出</p>
@@ -6413,31 +3474,9 @@ void AddEltCoeff(float eltCoeff)
 </td>
 </tr>
 </tbody>
-</table>
-
-### ExpOperator配置接口<a name="ZH-CN_TOPIC_0000002441981757"></a>
-
-
-
-
-
-
-
-#### SetExpBase<a name="ZH-CN_TOPIC_0000002441982153"></a>
-
-函数功能：
-
-配置exp运算的底数值。
-
-函数原型：
-
-```
+</table> ### ExpOperator配置接口<a name="ZH-CN_TOPIC_0000002441981757"></a> #### SetExpBase<a name="ZH-CN_TOPIC_0000002441982153"></a> 函数功能： 配置exp运算的底数值。 函数原型： ```
 void SetExpBase(float expBase)
-```
-
-参数说明：
-
-<a name="table1497mcpsimp"></a>
+``` 参数说明： <a name="table1497mcpsimp"></a>
 <table><thead align="left"><tr id="row1503mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1505mcpsimp"><a name="p1505mcpsimp"></a><a name="p1505mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1507mcpsimp"><a name="p1507mcpsimp"></a><a name="p1507mcpsimp"></a>输入/输出</p>
@@ -6454,23 +3493,9 @@ void SetExpBase(float expBase)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetExpBase<a name="ZH-CN_TOPIC_0000002408422210"></a>
-
-函数功能：
-
-获取exp运算的底数值。
-
-函数原型：
-
-```
-float GetExpBase() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetExpBase<a name="ZH-CN_TOPIC_0000002408422210"></a> 函数功能： 获取exp运算的底数值。 函数原型： ```
+float GetExpBase const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6487,23 +3512,9 @@ float GetExpBase() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetExpScale<a name="ZH-CN_TOPIC_0000002441982089"></a>
-
-函数功能：
-
-配置exp运算的scale缩放值。
-
-函数原型：
-
-```
+</table> #### SetExpScale<a name="ZH-CN_TOPIC_0000002441982089"></a> 函数功能： 配置exp运算的scale缩放值。 函数原型： ```
 void SetExpScale(float expScale)
-```
-
-参数说明：
-
-<a name="table4468mcpsimp"></a>
+``` 参数说明： <a name="table4468mcpsimp"></a>
 <table><thead align="left"><tr id="row4474mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4476mcpsimp"><a name="p4476mcpsimp"></a><a name="p4476mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4478mcpsimp"><a name="p4478mcpsimp"></a><a name="p4478mcpsimp"></a>输入/输出</p>
@@ -6520,23 +3531,9 @@ void SetExpScale(float expScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetExpScale<a name="ZH-CN_TOPIC_0000002408582338"></a>
-
-函数功能：
-
-获取exp运算的scale缩放值。
-
-函数原型：
-
-```
-float GetExpScale() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetExpScale<a name="ZH-CN_TOPIC_0000002408582338"></a> 函数功能： 获取exp运算的scale缩放值。 函数原型： ```
+float GetExpScale const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6553,23 +3550,9 @@ float GetExpScale() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetExpShift<a name="ZH-CN_TOPIC_0000002408582714"></a>
-
-函数功能：
-
-配置exp运算的shift偏移值。
-
-函数原型：
-
-```
+</table> #### SetExpShift<a name="ZH-CN_TOPIC_0000002408582714"></a> 函数功能： 配置exp运算的shift偏移值。 函数原型： ```
 void SetExpShift(float expShift)
-```
-
-参数说明：
-
-<a name="table4055mcpsimp"></a>
+``` 参数说明： <a name="table4055mcpsimp"></a>
 <table><thead align="left"><tr id="row4061mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4063mcpsimp"><a name="p4063mcpsimp"></a><a name="p4063mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4065mcpsimp"><a name="p4065mcpsimp"></a><a name="p4065mcpsimp"></a>输入/输出</p>
@@ -6586,23 +3569,9 @@ void SetExpShift(float expShift)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetExpShift<a name="ZH-CN_TOPIC_0000002408581946"></a>
-
-函数功能：
-
-获取exp运算的shift偏移值。
-
-函数原型：
-
-```
-float GetExpShift() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetExpShift<a name="ZH-CN_TOPIC_0000002408581946"></a> 函数功能： 获取exp运算的shift偏移值。 函数原型： ```
+float GetExpShift const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6619,41 +3588,9 @@ float GetExpShift() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### GatherOperator配置接口<a name="ZH-CN_TOPIC_0000002442021493"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-### InterpOperator配置接口<a name="ZH-CN_TOPIC_0000002408422862"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetInterpHeight<a name="ZH-CN_TOPIC_0000002408422666"></a>
-
-函数功能：
-
-配置双线性差值变形后的高度值。与SetInterpWidth配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。
-
-函数原型：
-
-```
+</table> ### GatherOperator配置接口<a name="ZH-CN_TOPIC_0000002442021493"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 ### InterpOperator配置接口<a name="ZH-CN_TOPIC_0000002408422862"></a> #### SetInterpHeight<a name="ZH-CN_TOPIC_0000002408422666"></a> 函数功能： 配置双线性差值变形后的高度值。与SetInterpWidth配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。 函数原型： ```
 void SetInterpHeight(int32_t interpHeight)
-```
-
-参数说明：
-
-<a name="table4560mcpsimp"></a>
+``` 参数说明： <a name="table4560mcpsimp"></a>
 <table><thead align="left"><tr id="row4566mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4568mcpsimp"><a name="p4568mcpsimp"></a><a name="p4568mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4570mcpsimp"><a name="p4570mcpsimp"></a><a name="p4570mcpsimp"></a>输入/输出</p>
@@ -6670,23 +3607,9 @@ void SetInterpHeight(int32_t interpHeight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInterpHeight<a name="ZH-CN_TOPIC_0000002441981997"></a>
-
-函数功能：
-
-获取双线性差值变形后的高度值。与SetInterpWidth配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。
-
-函数原型：
-
-```
-int32_t GetInterpHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInterpHeight<a name="ZH-CN_TOPIC_0000002441981997"></a> 函数功能： 获取双线性差值变形后的高度值。与SetInterpWidth配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。 函数原型： ```
+int32_t GetInterpHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6703,23 +3626,9 @@ int32_t GetInterpHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInterpWidth<a name="ZH-CN_TOPIC_0000002442021317"></a>
-
-函数功能：
-
-配置双线性差值变形后的宽度值。与SetInterpHeight配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。
-
-函数原型：
-
-```
+</table> #### SetInterpWidth<a name="ZH-CN_TOPIC_0000002442021317"></a> 函数功能： 配置双线性差值变形后的宽度值。与SetInterpHeight配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。 函数原型： ```
 void SetInterpWidth(int32_t interpWidth)
-```
-
-参数说明：
-
-<a name="table3466mcpsimp"></a>
+``` 参数说明： <a name="table3466mcpsimp"></a>
 <table><thead align="left"><tr id="row3472mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3474mcpsimp"><a name="p3474mcpsimp"></a><a name="p3474mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3476mcpsimp"><a name="p3476mcpsimp"></a><a name="p3476mcpsimp"></a>输入/输出</p>
@@ -6736,23 +3645,9 @@ void SetInterpWidth(int32_t interpWidth)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInterpWidth<a name="ZH-CN_TOPIC_0000002441981949"></a>
-
-函数功能：
-
-获取双线性差值变形后的宽度值。与SetInterpHeight配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。
-
-函数原型：
-
-```
-int32_t  GetInterpWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInterpWidth<a name="ZH-CN_TOPIC_0000002441981949"></a> 函数功能： 获取双线性差值变形后的宽度值。与SetInterpHeight配合使用，不能与SetInterpZoom、SetInterpShrink同时使用。 函数原型： ```
+int32_t GetInterpWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6769,23 +3664,9 @@ int32_t  GetInterpWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInterpZoom<a name="ZH-CN_TOPIC_0000002408582362"></a>
-
-函数功能：
-
-配置水平和竖直方向的放大系数。不能与SetInterpHeight、SetInterpWidth、SetInterpShrink同时使用。
-
-函数原型：
-
-```
+</table> #### SetInterpZoom<a name="ZH-CN_TOPIC_0000002408582362"></a> 函数功能： 配置水平和竖直方向的放大系数。不能与SetInterpHeight、SetInterpWidth、SetInterpShrink同时使用。 函数原型： ```
 void SetInterpZoom(int32_t interpZoom)
-```
-
-参数说明：
-
-<a name="table5312mcpsimp"></a>
+``` 参数说明： <a name="table5312mcpsimp"></a>
 <table><thead align="left"><tr id="row5318mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5320mcpsimp"><a name="p5320mcpsimp"></a><a name="p5320mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5322mcpsimp"><a name="p5322mcpsimp"></a><a name="p5322mcpsimp"></a>输入/输出</p>
@@ -6802,23 +3683,9 @@ void SetInterpZoom(int32_t interpZoom)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInterpZoom<a name="ZH-CN_TOPIC_0000002408582006"></a>
-
-函数功能：
-
-获取水平和竖直方向的放大系数。不能与SetInterpHeight、SetInterpWidth、SetInterpShrink同时使用。
-
-函数原型：
-
-```
-int32_t GetInterpZoom() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInterpZoom<a name="ZH-CN_TOPIC_0000002408582006"></a> 函数功能： 获取水平和竖直方向的放大系数。不能与SetInterpHeight、SetInterpWidth、SetInterpShrink同时使用。 函数原型： ```
+int32_t GetInterpZoom const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6835,23 +3702,9 @@ int32_t GetInterpZoom() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInterpShrink<a name="ZH-CN_TOPIC_0000002408582730"></a>
-
-函数功能：
-
-配置水平和竖直方向的缩小系数。不能与SetInterpHeight、SetInterpWidth、SetInterpZoom同时使用。
-
-函数原型：
-
-```
+</table> #### SetInterpShrink<a name="ZH-CN_TOPIC_0000002408582730"></a> 函数功能： 配置水平和竖直方向的缩小系数。不能与SetInterpHeight、SetInterpWidth、SetInterpZoom同时使用。 函数原型： ```
 void SetInterpShrink(int32_t interpShrink)
-```
-
-参数说明：
-
-<a name="table5771mcpsimp"></a>
+``` 参数说明： <a name="table5771mcpsimp"></a>
 <table><thead align="left"><tr id="row5777mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5779mcpsimp"><a name="p5779mcpsimp"></a><a name="p5779mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5781mcpsimp"><a name="p5781mcpsimp"></a><a name="p5781mcpsimp"></a>输入/输出</p>
@@ -6868,23 +3721,9 @@ void SetInterpShrink(int32_t interpShrink)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInterpShrink<a name="ZH-CN_TOPIC_0000002441981905"></a>
-
-函数功能：
-
-获取水平和竖直方向的缩小系数。不能与SetInterpHeight、SetInterpWidth、SetInterpZoom同时使用。
-
-函数原型：
-
-```
-int32_t GetInterpShrink() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInterpShrink<a name="ZH-CN_TOPIC_0000002441981905"></a> 函数功能： 获取水平和竖直方向的缩小系数。不能与SetInterpHeight、SetInterpWidth、SetInterpZoom同时使用。 函数原型： ```
+int32_t GetInterpShrink const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6901,23 +3740,9 @@ int32_t GetInterpShrink() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInterpPadBeg<a name="ZH-CN_TOPIC_0000002441982129"></a>
-
-函数功能：
-
-配置水平和竖直方向起始位置，即负补边值。只能为负值或0。
-
-函数原型：
-
-```
+</table> #### SetInterpPadBeg<a name="ZH-CN_TOPIC_0000002441982129"></a> 函数功能： 配置水平和竖直方向起始位置，即负补边值。只能为负值或0。 函数原型： ```
 void SetInterpPadBeg(int32_t interpPadBeg)
-```
-
-参数说明：
-
-<a name="table3495mcpsimp"></a>
+``` 参数说明： <a name="table3495mcpsimp"></a>
 <table><thead align="left"><tr id="row3501mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3503mcpsimp"><a name="p3503mcpsimp"></a><a name="p3503mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3505mcpsimp"><a name="p3505mcpsimp"></a><a name="p3505mcpsimp"></a>输入/输出</p>
@@ -6934,23 +3759,9 @@ void SetInterpPadBeg(int32_t interpPadBeg)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInterpPadBeg<a name="ZH-CN_TOPIC_0000002408582522"></a>
-
-函数功能：
-
-获取水平和竖直方向起始位置，即负补边值。只能为负值或0。
-
-函数原型：
-
-```
-int32_t GetInterpPadBeg() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInterpPadBeg<a name="ZH-CN_TOPIC_0000002408582522"></a> 函数功能： 获取水平和竖直方向起始位置，即负补边值。只能为负值或0。 函数原型： ```
+int32_t GetInterpPadBeg const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -6967,23 +3778,9 @@ int32_t GetInterpPadBeg() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInterpPadEnd<a name="ZH-CN_TOPIC_0000002442022001"></a>
-
-函数功能：
-
-配置水平和竖直方向结束位置，即负补边值。只能为负值或0。
-
-函数原型：
-
-```
+</table> #### SetInterpPadEnd<a name="ZH-CN_TOPIC_0000002442022001"></a> 函数功能： 配置水平和竖直方向结束位置，即负补边值。只能为负值或0。 函数原型： ```
 void SetInterpPadEnd(int32_t interpPadEnd)
-```
-
-参数说明：
-
-<a name="table3138mcpsimp"></a>
+``` 参数说明： <a name="table3138mcpsimp"></a>
 <table><thead align="left"><tr id="row3144mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3146mcpsimp"><a name="p3146mcpsimp"></a><a name="p3146mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3148mcpsimp"><a name="p3148mcpsimp"></a><a name="p3148mcpsimp"></a>输入/输出</p>
@@ -7000,23 +3797,9 @@ void SetInterpPadEnd(int32_t interpPadEnd)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInterpPadEnd<a name="ZH-CN_TOPIC_0000002441981745"></a>
-
-函数功能：
-
-获取水平和竖直方向结束位置，即负补边值。只能为负值或0。
-
-函数原型：
-
-```
-int32_t GetInterpPadEnd() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInterpPadEnd<a name="ZH-CN_TOPIC_0000002441981745"></a> 函数功能： 获取水平和竖直方向结束位置，即负补边值。只能为负值或0。 函数原型： ```
+int32_t GetInterpPadEnd const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7033,33 +3816,9 @@ int32_t GetInterpPadEnd() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### LrnOperator配置接口<a name="ZH-CN_TOPIC_0000002441981533"></a>
-
-
-
-
-
-
-
-
-
-#### SetLrnLocalSize<a name="ZH-CN_TOPIC_0000002442021961"></a>
-
-函数功能：
-
-配置Lrn运算的size值。
-
-函数原型：
-
-```
+</table> ### LrnOperator配置接口<a name="ZH-CN_TOPIC_0000002441981533"></a> #### SetLrnLocalSize<a name="ZH-CN_TOPIC_0000002442021961"></a> 函数功能： 配置Lrn运算的size值。 函数原型： ```
 void SetLrnLocalSize(uint32_t lrnLocalSize)
-```
-
-参数说明：
-
-<a name="table749mcpsimp"></a>
+``` 参数说明： <a name="table749mcpsimp"></a>
 <table><thead align="left"><tr id="row755mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p757mcpsimp"><a name="p757mcpsimp"></a><a name="p757mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p759mcpsimp"><a name="p759mcpsimp"></a><a name="p759mcpsimp"></a>输入/输出</p>
@@ -7076,23 +3835,9 @@ void SetLrnLocalSize(uint32_t lrnLocalSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLrnLocalSize<a name="ZH-CN_TOPIC_0000002441981405"></a>
-
-函数功能：
-
-获取Lrn运算的size值。
-
-函数原型：
-
-```
-uint32_t GetLrnLocalSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLrnLocalSize<a name="ZH-CN_TOPIC_0000002441981405"></a> 函数功能： 获取Lrn运算的size值。 函数原型： ```
+uint32_t GetLrnLocalSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7109,23 +3854,9 @@ uint32_t GetLrnLocalSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetLrnAlpha<a name="ZH-CN_TOPIC_0000002441981917"></a>
-
-函数功能：
-
-配置Lrn运算的alpha值。
-
-函数原型：
-
-```
+</table> #### SetLrnAlpha<a name="ZH-CN_TOPIC_0000002441981917"></a> 函数功能： 配置Lrn运算的alpha值。 函数原型： ```
 void SetLrnAlpha(float lrnAlpha)
-```
-
-参数说明：
-
-<a name="table5646mcpsimp"></a>
+``` 参数说明： <a name="table5646mcpsimp"></a>
 <table><thead align="left"><tr id="row5652mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5654mcpsimp"><a name="p5654mcpsimp"></a><a name="p5654mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5656mcpsimp"><a name="p5656mcpsimp"></a><a name="p5656mcpsimp"></a>输入/输出</p>
@@ -7142,23 +3873,9 @@ void SetLrnAlpha(float lrnAlpha)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLrnAlpha<a name="ZH-CN_TOPIC_0000002442021877"></a>
-
-函数功能：
-
-获取Lrn运算的alpha值。
-
-函数原型：
-
-```
-float GetLrnAlpha() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLrnAlpha<a name="ZH-CN_TOPIC_0000002442021877"></a> 函数功能： 获取Lrn运算的alpha值。 函数原型： ```
+float GetLrnAlpha const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7175,23 +3892,9 @@ float GetLrnAlpha() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetLrnBeta<a name="ZH-CN_TOPIC_0000002408582206"></a>
-
-函数功能：
-
-配置Lrn运算的beta值。
-
-函数原型：
-
-```
+</table> #### SetLrnBeta<a name="ZH-CN_TOPIC_0000002408582206"></a> 函数功能： 配置Lrn运算的beta值。 函数原型： ```
 void SetLrnBeta(float lrnBeta)
-```
-
-参数说明：
-
-<a name="table3703mcpsimp"></a>
+``` 参数说明： <a name="table3703mcpsimp"></a>
 <table><thead align="left"><tr id="row3709mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3711mcpsimp"><a name="p3711mcpsimp"></a><a name="p3711mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3713mcpsimp"><a name="p3713mcpsimp"></a><a name="p3713mcpsimp"></a>输入/输出</p>
@@ -7208,23 +3911,9 @@ void SetLrnBeta(float lrnBeta)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLrnBeta<a name="ZH-CN_TOPIC_0000002408582638"></a>
-
-函数功能：
-
-获取Lrn运算的beta值。
-
-函数原型：
-
-```
-float GetLrnBeta() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLrnBeta<a name="ZH-CN_TOPIC_0000002408582638"></a> 函数功能： 获取Lrn运算的beta值。 函数原型： ```
+float GetLrnBeta const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7241,23 +3930,9 @@ float GetLrnBeta() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetLrnK<a name="ZH-CN_TOPIC_0000002442021617"></a>
-
-函数功能：
-
-配置Lrn运算的k值。
-
-函数原型：
-
-```
+</table> #### SetLrnK<a name="ZH-CN_TOPIC_0000002442021617"></a> 函数功能： 配置Lrn运算的k值。 函数原型： ```
 void SetLrnK(float lrnK)
-```
-
-参数说明：
-
-<a name="table691mcpsimp"></a>
+``` 参数说明： <a name="table691mcpsimp"></a>
 <table><thead align="left"><tr id="row697mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p699mcpsimp"><a name="p699mcpsimp"></a><a name="p699mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p701mcpsimp"><a name="p701mcpsimp"></a><a name="p701mcpsimp"></a>输入/输出</p>
@@ -7274,23 +3949,9 @@ void SetLrnK(float lrnK)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLrnK<a name="ZH-CN_TOPIC_0000002408422170"></a>
-
-函数功能：
-
-获取Lrn运算的k值。
-
-函数原型：
-
-```
-float GetLrnK() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLrnK<a name="ZH-CN_TOPIC_0000002408422170"></a> 函数功能： 获取Lrn运算的k值。 函数原型： ```
+float GetLrnK const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7307,33 +3968,9 @@ float GetLrnK() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### MvnOperator配置接口<a name="ZH-CN_TOPIC_0000002441982133"></a>
-
-
-
-
-
-
-
-
-
-#### SetMVNNormalizeVariance<a name="ZH-CN_TOPIC_0000002408582710"></a>
-
-函数功能：
-
-设为false时只减均值，默认为true。
-
-函数原型：
-
-```
+</table> ### MvnOperator配置接口<a name="ZH-CN_TOPIC_0000002441982133"></a> #### SetMVNNormalizeVariance<a name="ZH-CN_TOPIC_0000002408582710"></a> 函数功能： 设为false时只减均值，默认为true。 函数原型： ```
 void SetMVNNormalizeVariance(bool flag)
-```
-
-参数说明：
-
-<a name="table2778mcpsimp"></a>
+``` 参数说明： <a name="table2778mcpsimp"></a>
 <table><thead align="left"><tr id="row2784mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2786mcpsimp"><a name="p2786mcpsimp"></a><a name="p2786mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2788mcpsimp"><a name="p2788mcpsimp"></a><a name="p2788mcpsimp"></a>输入/输出</p>
@@ -7350,23 +3987,9 @@ void SetMVNNormalizeVariance(bool flag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetMVNNormalizeVariance<a name="ZH-CN_TOPIC_0000002408582466"></a>
-
-函数功能：
-
-获取是否只减均值。false时只减均值，默认为true。
-
-函数原型：
-
-```
-bool GetMVNNormalizeVariance() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetMVNNormalizeVariance<a name="ZH-CN_TOPIC_0000002408582466"></a> 函数功能： 获取是否只减均值。false时只减均值，默认为true。 函数原型： ```
+bool GetMVNNormalizeVariance const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7383,23 +4006,9 @@ bool GetMVNNormalizeVariance() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetMVNAcrossChannels<a name="ZH-CN_TOPIC_0000002441982093"></a>
-
-函数功能：
-
-设为true时就使CHW视为一个向量，默认为flase。
-
-函数原型：
-
-```
+</table> #### SetMVNAcrossChannels<a name="ZH-CN_TOPIC_0000002441982093"></a> 函数功能： 设为true时就使CHW视为一个向量，默认为flase。 函数原型： ```
 void SetMVNAcrossChannels(bool flag)
-```
-
-参数说明：
-
-<a name="table4989mcpsimp"></a>
+``` 参数说明： <a name="table4989mcpsimp"></a>
 <table><thead align="left"><tr id="row4995mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4997mcpsimp"><a name="p4997mcpsimp"></a><a name="p4997mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4999mcpsimp"><a name="p4999mcpsimp"></a><a name="p4999mcpsimp"></a>输入/输出</p>
@@ -7416,23 +4025,9 @@ void SetMVNAcrossChannels(bool flag)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetMVNAcrossChannels<a name="ZH-CN_TOPIC_0000002408582454"></a>
-
-函数功能：
-
-获取是否将CHW视为一个向量。设为true时就使CHW视为一个向量，默认为flase
-
-函数原型：
-
-```
-bool GetMVNAcrossChannels() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetMVNAcrossChannels<a name="ZH-CN_TOPIC_0000002408582454"></a> 函数功能： 获取是否将CHW视为一个向量。设为true时就使CHW视为一个向量，默认为flase 函数原型： ```
+bool GetMVNAcrossChannels const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7449,23 +4044,9 @@ bool GetMVNAcrossChannels() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetMVNEps<a name="ZH-CN_TOPIC_0000002408582238"></a>
-
-函数功能：
-
-Epsilon为了防止除零，默认值5.96e-8，可以配置。
-
-函数原型：
-
-```
+</table> #### SetMVNEps<a name="ZH-CN_TOPIC_0000002408582238"></a> 函数功能： Epsilon为了防止除零，默认值5.96e-8，可以配置。 函数原型： ```
 void SetMVNEps(float eps)
-```
-
-参数说明：
-
-<a name="table5461mcpsimp"></a>
+``` 参数说明： <a name="table5461mcpsimp"></a>
 <table><thead align="left"><tr id="row5467mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5469mcpsimp"><a name="p5469mcpsimp"></a><a name="p5469mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5471mcpsimp"><a name="p5471mcpsimp"></a><a name="p5471mcpsimp"></a>输入/输出</p>
@@ -7482,23 +4063,9 @@ void SetMVNEps(float eps)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetMVNEps<a name="ZH-CN_TOPIC_0000002408422386"></a>
-
-函数功能：
-
-获取Epsilon值，为了防止除零，默认值5.96e-8。
-
-函数原型：
-
-```
-float GetMVNEps() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetMVNEps<a name="ZH-CN_TOPIC_0000002408422386"></a> 函数功能： 获取Epsilon值，为了防止除零，默认值5.96e-8。 函数原型： ```
+float GetMVNEps const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7515,23 +4082,9 @@ float GetMVNEps() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushMVNAxes<a name="ZH-CN_TOPIC_0000002408422782"></a>
-
-函数功能：
-
-添加一组参与运算的轴。
-
-函数原型：
-
-```
+</table> #### PushMVNAxes<a name="ZH-CN_TOPIC_0000002408422782"></a> 函数功能： 添加一组参与运算的轴。 函数原型： ```
 void PushMVNAxes(uint32_t axis)
-```
-
-参数说明：
-
-<a name="table3922mcpsimp"></a>
+``` 参数说明： <a name="table3922mcpsimp"></a>
 <table><thead align="left"><tr id="row3928mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3930mcpsimp"><a name="p3930mcpsimp"></a><a name="p3930mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3932mcpsimp"><a name="p3932mcpsimp"></a><a name="p3932mcpsimp"></a>输入/输出</p>
@@ -7548,23 +4101,9 @@ void PushMVNAxes(uint32_t axis)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetMVNAxes<a name="ZH-CN_TOPIC_0000002441981797"></a>
-
-函数功能：
-
-获取所有参与运算的轴。
-
-函数原型：
-
-```
-vector<uint32_t> GetMVNAxes() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetMVNAxes<a name="ZH-CN_TOPIC_0000002441981797"></a> 函数功能： 获取所有参与运算的轴。 函数原型： ```
+vector<uint32_t> GetMVNAxes const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7581,36 +4120,9 @@ vector<uint32_t> GetMVNAxes() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### NormalizeOperator配置接口<a name="ZH-CN_TOPIC_0000002441982081"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetNormAcrossSpatial<a name="ZH-CN_TOPIC_0000002442021377"></a>
-
-函数功能：
-
-配置是否在全空间做normalize运算。
-
-函数原型：
-
-```
+</table> ### NormalizeOperator配置接口<a name="ZH-CN_TOPIC_0000002441982081"></a> #### SetNormAcrossSpatial<a name="ZH-CN_TOPIC_0000002442021377"></a> 函数功能： 配置是否在全空间做normalize运算。 函数原型： ```
 void SetNormAcrossSpatial(bool normAcrossSpatial)
-```
-
-参数说明：
-
-<a name="table3791mcpsimp"></a>
+``` 参数说明： <a name="table3791mcpsimp"></a>
 <table><thead align="left"><tr id="row3797mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3799mcpsimp"><a name="p3799mcpsimp"></a><a name="p3799mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3801mcpsimp"><a name="p3801mcpsimp"></a><a name="p3801mcpsimp"></a>输入/输出</p>
@@ -7627,23 +4139,9 @@ void SetNormAcrossSpatial(bool normAcrossSpatial)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNormAcrossSpatial<a name="ZH-CN_TOPIC_0000002442021085"></a>
-
-函数功能：
-
-获取是否在全空间做normalize运算。
-
-函数原型：
-
-```
-bool GetNormAcrossSpatial() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNormAcrossSpatial<a name="ZH-CN_TOPIC_0000002442021085"></a> 函数功能： 获取是否在全空间做normalize运算。 函数原型： ```
+bool GetNormAcrossSpatial const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7660,23 +4158,9 @@ bool GetNormAcrossSpatial() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNormChannelShared<a name="ZH-CN_TOPIC_0000002408422218"></a>
-
-函数功能：
-
-配置不同通道是否使用相同的参数。
-
-函数原型：
-
-```
+</table> #### SetNormChannelShared<a name="ZH-CN_TOPIC_0000002408422218"></a> 函数功能： 配置不同通道是否使用相同的参数。 函数原型： ```
 void SetNormChannelShared(bool normChannelShared)
-```
-
-参数说明：
-
-<a name="table108mcpsimp"></a>
+``` 参数说明： <a name="table108mcpsimp"></a>
 <table><thead align="left"><tr id="row114mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p116mcpsimp"><a name="p116mcpsimp"></a><a name="p116mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p118mcpsimp"><a name="p118mcpsimp"></a><a name="p118mcpsimp"></a>输入/输出</p>
@@ -7693,23 +4177,9 @@ void SetNormChannelShared(bool normChannelShared)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNormChannelShared<a name="ZH-CN_TOPIC_0000002441981969"></a>
-
-函数功能：
-
-获取不同通道是否使用相同的参数。
-
-函数原型：
-
-```
-bool GetNormChannelShared() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNormChannelShared<a name="ZH-CN_TOPIC_0000002441981969"></a> 函数功能： 获取不同通道是否使用相同的参数。 函数原型： ```
+bool GetNormChannelShared const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7726,23 +4196,9 @@ bool GetNormChannelShared() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNormAlpha<a name="ZH-CN_TOPIC_0000002408422598"></a>
-
-函数功能：
-
-配置Norm运算中alpha参数的值。
-
-函数原型：
-
-```
+</table> #### SetNormAlpha<a name="ZH-CN_TOPIC_0000002408422598"></a> 函数功能： 配置Norm运算中alpha参数的值。 函数原型： ```
 void SetNormAlpha(float normAlpha)
-```
-
-参数说明：
-
-<a name="table224mcpsimp"></a>
+``` 参数说明： <a name="table224mcpsimp"></a>
 <table><thead align="left"><tr id="row230mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p232mcpsimp"><a name="p232mcpsimp"></a><a name="p232mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p234mcpsimp"><a name="p234mcpsimp"></a><a name="p234mcpsimp"></a>输入/输出</p>
@@ -7759,23 +4215,9 @@ void SetNormAlpha(float normAlpha)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNormAlpha<a name="ZH-CN_TOPIC_0000002442021881"></a>
-
-函数功能：
-
-获取Norm运算中alpha参数的值。
-
-函数原型：
-
-```
-float GetNormAlpha() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNormAlpha<a name="ZH-CN_TOPIC_0000002442021881"></a> 函数功能： 获取Norm运算中alpha参数的值。 函数原型： ```
+float GetNormAlpha const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7792,23 +4234,9 @@ float GetNormAlpha() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNormEps<a name="ZH-CN_TOPIC_0000002408582790"></a>
-
-函数功能：
-
-为了防止除0，默认值1e-10。
-
-函数原型：
-
-```
+</table> #### SetNormEps<a name="ZH-CN_TOPIC_0000002408582790"></a> 函数功能： 为了防止除0，默认值1e-10。 函数原型： ```
 void SetNormEps(float normEps)
-```
-
-参数说明：
-
-<a name="table195mcpsimp"></a>
+``` 参数说明： <a name="table195mcpsimp"></a>
 <table><thead align="left"><tr id="row201mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p203mcpsimp"><a name="p203mcpsimp"></a><a name="p203mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p205mcpsimp"><a name="p205mcpsimp"></a><a name="p205mcpsimp"></a>输入/输出</p>
@@ -7825,23 +4253,9 @@ void SetNormEps(float normEps)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNormEps<a name="ZH-CN_TOPIC_0000002408422022"></a>
-
-函数功能：
-
-获取Epsilon值，为了防止除零，默认值1e-10。
-
-函数原型：
-
-```
-float GetNormEps() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNormEps<a name="ZH-CN_TOPIC_0000002408422022"></a> 函数功能： 获取Epsilon值，为了防止除零，默认值1e-10。 函数原型： ```
+float GetNormEps const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7858,23 +4272,9 @@ float GetNormEps() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNormScaleVec<a name="ZH-CN_TOPIC_0000002408582774"></a>
-
-函数功能：
-
-配置所有通道的scale参数值。
-
-函数原型：
-
-```
+</table> #### SetNormScaleVec<a name="ZH-CN_TOPIC_0000002408582774"></a> 函数功能： 配置所有通道的scale参数值。 函数原型： ```
 void SetNormScaleVec(vector<float> normScaleVec)
-```
-
-参数说明：
-
-<a name="table2218mcpsimp"></a>
+``` 参数说明： <a name="table2218mcpsimp"></a>
 <table><thead align="left"><tr id="row2224mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2226mcpsimp"><a name="p2226mcpsimp"></a><a name="p2226mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2228mcpsimp"><a name="p2228mcpsimp"></a><a name="p2228mcpsimp"></a>输入/输出</p>
@@ -7891,23 +4291,9 @@ void SetNormScaleVec(vector<float> normScaleVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNormScaleVec<a name="ZH-CN_TOPIC_0000002408422606"></a>
-
-函数功能：
-
-获取所有通道的scale参数值。
-
-函数原型：
-
-```
-vector<float> GetNormScaleVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNormScaleVec<a name="ZH-CN_TOPIC_0000002408422606"></a> 函数功能： 获取所有通道的scale参数值。 函数原型： ```
+vector<float> GetNormScaleVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -7924,23 +4310,9 @@ vector<float> GetNormScaleVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushNormScale<a name="ZH-CN_TOPIC_0000002442021697"></a>
-
-函数功能：
-
-添加一个通道的scale参数值。
-
-函数原型：
-
-```
+</table> #### PushNormScale<a name="ZH-CN_TOPIC_0000002442021697"></a> 函数功能： 添加一个通道的scale参数值。 函数原型： ```
 void PushNormScale(float normScale)
-```
-
-参数说明：
-
-<a name="table4960mcpsimp"></a>
+``` 参数说明： <a name="table4960mcpsimp"></a>
 <table><thead align="left"><tr id="row4966mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4968mcpsimp"><a name="p4968mcpsimp"></a><a name="p4968mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4970mcpsimp"><a name="p4970mcpsimp"></a><a name="p4970mcpsimp"></a>输入/输出</p>
@@ -7957,33 +4329,9 @@ void PushNormScale(float normScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-### PassthroughOperator配置接口<a name="ZH-CN_TOPIC_0000002408582738"></a>
-
-Reorg算子与Passthrough算子功能一致，统一使用PassthroughOperator构图。
-
-
-
-
-
-
-
-#### SetPassThroughNumOutput<a name="ZH-CN_TOPIC_0000002441982121"></a>
-
-函数功能：
-
-配置输出数据通道数。
-
-函数原型：
-
-```
+</table> ### PassthroughOperator配置接口<a name="ZH-CN_TOPIC_0000002408582738"></a> Reorg算子与Passthrough算子功能一致，统一使用PassthroughOperator构图。 #### SetPassThroughNumOutput<a name="ZH-CN_TOPIC_0000002441982121"></a> 函数功能： 配置输出数据通道数。 函数原型： ```
 void SetPassThroughNumOutput(uint32_t numOuput)
-```
-
-参数说明：
-
-<a name="table137mcpsimp"></a>
+``` 参数说明： <a name="table137mcpsimp"></a>
 <table><thead align="left"><tr id="row143mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p145mcpsimp"><a name="p145mcpsimp"></a><a name="p145mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p147mcpsimp"><a name="p147mcpsimp"></a><a name="p147mcpsimp"></a>输入/输出</p>
@@ -8000,23 +4348,9 @@ void SetPassThroughNumOutput(uint32_t numOuput)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPassThroughNumOutput<a name="ZH-CN_TOPIC_0000002408422582"></a>
-
-函数功能：
-
-获取输出数据通道数。
-
-函数原型：
-
-```
-uint32_t GetPassThroughNumOutput() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPassThroughNumOutput<a name="ZH-CN_TOPIC_0000002408422582"></a> 函数功能： 获取输出数据通道数。 函数原型： ```
+uint32_t GetPassThroughNumOutput const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8033,23 +4367,9 @@ uint32_t GetPassThroughNumOutput() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPassThroughBlockHeight<a name="ZH-CN_TOPIC_0000002408582246"></a>
-
-函数功能：
-
-配置H方向block单元的长度，即H方向尺寸缩小的倍数。
-
-函数原型：
-
-```
+</table> #### SetPassThroughBlockHeight<a name="ZH-CN_TOPIC_0000002408582246"></a> 函数功能： 配置H方向block单元的长度，即H方向尺寸缩小的倍数。 函数原型： ```
 void SetPassThroughBlockHeight(uint32_t height)
-```
-
-参数说明：
-
-<a name="table5283mcpsimp"></a>
+``` 参数说明： <a name="table5283mcpsimp"></a>
 <table><thead align="left"><tr id="row5289mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5291mcpsimp"><a name="p5291mcpsimp"></a><a name="p5291mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5293mcpsimp"><a name="p5293mcpsimp"></a><a name="p5293mcpsimp"></a>输入/输出</p>
@@ -8066,23 +4386,9 @@ void SetPassThroughBlockHeight(uint32_t height)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPassThroughBlockHeight<a name="ZH-CN_TOPIC_0000002408422258"></a>
-
-函数功能：
-
-获取H方向block单元的长度，即H方向尺寸缩小的倍数。
-
-函数原型：
-
-```
-uint32_t GetPassThroughBlockHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPassThroughBlockHeight<a name="ZH-CN_TOPIC_0000002408422258"></a> 函数功能： 获取H方向block单元的长度，即H方向尺寸缩小的倍数。 函数原型： ```
+uint32_t GetPassThroughBlockHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8099,23 +4405,9 @@ uint32_t GetPassThroughBlockHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPassThroughBlockWidth<a name="ZH-CN_TOPIC_0000002441981685"></a>
-
-函数功能：
-
-配置W方向block单元的长度，即W方向尺寸缩小的倍数。
-
-函数原型：
-
-```
+</table> #### SetPassThroughBlockWidth<a name="ZH-CN_TOPIC_0000002441981685"></a> 函数功能： 配置W方向block单元的长度，即W方向尺寸缩小的倍数。 函数原型： ```
 void SetPassThroughBlockWidth(uint32_t width)
-```
-
-参数说明：
-
-<a name="table1655mcpsimp"></a>
+``` 参数说明： <a name="table1655mcpsimp"></a>
 <table><thead align="left"><tr id="row1661mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1663mcpsimp"><a name="p1663mcpsimp"></a><a name="p1663mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1665mcpsimp"><a name="p1665mcpsimp"></a><a name="p1665mcpsimp"></a>输入/输出</p>
@@ -8132,23 +4424,9 @@ void SetPassThroughBlockWidth(uint32_t width)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPassThroughBlockWidth<a name="ZH-CN_TOPIC_0000002408422446"></a>
-
-函数功能：
-
-获取W方向block单元的长度，即W方向尺寸缩小的倍数。
-
-函数原型：
-
-```
-uint32_t GetPassThroughBlockWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPassThroughBlockWidth<a name="ZH-CN_TOPIC_0000002408422446"></a> 函数功能： 获取W方向block单元的长度，即W方向尺寸缩小的倍数。 函数原型： ```
+uint32_t GetPassThroughBlockWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8165,31 +4443,9 @@ uint32_t GetPassThroughBlockWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### PowerOperator配置接口<a name="ZH-CN_TOPIC_0000002408422654"></a>
-
-
-
-
-
-
-
-#### SetPowerPower<a name="ZH-CN_TOPIC_0000002408422810"></a>
-
-函数功能：
-
-配置Power运算的幂指数。
-
-函数原型：
-
-```
+</table> ### PowerOperator配置接口<a name="ZH-CN_TOPIC_0000002408422654"></a> #### SetPowerPower<a name="ZH-CN_TOPIC_0000002408422810"></a> 函数功能： 配置Power运算的幂指数。 函数原型： ```
 void SetPowerPower(float powerPower)
-```
-
-参数说明：
-
-<a name="table538mcpsimp"></a>
+``` 参数说明： <a name="table538mcpsimp"></a>
 <table><thead align="left"><tr id="row544mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p546mcpsimp"><a name="p546mcpsimp"></a><a name="p546mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p548mcpsimp"><a name="p548mcpsimp"></a><a name="p548mcpsimp"></a>输入/输出</p>
@@ -8206,23 +4462,9 @@ void SetPowerPower(float powerPower)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPowerPower<a name="ZH-CN_TOPIC_0000002441981377"></a>
-
-函数功能：
-
-获取Power运算的幂指数。
-
-函数原型：
-
-```
-float GetPowerPower() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPowerPower<a name="ZH-CN_TOPIC_0000002441981377"></a> 函数功能： 获取Power运算的幂指数。 函数原型： ```
+float GetPowerPower const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8239,23 +4481,9 @@ float GetPowerPower() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPowerScale<a name="ZH-CN_TOPIC_0000002408422834"></a>
-
-函数功能：
-
-配置缩放系数。
-
-函数原型：
-
-```
+</table> #### SetPowerScale<a name="ZH-CN_TOPIC_0000002408422834"></a> 函数功能： 配置缩放系数。 函数原型： ```
 void SetPowerScale(float powerScale)
-```
-
-参数说明：
-
-<a name="table166mcpsimp"></a>
+``` 参数说明： <a name="table166mcpsimp"></a>
 <table><thead align="left"><tr id="row172mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p174mcpsimp"><a name="p174mcpsimp"></a><a name="p174mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p176mcpsimp"><a name="p176mcpsimp"></a><a name="p176mcpsimp"></a>输入/输出</p>
@@ -8272,23 +4500,9 @@ void SetPowerScale(float powerScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPowerScale<a name="ZH-CN_TOPIC_0000002408422734"></a>
-
-函数功能：
-
-获取缩放系数。
-
-函数原型：
-
-```
-float GetPowerScale() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPowerScale<a name="ZH-CN_TOPIC_0000002408422734"></a> 函数功能： 获取缩放系数。 函数原型： ```
+float GetPowerScale const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8305,23 +4519,9 @@ float GetPowerScale() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPowerShift<a name="ZH-CN_TOPIC_0000002408582554"></a>
-
-函数功能：
-
-配置偏移系数。
-
-函数原型：
-
-```
+</table> #### SetPowerShift<a name="ZH-CN_TOPIC_0000002408582554"></a> 函数功能： 配置偏移系数。 函数原型： ```
 void SetPowerShift(float powerShift)
-```
-
-参数说明：
-
-<a name="table3437mcpsimp"></a>
+``` 参数说明： <a name="table3437mcpsimp"></a>
 <table><thead align="left"><tr id="row3443mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3445mcpsimp"><a name="p3445mcpsimp"></a><a name="p3445mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3447mcpsimp"><a name="p3447mcpsimp"></a><a name="p3447mcpsimp"></a>输入/输出</p>
@@ -8338,23 +4538,9 @@ void SetPowerShift(float powerShift)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPowerShift<a name="ZH-CN_TOPIC_0000002441981977"></a>
-
-函数功能：
-
-获取偏移系数。
-
-函数原型：
-
-```
-float  GetPowerShift() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPowerShift<a name="ZH-CN_TOPIC_0000002441981977"></a> 函数功能： 获取偏移系数。 函数原型： ```
+float GetPowerShift const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8371,35 +4557,9 @@ float  GetPowerShift() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ReductionOperator配置接口<a name="ZH-CN_TOPIC_0000002408421974"></a>
-
-
-
-
-
-
-
-
-
-
-
-#### SetReductionOp<a name="ZH-CN_TOPIC_0000002441982105"></a>
-
-函数功能：
-
-配置运算类型。
-
-函数原型：
-
-```
+</table> ### ReductionOperator配置接口<a name="ZH-CN_TOPIC_0000002408421974"></a> #### SetReductionOp<a name="ZH-CN_TOPIC_0000002441982105"></a> 函数功能： 配置运算类型。 函数原型： ```
 void SetReductionOp(ReductionOp reductionOp)
-```
-
-参数说明：
-
-<a name="table1586mcpsimp"></a>
+``` 参数说明： <a name="table1586mcpsimp"></a>
 <table><thead align="left"><tr id="row1592mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1594mcpsimp"><a name="p1594mcpsimp"></a><a name="p1594mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1596mcpsimp"><a name="p1596mcpsimp"></a><a name="p1596mcpsimp"></a>输入/输出</p>
@@ -8428,23 +4588,9 @@ void SetReductionOp(ReductionOp reductionOp)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetReductionOp<a name="ZH-CN_TOPIC_0000002408582270"></a>
-
-函数功能：
-
-获取运算类型。
-
-函数原型：
-
-```
-ReductionOp GetReductionOp() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetReductionOp<a name="ZH-CN_TOPIC_0000002408582270"></a> 函数功能： 获取运算类型。 函数原型： ```
+ReductionOp GetReductionOp const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8472,23 +4618,9 @@ ReductionOp GetReductionOp() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetReductionCoeff<a name="ZH-CN_TOPIC_0000002408582330"></a>
-
-函数功能：
-
-配置输出的系数。
-
-函数原型：
-
-```
+</table> #### SetReductionCoeff<a name="ZH-CN_TOPIC_0000002408582330"></a> 函数功能： 配置输出的系数。 函数原型： ```
 void SetReductionCoeff(float reductionCoeff)
-```
-
-参数说明：
-
-<a name="table3016mcpsimp"></a>
+``` 参数说明： <a name="table3016mcpsimp"></a>
 <table><thead align="left"><tr id="row3022mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3024mcpsimp"><a name="p3024mcpsimp"></a><a name="p3024mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3026mcpsimp"><a name="p3026mcpsimp"></a><a name="p3026mcpsimp"></a>输入/输出</p>
@@ -8505,23 +4637,9 @@ void SetReductionCoeff(float reductionCoeff)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetReductionCoeff<a name="ZH-CN_TOPIC_0000002408422662"></a>
-
-函数功能：
-
-获取输出的系数。
-
-函数原型：
-
-```
-float GetReductionCoeff() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetReductionCoeff<a name="ZH-CN_TOPIC_0000002408422662"></a> 函数功能： 获取输出的系数。 函数原型： ```
+float GetReductionCoeff const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8538,23 +4656,9 @@ float GetReductionCoeff() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetReduceAxesSet<a name="ZH-CN_TOPIC_0000002442021389"></a>
-
-函数功能：
-
-配置所有参与Reduce运算的坐标轴。
-
-函数原型：
-
-```
+</table> #### SetReduceAxesSet<a name="ZH-CN_TOPIC_0000002442021389"></a> 函数功能： 配置所有参与Reduce运算的坐标轴。 函数原型： ```
 void SetReduceAxesSet(const set<int> &axesSet)
-```
-
-参数说明：
-
-<a name="table923mcpsimp"></a>
+``` 参数说明： <a name="table923mcpsimp"></a>
 <table><thead align="left"><tr id="row929mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p931mcpsimp"><a name="p931mcpsimp"></a><a name="p931mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p933mcpsimp"><a name="p933mcpsimp"></a><a name="p933mcpsimp"></a>输入/输出</p>
@@ -8571,23 +4675,9 @@ void SetReduceAxesSet(const set<int> &axesSet)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetReduceAxesSet<a name="ZH-CN_TOPIC_0000002408582434"></a>
-
-函数功能：
-
-获取所有参与Reduce运算的坐标轴。
-
-函数原型：
-
-```
-const set<int>& GetReduceAxesSet() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetReduceAxesSet<a name="ZH-CN_TOPIC_0000002408582434"></a> 函数功能： 获取所有参与Reduce运算的坐标轴。 函数原型： ```
+const set<int>& GetReduceAxesSet const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8604,23 +4694,9 @@ const set<int>& GetReduceAxesSet() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetReduceKeepDims<a name="ZH-CN_TOPIC_0000002442021829"></a>
-
-函数功能：
-
-配置布尔开关值，表示计算完成后是否保持维度数不变。
-
-函数原型：
-
-```
+</table> #### SetReduceKeepDims<a name="ZH-CN_TOPIC_0000002442021829"></a> 函数功能： 配置布尔开关值，表示计算完成后是否保持维度数不变。 函数原型： ```
 void SetReduceKeepDims(bool keepDims)
-```
-
-参数说明：
-
-<a name="table3167mcpsimp"></a>
+``` 参数说明： <a name="table3167mcpsimp"></a>
 <table><thead align="left"><tr id="row3173mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3175mcpsimp"><a name="p3175mcpsimp"></a><a name="p3175mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3177mcpsimp"><a name="p3177mcpsimp"></a><a name="p3177mcpsimp"></a>输入/输出</p>
@@ -8637,23 +4713,9 @@ void SetReduceKeepDims(bool keepDims)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetReduceKeepDims<a name="ZH-CN_TOPIC_0000002441981621"></a>
-
-函数功能：
-
-获取布尔开关值，表示计算完成后是否保持维度数不变。
-
-函数原型：
-
-```
-bool GetReduceKeepDims() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetReduceKeepDims<a name="ZH-CN_TOPIC_0000002441981621"></a> 函数功能： 获取布尔开关值，表示计算完成后是否保持维度数不变。 函数原型： ```
+bool GetReduceKeepDims const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8670,23 +4732,9 @@ bool GetReduceKeepDims() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetReduceIsFromCaffe<a name="ZH-CN_TOPIC_0000002408422618"></a>
-
-函数功能：
-
-配置布尔开关值，表示算子走Caffe还是Onnx
-
-函数原型：
-
-```
+</table> #### SetReduceIsFromCaffe<a name="ZH-CN_TOPIC_0000002408422618"></a> 函数功能： 配置布尔开关值，表示算子走Caffe还是Onnx 函数原型： ```
 bool SetReduceIsFromCaffe(bool isFromCaffe)
-```
-
-参数说明：
-
-<a name="table496415352017"></a>
+``` 参数说明： <a name="table496415352017"></a>
 <table><thead align="left"><tr id="row1896410531208"><th class="cellrowborder" valign="top" width="29.212921292129213%" id="mcps1.1.4.1.1"><p id="p8964653122017"><a name="p8964653122017"></a><a name="p8964653122017"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17.381738173817382%" id="mcps1.1.4.1.2"><p id="p1396419537208"><a name="p1396419537208"></a><a name="p1396419537208"></a>输入/输出</p>
@@ -8703,23 +4751,9 @@ bool SetReduceIsFromCaffe(bool isFromCaffe)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetReduceIsFromCaffe<a name="ZH-CN_TOPIC_0000002408422470"></a>
-
-函数功能：
-
-获取布尔开关值，表示算子走Caffe还是Onnx
-
-函数原型：
-
-```
-bool GetReduceIsFromCaffe() const
-```
-
-参数说明：
-
-<a name="table4182941173016"></a>
+</table> #### GetReduceIsFromCaffe<a name="ZH-CN_TOPIC_0000002408422470"></a> 函数功能： 获取布尔开关值，表示算子走Caffe还是Onnx 函数原型： ```
+bool GetReduceIsFromCaffe const
+``` 参数说明： <a name="table4182941173016"></a>
 <table><thead align="left"><tr id="row161829416300"><th class="cellrowborder" valign="top" width="29.56295629562956%" id="mcps1.1.4.1.1"><p id="p11182641193017"><a name="p11182641193017"></a><a name="p11182641193017"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17.99179917991799%" id="mcps1.1.4.1.2"><p id="p41820417308"><a name="p41820417308"></a><a name="p41820417308"></a>输入/输出</p>
@@ -8736,40 +4770,9 @@ bool GetReduceIsFromCaffe() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ScaleOperator配置接口<a name="ZH-CN_TOPIC_0000002408422850"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetScaleWeightSize<a name="ZH-CN_TOPIC_0000002441982157"></a>
-
-函数功能：
-
-配置权重数据的个数。
-
-函数原型：
-
-```
+</table> ### ScaleOperator配置接口<a name="ZH-CN_TOPIC_0000002408422850"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 #### SetScaleWeightSize<a name="ZH-CN_TOPIC_0000002441982157"></a> 函数功能： 配置权重数据的个数。 函数原型： ```
 void SetScaleWeightSize(uint32_t scaleWeightSize)
-```
-
-参数说明：
-
-<a name="table4695mcpsimp"></a>
+``` 参数说明： <a name="table4695mcpsimp"></a>
 <table><thead align="left"><tr id="row4701mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4703mcpsimp"><a name="p4703mcpsimp"></a><a name="p4703mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4705mcpsimp"><a name="p4705mcpsimp"></a><a name="p4705mcpsimp"></a>输入/输出</p>
@@ -8786,23 +4789,9 @@ void SetScaleWeightSize(uint32_t scaleWeightSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetScaleWeightSize<a name="ZH-CN_TOPIC_0000002442021329"></a>
-
-函数功能：
-
-获取权重数据的个数。
-
-函数原型：
-
-```
-uint32_t GetScaleWeightSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetScaleWeightSize<a name="ZH-CN_TOPIC_0000002442021329"></a> 函数功能： 获取权重数据的个数。 函数原型： ```
+uint32_t GetScaleWeightSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8819,23 +4808,9 @@ uint32_t GetScaleWeightSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetScaleBiasSize<a name="ZH-CN_TOPIC_0000002442021553"></a>
-
-函数功能：
-
-配置偏移量数据的个数。
-
-函数原型：
-
-```
+</table> #### SetScaleBiasSize<a name="ZH-CN_TOPIC_0000002442021553"></a> 函数功能： 配置偏移量数据的个数。 函数原型： ```
 void SetScaleBiasSize(uint32_t scaleBiasSize)
-```
-
-参数说明：
-
-<a name="table2662mcpsimp"></a>
+``` 参数说明： <a name="table2662mcpsimp"></a>
 <table><thead align="left"><tr id="row2668mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2670mcpsimp"><a name="p2670mcpsimp"></a><a name="p2670mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2672mcpsimp"><a name="p2672mcpsimp"></a><a name="p2672mcpsimp"></a>输入/输出</p>
@@ -8852,23 +4827,9 @@ void SetScaleBiasSize(uint32_t scaleBiasSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetScaleBiasSize<a name="ZH-CN_TOPIC_0000002442021297"></a>
-
-函数功能：
-
-获取偏移量数据的个数。
-
-函数原型：
-
-```
-uint32_t GetScaleBiasSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetScaleBiasSize<a name="ZH-CN_TOPIC_0000002442021297"></a> 函数功能： 获取偏移量数据的个数。 函数原型： ```
+uint32_t GetScaleBiasSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8885,23 +4846,9 @@ uint32_t GetScaleBiasSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetScaleNumAxes<a name="ZH-CN_TOPIC_0000002442021217"></a>
-
-函数功能：
-
-配置参与运算的坐标轴数量，与SetAxis接口配合使用。
-
-函数原型：
-
-```
+</table> #### SetScaleNumAxes<a name="ZH-CN_TOPIC_0000002442021217"></a> 函数功能： 配置参与运算的坐标轴数量，与SetAxis接口配合使用。 函数原型： ```
 void SetScaleNumAxes(int32_t scaleNumAxes)
-```
-
-参数说明：
-
-<a name="table1919mcpsimp"></a>
+``` 参数说明： <a name="table1919mcpsimp"></a>
 <table><thead align="left"><tr id="row1925mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1927mcpsimp"><a name="p1927mcpsimp"></a><a name="p1927mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1929mcpsimp"><a name="p1929mcpsimp"></a><a name="p1929mcpsimp"></a>输入/输出</p>
@@ -8918,23 +4865,9 @@ void SetScaleNumAxes(int32_t scaleNumAxes)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetScaleNumAxes<a name="ZH-CN_TOPIC_0000002442021897"></a>
-
-函数功能：
-
-获取参与运算的坐标轴数量，与SetAxis接口配合使用。
-
-函数原型：
-
-```
-int32_t GetScaleNumAxes() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetScaleNumAxes<a name="ZH-CN_TOPIC_0000002442021897"></a> 函数功能： 获取参与运算的坐标轴数量，与SetAxis接口配合使用。 函数原型： ```
+int32_t GetScaleNumAxes const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -8951,23 +4884,9 @@ int32_t GetScaleNumAxes() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetScaleWeightPtr<a name="ZH-CN_TOPIC_0000002442021989"></a>
-
-函数功能：
-
-配置权重数据指针。
-
-函数原型：
-
-```
+</table> #### SetScaleWeightPtr<a name="ZH-CN_TOPIC_0000002442021989"></a> 函数功能： 配置权重数据指针。 函数原型： ```
 void SetScaleWeightPtr(const float *scaleWeightPtr)
-```
-
-参数说明：
-
-<a name="table4322mcpsimp"></a>
+``` 参数说明： <a name="table4322mcpsimp"></a>
 <table><thead align="left"><tr id="row4328mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4330mcpsimp"><a name="p4330mcpsimp"></a><a name="p4330mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4332mcpsimp"><a name="p4332mcpsimp"></a><a name="p4332mcpsimp"></a>输入/输出</p>
@@ -8984,23 +4903,9 @@ void SetScaleWeightPtr(const float *scaleWeightPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetScaleWeightPtr<a name="ZH-CN_TOPIC_0000002441982021"></a>
-
-函数功能：
-
-获取权重数据指针。
-
-函数原型：
-
-```
-const float* GetScaleWeightPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetScaleWeightPtr<a name="ZH-CN_TOPIC_0000002441982021"></a> 函数功能： 获取权重数据指针。 函数原型： ```
+const float* GetScaleWeightPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9017,23 +4922,9 @@ const float* GetScaleWeightPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetScaleBiasPtr<a name="ZH-CN_TOPIC_0000002408582426"></a>
-
-函数功能：
-
-配置偏移量数据指针。
-
-函数原型：
-
-```
+</table> #### SetScaleBiasPtr<a name="ZH-CN_TOPIC_0000002408582426"></a> 函数功能： 配置偏移量数据指针。 函数原型： ```
 void SetScaleBiasPtr(const float *scaleBiasPtr)
-```
-
-参数说明：
-
-<a name="table1042mcpsimp"></a>
+``` 参数说明： <a name="table1042mcpsimp"></a>
 <table><thead align="left"><tr id="row1048mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1050mcpsimp"><a name="p1050mcpsimp"></a><a name="p1050mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1052mcpsimp"><a name="p1052mcpsimp"></a><a name="p1052mcpsimp"></a>输入/输出</p>
@@ -9050,23 +4941,9 @@ void SetScaleBiasPtr(const float *scaleBiasPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetScaleBiasPtr<a name="ZH-CN_TOPIC_0000002441981761"></a>
-
-函数功能：
-
-获取偏移量数据指针。
-
-函数原型：
-
-```
-const float* GetScaleBiasPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetScaleBiasPtr<a name="ZH-CN_TOPIC_0000002441981761"></a> 函数功能： 获取偏移量数据指针。 函数原型： ```
+const float* GetScaleBiasPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9083,23 +4960,9 @@ const float* GetScaleBiasPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetScaleShapeVec<a name="ZH-CN_TOPIC_0000002408422630"></a>
-
-函数功能：
-
-配置权重数据的所有shape信息。
-
-函数原型：
-
-```
+</table> #### SetScaleShapeVec<a name="ZH-CN_TOPIC_0000002408422630"></a> 函数功能： 配置权重数据的所有shape信息。 函数原型： ```
 void SetScaleShapeVec(const vector<int32_t> &scaleShapeVec)
-```
-
-参数说明：
-
-<a name="table1379mcpsimp"></a>
+``` 参数说明： <a name="table1379mcpsimp"></a>
 <table><thead align="left"><tr id="row1385mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1387mcpsimp"><a name="p1387mcpsimp"></a><a name="p1387mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1389mcpsimp"><a name="p1389mcpsimp"></a><a name="p1389mcpsimp"></a>输入/输出</p>
@@ -9116,23 +4979,9 @@ void SetScaleShapeVec(const vector<int32_t> &scaleShapeVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetScaleShapeVec<a name="ZH-CN_TOPIC_0000002441981737"></a>
-
-函数功能：
-
-获取权重数据的所有shape信息。
-
-函数原型：
-
-```
-const vector<int32_t>& GetScaleShapeVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetScaleShapeVec<a name="ZH-CN_TOPIC_0000002441981737"></a> 函数功能： 获取权重数据的所有shape信息。 函数原型： ```
+const vector<int32_t>& GetScaleShapeVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9149,23 +4998,9 @@ const vector<int32_t>& GetScaleShapeVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddScaleShape<a name="ZH-CN_TOPIC_0000002408422678"></a>
-
-函数功能：
-
-添加权重数据的一个shape维度数据。
-
-函数原型：
-
-```
+</table> #### AddScaleShape<a name="ZH-CN_TOPIC_0000002408422678"></a> 函数功能： 添加权重数据的一个shape维度数据。 函数原型： ```
 void AddScaleShape(int32_t scaleShape)
-```
-
-参数说明：
-
-<a name="table4786mcpsimp"></a>
+``` 参数说明： <a name="table4786mcpsimp"></a>
 <table><thead align="left"><tr id="row4792mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4794mcpsimp"><a name="p4794mcpsimp"></a><a name="p4794mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4796mcpsimp"><a name="p4796mcpsimp"></a><a name="p4796mcpsimp"></a>输入/输出</p>
@@ -9182,27 +5017,9 @@ void AddScaleShape(int32_t scaleShape)
 </td>
 </tr>
 </tbody>
-</table>
-
-### SoftmaxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582642"></a>
-
-
-
-#### SetRealAxes<a name="ZH-CN_TOPIC_0000002408422818"></a>
-
-函数功能：
-
-配置进行softmax运算的所有维度组合模式。
-
-函数原型：
-
-```
+</table> ### SoftmaxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582642"></a> #### SetRealAxes<a name="ZH-CN_TOPIC_0000002408422818"></a> 函数功能： 配置进行softmax运算的所有维度组合模式。 函数原型： ```
 void SetRealAxes(SoftmaxAxes axes)
-```
-
-参数说明：
-
-<a name="table5609mcpsimp"></a>
+``` 参数说明： <a name="table5609mcpsimp"></a>
 <table><thead align="left"><tr id="row5615mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5617mcpsimp"><a name="p5617mcpsimp"></a><a name="p5617mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5619mcpsimp"><a name="p5619mcpsimp"></a><a name="p5619mcpsimp"></a>输入/输出</p>
@@ -9225,23 +5042,9 @@ void SetRealAxes(SoftmaxAxes axes)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRealAxes<a name="ZH-CN_TOPIC_0000002442021557"></a>
-
-函数功能：
-
-获取进行softmax运算的所有维度组合模式。
-
-函数原型：
-
-```
-SoftmaxAxes GetMatMulDim1() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRealAxes<a name="ZH-CN_TOPIC_0000002442021557"></a> 函数功能： 获取进行softmax运算的所有维度组合模式。 函数原型： ```
+SoftmaxAxes GetMatMulDim1 const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9264,27 +5067,9 @@ SoftmaxAxes GetMatMulDim1() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ThresholdOperator配置接口<a name="ZH-CN_TOPIC_0000002442021609"></a>
-
-
-
-#### SetThreshold<a name="ZH-CN_TOPIC_0000002408421910"></a>
-
-函数功能：
-
-配置阈值。
-
-函数原型：
-
-```
+</table> ### ThresholdOperator配置接口<a name="ZH-CN_TOPIC_0000002442021609"></a> #### SetThreshold<a name="ZH-CN_TOPIC_0000002408421910"></a> 函数功能： 配置阈值。 函数原型： ```
 void SetThreshold(float threshold)
-```
-
-参数说明：
-
-<a name="table361mcpsimp"></a>
+``` 参数说明： <a name="table361mcpsimp"></a>
 <table><thead align="left"><tr id="row367mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p369mcpsimp"><a name="p369mcpsimp"></a><a name="p369mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p371mcpsimp"><a name="p371mcpsimp"></a><a name="p371mcpsimp"></a>输入/输出</p>
@@ -9301,23 +5086,9 @@ void SetThreshold(float threshold)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetThreshold<a name="ZH-CN_TOPIC_0000002408582126"></a>
-
-函数功能：
-
-获取阈值。
-
-函数原型：
-
-```
-float GetThreshold() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetThreshold<a name="ZH-CN_TOPIC_0000002408582126"></a> 函数功能： 获取阈值。 函数原型： ```
+float GetThreshold const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9334,29 +5105,9 @@ float GetThreshold() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### UpsampleOperator配置接口<a name="ZH-CN_TOPIC_0000002408422802"></a>
-
-
-
-
-
-#### SetUpsampleScale<a name="ZH-CN_TOPIC_0000002408422438"></a>
-
-函数功能：
-
-配置缩放系数。
-
-函数原型：
-
-```
+</table> ### UpsampleOperator配置接口<a name="ZH-CN_TOPIC_0000002408422802"></a> #### SetUpsampleScale<a name="ZH-CN_TOPIC_0000002408422438"></a> 函数功能： 配置缩放系数。 函数原型： ```
 void SetUpsampleScale(uint32_t upsampleScale)
-```
-
-参数说明：
-
-<a name="table1227mcpsimp"></a>
+``` 参数说明： <a name="table1227mcpsimp"></a>
 <table><thead align="left"><tr id="row1233mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1235mcpsimp"><a name="p1235mcpsimp"></a><a name="p1235mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1237mcpsimp"><a name="p1237mcpsimp"></a><a name="p1237mcpsimp"></a>输入/输出</p>
@@ -9373,23 +5124,9 @@ void SetUpsampleScale(uint32_t upsampleScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetUpsampleScale<a name="ZH-CN_TOPIC_0000002408582214"></a>
-
-函数功能：
-
-获取缩放系数。
-
-函数原型：
-
-```
-uint32_t GetUpsampleScale() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetUpsampleScale<a name="ZH-CN_TOPIC_0000002408582214"></a> 函数功能： 获取缩放系数。 函数原型： ```
+uint32_t GetUpsampleScale const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9406,23 +5143,9 @@ uint32_t GetUpsampleScale() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInterpolationMode<a name="ZH-CN_TOPIC_0000002441981877"></a>
-
-函数功能：
-
-配置差值计算模式。
-
-函数原型：
-
-```
+</table> #### SetInterpolationMode<a name="ZH-CN_TOPIC_0000002441981877"></a> 函数功能： 配置差值计算模式。 函数原型： ```
 void SetInterpolationMode(InterpolationMode mode)
-```
-
-参数说明：
-
-<a name="table4022mcpsimp"></a>
+``` 参数说明： <a name="table4022mcpsimp"></a>
 <table><thead align="left"><tr id="row4028mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4030mcpsimp"><a name="p4030mcpsimp"></a><a name="p4030mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4032mcpsimp"><a name="p4032mcpsimp"></a><a name="p4032mcpsimp"></a>输入/输出</p>
@@ -9442,23 +5165,9 @@ void SetInterpolationMode(InterpolationMode mode)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInterpolationMode<a name="ZH-CN_TOPIC_0000002442021157"></a>
-
-函数功能：
-
-获取差值计算模式。
-
-函数原型：
-
-```
-InterpolationMode GetInterpolationMode() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInterpolationMode<a name="ZH-CN_TOPIC_0000002442021157"></a> 函数功能： 获取差值计算模式。 函数原型： ```
+InterpolationMode GetInterpolationMode const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9478,43 +5187,9 @@ InterpolationMode GetInterpolationMode() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### BatchNormOperator配置接口<a name="ZH-CN_TOPIC_0000002408422730"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetBnEps<a name="ZH-CN_TOPIC_0000002408422650"></a>
-
-函数功能：
-
-配置分母附加值，防止除以方差时出现除0操作，默认为1e-5。
-
-函数原型：
-
-```
+</table> ### BatchNormOperator配置接口<a name="ZH-CN_TOPIC_0000002408422730"></a> #### SetBnEps<a name="ZH-CN_TOPIC_0000002408422650"></a> 函数功能： 配置分母附加值，防止除以方差时出现除0操作，默认为1e-5。 函数原型： ```
 void SetBnEps(float bnEps)
-```
-
-参数说明：
-
-<a name="table1257mcpsimp"></a>
+``` 参数说明： <a name="table1257mcpsimp"></a>
 <table><thead align="left"><tr id="row1263mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1265mcpsimp"><a name="p1265mcpsimp"></a><a name="p1265mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1267mcpsimp"><a name="p1267mcpsimp"></a><a name="p1267mcpsimp"></a>输入/输出</p>
@@ -9531,23 +5206,9 @@ void SetBnEps(float bnEps)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnEps<a name="ZH-CN_TOPIC_0000002408582346"></a>
-
-函数功能：
-
-获取分母附加值，防止除以方差时出现除0操作，默认为1e-5。
-
-函数原型：
-
-```
-float GetBnEps() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnEps<a name="ZH-CN_TOPIC_0000002408582346"></a> 函数功能： 获取分母附加值，防止除以方差时出现除0操作，默认为1e-5。 函数原型： ```
+float GetBnEps const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9564,23 +5225,9 @@ float GetBnEps() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnScaleSize<a name="ZH-CN_TOPIC_0000002441981965"></a>
-
-函数功能：
-
-配置缩放权重数据的个数。
-
-函数原型：
-
-```
+</table> #### SetBnScaleSize<a name="ZH-CN_TOPIC_0000002441981965"></a> 函数功能： 配置缩放权重数据的个数。 函数原型： ```
 void SetBnScaleSize(uint32_t bnScaleSize)
-```
-
-参数说明：
-
-<a name="table3075mcpsimp"></a>
+``` 参数说明： <a name="table3075mcpsimp"></a>
 <table><thead align="left"><tr id="row3081mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3083mcpsimp"><a name="p3083mcpsimp"></a><a name="p3083mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3085mcpsimp"><a name="p3085mcpsimp"></a><a name="p3085mcpsimp"></a>输入/输出</p>
@@ -9597,23 +5244,9 @@ void SetBnScaleSize(uint32_t bnScaleSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnScaleSize<a name="ZH-CN_TOPIC_0000002408422534"></a>
-
-函数功能：
-
-获取缩放权重数据的个数。
-
-函数原型：
-
-```
-uint32_t GetBnScaleSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnScaleSize<a name="ZH-CN_TOPIC_0000002408422534"></a> 函数功能： 获取缩放权重数据的个数。 函数原型： ```
+uint32_t GetBnScaleSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9630,23 +5263,9 @@ uint32_t GetBnScaleSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnBiasSize<a name="ZH-CN_TOPIC_0000002442021577"></a>
-
-函数功能：
-
-配置偏移量数据的个数。
-
-函数原型：
-
-```
+</table> #### SetBnBiasSize<a name="ZH-CN_TOPIC_0000002442021577"></a> 函数功能： 配置偏移量数据的个数。 函数原型： ```
 void SetBnBiasSize(uint32_t bnBiasSize)
-```
-
-参数说明：
-
-<a name="table2720mcpsimp"></a>
+``` 参数说明： <a name="table2720mcpsimp"></a>
 <table><thead align="left"><tr id="row2726mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2728mcpsimp"><a name="p2728mcpsimp"></a><a name="p2728mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2730mcpsimp"><a name="p2730mcpsimp"></a><a name="p2730mcpsimp"></a>输入/输出</p>
@@ -9663,23 +5282,9 @@ void SetBnBiasSize(uint32_t bnBiasSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnBiasSize<a name="ZH-CN_TOPIC_0000002408422454"></a>
-
-函数功能：
-
-获取偏移量数据的个数。
-
-函数原型：
-
-```
-uint32_t GetBnBiasSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnBiasSize<a name="ZH-CN_TOPIC_0000002408422454"></a> 函数功能： 获取偏移量数据的个数。 函数原型： ```
+uint32_t GetBnBiasSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9696,23 +5301,9 @@ uint32_t GetBnBiasSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnScalePtr<a name="ZH-CN_TOPIC_0000002408422142"></a>
-
-函数功能：
-
-配置缩放权重数据的指针。
-
-函数原型：
-
-```
+</table> #### SetBnScalePtr<a name="ZH-CN_TOPIC_0000002408422142"></a> 函数功能： 配置缩放权重数据的指针。 函数原型： ```
 void SetBnScalePtr(const float *bnScalePtr)
-```
-
-参数说明：
-
-<a name="table5341mcpsimp"></a>
+``` 参数说明： <a name="table5341mcpsimp"></a>
 <table><thead align="left"><tr id="row5347mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5349mcpsimp"><a name="p5349mcpsimp"></a><a name="p5349mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5351mcpsimp"><a name="p5351mcpsimp"></a><a name="p5351mcpsimp"></a>输入/输出</p>
@@ -9729,23 +5320,9 @@ void SetBnScalePtr(const float *bnScalePtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnScalePtr<a name="ZH-CN_TOPIC_0000002408582422"></a>
-
-函数功能：
-
-获取缩放权重数据的指针。
-
-函数原型：
-
-```
-const float* GetBnScalePtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnScalePtr<a name="ZH-CN_TOPIC_0000002408582422"></a> 函数功能： 获取缩放权重数据的指针。 函数原型： ```
+const float* GetBnScalePtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9762,23 +5339,9 @@ const float* GetBnScalePtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnBiasPtr<a name="ZH-CN_TOPIC_0000002408422842"></a>
-
-函数功能：
-
-配置偏移量数据的指针。
-
-函数原型：
-
-```
+</table> #### SetBnBiasPtr<a name="ZH-CN_TOPIC_0000002408422842"></a> 函数功能： 配置偏移量数据的指针。 函数原型： ```
 void SetBnBiasPtr(const float *bnBiasPtr)
-```
-
-参数说明：
-
-<a name="table1408mcpsimp"></a>
+``` 参数说明： <a name="table1408mcpsimp"></a>
 <table><thead align="left"><tr id="row1414mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1416mcpsimp"><a name="p1416mcpsimp"></a><a name="p1416mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1418mcpsimp"><a name="p1418mcpsimp"></a><a name="p1418mcpsimp"></a>输入/输出</p>
@@ -9795,23 +5358,9 @@ void SetBnBiasPtr(const float *bnBiasPtr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnBiasPtr<a name="ZH-CN_TOPIC_0000002408582406"></a>
-
-函数功能：
-
-获取偏移量数据的指针。
-
-函数原型：
-
-```
-const float* GetBnBiasPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnBiasPtr<a name="ZH-CN_TOPIC_0000002408582406"></a> 函数功能： 获取偏移量数据的指针。 函数原型： ```
+const float* GetBnBiasPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9828,23 +5377,9 @@ const float* GetBnBiasPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnMeanDataPtr<a name="ZH-CN_TOPIC_0000002441981769"></a>
-
-函数功能：
-
-配置均值数据的指针。
-
-函数原型：
-
-```
+</table> #### SetBnMeanDataPtr<a name="ZH-CN_TOPIC_0000002441981769"></a> 函数功能： 配置均值数据的指针。 函数原型： ```
 void SetBnMeanDataPtr(const float *bnMeanData)
-```
-
-参数说明：
-
-<a name="table5018mcpsimp"></a>
+``` 参数说明： <a name="table5018mcpsimp"></a>
 <table><thead align="left"><tr id="row5024mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5026mcpsimp"><a name="p5026mcpsimp"></a><a name="p5026mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5028mcpsimp"><a name="p5028mcpsimp"></a><a name="p5028mcpsimp"></a>输入/输出</p>
@@ -9861,23 +5396,9 @@ void SetBnMeanDataPtr(const float *bnMeanData)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnMeanDataPtr<a name="ZH-CN_TOPIC_0000002408582310"></a>
-
-函数功能：
-
-获取均值数据的指针。
-
-函数原型：
-
-```
-const float* GetBnMeanDataPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnMeanDataPtr<a name="ZH-CN_TOPIC_0000002408582310"></a> 函数功能： 获取均值数据的指针。 函数原型： ```
+const float* GetBnMeanDataPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9894,23 +5415,9 @@ const float* GetBnMeanDataPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnVarDataPtr<a name="ZH-CN_TOPIC_0000002441981933"></a>
-
-函数功能：
-
-配置方差数据指针。
-
-函数原型：
-
-```
+</table> #### SetBnVarDataPtr<a name="ZH-CN_TOPIC_0000002441981933"></a> 函数功能： 配置方差数据指针。 函数原型： ```
 void SetBnVarDataPtr(const float *bnVarData)
-```
-
-参数说明：
-
-<a name="table1287mcpsimp"></a>
+``` 参数说明： <a name="table1287mcpsimp"></a>
 <table><thead align="left"><tr id="row1293mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1295mcpsimp"><a name="p1295mcpsimp"></a><a name="p1295mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1297mcpsimp"><a name="p1297mcpsimp"></a><a name="p1297mcpsimp"></a>输入/输出</p>
@@ -9927,23 +5434,9 @@ void SetBnVarDataPtr(const float *bnVarData)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnVarDataPtr<a name="ZH-CN_TOPIC_0000002442021457"></a>
-
-函数功能：
-
-获取方差数据指针。
-
-函数原型：
-
-```
-const float* GetBnVarDataPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnVarDataPtr<a name="ZH-CN_TOPIC_0000002442021457"></a> 函数功能： 获取方差数据指针。 函数原型： ```
+const float* GetBnVarDataPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -9960,23 +5453,9 @@ const float* GetBnVarDataPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnMeanSize<a name="ZH-CN_TOPIC_0000002408422770"></a>
-
-函数功能：
-
-配置均值数据的个数。
-
-函数原型：
-
-```
+</table> #### SetBnMeanSize<a name="ZH-CN_TOPIC_0000002408422770"></a> 函数功能： 配置均值数据的个数。 函数原型： ```
 void SetBnMeanSize(uint32_t bnMeanSize)
-```
-
-参数说明：
-
-<a name="table4381mcpsimp"></a>
+``` 参数说明： <a name="table4381mcpsimp"></a>
 <table><thead align="left"><tr id="row4387mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4389mcpsimp"><a name="p4389mcpsimp"></a><a name="p4389mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4391mcpsimp"><a name="p4391mcpsimp"></a><a name="p4391mcpsimp"></a>输入/输出</p>
@@ -9993,23 +5472,9 @@ void SetBnMeanSize(uint32_t bnMeanSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnMeanSize<a name="ZH-CN_TOPIC_0000002408422114"></a>
-
-函数功能：
-
-获取均值数据的个数。
-
-函数原型：
-
-```
-uint32_t GetBnMeanSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnMeanSize<a name="ZH-CN_TOPIC_0000002408422114"></a> 函数功能： 获取均值数据的个数。 函数原型： ```
+uint32_t GetBnMeanSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10026,23 +5491,9 @@ uint32_t GetBnMeanSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBnVarSize<a name="ZH-CN_TOPIC_0000002441981849"></a>
-
-函数功能：
-
-配置方差数据的个数。
-
-函数原型：
-
-```
+</table> #### SetBnVarSize<a name="ZH-CN_TOPIC_0000002441981849"></a> 函数功能： 配置方差数据的个数。 函数原型： ```
 void SetBnVarSize(uint32_t bnVarSize)
-```
-
-参数说明：
-
-<a name="table4118mcpsimp"></a>
+``` 参数说明： <a name="table4118mcpsimp"></a>
 <table><thead align="left"><tr id="row4124mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4126mcpsimp"><a name="p4126mcpsimp"></a><a name="p4126mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4128mcpsimp"><a name="p4128mcpsimp"></a><a name="p4128mcpsimp"></a>输入/输出</p>
@@ -10059,23 +5510,9 @@ void SetBnVarSize(uint32_t bnVarSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBnVarSize<a name="ZH-CN_TOPIC_0000002408422478"></a>
-
-函数功能：
-
-获取方差数据的个数。
-
-函数原型：
-
-```
-uint32_t GetBnVarSize() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBnVarSize<a name="ZH-CN_TOPIC_0000002408422478"></a> 函数功能： 获取方差数据的个数。 函数原型： ```
+uint32_t GetBnVarSize const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10092,40 +5529,9 @@ uint32_t GetBnVarSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### DetectionOutputOperator配置接口<a name="ZH-CN_TOPIC_0000002441982029"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetNumGridsWidth<a name="ZH-CN_TOPIC_0000002408582594"></a>
-
-函数功能：
-
-配置宽度方向上grid数量。
-
-函数原型：
-
-```
+</table> ### DetectionOutputOperator配置接口<a name="ZH-CN_TOPIC_0000002441982029"></a> #### SetNumGridsWidth<a name="ZH-CN_TOPIC_0000002408582594"></a> 函数功能： 配置宽度方向上grid数量。 函数原型： ```
 void SetNumGridsWidth(uint32_t numGridsWidth)
-```
-
-参数说明：
-
-<a name="table4757mcpsimp"></a>
+``` 参数说明： <a name="table4757mcpsimp"></a>
 <table><thead align="left"><tr id="row4763mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4765mcpsimp"><a name="p4765mcpsimp"></a><a name="p4765mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4767mcpsimp"><a name="p4767mcpsimp"></a><a name="p4767mcpsimp"></a>输入/输出</p>
@@ -10142,23 +5548,9 @@ void SetNumGridsWidth(uint32_t numGridsWidth)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumGridsWidth<a name="ZH-CN_TOPIC_0000002442021701"></a>
-
-函数功能：
-
-获取宽度方向上grid数量。
-
-函数原型：
-
-```
-uint32_t GetNumGridsWidth() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumGridsWidth<a name="ZH-CN_TOPIC_0000002442021701"></a> 函数功能： 获取宽度方向上grid数量。 函数原型： ```
+uint32_t GetNumGridsWidth const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10175,23 +5567,9 @@ uint32_t GetNumGridsWidth() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumGridsHeight<a name="ZH-CN_TOPIC_0000002442021893"></a>
-
-函数功能：
-
-配置高度方向上grid数量。
-
-函数原型：
-
-```
+</table> #### SetNumGridsHeight<a name="ZH-CN_TOPIC_0000002442021893"></a> 函数功能： 配置高度方向上grid数量。 函数原型： ```
 void SetNumGridsHeight(uint32_t numGridsHeight)
-```
-
-参数说明：
-
-<a name="table3993mcpsimp"></a>
+``` 参数说明： <a name="table3993mcpsimp"></a>
 <table><thead align="left"><tr id="row3999mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4001mcpsimp"><a name="p4001mcpsimp"></a><a name="p4001mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4003mcpsimp"><a name="p4003mcpsimp"></a><a name="p4003mcpsimp"></a>输入/输出</p>
@@ -10208,23 +5586,9 @@ void SetNumGridsHeight(uint32_t numGridsHeight)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumGridsHeight<a name="ZH-CN_TOPIC_0000002441981785"></a>
-
-函数功能：
-
-获取高度方向上grid数量。
-
-函数原型：
-
-```
-uint32_t GetNumGridsHeight() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumGridsHeight<a name="ZH-CN_TOPIC_0000002441981785"></a> 函数功能： 获取高度方向上grid数量。 函数原型： ```
+uint32_t GetNumGridsHeight const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10241,23 +5605,9 @@ uint32_t GetNumGridsHeight() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumAnchors<a name="ZH-CN_TOPIC_0000002442021113"></a>
-
-函数功能：
-
-配置总框数。与SetNumBboxesPerGrid不同时使用。
-
-函数原型：
-
-```
+</table> #### SetNumAnchors<a name="ZH-CN_TOPIC_0000002442021113"></a> 函数功能： 配置总框数。与SetNumBboxesPerGrid不同时使用。 函数原型： ```
 void SetNumAnchors(uint32_t numAnchors)
-```
-
-参数说明：
-
-<a name="table2922mcpsimp"></a>
+``` 参数说明： <a name="table2922mcpsimp"></a>
 <table><thead align="left"><tr id="row2928mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2930mcpsimp"><a name="p2930mcpsimp"></a><a name="p2930mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2932mcpsimp"><a name="p2932mcpsimp"></a><a name="p2932mcpsimp"></a>输入/输出</p>
@@ -10274,23 +5624,9 @@ void SetNumAnchors(uint32_t numAnchors)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### 1GetNumAnchors<a name="ZH-CN_TOPIC_0000002442021549"></a>
-
-函数功能：
-
-获取总框数。与SetNumBboxesPerGrid不同时使用。
-
-函数原型：
-
-```
-uint32_t GetNumAnchors() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### 1GetNumAnchors<a name="ZH-CN_TOPIC_0000002442021549"></a> 函数功能： 获取总框数。与SetNumBboxesPerGrid不同时使用。 函数原型： ```
+uint32_t GetNumAnchors const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10307,23 +5643,9 @@ uint32_t GetNumAnchors() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002441981381"></a>
-
-函数功能：
-
-配置每个grid中框的数量。与SetNumAnchors不同时使用。
-
-函数原型：
-
-```
+</table> #### SetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002441981381"></a> 函数功能： 配置每个grid中框的数量。与SetNumAnchors不同时使用。 函数原型： ```
 void SetNumBboxesPerGrid(uint32_t numBboxesPerGrid)
-```
-
-参数说明：
-
-<a name="table5191mcpsimp"></a>
+``` 参数说明： <a name="table5191mcpsimp"></a>
 <table><thead align="left"><tr id="row5197mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5199mcpsimp"><a name="p5199mcpsimp"></a><a name="p5199mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5201mcpsimp"><a name="p5201mcpsimp"></a><a name="p5201mcpsimp"></a>输入/输出</p>
@@ -10340,23 +5662,9 @@ void SetNumBboxesPerGrid(uint32_t numBboxesPerGrid)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002408422418"></a>
-
-函数功能：
-
-获取每个grid中框的数量。与SetNumAnchors不同时使用。
-
-函数原型：
-
-```
-uint32_t GetNumBboxesPerGrid() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumBboxesPerGrid<a name="ZH-CN_TOPIC_0000002408422418"></a> 函数功能： 获取每个grid中框的数量。与SetNumAnchors不同时使用。 函数原型： ```
+uint32_t GetNumBboxesPerGrid const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10373,23 +5681,9 @@ uint32_t GetNumBboxesPerGrid() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumCoords<a name="ZH-CN_TOPIC_0000002408422762"></a>
-
-函数功能：
-
-配置Coords的数量。
-
-函数原型：
-
-```
+</table> #### SetNumCoords<a name="ZH-CN_TOPIC_0000002408422762"></a> 函数功能： 配置Coords的数量。 函数原型： ```
 void SetNumCoords(uint32_t numCoords)
-```
-
-参数说明：
-
-<a name="table5704mcpsimp"></a>
+``` 参数说明： <a name="table5704mcpsimp"></a>
 <table><thead align="left"><tr id="row5710mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5712mcpsimp"><a name="p5712mcpsimp"></a><a name="p5712mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5714mcpsimp"><a name="p5714mcpsimp"></a><a name="p5714mcpsimp"></a>输入/输出</p>
@@ -10406,23 +5700,9 @@ void SetNumCoords(uint32_t numCoords)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumCoords<a name="ZH-CN_TOPIC_0000002408582178"></a>
-
-函数功能：
-
-获取Coords的数量。
-
-函数原型：
-
-```
-uint32_t GetNumCoords() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumCoords<a name="ZH-CN_TOPIC_0000002408582178"></a> 函数功能： 获取Coords的数量。 函数原型： ```
+uint32_t GetNumCoords const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10439,23 +5719,9 @@ uint32_t GetNumCoords() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetNumClasses<a name="ZH-CN_TOPIC_0000002441981437"></a>
-
-函数功能：
-
-配置类型总数。
-
-函数原型：
-
-```
+</table> #### SetNumClasses<a name="ZH-CN_TOPIC_0000002441981437"></a> 函数功能： 配置类型总数。 函数原型： ```
 void SetNumClasses(uint32_t numClasses)
-```
-
-参数说明：
-
-<a name="table720mcpsimp"></a>
+``` 参数说明： <a name="table720mcpsimp"></a>
 <table><thead align="left"><tr id="row726mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p728mcpsimp"><a name="p728mcpsimp"></a><a name="p728mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p730mcpsimp"><a name="p730mcpsimp"></a><a name="p730mcpsimp"></a>输入/输出</p>
@@ -10472,23 +5738,9 @@ void SetNumClasses(uint32_t numClasses)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetNumClasses<a name="ZH-CN_TOPIC_0000002441981493"></a>
-
-函数功能：
-
-获取类型总数。
-
-函数原型：
-
-```
-uint32_t GetNumClasses() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetNumClasses<a name="ZH-CN_TOPIC_0000002441981493"></a> 函数功能： 获取类型总数。 函数原型： ```
+uint32_t GetNumClasses const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10505,23 +5757,9 @@ uint32_t GetNumClasses() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushDetectionOutputParam<a name="ZH-CN_TOPIC_0000002441981709"></a>
-
-函数功能：
-
-设置一组后处理参数，每组参数对应一个Proposal处理。
-
-函数原型：
-
-```
+</table> #### PushDetectionOutputParam<a name="ZH-CN_TOPIC_0000002441981709"></a> 函数功能： 设置一组后处理参数，每组参数对应一个Proposal处理。 函数原型： ```
 void PushDetectionOutputParam(const DetectionOutputParam &detectionOutputParam)
-```
-
-参数说明：
-
-<a name="table2069mcpsimp"></a>
+``` 参数说明： <a name="table2069mcpsimp"></a>
 <table><thead align="left"><tr id="row2075mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2077mcpsimp"><a name="p2077mcpsimp"></a><a name="p2077mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2079mcpsimp"><a name="p2079mcpsimp"></a><a name="p2079mcpsimp"></a>输入/输出</p>
@@ -10538,23 +5776,9 @@ void PushDetectionOutputParam(const DetectionOutputParam &detectionOutputParam)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetDetectionOutputParamVec<a name="ZH-CN_TOPIC_0000002408582598"></a>
-
-函数功能：
-
-一次性设置多组后处理参数，每组参数对应一个Proposal处理。
-
-函数原型：
-
-```
+</table> #### SetDetectionOutputParamVec<a name="ZH-CN_TOPIC_0000002408582598"></a> 函数功能： 一次性设置多组后处理参数，每组参数对应一个Proposal处理。 函数原型： ```
 void SetDetectionOutputParamVec(const vector<DetectionOutputParam> &detectionOutputParamVec)
-```
-
-参数说明：
-
-<a name="table1801mcpsimp"></a>
+``` 参数说明： <a name="table1801mcpsimp"></a>
 <table><thead align="left"><tr id="row1807mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1809mcpsimp"><a name="p1809mcpsimp"></a><a name="p1809mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1811mcpsimp"><a name="p1811mcpsimp"></a><a name="p1811mcpsimp"></a>输入/输出</p>
@@ -10571,23 +5795,9 @@ void SetDetectionOutputParamVec(const vector<DetectionOutputParam> &detectionOut
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetDetectionOutputParamVec<a name="ZH-CN_TOPIC_0000002408582142"></a>
-
-函数功能：
-
-获取多组后处理参数，每组参数对应一个Proposal处理。
-
-函数原型：
-
-```
-const vector<DetectionOutputParam>& GetDetectionOutputParamVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetDetectionOutputParamVec<a name="ZH-CN_TOPIC_0000002408582142"></a> 函数功能： 获取多组后处理参数，每组参数对应一个Proposal处理。 函数原型： ```
+const vector<DetectionOutputParam>& GetDetectionOutputParamVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10604,33 +5814,9 @@ const vector<DetectionOutputParam>& GetDetectionOutputParamVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### BiasOperator配置接口<a name="ZH-CN_TOPIC_0000002442021849"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-
-
-
-
-
-
-#### SetBiasNumAxes<a name="ZH-CN_TOPIC_0000002442021873"></a>
-
-函数功能：
-
-配置参与运算的维度数量，与SetAxis配合使用。
-
-函数原型：
-
-```
+</table> ### BiasOperator配置接口<a name="ZH-CN_TOPIC_0000002442021849"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 #### SetBiasNumAxes<a name="ZH-CN_TOPIC_0000002442021873"></a> 函数功能： 配置参与运算的维度数量，与SetAxis配合使用。 函数原型： ```
 void SetBiasNumAxes(int32_t value)
-```
-
-参数说明：
-
-<a name="table4352mcpsimp"></a>
+``` 参数说明： <a name="table4352mcpsimp"></a>
 <table><thead align="left"><tr id="row4358mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4360mcpsimp"><a name="p4360mcpsimp"></a><a name="p4360mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4362mcpsimp"><a name="p4362mcpsimp"></a><a name="p4362mcpsimp"></a>输入/输出</p>
@@ -10647,23 +5833,9 @@ void SetBiasNumAxes(int32_t value)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBiasNumAxes<a name="ZH-CN_TOPIC_0000002408582450"></a>
-
-函数功能：
-
-获取参与运算的维度数量，与SetAxis配合使用。
-
-函数原型：
-
-```
-int32_t GetBiasNumAxes() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBiasNumAxes<a name="ZH-CN_TOPIC_0000002408582450"></a> 函数功能： 获取参与运算的维度数量，与SetAxis配合使用。 函数原型： ```
+int32_t GetBiasNumAxes const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10680,23 +5852,9 @@ int32_t GetBiasNumAxes() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBiasPtr<a name="ZH-CN_TOPIC_0000002408582110"></a>
-
-函数功能：
-
-配置偏移量数据的指针，要求配置偏移量数据的大小要与SetBiasShapeVec设置的shape包含的数据量大小保持一致。
-
-函数原型：
-
-```
+</table> #### SetBiasPtr<a name="ZH-CN_TOPIC_0000002408582110"></a> 函数功能： 配置偏移量数据的指针，要求配置偏移量数据的大小要与SetBiasShapeVec设置的shape包含的数据量大小保持一致。 函数原型： ```
 void SetBiasPtr(const float *ptr)
-```
-
-参数说明：
-
-<a name="table448mcpsimp"></a>
+``` 参数说明： <a name="table448mcpsimp"></a>
 <table><thead align="left"><tr id="row454mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p456mcpsimp"><a name="p456mcpsimp"></a><a name="p456mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p458mcpsimp"><a name="p458mcpsimp"></a><a name="p458mcpsimp"></a>输入/输出</p>
@@ -10713,23 +5871,9 @@ void SetBiasPtr(const float *ptr)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBiasPtr<a name="ZH-CN_TOPIC_0000002408422642"></a>
-
-函数功能：
-
-获取偏移量数据的指针。
-
-函数原型：
-
-```
-const float* GetBiasPtr() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBiasPtr<a name="ZH-CN_TOPIC_0000002408422642"></a> 函数功能： 获取偏移量数据的指针。 函数原型： ```
+const float* GetBiasPtr const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10746,23 +5890,9 @@ const float* GetBiasPtr() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBiasShapeVec<a name="ZH-CN_TOPIC_0000002408422046"></a>
-
-函数功能：
-
-配置偏移量参数的shape。
-
-函数原型：
-
-```
+</table> #### SetBiasShapeVec<a name="ZH-CN_TOPIC_0000002408422046"></a> 函数功能： 配置偏移量参数的shape。 函数原型： ```
 void SetBiasShapeVec(const vector<int32_t> &shape)
-```
-
-参数说明：
-
-<a name="table3616mcpsimp"></a>
+``` 参数说明： <a name="table3616mcpsimp"></a>
 <table><thead align="left"><tr id="row3622mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3624mcpsimp"><a name="p3624mcpsimp"></a><a name="p3624mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3626mcpsimp"><a name="p3626mcpsimp"></a><a name="p3626mcpsimp"></a>输入/输出</p>
@@ -10779,23 +5909,9 @@ void SetBiasShapeVec(const vector<int32_t> &shape)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBiasShapeVec<a name="ZH-CN_TOPIC_0000002441981505"></a>
-
-函数功能：
-
-获取偏移量参数的shape。
-
-函数原型：
-
-```
-const vector<int32_t>& GetBiasShapeVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBiasShapeVec<a name="ZH-CN_TOPIC_0000002441981505"></a> 函数功能： 获取偏移量参数的shape。 函数原型： ```
+const vector<int32_t>& GetBiasShapeVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10812,34 +5928,9 @@ const vector<int32_t>& GetBiasShapeVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ConcatOperator配置接口<a name="ZH-CN_TOPIC_0000002408582614"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-### CropOperator配置接口<a name="ZH-CN_TOPIC_0000002408421994"></a>
-
-SetAxis接口参考[部分算子通用接口](#ZH-CN_TOPIC_0000002442021201)章节，其默认值为1。
-
-
-
-
-#### SetOrigOffsetVec<a name="ZH-CN_TOPIC_0000002408422474"></a>
-
-函数功能：
-
-配置所有轴方向上的偏移量值。
-
-函数原型：
-
-```
+</table> ### ConcatOperator配置接口<a name="ZH-CN_TOPIC_0000002408582614"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 ### CropOperator配置接口<a name="ZH-CN_TOPIC_0000002408421994"></a> SetAxis接口参考[部分算子通用接口](#ZH-CN_TOPIC_0000002442021201)章节，其默认值为1。 #### SetOrigOffsetVec<a name="ZH-CN_TOPIC_0000002408422474"></a> 函数功能： 配置所有轴方向上的偏移量值。 函数原型： ```
 void SetOrigOffsetVec(const vector<uint32_t> &offsetVec)
-```
-
-参数说明：
-
-<a name="table2098mcpsimp"></a>
+``` 参数说明： <a name="table2098mcpsimp"></a>
 <table><thead align="left"><tr id="row2104mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2106mcpsimp"><a name="p2106mcpsimp"></a><a name="p2106mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2108mcpsimp"><a name="p2108mcpsimp"></a><a name="p2108mcpsimp"></a>输入/输出</p>
@@ -10856,23 +5947,9 @@ void SetOrigOffsetVec(const vector<uint32_t> &offsetVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetOrigOffsetVec<a name="ZH-CN_TOPIC_0000002408582398"></a>
-
-函数功能：
-
-获取所有轴方向上的偏移量值。
-
-函数原型：
-
-```
-const vector<uint32_t>& GetOrigOffsetVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetOrigOffsetVec<a name="ZH-CN_TOPIC_0000002408582398"></a> 函数功能： 获取所有轴方向上的偏移量值。 函数原型： ```
+const vector<uint32_t>& GetOrigOffsetVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -10889,23 +5966,9 @@ const vector<uint32_t>& GetOrigOffsetVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddOrigOffset<a name="ZH-CN_TOPIC_0000002408582646"></a>
-
-函数功能：
-
-添加一个轴方向上的偏移量值。
-
-函数原型：
-
-```
+</table> #### AddOrigOffset<a name="ZH-CN_TOPIC_0000002408582646"></a> 函数功能： 添加一个轴方向上的偏移量值。 函数原型： ```
 void AddOrigOffset(uint32_t offset)
-```
-
-参数说明：
-
-<a name="table2276mcpsimp"></a>
+``` 参数说明： <a name="table2276mcpsimp"></a>
 <table><thead align="left"><tr id="row2282mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2284mcpsimp"><a name="p2284mcpsimp"></a><a name="p2284mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2286mcpsimp"><a name="p2286mcpsimp"></a><a name="p2286mcpsimp"></a>输入/输出</p>
@@ -10922,36 +5985,9 @@ void AddOrigOffset(uint32_t offset)
 </td>
 </tr>
 </tbody>
-</table>
-
-### PreprocessOperator配置接口<a name="ZH-CN_TOPIC_0000002442021889"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetShapeParamVec<a name="ZH-CN_TOPIC_0000002408422686"></a>
-
-函数功能：
-
-配置输入数据的shape信息。
-
-函数原型：
-
-```
+</table> ### PreprocessOperator配置接口<a name="ZH-CN_TOPIC_0000002442021889"></a> #### SetShapeParamVec<a name="ZH-CN_TOPIC_0000002408422686"></a> 函数功能： 配置输入数据的shape信息。 函数原型： ```
 void SetShapeParamVec(const vector<int32_t> &shapeParamVec)
-```
-
-参数说明：
-
-<a name="table1557mcpsimp"></a>
+``` 参数说明： <a name="table1557mcpsimp"></a>
 <table><thead align="left"><tr id="row1563mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1565mcpsimp"><a name="p1565mcpsimp"></a><a name="p1565mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1567mcpsimp"><a name="p1567mcpsimp"></a><a name="p1567mcpsimp"></a>输入/输出</p>
@@ -10968,23 +6004,9 @@ void SetShapeParamVec(const vector<int32_t> &shapeParamVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetShapeParamVec<a name="ZH-CN_TOPIC_0000002442021581"></a>
-
-函数功能：
-
-获取输入数据的shape信息。
-
-函数原型：
-
-```
-const vector<int32_t>& GetShapeParamVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetShapeParamVec<a name="ZH-CN_TOPIC_0000002442021581"></a> 函数功能： 获取输入数据的shape信息。 函数原型： ```
+const vector<int32_t>& GetShapeParamVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11001,23 +6023,9 @@ const vector<int32_t>& GetShapeParamVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddShapeParam<a name="ZH-CN_TOPIC_0000002441981569"></a>
-
-函数功能：
-
-添加一组输入数据对的维度dim值。
-
-函数原型：
-
-```
+</table> #### AddShapeParam<a name="ZH-CN_TOPIC_0000002441981569"></a> 函数功能： 添加一组输入数据对的维度dim值。 函数原型： ```
 void AddShapeParam(int32_t shapeParam)
-```
-
-参数说明：
-
-<a name="table4264mcpsimp"></a>
+``` 参数说明： <a name="table4264mcpsimp"></a>
 <table><thead align="left"><tr id="row4270mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4272mcpsimp"><a name="p4272mcpsimp"></a><a name="p4272mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4274mcpsimp"><a name="p4274mcpsimp"></a><a name="p4274mcpsimp"></a>输入/输出</p>
@@ -11034,23 +6042,9 @@ void AddShapeParam(int32_t shapeParam)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPreprocessScale<a name="ZH-CN_TOPIC_0000002408582514"></a>
-
-函数功能：
-
-配置AAPP所有图像通道的scale参数。通道数需要与SetPreprocessMean相同，与SetModelFormat对应的图像格式通道数相同。
-
-函数原型：
-
-```
+</table> #### SetPreprocessScale<a name="ZH-CN_TOPIC_0000002408582514"></a> 函数功能： 配置AAPP所有图像通道的scale参数。通道数需要与SetPreprocessMean相同，与SetModelFormat对应的图像格式通道数相同。 函数原型： ```
 void SetPreprocessScale(const vector<float> preprocessScale)
-```
-
-参数说明：
-
-<a name="table4264mcpsimp"></a>
+``` 参数说明： <a name="table4264mcpsimp"></a>
 <table><thead align="left"><tr id="row4270mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4272mcpsimp"><a name="p4272mcpsimp"></a><a name="p4272mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4274mcpsimp"><a name="p4274mcpsimp"></a><a name="p4274mcpsimp"></a>输入/输出</p>
@@ -11067,23 +6061,9 @@ void SetPreprocessScale(const vector<float> preprocessScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPreprocessScale<a name="ZH-CN_TOPIC_0000002408422342"></a>
-
-函数功能：
-
-获取AAPP所有图像通道的scale参数。通道数需要与SetPreprocessMean相同，与SetModelFormat对应的图像格式通道数相同。
-
-函数原型：
-
-```
-const vector<float> GetPreprocessScale() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPreprocessScale<a name="ZH-CN_TOPIC_0000002408422342"></a> 函数功能： 获取AAPP所有图像通道的scale参数。通道数需要与SetPreprocessMean相同，与SetModelFormat对应的图像格式通道数相同。 函数原型： ```
+const vector<float> GetPreprocessScale const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11100,23 +6080,9 @@ const vector<float> GetPreprocessScale() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPreprocessMean<a name="ZH-CN_TOPIC_0000002408582746"></a>
-
-函数功能：
-
-配置AAPP所有图像通道的mean参数。通道数需要与SetPreprocessScale相同，与SetModelFormat对应的图像格式通道数相同。
-
-函数原型：
-
-```
+</table> #### SetPreprocessMean<a name="ZH-CN_TOPIC_0000002408582746"></a> 函数功能： 配置AAPP所有图像通道的mean参数。通道数需要与SetPreprocessScale相同，与SetModelFormat对应的图像格式通道数相同。 函数原型： ```
 void SetPreprocessMean(const vector<float> preprocessMean)
-```
-
-参数说明：
-
-<a name="table4264mcpsimp"></a>
+``` 参数说明： <a name="table4264mcpsimp"></a>
 <table><thead align="left"><tr id="row4270mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4272mcpsimp"><a name="p4272mcpsimp"></a><a name="p4272mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4274mcpsimp"><a name="p4274mcpsimp"></a><a name="p4274mcpsimp"></a>输入/输出</p>
@@ -11133,23 +6099,9 @@ void SetPreprocessMean(const vector<float> preprocessMean)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPreprocessMean<a name="ZH-CN_TOPIC_0000002441981353"></a>
-
-函数功能：
-
-获取AAPP所有图像通道的mean参数。通道数需要与SetPreprocessScale相同，与SetModelFormat对应的图像格式通道数相同。
-
-函数原型：
-
-```
-const vector<float> GetPreprocessMean() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPreprocessMean<a name="ZH-CN_TOPIC_0000002441981353"></a> 函数功能： 获取AAPP所有图像通道的mean参数。通道数需要与SetPreprocessScale相同，与SetModelFormat对应的图像格式通道数相同。 函数原型： ```
+const vector<float> GetPreprocessMean const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11166,23 +6118,9 @@ const vector<float> GetPreprocessMean() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetInputFormat<a name="ZH-CN_TOPIC_0000002408422150"></a>
-
-函数功能：
-
-配置AAPP输入图像格式参数。
-
-函数原型：
-
-```
+</table> #### SetInputFormat<a name="ZH-CN_TOPIC_0000002408422150"></a> 函数功能： 配置AAPP输入图像格式参数。 函数原型： ```
 void SetInputFormat(const ImageType inputFormat)
-```
-
-参数说明：
-
-<a name="table4264mcpsimp"></a>
+``` 参数说明： <a name="table4264mcpsimp"></a>
 <table><thead align="left"><tr id="row4270mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4272mcpsimp"><a name="p4272mcpsimp"></a><a name="p4272mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4274mcpsimp"><a name="p4274mcpsimp"></a><a name="p4274mcpsimp"></a>输入/输出</p>
@@ -11222,23 +6160,9 @@ void SetInputFormat(const ImageType inputFormat)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetInputFormat<a name="ZH-CN_TOPIC_0000002442021429"></a>
-
-函数功能：
-
-获取AAPP输入图像格式参数。
-
-函数原型：
-
-```
-const ImageType GetInputFormat() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetInputFormat<a name="ZH-CN_TOPIC_0000002442021429"></a> 函数功能： 获取AAPP输入图像格式参数。 函数原型： ```
+const ImageType GetInputFormat const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11278,23 +6202,9 @@ const ImageType GetInputFormat() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetModelFormat<a name="ZH-CN_TOPIC_0000002441982053"></a>
-
-函数功能：
-
-配置AAPP模型训练与执行时图像通道排布顺序。
-
-函数原型：
-
-```
+</table> #### SetModelFormat<a name="ZH-CN_TOPIC_0000002441982053"></a> 函数功能： 配置AAPP模型训练与执行时图像通道排布顺序。 函数原型： ```
 void SetModelFormat(const RgbxOrderType modelFormat)
-```
-
-参数说明：
-
-<a name="table4264mcpsimp"></a>
+``` 参数说明： <a name="table4264mcpsimp"></a>
 <table><thead align="left"><tr id="row4270mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4272mcpsimp"><a name="p4272mcpsimp"></a><a name="p4272mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4274mcpsimp"><a name="p4274mcpsimp"></a><a name="p4274mcpsimp"></a>输入/输出</p>
@@ -11323,23 +6233,9 @@ void SetModelFormat(const RgbxOrderType modelFormat)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetModelFormat<a name="ZH-CN_TOPIC_0000002408582366"></a>
-
-函数功能：
-
-获取AAPP模型训练与执行时图像通道排布顺序。
-
-函数原型：
-
-```
-const RgbxOrderType GetModelFormat() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetModelFormat<a name="ZH-CN_TOPIC_0000002408582366"></a> 函数功能： 获取AAPP模型训练与执行时图像通道排布顺序。 函数原型： ```
+const RgbxOrderType GetModelFormat const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11368,35 +6264,9 @@ const RgbxOrderType GetModelFormat() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ReshapeOperator配置接口<a name="ZH-CN_TOPIC_0000002408582066"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->当axis<0时，实际起始维度为axis+1。如当shape=NCHW时，axis=-2，意味着仅对W轴reshape。
-
-
-
-
-
-
-#### SetReshapeNumAxes<a name="ZH-CN_TOPIC_0000002408582586"></a>
-
-函数功能：
-
-设置计算从输入shape的axis开始做几个维度的reshape。
-
-函数原型：
-
-```
+</table> ### ReshapeOperator配置接口<a name="ZH-CN_TOPIC_0000002408582066"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 >![](public_sys-resources/icon-notice.gif) **须知：** >当axis<0时，实际起始维度为axis+1。如当shape=NCHW时，axis=-2，意味着仅对W轴reshape。 #### SetReshapeNumAxes<a name="ZH-CN_TOPIC_0000002408582586"></a> 函数功能： 设置计算从输入shape的axis开始做几个维度的reshape。 函数原型： ```
 void SetReshapeNumAxes(int32_t reshapeNumAxes)
-```
-
-参数说明：
-
-<a name="table2039mcpsimp"></a>
+``` 参数说明： <a name="table2039mcpsimp"></a>
 <table><thead align="left"><tr id="row2045mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2047mcpsimp"><a name="p2047mcpsimp"></a><a name="p2047mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2049mcpsimp"><a name="p2049mcpsimp"></a><a name="p2049mcpsimp"></a>输入/输出</p>
@@ -11413,23 +6283,9 @@ void SetReshapeNumAxes(int32_t reshapeNumAxes)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetReshapeNumAxes<a name="ZH-CN_TOPIC_0000002408422702"></a>
-
-函数功能：
-
-获取计算输出Shape的维度数。
-
-函数原型：
-
-```
-int32_t GetReshapeNumAxes() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetReshapeNumAxes<a name="ZH-CN_TOPIC_0000002408422702"></a> 函数功能： 获取计算输出Shape的维度数。 函数原型： ```
+int32_t GetReshapeNumAxes const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11446,23 +6302,9 @@ int32_t GetReshapeNumAxes() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetReshapeDimVec<a name="ZH-CN_TOPIC_0000002408421926"></a>
-
-函数功能：
-
-配置输出的维度shape信息。
-
-函数原型：
-
-```
+</table> #### SetReshapeDimVec<a name="ZH-CN_TOPIC_0000002408421926"></a> 函数功能： 配置输出的维度shape信息。 函数原型： ```
 void SetReshapeDimVec(const vector<int32_t> &reshapeDimVec)
-```
-
-参数说明：
-
-<a name="table5803mcpsimp"></a>
+``` 参数说明： <a name="table5803mcpsimp"></a>
 <table><thead align="left"><tr id="row5809mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5811mcpsimp"><a name="p5811mcpsimp"></a><a name="p5811mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5813mcpsimp"><a name="p5813mcpsimp"></a><a name="p5813mcpsimp"></a>输入/输出</p>
@@ -11479,23 +6321,9 @@ void SetReshapeDimVec(const vector<int32_t> &reshapeDimVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetReshapeDimVec<a name="ZH-CN_TOPIC_0000002408422302"></a>
-
-函数功能：
-
-获取输出的维度shape信息。
-
-函数原型：
-
-```
-const vector<int32_t>& GetReshapeDimVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetReshapeDimVec<a name="ZH-CN_TOPIC_0000002408422302"></a> 函数功能： 获取输出的维度shape信息。 函数原型： ```
+const vector<int32_t>& GetReshapeDimVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11512,23 +6340,9 @@ const vector<int32_t>& GetReshapeDimVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddReshapeDim<a name="ZH-CN_TOPIC_0000002408582446"></a>
-
-函数功能：
-
-添加输出数据一个维度的维度dim值。
-
-函数原型：
-
-```
+</table> #### AddReshapeDim<a name="ZH-CN_TOPIC_0000002408582446"></a> 函数功能： 添加输出数据一个维度的维度dim值。 函数原型： ```
 void AddReshapeDim(int32_t reshapeDim)
-```
-
-参数说明：
-
-<a name="table2247mcpsimp"></a>
+``` 参数说明： <a name="table2247mcpsimp"></a>
 <table><thead align="left"><tr id="row2253mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2255mcpsimp"><a name="p2255mcpsimp"></a><a name="p2255mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2257mcpsimp"><a name="p2257mcpsimp"></a><a name="p2257mcpsimp"></a>输入/输出</p>
@@ -11545,29 +6359,9 @@ void AddReshapeDim(int32_t reshapeDim)
 </td>
 </tr>
 </tbody>
-</table>
-
-### FlattenOperator配置接口<a name="ZH-CN_TOPIC_0000002441981989"></a>
-
-
-
-
-
-#### SetFlattenStartAxis<a name="ZH-CN_TOPIC_0000002408582666"></a>
-
-函数功能：
-
-配置flatten的开始轴。
-
-函数原型：
-
-```
+</table> ### FlattenOperator配置接口<a name="ZH-CN_TOPIC_0000002441981989"></a> #### SetFlattenStartAxis<a name="ZH-CN_TOPIC_0000002408582666"></a> 函数功能： 配置flatten的开始轴。 函数原型： ```
 void SetFlattenStartAxis(int32_t flattenStartAxis)
-```
-
-参数说明：
-
-<a name="table3316mcpsimp"></a>
+``` 参数说明： <a name="table3316mcpsimp"></a>
 <table><thead align="left"><tr id="row3322mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3324mcpsimp"><a name="p3324mcpsimp"></a><a name="p3324mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3326mcpsimp"><a name="p3326mcpsimp"></a><a name="p3326mcpsimp"></a>输入/输出</p>
@@ -11584,23 +6378,9 @@ void SetFlattenStartAxis(int32_t flattenStartAxis)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetFlattenStartAxis<a name="ZH-CN_TOPIC_0000002442021649"></a>
-
-函数功能：
-
-获取flatten的开始轴。
-
-函数原型：
-
-```
-int32_t GetFlattenStartAxis() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetFlattenStartAxis<a name="ZH-CN_TOPIC_0000002442021649"></a> 函数功能： 获取flatten的开始轴。 函数原型： ```
+int32_t GetFlattenStartAxis const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11617,23 +6397,9 @@ int32_t GetFlattenStartAxis() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetFlattenEndAxis<a name="ZH-CN_TOPIC_0000002408582754"></a>
-
-函数功能：
-
-配置flatten的结束轴。
-
-函数原型：
-
-```
+</table> #### SetFlattenEndAxis<a name="ZH-CN_TOPIC_0000002408582754"></a> 函数功能： 配置flatten的结束轴。 函数原型： ```
 void SetFlattenEndAxis(int32_t flattenEndAxis)
-```
-
-参数说明：
-
-<a name="table1439mcpsimp"></a>
+``` 参数说明： <a name="table1439mcpsimp"></a>
 <table><thead align="left"><tr id="row1445mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1447mcpsimp"><a name="p1447mcpsimp"></a><a name="p1447mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1449mcpsimp"><a name="p1449mcpsimp"></a><a name="p1449mcpsimp"></a>输入/输出</p>
@@ -11650,23 +6416,9 @@ void SetFlattenEndAxis(int32_t flattenEndAxis)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetFlattenEndAxis<a name="ZH-CN_TOPIC_0000002442021637"></a>
-
-函数功能：
-
-获取flatten的结束轴。
-
-函数原型：
-
-```
-int32_t GetFlattenEndAxis() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetFlattenEndAxis<a name="ZH-CN_TOPIC_0000002442021637"></a> 函数功能： 获取flatten的结束轴。 函数原型： ```
+int32_t GetFlattenEndAxis const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11683,27 +6435,9 @@ int32_t GetFlattenEndAxis() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ShuffleChannelOperator配置接口<a name="ZH-CN_TOPIC_0000002441981653"></a>
-
-
-
-#### SetShuffleChannelGroup<a name="ZH-CN_TOPIC_0000002408581902"></a>
-
-函数功能：
-
-配置通道分组数。
-
-函数原型：
-
-```
+</table> ### ShuffleChannelOperator配置接口<a name="ZH-CN_TOPIC_0000002441981653"></a> #### SetShuffleChannelGroup<a name="ZH-CN_TOPIC_0000002408581902"></a> 函数功能： 配置通道分组数。 函数原型： ```
 void SetShuffleChannelGroup(int32_t group)
-```
-
-参数说明：
-
-<a name="table4293mcpsimp"></a>
+``` 参数说明： <a name="table4293mcpsimp"></a>
 <table><thead align="left"><tr id="row4299mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4301mcpsimp"><a name="p4301mcpsimp"></a><a name="p4301mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4303mcpsimp"><a name="p4303mcpsimp"></a><a name="p4303mcpsimp"></a>输入/输出</p>
@@ -11720,23 +6454,9 @@ void SetShuffleChannelGroup(int32_t group)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetShuffleChannelGroup<a name="ZH-CN_TOPIC_0000002442021541"></a>
-
-函数功能：
-
-获取通道分组数。
-
-函数原型：
-
-```
-int32_t GetShuffleChannelGroup() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetShuffleChannelGroup<a name="ZH-CN_TOPIC_0000002442021541"></a> 函数功能： 获取通道分组数。 函数原型： ```
+int32_t GetShuffleChannelGroup const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11753,32 +6473,9 @@ int32_t GetShuffleChannelGroup() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SliceOperator配置接口<a name="ZH-CN_TOPIC_0000002408422826"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-
-
-
-
-
-#### SetSliceDim<a name="ZH-CN_TOPIC_0000002442021413"></a>
-
-函数功能：
-
-配置切分沿哪个轴进行。
-
-函数原型：
-
-```
+</table> ### SliceOperator配置接口<a name="ZH-CN_TOPIC_0000002408422826"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 #### SetSliceDim<a name="ZH-CN_TOPIC_0000002442021413"></a> 函数功能： 配置切分沿哪个轴进行。 函数原型： ```
 void SetSliceDim(uint32_t sliceDim)
-```
-
-参数说明：
-
-<a name="table865mcpsimp"></a>
+``` 参数说明： <a name="table865mcpsimp"></a>
 <table><thead align="left"><tr id="row871mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p873mcpsimp"><a name="p873mcpsimp"></a><a name="p873mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p875mcpsimp"><a name="p875mcpsimp"></a><a name="p875mcpsimp"></a>输入/输出</p>
@@ -11795,23 +6492,9 @@ void SetSliceDim(uint32_t sliceDim)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSliceDim<a name="ZH-CN_TOPIC_0000002441981449"></a>
-
-函数功能：
-
-获取切分沿哪个轴进行。
-
-函数原型：
-
-```
-uint32_t GetSliceDim() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSliceDim<a name="ZH-CN_TOPIC_0000002441981449"></a> 函数功能： 获取切分沿哪个轴进行。 函数原型： ```
+uint32_t GetSliceDim const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11828,23 +6511,9 @@ uint32_t GetSliceDim() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetSlicePointVec<a name="ZH-CN_TOPIC_0000002441981781"></a>
-
-函数功能：
-
-配置输出数据的各个切割点。
-
-函数原型：
-
-```
+</table> #### SetSlicePointVec<a name="ZH-CN_TOPIC_0000002441981781"></a> 函数功能： 配置输出数据的各个切割点。 函数原型： ```
 void SetSlicePointVec(const vector<uint32_t> &slicePointVec)
-```
-
-参数说明：
-
-<a name="table332mcpsimp"></a>
+``` 参数说明： <a name="table332mcpsimp"></a>
 <table><thead align="left"><tr id="row338mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p340mcpsimp"><a name="p340mcpsimp"></a><a name="p340mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p342mcpsimp"><a name="p342mcpsimp"></a><a name="p342mcpsimp"></a>输入/输出</p>
@@ -11861,23 +6530,9 @@ void SetSlicePointVec(const vector<uint32_t> &slicePointVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSlicePointVec<a name="ZH-CN_TOPIC_0000002408582322"></a>
-
-函数功能：
-
-获取输出数据的各个切割点。
-
-函数原型：
-
-```
-const vector<uint32_t>& GetSlicePointVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSlicePointVec<a name="ZH-CN_TOPIC_0000002408582322"></a> 函数功能： 获取输出数据的各个切割点。 函数原型： ```
+const vector<uint32_t>& GetSlicePointVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -11894,23 +6549,9 @@ const vector<uint32_t>& GetSlicePointVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddSlicePoint<a name="ZH-CN_TOPIC_0000002408422754"></a>
-
-函数功能：
-
-添加输出数据一个切割点。
-
-函数原型：
-
-```
+</table> #### AddSlicePoint<a name="ZH-CN_TOPIC_0000002408422754"></a> 函数功能： 添加输出数据一个切割点。 函数原型： ```
 void AddSlicePoint(uint32_t slicePoint)
-```
-
-参数说明：
-
-<a name="table2305mcpsimp"></a>
+``` 参数说明： <a name="table2305mcpsimp"></a>
 <table><thead align="left"><tr id="row2311mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2313mcpsimp"><a name="p2313mcpsimp"></a><a name="p2313mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2315mcpsimp"><a name="p2315mcpsimp"></a><a name="p2315mcpsimp"></a>输入/输出</p>
@@ -11927,37 +6568,9 @@ void AddSlicePoint(uint32_t slicePoint)
 </td>
 </tr>
 </tbody>
-</table>
-
-### SplitOperator配置接口<a name="ZH-CN_TOPIC_0000002442021797"></a>
-
-无参数配置。
-
-### ExtractOperator配置接口<a name="ZH-CN_TOPIC_0000002408582734"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-
-
-
-
-
-
-#### SetSliceDim<a name="ZH-CN_TOPIC_0000002442021445"></a>
-
-函数功能：
-
-配置切分沿哪个轴进行。
-
-函数原型：
-
-```
+</table> ### SplitOperator配置接口<a name="ZH-CN_TOPIC_0000002442021797"></a> 无参数配置。 ### ExtractOperator配置接口<a name="ZH-CN_TOPIC_0000002408582734"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 #### SetSliceDim<a name="ZH-CN_TOPIC_0000002442021445"></a> 函数功能： 配置切分沿哪个轴进行。 函数原型： ```
 void SetSliceDim(uint32_t sliceDim)
-```
-
-参数说明：
-
-<a name="table4410mcpsimp"></a>
+``` 参数说明： <a name="table4410mcpsimp"></a>
 <table><thead align="left"><tr id="row4416mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4418mcpsimp"><a name="p4418mcpsimp"></a><a name="p4418mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4420mcpsimp"><a name="p4420mcpsimp"></a><a name="p4420mcpsimp"></a>输入/输出</p>
@@ -11974,23 +6587,9 @@ void SetSliceDim(uint32_t sliceDim)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSliceDim<a name="ZH-CN_TOPIC_0000002408422506"></a>
-
-函数功能：
-
-获取切分沿哪个轴进行。
-
-函数原型：
-
-```
-uint32_t GetSliceDim() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSliceDim<a name="ZH-CN_TOPIC_0000002408422506"></a> 函数功能： 获取切分沿哪个轴进行。 函数原型： ```
+uint32_t GetSliceDim const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12007,23 +6606,9 @@ uint32_t GetSliceDim() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetSlicePointBegin<a name="ZH-CN_TOPIC_0000002408422090"></a>
-
-函数功能：
-
-配置切割的开始位置。
-
-函数原型：
-
-```
+</table> #### SetSlicePointBegin<a name="ZH-CN_TOPIC_0000002408422090"></a> 函数功能： 配置切割的开始位置。 函数原型： ```
 void SetSlicePointBegin(uint32_t slicePointBegin)
-```
-
-参数说明：
-
-<a name="table5519mcpsimp"></a>
+``` 参数说明： <a name="table5519mcpsimp"></a>
 <table><thead align="left"><tr id="row5525mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5527mcpsimp"><a name="p5527mcpsimp"></a><a name="p5527mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5529mcpsimp"><a name="p5529mcpsimp"></a><a name="p5529mcpsimp"></a>输入/输出</p>
@@ -12040,23 +6625,9 @@ void SetSlicePointBegin(uint32_t slicePointBegin)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSlicePointBegin<a name="ZH-CN_TOPIC_0000002408422746"></a>
-
-函数功能：
-
-获取切割的开始位置。
-
-函数原型：
-
-```
-uint32_t GetSlicePointBegin() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSlicePointBegin<a name="ZH-CN_TOPIC_0000002408422746"></a> 函数功能： 获取切割的开始位置。 函数原型： ```
+uint32_t GetSlicePointBegin const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12073,23 +6644,9 @@ uint32_t GetSlicePointBegin() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetSlicePointEnd<a name="ZH-CN_TOPIC_0000002441982145"></a>
-
-函数功能：
-
-配置切割的结束位置。
-
-函数原型：
-
-```
+</table> #### SetSlicePointEnd<a name="ZH-CN_TOPIC_0000002441982145"></a> 函数功能： 配置切割的结束位置。 函数原型： ```
 void SetSlicePointEnd(uint32_t slicePointEnd)
-```
-
-参数说明：
-
-<a name="table1830mcpsimp"></a>
+``` 参数说明： <a name="table1830mcpsimp"></a>
 <table><thead align="left"><tr id="row1836mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1838mcpsimp"><a name="p1838mcpsimp"></a><a name="p1838mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1840mcpsimp"><a name="p1840mcpsimp"></a><a name="p1840mcpsimp"></a>输入/输出</p>
@@ -12106,23 +6663,9 @@ void SetSlicePointEnd(uint32_t slicePointEnd)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSlicePointEnd<a name="ZH-CN_TOPIC_0000002408422398"></a>
-
-函数功能：
-
-获取切割的结束位置。
-
-函数原型：
-
-```
-uint32_t GetSlicePointEnd() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSlicePointEnd<a name="ZH-CN_TOPIC_0000002408422398"></a> 函数功能： 获取切割的结束位置。 函数原型： ```
+uint32_t GetSlicePointEnd const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12139,31 +6682,9 @@ uint32_t GetSlicePointEnd() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### TileOperator配置接口<a name="ZH-CN_TOPIC_0000002408582302"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-
-
-
-
-#### SetTileTiles<a name="ZH-CN_TOPIC_0000002408582134"></a>
-
-函数功能：
-
-配置扩展的倍数。与SetAxis配合使用。与SetTileRepeats不同时使用。
-
-函数原型：
-
-```
+</table> ### TileOperator配置接口<a name="ZH-CN_TOPIC_0000002408582302"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 #### SetTileTiles<a name="ZH-CN_TOPIC_0000002408582134"></a> 函数功能： 配置扩展的倍数。与SetAxis配合使用。与SetTileRepeats不同时使用。 函数原型： ```
 void SetTileTiles(int32_t tileTiles)
-```
-
-参数说明：
-
-<a name="table3196mcpsimp"></a>
+``` 参数说明： <a name="table3196mcpsimp"></a>
 <table><thead align="left"><tr id="row3202mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3204mcpsimp"><a name="p3204mcpsimp"></a><a name="p3204mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3206mcpsimp"><a name="p3206mcpsimp"></a><a name="p3206mcpsimp"></a>输入/输出</p>
@@ -12180,23 +6701,9 @@ void SetTileTiles(int32_t tileTiles)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetTileTiles<a name="ZH-CN_TOPIC_0000002442021689"></a>
-
-函数功能：
-
-获取扩展的倍数。与SetAxis配合使用。与SetTileRepeats不同时使用。
-
-函数原型：
-
-```
-int32_t GetTileTiles() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetTileTiles<a name="ZH-CN_TOPIC_0000002442021689"></a> 函数功能： 获取扩展的倍数。与SetAxis配合使用。与SetTileRepeats不同时使用。 函数原型： ```
+int32_t GetTileTiles const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12213,23 +6720,9 @@ int32_t GetTileTiles() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetTileRepeats<a name="ZH-CN_TOPIC_0000002442021801"></a>
-
-函数功能：
-
-配置在各个维度上的扩展倍数。与SetAxis、SetTileTiles不同时使用。
-
-函数原型：
-
-```
+</table> #### SetTileRepeats<a name="ZH-CN_TOPIC_0000002442021801"></a> 函数功能： 配置在各个维度上的扩展倍数。与SetAxis、SetTileTiles不同时使用。 函数原型： ```
 void SetTileRepeats(vector<int64_t> tileRepeats)
-```
-
-参数说明：
-
-<a name="table1979mcpsimp"></a>
+``` 参数说明： <a name="table1979mcpsimp"></a>
 <table><thead align="left"><tr id="row1985mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1987mcpsimp"><a name="p1987mcpsimp"></a><a name="p1987mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1989mcpsimp"><a name="p1989mcpsimp"></a><a name="p1989mcpsimp"></a>输入/输出</p>
@@ -12246,23 +6739,9 @@ void SetTileRepeats(vector<int64_t> tileRepeats)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetTileRepeats<a name="ZH-CN_TOPIC_0000002441981721"></a>
-
-函数功能：
-
-获取在各个维度上的扩展倍数。与SetAxis、SetTileTiles不同时使用。
-
-函数原型：
-
-```
-vector<int64_t> GetTileRepeats() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetTileRepeats<a name="ZH-CN_TOPIC_0000002441981721"></a> 函数功能： 获取在各个维度上的扩展倍数。与SetAxis、SetTileTiles不同时使用。 函数原型： ```
+vector<int64_t> GetTileRepeats const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12279,29 +6758,9 @@ vector<int64_t> GetTileRepeats() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### PermuteOperator配置接口<a name="ZH-CN_TOPIC_0000002408422594"></a>
-
-
-
-
-
-#### SetOutputDimOrderFormat<a name="ZH-CN_TOPIC_0000002442021981"></a>
-
-函数功能：
-
-配置维度顺序格式的转换类型。
-
-函数原型：
-
-```
+</table> ### PermuteOperator配置接口<a name="ZH-CN_TOPIC_0000002408422594"></a> #### SetOutputDimOrderFormat<a name="ZH-CN_TOPIC_0000002442021981"></a> 函数功能： 配置维度顺序格式的转换类型。 函数原型： ```
 void SetOutputDimOrderFormat(DimOrderFormat format)
-```
-
-参数说明：
-
-<a name="table3524mcpsimp"></a>
+``` 参数说明： <a name="table3524mcpsimp"></a>
 <table><thead align="left"><tr id="row3530mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3532mcpsimp"><a name="p3532mcpsimp"></a><a name="p3532mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3534mcpsimp"><a name="p3534mcpsimp"></a><a name="p3534mcpsimp"></a>输入/输出</p>
@@ -12320,23 +6779,9 @@ void SetOutputDimOrderFormat(DimOrderFormat format)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetOutputDimOrderFormat<a name="ZH-CN_TOPIC_0000002408422466"></a>
-
-函数功能：
-
-获取维度顺序格式的转换类型。
-
-函数原型：
-
-```
-DimOrderFormat GetOutputDimOrderFormat() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetOutputDimOrderFormat<a name="ZH-CN_TOPIC_0000002408422466"></a> 函数功能： 获取维度顺序格式的转换类型。 函数原型： ```
+DimOrderFormat GetOutputDimOrderFormat const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12355,23 +6800,9 @@ DimOrderFormat GetOutputDimOrderFormat() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetOutputDimOrder<a name="ZH-CN_TOPIC_0000002408582778"></a>
-
-函数功能：
-
-配置输出维度顺序。
-
-函数原型：
-
-```
+</table> #### SetOutputDimOrder<a name="ZH-CN_TOPIC_0000002408582778"></a> 函数功能： 配置输出维度顺序。 函数原型： ```
 void SetOutputDimOrder(const vector<uint32_t> &permuteOrder)
-```
-
-参数说明：
-
-<a name="table3524mcpsimp"></a>
+``` 参数说明： <a name="table3524mcpsimp"></a>
 <table><thead align="left"><tr id="row3530mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3532mcpsimp"><a name="p3532mcpsimp"></a><a name="p3532mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3534mcpsimp"><a name="p3534mcpsimp"></a><a name="p3534mcpsimp"></a>输入/输出</p>
@@ -12388,23 +6819,9 @@ void SetOutputDimOrder(const vector<uint32_t> &permuteOrder)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetOutputDimOrder<a name="ZH-CN_TOPIC_0000002408582786"></a>
-
-函数功能:
-
-获取输出维度顺序。
-
-函数原型：
-
-```
-const vector<uint32_t>& GetOutputDimOrder() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetOutputDimOrder<a name="ZH-CN_TOPIC_0000002408582786"></a> 函数功能: 获取输出维度顺序。 函数原型： ```
+const vector<uint32_t>& GetOutputDimOrder const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12421,35 +6838,9 @@ const vector<uint32_t>& GetOutputDimOrder() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### BnllOperator配置接口<a name="ZH-CN_TOPIC_0000002442021041"></a>
-
-无参数配置。
-
-### LogOperator配置接口<a name="ZH-CN_TOPIC_0000002442021405"></a>
-
-
-
-
-
-
-
-#### SetLogBase<a name="ZH-CN_TOPIC_0000002408582762"></a>
-
-函数功能：
-
-配置底数的值。
-
-函数原型：
-
-```
+</table> ### BnllOperator配置接口<a name="ZH-CN_TOPIC_0000002442021041"></a> 无参数配置。 ### LogOperator配置接口<a name="ZH-CN_TOPIC_0000002442021405"></a> #### SetLogBase<a name="ZH-CN_TOPIC_0000002408582762"></a> 函数功能： 配置底数的值。 函数原型： ```
 void SetLogBase(float logBase)
-```
-
-参数说明：
-
-<a name="table2987mcpsimp"></a>
+``` 参数说明： <a name="table2987mcpsimp"></a>
 <table><thead align="left"><tr id="row2993mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2995mcpsimp"><a name="p2995mcpsimp"></a><a name="p2995mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2997mcpsimp"><a name="p2997mcpsimp"></a><a name="p2997mcpsimp"></a>输入/输出</p>
@@ -12466,23 +6857,9 @@ void SetLogBase(float logBase)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLogBase<a name="ZH-CN_TOPIC_0000002441981289"></a>
-
-函数功能：
-
-获取底数的值。
-
-函数原型：
-
-```
-float GetLogBase() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLogBase<a name="ZH-CN_TOPIC_0000002441981289"></a> 函数功能： 获取底数的值。 函数原型： ```
+float GetLogBase const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12499,23 +6876,9 @@ float GetLogBase() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetLogScale<a name="ZH-CN_TOPIC_0000002408422610"></a>
-
-函数功能：
-
-配置缩放系数的值。
-
-函数原型：
-
-```
+</table> #### SetLogScale<a name="ZH-CN_TOPIC_0000002408422610"></a> 函数功能： 配置缩放系数的值。 函数原型： ```
 void SetLogScale(float logScale)
-```
-
-参数说明：
-
-<a name="table2367mcpsimp"></a>
+``` 参数说明： <a name="table2367mcpsimp"></a>
 <table><thead align="left"><tr id="row2373mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2375mcpsimp"><a name="p2375mcpsimp"></a><a name="p2375mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2377mcpsimp"><a name="p2377mcpsimp"></a><a name="p2377mcpsimp"></a>输入/输出</p>
@@ -12532,23 +6895,9 @@ void SetLogScale(float logScale)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLogScale<a name="ZH-CN_TOPIC_0000002441981557"></a>
-
-函数功能：
-
-获取缩放系数的值。
-
-函数原型：
-
-```
-float GetLogScale() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLogScale<a name="ZH-CN_TOPIC_0000002441981557"></a> 函数功能： 获取缩放系数的值。 函数原型： ```
+float GetLogScale const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12565,23 +6914,9 @@ float GetLogScale() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetLogShift<a name="ZH-CN_TOPIC_0000002441981585"></a>
-
-函数功能：
-
-配置偏移量的值。
-
-函数原型：
-
-```
+</table> #### SetLogShift<a name="ZH-CN_TOPIC_0000002441981585"></a> 函数功能： 配置偏移量的值。 函数原型： ```
 void SetLogShift(float logShift)
-```
-
-参数说明：
-
-<a name="table4498mcpsimp"></a>
+``` 参数说明： <a name="table4498mcpsimp"></a>
 <table><thead align="left"><tr id="row4504mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4506mcpsimp"><a name="p4506mcpsimp"></a><a name="p4506mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4508mcpsimp"><a name="p4508mcpsimp"></a><a name="p4508mcpsimp"></a>输入/输出</p>
@@ -12598,23 +6933,9 @@ void SetLogShift(float logShift)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLogShift<a name="ZH-CN_TOPIC_0000002408422222"></a>
-
-函数功能：
-
-获取偏移量的值。
-
-函数原型：
-
-```
-float GetLogShift() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLogShift<a name="ZH-CN_TOPIC_0000002408422222"></a> 函数功能： 获取偏移量的值。 函数原型： ```
+float GetLogShift const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12631,31 +6952,9 @@ float GetLogShift() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### AbsvalOperator配置接口<a name="ZH-CN_TOPIC_0000002408422874"></a>
-
-无参数配置。
-
-### EluOperator配置接口<a name="ZH-CN_TOPIC_0000002408582574"></a>
-
-
-
-#### SetEluAlpha<a name="ZH-CN_TOPIC_0000002441981233"></a>
-
-函数功能：
-
-配置Alpha系数的值。
-
-函数原型：
-
-```
+</table> ### AbsvalOperator配置接口<a name="ZH-CN_TOPIC_0000002408422874"></a> 无参数配置。 ### EluOperator配置接口<a name="ZH-CN_TOPIC_0000002408582574"></a> #### SetEluAlpha<a name="ZH-CN_TOPIC_0000002441981233"></a> 函数功能： 配置Alpha系数的值。 函数原型： ```
 void SetEluAlpha(float eluAlpha)
-```
-
-参数说明：
-
-<a name="table2338mcpsimp"></a>
+``` 参数说明： <a name="table2338mcpsimp"></a>
 <table><thead align="left"><tr id="row2344mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2346mcpsimp"><a name="p2346mcpsimp"></a><a name="p2346mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2348mcpsimp"><a name="p2348mcpsimp"></a><a name="p2348mcpsimp"></a>输入/输出</p>
@@ -12672,23 +6971,9 @@ void SetEluAlpha(float eluAlpha)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetEluAlpha<a name="ZH-CN_TOPIC_0000002408422670"></a>
-
-函数功能：
-
-获取Alpha系数的值。
-
-函数原型：
-
-```
-float GetEluAlpha() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetEluAlpha<a name="ZH-CN_TOPIC_0000002408422670"></a> 函数功能： 获取Alpha系数的值。 函数原型： ```
+float GetEluAlpha const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12705,35 +6990,9 @@ float GetEluAlpha() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SigmoidOperator配置接口<a name="ZH-CN_TOPIC_0000002442021177"></a>
-
-无参数配置。
-
-### TanhOperator配置接口<a name="ZH-CN_TOPIC_0000002408422370"></a>
-
-无参数配置。
-
-### HswishOperator配置接口<a name="ZH-CN_TOPIC_0000002442021905"></a>
-
-
-
-#### SetHswishSlope<a name="ZH-CN_TOPIC_0000002442021537"></a>
-
-函数功能：
-
-配置斜率值。
-
-函数原型：
-
-```
+</table> ### SigmoidOperator配置接口<a name="ZH-CN_TOPIC_0000002442021177"></a> 无参数配置。 ### TanhOperator配置接口<a name="ZH-CN_TOPIC_0000002408422370"></a> 无参数配置。 ### HswishOperator配置接口<a name="ZH-CN_TOPIC_0000002442021905"></a> #### SetHswishSlope<a name="ZH-CN_TOPIC_0000002442021537"></a> 函数功能： 配置斜率值。 函数原型： ```
 void SetHswishSlope(float slope)
-```
-
-参数说明：
-
-<a name="table952mcpsimp"></a>
+``` 参数说明： <a name="table952mcpsimp"></a>
 <table><thead align="left"><tr id="row958mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p960mcpsimp"><a name="p960mcpsimp"></a><a name="p960mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p962mcpsimp"><a name="p962mcpsimp"></a><a name="p962mcpsimp"></a>输入/输出</p>
@@ -12750,23 +7009,9 @@ void SetHswishSlope(float slope)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetHswishSlope<a name="ZH-CN_TOPIC_0000002442021397"></a>
-
-函数功能：
-
-获取斜率值。
-
-函数原型：
-
-```
-float GetHswishSlope() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetHswishSlope<a name="ZH-CN_TOPIC_0000002442021397"></a> 函数功能： 获取斜率值。 函数原型： ```
+float GetHswishSlope const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12783,30 +7028,9 @@ float GetHswishSlope() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### PreluOperator配置接口<a name="ZH-CN_TOPIC_0000002441981553"></a>
-
-
-
-
-
-
-#### SetPreluIsChannelShared<a name="ZH-CN_TOPIC_0000002408422710"></a>
-
-函数功能：
-
-配置斜率参数是不是各个通道共享的。
-
-函数原型：
-
-```
+</table> ### PreluOperator配置接口<a name="ZH-CN_TOPIC_0000002441981553"></a> #### SetPreluIsChannelShared<a name="ZH-CN_TOPIC_0000002408422710"></a> 函数功能： 配置斜率参数是不是各个通道共享的。 函数原型： ```
 void SetPreluIsChannelShared(bool preluIsChannelShared)
-```
-
-参数说明：
-
-<a name="table981mcpsimp"></a>
+``` 参数说明： <a name="table981mcpsimp"></a>
 <table><thead align="left"><tr id="row987mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p989mcpsimp"><a name="p989mcpsimp"></a><a name="p989mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p991mcpsimp"><a name="p991mcpsimp"></a><a name="p991mcpsimp"></a>输入/输出</p>
@@ -12823,23 +7047,9 @@ void SetPreluIsChannelShared(bool preluIsChannelShared)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPreluIsChannelShared<a name="ZH-CN_TOPIC_0000002408422634"></a>
-
-函数功能：
-
-获取斜率参数是不是各个通道共享的。
-
-函数原型：
-
-```
-bool GetPreluIsChannelShared() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPreluIsChannelShared<a name="ZH-CN_TOPIC_0000002408422634"></a> 函数功能： 获取斜率参数是不是各个通道共享的。 函数原型： ```
+bool GetPreluIsChannelShared const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12856,23 +7066,9 @@ bool GetPreluIsChannelShared() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetAlphaNegVec<a name="ZH-CN_TOPIC_0000002442021749"></a>
-
-函数功能：
-
-设置所有通道的斜率数据。
-
-函数原型：
-
-```
+</table> #### SetAlphaNegVec<a name="ZH-CN_TOPIC_0000002442021749"></a> 函数功能： 设置所有通道的斜率数据。 函数原型： ```
 void SetAlphaNegVec(const vector<float> &vec)
-```
-
-参数说明：
-
-<a name="table2128mcpsimp"></a>
+``` 参数说明： <a name="table2128mcpsimp"></a>
 <table><thead align="left"><tr id="row2134mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2136mcpsimp"><a name="p2136mcpsimp"></a><a name="p2136mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2138mcpsimp"><a name="p2138mcpsimp"></a><a name="p2138mcpsimp"></a>输入/输出</p>
@@ -12889,23 +7085,9 @@ void SetAlphaNegVec(const vector<float> &vec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAlphaNegVec<a name="ZH-CN_TOPIC_0000002442021613"></a>
-
-函数功能：
-
-获取所有通道的斜率数据。
-
-函数原型：
-
-```
-const vector<float>& GetAlphaNegVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetAlphaNegVec<a name="ZH-CN_TOPIC_0000002442021613"></a> 函数功能： 获取所有通道的斜率数据。 函数原型： ```
+const vector<float>& GetAlphaNegVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -12922,23 +7104,9 @@ const vector<float>& GetAlphaNegVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushAlphaNegVec<a name="ZH-CN_TOPIC_0000002441981369"></a>
-
-函数功能：
-
-添加一组斜率数据。
-
-函数原型：
-
-```
+</table> #### PushAlphaNegVec<a name="ZH-CN_TOPIC_0000002441981369"></a> 函数功能： 添加一组斜率数据。 函数原型： ```
 void PushAlphaNegVec(float value)
-```
-
-参数说明：
-
-<a name="table597mcpsimp"></a>
+``` 参数说明： <a name="table597mcpsimp"></a>
 <table><thead align="left"><tr id="row603mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p605mcpsimp"><a name="p605mcpsimp"></a><a name="p605mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p607mcpsimp"><a name="p607mcpsimp"></a><a name="p607mcpsimp"></a>输入/输出</p>
@@ -12955,27 +7123,9 @@ void PushAlphaNegVec(float value)
 </td>
 </tr>
 </tbody>
-</table>
-
-### ReluOperator配置接口<a name="ZH-CN_TOPIC_0000002441981279"></a>
-
-
-
-#### SetAlpha<a name="ZH-CN_TOPIC_0000002408582162"></a>
-
-函数功能：
-
-设置斜率数据。
-
-函数原型：
-
-```
+</table> ### ReluOperator配置接口<a name="ZH-CN_TOPIC_0000002441981279"></a> #### SetAlpha<a name="ZH-CN_TOPIC_0000002408582162"></a> 函数功能： 设置斜率数据。 函数原型： ```
 void SetAlpha(float alpha)
-```
-
-参数说明：
-
-<a name="table5675mcpsimp"></a>
+``` 参数说明： <a name="table5675mcpsimp"></a>
 <table><thead align="left"><tr id="row5681mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5683mcpsimp"><a name="p5683mcpsimp"></a><a name="p5683mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5685mcpsimp"><a name="p5685mcpsimp"></a><a name="p5685mcpsimp"></a>输入/输出</p>
@@ -12992,23 +7142,9 @@ void SetAlpha(float alpha)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAlpha<a name="ZH-CN_TOPIC_0000002408422518"></a>
-
-函数功能：
-
-获取斜率数据。
-
-函数原型：
-
-```
-float GetAlpha() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetAlpha<a name="ZH-CN_TOPIC_0000002408422518"></a> 函数功能： 获取斜率数据。 函数原型： ```
+float GetAlpha const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13025,29 +7161,9 @@ float GetAlpha() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ClipOperator配置接口<a name="ZH-CN_TOPIC_0000002408422578"></a>
-
-
-
-
-
-#### SetClipCeil<a name="ZH-CN_TOPIC_0000002441981741"></a>
-
-函数功能：
-
-配置截取的上阈值。
-
-函数原型：
-
-```
+</table> ### ClipOperator配置接口<a name="ZH-CN_TOPIC_0000002408422578"></a> #### SetClipCeil<a name="ZH-CN_TOPIC_0000002441981741"></a> 函数功能： 配置截取的上阈值。 函数原型： ```
 void SetClipCeil(float value)
-```
-
-参数说明：
-
-<a name="table254mcpsimp"></a>
+``` 参数说明： <a name="table254mcpsimp"></a>
 <table><thead align="left"><tr id="row260mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p262mcpsimp"><a name="p262mcpsimp"></a><a name="p262mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p264mcpsimp"><a name="p264mcpsimp"></a><a name="p264mcpsimp"></a>输入/输出</p>
@@ -13064,23 +7180,9 @@ void SetClipCeil(float value)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetClipCeil<a name="ZH-CN_TOPIC_0000002441981397"></a>
-
-函数功能：
-
-获取截取的上阈值。
-
-函数原型：
-
-```
-float GetClipCeil() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetClipCeil<a name="ZH-CN_TOPIC_0000002441981397"></a> 函数功能： 获取截取的上阈值。 函数原型： ```
+float GetClipCeil const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13097,23 +7199,9 @@ float GetClipCeil() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetClipFloor<a name="ZH-CN_TOPIC_0000002442021465"></a>
-
-函数功能：
-
-配置截取的下阈值。
-
-函数原型：
-
-```
+</table> #### SetClipFloor<a name="ZH-CN_TOPIC_0000002442021465"></a> 函数功能： 配置截取的下阈值。 函数原型： ```
 void SetClipFloor(float value)
-```
-
-参数说明：
-
-<a name="table894mcpsimp"></a>
+``` 参数说明： <a name="table894mcpsimp"></a>
 <table><thead align="left"><tr id="row900mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p902mcpsimp"><a name="p902mcpsimp"></a><a name="p902mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p904mcpsimp"><a name="p904mcpsimp"></a><a name="p904mcpsimp"></a>输入/输出</p>
@@ -13130,23 +7218,9 @@ void SetClipFloor(float value)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetClipFloor<a name="ZH-CN_TOPIC_0000002441981637"></a>
-
-函数功能：
-
-获取截取的下阈值。
-
-函数原型：
-
-```
-float GetClipFloor() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetClipFloor<a name="ZH-CN_TOPIC_0000002441981637"></a> 函数功能： 获取截取的下阈值。 函数原型： ```
+float GetClipFloor const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13163,31 +7237,9 @@ float GetClipFloor() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ConstantOfShapeOperator配置接口<a name="ZH-CN_TOPIC_0000002408422854"></a>
-
-该算子不能作为网络输出层。
-
-
-
-
-
-#### SetValue<a name="ZH-CN_TOPIC_0000002442021665"></a>
-
-函数功能：
-
-配置设置的数值。
-
-函数原型：
-
-```
+</table> ### ConstantOfShapeOperator配置接口<a name="ZH-CN_TOPIC_0000002408422854"></a> 该算子不能作为网络输出层。 #### SetValue<a name="ZH-CN_TOPIC_0000002442021665"></a> 函数功能： 配置设置的数值。 函数原型： ```
 void SetValue(float val)
-```
-
-参数说明：
-
-<a name="table1948mcpsimp"></a>
+``` 参数说明： <a name="table1948mcpsimp"></a>
 <table><thead align="left"><tr id="row1954mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1956mcpsimp"><a name="p1956mcpsimp"></a><a name="p1956mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1958mcpsimp"><a name="p1958mcpsimp"></a><a name="p1958mcpsimp"></a>输入/输出</p>
@@ -13204,23 +7256,9 @@ void SetValue(float val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetValue<a name="ZH-CN_TOPIC_0000002408582222"></a>
-
-函数功能：
-
-获取设置的数值。
-
-函数原型：
-
-```
-float GetValue() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetValue<a name="ZH-CN_TOPIC_0000002408582222"></a> 函数功能： 获取设置的数值。 函数原型： ```
+float GetValue const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13237,23 +7275,9 @@ float GetValue() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetShape<a name="ZH-CN_TOPIC_0000002441981301"></a>
-
-函数功能：
-
-设置维度尺寸shape。
-
-函数原型：
-
-```
+</table> #### SetShape<a name="ZH-CN_TOPIC_0000002441981301"></a> 函数功能： 设置维度尺寸shape。 函数原型： ```
 void SetShape(const vector<int32_t> &shape)
-```
-
-参数说明：
-
-<a name="table4235mcpsimp"></a>
+``` 参数说明： <a name="table4235mcpsimp"></a>
 <table><thead align="left"><tr id="row4241mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4243mcpsimp"><a name="p4243mcpsimp"></a><a name="p4243mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4245mcpsimp"><a name="p4245mcpsimp"></a><a name="p4245mcpsimp"></a>输入/输出</p>
@@ -13270,23 +7294,9 @@ void SetShape(const vector<int32_t> &shape)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetShape<a name="ZH-CN_TOPIC_0000002441981861"></a>
-
-函数功能：
-
-获取维度尺寸shape。
-
-函数原型：
-
-```
-const vector<int32_t>& GetShape() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetShape<a name="ZH-CN_TOPIC_0000002441981861"></a> 函数功能： 获取维度尺寸shape。 函数原型： ```
+const vector<int32_t>& GetShape const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13303,31 +7313,9 @@ const vector<int32_t>& GetShape() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ShapeOperator配置接口<a name="ZH-CN_TOPIC_0000002442021225"></a>
-
-无参数配置。该算子不能作为网络输出层。
-
-### SqueezeOperator配置接口<a name="ZH-CN_TOPIC_0000002441981945"></a>
-
-
-
-#### SetSqueezeAxisVec<a name="ZH-CN_TOPIC_0000002441981837"></a>
-
-函数功能：
-
-配置需要压缩删除的轴。
-
-函数原型：
-
-```
+</table> ### ShapeOperator配置接口<a name="ZH-CN_TOPIC_0000002442021225"></a> 无参数配置。该算子不能作为网络输出层。 ### SqueezeOperator配置接口<a name="ZH-CN_TOPIC_0000002441981945"></a> #### SetSqueezeAxisVec<a name="ZH-CN_TOPIC_0000002441981837"></a> 函数功能： 配置需要压缩删除的轴。 函数原型： ```
 void SetSqueezeAxisVec(const vector<int32_t> &squeezeDimVec)
-```
-
-参数说明：
-
-<a name="table1071mcpsimp"></a>
+``` 参数说明： <a name="table1071mcpsimp"></a>
 <table><thead align="left"><tr id="row1077mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1079mcpsimp"><a name="p1079mcpsimp"></a><a name="p1079mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1081mcpsimp"><a name="p1081mcpsimp"></a><a name="p1081mcpsimp"></a>输入/输出</p>
@@ -13344,23 +7332,9 @@ void SetSqueezeAxisVec(const vector<int32_t> &squeezeDimVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSqueezeAxisVec<a name="ZH-CN_TOPIC_0000002442021481"></a>
-
-函数功能：
-
-获取需要压缩删除的轴。
-
-函数原型：
-
-```
-const vector<int32_t>& GetSqueezeAxisVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSqueezeAxisVec<a name="ZH-CN_TOPIC_0000002442021481"></a> 函数功能： 获取需要压缩删除的轴。 函数原型： ```
+const vector<int32_t>& GetSqueezeAxisVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13377,27 +7351,9 @@ const vector<int32_t>& GetSqueezeAxisVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### UnsqueezeOperator配置接口<a name="ZH-CN_TOPIC_0000002408582722"></a>
-
-
-
-#### SetUnsqueezeAxisVec<a name="ZH-CN_TOPIC_0000002442021633"></a>
-
-函数功能：
-
-配置需要插入轴的位置。
-
-函数原型：
-
-```
+</table> ### UnsqueezeOperator配置接口<a name="ZH-CN_TOPIC_0000002408582722"></a> #### SetUnsqueezeAxisVec<a name="ZH-CN_TOPIC_0000002442021633"></a> 函数功能： 配置需要插入轴的位置。 函数原型： ```
 void SetUnsqueezeAxisVec(const vector<int32_t> &unsqueezeDimVec)
-```
-
-参数说明：
-
-<a name="table2893mcpsimp"></a>
+``` 参数说明： <a name="table2893mcpsimp"></a>
 <table><thead align="left"><tr id="row2899mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2901mcpsimp"><a name="p2901mcpsimp"></a><a name="p2901mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2903mcpsimp"><a name="p2903mcpsimp"></a><a name="p2903mcpsimp"></a>输入/输出</p>
@@ -13414,23 +7370,9 @@ void SetUnsqueezeAxisVec(const vector<int32_t> &unsqueezeDimVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetUnsqueezeAxisVec<a name="ZH-CN_TOPIC_0000002441981517"></a>
-
-函数功能：
-
-获取需要插入轴的位置。
-
-函数原型：
-
-```
-const vector<int32_t>& GetUnsqueezeAxisVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetUnsqueezeAxisVec<a name="ZH-CN_TOPIC_0000002441981517"></a> 函数功能： 获取需要插入轴的位置。 函数原型： ```
+const vector<int32_t>& GetUnsqueezeAxisVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13447,29 +7389,9 @@ const vector<int32_t>& GetUnsqueezeAxisVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### CustomOperator配置接口<a name="ZH-CN_TOPIC_0000002408581858"></a>
-
-
-
-
-
-#### SetExtendedOpType<a name="ZH-CN_TOPIC_0000002408422794"></a>
-
-函数功能：
-
-配置当前自定义算子的类型名称。
-
-函数原型：
-
-```
+</table> ### CustomOperator配置接口<a name="ZH-CN_TOPIC_0000002408581858"></a> #### SetExtendedOpType<a name="ZH-CN_TOPIC_0000002408422794"></a> 函数功能： 配置当前自定义算子的类型名称。 函数原型： ```
 void SetExtendedOpType(string extendedOpType)
-```
-
-参数说明：
-
-<a name="table2951mcpsimp"></a>
+``` 参数说明： <a name="table2951mcpsimp"></a>
 <table><thead align="left"><tr id="row2957mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2959mcpsimp"><a name="p2959mcpsimp"></a><a name="p2959mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2961mcpsimp"><a name="p2961mcpsimp"></a><a name="p2961mcpsimp"></a>输入/输出</p>
@@ -13486,23 +7408,9 @@ void SetExtendedOpType(string extendedOpType)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetExtendedOpType<a name="ZH-CN_TOPIC_0000002408582118"></a>
-
-函数功能：
-
-获取当前自定义算子的类型名称。
-
-函数原型：
-
-```
-string GetExtendedOpType() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetExtendedOpType<a name="ZH-CN_TOPIC_0000002408582118"></a> 函数功能： 获取当前自定义算子的类型名称。 函数原型： ```
+string GetExtendedOpType const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13519,23 +7427,9 @@ string GetExtendedOpType() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetExtendedAttrs<a name="ZH-CN_TOPIC_0000002408582510"></a>
-
-函数功能：
-
-配置自定义算子的全部扩展属性。
-
-函数原型：
-
-```
+</table> #### SetExtendedAttrs<a name="ZH-CN_TOPIC_0000002408582510"></a> 函数功能： 配置自定义算子的全部扩展属性。 函数原型： ```
 void SetExtendedAttrs(const vector<ExtendedAttr> &extendedAttrs)
-```
-
-参数说明：
-
-<a name="table3851mcpsimp"></a>
+``` 参数说明： <a name="table3851mcpsimp"></a>
 <table><thead align="left"><tr id="row3857mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3859mcpsimp"><a name="p3859mcpsimp"></a><a name="p3859mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3861mcpsimp"><a name="p3861mcpsimp"></a><a name="p3861mcpsimp"></a>输入/输出</p>
@@ -13554,23 +7448,9 @@ void SetExtendedAttrs(const vector<ExtendedAttr> &extendedAttrs)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetExtendedAttrs<a name="ZH-CN_TOPIC_0000002408582358"></a>
-
-函数功能：
-
-获取自定义算子的全部扩展属性。
-
-函数原型：
-
-```
-const vector<ExtendedAttr>& GetExtendedAttrs() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetExtendedAttrs<a name="ZH-CN_TOPIC_0000002408582358"></a> 函数功能： 获取自定义算子的全部扩展属性。 函数原型： ```
+const vector<ExtendedAttr>& GetExtendedAttrs const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13589,45 +7469,9 @@ const vector<ExtendedAttr>& GetExtendedAttrs() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### MishOperator配置接口<a name="ZH-CN_TOPIC_0000002408422502"></a>
-
-无参数配置。
-
-### AcoshOperator配置接口<a name="ZH-CN_TOPIC_0000002408422758"></a>
-
-无参数配置。
-
-### AtanhOperator配置接口<a name="ZH-CN_TOPIC_0000002442021781"></a>
-
-无参数配置。
-
-### CoshOperator配置接口<a name="ZH-CN_TOPIC_0000002408422198"></a>
-
-无参数配置。
-
-### HardSigmoidOperator配置接口<a name="ZH-CN_TOPIC_0000002441981577"></a>
-
-
-
-
-
-#### SetHardSigmoidAlpha<a name="ZH-CN_TOPIC_0000002442021501"></a>
-
-函数功能：
-
-配置Alpha系数的值。
-
-函数原型：
-
-```
+</table> ### MishOperator配置接口<a name="ZH-CN_TOPIC_0000002408422502"></a> 无参数配置。 ### AcoshOperator配置接口<a name="ZH-CN_TOPIC_0000002408422758"></a> 无参数配置。 ### AtanhOperator配置接口<a name="ZH-CN_TOPIC_0000002442021781"></a> 无参数配置。 ### CoshOperator配置接口<a name="ZH-CN_TOPIC_0000002408422198"></a> 无参数配置。 ### HardSigmoidOperator配置接口<a name="ZH-CN_TOPIC_0000002441981577"></a> #### SetHardSigmoidAlpha<a name="ZH-CN_TOPIC_0000002442021501"></a> 函数功能： 配置Alpha系数的值。 函数原型： ```
 void SetHardSigmoidAlpha(float alpha)
-```
-
-参数说明：
-
-<a name="table2951mcpsimp"></a>
+``` 参数说明： <a name="table2951mcpsimp"></a>
 <table><thead align="left"><tr id="row2957mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2959mcpsimp"><a name="p2959mcpsimp"></a><a name="p2959mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2961mcpsimp"><a name="p2961mcpsimp"></a><a name="p2961mcpsimp"></a>输入/输出</p>
@@ -13644,23 +7488,9 @@ void SetHardSigmoidAlpha(float alpha)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetHardSigmoidAlpha<a name="ZH-CN_TOPIC_0000002408582378"></a>
-
-函数功能：
-
-返回配置的Alpha系数的值。
-
-函数原型：
-
-```
-float GetHardSigmoidAlpha() const
-```
-
-参数说明：
-
-<a name="table2951mcpsimp"></a>
+</table> #### GetHardSigmoidAlpha<a name="ZH-CN_TOPIC_0000002408582378"></a> 函数功能： 返回配置的Alpha系数的值。 函数原型： ```
+float GetHardSigmoidAlpha const
+``` 参数说明： <a name="table2951mcpsimp"></a>
 <table><thead align="left"><tr id="row2957mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p2959mcpsimp"><a name="p2959mcpsimp"></a><a name="p2959mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2961mcpsimp"><a name="p2961mcpsimp"></a><a name="p2961mcpsimp"></a>输入/输出</p>
@@ -13677,23 +7507,9 @@ float GetHardSigmoidAlpha() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetHardSigmoidBeta<a name="ZH-CN_TOPIC_0000002408581918"></a>
-
-函数功能：
-
-配置Beta系数的值。
-
-函数原型：
-
-```
+</table> #### SetHardSigmoidBeta<a name="ZH-CN_TOPIC_0000002408581918"></a> 函数功能： 配置Beta系数的值。 函数原型： ```
 void SetHardSigmoidBeta(float beta)
-```
-
-参数说明：
-
-<a name="table088711514241"></a>
+``` 参数说明： <a name="table088711514241"></a>
 <table><thead align="left"><tr id="row5887195182416"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p58878514246"><a name="p58878514246"></a><a name="p58878514246"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p9887159242"><a name="p9887159242"></a><a name="p9887159242"></a>输入/输出</p>
@@ -13710,23 +7526,9 @@ void SetHardSigmoidBeta(float beta)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetHardSigmoidBeta<a name="ZH-CN_TOPIC_0000002442021789"></a>
-
-函数功能：
-
-返回配置的Beta系数的值。
-
-函数原型：
-
-```
-float GetHardSigmoidBeta() const
-```
-
-参数说明：
-
-<a name="table088711514241"></a>
+</table> #### GetHardSigmoidBeta<a name="ZH-CN_TOPIC_0000002442021789"></a> 函数功能： 返回配置的Beta系数的值。 函数原型： ```
+float GetHardSigmoidBeta const
+``` 参数说明： <a name="table088711514241"></a>
 <table><thead align="left"><tr id="row5887195182416"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p58878514246"><a name="p58878514246"></a><a name="p58878514246"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p9887159242"><a name="p9887159242"></a><a name="p9887159242"></a>输入/输出</p>
@@ -13743,36 +7545,9 @@ float GetHardSigmoidBeta() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### MaxUnPoolOperator配置接口<a name="ZH-CN_TOPIC_0000002408582390"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetKernelShapeVec<a name="ZH-CN_TOPIC_0000002442021957"></a>
-
-函数功能：
-
-配置内核数据的所有Shape信息。
-
-函数原型：
-
-```
+</table> ### MaxUnPoolOperator配置接口<a name="ZH-CN_TOPIC_0000002408582390"></a> #### SetKernelShapeVec<a name="ZH-CN_TOPIC_0000002442021957"></a> 函数功能： 配置内核数据的所有Shape信息。 函数原型： ```
 void SetKernelShapeVec(constvector<int32_t>& kernelshapevec)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13789,23 +7564,9 @@ void SetKernelShapeVec(constvector<int32_t>& kernelshapevec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushKernelShape<a name="ZH-CN_TOPIC_0000002408422078"></a>
-
-函数功能：
-
-添加内核数据的一个shape维度数据。
-
-函数原型：
-
-```
+</table> #### PushKernelShape<a name="ZH-CN_TOPIC_0000002408422078"></a> 函数功能： 添加内核数据的一个shape维度数据。 函数原型： ```
 void PushKernelShape(int32_t val)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13822,23 +7583,9 @@ void PushKernelShape(int32_t val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetKernelShapeVec<a name="ZH-CN_TOPIC_0000002408582418"></a>
-
-函数功能：
-
-获取配置内核数据的所有Shape信息。
-
-函数原型：
-
-```
-const vector<int32_t>& GetKernelShapeVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetKernelShapeVec<a name="ZH-CN_TOPIC_0000002408582418"></a> 函数功能： 获取配置内核数据的所有Shape信息。 函数原型： ```
+const vector<int32_t>& GetKernelShapeVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13855,23 +7602,9 @@ const vector<int32_t>& GetKernelShapeVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPadsVec<a name="ZH-CN_TOPIC_0000002408582578"></a>
-
-函数功能：
-
-配置输入的所有pad信息。
-
-函数原型：
-
-```
+</table> #### SetPadsVec<a name="ZH-CN_TOPIC_0000002408582578"></a> 函数功能： 配置输入的所有pad信息。 函数原型： ```
 void SetPadsVec(const vector<int32_t>& padsvec)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13888,23 +7621,9 @@ void SetPadsVec(const vector<int32_t>& padsvec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushPads<a name="ZH-CN_TOPIC_0000002441981701"></a>
-
-函数功能：
-
-添加输入的一个pad数据。
-
-函数原型：
-
-```
+</table> #### PushPads<a name="ZH-CN_TOPIC_0000002441981701"></a> 函数功能： 添加输入的一个pad数据。 函数原型： ```
 void PushPads(int32_t val)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13921,23 +7640,9 @@ void PushPads(int32_t val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadsVec<a name="ZH-CN_TOPIC_0000002408422514"></a>
-
-函数功能：
-
-获取配置内核数据的所有pad信息队列。
-
-函数原型：
-
-```
-const vector<int32_t>& GetPadsVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPadsVec<a name="ZH-CN_TOPIC_0000002408422514"></a> 函数功能： 获取配置内核数据的所有pad信息队列。 函数原型： ```
+const vector<int32_t>& GetPadsVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13954,23 +7659,9 @@ const vector<int32_t>& GetPadsVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetStridesVec<a name="ZH-CN_TOPIC_0000002441981477"></a>
-
-函数功能：
-
-配置输入的所有stride信息。
-
-函数原型：
-
-```
+</table> #### SetStridesVec<a name="ZH-CN_TOPIC_0000002441981477"></a> 函数功能： 配置输入的所有stride信息。 函数原型： ```
 void SetStridesVec(const vector<int32_t>& stridesvec)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -13987,23 +7678,9 @@ void SetStridesVec(const vector<int32_t>& stridesvec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushStrides<a name="ZH-CN_TOPIC_0000002408422718"></a>
-
-函数功能：
-
-添加输入的一个stride数据。
-
-函数原型：
-
-```
+</table> #### PushStrides<a name="ZH-CN_TOPIC_0000002408422718"></a> 函数功能： 添加输入的一个stride数据。 函数原型： ```
 void PushStrides(int32_t val)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14020,23 +7697,9 @@ void PushStrides(int32_t val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetStridesVec<a name="ZH-CN_TOPIC_0000002408422878"></a>
-
-函数功能：
-
-获取配置内核数据的所有stride信息。
-
-函数原型：
-
-```
-const vector<int32_t>& GetStridesVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetStridesVec<a name="ZH-CN_TOPIC_0000002408422878"></a> 函数功能： 获取配置内核数据的所有stride信息。 函数原型： ```
+const vector<int32_t>& GetStridesVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14053,23 +7716,9 @@ const vector<int32_t>& GetStridesVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021305"></a>
-
-函数功能：
-
-获取GlobalPooling信息。
-
-函数原型：
-
-```
-bool GetGlobalPoolingFlag() const;
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021305"></a> 函数功能： 获取GlobalPooling信息。 函数原型： ```
+bool GetGlobalPoolingFlag const;
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14086,23 +7735,9 @@ bool GetGlobalPoolingFlag() const;
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021145"></a>
-
-函数功能：
-
-设置GlobalPooling信息。
-
-函数原型：
-
-```
+</table> #### SetGlobalPoolingFlag<a name="ZH-CN_TOPIC_0000002442021145"></a> 函数功能： 设置GlobalPooling信息。 函数原型： ```
 void SetGlobalPoolingFlag(bool globalPoolingFlag);
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14119,29 +7754,9 @@ void SetGlobalPoolingFlag(bool globalPoolingFlag);
 </td>
 </tr>
 </tbody>
-</table>
-
-### ShrinkOperator配置接口<a name="ZH-CN_TOPIC_0000002442021837"></a>
-
-
-
-
-
-#### SetShrinkBias<a name="ZH-CN_TOPIC_0000002441981457"></a>
-
-函数功能：
-
-配置输出数据的偏移信息。
-
-函数原型：
-
-```
+</table> ### ShrinkOperator配置接口<a name="ZH-CN_TOPIC_0000002442021837"></a> #### SetShrinkBias<a name="ZH-CN_TOPIC_0000002441981457"></a> 函数功能： 配置输出数据的偏移信息。 函数原型： ```
 void SetShrinkBias(float bias)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14158,23 +7773,9 @@ void SetShrinkBias(float bias)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetShrinkBias<a name="ZH-CN_TOPIC_0000002408422430"></a>
-
-函数功能：
-
-获取配置输出数据的偏移信息。
-
-函数原型：
-
-```
-float GetShrinkBias() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetShrinkBias<a name="ZH-CN_TOPIC_0000002408422430"></a> 函数功能： 获取配置输出数据的偏移信息。 函数原型： ```
+float GetShrinkBias const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14191,23 +7792,9 @@ float GetShrinkBias() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetShrinkLambd<a name="ZH-CN_TOPIC_0000002408582602"></a>
-
-函数功能：
-
-配置Shrink公式的lambd值。
-
-函数原型：
-
-```
+</table> #### SetShrinkLambd<a name="ZH-CN_TOPIC_0000002408582602"></a> 函数功能： 配置Shrink公式的lambd值。 函数原型： ```
 void SetShrinkLambd(float lambd)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14224,23 +7811,9 @@ void SetShrinkLambd(float lambd)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetShrinkLambd<a name="ZH-CN_TOPIC_0000002408422462"></a>
-
-函数功能：
-
-获取配置Shrink公式的lambd值。
-
-函数原型：
-
-```
-float GetShrinkLambd() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetShrinkLambd<a name="ZH-CN_TOPIC_0000002408422462"></a> 函数功能： 获取配置Shrink公式的lambd值。 函数原型： ```
+float GetShrinkLambd const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14257,36 +7830,9 @@ float GetShrinkLambd() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SoftSignOperator配置接口<a name="ZH-CN_TOPIC_0000002408581850"></a>
-
-无参数配置。
-
-### PadOperator配置接口<a name="ZH-CN_TOPIC_0000002442021645"></a>
-
-
-
-
-
-
-
-
-#### SetPadMode<a name="ZH-CN_TOPIC_0000002408582354"></a>
-
-函数功能：
-
-设置pad模式，目前支持"constant"、"reflect"、"edge"三种模式。
-
-函数原型：
-
-```
+</table> ### SoftSignOperator配置接口<a name="ZH-CN_TOPIC_0000002408581850"></a> 无参数配置。 ### PadOperator配置接口<a name="ZH-CN_TOPIC_0000002442021645"></a> #### SetPadMode<a name="ZH-CN_TOPIC_0000002408582354"></a> 函数功能： 设置pad模式，目前支持"constant"、"reflect"、"edge"三种模式。 函数原型： ```
 void SetPadMode(PadMode mode)
-```
-
-参数说明：
-
-<a name="table5577mcpsimp"></a>
+``` 参数说明： <a name="table5577mcpsimp"></a>
 <table><thead align="left"><tr id="row5583mcpsimp"><th class="cellrowborder" valign="top" width="23.89%" id="mcps1.1.4.1.1"><p id="p5585mcpsimp"><a name="p5585mcpsimp"></a><a name="p5585mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="20.84%" id="mcps1.1.4.1.2"><p id="p5587mcpsimp"><a name="p5587mcpsimp"></a><a name="p5587mcpsimp"></a>输入/输出</p>
@@ -14307,23 +7853,9 @@ void SetPadMode(PadMode mode)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadMode<a name="ZH-CN_TOPIC_0000002408422054"></a>
-
-函数功能：
-
-获取设置的pad模式，目前支持"constant"、"reflect"、"edge"三种模式。
-
-函数原型：
-
-```
-PadMode GetPadMode() const
-```
-
-参数说明：
-
-<a name="table5577mcpsimp"></a>
+</table> #### GetPadMode<a name="ZH-CN_TOPIC_0000002408422054"></a> 函数功能： 获取设置的pad模式，目前支持"constant"、"reflect"、"edge"三种模式。 函数原型： ```
+PadMode GetPadMode const
+``` 参数说明： <a name="table5577mcpsimp"></a>
 <table><thead align="left"><tr id="row5583mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5585mcpsimp"><a name="p5585mcpsimp"></a><a name="p5585mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5587mcpsimp"><a name="p5587mcpsimp"></a><a name="p5587mcpsimp"></a>输入/输出</p>
@@ -14344,23 +7876,9 @@ PadMode GetPadMode() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPadsLocVec<a name="ZH-CN_TOPIC_0000002408422866"></a>
-
-函数功能：
-
-配置所有填充或删除的起始与结束轴列。
-
-函数原型：
-
-```
+</table> #### SetPadsLocVec<a name="ZH-CN_TOPIC_0000002408422866"></a> 函数功能： 配置所有填充或删除的起始与结束轴列。 函数原型： ```
 void SetPadsLocVec(const vector<int32_t>& padslocvec)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14377,23 +7895,9 @@ void SetPadsLocVec(const vector<int32_t>& padslocvec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushPadsLoc<a name="ZH-CN_TOPIC_0000002442021941"></a>
-
-函数功能：
-
-添加一个填充或删除的起始与结束轴列。
-
-函数原型：
-
-```
+</table> #### PushPadsLoc<a name="ZH-CN_TOPIC_0000002442021941"></a> 函数功能： 添加一个填充或删除的起始与结束轴列。 函数原型： ```
 void PushPadsLoc(int32_t val)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14410,23 +7914,9 @@ void PushPadsLoc(int32_t val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadsLocVec<a name="ZH-CN_TOPIC_0000002408582186"></a>
-
-函数功能：
-
-获取配置内核数据的所有stride信息。
-
-函数原型：
-
-```
-const vector<int32_t>& GetPadsLocVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPadsLocVec<a name="ZH-CN_TOPIC_0000002408582186"></a> 函数功能： 获取配置内核数据的所有stride信息。 函数原型： ```
+const vector<int32_t>& GetPadsLocVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14443,21 +7933,9 @@ const vector<int32_t>& GetPadsLocVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetPadValue<a name="ZH-CN_TOPIC_0000002442021601"></a>
-
-函数功能：如果mode为"constant"时，配置填充的值。
-
-函数原型：
-
-```
+</table> #### SetPadValue<a name="ZH-CN_TOPIC_0000002442021601"></a> 函数功能：如果mode为"constant"时，配置填充的值。 函数原型： ```
 void SetPadValue(float val)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14474,23 +7952,9 @@ void SetPadValue(float val)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetPadValue<a name="ZH-CN_TOPIC_0000002442021853"></a>
-
-函数功能：
-
-获取如果mode为"constant"时，配置填充的值。
-
-函数原型：
-
-```
-float GetPadValue() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetPadValue<a name="ZH-CN_TOPIC_0000002442021853"></a> 函数功能： 获取如果mode为"constant"时，配置填充的值。 函数原型： ```
+float GetPadValue const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14507,39 +7971,9 @@ float GetPadValue() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SqrtOperator配置接口<a name="ZH-CN_TOPIC_0000002441981389"></a>
-
-无参数配置。
-
-### AcosOperator配置接口<a name="ZH-CN_TOPIC_0000002441981733"></a>
-
-无参数配置。
-
-### AsinhOperator配置接口<a name="ZH-CN_TOPIC_0000002408422294"></a>
-
-无参数配置。
-
-### BitShiftOperator配置接口<a name="ZH-CN_TOPIC_0000002441981661"></a>
-
-
-
-#### SetBitShiftDirection<a name="ZH-CN_TOPIC_0000002441981793"></a>
-
-函数功能：
-
-配置BitShift移位的方向，目前支持“BIT\_SHIFT\_LEFT”和“IT\_SHIFT\_RIGHT”两种。
-
-函数原型：
-
-```
+</table> ### SqrtOperator配置接口<a name="ZH-CN_TOPIC_0000002441981389"></a> 无参数配置。 ### AcosOperator配置接口<a name="ZH-CN_TOPIC_0000002441981733"></a> 无参数配置。 ### AsinhOperator配置接口<a name="ZH-CN_TOPIC_0000002408422294"></a> 无参数配置。 ### BitShiftOperator配置接口<a name="ZH-CN_TOPIC_0000002441981661"></a> #### SetBitShiftDirection<a name="ZH-CN_TOPIC_0000002441981793"></a> 函数功能： 配置BitShift移位的方向，目前支持“BIT\_SHIFT\_LEFT”和“IT\_SHIFT\_RIGHT”两种。 函数原型： ```
 void SetBitShiftDirection(BitShiftDirection direction）
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14559,23 +7993,9 @@ void SetBitShiftDirection(BitShiftDirection direction）
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBitShiftDirection<a name="ZH-CN_TOPIC_0000002408422494"></a>
-
-函数功能：
-
-获取配置BitShift移位的方向。
-
-函数原型：
-
-```
-BitShiftDirection GetBitShiftDirection() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBitShiftDirection<a name="ZH-CN_TOPIC_0000002408422494"></a> 函数功能： 获取配置BitShift移位的方向。 函数原型： ```
+BitShiftDirection GetBitShiftDirection const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.99%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14595,27 +8015,9 @@ BitShiftDirection GetBitShiftDirection() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### GatherElementsOperator配置接口<a name="ZH-CN_TOPIC_0000002441981805"></a>
-
-
-
-#### SetGatherElementsAxis<a name="ZH-CN_TOPIC_0000002408582074"></a>
-
-函数功能：
-
-配置gather的轴。
-
-函数原型：
-
-```
+</table> ### GatherElementsOperator配置接口<a name="ZH-CN_TOPIC_0000002441981805"></a> #### SetGatherElementsAxis<a name="ZH-CN_TOPIC_0000002408582074"></a> 函数功能： 配置gather的轴。 函数原型： ```
 void SetGatherElementsAxis(int32_t axis)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14632,23 +8034,9 @@ void SetGatherElementsAxis(int32_t axis)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetGatherElementsAxis<a name="ZH-CN_TOPIC_0000002442021821"></a>
-
-函数功能：
-
-获取配置gather的轴。
-
-函数原型：
-
-```
-int32_t GetGatherElementsAxis() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetGatherElementsAxis<a name="ZH-CN_TOPIC_0000002442021821"></a> 函数功能： 获取配置gather的轴。 函数原型： ```
+int32_t GetGatherElementsAxis const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14665,27 +8053,9 @@ int32_t GetGatherElementsAxis() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### HardMaxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582674"></a>
-
-
-
-#### SetHardmaxAxis<a name="ZH-CN_TOPIC_0000002441982137"></a>
-
-函数功能：
-
-配置Hardmax的运算轴。
-
-函数原型：
-
-```
+</table> ### HardMaxOperator配置接口<a name="ZH-CN_TOPIC_0000002408582674"></a> #### SetHardmaxAxis<a name="ZH-CN_TOPIC_0000002441982137"></a> 函数功能： 配置Hardmax的运算轴。 函数原型： ```
 void SetHardmaxAxis(int32_t axis)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14702,23 +8072,9 @@ void SetHardmaxAxis(int32_t axis)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetHardmaxAxis<a name="ZH-CN_TOPIC_0000002408422354"></a>
-
-函数功能：
-
-获取配置Hardmax的运算轴。
-
-函数原型：
-
-```
-int32_t GetHardmaxAxis() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetHardmaxAxis<a name="ZH-CN_TOPIC_0000002408422354"></a> 函数功能： 获取配置Hardmax的运算轴。 函数原型： ```
+int32_t GetHardmaxAxis const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14735,27 +8091,9 @@ int32_t GetHardmaxAxis() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ModOperator配置接口<a name="ZH-CN_TOPIC_0000002441981337"></a>
-
-
-
-#### SetIsFmod<a name="ZH-CN_TOPIC_0000002408422526"></a>
-
-函数功能：
-
-指示进行fmod还是integer mod。
-
-函数原型：
-
-```
+</table> ### ModOperator配置接口<a name="ZH-CN_TOPIC_0000002441981337"></a> #### SetIsFmod<a name="ZH-CN_TOPIC_0000002408422526"></a> 函数功能： 指示进行fmod还是integer mod。 函数原型： ```
 void SetIsFmod(bool isFmod)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14772,23 +8110,9 @@ void SetIsFmod(bool isFmod)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetIsFmod<a name="ZH-CN_TOPIC_0000002408422774"></a>
-
-函数功能：
-
-获取进行的是fmod还是integer mod。
-
-函数原型：
-
-```
-bool GetIsFmod() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetIsFmod<a name="ZH-CN_TOPIC_0000002408422774"></a> 函数功能： 获取进行的是fmod还是integer mod。 函数原型： ```
+bool GetIsFmod const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14805,31 +8129,9 @@ bool GetIsFmod() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SinhOperator配置接口<a name="ZH-CN_TOPIC_0000002442021565"></a>
-
-无参数配置。
-
-### CmpOperator配置接口<a name="ZH-CN_TOPIC_0000002442021621"></a>
-
-
-
-#### SetCompType<a name="ZH-CN_TOPIC_0000002441982065"></a>
-
-函数功能：
-
-配置比较类型，目前支持"COND\_GT"、"COND\_EQ"、"COND\_LT"、"COND\_NE"、"COND\_GE"、"COND\_LE"六种。
-
-函数原型：
-
-```
+</table> ### SinhOperator配置接口<a name="ZH-CN_TOPIC_0000002442021565"></a> 无参数配置。 ### CmpOperator配置接口<a name="ZH-CN_TOPIC_0000002442021621"></a> #### SetCompType<a name="ZH-CN_TOPIC_0000002441982065"></a> 函数功能： 配置比较类型，目前支持"COND\_GT"、"COND\_EQ"、"COND\_LT"、"COND\_NE"、"COND\_GE"、"COND\_LE"六种。 函数原型： ```
 void SetCompType(CompType compType )
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14853,23 +8155,9 @@ void SetCompType(CompType compType )
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetCompType<a name="ZH-CN_TOPIC_0000002441982033"></a>
-
-函数功能：
-
-获取配置的比较类型。
-
-函数原型：
-
-```
-CompType GetCompType() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetCompType<a name="ZH-CN_TOPIC_0000002441982033"></a> 函数功能： 获取配置的比较类型。 函数原型： ```
+CompType GetCompType const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14892,27 +8180,9 @@ CompType GetCompType() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### LogicalOperator配置接口<a name="ZH-CN_TOPIC_0000002441981541"></a>
-
-
-
-#### SetLogicalOperator<a name="ZH-CN_TOPIC_0000002442021725"></a>
-
-函数功能：
-
-配置逻辑运算类型，目前支持 "LOGICAL\_AND"、"LOGICAL\_OR"、"LOGICAL\_XOR"、"LOGICAL\_NOT" 四种。
-
-函数原型：
-
-```
+</table> ### LogicalOperator配置接口<a name="ZH-CN_TOPIC_0000002441981541"></a> #### SetLogicalOperator<a name="ZH-CN_TOPIC_0000002442021725"></a> 函数功能： 配置逻辑运算类型，目前支持 "LOGICAL\_AND"、"LOGICAL\_OR"、"LOGICAL\_XOR"、"LOGICAL\_NOT" 四种。 函数原型： ```
 void SetLogicalOperator(LogicalOp op)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14934,23 +8204,9 @@ void SetLogicalOperator(LogicalOp op)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLogicalOperator<a name="ZH-CN_TOPIC_0000002408422558"></a>
-
-函数功能：
-
-获取配置的逻辑运算类型。
-
-函数原型：
-
-```
-LogicalOp GetLogicalOperator() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetLogicalOperator<a name="ZH-CN_TOPIC_0000002408422558"></a> 函数功能： 获取配置的逻辑运算类型。 函数原型： ```
+LogicalOp GetLogicalOperator const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -14971,27 +8227,9 @@ LogicalOp GetLogicalOperator() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SwishOperator配置接口<a name="ZH-CN_TOPIC_0000002441982005"></a>
-
-
-
-#### SetSwishBeta<a name="ZH-CN_TOPIC_0000002408422498"></a>
-
-函数功能：
-
-配置Swish算子中的scale系数Beta。
-
-函数原型：
-
-```
+</table> ### SwishOperator配置接口<a name="ZH-CN_TOPIC_0000002441982005"></a> #### SetSwishBeta<a name="ZH-CN_TOPIC_0000002408422498"></a> 函数功能： 配置Swish算子中的scale系数Beta。 函数原型： ```
 void SetSwishBeta(const float beta)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15008,23 +8246,9 @@ void SetSwishBeta(const float beta)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSwishBeta<a name="ZH-CN_TOPIC_0000002441981501"></a>
-
-函数功能：
-
-获取Swish算子中的scale系数Beta。
-
-函数原型：
-
-```
-float GetSwishBeta() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSwishBeta<a name="ZH-CN_TOPIC_0000002441981501"></a> 函数功能： 获取Swish算子中的scale系数Beta。 函数原型： ```
+float GetSwishBeta const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15041,33 +8265,9 @@ float GetSwishBeta() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SilenceOperator配置接口<a name="ZH-CN_TOPIC_0000002408582758"></a>
-
-无参数配置。
-
-### LayerNormOperator配置接口<a name="ZH-CN_TOPIC_0000002441981749"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为3，不支持input，scale，bias全部离线场景。
-
-
-
-#### SetEpsilon<a name="ZH-CN_TOPIC_0000002442021865"></a>
-
-函数功能：
-
-Epsilon为了防止除零，默认值1e-5，可以配置。
-
-函数原型：
-
-```
+</table> ### SilenceOperator配置接口<a name="ZH-CN_TOPIC_0000002408582758"></a> 无参数配置。 ### LayerNormOperator配置接口<a name="ZH-CN_TOPIC_0000002441981749"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为3，不支持input，scale，bias全部离线场景。 #### SetEpsilon<a name="ZH-CN_TOPIC_0000002442021865"></a> 函数功能： Epsilon为了防止除零，默认值1e-5，可以配置。 函数原型： ```
 void SetEpsilon(const float epsilon)
-```
-
-参数说明：
-
-<a name="table5461mcpsimp"></a>
+``` 参数说明： <a name="table5461mcpsimp"></a>
 <table><thead align="left"><tr id="row5467mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5469mcpsimp"><a name="p5469mcpsimp"></a><a name="p5469mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5471mcpsimp"><a name="p5471mcpsimp"></a><a name="p5471mcpsimp"></a>输入/输出</p>
@@ -15084,23 +8284,9 @@ void SetEpsilon(const float epsilon)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetEpsilon<a name="ZH-CN_TOPIC_0000002442021561"></a>
-
-函数功能：
-
-获取Epsilon值，为了防止除零，默认值1e-5。
-
-函数原型：
-
-```
-float GetEpsilon() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetEpsilon<a name="ZH-CN_TOPIC_0000002442021561"></a> 函数功能： 获取Epsilon值，为了防止除零，默认值1e-5。 函数原型： ```
+float GetEpsilon const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15117,32 +8303,9 @@ float GetEpsilon() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### GroupNormOperator配置接口<a name="ZH-CN_TOPIC_0000002408422690"></a>
-
-
-
-
-
-
-
-
-#### SetGroupNum<a name="ZH-CN_TOPIC_0000002441982161"></a>
-
-函数功能：
-
-设置运算的分组数量。
-
-函数原型：
-
-```
+</table> ### GroupNormOperator配置接口<a name="ZH-CN_TOPIC_0000002408422690"></a> #### SetGroupNum<a name="ZH-CN_TOPIC_0000002441982161"></a> 函数功能： 设置运算的分组数量。 函数原型： ```
 void SetGroupNum(const uint32_t groupNum)
-```
-
-参数说明：
-
-<a name="table3922mcpsimp"></a>
+``` 参数说明： <a name="table3922mcpsimp"></a>
 <table><thead align="left"><tr id="row3928mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3930mcpsimp"><a name="p3930mcpsimp"></a><a name="p3930mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3932mcpsimp"><a name="p3932mcpsimp"></a><a name="p3932mcpsimp"></a>输入/输出</p>
@@ -15159,23 +8322,9 @@ void SetGroupNum(const uint32_t groupNum)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetGroupNum<a name="ZH-CN_TOPIC_0000002408422158"></a>
-
-函数功能：
-
-获取运算的分组数量。
-
-函数原型：
-
-```
-uint32_t GetGroupNum() const
-```
-
-参数说明：
-
-<a name="table3922mcpsimp"></a>
+</table> #### GetGroupNum<a name="ZH-CN_TOPIC_0000002408422158"></a> 函数功能： 获取运算的分组数量。 函数原型： ```
+uint32_t GetGroupNum const
+``` 参数说明： <a name="table3922mcpsimp"></a>
 <table><thead align="left"><tr id="row3928mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p3930mcpsimp"><a name="p3930mcpsimp"></a><a name="p3930mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p3932mcpsimp"><a name="p3932mcpsimp"></a><a name="p3932mcpsimp"></a>输入/输出</p>
@@ -15192,23 +8341,9 @@ uint32_t GetGroupNum() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetEpsilon<a name="ZH-CN_TOPIC_0000002442021661"></a>
-
-函数功能：
-
-Epsilon为了防止除零，默认值1e-5，可以配置。
-
-函数原型：
-
-```
+</table> #### SetEpsilon<a name="ZH-CN_TOPIC_0000002442021661"></a> 函数功能： Epsilon为了防止除零，默认值1e-5，可以配置。 函数原型： ```
 void SetEpsilon(const float epsilon)
-```
-
-参数说明：
-
-<a name="table5461mcpsimp"></a>
+``` 参数说明： <a name="table5461mcpsimp"></a>
 <table><thead align="left"><tr id="row5467mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5469mcpsimp"><a name="p5469mcpsimp"></a><a name="p5469mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5471mcpsimp"><a name="p5471mcpsimp"></a><a name="p5471mcpsimp"></a>输入/输出</p>
@@ -15225,23 +8360,9 @@ void SetEpsilon(const float epsilon)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetEpsilon<a name="ZH-CN_TOPIC_0000002408582654"></a>
-
-函数功能：
-
-获取Epsilon值，为了防止除零，默认值1e-5。
-
-函数原型：
-
-```
-float GetEpsilon() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetEpsilon<a name="ZH-CN_TOPIC_0000002408582654"></a> 函数功能： 获取Epsilon值，为了防止除零，默认值1e-5。 函数原型： ```
+float GetEpsilon const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15258,23 +8379,9 @@ float GetEpsilon() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBiasShapeVec<a name="ZH-CN_TOPIC_0000002408422178"></a>
-
-函数功能：
-
-配置权重数据的所有shape信息。
-
-函数原型：
-
-```
+</table> #### SetBiasShapeVec<a name="ZH-CN_TOPIC_0000002408422178"></a> 函数功能： 配置权重数据的所有shape信息。 函数原型： ```
 void SetBiasShapeVec(const vector<int32_t> &biasShapeVec)
-```
-
-参数说明：
-
-<a name="table1379mcpsimp"></a>
+``` 参数说明： <a name="table1379mcpsimp"></a>
 <table><thead align="left"><tr id="row1385mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1387mcpsimp"><a name="p1387mcpsimp"></a><a name="p1387mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1389mcpsimp"><a name="p1389mcpsimp"></a><a name="p1389mcpsimp"></a>输入/输出</p>
@@ -15291,23 +8398,9 @@ void SetBiasShapeVec(const vector<int32_t> &biasShapeVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### AddBiasShape<a name="ZH-CN_TOPIC_0000002408422066"></a>
-
-函数功能：
-
-添加权重数据的一个shape信息。
-
-函数原型：
-
-```
+</table> #### AddBiasShape<a name="ZH-CN_TOPIC_0000002408422066"></a> 函数功能： 添加权重数据的一个shape信息。 函数原型： ```
 void AddBiasShape(const int32_t biasShape)
-```
-
-参数说明：
-
-<a name="table1379mcpsimp"></a>
+``` 参数说明： <a name="table1379mcpsimp"></a>
 <table><thead align="left"><tr id="row1385mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1387mcpsimp"><a name="p1387mcpsimp"></a><a name="p1387mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1389mcpsimp"><a name="p1389mcpsimp"></a><a name="p1389mcpsimp"></a>输入/输出</p>
@@ -15324,23 +8417,9 @@ void AddBiasShape(const int32_t biasShape)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBiasShapeVec<a name="ZH-CN_TOPIC_0000002408581958"></a>
-
-函数功能：
-
-获取偏移数据的所有shape信息。
-
-函数原型：
-
-```
-const vector<int32_t>& GetBiasShapeVec() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBiasShapeVec<a name="ZH-CN_TOPIC_0000002408581958"></a> 函数功能： 获取偏移数据的所有shape信息。 函数原型： ```
+const vector<int32_t>& GetBiasShapeVec const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15357,35 +8436,9 @@ const vector<int32_t>& GetBiasShapeVec() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### GemmOperator配置接口<a name="ZH-CN_TOPIC_0000002408582766"></a>
-
-
-
-
-
-
-
-
-
-
-
-#### SetAlpha<a name="ZH-CN_TOPIC_0000002441981713"></a>
-
-函数功能：
-
-配置Gemm算子中的Alpha参数。
-
-函数原型：
-
-```
+</table> ### GemmOperator配置接口<a name="ZH-CN_TOPIC_0000002408582766"></a> #### SetAlpha<a name="ZH-CN_TOPIC_0000002441981713"></a> 函数功能： 配置Gemm算子中的Alpha参数。 函数原型： ```
 void SetAlpha(float alpha)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15402,23 +8455,9 @@ void SetAlpha(float alpha)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAlpha<a name="ZH-CN_TOPIC_0000002408422006"></a>
-
-函数功能：
-
-获取Gemm算子中的Alpha参数。
-
-函数原型：
-
-```
-float GetAlpha() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetAlpha<a name="ZH-CN_TOPIC_0000002408422006"></a> 函数功能： 获取Gemm算子中的Alpha参数。 函数原型： ```
+float GetAlpha const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15435,23 +8474,9 @@ float GetAlpha() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetBeta<a name="ZH-CN_TOPIC_0000002408582458"></a>
-
-函数功能：
-
-配置Gemm算子中的Beta参数。
-
-函数原型：
-
-```
+</table> #### SetBeta<a name="ZH-CN_TOPIC_0000002408582458"></a> 函数功能： 配置Gemm算子中的Beta参数。 函数原型： ```
 void SetBeta(float beta)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15468,23 +8493,9 @@ void SetBeta(float beta)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBeta<a name="ZH-CN_TOPIC_0000002442021533"></a>
-
-函数功能：
-
-获取Gemm算子中的Beta参数。
-
-函数原型：
-
-```
-float GetBeta() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetBeta<a name="ZH-CN_TOPIC_0000002442021533"></a> 函数功能： 获取Gemm算子中的Beta参数。 函数原型： ```
+float GetBeta const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15501,23 +8512,9 @@ float GetBeta() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetTransA<a name="ZH-CN_TOPIC_0000002408582442"></a>
-
-函数功能：
-
-配置Gemm算子中的TransA参数。
-
-函数原型：
-
-```
+</table> #### SetTransA<a name="ZH-CN_TOPIC_0000002408582442"></a> 函数功能： 配置Gemm算子中的TransA参数。 函数原型： ```
 void SetTransA(bool transA)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15534,23 +8531,9 @@ void SetTransA(bool transA)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetTransA<a name="ZH-CN_TOPIC_0000002408422574"></a>
-
-函数功能：
-
-获取Gemm算子中的TransA参数。
-
-函数原型：
-
-```
-bool GetTransA() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetTransA<a name="ZH-CN_TOPIC_0000002408422574"></a> 函数功能： 获取Gemm算子中的TransA参数。 函数原型： ```
+bool GetTransA const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15567,23 +8550,9 @@ bool GetTransA() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetTransB<a name="ZH-CN_TOPIC_0000002408422590"></a>
-
-函数功能：
-
-配置Gemm算子中的TransB参数。
-
-函数原型：
-
-```
+</table> #### SetTransB<a name="ZH-CN_TOPIC_0000002408422590"></a> 函数功能： 配置Gemm算子中的TransB参数。 函数原型： ```
 void SetTransB(bool transB)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15600,23 +8569,9 @@ void SetTransB(bool transB)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetTransB<a name="ZH-CN_TOPIC_0000002408582194"></a>
-
-函数功能：
-
-获取Gemm算子中的TransB参数。
-
-函数原型：
-
-```
-bool GetTransB() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetTransB<a name="ZH-CN_TOPIC_0000002408582194"></a> 函数功能： 获取Gemm算子中的TransB参数。 函数原型： ```
+bool GetTransB const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15633,23 +8588,9 @@ bool GetTransB() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetWeightBiasQuanted<a name="ZH-CN_TOPIC_0000002441981981"></a>
-
-函数功能：
-
-Gemm的第二个和第三个参数是离线且满足转SVP NNN实现时，该接口用于说明离线参数是否是量化后的数据，true表示量化数据，false表示浮点数据。
-
-函数原型：
-
-```
+</table> #### SetWeightBiasQuanted<a name="ZH-CN_TOPIC_0000002441981981"></a> 函数功能： Gemm的第二个和第三个参数是离线且满足转SVP NNN实现时，该接口用于说明离线参数是否是量化后的数据，true表示量化数据，false表示浮点数据。 函数原型： ```
 void SetWeightBiasQuanted(bool isWeightBiasQuanted)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15666,23 +8607,9 @@ void SetWeightBiasQuanted(bool isWeightBiasQuanted)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetWeightBiasQuanted<a name="ZH-CN_TOPIC_0000002408582546"></a>
-
-函数功能：
-
-Gemm的第二个和第三个参数是离线且满足转SVP NNN实现时，该接口用于获取离线参数是否是量化后的数据，true表示量化数据，false表示浮点数据。
-
-函数原型：
-
-```
-bool GetWeightBiasQuanted() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetWeightBiasQuanted<a name="ZH-CN_TOPIC_0000002408582546"></a> 函数功能： Gemm的第二个和第三个参数是离线且满足转SVP NNN实现时，该接口用于获取离线参数是否是量化后的数据，true表示量化数据，false表示浮点数据。 函数原型： ```
+bool GetWeightBiasQuanted const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15699,27 +8626,9 @@ bool GetWeightBiasQuanted() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### RoundOperator配置接口<a name="ZH-CN_TOPIC_0000002442021825"></a>
-
-
-
-#### SetRoundType<a name="ZH-CN_TOPIC_0000002441981465"></a>
-
-函数功能：
-
-配置取整方式，目前支持"ROUND\_CEIL"、"ROUND\_FLOOR"、"ROUND\_EVEN" 三种。
-
-函数原型：
-
-```
+</table> ### RoundOperator配置接口<a name="ZH-CN_TOPIC_0000002442021825"></a> #### SetRoundType<a name="ZH-CN_TOPIC_0000002441981465"></a> 函数功能： 配置取整方式，目前支持"ROUND\_CEIL"、"ROUND\_FLOOR"、"ROUND\_EVEN" 三种。 函数原型： ```
 void SeRoundType(RoundType roundType)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15740,23 +8649,9 @@ void SeRoundType(RoundType roundType)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetRoundType<a name="ZH-CN_TOPIC_0000002408582726"></a>
-
-函数功能：
-
-获取取整的类型。
-
-函数原型：
-
-```
-RoundType GetRoundType() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetRoundType<a name="ZH-CN_TOPIC_0000002408582726"></a> 函数功能： 获取取整的类型。 函数原型： ```
+RoundType GetRoundType const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15776,33 +8671,9 @@ RoundType GetRoundType() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ArgminOperator配置接口<a name="ZH-CN_TOPIC_0000002442021741"></a>
-
-SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。
-
-
-
-
-
-
-
-#### SetArgMinAxis<a name="ZH-CN_TOPIC_0000002408582718"></a>
-
-函数功能：
-
-配置当前算子的Axis属性值。
-
-函数原型：
-
-```
+</table> ### ArgminOperator配置接口<a name="ZH-CN_TOPIC_0000002442021741"></a> SetAxis接口参考[SetAxis](#ZH-CN_TOPIC_0000002408582386)章节，其默认值为1。 #### SetArgMinAxis<a name="ZH-CN_TOPIC_0000002408582718"></a> 函数功能： 配置当前算子的Axis属性值。 函数原型： ```
 void SetArgMinAxis(const int32_t axis);
-```
-
-参数说明：
-
-<a name="table1685mcpsimp"></a>
+``` 参数说明： <a name="table1685mcpsimp"></a>
 <table><thead align="left"><tr id="row1691mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1693mcpsimp"><a name="p1693mcpsimp"></a><a name="p1693mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1695mcpsimp"><a name="p1695mcpsimp"></a><a name="p1695mcpsimp"></a>输入/输出</p>
@@ -15819,23 +8690,9 @@ void SetArgMinAxis(const int32_t axis);
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetArgMinAxis<a name="ZH-CN_TOPIC_0000002442021933"></a>
-
-函数功能：
-
-获取当前算子的Axis属性值。
-
-函数原型：
-
-```
-const int32_t GetArgMinAxis() const;
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetArgMinAxis<a name="ZH-CN_TOPIC_0000002442021933"></a> 函数功能： 获取当前算子的Axis属性值。 函数原型： ```
+const int32_t GetArgMinAxis const;
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15852,23 +8709,9 @@ const int32_t GetArgMinAxis() const;
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetKeepDims<a name="ZH-CN_TOPIC_0000002441981825"></a>
-
-函数功能：
-
-配置输出是否需要保持维度数量不变。
-
-函数原型：
-
-```
+</table> #### SetKeepDims<a name="ZH-CN_TOPIC_0000002441981825"></a> 函数功能： 配置输出是否需要保持维度数量不变。 函数原型： ```
 void SetKeepDims(bool keepDims)
-```
-
-参数说明：
-
-<a name="table507mcpsimp"></a>
+``` 参数说明： <a name="table507mcpsimp"></a>
 <table><thead align="left"><tr id="row513mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p515mcpsimp"><a name="p515mcpsimp"></a><a name="p515mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p517mcpsimp"><a name="p517mcpsimp"></a><a name="p517mcpsimp"></a>输入/输出</p>
@@ -15885,23 +8728,9 @@ void SetKeepDims(bool keepDims)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetKeepDims<a name="ZH-CN_TOPIC_0000002408422034"></a>
-
-函数功能：
-
-获取输出是否需要保持维度数量不变。
-
-函数原型：
-
-```
-bool GetKeepDims() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetKeepDims<a name="ZH-CN_TOPIC_0000002408422034"></a> 函数功能： 获取输出是否需要保持维度数量不变。 函数原型： ```
+bool GetKeepDims const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15918,23 +8747,9 @@ bool GetKeepDims() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetSelectLastIndex<a name="ZH-CN_TOPIC_0000002408422778"></a>
-
-函数功能：
-
-当有多个相同的最小值时，配置输出的最小值索引对应的是否为最后一个最小值。
-
-函数原型：
-
-```
+</table> #### SetSelectLastIndex<a name="ZH-CN_TOPIC_0000002408422778"></a> 函数功能： 当有多个相同的最小值时，配置输出的最小值索引对应的是否为最后一个最小值。 函数原型： ```
 void SetSelectLastIndex(bool selectLastIndex)
-```
-
-参数说明：
-
-<a name="table5429mcpsimp"></a>
+``` 参数说明： <a name="table5429mcpsimp"></a>
 <table><thead align="left"><tr id="row5435mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p5437mcpsimp"><a name="p5437mcpsimp"></a><a name="p5437mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p5439mcpsimp"><a name="p5439mcpsimp"></a><a name="p5439mcpsimp"></a>输入/输出</p>
@@ -15951,23 +8766,9 @@ void SetSelectLastIndex(bool selectLastIndex)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSelectLastIndex<a name="ZH-CN_TOPIC_0000002442021909"></a>
-
-函数功能：
-
-获取输出的最小值索引对应的是否为最后一个最小值。
-
-函数原型：
-
-```
-bool  GetSelectLastIndex() const
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+</table> #### GetSelectLastIndex<a name="ZH-CN_TOPIC_0000002442021909"></a> 函数功能： 获取输出的最小值索引对应的是否为最后一个最小值。 函数原型： ```
+bool GetSelectLastIndex const
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -15984,37 +8785,9 @@ bool  GetSelectLastIndex() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### ExtractSlice配置接口<a name="ZH-CN_TOPIC_0000002408582102"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SetAxesVec<a name="ZH-CN_TOPIC_0000002441982025"></a>
-
-函数功能：
-
-设置切割的维度。
-
-函数原型：
-
-```
+</table> ### ExtractSlice配置接口<a name="ZH-CN_TOPIC_0000002408582102"></a> #### SetAxesVec<a name="ZH-CN_TOPIC_0000002441982025"></a> 函数功能： 设置切割的维度。 函数原型： ```
 void SetAxesVec(vector<int32_t> axesVec)
-```
-
-参数说明：
-
-<a name="table1071117244248"></a>
+``` 参数说明： <a name="table1071117244248"></a>
 <table><thead align="left"><tr id="row971292414241"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p107122248242"><a name="p107122248242"></a><a name="p107122248242"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p47127241248"><a name="p47127241248"></a><a name="p47127241248"></a>输入/输出</p>
@@ -16031,23 +8804,9 @@ void SetAxesVec(vector<int32_t> axesVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushAxes<a name="ZH-CN_TOPIC_0000002408422886"></a>
-
-函数功能：
-
-逐个设置切割的维度。
-
-函数原型：
-
-```
+</table> #### PushAxes<a name="ZH-CN_TOPIC_0000002408422886"></a> 函数功能： 逐个设置切割的维度。 函数原型： ```
 void PushAxes(int32_t axes)
-```
-
-参数说明：
-
-<a name="table1866433045312"></a>
+``` 参数说明： <a name="table1866433045312"></a>
 <table><thead align="left"><tr id="row10664123085317"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p86641130135312"><a name="p86641130135312"></a><a name="p86641130135312"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p466473045311"><a name="p466473045311"></a><a name="p466473045311"></a>输入/输出</p>
@@ -16064,23 +8823,9 @@ void PushAxes(int32_t axes)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAxesVec<a name="ZH-CN_TOPIC_0000002408581934"></a>
-
-函数功能：
-
-获取切割的维度。
-
-函数原型：
-
-```
-const vector<int32_t> &GetAxesVec()
-```
-
-参数说明：
-
-<a name="table207533613567"></a>
+</table> #### GetAxesVec<a name="ZH-CN_TOPIC_0000002408581934"></a> 函数功能： 获取切割的维度。 函数原型： ```
+const vector<int32_t> &GetAxesVec
+``` 参数说明： <a name="table207533613567"></a>
 <table><thead align="left"><tr id="row475113605619"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p67593675620"><a name="p67593675620"></a><a name="p67593675620"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1575163655611"><a name="p1575163655611"></a><a name="p1575163655611"></a>输入/输出</p>
@@ -16097,23 +8842,9 @@ const vector<int32_t> &GetAxesVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetStartsVec<a name="ZH-CN_TOPIC_0000002442021169"></a>
-
-函数功能：
-
-设置切割的起始位置。
-
-函数原型：
-
-```
+</table> #### SetStartsVec<a name="ZH-CN_TOPIC_0000002442021169"></a> 函数功能： 设置切割的起始位置。 函数原型： ```
 void SetStartsVec(vector<int32_t> startsVec)
-```
-
-参数说明：
-
-<a name="table13811541384"></a>
+``` 参数说明： <a name="table13811541384"></a>
 <table><thead align="left"><tr id="row1981204153819"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p7811148380"><a name="p7811148380"></a><a name="p7811148380"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p12815414388"><a name="p12815414388"></a><a name="p12815414388"></a>输入/输出</p>
@@ -16130,23 +8861,9 @@ void SetStartsVec(vector<int32_t> startsVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushStarts<a name="ZH-CN_TOPIC_0000002441981957"></a>
-
-函数功能：
-
-逐个设置切割的起始位置。
-
-函数原型：
-
-```
+</table> #### PushStarts<a name="ZH-CN_TOPIC_0000002441981957"></a> 函数功能： 逐个设置切割的起始位置。 函数原型： ```
 void PushStarts(int32_t starts)
-```
-
-参数说明：
-
-<a name="table1365811206390"></a>
+``` 参数说明： <a name="table1365811206390"></a>
 <table><thead align="left"><tr id="row46584203391"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p26581420153917"><a name="p26581420153917"></a><a name="p26581420153917"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p2065822093917"><a name="p2065822093917"></a><a name="p2065822093917"></a>输入/输出</p>
@@ -16163,23 +8880,9 @@ void PushStarts(int32_t starts)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetStartsVec<a name="ZH-CN_TOPIC_0000002441982097"></a>
-
-函数功能：
-
-获取切割的起始位置。
-
-函数原型：
-
-```
-const vector<int32_t> &GetStartsVec()
-```
-
-参数说明：
-
-<a name="table7492973422"></a>
+</table> #### GetStartsVec<a name="ZH-CN_TOPIC_0000002441982097"></a> 函数功能： 获取切割的起始位置。 函数原型： ```
+const vector<int32_t> &GetStartsVec
+``` 参数说明： <a name="table7492973422"></a>
 <table><thead align="left"><tr id="row74924711424"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p20492177184211"><a name="p20492177184211"></a><a name="p20492177184211"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p649267134220"><a name="p649267134220"></a><a name="p649267134220"></a>输入/输出</p>
@@ -16196,23 +8899,9 @@ const vector<int32_t> &GetStartsVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetEndsVec<a name="ZH-CN_TOPIC_0000002408422106"></a>
-
-函数功能：
-
-设置切割的结束位置。
-
-函数原型：
-
-```
+</table> #### SetEndsVec<a name="ZH-CN_TOPIC_0000002408422106"></a> 函数功能： 设置切割的结束位置。 函数原型： ```
 void SetEndsVec(vector<int32_t> endsVec)
-```
-
-参数说明：
-
-<a name="table5894956104415"></a>
+``` 参数说明： <a name="table5894956104415"></a>
 <table><thead align="left"><tr id="row1189435674420"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p168941956144418"><a name="p168941956144418"></a><a name="p168941956144418"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p289475614410"><a name="p289475614410"></a><a name="p289475614410"></a>输入/输出</p>
@@ -16229,23 +8918,9 @@ void SetEndsVec(vector<int32_t> endsVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushEnds<a name="ZH-CN_TOPIC_0000002441981429"></a>
-
-函数功能：
-
-逐个设置切割的结束位置。
-
-函数原型：
-
-```
+</table> #### PushEnds<a name="ZH-CN_TOPIC_0000002441981429"></a> 函数功能： 逐个设置切割的结束位置。 函数原型： ```
 void PushEnds(int32_t ends)
-```
-
-参数说明：
-
-<a name="table1924417439455"></a>
+``` 参数说明： <a name="table1924417439455"></a>
 <table><thead align="left"><tr id="row52441043104511"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1224424316451"><a name="p1224424316451"></a><a name="p1224424316451"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p16244104311455"><a name="p16244104311455"></a><a name="p16244104311455"></a>输入/输出</p>
@@ -16262,23 +8937,9 @@ void PushEnds(int32_t ends)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetEndsVec<a name="ZH-CN_TOPIC_0000002408422722"></a>
-
-函数功能：
-
-获取切割的结束位置。
-
-函数原型：
-
-```
-const vector<int32_t> &GetEndsVec()
-```
-
-参数说明：
-
-<a name="table17143894811"></a>
+</table> #### GetEndsVec<a name="ZH-CN_TOPIC_0000002408422722"></a> 函数功能： 获取切割的结束位置。 函数原型： ```
+const vector<int32_t> &GetEndsVec
+``` 参数说明： <a name="table17143894811"></a>
 <table><thead align="left"><tr id="row3145834815"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p18142818489"><a name="p18142818489"></a><a name="p18142818489"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p121416815487"><a name="p121416815487"></a><a name="p121416815487"></a>输入/输出</p>
@@ -16295,23 +8956,9 @@ const vector<int32_t> &GetEndsVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetStepsVec<a name="ZH-CN_TOPIC_0000002441982141"></a>
-
-函数功能：
-
-设置切割的步长。
-
-函数原型：
-
-```
+</table> #### SetStepsVec<a name="ZH-CN_TOPIC_0000002441982141"></a> 函数功能： 设置切割的步长。 函数原型： ```
 void SetStepsVec(vector<int32_t> stepsVec)
-```
-
-参数说明：
-
-<a name="table7721109155417"></a>
+``` 参数说明： <a name="table7721109155417"></a>
 <table><thead align="left"><tr id="row1272112935413"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p57211290545"><a name="p57211290545"></a><a name="p57211290545"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p672199155415"><a name="p672199155415"></a><a name="p672199155415"></a>输入/输出</p>
@@ -16328,23 +8975,9 @@ void SetStepsVec(vector<int32_t> stepsVec)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### PushSteps<a name="ZH-CN_TOPIC_0000002441982069"></a>
-
-函数功能：
-
-逐个设置切割的步长。
-
-函数原型：
-
-```
+</table> #### PushSteps<a name="ZH-CN_TOPIC_0000002441982069"></a> 函数功能： 逐个设置切割的步长。 函数原型： ```
 void PushSteps(int32_t steps)
-```
-
-参数说明：
-
-<a name="table11883114115617"></a>
+``` 参数说明： <a name="table11883114115617"></a>
 <table><thead align="left"><tr id="row78837415561"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p38835485610"><a name="p38835485610"></a><a name="p38835485610"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p7883124175615"><a name="p7883124175615"></a><a name="p7883124175615"></a>输入/输出</p>
@@ -16361,23 +8994,9 @@ void PushSteps(int32_t steps)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetStepsVec<a name="ZH-CN_TOPIC_0000002408581882"></a>
-
-函数功能：
-
-获取切割的步长。
-
-函数原型：
-
-```
-const vector<int32_t> &GetStepsVec()
-```
-
-参数说明：
-
-<a name="table56701239185616"></a>
+</table> #### GetStepsVec<a name="ZH-CN_TOPIC_0000002408581882"></a> 函数功能： 获取切割的步长。 函数原型： ```
+const vector<int32_t> &GetStepsVec
+``` 参数说明： <a name="table56701239185616"></a>
 <table><thead align="left"><tr id="row9671193925616"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p18671239155616"><a name="p18671239155616"></a><a name="p18671239155616"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p11671173920562"><a name="p11671173920562"></a><a name="p11671173920562"></a>输入/输出</p>
@@ -16394,29 +9013,9 @@ const vector<int32_t> &GetStepsVec()
 </td>
 </tr>
 </tbody>
-</table>
-
-### DepthToSpace配置接口<a name="ZH-CN_TOPIC_0000002408582502"></a>
-
-
-
-
-
-#### SetBlockSize<a name="ZH-CN_TOPIC_0000002441981913"></a>
-
-函数功能：
-
-配置取空间的大小
-
-函数原型：
-
-```
+</table> ### DepthToSpace配置接口<a name="ZH-CN_TOPIC_0000002408582502"></a> #### SetBlockSize<a name="ZH-CN_TOPIC_0000002441981913"></a> 函数功能： 配置取空间的大小 函数原型： ```
 void SetBlockSize(uint32_t blockSize)
-```
-
-参数说明：
-
-<a name="table789317220287"></a>
+``` 参数说明： <a name="table789317220287"></a>
 <table><thead align="left"><tr id="row1893152202810"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p158931029284"><a name="p158931029284"></a><a name="p158931029284"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p1789310211285"><a name="p1789310211285"></a><a name="p1789310211285"></a>输入/输出</p>
@@ -16433,23 +9032,9 @@ void SetBlockSize(uint32_t blockSize)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetBlockSize<a name="ZH-CN_TOPIC_0000002408582342"></a>
-
-函数功能：
-
-获取取空间的大小
-
-函数原型：
-
-```
-uint32_t GetBlockSize() const
-```
-
-参数说明：
-
-<a name="table9401650145619"></a>
+</table> #### GetBlockSize<a name="ZH-CN_TOPIC_0000002408582342"></a> 函数功能： 获取取空间的大小 函数原型： ```
+uint32_t GetBlockSize const
+``` 参数说明： <a name="table9401650145619"></a>
 <table><thead align="left"><tr id="row640195020563"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p240115018563"><a name="p240115018563"></a><a name="p240115018563"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p940125013563"><a name="p940125013563"></a><a name="p940125013563"></a>输入/输出</p>
@@ -16466,23 +9051,9 @@ uint32_t GetBlockSize() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetModeType<a name="ZH-CN_TOPIC_0000002441981789"></a>
-
-函数功能：
-
-配置取空间的大小
-
-函数原型：
-
-```
+</table> #### SetModeType<a name="ZH-CN_TOPIC_0000002441981789"></a> 函数功能： 配置取空间的大小 函数原型： ```
 void SetModeType(DepthToSpaceModeType modeType)
-```
-
-参数说明：
-
-<a name="table7244679597"></a>
+``` 参数说明： <a name="table7244679597"></a>
 <table><thead align="left"><tr id="row3244971595"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1124410710591"><a name="p1124410710591"></a><a name="p1124410710591"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p17244147175913"><a name="p17244147175913"></a><a name="p17244147175913"></a>输入/输出</p>
@@ -16499,23 +9070,9 @@ void SetModeType(DepthToSpaceModeType modeType)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetModeType<a name="ZH-CN_TOPIC_0000002408422646"></a>
-
-函数功能：
-
-获取取空间的大小
-
-函数原型：
-
-```
-DepthToSpaceModeType GetModeType() const
-```
-
-参数说明：
-
-<a name="table7245107205914"></a>
+</table> #### GetModeType<a name="ZH-CN_TOPIC_0000002408422646"></a> 函数功能： 获取取空间的大小 函数原型： ```
+DepthToSpaceModeType GetModeType const
+``` 参数说明： <a name="table7245107205914"></a>
 <table><thead align="left"><tr id="row4245127135911"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p14245775596"><a name="p14245775596"></a><a name="p14245775596"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p524516775916"><a name="p524516775916"></a><a name="p524516775916"></a>输入/输出</p>
@@ -16532,31 +9089,9 @@ DepthToSpaceModeType GetModeType() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### TopK配置接口<a name="ZH-CN_TOPIC_0000002408422434"></a>
-
-
-
-
-
-
-
-#### SetAxis<a name="ZH-CN_TOPIC_0000002408582386"></a>
-
-函数功能：
-
-配置排序的维度
-
-函数原型：
-
-```
+</table> ### TopK配置接口<a name="ZH-CN_TOPIC_0000002408422434"></a> #### SetAxis<a name="ZH-CN_TOPIC_0000002408582386"></a> 函数功能： 配置排序的维度 函数原型： ```
 void SetAxis(int32_t axis)
-```
-
-参数说明：
-
-<a name="table7941743422"></a>
+``` 参数说明： <a name="table7941743422"></a>
 <table><thead align="left"><tr id="row1942431210"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p7941143327"><a name="p7941143327"></a><a name="p7941143327"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p14943431120"><a name="p14943431120"></a><a name="p14943431120"></a>输入/输出</p>
@@ -16573,23 +9108,9 @@ void SetAxis(int32_t axis)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetAxis<a name="ZH-CN_TOPIC_0000002442021361"></a>
-
-函数功能：
-
-获取排序的维度
-
-函数原型：
-
-```
-int32_t GetAxis() const
-```
-
-参数说明：
-
-<a name="table3219132214612"></a>
+</table> #### GetAxis<a name="ZH-CN_TOPIC_0000002442021361"></a> 函数功能： 获取排序的维度 函数原型： ```
+int32_t GetAxis const
+``` 参数说明： <a name="table3219132214612"></a>
 <table><thead align="left"><tr id="row521913225611"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1521922211618"><a name="p1521922211618"></a><a name="p1521922211618"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p921917221619"><a name="p921917221619"></a><a name="p921917221619"></a>输入/输出</p>
@@ -16606,23 +9127,9 @@ int32_t GetAxis() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetLargest<a name="ZH-CN_TOPIC_0000002441981725"></a>
-
-函数功能：
-
-配置是否返回最大或最小的元素
-
-函数原型：
-
-```
+</table> #### SetLargest<a name="ZH-CN_TOPIC_0000002441981725"></a> 函数功能： 配置是否返回最大或最小的元素 函数原型： ```
 void SetLargest(int32_t largest)
-```
-
-参数说明：
-
-<a name="table98108587610"></a>
+``` 参数说明： <a name="table98108587610"></a>
 <table><thead align="left"><tr id="row168101258167"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p10810145813615"><a name="p10810145813615"></a><a name="p10810145813615"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p8810158964"><a name="p8810158964"></a><a name="p8810158964"></a>输入/输出</p>
@@ -16639,23 +9146,9 @@ void SetLargest(int32_t largest)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetLargest<a name="ZH-CN_TOPIC_0000002442021605"></a>
-
-函数功能：
-
-获取排序的维度
-
-函数原型：
-
-```
-int32_t GetLargest() const
-```
-
-参数说明：
-
-<a name="table8198315810"></a>
+</table> #### GetLargest<a name="ZH-CN_TOPIC_0000002442021605"></a> 函数功能： 获取排序的维度 函数原型： ```
+int32_t GetLargest const
+``` 参数说明： <a name="table8198315810"></a>
 <table><thead align="left"><tr id="row1619819112810"><th class="cellrowborder" valign="top" width="28.970000000000002%" id="mcps1.1.4.1.1"><p id="p71981511589"><a name="p71981511589"></a><a name="p71981511589"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17.03%" id="mcps1.1.4.1.2"><p id="p1419812115815"><a name="p1419812115815"></a><a name="p1419812115815"></a>输入/输出</p>
@@ -16672,23 +9165,9 @@ int32_t GetLargest() const
 </td>
 </tr>
 </tbody>
-</table>
-
-#### SetSorted<a name="ZH-CN_TOPIC_0000002442021641"></a>
-
-函数功能：
-
-配置是否返回排好序的元素
-
-函数原型：
-
-```
-void  SetSorted(int32_t sorted)
-```
-
-参数说明：
-
-<a name="table158951148688"></a>
+</table> #### SetSorted<a name="ZH-CN_TOPIC_0000002442021641"></a> 函数功能： 配置是否返回排好序的元素 函数原型： ```
+void SetSorted(int32_t sorted)
+``` 参数说明： <a name="table158951148688"></a>
 <table><thead align="left"><tr id="row1189564810815"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p108951948983"><a name="p108951948983"></a><a name="p108951948983"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p188951448986"><a name="p188951448986"></a><a name="p188951448986"></a>输入/输出</p>
@@ -16705,23 +9184,9 @@ void  SetSorted(int32_t sorted)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetSorted<a name="ZH-CN_TOPIC_0000002442021437"></a>
-
-函数功能：
-
-获取排序的维度
-
-函数原型：
-
-```
-int32_t GetLargest() const
-```
-
-参数说明：
-
-<a name="table12941658391"></a>
+</table> #### GetSorted<a name="ZH-CN_TOPIC_0000002442021437"></a> 函数功能： 获取排序的维度 函数原型： ```
+int32_t GetLargest const
+``` 参数说明： <a name="table12941658391"></a>
 <table><thead align="left"><tr id="row79411458795"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p29411958398"><a name="p29411958398"></a><a name="p29411958398"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p109411583915"><a name="p109411583915"></a><a name="p109411583915"></a>输入/输出</p>
@@ -16738,27 +9203,9 @@ int32_t GetLargest() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### Expand配置接口<a name="ZH-CN_TOPIC_0000002442021733"></a>
-
-
-
-#### SetExpandShape<a name="ZH-CN_TOPIC_0000002441981765"></a>
-
-函数功能：
-
-设置输出形状 。
-
-函数原型：
-
-```
+</table> ### Expand配置接口<a name="ZH-CN_TOPIC_0000002442021733"></a> #### SetExpandShape<a name="ZH-CN_TOPIC_0000002441981765"></a> 函数功能： 设置输出形状 。 函数原型： ```
 void SetExpandShape(const vector<int64_t> &shape)
-```
-
-参数说明：
-
-<a name="table1071117244248"></a>
+``` 参数说明： <a name="table1071117244248"></a>
 <table><thead align="left"><tr id="row971292414241"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p107122248242"><a name="p107122248242"></a><a name="p107122248242"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p47127241248"><a name="p47127241248"></a><a name="p47127241248"></a>输入/输出</p>
@@ -16775,23 +9222,9 @@ void SetExpandShape(const vector<int64_t> &shape)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetExpandShape<a name="ZH-CN_TOPIC_0000002441981801"></a>
-
-函数功能：
-
-获取输出形状。
-
-函数原型：
-
-```
-vector<int64_t> GetExpandShape() const
-```
-
-参数说明：
-
-<a name="table9454195522914"></a>
+</table> #### GetExpandShape<a name="ZH-CN_TOPIC_0000002441981801"></a> 函数功能： 获取输出形状。 函数原型： ```
+vector<int64_t> GetExpandShape const
+``` 参数说明： <a name="table9454195522914"></a>
 <table><thead align="left"><tr id="row1245416552294"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1145435518292"><a name="p1145435518292"></a><a name="p1145435518292"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p12454105552919"><a name="p12454105552919"></a><a name="p12454105552919"></a>输入/输出</p>
@@ -16808,35 +9241,9 @@ vector<int64_t> GetExpandShape() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### SignOperator配置接口<a name="ZH-CN_TOPIC_0000002442021973"></a>
-
-无参数配置。
-
-### ErfOperator配置接口<a name="ZH-CN_TOPIC_0000002408582610"></a>
-
-无参数配置
-
-### GeluOperator配置接口<a name="ZH-CN_TOPIC_0000002442021101"></a>
-
-
-
-#### SetApproximationName<a name="ZH-CN_TOPIC_0000002408582538"></a>
-
-函数功能：
-
-设置Gelu近似算法名称。
-
-函数原型：
-
-```
+</table> ### SignOperator配置接口<a name="ZH-CN_TOPIC_0000002442021973"></a> 无参数配置。 ### ErfOperator配置接口<a name="ZH-CN_TOPIC_0000002408582610"></a> 无参数配置 ### GeluOperator配置接口<a name="ZH-CN_TOPIC_0000002442021101"></a> #### SetApproximationName<a name="ZH-CN_TOPIC_0000002408582538"></a> 函数功能： 设置Gelu近似算法名称。 函数原型： ```
 void SetApproximationName(const string &approximationName)
-```
-
-参数说明：
-
-<a name="table1071117244248"></a>
+``` 参数说明： <a name="table1071117244248"></a>
 <table><thead align="left"><tr id="row971292414241"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p107122248242"><a name="p107122248242"></a><a name="p107122248242"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p47127241248"><a name="p47127241248"></a><a name="p47127241248"></a>输入/输出</p>
@@ -16853,23 +9260,9 @@ void SetApproximationName(const string &approximationName)
 </td>
 </tr>
 </tbody>
-</table>
-
-#### GetApproximationName<a name="ZH-CN_TOPIC_0000002408422790"></a>
-
-函数功能：
-
-获取近似算法名称 。
-
-函数原型：
-
-```
-string GetApproximationName() const
-```
-
-参数说明：
-
-<a name="table9454195522914"></a>
+</table> #### GetApproximationName<a name="ZH-CN_TOPIC_0000002408422790"></a> 函数功能： 获取近似算法名称 。 函数原型： ```
+string GetApproximationName const
+``` 参数说明： <a name="table9454195522914"></a>
 <table><thead align="left"><tr id="row1245416552294"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p1145435518292"><a name="p1145435518292"></a><a name="p1145435518292"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p12454105552919"><a name="p12454105552919"></a><a name="p12454105552919"></a>输入/输出</p>
@@ -16886,58 +9279,12 @@ string GetApproximationName() const
 </td>
 </tr>
 </tbody>
-</table>
-
-### WarpOperator配置接口<a name="ZH-CN_TOPIC_0000002408582694"></a>
-
-无参数配置
-
-### SinOperator配置接口<a name="ZH-CN_TOPIC_0000002408582566"></a>
-
-无参数配置
-
-### CosOperator配置接口<a name="ZH-CN_TOPIC_0000002441981601"></a>
-
-无参数配置
-
-### NegOperator配置接口<a name="ZH-CN_TOPIC_0000002441982109"></a>
-
-无参数配置
-
-### LayerNorm2配置接口<a name="ZH-CN_TOPIC_0000002442021485"></a>
-
-LayerNorm2接口继承LayerNorm，区别在于LayerNorm支持的归一化维度为W，HW，CHW；而LayerNorm2支持的归一化维度为W，C。
-
-# GenerateModelAPI说明
-## 概览<a name="ZH-CN_TOPIC_0000002408422414"></a>
-
-GenerateModelAPI提供与ATC工具相似的功能，用于将构造好的模型图结构转换为om模型及输出信息，该模型可以被端侧硬件加速器SDK识别，用于模型推理计算。其与ATC工具的主要差异：
-
--   GenerateModelAPI的模型来源于构图接口生成的graph队列，而不是caffe或onnx模型文件。
--   作为函数接口，配置信息无法以命令行的形式传递，而是采用文件路径、字符串、map参数表的形式实现配置，其具体配置项与功能和ATC工具一致。
--   最终编译生成的om二进制模型信息不一定单独生成文件，也可以通过内存直接返回给调用者，并同时附带输入输出节点的基本信息，便于上层框架对其进行封装。
-
-使用限制：与ATC工具一样，不支持多线程调用。
-
-## 转换接口<a name="ZH-CN_TOPIC_0000002442021841"></a>
-
-
-
-### GenerateModelBinary<a name="ZH-CN_TOPIC_0000002442021861"></a>
-
-函数功能：
-
-基于cfg配置文件和graph队列完成编译转换，生成om模型文件或在内存中获取到om数据。
-
-函数原型：
-
-```
+</table> ### WarpOperator配置接口<a name="ZH-CN_TOPIC_0000002408582694"></a> 无参数配置 ### SinOperator配置接口<a name="ZH-CN_TOPIC_0000002408582566"></a> 无参数配置 ### CosOperator配置接口<a name="ZH-CN_TOPIC_0000002441981601"></a> 无参数配置 ### NegOperator配置接口<a name="ZH-CN_TOPIC_0000002441982109"></a> 无参数配置 ### LayerNorm2配置接口<a name="ZH-CN_TOPIC_0000002442021485"></a> LayerNorm2接口继承LayerNorm，区别在于LayerNorm支持的归一化维度为W，HW，CHW；而LayerNorm2支持的归一化维度为W，C。 # GenerateModelAPI说明
+## 概览<a name="ZH-CN_TOPIC_0000002408422414"></a> GenerateModelAPI提供与ATC工具相似的功能，用于将构造好的模型图结构转换为om模型及输出信息，该模型可以被端侧硬件加速器SDK识别，用于模型推理计算。其与ATC工具的主要差异： - GenerateModelAPI的模型来源于构图接口生成的graph队列，而不是caffe或onnx模型文件。
+- 作为函数接口，配置信息无法以命令行的形式传递，而是采用文件路径、字符串、map参数表的形式实现配置，其具体配置项与功能和ATC工具一致。
+- 最终编译生成的om二进制模型信息不一定单独生成文件，也可以通过内存直接返回给调用者，并同时附带输入输出节点的基本信息，便于上层框架对其进行封装。 使用限制：与ATC工具一样，不支持多线程调用。 ## 转换接口<a name="ZH-CN_TOPIC_0000002442021841"></a> ### GenerateModelBinary<a name="ZH-CN_TOPIC_0000002442021861"></a> 函数功能： 基于cfg配置文件和graph队列完成编译转换，生成om模型文件或在内存中获取到om数据。 函数原型： ```
 bool GenerateModelBinary(const char *cfgFile, vector<unique_ptr<BaseOperator>> &operatorVec, ModelCoreInfo *modelCoreInfo)
-```
-
-参数说明：
-
-<a name="table4878mcpsimp"></a>
+``` 参数说明： <a name="table4878mcpsimp"></a>
 <table><thead align="left"><tr id="row4884mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4886mcpsimp"><a name="p4886mcpsimp"></a><a name="p4886mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.2"><p id="p4888mcpsimp"><a name="p4888mcpsimp"></a><a name="p4888mcpsimp"></a>输入/输出</p>
@@ -16968,23 +9315,9 @@ bool GenerateModelBinary(const char *cfgFile, vector<unique_ptr<BaseOperator>> &
 </td>
 </tr>
 </tbody>
-</table>
-
-### GenerateModelBinaryWithCfgMap<a name="ZH-CN_TOPIC_0000002408582082"></a>
-
-函数功能：
-
-基于cfg map配置列表和graph队列完成编译转换，生成om模型文件或在内存中获取到om数据。
-
-函数原型：
-
-```
+</table> ### GenerateModelBinaryWithCfgMap<a name="ZH-CN_TOPIC_0000002408582082"></a> 函数功能： 基于cfg map配置列表和graph队列完成编译转换，生成om模型文件或在内存中获取到om数据。 函数原型： ```
 bool GenerateModelBinaryWithCfgMap(const map<string, string> &cfgMap, vector<unique_ptr<BaseOperator>> &operatorVec, ModelCoreInfo *modelCoreInfo)
-```
-
-参数说明：
-
-<a name="table4589mcpsimp"></a>
+``` 参数说明： <a name="table4589mcpsimp"></a>
 <table><thead align="left"><tr id="row4595mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p4597mcpsimp"><a name="p4597mcpsimp"></a><a name="p4597mcpsimp"></a>参数名</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.39%" id="mcps1.1.4.1.2"><p id="p4599mcpsimp"><a name="p4599mcpsimp"></a><a name="p4599mcpsimp"></a>输入/输出</p>
@@ -17015,19 +9348,8 @@ bool GenerateModelBinaryWithCfgMap(const map<string, string> &cfgMap, vector<uni
 </td>
 </tr>
 </tbody>
-</table>
-
-# 参考实现
-## 简介<a name="ZH-CN_TOPIC_0000002408422570"></a>
-
-构图接口与转换接口的使用方式既简单又灵活，提供了多种量化参数配置方式和转换参数配置方式。为了方便用户使用，提供对应简单实现的代码示例，重点关注以下几点：
-
--   算子参数配置方式
--   量化信息配置方式
--   转换参数配置方式
--   自定义算子配置方式
-
-## 实现代码<a name="ZH-CN_TOPIC_0000002408422554"></a>
-
-进入发布包SVP\_NNN\_PC\_Vx.x.x.x/Sample目录，解压samples.tar.gz，解压后请参考samples/8\_graph。
-
+</table> # 参考实现
+## 简介<a name="ZH-CN_TOPIC_0000002408422570"></a> 构图接口与转换接口的使用方式既简单又灵活，提供了多种量化参数配置方式和转换参数配置方式。为了方便用户使用，提供对应简单实现的代码示例，重点关注以下几点： - 算子参数配置方式
+- 量化信息配置方式
+- 转换参数配置方式
+- 自定义算子配置方式 ## 实现代码<a name="ZH-CN_TOPIC_0000002408422554"></a> 进入发布包SVP\_NNN\_PC\_Vx.x.x.x/Sample目录，解压samples.tar.gz，解压后请参考samples/8\_graph。 
