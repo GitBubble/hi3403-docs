@@ -237,7 +237,7 @@ RPC: failed to contact local rpcbind server (errno 5).
 
 Such prints, generally the -o nolock option is missing. If NFS frequently loses response (especially when reading/writing large files, accompanied by prints like "nfs server not responding, still trying"), the -o tcp option is usually missing.
 
-## Why Can't I Burn the Filesystem or Why Are There So Many Bad Blocks on Flash<a name="ZH-CN_TOPIC_0000002424200702"></a>
+## Why Can't I Flash the Filesystem or Why Are There So Many Bad Blocks on Flash<a name="ZH-CN_TOPIC_0000002424200702"></a>
 
 Common errors may be as follows:
 
@@ -250,7 +250,7 @@ Attempt to write non page aligned data, length 26380992 4096 128
 
 This is caused by a mismatch between the pagesize and ecc parameters specified when creating the yaffs filesystem and the actual physical parameters of the NAND flash on the board. Please confirm the pagesize and ecc parameters of the NAND flash on the board and recreate the filesystem.
 
-Note that incorrect pagesize and ecc parameters do not necessarily cause a burning error — it may burn successfully but still fail to boot, printing "bad block n" and similar errors. When encountering such errors, recreate the filesystem and use the "nand scrub NandFlashAddress Length" command to clean the area where the yaffs filesystem resides before reburning the yaffs filesystem. For example, "nand scrub 400000 1000000" cleans 64 MB starting from 0x400000. If the last parameter is omitted, it cleans from the specified address to the end of NAND flash. For example, "nand scrub 400000" cleans all flash space starting from 0x400000.
+Note that incorrect pagesize and ecc parameters do not necessarily cause a Flashing error — it may burn successfully but still fail to boot, printing "bad block n" and similar errors. When encountering such errors, recreate the filesystem and use the "nand scrub NandFlashAddress Length" command to clean the area where the yaffs filesystem resides before reburning the yaffs filesystem. For example, "nand scrub 400000 1000000" cleans 64 MB starting from 0x400000. If the last parameter is omitted, it cleans from the specified address to the end of NAND flash. For example, "nand scrub 400000" cleans all flash space starting from 0x400000.
 
 How to determine the NAND flash pagesize and ecc type? Look at the kernel boot prints. The kernel outputs many messages during booting; find these lines:
 
@@ -280,7 +280,7 @@ Kernel panic - not syncing: No init found. Try passing init= option to kernel. S
 Possible causes include the following two items:
 
 1.  The pagesize and ecctype parameters were incorrect when creating the yaffs filesystem. If these two parameters do not match the actual NAND flash properties, the kernel will be unable to recognize the yaffs filesystem. When SDK make build is executed, the filesystem is created by default according to the reference board released with the SDK. The pagesize and ecctype parameters used may not match yours.
-2.  The bootargs are incorrectly configured. For example, the bootargs may be incorrectly set to: setenv bootargs 'bootargs=mem=96M console=ttyAMA0,115200 root=/dev/mtdblock2 rootfstype=yaffs2 mtdparts=nand:4M\(boot\),60M\(rootfs\),-\(others\)' or the rootfstype in bootargs may be incorrect — for example, burning a jffs2 filesystem while bootargs is configured with yaffs2, which may also cause the kernel to fail to recognize the filesystem.
+2.  The bootargs are incorrectly configured. For example, the bootargs may be incorrectly set to: setenv bootargs 'bootargs=mem=96M console=ttyAMA0,115200 root=/dev/mtdblock2 rootfstype=yaffs2 mtdparts=nand:4M\(boot\),60M\(rootfs\),-\(others\)' or the rootfstype in bootargs may be incorrect — for example, Flashing a jffs2 filesystem while bootargs is configured with yaffs2, which may also cause the kernel to fail to recognize the filesystem.
 
 ## Why Can't the Filesystem Boot with "Cannot open console"<a name="ZH-CN_TOPIC_0000002457879377"></a>
 

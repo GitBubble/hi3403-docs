@@ -934,15 +934,15 @@ command = [utils.get_python_cmd(), "setup.py", "sdist"]
     **Figure 1** HksCipherTest003 test case failure log<a name="fig154392039112413"></a>
     ![](figures/HksCipherTest003用例failed日志.png "HksCipherTest003用例failed日志")
 
-    Hi3403V100 hardware boards require a one-time KEY0 burn-in during mass production and cannot be re-burned. If KEY0 is not burned, the hardware blocks key derivation operations, and hardware key encryption/decryption cannot be used normally.
+    Hi3403V100 hardware boards require a one-time KEY0 flash during mass production and cannot be re-flashed. If KEY0 is not flashed, the hardware blocks key derivation operations, and hardware key encryption/decryption cannot be used normally.
 
-    Steps for burning KEY0 on Hi3403V100 boards:
+    Steps for Flashing KEY0 on Hi3403V100 boards:
 
     1.  Enter the U-Boot command line and execute the following commands sequentially:
 
         ```
         mw 0x10122008 0x6
-        # The following four lines set the key to be burned,
+        # The following four lines set the key to be flashed,
         # using key=128'h00010203_04050607_08090a0b_0c0d0e0f as an example
         mw 0x1012200C 0x0c0d0e0f
         mw 0x10122010 0x08090a0b
@@ -953,7 +953,7 @@ command = [utils.get_python_cmd(), "setup.py", "sdist"]
         ```
 
         >![](public_sys-resources/icon-warning.gif) **Warning:**
-        >The key in the above burn-in commands is just a parameter. For actual burning, use random numbers. Do not use the example key.
+        >The key in the above flash commands is just a parameter. For actual Flashing, use random numbers. Do not use the example key.
 
     2.  Power cycle the board (reboot soft restart does not work; power cycle is required for the change to take effect). After that, running XTS test cases will show that all HUKS cases for XTS certification PASS.
 

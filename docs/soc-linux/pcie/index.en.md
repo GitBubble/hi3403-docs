@@ -138,7 +138,7 @@ For the boot, kernel, and file system required by the solution, refer to the `re
 
 -   Both master and slave boards use Flash boot mode:
 
-    Burn the u-boot, kernel, and file system to the master/slave board Flash using the non-PCIe mode burning method.
+    Flash the u-boot, kernel, and file system to the master/slave board Flash using the non-PCIe mode flashing method.
 
 -   Under Flash boot mode for master and slave boards, the boot file list is shown in [Table 1](#_Ref239665721).
 

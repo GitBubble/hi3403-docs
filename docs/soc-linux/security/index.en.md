@@ -106,7 +106,7 @@ The following symbols may appear in this document. Their meanings are as follows
 The SSxxxx SoC provides a comprehensive set of security features, including a series of hardware, firmware, and software components to support customers in building secure and trusted devices. The main security features are as follows:
 
 -   One Time Programmable (OTP), used for storing RSA public key hashes for device secure boot verification, multiple groups of symmetric root keys, various SoC security-related control information, and user-defined data.
--   The chip supports three-level key derivation based on OTP symmetric root keys. It supports scrambling protection for root keys burned into OTP. All plaintext keys during the key derivation process are invisible to software.
+-   The chip supports three-level key derivation based on OTP symmetric root keys. It supports scrambling protection for root keys flashed into OTP. All plaintext keys during the key derivation process are invisible to software.
 -   Hardware true random number generator.
 -   Asymmetric cryptographic algorithm RSA module.
 -   SPACC module supporting multiple general hash algorithms and symmetric cryptographic algorithms.
@@ -123,11 +123,11 @@ OTP is a non-volatile memory. Its main characteristic is that once a storage spa
 
     The chip can store multiple groups of root public key hashes for secure boot verification. These include: chip manufacturer root public key hash (pre-programmed), OEM root public key hash, and third-party dual-signature root public key hash. Customers can select the appropriate root public key based on actual product requirements (via OTP selection).
 
-    Encryption/decryption root keys: The chip reserves 4 OEM-writable symmetric cipher root key OTP spaces, oem\_root\_symc\_key0 through oem\_root\_symc\_key3. OEM can use one or more of these root keys to derive different key encryption keys and working keys. These key areas can be written through the corresponding OTP burning interface. Once written, the hardware locks them automatically and they cannot be changed. The written content cannot be read through software or JTAG interfaces.
+    Encryption/decryption root keys: The chip reserves 4 OEM-writable symmetric cipher root key OTP spaces, oem\_root\_symc\_key0 through oem\_root\_symc\_key3. OEM can use one or more of these root keys to derive different key encryption keys and working keys. These key areas can be written through the corresponding OTP Flashing interface. Once written, the hardware locks them automatically and they cannot be changed. The written content cannot be read through software or JTAG interfaces.
 
     The chip is pre-programmed with one chip manufacturer TEE symmetric cipher algorithm encryption/decryption root key. Users can choose whether to use it based on actual needs (via OTP selection).
 
-2.  SoC important feature/function switch control area (including single-bit control area and multi-bit control area): Most important SoC features can be controlled through OTP to improve product application flexibility. For example: secure boot enable, whether the secure boot image is encrypted, whether secure boot uses redundant backup, whether to enable TEE, JTAG working mode selection, etc. After the target values for the feature/function switch control area are burned, they can be locked to prevent subsequent illegal tampering.
+2.  SoC important feature/function switch control area (including single-bit control area and multi-bit control area): Most important SoC features can be controlled through OTP to improve product application flexibility. For example: secure boot enable, whether the secure boot image is encrypted, whether secure boot uses redundant backup, whether to enable TEE, JTAG working mode selection, etc. After the target values for the feature/function switch control area are flashed, they can be locked to prevent subsequent illegal tampering.
 
     **It is strongly recommended that customers set all feature/function switch bit values before final product release and force lock them! Even if the default values meet requirements, locking is required.**
 
@@ -146,8 +146,8 @@ OTP is a non-volatile memory. Its main characteristic is that once a storage spa
 
 #### LOCK Attribute Description<a name="ZH-CN_TOPIC_0000002457828801"></a>
 
--   **Oneway attribute**: Bit fields with this attribute that have not been burned to 1 can be burned again in subsequent operations until all bits are burned to 1. The lock enable bit does not lock bit fields with this attribute.
--   **lockable attribute**: Bit fields with the lockable attribute behave identically to the oneway attribute before locking. After burning the corresponding lock bit, even bits that have not been burned cannot be burned again. **It is recommended that for lockable attribute bit fields, the corresponding bit fields should be locked after burning the value to prevent modification.**
+-   **Oneway attribute**: Bit fields with this attribute that have not been flashed to 1 can be flashed again in subsequent operations until all bits are flashed to 1. The lock enable bit does not lock bit fields with this attribute.
+-   **lockable attribute**: Bit fields with the lockable attribute behave identically to the oneway attribute before locking. After Flashing the corresponding lock bit, even bits that have not been flashed cannot be flashed again. **It is recommended that for lockable attribute bit fields, the corresponding bit fields should be locked after Flashing the value to prevent modification.**
 -   **wrlock attribute**: As long as a write operation has been performed, the corresponding bit field is locked and cannot be changed.
 
 #### Load Shadow Attribute Description<a name="ZH-CN_TOPIC_0000002457868889"></a>

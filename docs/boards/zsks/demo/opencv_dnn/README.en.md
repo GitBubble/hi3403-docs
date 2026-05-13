@@ -134,7 +134,7 @@ chmod +x main
 
 <img src="pic/image-20250210170027454.png" alt="image-20250210170027454" style="zoom:50%;" />
 
-* If you see a different result from the image below, verify that the USB camera is connected to the development board's USB port and that video0 and video1 device nodes are visible in the /dev directory on the development board. If these two device nodes are not present, ensure that the image has been burned correctly.
+* If you see a different result from the image below, verify that the USB camera is connected to the development board's USB port and that video0 and video1 device nodes are visible in the /dev directory on the development board. If these two device nodes are not present, ensure that the image has been flashed correctly.
 
 ![image-20250919151018659](pic/image-20250919151018659.png)
 

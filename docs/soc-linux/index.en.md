@@ -31,7 +31,7 @@ Boot link (U-Boot → ATF → Kernel), various peripherals, memory layout, and s
 
     ---
 
-    Hi3403V100/Hi3519AV200 secure boot key, signature, and burning process.
+    Hi3403V100/Hi3519AV200 secure boot key, signature, and flashing process.
 
     [:octicons-arrow-right-24: Enter](secure-boot/index.md)
 

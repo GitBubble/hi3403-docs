@@ -171,7 +171,7 @@ This release package is used for miniaturized scenarios where some PQTools tool 
 
 ### Installation and Operation of Board-Side Software under Linux<a name="ZH-CN_TOPIC_0000002530221763"></a>
 
-For the steps to burn the chip SDK and configure the board-side tool runtime environment, please refer to the "SSXX SDK Installation and Upgrade Instructions". Burn the image file to the board and configure the network.
+For the steps to Flash the chip SDK and configure the board-side tool runtime environment, please refer to the "SSXX SDK Installation and Upgrade Instructions". flash the image file to the board and configure the network.
 
 1.  Decompress the SSXX\_SDK\_VX.X.X.X.tgz from the release package and place the mpp/ko directory into the file system, or NFS mount the mpp directory from the server to the board file system.
 2.  Run the loadXXXX script in the ko directory.

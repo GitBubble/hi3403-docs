@@ -605,15 +605,15 @@ The image files that need to be flashed include:
 
 ### Hardware Board Flashing<a name="ZH-CN_TOPIC_0000002555387861"></a>
 
-Hi3403V100 and Hi3519AV200 hardware boards require a one-time KEY0 burn-in during mass production and cannot be re-burned. If KEY0 is not burned, the hardware blocks key derivation operations, and hardware key encryption/decryption cannot be used normally.
+Hi3403V100 and Hi3519AV200 hardware boards require a one-time KEY0 flash during mass production and cannot be re-flashed. If KEY0 is not flashed, the hardware blocks key derivation operations, and hardware key encryption/decryption cannot be used normally.
 
-The steps for burning KEY0 on Hi3403V100 hardware boards are as follows.
+The steps for Flashing KEY0 on Hi3403V100 hardware boards are as follows.
 
 1.  Enter the U-Boot command line and execute the following commands sequentially
 
     ```
     mw 0x10122008 0x6
-    # The following four lines set the key to be burned,
+    # The following four lines set the key to be flashed,
     # using key=128'h00010203_04050607_08090a0b_0c0d0e0f as an example
     mw 0x1012200C 0x0c0d0e0f
     mw 0x10122010 0x08090a0b
@@ -624,7 +624,7 @@ The steps for burning KEY0 on Hi3403V100 hardware boards are as follows.
     ```
 
     >![](public_sys-resources/icon-warning.gif) **Warning:**
-    >The key in the above burn-in commands is just a parameter. For actual burning, use random numbers. Do not use the example key.
+    >The key in the above flash commands is just a parameter. For actual Flashing, use random numbers. Do not use the example key.
 
 2.  Power cycle the board (reboot soft restart does not work; power cycle is required for the change to take effect). After that, running XTS test cases will show that all HUKS cases for XTS certification PASS.
 
@@ -702,13 +702,13 @@ Products with screens and applications need to test ActsAbilityMgrTest and ActsB
     ![](figures/XTS认证送检材料参考目录.png "XTS认证送检材料参考目录")
 ### Hardware Board Flashing<a name="ZH-CN_TOPIC_0000002374732952"></a>
 
-Steps for burning KEY0 on Hi3403V100 and Hi3519AV200 hardware boards.
+Steps for Flashing KEY0 on Hi3403V100 and Hi3519AV200 hardware boards.
 
 1.  Enter the U-Boot command line and execute the following commands sequentially
 
     ```
     mw 0x10122008 0x6
-    # The following four lines set the key to be burned,
+    # The following four lines set the key to be flashed,
     # using key=128'h00010203_04050607_08090a0b_0c0d0e0f as an example
     mw 0x1012200C 0x0c0d0e0f
     mw 0x10122010 0x08090a0b
@@ -719,7 +719,7 @@ Steps for burning KEY0 on Hi3403V100 and Hi3519AV200 hardware boards.
     ```
 
     >![](public_sys-resources/icon-warning.gif) **Warning:**
-    >The key in the above burn-in commands is just a parameter. For actual burning, use random numbers. Do not use the example key.
+    >The key in the above flash commands is just a parameter. For actual Flashing, use random numbers. Do not use the example key.
 
 2.  Power cycle the board (reboot soft restart does not work; power cycle is required for the change to take effect). After that, running XTS test cases will show that all HUKS cases for XTS certification PASS.
 

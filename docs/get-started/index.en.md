@@ -13,7 +13,7 @@ Novice-friendly entry path - from selecting a development board to lighting up t
 
     ---
 
-    Select the board → Burn the image → Connect the serial port → Log in. Go through the entire process in one page.
+    Select the board → flash the image → Connect the serial port → Log in. Go through the entire process in one page.
 
     [:octicons-arrow-right-24: Enter](quickstart.md)
 

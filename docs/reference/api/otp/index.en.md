@@ -132,7 +132,7 @@ The revision history summarizes the changes made in each document update. The la
 </table>
 
 # Overview
-The OTP module provides MPI interfaces for driving one-time programmable operations, enabling CIPHER module root key burning, jtag key burning, key burning status verification, and user reserved space data read/write.
+The OTP module provides MPI interfaces for driving one-time programmable operations, enabling CIPHER module root key Flashing, jtag key Flashing, key Flashing status verification, and user reserved space data read/write.
 
 ## Key Usage Mechanism in OTP<a name="ZH-CN_TOPIC_0000002457868861"></a>
 
@@ -900,7 +900,7 @@ typedef struct {
 </thead>
 <tbody><tr id="row1000mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1002mcpsimp"><a name="p1002mcpsimp"></a><a name="p1002mcpsimp"></a>burn</p>
 </td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p1004mcpsimp"><a name="p1004mcpsimp"></a><a name="p1004mcpsimp"></a>Whether to burn. TD_TRUE for burning, TD_FALSE for reading.</p>
+<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p1004mcpsimp"><a name="p1004mcpsimp"></a><a name="p1004mcpsimp"></a>Whether to burn. TD_TRUE for Flashing, TD_FALSE for reading.</p>
 </td>
 </tr>
 <tr id="row1005mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1007mcpsimp"><a name="p1007mcpsimp"></a><a name="p1007mcpsimp"></a>field_name</p>

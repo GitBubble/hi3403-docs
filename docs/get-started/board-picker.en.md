@@ -62,7 +62,7 @@ kcf_track, fruit_identify, opencv_dnn, hnr_auto), suitable for seeing the effect
 
 If you already have other Hi3403V100 self-developed boards (such as Hi3403V100 reference design),
 You can also use this set of documents - Hi3403 SDK and the multimedia/AI documents here are at the chip level.
-It has nothing to do with the specific board. Please refer to the board-specific content (pinout, schematic diagram, burning script)
+It has nothing to do with the specific board. Please refer to the board-specific content (pinout, schematic diagram, Flashing script)
 Information provided by your board manufacturer.
 
 ## Next

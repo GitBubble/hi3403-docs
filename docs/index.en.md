@@ -68,7 +68,7 @@ Covering chips, Linux, multimedia, AI, development boards and construction tools
 
     ---
 
-    `hi3403-build` one-click build script, BurnTool burning tool, MindCmd, ToolPlatform.
+    `hi3403-build` one-click build script, BurnTool flashing tool, MindCmd, ToolPlatform.
 
     [:octicons-arrow-right-24: Enter](tools/index.md)
 

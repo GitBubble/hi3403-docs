@@ -6,7 +6,7 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/BurnTool
 # Preface
 **Overview<a name="section94015722114"></a>**
 
-This document primarily introduces the usage of the BurnTool burning tool, applicable to scenarios including one-click burning of all program images to the board flash, burning other program images to the board flash by address when the board already has boot, and burning only boot to the board flash on an empty board.
+This document primarily introduces the usage of the BurnTool flashing tool, applicable to scenarios including one-click Flashing of all program images to the board flash, Flashing other program images to the board flash by address when the board already has boot, and Flashing only boot to the board flash on an empty board.
 
 **Product Version<a name="section1241074213"></a>**
 
@@ -90,7 +90,7 @@ The revision history accumulates the description of each document update. The la
 # Overview
 ## Tool Overview<a name="ZH-CN_TOPIC_0000002441889113"></a>
 
-The BurnTool is a multifunctional tool primarily used for image burning, image uploading, and burner image creation.
+The BurnTool is a multifunctional tool primarily used for image Flashing, image uploading, and burner image creation.
 
 >![](public_sys-resources/icon-note.gif) **Note:**  The current tool only supports use on 64-bit operating systems.
 
@@ -98,15 +98,15 @@ The BurnTool is a multifunctional tool primarily used for image burning, image u
 
 The application scenarios of the three main functions of the BurnTool are as follows:
 
-- Image burning: used to burn images to the corresponding Flash addresses via serial port, network port, or USB port.
+- Image Flashing: used to flash images to the corresponding Flash addresses via serial port, network port, or USB port.
 - Image uploading: used to export data from Flash addresses to files on the PC via DDR.
-- Burner image creation: used to package images from the partition table into corresponding image files according to the format required by the burner tool for mass production burning.
+- Burner image creation: used to package images from the partition table into corresponding image files according to the format required by the burner tool for mass production Flashing.
 
-## Burning Principle<a name="ZH-CN_TOPIC_0000002441768981"></a>
+## Flashing Principle<a name="ZH-CN_TOPIC_0000002441768981"></a>
 
-U-Boot burning principle: After the BurnTool starts burning, it first interacts with bootrom. The tool transmits DDR parameters to bootrom (this is the U-Boot download stage at 5%). It then initializes DDR and transfers U-Boot to DDR (the U-Boot download stage at 100% indicates transfer completion). U-Boot is then started from DDR. After U-Boot startup is complete, the tool begins interacting with U-Boot, sending burning commands to burn U-Boot from DDR to the corresponding Flash address.
+U-Boot Flashing principle: After the BurnTool starts Flashing, it first interacts with bootrom. The tool transmits DDR parameters to bootrom (this is the U-Boot download stage at 5%). It then initializes DDR and transfers U-Boot to DDR (the U-Boot download stage at 100% indicates transfer completion). U-Boot is then started from DDR. After U-Boot startup is complete, the tool begins interacting with U-Boot, sending Flashing commands to burn U-Boot from DDR to the corresponding Flash address.
 
-Burning principle for other image partitions: For other image partitions, such as kernel, rootfs, etc., the tool defaults to network port transmission. Customers can choose between bare burning and non-bare burning methods. Bare burning means selecting U-Boot for burning in Burn by Partition or Burn by eMMC — at this time U-Boot will be burned to Flash. Non-bare burning means not selecting U-Boot and only selecting other partitions for burning. In this case, U-Boot must already exist on the current board. During burning, the tool will start U-Boot, interact with it, and complete burning by sending TFTP commands and Write commands to U-Boot.
+Flashing principle for other image partitions: For other image partitions, such as kernel, rootfs, etc., the tool defaults to network port transmission. Customers can choose between bare Flashing and non-bare flashing methods. Bare Flashing means selecting U-Boot for Flashing in Burn by Partition or Burn by eMMC — at this time U-Boot will be flashed to Flash. Non-bare Flashing means not selecting U-Boot and only selecting other partitions for Flashing. In this case, U-Boot must already exist on the current board. During Flashing, the tool will start U-Boot, interact with it, and complete Flashing by sending TFTP commands and Write commands to U-Boot.
 
 ## Tool and Board Device Matching Relationship<a name="ZH-CN_TOPIC_0000002408169824"></a>
 
@@ -225,9 +225,9 @@ Note: ● indicates supported; ○ indicates not supported.
 
 ## Environment Preparation<a name="ZH-CN_TOPIC_0000002408169800"></a>
 
-The environment preparation for BurnTool burning is as follows:
+The environment preparation for BurnTool Flashing is as follows:
 
-1.  Connect the serial port and network cable between the PC and the board. Since tool burning involves interaction with bootrom, the bootrom_sel on the board hardware must be set to 1 to boot from bootrom.
+1.  Connect the serial port and network cable between the PC and the board. Since tool Flashing involves interaction with bootrom, the bootrom_sel on the board hardware must be set to 1 to boot from bootrom.
 2.  Copy ToolPlatform-X.X.X.zip located in the SDK release package (path: $SDK_DIR/tools/windows/ToolPlatform) to a local hard drive on the PC (the PC requires Win7 or Win10 operating system).
 3.  Extract ToolPlatform-X.X.X.zip, double-click ToolPlatform.exe in the tool directory to open the ToolPlatform tool, as shown in [Figure 1](#_Ref427762404).
 
@@ -242,7 +242,7 @@ The environment preparation for BurnTool burning is as follows:
 5.  Parameter configuration: select the serial port used to connect to the board, select the network IP address used by the PC, and configure the board's MAC address, IP address, subnet mask, and gateway, as shown in [Figure 3](#fig58684616564).
 
     >![](public_sys-resources/icon-notice.gif) **Important:** 
-    >The selected PC server IP must be in the same network segment as the board's network configuration; otherwise, images other than fastboot cannot be burned via the network port (the fastboot image is burned via the serial port).
+    >The selected PC server IP must be in the same network segment as the board's network configuration; otherwise, images other than fastboot cannot be flashed via the network port (the fastboot image is flashed via the serial port).
 
     **Figure 3**  Parameter settings<a name="fig58684616564"></a>  
     ![](figures/参数设置.png "参数设置")
@@ -251,9 +251,9 @@ The environment preparation for BurnTool burning is as follows:
 
 The Burn by Partition function is applicable to all boards, regardless of whether boot is present on the board.
 
-## Burning Steps<a name="ZH-CN_TOPIC_0000002441889129"></a>
+## flashing Steps<a name="ZH-CN_TOPIC_0000002441889129"></a>
 
-The specific burning steps are as follows:
+The specific flashing steps are as follows:
 
 1.  After opening the BurnTool, switch to the "Burn by Partition" tab, as shown in [Figure 1](#fig1560862365516).
 
@@ -270,10 +270,10 @@ The specific burning steps are as follows:
     **Figure 2**  Configuring board partition information<a name="fig62556341"></a>  
     ![](figures/配置单板分区信息.png "配置单板分区信息")
     >![](public_sys-resources/icon-notice.gif) **Important:** 
-    >-   The partition information is only used for burning and does not determine the actual partition layout of the board. The actual partition layout of the board is determined by the board's bootargs. Please ensure that the partition information here corresponds to the partition information specified by the board's bootargs; otherwise, errors may occur.
-    >-   BurnTool supports inconsistent partition paths and remote burning, meaning the images to be burned can be images on remote paths.
-    >-   If a partition is selected but no burning file is chosen, the partition will be erased during the burning process.
-    >-   If all partition files need to be packaged into a single image for burning (for NAND flash, due to its special characteristics, if the file system partition is a read-write file system, they cannot be packaged together), the packaged file must be loaded into the fastboot partition for burning, and the image must contain fastboot to burn correctly. Since burning the fastboot partition uses the serial port method, which has a slower burning speed, this method is not recommended for burning.
+    >-   The partition information is only used for Flashing and does not determine the actual partition layout of the board. The actual partition layout of the board is determined by the board's bootargs. Please ensure that the partition information here corresponds to the partition information specified by the board's bootargs; otherwise, errors may occur.
+    >-   BurnTool supports inconsistent partition paths and remote Flashing, meaning the images to be flashed can be images on remote paths.
+    >-   If a partition is selected but no Flashing file is chosen, the partition will be erased during the flashing process.
+    >-   If all partition files need to be packaged into a single image for Flashing (for NAND flash, due to its special characteristics, if the file system partition is a read-write file system, they cannot be packaged together), the packaged file must be loaded into the fastboot partition for Flashing, and the image must contain fastboot to burn correctly. Since Flashing the fastboot partition uses the serial port method, which has a slower Flashing speed, this method is not recommended for Flashing.
 
     To modify partition information, you can directly modify the xml-format partition information file, or modify it in the tool by clicking on the column of the partition you want to modify, as shown in [Figure 3](#fig1406152918013).
 
@@ -286,13 +286,13 @@ The specific burning steps are as follows:
     >-   The partition start address and partition size are in KB or MB units and must be integer multiples of the flash block size; otherwise, errors may occur.
     >-   For the jffs2 file system in a partition, it is not a special format — simply select none.
 
-    -   Click the button ![](figures/zh-cn_image_0000002408330584.jpg) to select or change the burning file for this partition.
+    -   Click the button ![](figures/zh-cn_image_0000002408330584.jpg) to select or change the Flashing file for this partition.
     -   Click the button ![](figures/zh-cn_image_0000002441769729.jpg) to delete this partition information.
 
     >![](public_sys-resources/icon-notice.gif) **Important:** 
-    >The fastboot partition cannot be deleted here, and the fastboot partition name cannot be modified, because if the fastboot partition is deleted or its name is modified, one-click burning cannot be achieved.
+    >The fastboot partition cannot be deleted here, and the fastboot partition name cannot be modified, because if the fastboot partition is deleted or its name is modified, one-click Flashing cannot be achieved.
 
-    -   Click the button ![](figures/zh-cn_image_0000002441890057.jpg) to select all partitions to be burned for one-click burning of all partitions. Click the button again ![](figures/zh-cn_image_0000002441890145.jpg) to deselect all partitions to be burned. You can also click the checkbox ![](figures/zh-cn_image_0000002441889885.jpg) to select the corresponding partitions for burning.
+    -   Click the button ![](figures/zh-cn_image_0000002441890057.jpg) to select all partitions to be flashed for one-click Flashing of all partitions. Click the button again ![](figures/zh-cn_image_0000002441890145.jpg) to deselect all partitions to be flashed. You can also click the checkbox ![](figures/zh-cn_image_0000002441889885.jpg) to select the corresponding partitions for Flashing.
     -   Click the save button ![](figures/zh-cn_image_0000002441769905.png) to save the edited partition table as a file.
 
     >![](public_sys-resources/icon-note.gif) **Note:** 
@@ -308,7 +308,7 @@ The specific burning steps are as follows:
     **Figure 6**  Partition information save interface<a name="Figure2.7"></a>  
     ![](figures/分区信息保存界面.png "分区信息保存界面")
 
-    Select the current last row, click New ![](figures/zh-cn_image_0000002441769857.jpg) to get a new last row, then enter "-" in the length column of that row, add the partition name, file system, and file reference path for that row. During subsequent burning, the length of this row can be calculated as the remaining length of the entire device. This is shown in [Figure 7](#fig99064111119).
+    Select the current last row, click New ![](figures/zh-cn_image_0000002441769857.jpg) to get a new last row, then enter "-" in the length column of that row, add the partition name, file system, and file reference path for that row. During subsequent Flashing, the length of this row can be calculated as the remaining length of the entire device. This is shown in [Figure 7](#fig99064111119).
 
     **Figure 7**  Setting length to "-" after creating new board partition information<a name="fig99064111119"></a>  
     ![](figures/新建单板分区信息后设置长度为--.png "新建单板分区信息后设置长度为--")
@@ -322,23 +322,23 @@ The specific burning steps are as follows:
     -   If selecting the network port, connect the board's serial port and network port.
     -   If selecting the serial port, connect the board's serial port.
 
-4.  Burn the board. Click the burn button ![](figures/zh-cn_image_0000002441889961.png), as shown in [Figure 9](#fig1659555711617).
+4.  flash the board. Click the burn button ![](figures/zh-cn_image_0000002441889961.png), as shown in [Figure 9](#fig1659555711617).
 
     **Figure 9**  Clicking Burn<a name="fig1659555711617"></a>  
     ![](figures/点击烧写.png "点击烧写")
 
-5.  Power on the board, enter the burning process, and wait for burning to complete. The burning process is shown in [Figure 10](#fig297215536181).
+5.  Power on the board, enter the flashing process, and wait for Flashing to complete. The flashing process is shown in [Figure 10](#fig297215536181).
 
-    **Figure 10**  Burning process<a name="fig297215536181"></a>  
+    **Figure 10**  flashing process<a name="fig297215536181"></a>  
     ![](figures/烧写过程.png "烧写过程")
 
-    Information about the burning process will be displayed in the console above. If a burning error is found, please check the board again:
+    Information about the flashing process will be displayed in the console above. If a Flashing error is found, please check the board again:
 
     -   Whether the serial port selection is correct.
     -   Whether the IP address is correct and whether it is occupied.
     -   Whether the bootstrap jumper on the board is shorted.
 
-6.  After burning is complete, connect the terminal tool and restart the board.
+6.  After Flashing is complete, connect the terminal tool and restart the board.
 
 ## Creating NAND Burner Images<a name="ZH-CN_TOPIC_0000002408169740"></a>
 
@@ -351,7 +351,7 @@ After selecting the various data in the dialog box (the Randomization function i
 
 >![](public_sys-resources/icon-notice.gif) **Important:** 
 >-   The parameters entered or selected must be consistent with the corresponding item values in the board boot information (which can be captured and viewed using terminal software such as HyperTerminal) or match the actual device parameters installed.
->-   If the user does not select a partition, or does not specify a burning file for a selected partition, the image file for that partition cannot be created.
+>-   If the user does not select a partition, or does not specify a Flashing file for a selected partition, the image file for that partition cannot be created.
 >-   If creating an image for a non-yaffs partition, the file system item in the partition table must not be specified as yaffs. When creating an image for a yaffs partition, the file system must be specified as yaffs. Otherwise, the resulting image will be incorrect.
 
 ## Selecting a Single Row in the Partition Table to Jump to the Burn by Address Interface<a name="ZH-CN_TOPIC_0000002441768853"></a>
@@ -371,35 +371,35 @@ Burn by Partition provides the ability to carry sub-partition information, i.e.,
 
 The board already has boot.
 
-## Burning Steps<a name="ZH-CN_TOPIC_0000002441889077"></a>
+## flashing Steps<a name="ZH-CN_TOPIC_0000002441889077"></a>
 
-The specific burning steps are as follows:
+The specific flashing steps are as follows:
 
 1.  Switch to the "Burn by Address" tab, as shown in [Figure 1](#fig77356229246).
 
     **Figure 1**  Burn by Address interface<a name="fig77356229246"></a>  
     ![](figures/地址烧写界面.png "地址烧写界面")
 
-1.  Configure the board burning information: select the flash type to burn, set the burning start address and length, and select the file to burn, as shown in [Figure 2](#fig1355103942610).
+1.  Configure the board Flashing information: select the flash type to burn, set the Flashing start address and length, and select the file to burn, as shown in [Figure 2](#fig1355103942610).
 
-    **Figure 2**  Configuring board burning information<a name="fig1355103942610"></a>  
+    **Figure 2**  Configuring board Flashing information<a name="fig1355103942610"></a>  
     ![](figures/配置单板烧写信息.png "配置单板烧写信息")
 
 2.  Same as section 2.2 step [3](#ZH-CN_TOPIC_0000002441889129).
 3.  Click the burn button ![](figures/zh-cn_image_0000002441769249.png), as shown in [Figure 3](#_Ref416783621).
 
     >![](public_sys-resources/icon-notice.gif) **Important:** 
-    >When burning by address, the user does not need to select a file type — just select the file you want to burn. Since yaffs files (with OOB data) and other types of files (without OOB data) have different formats, the tool will automatically distinguish the file type in the background based on the selected file (the tool distinguishes between yaffs type and None type). It then executes the corresponding burning according to the different types. Power on the board, enter the burning process, and wait for burning to complete. For Burn by Address, only the first time the burn button is clicked does the board need to be powered on again. For subsequent image burns, the board does not need to be powered on again.
+    >When Flashing by address, the user does not need to select a file type — just select the file you want to burn. Since yaffs files (with OOB data) and other types of files (without OOB data) have different formats, the tool will automatically distinguish the file type in the background based on the selected file (the tool distinguishes between yaffs type and None type). It then executes the corresponding Flashing according to the different types. Power on the board, enter the flashing process, and wait for Flashing to complete. For Burn by Address, only the first time the burn button is clicked does the board need to be powered on again. For subsequent image burns, the board does not need to be powered on again.
 
     **Figure 3**  Clicking Burn<a name="_Ref416783621"></a>  
     ![](figures/单击烧写.png "单击烧写")
 
-4.  Power on the board, enter the burning process, and wait for burning to complete. The burning process is shown in [Figure 4](#_Ref416783705).
+4.  Power on the board, enter the flashing process, and wait for Flashing to complete. The flashing process is shown in [Figure 4](#_Ref416783705).
 
-    **Figure 4**  Burning process<a name="_Ref416783705"></a>  
+    **Figure 4**  flashing process<a name="_Ref416783705"></a>  
     ![](figures/烧写过程-0.png "烧写过程-0")
 
-    Information about the burning process will be printed in the "Console" above. If a burning error is found, please check the board again:
+    Information about the flashing process will be printed in the "Console" above. If a Flashing error is found, please check the board again:
 
     -   Whether the serial port selection is correct
     -   Whether the IP address setting is correct and whether it is occupied
@@ -407,11 +407,11 @@ The specific burning steps are as follows:
 
     The Erase operation is similar to the Burn operation and will not be elaborated here.
 
-5.  After burning is complete, connect the terminal tool and restart the board.
+5.  After Flashing is complete, connect the terminal tool and restart the board.
 
 ## Upload Steps<a name="ZH-CN_TOPIC_0000002408329648"></a>
 
-Burning and uploading are two inverse operations. The burning function writes image files to the board, while the upload function uploads the content of a region to the PC according to the start address and length set by the user. The specific steps for uploading can fully reference the burning steps. Two differences from the burning steps are listed here; repetitive parts will not be reiterated.
+Flashing and uploading are two inverse operations. The Flashing function writes image files to the board, while the upload function uploads the content of a region to the PC according to the start address and length set by the user. The specific steps for uploading can fully reference the flashing steps. Two differences from the flashing steps are listed here; repetitive parts will not be reiterated.
 
 1.  Same as section 3.2 step [1](#ZH-CN_TOPIC_0000002441889077).
 2.  Same as section 3.2 step [2](#ZH-CN_TOPIC_0000002441889077).
@@ -430,7 +430,7 @@ Burning and uploading are two inverse operations. The burning function writes im
 
 ## Erase Steps<a name="ZH-CN_TOPIC_0000002441889041"></a>
 
-The erase function erases content of a specified length starting from a specified address on the board side. The erase steps are similar to the burning steps. Two differences from the burning steps are listed here; repetitive parts will not be reiterated.
+The erase function erases content of a specified length starting from a specified address on the board side. The erase steps are similar to the flashing steps. Two differences from the flashing steps are listed here; repetitive parts will not be reiterated.
 
 1.  Same as section 3.2 step [1](#ZH-CN_TOPIC_0000002441889077).
 2.  Same as section 3.2 step [2](#ZH-CN_TOPIC_0000002441889077).
@@ -447,18 +447,18 @@ The erase function erases content of a specified length starting from a specifie
     >![](public_sys-resources/icon-notice.gif) **Important:** 
     >When erasing, the length should be a multiple of the blocksize.
 
-# Boot Burning
+# Boot Flashing
 ## Applicable Scenarios<a name="ZH-CN_TOPIC_0000002408169760"></a>
 
-The board does not have boot. Used in conjunction with Burn by Address, it can complete burning of all images on the board.
+The board does not have boot. Used in conjunction with Burn by Address, it can complete Flashing of all images on the board.
 
-## Burning Steps<a name="ZH-CN_TOPIC_0000002408329636"></a>
+## flashing Steps<a name="ZH-CN_TOPIC_0000002408329636"></a>
 
-The specific burning steps are as follows:
+The specific flashing steps are as follows:
 
 1.  Switch to the "Burn Fastboot" tab, as shown in [Figure 1](#_Ref416783832).
 
-    **Figure 1**  Fastboot burning interface<a name="_Ref416783832"></a>  
+    **Figure 1**  Fastboot Flashing interface<a name="_Ref416783832"></a>  
     ![](figures/Fastboot烧写界面.png "Fastboot烧写界面")
 
 2.  Configure the serial port: select the serial port used to connect to the board, as shown in [Figure 2](#_Ref416783851).
@@ -466,9 +466,9 @@ The specific burning steps are as follows:
     **Figure 2**  Serial port selection<a name="_Ref416783851"></a>  
     ![](figures/串口选择.png "串口选择")
 
-3.  Configure the Boot burning information, as shown in [Figure 3](#fig6981215103111).
+3.  Configure the Boot Flashing information, as shown in [Figure 3](#fig6981215103111).
 
-    **Figure 3**  Configuring boot burning information<a name="fig6981215103111"></a>  
+    **Figure 3**  Configuring boot Flashing information<a name="fig6981215103111"></a>  
     ![](figures/配置boot-烧写信息.png "配置boot-烧写信息")
 
 4.  Prepare the board environment. If the board is powered on, power it off.
@@ -477,38 +477,38 @@ The specific burning steps are as follows:
     **Figure 4**  Clicking Burn<a name="fig1999382113211"></a>  
     ![](figures/点击Burn.png "点击Burn")
 
-6.  Power on the board, enter the burning process, and wait for burning to complete. The burning process is shown in [Figure 5](#_Ref416783918).
+6.  Power on the board, enter the flashing process, and wait for Flashing to complete. The flashing process is shown in [Figure 5](#_Ref416783918).
 
-    **Figure 5**  Burning process<a name="_Ref416783918"></a>  
+    **Figure 5**  flashing process<a name="_Ref416783918"></a>  
     ![](figures/烧写过程-1.png "烧写过程-1")
 
-    Information about the burning process will be printed in the "Console" above. If a burning error is found, please check again whether the serial port selection is correct.
+    Information about the flashing process will be printed in the "Console" above. If a Flashing error is found, please check again whether the serial port selection is correct.
 
-7.  After burning is complete, connect the terminal tool and restart the board.
+7.  After Flashing is complete, connect the terminal tool and restart the board.
 
-# eMMC Burning
+# eMMC Flashing
 ## Applicable Scenarios<a name="ZH-CN_TOPIC_0000002441889025"></a>
 
-The applicable scenarios are as follows: only applicable to eMMC burning, regardless of whether boot is present on the board, enabling one-click burning of all images.
+The applicable scenarios are as follows: only applicable to eMMC Flashing, regardless of whether boot is present on the board, enabling one-click Flashing of all images.
 
-## Burning Steps<a name="ZH-CN_TOPIC_0000002408329704"></a>
+## flashing Steps<a name="ZH-CN_TOPIC_0000002408329704"></a>
 
-The specific burning steps are as follows:
+The specific flashing steps are as follows:
 
 1.  Switch to the "Burn eMMC" tab, as shown in [Figure 1](#fig10733727164915).
 
-    **Figure 1**  eMMC burning interface<a name="fig10733727164915"></a>  
+    **Figure 1**  eMMC Flashing interface<a name="fig10733727164915"></a>  
     ![](figures/eMMC-烧写界面.png "eMMC-烧写界面")
     >![](public_sys-resources/icon-note.gif) **Note:** 
     >-   Toggle the "Use XML path by default" checkbox state. If checked, the partition file is searched for in the XML path first. If unchecked, the absolute path is used to search for the file first. If the file is not found, the tool then tries to find it in the XML directory. This state is checked by default.
     >-   **XML is a configuration file used to save partition table information. The edited partition table can be saved as an XML file using the Save button on the tool. The next time the tool is opened, import the XML and the partition table information will be directly loaded.**
 
-1.  Configure the board partition information. Click "Browse" to select pre-configured partition table information and load it into the tool, as shown in [Figure 2](#fig19253651205117). When the device type of the boot partition is emmc or emmc0, boot will be burned into the default partition. emmc will not switch the boot partition, while emmc0 will switch the boot partition to the default partition. When the device type of the boot partition is emmc1 or emmc2, boot will be burned into the corresponding boot1 or boot2 partition, and the boot partition will be switched to the corresponding boot1 or boot2 partition.
+1.  Configure the board partition information. Click "Browse" to select pre-configured partition table information and load it into the tool, as shown in [Figure 2](#fig19253651205117). When the device type of the boot partition is emmc or emmc0, boot will be flashed into the default partition. emmc will not switch the boot partition, while emmc0 will switch the boot partition to the default partition. When the device type of the boot partition is emmc1 or emmc2, boot will be flashed into the corresponding boot1 or boot2 partition, and the boot partition will be switched to the corresponding boot1 or boot2 partition.
 
     **Figure 2**  Configuring board partition information<a name="fig19253651205117"></a>  
     ![](figures/配置单板分区信息-2.png "配置单板分区信息-2")
     >![](public_sys-resources/icon-notice.gif) **Important:** 
-    >If all partition files are packaged into a single image for burning (since eMMC file system partitions need to create a partition table, if the file system partitions are different, they cannot be packaged together; this issue does not exist for Android versions), this image must be placed in the fastboot partition, and the image must contain fastboot. Additionally, since burning at this time uses the serial port method, the burning speed is relatively slow — please be patient.
+    >If all partition files are packaged into a single image for Flashing (since eMMC file system partitions need to create a partition table, if the file system partitions are different, they cannot be packaged together; this issue does not exist for Android versions), this image must be placed in the fastboot partition, and the image must contain fastboot. Additionally, since Flashing at this time uses the serial port method, the Flashing speed is relatively slow — please be patient.
 
     >![](public_sys-resources/icon-note.gif) **Note:** 
     >eMMC uses the DOS partition format. For Ext3/4 file system partitions, partition table information needs to be created for the kernel to correctly recognize the Ext3/4 file system partitions.
@@ -521,9 +521,9 @@ The specific burning steps are as follows:
     >The partition start size and partition size are in KB or MB units and must be integer multiples of the eMMC sector size; otherwise, errors may occur.
 
     -   Click the button ![](figures/zh-cn_image_0000002408170740.jpg) to add a row of partition. In this row, you can modify the partition name, select whether a file system is needed and the file system type, and modify the partition start size and partition size.
-    -   Click the button ![](figures/zh-cn_image_0000002408170832.jpg) to select or change the burning file for this partition.
-    -   Click the button ![](figures/zh-cn_image_0000002408330712.jpg) to delete this partition information. Note: the fastboot partition cannot be deleted here, and the fastboot partition name cannot be modified, because if the fastboot partition is deleted or its name is modified, one-click burning cannot be achieved.
-    -   Click the button ![](figures/zh-cn_image_0000002441889837.jpg) to select all partitions for one-click burning of all partitions. Click the button again ![](figures/zh-cn_image_0000002408170596.jpg) to deselect all partitions to be burned. You can also click the checkbox ![](figures/zh-cn_image_0000002408330496.jpg) to select the corresponding partitions for burning.
+    -   Click the button ![](figures/zh-cn_image_0000002408170832.jpg) to select or change the Flashing file for this partition.
+    -   Click the button ![](figures/zh-cn_image_0000002408330712.jpg) to delete this partition information. Note: the fastboot partition cannot be deleted here, and the fastboot partition name cannot be modified, because if the fastboot partition is deleted or its name is modified, one-click Flashing cannot be achieved.
+    -   Click the button ![](figures/zh-cn_image_0000002441889837.jpg) to select all partitions for one-click Flashing of all partitions. Click the button again ![](figures/zh-cn_image_0000002408170596.jpg) to deselect all partitions to be flashed. You can also click the checkbox ![](figures/zh-cn_image_0000002408330496.jpg) to select the corresponding partitions for Flashing.
     -   Click the button ![](figures/zh-cn_image_0000002441769909.jpg) to save the edited partition table as a file.
 
     >![](public_sys-resources/icon-note.gif) **Note:** 
@@ -541,20 +541,20 @@ The specific burning steps are as follows:
     ![](figures/分区信息保存界面-5.png "分区信息保存界面-5")
 
 1.  Same as [2.2 step 3](#ZH-CN_TOPIC_0000002441889129).
-2.  Burn the board. Click the burn button ![](figures/zh-cn_image_0000002408170564.png), as shown in [Figure 7](#fig79197461111).
+2.  flash the board. Click the burn button ![](figures/zh-cn_image_0000002408170564.png), as shown in [Figure 7](#fig79197461111).
 
     **Figure 7**  Clicking Burn<a name="fig79197461111"></a>  
     ![](figures/点击烧写-6.png "点击烧写-6")
 
-1.  Power on the board, enter the burning process, and wait for burning to complete.
+1.  Power on the board, enter the flashing process, and wait for Flashing to complete.
 
-    Information about the burning process will be displayed in the console.
+    Information about the flashing process will be displayed in the console.
 
     -   Whether the serial port selection is correct.
     -   Whether the IP address setting is correct and whether the address is occupied.
     -   Whether the bootstrap jumper on the board is shorted.
 
-2.  After burning is complete, connect the terminal tool and restart the board.
+2.  After Flashing is complete, connect the terminal tool and restart the board.
 
 ## Creating Burner Images<a name="ZH-CN_TOPIC_0000002441768929"></a>
 
@@ -587,7 +587,7 @@ The upload function is not available — the board does not support uploading.
 
 The applicable scenarios are as follows: applicable to SPI Flash scenarios where storage space is small and users need to merge multiple small images into a single image and then burn them into the same block to save flash space. Also applicable to merging images of other Flash types into a single image.
 
-For example, if there are two images, fastboot and kernel, each 500K, and the SPI block size is 1M, then if these two images are burned as two partitions, the board-side burning command will use 2 blocks. If the images are merged, only a single block is needed, thus saving 1M of Flash space.
+For example, if there are two images, fastboot and kernel, each 500K, and the SPI block size is 1M, then if these two images are flashed as two partitions, the board-side Flashing command will use 2 blocks. If the images are merged, only a single block is needed, thus saving 1M of Flash space.
 
 ## Operation Steps<a name="ZH-CN_TOPIC_0000002408329692"></a>
 
@@ -645,18 +645,18 @@ The BurnTool's Debug console can be set through Preferences.
     **Figure 1**  Selecting to enable the Debug console<a name="_Ref410048637"></a>  
     ![](figures/选中开启Debug控制台.png "选中开启Debug控制台")
 
-2.  After starting burning, the tool will automatically create a Debug console. Click the console switch button in the upper right corner of the console and select the "BurnTool-Debug" console to switch. The current console will then display as the Debug console, as shown in [Figure 2](#_Ref410048738).
+2.  After starting Flashing, the tool will automatically create a Debug console. Click the console switch button in the upper right corner of the console and select the "BurnTool-Debug" console to switch. The current console will then display as the Debug console, as shown in [Figure 2](#_Ref410048738).
 
     **Figure 2**  Switching to the BurnTool-Debug console<a name="_Ref410048738"></a>  
     ![](figures/切换BurnTool-Debug控制台.png "切换BurnTool-Debug控制台")
 ### Check Same Network Segment Settings<a name="ZH-CN_TOPIC_0000002441768921"></a>
 
-Click "Window" → "Preferences" in the menu bar to enter the Preferences dialog, go to the "BurnTool" page, and select the "Check whether the PC and Board IP addresses are in the same network segment" button, as shown in [Figure 1](#_Ref410048821). This enables checking whether the PC and board IPs are in the same gateway before burning. Deselecting it means this check will not be performed before burning.
+Click "Window" → "Preferences" in the menu bar to enter the Preferences dialog, go to the "BurnTool" page, and select the "Check whether the PC and Board IP addresses are in the same network segment" button, as shown in [Figure 1](#_Ref410048821). This enables checking whether the PC and board IPs are in the same gateway before Flashing. Deselecting it means this check will not be performed before Flashing.
 
 **Figure 1**  Check Same Network Segment Settings page<a name="_Ref410048821"></a>  
 ![](figures/检查同一网段设置页面.png "检查同一网段设置页面")
 # FAQ
-## Solution for TFTP Timeout Prompt During BurnTool Burning<a name="ZH-CN_TOPIC_0000002408169704"></a>
+## Solution for TFTP Timeout Prompt During BurnTool Flashing<a name="ZH-CN_TOPIC_0000002408169704"></a>
 
 **Problem Description<a name="section9846741144918"></a>**
 
@@ -669,12 +669,12 @@ When the following TFTP error occurs, as shown in [Figure 1](#_Ref386011440), ho
 
 Resolving this issue involves the following four aspects:
 
--   Check whether the network configuration in the BurnTool is correct, as shown in [Figure 2](#_Ref386011442). First, check whether the server IP is correct. If not, click Reload to load the latest PC-side IP address. Then check whether the subnet mask and gateway are correctly configured. If correct, check whether the board-side IP address is occupied (use the ping command to check whether the current board IP can be pinged; if not, it indicates that the current network is unreachable). After ensuring all the above parameters are correct, try burning again.
+-   Check whether the network configuration in the BurnTool is correct, as shown in [Figure 2](#_Ref386011442). First, check whether the server IP is correct. If not, click Reload to load the latest PC-side IP address. Then check whether the subnet mask and gateway are correctly configured. If correct, check whether the board-side IP address is occupied (use the ping command to check whether the current board IP can be pinged; if not, it indicates that the current network is unreachable). After ensuring all the above parameters are correct, try Flashing again.
 
     **Figure 2**  Checking whether the network configuration is correct<a name="_Ref386011442"></a>  
     ![](figures/检查网络配置是否正确.png "检查网络配置是否正确")
 -   Use an external tftpd32 tool instead of the built-in TFTP in the tool for download operations (see "[How to Use an External tftpd32 for Image Download?](#ZH-CN_TOPIC_0000002441889093)"). If tftpd32 also shows a timeout, check whether the current network environment is normal.
--   Modify the TFTP parameter settings in the tool to match the current network environment. Through the menu bar, click "Window" → "Preferences" → "BurnTool" → "TFTP Setting", as shown in [Figure 3](#_Ref386007685). Set the "The number of consecutive packet loss" and "TFTP no response timeout" parameters larger, then perform burning to check whether it is normal.
+-   Modify the TFTP parameter settings in the tool to match the current network environment. Through the menu bar, click "Window" → "Preferences" → "BurnTool" → "TFTP Setting", as shown in [Figure 3](#_Ref386007685). Set the "The number of consecutive packet loss" and "TFTP no response timeout" parameters larger, then perform Flashing to check whether it is normal.
 -   Check whether the firewall is disabled. If not, disable the firewall.
 
     **Figure 3**  Modifying TFTP settings<a name="_Ref386007685"></a>  
@@ -689,38 +689,38 @@ How to use an external tftpd32 for image download and what should be noted?
 
 The steps for using the external tftpd32 are:
 
-1.  Before burning, open the tftpd32 tool and select the correct PC-side IP address and the directory where the images to be burned are located, as shown in [Figure 1](#_Ref386011451).
+1.  Before Flashing, open the tftpd32 tool and select the correct PC-side IP address and the directory where the images to be flashed are located, as shown in [Figure 1](#_Ref386011451).
 
     **Figure 1**  Configuring the tftpd32 tool<a name="_Ref386011451"></a>  
     ![](figures/配置tftpd32工具.png "配置tftpd32工具")
 
-1.  Click the burn button normally in the BurnTool. A prompt box will appear, as shown in [Figure 2](#_Ref386011453). Click Confirm to start burning. The external tftpd32 will then be used for image download, as shown in [Figure 3](#_Ref386011454).
+1.  Click the burn button normally in the BurnTool. A prompt box will appear, as shown in [Figure 2](#_Ref386011453). Click Confirm to start Flashing. The external tftpd32 will then be used for image download, as shown in [Figure 3](#_Ref386011454).
 
     **Figure 2**  Prompt indicating built-in TFTP startup failed, port occupied by external tftpd32 tool<a name="_Ref386011453"></a>  
     ![](figures/提示内置TFTP启动失败-端口被外置tftpd32工具占.png "提示内置TFTP启动失败-端口被外置tftpd32工具占")
 
     **Figure 3**  External tftpd32 tool downloading image<a name="_Ref386011454"></a>  
     ![](figures/外置tftpd32工具正在下载镜像.png "外置tftpd32工具正在下载镜像")
-## Solution for "Failed to Send Start Frame" Error When Burning the Fastboot Partition with BurnTool<a name="ZH-CN_TOPIC_0000002408329668"></a>
+## Solution for "Failed to Send Start Frame" Error When Flashing the Fastboot Partition with BurnTool<a name="ZH-CN_TOPIC_0000002408329668"></a>
 
 **Problem Description<a name="section17113181011420"></a>**
 
-When the following "Failed to send start frame" error occurs while burning the Fastboot partition, as shown in [Figure 1](#_Ref386011456), what should I do?
+When the following "Failed to send start frame" error occurs while Flashing the Fastboot partition, as shown in [Figure 1](#_Ref386011456), what should I do?
 
 **Figure 1**  "Failed to send start frame" error message<a name="_Ref386011456"></a>  
 ![](figures/Failed-to-send-start-frame-报错信息.png "Failed-to-send-start-frame-报错信息")Failed to send start frame\" error message")
 
 **Solution<a name="section1951334642"></a>**
 
-First, confirm whether the board was powered on again within 15 seconds after the last burn was clicked. If it has already been powered on again, check whether the serial port is making good contact with the board. If the connection is normal, check whether the correct serial port number is selected in the BurnTool, as shown in [Figure 2](#_Ref386011460). After ensuring everything is correct, try burning again.
+First, confirm whether the board was powered on again within 15 seconds after the last burn was clicked. If it has already been powered on again, check whether the serial port is making good contact with the board. If the connection is normal, check whether the correct serial port number is selected in the BurnTool, as shown in [Figure 2](#_Ref386011460). After ensuring everything is correct, try Flashing again.
 
 **Figure 2**  Checking whether the serial port number is correctly selected<a name="_Ref386011460"></a>  
 ![](figures/检查串口号是否选择正确.png "检查串口号是否选择正确")
-## Solution When the Console Only Prints a Line of "#########" Then Stops, and the Tool Reports "Failed to Send Head Frame" During Fastboot Partition Burning<a name="ZH-CN_TOPIC_0000002408169788"></a>
+## Solution When the Console Only Prints a Line of "#########" Then Stops, and the Tool Reports "Failed to Send Head Frame" During Fastboot Partition Flashing<a name="ZH-CN_TOPIC_0000002408169788"></a>
 
 **Problem Description<a name="section1174175519"></a>**
 
-When burning the Fastboot partition, the console only prints a line of "#########" and then stops, and the tool reports a "Failed to send head frame" error, as shown in [Figure 1](#_Ref386011462), how should it be resolved?
+When Flashing the Fastboot partition, the console only prints a line of "#########" and then stops, and the tool reports a "Failed to send head frame" error, as shown in [Figure 1](#_Ref386011462), how should it be resolved?
 
 **Figure 1**  "Failed to send head frame" error message<a name="_Ref386011462"></a>  
 ![](figures/Failed-to-send-head-frame-报错信息.png "Failed-to-send-head-frame-报错信息")Failed to send head frame\" error message")
@@ -729,27 +729,27 @@ When burning the Fastboot partition, the console only prints a line of "########
 
 There may be two causes for this error:
 
--   The Fastboot image being burned does not match the current board model. Directly check the board model marking. After identifying the board model, use the SDK image matching the current chip to burn again.
+-   The Fastboot image being flashed does not match the current board model. Directly check the board model marking. After identifying the board model, use the SDK image matching the current chip to burn again.
 -   The board DDR has issues and cannot perform DDR initialization normally.
 
-## Solution for "Failed to Send Data Frame" Error When Burning the Fastboot Partition with BurnTool<a name="ZH-CN_TOPIC_0000002441768861"></a>
+## Solution for "Failed to Send Data Frame" Error When Flashing the Fastboot Partition with BurnTool<a name="ZH-CN_TOPIC_0000002441768861"></a>
 
 **Problem Description<a name="section956919507512"></a>**
 
-When the following "Failed to send data frame" error occurs while burning the Fastboot partition, as shown in [Figure 1](#_Ref386011468), what should I do?
+When the following "Failed to send data frame" error occurs while Flashing the Fastboot partition, as shown in [Figure 1](#_Ref386011468), what should I do?
 
 **Figure 1**  "Failed to send data frame" error message<a name="_Ref386011468"></a>  
 ![](figures/Failed-to-send-data-frame-报错信息.png "Failed-to-send-data-frame-报错信息")Failed to send data frame\" error message")
 
 **Solution<a name="section35233257619"></a>**
 
-The cause of this error may be that the serial port connection became loose during Fastboot image burning, causing data transmission failure when the tool interacts with the board. Please check the serial port connection.
+The cause of this error may be that the serial port connection became loose during Fastboot image Flashing, causing data transmission failure when the tool interacts with the board. Please check the serial port connection.
 
-## Solution for "Failed to Execute Command" Error When Burning the Fastboot Partition with BurnTool<a name="ZH-CN_TOPIC_0000002408169752"></a>
+## Solution for "Failed to Execute Command" Error When Flashing the Fastboot Partition with BurnTool<a name="ZH-CN_TOPIC_0000002408169752"></a>
 
 **Problem Description<a name="section45431947769"></a>**
 
-When the following "Failed to execute command" error occurs while burning the Fastboot partition, as shown in [Figure 1](#_Ref386011469), what should I do?
+When the following "Failed to execute command" error occurs while Flashing the Fastboot partition, as shown in [Figure 1](#_Ref386011469), what should I do?
 
 **Figure 1**  "Failed to execute command" error message<a name="_Ref386011469"></a>  
 ![](figures/Failed-to-execute-command-报错信息.png "Failed-to-execute-command-报错信息")Failed to execute command\" error message")
@@ -768,7 +768,7 @@ When selecting a file transfer method, what are the pros and cons between serial
 
 **Solution<a name="section15228123017718"></a>**
 
-The BurnTool's serial port burning function is pure serial port burning. Since the burning process requires transmitting a large amount of data to the board side, and the serial port's own transmission rate is relatively low, burning using the pure serial port method will be relatively inefficient. We recommend using the network port method for burning. The pure serial port method of burning is very stable; if the user's network environment is unstable, serial port burning can be used.
+The BurnTool's serial port Flashing function is pure serial port Flashing. Since the flashing process requires transmitting a large amount of data to the board side, and the serial port's own transmission rate is relatively low, Flashing using the pure serial port method will be relatively inefficient. We recommend using the network port method for Flashing. The pure serial port method of Flashing is very stable; if the user's network environment is unstable, serial port Flashing can be used.
 
 ## File Length Requirements in the Burn by Address Interface?<a name="ZH-CN_TOPIC_0000002441889033"></a>
 
@@ -780,11 +780,11 @@ In the Burn by Address interface, what are the file length requirements?
 
 When erasing, the length should be a multiple of the blocksize. When partially uploading a yaffs file system, the length should be a multiple of pagesize + oobsize.
 
-## Possible Reasons Why Burning Does Not Start After Clicking Burn and Power Cycling?<a name="ZH-CN_TOPIC_0000002441768873"></a>
+## Possible Reasons Why Flashing Does Not Start After Clicking Burn and Power Cycling?<a name="ZH-CN_TOPIC_0000002441768873"></a>
 
 **Problem Description<a name="section879943317814"></a>**
 
-After clicking Burn and power cycling, but the tool does not start burning — what is the reason?
+After clicking Burn and power cycling, but the tool does not start Flashing — what is the reason?
 
 **Solution<a name="section17459025490"></a>**
 
@@ -800,15 +800,15 @@ When using Linux, the serial port cannot be found, TFTP startup fails, or a TFTP
 
 Not logged in as the root user, lacking permission to open the TFTP service or use the serial port. A TFTP port occupied error may also be caused by other software occupying this port.
 
-## When Burning NAND, What Do pure data length and len_incl_bad Printed in the Console Mean?<a name="ZH-CN_TOPIC_0000002408169776"></a>
+## When Flashing NAND, What Do pure data length and len_incl_bad Printed in the Console Mean?<a name="ZH-CN_TOPIC_0000002408169776"></a>
 
 **Problem Description<a name="section9483135101011"></a>**
 
-When burning NAND, what do pure data length and len_incl_bad printed in the console mean?
+When Flashing NAND, what do pure data length and len_incl_bad printed in the console mean?
 
 **Solution<a name="section15954111011116"></a>**
 
-As shown in [Figure 1](#_Ref386007893), pure data length represents the actual length of data burned, while len incl bad represents the actual length occupied by burning including bad blocks. Neither of the above two lengths includes the oobSize length.
+As shown in [Figure 1](#_Ref386007893), pure data length represents the actual length of data flashed, while len incl bad represents the actual length occupied by Flashing including bad blocks. Neither of the above two lengths includes the oobSize length.
 
 **Figure 1**  Burn length printed by the console as feedback to the burn command<a name="_Ref386007893"></a>  
 ![](figures/控制台打印烧写命令反馈的烧写长度.png "控制台打印烧写命令反馈的烧写长度")
@@ -820,7 +820,7 @@ What will the tool print when board DDR Training fails?
 
 **Solution<a name="section2742102181210"></a>**
 
-When board DDR Training fails, during Fastboot partition burning, the information shown in [Figure 1](#_Ref386011496) will be printed.
+When board DDR Training fails, during Fastboot partition Flashing, the information shown in [Figure 1](#_Ref386011496) will be printed.
 
 **Figure 1**  Printing DDR Training failure information<a name="_Ref386011496"></a>  
 ![](figures/打印DDR-Training失败信息.png "打印DDR-Training失败信息")
@@ -872,18 +872,18 @@ Since ToolPlatform depends on the 32-bit JRE version, before using ToolPlatform,
 
 Additionally, ToolPlatform-XXX-4.0.15 and later versions already have the JRE program built in, so there is no need to install JRE again.
 
-## Non-Chinese Language Systems Cannot Burn Images with Chinese Paths<a name="ZH-CN_TOPIC_0000002441889049"></a>
+## Non-Chinese Language Systems Cannot flash images with Chinese Paths<a name="ZH-CN_TOPIC_0000002441889049"></a>
 
 **Problem Description<a name="section1999915715158"></a>**
 
-If the system is a non-Chinese system, the tool cannot burn images with Chinese paths in the system. To query the language system, enter the chcp command in cmd. As shown in Figure Querying the Windows Language System Method, 437 represents the US language system, while 936 represents the Chinese language system.
+If the system is a non-Chinese system, the tool cannot flash images with Chinese paths in the system. To query the language system, enter the chcp command in cmd. As shown in Figure Querying the Windows Language System Method, 437 represents the US language system, while 936 represents the Chinese language system.
 
 **Figure 1**  Method for querying the Windows language system<a name="_Ref4156611"></a>  
 ![](figures/查询windows语言系统方法.png "查询windows语言系统方法")
 
 **Solution<a name="section185019199156"></a>**
 
-Non-Chinese language systems do not support images with paths containing Chinese characters. Change the burning path to an English path.
+Non-Chinese language systems do not support images with paths containing Chinese characters. Change the Flashing path to an English path.
 
 # Acronyms and Abbreviations
 <a name="table177mcpsimp"></a>

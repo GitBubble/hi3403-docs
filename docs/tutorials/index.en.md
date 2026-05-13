@@ -51,5 +51,5 @@ We are working on these topics:
 - Running GStreamer on Hi3403
 - Integrate Hi3403 into ROS 2
 - Make a camera application with OpenHarmony
-- Secure boot signing and burning
+- Secure boot signing and Flashing
 - Multi-board PCIE cascade networking

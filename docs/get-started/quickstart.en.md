@@ -7,7 +7,7 @@ title: Boot Hi3403 in 30 minutes
 # Boot Hi3403 in 30 minutes
 
 If you just got a Hi3403V100 development board, this guide is the shortest path to lighting it up:
-**Burn the precompiled image → Connect the serial port and HDMI → Log in to the system**.
+**Flash the precompiled image → Connect the serial port and HDMI → Log in to the system**.
 
 No compilation, no SDK, no cross toolchain required.
 
@@ -47,11 +47,11 @@ hi3403-ubuntu-xfce-Hi3403V100.img # 8 GB with XFCE desktop
 hi3403-ubuntu-lite-Hi3403V100.img # 1.5 GB, pure command line
 ```
 
-## Step 2 — Burn the image
+## Step 2 — flash the image
 
 === "Use BurnTool (recommended, HiSilicon official tool)"
 
-    BurnTool is a graphical burning tool provided by HiSilicon and is cross-platform.
+    BurnTool is a graphical flashing tool provided by HiSilicon and is cross-platform.
 
     1. Download BurnTool (see [the BurnTool user guide](../tools/burntool/index.md)).
     2. Put the development board into programming mode (usually press and hold the BOOT key before powering on; see your board's documentation for details).

@@ -5,7 +5,7 @@ title: Tools
 
 # Tools
 
-Official and community tools around Hi3403. From one-click image building to burning, debugging, and performance analysis.
+Official and community tools around Hi3403. From one-click image building to Flashing, debugging, and performance analysis.
 
 <div class="grid cards" markdown>
 
@@ -18,11 +18,11 @@ Official and community tools around Hi3403. From one-click image building to bur
 
     [:octicons-arrow-right-24: Enter](hi3403-build.md)
 
--   :material-fire:{ .lg .middle } __BurnTool burning tool__
+-   :material-fire:{ .lg .middle } __BurnTool flashing tool__
 
     ---
 
-    HiSilicon official burning tool usage guide.
+    HiSilicon official flashing tool usage guide.
 
     [:octicons-arrow-right-24: Enter](burntool/index.md)
 

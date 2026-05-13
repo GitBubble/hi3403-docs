@@ -231,7 +231,7 @@ The key derivation tool is located in the osdrv/tools/pc/kdf\_customer directory
 </tr>
 <tr id="row649mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p651mcpsimp"><a name="p651mcpsimp"></a><a name="p651mcpsimp"></a>oem_root_symc_key</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p653mcpsimp"><a name="p653mcpsimp"></a><a name="p653mcpsimp"></a>Root key burned into OTP.</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p653mcpsimp"><a name="p653mcpsimp"></a><a name="p653mcpsimp"></a>Root key flashed into OTP.</p>
 </td>
 </tr>
 <tr id="row654mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p656mcpsimp"><a name="p656mcpsimp"></a><a name="p656mcpsimp"></a>protection_key_l1</p>
@@ -246,7 +246,7 @@ The key derivation tool is located in the osdrv/tools/pc/kdf\_customer directory
 </tr>
 <tr id="row664mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p666mcpsimp"><a name="p666mcpsimp"></a><a name="p666mcpsimp"></a>oem_rk_deob_en</p>
 </td>
-<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p668mcpsimp"><a name="p668mcpsimp"></a><a name="p668mcpsimp"></a>Obfuscation protection. Default is 0. If the relevant OTP has been burned, it needs to be set to 1.</p>
+<td class="cellrowborder" valign="top" width="59%" headers="mcps1.2.3.1.2 "><p id="p668mcpsimp"><a name="p668mcpsimp"></a><a name="p668mcpsimp"></a>Obfuscation protection. Default is 0. If the relevant OTP has been flashed, it needs to be set to 1.</p>
 </td>
 </tr>
 <tr id="row669mcpsimp"><td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.3.1.1 "><p id="p671mcpsimp"><a name="p671mcpsimp"></a><a name="p671mcpsimp"></a>boot_flag</p>

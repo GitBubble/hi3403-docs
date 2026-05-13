@@ -53,7 +53,7 @@ If the following peripheral functional verification requires pin multiplexing co
 | Black USB | 1        | USB 2.0     |
 | White USB | 2        | USB 2.0     |
 
-The blue USB port can also be used as an image burning interface. Connect it to a computer using a dual male USB cable, and select USB as the transmission method in the image burning tool (ToolPlatform v5.6.58 supports USB burning).
+The blue USB port can also be used as an image Flashing interface. Connect it to a computer using a dual male USB cable, and select USB as the transmission method in the image flashing tool (ToolPlatform v5.6.58 supports USB Flashing).
 
 ```
 # View USB devices

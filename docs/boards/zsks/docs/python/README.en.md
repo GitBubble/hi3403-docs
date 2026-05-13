@@ -387,7 +387,7 @@ make install 2>1 | tee install.log.txt
 
 ### Step 1: Configure the Board Environment
 
-* 1. Ensure the development board has the OpenHarmony operating system burned.
+* 1. Ensure the development board has the OpenHarmony operating system flashed.
 * 2. Connect the development board to your computer using a network cable, ensuring they are on the same local network.
 * 3. Configure the development board's IP address and ensure the board and computer can ping each other.
 

@@ -159,7 +159,7 @@ NAND is an industrial control scenario.
     [Reference](../tools/hi3403-build.md)
 
 `BurnTool`
-: HiSilicon’s official graphics burning tool.
+: HiSilicon’s official graphics flashing tool.
     [Reference](../tools/burntool/index.md)
 
 `MindCmd`

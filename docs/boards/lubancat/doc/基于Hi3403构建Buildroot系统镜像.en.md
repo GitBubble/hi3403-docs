@@ -120,14 +120,14 @@ The root filesystem image packages the kernel ko files. If the kernel ko configu
 
 The built root filesystem image file is saved at platform/Hi3403V100_gcc/osdrv/pub/Hi3403V100_emmc_image_glibc/rootfs.ext4
 
-### Burning
+### Flashing
 
-It is recommended to use ToolPlatform v5.6.58 for burning, as this version includes the USB burning function.
+It is recommended to use ToolPlatform v5.6.58 for Flashing, as this version includes the USB Flashing function.
 
-- When burning the boot image, use serial port burning. The boot partition can only be burned via the serial port.
-- When burning kernel and rootfs, use USB burning for fast speed.
+- When Flashing the boot image, use serial port Flashing. The boot partition can only be flashed via the serial port.
+- When Flashing kernel and rootfs, use USB Flashing for fast speed.
 
-The board has onboard eMMC storage for system boot. Select **Burn eMMC** in the burning software.
+The board has onboard eMMC storage for system boot. Select **Burn eMMC** in the Flashing software.
 
 Partition configuration is as follows:
 
@@ -139,11 +139,11 @@ Partition configuration is as follows:
 | uImage_Hi3403V100 | kernel    | 1M–17M                  | 16M            | Kernel image, including device tree                      |
 | rootfs.ext4      | rootfs    | 17M–image size          | image size     | Root filesystem image, set to "-" for auto-adaptation    |
 
-When configuring partition addresses, strictly follow the addresses in the table above. For the last partition, the partition length during burning should be configured to be greater than or equal to the actual file size to be burned. It can also be set directly to "-", and the burning software will automatically adapt the image size for burning.
+When configuring partition addresses, strictly follow the addresses in the table above. For the last partition, the partition length during Flashing should be configured to be greater than or equal to the actual file size to be flashed. It can also be set directly to "-", and the Flashing software will automatically adapt the image size for Flashing.
 
 ### Running the System
 
-After burning is complete, connect the debug serial port at 115200 baud rate and enter the following commands in the U-Boot command line terminal:
+After Flashing is complete, connect the debug serial port at 115200 baud rate and enter the following commands in the U-Boot command line terminal:
 
 ```
 # Environment variable configuration
@@ -160,7 +160,7 @@ reset
 ```
 
 -   blkdevparts represents the partition table; mmcblk0 is eMMC; partition names are in parentheses, with the partition size preceding the parentheses; 16M means a partition size of 16MB, and "-" means using all remaining space (only applicable to the last partition)
--   This partition table configuration must correspond to the burning tool configuration. The partition image sizes in the burning tool should be less than or equal to the partition sizes in this table (except for the last partition), and the start addresses must strictly correspond to this table.
+-   This partition table configuration must correspond to the flashing tool configuration. The partition image sizes in the flashing tool should be less than or equal to the partition sizes in this table (except for the last partition), and the start addresses must strictly correspond to this table.
 
 After modification, re-power the board or run the boot command to load the kernel and run the system.
 
@@ -168,5 +168,5 @@ The Buildroot system by default allows root user login via SSH and sets a passwo
 
 Username: root  Password: root
 
-The initial rootfs partition size is the size of the rootfs image. To facilitate distribution and fast burning, only a small amount of free space is set when building the rootfs image.
+The initial rootfs partition size is the size of the rootfs image. To facilitate distribution and fast Flashing, only a small amount of free space is set when building the rootfs image.
 After logging into the system for the first time, manually run the `resize2fs /dev/mmcblk0p3` command to expand the rootfs partition to the remaining eMMC space.

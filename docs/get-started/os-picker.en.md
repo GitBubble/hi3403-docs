@@ -82,7 +82,7 @@ flowchart TD
 
 | question | Answer |
 |---|---|
-| Can I switch operating systems on the same board? | able. Hi3403V100 starts from eMMC/SD/SPI and changes the system when re-burning. |
+| Can I switch operating systems on the same board? | able. Hi3403V100 starts from eMMC/SD/SPI and changes the system when re-Flashing. |
 | Which system has the best NPU/ISP/codec support? | Either way - Hi3403 SDK is OS agnostic. All three systems run the same MPP/SVP library. |
 | Is 8GB too big for an Ubuntu image? | Desktop version 8 GB; lite version 1.5 GB; if you want to go smaller, use Buildroot. |
 | What should I do if the real-time requirements are high? | Buildroot + PREEMPT_RT kernel patch. Ubuntu/OpenEuler is not recommended for hard real-time. |
@@ -91,7 +91,7 @@ flowchart TD
 
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __Selected, burned to the board__
+-   :material-clock-fast:{ .lg .middle } __Selected, flashed to the board__
 
     ---
 
