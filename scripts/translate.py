@@ -2,7 +2,7 @@
 """Multi-pass CJK→English translator for MPP documentation.
 
 Usage:
-    python scripts/translate.py [--passes N] [--dry-run] [FILE ...]
+    python scripts/translate.py [--passes N] [--deconcat] [--dry-run] [FILE ...]
     python scripts/translate.py --extract-notes [FILE ...]
 
     If no FILE is given, translates all *.en.md files under docs/ that still
@@ -13,6 +13,7 @@ Passes (defined in phrases.py):
     2  Verbs, nouns, connectives, quantifiers
     3  Single-character remnants
     4  Grammatical particle removal
+    5  Strip remaining CJK + deconcatenate (requires --deconcat)
 """
 import argparse, os, re, sys
 
@@ -34,7 +35,13 @@ def translate_text(text: str, passes: list[list[tuple[str, str]]]) -> str:
     return text
 
 
-def translate_file(path: str, passes: list[list[tuple[str, str]]]) -> tuple[int, int]:
+def strip_remaining_cjk(text: str) -> str:
+    """Remove any remaining CJK characters from text."""
+    return CJK.sub('', text)
+
+
+def translate_file(path: str, passes: list[list[tuple[str, str]]],
+                   use_deconcat: bool = False) -> tuple[int, int]:
     with open(path, encoding='utf-8') as fh:
         content = fh.read()
 
@@ -51,7 +58,20 @@ def translate_file(path: str, passes: list[list[tuple[str, str]]]) -> tuple[int,
         body = content
 
     lines = body.split('\n')
-    translated = [translate_text(l, passes) if CJK.search(l) else l for l in lines]
+    translated = []
+    for l in lines:
+        if CJK.search(l):
+            l = translate_text(l, passes)
+        translated.append(l)
+
+    # Pass 5: strip remaining CJK from all lines
+    translated = [strip_remaining_cjk(l) for l in translated]
+
+    # Deconcatenate
+    if use_deconcat:
+        from deconcat import deconcat_text
+        translated = [deconcat_text(l) for l in translated]
+
     result = pre + '\n'.join(translated)
 
     after = count_cjk(result)
@@ -65,7 +85,7 @@ def find_files() -> list[str]:
     paths = []
     for root, _dirs, files in os.walk(DOCS_ROOT):
         for name in files:
-            if name.endswith('.en.md') and 'index.en.md' not in name:
+            if name.endswith('.en.md'):
                 path = os.path.join(root, name)
                 if count_cjk(open(path).read()) > 0:
                     paths.append(path)
@@ -89,19 +109,16 @@ def extract_notes(en_files: list[str]) -> None:
         zh_parts = zh_content.split('---', 2)
         zh_body = zh_parts[2] if len(zh_parts) > 2 else zh_content
 
-        # Build a lookup of zh 【注意】 sections keyed by surrounding heading
         zh_sections = {}
         zh_blocks = zh_body.split('【注意】')
         for i in range(1, len(zh_blocks)):
             end = re.search(r'\n【|^\#', zh_blocks[i], re.MULTILINE)
             text = zh_blocks[i][:end.start()] if end else zh_blocks[i][:800]
-            # Find the preceding heading
             before = zh_body[:zh_body.find('【注意】' + text[:60])] if '【注意】' + text[:60] in zh_body else ''
             heading_match = re.findall(r'^#{1,4}\s+.+', before, re.MULTILINE)
             heading = heading_match[-1] if heading_match else 'unknown'
             zh_sections[heading.strip()] = text.strip()
 
-        # Find en **Note** sections with CJK
         en_sections = list(re.finditer(r'\*\*Note\*\*', en_body))
         note_count = 0
         cjk_total = 0
@@ -122,12 +139,10 @@ def extract_notes(en_files: list[str]) -> None:
             cjk_total += cn
             lineno = en_body[:m.start()].count('\n') + 1
 
-            # Find preceding heading for matching
             before = en_body[:m.start()]
             heading_match = re.findall(r'^#{1,4}\s+.+', before, re.MULTILINE)
             heading = heading_match[-1] if heading_match else 'unknown'
 
-            # Try to find corresponding zh section
             zh_text = zh_sections.get(heading.strip(), '(no zh match found)')
 
             rel = os.path.relpath(en_path, DOCS_ROOT)
@@ -148,7 +163,9 @@ def main():
     parser.add_argument('files', nargs='*',
                         help='Files to translate (default: all .en.md with CJK)')
     parser.add_argument('--passes', type=int, default=0, choices=[1, 2, 3, 4],
-                        help='Only run this many passes (default: all)')
+                        help='Only run this many CJK passes (default: all 4)')
+    parser.add_argument('--deconcat', action='store_true',
+                        help='Run deconcatenation pass after CJK removal')
     parser.add_argument('--dry-run', action='store_true',
                         help='Report CJK counts without modifying files')
     parser.add_argument('--extract-notes', action='store_true',
@@ -175,7 +192,7 @@ def main():
             print(f'{cn:>6}  {os.path.relpath(path, DOCS_ROOT)}')
             continue
 
-        before, after = translate_file(path, passes)
+        before, after = translate_file(path, passes, use_deconcat=args.deconcat)
         total_before += before
         total_after += after
         delta = before - after

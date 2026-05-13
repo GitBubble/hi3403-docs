@@ -1,21 +1,8 @@
 ---
 title: "ISP FAQ"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP FAQ/ISP FAQ.md
----
-
-# Preface
-**Overview<a name="section143mcpsimp"></a>**
-
-This document is written for developers using ISP. It provides solutions and guidance for issues encountered during development.
-
->![](public_sys-resources/icon-note.gif) **Note:** 
->This document uses Hi3403V100 as the reference. Unless otherwise specified, Hi3519AV200 is identical to Hi3403V100.
-
-**Product Versions<a name="section146mcpsimp"></a>**
-
-The product versions corresponding to this document are listed below.
-
-<a name="table149mcpsimp"></a>
+--- # Preface
+**Overview<a name="section143mcpsimp"></a>** This document is written for developers using ISP. It provides solutions and guidance for issues encountered during development. >![](public_sys-resources/icon-note.gif) **Note:** >This document uses Hi3403V100 as the reference. Unless otherwise specified, is identical to Hi3403V100. **Product Versions<a name="section146mcpsimp"></a>** The product versions corresponding to this document are listed below. <a name="table149mcpsimp"></a>
 <table><thead align="left"><tr id="row154mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p156mcpsimp"><a name="p156mcpsimp"></a><a name="p156mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p158mcpsimp"><a name="p158mcpsimp"></a><a name="p158mcpsimp"></a>Product Version</p>
@@ -27,26 +14,13 @@ The product versions corresponding to this document are listed below.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p164mcpsimp"><a name="p164mcpsimp"></a><a name="p164mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row3890144411453"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p17589247164514"><a name="p17589247164514"></a><a name="p17589247164514"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p7589247134510"><a name="p7589247134510"></a><a name="p7589247134510"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Intended Audience<a name="section165mcpsimp"></a>**
-
-This document is intended for the following engineers:
-
--   Technical support engineers
--   Software development engineers
-
-**Revision History<a name="section171mcpsimp"></a>**
-
-The revision history accumulates the description of each document update. The latest version of this document incorporates all updates from previous versions.
-
-<a name="table126443203200"></a>
+</table> **Intended Audience<a name="section165mcpsimp"></a>** This document is intended for the following engineers: - Technical support engineers
+- Software development engineers **Revision History<a name="section171mcpsimp"></a>** The revision history accumulates the description of each document update. The latest version of this document incorporates all updates from previous versions. <a name="table126443203200"></a>
 <table><thead align="left"><tr id="row264516207203"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p146456203200"><a name="p146456203200"></a><a name="p146456203200"></a><strong id="b8645172022010"><a name="b8645172022010"></a><a name="b8645172022010"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p364512062019"><a name="p364512062019"></a><a name="p364512062019"></a><strong id="b1464512200200"><a name="b1464512200200"></a><a name="b1464512200200"></a>Release Date</strong></p>
@@ -63,588 +37,66 @@ The revision history accumulates the description of each document update. The la
 </td>
 </tr>
 </tbody>
-</table>
-
-# FAQ
-## ISP<a name="ZH-CN_TOPIC_0000002441723797"></a>
-
-### How to Resolve Insufficient Overall Sharpness<a name="ZH-CN_TOPIC_0000002441683949"></a>
-
-**Symptom**
-
-Image edges and fine details appear blurry, similar to being out of focus. Or, when compared to a reference device, the sharpness of large edges and textures is lower.
-
-**Analysis**
-
-Image sharpness is affected by multiple factors: overall brightness and contrast (AE, WB, GAMMA, and DCI), sharpening strength (sharpen), Demosaic, noise reduction strength (2DNR and 3DNR), and encoding bitrate. When the overall image clarity style deviates significantly from the customer's requirements, prioritize adjusting GAMMA and similar modules that affect global brightness and local contrast, then adjust Demosaic and sharpen.
-
-**Solution**
-
-Systematically eliminate the possible causes of insufficient sharpness:
-
--   Inspect the sensor and lens surfaces for contamination, protective film that has not been removed, or single-side blur. Confirm the lens aperture is fully open and focus is sharp.
--   Check that image brightness is reasonable. Use the `ae_compensation` parameter to adjust brightness to a satisfactory level.
--   Calibrate WB to ensure proper white balance.
--   Adjust GAMMA to bring the overall image style and contrast to the desired level.
--   Set the encoding bitrate to a high value and observe whether quality improves.
--   Adjust Demosaic parameters to prevent the interpolated output from being overly blurred with indistinct edges.
--   Use PQtools to read the current sharpen strength, or manually set sharpen strength to maximum to see whether improvement is achieved:
-    -   First, set both `texture_str` and `edge_strength` to maximum.
-    -   Then, set both `over_shoot` and `under_shoot` to maximum.
-    -   Next, set `detail_ctrl` to 128 and all `luma_wgt` values to 127.
-    -   Finally, fine-tune `under_shoot`, `over_shoot`, and `shoot_sup_strength` based on the black and white edge appearance in the image. If the resulting sharpness is too high, reduce `texture_str` and `edge_strength` gradually and repeat the steps above until the desired clarity is achieved.
-
--   Disable or reduce the strength of 2DNR/3DNR noise reduction and observe whether sharpness improves.
-
-### How to Resolve Image Haziness and Improve Clarity<a name="ZH-CN_TOPIC_0000002408284530"></a>
-
-**Symptom**
-
-Image appears hazy with poor transparency.
-
-**Analysis**
-
-Image transparency is determined by two main factors: sharpness and contrast.
-
--   Insufficient sharpness or contrast gives the impression of poor transparency.
--   If haziness is present, check for light leakage.
-
-**Solution**
-
--   Block any light leakage sources, including the back of the sensor board.
--   Increase contrast by applying a higher-contrast Gamma curve.
--   Adjust LDCI to further enhance image contrast.
--   If the scene is foggy or fog-like, try tuning the Dehaze module to reduce the haziness.
--   Improve sharpness — refer to [How to Resolve Insufficient Overall Sharpness](#ZH-CN_TOPIC_0000002441683949) and [How to Resolve Poor Sharpness in Low Light](#ZH-CN_TOPIC_0000002441723789).
-
-### How to Resolve Poor Sharpness in Low Light<a name="ZH-CN_TOPIC_0000002441723789"></a>
-
-**Symptom**
-
-Sharpness is poor in low-light conditions.
-
-**Analysis**
-
--   Cause 1: Sharpness is most closely related to the lens. Focal length and object distance both affect depth of field (shorter focal length yields greater depth of field; greater object distance yields greater depth of field), resulting in overall sharpness differences.
--   Cause 2: The ISP software has a built-in linkage mechanism that automatically reduces sharpening strength and increases noise reduction strength when noise is high. This strategy causes sharpness to decrease in low-light conditions.
-
-**Solution**
-
--   For Cause 1: Use the same lens (same manufacturer and model) for comparison.
--   For Cause 2: The linkage mechanism parameters are exposed for user configuration, allowing a balance between sharpness and noise reduction based on preference. In low light, increase 2DNR/3DNR strength to reduce noise, moderately increase sharpen strength to enhance edge sharpness, and adjust Demosaic parameters to prevent interpolated edges from being too blurred.
-
-### How to Resolve Sharpness Issues and Black/White Edge Artifacts<a name="ZH-CN_TOPIC_0000002408124638"></a>
-
-**Symptom**
-
-Insufficient image sharpness, or visible black/white halos around object edges (such as text, leaves, or building contours).
-
-**Analysis**
-
-When the image is in focus, sharpness is determined by two factors:
-
--   The stronger the noise reduction, the blurrier the image.
--   The stronger the sharpen setting, the sharper the image, and vice versa.
-
-Black and white edge halos around objects are generally caused by excessive sharpening. These halos are an unavoidable side effect of sharpening, and are especially pronounced when sharpening is very strong. Moderate halos actually enhance the perceived sharpness for the human eye.
-
-**Solution**
-
-Sharpness and black/white edge halos are primarily controlled through two approaches: noise reduction and image sharpening.
-
--   If sharpness is insufficient, moderately reduce 2DNR strength and moderately increase sharpen strength.
--   Once sharpness meets requirements:
-    -   First, increase `shoot_sup_strength` to reduce black/white halos. Increasing `shoot_sup_strength` narrows the width and suppresses the amplitude of halos with minimal sharpness loss. However, excessive values degrade sharpness, introduce a subtle painting effect, and may worsen aliasing.
-    -   If adjusting `shoot_sup_strength` alone is not sufficient, reduce `overshoot` to specifically suppress white halos, or reduce `undershoot` to specifically suppress black halos. Note that decreasing either will noticeably reduce image sharpness.
-
-### How to Resolve Severe Aliasing in Images<a name="ZH-CN_TOPIC_0000002408124646"></a>
-
-**Symptom**
-
-After sharpening, high-contrast edges at shallow angles exhibit visible aliasing (jagged edges).
-
-**Analysis**
-
-Slightly angled, high-contrast edges in the image typically have some pre-existing aliasing before sharpening, though it may be subtle. After sharpening, these subtle artifacts are amplified and become prominent. The severity of aliasing is strongly correlated with the angle of the edge — different angles produce significantly different results.
-
-**Solution**
-
-Systematically eliminate the causes of aliasing:
-
--   Verify that the viewing angle and edge inclination match those of the reference device. Comparing aliasing against a reference requires the same viewing angle and edge tilt.
--   Disable sharpen and check whether prominent aliasing still exists.
-    -   If large edges show obvious aliasing even with sharpen disabled, adjust Demosaic and 2DNR. In most cases, moderately increasing `detail_smooth_str` in Demosaic significantly reduces edge aliasing; however, avoid pushing the parameter to extremes or edges will become overly blurred.
-    -   If aliasing is not prominent with sharpen disabled but becomes obvious or worsens after enabling sharpen, adjust sharpen parameters to reduce aliasing while maintaining sharpness.
-
-        Adjusting `edge_str` is effective in reducing aliasing without noticeably degrading image sharpness. `edge_str` is an array of 32 values. Reducing the values at higher indices (e.g., `edge_str[20]` through `edge_str[31]`) while keeping lower-index values (`0~19`) unchanged can significantly reduce aliasing without noticeably reducing overall sharpness. The `edge_str` strength curve should be adjusted smoothly. Additionally, if `shoot_sup_strength` is too large, it can aggravate edge aliasing; reduce `shoot_sup_strength` within an acceptable halo range to mitigate this. Finally, moderately increasing `edge_filt_str` can also reduce edge aliasing.
-
-### How to Resolve Dark Corner Grid Artifacts<a name="ZH-CN_TOPIC_0000002441723785"></a>
-
-**Symptom**
-
-Random horizontal or vertical lines appear in the dark corners of the image.
-
-**Analysis**
-
-When the lens CRA angle does not match the sensor, incident light through the lens causes Gr/Gb imbalance, resulting in crosstalk. Since the Demosaic module randomly performs interpolation in either the horizontal or vertical direction, this crosstalk manifests as a grid pattern.
-
-**Solution**
-
-First verify whether the CRA angle of the sensor and lens are matched. If not, replace the sensor or lens with one whose CRA angle matches, following the documentation provided by the sensor manufacturer.
-
-### How to Resolve AE Anomalies Such as Severe Overexposure or Underexposure<a name="ZH-CN_TOPIC_0000002408284518"></a>
-
-**Symptom**
-
-AE shows severe overexposure or underexposure, and adjusting the target brightness parameter has no effect.
-
-**Analysis**
-
-Use the `ot_mpi_isp_query_inner_state_info` interface to query the current exposure time and gain values.
-
->![](public_sys-resources/icon-note.gif) **Note:**  For the `ot_mpi_isp_query_inner_state_info` interface, refer to the *ISP Development Reference* document.
-
-**Solution**
-
-Based on the queried exposure time and gain values, take the following actions:
-
--   If the exposure information is inconsistent with the actual brightness (e.g., exposure time and gain are already at high values but the image is still underexposed, or vice versa), check the hardware circuit.
--   If the exposure information is consistent with the actual brightness, query the AE histogram statistics. If the gray level distribution is overly concentrated or certain segments have zero statistical data, verify that the image width and height settings are correct and that the VI mask matches the hardware.
--   If the exposure information is inconsistent with the actual brightness, verify that the sensor registers computed by AE are correctly configured and have taken effect. You can read the sensor's shutter and gain registers directly via I2C/SPI to check.
-
-### How to Resolve Poor Brightness and Contrast in Infrared Scenes<a name="ZH-CN_TOPIC_0000002441683909"></a>
-
-**Symptom**
-
-In low-light conditions with the IR light on, the image periphery is too dark while the center is overexposed, causing detail loss in bright areas and poor contrast with a hazy appearance.
-
-**Analysis**
-
-IR lights typically illuminate the center of the frame, resulting in high brightness and potential overexposure in that area, while the periphery receives less light and appears darker.
-
-**Solution**
-
--   Ensure the IR-Cut filter is switched to night mode.
--   Configure AE to reduce exposure: decrease `Compensation`, set `ae_strategy_mode` to `AE_EXP_HIGHTLIGHT_PRIOR`, and increase both `hist_ratio_slope` and `max_hist_offset` to eliminate overexposure.
--   Since AE reduces exposure, overall brightness decreases. Enable DRC and tune the DRC strength and curve to restore brightness. Note that brightness boost may reduce contrast, so co-tune the Dehaze and DCI modules.
--   Enable the Dehaze module and tune the custom Dehaze curve to locally suppress Dehaze strength based on brightness. This can enhance local contrast in bright areas and improve detail without over-darkening the periphery. Simultaneously adjust DCI to improve overall image contrast.
--   If the periphery is still too dark, use shading compensation to boost the brightness of the outer regions while leaving (or minimally affecting) the center.
-
-### How to Tune AE, AWB, and CCM Parameters in Infrared Mode<a name="ZH-CN_TOPIC_0000002441683913"></a>
-
-**Symptom**
-
-In infrared mode, AE statistics are unstable and oscillate frequently. Or AE converges to different brightness levels — for example, brightness changes after covering and uncovering the lens with a hand.
-
-**Analysis**
-
-These symptoms are related to AE and AWB configuration. When AWB is enabled, the R and B channels may become abnormal, causing AE to incorrectly classify large uniform-color areas, leading to oscillation.
-
-**Solution**
-
--   In infrared scenes, when using the AE library provided by the SDK, disable the large-area uniform-color detection feature (`hist_stat_adjust`). If `wb_gain` is enabled in infrared mode, the image may appear overly bright; configure `hist_config` based on the sensor bayer pattern type to sample both R and G channels simultaneously, which results in more reasonable image brightness.
--   In infrared mode, it is recommended to disable AWB and set saturation to 0. In this case, the G and R channels contribute more signal, so the CCM matrix should assign higher weights to the R and G channels.
--   If AWB must be enabled for IR light operation, set `zone_sel=0` to use global AWB statistics. In this configuration, AWB applies large multipliers to the R and B channels, which increases their noise. It is recommended to configure the CCM matrix to use primarily the G channel weight, with small weights for R and B channels.
-
-### How to Resolve Vertical Stripes in Low-Light Images<a name="ZH-CN_TOPIC_0000002408124654"></a>
-
-**Symptom**
-
-Some sensors exhibit vertical stripes in low-light conditions.
-
-**Analysis**
-
-Vertical stripes are caused by sensor FPN (Fixed Pattern Noise), which becomes more visible as the sensor digital gain increases. Currently, software does not limit sensor digital gain, so in low light where digital gain is high, FPN stripes can be severe.
-
-**Solution**
-
-Use the FPN algorithm module to remove or reduce FPN.
-
-### How to Implement Backlight Compensation<a name="ZH-CN_TOPIC_0000002408124658"></a>
-
-**Symptom**
-
-In backlit scenes, the subject appears dark.
-
-**Analysis**
-
-In backlit scenes, backlight compensation can be achieved by increasing the overall exposure brightness of the image.
-
-**Solution**
-
-Increase the AE weight for the target region.
-
-SS919V100 auto-exposure static statistics are divided into a 15×17 grid of regions. Setting a weight table allows you to change the weight of each region, adjusting the final exposure brightness accordingly.
-
-Use the MPI interface to increase the weight of the target region so that the final exposure is driven by the brightness of that region, achieving backlight compensation. When the weight of the subject region is set very high, this approach may cause overexposure in brighter surrounding areas.
-
-### How to Implement Manual Exposure Time with Auto Gain Control, or Manual Gain with Auto Exposure Time Control<a name="ZH-CN_TOPIC_0000002441683929"></a>
-
-**Implementation**
-
-To implement manual exposure time with automatic gain control, or manual gain with automatic exposure time control:
-
-The simplest approach is to remain in AE mode and set the upper and lower limits of exposure time to the same value, which effectively fixes exposure time while allowing gain to be controlled automatically. In this configuration, if `ae_mode` is set to `AE_MODE_SLOW_SHUTTER`, the frame rate will be automatically reduced when the exposure time exceeds one frame duration. Similarly, setting identical upper and lower limits for `sys_gain` fixes the gain.
-
-### How to Set the Maximum Gain Correctly<a name="ZH-CN_TOPIC_0000002441723793"></a>
-
-**Symptom**
-
-In low-light scenarios, it may be necessary to limit the maximum gain for better image quality. However, after limiting `dgain` and `isp_dgain`, AE flickering occurs.
-
-**Analysis**
-
-Most sensors have low analog gain (again) precision. Limiting the high-precision `dgain` and `isp_dgain` prevents AE from precisely achieving the target brightness, resulting in flickering.
-
-**Solution**
-
-Instead of individually limiting `again`, `dgain`, and `isp_dgain`, limit `system_gain_max` — the maximum system gain (i.e., the maximum value of `again * dgain * isp_dgain`). This way, you do not need to concern yourself with how AE distributes gain among the three components.
-
-### How to Resolve AWB Susceptibility to Interference<a name="ZH-CN_TOPIC_0000002408284534"></a>
-
-**Symptom**
-
-AWB color shifts when a hand moves in front of the lens or a large vehicle with a particular color passes through the field of view.
-
-**Analysis**
-
-Skin tones or certain vehicle colors can significantly affect AWB, causing errors in the white balance estimate.
-
-**Solution**
-
--   Reduce the AWB convergence speed (`speed` attribute). Slowing convergence visibly reduces this effect.
--   Switch the AWB algorithm to advanced mode, which improves handling of such interference. If the ambient light source does not change gradually (i.e., only indoor lighting without sunlight influence), increasing the `tolerance` parameter of the advanced AWB algorithm will also help mitigate this issue.
-
-### How to Resolve Color Shift Caused by Black Level Drift at High Temperature<a name="ZH-CN_TOPIC_0000002441723781"></a>
-
-**Symptom**
-
-At extremely high or low temperatures, the image has a color cast even after AWB correction.
-
-**Analysis**
-
-At extreme temperatures, the stability of sensor image capture is affected. At high temperatures, the sensor black level drifts — the actual black level may be several times higher than at normal temperature. This causes color shift after AWB correction. Under ideal conditions, the sensor should produce the same color response for grey points of different brightness: R = K * G. At normal temperature the sensor offset is F0; at high temperature it is F1, where F0 < F1.
-
--   R/G gain at normal temperature: Normal_R/G = (K * G + F0 – F0) / (G + F0 – F0) = K
--   R/G gain at high temperature: High_R/G = (K * G + F1 – F0) / (G + F1 – F0)
-
-    Since F0 < F1 (black level drifts at high temperature);
-
-From sensor spectral data, most sensors have stronger green sensitivity than R and B, so K < 1. Therefore High_R/G - Normal_R/G = (1 - K) * (F1 – F0) / (G + F1 – F0) > 0, meaning High_R/G > Normal_R/G. The R channel gain Rgain = G/R = 1/(R/G), so High_Rgain < Normal_Rgain — the red channel gain becomes smaller. By the same reasoning, the blue channel gain is also smaller at high temperatures. This explains why images appear greenish at high temperatures.
-
-**Solution**
-
-Since High_R/G - Normal_R/G = (1 - K) * (F1 – F0) / (G + F1 – F0), and G represents luminance — the higher G is, the smaller the deviation between High_R/G and Normal_R/G — brighter scenes are less sensitive to black level drift. Therefore, it is recommended to increase the AWB parameter `black_level` (previously defaulting to 0x40) to reduce the impact of black level drift on gain.
-
-### How to Resolve Low Brightness and Contrast in Low-Light Conditions<a name="ZH-CN_TOPIC_0000002441683921"></a>
-
-**Symptom**
-
-In low-light conditions, the image brightness and contrast are lower than the reference device.
-
-**Analysis**
-
--   Cause 1: Different lens apertures. A smaller F-number means a larger aperture and more light reaching the sensor.
--   Cause 2: Different sensors. Sensor photoelectric conversion efficiency determines low-light performance.
--   Cause 3: Different overall brightness settings. Since image brightness values are low, some products boost perceptible brightness by adjusting brightness and contrast.
--   Cause 4: Some products reduce frame rate in low light, allowing longer exposure times, which makes the image appear brighter.
--   Cause 5: Noise reduction processing in low light may reduce contrast. In low-light environments with significant salt-and-pepper noise, if the noise reduction algorithm over-processes pepper noise while leaving salt noise, the overall image may appear washed out.
-
-**Solution**
-
--   For Cause 1: Use the same lens (same manufacturer and model) for comparison.
--   For Cause 2: Use the same sensor for comparison.
--   For Cause 3: Adjust AE parameters to bring the overall brightness in line with the reference.
--   For Cause 4: In demo environments, frame rate can be reduced manually, but this is not recommended in production.
--   For Cause 5: Adjust the noise reduction strategy, or tune the Gamma and LDCI modules to increase overall contrast.
-
-### How to Resolve Directional Fringing Near Bright Light Sources<a name="ZH-CN_TOPIC_0000002408284522"></a>
-
-**Symptom**
-
-At normal illumination levels, directional fringing appears near bright light source text, as shown in [Figure 1](#_Ref508268875).
-
-**Figure 1**  Example of directional fringing near light source text<a name="_Ref508268875"></a>  
-![](figures/光源字体附近出现方向性的毛刺效果图.png "光源字体附近出现方向性的毛刺效果图")
-
-**Analysis**
-
-This issue is primarily caused by unreasonable static coefficient calibration in the Global CAC module.
-
-**Solution**
-
-First, verify whether the Global CAC static coefficients are correctly calibrated. If not, recalibrate. If recalibration is not desired, disable Global CAC by default. [Figure 2](#_Ref508268896) shows a comparison with and without Global CAC enabled when the static coefficients are incorrectly calibrated.
-
-**Figure 2**  Comparison with and without Global CAC enabled under incorrect static coefficient calibration<a name="_Ref508268896"></a>  
-
-![](figures/zh-cn_image_0000002441684005.png) ![](figures/zh-cn_image_0000002408284590.png)
-
-### How to Resolve AE Unable to Control the P-Iris Aperture<a name="ZH-CN_TOPIC_0000002408124662"></a>
-
-**Symptom**
-
-After the P-Iris is connected and the driver is integrated, the aperture can be controlled manually, but AE cannot control it.
-
-**Analysis**
-
-The relevant aperture parameters in AE are not correctly configured.
-
-**Solution**
-
--   Configure the AE route. Without this, by default the aperture only moves when exposure time reaches its minimum, which is rarely achieved in practice. By configuring the AE route, the aperture can be actuated before the exposure time reaches its minimum.
--   In the `xxx_cmos.c` file, `ae_sns_dft->max_iris_fno` and `ae_sns_dft->min_iris_fno` must be configured. Note: these are different from `min_iris_fno_target`. Parameters with `Target` in their name are the maximum/minimum values configured via the MPI interface; parameters without `Target` are the actual hardware-supported maximum/minimum values. If left unset, AE treats both the maximum and minimum P-Iris values as 0 and will not actuate the aperture. Set both parameters to the appropriate maximum and minimum physical limits.
-
-### DCIris Aperture Can Be Toggled Manually but Does Not Close in Auto Mode<a name="ZH-CN_TOPIC_0000002408124630"></a>
-
-**Analysis**
-
--   The fact that DCIris can be controlled manually indicates the hardware connection is correct.
--   DCIris is typically used to mitigate flicker caused by power line frequency. AE anti-flicker requires exposure time to be a multiple of the power cycle (e.g., multiples of 10 ms for 50 Hz). In bright environments, when the maximum aperture results in an exposure time under 10 ms, DCIris can be closed down to achieve anti-flicker.
--   The AE DCIris algorithm provided by the SDK only closes the aperture after exposure time reaches its minimum value. However, the default minimum is typically around 2 rows (a few tens of microseconds), which is almost impossible to reach in practice, so the aperture rarely closes. You can manually set the minimum exposure time to 10 ms to enable anti-flicker. Alternatively, without setting the minimum exposure time, set the anti-flicker mode to Normal mode — exposure time will be held at the anti-flicker minimum, which is effectively the same as reaching the minimum, and the aperture will close accordingly.
-
-### How to Resolve AE Flickering<a name="ZH-CN_TOPIC_0000002408124650"></a>
-
-**Symptom**
-
-Synchronization issue: a specific frame or two frames are suddenly much brighter or darker than others, then return to normal. Precision issue: image brightness continuously oscillates either slightly or significantly, or AE exhibits occasional instability.
-
-**Analysis**
-
-The two most common causes of AE flickering are synchronization issues and precision issues.
-
-**Solution**
-
--   Synchronization issue: Many sensors apply gain changes in the next frame and exposure time changes in the frame after that. `isp_dgain` is similarly applied to the next frame. If synchronization is not configured correctly, large relative changes in gain and exposure time can cause flickering. This commonly occurs in bright scenes and when anti-flicker is enabled.
-
-    The synchronization configuration in `xxx_cmos.c` is `cmos_get_sns_regs_info`, which includes synchronization settings for sensor registers. `cfg2_valid_delay_max` controls the `isp_dgain` synchronization. Try modifying the exposure time, gain, and `isp_dgain` synchronization settings to resolve this issue.
-
--   Precision issue: The brightness value computed by the AE algorithm cannot always be accurately achieved when configured to the sensor, due to limited gain precision. This causes brightness to oscillate between adjacent achievable levels and prevents convergence. Since `isp_dgain` has very fine precision, retaining at least 2x of `isp_dgain` headroom effectively solves most precision issues.
-
-    When limiting gain, avoid setting individual limits on `again`, `dgain`, and `isp_dgain`, as this easily introduces precision problems. Use `system_gain` limits instead — AE will automatically distribute gain among the three components.
-
-### How to Resolve Increased Edge Noise Due to Fisheye Correction Placed in the VI Module<a name="ZH-CN_TOPIC_0000002441723801"></a>
-
-**Symptom**
-
-When fisheye correction is applied in the VI module (before 3DNR), the correction introduces uneven noise — high noise at the edges and low noise in the center — causing image noise to be spatially correlated.
-
-**Analysis**
-
-The non-uniform noise caused by fisheye correction is strongly position-dependent. Currently, the only mitigation is to enable BayerNR + NrLsc. Only SS813V100/SS812V100 have Shading module support for BayerNR-specific noise with `bnr_lsc_gain_lut.r_gain`, `bnr_lsc_gain_lut.gr_gain`, `bnr_lsc_gain_lut.gb_gain`, and `bnr_lsc_gain_lut.b_gain`. The `bnr_lsc_gain_lut` table is decoupled from the Shading module's brightness correction.
-
-**Solution**
-
-Tune the NrLsc module within BayerNR: enable `nr_lsc_enable`, and tune `bnr_lsc_gain_lut.r_gain`, `bnr_lsc_gain_lut.gr_gain`, `bnr_lsc_gain_lut.gb_gain`, and `bnr_lsc_gain_lut.b_gain` within Mesh-shading.
-
-Note that in `bnr_lsc_gain_lut.r_gain`, a value of 4096 represents 1x gain and 8192 represents 2x gain. Set higher gain values at the image edges so that BayerNR applies stronger denoising there. Set lower gain values at the image center so that BayerNR applies weaker denoising there. In this configuration, use `coarse_str` (not `fine_str`) to adjust the BayerNR denoising strength.
-
-### How to Resolve Flickering in Bright Scenes After Enabling Anti-Flicker<a name="ZH-CN_TOPIC_0000002441683945"></a>
-
-**Symptom**
-
-With the default AE route configured in adaptive mode and anti-flicker set to the corresponding frequency, flickering still occurs in bright environments where the required exposure is already greater than the minimum anti-flicker exposure.
-
-**Analysis**
-
-The auto anti-flicker function is constrained by the AE route. If the AE route is configured to prioritize gain allocation, the total exposure may exceed the minimum anti-flicker exposure while the exposure time remains below the minimum anti-flicker time. In this case, enabling auto anti-flicker mode does not achieve the desired effect.
-
-**Solution**
-
-Configure the AE route to prioritize exposure time allocation — allow the exposure time to reach the minimum anti-flicker threshold before allocating gain (i.e., gain stays at 1x or the minimum desired value). Only then will enabling auto anti-flicker actually suppress flickering.
-
-### How to Resolve Frequent IR-Cut Switching in Soft Photosensor Mode and Usage Recommendations<a name="ZH-CN_TOPIC_0000002441683941"></a>
-
-**Symptom**
-
-In a completely dark lab environment (no or minimal visible light), with IR lights on, the soft photosensor scheme (`ir_auto sample`) frequently switches the IR-Cut filter when the IR light reflection distance is within 4 m.
-
-**Calibration Conditions**
-
--   IR lights on; device switched to IR mode; filter switched to full-pass.
--   Raw brightness is appropriate — approximately 70%–80% of maximum brightness (e.g., for 12-bit, 80% of 4095 = 3276).
--   Run the sample calibration program to obtain the maximum and minimum thresholds for IR mode for use as scene detection criteria.
-
-**Usage Recommendations**
-
--   Scene brightness must be appropriate — neither overexposed nor too dark — otherwise the soft photosensor function should not be used.
--   The IR reflection distance between the device and objects should not be too close or too far, as this makes the calibration parameters inapplicable.
--   When switching from IR to visible light mode, if IR light intensity is too high (e.g., ISO 100), the ISO linkage detection condition should be disabled.
-
-### DynamicBLC Usage Notes<a name="ZH-CN_TOPIC_0000002441723805"></a>
-
-Before enabling DynamicBLC mode, ensure that the MIPI data contains OB (optical black) regions for statistics. The data processing flow is shown in [Figure 1](#fig6558124065118).
-
-**Figure 1**  Data processing flow<a name="fig6558124065118"></a>  
-![](figures/数据处理流程.png "数据处理流程")
-
-To use the Dynamic BLC module to obtain a valid black level based on OB region statistics, configure the entire data processing pipeline as follows:
-
--   Sensor driver configuration: Add a sensor sequence in the driver that outputs the OB region. When enabling Dynamic BLC, the sensor's built-in BLC correction must be disabled.
--   MIPI configuration: Ensure the MIPI crop region includes the OB area. If the OB region uses a different datatype than the visible image region, modify the MIPI datatype configuration using the `OT_MIPI_SET_EXT_DATA_TYPE` interface (see the *MIPI User Guide* for details) so that the MIPI output includes the OB region. If Dynamic BLC behaves abnormally, check whether the resolution detected by MIPI includes the OB region.
--   VI dev configuration: Width and height must match the MIPI output dimensions.
--   pub attr configuration: Configure `wnd_rect` with the start coordinates and dimensions to crop out the OB region using ISP cropping, ensuring that the raw data processed by ISP FE and BE excludes the OB region.
-
-The width and height in VI pipe attr and chn info should reflect the post-ISP-crop dimensions.
-
-Note that when sensor gain is high, the dynamic black level can drift significantly, making the `calibration_black_level` calibration value less accurate. This does not affect image quality in extreme switching scenarios such as light-on/light-off transitions.
-
-### Black Level Configuration Notes When Capturing FE Raw Data for BE<a name="ZH-CN_TOPIC_0000002408284550"></a>
-
-When capturing FE raw data and sending it to BE, and the FE is using dynamic black level, it is recommended to enable `user_black_level` on the FE side so that BE processing does not need to account for black level synchronization. When using `user_black_level`, ensure that the sensor black level is always less than `user_black_level`. If the sensor black level exceeds `user_black_level`, either disable `sensor_dgain` to reduce the sensor black level, or increase `user_black_level`. On the BE pipe, set `manual_black_level` to the same value as `user_black_level`.
-
-### AE Separate Gain Configuration Instructions<a name="ZH-CN_TOPIC_0000002408124634"></a>
-
-**Description**
-
-When the sensor supports separate gain configuration for long and short frames, the sensor driver must be adapted accordingly.
-
-1.  The driver must implement the corresponding gain and exposure time configuration functions, alternately configuring long and short frames. The AE algorithm will call these functions via callback to set sensor exposure parameters.
-2.  The driver must pass the appropriate parameters to the AE algorithm via the `cmos_get_ae_default` interface:
-    -   `ae_gain_sep_cfg`: Set to True to enable separate gain configuration mode.
-    -   `diff_gain_support`: Enables different gains for long and short frames.
-    -   `lhcg_support`: Enable this for single-shutter dual-gain sensors.
-    -   `lhcg_ratio`: For single-shutter dual-gain sensors, provide the internal long/short frame gain ratio to AE. AE incorporates `lhcg_ratio` when computing the exposure ratio: `long-frame exposure / short-frame exposure * lhcg_ratio = final exposure ratio`.
-
-**Notes**
-
-The current single-shutter dual-gain mode only supports long-frame-priority, non-extended AE routes.
-
-**Example**
-
-```
-cmos_get_ae_comm_default() {
-    ae_sns_dft->diff_gain_support = TRUE;
-    ae_sns_dft->lhcg_support = TRUE;
-    ae_sns_dft->sns_lhcg_exp_ratio = 64; / 6bit precision/
-    ...
+</table> # FAQ
+## ISP<a name="ZH-CN_TOPIC_0000002441723797"></a> ### How to Resolve Insufficient Overall Sharpness<a name="ZH-CN_TOPIC_0000002441683949"></a> **Symptom** Image edges and fine details appear blurry, similar to being out of focus. Or, when compared to a reference device, the sharpness of large edges and textures is lower. **Analysis** Image sharpness is affected by multiple factors: overall brightness and contrast (AE, WB, GAMMA, and DCI), sharpening strength (sharpen), Demosaic, noise reduction strength (2DNR and 3DNR), and encoding bitrate. When the overall image clarity style deviates significantly from the customer's requirements, prioritize adjusting GAMMA and similar modules that affect global brightness and local contrast, then adjust Demosaic and sharpen. **Solution** Systematically eliminate the possible causes of insufficient sharpness: - Inspect the sensor and lens surfaces for contamination, protective film that has not been removed, or single-side blur. Confirm the lens aperture is fully open and focus is sharp.
+- Check that image brightness is reasonable. Use the `ae_compensation` parameter to adjust brightness to a satisfactory level.
+- Calibrate WB to ensure proper white balance.
+- Adjust GAMMA to bring the overall image style and contrast to the desired level.
+- Set the encoding bitrate to a high value and observe whether quality improves.
+- Adjust Demosaic parameters to prevent the interpolated output from being overly blurred with indistinct edges.
+- Use P Qtools to read the current sharpen strength, or manually set sharpen strength to maximum to see whether improvement is achieved: - First, set both `texture_str` and `edge_strength` to maximum. - Then, set both `over_shoot` and `under_shoot` to maximum. - Next, set `detail_ctrl` to 128 and all `luma_wgt` values to 127. - Finally, fine-tune `under_shoot`, `over_shoot`, and `shoot_sup_strength` based on the black and white edge appearance in the image. If the resulting sharpness is too high, reduce `texture_str` and `edge_strength` gradually and repeat the steps above until the desired clarity is achieved. - Disable or reduce the strength of 2DNR/3DNR noise reduction and observe whether sharpness improves. ### How to Resolve Image Haziness and Improve Clarity<a name="ZH-CN_TOPIC_0000002408284530"></a> **Symptom** Image appears hazy with poor transparency. **Analysis** Image transparency is determined by two main factors: sharpness and contrast. - Insufficient sharpness or contrast gives the impression of poor transparency.
+- If haziness is present, check for light leakage. **Solution** - Block any light leakage sources, including the back of the sensor board.
+- Increase contrast by applying a higher-contrast Gamma curve.
+- Adjust LDCI to further enhance image contrast.
+- If the scene is foggy or fog-like, try tuning the Dehaze module to reduce the haziness.
+- Improve sharpness — refer to [How to Resolve Insufficient Overall Sharpness](#ZH-CN_TOPIC_0000002441683949) and [How to Resolve Poor Sharpness in Low Light](#ZH-CN_TOPIC_0000002441723789). ### How to Resolve Poor Sharpness in Low Light<a name="ZH-CN_TOPIC_0000002441723789"></a> **Symptom** Sharpness is poor in low-light conditions. **Analysis** - Cause 1: Sharpness is most closely related to the lens. Focal length and object distance both affect depth of field (shorter focal length yields greater depth of field; greater object distance yields greater depth of field), resulting in overall sharpness differences.
+- Cause 2: The ISP software has a built-in linkage mechanism that automatically reduces sharpening strength and increases noise reduction strength when noise is high. This strategy causes sharpness to decrease in low-light conditions. **Solution** - For Cause 1: Use the same lens (same manufacturer and model) for comparison.
+- For Cause 2: The linkage mechanism parameters are exposed for user configuration, allowing a balance between sharpness and noise reduction based on preference. In low light, increase 2DNR/3DNR strength to reduce noise, moderately increase sharpen strength to enhance edge sharpness, and adjust Demosaic parameters to prevent interpolated edges from being too blurred. ### How to Resolve Sharpness Issues and Black/White Edge Artifacts<a name="ZH-CN_TOPIC_0000002408124638"></a> **Symptom** Insufficient image sharpness, or visible black/white halos around object edges (such as text, leaves, or building contours). **Analysis** When the image is in focus, sharpness is determined by two factors: - The stronger the noise reduction, the blurrier the image.
+- The stronger the sharpen setting, the sharper the image, and vice versa. Black and white edge halos around objects are generally caused by excessive sharpening. These halos are an unavoidable side effect of sharpening, and are especially pronounced when sharpening is very strong. Moderate halos actually enhance the perceived sharpness for the human eye. **Solution** Sharpness and black/white edge halos are primarily controlled through two approaches: noise reduction and image sharpening. - If sharpness is insufficient, moderately reduce 2DNR strength and moderately increase sharpen strength.
+- Once sharpness meets requirements: - First, increase `shoot_sup_strength` to reduce black/white halos. Increasing `shoot_sup_strength` narrows the width and suppresses the amplitude of halos with minimal sharpness loss. However, excessive values degrade sharpness, introduce a subtle painting effect, and may worsen aliasing. - If adjusting `shoot_sup_strength` alone is not sufficient, reduce `overshoot` to specifically suppress white halos, or reduce `undershoot` to specifically suppress black halos. Note that decreasing either will noticeably reduce image sharpness. ### How to Resolve Severe Aliasing in Images<a name="ZH-CN_TOPIC_0000002408124646"></a> **Symptom** After sharpening, high-contrast edges at shallow angles exhibit visible aliasing (jagged edges). **Analysis** Slightly angled, high-contrast edges in the image typically have some pre-existing aliasing before sharpening, though it may be subtle. After sharpening, these subtle artifacts are amplified and become prominent. The severity of aliasing is strongly correlated with the angle of the edge — different angles produce significantly different results. **Solution** Systematically eliminate the causes of aliasing: - Verify that the viewing angle and edge inclination match those of the reference device. Comparing aliasing against a reference requires the same viewing angle and edge tilt.
+- Disable sharpen and check whether prominent aliasing still exists. - If large edges show obvious aliasing even with sharpen disabled, adjust Demosaic and 2DNR. In most cases, moderately increasing `detail_smooth_str` in Demosaic significantly reduces edge aliasing; however, avoid pushing the parameter to extremes or edges will become overly blurred. - If aliasing is not prominent with sharpen disabled but becomes obvious or worsens after enabling sharpen, adjust sharpen parameters to reduce aliasing while maintaining sharpness. Adjusting `edge_str` is effective in reducing aliasing without noticeably degrading image sharpness. `edge_str` is an array of 32 values. Reducing the values at higher indices (e.g., `edge_str[20]` through `edge_str[31]`) while keeping lower-index values (`0~19`) unchanged can significantly reduce aliasing without noticeably reducing overall sharpness. The `edge_str` strength curve should be adjusted smoothly. Additionally, if `shoot_sup_strength` is too large, it can aggravate edge aliasing; reduce `shoot_sup_strength` within an acceptable halo range to mitigate this. Finally, moderately increasing `edge_filt_str` can also reduce edge aliasing. ### How to Resolve Dark Corner Grid Artifacts<a name="ZH-CN_TOPIC_0000002441723785"></a> **Symptom** Random horizontal or vertical lines appear in the dark corners of the image. **Analysis** When the lens CRA angle does not match the sensor, incident light through the lens causes Gr/Gb imbalance, resulting in crosstalk. Since the Demosaic module randomly performs interpolation in either the horizontal or vertical direction, this crosstalk manifests as a grid pattern. **Solution** First verify whether the CRA angle of the sensor and lens are matched. If not, replace the sensor or lens with one whose CRA angle matches, following the documentation provided by the sensor manufacturer. ### How to Resolve AE Anomalies Such as Severe Overexposure or Underexposure<a name="ZH-CN_TOPIC_0000002408284518"></a> **Symptom** AE shows severe overexposure or underexposure, and adjusting the target brightness parameter has no effect. **Analysis** Use the `ot_mpi_isp_query_inner_state_info` interface to query the current exposure time and gain values. >![](public_sys-resources/icon-note.gif) **Note:** For the `ot_mpi_isp_query_inner_state_info` interface, refer to the *ISP Development Reference* document. **Solution** Based on the queried exposure time and gain values, take the following actions: - If the exposure information is inconsistent with the actual brightness (e.g., exposure time and gain are already at high values but the image is still underexposed, or vice versa), check the hardware circuit.
+- If the exposure information is consistent with the actual brightness, query the AE histogram statistics. If the gray level distribution is overly concentrated or certain segments have zero statistical data, verify that the image width and height settings are correct and that the VI mask matches the hardware.
+- If the exposure information is inconsistent with the actual brightness, verify that the sensor registers computed by AE are correctly configured and have taken effect. You can read the sensor's shutter and gain registers directly via I2C/SPI to check. ### How to Resolve Poor Brightness and Contrast in Infrared Scenes<a name="ZH-CN_TOPIC_0000002441683909"></a> **Symptom** In low-light conditions with the IR light on, the image periphery is too dark while the center is overexposed, causing detail loss in bright areas and poor contrast with a hazy appearance. **Analysis** IR lights typically illuminate the center of the frame, resulting in high brightness and potential overexposure in that area, while the periphery receives less light and appears darker. **Solution** - Ensure the IR-Cut filter is switched to night mode.
+- Configure AE to reduce exposure: decrease `Compensation`, set `ae_strategy_mode` to `AE_EXP_HIGHTLIGHT_PRIOR`, and increase both `hist_ratio_slope` and `max_hist_offset` to eliminate overexposure.
+- Since AE reduces exposure, overall brightness decreases. Enable DRC and tune the DRC strength and curve to restore brightness. Note that brightness boost may reduce contrast, so co-tune the Dehaze and DCI modules.
+- Enable the Dehaze module and tune the custom Dehaze curve to locally suppress Dehaze strength based on brightness. This can enhance local contrast in bright areas and improve detail without over-darkening the periphery. Simultaneously adjust DCI to improve overall image contrast.
+- If the periphery is still too dark, use shading compensation to boost the brightness of the outer regions while leaving (or minimally affecting) the center. ### How to Tune AE, AWB, and CCM Parameters in Infrared Mode<a name="ZH-CN_TOPIC_0000002441683913"></a> **Symptom** In infrared mode, AE statistics are unstable and oscillate frequently. Or AE converges to different brightness levels — for example, brightness changes after covering and uncovering the lens with a hand. **Analysis** These symptoms are related to AE and AWB configuration. When AWB is enabled, the R and B channels may become abnormal, causing AE to incorrectly classify large uniform-color areas, leading to oscillation. **Solution** - In infrared scenes, when using the AE library provided by the SDK, disable the large-area uniform-color detection feature (`hist_stat_adjust`). If `wb_gain` is enabled in infrared mode, the image may appear overly bright; configure `hist_config` based on the sensor bayer pattern type to sample both R and G channels simultaneously, which results in more reasonable image brightness.
+- In infrared mode, it is recommended to disable AWB and set saturation to 0. In this case, the G and R channels contribute more signal, so the CCM matrix should assign higher weights to the R and G channels.
+- If AWB must be enabled for IR light operation, set `zone_sel=0` to use global AWB statistics. In this configuration, AWB applies large multipliers to the R and B channels, which increases their noise. It is recommended to configure the CCM matrix to use primarily the G channel weight, with small weights for R and B channels. ### How to Resolve Vertical Stripes in Low-Light Images<a name="ZH-CN_TOPIC_0000002408124654"></a> **Symptom** Some sensors exhibit vertical stripes in low-light conditions. **Analysis** Vertical stripes are caused by sensor FPN (Fixed Pattern Noise), which becomes more visible as the sensor digital gain increases. Currently, software does not limit sensor digital gain, so in low light where digital gain is high, FPN stripes can be severe. **Solution** Use the FPN algorithm module to remove or reduce FPN. ### How to Implement Backlight Compensation<a name="ZH-CN_TOPIC_0000002408124658"></a> **Symptom** In backlit scenes, the subject appears dark. **Analysis** In backlit scenes, backlight compensation can be achieved by increasing the overall exposure brightness of the image. **Solution** Increase the AE weight for the target region. auto-exposure static statistics are divided into a 15×17 grid of regions. Setting a weight table allows you to change the weight of each region, adjusting the final exposure brightness accordingly. Use the MPI interface to increase the weight of the target region so that the final exposure is driven by the brightness of that region, achieving backlight compensation. When the weight of the subject region is set very high, this approach may cause overexposure in brighter surrounding areas. ### How to Implement Manual Exposure Time with Auto Gain Control, or Manual Gain with Auto Exposure Time Control<a name="ZH-CN_TOPIC_0000002441683929"></a> **Implementation** To implement manual exposure time with automatic gain control, or manual gain with automatic exposure time control: The simplest approach is to remain in AE mode and set the upper and lower limits of exposure time to the same value, which effectively fixes exposure time while allowing gain to be controlled automatically. In this configuration, if `ae_mode` is set to `AE_MODE_SLOW_SHUTTER`, the frame rate will be automatically reduced when the exposure time exceeds one frame duration. Similarly, setting identical upper and lower limits for `sys_gain` fixes the gain. ### How to Set the Maximum Gain Correctly<a name="ZH-CN_TOPIC_0000002441723793"></a> **Symptom** In low-light scenarios, it may be necessary to limit the maximum gain for better image quality. However, after limiting `dgain` and `isp_dgain`, AE flickering occurs. **Analysis** Most sensors have low analog gain (again) precision. Limiting the high-precision `dgain` and `isp_dgain` prevents AE from precisely achieving the target brightness, resulting in flickering. **Solution** Instead of individually limiting `again`, `dgain`, and `isp_dgain`, limit `system_gain_max` — the maximum system gain (i.e., the maximum value of `again * dgain * isp_dgain`). This way, you do not need to concern yourself with how AE distributes gain among the three components. ### How to Resolve AWB Susceptibility to Interference<a name="ZH-CN_TOPIC_0000002408284534"></a> **Symptom** AWB color shifts when a hand moves in front of the lens or a large vehicle with a particular color passes through the field of view. **Analysis** Skin tones or certain vehicle colors can significantly affect AWB, causing errors in the white balance estimate. **Solution** - Reduce the AWB convergence speed (`speed` attribute). Slowing convergence visibly reduces this effect.
+- Switch the AWB algorithm to advanced mode, which improves handling of such interference. If the ambient light source does not change gradually (i.e., only indoor lighting without sunlight influence), increasing the `tolerance` parameter of the advanced AWB algorithm will also help mitigate this issue. ### How to Resolve Color Shift Caused by Black Level Drift at High Temperature<a name="ZH-CN_TOPIC_0000002441723781"></a> **Symptom** At extremely high or low temperatures, the image has a color cast even after AWB correction. **Analysis** At extreme temperatures, the stability of sensor image capture is affected. At high temperatures, the sensor black level drifts — the actual black level may be several times higher than at normal temperature. This causes color shift after AWB correction. Under ideal conditions, the sensor should produce the same color response for grey points of different brightness: R = K * G. At normal temperature the sensor offset is F0; at high temperature it is F1, where F0 < F1. - R/G gain at normal temperature: Normal_R/G = (K * G + F0 – F0) / (G + F0 – F0) = K
+- R/G gain at high temperature: High_R/G = (K * G + F1 – F0) / (G + F1 – F0) Since F0 < F1 (black level drifts at high temperature); From sensor spectral data, most sensors have stronger green sensitivity than R and B, so K < 1. Therefore High_R/G - Normal_R/G = (1 - K) * (F1 – F0) / (G + F1 – F0) > 0, meaning High_R/G > Normal_R/G. The R channel gain Rgain = G/R = 1/(R/G), so High_Rgain < Normal_Rgain — the red channel gain becomes smaller. By the same reasoning, the blue channel gain is also smaller at high temperatures. This explains why images appear greenish at high temperatures. **Solution** Since High_R/G - Normal_R/G = (1 - K) * (F1 – F0) / (G + F1 – F0), and G represents luminance — the higher G is, the smaller the deviation between High_R/G and Normal_R/G — brighter scenes are less sensitive to black level drift. Therefore, it is recommended to increase the AWB parameter `black_level` (previously defaulting to 0x40) to reduce the impact of black level drift on gain. ### How to Resolve Low Brightness and Contrast in Low-Light Conditions<a name="ZH-CN_TOPIC_0000002441683921"></a> **Symptom** In low-light conditions, the image brightness and contrast are lower than the reference device. **Analysis** - Cause 1: Different lens apertures. A smaller F-number means a larger aperture and more light reaching the sensor.
+- Cause 2: Different sensors. Sensor photoelectric conversion efficiency determines low-light performance.
+- Cause 3: Different overall brightness settings. Since image brightness values are low, some products boost perceptible brightness by adjusting brightness and contrast.
+- Cause 4: Some products reduce frame rate in low light, allowing longer exposure times, which makes the image appear brighter.
+- Cause 5: Noise reduction processing in low light may reduce contrast. In low-light environments with significant salt-and-pepper noise, if the noise reduction algorithm over-processes pepper noise while leaving salt noise, the overall image may appear washed out. **Solution** - For Cause 1: Use the same lens (same manufacturer and model) for comparison.
+- For Cause 2: Use the same sensor for comparison.
+- For Cause 3: Adjust AE parameters to bring the overall brightness in line with the reference.
+- For Cause 4: In demo environments, frame rate can be reduced manually, but this is not recommended in production.
+- For Cause 5: Adjust the noise reduction strategy, or tune the Gamma and LDCI modules to increase overall contrast. ### How to Resolve Directional Fringing Near Bright Light Sources<a name="ZH-CN_TOPIC_0000002408284522"></a> **Symptom** At normal illumination levels, directional fringing appears near bright light source text, as shown in [Figure 1](#_Ref508268875). **Figure 1** Example of directional fringing near light source text<a name="_Ref508268875"></a> ![](figures/sourcenearexit Toward Effectgraph.png "sourcenearexit Toward Effectgraph") **Analysis** This issue is primarily caused by unreasonable static coefficient calibration in the Global CAC module. **Solution** First, verify whether the Global CAC static coefficients are correctly calibrated. If not, recalibrate. If recalibration is not desired, disable Global CAC by default. [Figure 2](#_Ref508268896) shows a comparison with and without Global CAC enabled when the static coefficients are incorrectly calibrated. **Figure 2** Comparison with and without Global CAC enabled under incorrect static coefficient calibration<a name="_Ref508268896"></a> ![](figures/zh-cn_image_0000002441684005.png) ![](figures/zh-cn_image_0000002408284590.png) ### How to Resolve AE Unable to Control the P-Iris Aperture<a name="ZH-CN_TOPIC_0000002408124662"></a> **Symptom** After the P-Iris is connected and the driver is integrated, the aperture can be controlled manually, but AE cannot control it. **Analysis** The relevant aperture parameters in AE are not correctly configured. **Solution** - Configure the AE route. Without this, by default the aperture only moves when exposure time reaches its minimum, which is rarely achieved in practice. By configuring the AE route, the aperture can be actuated before the exposure time reaches its minimum.
+- In the `xxx_cmos.c` file, `ae_sns_dft->max_iris_fno` and `ae_sns_dft->min_iris_fno` must be configured. Note: these are different from `min_iris_fno_target`. Parameters with `Target` in their name are the maximum/minimum values configured via the MPI interface; parameters without `Target` are the actual hardware-supported maximum/minimum values. If left unset, AE treats both the maximum and minimum P-Iris values as 0 and will not actuate the aperture. Set both parameters to the appropriate maximum and minimum physical limits. ### DC Iris Aperture Can Be Toggled Manually but Does Not Close in Auto Mode<a name="ZH-CN_TOPIC_0000002408124630"></a> **Analysis** - The fact that DC Iris can be controlled manually indicates the hardware connection is correct.
+- DC Iris is typically used to mitigate flicker caused by power line frequency. AE anti-flicker requires exposure time to be a multiple of the power cycle (e.g., multiples of 10 ms for 50 Hz). In bright environments, when the maximum aperture results in an exposure time under 10 ms, DC Iris can be closed down to achieve anti-flicker.
+- The AE DC Iris algorithm provided by the SDK only closes the aperture after exposure time reaches its minimum value. However, the default minimum is typically around 2 rows (a few tens of microseconds), which is almost impossible to reach in practice, so the aperture rarely closes. You can manually set the minimum exposure time to 10 ms to enable anti-flicker. Alternatively, without setting the minimum exposure time, set the anti-flicker mode to Normal mode — exposure time will be held at the anti-flicker minimum, which is effectively the same as reaching the minimum, and the aperture will close accordingly. ### How to Resolve AE Flickering<a name="ZH-CN_TOPIC_0000002408124650"></a> **Symptom** Synchronization issue: a specific frame or two frames are suddenly much brighter or darker than others, then return to normal. Precision issue: image brightness continuously oscillates either slightly or significantly, or AE exhibits occasional instability. **Analysis** The two most common causes of AE flickering are synchronization issues and precision issues. **Solution** - Synchronization issue: Many sensors apply gain changes in the next frame and exposure time changes in the frame after that. `isp_dgain` is similarly applied to the next frame. If synchronization is not configured correctly, large relative changes in gain and exposure time can cause flickering. This commonly occurs in bright scenes and when anti-flicker is enabled. The synchronization configuration in `xxx_cmos.c` is `cmos_get_sns_regs_info`, which includes synchronization settings for sensor registers. `cfg2_valid_delay_max` controls the `isp_dgain` synchronization. Try modifying the exposure time, gain, and `isp_dgain` synchronization settings to resolve this issue. - Precision issue: The brightness value computed by the AE algorithm cannot always be accurately achieved when configured to the sensor, due to limited gain precision. This causes brightness to oscillate between adjacent achievable levels and prevents convergence. Since `isp_dgain` has very fine precision, retaining at least 2x of `isp_dgain` headroom effectively solves most precision issues. When limiting gain, avoid setting individual limits on `again`, `dgain`, and `isp_dgain`, as this easily introduces precision problems. Use `system_gain` limits instead — AE will automatically distribute gain among the three components. ### How to Resolve Increased Edge Noise Due to Fisheye Correction Placed in the VI Module<a name="ZH-CN_TOPIC_0000002441723801"></a> **Symptom** When fisheye correction is applied in the VI module (before 3DNR), the correction introduces uneven noise — high noise at the edges and low noise in the center — causing image noise to be spatially correlated. **Analysis** The non-uniform noise caused by fisheye correction is strongly position-dependent. Currently, the only mitigation is to enable Bayer NR + Nr Lsc. Only have Shading module support for BayerNR-specific noise with `bnr_lsc_gain_lut.r_gain`, `bnr_lsc_gain_lut.gr_gain`, `bnr_lsc_gain_lut.gb_gain`, and `bnr_lsc_gain_lut.b_gain`. The `bnr_lsc_gain_lut` table is decoupled from the Shading module's brightness correction. **Solution** Tune the Nr Lsc module within BayerNR: enable `nr_lsc_enable`, and tune `bnr_lsc_gain_lut.r_gain`, `bnr_lsc_gain_lut.gr_gain`, `bnr_lsc_gain_lut.gb_gain`, and `bnr_lsc_gain_lut.b_gain` within Mesh-shading. Note that in `bnr_lsc_gain_lut.r_gain`, a value of 4096 represents 1x gain and 8192 represents 2x gain. Set higher gain values at the image edges so that Bayer NR applies stronger denoising there. Set lower gain values at the image center so that Bayer NR applies weaker denoising there. In this configuration, use `coarse_str` (not `fine_str`) to adjust the BayerNR denoising strength. ### How to Resolve Flickering in Bright Scenes After Enabling Anti-Flicker<a name="ZH-CN_TOPIC_0000002441683945"></a> **Symptom** With the default AE route configured in adaptive mode and anti-flicker set to the corresponding frequency, flickering still occurs in bright environments where the required exposure is already greater than the minimum anti-flicker exposure. **Analysis** The auto anti-flicker function is constrained by the AE route. If the AE route is configured to prioritize gain allocation, the total exposure may exceed the minimum anti-flicker exposure while the exposure time remains below the minimum anti-flicker time. In this case, enabling auto anti-flicker mode does not achieve the desired effect. **Solution** Configure the AE route to prioritize exposure time allocation — allow the exposure time to reach the minimum anti-flicker threshold before allocating gain (i.e., gain stays at 1x or the minimum desired value). Only then will enabling auto anti-flicker actually suppress flickering. ### How to Resolve Frequent IR-Cut Switching in Soft Photosensor Mode and Usage Recommendations<a name="ZH-CN_TOPIC_0000002441683941"></a> **Symptom** In a completely dark lab environment (no or minimal visible light), with IR lights on, the soft photosensor scheme (`ir_auto sample`) frequently switches the IR-Cut filter when the IR light reflection distance is within 4 m. **Calibration Conditions** - IR lights on; device switched to IR mode; filter switched to full-pass.
+- Raw brightness is appropriate — approximately 70%–80% of maximum brightness (e.g., for 12-bit, 80% of 4095 = 3276).
+- Run the sample calibration program to obtain the maximum and minimum thresholds for IR mode for use as scene detection criteria. **Usage Recommendations** - Scene brightness must be appropriate — neither overexposed nor too dark — otherwise the soft photosensor function should not be used.
+- The IR reflection distance between the device and objects should not be too close or too far, as this makes the calibration parameters inapplicable.
+- When switching from IR to visible light mode, if IR light intensity is too high (e.g., ISO 100), the ISO linkage detection condition should be disabled. ### DynamicBLC Usage Notes<a name="ZH-CN_TOPIC_0000002441723805"></a> Before enabling Dynamic BLC mode, ensure that the MIPI data contains OB (optical black) regions for statistics. The data processing flow is shown in [Figure 1](#fig6558124065118). **Figure 1** Data processing flow<a name="fig6558124065118"></a> ![](figures/Data Processingstream.png "Data Processingstream") To use the Dynamic BLC module to obtain a valid black level based on OB region statistics, configure the entire data processing pipeline as follows: - Sensor driver configuration: Add a sensor sequence in the driver that outputs the OB region. When enabling Dynamic BLC, the sensor's built-in BLC correction must be disabled.
+- MIPI configuration: Ensure the MIPI crop region includes the OB area. If the OB region uses a different datatype than the visible image region, modify the MIPI datatype configuration using the `OT_MIPI_SET_EXT_DATA_TYPE` interface (see the *MIPI User Guide* for details) so that the MIPI output includes the OB region. If Dynamic BLC behaves abnormally, check whether the resolution detected by MIPI includes the OB region.
+- VI dev configuration: Width and height must match the MIPI output dimensions.
+- pub attr configuration: Configure `wnd_rect` with the start coordinates and dimensions to crop out the OB region using ISP cropping, ensuring that the raw data processed by ISP FE and BE excludes the OB region. The width and height in VI pipe attr and chn info should reflect the post-ISP-crop dimensions. Note that when sensor gain is high, the dynamic black level can drift significantly, making the `calibration_black_level` calibration value less accurate. This does not affect image quality in extreme switching scenarios such as light-on/light-off transitions. ### Black Level Configuration Notes When Capturing FE Raw Data for BE<a name="ZH-CN_TOPIC_0000002408284550"></a> When capturing FE raw data and sending it to BE, and the FE is using dynamic black level, it is recommended to enable `user_black_level` on the FE side so that BE processing does not need to account for black level synchronization. When using `user_black_level`, ensure that the sensor black level is always less than `user_black_level`. If the sensor black level exceeds `user_black_level`, either disable `sensor_dgain` to reduce the sensor black level, or increase `user_black_level`. On the BE pipe, set `manual_black_level` to the same value as `user_black_level`. ### AE Separate Gain Configuration Instructions<a name="ZH-CN_TOPIC_0000002408124634"></a> **Description** When the sensor supports separate gain configuration for long and short frames, the sensor driver must be adapted accordingly. 1. The driver must implement the corresponding gain and exposure time configuration functions, alternately configuring long and short frames. The AE algorithm will call these functions via callback to set sensor exposure parameters.
+2. The driver must pass the appropriate parameters to the AE algorithm via the `cmos_get_ae_default` interface: - `ae_gain_sep_cfg`: Set to True to enable separate gain configuration mode. - `diff_gain_support`: Enables different gains for long and short frames. - `lhcg_support`: Enable this for single-shutter dual-gain sensors. - `lhcg_ratio`: For single-shutter dual-gain sensors, provide the internal long/short frame gain ratio to AE. AE incorporates `lhcg_ratio` when computing the exposure ratio: `long-frame exposure / short-frame exposure * lhcg_ratio = final exposure ratio`. **Notes** The current single-shutter dual-gain mode only supports long-frame-priority, non-extended AE routes. **Example** ```
+cmos_get_ae_comm_default { ae_sns_dft->diff_gain_support = TRUE; ae_sns_dft->lhcg_support = TRUE; ae_sns_dft->sns_lhcg_exp_ratio = 64; / 6bit precision/ ...
 }
 cmos_gains_regs_set(gain)
-{
-    static bool first_gain = 1;
-    if (first_gain == TRUE) {
-        deploy_long_gain_to_sensor(gain);
-        first_gain = FALSE;
-    } else {
-        deploy_short_gain_to_sensor(gain);
-        first_gain = TRUE;
-    }
-    return;
+{ static bool first_gain = 1; if (first_gain == TRUE) { deploy_long_gain_to_sensor(gain); first_gain = FALSE; } else { deploy_short_gain_to_sensor(gain); first_gain = TRUE; } return;
 }
 cmos_inttime_update(int_time)
-{
-    static bool first_time = 1;
-    if (first_time == TRUE) {
-        deploy_long_time_to_sensor(int_time);
-        first_time = FALSE;
-    } else {
-        deploy_short_time_to_sensor(int_time);
-        first_time = TRUE;
-    }
-    return;
+{ static bool first_time = 1; if (first_time == TRUE) { deploy_long_time_to_sensor(int_time); first_time = FALSE; } else { deploy_short_time_to_sensor(int_time); first_time = TRUE; } return;
 }
-```
-
-## Sensor-Related<a name="ZH-CN_TOPIC_0000002441723777"></a>
-
-### How to Resolve Image Tearing When Ambient Brightness Changes During Sensor Integration<a name="ZH-CN_TOPIC_0000002408284546"></a>
-
-**Symptom**
-
-When SS919V100 is connected to a sensor and ambient brightness changes, AE updates the sensor's exposure time and gain, causing bright lines or image tearing.
-
-**Analysis**
-
-For sensors in slave mode, the analog gain registers take effect immediately (not synchronized to blanking). When ambient brightness changes and AE updates the relevant sensor registers, if the analog gain is configured during the active image data period (not during vertical blanking), the immediate gain change will cause bright lines or image tearing.
-
-Most slave mode sensors have this issue of immediately effective analog gain, which requires the gain configuration to complete within the vertical blanking interval. Ensuring register updates occur during blanking prevents bad frames.
-
-**Solution**
-
-Use the ISP's register configuration mechanism (or a customer-designed mechanism) to configure registers via interrupts, ensuring analog gain changes take effect within the vertical blanking interval. When the customer application is heavily loaded, interrupt handling may be delayed, causing configuration to miss the blanking window and re-triggering this issue. In that case, optimize interrupt handling routines to ensure timely interrupt response.
-
-### How to Implement 50 Hz/60 Hz Anti-Flicker for Different Sensors<a name="ZH-CN_TOPIC_0000002408284514"></a>
-
-**Symptom**
-
-With the default SDK parameters and anti-flicker enabled, the feature does not work.
-
-**Analysis**
-
-The AC waveform is shown in [Figure 1](#_Ref464811362).
-
-**Figure 1**  AC waveform<a name="_Ref464811362"></a>  
-![](figures/交流电波形.png "交流电波形")
-
-Different rows of the sensor start exposure at different times. If the exposure time is short, some rows expose during a bright phase and others during a dark phase of the AC cycle. Even with the same exposure time per row, the accumulated energy differs noticeably across rows, causing frame-to-frame brightness differences in the same row and row-to-row brightness differences within the same frame, resulting in flickering.
-
-If the exposure time is controlled to be an integer multiple of the flicker period, the overall brightness of each frame becomes consistent:
-
--   In a 50 Hz environment, exposure time must be an integer multiple of 1/100 s.
--   In a 60 Hz environment, exposure time must be an integer multiple of 1/120 s.
-
-**Solution**
-
-SS919V100 ISP implements anti-flicker internally. Sensor exposure time is measured in rows, and the row-to-second conversion ratio varies by sensor. Users must configure the `lines_per_500ms` parameter correctly for their hardware. `lines_per_500ms` is half the line frequency, calculated as follows:
-
-`lines_per_500ms = pixel_clock / (image_width + horizontal_blanking) / 2`
-
-### How to Resolve Yellow Ring Artifacts in the Center of the Sensor Output Image<a name="ZH-CN_TOPIC_0000002408284510"></a>
-
-**Symptom**
-
-Concentric color rings appear in the center of the image, typically as a yellow ring.
-
-**Analysis**
-
-The sensor CRA does not match the lens, causing a color cast.
-
-**Solution**
-
--   Use the ISP lens shading correction module. Default parameters may not perfectly match every lens, so recalibrate using your specific lens. Rear focal length and aperture size have the greatest influence.
--   At low illumination levels, correction parameters that work correctly at normal illumination may introduce higher noise and higher brightness in the image periphery. In low-light conditions, consider using a correction table that caps the maximum gain, or disable the lens shading correction function.
-
-### How to Mitigate Yellow-Green Color Artifacts in Bright/Dark Areas of Sensor Built-in Mode<a name="ZH-CN_TOPIC_0000002441683933"></a>
-
-**Symptom**
-
-In Built-in sensor mode, bright and dark areas of the image exhibit yellow-green color casts, and purple fringing is noticeable in moving areas.
-
-**Analysis**
-
-When long and short frame data are merged inside the sensor (internal synthesis with segmented compression), the output exhibits non-linear color response at transition points. This is a raw data artifact.
-
-**Mitigation**
-
--   Consider switching to frame-synthesis WDR mode.
--   Reduce overall image brightness so that color anomaly regions do not fall within areas of interest.
-
-### How to Implement Image Cropping<a name="ZH-CN_TOPIC_0000002441683937"></a>
-
-**Description**
-
-**Figure 1**  Illustration of croppable modules<a name="fig145621869587"></a>  
-![](figures/可裁剪模块的图示说明.png "可裁剪模块的图示说明")
-
-**Implementation**
-
--   The sensor itself typically supports cropping, but switching crop size is slow.
--   The MIPI Rx module (both MIPI and LVDS) supports cropping and start-point configuration.
--   VI PIPE supports cropping.
--   The ISP module supports cropping. At this stage, only valid image data should remain after cropping; otherwise, non-image data entering the ISP will affect image processing.
--   VI CHN also supports cropping, but this is generally not done at this stage.
-
-### How to Understand Interface Input Performance<a name="ZH-CN_TOPIC_0000002441683925"></a>
-
-**Description**
-
-1.  Serial interface (MIPI/LVDS/SLVS-EC) input performance is limited by two factors: (1) single-lane data rate; (2) VI/ISP operating frequency.
-
-    The chip's MIPI single-lane rate (bps) can be found in the chip manual. The sensor's single-lane rate (bps) can be obtained from the sensor initialization sequence.
-
-    VI/ISP frequency is equivalent to Pclk in parallel interface mode, with units of Pixel/s. Since sensor initialization sequences typically only provide the single-lane rate, this can be converted. For example, a sensor with a single-lane rate of 1.14 Gbps, 4 lanes, and 12-bit data:
-
-    Total data rate = 1.14 Gbps × 4 = 4.56 Gbps
-
-    Total pixel rate = 4.56 × 1000 Mbps / 12 bits/pixel = 380 M pixels/s
-
-1.  For parallel interfaces (DC), refer to the chip manual.
+``` ## Sensor-Related<a name="ZH-CN_TOPIC_0000002441723777"></a> ### How to Resolve Image Tearing When Ambient Brightness Changes During Sensor Integration<a name="ZH-CN_TOPIC_0000002408284546"></a> **Symptom** When is connected to a sensor and ambient brightness changes, AE updates the sensor's exposure time and gain, causing bright lines or image tearing. **Analysis** For sensors in slave mode, the analog gain registers take effect immediately (not synchronized to blanking). When ambient brightness changes and AE updates the relevant sensor registers, if the analog gain is configured during the active image data period (not during vertical blanking), the immediate gain change will cause bright lines or image tearing. Most slave mode sensors have this issue of immediately effective analog gain, which requires the gain configuration to complete within the vertical blanking interval. Ensuring register updates occur during blanking prevents bad frames. **Solution** Use the ISP's register configuration mechanism (or a customer-designed mechanism) to configure registers via interrupts, ensuring analog gain changes take effect within the vertical blanking interval. When the customer application is heavily loaded, interrupt handling may be delayed, causing configuration to miss the blanking window and re-triggering this issue. In that case, optimize interrupt handling routines to ensure timely interrupt response. ### How to Implement 50 Hz/60 Hz Anti-Flicker for Different Sensors<a name="ZH-CN_TOPIC_0000002408284514"></a> **Symptom** With the default SDK parameters and anti-flicker enabled, the feature does not work. **Analysis** The AC waveform is shown in [Figure 1](#_Ref464811362). **Figure 1** AC waveform<a name="_Ref464811362"></a> ![](figures/intersectionstream.png "intersectionstream") Different rows of the sensor start exposure at different times. If the exposure time is short, some rows expose during a bright phase and others during a dark phase of the AC cycle. Even with the same exposure time per row, the accumulated energy differs noticeably across rows, causing frame-to-frame brightness differences in the same row and row-to-row brightness differences within the same frame, resulting in flickering. If the exposure time is controlled to be an integer multiple of the flicker period, the overall brightness of each frame becomes consistent: - In a 50 Hz environment, exposure time must be an integer multiple of 1/100 s.
+- In a 60 Hz environment, exposure time must be an integer multiple of 1/120 s. **Solution** ISP implements anti-flicker internally. Sensor exposure time is measured in rows, and the row-to-second conversion ratio varies by sensor. Users must configure the `lines_per_500ms` parameter correctly for their hardware. `lines_per_500ms` is half the line frequency, calculated as follows: `lines_per_500ms = pixel_clock / (image_width + horizontal_blanking) / 2` ### How to Resolve Yellow Ring Artifacts in the Center of the Sensor Output Image<a name="ZH-CN_TOPIC_0000002408284510"></a> **Symptom** Concentric color rings appear in the center of the image, typically as a yellow ring. **Analysis** The sensor CRA does not match the lens, causing a color cast. **Solution** - Use the ISP lens shading correction module. Default parameters may not perfectly match every lens, so recalibrate using your specific lens. Rear focal length and aperture size have the greatest influence.
+- At low illumination levels, correction parameters that work correctly at normal illumination may introduce higher noise and higher brightness in the image periphery. In low-light conditions, consider using a correction table that caps the maximum gain, or disable the lens shading correction function. ### How to Mitigate Yellow-Green Color Artifacts in Bright/Dark Areas of Sensor Built-in Mode<a name="ZH-CN_TOPIC_0000002441683933"></a> **Symptom** In Built-in sensor mode, bright and dark areas of the image exhibit yellow-green color casts, and purple fringing is noticeable in moving areas. **Analysis** When long and short frame data are merged inside the sensor (internal synthesis with segmented compression), the output exhibits non-linear color response at transition points. This is a raw data artifact. **Mitigation** - Consider switching to frame-synthesis WDR mode.
+- Reduce overall image brightness so that color anomaly regions do not fall within areas of interest. ### How to Implement Image Cropping<a name="ZH-CN_TOPIC_0000002441683937"></a> **Description** **Figure 1** Illustration of croppable modules<a name="fig145621869587"></a> ![](figures/Can Cropping Modulegraphshown Description.png "Can Cropping Modulegraphshown Description") **Implementation** - The sensor itself typically supports cropping, but switching crop size is slow.
+- The MIPI Rx module (both MIPI and LVDS) supports cropping and start-point configuration.
+- VI PIPE supports cropping.
+- The ISP module supports cropping. At this stage, only valid image data should remain after cropping; otherwise, non-image data entering the ISP will affect image processing.
+- VI CHN also supports cropping, but this is generally not done at this stage. ### How to Understand Interface Input Performance<a name="ZH-CN_TOPIC_0000002441683925"></a> **Description** 1. Serial interface (MIPI/LVDS/SLVS-EC) input performance is limited by two factors: (1) single-lane data rate; (2) VI/ISP operating frequency. The chip's MIPI single-lane rate (bps) can be found in the chip manual. The sensor's single-lane rate (bps) can be obtained from the sensor initialization sequence. VI/ISP frequency is equivalent to Pclk in parallel interface mode, with units of Pixel/s. Since sensor initialization sequences typically only provide the single-lane rate, this can be converted. For example, a sensor with a single-lane rate of 1.14 Gbps, 4 lanes, and 12-bit data: Total data rate = 1.14 Gbps × 4 = 4.56 Gbps Total pixel rate = 4.56 × 1000 Mbps / 12 bits/pixel = 380 M pixels/s 1. For parallel interfaces (DC), refer to the chip manual.

@@ -1,21 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR 开发参考/HNR 开发参考.md
----
-
-# 前言
-**概述<a name="section140mcpsimp"></a>**
-
-本文为使用HNR的软件开发工程师和图像质量开发工程师而写，目的是为您在开发过程中提供使用指导和帮助。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->本文以Hi3403V100描述为例，未有特殊说明，Hi3519AV200与Hi3403V100内容一致。
-
-**产品版本<a name="section143mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table146mcpsimp"></a>
+--- # 前言
+**概述<a name="section140mcpsimp"></a>** 本文为使用HNR的软件开发工程师和图像质量开发工程师而写，目的是为您在开发过程中提供使用指导和帮助。 >![](public_sys-resources/icon-note.gif) **说明：** >本文以Hi3403V100描述为例，未有特殊说明，与Hi3403V100内容一致。 **产品版本<a name="section143mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table146mcpsimp"></a>
 <table><thead align="left"><tr id="row151mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p153mcpsimp"><a name="p153mcpsimp"></a><a name="p153mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>产品版本</p>
@@ -27,19 +14,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR 开�
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row79393281419"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p761953118419"><a name="p761953118419"></a><a name="p761953118419"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1361913118420"><a name="p1361913118420"></a><a name="p1361913118420"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修订记录<a name="section162mcpsimp"></a>**
-
-修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
-
-<a name="table1557726816410"></a>
+</table> **修订记录<a name="section162mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a>文档版本</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.27%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a>发布日期</p>
@@ -64,25 +40,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR 开�
 </td>
 </tr>
 </tbody>
-</table>
-
-# 概述
-## 概述<a name="ZH-CN_TOPIC_0000002441661549"></a>
-
-HNR（hypersensitive noise reduction）是一种新型的去噪算法，它能使成像设备在更低照度时噪声去除更干净，细节保留更多，从而提高成像设备极低照度的感光能力。本文主要介绍HNR的接口说明和使用注意事项。
-
-HNR参考帧普通模式性能支持3840 x 2160@30fps，无参考帧模式支持3840 x 2160@40fps，HNR支持的最高帧率为100fps。
-
-## 基本概念<a name="ZH-CN_TOPIC_0000002408102234"></a>
-
--   sfs \(spatial filter strength\)，即空域去噪强度。
--   tfs \(temporal filter strength\)，即时域去噪强度。
-
-## 性能<a name="ZH-CN_TOPIC_0000002441701401"></a>
-
-线性OT\_HNR\_REF\_MODE\_NORM模式性能数据如下。
-
-<a name="table11488022326"></a>
+</table> # 概述
+## 概述<a name="ZH-CN_TOPIC_0000002441661549"></a> HNR（hypersensitive noise reduction）是一种新型的去噪算法，它能使成像设备在更低照度时噪声去除更干净，细节保留更多，从而提高成像设备极低照度的感光能力。本文主要介绍HNR的接口说明和使用注意事项。 HNR参考帧普通模式性能支持3840 x 2160@30fps，无参考帧模式支持3840 x 2160@40fps，HNR支持的最高帧率为100fps。 ## 基本概念<a name="ZH-CN_TOPIC_0000002408102234"></a> - sfs \(spatial filter strength\)，即空域去噪强度。
+- tfs \(temporal filter strength\)，即时域去噪强度。 ## 性能<a name="ZH-CN_TOPIC_0000002441701401"></a> 线性OT\_HNR\_REF\_MODE\_NORM模式性能数据如下。 <a name="table11488022326"></a>
 <table><thead align="left"><tr id="row353517225215"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p195350221520"><a name="p195350221520"></a><a name="p195350221520"></a>分辨率</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p135351522226"><a name="p135351522226"></a><a name="p135351522226"></a>帧率</p>
@@ -115,61 +75,24 @@ HNR参考帧普通模式性能支持3840 x 2160@30fps，无参考帧模式支持
 </td>
 </tr>
 </tbody>
-</table>
-
-# API参考
-该功能模块为用户提供以下API：
-
--   [ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)：初始化HNR模块。
--   [ss\_mpi\_hnr\_exit](#ZH-CN_TOPIC_0000002408262170)：去初始化HNR模块。
--   [ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)：加载HNR的配置文件。
--   [ss\_mpi\_hnr\_unload\_cfg](#ZH-CN_TOPIC_0000002441701385)：卸载HNR的配置文件。
--   [ss\_mpi\_hnr\_set\_alg\_cfg](#ZH-CN_TOPIC_0000002441661513)：设置HNR算法相关配置参数。
--   [ss\_mpi\_hnr\_get\_alg\_cfg](#ZH-CN_TOPIC_0000002441661465)：获取HNR算法相关配置参数。
--   [ss\_mpi\_hnr\_enable](#ZH-CN_TOPIC_0000002408102158)：使能HNR数据流开关。
--   [ss\_mpi\_hnr\_disable](#ZH-CN_TOPIC_0000002408102186)：关闭HNR数据流开关。
--   [ss\_mpi\_hnr\_set\_attr](#ZH-CN_TOPIC_0000002441661457)：设置HNR的属性。
--   [ss\_mpi\_hnr\_get\_attr](#ZH-CN_TOPIC_0000002408262070)：获取HNR的属性。
--   [ss\_mpi\_hnr\_set\_input\_depth](#ZH-CN_TOPIC_0000002441661493)：设置HNR输入队列的缓存深度。
--   [ss\_mpi\_hnr\_set\_thread\_attr](#ZH-CN_TOPIC_0000002441661481)：设置HNR线程属性。
--   [ss\_mpi\_hnr\_get\_thread\_attr](#ZH-CN_TOPIC_0000002408262054)：获取HNR线程属性。
--   [ss\_mpi\_hnr\_attach\_out\_vb\_pool](#ZH-CN_TOPIC_0000002408262098)：HNR输出绑定到某个视频缓存VB池。
--   [ss\_mpi\_hnr\_detach\_out\_vb\_pool](#ZH-CN_TOPIC_0000002441701317)：HNR输出与视频缓存VB池解除绑定。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ss\_mpi\_hnr\_init<a name="ZH-CN_TOPIC_0000002441661525"></a>
-
-【描述】
-
-初始化HNR模块。
-
-【语法】
-
-```
+</table> # API参考
+该功能模块为用户提供以下API： - [ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)：初始化HNR模块。
+- [ss\_mpi\_hnr\_exit](#ZH-CN_TOPIC_0000002408262170)：去初始化HNR模块。
+- [ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)：加载HNR的配置文件。
+- [ss\_mpi\_hnr\_unload\_cfg](#ZH-CN_TOPIC_0000002441701385)：卸载HNR的配置文件。
+- [ss\_mpi\_hnr\_set\_alg\_cfg](#ZH-CN_TOPIC_0000002441661513)：设置HNR算法相关配置参数。
+- [ss\_mpi\_hnr\_get\_alg\_cfg](#ZH-CN_TOPIC_0000002441661465)：获取HNR算法相关配置参数。
+- [ss\_mpi\_hnr\_enable](#ZH-CN_TOPIC_0000002408102158)：使能HNR数据流开关。
+- [ss\_mpi\_hnr\_disable](#ZH-CN_TOPIC_0000002408102186)：关闭HNR数据流开关。
+- [ss\_mpi\_hnr\_set\_attr](#ZH-CN_TOPIC_0000002441661457)：设置HNR的属性。
+- [ss\_mpi\_hnr\_get\_attr](#ZH-CN_TOPIC_0000002408262070)：获取HNR的属性。
+- [ss\_mpi\_hnr\_set\_input\_depth](#ZH-CN_TOPIC_0000002441661493)：设置HNR输入队列的缓存深度。
+- [ss\_mpi\_hnr\_set\_thread\_attr](#ZH-CN_TOPIC_0000002441661481)：设置HNR线程属性。
+- [ss\_mpi\_hnr\_get\_thread\_attr](#ZH-CN_TOPIC_0000002408262054)：获取HNR线程属性。
+- [ss\_mpi\_hnr\_attach\_out\_vb\_pool](#ZH-CN_TOPIC_0000002408262098)：HNR输出绑定到某个视频缓存VB池。
+- [ss\_mpi\_hnr\_detach\_out\_vb\_pool](#ZH-CN_TOPIC_0000002441701317)：HNR输出与视频缓存VB池解除绑定。 ## ss\_mpi\_hnr\_init<a name="ZH-CN_TOPIC_0000002441661525"></a> 【描述】 初始化HNR模块。 【语法】 ```
 td_s32 ss_mpi_hnr_init(td_void);
-```
-
-【参数】
-
-无
-
-【返回值】
-
-<a name="table194mcpsimp"></a>
+``` 【参数】 无 【返回值】 <a name="table194mcpsimp"></a>
 <table><thead align="left"><tr id="row199mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p201mcpsimp"><a name="p201mcpsimp"></a><a name="p201mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p203mcpsimp"><a name="p203mcpsimp"></a><a name="p203mcpsimp"></a>描述</p>
@@ -181,51 +104,12 @@ td_s32 ss_mpi_hnr_init(td_void);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p209mcpsimp"><a name="p209mcpsimp"></a><a name="p209mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row210mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p212mcpsimp"><a name="p212mcpsimp"></a><a name="p212mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p214mcpsimp"><a name="p214mcpsimp"></a><a name="p214mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   不支持多进程调用。
--   调用此接口前需要先初始化VI、ISP模块。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_exit<a name="ZH-CN_TOPIC_0000002408262170"></a>
-
-【描述】
-
-去初始化HNR模块。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 不支持多进程调用。
+- 调用此接口前需要先初始化VI、ISP模块。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_exit<a name="ZH-CN_TOPIC_0000002408262170"></a> 【描述】 去初始化HNR模块。 【语法】 ```
 td_void ss_mpi_hnr_exit(td_void);
-```
-
-【参数】
-
-无
-
-【返回值】
-
-<a name="table234mcpsimp"></a>
+``` 【参数】 无 【返回值】 <a name="table234mcpsimp"></a>
 <table><thead align="left"><tr id="row239mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p241mcpsimp"><a name="p241mcpsimp"></a><a name="p241mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p243mcpsimp"><a name="p243mcpsimp"></a><a name="p243mcpsimp"></a>描述</p>
@@ -237,47 +121,12 @@ td_void ss_mpi_hnr_exit(td_void);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p249mcpsimp"><a name="p249mcpsimp"></a><a name="p249mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row250mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p252mcpsimp"><a name="p252mcpsimp"></a><a name="p252mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p254mcpsimp"><a name="p254mcpsimp"></a><a name="p254mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   不支持多进程调用。
--   调用此接口去初始化HNR模块前，需要关闭HNR数据流开关。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_load\_cfg<a name="ZH-CN_TOPIC_0000002441701369"></a>
-
-【描述】
-
-加载HNR的配置文件。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 不支持多进程调用。
+- 调用此接口去初始化HNR模块前，需要关闭HNR数据流开关。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_load\_cfg<a name="ZH-CN_TOPIC_0000002441701369"></a> 【描述】 加载HNR的配置文件。 【语法】 ```
 td_s32 ss_mpi_hnr_load_cfg(const ot_hnr_cfg *cfg, td_s32 *cfg_id);
-```
-
-【参数】
-
-<a name="table276mcpsimp"></a>
+``` 【参数】 <a name="table276mcpsimp"></a>
 <table><thead align="left"><tr id="row282mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p284mcpsimp"><a name="p284mcpsimp"></a><a name="p284mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p286mcpsimp"><a name="p286mcpsimp"></a><a name="p286mcpsimp"></a>描述</p>
@@ -301,11 +150,7 @@ td_s32 ss_mpi_hnr_load_cfg(const ot_hnr_cfg *cfg, td_s32 *cfg_id);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table307mcpsimp"></a>
+</table> 【返回值】 <a name="table307mcpsimp"></a>
 <table><thead align="left"><tr id="row312mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p314mcpsimp"><a name="p314mcpsimp"></a><a name="p314mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>描述</p>
@@ -317,51 +162,16 @@ td_s32 ss_mpi_hnr_load_cfg(const ot_hnr_cfg *cfg, td_s32 *cfg_id);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p322mcpsimp"><a name="p322mcpsimp"></a><a name="p322mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row323mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p325mcpsimp"><a name="p325mcpsimp"></a><a name="p325mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p327mcpsimp"><a name="p327mcpsimp"></a><a name="p327mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
--   调用该接口前HNR数据流需要保持关闭状态。
--   相同类型的配置文件，如果图像宽高相等时，不能重复加载。
--   支持多个配置文件的加载，或者同一配置文件、不同分辨率多次加载。
--   不支持多进程调用。
--   WDR模式不支持加载抓拍模型。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_unload\_cfg<a name="ZH-CN_TOPIC_0000002441701385"></a>
-
-【描述】
-
-卸载HNR的配置文件。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
+- 调用该接口前HNR数据流需要保持关闭状态。
+- 相同类型的配置文件，如果图像宽高相等时，不能重复加载。
+- 支持多个配置文件的加载，或者同一配置文件、不同分辨率多次加载。
+- 不支持多进程调用。
+- WDR模式不支持加载抓拍模型。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_unload\_cfg<a name="ZH-CN_TOPIC_0000002441701385"></a> 【描述】 卸载HNR的配置文件。 【语法】 ```
 td_s32 ss_mpi_hnr_unload_cfg(td_s32 cfg_id);
-```
-
-【参数】
-
-<a name="table351mcpsimp"></a>
+``` 【参数】 <a name="table351mcpsimp"></a>
 <table><thead align="left"><tr id="row357mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p359mcpsimp"><a name="p359mcpsimp"></a><a name="p359mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p361mcpsimp"><a name="p361mcpsimp"></a><a name="p361mcpsimp"></a>描述</p>
@@ -378,11 +188,7 @@ td_s32 ss_mpi_hnr_unload_cfg(td_s32 cfg_id);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table374mcpsimp"></a>
+</table> 【返回值】 <a name="table374mcpsimp"></a>
 <table><thead align="left"><tr id="row379mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p381mcpsimp"><a name="p381mcpsimp"></a><a name="p381mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p383mcpsimp"><a name="p383mcpsimp"></a><a name="p383mcpsimp"></a>描述</p>
@@ -394,48 +200,13 @@ td_s32 ss_mpi_hnr_unload_cfg(td_s32 cfg_id);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p389mcpsimp"><a name="p389mcpsimp"></a><a name="p389mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row390mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p392mcpsimp"><a name="p392mcpsimp"></a><a name="p392mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p394mcpsimp"><a name="p394mcpsimp"></a><a name="p394mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   应用程序退出前，需调用此接口释放已加载配置文件的内存资源，或者调用[ss\_mpi\_hnr\_exit](#ZH-CN_TOPIC_0000002408262170)接口释放HNR的所有资源。
--   不支持多进程调用。
--   调用此接口前需要关闭HNR数据流开关。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_set\_alg\_cfg<a name="ZH-CN_TOPIC_0000002441661513"></a>
-
-【描述】
-
-设置HNR算法相关配置参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 应用程序退出前，需调用此接口释放已加载配置文件的内存资源，或者调用[ss\_mpi\_hnr\_exit](#ZH-CN_TOPIC_0000002408262170)接口释放HNR的所有资源。
+- 不支持多进程调用。
+- 调用此接口前需要关闭HNR数据流开关。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_set\_alg\_cfg<a name="ZH-CN_TOPIC_0000002441661513"></a> 【描述】 设置HNR算法相关配置参数。 【语法】 ```
 td_s32 ss_mpi_hnr_set_alg_cfg(ot_vi_pipe vi_pipe, const ot_hnr_alg_cfg *cfg)
-```
-
-【参数】
-
-<a name="table418mcpsimp"></a>
+``` 【参数】 <a name="table418mcpsimp"></a>
 <table><thead align="left"><tr id="row424mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p426mcpsimp"><a name="p426mcpsimp"></a><a name="p426mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p428mcpsimp"><a name="p428mcpsimp"></a><a name="p428mcpsimp"></a>描述</p>
@@ -460,11 +231,7 @@ td_s32 ss_mpi_hnr_set_alg_cfg(ot_vi_pipe vi_pipe, const ot_hnr_alg_cfg *cfg)
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table449mcpsimp"></a>
+</table> 【返回值】 <a name="table449mcpsimp"></a>
 <table><thead align="left"><tr id="row454mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p456mcpsimp"><a name="p456mcpsimp"></a><a name="p456mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p458mcpsimp"><a name="p458mcpsimp"></a><a name="p458mcpsimp"></a>描述</p>
@@ -476,57 +243,22 @@ td_s32 ss_mpi_hnr_set_alg_cfg(ot_vi_pipe vi_pipe, const ot_hnr_alg_cfg *cfg)
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p464mcpsimp"><a name="p464mcpsimp"></a><a name="p464mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row465mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p467mcpsimp"><a name="p467mcpsimp"></a><a name="p467mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p469mcpsimp"><a name="p469mcpsimp"></a><a name="p469mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
--   调用该接口前需要已创建pipe，并且已初始化ISP。
--   调用该接口时HNR数据流需要保持关闭状态。
--   如果未调用此接口，默认为有参考帧模式。
--   如果是拍照场景，必须调用此接口设置为无参考帧模式。
--   HNR参考帧普通模式支持的最大分辨率为4096×4096；HNR无参考帧模式（OT\_HNR\_REF\_MODE\_NONE和OT\_HNR\_REF\_MODE\_NONE\_ADVANCED）支持的最大分辨率为8192×8192。
--   当前版本HNR 的无参考帧模式（OT\_HNR\_REF\_MODE\_NONE和OT\_HNR\_REF\_MODE\_NONE\_ADVANCED）不支持BGGR和GRBG的Bayer图像的数据格式。
--   WDR模式不支持HNR无参考帧模式（OT\_HNR\_REF\_MODE\_NONE和OT\_HNR\_REF\_MODE\_NONE\_ADVANCED）。
--   OT\_HNR\_REF\_MODE\_NONE\_ADVANCED模式仅支持在VI视频模式为OT\_VI\_VIDEO\_MODE\_ADVANCED时使用。
--   OT\_HNR\_REF\_MODE\_NONE\_ADVANCED模式仅支持送帧方式，推荐使用RunOnce方式。
--   OT\_HNR\_REF\_MODE\_NONE\_ADVANCED模式的输入帧仅支持非压缩格式。
--   如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_get\_alg\_cfg<a name="ZH-CN_TOPIC_0000002441661465"></a>
-
-【描述】
-
-获取HNR算法相关配置参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
+- 调用该接口前需要已创建pipe，并且已初始化ISP。
+- 调用该接口时HNR数据流需要保持关闭状态。
+- 如果未调用此接口，默认为有参考帧模式。
+- 如果是拍照场景，必须调用此接口设置为无参考帧模式。
+- HNR参考帧普通模式支持的最大分辨率为4096×4096；HNR无参考帧模式（OT\_HNR\_REF\_MODE\_NONE和OT\_HNR\_REF\_MODE\_NONE\_ADVANCED）支持的最大分辨率为8192×8192。
+- 当前版本HNR 的无参考帧模式（OT\_HNR\_REF\_MODE\_NONE和OT\_HNR\_REF\_MODE\_NONE\_ADVANCED）不支持BGGR和GRBG的Bayer图像的数据格式。
+- WDR模式不支持HNR无参考帧模式（OT\_HNR\_REF\_MODE\_NONE和OT\_HNR\_REF\_MODE\_NONE\_ADVANCED）。
+- OT\_HNR\_REF\_MODE\_NONE\_ADVANCED模式仅支持在VI视频模式为OT\_VI\_VIDEO\_MODE\_ADVANCED时使用。
+- OT\_HNR\_REF\_MODE\_NONE\_ADVANCED模式仅支持送帧方式，推荐使用RunOnce方式。
+- OT\_HNR\_REF\_MODE\_NONE\_ADVANCED模式的输入帧仅支持非压缩格式。
+- 如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_get\_alg\_cfg<a name="ZH-CN_TOPIC_0000002441661465"></a> 【描述】 获取HNR算法相关配置参数。 【语法】 ```
 td_s32 ss_mpi_hnr_get_alg_cfg(ot_vi_pipe vi_pipe, ot_hnr_alg_cfg *cfg);
-```
-
-【参数】
-
-<a name="table494mcpsimp"></a>
+``` 【参数】 <a name="table494mcpsimp"></a>
 <table><thead align="left"><tr id="row500mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p502mcpsimp"><a name="p502mcpsimp"></a><a name="p502mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p504mcpsimp"><a name="p504mcpsimp"></a><a name="p504mcpsimp"></a>描述</p>
@@ -551,11 +283,7 @@ td_s32 ss_mpi_hnr_get_alg_cfg(ot_vi_pipe vi_pipe, ot_hnr_alg_cfg *cfg);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table525mcpsimp"></a>
+</table> 【返回值】 <a name="table525mcpsimp"></a>
 <table><thead align="left"><tr id="row530mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p532mcpsimp"><a name="p532mcpsimp"></a><a name="p532mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p534mcpsimp"><a name="p534mcpsimp"></a><a name="p534mcpsimp"></a>描述</p>
@@ -567,48 +295,13 @@ td_s32 ss_mpi_hnr_get_alg_cfg(ot_vi_pipe vi_pipe, ot_hnr_alg_cfg *cfg);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p540mcpsimp"><a name="p540mcpsimp"></a><a name="p540mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row541mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p543mcpsimp"><a name="p543mcpsimp"></a><a name="p543mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p545mcpsimp"><a name="p545mcpsimp"></a><a name="p545mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
--   调用该接口前需要已创建pipe，并且已初始化ISP。
--   如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_enable<a name="ZH-CN_TOPIC_0000002408102158"></a>
-
-【描述】
-
-使能HNR数据流开关。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
+- 调用该接口前需要已创建pipe，并且已初始化ISP。
+- 如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_enable<a name="ZH-CN_TOPIC_0000002408102158"></a> 【描述】 使能HNR数据流开关。 【语法】 ```
 td_s32 ss_mpi_hnr_enable(ot_vi_pipe vi_pipe);
-```
-
-【参数】
-
-<a name="table563mcpsimp"></a>
+``` 【参数】 <a name="table563mcpsimp"></a>
 <table><thead align="left"><tr id="row569mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p571mcpsimp"><a name="p571mcpsimp"></a><a name="p571mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p573mcpsimp"><a name="p573mcpsimp"></a><a name="p573mcpsimp"></a>描述</p>
@@ -626,11 +319,7 @@ td_s32 ss_mpi_hnr_enable(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table587mcpsimp"></a>
+</table> 【返回值】 <a name="table587mcpsimp"></a>
 <table><thead align="left"><tr id="row592mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p594mcpsimp"><a name="p594mcpsimp"></a><a name="p594mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p596mcpsimp"><a name="p596mcpsimp"></a><a name="p596mcpsimp"></a>描述</p>
@@ -642,67 +331,17 @@ td_s32 ss_mpi_hnr_enable(ot_vi_pipe vi_pipe);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p602mcpsimp"><a name="p602mcpsimp"></a><a name="p602mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row603mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p605mcpsimp"><a name="p605mcpsimp"></a><a name="p605mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p607mcpsimp"><a name="p607mcpsimp"></a><a name="p607mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   主进程调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并调用[ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)接口加载HNR配置文件。
--   其他非主进程（例如PQTools）支持使用该接口打开HNR数据流，无需初始化HNR；但需要主进程初始化HNR模块，否则无法实际打开数据流。
--   如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
--   enable hnr前有如下限制条件：
-    -   对应的pipe必须已经创建。
-    -   需要用户调用函数去分配VB池，VB大小计算使用函数ot\_hnr\_get\_pic\_buf\_size，详见《MPP 媒体处理软件V5.0 开发参考》“系统控制”章节，且分配的VB池需要attach对应的PIPE上。
-
--   如果更改了输入Bayer图像的数据格式，需要[ss\_mpi\_hnr\_disable](#ZH-CN_TOPIC_0000002408102186)关闭之后，在重新调用本接口使能HNR数据流才会生效。
--   HNR使能之后，有参考帧模式延迟4帧生效，无参考帧模式延迟2帧生效。
--   HNR仅支持12bit的Bayer图像数据处理。如果sensor输入非12bit的Bayer图像，需设置VI PIPE输出的图像数据格式为Bayer 12bit。
--   HNR的线性模式使用有如下限制：
-
-    如果另一路使用WDR模式，则VI视频模式需要设置为OT\_VI\_VIDEO\_MODE\_NORM模式，否则会影响WDR路的BNR效果；
-
--   HNR的WDR模式使用有如下限制：
-    -   只能在VI离线时生效；
-    -   VI视频模式必须设置为OT\_VI\_VIDEO\_MODE\_NORM模式；
-    -   HNR建议绑定长帧所在的pipe，不能是虚拟pipe；
-    -   pipe通路不能开压缩；
-    -   当前版本HNR 的WDR模式不支持BGGR和GRBG的Bayer图像的数据格式；
-    -   不支持normal\_blend模式；
-    -   超性能场景可能会出现WDR长短帧丢帧不同步，进而导致WDR融合效果异常。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_disable<a name="ZH-CN_TOPIC_0000002408102186"></a>
-
-【描述】
-
-关闭HNR数据流开关。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 主进程调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并调用[ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)接口加载HNR配置文件。
+- 其他非主进程（例如PQTools）支持使用该接口打开HNR数据流，无需初始化HNR；但需要主进程初始化HNR模块，否则无法实际打开数据流。
+- 如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
+- enable hnr前有如下限制条件： - 对应的pipe必须已经创建。 - 需要用户调用函数去分配VB池，VB大小计算使用函数ot\_hnr\_get\_pic\_buf\_size，详见《MPP 媒体处理软件V5.0 开发参考》“系统控制”章节，且分配的VB池需要attach对应的PIPE上。 - 如果更改了输入Bayer图像的数据格式，需要[ss\_mpi\_hnr\_disable](#ZH-CN_TOPIC_0000002408102186)关闭之后，在重新调用本接口使能HNR数据流才会生效。
+- HNR使能之后，有参考帧模式延迟4帧生效，无参考帧模式延迟2帧生效。
+- HNR仅支持12bit的Bayer图像数据处理。如果sensor输入非12bit的Bayer图像，需设置VI PIPE输出的图像数据格式为Bayer 12bit。
+- HNR的线性模式使用有如下限制： 如果另一路使用WDR模式，则VI视频模式需要设置为OT\_VI\_VIDEO\_MODE\_NORM模式，否则会影响WDR路的BNR效果； - HNR的WDR模式使用有如下限制： - 只能在VI离线时生效； - VI视频模式必须设置为OT\_VI\_VIDEO\_MODE\_NORM模式； - HNR建议绑定长帧所在的pipe，不能是虚拟pipe； - pipe通路不能开压缩； - 当前版本HNR 的WDR模式不支持BGGR和GRBG的Bayer图像的数据格式； - 不支持normal\_blend模式； - 超性能场景可能会出现WDR长短帧丢帧不同步，进而导致WDR融合效果异常。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_disable<a name="ZH-CN_TOPIC_0000002408102186"></a> 【描述】 关闭HNR数据流开关。 【语法】 ```
 td_s32 ss_mpi_hnr_disable(ot_vi_pipe vi_pipe);
-```
-
-【参数】
-
-<a name="table651mcpsimp"></a>
+``` 【参数】 <a name="table651mcpsimp"></a>
 <table><thead align="left"><tr id="row657mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p659mcpsimp"><a name="p659mcpsimp"></a><a name="p659mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p661mcpsimp"><a name="p661mcpsimp"></a><a name="p661mcpsimp"></a>描述</p>
@@ -720,11 +359,7 @@ td_s32 ss_mpi_hnr_disable(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table675mcpsimp"></a>
+</table> 【返回值】 <a name="table675mcpsimp"></a>
 <table><thead align="left"><tr id="row680mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p682mcpsimp"><a name="p682mcpsimp"></a><a name="p682mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p684mcpsimp"><a name="p684mcpsimp"></a><a name="p684mcpsimp"></a>描述</p>
@@ -736,49 +371,14 @@ td_s32 ss_mpi_hnr_disable(ot_vi_pipe vi_pipe);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p690mcpsimp"><a name="p690mcpsimp"></a><a name="p690mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row691mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p693mcpsimp"><a name="p693mcpsimp"></a><a name="p693mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p695mcpsimp"><a name="p695mcpsimp"></a><a name="p695mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   主进程调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并调用[ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)接口加载HNR配置文件。
--   其他非主进程（例如PQTools）支持使用该接口关闭HNR数据流，无需初始化HNR。
--   如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
--   在VI模块销毁对应的pipe之前，需要先调用该接口关闭HNR功能，否则可能出现VB泄漏。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_set\_attr<a name="ZH-CN_TOPIC_0000002441661457"></a>
-
-【描述】
-
-设置HNR的属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 主进程调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并调用[ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)接口加载HNR配置文件。
+- 其他非主进程（例如PQTools）支持使用该接口关闭HNR数据流，无需初始化HNR。
+- 如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
+- 在VI模块销毁对应的pipe之前，需要先调用该接口关闭HNR功能，否则可能出现VB泄漏。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_set\_attr<a name="ZH-CN_TOPIC_0000002441661457"></a> 【描述】 设置HNR的属性。 【语法】 ```
 td_s32 ss_mpi_hnr_set_attr(ot_vi_pipe vi_pipe, const ot_hnr_attr *attr);
-```
-
-【参数】
-
-<a name="table719mcpsimp"></a>
+``` 【参数】 <a name="table719mcpsimp"></a>
 <table><thead align="left"><tr id="row725mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p727mcpsimp"><a name="p727mcpsimp"></a><a name="p727mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p729mcpsimp"><a name="p729mcpsimp"></a><a name="p729mcpsimp"></a>描述</p>
@@ -803,11 +403,7 @@ td_s32 ss_mpi_hnr_set_attr(ot_vi_pipe vi_pipe, const ot_hnr_attr *attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table750mcpsimp"></a>
+</table> 【返回值】 <a name="table750mcpsimp"></a>
 <table><thead align="left"><tr id="row755mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p757mcpsimp"><a name="p757mcpsimp"></a><a name="p757mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p759mcpsimp"><a name="p759mcpsimp"></a><a name="p759mcpsimp"></a>描述</p>
@@ -819,53 +415,18 @@ td_s32 ss_mpi_hnr_set_attr(ot_vi_pipe vi_pipe, const ot_hnr_attr *attr);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p765mcpsimp"><a name="p765mcpsimp"></a><a name="p765mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row766mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p768mcpsimp"><a name="p768mcpsimp"></a><a name="p768mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p770mcpsimp"><a name="p770mcpsimp"></a><a name="p770mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并调用[ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)接口加载HNR配置文件。
--   使能HNR数据流开关之后才能调用此接口成功设置HNR属性。
--   VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，当attr-\>enable为TD\_FALSE时，bnr\_bypass必须为TD\_FALSE。
--   VI视频模式为OT\_VI\_VIDEO\_MODE\_ADVANCED时，bnr\_bypass不起作用。
--   VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，并且bnr\_bypass为TD\_FALSE时，才能开启normal\_blend。
--   VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，normal\_blend开启，不支持获取HNR处理后的raw，不支持ISP RunOnce方式使用HNR，因为BE灌的raw没有经过HNR处理。
--   VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，normal\_blend关闭，支持获取HNR处理后的raw, 支持ISP RunOnce方式使用HNR。
--   如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_get\_attr<a name="ZH-CN_TOPIC_0000002408262070"></a>
-
-【描述】
-
-获取HNR的属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并调用[ss\_mpi\_hnr\_load\_cfg](#ZH-CN_TOPIC_0000002441701369)接口加载HNR配置文件。
+- 使能HNR数据流开关之后才能调用此接口成功设置HNR属性。
+- VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，当attr-\>enable为TD\_FALSE时，bnr\_bypass必须为TD\_FALSE。
+- VI视频模式为OT\_VI\_VIDEO\_MODE\_ADVANCED时，bnr\_bypass不起作用。
+- VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，并且bnr\_bypass为TD\_FALSE时，才能开启normal\_blend。
+- VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，normal\_blend开启，不支持获取HNR处理后的raw，不支持ISP RunOnce方式使用HNR，因为BE灌的raw没有经过HNR处理。
+- VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时，normal\_blend关闭，支持获取HNR处理后的raw, 支持ISP RunOnce方式使用HNR。
+- 如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_get\_attr<a name="ZH-CN_TOPIC_0000002408262070"></a> 【描述】 获取HNR的属性。 【语法】 ```
 td_s32 ss_mpi_hnr_get_attr(ot_vi_pipe vi_pipe, ot_hnr_attr *attr);
-```
-
-【参数】
-
-<a name="table796mcpsimp"></a>
+``` 【参数】 <a name="table796mcpsimp"></a>
 <table><thead align="left"><tr id="row802mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.4.1.1"><p id="p804mcpsimp"><a name="p804mcpsimp"></a><a name="p804mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.4.1.2"><p id="p806mcpsimp"><a name="p806mcpsimp"></a><a name="p806mcpsimp"></a>描述</p>
@@ -890,11 +451,7 @@ td_s32 ss_mpi_hnr_get_attr(ot_vi_pipe vi_pipe, ot_hnr_attr *attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table827mcpsimp"></a>
+</table> 【返回值】 <a name="table827mcpsimp"></a>
 <table><thead align="left"><tr id="row832mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p834mcpsimp"><a name="p834mcpsimp"></a><a name="p834mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p836mcpsimp"><a name="p836mcpsimp"></a><a name="p836mcpsimp"></a>描述</p>
@@ -906,47 +463,12 @@ td_s32 ss_mpi_hnr_get_attr(ot_vi_pipe vi_pipe, ot_hnr_attr *attr);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p842mcpsimp"><a name="p842mcpsimp"></a><a name="p842mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row843mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p845mcpsimp"><a name="p845mcpsimp"></a><a name="p845mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p847mcpsimp"><a name="p847mcpsimp"></a><a name="p847mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   使能HNR数据流开关之后才能调用此接口成功获取HNR属性。
--   如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_set\_input\_depth<a name="ZH-CN_TOPIC_0000002441661493"></a>
-
-【描述】
-
-设置HNR输入队列的缓存深度。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 使能HNR数据流开关之后才能调用此接口成功获取HNR属性。
+- 如果在非主进程中调用此接口，必须先调用ss\_mpi\_isp\_mem\_share或ss\_mpi\_isp\_mem\_share\_all接口，共享ISP相关MMZ buffer。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_set\_input\_depth<a name="ZH-CN_TOPIC_0000002441661493"></a> 【描述】 设置HNR输入队列的缓存深度。 【语法】 ```
 td_s32 ss_mpi_hnr_set_input_depth(ot_vi_pipe vi_pipe, td_u32 depth);
-```
-
-【参数】
-
-<a name="table865mcpsimp"></a>
+``` 【参数】 <a name="table865mcpsimp"></a>
 <table><thead align="left"><tr id="row871mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p873mcpsimp"><a name="p873mcpsimp"></a><a name="p873mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p875mcpsimp"><a name="p875mcpsimp"></a><a name="p875mcpsimp"></a>描述</p>
@@ -971,11 +493,7 @@ td_s32 ss_mpi_hnr_set_input_depth(ot_vi_pipe vi_pipe, td_u32 depth);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table896mcpsimp"></a>
+</table> 【返回值】 <a name="table896mcpsimp"></a>
 <table><thead align="left"><tr id="row901mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p903mcpsimp"><a name="p903mcpsimp"></a><a name="p903mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p905mcpsimp"><a name="p905mcpsimp"></a><a name="p905mcpsimp"></a>描述</p>
@@ -987,46 +505,11 @@ td_s32 ss_mpi_hnr_set_input_depth(ot_vi_pipe vi_pipe, td_u32 depth);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p911mcpsimp"><a name="p911mcpsimp"></a><a name="p911mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row912mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p914mcpsimp"><a name="p914mcpsimp"></a><a name="p914mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p916mcpsimp"><a name="p916mcpsimp"></a><a name="p916mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
-调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并且对应的pipe必须已经创建。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_set\_thread\_attr<a name="ZH-CN_TOPIC_0000002441661481"></a>
-
-【描述】
-
-设置HNR线程属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块，并且对应的pipe必须已经创建。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_set\_thread\_attr<a name="ZH-CN_TOPIC_0000002441661481"></a> 【描述】 设置HNR线程属性。 【语法】 ```
 td_s32 ss_mpi_hnr_set_thread_attr(const ot_hnr_thread_attr *thread_attr);
-```
-
-【参数】
-
-<a name="table719mcpsimp"></a>
+``` 【参数】 <a name="table719mcpsimp"></a>
 <table><thead align="left"><tr id="row725mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p727mcpsimp"><a name="p727mcpsimp"></a><a name="p727mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p729mcpsimp"><a name="p729mcpsimp"></a><a name="p729mcpsimp"></a>描述</p>
@@ -1043,11 +526,7 @@ td_s32 ss_mpi_hnr_set_thread_attr(const ot_hnr_thread_attr *thread_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table750mcpsimp"></a>
+</table> 【返回值】 <a name="table750mcpsimp"></a>
 <table><thead align="left"><tr id="row755mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p757mcpsimp"><a name="p757mcpsimp"></a><a name="p757mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p759mcpsimp"><a name="p759mcpsimp"></a><a name="p759mcpsimp"></a>描述</p>
@@ -1059,46 +538,11 @@ td_s32 ss_mpi_hnr_set_thread_attr(const ot_hnr_thread_attr *thread_attr);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p765mcpsimp"><a name="p765mcpsimp"></a><a name="p765mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row766mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p768mcpsimp"><a name="p768mcpsimp"></a><a name="p768mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p770mcpsimp"><a name="p770mcpsimp"></a><a name="p770mcpsimp"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
-调用该接口支持在调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块前或开启HNR通路后动态修改。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_get\_thread\_attr<a name="ZH-CN_TOPIC_0000002408262054"></a>
-
-【描述】
-
-获取HNR线程属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 调用该接口支持在调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块前或开启HNR通路后动态修改。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_get\_thread\_attr<a name="ZH-CN_TOPIC_0000002408262054"></a> 【描述】 获取HNR线程属性。 【语法】 ```
 td_s32 ss_mpi_hnr_get_thread_attr(const ot_hnr_thread_attr *thread_attr);
-```
-
-【参数】
-
-<a name="table1578315475611"></a>
+``` 【参数】 <a name="table1578315475611"></a>
 <table><thead align="left"><tr id="row8783114718618"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p7784144713611"><a name="p7784144713611"></a><a name="p7784144713611"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p3784184719613"><a name="p3784184719613"></a><a name="p3784184719613"></a>描述</p>
@@ -1115,11 +559,7 @@ td_s32 ss_mpi_hnr_get_thread_attr(const ot_hnr_thread_attr *thread_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table97841347266"></a>
+</table> 【返回值】 <a name="table97841347266"></a>
 <table><thead align="left"><tr id="row4784647763"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p378419471264"><a name="p378419471264"></a><a name="p378419471264"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4784047561"><a name="p4784047561"></a><a name="p4784047561"></a>描述</p>
@@ -1131,46 +571,11 @@ td_s32 ss_mpi_hnr_get_thread_attr(const ot_hnr_thread_attr *thread_attr);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1578410473614"><a name="p1578410473614"></a><a name="p1578410473614"></a>成功。</p>
 </td>
 </tr>
-<tr id="row57845471368"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p207845470614"><a name="p207845470614"></a><a name="p207845470614"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p77841847464"><a name="p77841847464"></a><a name="p77841847464"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_attach\_out\_vb\_pool<a name="ZH-CN_TOPIC_0000002408262098"></a>
-
-【描述】
-
-将HNR输出绑定到某个视频缓存VB池。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 无 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_attach\_out\_vb\_pool<a name="ZH-CN_TOPIC_0000002408262098"></a> 【描述】 将HNR输出绑定到某个视频缓存VB池。 【语法】 ```
 td_s32 ss_mpi_hnr_attach_out_vb_pool(ot_vi_pipe vi_pipe, ot_vb_pool vb_pool);
-```
-
-【参数】
-
-<a name="table1010413506202"></a>
+``` 【参数】 <a name="table1010413506202"></a>
 <table><thead align="left"><tr id="row3104850192012"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p810445072017"><a name="p810445072017"></a><a name="p810445072017"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p191041250122018"><a name="p191041250122018"></a><a name="p191041250122018"></a>描述</p>
@@ -1195,11 +600,7 @@ td_s32 ss_mpi_hnr_attach_out_vb_pool(ot_vi_pipe vi_pipe, ot_vb_pool vb_pool);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1810575010201"></a>
+</table> 【返回值】 <a name="table1810575010201"></a>
 <table><thead align="left"><tr id="row13105205052018"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1510595052016"><a name="p1510595052016"></a><a name="p1510595052016"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p710535022013"><a name="p710535022013"></a><a name="p710535022013"></a>描述</p>
@@ -1211,48 +612,13 @@ td_s32 ss_mpi_hnr_attach_out_vb_pool(ot_vi_pipe vi_pipe, ot_vb_pool vb_pool);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p910525022014"><a name="p910525022014"></a><a name="p910525022014"></a>成功。</p>
 </td>
 </tr>
-<tr id="row910575013204"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p171056503201"><a name="p171056503201"></a><a name="p171056503201"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1105350112018"><a name="p1105350112018"></a><a name="p1105350112018"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
--   调用该接口前HNR数据流需要保持关闭状态。
--   只推荐在VI stagger输入场景且VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时使用；其他场景使用会造成vb利用率下降。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-## ss\_mpi\_hnr\_detach\_out\_vb\_pool<a name="ZH-CN_TOPIC_0000002441701317"></a>
-
-【描述】
-
-将HNR输出与某个视频缓存VB池解绑定。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
+- 调用该接口前HNR数据流需要保持关闭状态。
+- 只推荐在VI stagger输入场景且VI视频模式为OT\_VI\_VIDEO\_MODE\_NORM时使用；其他场景使用会造成vb利用率下降。 【举例】 无 【相关主题】 无 ## ss\_mpi\_hnr\_detach\_out\_vb\_pool<a name="ZH-CN_TOPIC_0000002441701317"></a> 【描述】 将HNR输出与某个视频缓存VB池解绑定。 【语法】 ```
 td_s32 ss_mpi_hnr_detach_out_vb_pool(ot_vi_pipe vi_pipe);
-```
-
-【参数】
-
-<a name="table14616149162819"></a>
+``` 【参数】 <a name="table14616149162819"></a>
 <table><thead align="left"><tr id="row86161449132817"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p761615496286"><a name="p761615496286"></a><a name="p761615496286"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p56162492284"><a name="p56162492284"></a><a name="p56162492284"></a>描述</p>
@@ -1270,11 +636,7 @@ td_s32 ss_mpi_hnr_detach_out_vb_pool(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table461744915286"></a>
+</table> 【返回值】 <a name="table461744915286"></a>
 <table><thead align="left"><tr id="row13617154902818"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p16617449152814"><a name="p16617449152814"></a><a name="p16617449152814"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p361784992819"><a name="p361784992819"></a><a name="p361784992819"></a>描述</p>
@@ -1286,93 +648,24 @@ td_s32 ss_mpi_hnr_detach_out_vb_pool(ot_vi_pipe vi_pipe);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3617144902818"><a name="p3617144902818"></a><a name="p3617144902818"></a>成功。</p>
 </td>
 </tr>
-<tr id="row361724918281"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p8617154915280"><a name="p8617154915280"></a><a name="p8617154915280"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p196171249172810"><a name="p196171249172810"></a><a name="p196171249172810"></a>失败，请参见<a href="#ZH-CN_TOPIC_0000002441701421">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_hnr.h
--   库文件：libss\_hnr.a
-
-【注意】
-
--   调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
--   调用该接口前HNR数据流需要保持关闭状态。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-# 数据类型
-HNR模块相关数据类型定义如下：
-
--   [OT\_HNR\_MAX\_CFG\_NUM](#ZH-CN_TOPIC_0000002408262082)：定义HNR配置文件最大支持加载数。
--   [ot\_hnr\_mem\_info](#ZH-CN_TOPIC_0000002441701333)：定义HNR配置文件内存信息。
--   [ot\_hnr\_cfg](#ZH-CN_TOPIC_0000002408102170)：定义HNR配置文件信息。
--   [ot\_hnr\_param](#ZH-CN_TOPIC_0000002441701305)：定义HNR图像效果参数。
--   [ot\_hnr\_manual\_attr](#ZH-CN_TOPIC_0000002408102146)：定义HNR手动参数。
--   [ot\_hnr\_attr](#ZH-CN_TOPIC_0000002408102266)：定义HNR属性。
--   [ot\_hnr\_ref\_mode](#ZH-CN_TOPIC_0000002408102250)：定义HNR参考帧模式。
--   [ot\_hnr\_alg\_cfg](#ZH-CN_TOPIC_0000002441701357)：定义HNR算法配置参数。
--   [ot\_hnr\_thread\_attr](#ZH-CN_TOPIC_0000002441661533)：定义HNR线程配置参数。
-
-
-
-
-
-
-
-
-
-
-## OT\_HNR\_MAX\_CFG\_NUM<a name="ZH-CN_TOPIC_0000002408262082"></a>
-
-【说明】
-
-定义HNR配置文件最大支持加载数。
-
-【定义】
-
-```
-#define OT_HNR_MAX_CFG_NUM  32
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_hnr\_mem\_info<a name="ZH-CN_TOPIC_0000002441701333"></a>
-
-【说明】
-
-HNR配置文件内存信息。
-
-【定义】
-
-```
-typedef struct {
-    td_phys_addr_t phys_addr;
-    td_void *virt_addr;
-    td_u32  size;
+</table> 【需求】 - 头文件：ss\_mpi\_hnr.h
+- 库文件：libss\_hnr.a 【注意】 - 调用该接口前必须先调用[ss\_mpi\_hnr\_init](#ZH-CN_TOPIC_0000002441661525)初始化HNR模块。
+- 调用该接口前HNR数据流需要保持关闭状态。 【举例】 无 【相关主题】 无 # 数据类型
+HNR模块相关数据类型定义如下： - [OT\_HNR\_MAX\_CFG\_NUM](#ZH-CN_TOPIC_0000002408262082)：定义HNR配置文件最大支持加载数。
+- [ot\_hnr\_mem\_info](#ZH-CN_TOPIC_0000002441701333)：定义HNR配置文件内存信息。
+- [ot\_hnr\_cfg](#ZH-CN_TOPIC_0000002408102170)：定义HNR配置文件信息。
+- [ot\_hnr\_param](#ZH-CN_TOPIC_0000002441701305)：定义HNR图像效果参数。
+- [ot\_hnr\_manual\_attr](#ZH-CN_TOPIC_0000002408102146)：定义HNR手动参数。
+- [ot\_hnr\_attr](#ZH-CN_TOPIC_0000002408102266)：定义HNR属性。
+- [ot\_hnr\_ref\_mode](#ZH-CN_TOPIC_0000002408102250)：定义HNR参考帧模式。
+- [ot\_hnr\_alg\_cfg](#ZH-CN_TOPIC_0000002441701357)：定义HNR算法配置参数。
+- [ot\_hnr\_thread\_attr](#ZH-CN_TOPIC_0000002441661533)：定义HNR线程配置参数。 ## OT\_HNR\_MAX\_CFG\_NUM<a name="ZH-CN_TOPIC_0000002408262082"></a> 【说明】 定义HNR配置文件最大支持加载数。 【定义】 ```
+#define OT_HNR_MAX_CFG_NUM 32
+``` 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_hnr\_mem\_info<a name="ZH-CN_TOPIC_0000002441701333"></a> 【说明】 HNR配置文件内存信息。 【定义】 ```
+typedef struct { td_phys_addr_t phys_addr; td_void *virt_addr; td_u32 size;
 } ot_hnr_mem_info;
-```
-
-【成员】
-
-<a name="table976mcpsimp"></a>
+``` 【成员】 <a name="table976mcpsimp"></a>
 <table><thead align="left"><tr id="row981mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p983mcpsimp"><a name="p983mcpsimp"></a><a name="p983mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p985mcpsimp"><a name="p985mcpsimp"></a><a name="p985mcpsimp"></a>描述</p>
@@ -1396,35 +689,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_hnr\_cfg](#ot_hnr_cfg)
-
-## ot\_hnr\_cfg<a name="ZH-CN_TOPIC_0000002408102170"></a>
-
-【说明】
-
-HNR配置文件信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_hnr_mem_info mem_info;
-    ot_size image_size;
-    td_bool is_wdr_mode;
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_hnr\_cfg](#ot_hnr_cfg) ## ot\_hnr\_cfg<a name="ZH-CN_TOPIC_0000002408102170"></a> 【说明】 HNR配置文件信息。 【定义】 ```
+typedef struct { ot_hnr_mem_info mem_info; ot_size image_size; td_bool is_wdr_mode;
 } ot_hnr_cfg;
-```
-
-【成员】
-
-<a name="table1020mcpsimp"></a>
+``` 【成员】 <a name="table1020mcpsimp"></a>
 <table><thead align="left"><tr id="row1025mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p1027mcpsimp"><a name="p1027mcpsimp"></a><a name="p1027mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p1029mcpsimp"><a name="p1029mcpsimp"></a><a name="p1029mcpsimp"></a>描述</p>
@@ -1447,37 +715,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   用户需要保证内存中所存储的配置文件信息的完整性和正确性，否则可能导致运行异常。
--   配置文件加载时需指定所支持的图像分辨率。
--   支持的图像分辨率宽高都必须是4的整数倍。
--   HNR参考帧模式支持的图像分辨率宽高与VI PIPE离线图像大小范围一致。详细请参考《MPP 媒体处理软件 V5.0 开发参考》“视频输入”章节。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_hnr\_param<a name="ZH-CN_TOPIC_0000002441701305"></a>
-
-【说明】
-
-定义HNR图像效果参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 sfs;
-    td_u32 tfs;
+</table> 【注意事项】 - 用户需要保证内存中所存储的配置文件信息的完整性和正确性，否则可能导致运行异常。
+- 配置文件加载时需指定所支持的图像分辨率。
+- 支持的图像分辨率宽高都必须是4的整数倍。
+- HNR参考帧模式支持的图像分辨率宽高与VI PIPE离线图像大小范围一致。详细请参考《MPP 媒体处理软件 V5.0 开发参考》“视频输入”章节。 【相关数据类型及接口】 无 ## ot\_hnr\_param<a name="ZH-CN_TOPIC_0000002441701305"></a> 【说明】 定义HNR图像效果参数。 【定义】 ```
+typedef struct { td_u32 sfs; td_u32 tfs;
 } ot_hnr_param;
-```
-
-【成员】
-
-<a name="table1064mcpsimp"></a>
+``` 【成员】 <a name="table1064mcpsimp"></a>
 <table><thead align="left"><tr id="row1069mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p1071mcpsimp"><a name="p1071mcpsimp"></a><a name="p1071mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p1073mcpsimp"><a name="p1073mcpsimp"></a><a name="p1073mcpsimp"></a>描述</p>
@@ -1497,33 +741,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-当前版本，tfs参数暂未生效。参数调节请参考《HNR调优指南》。
-
-【相关数据类型及接口】
-
-[ot\_hnr\_manual\_attr](#ot_hnr_manual_attr)
-
-## ot\_hnr\_manual\_attr<a name="ZH-CN_TOPIC_0000002408102146"></a>
-
-【说明】
-
-定义HNR手动参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_hnr_param param;
+</table> 【注意事项】 当前版本，tfs参数暂未生效。参数调节请参考《HNR调优指南》。 【相关数据类型及接口】 [ot\_hnr\_manual\_attr](#ot_hnr_manual_attr) ## ot\_hnr\_manual\_attr<a name="ZH-CN_TOPIC_0000002408102146"></a> 【说明】 定义HNR手动参数。 【定义】 ```
+typedef struct { ot_hnr_param param;
 } ot_hnr_manual_attr;
-```
-
-【成员】
-
-<a name="table1102mcpsimp"></a>
+``` 【成员】 <a name="table1102mcpsimp"></a>
 <table><thead align="left"><tr id="row1107mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p1109mcpsimp"><a name="p1109mcpsimp"></a><a name="p1109mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p1111mcpsimp"><a name="p1111mcpsimp"></a><a name="p1111mcpsimp"></a>描述</p>
@@ -1536,38 +757,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_hnr\_attr](#ot_hnr_attr)
-
-## ot\_hnr\_attr<a name="ZH-CN_TOPIC_0000002408102266"></a>
-
-【说明】
-
-定义HNR属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool enable;
-    td_bool bnr_bypass;
-    td_bool normal_blend;
-    ot_op_mode op_type;
-    ot_hnr_manual_attr manual_attr;
-    ot_hnr_auto_attr auto_attr;
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_hnr\_attr](#ot_hnr_attr) ## ot\_hnr\_attr<a name="ZH-CN_TOPIC_0000002408102266"></a> 【说明】 定义HNR属性。 【定义】 ```
+typedef struct { td_bool enable; td_bool bnr_bypass; td_bool normal_blend; ot_op_mode op_type; ot_hnr_manual_attr manual_attr; ot_hnr_auto_attr auto_attr;
 } ot_hnr_attr;
-```
-
-【成员】
-
-<a name="table1138mcpsimp"></a>
+``` 【成员】 <a name="table1138mcpsimp"></a>
 <table><thead align="left"><tr id="row1143mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p1145mcpsimp"><a name="p1145mcpsimp"></a><a name="p1145mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p1147mcpsimp"><a name="p1147mcpsimp"></a><a name="p1147mcpsimp"></a>描述</p>
@@ -1606,37 +799,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-本版本暂只支持手动模式参数，不支持自动模式参数配置。
-
-【相关数据类型及接口】
-
-无
-
-## ot\_hnr\_ref\_mode<a name="ZH-CN_TOPIC_0000002408102250"></a>
-
-【说明】
-
-定义HNR参考帧模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_HNR_REF_MODE_NORM = 0,
-    OT_HNR_REF_MODE_NONE,
-    OT_HNR_REF_MODE_NONE_ADVANCED,
-    OT_HNR_REF_MODE_NORM_FACE,
-    OT_HNR_REF_MODE_BUTT
+</table> 【注意事项】 本版本暂只支持手动模式参数，不支持自动模式参数配置。 【相关数据类型及接口】 无 ## ot\_hnr\_ref\_mode<a name="ZH-CN_TOPIC_0000002408102250"></a> 【说明】 定义HNR参考帧模式。 【定义】 ```
+typedef enum { OT_HNR_REF_MODE_NORM = 0, OT_HNR_REF_MODE_NONE, OT_HNR_REF_MODE_NONE_ADVANCED, OT_HNR_REF_MODE_NORM_FACE, OT_HNR_REF_MODE_BUTT
 } ot_hnr_ref_mode;
-```
-
-【成员】
-
-<a name="table1190mcpsimp"></a>
+``` 【成员】 <a name="table1190mcpsimp"></a>
 <table><thead align="left"><tr id="row1195mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p1197mcpsimp"><a name="p1197mcpsimp"></a><a name="p1197mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p1199mcpsimp"><a name="p1199mcpsimp"></a><a name="p1199mcpsimp"></a>描述</p>
@@ -1664,33 +830,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-如果是拍照场景，需选用HNR无参考帧模式，或HNR无参考帧的高级模式。
-
-【相关数据类型及接口】
-
-[ot\_hnr\_alg\_cfg](#ot_hnr_alg_cfg)
-
-## ot\_hnr\_alg\_cfg<a name="ZH-CN_TOPIC_0000002441701357"></a>
-
-【说明】
-
-定义HNR算法配置参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_hnr_ref_mode ref_mode;
+</table> 【注意事项】 如果是拍照场景，需选用HNR无参考帧模式，或HNR无参考帧的高级模式。 【相关数据类型及接口】 [ot\_hnr\_alg\_cfg](#ot_hnr_alg_cfg) ## ot\_hnr\_alg\_cfg<a name="ZH-CN_TOPIC_0000002441701357"></a> 【说明】 定义HNR算法配置参数。 【定义】 ```
+typedef struct { ot_hnr_ref_mode ref_mode;
 } ot_hnr_alg_cfg;
-```
-
-【成员】
-
-<a name="table1225mcpsimp"></a>
+``` 【成员】 <a name="table1225mcpsimp"></a>
 <table><thead align="left"><tr id="row1230mcpsimp"><th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.1"><p id="p1232mcpsimp"><a name="p1232mcpsimp"></a><a name="p1232mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.2"><p id="p1234mcpsimp"><a name="p1234mcpsimp"></a><a name="p1234mcpsimp"></a>描述</p>
@@ -1703,33 +846,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## ot\_hnr\_thread\_attr<a name="ZH-CN_TOPIC_0000002441661533"></a>
-
-【说明】
-
-定义HNR线程属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 cpu_id;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## ot\_hnr\_thread\_attr<a name="ZH-CN_TOPIC_0000002441661533"></a> 【说明】 定义HNR线程属性。 【定义】 ```
+typedef struct { td_u32 cpu_id;
 } ot_hnr_thread_attr;
-```
-
-【成员】
-
-<a name="table439015344443"></a>
+``` 【成员】 <a name="table439015344443"></a>
 <table><thead align="left"><tr id="row16390173444411"><th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.1"><p id="p7390734124410"><a name="p7390734124410"></a><a name="p7390734124410"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.2"><p id="p3390734174417"><a name="p3390734174417"></a><a name="p3390734174417"></a>描述</p>
@@ -1742,70 +862,15 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-# Proc调试信息
-## 概述<a name="ZH-CN_TOPIC_0000002408262154"></a>
-
-调试信息采用了Linux下的proc文件系统，可实时反映当前系统的运行状态，所记录的信息可供问题定位及分析时使用。
-
-【文件目录】
-
-/proc/umap
-
-【信息查看方法】
-
--   在控制台上可以使用cat命令查看信息，cat /proc/umap/isp或cat /proc/umap/pqp；也可以使用其他常用的文件操作命令，例如 cp /proc/umap/isp ./或cp /proc/umap/pqp ./，将文件拷贝到当前目录。
--   在应用程序中可以将上述文件当作普通只读文件进行读操作，例如fopen、fread等。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数在描述时有以下两种情况需要注意：
->-   取值为\{0, 1\}的参数，如未列出具体取值和含义的对应关系，则参数为1时表示肯定，为0时表示否定。
->-   取值为\{aaa, bbb, ccc\}的参数，未列出具体取值和含义的对应关系，但可直接根据取值aaa、bbb或ccc判断参数含义。
-
-## Proc信息说明<a name="ZH-CN_TOPIC_0000002441661569"></a>
-
-
-
-### HNR调试信息说明<a name="ZH-CN_TOPIC_0000002408262134"></a>
-
-【调试信息】
-
-```
-# cat /proc/umap/isp 
- 
-[ISP] Version: [MPP_Vx.x.x.x B0xx Release], Build Time[mm dd yyyy, hh:mm:ss]
+</table> 【注意事项】 无 【相关数据类型及接口】 无 # Proc调试信息
+## 概述<a name="ZH-CN_TOPIC_0000002408262154"></a> 调试信息采用了Linux下的proc文件系统，可实时反映当前系统的运行状态，所记录的信息可供问题定位及分析时使用。 【文件目录】 /proc/umap 【信息查看方法】 - 在控制台上可以使用cat命令查看信息，cat /proc/umap/isp或cat /proc/umap/pqp；也可以使用其他常用的文件操作命令，例如 cp /proc/umap/isp ./或cp /proc/umap/pqp ./，将文件拷贝到当前目录。
+- 在应用程序中可以将上述文件当作普通只读文件进行读操作，例如fopen、fread等。 >![](public_sys-resources/icon-note.gif) **说明：** >参数在描述时有以下两种情况需要注意：
+>- 取值为\{0, 1\}的参数，如未列出具体取值和含义的对应关系，则参数为1时表示肯定，为0时表示否定。
+>- 取值为\{aaa, bbb, ccc\}的参数，未列出具体取值和含义的对应关系，但可直接根据取值aaa、bbb或ccc判断参数含义。 ## Proc信息说明<a name="ZH-CN_TOPIC_0000002441661569"></a> ### HNR调试信息说明<a name="ZH-CN_TOPIC_0000002408262134"></a> 【调试信息】 ```
+# cat /proc/umap/isp [ISP] Version: [MPP_Vx.x.x.x B0xx Release], Build Time[mm dd yyyy, hh:mm:ss]
 ----------------------------------------hnr info------------------------------------------------------------------------
-hnr_en   attr_en       sfs   set_bnr_bypass bnr_bypass_status  long_frame_mode   normal_blend     normal_blend_status
-1         1        31                1                 0                N                   0                       0
- 
-    cfg_id     width     height     is_wdr   ref_mode  version_id
-        0      3840      2160        N   norm     2021082801
- 
-   vi_pipe       iso    handle  busy_node  free_node  ref_mode  input_depth  ref_cnt work_time   slp_cnt  slp_time
-        0      3521        1         2         1      norm         8               1     12226        26     12231 
- 
-```
-
-【注意事项】
-
-当HNR数据流首次使能之后，才能查看到HNR相关的proc信息。
-
-【调试信息分析】
-
-记录当前HNR工作状态资源信息，主要包括HNR用户设置信息，加载的配置文件信息，任务状态信息。
-
-【参数说明】
-
-<a name="table1278mcpsimp"></a>
+hnr_en attr_en sfs set_bnr_bypass bnr_bypass_status long_frame_mode normal_blend normal_blend_status
+1 1 31 1 0 N 0 0 cfg_id width height is_wdr ref_mode version_id 0 3840 2160 N norm 2021082801 vi_pipe iso handle busy_node free_node ref_mode input_depth ref_cnt work_time slp_cnt slp_time 0 3521 1 2 1 norm 8 1 12226 26 12231 ``` 【注意事项】 当HNR数据流首次使能之后，才能查看到HNR相关的proc信息。 【调试信息分析】 记录当前HNR工作状态资源信息，主要包括HNR用户设置信息，加载的配置文件信息，任务状态信息。 【参数说明】 <a name="table1278mcpsimp"></a>
 <table><thead align="left"><tr id="row1284mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p1286mcpsimp"><a name="p1286mcpsimp"></a><a name="p1286mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p1288mcpsimp"><a name="p1288mcpsimp"></a><a name="p1288mcpsimp"></a>描述</p>
@@ -1960,48 +1025,9 @@ hnr_en   attr_en       sfs   set_bnr_bypass bnr_bypass_status  long_frame_mode  
 </td>
 </tr>
 </tbody>
-</table>
-
-### PQP调试信息说明<a name="ZH-CN_TOPIC_0000002441701433"></a>
-
-【调试信息】
-
-```
-# cat /proc/umap/pqp 
- 
-[PQP] Version: [Vx.x.x.x B0xx Release], Build Time[mm  dd yyyy, hh:mm:ss]
-----------------------------------------pqp module param------------------------------
-   dev_id       high_profile
-        0             N
-
--------------------------------- pqp task queue info----------------------------------
-   dev_id     wait_queue_id   work_queue_id   wait_head_idx    wait_tail_idx
-        0                0               -1               0              0
-   work_head_idx   work_tail_idx
-                0             0
- 
--------------------------------------- pqp task info -----------------------------------
-   dev_id   handle   task_send    task_finish  last_finish_id  start_task_id  handle_wrap
-        0        0           0            0            0             0            0
-   finish_wrap
-            0
- 
--------------------------------------- pqp perf info------------------------------------
-    dev_id  irq_num_per_sec  last_irq_time  max_irq_time  last_task_time
-         0                0            0              0             0
- 
---------------------------------------- pqp err info-------------------------------------
- dev_id  query_timeout_num  hw_timeout_num  hw_err_num
-      0                   0                 0            0 
-```
-
-【调试信息分析】
-
-记录当前PQP工作状态资源信息，主要包括PQP队列状态信息，任务状态信息，性能信息和错误信息。
-
-【参数说明】
-
-<a name="table1426mcpsimp"></a>
+</table> ### PQP调试信息说明<a name="ZH-CN_TOPIC_0000002441701433"></a> 【调试信息】 ```
+# cat /proc/umap/pqp [PQP] Version: [Vx.x.x.x B0xx Release], Build Time[mm dd yyyy, hh:mm:ss]
+----------------------------------------pqp module param------------------------------ dev_id high_profile 0 N -------------------------------- pqp task queue info---------------------------------- dev_id wait_queue_id work_queue_id wait_head_idx wait_tail_idx 0 0 -1 0 0 work_head_idx work_tail_idx 0 0 -------------------------------------- pqp task info ----------------------------------- dev_id handle task_send task_finish last_finish_id start_task_id handle_wrap 0 0 0 0 0 0 0 finish_wrap 0 -------------------------------------- pqp perf info------------------------------------ dev_id irq_num_per_sec last_irq_time max_irq_time last_task_time 0 0 0 0 0 --------------------------------------- pqp err info------------------------------------- dev_id query_timeout_num hw_timeout_num hw_err_num 0 0 0 0 ``` 【调试信息分析】 记录当前PQP工作状态资源信息，主要包括PQP队列状态信息，任务状态信息，性能信息和错误信息。 【参数说明】 <a name="table1426mcpsimp"></a>
 <table><thead align="left"><tr id="row1432mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p1434mcpsimp"><a name="p1434mcpsimp"></a><a name="p1434mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p1436mcpsimp"><a name="p1436mcpsimp"></a><a name="p1436mcpsimp"></a>描述</p>
@@ -2159,14 +1185,8 @@ hnr_en   attr_en       sfs   set_bnr_bypass bnr_bypass_status  long_frame_mode  
 </td>
 </tr>
 </tbody>
-</table>
-
-# 错误码
-HNR错误码如下所示。
-
-**表 1**  HNR API错误码
-
-<a name="_Ref248290030"></a>
+</table> # 错误码
+HNR错误码如下所示。 **表 1** HNR API错误码 <a name="_Ref248290030"></a>
 <table><thead align="left"><tr id="row1613mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.2.4.1.1"><p id="p1615mcpsimp"><a name="p1615mcpsimp"></a><a name="p1615mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.2.4.1.2"><p id="p1617mcpsimp"><a name="p1617mcpsimp"></a><a name="p1617mcpsimp"></a>宏定义</p>
@@ -2232,5 +1252,4 @@ HNR错误码如下所示。
 </td>
 </tr>
 </tbody>
-</table>
-
+</table> 

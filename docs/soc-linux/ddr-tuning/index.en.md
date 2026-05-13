@@ -1,28 +1,15 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/DDR 小型化指南/DDR 小型化指南.md
----
-
-# Preface
-**Overview<a name="section4537382116410"></a>**
-
-This document is written for programmers developing miniaturization, with the aim of introducing Linux development, tailoring, optimization, and usage precautions on a single board.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->Unless otherwise specified, the content for Hi3519AV200 is identical to that of Hi3403V100.
-
-**Product Version<a name="section25718263411"></a>**
-
-The product versions corresponding to this document are as follows.
-
-<a name="table1233317181949"></a>
+--- # Preface
+**Overview<a name="section4537382116410"></a>** This document is written for programmers developing miniaturization, with the aim of introducing Linux development, tailoring, optimization, and usage precautions on a single board. >![](public_sys-resources/icon-note.gif) **Note:**
+>Unless otherwise specified, the content for is identical to that of Hi3403V100. **Product Version<a name="section25718263411"></a>** The product versions corresponding to this document are as follows. <a name="table1233317181949"></a>
 <table><thead align="left"><tr id="row103955189411"><th class="cellrowborder" valign="top" width="31.759999999999998%" id="mcps1.1.3.1.1"><p id="p13395161815412"><a name="p13395161815412"></a><a name="p13395161815412"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.24%" id="mcps1.1.3.1.2"><p id="p33951518144"><a name="p33951518144"></a><a name="p33951518144"></a>Product Version</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row039571815420"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p939510182419"><a name="p939510182419"></a><a name="p939510182419"></a>SS626</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p93951718242"><a name="p93951718242"></a><a name="p93951718242"></a>V100</p>
 </td>
@@ -32,24 +19,13 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p168061342157"><a name="p168061342157"></a><a name="p168061342157"></a>V100</p>
 </td>
 </tr>
-<tr id="row31204306217"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Intended Audience<a name="section51625422047"></a>**
-
-This document (guide) is mainly applicable to the following engineers:
-
--   Technical Support Engineer
--   Software Development Engineer
-
-**Revision History<a name="section2467512116410"></a>**
-
-<a name="table126443203200"></a>
+</table> **Intended Audience<a name="section51625422047"></a>** This document (guide) is mainly applicable to the following engineers: - Technical Support Engineer
+- Software Development Engineer **Revision History<a name="section2467512116410"></a>** <a name="table126443203200"></a>
 <table><thead align="left"><tr id="row264516207203"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p146456203200"><a name="p146456203200"></a><a name="p146456203200"></a><strong id="b8645172022010"><a name="b8645172022010"></a><a name="b8645172022010"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p364512062019"><a name="p364512062019"></a><a name="p364512062019"></a><strong id="b1464512200200"><a name="b1464512200200"></a><a name="b1464512200200"></a>Release Date</strong></p>
@@ -66,308 +42,59 @@ This document (guide) is mainly applicable to the following engineers:
 </td>
 </tr>
 </tbody>
-</table>
-
-# Overview
-DDR miniaturization can be approached from multiple directions: uboot, kernel, filesys, SDK, and APP can all be optimized to a certain extent in memory usage. This document mainly provides a brief explanation of miniaturization for SDK and APP.
-
-The SDK based on SS626V100 currently supports running both Linux and LiteOS dual systems or a single Linux system. If the business scenario only requires running a single Linux system, please refer to Section 3.2 of the "Memory Layout Adjustment Guide" to trim MMZ occupancy related to the liteos system. This document is based on the Linux and LiteOS dual-system configuration by default. The system miniaturization of SS626V100 is implemented on the DEMO board, using 2GB DDR memory as an example.
-
-**Figure 1** Linux System Memory Allocation Diagram on DEMO Board (for reference only)<a name="fig58516719710"></a>
-![](figures/DEMO板中Linux系统内存分配图（仅供参考）.png "DEMO板中Linux系统内存分配图（仅供参考）")")
-
-For MMZ memory usage data in typical SS626V100 business scenarios, please refer to the "SS626V100 Memory Usage Statistics Report". Additionally, specific memory usage for customer applications needs to be analyzed in conjunction with specific scenarios. The following sections describe the MMZ memory usage of each module and optimization methods for miniaturization.
-
-# MMZ Occupancy of Main Modules During Operation
-In general business scenarios, MMZ occupancy often accounts for a large portion of memory consumption. This chapter mainly describes the MMZ occupancy of several major modules during operation in typical business scenarios.
-
-## VI<a name="ZH-CN_TOPIC_0000002424361046"></a>
-
-In the VI capture state, a maximum of three video frame VBs will be occupied. One is used for current frame capture, one is prepared for the next frame capture, and one is in the rotation flow (mainly occupied by downstream modules).
-
-MMZ occupancy in Hi3403V100:
-
--   vi\(%d\)\_model\_%d: Each pipe needs to occupy two template MMZ memories of a certain size. The size is related to the channel width. When the width is less than or equal to 4096, the size is 16KB.
--   vi\(%d\)\_lmf: Occupies MMZ memory when LMF function is enabled on each pipe, used to store LMF coefficients, fixed at 4K.
--   vi\(%d\)\_bnr\_mot: Motion buffer memory required when Bayer NR function is enabled on each pipe. Size is determined by the width and height of the processed image.
--   vi\(0\)\_bnr\_rnt: RNT memory required when Bayer NR function is enabled on each pipe. Size is determined by the width and height of the processed image. When offline, the count is set by ss\_mpi\_vi\_set\_pipe\_bnr\_buf\_num.
--   Interface setting, default is 40 blocks.
--   vi\(0\)\_bnr\_ref%d: Temporal reference memory required when Bayer NR function is enabled on each pipe. Size is determined by the width and height of the processed image.
-
-## VDEC<a name="ZH-CN_TOPIC_0000002424201210"></a>
-
-VDEC MMZ occupancy is divided into buffer occupancy, rotation occupancy, and device occupancy.
-
-**Buffer Occupancy<a name="section389732110912"></a>**
-
--   vdec\(%d\)\_stream: Memory related to the decoding stream buffer, which is the sum of user-specified size and internal driver allocation. On SS626V100, this includes memory for storing PTS data.
--   vfmw\(%d\)\_usd\_buf: User data buffer memory, allocated based on the size specified by the user.
--   vdec\(%d\)\_adp\_ref: Used to store vb-related information for the channel.
--   vdec\(%d\)\_adp\_event: Used to store event information generated during decoding.
--   vfmw\(%d\)\_shr\_img: Used to store information related to decoded images.
--   vdec\_adp\_proc: Used to store proc information generated by vdec on the MDC side.
--   vfmw\_mdc\_shr: Used to store proc information generated by vfmw on the MDC side.
-
-**Device Occupancy<a name="section172822554102"></a>**
-
--   vfmw\(%d\)\_seg\_buf: Memory for storing data after SCD stream slicing. Related to resolution, independent of protocol.
--   vfmw\_scd\_msg: Memory required for SCD logic operation, fixed at 44KB.
--   vfmw\(%d\)\_vdh\_msg: Memory required for VDH logic operation. Related to the maximum slice count set in the module parameters. With default module parameters (600 slices), the size is 616KB. On SS626V100, this memory is named vfmw\_vdh\_msg.
--   vfmw\_vdh\_ext: Memory required for VDH logic operation. Related to the maximum width and height set in the module parameters. With SS626V100 default module parameters (8192x8192), the size is 572KB.
--   vfmw\_mdma\_msg: Memory required for VDH logic operation, fixed at 44KB.
-
-**Rotation Occupancy<a name="section32020161117"></a>**
-
--   vdec\(%d\)\_pic\_vb: Both the VB size and count are configured by the user. In private VB mode, the size is determined by frame\_buf\_size in the user-configured channel attributes, and the count is determined by frame\_buf\_cnt in the user-configured channel attributes.
--   vdec\(%d\)\_tmv\_vb: Both the VB size and count are configured by the user. In private VB mode, the size is determined by tmv\_buf\_size in the user-configured channel attributes, and the count is "reference frames + 1", where the reference frame count is determined by ref\_frame\_num in the user-configured channel attributes.
-
-## VPSS<a name="ZH-CN_TOPIC_0000002457879933"></a>
-
--   vb\_pool: The Group occupies two VBs (sent from the upstream module: current working VB + Backup frame). Each enabled channel will obtain a channel-sized VB (in Auto mode for the channel, it is obtained for the downstream module). After hardware processing, it is sent to the bound downstream module. If rotation/secondary scaling is needed, intermediate temporary VBs (public VBs) also need to be allocated.
--   vpss\(%d\)\_src: Each group needs to occupy luminance and MMZ memory resources, approximately 4K.
--   vpss\(%d\)\_dci: Occupies MMZ memory when DCI function is enabled on each group, approximately 4K.
--   vpss\(%d\)\_model: Each group needs to occupy a certain size of template MMZ memory. The size is related to split\_node\_num in the module parameters and the max\_width of the group. The larger split\_node\_num and max\_width are, the larger the occupancy.
--   vpss\(%d\)\_lmf: Occupies MMZ memory when LMF function is enabled on each group, used to store LMF coefficients, fixed at 4K.
--   vpss\(%d\)\_rgn\_luma: Occupies MMZ memory when the channel luminance sum function is enabled on each group, used to store luminance statistical information, fixed at 4K.
--   vmallocinfo: Each group context needs to occupy a certain amount of OS memory. The total size is related to the number of groups; more groups mean larger occupancy.
-
-## VGS<a name="ZH-CN_TOPIC_0000002457879973"></a>
-
-The VGS module allocates fixed MMZ memory based on the number of jobs, nodes, and tasks.
-
--   vmallocinfo: Occupies OS memory based on the number of jobs, tasks, and context. More items mean larger occupancy.
--   vgs\_node\_buf: Occupies a certain amount of MMZ memory based on the number of nodes. More nodes mean larger occupancy.
-
-## VENC<a name="ZH-CN_TOPIC_0000002457879945"></a>
-
--   Hardware-related:
-
-    vedu\_hal\_\(%d\): Memory required by the hardware, related to the number of IPs.
-
--   Channel-related memory (using H264 as an example; H265 uses the h265e prefix):
-    -   h264e\(%d\)\_node: Register node configuration memory, one per channel.
-    -   h264e\(%d\)\_str0: Stream buffer, one per channel.
-    -   h264e\(%d\)\_rcn\(%d\): Reference frame reconstruction frame memory. The count is related to the number of encoding reference frames.
-    -   h264e\(%d\)\_info\(%d\): Reference frame reconstruction frame information memory. The count is related to the number of encoding reference frames.
-    -   h264e\(%d\)\_deblur: After enabling deblur via ss\_mpi\_venc\_set\_deblur, corresponding deblur processing memory is required.
-    -   h264e\(%d\)\_md: After enabling MD detection via ss\_mpi\_venc\_set\_md, corresponding MD detection memory is required.
-    -   venc\(%d\)\_svc: After enabling SVC via ss\_mpi\_venc\_enable\_svc, corresponding SVC memory is required.
-    -   jpege\(%d\)\_stm: jpege stream buffer, one per channel.
-    -   jpege\(%d\)\_roi\_map: When enabling roi\_map via ss\_mpi\_venc\_set\_jpeg\_roi\_attr, memory is allocated for the jpege roi\_map.
-    -   vmallocinfo: Channel context memory for each channel; UserData data; bitrate control related memory.
-
-## VO<a name="ZH-CN_TOPIC_0000002424201194"></a>
-
-VO MMZ occupancy is divided into coefficient MMZ occupancy, luminance sum MMZ occupancy, and VB rotation MMZ occupancy.
-
--   Coefficient MMZ occupancy:
-
-    vo\_coef\_buf: Memory for storing write-back scaling coefficients (128KB) and multi-region configuration coefficients (8KB), totaling 136KB. If the chip does not support write-back scaling, the corresponding coefficients will not be allocated. One multi-region occupies 4KB of memory, and two multi-regions occupy 8KB.
-
--   Luminance sum MMZ occupancy:
-
-    vo\(%d,%d\)\_luma: MMZ memory dynamically allocated when the VO module obtains the video layer and channel luminance sum. A specific channel always occupies 4KB. If the chip does not support obtaining the luminance sum, this memory is not allocated.
-
--   VB rotation MMZ occupancy:
-
-    vo\(%d\)\_disp\_buf: Both the VB size and count are configured by the user. The size is determined by img\_size in the user-configured video layer attribute, and the count is determined by display\_buf\_len in the user-configured video layer attribute. In Single mode, VO occupies 3 private VBs for display rotation.
-
-    In Multi mode, if the upstream VPSS is in auto mode, VO occupies 4 private VBs for display rotation; if the upstream is in User mode, VO may not allocate VBs, instead occupying VBs sent from the upstream module and releasing them after display.
-
-## GFBG<a name="ZH-CN_TOPIC_0000002457839817"></a>
-
-When loading the ko, the user specifies the display buffer size for the graphics layer and mouse layer. All supported layers can be specified, and the layer ID must match the vram ID.
-
-For example: `insmod gfbg.ko video="gfbg:vram0_size:32400,vram1_size:32400,vram2_size:256,vram3_size:4052"`.
-
--   vram0\_size: Corresponds to the gfbg0 graphics layer memory size, in KB, mmz name= gfbg\_layer0.
--   vram1\_size: Corresponds to the gfbg1 graphics layer memory size, in KB, mmz name= gfbg\_layer1.
--   vram2\_size: Corresponds to the gfbg2 graphics layer memory size, in KB, mmz name= gfbg\_layer2.
--   vram3\_size: Corresponds to the gfbg3 graphics layer memory size, in KB, mmz name= gfbg\_layer3.
-
-## AUDIO<a name="ZH-CN_TOPIC_0000002424201218"></a>
-
-**AI<a name="section1478714716237"></a>**
-
--   ai\(%d\)\_frm: AI channel buffer allocated based on chn\_cnt, frame\_num, and point\_num\_per\_frame.
--   ai\(%d\)\_dma: AI DMA buffer allocated based on chn\_cnt and point\_num\_per\_frame.
-
-**AO<a name="section20436157192318"></a>**
-
--   ao\(%d\)\_dma&frm: AO DMA buffer and channel buffer allocated based on chn\_cnt, frame\_num, and point\_num\_per\_frame.
--   ao\(%d, %d\)\_cir: Audio frame buffer allocated based on frame\_num and point\_num\_per\_frame.
-
-**AENC<a name="section339816212241"></a>**
-
--   aenc\(%d\)\_strm: Stream buffer allocated based on buf\_size.
--   aenc\(%d\)\_cir: Ring buffer allocated based on the number of encoding channels.
-
-## REGION<a name="ZH-CN_TOPIC_0000002457879941"></a>
-
-**Region Information Context Nodes<a name="section15813751132413"></a>**
-
-Removing unnecessary modules can reduce memory usage, for example:
-
--   1024 region information context nodes allocated when loading the module, consuming 4KB of OS memory. Region information context is dynamically allocated when creating regions.
--   If it is an overlay or overlayex type region, ping-pong buffers will also be allocated for storing bitmap data.
--   rgn\_pin\_pon\_\(%d\): The size of the ping-pong buffer is determined by the width, height, canvas\_num, and color format set by the user, occupying MMZ memory.
-
-**Channel Management Information Nodes<a name="section16571145662413"></a>**
-
-When other modules call REGION functions to register information with REGION, they are dynamically allocated, occupying MMZ memory.
-
-## TDE<a name="ZH-CN_TOPIC_0000002457839825"></a>
-
-The channel uses MMZ memory with a fixed total size: \(OT\_TDE\_CMD\_NUM\) \* 64 + \(OT\_TDE\_JOB\_NUM\) \* 96 + \(OT\_TDE\_NODE\_NUM\) \* 256 + \(OT\_TDE\_FILTER\_NUM\) \* 1024.
-
-## SVP<a name="ZH-CN_TOPIC_0000002457839801"></a>
-
-**SVP\_NNN<a name="section14631148142915"></a>**
-
-SVP\_NNN memory usage is divided into MMZ memory and OS memory. MMZ memory includes task nodes and inference content memory.
-
--   Node MMZ occupancy:
-
-    Kernel-mode node size, default 100KB;
-
-    User-mode node size, default 80KB.
-
--   Inference MMZ occupancy (Resnet50 Batch 1 typical scenario):
-
-    OM memory size, 50828KB;
-
-    Input/output data memory size, 8596KB;
-
-    Model information memory size, 12KB.
-
--   OS memory occupancy:
-
-    OS memory mainly includes two parts: static global variable memory, approximately 5.6KB; dynamic memory, approximately 0.594KB.
-
-    >![](public_sys-resources/icon-note.gif) **Note:**
-    >Hi3519AV200 does not support the SVP\_NNN module.
-
-**IVE<a name="section8594155332913"></a>**
-
-IVE memory usage is divided into MMZ memory and OS memory. MMZ memory includes the task list and auxiliary memory.
-
--   Task list MMZ occupancy:
-
-    ive\_queue: IVE task list size, default 212KB.
-
--   Auxiliary MMZ memory occupancy:
-    -   ive\_tmp\_node: Temporary node needed for IVE multi-operator combined tasks, fixed at 4KB.
-    -   Md\_proc: MMZ memory needed for MD proc information, fixed at 8KB.
-    -   ive\_resize\_param: Auxiliary memory needed for resize operator calculation, fixed at 9264 bytes.
-    -   ive\_yuv\_to\_hsv\_table: Auxiliary memory for storing IVE color space conversion table, fixed at 2048 bytes.
-    -   ive\_yuv\_to\_lab\_table: Auxiliary memory for storing IVE color space conversion table, fixed at 6656 bytes.
-
--   OS memory occupancy:
-
-    IVE OS memory mainly consists of memory allocated by kmalloc and static global variable memory. OS memory plus MMZ memory does not exceed 235KB.
-
-**KCF<a name="section1226215919298"></a>**
-
-KCF memory usage is divided into MMZ memory and OS memory. MMZ memory includes the task list and auxiliary memory.
-
--   Task list MMZ occupancy:
-
-    kcf\_queue: KCF task list size, fixed at 106688 bytes.
-
--   Auxiliary MMZ memory occupancy:
-
-    kcf\_param: Auxiliary memory needed for KCF calculation, fixed at 45328 bytes.
-
--   OS memory occupancy:
-
-    KCF OS memory mainly consists of memory allocated by kmalloc and static global variable memory. OS memory plus MMZ memory does not exceed 150KB.
-
-**MAU<a name="section4581452303"></a>**
-
-MAU memory is mainly divided into MMZ memory and OS memory. MMZ memory is the task list memory.
-
--   Task list occupancy:
-
-    svp\_mau\_queue: MAU task list size, default 160KB.
-
--   OS memory occupancy:
-
-    MAU OS memory mainly consists of mem\_info linked list memory using OS memory (40 \* mau\_max\_mem\_info\_num bytes), and memory used by mau context static global variables. OS memory plus MMZ memory totals no more than 163KB.
-
-## PCIV<a name="ZH-CN_TOPIC_0000002457839793"></a>
-
-PCIV MMZ occupancy is divided into pcie-mcc message pool occupancy, window occupancy, and VB rotation occupancy.
-
--   pcie-mcc message pool occupancy:
-
-    Used for pcie-mcc message communication. The location and size are specified when loading the slave chip pcie driver, fixed at 1M.
-
--   Window occupancy:
-
-    When the master chip initiates a DMA operation, the slave chip space can only be read and written through the window. When loading the osal driver, the MMZ name is specified as window, the default size is 7M, and the starting position immediately follows the pcie-mcc message pool (pcie-mcc message pool + window continuous space has a maximum of 8M).
-
--   VB rotation occupancy:
-    -   Master chip rotation VB: VB size and count are configured by the user. The size must be sufficient to receive a complete image, generally determined by the image width, height, format attributes, etc., in the channel attributes. Allocation and release are controlled by user-called interfaces. When receiving slave chip images, the rotation VB is passed downstream, and whether to accept the next rotation is determined by checking the downstream occupancy status.
-    -   Slave chip rotation VB: The slave chip receives the upstream image. If VPSS uses auto mode to send frames, PCIV obtains the VB; in other modes, the VB is occupied when receiving the image. In pass-through mode (PCIV transparent transmission), the VB is released after DMA transmission completes. In non-pass-through mode (OSD, scaling, etc.), VGS needs to obtain a write VB and release the received image VB. After DMA transmission completes, the VGS write VB is released.
-
-## GDC<a name="ZH-CN_TOPIC_0000002424361082"></a>
-
-The GDC module allocates fixed MMZ memory based on the number of jobs, nodes, and tasks.
-
--   vmallocinfo: Occupies OS memory based on job count, task count, and context. More items mean larger occupancy.
--   gdc\_node\_buf: Occupies a certain amount of MMZ memory based on the number of nodes. More nodes mean larger occupancy.
--   gdc\_int\_pole\_coef: MMZ memory needed for storing interpolation coefficients, fixed at 4KB.
-
-## CIPHER<a name="ZH-CN_TOPIC_0000002457879957"></a>
-
-Fixed size (the length of MMZ memory allocated is determined internally by the driver):
-
--   Hash initialization: Allocates memory for the SHA node linked list, fixed at 28 \* 255 \* 1 = 7KB; 255 is the maximum depth of the linked list, with a minimum depth of 2. HASH message DMA memory: logic only recognizes physical memory, so a maximum of 64KB of physical memory needs to be allocated to store hash messages.
--   Cipher driver module initialization: Allocates memory for the CIPHER node linked list, entry list size (20KB), used to store the CCM GCM aad physical memory padding buffer (2KB) for each of the 16 channels, fixed at 22KB.
-
-Non-fixed size (the length of MMZ memory allocated is passed in by the user-layer interface):
-
-cipher encryption/decryption: Depends on the byte\_len parameter of the virtual address/physical address encryption/decryption interface.
-
-## DCC<a name="ZH-CN_TOPIC_0000002424361058"></a>
-
-dcc\_msg\_buf: Used on SS626V100 for dual-core communication tasks.
-
-## VDA<a name="ZH-CN_TOPIC_0000002457879965"></a>
-
-vda\(%d\): Memory related to internal channel calculation result storage, mainly including SAD result memory, RGN motion region information memory, and background.
-
-## ISP<a name="ZH-CN_TOPIC_0000002457839813"></a>
-
--   isp\[%d\].vreg\[%d\]: External virtual register memory.
--   isp\[%d\].proc: User-mode algorithm proc debug information.
--   isp\[%d\].trans: dng, dcf, colorgamut and other information memory.
--   isp\[%d\].ldci: ldci algorithm memory.
--   isp\[%d\].clut: clut algorithm memory.
--   be\_lut\_stt\[%d\]: be lut information memory.
--   pre\_on\_lut\_stt\[%d\]: Online channel ADVANCED mode be lut information memory.
--   isp\[%d\].stat: Statistical information (FE, BE) memory.
--   isp\[%d\].fe\_stat: FE statistical information memory.
--   isp\[%d\].wdr: wdr algorithm memory.
--   isp\[%d\].drc: drc algorithm memory.
--   isp\[%d\].be\_cfg: Offline channel be config buffer.
--   isp\[%d\].be\_stt\_on: Online channel be statistical information memory.
--   isp\[%d\].fe\_stt: fe statistical information memory.
--   isp\[%d\].be\_stt: Offline channel be statistical information memory.
--   isp\[%d\].stit\_fe: Stitching channel fe statistical information memory.
--   isp\[%d\].stit\_be: Stitching channel be statistical information memory.
-
-## HNR<a name="ZH-CN_TOPIC_0000002424201214"></a>
-
--   hnr\_pqp\_buf\[%d\]: HNR model file memory.
--   hnr\_ping\_pong\_buf: Working memory used for HNR model inference.
-
-    When the HNR function reference frame mode is enabled, 4-6 additional video frame VBs are needed. In non-reference frame mode, 1 additional video frame VB is needed.
-
-# Module Memory Optimization Configurations
-## VB<a name="ZH-CN_TOPIC_0000002424201202"></a>
-
-<a name="table626mcpsimp"></a>
+</table> # Overview
+DDR miniaturization can be approached from multiple directions: uboot, kernel, filesys, SDK, and APP can all be optimized to a certain extent in memory usage. This document mainly provides a brief explanation of miniaturization for SDK and APP. The SDK based on currently supports running both Linux and Lite OS dual systems or a single Linux system. If the business scenario only requires running a single Linux system, please refer to Section 3.2 of the "Memory Layout Adjustment Guide" to trim MMZ occupancy related to the liteos system. This document is based on the Linux and Lite OS dual-system configuration by default. The system miniaturization of is implemented on the DEMO board, using 2GB DDR memory as an example. **Figure 1** Linux System Memory Allocation Diagram on DEMO Board (for reference only)<a name="fig58516719710"></a>
+![](figures/DEMO Linux System Memoryallocategraph（Only Reference）.png "DEMO Linux System Memoryallocategraph（Only Reference）")") For MMZ memory usage data in typical business scenarios, please refer to the " Memory Usage Statistics Report". Additionally, specific memory usage for customer applications needs to be analyzed in conjunction with specific scenarios. The following sections describe the MMZ memory usage of each module and optimization methods for miniaturization. # MMZ Occupancy of Main Modules During Operation
+In general business scenarios, MMZ occupancy often accounts for a large portion of memory consumption. This chapter mainly describes the MMZ occupancy of several major modules during operation in typical business scenarios. ## VI<a name="ZH-CN_TOPIC_0000002424361046"></a> In the VI capture state, a maximum of three video frame V Bs will be occupied. One is used for current frame capture, one is prepared for the next frame capture, and one is in the rotation flow (mainly occupied by downstream modules). MMZ occupancy in Hi3403V100: - vi\(%d\)\_model\_%d: Each pipe needs to occupy two template MMZ memories of a certain size. The size is related to the channel width. When the width is less than or equal to 4096, the size is 16KB.
+- vi\(%d\)\_lmf: Occupies MMZ memory when LMF function is enabled on each pipe, used to store LMF coefficients, fixed at 4K.
+- vi\(%d\)\_bnr\_mot: Motion buffer memory required when Bayer NR function is enabled on each pipe. Size is determined by the width and height of the processed image.
+- vi\(0\)\_bnr\_rnt: RNT memory required when Bayer NR function is enabled on each pipe. Size is determined by the width and height of the processed image. When offline, the count is set by ss\_mpi\_vi\_set\_pipe\_bnr\_buf\_num.
+- Interface setting, default is 40 blocks.
+- vi\(0\)\_bnr\_ref%d: Temporal reference memory required when Bayer NR function is enabled on each pipe. Size is determined by the width and height of the processed image. ## VDEC<a name="ZH-CN_TOPIC_0000002424201210"></a> VDEC MMZ occupancy is divided into buffer occupancy, rotation occupancy, and device occupancy. **Buffer Occupancy<a name="section389732110912"></a>** - vfmw\(%d\)\_usd\_buf: User data buffer memory, allocated based on the size specified by the user.
+- vdec\(%d\)\_adp\_ref: Used to store vb-related information for the channel.
+- vdec\(%d\)\_adp\_event: Used to store event information generated during decoding.
+- vfmw\(%d\)\_shr\_img: Used to store information related to decoded images.
+- vdec\_adp\_proc: Used to store proc information generated by vdec on the MDC side.
+- vfmw\_mdc\_shr: Used to store proc information generated by vfmw on the MDC side. **Device Occupancy<a name="section172822554102"></a>** - vfmw\(%d\)\_seg\_buf: Memory for storing data after SCD stream slicing. Related to resolution, independent of protocol.
+- vfmw\_scd\_msg: Memory required for SCD logic operation, fixed at 44KB.
+- vfmw\_mdma\_msg: Memory required for VDH logic operation, fixed at 44KB. **Rotation Occupancy<a name="section32020161117"></a>** - vdec\(%d\)\_pic\_vb: Both the VB size and count are configured by the user. In private VB mode, the size is determined by frame\_buf\_size in the user-configured channel attributes, and the count is determined by frame\_buf\_cnt in the user-configured channel attributes.
+- vdec\(%d\)\_tmv\_vb: Both the VB size and count are configured by the user. In private VB mode, the size is determined by tmv\_buf\_size in the user-configured channel attributes, and the count is "reference frames + 1", where the reference frame count is determined by ref\_frame\_num in the user-configured channel attributes. ## VPSS<a name="ZH-CN_TOPIC_0000002457879933"></a> - vb\_pool: The Group occupies two VBs (sent from the upstream module: current working VB + Backup frame). Each enabled channel will obtain a channel-sized VB (in Auto mode for the channel, it is obtained for the downstream module). After hardware processing, it is sent to the bound downstream module. If rotation/secondary scaling is needed, intermediate temporary V Bs (public V Bs) also need to be allocated.
+- vpss\(%d\)\_src: Each group needs to occupy luminance and MMZ memory resources, approximately 4K.
+- vpss\(%d\)\_dci: Occupies MMZ memory when DCI function is enabled on each group, approximately 4K.
+- vpss\(%d\)\_model: Each group needs to occupy a certain size of template MMZ memory. The size is related to split\_node\_num in the module parameters and the max\_width of the group. The larger split\_node\_num and max\_width are, the larger the occupancy.
+- vpss\(%d\)\_lmf: Occupies MMZ memory when LMF function is enabled on each group, used to store LMF coefficients, fixed at 4K.
+- vpss\(%d\)\_rgn\_luma: Occupies MMZ memory when the channel luminance sum function is enabled on each group, used to store luminance statistical information, fixed at 4K.
+- vmallocinfo: Each group context needs to occupy a certain amount of OS memory. The total size is related to the number of groups; more groups mean larger occupancy. ## VGS<a name="ZH-CN_TOPIC_0000002457879973"></a> The VGS module allocates fixed MMZ memory based on the number of jobs, nodes, and tasks. - vmallocinfo: Occupies OS memory based on the number of jobs, tasks, and context. More items mean larger occupancy.
+- vgs\_node\_buf: Occupies a certain amount of MMZ memory based on the number of nodes. More nodes mean larger occupancy. ## VENC<a name="ZH-CN_TOPIC_0000002457879945"></a> - Hardware-related: vedu\_hal\_\(%d\): Memory required by the hardware, related to the number of I Ps. - Channel-related memory (using H264 as an example; H265 uses the h265e prefix): - h264e\(%d\)\_node: Register node configuration memory, one per channel. - h264e\(%d\)\_str0: Stream buffer, one per channel. - h264e\(%d\)\_rcn\(%d\): Reference frame reconstruction frame memory. The count is related to the number of encoding reference frames. - h264e\(%d\)\_info\(%d\): Reference frame reconstruction frame information memory. The count is related to the number of encoding reference frames. - h264e\(%d\)\_deblur: After enabling deblur via ss\_mpi\_venc\_set\_deblur, corresponding deblur processing memory is required. - h264e\(%d\)\_md: After enabling MD detection via ss\_mpi\_venc\_set\_md, corresponding MD detection memory is required. - venc\(%d\)\_svc: After enabling SVC via ss\_mpi\_venc\_enable\_svc, corresponding SVC memory is required. - jpege\(%d\)\_stm: jpege stream buffer, one per channel. - jpege\(%d\)\_roi\_map: When enabling roi\_map via ss\_mpi\_venc\_set\_jpeg\_roi\_attr, memory is allocated for the jpege roi\_map. - vmallocinfo: Channel context memory for each channel; User Data data; bitrate control related memory. ## VO<a name="ZH-CN_TOPIC_0000002424201194"></a> VO MMZ occupancy is divided into coefficient MMZ occupancy, luminance sum MMZ occupancy, and VB rotation MMZ occupancy. - Coefficient MMZ occupancy: vo\_coef\_buf: Memory for storing write-back scaling coefficients (128KB) and multi-region configuration coefficients (8KB), totaling 136KB. If the chip does not support write-back scaling, the corresponding coefficients will not be allocated. One multi-region occupies 4KB of memory, and two multi-regions occupy 8KB. - Luminance sum MMZ occupancy: vo\(%d,%d\)\_luma: MMZ memory dynamically allocated when the VO module obtains the video layer and channel luminance sum. A specific channel always occupies 4KB. If the chip does not support obtaining the luminance sum, this memory is not allocated. - VB rotation MMZ occupancy: vo\(%d\)\_disp\_buf: Both the VB size and count are configured by the user. The size is determined by img\_size in the user-configured video layer attribute, and the count is determined by display\_buf\_len in the user-configured video layer attribute. In Single mode, VO occupies 3 private V Bs for display rotation. In Multi mode, if the upstream VPSS is in auto mode, VO occupies 4 private V Bs for display rotation; if the upstream is in User mode, VO may not allocate V Bs, instead occupying V Bs sent from the upstream module and releasing them after display. ## GFBG<a name="ZH-CN_TOPIC_0000002457839817"></a> When loading the ko, the user specifies the display buffer size for the graphics layer and mouse layer. All supported layers can be specified, and the layer ID must match the vram ID. For example: `insmod gfbg.ko video="gfbg:vram0_size:32400,vram1_size:32400,vram2_size:256,vram3_size:4052"`. - vram0\_size: Corresponds to the gfbg0 graphics layer memory size, in KB, mmz name= gfbg\_layer0.
+- vram1\_size: Corresponds to the gfbg1 graphics layer memory size, in KB, mmz name= gfbg\_layer1.
+- vram2\_size: Corresponds to the gfbg2 graphics layer memory size, in KB, mmz name= gfbg\_layer2.
+- vram3\_size: Corresponds to the gfbg3 graphics layer memory size, in KB, mmz name= gfbg\_layer3. ## AUDIO<a name="ZH-CN_TOPIC_0000002424201218"></a> **AI<a name="section1478714716237"></a>** - ai\(%d\)\_frm: AI channel buffer allocated based on chn\_cnt, frame\_num, and point\_num\_per\_frame.
+- ai\(%d\)\_dma: AI DMA buffer allocated based on chn\_cnt and point\_num\_per\_frame. **AO<a name="section20436157192318"></a>** - ao\(%d\)\_dma&frm: AO DMA buffer and channel buffer allocated based on chn\_cnt, frame\_num, and point\_num\_per\_frame.
+- ao\(%d, %d\)\_cir: Audio frame buffer allocated based on frame\_num and point\_num\_per\_frame. **AENC<a name="section339816212241"></a>** - aenc\(%d\)\_strm: Stream buffer allocated based on buf\_size.
+- aenc\(%d\)\_cir: Ring buffer allocated based on the number of encoding channels. ## REGION<a name="ZH-CN_TOPIC_0000002457879941"></a> **Region Information Context Nodes<a name="section15813751132413"></a>** Removing unnecessary modules can reduce memory usage, for example: - 1024 region information context nodes allocated when loading the module, consuming 4KB of OS memory. Region information context is dynamically allocated when creating regions.
+- If it is an overlay or overlayex type region, ping-pong buffers will also be allocated for storing bitmap data.
+- rgn\_pin\_pon\_\(%d\): The size of the ping-pong buffer is determined by the width, height, canvas\_num, and color format set by the user, occupying MMZ memory. **Channel Management Information Nodes<a name="section16571145662413"></a>** When other modules call REGION functions to register information with REGION, they are dynamically allocated, occupying MMZ memory. ## TDE<a name="ZH-CN_TOPIC_0000002457839825"></a> The channel uses MMZ memory with a fixed total size: \(OT\_TDE\_CMD\_NUM\) \* 64 + \(OT\_TDE\_JOB\_NUM\) \* 96 + \(OT\_TDE\_NODE\_NUM\) \* 256 + \(OT\_TDE\_FILTER\_NUM\) \* 1024. ## SVP<a name="ZH-CN_TOPIC_0000002457839801"></a> **SVP\_NNN<a name="section14631148142915"></a>** SVP\_NNN memory usage is divided into MMZ memory and OS memory. MMZ memory includes task nodes and inference content memory. - Node MMZ occupancy: Kernel-mode node size, default 100KB; User-mode node size, default 80KB. - Inference MMZ occupancy (Resnet50 Batch 1 typical scenario): OM memory size, 50828KB; Input/output data memory size, 8596KB; Model information memory size, 12KB. - OS memory occupancy: OS memory mainly includes two parts: static global variable memory, approximately 5.6KB; dynamic memory, approximately 0.594KB. >![](public_sys-resources/icon-note.gif) **Note:** **IVE<a name="section8594155332913"></a>** IVE memory usage is divided into MMZ memory and OS memory. MMZ memory includes the task list and auxiliary memory. - Task list MMZ occupancy: ive\_queue: IVE task list size, default 212KB. - Auxiliary MMZ memory occupancy: - ive\_tmp\_node: Temporary node needed for IVE multi-operator combined tasks, fixed at 4KB. - Md\_proc: MMZ memory needed for MD proc information, fixed at 8KB. - ive\_resize\_param: Auxiliary memory needed for resize operator calculation, fixed at 9264 bytes. - ive\_yuv\_to\_hsv\_table: Auxiliary memory for storing IVE color space conversion table, fixed at 2048 bytes. - ive\_yuv\_to\_lab\_table: Auxiliary memory for storing IVE color space conversion table, fixed at 6656 bytes. - OS memory occupancy: IVE OS memory mainly consists of memory allocated by kmalloc and static global variable memory. OS memory plus MMZ memory does not exceed 235KB. **KCF<a name="section1226215919298"></a>** KCF memory usage is divided into MMZ memory and OS memory. MMZ memory includes the task list and auxiliary memory. - Task list MMZ occupancy: kcf\_queue: KCF task list size, fixed at 106688 bytes. - Auxiliary MMZ memory occupancy: kcf\_param: Auxiliary memory needed for KCF calculation, fixed at 45328 bytes. - OS memory occupancy: KCF OS memory mainly consists of memory allocated by kmalloc and static global variable memory. OS memory plus MMZ memory does not exceed 150KB. **MAU<a name="section4581452303"></a>** MAU memory is mainly divided into MMZ memory and OS memory. MMZ memory is the task list memory. - Task list occupancy: svp\_mau\_queue: MAU task list size, default 160KB. - OS memory occupancy: MAU OS memory mainly consists of mem\_info linked list memory using OS memory (40 \* mau\_max\_mem\_info\_num bytes), and memory used by mau context static global variables. OS memory plus MMZ memory totals no more than 163KB. ## PCIV<a name="ZH-CN_TOPIC_0000002457839793"></a> PCIV MMZ occupancy is divided into pcie-mcc message pool occupancy, window occupancy, and VB rotation occupancy. - pcie-mcc message pool occupancy: Used for pcie-mcc message communication. The location and size are specified when loading the slave chip pcie driver, fixed at 1M. - Window occupancy: When the master chip initiates a DMA operation, the slave chip space can only be read and written through the window. When loading the osal driver, the MMZ name is specified as window, the default size is 7M, and the starting position immediately follows the pcie-mcc message pool (pcie-mcc message pool + window continuous space has a maximum of 8M). - VB rotation occupancy: - Master chip rotation VB: VB size and count are configured by the user. The size must be sufficient to receive a complete image, generally determined by the image width, height, format attributes, etc., in the channel attributes. Allocation and release are controlled by user-called interfaces. When receiving slave chip images, the rotation VB is passed downstream, and whether to accept the next rotation is determined by checking the downstream occupancy status. - Slave chip rotation VB: The slave chip receives the upstream image. If VPSS uses auto mode to send frames, PCIV obtains the VB; in other modes, the VB is occupied when receiving the image. In pass-through mode (PCIV transparent transmission), the VB is released after DMA transmission completes. In non-pass-through mode (OSD, scaling, etc.), VGS needs to obtain a write VB and release the received image VB. After DMA transmission completes, the VGS write VB is released. ## GDC<a name="ZH-CN_TOPIC_0000002424361082"></a> The GDC module allocates fixed MMZ memory based on the number of jobs, nodes, and tasks. - vmallocinfo: Occupies OS memory based on job count, task count, and context. More items mean larger occupancy.
+- gdc\_node\_buf: Occupies a certain amount of MMZ memory based on the number of nodes. More nodes mean larger occupancy.
+- gdc\_int\_pole\_coef: MMZ memory needed for storing interpolation coefficients, fixed at 4KB. ## CIPHER<a name="ZH-CN_TOPIC_0000002457879957"></a> Fixed size (the length of MMZ memory allocated is determined internally by the driver): - Hash initialization: Allocates memory for the SHA node linked list, fixed at 28 \* 255 \* 1 = 7KB; 255 is the maximum depth of the linked list, with a minimum depth of 2. HASH message DMA memory: logic only recognizes physical memory, so a maximum of 64KB of physical memory needs to be allocated to store hash messages.
+- Cipher driver module initialization: Allocates memory for the CIPHER node linked list, entry list size (20KB), used to store the CCM GCM aad physical memory padding buffer (2KB) for each of the 16 channels, fixed at 22KB. Non-fixed size (the length of MMZ memory allocated is passed in by the user-layer interface): cipher encryption/decryption: Depends on the byte\_len parameter of the virtual address/physical address encryption/decryption interface. ## DCC<a name="ZH-CN_TOPIC_0000002424361058"></a> dcc\_msg\_buf: Used on for dual-core communication tasks. ## VDA<a name="ZH-CN_TOPIC_0000002457879965"></a> vda\(%d\): Memory related to internal channel calculation result storage, mainly including SAD result memory, RGN motion region information memory, and background. ## ISP<a name="ZH-CN_TOPIC_0000002457839813"></a> - isp\[%d\].vreg\[%d\]: External virtual register memory.
+- isp\[%d\].proc: User-mode algorithm proc debug information.
+- isp\[%d\].trans: dng, dcf, colorgamut and other information memory.
+- isp\[%d\].ldci: ldci algorithm memory.
+- isp\[%d\].clut: clut algorithm memory.
+- be\_lut\_stt\[%d\]: be lut information memory.
+- pre\_on\_lut\_stt\[%d\]: Online channel ADVANCED mode be lut information memory.
+- isp\[%d\].stat: Statistical information (FE, BE) memory.
+- isp\[%d\].fe\_stat: FE statistical information memory.
+- isp\[%d\].wdr: wdr algorithm memory.
+- isp\[%d\].drc: drc algorithm memory.
+- isp\[%d\].be\_cfg: Offline channel be config buffer.
+- isp\[%d\].be\_stt\_on: Online channel be statistical information memory.
+- isp\[%d\].fe\_stt: fe statistical information memory.
+- isp\[%d\].be\_stt: Offline channel be statistical information memory.
+- isp\[%d\].stit\_fe: Stitching channel fe statistical information memory.
+- isp\[%d\].stit\_be: Stitching channel be statistical information memory. ## HNR<a name="ZH-CN_TOPIC_0000002424201214"></a> - hnr\_pqp\_buf\[%d\]: HNR model file memory.
+- hnr\_ping\_pong\_buf: Working memory used for HNR model inference. When the HNR function reference frame mode is enabled, 4-6 additional video frame V Bs are needed. In non-reference frame mode, 1 additional video frame VB is needed. # Module Memory Optimization Configurations
+## VB<a name="ZH-CN_TOPIC_0000002424201202"></a> <a name="table626mcpsimp"></a>
 <table><thead align="left"><tr id="row635mcpsimp"><th class="cellrowborder" valign="top" width="10.80897348742352%" id="mcps1.1.7.1.1"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.197436146450421%" id="mcps1.1.7.1.2"><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>Related Module Parameter/Interface</p>
@@ -390,8 +117,8 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="6.798096532970768%" headers="mcps1.1.7.1.4 "><p id="p67241519151610"><a name="p67241519151610"></a><a name="p67241519151610"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.26240652617267%" headers="mcps1.1.7.1.5 "><p id="p572411981616"><a name="p572411981616"></a><a name="p572411981616"></a>For setting VB count in public VB pool, module VB pool, and UserVB pool, refer to the VB-related interfaces in the "System Control" chapter of the "MPP Media Processing Software V5.0 Development Reference".</p>
-<p id="p187074211157"><a name="p187074211157"></a><a name="p187074211157"></a>For setting PrivateVB pool count, find the corresponding parameters in the relevant module interfaces.</p>
+<td class="cellrowborder" valign="top" width="34.26240652617267%" headers="mcps1.1.7.1.5 "><p id="p572411981616"><a name="p572411981616"></a><a name="p572411981616"></a>For setting VB count in public VB pool, module VB pool, and User VB pool, refer to the VB-related interfaces in the "System Control" chapter of the "MPP Media Processing Software V5.0 Development Reference".</p>
+<p id="p187074211157"><a name="p187074211157"></a><a name="p187074211157"></a>For setting Private VB pool count, find the corresponding parameters in the relevant module interfaces.</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.364863552491016%" headers="mcps1.1.7.1.6 "><p id="p1372417193163"><a name="p1372417193163"></a><a name="p1372417193163"></a>mini_free: historical minimum remaining VB count</p>
 </td>
@@ -404,19 +131,15 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="6.798096532970768%" headers="mcps1.1.7.1.4 "><p id="p12699753174"><a name="p12699753174"></a><a name="p12699753174"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="34.26240652617267%" headers="mcps1.1.7.1.5 "><p id="p4276361092"><a name="p4276361092"></a><a name="p4276361092"></a>For setting VB block size in public VB pool, module VB pool, and UserVB pool, refer to the VB-related interfaces in the "System Control" chapter of the "MPP Media Processing Software V5.0 FAQ".</p>
-<p id="p162712362916"><a name="p162712362916"></a><a name="p162712362916"></a>For setting PrivateVB pool count, find the corresponding parameters in the relevant module interfaces.</p>
+<td class="cellrowborder" valign="top" width="34.26240652617267%" headers="mcps1.1.7.1.5 "><p id="p4276361092"><a name="p4276361092"></a><a name="p4276361092"></a>For setting VB block size in public VB pool, module VB pool, and User VB pool, refer to the VB-related interfaces in the "System Control" chapter of the "MPP Media Processing Software V5.0 FAQ".</p>
+<p id="p162712362916"><a name="p162712362916"></a><a name="p162712362916"></a>For setting Private VB pool count, find the corresponding parameters in the relevant module interfaces.</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.364863552491016%" headers="mcps1.1.7.1.6 "><p id="p869916538718"><a name="p869916538718"></a><a name="p869916538718"></a>free_bytes: real-time remaining bytes in VB block</p>
 <p id="p109046282137"><a name="p109046282137"></a><a name="p109046282137"></a>get: the module that obtained the VB block; this information can help determine which module's VB block size is oversized</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## SYS<a name="ZH-CN_TOPIC_0000002457879949"></a>
-
-<a name="table626mcpsimp"></a>
+</table> ## SYS<a name="ZH-CN_TOPIC_0000002457879949"></a> <a name="table626mcpsimp"></a>
 <table><thead align="left"><tr id="row635mcpsimp"><th class="cellrowborder" valign="top" width="16.6016601660166%" id="mcps1.1.7.1.1"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.56165616561656%" id="mcps1.1.7.1.2"><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>Related Module Parameter/Interface</p>
@@ -452,7 +175,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="5.5205520552055205%" headers="mcps1.1.7.1.4 "><p id="p15930184513162"><a name="p15930184513162"></a><a name="p15930184513162"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul5953174413428"></a><a name="ul5953174413428"></a><ul id="ul5953174413428"><li>Set module parameter g_mdc_log_enable=0 when inserting xx_base.ko</li><li>Supported by SS626V100</li></ul>
+<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul5953174413428"></a><a name="ul5953174413428"></a><ul id="ul5953174413428"><li>Set module parameter g_mdc_log_enable=0 when inserting xx_base.ko</li><li>Supported by </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="8.85088508850885%" headers="mcps1.1.7.1.6 "><p id="p1592917457166"><a name="p1592917457166"></a><a name="p1592917457166"></a>-</p>
 </td>
@@ -465,17 +188,13 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="5.5205520552055205%" headers="mcps1.1.7.1.4 "><p id="p2819188142613"><a name="p2819188142613"></a><a name="p2819188142613"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul07781240164419"></a><a name="ul07781240164419"></a><ul id="ul07781240164419"><li>Refer to document "Memory Layout Adjustment Guide"</li><li>ss_mpi_vdec_set_chn_config: set deployment_mode to OT_VDEC_DEPLOYMENT_MODE0</li><li>Supported by SS626V100</li></ul>
+<td class="cellrowborder" valign="top" width="33.913391339133916%" headers="mcps1.1.7.1.5 "><a name="ul07781240164419"></a><a name="ul07781240164419"></a><ul id="ul07781240164419"><li>Refer to document "Memory Layout Adjustment Guide"</li><li>ss_mpi_vdec_set_chn_config: set deployment_mode to OT_VDEC_DEPLOYMENT_MODE0</li><li>Supported by </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="8.85088508850885%" headers="mcps1.1.7.1.6 "><p id="p179233459165"><a name="p179233459165"></a><a name="p179233459165"></a>-</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## VI<a name="ZH-CN_TOPIC_0000002457879929"></a>
-
-<a name="table131881116404"></a>
+</table> ## VI<a name="ZH-CN_TOPIC_0000002457879929"></a> <a name="table131881116404"></a>
 <table><thead align="left"><tr id="row1118913161008"><th class="cellrowborder" valign="top" width="17.39%" id="mcps1.1.7.1.1"><p id="p171891516307"><a name="p171891516307"></a><a name="p171891516307"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.259999999999998%" id="mcps1.1.7.1.2"><p id="p181891616508"><a name="p181891616508"></a><a name="p181891616508"></a>Related Interface</p>
@@ -494,7 +213,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="16.259999999999998%" headers="mcps1.1.7.1.2 "><p id="p35557121739"><a name="p35557121739"></a><a name="p35557121739"></a>ss_mpi_vi_set_pipe_frame_interrupt_attr</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p41899164014"><a name="p41899164014"></a><a name="p41899164014"></a>Linear or online WDR, saves one VB; offline WDR (2 channels), saves two VBs</p>
+<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p41899164014"><a name="p41899164014"></a><a name="p41899164014"></a>Linear or online WDR, saves one VB; offline WDR (2 channels), saves two V Bs</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p61891216901"><a name="p61891216901"></a><a name="p61891216901"></a>Number of VI capture response interrupts doubles</p>
 </td>
@@ -550,7 +269,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="16.259999999999998%" headers="mcps1.1.7.1.2 "><p id="p1685912519133"><a name="p1685912519133"></a><a name="p1685912519133"></a>ss_mpi_sys_set_vi_vpss_mode</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p819016162012"><a name="p819016162012"></a><a name="p819016162012"></a>Online/online-offline/offline-online paths save 1-2 VBs compared to fully offline paths</p>
+<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p819016162012"><a name="p819016162012"></a><a name="p819016162012"></a>Online/online-offline/offline-online paths save 1-2 V Bs compared to fully offline paths</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p619018161605"><a name="p619018161605"></a><a name="p619018161605"></a>VI online can only process one path; VPSS online cannot perform channel post-processing functions at VI_CHN</p>
 </td>
@@ -563,7 +282,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 <td class="cellrowborder" valign="top" width="16.259999999999998%" headers="mcps1.1.7.1.2 "><p id="p4914172816364"><a name="p4914172816364"></a><a name="p4914172816364"></a>ss_mpi_sys_set_vi_video_mode</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p8914162833615"><a name="p8914162833615"></a><a name="p8914162833615"></a>Normal mode saves 2 VBs compared to advanced mode</p>
+<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p8914162833615"><a name="p8914162833615"></a><a name="p8914162833615"></a>Normal mode saves 2 V Bs compared to advanced mode</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p2914152810361"><a name="p2914152810361"></a><a name="p2914152810361"></a>In normal mode, HNR function is before BE</p>
 </td>
@@ -586,11 +305,11 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 <p id="p250319140392"><a name="p250319140392"></a><a name="p250319140392"></a>bnr_buf_num</p>
 </td>
 </tr>
-<tr id="row1794717217459"><td class="cellrowborder" valign="top" width="17.39%" headers="mcps1.1.7.1.1 "><p id="p119471121134513"><a name="p119471121134513"></a><a name="p119471121134513"></a>Manually disable ISP BayerNR function</p>
+<tr id="row1794717217459"><td class="cellrowborder" valign="top" width="17.39%" headers="mcps1.1.7.1.1 "><p id="p119471121134513"><a name="p119471121134513"></a><a name="p119471121134513"></a>Manually disable ISP Bayer NR function</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.259999999999998%" headers="mcps1.1.7.1.2 "><p id="p20607134462"><a name="p20607134462"></a><a name="p20607134462"></a>ss_mpi_isp_set_nr_attr</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p49471821174517"><a name="p49471821174517"></a><a name="p49471821174517"></a>Disabling BayerNR can save reference frame memory and bandwidth</p>
+<td class="cellrowborder" valign="top" width="18.96%" headers="mcps1.1.7.1.3 "><p id="p49471821174517"><a name="p49471821174517"></a><a name="p49471821174517"></a>Disabling Bayer NR can save reference frame memory and bandwidth</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.28%" headers="mcps1.1.7.1.4 "><p id="p189471921174513"><a name="p189471921174513"></a><a name="p189471921174513"></a>Affects image quality</p>
 </td>
@@ -600,11 +319,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 </tr>
 </tbody>
-</table>
-
-## VDEC<a name="ZH-CN_TOPIC_0000002457839809"></a>
-
-<a name="table626mcpsimp"></a>
+</table> ## VDEC<a name="ZH-CN_TOPIC_0000002457839809"></a> <a name="table626mcpsimp"></a>
 <table><thead align="left"><tr id="row635mcpsimp"><th class="cellrowborder" valign="top" width="15.521552155215524%" id="mcps1.1.7.1.1"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="19.061906190619062%" id="mcps1.1.7.1.2"><p id="p639mcpsimp"><a name="p639mcpsimp"></a><a name="p639mcpsimp"></a>Related Module Parameter/Interface</p>
@@ -704,7 +419,7 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </tr>
 <tr id="row701mcpsimp"><td class="cellrowborder" valign="top" width="15.521552155215524%" headers="mcps1.1.7.1.1 "><p id="p703mcpsimp"><a name="p703mcpsimp"></a><a name="p703mcpsimp"></a>Maximum number of channels supported by the decoding module</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.061906190619062%" headers="mcps1.1.7.1.2 "><p id="p705mcpsimp"><a name="p705mcpsimp"></a><a name="p705mcpsimp"></a>g_vdec_max_chn_num  g_vfmw_max_chn_num</p>
+<td class="cellrowborder" valign="top" width="19.061906190619062%" headers="mcps1.1.7.1.2 "><p id="p705mcpsimp"><a name="p705mcpsimp"></a><a name="p705mcpsimp"></a>g_vdec_max_chn_num g_vfmw_max_chn_num</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.851785178517854%" headers="mcps1.1.7.1.3 "><p id="p707mcpsimp"><a name="p707mcpsimp"></a><a name="p707mcpsimp"></a>Can save some OS memory</p>
 </td>
@@ -759,14 +474,8 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **Note:**
->For details, see the "Video Decoding" chapter of the "MPP Media Processing Software V5.0 Development Reference".
-
-## VPSS<a name="ZH-CN_TOPIC_0000002424201190"></a>
-
-<a name="table451mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **Note:**
+>For details, see the "Video Decoding" chapter of the "MPP Media Processing Software V5.0 Development Reference". ## VPSS<a name="ZH-CN_TOPIC_0000002424201190"></a> <a name="table451mcpsimp"></a>
 <table><thead align="left"><tr id="row460mcpsimp"><th class="cellrowborder" valign="top" width="11.111111111111112%" id="mcps1.1.7.1.1"><p id="p462mcpsimp"><a name="p462mcpsimp"></a><a name="p462mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.842184218421842%" id="mcps1.1.7.1.2"><p id="p464mcpsimp"><a name="p464mcpsimp"></a><a name="p464mcpsimp"></a>Related Module Parameter/Interface</p>
@@ -848,14 +557,8 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **Note:**
->For specific usage and limitations, see the "Video Processing Subsystem" chapter of the "MPP Media Processing Software V5.0 Development Reference".
-
-## VGS<a name="ZH-CN_TOPIC_0000002424361078"></a>
-
-<a name="table830mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **Note:**
+>For specific usage and limitations, see the "Video Processing Subsystem" chapter of the "MPP Media Processing Software V5.0 Development Reference". ## VGS<a name="ZH-CN_TOPIC_0000002424361078"></a> <a name="table830mcpsimp"></a>
 <table><thead align="left"><tr id="row839mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.7.1.1"><p id="p841mcpsimp"><a name="p841mcpsimp"></a><a name="p841mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="18%" id="mcps1.1.7.1.2"><p id="p843mcpsimp"><a name="p843mcpsimp"></a><a name="p843mcpsimp"></a>Related Module Parameter</p>
@@ -910,16 +613,8 @@ vda\(%d\): Memory related to internal channel calculation result storage, mainly
 </td>
 </tr>
 </tbody>
-</table>
-
-The VGS module mainly uses OS memory and node mmz. Considering the scenario, reducing the maximum job count, maximum task count, and maximum node count can reduce OS memory usage and node-occupied MMZ memory.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->For specific usage and limitations, see the "Video Graphics Subsystem" chapter of the "MPP Media Processing Software V5.0 Development Reference".
-
-## VENC<a name="ZH-CN_TOPIC_0000002424361070"></a>
-
-<a name="table97611421161513"></a>
+</table> The VGS module mainly uses OS memory and node mmz. Considering the scenario, reducing the maximum job count, maximum task count, and maximum node count can reduce OS memory usage and node-occupied MMZ memory. >![](public_sys-resources/icon-note.gif) **Note:**
+>For specific usage and limitations, see the "Video Graphics Subsystem" chapter of the "MPP Media Processing Software V5.0 Development Reference". ## VENC<a name="ZH-CN_TOPIC_0000002424361070"></a> <a name="table97611421161513"></a>
 <table><thead align="left"><tr id="row127617214151"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.7.1.1"><p id="p117611621171511"><a name="p117611621171511"></a><a name="p117611621171511"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="20.18%" id="mcps1.1.7.1.2"><p id="p1676192171517"><a name="p1676192171517"></a><a name="p1676192171517"></a>Related Module Parameter/Interface</p>
@@ -980,7 +675,7 @@ The VGS module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 <td class="cellrowborder" valign="top" width="17.299999999999997%" headers="mcps1.1.7.1.3 "><p id="p12762621131513"><a name="p12762621131513"></a><a name="p12762621131513"></a>If set to 80, the frame buffer is 80% of the original size.</p>
 </td>
-<td class="cellrowborder" valign="top" width="22.52%" headers="mcps1.1.7.1.4 "><a name="ol11762122111153"></a><a name="ol11762122111153"></a><ol id="ol11762122111153"><li>When P frames flush I slices, the entire frame may be flushed as I blocks and the I slice flushing may end early;</li><li>Anti-breathing effect may fail on certain frames;</li><li>The QPMAP table cannot force-specify skip blocks, and the SkipWeight table cannot force-specify skip blocks;</li><li>ROI background low-frame-rate encoding may result in some frames' non-ROI areas not being encoded as p_skip blocks;</li><li>In certain scenarios, specifying p_skip frames may fail, such as the frame-dropping strategy when the instantaneous encoding bitrate exceeds the threshold;</li><li>Skip tendency may fail.</li></ol>
+<td class="cellrowborder" valign="top" width="22.52%" headers="mcps1.1.7.1.4 "><a name="ol11762122111153"></a><a name="ol11762122111153"></a><ol id="ol11762122111153"><li>When P frames flush I slices, the entire frame may be flushed as I blocks and the I slice flushing may end early;</li><li>Anti-breathing effect may fail on certain frames;</li><li>The QPMAP table cannot force-specify skip blocks, and the Skip Weight table cannot force-specify skip blocks;</li><li>ROI background low-frame-rate encoding may result in some frames' non-ROI areas not being encoded as p_skip blocks;</li><li>In certain scenarios, specifying p_skip frames may fail, such as the frame-dropping strategy when the instantaneous encoding bitrate exceeds the threshold;</li><li>Skip tendency may fail.</li></ol>
 </td>
 <td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.7.1.5 ">&nbsp;&nbsp;</td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.7.1.6 "><p id="p2763121161519"><a name="p2763121161519"></a><a name="p2763121161519"></a>h265e/h264e module ref_param info: frame_buf_ratio</p>
@@ -1012,11 +707,11 @@ The VGS module mainly uses OS memory and node mmz. Considering the scenario, red
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.7.1.6 "><p id="p167632217151"><a name="p167632217151"></a><a name="p167632217151"></a>venc module param: venc_max_chn_num</p>
 </td>
 </tr>
-<tr id="row876392181520"><td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.7.1.1 "><p id="p57631221171510"><a name="p57631221171510"></a><a name="p57631221171510"></a>Multi-channel encoding with same resolution uses UserVB mode to save memory</p>
+<tr id="row876392181520"><td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.1.7.1.1 "><p id="p57631221171510"><a name="p57631221171510"></a><a name="p57631221171510"></a>Multi-channel encoding with same resolution uses User VB mode to save memory</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.18%" headers="mcps1.1.7.1.2 "><p id="p187631721161519"><a name="p187631721161519"></a><a name="p187631721161519"></a>ss_mpi_venc_set_mod_param: vb_src</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.299999999999997%" headers="mcps1.1.7.1.3 "><p id="p37634212157"><a name="p37634212157"></a><a name="p37634212157"></a>Saves more frame buffer memory than PrivateVB mode</p>
+<td class="cellrowborder" valign="top" width="17.299999999999997%" headers="mcps1.1.7.1.3 "><p id="p37634212157"><a name="p37634212157"></a><a name="p37634212157"></a>Saves more frame buffer memory than Private VB mode</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.52%" headers="mcps1.1.7.1.4 "><p id="p27637210154"><a name="p27637210154"></a><a name="p27637210154"></a>-</p>
 </td>
@@ -1027,14 +722,8 @@ The VGS module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **Note:**
->For details, see the "Video Encoding" chapter of the "MPP Media Processing Software V5.0 Development Reference".
-
-## VO<a name="ZH-CN_TOPIC_0000002424361042"></a>
-
-<a name="table16803153016127"></a>
+</table> >![](public_sys-resources/icon-note.gif) **Note:**
+>For details, see the "Video Encoding" chapter of the "MPP Media Processing Software V5.0 Development Reference". ## VO<a name="ZH-CN_TOPIC_0000002424361042"></a> <a name="table16803153016127"></a>
 <table><thead align="left"><tr id="row4803153012125"><th class="cellrowborder" valign="top" width="13.171317131713172%" id="mcps1.1.7.1.1"><p id="p98031130121217"><a name="p98031130121217"></a><a name="p98031130121217"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="22.472247224722473%" id="mcps1.1.7.1.2"><p id="p8803173016125"><a name="p8803173016125"></a><a name="p8803173016125"></a>Related Interface</p>
@@ -1075,7 +764,7 @@ The VGS module mainly uses OS memory and node mmz. Considering the scenario, red
 <td class="cellrowborder" valign="top" width="23.382338233823383%" headers="mcps1.1.7.1.6 "><p id="p68041830111220"><a name="p68041830111220"></a><a name="p68041830111220"></a>vo video layer status 2: disp_buf_len</p>
 </td>
 </tr>
-<tr id="row78041830121212"><td class="cellrowborder" valign="top" width="13.171317131713172%" headers="mcps1.1.7.1.1 "><p id="p1680473011125"><a name="p1680473011125"></a><a name="p1680473011125"></a>In pass-through mode, DispBufLen can be set to 0</p>
+<tr id="row78041830121212"><td class="cellrowborder" valign="top" width="13.171317131713172%" headers="mcps1.1.7.1.1 "><p id="p1680473011125"><a name="p1680473011125"></a><a name="p1680473011125"></a>In pass-through mode, Disp Buf Len can be set to 0</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.472247224722473%" headers="mcps1.1.7.1.2 "><p id="p2080483011129"><a name="p2080483011129"></a><a name="p2080483011129"></a>ss_mpi_vo_set_video_layer_attr</p>
 </td>
@@ -1096,7 +785,7 @@ The VGS module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.1.7.1.4 "><p id="p580573021218"><a name="p580573021218"></a><a name="p580573021218"></a>Cluster mode VO does not support scaling</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p580583071220"><a name="p580583071220"></a><a name="p580583071220"></a>Supported by SS626V100</p>
+<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p580583071220"><a name="p580583071220"></a><a name="p580583071220"></a>Supported by </p>
 </td>
 <td class="cellrowborder" valign="top" width="23.382338233823383%" headers="mcps1.1.7.1.6 "><a name="ul58051130111211"></a><a name="ul58051130111211"></a><ul id="ul58051130111211"><li>vo video layer status 2: cluster_mode_en</li><li>vo chn basic info: disp_x disp_y</li></ul>
 </td>
@@ -1109,7 +798,7 @@ The VGS module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.1.7.1.4 "><p id="p19805143091213"><a name="p19805143091213"></a><a name="p19805143091213"></a>Reduces one display buffer</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p198051630101210"><a name="p198051630101210"></a><a name="p198051630101210"></a>Supported by SS626V100</p>
+<td class="cellrowborder" valign="top" width="13.251325132513253%" headers="mcps1.1.7.1.5 "><p id="p198051630101210"><a name="p198051630101210"></a><a name="p198051630101210"></a>Supported by </p>
 </td>
 <td class="cellrowborder" valign="top" width="23.382338233823383%" headers="mcps1.1.7.1.6 "><a name="ul7805230171213"></a><a name="ul7805230171213"></a><ul id="ul7805230171213"><li>vo video layer status 2: disp_buf_len</li><li>vo interface status:<a name="ul7805103031214"></a><a name="ul7805103031214"></a><ul id="ul7805103031214"><li>vtth less_buf_enable</li><li>less_buf_vtth</li></ul>
 </li></ul>
@@ -1130,34 +819,12 @@ The VGS module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **Note:**
->For details, see the "Video Output" chapter of the "MPP Media Processing Software V5.0 Development Reference".
-
-## GFBG<a name="ZH-CN_TOPIC_0000002457839797"></a>
-
-When loading the ko, the video memory size for the overlay graphics layer is calculated based on pixel format, resolution, and buffer mode. The user can determine the required video memory size based on the actual usage scenario.
-
-Uncompressed: Allocated by calculating based on actual UI size, pixel format, and single/double BUF.
-
-Example: 1080P argb8888 double buf mode,
-
-```
+</table> >![](public_sys-resources/icon-note.gif) **Note:**
+>For details, see the "Video Output" chapter of the "MPP Media Processing Software V5.0 Development Reference". ## GFBG<a name="ZH-CN_TOPIC_0000002457839797"></a> When loading the ko, the video memory size for the overlay graphics layer is calculated based on pixel format, resolution, and buffer mode. The user can determine the required video memory size based on the actual usage scenario. Uncompressed: Allocated by calculating based on actual UI size, pixel format, and single/double BUF. Example: 1080P argb8888 double buf mode, ```
 buf_size = 1920 * 4 * 1080 * 2 / 1024 = 16200KB
-```
-
-Compressed: For argb8888 pixel format with width >= 320, memory savings of 45% compared to uncompressed:
-
-Example: 1080P argb8888 double buf mode,
-
-```
+``` Compressed: For argb8888 pixel format with width >= 320, memory savings of 45% compared to uncompressed: Example: 1080P argb8888 double buf mode, ```
 buf_size = (1920 * 4 * 1080 * 2 / 1024) * 55% = 8910KB
-```
-
-SS626V100 online drawing can save G3 MMZ memory. If G3 is only used for online drawing, G3 MMZ may not be allocated. The same applies for G4 when used for online drawing.
-
-<a name="table950mcpsimp"></a>
+``` online drawing can save G3 MMZ memory. If G3 is only used for online drawing, G3 MMZ may not be allocated. The same applies for G4 when used for online drawing. <a name="table950mcpsimp"></a>
 <table><thead align="left"><tr id="row959mcpsimp"><th class="cellrowborder" valign="top" width="13%" id="mcps1.1.7.1.1"><p id="p961mcpsimp"><a name="p961mcpsimp"></a><a name="p961mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="19.63%" id="mcps1.1.7.1.2"><p id="p963mcpsimp"><a name="p963mcpsimp"></a><a name="p963mcpsimp"></a>Related Module Parameter/Interface</p>
@@ -1206,17 +873,13 @@ SS626V100 online drawing can save G3 MMZ memory. If G3 is only used for online d
 </td>
 <td class="cellrowborder" valign="top" width="16.76%" headers="mcps1.1.7.1.4 "><p id="p1006mcpsimp"><a name="p1006mcpsimp"></a><a name="p1006mcpsimp"></a>If G3 is used for SD layer display, the KO needs to be reloaded with sufficient memory allocated.</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.95%" headers="mcps1.1.7.1.5 "><a name="ul49726222180"></a><a name="ul49726222180"></a><ul id="ul49726222180"><li>If G3 is only used for online drawing, G3 MMZ memory may not be allocated;</li><li>Supported by SS626V100</li></ul>
+<td class="cellrowborder" valign="top" width="18.95%" headers="mcps1.1.7.1.5 "><a name="ul49726222180"></a><a name="ul49726222180"></a><ul id="ul49726222180"><li>If G3 is only used for online drawing, G3 MMZ memory may not be allocated;</li><li>Supported by </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="12%" headers="mcps1.1.7.1.6 "><p id="p1010mcpsimp"><a name="p1010mcpsimp"></a><a name="p1010mcpsimp"></a>mem_size</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## AUDIO<a name="ZH-CN_TOPIC_0000002457879961"></a>
-
-<a name="table1014mcpsimp"></a>
+</table> ## AUDIO<a name="ZH-CN_TOPIC_0000002457879961"></a> <a name="table1014mcpsimp"></a>
 <table><thead align="left"><tr id="row1023mcpsimp"><th class="cellrowborder" valign="top" width="21.84%" id="mcps1.1.7.1.1"><p id="p1025mcpsimp"><a name="p1025mcpsimp"></a><a name="p1025mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="18.16%" id="mcps1.1.7.1.2"><p id="p1027mcpsimp"><a name="p1027mcpsimp"></a><a name="p1027mcpsimp"></a>Related Interface/Parameter</p>
@@ -1289,19 +952,11 @@ SS626V100 online drawing can save G3 MMZ memory. If G3 is only used for online d
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **Note:**
->Refer to the "Audio" chapter of the "MPP Media Processing Software V5.0 Development Reference".
-
-## REGION<a name="ZH-CN_TOPIC_0000002457879937"></a>
-
--   Set the width and height specified by the user for the ping-pong buffer as small as possible based on requirements.
--   When the region type is overlay/overlayex, pixel\_format can be set to CLUT2/CLUT4. CLUT2 can save 7/8 memory compared to ARGB1555, and CLUT4 can save 3/4 memory compared to 1555. This method will reduce image quality.
--   overlay/overlayex can use single-buff mode by setting canvas\_num in the region attribute to 1. When the image needs frequent refreshing, tearing effects may occur.
--   Refer to the "Region Management" chapter of the "MPP Media Processing Software V5.0 Development Reference". Use the command cat /proc/umap/rgn to view proc information.
-
-<a name="table895mcpsimp"></a>
+</table> >![](public_sys-resources/icon-note.gif) **Note:**
+>Refer to the "Audio" chapter of the "MPP Media Processing Software V5.0 Development Reference". ## REGION<a name="ZH-CN_TOPIC_0000002457879937"></a> - Set the width and height specified by the user for the ping-pong buffer as small as possible based on requirements.
+- When the region type is overlay/overlayex, pixel\_format can be set to CLUT2/CLUT4. CLUT2 can save 7/8 memory compared to ARGB1555, and CLUT4 can save 3/4 memory compared to 1555. This method will reduce image quality.
+- overlay/overlayex can use single-buff mode by setting canvas\_num in the region attribute to 1. When the image needs frequent refreshing, tearing effects may occur.
+- Refer to the "Region Management" chapter of the "MPP Media Processing Software V5.0 Development Reference". Use the command cat /proc/umap/rgn to view proc information. <a name="table895mcpsimp"></a>
 <table><thead align="left"><tr id="row904mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.7.1.1"><p id="p906mcpsimp"><a name="p906mcpsimp"></a><a name="p906mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="18.5%" id="mcps1.1.7.1.2"><p id="p908mcpsimp"><a name="p908mcpsimp"></a><a name="p908mcpsimp"></a>Related Module Parameter/Interface</p>
@@ -1324,7 +979,7 @@ SS626V100 online drawing can save G3 MMZ memory. If G3 is only used for online d
 </td>
 <td class="cellrowborder" valign="top" width="9.87%" headers="mcps1.1.7.1.4 "><p id="p925mcpsimp"><a name="p925mcpsimp"></a><a name="p925mcpsimp"></a>Can only display 4 colors</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.509999999999998%" headers="mcps1.1.7.1.5 "><p id="p927mcpsimp"><a name="p927mcpsimp"></a><a name="p927mcpsimp"></a>When multiple OSDs overlap, the higher-layer OSD will cover the lower-layer OSD.</p>
+<td class="cellrowborder" valign="top" width="18.509999999999998%" headers="mcps1.1.7.1.5 "><p id="p927mcpsimp"><a name="p927mcpsimp"></a><a name="p927mcpsimp"></a>When multiple OS Ds overlap, the higher-layer OSD will cover the lower-layer OSD.</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.54%" headers="mcps1.1.7.1.6 "><p id="p929mcpsimp"><a name="p929mcpsimp"></a><a name="p929mcpsimp"></a>region status of overlay: pixel_format;</p>
 <p id="p930mcpsimp"><a name="p930mcpsimp"></a><a name="p930mcpsimp"></a>region status of overlayex: pixel_format</p>
@@ -1338,79 +993,19 @@ SS626V100 online drawing can save G3 MMZ memory. If G3 is only used for online d
 </td>
 <td class="cellrowborder" valign="top" width="9.87%" headers="mcps1.1.7.1.4 "><p id="p939mcpsimp"><a name="p939mcpsimp"></a><a name="p939mcpsimp"></a>Can only display 16 colors</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.509999999999998%" headers="mcps1.1.7.1.5 "><p id="p941mcpsimp"><a name="p941mcpsimp"></a><a name="p941mcpsimp"></a>When multiple OSDs overlap, the higher-layer OSD will cover the lower-layer OSD.</p>
+<td class="cellrowborder" valign="top" width="18.509999999999998%" headers="mcps1.1.7.1.5 "><p id="p941mcpsimp"><a name="p941mcpsimp"></a><a name="p941mcpsimp"></a>When multiple OS Ds overlap, the higher-layer OSD will cover the lower-layer OSD.</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.54%" headers="mcps1.1.7.1.6 "><p id="p943mcpsimp"><a name="p943mcpsimp"></a><a name="p943mcpsimp"></a>region status of overlay: pixel_format;</p>
 <p id="p944mcpsimp"><a name="p944mcpsimp"></a><a name="p944mcpsimp"></a>region status of overlayex: pixel_format</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-## SVP<a name="ZH-CN_TOPIC_0000002457839821"></a>
-
-**SVP\_NNN<a name="section72111374332"></a>**
-
-1.  Configuration parameters during model conversion
-    -   ATC --batch\_num parameter set to 1 to reduce input/output and workbuf memory usage.
-    -   ATC --online\_model\_type parameter set to 0. This configuration prevents the converted model from carrying debug-related information, reducing model memory usage.
-
-2.  Quantization parameter configuration
-
-    -   activation\_quant\_params - num\_bits set to 8
-    -   weight\_quant\_params - num\_bits set to 4
-
-    Note: This configuration will affect model accuracy.
-
-3.  KO module parameters
-
-    The number of task nodes can be changed via the module parameter svp\_nnn\_max\_task\_node\_num, thereby reducing the mmz memory occupied by task nodes.
-
-4.  Workbuf sharing
-
-    Multiple models on the same stream can share the same workbuf, thereby reducing mmz memory usage.
-
-    >![](public_sys-resources/icon-note.gif) **Note:**
-    >Hi3519AV200 does not support the SVP\_NNN module.
-
-**NNN<a name="section1727814121310"></a>**
-
-1.  Configuration parameter during model conversion: ATC -enable\_single\_stream=true, enabling one model to use one stream.
-2.  When multiple models perform inference sequentially, use aclmdlLoadFromFileWithMem or aclmdlLoadFromMemWithMem loading methods to manually allocate workbuf memory, and then have multiple models share the same working memory, thereby reducing mmz memory usage.
-
-**IVE<a name="section151011750183319"></a>**
-
-1.  MD proc information memory is only allocated when MD is supported.
-2.  If the user does not call IVE's resize, kcf, and csc operators, the corresponding auxiliary memory for resize, kcf, and csc will not be allocated.
-3.  The number of linked list nodes can be controlled by configuring the module parameter max\_node\_num, reducing the MMZ memory occupied by linked list nodes.
-
-**KCF<a name="section1668375619333"></a>**
-
-Reducing the number of cores used can reduce memory usage.
-
-**MAU<a name="section15117207183413"></a>**
-
-1.  If the user does not call the ss\_mpi\_svp\_mau\_add\_mem\_info interface to record mem\_info, the mem\_info linked list memory will not be allocated. If the user needs to call the ss\_mpi\_svp\_mau\_add\_mem\_info interface to record mem\_info, the memory size for storing mem\_info can be controlled by configuring the module parameter mau\_max\_mem\_info\_num.
-2.  The number of linked list nodes can be controlled by configuring the module parameter mau\_max\_node\_num, reducing the MMZ memory occupied by linked list nodes.
-
-## VDA<a name="ZH-CN_TOPIC_0000002424361054"></a>
-
-When loading the vda module ko, set the module parameter for the maximum channel count g\_vda\_max\_chn\_num to save OS memory.
-
-## PCIV<a name="ZH-CN_TOPIC_0000002424201186"></a>
-
--   Window occupancy: If no DMA tasks initiated by the master chip are involved, the window space does not need to be allocated. Note that if the window space is not allocated, care must be taken regarding mmz space integrity so that it is not split by pcie\_mcc space.
--   VB rotation occupancy:
-    -   Master chip rotation VB: Used for receiving bound images. If only DMA functionality is used, it may not be allocated. If transmission efficiency is sufficient (small images, low frame rate), single-buff can be used with only one allocation.
-    -   Slave chip rotation VB: When receiving bound images, use pass-through mode if possible. When only using DMA transmission, rotation VBs are not occupied or allocated.
-
-## GDC<a name="ZH-CN_TOPIC_0000002424201222"></a>
-
-The GDC module mainly uses OS memory and node mmz. Considering the scenario, reducing the maximum job count, maximum task count, and maximum node count can reduce OS memory usage and node-occupied MMZ memory.
-
-## CIPHER<a name="ZH-CN_TOPIC_0000002424361050"></a>
-
-<a name="table830mcpsimp"></a>
+</table> ## SVP<a name="ZH-CN_TOPIC_0000002457839821"></a> **SVP\_NNN<a name="section72111374332"></a>** 1. Configuration parameters during model conversion - ATC --batch\_num parameter set to 1 to reduce input/output and workbuf memory usage. - ATC --online\_model\_type parameter set to 0. This configuration prevents the converted model from carrying debug-related information, reducing model memory usage. 2. Quantization parameter configuration - activation\_quant\_params - num\_bits set to 8 - weight\_quant\_params - num\_bits set to 4 Note: This configuration will affect model accuracy. 3. KO module parameters The number of task nodes can be changed via the module parameter svp\_nnn\_max\_task\_node\_num, thereby reducing the mmz memory occupied by task nodes. 4. Workbuf sharing Multiple models on the same stream can share the same workbuf, thereby reducing mmz memory usage. >![](public_sys-resources/icon-note.gif) **Note:** **NNN<a name="section1727814121310"></a>** 1. Configuration parameter during model conversion: ATC -enable\_single\_stream=true, enabling one model to use one stream.
+2. When multiple models perform inference sequentially, use aclmdl Load From File With Mem or aclmdl Load From Mem With Mem loading methods to manually allocate workbuf memory, and then have multiple models share the same working memory, thereby reducing mmz memory usage. **IVE<a name="section151011750183319"></a>** 1. MD proc information memory is only allocated when MD is supported.
+2. If the user does not call IVE's resize, kcf, and csc operators, the corresponding auxiliary memory for resize, kcf, and csc will not be allocated.
+3. The number of linked list nodes can be controlled by configuring the module parameter max\_node\_num, reducing the MMZ memory occupied by linked list nodes. **KCF<a name="section1668375619333"></a>** Reducing the number of cores used can reduce memory usage. **MAU<a name="section15117207183413"></a>** 1. If the user does not call the ss\_mpi\_svp\_mau\_add\_mem\_info interface to record mem\_info, the mem\_info linked list memory will not be allocated. If the user needs to call the ss\_mpi\_svp\_mau\_add\_mem\_info interface to record mem\_info, the memory size for storing mem\_info can be controlled by configuring the module parameter mau\_max\_mem\_info\_num.
+2. The number of linked list nodes can be controlled by configuring the module parameter mau\_max\_node\_num, reducing the MMZ memory occupied by linked list nodes. ## VDA<a name="ZH-CN_TOPIC_0000002424361054"></a> When loading the vda module ko, set the module parameter for the maximum channel count g\_vda\_max\_chn\_num to save OS memory. ## PCIV<a name="ZH-CN_TOPIC_0000002424201186"></a> - Window occupancy: If no DMA tasks initiated by the master chip are involved, the window space does not need to be allocated. Note that if the window space is not allocated, care must be taken regarding mmz space integrity so that it is not split by pcie\_mcc space.
+- VB rotation occupancy: - Master chip rotation VB: Used for receiving bound images. If only DMA functionality is used, it may not be allocated. If transmission efficiency is sufficient (small images, low frame rate), single-buff can be used with only one allocation. - Slave chip rotation VB: When receiving bound images, use pass-through mode if possible. When only using DMA transmission, rotation V Bs are not occupied or allocated. ## GDC<a name="ZH-CN_TOPIC_0000002424201222"></a> The GDC module mainly uses OS memory and node mmz. Considering the scenario, reducing the maximum job count, maximum task count, and maximum node count can reduce OS memory usage and node-occupied MMZ memory. ## CIPHER<a name="ZH-CN_TOPIC_0000002424361050"></a> <a name="table830mcpsimp"></a>
 <table><thead align="left"><tr id="row839mcpsimp"><th class="cellrowborder" valign="top" width="17.419999999999998%" id="mcps1.1.7.1.1"><p id="p841mcpsimp"><a name="p841mcpsimp"></a><a name="p841mcpsimp"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="22.3%" id="mcps1.1.7.1.2"><p id="p843mcpsimp"><a name="p843mcpsimp"></a><a name="p843mcpsimp"></a>Related Module Parameter</p>
@@ -1467,11 +1062,7 @@ The GDC module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 </tr>
 </tbody>
-</table>
-
-## ISP<a name="ZH-CN_TOPIC_0000002457839833"></a>
-
-<a name="table1014mcpsimp"></a>
+</table> ## ISP<a name="ZH-CN_TOPIC_0000002457839833"></a> <a name="table1014mcpsimp"></a>
 <table><thead align="left"><tr id="row1023mcpsimp"><th class="cellrowborder" valign="top" width="18.85%" id="mcps1.1.7.1.1"><p id="p149138502109"><a name="p149138502109"></a><a name="p149138502109"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.15%" id="mcps1.1.7.1.2"><p id="p791315018106"><a name="p791315018106"></a><a name="p791315018106"></a>Related Interface/Parameter</p>
@@ -1501,11 +1092,7 @@ The GDC module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 </tr>
 </tbody>
-</table>
-
-## HNR<a name="ZH-CN_TOPIC_0000002457879953"></a>
-
-<a name="table779695811439"></a>
+</table> ## HNR<a name="ZH-CN_TOPIC_0000002457879953"></a> <a name="table779695811439"></a>
 <table><thead align="left"><tr id="row12796125817436"><th class="cellrowborder" valign="top" width="18.85%" id="mcps1.1.7.1.1"><p id="p19796115817439"><a name="p19796115817439"></a><a name="p19796115817439"></a>Measure</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.15%" id="mcps1.1.7.1.2"><p id="p12796135814312"><a name="p12796135814312"></a><a name="p12796135814312"></a>Related Interface/Parameter</p>
@@ -1534,35 +1121,11 @@ The GDC module mainly uses OS memory and node mmz. Considering the scenario, red
 </td>
 </tr>
 </tbody>
-</table>
-
-# Other Measures
-## Limit Stack Size<a name="ZH-CN_TOPIC_0000002457879969"></a>
-
-The default stack size is 8192KB. If memory is limited, thread creation may fail. Based on the actual stack space required by the application, modify the stack size limit to 1024KB. If the application uses even less, it can be changed to 512KB or smaller.
-
-There are two methods to modify the stack size:
-
--   Use the `ulimit -s 1024` command, called once before the application starts;
--   Call the `pthread_attr_setstacksize` function at the beginning of the main function to modify the stack space for a single application.
-
-## Optimize Memory Usage in Code<a name="ZH-CN_TOPIC_0000002457839805"></a>
-
-Optimize memory usage in code, especially for stack, heap, constants, and global variables. Key points to note:
-
--   Avoid declaring variables that are not used after allocation in application code;
--   Do not arbitrarily allocate large blocks of memory; allocate only as much as needed;
--   Redundant memory usage also includes initialization of unused functional modules.
-
-## Disable Process Creation Functions like fork and system in Applications<a name="ZH-CN_TOPIC_0000002457839829"></a>
-
-Since the main process data segment already occupies significant memory, forking a child process will certainly consume substantial memory and has a high probability of failure. Therefore, process creation functions such as fork and system should be disabled in applications: for example, bspmm calls, mkfs.vfat calls, etc.
-
-## Remove Unnecessary Modules Based on the Scenario<a name="ZH-CN_TOPIC_0000002424361062"></a>
-
-Removing unnecessary modules can reduce memory usage, for example:
-
--   When using gfbg 0buffer or standard mode, TDE may not be loaded. If TDE is not loaded, REGION uses memcpy for Overlay/OverlayEx copying.
--   When audio input and encoding are not needed, AI and VENC may not be loaded.
--   When REGION functions are not needed, REGION may not be loaded.
--   When JPEGE is not needed, the jpege module may not be loaded.
+</table> # Other Measures
+## Limit Stack Size<a name="ZH-CN_TOPIC_0000002457879969"></a> The default stack size is 8192KB. If memory is limited, thread creation may fail. Based on the actual stack space required by the application, modify the stack size limit to 1024KB. If the application uses even less, it can be changed to 512KB or smaller. There are two methods to modify the stack size: - Use the `ulimit -s 1024` command, called once before the application starts;
+- Call the `pthread_attr_setstacksize` function at the beginning of the main function to modify the stack space for a single application. ## Optimize Memory Usage in Code<a name="ZH-CN_TOPIC_0000002457839805"></a> Optimize memory usage in code, especially for stack, heap, constants, and global variables. Key points to note: - Avoid declaring variables that are not used after allocation in application code;
+- Do not arbitrarily allocate large blocks of memory; allocate only as much as needed;
+- Redundant memory usage also includes initialization of unused functional modules. ## Disable Process Creation Functions like fork and system in Applications<a name="ZH-CN_TOPIC_0000002457839829"></a> Since the main process data segment already occupies significant memory, forking a child process will certainly consume substantial memory and has a high probability of failure. Therefore, process creation functions such as fork and system should be disabled in applications: for example, bspmm calls, mkfs.vfat calls, etc. ## Remove Unnecessary Modules Based on the Scenario<a name="ZH-CN_TOPIC_0000002424361062"></a> Removing unnecessary modules can reduce memory usage, for example: - When using gfbg 0buffer or standard mode, TDE may not be loaded. If TDE is not loaded, REGION uses memcpy for Overlay/Overlay Ex copying.
+- When audio input and encoding are not needed, AI and VENC may not be loaded.
+- When REGION functions are not needed, REGION may not be loaded.
+- When JPEGE is not needed, the jpege module may not be loaded.

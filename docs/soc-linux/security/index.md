@@ -1,14 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/安全子系统使用说明/安全子系统使用说明.md
----
-
-# 前言
-**产品版本<a name="section18702155413353"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table187251254193511"></a>
+--- # 前言
+**产品版本<a name="section18702155413353"></a>** 与本文档相对应的产品版本如下。 <a name="table187251254193511"></a>
 <table><thead align="left"><tr id="row13800185412357"><th class="cellrowborder" valign="top" width="31.31%" id="mcps1.1.3.1.1"><p id="p1680011544355"><a name="p1680011544355"></a><a name="p1680011544355"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.69%" id="mcps1.1.3.1.2"><p id="p38006546351"><a name="p38006546351"></a><a name="p38006546351"></a>产品版本</p>
@@ -20,31 +14,9 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/安全�
 <td class="cellrowborder" valign="top" width="68.69%" headers="mcps1.1.3.1.2 "><p id="p14800145403519"><a name="p14800145403519"></a><a name="p14800145403519"></a>V100</p>
 </td>
 </tr>
-<tr id="row1814825163714"><td class="cellrowborder" valign="top" width="31.31%" headers="mcps1.1.3.1.1 "><p id="p111491650373"><a name="p111491650373"></a><a name="p111491650373"></a>SS626</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.69%" headers="mcps1.1.3.1.2 "><p id="p114975173716"><a name="p114975173716"></a><a name="p114975173716"></a>V100</p>
-</td>
-</tr>
-<tr id="row203262171414"><td class="cellrowborder" valign="top" width="31.31%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.69%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section8711125463519"></a>**
-
-本文档（本指南）主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-**符号约定<a name="section27127546353"></a>**
-
-在本文中可能出现下列标志，它们所代表的含义如下。
-
-<a name="table18726165483514"></a>
+</table> **读者对象<a name="section8711125463519"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 **符号约定<a name="section27127546353"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table18726165483514"></a>
 <table><thead align="left"><tr id="row16800195493519"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.1.3.1.1"><p id="p178005548352"><a name="p178005548352"></a><a name="p178005548352"></a><strong id="b7800155433510"><a name="b7800155433510"></a><a name="b7800155433510"></a>符号</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79.80000000000001%" id="mcps1.1.3.1.2"><p id="p2800105483516"><a name="p2800105483516"></a><a name="p2800105483516"></a><strong id="b1800554193519"><a name="b1800554193519"></a><a name="b1800554193519"></a>说明</strong></p>
@@ -56,34 +28,8 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/安全�
 <td class="cellrowborder" valign="top" width="79.80000000000001%" headers="mcps1.1.3.1.2 "><p id="p58002541356"><a name="p58002541356"></a><a name="p58002541356"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row9800135483510"><td class="cellrowborder" valign="top" width="20.200000000000003%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p191mcpsimp"><a name="p191mcpsimp"></a><a name="p191mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002457868937.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.80000000000001%" headers="mcps1.1.3.1.2 "><p id="p3800145419357"><a name="p3800145419357"></a><a name="p3800145419357"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row1080055419355"><td class="cellrowborder" valign="top" width="20.200000000000003%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p196mcpsimp"><a name="p196mcpsimp"></a><a name="p196mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002457828817.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.80000000000001%" headers="mcps1.1.3.1.2 "><p id="p15801155433513"><a name="p15801155433513"></a><a name="p15801155433513"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row2801054103511"><td class="cellrowborder" valign="top" width="20.200000000000003%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p201mcpsimp"><a name="p201mcpsimp"></a><a name="p201mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002424349998.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.80000000000001%" headers="mcps1.1.3.1.2 "><p id="p128011954183510"><a name="p128011954183510"></a><a name="p128011954183510"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
-<p id="p18010545352"><a name="p18010545352"></a><a name="p18010545352"></a>“须知”不涉及人身伤害。</p>
-</td>
-</tr>
-<tr id="row17801145414351"><td class="cellrowborder" valign="top" width="20.200000000000003%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p207mcpsimp"><a name="p207mcpsimp"></a><a name="p207mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002457868929.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.80000000000001%" headers="mcps1.1.3.1.2 "><p id="p16801145418351"><a name="p16801145418351"></a><a name="p16801145418351"></a>对正文中重点信息的补充说明。</p>
-<p id="p2801054163520"><a name="p2801054163520"></a><a name="p2801054163520"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修改记录<a name="section2467512116410"></a>**
-
-<a name="table256mcpsimp"></a>
+</table> **修改记录<a name="section2467512116410"></a>** <a name="table256mcpsimp"></a>
 <table><thead align="left"><tr id="row262mcpsimp"><th class="cellrowborder" valign="top" width="20.97%" id="mcps1.1.4.1.1"><p id="p264mcpsimp"><a name="p264mcpsimp"></a><a name="p264mcpsimp"></a><strong id="b265mcpsimp"><a name="b265mcpsimp"></a><a name="b265mcpsimp"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.029999999999998%" id="mcps1.1.4.1.2"><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a><strong id="b268mcpsimp"><a name="b268mcpsimp"></a><a name="b268mcpsimp"></a>发布日期</strong></p>
@@ -100,72 +46,19 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/安全�
 </td>
 </tr>
 </tbody>
-</table>
-
-# 概述
-SSxxxx SoC提供丰富的安全特性，包括一系列硬件、固件和软件，以支持客户构建安全可信的设备。主要的安全特性如下：
-
--   One Time Programmable（OTP），用于存储包括设备安全启动验签的RSA 公钥哈希、多组对称根密钥、SoC安全相关的各种控制信息，以及用户自定义数据等。
--   芯片支持基于OTP对称根密钥的三级密钥派生。支持对烧录到OTP的根密钥的加扰保护；密钥派生过程中所有的明文密钥软件不可见。
--   硬件真随机数。
--   非对称密码算法RSA模块。
--   支持多种通用Hash算法和对称密码算法的SPACC模块。
--   基于硬件可信根的安全启动：支持安全镜像逐级校验；支持镜像加密可选择；支持TEE/REE信任链分离；安全启动镜像和非安全启动镜像格式统一，即安全启动没有使能的情况下，非加密的安全启动镜像也可以正常启动。
--   支持ARM TrustZone，支持安全、非安全内存地址隔离。客户可构建TEE安全方案。
--   支持安全JTAG。
-
-# OTP
-## 简介<a name="ZH-CN_TOPIC_0000002457828777"></a>
-
-OTP是一种非易失性存储器，其主要特性是对应存储空间的内容由0写为1之后，或者写入后锁定，就不能再次更改。SSxxxx OTP 包含如下几大区域：
-
-1.  存放SoC各种密钥的区域：包括存放安全启动的根公钥哈希值\(受限可读），存放保护多个对称密码算法根密钥。密钥区域一旦发起写入操作，自行锁定不可再更改。
-
-    芯片可存放各组根公钥哈希值，用于安全启动校验。包括：芯片厂商根公钥哈希\(已预置），OEM根公钥哈希和第三方双签名根公钥哈希。客户可根据产品实际需要，选择合适的根公钥（通过OTP选择）。
-
-    加解密根密钥：芯片预留4个OEM可烧写的对称密码根密钥OTP空间，oem\_root\_symc\_key0\~ oem\_root\_symc\_key3，OEM可以利用这里面的一个或者多个根密钥，分别派生出不同的密钥保护密钥和工作密钥。这些密钥区域可以通过对应的OTP烧写接口烧写，一旦写入，硬件自行锁定，不可更改。写入的内容也不能通过软件方式或JTAG接口读取得到。
-
-    芯片预置一个芯片厂商TEE对称密码算法加解密的根密钥，用户可根据实际需要选择使用（通过OTP选择）。
-
-2.  SoC重要特性/功能开关控制区域（含单bit控制区域和多bit控制区域）：SoC大多数重要的特性，都可以通过OTP来控制，以提高产品应用的灵活性。比如：安全启动使能，安全启动镜像是否加密，安全启动是否启动冗余备份，是否使能TEE，JTAG工作模式选择等等。特性/功能开关控制区域，在烧写好目标值之后，都可以选择将其锁定，避免后续非法篡改。
-
-    **强烈建议客户在最终产品发布前，将所有的特性/功能开关位对应的值设置好，并且强制锁定！即使默认值满足要求，也要求锁定**。
-
-3.  用户自定义区域：芯片集成了约25Kbit的用户自定义OTP区域，用以存放用户数据。
-
-    用户自定义区域还包含了一个128bit的版本控制区域：版本控制区域用于存放重要版本标识，防止版本回滚攻击。即防止攻击者利用有安全漏洞的老的合法镜像重新升级，实现重放攻击。版本控制区域不能锁定，每一个控制位都只能由0写到1，一旦写入1后，便不可再更改（one way 模式）。
-
-    在SSxxxx SDK包中，提供了OTP相关的读写接口。详细请参考本文“[SSxxxx OTP字段定义](#ZH-CN_TOPIC_0000002457868877)  ”以及文档《OTP API 参考》。
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >所有的OTP控制位，无论默认值是否满足实际应用，请全部重新烧写锁定，保证设备安全。
-
-## SSxxxx OTP字段定义<a name="ZH-CN_TOPIC_0000002457868877"></a>
-
-
-
-
-
-
-
-### OTP位域属性说明<a name="ZH-CN_TOPIC_0000002424190150"></a>
-
-
-
-#### LOCK属性说明<a name="ZH-CN_TOPIC_0000002457828801"></a>
-
--   **Oneway属性**：具有此属性的位域未烧写为1的bit都可以在下一次继续烧写，直到所有bit都烧为1；lock使能位不会锁定此属性的位域；
--   **lockable属性**：lockable属性的相关位域在锁定前与oneway属性一致，烧写对应的lock位后，即使没烧写过的bit也不能再次烧写；**建议lockable属性的位域，烧写值后对对应的位域进行锁定，防止被修改。**
--   **wrlock属性**：只要执行过写操作，相应的位域即锁定，不能再做更改。
-
-#### Load shadow属性说明<a name="ZH-CN_TOPIC_0000002457868889"></a>
-
--   芯片上电硬复位后OTP的值会自动加载到对应的寄存器（shadow寄存器）；每次烧写OTP后，必须重新上下电才能从shadow寄存器读到刷新后的值；
--   OTP位域无对应的shadow寄存器。
-
-### 密钥区域<a name="ZH-CN_TOPIC_0000002457828785"></a>
-
-<a name="table1869mcpsimp"></a>
+</table> # 概述
+SSxxxx SoC提供丰富的安全特性，包括一系列硬件、固件和软件，以支持客户构建安全可信的设备。主要的安全特性如下： - One Time Programmable（OTP），用于存储包括设备安全启动验签的RSA 公钥哈希、多组对称根密钥、SoC安全相关的各种控制信息，以及用户自定义数据等。
+- 芯片支持基于OTP对称根密钥的三级密钥派生。支持对烧录到OTP的根密钥的加扰保护；密钥派生过程中所有的明文密钥软件不可见。
+- 硬件真随机数。
+- 非对称密码算法RSA模块。
+- 支持多种通用Hash算法和对称密码算法的SPACC模块。
+- 基于硬件可信根的安全启动：支持安全镜像逐级校验；支持镜像加密可选择；支持TEE/REE信任链分离；安全启动镜像和非安全启动镜像格式统一，即安全启动没有使能的情况下，非加密的安全启动镜像也可以正常启动。
+- 支持ARM TrustZone，支持安全、非安全内存地址隔离。客户可构建TEE安全方案。
+- 支持安全JTAG。 # OTP
+## 简介<a name="ZH-CN_TOPIC_0000002457828777"></a> OTP是一种非易失性存储器，其主要特性是对应存储空间的内容由0写为1之后，或者写入后锁定，就不能再次更改。SSxxxx OTP 包含如下几大区域： 1. 存放SoC各种密钥的区域：包括存放安全启动的根公钥哈希值\(受限可读），存放保护多个对称密码算法根密钥。密钥区域一旦发起写入操作，自行锁定不可再更改。 芯片可存放各组根公钥哈希值，用于安全启动校验。包括：芯片厂商根公钥哈希\(已预置），OEM根公钥哈希和第三方双签名根公钥哈希。客户可根据产品实际需要，选择合适的根公钥（通过OTP选择）。 加解密根密钥：芯片预留4个OEM可烧写的对称密码根密钥OTP空间，oem\_root\_symc\_key0\~ oem\_root\_symc\_key3，OEM可以利用这里面的一个或者多个根密钥，分别派生出不同的密钥保护密钥和工作密钥。这些密钥区域可以通过对应的OTP烧写接口烧写，一旦写入，硬件自行锁定，不可更改。写入的内容也不能通过软件方式或JTAG接口读取得到。 芯片预置一个芯片厂商TEE对称密码算法加解密的根密钥，用户可根据实际需要选择使用（通过OTP选择）。 2. SoC重要特性/功能开关控制区域（含单bit控制区域和多bit控制区域）：SoC大多数重要的特性，都可以通过OTP来控制，以提高产品应用的灵活性。比如：安全启动使能，安全启动镜像是否加密，安全启动是否启动冗余备份，是否使能TEE，JTAG工作模式选择等等。特性/功能开关控制区域，在烧写好目标值之后，都可以选择将其锁定，避免后续非法篡改。 **强烈建议客户在最终产品发布前，将所有的特性/功能开关位对应的值设置好，并且强制锁定！即使默认值满足要求，也要求锁定**。 3. 用户自定义区域：芯片集成了约25Kbit的用户自定义OTP区域，用以存放用户数据。 用户自定义区域还包含了一个128bit的版本控制区域：版本控制区域用于存放重要版本标识，防止版本回滚攻击。即防止攻击者利用有安全漏洞的老的合法镜像重新升级，实现重放攻击。版本控制区域不能锁定，每一个控制位都只能由0写到1，一旦写入1后，便不可再更改（one way 模式）。 在SSxxxx SDK包中，提供了OTP相关的读写接口。详细请参考本文“[SSxxxx OTP字段定义](#ZH-CN_TOPIC_0000002457868877) ”以及文档《OTP API 参考》。 >![](public_sys-resources/icon-notice.gif) **须知：** >所有的OTP控制位，无论默认值是否满足实际应用，请全部重新烧写锁定，保证设备安全。 ## SSxxxx OTP字段定义<a name="ZH-CN_TOPIC_0000002457868877"></a> ### OTP位域属性说明<a name="ZH-CN_TOPIC_0000002424190150"></a> #### LOCK属性说明<a name="ZH-CN_TOPIC_0000002457828801"></a> - **Oneway属性**：具有此属性的位域未烧写为1的bit都可以在下一次继续烧写，直到所有bit都烧为1；lock使能位不会锁定此属性的位域；
+- **lockable属性**：lockable属性的相关位域在锁定前与oneway属性一致，烧写对应的lock位后，即使没烧写过的bit也不能再次烧写；**建议lockable属性的位域，烧写值后对对应的位域进行锁定，防止被修改。**
+- **wrlock属性**：只要执行过写操作，相应的位域即锁定，不能再做更改。 #### Load shadow属性说明<a name="ZH-CN_TOPIC_0000002457868889"></a> - 芯片上电硬复位后OTP的值会自动加载到对应的寄存器（shadow寄存器）；每次烧写OTP后，必须重新上下电才能从shadow寄存器读到刷新后的值；
+- OTP位域无对应的shadow寄存器。 ### 密钥区域<a name="ZH-CN_TOPIC_0000002457828785"></a> <a name="table1869mcpsimp"></a>
 <table><thead align="left"><tr id="row1877mcpsimp"><th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.6.1.1"><p id="p1879mcpsimp"><a name="p1879mcpsimp"></a><a name="p1879mcpsimp"></a>字段名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="9%" id="mcps1.1.6.1.2"><p id="p1881mcpsimp"><a name="p1881mcpsimp"></a><a name="p1881mcpsimp"></a>位宽</p>
@@ -245,21 +138,9 @@ OTP是一种非易失性存储器，其主要特性是对应存储空间的内�
 </td>
 </tr>
 </tbody>
-</table>
-
-密钥区域可以通过下面OTP API接口访问：
-
-```
-td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
-```
-
-详细请参考《OTP API参考》
-
-密钥区域的内容不可读取，因此ot\_mpi\_otp\_read\_product\_pv接口只是返回对应区域的锁定状态（已经锁定的区域，不可再写），无法获取该区域的内容。
-
-### 单比特控制区域<a name="ZH-CN_TOPIC_0000002424349982"></a>
-
-<a name="table1960mcpsimp"></a>
+</table> 密钥区域可以通过下面OTP API接口访问： ```
+td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num); td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
+``` 详细请参考《OTP API参考》 密钥区域的内容不可读取，因此ot\_mpi\_otp\_read\_product\_pv接口只是返回对应区域的锁定状态（已经锁定的区域，不可再写），无法获取该区域的内容。 ### 单比特控制区域<a name="ZH-CN_TOPIC_0000002424349982"></a> <a name="table1960mcpsimp"></a>
 <table><thead align="left"><tr id="row1968mcpsimp"><th class="cellrowborder" valign="top" width="21.21212121212121%" id="mcps1.1.6.1.1"><p id="p1970mcpsimp"><a name="p1970mcpsimp"></a><a name="p1970mcpsimp"></a>字段名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="8.08080808080808%" id="mcps1.1.6.1.2"><p id="p1972mcpsimp"><a name="p1972mcpsimp"></a><a name="p1972mcpsimp"></a>位宽</p>
@@ -413,21 +294,9 @@ td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  t
 </td>
 </tr>
 </tbody>
-</table>
-
-单比特控制的区域可以通过下面OTP API接口访问：
-
-```
-td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
-```
-
-详细请参考《OTP API参考》
-
-单比特控制的区域，OTP对应的值，会在其对应的shadow寄存器中体现出来。通过ot\_mpi\_otp\_read\_product\_pv接口只能返回该控制位的锁定状态（已经锁定的位置，不可再写），不能直接获得该控制位的值。
-
-### 多比特控制区域<a name="ZH-CN_TOPIC_0000002424349994"></a>
-
-<a name="table2125mcpsimp"></a>
+</table> 单比特控制的区域可以通过下面OTP API接口访问： ```
+td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num); td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num);
+``` 详细请参考《OTP API参考》 单比特控制的区域，OTP对应的值，会在其对应的shadow寄存器中体现出来。通过ot\_mpi\_otp\_read\_product\_pv接口只能返回该控制位的锁定状态（已经锁定的位置，不可再写），不能直接获得该控制位的值。 ### 多比特控制区域<a name="ZH-CN_TOPIC_0000002424349994"></a> <a name="table2125mcpsimp"></a>
 <table><thead align="left"><tr id="row2133mcpsimp"><th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.1.6.1.1"><p id="p2135mcpsimp"><a name="p2135mcpsimp"></a><a name="p2135mcpsimp"></a>字段名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="8.08080808080808%" id="mcps1.1.6.1.2"><p id="p2137mcpsimp"><a name="p2137mcpsimp"></a><a name="p2137mcpsimp"></a>位宽</p>
@@ -902,19 +771,9 @@ td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  t
 </td>
 </tr>
 </tbody>
-</table>
-
-多比特控制区域可通过如下OTP API访问：
-
-```
-td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num)
-```
-
-多比特控制区域可读可写。其中oneway属性的区域，不可锁定，通过API获得的锁定状态无意义。
-
-### 用户自定义区域<a name="ZH-CN_TOPIC_0000002457868901"></a>
-
-<a name="table102mcpsimp"></a>
+</table> 多比特控制区域可通过如下OTP API访问： ```
+td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num); td_s32 ot_mpi_otp_read_product_pv(ot_otp_burn_pv_item *pv, td_u32 num)
+``` 多比特控制区域可读可写。其中oneway属性的区域，不可锁定，通过API获得的锁定状态无意义。 ### 用户自定义区域<a name="ZH-CN_TOPIC_0000002457868901"></a> <a name="table102mcpsimp"></a>
 <table><thead align="left"><tr id="row110mcpsimp"><th class="cellrowborder" valign="top" width="17%" id="mcps1.1.6.1.1"><p id="p112mcpsimp"><a name="p112mcpsimp"></a><a name="p112mcpsimp"></a>字段名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="8%" id="mcps1.1.6.1.2"><p id="p114mcpsimp"><a name="p114mcpsimp"></a><a name="p114mcpsimp"></a>位宽</p>
@@ -962,28 +821,11 @@ td_s32 ot_mpi_otp_burn_product_pv(const ot_otp_burn_pv_item *pv, td_u32 num);  t
 </td>
 </tr>
 </tbody>
-</table>
-
-用户自定义区域可通过如下OTP API访问：
-
-```
-td_s32 ot_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const td_u8 *value, td_u32 value_len);  td_s32 ot_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 *value, td_u32 value_len);  td_s32 ot_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len);  td_s32 ot_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len, ot_otp_lock_status *lock);
-```
-
-用户自定义区域可写可读，其中oneway属性的区域，不可锁定，通过API获得的锁定状态无意义。
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->配置JTAG安全模式时，请注意以下事项：
->-   jtag\_prt\_mode字段为oneway属性（为0的bit可以烧写为1，直到所有bit都为1），其他字段位只要写过一次即锁定；
->-   jtag\_prt\_mode可以向更高密级配置：JTAG OPEN →JTAG PASSWORD → JTAG CLOSE。
-
-### shadow寄存器<a name="ZH-CN_TOPIC_0000002424349954"></a>
-
-shadow寄存器概览如[表1](#__Ref55290132)所示。
-
-**表 1**  shadow寄存器概览（基址是0x1012\_0000）
-
-<a name="__Ref55290132"></a>
+</table> 用户自定义区域可通过如下OTP API访问： ```
+td_s32 ot_mpi_otp_set_user_data(const td_char *field_name, td_u32 offset, const td_u8 *value, td_u32 value_len); td_s32 ot_mpi_otp_get_user_data(const td_char *field_name, td_u32 offset, td_u8 *value, td_u32 value_len); td_s32 ot_mpi_otp_set_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len); td_s32 ot_mpi_otp_get_user_data_lock(const td_char *field_name, td_u32 offset, td_u32 value_len, ot_otp_lock_status *lock);
+``` 用户自定义区域可写可读，其中oneway属性的区域，不可锁定，通过API获得的锁定状态无意义。 >![](public_sys-resources/icon-notice.gif) **须知：** >配置JTAG安全模式时，请注意以下事项：
+>- jtag\_prt\_mode字段为oneway属性（为0的bit可以烧写为1，直到所有bit都为1），其他字段位只要写过一次即锁定；
+>- jtag\_prt\_mode可以向更高密级配置：JTAG OPEN →JTAG PASSWORD → JTAG CLOSE。 ### shadow寄存器<a name="ZH-CN_TOPIC_0000002424349954"></a> shadow寄存器概览如[表1](#__Ref55290132)所示。 **表 1** shadow寄存器概览（基址是0x1012\_0000） <a name="__Ref55290132"></a>
 <table><thead align="left"><tr id="row174mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.4.1.1"><p id="p176mcpsimp"><a name="p176mcpsimp"></a><a name="p176mcpsimp"></a>偏移地址</p>
 </th>
 <th class="cellrowborder" valign="top" width="36%" id="mcps1.2.4.1.2"><p id="p178mcpsimp"><a name="p178mcpsimp"></a><a name="p178mcpsimp"></a>名称</p>
@@ -1119,33 +961,7 @@ shadow寄存器概览如[表1](#__Ref55290132)所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### OTP\_USER\_ONEWAY0<a name="ZH-CN_TOPIC_0000002457868921"></a>
-
-OTP\_USER\_ONEWAY0为OTP用户接口寄存器20。
-
-Offset Address: 0x2050   Total Reset Value: 0x0000\_0000
-
-<a name="table337mcpsimp"></a>
+</table> #### OTP\_USER\_ONEWAY0<a name="ZH-CN_TOPIC_0000002457868921"></a> OTP\_USER\_ONEWAY0为OTP用户接口寄存器20。 Offset Address: 0x2050 Total Reset Value: 0x0000\_0000 <a name="table337mcpsimp"></a>
 <table><thead align="left"><tr id="row345mcpsimp"><th class="cellrowborder" valign="top" width="13.831383138313832%" id="mcps1.1.6.1.1"><p id="p347mcpsimp"><a name="p347mcpsimp"></a><a name="p347mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="11.501150115011502%" id="mcps1.1.6.1.2"><p id="p349mcpsimp"><a name="p349mcpsimp"></a><a name="p349mcpsimp"></a>Access</p>
@@ -1263,15 +1079,7 @@ Offset Address: 0x2050   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_ONEWAY1<a name="ZH-CN_TOPIC_0000002457828761"></a>
-
-OTP\_USER\_ONEWAY1为OTP用户接口寄存器21。
-
-Offset Address: 0x2054   Total Reset Value: 0x0000\_0000
-
-<a name="table464mcpsimp"></a>
+</table> #### OTP\_USER\_ONEWAY1<a name="ZH-CN_TOPIC_0000002457828761"></a> OTP\_USER\_ONEWAY1为OTP用户接口寄存器21。 Offset Address: 0x2054 Total Reset Value: 0x0000\_0000 <a name="table464mcpsimp"></a>
 <table><thead align="left"><tr id="row472mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p474mcpsimp"><a name="p474mcpsimp"></a><a name="p474mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p476mcpsimp"><a name="p476mcpsimp"></a><a name="p476mcpsimp"></a>Access</p>
@@ -1374,15 +1182,7 @@ Offset Address: 0x2054   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE0<a name="ZH-CN_TOPIC_0000002424190138"></a>
-
-OTP\_USER\_LOCKABLE0为OTP用户接口寄存器22。
-
-Offset Address: 0x2058   Total Reset Value: 0x0000\_0000
-
-<a name="table576mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE0<a name="ZH-CN_TOPIC_0000002424190138"></a> OTP\_USER\_LOCKABLE0为OTP用户接口寄存器22。 Offset Address: 0x2058 Total Reset Value: 0x0000\_0000 <a name="table576mcpsimp"></a>
 <table><thead align="left"><tr id="row584mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p586mcpsimp"><a name="p586mcpsimp"></a><a name="p586mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p588mcpsimp"><a name="p588mcpsimp"></a><a name="p588mcpsimp"></a>Access</p>
@@ -1420,15 +1220,7 @@ Offset Address: 0x2058   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE1<a name="ZH-CN_TOPIC_0000002457868909"></a>
-
-OTP\_USER\_LOCKABLE1为OTP用户接口寄存器23。
-
-Offset Address: 0x205C   Total Reset Value: 0x0000\_0000
-
-<a name="table623mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE1<a name="ZH-CN_TOPIC_0000002457868909"></a> OTP\_USER\_LOCKABLE1为OTP用户接口寄存器23。 Offset Address: 0x205C Total Reset Value: 0x0000\_0000 <a name="table623mcpsimp"></a>
 <table><thead align="left"><tr id="row631mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p633mcpsimp"><a name="p633mcpsimp"></a><a name="p633mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p635mcpsimp"><a name="p635mcpsimp"></a><a name="p635mcpsimp"></a>Access</p>
@@ -1457,15 +1249,7 @@ Offset Address: 0x205C   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE2<a name="ZH-CN_TOPIC_0000002424349946"></a>
-
-OTP\_USER\_LOCKABLE2为OTP用户接口寄存器24。
-
-Offset Address: 0x2060   Total Reset Value: 0x0000\_0000
-
-<a name="table661mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE2<a name="ZH-CN_TOPIC_0000002424349946"></a> OTP\_USER\_LOCKABLE2为OTP用户接口寄存器24。 Offset Address: 0x2060 Total Reset Value: 0x0000\_0000 <a name="table661mcpsimp"></a>
 <table><thead align="left"><tr id="row669mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p671mcpsimp"><a name="p671mcpsimp"></a><a name="p671mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p673mcpsimp"><a name="p673mcpsimp"></a><a name="p673mcpsimp"></a>Access</p>
@@ -1494,15 +1278,7 @@ Offset Address: 0x2060   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE3<a name="ZH-CN_TOPIC_0000002424349966"></a>
-
-OTP\_USER\_LOCKABLE3为OTP用户接口寄存器25。
-
-Offset Address: 0x2064   Total Reset Value: 0x0000\_0000
-
-<a name="table699mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE3<a name="ZH-CN_TOPIC_0000002424349966"></a> OTP\_USER\_LOCKABLE3为OTP用户接口寄存器25。 Offset Address: 0x2064 Total Reset Value: 0x0000\_0000 <a name="table699mcpsimp"></a>
 <table><thead align="left"><tr id="row707mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p709mcpsimp"><a name="p709mcpsimp"></a><a name="p709mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p711mcpsimp"><a name="p711mcpsimp"></a><a name="p711mcpsimp"></a>Access</p>
@@ -1531,15 +1307,7 @@ Offset Address: 0x2064   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE4<a name="ZH-CN_TOPIC_0000002457828797"></a>
-
-OTP\_USER\_LOCKABLE4为OTP用户接口寄存器26。
-
-Offset Address: 0x2068   Total Reset Value: 0x0000\_0000
-
-<a name="table737mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE4<a name="ZH-CN_TOPIC_0000002457828797"></a> OTP\_USER\_LOCKABLE4为OTP用户接口寄存器26。 Offset Address: 0x2068 Total Reset Value: 0x0000\_0000 <a name="table737mcpsimp"></a>
 <table><thead align="left"><tr id="row745mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p747mcpsimp"><a name="p747mcpsimp"></a><a name="p747mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p749mcpsimp"><a name="p749mcpsimp"></a><a name="p749mcpsimp"></a>Access</p>
@@ -1568,15 +1336,7 @@ Offset Address: 0x2068   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE5<a name="ZH-CN_TOPIC_0000002424190134"></a>
-
-OTP\_USER\_LOCKABLE5为OTP用户接口寄存器27。
-
-Offset Address: 0x206C   Total Reset Value: 0x0000\_0000
-
-<a name="table775mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE5<a name="ZH-CN_TOPIC_0000002424190134"></a> OTP\_USER\_LOCKABLE5为OTP用户接口寄存器27。 Offset Address: 0x206C Total Reset Value: 0x0000\_0000 <a name="table775mcpsimp"></a>
 <table><thead align="left"><tr id="row783mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p785mcpsimp"><a name="p785mcpsimp"></a><a name="p785mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p787mcpsimp"><a name="p787mcpsimp"></a><a name="p787mcpsimp"></a>Access</p>
@@ -1742,15 +1502,7 @@ Offset Address: 0x206C   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE6<a name="ZH-CN_TOPIC_0000002457868885"></a>
-
-OTP\_USER\_LOCKABLE6为OTP用户接口寄存器28。
-
-Offset Address: 0x2070   Total Reset Value: 0x0000\_0056
-
-<a name="table950mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE6<a name="ZH-CN_TOPIC_0000002457868885"></a> OTP\_USER\_LOCKABLE6为OTP用户接口寄存器28。 Offset Address: 0x2070 Total Reset Value: 0x0000\_0056 <a name="table950mcpsimp"></a>
 <table><thead align="left"><tr id="row958mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p960mcpsimp"><a name="p960mcpsimp"></a><a name="p960mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p962mcpsimp"><a name="p962mcpsimp"></a><a name="p962mcpsimp"></a>Access</p>
@@ -1788,15 +1540,7 @@ Offset Address: 0x2070   Total Reset Value: 0x0000\_0056
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE8<a name="ZH-CN_TOPIC_0000002424190146"></a>
-
-OTP\_USER\_LOCKABLE8为OTP用户接口寄存器30。
-
-Offset Address: 0x2078   Total Reset Value: 0x0000\_0000
-
-<a name="table1031mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE8<a name="ZH-CN_TOPIC_0000002424190146"></a> OTP\_USER\_LOCKABLE8为OTP用户接口寄存器30。 Offset Address: 0x2078 Total Reset Value: 0x0000\_0000 <a name="table1031mcpsimp"></a>
 <table><thead align="left"><tr id="row1039mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1041mcpsimp"><a name="p1041mcpsimp"></a><a name="p1041mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1043mcpsimp"><a name="p1043mcpsimp"></a><a name="p1043mcpsimp"></a>Access</p>
@@ -1834,15 +1578,7 @@ Offset Address: 0x2078   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE9<a name="ZH-CN_TOPIC_0000002457828805"></a>
-
-OTP\_USER\_LOCKABLE9为OTP用户接口寄存器31。
-
-Offset Address: 0x207C   Total Reset Value: 0x0000\_0000
-
-<a name="table1078mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE9<a name="ZH-CN_TOPIC_0000002457828805"></a> OTP\_USER\_LOCKABLE9为OTP用户接口寄存器31。 Offset Address: 0x207C Total Reset Value: 0x0000\_0000 <a name="table1078mcpsimp"></a>
 <table><thead align="left"><tr id="row1086mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1088mcpsimp"><a name="p1088mcpsimp"></a><a name="p1088mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1090mcpsimp"><a name="p1090mcpsimp"></a><a name="p1090mcpsimp"></a>Access</p>
@@ -1880,15 +1616,7 @@ Offset Address: 0x207C   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE10<a name="ZH-CN_TOPIC_0000002457828773"></a>
-
-OTP\_USER\_LOCKABLE10为OTP用户接口寄存器32。
-
-Offset Address: 0x2080   Total Reset Value: 0x0000\_0000
-
-<a name="table1125mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE10<a name="ZH-CN_TOPIC_0000002457828773"></a> OTP\_USER\_LOCKABLE10为OTP用户接口寄存器32。 Offset Address: 0x2080 Total Reset Value: 0x0000\_0000 <a name="table1125mcpsimp"></a>
 <table><thead align="left"><tr id="row1133mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1135mcpsimp"><a name="p1135mcpsimp"></a><a name="p1135mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1137mcpsimp"><a name="p1137mcpsimp"></a><a name="p1137mcpsimp"></a>Access</p>
@@ -1913,15 +1641,7 @@ Offset Address: 0x2080   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE11<a name="ZH-CN_TOPIC_0000002457828793"></a>
-
-OTP\_USER\_LOCKABLE11为OTP用户接口寄存器33。
-
-Offset Address: 0x2084   Total Reset Value: 0x0000\_0000
-
-<a name="table1159mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE11<a name="ZH-CN_TOPIC_0000002457828793"></a> OTP\_USER\_LOCKABLE11为OTP用户接口寄存器33。 Offset Address: 0x2084 Total Reset Value: 0x0000\_0000 <a name="table1159mcpsimp"></a>
 <table><thead align="left"><tr id="row1167mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1169mcpsimp"><a name="p1169mcpsimp"></a><a name="p1169mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1171mcpsimp"><a name="p1171mcpsimp"></a><a name="p1171mcpsimp"></a>Access</p>
@@ -1946,15 +1666,7 @@ Offset Address: 0x2084   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE13<a name="ZH-CN_TOPIC_0000002424190166"></a>
-
-OTP\_USER\_LOCKABLE13为OTP用户接口寄存器35。
-
-Offset Address: 0x208c   Total Reset Value: 0x0000\_0000
-
-<a name="table1193mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE13<a name="ZH-CN_TOPIC_0000002424190166"></a> OTP\_USER\_LOCKABLE13为OTP用户接口寄存器35。 Offset Address: 0x208c Total Reset Value: 0x0000\_0000 <a name="table1193mcpsimp"></a>
 <table><thead align="left"><tr id="row1201mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1203mcpsimp"><a name="p1203mcpsimp"></a><a name="p1203mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1205mcpsimp"><a name="p1205mcpsimp"></a><a name="p1205mcpsimp"></a>Access</p>
@@ -1991,15 +1703,7 @@ Offset Address: 0x208c   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE14<a name="ZH-CN_TOPIC_0000002424190142"></a>
-
-OTP\_USER\_LOCKABLE14为OTP用户接口寄存器36。
-
-Offset Address: 0x2090   Total Reset Value: 0x0000\_0000
-
-<a name="table1239mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE14<a name="ZH-CN_TOPIC_0000002424190142"></a> OTP\_USER\_LOCKABLE14为OTP用户接口寄存器36。 Offset Address: 0x2090 Total Reset Value: 0x0000\_0000 <a name="table1239mcpsimp"></a>
 <table><thead align="left"><tr id="row1247mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1249mcpsimp"><a name="p1249mcpsimp"></a><a name="p1249mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1251mcpsimp"><a name="p1251mcpsimp"></a><a name="p1251mcpsimp"></a>Access</p>
@@ -2037,15 +1741,7 @@ Offset Address: 0x2090   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE15<a name="ZH-CN_TOPIC_0000002424349958"></a>
-
-OTP\_USER\_LOCKABLE15为OTP用户接口寄存器37。
-
-Offset Address: 0x2094   Total Reset Value: 0x0000\_0000
-
-<a name="table1286mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE15<a name="ZH-CN_TOPIC_0000002424349958"></a> OTP\_USER\_LOCKABLE15为OTP用户接口寄存器37。 Offset Address: 0x2094 Total Reset Value: 0x0000\_0000 <a name="table1286mcpsimp"></a>
 <table><thead align="left"><tr id="row1294mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1296mcpsimp"><a name="p1296mcpsimp"></a><a name="p1296mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1298mcpsimp"><a name="p1298mcpsimp"></a><a name="p1298mcpsimp"></a>Access</p>
@@ -2070,15 +1766,7 @@ Offset Address: 0x2094   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE16<a name="ZH-CN_TOPIC_0000002457868897"></a>
-
-OTP\_USER\_LOCKABLE16为OTP用户接口寄存器38。
-
-Offset Address: 0x2098   Total Reset Value: 0x0000\_0000
-
-<a name="table1320mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE16<a name="ZH-CN_TOPIC_0000002457868897"></a> OTP\_USER\_LOCKABLE16为OTP用户接口寄存器38。 Offset Address: 0x2098 Total Reset Value: 0x0000\_0000 <a name="table1320mcpsimp"></a>
 <table><thead align="left"><tr id="row1328mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1330mcpsimp"><a name="p1330mcpsimp"></a><a name="p1330mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1332mcpsimp"><a name="p1332mcpsimp"></a><a name="p1332mcpsimp"></a>Access</p>
@@ -2103,15 +1791,7 @@ Offset Address: 0x2098   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-#### OTP\_USER\_LOCKABLE17<a name="ZH-CN_TOPIC_0000002424190162"></a>
-
-OTP\_USER\_LOCKABLE17为OTP用户接口寄存器39。
-
-Offset Address: 0x209c   Total Reset Value: 0x0000\_0000
-
-<a name="table1354mcpsimp"></a>
+</table> #### OTP\_USER\_LOCKABLE17<a name="ZH-CN_TOPIC_0000002424190162"></a> OTP\_USER\_LOCKABLE17为OTP用户接口寄存器39。 Offset Address: 0x209c Total Reset Value: 0x0000\_0000 <a name="table1354mcpsimp"></a>
 <table><thead align="left"><tr id="row1362mcpsimp"><th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.1"><p id="p1364mcpsimp"><a name="p1364mcpsimp"></a><a name="p1364mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.1.6.1.2"><p id="p1366mcpsimp"><a name="p1366mcpsimp"></a><a name="p1366mcpsimp"></a>Access</p>
@@ -2136,177 +1816,35 @@ Offset Address: 0x209c   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-# 硬件真随机数
-## TRNG<a name="ZH-CN_TOPIC_0000002457828781"></a>
-
-TRNG模块能够生成真随机数。产生的真随机数符合FIPS140-1的随机测试标准。
-
-TRNG具体应用方法，请参考文档《CIPHER API 参考》
-
-# 密钥管理
-密钥管理分为三级，分别为RKP、一级KLAD、二级KLAD，增强了密钥安全强度。密钥经三级密钥管理后，生成明文的工作密钥，并送给加解密引擎（SPACC），实现对最终的数据加解密运算。明文的工作密钥不会出现在内存中，确保不会被泄露。
-
-
-
-
-## RKP<a name="ZH-CN_TOPIC_0000002424190126"></a>
-
-RKP模块从OTP中获取对称根密钥，根据OTP配置判断是否解混淆对称根密钥，根据用户输入的派生材料派生ROOT KEY，并将ROOT KEY传递给一级KLAD。ROOT KEY存储在硬件中，不会泄露。RKP的具体规格：
-
--   支持AES 128 ECB算法。
--   支持从OTP中获取对称根密钥。
--   支持对称根密钥解混淆。
--   支持派生2<sup>32</sup>个密钥。
-
-## 一级KLAD<a name="ZH-CN_TOPIC_0000002424190154"></a>
-
-一级KLAD从RKP模块中获取ROOT KEY，并将受保护的一级密钥解密，传递给二级KLAD。解密后的一级密钥存储在硬件中，不会泄露。一级KLAD的具体规格：
-
--   支持AES 128 ECB算法。
--   支持受保护的一级密钥长度为128bits。
-
-## 二级KLAD<a name="ZH-CN_TOPIC_0000002457828809"></a>
-
-二级KLAD从一级KLAD获取解密后的密钥，并将受保护的二级密钥解密（明文的工作密钥），传递给加解密引擎（SPACC）。明文的工作密钥存储在硬件中，不会泄露。二级KLAD的具体规格：
-
--   支持AES 128 ECB算法。
--   支持受保护的二级密钥长度为128/256bits。
-
-为详细了解密钥管理中RKP、一级KLAD、二级KLAD与OTP、SPACC之间的关系，请参考[图1](#fig769715318593)。
-
-**图 1**  密钥管理原理图<a name="fig769715318593"></a>  
-![](figures/密钥管理原理图.png "密钥管理原理图")
-
-SPACC具体应用方法，请参考文档《CIPHER API 参考》
-
-# 硬件非对称密码算法
-## RSA<a name="ZH-CN_TOPIC_0000002457868881"></a>
-
-RSA是一种非对称密码算法，通过模幂计算实现加解密，常用于对数据进行数字签名和签名验证。SSXXXX RSA模块支持RSA2048/3072/4096，算法实现符合PKCS\#1 V1.5/2.1标准。具体规格：
-
--   支持2048bit、3072bit和4096bit的密钥位宽。
--   2048密钥位宽公钥加解密性能最低为10 bps。
--   支持RSA内部密钥RAM、报文RAM和结果RAM清零。
-
-RSA具体应用方法，请参考文档《CIPHER API 参考》。
-
-# Hash算法和对称密码算法AES
-## SPACC<a name="ZH-CN_TOPIC_0000002457828789"></a>
-
-SSxxxx SPACC模块实现了对称密码算法AES和HASH算法。
-
-AES算法的实现符合FIPS 197 标准；AES 的工作模式符合NIST special800-38a 标准。
-
-SHA算法实现符合FIPS180-2标准，HMAC\_SHA算法实现符合RFC2104标准。
-
-具体规格：
-
--   支持AES ECB/CBC/OFB/CFB/CTR/CCM/GCM。
--   支持AES128、AES192和AES256。
--   支持SHA256、HMAC-SHA256、SHA384、HMAC-SHA384、SHA512、HMAC-SHA512。
--   支持15个DMA通道。
--   支持CPU配置输入数据和DMA方式读取输入数据。
--   多块加密通道支持字节地址。
--   AES算法支持基于硬件根密钥派生工作密钥进行加解密（如[图1](#fig769715318593)）
-
-# 安全启动
-SSxxxx 支持基于芯片硬件可信根的安全启动。芯片OTP中可存储一个RSA2048（或者RSA4096）public key的hash256值，作为安全启动签名校验的起点。安全启动的信任传递为：
-
--   硬件可信根（OTP hash值）验证Flash中的RSA public key，这部分由BootRom完成；
--   RSA public key 验证U-boot；
--   U-boot再验证启动后续的镜像（uImage、rootfs，和其它分区）。
-
-强烈建议在产品开发中使用安全启动。安全启动需要通过OTP中的secure\_boot\_en 控制位来使能。在使能安全启动之前，版本提供的未加密的安全启动镜像（特指安全U-boot），可以正常启动。
-
-SSxxxx 安全启动方案支持镜像加密功能。安全启动的根密钥来自于OTP中的AES key0（软件不可读），由根密钥派生出实际的镜像解密密钥。
-
-OTP中的可信根，以及数据加解密根密钥AES key0 完全由客户自行管理并烧录。
-
-安全启动更详细的信息，请参考文档《SSxxxVxxx  安全启动使用指南》。
-
-# 支持安全、非安全内存地址隔离
-## TZASC<a name="ZH-CN_TOPIC_0000002424190118"></a>
-
-SSxxxx  提供TZASC模块，支持对内存地址空间进行隔离控制，使CPU和其他SoC组件在处于安全模式和非安全模式等不同特权模式下，对内存的访问权限进行硬件级别的控制。这是实现基于ARM TrustZone 下的TEE、REE隔离的基础。
-
-TZASC全称是TrustZone Address Space Controller，它是Advanced Microcontroller Bus Architecture（AMBA）兼容的SoC外围组件，可对接AMBA AXI和AMBA APB接口。
-
-SSxxxx的 TZASC模块提供了16个可配置的区域（region0\~region15）。其中region0固定使能，无法配置访问属性，大小覆盖除了region1\~region15区域以外的所有内存区域。任何组件（无论是安全还是非安全）都无法访问region0覆盖的内存。
-
-其余内存区域的访问属性，可以根据需要，选择下面四个属性单元的组合：
-
--   安全可读属性
--   安全可写属性
--   非安全可读属性
--   非安全可写属性
-
-TZASC模块的bypass属性控制着模块是否使能：
-
--   默认bypass属性使能，TZASC模块处于失能状态，内存访问不受限制；
--   设置bypass属性失能，TZASC模块将会使能，各内存区域的访问属性生效。
-
-TZASC控制的参考代码，请参考发布包GSL源代码根目录下drivers/tzasc/tzasc.c，该代码在boot/checkup.c中调用。
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   bypass属性失能后，在系统复位前无法再次使能。
->-   TZASC的配置，建议客户在系统启动之后，只做一次配置，不要多次动态调整，以避免处理不当导致其他异常。
-
-# 安全Debug
-## JTAG<a name="ZH-CN_TOPIC_0000002457868917"></a>
-
-SSxxxx 的JTAG调试接口可以通过OTP进行打开模式、密码模式、永久关闭模式的切换，默认为打开模式。OTP烧写的具体操作方法，请参照本文“[SSxxxx OTP字段定义](#ZH-CN_TOPIC_0000002457868877)”和文档《OTP API 参考》。
-
-通过JTAG调试接口对SoC进行调试，需要配套的调试板和PC对应的软件工具。
-
-JTAG的安全由OTP中如下四个控制属性控制：
-
--   jtag\_ca\_en：
-    -   不使能，则JTAG永远打开，JTAG调试无需任何权鉴；
-    -   使能，JTAG安全由jtag\_prt\_mode控制。
-
--   jtag\_prt\_mode：在jtag\_ca\_en为1（使能）的情况下有效。jtag\_prt\_mode由2bit控制不同工作模式。
-
-    -   直通模式，即无需任何权鉴即可联通；
-    -   密码模式，需要输入用户名和密码（参见jtag\_pw\_id和jtag\_pw字段）；
-    -   其它模式，jtag关闭，即不可用。
-
-    详细配置，请参考本文“[SSxxxx OTP字段定义](#ZH-CN_TOPIC_0000002457868877)”。
-
--   jtag\_pw\_id：JTAG的用户名。如有需要，需在设备出厂前烧录；可以通过PC端调试工具读取。
--   jtag\_pw：JTAG用户密码。如有需要，需在设备出厂前烧录。该字段不可读取。
-
-密码模式下，如果调试者输入的用户名、密码和OTP中的jtag\_pw\_id、jtag\_pw一致，则可以打开JTAG，否则不能接通JTAG。芯片重启后需要重新输入密码。
-
-JTAG的权限由DBC模块控制，密钥模式下要打开JTAG，需要配置DBC寄存器。
-
-通过SOC JTAG读写DBC寄存器的方法：
-
--   读 chipid
-
-    chipid为64bit，储存在2个寄存器中，需要读2次完全获取。
-
-    -   配置chipid\[31:0\]的寄存器地址0x13000到JTAG\_ADDR；配置0x01到JTAG\_ENABLE开始读操作：
-    -   读JTAG\_STATUS直到req\_cnt以及ack\_cnt计数都已经加1。
-    -   读JTAG\_RDATA获得chipid\[31:0\]。
-    -   配置0x0到JTAG\_ENABLE清除读使能。
-
-    chipid\[63:32\]同样的操作，仅需修改ADDR为0x13004.
-
--   输入密钥
-
-    jtag密钥128bit，需要写4次寄存器输入。
-
-    -   配置COM\_PSWD\_0的寄存器地址0x13010到JTAG\_ADDR；配置密钥的低32bit数据到JTAG\_WDATA，配置0x1到JTAG\_WRITE和JTAG\_ENABLE开始写操作：
-    -   读JTAG\_STATUS 直到req\_cnt以及ack\_cnt计数都已经加1。
-    -   配置0x0到JTAG\_WRITE和JTAG\_ENABLE清除写使能。
-
-    其余96bit同样的操作输入，对应密钥寄存器地址为0x130014\~0x13001c.
-
-**表 1**  SOC\_JTAG接口命令
-
-<a name="table1506mcpsimp"></a>
+</table> # 硬件真随机数
+## TRNG<a name="ZH-CN_TOPIC_0000002457828781"></a> TRNG模块能够生成真随机数。产生的真随机数符合FIPS140-1的随机测试标准。 TRNG具体应用方法，请参考文档《CIPHER API 参考》 # 密钥管理
+密钥管理分为三级，分别为RKP、一级KLAD、二级KLAD，增强了密钥安全强度。密钥经三级密钥管理后，生成明文的工作密钥，并送给加解密引擎（SPACC），实现对最终的数据加解密运算。明文的工作密钥不会出现在内存中，确保不会被泄露。 ## RKP<a name="ZH-CN_TOPIC_0000002424190126"></a> RKP模块从OTP中获取对称根密钥，根据OTP配置判断是否解混淆对称根密钥，根据用户输入的派生材料派生ROOT KEY，并将ROOT KEY传递给一级KLAD。ROOT KEY存储在硬件中，不会泄露。RKP的具体规格： - 支持AES 128 ECB算法。
+- 支持从OTP中获取对称根密钥。
+- 支持对称根密钥解混淆。
+- 支持派生2<sup>32</sup>个密钥。 ## 一级KLAD<a name="ZH-CN_TOPIC_0000002424190154"></a> 一级KLAD从RKP模块中获取ROOT KEY，并将受保护的一级密钥解密，传递给二级KLAD。解密后的一级密钥存储在硬件中，不会泄露。一级KLAD的具体规格： - 支持AES 128 ECB算法。
+- 支持受保护的一级密钥长度为128bits。 ## 二级KLAD<a name="ZH-CN_TOPIC_0000002457828809"></a> 二级KLAD从一级KLAD获取解密后的密钥，并将受保护的二级密钥解密（明文的工作密钥），传递给加解密引擎（SPACC）。明文的工作密钥存储在硬件中，不会泄露。二级KLAD的具体规格： - 支持AES 128 ECB算法。
+- 支持受保护的二级密钥长度为128/256bits。 为详细了解密钥管理中RKP、一级KLAD、二级KLAD与OTP、SPACC之间的关系，请参考[图1](#fig769715318593)。 **图 1** 密钥管理原理图<a name="fig769715318593"></a> ![](figures/密钥管理原理图.png "密钥管理原理图") SPACC具体应用方法，请参考文档《CIPHER API 参考》 # 硬件非对称密码算法
+## RSA<a name="ZH-CN_TOPIC_0000002457868881"></a> RSA是一种非对称密码算法，通过模幂计算实现加解密，常用于对数据进行数字签名和签名验证。SSXXXX RSA模块支持RSA2048/3072/4096，算法实现符合PKCS\#1 V1.5/2.1标准。具体规格： - 支持2048bit、3072bit和4096bit的密钥位宽。
+- 2048密钥位宽公钥加解密性能最低为10 bps。
+- 支持RSA内部密钥RAM、报文RAM和结果RAM清零。 RSA具体应用方法，请参考文档《CIPHER API 参考》。 # Hash算法和对称密码算法AES
+## SPACC<a name="ZH-CN_TOPIC_0000002457828789"></a> SSxxxx SPACC模块实现了对称密码算法AES和HASH算法。 AES算法的实现符合FIPS 197 标准；AES 的工作模式符合NIST special800-38a 标准。 SHA算法实现符合FIPS180-2标准，HMAC\_SHA算法实现符合RFC2104标准。 具体规格： - 支持AES ECB/CBC/OFB/CFB/CTR/CCM/GCM。
+- 支持AES128、AES192和AES256。
+- 支持SHA256、HMAC-SHA256、SHA384、HMAC-SHA384、SHA512、HMAC-SHA512。
+- 支持15个DMA通道。
+- 支持CPU配置输入数据和DMA方式读取输入数据。
+- 多块加密通道支持字节地址。
+- AES算法支持基于硬件根密钥派生工作密钥进行加解密（如[图1](#fig769715318593)） # 安全启动
+SSxxxx 支持基于芯片硬件可信根的安全启动。芯片OTP中可存储一个RSA2048（或者RSA4096）public key的hash256值，作为安全启动签名校验的起点。安全启动的信任传递为： - 硬件可信根（OTP hash值）验证Flash中的RSA public key，这部分由BootRom完成；
+- RSA public key 验证U-boot；
+- U-boot再验证启动后续的镜像（uImage、rootfs，和其它分区）。 强烈建议在产品开发中使用安全启动。安全启动需要通过OTP中的secure\_boot\_en 控制位来使能。在使能安全启动之前，版本提供的未加密的安全启动镜像（特指安全U-boot），可以正常启动。 SSxxxx 安全启动方案支持镜像加密功能。安全启动的根密钥来自于OTP中的AES key0（软件不可读），由根密钥派生出实际的镜像解密密钥。 OTP中的可信根，以及数据加解密根密钥AES key0 完全由客户自行管理并烧录。 安全启动更详细的信息，请参考文档《SSxxxVxxx 安全启动使用指南》。 # 支持安全、非安全内存地址隔离
+## TZASC<a name="ZH-CN_TOPIC_0000002424190118"></a> SSxxxx 提供TZASC模块，支持对内存地址空间进行隔离控制，使CPU和其他SoC组件在处于安全模式和非安全模式等不同特权模式下，对内存的访问权限进行硬件级别的控制。这是实现基于ARM TrustZone 下的TEE、REE隔离的基础。 TZASC全称是TrustZone Address Space Controller，它是Advanced Microcontroller Bus Architecture（AMBA）兼容的SoC外围组件，可对接AMBA AXI和AMBA APB接口。 SSxxxx的 TZASC模块提供了16个可配置的区域（region0\~region15）。其中region0固定使能，无法配置访问属性，大小覆盖除了region1\~region15区域以外的所有内存区域。任何组件（无论是安全还是非安全）都无法访问region0覆盖的内存。 其余内存区域的访问属性，可以根据需要，选择下面四个属性单元的组合： - 安全可读属性
+- 安全可写属性
+- 非安全可读属性
+- 非安全可写属性 TZASC模块的bypass属性控制着模块是否使能： - 默认bypass属性使能，TZASC模块处于失能状态，内存访问不受限制；
+- 设置bypass属性失能，TZASC模块将会使能，各内存区域的访问属性生效。 TZASC控制的参考代码，请参考发布包GSL源代码根目录下drivers/tzasc/tzasc.c，该代码在boot/checkup.c中调用。 >![](public_sys-resources/icon-notice.gif) **须知：** >- bypass属性失能后，在系统复位前无法再次使能。
+>- TZASC的配置，建议客户在系统启动之后，只做一次配置，不要多次动态调整，以避免处理不当导致其他异常。 # 安全Debug
+## JTAG<a name="ZH-CN_TOPIC_0000002457868917"></a> SSxxxx 的JTAG调试接口可以通过OTP进行打开模式、密码模式、永久关闭模式的切换，默认为打开模式。OTP烧写的具体操作方法，请参照本文“[SSxxxx OTP字段定义](#ZH-CN_TOPIC_0000002457868877)”和文档《OTP API 参考》。 通过JTAG调试接口对SoC进行调试，需要配套的调试板和PC对应的软件工具。 JTAG的安全由OTP中如下四个控制属性控制： - jtag\_ca\_en： - 不使能，则JTAG永远打开，JTAG调试无需任何权鉴； - 使能，JTAG安全由jtag\_prt\_mode控制。 - jtag\_prt\_mode：在jtag\_ca\_en为1（使能）的情况下有效。jtag\_prt\_mode由2bit控制不同工作模式。 - 直通模式，即无需任何权鉴即可联通； - 密码模式，需要输入用户名和密码（参见jtag\_pw\_id和jtag\_pw字段）； - 其它模式，jtag关闭，即不可用。 详细配置，请参考本文“[SSxxxx OTP字段定义](#ZH-CN_TOPIC_0000002457868877)”。 - jtag\_pw\_id：JTAG的用户名。如有需要，需在设备出厂前烧录；可以通过PC端调试工具读取。
+- jtag\_pw：JTAG用户密码。如有需要，需在设备出厂前烧录。该字段不可读取。 密码模式下，如果调试者输入的用户名、密码和OTP中的jtag\_pw\_id、jtag\_pw一致，则可以打开JTAG，否则不能接通JTAG。芯片重启后需要重新输入密码。 JTAG的权限由DBC模块控制，密钥模式下要打开JTAG，需要配置DBC寄存器。 通过SOC JTAG读写DBC寄存器的方法： - 读 chipid chipid为64bit，储存在2个寄存器中，需要读2次完全获取。 - 配置chipid\[31:0\]的寄存器地址0x13000到JTAG\_ADDR；配置0x01到JTAG\_ENABLE开始读操作： - 读JTAG\_STATUS直到req\_cnt以及ack\_cnt计数都已经加1。 - 读JTAG\_RDATA获得chipid\[31:0\]。 - 配置0x0到JTAG\_ENABLE清除读使能。 chipid\[63:32\]同样的操作，仅需修改ADDR为0x13004. - 输入密钥 jtag密钥128bit，需要写4次寄存器输入。 - 配置COM\_PSWD\_0的寄存器地址0x13010到JTAG\_ADDR；配置密钥的低32bit数据到JTAG\_WDATA，配置0x1到JTAG\_WRITE和JTAG\_ENABLE开始写操作： - 读JTAG\_STATUS 直到req\_cnt以及ack\_cnt计数都已经加1。 - 配置0x0到JTAG\_WRITE和JTAG\_ENABLE清除写使能。 其余96bit同样的操作输入，对应密钥寄存器地址为0x130014\~0x13001c. **表 1** SOC\_JTAG接口命令 <a name="table1506mcpsimp"></a>
 <table><thead align="left"><tr id="row1514mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.1"><p id="p1516mcpsimp"><a name="p1516mcpsimp"></a><a name="p1516mcpsimp"></a>Instruction</p>
 </th>
 <th class="cellrowborder" valign="top" width="26%" id="mcps1.2.5.1.2"><p id="p1518mcpsimp"><a name="p1518mcpsimp"></a><a name="p1518mcpsimp"></a>Data Register</p>
@@ -2419,16 +1957,11 @@ JTAG的权限由DBC模块控制，密钥模式下要打开JTAG，需要配置DBC
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   SOC JTAG支持一次配置1个命令，也支持一次配置2个命令。soc\_jtag\_op有128bit，当前为了提升指令效率，reserved的高20bit未使用，其他108bit根据数据和使能拆分为2个指令；
->-   当SOC JTAG一次配置1个命令时，支持通过JTAG\_ENABLE\_0或者JTAG\_ENABLE\_1发起；
->-   当SOC JTAG一次配置2个命令时，逻辑优先执行JTAG\_ENABLE\_0，再执行JTAG\_ENABLE\_1命令；
->-   JTAG\_REQ\_CNT是SOC JTAG命令请求次数统计，JTAG\_ACK\_CNT是逻辑命令完成次数统计;
->-   **无论是否启用安全JTAG功能，建议客户根据实际情况烧写锁定JTAG状态。**
-
-# 缩略语
+</table> >![](public_sys-resources/icon-note.gif) **说明：** >- SOC JTAG支持一次配置1个命令，也支持一次配置2个命令。soc\_jtag\_op有128bit，当前为了提升指令效率，reserved的高20bit未使用，其他108bit根据数据和使能拆分为2个指令；
+>- 当SOC JTAG一次配置1个命令时，支持通过JTAG\_ENABLE\_0或者JTAG\_ENABLE\_1发起；
+>- 当SOC JTAG一次配置2个命令时，逻辑优先执行JTAG\_ENABLE\_0，再执行JTAG\_ENABLE\_1命令；
+>- JTAG\_REQ\_CNT是SOC JTAG命令请求次数统计，JTAG\_ACK\_CNT是逻辑命令完成次数统计;
+>- **无论是否启用安全JTAG功能，建议客户根据实际情况烧写锁定JTAG状态。** # 缩略语
 <a name="table1642mcpsimp"></a>
 <table><thead align="left"><tr id="row1647mcpsimp"><th class="cellrowborder" valign="top" width="26%" id="mcps1.1.3.1.1"><p id="p1649mcpsimp"><a name="p1649mcpsimp"></a><a name="p1649mcpsimp"></a><strong id="b1650mcpsimp"><a name="b1650mcpsimp"></a><a name="b1650mcpsimp"></a>缩略语</strong></p>
 </th>
@@ -2472,5 +2005,4 @@ JTAG的权限由DBC模块控制，密钥模式下要打开JTAG，需要配置DBC
 </td>
 </tr>
 </tbody>
-</table>
-
+</table> 

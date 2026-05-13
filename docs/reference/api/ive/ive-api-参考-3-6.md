@@ -1,203 +1,141 @@
 ---
 title: "数据类型和数据结构"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 参考/IVE API 参考（3--6）.md
----
-
-# 数据类型和数据结构
-SVP相关数据类型、数据结构定义如下：
-
--   [ot\_svp\_img\_type](#ZH-CN_TOPIC_0000002471091210)：定义二维广义图像支持的图像类型。
--   [ot\_svp\_img](#ZH-CN_TOPIC_0000002504091103)：定义二维广义图像信息。
--   [ot\_svp\_src\_img](#ZH-CN_TOPIC_0000002471091254)：定义源图像。
--   [ot\_svp\_dst\_img](#ZH-CN_TOPIC_0000002471091286)：定义输出图像。
--   [OT\_SVP\_IMG\_ADDR\_NUM](#ZH-CN_TOPIC_0000002470931272)：定义地址通道数目。
-
-定点数据类型：
-
--   [ot\_svp\_data](#ZH-CN_TOPIC_0000002470931244)：定义以byte为单位的二维图像信息。
--   [ot\_svp\_src\_data](#ZH-CN_TOPIC_0000002503971213)：定义以byte为单位的二维源数据信息。
--   [ot\_svp\_dst\_data](#ZH-CN_TOPIC_0000002470931290)：定义byte为单位的二维输出数据信息。
--   [ot\_svp\_8bit](#ZH-CN_TOPIC_0000002503971231)：定义8bit数据联合体。
--   [ot\_svp\_point\_u16](#ZH-CN_TOPIC_0000002503971259)：定义u16bit的点信息结构体。
--   [ot\_svp\_point\_s16](#ZH-CN_TOPIC_0000002504091193)：定义s16bit的点信息结构体。
--   [ot\_svp\_point\_s25q7](#ZH-CN_TOPIC_0000002503971257)：定义s25q7表示的点信息结构体。
--   [ot\_svp\_point\_u14q2](#ZH-CN_TOPIC_0000002504091195)：定义u14q2表示的点信息结构体。
--   [ot\_svp\_rect\_u32](#ZH-CN_TOPIC_0000002470931266)：定义u16表示的矩形信息结构体。
--   [ot\_svp\_rect\_u16](#ZH-CN_TOPIC_0000002470931214)：定义u32表示的矩形信息结构体。
--   [ot\_svp\_rect\_s24q8](#ZH-CN_TOPIC_0000002503971197)：定义s24q8表示的矩形信息结构体。
--   [ot\_svp\_lut](#ZH-CN_TOPIC_0000002503971221)：定义查找表结构体。
-
-IVE相关数据类型、数据结构定义如下：
-
--   [ot\_ive\_handle](#ZH-CN_TOPIC_0000002471091250)：定义IVE句柄。
--   [OT\_IVE\_HIST\_NUM](#ZH-CN_TOPIC_0000002470931262)：定义直方图统计bin数目。
--   [OT\_IVE\_MAP\_NUM](#ZH-CN_TOPIC_0000002471091274)：定义映射查找表项数目。
--   [OT\_IVE\_MAX\_RGN\_NUM](#ZH-CN_TOPIC_0000002471091214)：定义最大连通区域数目。
--   [OT\_IVE\_ST\_MAX\_CORNER\_NUM](#ZH-CN_TOPIC_0000002503971193)：定义Shi-Tomasi-like角点最大数目。
--   [OT\_IVE\_MASK\_NUM](#ZH-CN_TOPIC_0000002471091310)：掩码mask数组长度
--   [OT\_IVE\_ARR\_RESERVED\_NUM\_TWO](#ZH-CN_TOPIC_0000002503971159)：保留字段数组长度2
--   [OT\_IVE\_ARR\_RESERVED\_NUM\_THREE](#ZH-CN_TOPIC_0000002504091161)：保留字段数组长度3
--   [OT\_IVE\_ARR\_RESERVED\_NUM\_EIGHT](#ZH-CN_TOPIC_0000002470931298)：保留字段数组长度8
--   [OT\_IVE\_ARR\_RESERVED\_NUM\_TWELVE](#ZH-CN_TOPIC_0000002470931230)：保留字段数组长度12
--   [OT\_IVE\_ARR\_RESERVED\_NUM\_FOURTEEN](#ZH-CN_TOPIC_0000002470931216)：保留字段数组长度14
--   [OT\_IVE\_ARR\_NUM\_THREE](#ZH-CN_TOPIC_0000002503971175)：数组长度3
--   [OT\_IVE\_ARR\_NUM\_EIGHT](#ZH-CN_TOPIC_0000002503971255)：数组长度8
--   [OT\_IVE\_DEV\_NAME\_LENGTH](#ZH-CN_TOPIC_0000002503971217)：IVE设备名字的长度。
--   [OT\_IVE\_DEV\_DEFAULT\_NODE\_NUM](#ZH-CN_TOPIC_0000002504091127)：默认的IVE节点个数。
--   [ot\_ive\_mod\_param](#ZH-CN_TOPIC_0000002504091147)：IVE模块相关参数定义。
--   [ot\_ive\_err\_code](#ZH-CN_TOPIC_0000002504091141)：定义错误码。
--   [ot\_ive\_dma\_mode](#ZH-CN_TOPIC_0000002470931310)：定义DMA运算模式。
--   [ot\_ive\_dma\_ctrl](#ZH-CN_TOPIC_0000002504091157)：定义DMA控制信息。
--   [ot\_ive\_filter\_ctrl](#ZH-CN_TOPIC_0000002503971267)：定义模板滤波控制信息。
--   [ot\_ive\_csc\_mode](#ZH-CN_TOPIC_0000002470931222)：定义色彩空间转换模式。
--   [ot\_ive\_csc\_ctrl](#ZH-CN_TOPIC_0000002504091137)：定义色彩空间转换控制信息。
--   [ot\_ive\_filter\_and\_csc\_ctrl](#ZH-CN_TOPIC_0000002471091222)：定义模板滤波加色彩空间转换复合功能控制信息。
--   [ot\_ive\_sobel\_out\_ctrl](#ZH-CN_TOPIC_0000002503971149)：定义sobel输出控制信息。
--   [ot\_ive\_sobel\_ctrl](#ZH-CN_TOPIC_0000002470931226)：定义sobel边缘提取控制信息。
--   [ot\_ive\_mag\_and\_ang\_out\_ctrl](#ZH-CN_TOPIC_0000002471091234)：定义canny边缘幅值与角度计算的输出格式。
--   [ot\_ive\_mag\_and\_ang\_ctrl](#ZH-CN_TOPIC_0000002470931264)：定义canny边缘幅值和幅角计算的控制信息。
--   [ot\_ive\_dilate\_ctrl](#ZH-CN_TOPIC_0000002504091109)：定义膨胀控制信息。
--   [ot\_ive\_erode\_ctrl](#ZH-CN_TOPIC_0000002470931312)：定义腐蚀控制信息。
--   [ot\_ive\_threshold\_mode](#ZH-CN_TOPIC_0000002504091197)：定义图像二值化输出格式。
--   [ot\_ive\_threshold\_ctrl](#ZH-CN_TOPIC_0000002504091163)：定义图像二值化控制信息。
--   [ot\_ive\_sub\_mode](#ZH-CN_TOPIC_0000002470931336)：定义两图像相减输出格式。
--   [ot\_ive\_sub\_ctrl](#ZH-CN_TOPIC_0000002471091290)：定义两图像相减控制参数。
--   [ot\_ive\_integ\_out\_ctrl](#ZH-CN_TOPIC_0000002504091081)：定义积分图输出控制参数。
--   [ot\_ive\_integ\_ctrl](#ZH-CN_TOPIC_0000002504091115)：定义积分图计算控制参数。
--   [ot\_ive\_threshold\_s16\_mode](#ZH-CN_TOPIC_0000002504091143)：定义16bit有符号图像的阈值化模式。
--   [ot\_ive\_threshold\_s16\_ctrl](#ZH-CN_TOPIC_0000002504091125)：定义16bit有符号图像的阈值化控制参数。
--   [ot\_ive\_threshold\_u16\_mode](#ZH-CN_TOPIC_0000002503971223)：定义16bti无符号图像的阈值化模式。
--   [ot\_ive\_threshold\_u16\_ctrl](#ZH-CN_TOPIC_0000002504091089)：定义16bit无符号图像的阈值化控制参数。
--   [ot\_ive\_16bit\_to\_8bit\_mode](#ZH-CN_TOPIC_0000002471091260)：定义16bit图像到8bit图像的转化模式。
--   [ot\_ive\_16bit\_to\_8bit\_ctrl](#ZH-CN_TOPIC_0000002470931316)：定义16bit图像到8bit图像的转化控制参数。
--   [ot\_ive\_order\_stats\_filter\_mode](#ZH-CN_TOPIC_0000002470931238)：定义顺序统计量滤波模式。
--   [ot\_ive\_order\_stats\_filter\_ctrl](#ZH-CN_TOPIC_0000002471091240)：定义顺序统计量滤波控制参数。
--   [ot\_ive\_map\_u8bit\_lut\_mem](#ZH-CN_TOPIC_0000002471091206)：定义Map U8C1→U8C1的查找表内存。
--   [ot\_ive\_map\_u16bit\_lut\_mem](#ZH-CN_TOPIC_0000002504091091)：定义Map U8C1→U16C1的查找表内存。
--   [ot\_ive\_map\_s16bit\_lut\_mem](#ZH-CN_TOPIC_0000002504091173)：定义Map U8C1→S16C1的查找表内存。
--   [ot\_ive\_map\_mode](#ZH-CN_TOPIC_0000002470931320)：定义Map的模式。
--   [ot\_ive\_map\_ctrl](#ZH-CN_TOPIC_0000002471091224)：定义Map控制参数。
--   [ot\_ive\_equalize\_hist\_ctrl\_mem](#ZH-CN_TOPIC_0000002471091324)：定义直方图均衡化辅助内存。
--   [ot\_ive\_equalize\_hist\_ctrl](#ZH-CN_TOPIC_0000002503971189)：定义直方图均衡化控制参数。
--   [ot\_ive\_add\_ctrl](#ZH-CN_TOPIC_0000002503971153)：定义两图像的加权加控制参数。
--   [ot\_ive\_ncc\_dst\_mem](#ZH-CN_TOPIC_0000002503971173)：定义NCC的输出内存信息。
--   [ot\_ive\_rgn](#ZH-CN_TOPIC_0000002471091252)：定义连通区域信息。
--   [ot\_ive\_ccblob](#ZH-CN_TOPIC_0000002503971207)：定义连通区域标记的输出信息。
--   [ot\_ive\_ccl\_mode](#ZH-CN_TOPIC_0000002470931332)：定义连通区域模式。
--   [ot\_ive\_ccl\_ctrl](#ZH-CN_TOPIC_0000002471091318)：定义连通区域标记控制参数。
--   [ot\_ive\_gmm\_ctrl](#ZH-CN_TOPIC_0000002471091236)：定义GMM背景建模的控制参数。
--   [ot\_ive\_gmm2\_sns\_factor\_mode](#ZH-CN_TOPIC_0000002471091300)：定义灵敏度系数模式。
--   [ot\_ive\_gmm2\_life\_update\_factor\_mode](#ZH-CN_TOPIC_0000002503971203)：定义模型时长参数更新模式。
--   [ot\_ive\_gmm2\_ctrl](#ZH-CN_TOPIC_0000002504091119)：定义GMM2背景建模的控制参数。
--   [ot\_ive\_canny\_stack\_size](#ZH-CN_TOPIC_0000002504091083)：定义Canny边缘前半部分计算时强边缘点栈大小结构体。
--   [ot\_ive\_canny\_hys\_edge\_ctrl](#ZH-CN_TOPIC_0000002503971183)：定义Canny边缘前半部分计算任务的控制参数。
--   [ot\_ive\_lbp\_compare\_mode](#ZH-CN_TOPIC_0000002470931250)：定义LBP纹理计算控制参数。
--   [ot\_ive\_lbp\_ctrl](#ZH-CN_TOPIC_0000002471091226)：定义LBP纹理计算控制参数。
--   [ot\_ive\_norm\_grad\_out\_ctrl](#ZH-CN_TOPIC_0000002503971179)：定义归一化梯度信息计算任务输出控制枚举类型。
--   [ot\_ive\_norm\_grad\_ctrl](#ZH-CN_TOPIC_0000002470931288)：定义归一化梯度信息计算控制参数。
--   [ot\_ive\_lk\_optical\_flow\_pyr\_out\_mode](#ZH-CN_TOPIC_0000002504091077)：定义金字塔LK光流计算输出模式。
--   [ot\_ive\_lk\_optical\_flow\_pyr\_ctrl](#ZH-CN_TOPIC_0000002503971181)：定义金字塔LK光流计算控制参数。
--   [ot\_ive\_st\_max\_eig\_val](#ZH-CN_TOPIC_0000002504091183)：定义Shi-Tomas-like角点计算时最大角点响应值结构体。
--   [ot\_ive\_st\_cand\_corner\_ctrl](#ZH-CN_TOPIC_0000002504091117)：定义Shi-Tomas-like候选角点计算控制参数。
--   [ot\_ive\_st\_corner\_info](#ZH-CN_TOPIC_0000002503971265)：定义Shi-Tomas-like角点计算输出的角点信息结构体。
--   [ot\_ive\_st\_corner\_ctrl](#ZH-CN_TOPIC_0000002471091220)：定义Shi-Tomas-like角点筛选控制参数。
--   [ot\_ive\_sad\_mode](#ZH-CN_TOPIC_0000002470931274)：定义SAD计算模式。
--   [ot\_ive\_sad\_out\_ctrl](#ZH-CN_TOPIC_0000002471091278)：定义SAD输出控制模式。
--   [ot\_ive\_sad\_ctrl](#ZH-CN_TOPIC_0000002471091212)：定义SAD控制参数。
--   [ot\_ive\_resize\_mode](#ZH-CN_TOPIC_0000002503971219)：定义Resize的模式。
--   [ot\_ive\_resize\_ctrl](#ZH-CN_TOPIC_0000002471091258)：定义Resize控制参数。
--   [ot\_ive\_grad\_fg\_mode](#ZH-CN_TOPIC_0000002503971161)：定义梯度前景计算模式。
--   [ot\_ive\_grad\_fg\_ctrl](#ZH-CN_TOPIC_0000002504091111)：定义计算梯度前景控制参数。
--   [ot\_ive\_cand\_bg\_pixel](#ZH-CN_TOPIC_0000002503971261)：定义候选背景模型数据。
--   [ot\_ive\_wrok\_bg\_pixel](#ZH-CN_TOPIC_0000002503971171)：定义工作背景模型数据。
--   [ot\_ive\_bg\_life](#ZH-CN_TOPIC_0000002471091208)：定义背景生命力数据。
--   [ot\_ive\_bg\_model\_pixel](#ZH-CN_TOPIC_0000002503971177)：定义背景模型数据。
--   [ot\_ive\_fg\_status\_data](#ZH-CN_TOPIC_0000002503971239)：定义前景状态数据。
--   [ot\_ive\_bg\_status\_data](#ZH-CN_TOPIC_0000002503971253)：定义背景状态数据。
--   [ot\_ive\_match\_bg\_model\_ctrl](#ZH-CN_TOPIC_0000002503971249)：定义背景匹配控制参数。
--   [ot\_ive\_update\_bg\_model\_ctrl](#ZH-CN_TOPIC_0000002471091248)：定义背景更新控制参数。
--   [ot\_ive\_ann\_mlp\_accurate](#ZH-CN_TOPIC_0000002504091185)：定义ann\_mlp输入特征向量类型。
--   [ot\_ive\_ann\_mlp\_actv\_func](#ZH-CN_TOPIC_0000002503971151)：定义ann\_mlp激活函数枚举类型。
--   [ot\_ive\_ann\_mlp\_model](#ZH-CN_TOPIC_0000002503971233)：定义ann\_mlp模型数据结构体。
--   [ot\_ive\_svm\_type](#ZH-CN_TOPIC_0000002471091314)：定义SVM类型。
--   [ot\_ive\_svm\_kernel\_type](#ZH-CN_TOPIC_0000002471091268)：定义SVM核函数类型。
--   [ot\_ive\_svm\_model](#ZH-CN_TOPIC_0000002470931338)：定义SVM模型数据结构体。
--   [ot\_ive\_cnn\_actv\_func](#ZH-CN_TOPIC_0000002470931254)：定义CNN激活函数枚举类型。
--   [ot\_ive\_cnn\_pooling](#ZH-CN_TOPIC_0000002471091230)：定义CNN汇聚操作枚举类型。
--   [ot\_ive\_cnn\_conv\_pooling](#ZH-CN_TOPIC_0000002471091306)：定义CNN单层Conv-ReLU-Pooling运算包参数结构体。
--   [ot\_ive\_cnn\_fc\_info](#ZH-CN_TOPIC_0000002470931296)：定义CNN全链接网络参数结构体。
--   [ot\_ive\_cnn\_model](#ZH-CN_TOPIC_0000002504091131)：定义CNN模型参数结构体。
--   [ot\_ive\_cnn\_ctrl](#ZH-CN_TOPIC_0000002471091238)：定义CNN预测任务的控制参数。
--   [ot\_ive\_cnn\_result](#ZH-CN_TOPIC_0000002503971157)：定义CNN单个样本预测结果结构体。
--   [ot\_ive\_persp\_trans\_point\_pair](#ZH-CN_TOPIC_0000002470931326)：定义透视变换点对结构体。
--   [ot\_ive\_persp\_trans\_alg\_mode](#ZH-CN_TOPIC_0000002471091242)：定义透视变换算法模式枚举。
--   [ot\_ive\_persp\_trans\_csc\_mode](#ZH-CN_TOPIC_0000002470931228)：定义透视变换色彩空间转换模式。
--   [ot\_ive\_kcf\_core\_id](#ZH-CN_TOPIC_0000002504091191)：定义KCF的核ID。
--   [ot\_ive\_persp\_trans\_ctrl](#ZH-CN_TOPIC_0000002471091262)：定义透视变换控制参数。
--   [ot\_ive\_roi\_info](#ZH-CN_TOPIC_0000002503971155)：定义目前区域信息参数。
--   [ot\_ive\_kcf\_proc\_ctrl](#ZH-CN_TOPIC_0000002471091264)：定义跟踪处理控制参数。
--   [ot\_ive\_list\_head](#ZH-CN_TOPIC_0000002504091189)：定义链表头结构体参数。
--   [ot\_ive\_kcf\_obj](#ZH-CN_TOPIC_0000002471091292)：定义目标信息结构体参数。
--   [ot\_ive\_kcf\_obj\_node](#ZH-CN_TOPIC_0000002470931324)：定义目标链表节点参数。
--   [ot\_ive\_kcf\_list\_state](#ZH-CN_TOPIC_0000002504091113)：定义目标链表状态枚举类型。
--   [ot\_ive\_kcf\_obj\_list](#ZH-CN_TOPIC_0000002470931236)：定义目标链表结构参数。
--   [ot\_ive\_kcf\_bbox](#ZH-CN_TOPIC_0000002504091101)：定义目标区域信息参数。
--   [ot\_ive\_kcf\_bbox\_ctrl](#ZH-CN_TOPIC_0000002470931278)：定义目标区域信息控制参数。
--   [ot\_ive\_hog\_mode](#ZH-CN_TOPIC_0000002504091097)：定义HOG\(Histogram of Oriented Gradient\)特征存储模式枚举类型。
--   [ot\_ive\_hog\_ctrl](#ZH-CN_TOPIC_0000002470931248)：定义计算HOG\(Histogram of Oriented Gradient\)特征控制参数。
-
-
-
-
-## SVP相关数据类型、数据结构<a name="ZH-CN_TOPIC_0000002471091256"></a>
-
-
-
-
-
-
-
-### ot\_svp\_img\_type<a name="ZH-CN_TOPIC_0000002471091210"></a>
-
-【说明】
-
-定义二维广义图像支持的图像类型。
-
-【定义】
-
-```
+--- # 数据类型和数据结构
+SVP相关数据类型、数据结构定义如下： - [ot\_svp\_img\_type](#ZH-CN_TOPIC_0000002471091210)：定义二维广义图像支持的图像类型。
+- [ot\_svp\_img](#ZH-CN_TOPIC_0000002504091103)：定义二维广义图像信息。
+- [ot\_svp\_src\_img](#ZH-CN_TOPIC_0000002471091254)：定义源图像。
+- [ot\_svp\_dst\_img](#ZH-CN_TOPIC_0000002471091286)：定义输出图像。
+- [OT\_SVP\_IMG\_ADDR\_NUM](#ZH-CN_TOPIC_0000002470931272)：定义地址通道数目。 定点数据类型： - [ot\_svp\_data](#ZH-CN_TOPIC_0000002470931244)：定义以byte为单位的二维图像信息。
+- [ot\_svp\_src\_data](#ZH-CN_TOPIC_0000002503971213)：定义以byte为单位的二维源数据信息。
+- [ot\_svp\_dst\_data](#ZH-CN_TOPIC_0000002470931290)：定义byte为单位的二维输出数据信息。
+- [ot\_svp\_8bit](#ZH-CN_TOPIC_0000002503971231)：定义8bit数据联合体。
+- [ot\_svp\_point\_u16](#ZH-CN_TOPIC_0000002503971259)：定义u16bit的点信息结构体。
+- [ot\_svp\_point\_s16](#ZH-CN_TOPIC_0000002504091193)：定义s16bit的点信息结构体。
+- [ot\_svp\_point\_s25q7](#ZH-CN_TOPIC_0000002503971257)：定义s25q7表示的点信息结构体。
+- [ot\_svp\_point\_u14q2](#ZH-CN_TOPIC_0000002504091195)：定义u14q2表示的点信息结构体。
+- [ot\_svp\_rect\_u32](#ZH-CN_TOPIC_0000002470931266)：定义u16表示的矩形信息结构体。
+- [ot\_svp\_rect\_u16](#ZH-CN_TOPIC_0000002470931214)：定义u32表示的矩形信息结构体。
+- [ot\_svp\_rect\_s24q8](#ZH-CN_TOPIC_0000002503971197)：定义s24q8表示的矩形信息结构体。
+- [ot\_svp\_lut](#ZH-CN_TOPIC_0000002503971221)：定义查找表结构体。 IVE相关数据类型、数据结构定义如下： - [ot\_ive\_handle](#ZH-CN_TOPIC_0000002471091250)：定义IVE句柄。
+- [OT\_IVE\_HIST\_NUM](#ZH-CN_TOPIC_0000002470931262)：定义直方图统计bin数目。
+- [OT\_IVE\_MAP\_NUM](#ZH-CN_TOPIC_0000002471091274)：定义映射查找表项数目。
+- [OT\_IVE\_MAX\_RGN\_NUM](#ZH-CN_TOPIC_0000002471091214)：定义最大连通区域数目。
+- [OT\_IVE\_ST\_MAX\_CORNER\_NUM](#ZH-CN_TOPIC_0000002503971193)：定义Shi-Tomasi-like角点最大数目。
+- [OT\_IVE\_MASK\_NUM](#ZH-CN_TOPIC_0000002471091310)：掩码mask数组长度
+- [OT\_IVE\_ARR\_RESERVED\_NUM\_TWO](#ZH-CN_TOPIC_0000002503971159)：保留字段数组长度2
+- [OT\_IVE\_ARR\_RESERVED\_NUM\_THREE](#ZH-CN_TOPIC_0000002504091161)：保留字段数组长度3
+- [OT\_IVE\_ARR\_RESERVED\_NUM\_EIGHT](#ZH-CN_TOPIC_0000002470931298)：保留字段数组长度8
+- [OT\_IVE\_ARR\_RESERVED\_NUM\_TWELVE](#ZH-CN_TOPIC_0000002470931230)：保留字段数组长度12
+- [OT\_IVE\_ARR\_RESERVED\_NUM\_FOURTEEN](#ZH-CN_TOPIC_0000002470931216)：保留字段数组长度14
+- [OT\_IVE\_ARR\_NUM\_THREE](#ZH-CN_TOPIC_0000002503971175)：数组长度3
+- [OT\_IVE\_ARR\_NUM\_EIGHT](#ZH-CN_TOPIC_0000002503971255)：数组长度8
+- [OT\_IVE\_DEV\_NAME\_LENGTH](#ZH-CN_TOPIC_0000002503971217)：IVE设备名字的长度。
+- [OT\_IVE\_DEV\_DEFAULT\_NODE\_NUM](#ZH-CN_TOPIC_0000002504091127)：默认的IVE节点个数。
+- [ot\_ive\_mod\_param](#ZH-CN_TOPIC_0000002504091147)：IVE模块相关参数定义。
+- [ot\_ive\_err\_code](#ZH-CN_TOPIC_0000002504091141)：定义错误码。
+- [ot\_ive\_dma\_mode](#ZH-CN_TOPIC_0000002470931310)：定义DMA运算模式。
+- [ot\_ive\_dma\_ctrl](#ZH-CN_TOPIC_0000002504091157)：定义DMA控制信息。
+- [ot\_ive\_filter\_ctrl](#ZH-CN_TOPIC_0000002503971267)：定义模板滤波控制信息。
+- [ot\_ive\_csc\_mode](#ZH-CN_TOPIC_0000002470931222)：定义色彩空间转换模式。
+- [ot\_ive\_csc\_ctrl](#ZH-CN_TOPIC_0000002504091137)：定义色彩空间转换控制信息。
+- [ot\_ive\_filter\_and\_csc\_ctrl](#ZH-CN_TOPIC_0000002471091222)：定义模板滤波加色彩空间转换复合功能控制信息。
+- [ot\_ive\_sobel\_out\_ctrl](#ZH-CN_TOPIC_0000002503971149)：定义sobel输出控制信息。
+- [ot\_ive\_sobel\_ctrl](#ZH-CN_TOPIC_0000002470931226)：定义sobel边缘提取控制信息。
+- [ot\_ive\_mag\_and\_ang\_out\_ctrl](#ZH-CN_TOPIC_0000002471091234)：定义canny边缘幅值与角度计算的输出格式。
+- [ot\_ive\_mag\_and\_ang\_ctrl](#ZH-CN_TOPIC_0000002470931264)：定义canny边缘幅值和幅角计算的控制信息。
+- [ot\_ive\_dilate\_ctrl](#ZH-CN_TOPIC_0000002504091109)：定义膨胀控制信息。
+- [ot\_ive\_erode\_ctrl](#ZH-CN_TOPIC_0000002470931312)：定义腐蚀控制信息。
+- [ot\_ive\_threshold\_mode](#ZH-CN_TOPIC_0000002504091197)：定义图像二值化输出格式。
+- [ot\_ive\_threshold\_ctrl](#ZH-CN_TOPIC_0000002504091163)：定义图像二值化控制信息。
+- [ot\_ive\_sub\_mode](#ZH-CN_TOPIC_0000002470931336)：定义两图像相减输出格式。
+- [ot\_ive\_sub\_ctrl](#ZH-CN_TOPIC_0000002471091290)：定义两图像相减控制参数。
+- [ot\_ive\_integ\_out\_ctrl](#ZH-CN_TOPIC_0000002504091081)：定义积分图输出控制参数。
+- [ot\_ive\_integ\_ctrl](#ZH-CN_TOPIC_0000002504091115)：定义积分图计算控制参数。
+- [ot\_ive\_threshold\_s16\_mode](#ZH-CN_TOPIC_0000002504091143)：定义16bit有符号图像的阈值化模式。
+- [ot\_ive\_threshold\_s16\_ctrl](#ZH-CN_TOPIC_0000002504091125)：定义16bit有符号图像的阈值化控制参数。
+- [ot\_ive\_threshold\_u16\_mode](#ZH-CN_TOPIC_0000002503971223)：定义16bti无符号图像的阈值化模式。
+- [ot\_ive\_threshold\_u16\_ctrl](#ZH-CN_TOPIC_0000002504091089)：定义16bit无符号图像的阈值化控制参数。
+- [ot\_ive\_16bit\_to\_8bit\_mode](#ZH-CN_TOPIC_0000002471091260)：定义16bit图像到8bit图像的转化模式。
+- [ot\_ive\_16bit\_to\_8bit\_ctrl](#ZH-CN_TOPIC_0000002470931316)：定义16bit图像到8bit图像的转化控制参数。
+- [ot\_ive\_order\_stats\_filter\_mode](#ZH-CN_TOPIC_0000002470931238)：定义顺序统计量滤波模式。
+- [ot\_ive\_order\_stats\_filter\_ctrl](#ZH-CN_TOPIC_0000002471091240)：定义顺序统计量滤波控制参数。
+- [ot\_ive\_map\_u8bit\_lut\_mem](#ZH-CN_TOPIC_0000002471091206)：定义Map U8C1→U8C1的查找表内存。
+- [ot\_ive\_map\_u16bit\_lut\_mem](#ZH-CN_TOPIC_0000002504091091)：定义Map U8C1→U16C1的查找表内存。
+- [ot\_ive\_map\_s16bit\_lut\_mem](#ZH-CN_TOPIC_0000002504091173)：定义Map U8C1→S16C1的查找表内存。
+- [ot\_ive\_map\_mode](#ZH-CN_TOPIC_0000002470931320)：定义Map的模式。
+- [ot\_ive\_map\_ctrl](#ZH-CN_TOPIC_0000002471091224)：定义Map控制参数。
+- [ot\_ive\_equalize\_hist\_ctrl\_mem](#ZH-CN_TOPIC_0000002471091324)：定义直方图均衡化辅助内存。
+- [ot\_ive\_equalize\_hist\_ctrl](#ZH-CN_TOPIC_0000002503971189)：定义直方图均衡化控制参数。
+- [ot\_ive\_add\_ctrl](#ZH-CN_TOPIC_0000002503971153)：定义两图像的加权加控制参数。
+- [ot\_ive\_ncc\_dst\_mem](#ZH-CN_TOPIC_0000002503971173)：定义NCC的输出内存信息。
+- [ot\_ive\_rgn](#ZH-CN_TOPIC_0000002471091252)：定义连通区域信息。
+- [ot\_ive\_ccblob](#ZH-CN_TOPIC_0000002503971207)：定义连通区域标记的输出信息。
+- [ot\_ive\_ccl\_mode](#ZH-CN_TOPIC_0000002470931332)：定义连通区域模式。
+- [ot\_ive\_ccl\_ctrl](#ZH-CN_TOPIC_0000002471091318)：定义连通区域标记控制参数。
+- [ot\_ive\_gmm\_ctrl](#ZH-CN_TOPIC_0000002471091236)：定义GMM背景建模的控制参数。
+- [ot\_ive\_gmm2\_sns\_factor\_mode](#ZH-CN_TOPIC_0000002471091300)：定义灵敏度系数模式。
+- [ot\_ive\_gmm2\_life\_update\_factor\_mode](#ZH-CN_TOPIC_0000002503971203)：定义模型时长参数更新模式。
+- [ot\_ive\_gmm2\_ctrl](#ZH-CN_TOPIC_0000002504091119)：定义GMM2背景建模的控制参数。
+- [ot\_ive\_canny\_stack\_size](#ZH-CN_TOPIC_0000002504091083)：定义Canny边缘前半部分计算时强边缘点栈大小结构体。
+- [ot\_ive\_canny\_hys\_edge\_ctrl](#ZH-CN_TOPIC_0000002503971183)：定义Canny边缘前半部分计算任务的控制参数。
+- [ot\_ive\_lbp\_compare\_mode](#ZH-CN_TOPIC_0000002470931250)：定义LBP纹理计算控制参数。
+- [ot\_ive\_lbp\_ctrl](#ZH-CN_TOPIC_0000002471091226)：定义LBP纹理计算控制参数。
+- [ot\_ive\_norm\_grad\_out\_ctrl](#ZH-CN_TOPIC_0000002503971179)：定义归一化梯度信息计算任务输出控制枚举类型。
+- [ot\_ive\_norm\_grad\_ctrl](#ZH-CN_TOPIC_0000002470931288)：定义归一化梯度信息计算控制参数。
+- [ot\_ive\_lk\_optical\_flow\_pyr\_out\_mode](#ZH-CN_TOPIC_0000002504091077)：定义金字塔LK光流计算输出模式。
+- [ot\_ive\_lk\_optical\_flow\_pyr\_ctrl](#ZH-CN_TOPIC_0000002503971181)：定义金字塔LK光流计算控制参数。
+- [ot\_ive\_st\_max\_eig\_val](#ZH-CN_TOPIC_0000002504091183)：定义Shi-Tomas-like角点计算时最大角点响应值结构体。
+- [ot\_ive\_st\_cand\_corner\_ctrl](#ZH-CN_TOPIC_0000002504091117)：定义Shi-Tomas-like候选角点计算控制参数。
+- [ot\_ive\_st\_corner\_info](#ZH-CN_TOPIC_0000002503971265)：定义Shi-Tomas-like角点计算输出的角点信息结构体。
+- [ot\_ive\_st\_corner\_ctrl](#ZH-CN_TOPIC_0000002471091220)：定义Shi-Tomas-like角点筛选控制参数。
+- [ot\_ive\_sad\_mode](#ZH-CN_TOPIC_0000002470931274)：定义SAD计算模式。
+- [ot\_ive\_sad\_out\_ctrl](#ZH-CN_TOPIC_0000002471091278)：定义SAD输出控制模式。
+- [ot\_ive\_sad\_ctrl](#ZH-CN_TOPIC_0000002471091212)：定义SAD控制参数。
+- [ot\_ive\_resize\_mode](#ZH-CN_TOPIC_0000002503971219)：定义Resize的模式。
+- [ot\_ive\_resize\_ctrl](#ZH-CN_TOPIC_0000002471091258)：定义Resize控制参数。
+- [ot\_ive\_grad\_fg\_mode](#ZH-CN_TOPIC_0000002503971161)：定义梯度前景计算模式。
+- [ot\_ive\_grad\_fg\_ctrl](#ZH-CN_TOPIC_0000002504091111)：定义计算梯度前景控制参数。
+- [ot\_ive\_cand\_bg\_pixel](#ZH-CN_TOPIC_0000002503971261)：定义候选背景模型数据。
+- [ot\_ive\_wrok\_bg\_pixel](#ZH-CN_TOPIC_0000002503971171)：定义工作背景模型数据。
+- [ot\_ive\_bg\_life](#ZH-CN_TOPIC_0000002471091208)：定义背景生命力数据。
+- [ot\_ive\_bg\_model\_pixel](#ZH-CN_TOPIC_0000002503971177)：定义背景模型数据。
+- [ot\_ive\_fg\_status\_data](#ZH-CN_TOPIC_0000002503971239)：定义前景状态数据。
+- [ot\_ive\_bg\_status\_data](#ZH-CN_TOPIC_0000002503971253)：定义背景状态数据。
+- [ot\_ive\_match\_bg\_model\_ctrl](#ZH-CN_TOPIC_0000002503971249)：定义背景匹配控制参数。
+- [ot\_ive\_update\_bg\_model\_ctrl](#ZH-CN_TOPIC_0000002471091248)：定义背景更新控制参数。
+- [ot\_ive\_ann\_mlp\_accurate](#ZH-CN_TOPIC_0000002504091185)：定义ann\_mlp输入特征向量类型。
+- [ot\_ive\_ann\_mlp\_actv\_func](#ZH-CN_TOPIC_0000002503971151)：定义ann\_mlp激活函数枚举类型。
+- [ot\_ive\_ann\_mlp\_model](#ZH-CN_TOPIC_0000002503971233)：定义ann\_mlp模型数据结构体。
+- [ot\_ive\_svm\_type](#ZH-CN_TOPIC_0000002471091314)：定义SVM类型。
+- [ot\_ive\_svm\_kernel\_type](#ZH-CN_TOPIC_0000002471091268)：定义SVM核函数类型。
+- [ot\_ive\_svm\_model](#ZH-CN_TOPIC_0000002470931338)：定义SVM模型数据结构体。
+- [ot\_ive\_cnn\_actv\_func](#ZH-CN_TOPIC_0000002470931254)：定义CNN激活函数枚举类型。
+- [ot\_ive\_cnn\_pooling](#ZH-CN_TOPIC_0000002471091230)：定义CNN汇聚操作枚举类型。
+- [ot\_ive\_cnn\_conv\_pooling](#ZH-CN_TOPIC_0000002471091306)：定义CNN单层Conv-ReLU-Pooling运算包参数结构体。
+- [ot\_ive\_cnn\_fc\_info](#ZH-CN_TOPIC_0000002470931296)：定义CNN全链接网络参数结构体。
+- [ot\_ive\_cnn\_model](#ZH-CN_TOPIC_0000002504091131)：定义CNN模型参数结构体。
+- [ot\_ive\_cnn\_ctrl](#ZH-CN_TOPIC_0000002471091238)：定义CNN预测任务的控制参数。
+- [ot\_ive\_cnn\_result](#ZH-CN_TOPIC_0000002503971157)：定义CNN单个样本预测结果结构体。
+- [ot\_ive\_persp\_trans\_point\_pair](#ZH-CN_TOPIC_0000002470931326)：定义透视变换点对结构体。
+- [ot\_ive\_persp\_trans\_alg\_mode](#ZH-CN_TOPIC_0000002471091242)：定义透视变换算法模式枚举。
+- [ot\_ive\_persp\_trans\_csc\_mode](#ZH-CN_TOPIC_0000002470931228)：定义透视变换色彩空间转换模式。
+- [ot\_ive\_kcf\_core\_id](#ZH-CN_TOPIC_0000002504091191)：定义KCF的核ID。
+- [ot\_ive\_persp\_trans\_ctrl](#ZH-CN_TOPIC_0000002471091262)：定义透视变换控制参数。
+- [ot\_ive\_roi\_info](#ZH-CN_TOPIC_0000002503971155)：定义目前区域信息参数。
+- [ot\_ive\_kcf\_proc\_ctrl](#ZH-CN_TOPIC_0000002471091264)：定义跟踪处理控制参数。
+- [ot\_ive\_list\_head](#ZH-CN_TOPIC_0000002504091189)：定义链表头结构体参数。
+- [ot\_ive\_kcf\_obj](#ZH-CN_TOPIC_0000002471091292)：定义目标信息结构体参数。
+- [ot\_ive\_kcf\_obj\_node](#ZH-CN_TOPIC_0000002470931324)：定义目标链表节点参数。
+- [ot\_ive\_kcf\_list\_state](#ZH-CN_TOPIC_0000002504091113)：定义目标链表状态枚举类型。
+- [ot\_ive\_kcf\_obj\_list](#ZH-CN_TOPIC_0000002470931236)：定义目标链表结构参数。
+- [ot\_ive\_kcf\_bbox](#ZH-CN_TOPIC_0000002504091101)：定义目标区域信息参数。
+- [ot\_ive\_kcf\_bbox\_ctrl](#ZH-CN_TOPIC_0000002470931278)：定义目标区域信息控制参数。
+- [ot\_ive\_hog\_mode](#ZH-CN_TOPIC_0000002504091097)：定义HOG\(Histogram of Oriented Gradient\)特征存储模式枚举类型。
+- [ot\_ive\_hog\_ctrl](#ZH-CN_TOPIC_0000002470931248)：定义计算HOG\(Histogram of Oriented Gradient\)特征控制参数。 ## SVP相关数据类型、数据结构<a name="ZH-CN_TOPIC_0000002471091256"></a> ### ot\_svp\_img\_type<a name="ZH-CN_TOPIC_0000002471091210"></a> 【说明】 定义二维广义图像支持的图像类型。 【定义】 ```
 /* Img type */
-typedef enum {
-    OT_SVP_IMG_TYPE_U8C1           =  0x0,
-    OT_SVP_IMG_TYPE_S8C1           =  0x1,
- 
-    OT_SVP_IMG_TYPE_YUV420SP       =  0x2,       /* YUV420 SemiPlanar */
-    OT_SVP_IMG_TYPE_YUV422SP       =  0x3,       /* YUV422 SemiPlanar */
-    OT_SVP_IMG_TYPE_YUV420P        =  0x4,       /* YUV420 Planar */
-    OT_SVP_IMG_TYPE_YUV422P        =  0x5,       /* YUV422 planar */
- 
-    OT_SVP_IMG_TYPE_S8C2_PACKAGE   =  0x6,
-    OT_SVP_IMG_TYPE_S8C2_PLANAR    =  0x7,
- 
-    OT_SVP_IMG_TYPE_S16C1          =  0x8,
-    OT_SVP_IMG_TYPE_U16C1          =  0x9,
- 
-    OT_SVP_IMG_TYPE_U8C3_PACKAGE   =  0xa,
-    OT_SVP_IMG_TYPE_U8C3_PLANAR    =  0xb,
- 
-    OT_SVP_IMG_TYPE_S32C1          =  0xc,
-    OT_SVP_IMG_TYPE_U32C1          =  0xd,
- 
-    OT_SVP_IMG_TYPE_S64C1          =  0xe,
-    OT_SVP_IMG_TYPE_U64C1          =  0xf,
-    OT_SVP_IMG_TYPE_BUTT
- 
-} ot_svp_img_type;
-```
-
-【成员】
-
-<a name="table15961mcpsimp"></a>
+typedef enum { OT_SVP_IMG_TYPE_U8C1 = 0x0, OT_SVP_IMG_TYPE_S8C1 = 0x1, OT_SVP_IMG_TYPE_YUV420SP = 0x2, /* YUV420 SemiPlanar */ OT_SVP_IMG_TYPE_YUV422SP = 0x3, /* YUV422 SemiPlanar */ OT_SVP_IMG_TYPE_YUV420P = 0x4, /* YUV420 Planar */ OT_SVP_IMG_TYPE_YUV422P = 0x5, /* YUV422 planar */ OT_SVP_IMG_TYPE_S8C2_PACKAGE = 0x6, OT_SVP_IMG_TYPE_S8C2_PLANAR = 0x7, OT_SVP_IMG_TYPE_S16C1 = 0x8, OT_SVP_IMG_TYPE_U16C1 = 0x9, OT_SVP_IMG_TYPE_U8C3_PACKAGE = 0xa, OT_SVP_IMG_TYPE_U8C3_PLANAR = 0xb, OT_SVP_IMG_TYPE_S32C1 = 0xc, OT_SVP_IMG_TYPE_U32C1 = 0xd, OT_SVP_IMG_TYPE_S64C1 = 0xe, OT_SVP_IMG_TYPE_U64C1 = 0xf, OT_SVP_IMG_TYPE_BUTT } ot_svp_img_type;
+``` 【成员】 <a name="table15961mcpsimp"></a>
 <table><thead align="left"><tr id="row15966mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p15968mcpsimp"><a name="p15968mcpsimp"></a><a name="p15968mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p15970mcpsimp"><a name="p15970mcpsimp"></a><a name="p15970mcpsimp"></a>描述</p>
@@ -291,40 +229,12 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_svp\_img](#ot_svp_img)
--   [ot\_svp\_src\_img](#ot_svp_src_img)
--   [ot\_svp\_dst\_img](#ot_svp_dst_img)
-
-### ot\_svp\_img<a name="ZH-CN_TOPIC_0000002504091103"></a>
-
-【说明】
-
-定义二维广义图像信息。
-
-【定义】
-
-```
-typedef struct {
-    td_u64  phys_addr[OT_SVP_IMG_ADDR_NUM]; /* RW;The physical address of the image */
-    td_u64  virt_addr[OT_SVP_IMG_ADDR_NUM]; /* RW;The virtual address of the image */
-    td_u32  stride[OT_SVP_IMG_STRIDE_NUM]; /* RW;The stride of the image */
-    td_u32  width;                           /* RW;The width of the image */
-    td_u32  height;                          /* RW;The height of the image */
-    ot_svp_img_type  type;                   /* RW;The type of the image */
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_svp\_img](#ot_svp_img)
+- [ot\_svp\_src\_img](#ot_svp_src_img)
+- [ot\_svp\_dst\_img](#ot_svp_dst_img) ### ot\_svp\_img<a name="ZH-CN_TOPIC_0000002504091103"></a> 【说明】 定义二维广义图像信息。 【定义】 ```
+typedef struct { td_u64 phys_addr[OT_SVP_IMG_ADDR_NUM]; /* RW;The physical address of the image */ td_u64 virt_addr[OT_SVP_IMG_ADDR_NUM]; /* RW;The virtual address of the image */ td_u32 stride[OT_SVP_IMG_STRIDE_NUM]; /* RW;The stride of the image */ td_u32 width; /* RW;The width of the image */ td_u32 height; /* RW;The height of the image */ ot_svp_img_type type; /* RW;The type of the image */
 } ot_svp_img;
-```
-
-【成员】
-
-<a name="table7778mcpsimp"></a>
+``` 【成员】 <a name="table7778mcpsimp"></a>
 <table><thead align="left"><tr id="row7783mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p7785mcpsimp"><a name="p7785mcpsimp"></a><a name="p7785mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p7787mcpsimp"><a name="p7787mcpsimp"></a><a name="p7787mcpsimp"></a>描述</p>
@@ -362,131 +272,23 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-每种type下面的图像示意图请参考OT\_SVP\_IMG\_TYPE\_U8C1 \\ OT\_SVP\_IMG\_TYPE\_S8C1 \\ OT\_SVP\_IMG\_TYPE\_S16C1 \\ OT\_SVP\_IMG\_TYPE\_U16C1 \\ OT\_SVP\_IMG\_TYPE\_S32C1 \\ OT\_SVP\_IMG\_TYPE\_U32C1 \\ OT\_SVP\_IMG\_TYPE\_S64C1 \\ OT\_SVP\_IMG\_TYPE\_U64C1 类型的ot\_svp\_img图像图\~ OT\_SVP\_IMG\_TYPE\_U8C3\_PLANAR类型的ot\_svp\_img图像图。
-
-【相关数据及接口】
-
--   [ot\_svp\_img\_type](#ot_svp_img_type)
--   [ot\_svp\_src\_img](#ot_svp_src_img)
--   [ot\_svp\_dst\_img](#ot_svp_dst_img)
-
-### ot\_svp\_src\_img<a name="ZH-CN_TOPIC_0000002471091254"></a>
-
-【说明】
-
-定义源图像。
-
-【定义】
-
-```
+</table> 【注意事项】 每种type下面的图像示意图请参考OT\_SVP\_IMG\_TYPE\_U8C1 \\ OT\_SVP\_IMG\_TYPE\_S8C1 \\ OT\_SVP\_IMG\_TYPE\_S16C1 \\ OT\_SVP\_IMG\_TYPE\_U16C1 \\ OT\_SVP\_IMG\_TYPE\_S32C1 \\ OT\_SVP\_IMG\_TYPE\_U32C1 \\ OT\_SVP\_IMG\_TYPE\_S64C1 \\ OT\_SVP\_IMG\_TYPE\_U64C1 类型的ot\_svp\_img图像图\~ OT\_SVP\_IMG\_TYPE\_U8C3\_PLANAR类型的ot\_svp\_img图像图。 【相关数据及接口】 - [ot\_svp\_img\_type](#ot_svp_img_type)
+- [ot\_svp\_src\_img](#ot_svp_src_img)
+- [ot\_svp\_dst\_img](#ot_svp_dst_img) ### ot\_svp\_src\_img<a name="ZH-CN_TOPIC_0000002471091254"></a> 【说明】 定义源图像。 【定义】 ```
 typedef ot_svp_img ot_svp_src_img;
-```
-
-【成员】
-
-无
-
-【注意事项】
-
-无
-
-【相关数据及接口】
-
--   [ot\_svp\_img\_type](#ot_svp_img_type)
--   [ot\_svp\_dst\_img](#ot_svp_dst_img)
-
-### ot\_svp\_dst\_img<a name="ZH-CN_TOPIC_0000002471091286"></a>
-
-【说明】
-
-定义输出图像。
-
-【定义】
-
-```
+``` 【成员】 无 【注意事项】 无 【相关数据及接口】 - [ot\_svp\_img\_type](#ot_svp_img_type)
+- [ot\_svp\_dst\_img](#ot_svp_dst_img) ### ot\_svp\_dst\_img<a name="ZH-CN_TOPIC_0000002471091286"></a> 【说明】 定义输出图像。 【定义】 ```
 typedef ot_svp_img ot_svp_dst_img;
-```
-
-【成员】
-
-无
-
-【注意事项】
-
-无
-
-【相关数据及接口】
-
--   [ot\_svp\_img\_type](#ot_svp_img_type)
--   [ot\_svp\_src\_img](#ot_svp_src_img)
-
-### OT\_SVP\_IMG\_ADDR\_NUM<a name="ZH-CN_TOPIC_0000002470931272"></a>
-
-【说明】
-
-定义地址通道数目。
-
-【定义】
-
-```
-#define OT_SVP_IMAE_ADDR_NUM    3
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### OT\_SVP\_IMG\_STRIDE\_NUM<a name="ZH-CN_TOPIC_0000002470931232"></a>
-
-【说明】
-
-定义跨度数组长度。
-
-【定义】
-
-```
-#define  OT_SVP_IMG_STRIDE_NUM    3
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-## 定点数据类型<a name="ZH-CN_TOPIC_0000002471091272"></a>
-
-【说明】
-
-定义定点化的数据类型。
-
-【定义】
-
-```
+``` 【成员】 无 【注意事项】 无 【相关数据及接口】 - [ot\_svp\_img\_type](#ot_svp_img_type)
+- [ot\_svp\_src\_img](#ot_svp_src_img) ### OT\_SVP\_IMG\_ADDR\_NUM<a name="ZH-CN_TOPIC_0000002470931272"></a> 【说明】 定义地址通道数目。 【定义】 ```
+#define OT_SVP_IMAE_ADDR_NUM 3
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_SVP\_IMG\_STRIDE\_NUM<a name="ZH-CN_TOPIC_0000002470931232"></a> 【说明】 定义跨度数组长度。 【定义】 ```
+#define OT_SVP_IMG_STRIDE_NUM 3
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 无。 ## 定点数据类型<a name="ZH-CN_TOPIC_0000002471091272"></a> 【说明】 定义定点化的数据类型。 【定义】 ```
 typedef unsigned char td_u0q8;
 typedef unsigned char td_u1q7;
 typedef unsigned char td_u5q3;
-typedef unsigned char td_u3q5;
- 
-typedef unsigned short td_u0q16;
+typedef unsigned char td_u3q5; typedef unsigned short td_u0q16;
 typedef unsigned short td_u4q12;
 typedef unsigned short td_u6q10;
 typedef unsigned short td_u8q8;
@@ -499,27 +301,17 @@ typedef unsigned short td_u2q14;
 typedef td_u6q10 td_ufp16;
 typedef short td_s9q7;
 typedef short td_s14q2;
-typedef short td_s1q15;
- 
-typedef unsigned int td_u22q10;
+typedef short td_s1q15; typedef unsigned int td_u22q10;
 typedef unsigned int td_u25q7;
 typedef unsigned int td_u21q11;
 typedef unsigned int td_u14q18;
 typedef unsigned int td_u8q24;
-typedef unsigned int td_u4q28;
- 
-typedef int td_s25q7;
+typedef unsigned int td_u4q28; typedef int td_s25q7;
 typedef int td_s16q16;
 typedef int td_s14q18;
 typedef int td_s20q12;
-typedef int td_s24q8;
- 
-typedef unsigned short td_u8q4f4;
-```
-
-【成员】
-
-<a name="table11614mcpsimp"></a>
+typedef int td_s24q8; typedef unsigned short td_u8q4f4;
+``` 【成员】 <a name="table11614mcpsimp"></a>
 <table><thead align="left"><tr id="row11619mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.3.1.1"><p id="p11621mcpsimp"><a name="p11621mcpsimp"></a><a name="p11621mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="82%" id="mcps1.1.3.1.2"><p id="p11623mcpsimp"><a name="p11623mcpsimp"></a><a name="p11623mcpsimp"></a>描述</p>
@@ -677,56 +469,14 @@ typedef unsigned short td_u8q4f4;
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-td\_uxqyfz\\td\_sxqy：
-
--   u后面的数字x表示是用x bit无符号数据表示整数部分；
--   s后面的数字x表示用x bit有符号数据表示整数部分；
--   q后面的数字y表示用y bit 数据表示小数部分；
--   f后面的数字z表示用z bit 来表示标志位；
--   从左到右依次表示高bit位到低bit位。
-
-【相关数据类型及接口】
-
-无。
-
-
-
-
-
-
-
-
-
-
-
-
-
-### ot\_svp\_data<a name="ZH-CN_TOPIC_0000002470931244"></a>
-
-【说明】
-
-定义以byte为单位的二维数据信息。
-
-【定义】
-
-```
-typedef struct {
-    td_u64 phys_addr; /* RW;The physical address of the data */
-    td_u64 virt_addr; /* RW;The virtaul address of the data */
-    td_u32 stride;   /* RW;The stride of 2D data by byte */
-    td_u32 width;    /* RW;The width of 2D data by byte */
-    td_u32 height;   /* RW;The height of 2D data by byte */
-    td_u32 reserved;
+</table> 【注意事项】 td\_uxqyfz\\td\_sxqy： - u后面的数字x表示是用x bit无符号数据表示整数部分；
+- s后面的数字x表示用x bit有符号数据表示整数部分；
+- q后面的数字y表示用y bit 数据表示小数部分；
+- f后面的数字z表示用z bit 来表示标志位；
+- 从左到右依次表示高bit位到低bit位。 【相关数据类型及接口】 无。 ### ot\_svp\_data<a name="ZH-CN_TOPIC_0000002470931244"></a> 【说明】 定义以byte为单位的二维数据信息。 【定义】 ```
+typedef struct { td_u64 phys_addr; /* RW;The physical address of the data */ td_u64 virt_addr; /* RW;The virtaul address of the data */ td_u32 stride; /* RW;The stride of 2D data by byte */ td_u32 width; /* RW;The width of 2D data by byte */ td_u32 height; /* RW;The height of 2D data by byte */ td_u32 reserved;
 } ot_svp_data;
-```
-
-【成员】
-
-<a name="table1382mcpsimp"></a>
+``` 【成员】 <a name="table1382mcpsimp"></a>
 <table><thead align="left"><tr id="row1387mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.1.3.1.1"><p id="p1389mcpsimp"><a name="p1389mcpsimp"></a><a name="p1389mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.3.1.2"><p id="p1391mcpsimp"><a name="p1391mcpsimp"></a><a name="p1391mcpsimp"></a>描述</p>
@@ -764,84 +514,16 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-表示以byte为单位的二维数据；可以与[ot\_svp\_img](#ZH-CN_TOPIC_0000002504091103)图像进行转换。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_svp\_src\_data<a name="ZH-CN_TOPIC_0000002503971213"></a>
-
-【说明】
-
-定义以byte为单位的二维源数据信息。
-
-【定义】
-
-```
+</table> 【注意事项】 表示以byte为单位的二维数据；可以与[ot\_svp\_img](#ZH-CN_TOPIC_0000002504091103)图像进行转换。 【相关数据类型及接口】 无。 ### ot\_svp\_src\_data<a name="ZH-CN_TOPIC_0000002503971213"></a> 【说明】 定义以byte为单位的二维源数据信息。 【定义】 ```
 typedef ot_svp_data ot_svp_src_data;
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_svp\_img](#ot_svp_img)
--   [ot\_svp\_dst\_data](#ot_svp_dst_data)
-
-### ot\_svp\_dst\_data<a name="ZH-CN_TOPIC_0000002470931290"></a>
-
-【说明】
-
-定义byte为单位的二维输出数据信息。
-
-【定义】
-
-```
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 - [ot\_svp\_img](#ot_svp_img)
+- [ot\_svp\_dst\_data](#ot_svp_dst_data) ### ot\_svp\_dst\_data<a name="ZH-CN_TOPIC_0000002470931290"></a> 【说明】 定义byte为单位的二维输出数据信息。 【定义】 ```
 typedef ot_svp_data ot_svp_dst_data;
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_svp\_img](#ot_svp_img)
--   [ot\_svp\_src\_img](#ot_svp_src_img)
-
-### ot\_svp\_8bit<a name="ZH-CN_TOPIC_0000002503971231"></a>
-
-【说明】
-
-定义8bit数据联合体。
-
-【定义】
-
-```
-typedef union {
-    td_s8 s8_val;
-    td_u8 u8_val;
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 - [ot\_svp\_img](#ot_svp_img)
+- [ot\_svp\_src\_img](#ot_svp_src_img) ### ot\_svp\_8bit<a name="ZH-CN_TOPIC_0000002503971231"></a> 【说明】 定义8bit数据联合体。 【定义】 ```
+typedef union { td_s8 s8_val; td_u8 u8_val;
 } ot_svp_8bit;
-```
-
-【成员】
-
-<a name="table15205mcpsimp"></a>
+``` 【成员】 <a name="table15205mcpsimp"></a>
 <table><thead align="left"><tr id="row15210mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.1.3.1.1"><p id="p15212mcpsimp"><a name="p15212mcpsimp"></a><a name="p15212mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.3.1.2"><p id="p15214mcpsimp"><a name="p15214mcpsimp"></a><a name="p15214mcpsimp"></a>描述</p>
@@ -859,34 +541,10 @@ typedef union {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_svp\_point\_u16<a name="ZH-CN_TOPIC_0000002503971259"></a>
-
-【说明】
-
-定义u16表示的点信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 x; /* RW;The X coordinate of the point */
-    td_u16 y; /* RW;The Y coordinate of the point */
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_svp\_point\_u16<a name="ZH-CN_TOPIC_0000002503971259"></a> 【说明】 定义u16表示的点信息结构体。 【定义】 ```
+typedef struct { td_u16 x; /* RW;The X coordinate of the point */ td_u16 y; /* RW;The Y coordinate of the point */
 } ot_svp_point_u16;
-```
-
-【成员】
-
-<a name="table10459mcpsimp"></a>
+``` 【成员】 <a name="table10459mcpsimp"></a>
 <table><thead align="left"><tr id="row10464mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p10466mcpsimp"><a name="p10466mcpsimp"></a><a name="p10466mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p10468mcpsimp"><a name="p10468mcpsimp"></a><a name="p10468mcpsimp"></a>描述</p>
@@ -898,40 +556,11 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p10474mcpsimp"><a name="p10474mcpsimp"></a><a name="p10474mcpsimp"></a>点的x坐标。</p>
 </td>
 </tr>
-<tr id="row10475mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p10477mcpsimp"><a name="p10477mcpsimp"></a><a name="p10477mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p10479mcpsimp"><a name="p10479mcpsimp"></a><a name="p10479mcpsimp"></a>点的y坐标。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_svp\_point\_s16<a name="ZH-CN_TOPIC_0000002504091193"></a>
-
-【说明】
-
-定义s16表示的点信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_s16 x; /* RW;The X coordinate of the point */
-    td_s16 y; /* RW;The Y coordinate of the point */
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_svp\_point\_s16<a name="ZH-CN_TOPIC_0000002504091193"></a> 【说明】 定义s16表示的点信息结构体。 【定义】 ```
+typedef struct { td_s16 x; /* RW;The X coordinate of the point */ td_s16 y; /* RW;The Y coordinate of the point */
 } ot_svp_point_s16;
-```
-
-【成员】
-
-<a name="table2917mcpsimp"></a>
+``` 【成员】 <a name="table2917mcpsimp"></a>
 <table><thead align="left"><tr id="row2922mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p2924mcpsimp"><a name="p2924mcpsimp"></a><a name="p2924mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p2926mcpsimp"><a name="p2926mcpsimp"></a><a name="p2926mcpsimp"></a>描述</p>
@@ -943,40 +572,11 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p2932mcpsimp"><a name="p2932mcpsimp"></a><a name="p2932mcpsimp"></a>点的x坐标。</p>
 </td>
 </tr>
-<tr id="row2933mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p2935mcpsimp"><a name="p2935mcpsimp"></a><a name="p2935mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p2937mcpsimp"><a name="p2937mcpsimp"></a><a name="p2937mcpsimp"></a>点的y坐标。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_svp\_point\_s25q7<a name="ZH-CN_TOPIC_0000002503971257"></a>
-
-【说明】
-
-定义s25q7表示的点信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_s25q7 x; /* RW;The X coordinate of the point */
-    td_s25q7 y; /* RW;The Y coordinate of the point */
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_svp\_point\_s25q7<a name="ZH-CN_TOPIC_0000002503971257"></a> 【说明】 定义s25q7表示的点信息结构体。 【定义】 ```
+typedef struct { td_s25q7 x; /* RW;The X coordinate of the point */ td_s25q7 y; /* RW;The Y coordinate of the point */
 } ot_svp_point_s25q7;
-```
-
-【成员】
-
-<a name="table16735mcpsimp"></a>
+``` 【成员】 <a name="table16735mcpsimp"></a>
 <table><thead align="left"><tr id="row16740mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p16742mcpsimp"><a name="p16742mcpsimp"></a><a name="p16742mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p16744mcpsimp"><a name="p16744mcpsimp"></a><a name="p16744mcpsimp"></a>描述</p>
@@ -988,40 +588,11 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p16750mcpsimp"><a name="p16750mcpsimp"></a><a name="p16750mcpsimp"></a>点的x坐标，以SQ25.7表示。</p>
 </td>
 </tr>
-<tr id="row16751mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p16753mcpsimp"><a name="p16753mcpsimp"></a><a name="p16753mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p16755mcpsimp"><a name="p16755mcpsimp"></a><a name="p16755mcpsimp"></a>点的y坐标，以SQ25.7表示。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_svp\_point\_u14q2<a name="ZH-CN_TOPIC_0000002504091195"></a>
-
-【说明】
-
-定义u14q2表示的点信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u14q2 x;
-    td_u14q2 y;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_svp\_point\_u14q2<a name="ZH-CN_TOPIC_0000002504091195"></a> 【说明】 定义u14q2表示的点信息结构体。 【定义】 ```
+typedef struct { td_u14q2 x; td_u14q2 y;
 } ot_svp_point_u14q2;
-```
-
-【成员】
-
-<a name="table12099mcpsimp"></a>
+``` 【成员】 <a name="table12099mcpsimp"></a>
 <table><thead align="left"><tr id="row12104mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p12106mcpsimp"><a name="p12106mcpsimp"></a><a name="p12106mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p12108mcpsimp"><a name="p12108mcpsimp"></a><a name="p12108mcpsimp"></a>描述</p>
@@ -1033,42 +604,11 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p12114mcpsimp"><a name="p12114mcpsimp"></a><a name="p12114mcpsimp"></a>点的x坐标。</p>
 </td>
 </tr>
-<tr id="row12115mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p12117mcpsimp"><a name="p12117mcpsimp"></a><a name="p12117mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p12119mcpsimp"><a name="p12119mcpsimp"></a><a name="p12119mcpsimp"></a>点的y坐标。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_svp\_rect\_u32<a name="ZH-CN_TOPIC_0000002470931266"></a>
-
-【说明】
-
-定义u32表示的矩形信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 x;      /* RW;The location of X axis of the rectangle */
-    td_u32 y;      /* RW;The location of Y axis of the rectangle */
-    td_u32 width;  /* RW;The width of the rectangle */
-    td_u32 height; /* RW;The height of the rectangle */
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_svp\_rect\_u32<a name="ZH-CN_TOPIC_0000002470931266"></a> 【说明】 定义u32表示的矩形信息结构体。 【定义】 ```
+typedef struct { td_u32 x; /* RW;The location of X axis of the rectangle */ td_u32 y; /* RW;The location of Y axis of the rectangle */ td_u32 width; /* RW;The width of the rectangle */ td_u32 height; /* RW;The height of the rectangle */
 } ot_svp_rect_u32;
-```
-
-【成员】
-
-<a name="table10092mcpsimp"></a>
+``` 【成员】 <a name="table10092mcpsimp"></a>
 <table><thead align="left"><tr id="row10097mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p10099mcpsimp"><a name="p10099mcpsimp"></a><a name="p10099mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p10101mcpsimp"><a name="p10101mcpsimp"></a><a name="p10101mcpsimp"></a>描述</p>
@@ -1078,11 +618,6 @@ typedef struct {
 <tbody><tr id="row10103mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p10105mcpsimp"><a name="p10105mcpsimp"></a><a name="p10105mcpsimp"></a>x</p>
 </td>
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p10107mcpsimp"><a name="p10107mcpsimp"></a><a name="p10107mcpsimp"></a>矩形相对于坐标原点最近点的x坐标。</p>
-</td>
-</tr>
-<tr id="row10108mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p10110mcpsimp"><a name="p10110mcpsimp"></a><a name="p10110mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p10112mcpsimp"><a name="p10112mcpsimp"></a><a name="p10112mcpsimp"></a>矩形相对于坐标原点最近点的y坐标。</p>
 </td>
 </tr>
 <tr id="row10113mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p10115mcpsimp"><a name="p10115mcpsimp"></a><a name="p10115mcpsimp"></a>width</p>
@@ -1096,36 +631,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及结构】
-
-无
-
-### ot\_svp\_rect\_u16<a name="ZH-CN_TOPIC_0000002470931214"></a>
-
-【说明】
-
-定义u16表示的矩形信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 x;      /* RW;The location of X axis of the rectangle */
-    td_u16 y;      /* RW;The location of Y axis of the rectangle */
-    td_u16 width;  /* RW;The width of the rectangle */
-    td_u16 height; /* RW;The height of the rectangle */
+</table> 【注意事项】 无 【相关数据类型及结构】 无 ### ot\_svp\_rect\_u16<a name="ZH-CN_TOPIC_0000002470931214"></a> 【说明】 定义u16表示的矩形信息结构体。 【定义】 ```
+typedef struct { td_u16 x; /* RW;The location of X axis of the rectangle */ td_u16 y; /* RW;The location of Y axis of the rectangle */ td_u16 width; /* RW;The width of the rectangle */ td_u16 height; /* RW;The height of the rectangle */
 } ot_svp_rect_u16;
-```
-
-【成员】
-
-<a name="table7481mcpsimp"></a>
+``` 【成员】 <a name="table7481mcpsimp"></a>
 <table><thead align="left"><tr id="row7486mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p7488mcpsimp"><a name="p7488mcpsimp"></a><a name="p7488mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p7490mcpsimp"><a name="p7490mcpsimp"></a><a name="p7490mcpsimp"></a>描述</p>
@@ -1135,11 +644,6 @@ typedef struct {
 <tbody><tr id="row7492mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p7494mcpsimp"><a name="p7494mcpsimp"></a><a name="p7494mcpsimp"></a>x</p>
 </td>
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p7496mcpsimp"><a name="p7496mcpsimp"></a><a name="p7496mcpsimp"></a>矩形相对于坐标原点最近点的x坐标。</p>
-</td>
-</tr>
-<tr id="row7497mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p7499mcpsimp"><a name="p7499mcpsimp"></a><a name="p7499mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p7501mcpsimp"><a name="p7501mcpsimp"></a><a name="p7501mcpsimp"></a>矩形相对于坐标原点最近点的y坐标。</p>
 </td>
 </tr>
 <tr id="row7502mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p7504mcpsimp"><a name="p7504mcpsimp"></a><a name="p7504mcpsimp"></a>width</p>
@@ -1153,36 +657,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及结构】
-
-无
-
-### ot\_svp\_rect\_s24q8<a name="ZH-CN_TOPIC_0000002503971197"></a>
-
-【说明】
-
-定义s24q8表示的矩形信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_s24q8 x;
-    td_s24q8 y;
-    td_u32 width;
-    td_u32 height;
+</table> 【注意事项】 无 【相关数据类型及结构】 无 ### ot\_svp\_rect\_s24q8<a name="ZH-CN_TOPIC_0000002503971197"></a> 【说明】 定义s24q8表示的矩形信息结构体。 【定义】 ```
+typedef struct { td_s24q8 x; td_s24q8 y; td_u32 width; td_u32 height;
 } ot_svp_rect_s24q8;
-```
-
-【成员】
-
-<a name="table1775mcpsimp"></a>
+``` 【成员】 <a name="table1775mcpsimp"></a>
 <table><thead align="left"><tr id="row1780mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p1782mcpsimp"><a name="p1782mcpsimp"></a><a name="p1782mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p1784mcpsimp"><a name="p1784mcpsimp"></a><a name="p1784mcpsimp"></a>描述</p>
@@ -1192,11 +670,6 @@ typedef struct {
 <tbody><tr id="row1786mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1788mcpsimp"><a name="p1788mcpsimp"></a><a name="p1788mcpsimp"></a>x</p>
 </td>
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p1790mcpsimp"><a name="p1790mcpsimp"></a><a name="p1790mcpsimp"></a>矩形相对于坐标原点最近点的x坐标。</p>
-</td>
-</tr>
-<tr id="row1791mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1793mcpsimp"><a name="p1793mcpsimp"></a><a name="p1793mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p1795mcpsimp"><a name="p1795mcpsimp"></a><a name="p1795mcpsimp"></a>矩形相对于坐标原点最近点的y坐标。</p>
 </td>
 </tr>
 <tr id="row1796mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1798mcpsimp"><a name="p1798mcpsimp"></a><a name="p1798mcpsimp"></a>width</p>
@@ -1210,40 +683,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及结构】
-
-无
-
-### ot\_svp\_lut<a name="ZH-CN_TOPIC_0000002503971221"></a>
-
-【说明】
-
-定义查找表结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_svp_mem_info table;
-    td_u16 elem_num; /* RW;LUT's elements number */
- 
-    td_u8 table_in_precision;
-    td_u8 table_out_norm;
- 
-    td_s32 table_in_lower; /* RW;LUT's original input lower limit */
-    td_s32 table_in_upper; /* RW;LUT's original input upper limit */
+</table> 【注意事项】 无 【相关数据类型及结构】 无 ### ot\_svp\_lut<a name="ZH-CN_TOPIC_0000002503971221"></a> 【说明】 定义查找表结构体。 【定义】 ```
+typedef struct { ot_svp_mem_info table; td_u16 elem_num; /* RW;LUT's elements number */ td_u8 table_in_precision; td_u8 table_out_norm; td_s32 table_in_lower; /* RW;LUT's original input lower limit */ td_s32 table_in_upper; /* RW;LUT's original input upper limit */
 } ot_svp_lut;
-```
-
-【成员】
-
-<a name="table5017mcpsimp"></a>
+``` 【成员】 <a name="table5017mcpsimp"></a>
 <table><thead align="left"><tr id="row5022mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p5024mcpsimp"><a name="p5024mcpsimp"></a><a name="p5024mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p5026mcpsimp"><a name="p5026mcpsimp"></a><a name="p5026mcpsimp"></a>描述</p>
@@ -1281,473 +724,40 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及结构】
-
-无
-
-## IVE相关数据类型、数据结构<a name="ZH-CN_TOPIC_0000002503971225"></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### ot\_ive\_handle<a name="ZH-CN_TOPIC_0000002471091250"></a>
-
-【说明】
-
-定义IVE句柄。
-
-【定义】
-
-```
+</table> 【注意事项】 无 【相关数据类型及结构】 无 ## IVE相关数据类型、数据结构<a name="ZH-CN_TOPIC_0000002503971225"></a> ### ot\_ive\_handle<a name="ZH-CN_TOPIC_0000002471091250"></a> 【说明】 定义IVE句柄。 【定义】 ```
 typedef td_s32 ot_ive_handle;
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### OT\_IVE\_HIST\_NUM<a name="ZH-CN_TOPIC_0000002470931262"></a>
-
-【说明】
-
-定义直方图统计bin数目。
-
-【定义】
-
-```
-#define OT_IVE_HIST_NUM	    256
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### OT\_IVE\_MAP\_NUM<a name="ZH-CN_TOPIC_0000002471091274"></a>
-
-【说明】
-
-定义映射查找表项数目。
-
-【定义】
-
-```
-#define OT_IVE_MAP_NUM	    256
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### OT\_IVE\_MAX\_RGN\_NUM<a name="ZH-CN_TOPIC_0000002471091214"></a>
-
-【说明】
-
-定义最大连通区域数目。
-
-【定义】
-
-```
-#define OT_IVE_MAX_RGN_NUM    254
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### OT\_IVE\_ST\_MAX\_CORNER\_NUM<a name="ZH-CN_TOPIC_0000002503971193"></a>
-
-【说明】
-
-定义Shi-Tomasi-like角点最大数目。
-
-【定义】
-
-```
-#define OT_IVE_ST_MAX_CORNER_NUM    500
-```
-
-【成员】
-
-无。
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### OT\_IVE\_MASK\_NUM<a name="ZH-CN_TOPIC_0000002471091310"></a>
-
-【说明】
-
-掩码mask对应的数组长度。
-
-【定义】
-
-```
-#define OT_IVE_MASK_NUM                25
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_ARR\_RESERVED\_NUM\_TWO<a name="ZH-CN_TOPIC_0000002503971159"></a>
-
-【说明】
-
-保留字段数组长度2。
-
-【定义】
-
-```
-#define OT_IVE_ARR_RESERVED_NUM_TWO         2
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_ARR\_RESERVED\_NUM\_THREE<a name="ZH-CN_TOPIC_0000002504091161"></a>
-
-【说明】
-
-保留字段数组长度3。
-
-【定义】
-
-```
-#define OT_IVE_ARR_RESERVED_NUM_THREE       3
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_ARR\_RESERVED\_NUM\_EIGHT<a name="ZH-CN_TOPIC_0000002470931298"></a>
-
-【说明】
-
-保留字段数组长度8。
-
-【定义】
-
-```
-#define OT_IVE_ARR_RESERVED_NUM_EIGHT       8
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_ARR\_RESERVED\_NUM\_TWELVE<a name="ZH-CN_TOPIC_0000002470931230"></a>
-
-【说明】
-
-保留字段数组长度12。
-
-【定义】
-
-```
-#define OT_IVE_ARR_RESERVED_NUM_TWELVE      12
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_ARR\_RESERVED\_NUM\_FOURTEEN<a name="ZH-CN_TOPIC_0000002470931216"></a>
-
-【说明】
-
-保留字段数组长度14。
-
-【定义】
-
-```
-#define OT_IVE_ARR_RESERVED_NUM_FOURTEEN    14
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_ARR\_NUM\_THREE<a name="ZH-CN_TOPIC_0000002503971175"></a>
-
-【说明】
-
-数组长度3。
-
-【定义】
-
-```
-#define OT_IVE_ARR_NUM_THREE           3
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_ARR\_NUM\_EIGHT<a name="ZH-CN_TOPIC_0000002503971255"></a>
-
-【说明】
-
-数组长度8。
-
-【定义】
-
-```
-#define OT_IVE_ARR_NUM_EIGHT           8
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_DEV\_NAME\_LENGTH<a name="ZH-CN_TOPIC_0000002503971217"></a>
-
-【说明】
-
-IVE设备名字的长度。
-
-【定义】
-
-```
-#define OT_IVE_DEV_NAME_LENGTH           10
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### OT\_IVE\_DEV\_DEFAULT\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504091127"></a>
-
-【说明】
-
-默认的IVE节点个数。
-
-【定义】
-
-```
-#define OT_IVE_DEFAULT_NODE_NUM           512
-```
-
-【成员】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_ive\_mod\_param<a name="ZH-CN_TOPIC_0000002504091147"></a>
-
-【说明】
-
-IVE模块相关参数定义。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 mod_node_num;
-    td_u8 power_save_en;
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_IVE\_HIST\_NUM<a name="ZH-CN_TOPIC_0000002470931262"></a> 【说明】 定义直方图统计bin数目。 【定义】 ```
+#define OT_IVE_HIST_NUM 256
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_IVE\_MAP\_NUM<a name="ZH-CN_TOPIC_0000002471091274"></a> 【说明】 定义映射查找表项数目。 【定义】 ```
+#define OT_IVE_MAP_NUM 256
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_IVE\_MAX\_RGN\_NUM<a name="ZH-CN_TOPIC_0000002471091214"></a> 【说明】 定义最大连通区域数目。 【定义】 ```
+#define OT_IVE_MAX_RGN_NUM 254
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_IVE\_ST\_MAX\_CORNER\_NUM<a name="ZH-CN_TOPIC_0000002503971193"></a> 【说明】 定义Shi-Tomasi-like角点最大数目。 【定义】 ```
+#define OT_IVE_ST_MAX_CORNER_NUM 500
+``` 【成员】 无。 【注意事项】 无。 【相关数据类型及接口】 无。 ### OT\_IVE\_MASK\_NUM<a name="ZH-CN_TOPIC_0000002471091310"></a> 【说明】 掩码mask对应的数组长度。 【定义】 ```
+#define OT_IVE_MASK_NUM 25
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_ARR\_RESERVED\_NUM\_TWO<a name="ZH-CN_TOPIC_0000002503971159"></a> 【说明】 保留字段数组长度2。 【定义】 ```
+#define OT_IVE_ARR_RESERVED_NUM_TWO 2
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_ARR\_RESERVED\_NUM\_THREE<a name="ZH-CN_TOPIC_0000002504091161"></a> 【说明】 保留字段数组长度3。 【定义】 ```
+#define OT_IVE_ARR_RESERVED_NUM_THREE 3
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_ARR\_RESERVED\_NUM\_EIGHT<a name="ZH-CN_TOPIC_0000002470931298"></a> 【说明】 保留字段数组长度8。 【定义】 ```
+#define OT_IVE_ARR_RESERVED_NUM_EIGHT 8
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_ARR\_RESERVED\_NUM\_TWELVE<a name="ZH-CN_TOPIC_0000002470931230"></a> 【说明】 保留字段数组长度12。 【定义】 ```
+#define OT_IVE_ARR_RESERVED_NUM_TWELVE 12
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_ARR\_RESERVED\_NUM\_FOURTEEN<a name="ZH-CN_TOPIC_0000002470931216"></a> 【说明】 保留字段数组长度14。 【定义】 ```
+#define OT_IVE_ARR_RESERVED_NUM_FOURTEEN 14
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_ARR\_NUM\_THREE<a name="ZH-CN_TOPIC_0000002503971175"></a> 【说明】 数组长度3。 【定义】 ```
+#define OT_IVE_ARR_NUM_THREE 3
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_ARR\_NUM\_EIGHT<a name="ZH-CN_TOPIC_0000002503971255"></a> 【说明】 数组长度8。 【定义】 ```
+#define OT_IVE_ARR_NUM_EIGHT 8
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_DEV\_NAME\_LENGTH<a name="ZH-CN_TOPIC_0000002503971217"></a> 【说明】 IVE设备名字的长度。 【定义】 ```
+#define OT_IVE_DEV_NAME_LENGTH 10
+``` 【成员】 无 【相关数据类型及接口】 无 ### OT\_IVE\_DEV\_DEFAULT\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504091127"></a> 【说明】 默认的IVE节点个数。 【定义】 ```
+#define OT_IVE_DEFAULT_NODE_NUM 512
+``` 【成员】 无 【相关数据类型及接口】 无 ### ot\_ive\_mod\_param<a name="ZH-CN_TOPIC_0000002504091147"></a> 【说明】 IVE模块相关参数定义。 【定义】 ```
+typedef struct { td_u16 mod_node_num; td_u8 power_save_en;
 } ot_ive_mod_param;
-```
-
-【成员】
-
-<a name="table16634mcpsimp"></a>
+``` 【成员】 <a name="table16634mcpsimp"></a>
 <table><thead align="left"><tr id="row16639mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p16641mcpsimp"><a name="p16641mcpsimp"></a><a name="p16641mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p16643mcpsimp"><a name="p16643mcpsimp"></a><a name="p16643mcpsimp"></a>描述</p>
@@ -1765,38 +775,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-ive\_std\_mod\_init
-
-### ot\_ive\_err\_code<a name="ZH-CN_TOPIC_0000002504091141"></a>
-
-【说明】
-
-定义错误码。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_ERR_SYS_TIMEOUT      = 0x40,             /* IVE process timeout */
-    OT_IVE_ERR_QUERY_TIMEOUT    = 0x41,             /* IVE query timeout */
-    OT_IVE_ERR_BUS_ERR          = 0x42,             /* IVE BUS error */
-    OT_IVE_ERR_OPEN_FILE        = 0x43,             /* IVE open file error */
-    OT_IVE_ERR_READ_FILE        = 0x44,             /* IVE read file error */
-    OT_IVE_ERR_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 ive\_std\_mod\_init ### ot\_ive\_err\_code<a name="ZH-CN_TOPIC_0000002504091141"></a> 【说明】 定义错误码。 【定义】 ```
+typedef enum { OT_IVE_ERR_SYS_TIMEOUT = 0x40, /* IVE process timeout */ OT_IVE_ERR_QUERY_TIMEOUT = 0x41, /* IVE query timeout */ OT_IVE_ERR_BUS_ERR = 0x42, /* IVE BUS error */ OT_IVE_ERR_OPEN_FILE = 0x43, /* IVE open file error */ OT_IVE_ERR_READ_FILE = 0x44, /* IVE read file error */ OT_IVE_ERR_BUTT
 } ot_ive_err_code;
-```
-
-【成员】
-
-<a name="table14929mcpsimp"></a>
+``` 【成员】 <a name="table14929mcpsimp"></a>
 <table><thead align="left"><tr id="row14934mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p14936mcpsimp"><a name="p14936mcpsimp"></a><a name="p14936mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p14938mcpsimp"><a name="p14938mcpsimp"></a><a name="p14938mcpsimp"></a>描述</p>
@@ -1829,37 +811,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_dma\_mode<a name="ZH-CN_TOPIC_0000002470931310"></a>
-
-【说明】
-
-定义dma操作模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_DMA_MODE_DIRECT_COPY = 0x0,
-    OT_IVE_DMA_MODE_INTERVAL_COPY = 0x1,
-    OT_IVE_DMA_MODE_SET_3BYTE = 0x2,
-    OT_IVE_DMA_MODE_SET_8BYTE = 0x3,
-    OT_IVE_DMA_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_dma\_mode<a name="ZH-CN_TOPIC_0000002470931310"></a> 【说明】 定义dma操作模式。 【定义】 ```
+typedef enum { OT_IVE_DMA_MODE_DIRECT_COPY = 0x0, OT_IVE_DMA_MODE_INTERVAL_COPY = 0x1, OT_IVE_DMA_MODE_SET_3BYTE = 0x2, OT_IVE_DMA_MODE_SET_8BYTE = 0x3, OT_IVE_DMA_MODE_BUTT
 } ot_ive_dma_mode;
-```
-
-【成员】
-
-<a name="table12800mcpsimp"></a>
+``` 【成员】 <a name="table12800mcpsimp"></a>
 <table><thead align="left"><tr id="row12805mcpsimp"><th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.1"><p id="p12807mcpsimp"><a name="p12807mcpsimp"></a><a name="p12807mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.2"><p id="p12809mcpsimp"><a name="p12809mcpsimp"></a><a name="p12809mcpsimp"></a>描述</p>
@@ -1887,37 +842,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_dma\_ctrl](#ot_ive_dma_ctrl)
-
-### ot\_ive\_dma\_ctrl<a name="ZH-CN_TOPIC_0000002504091157"></a>
-
-【说明】
-
-定义dma控制信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_dma_mode mode;
-    td_u64 val;
-    td_u8  hor_seg_size;
-    td_u8 elem_size;
-    td_u8 ver_seg_rows;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_dma\_ctrl](#ot_ive_dma_ctrl) ### ot\_ive\_dma\_ctrl<a name="ZH-CN_TOPIC_0000002504091157"></a> 【说明】 定义dma控制信息。 【定义】 ```
+typedef struct { ot_ive_dma_mode mode; td_u64 val; td_u8 hor_seg_size; td_u8 elem_size; td_u8 ver_seg_rows;
 } ot_ive_dma_ctrl
-```
-
-【成员】
-
-<a name="table7716mcpsimp"></a>
+``` 【成员】 <a name="table7716mcpsimp"></a>
 <table><thead align="left"><tr id="row7721mcpsimp"><th class="cellrowborder" valign="top" width="26%" id="mcps1.1.3.1.1"><p id="p7723mcpsimp"><a name="p7723mcpsimp"></a><a name="p7723mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="74%" id="mcps1.1.3.1.2"><p id="p7725mcpsimp"><a name="p7725mcpsimp"></a><a name="p7725mcpsimp"></a>描述</p>
@@ -1953,34 +881,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_dma\_mode](#ot_ive_dma_mode)
-
-### ot\_ive\_filter\_ctrl<a name="ZH-CN_TOPIC_0000002503971267"></a>
-
-【说明】
-
-定义模板滤波控制信息。
-
-【定义】
-
-```
-typedef struct {
-    td_s8 mask[OT_IVE_MASK_NUM];     /* Template parameter filter coefficient */
-    td_u8 norm;         /* Normalization parameter, by right shift */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_dma\_mode](#ot_ive_dma_mode) ### ot\_ive\_filter\_ctrl<a name="ZH-CN_TOPIC_0000002503971267"></a> 【说明】 定义模板滤波控制信息。 【定义】 ```
+typedef struct { td_s8 mask[OT_IVE_MASK_NUM]; /* Template parameter filter coefficient */ td_u8 norm; /* Normalization parameter, by right shift */
 } ot_ive_filter_ctrl
-```
-
-【成员】
-
-<a name="table16288mcpsimp"></a>
+``` 【成员】 <a name="table16288mcpsimp"></a>
 <table><thead align="left"><tr id="row16293mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p16295mcpsimp"><a name="p16295mcpsimp"></a><a name="p16295mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p16297mcpsimp"><a name="p16297mcpsimp"></a><a name="p16297mcpsimp"></a>描述</p>
@@ -1999,45 +903,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-通过配置不同的模板系数可以达到不同的滤波效果。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_csc\_mode<a name="ZH-CN_TOPIC_0000002470931222"></a>
-
-【说明】
-
-定义色彩空间转换模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_CSC_MODE_VIDEO_BT601_YUV_TO_RGB = 0x0,     /* CSC: YUV_TO_RGB, video transfer mode, RGB value range [16, 235] */
-    OT_IVE_CSC_MODE_VIDEO_BT709_YUV_TO_RGB = 0x1,     /* CSC: YUV_To_RGB, video transfer mode, RGB value range [16, 235] */
-    OT_IVE_CSC_MODE_PIC_BT601_YUV_TO_RGB = 0x2,       /* CSC: YUV_TO_RGB, picture transfer mode, RGB value range [0, 255] */
-    OT_IVE_CSC_MODE_PIC_BT709_YUV_TO_RGB = 0x3,       /* CSC: YUV_TO_RGB, picture transfer mode, RGB value range [0, 255] */
-    OT_IVE_CSC_MODE_PIC_BT601_YUV_TO_HSV = 0x4,       /* CSC: YUV_TO_HSV, picture transfer mode, HSV value range [0, 255] */
-    OT_IVE_CSC_MODE_PIC_BT709_YUV_TO_HSV = 0x5,       /* CSC: YUV_TO_HSV, picture transfer mode, HSV value range [0, 255] */
-    OT_IVE_CSC_MODE_PIC_BT601_YUV_TO_LAB = 0x6,       /* CSC: YUV_TO_LAB, picture transfer mode, Lab value range [0, 255] */
-    OT_IVE_CSC_MODE_PIC_BT709_YUV_TO_LAB = 0x7,       /* CSC: YUV_TO_LAB, picture transfer mode, Lab value range [0, 255] */
-    OT_IVE_CSC_MODE_VIDEO_BT601_RGB_TO_YUV = 0x8,     /* CSC: RGB_TO_YUV, video transfer mode, YUV value range [0, 255] */
-    OT_IVE_CSC_MODE_VIDEO_BT709_RGB_TO_2YUV = 0x9,     /* CSC: RGB_TO_YUV, video transfer mode, YUV value range [0, 255] */
-    OT_IVE_CSC_MODE_PIC_BT601_RGB_TO_YUV = 0xa,       /* CSC: RGB_TO_YUV, picture transfer mode, Y:[16, 235],U\V:[16, 240] */
-    OT_IVE_CSC_MODE_PIC_BT709_RGB_TO_YUV = 0xb,       /* CSC: RGB_TO_YUV, picture transfer mode, Y:[16, 235],U\V:[16, 240] */
-    OT_IVE_CSC_MODE_BUTT
+</table> 【注意事项】 通过配置不同的模板系数可以达到不同的滤波效果。 【相关数据类型及接口】 无。 ### ot\_ive\_csc\_mode<a name="ZH-CN_TOPIC_0000002470931222"></a> 【说明】 定义色彩空间转换模式。 【定义】 ```
+typedef enum { OT_IVE_CSC_MODE_VIDEO_BT601_YUV_TO_RGB = 0x0, /* CSC: YUV_TO_RGB, video transfer mode, RGB value range [16, 235] */ OT_IVE_CSC_MODE_VIDEO_BT709_YUV_TO_RGB = 0x1, /* CSC: YUV_To_RGB, video transfer mode, RGB value range [16, 235] */ OT_IVE_CSC_MODE_PIC_BT601_YUV_TO_RGB = 0x2, /* CSC: YUV_TO_RGB, picture transfer mode, RGB value range [0, 255] */ OT_IVE_CSC_MODE_PIC_BT709_YUV_TO_RGB = 0x3, /* CSC: YUV_TO_RGB, picture transfer mode, RGB value range [0, 255] */ OT_IVE_CSC_MODE_PIC_BT601_YUV_TO_HSV = 0x4, /* CSC: YUV_TO_HSV, picture transfer mode, HSV value range [0, 255] */ OT_IVE_CSC_MODE_PIC_BT709_YUV_TO_HSV = 0x5, /* CSC: YUV_TO_HSV, picture transfer mode, HSV value range [0, 255] */ OT_IVE_CSC_MODE_PIC_BT601_YUV_TO_LAB = 0x6, /* CSC: YUV_TO_LAB, picture transfer mode, Lab value range [0, 255] */ OT_IVE_CSC_MODE_PIC_BT709_YUV_TO_LAB = 0x7, /* CSC: YUV_TO_LAB, picture transfer mode, Lab value range [0, 255] */ OT_IVE_CSC_MODE_VIDEO_BT601_RGB_TO_YUV = 0x8, /* CSC: RGB_TO_YUV, video transfer mode, YUV value range [0, 255] */ OT_IVE_CSC_MODE_VIDEO_BT709_RGB_TO_2YUV = 0x9, /* CSC: RGB_TO_YUV, video transfer mode, YUV value range [0, 255] */ OT_IVE_CSC_MODE_PIC_BT601_RGB_TO_YUV = 0xa, /* CSC: RGB_TO_YUV, picture transfer mode, Y:[16, 235],U\V:[16, 240] */ OT_IVE_CSC_MODE_PIC_BT709_RGB_TO_YUV = 0xb, /* CSC: RGB_TO_YUV, picture transfer mode, Y:[16, 235],U\V:[16, 240] */ OT_IVE_CSC_MODE_BUTT
 } ot_ive_csc_mode
-```
-
-【成员】
-
-<a name="table4136mcpsimp"></a>
+``` 【成员】 <a name="table4136mcpsimp"></a>
 <table><thead align="left"><tr id="row4141mcpsimp"><th class="cellrowborder" valign="top" width="67%" id="mcps1.1.3.1.1"><p id="p4143mcpsimp"><a name="p4143mcpsimp"></a><a name="p4143mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="33%" id="mcps1.1.3.1.2"><p id="p4145mcpsimp"><a name="p4145mcpsimp"></a><a name="p4145mcpsimp"></a>描述</p>
@@ -2105,39 +974,16 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   OT\_IVE\_CSC\_MODE\_VIDEO\_BT601\_YUV\_TO\_RGB和OT\_IVE\_CSC\_MODE\_VIDEO\_BT709\_YUV\_TO\_RGB模式，输出满足16≤R、G、B≤235。
--   OT\_IVE\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_RGB和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_RGB模式，输出满足0≤R、G、B≤255。
--   OT\_IVE\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_HSV和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_HSV模式，输出满足0≤H、S、V≤255。
--   OT\_IVE\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_LAB和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_LAB模式，输出满足0≤L、A、B≤255。
--   OT\_IVE\_CSC\_MODE\_VIDEO\_BT601\_RGB\_TO\_YUV和OT\_IVE\_CSC\_MODE\_VIDEO\_BT709\_RGB\_TO\_YUV模式，输出满足0≤Y、U、V≤255。
--   OT\_IVE\_CSC\_MODE\_PIC\_BT601\_RGB\_TO\_YUV和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_RGB\_TO\_YUV模式，输出满足0≤Y≤235，0≤U、V≤240。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_csc\_ctrl](#ot_ive_csc_ctrl)
--   [ot\_ive\_filter\_and\_csc\_ctrl](#ot_ive_filter_and_csc_ctrl)
-
-### ot\_ive\_csc\_ctrl<a name="ZH-CN_TOPIC_0000002504091137"></a>
-
-【说明】
-
-定义色彩空间转换控制信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_csc_mode mode; /* Working mode */
+</table> 【注意事项】 - OT\_IVE\_CSC\_MODE\_VIDEO\_BT601\_YUV\_TO\_RGB和OT\_IVE\_CSC\_MODE\_VIDEO\_BT709\_YUV\_TO\_RGB模式，输出满足16≤R、G、B≤235。
+- OT\_IVE\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_RGB和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_RGB模式，输出满足0≤R、G、B≤255。
+- OT\_IVE\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_HSV和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_HSV模式，输出满足0≤H、S、V≤255。
+- OT\_IVE\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_LAB和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_LAB模式，输出满足0≤L、A、B≤255。
+- OT\_IVE\_CSC\_MODE\_VIDEO\_BT601\_RGB\_TO\_YUV和OT\_IVE\_CSC\_MODE\_VIDEO\_BT709\_RGB\_TO\_YUV模式，输出满足0≤Y、U、V≤255。
+- OT\_IVE\_CSC\_MODE\_PIC\_BT601\_RGB\_TO\_YUV和OT\_IVE\_CSC\_MODE\_PIC\_BT709\_RGB\_TO\_YUV模式，输出满足0≤Y≤235，0≤U、V≤240。 【相关数据类型及接口】 - [ot\_ive\_csc\_ctrl](#ot_ive_csc_ctrl)
+- [ot\_ive\_filter\_and\_csc\_ctrl](#ot_ive_filter_and_csc_ctrl) ### ot\_ive\_csc\_ctrl<a name="ZH-CN_TOPIC_0000002504091137"></a> 【说明】 定义色彩空间转换控制信息。 【定义】 ```
+typedef struct { ot_ive_csc_mode mode; /* Working mode */
 } ot_ive_csc_ctrl
-```
-
-【成员】
-
-<a name="table8630mcpsimp"></a>
+``` 【成员】 <a name="table8630mcpsimp"></a>
 <table><thead align="left"><tr id="row8635mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p8637mcpsimp"><a name="p8637mcpsimp"></a><a name="p8637mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p8639mcpsimp"><a name="p8639mcpsimp"></a><a name="p8639mcpsimp"></a>描述</p>
@@ -2150,35 +996,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_csc\_mode](#ot_ive_csc_mode)
-
-### ot\_ive\_filter\_and\_csc\_ctrl<a name="ZH-CN_TOPIC_0000002471091222"></a>
-
-【说明】
-
-定义模板滤波加色彩空间转换复合功能控制信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_csc_mode mode;   /* CSC working mode */
-    td_s8 mask[OT_IVE_MASK_NUM];         /* Template parameter filter coefficient */
-    td_u8 norm;             /* Normalization parameter, by right shift */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_csc\_mode](#ot_ive_csc_mode) ### ot\_ive\_filter\_and\_csc\_ctrl<a name="ZH-CN_TOPIC_0000002471091222"></a> 【说明】 定义模板滤波加色彩空间转换复合功能控制信息。 【定义】 ```
+typedef struct { ot_ive_csc_mode mode; /* CSC working mode */ td_s8 mask[OT_IVE_MASK_NUM]; /* Template parameter filter coefficient */ td_u8 norm; /* Normalization parameter, by right shift */
 } ot_ive_filter_and_csc_ctrl ;
-```
-
-【成员】
-
-<a name="table114mcpsimp"></a>
+``` 【成员】 <a name="table114mcpsimp"></a>
 <table><thead align="left"><tr id="row119mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p123mcpsimp"><a name="p123mcpsimp"></a><a name="p123mcpsimp"></a>描述</p>
@@ -2202,36 +1023,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-仅支持YUV2RGB的4种模式。
-
-【相关数据类型及接口】
-
-[ot\_ive\_csc\_mode](#ot_ive_csc_mode)
-
-### ot\_ive\_sobel\_out\_ctrl<a name="ZH-CN_TOPIC_0000002503971149"></a>
-
-【说明】
-
-定义sobel输出控制信息。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_SOBEL_OUT_CTRL_BOTH = 0x0, /* Output horizontal and vertical */
-    OT_IVE_SOBEL_OUT_CTRL_HOR = 0x1,  /* Output horizontal */
-    OT_IVE_SOBEL_OUT_CTRL_VER = 0x2,  /* Output vertical */
-    OT_IVE_SOBEL_OUT_CTRL_BUTT
+</table> 【注意事项】 仅支持YUV2RGB的4种模式。 【相关数据类型及接口】 [ot\_ive\_csc\_mode](#ot_ive_csc_mode) ### ot\_ive\_sobel\_out\_ctrl<a name="ZH-CN_TOPIC_0000002503971149"></a> 【说明】 定义sobel输出控制信息。 【定义】 ```
+typedef enum { OT_IVE_SOBEL_OUT_CTRL_BOTH = 0x0, /* Output horizontal and vertical */ OT_IVE_SOBEL_OUT_CTRL_HOR = 0x1, /* Output horizontal */ OT_IVE_SOBEL_OUT_CTRL_VER = 0x2, /* Output vertical */ OT_IVE_SOBEL_OUT_CTRL_BUTT
 } ot_ive_sobel_out_ctrl;
-```
-
-【成员】
-
-<a name="table16823mcpsimp"></a>
+``` 【成员】 <a name="table16823mcpsimp"></a>
 <table><thead align="left"><tr id="row16828mcpsimp"><th class="cellrowborder" valign="top" width="47%" id="mcps1.1.3.1.1"><p id="p16830mcpsimp"><a name="p16830mcpsimp"></a><a name="p16830mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="53%" id="mcps1.1.3.1.2"><p id="p16832mcpsimp"><a name="p16832mcpsimp"></a><a name="p16832mcpsimp"></a>描述</p>
@@ -2254,34 +1049,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_sobel\_ctrl](#ot_ive_sobel_ctrl)
-
-### ot\_ive\_sobel\_ctrl<a name="ZH-CN_TOPIC_0000002470931226"></a>
-
-【说明】
-
-定义sobel-like梯度计算控制信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_sobel_out_ctrl out_ctrl; /* Output format */
-    td_s8 mask[OT_IVE_MASK_NUM];                 /* Template parameter */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_sobel\_ctrl](#ot_ive_sobel_ctrl) ### ot\_ive\_sobel\_ctrl<a name="ZH-CN_TOPIC_0000002470931226"></a> 【说明】 定义sobel-like梯度计算控制信息。 【定义】 ```
+typedef struct { ot_ive_sobel_out_ctrl out_ctrl; /* Output format */ td_s8 mask[OT_IVE_MASK_NUM]; /* Template parameter */
 } ot_ive_sobel_ctrl;
-```
-
-【成员】
-
-<a name="table3633mcpsimp"></a>
+``` 【成员】 <a name="table3633mcpsimp"></a>
 <table><thead align="left"><tr id="row3638mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p3640mcpsimp"><a name="p3640mcpsimp"></a><a name="p3640mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p3642mcpsimp"><a name="p3642mcpsimp"></a><a name="p3642mcpsimp"></a>描述</p>
@@ -2299,35 +1070,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_sobel\_out\_ctrl](#ot_ive_sobel_out_ctrl)
-
-### ot\_ive\_mag\_and\_ang\_out\_ctrl<a name="ZH-CN_TOPIC_0000002471091234"></a>
-
-【说明】
-
-定义梯度幅值与角度计算的输出格式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_MAG_AND_ANG_OUT_CTRL_MAG = 0x0,/* Only the magnitude is output.*/
-    OT_IVE_MAG_AND_ANG_OUT_CTRL_MAG_AND_ANG = 0x1, /* The magnitude and angle are output.*/
-    OT_IVE_MAG_AND_ANG_OUT_CTRL_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_sobel\_out\_ctrl](#ot_ive_sobel_out_ctrl) ### ot\_ive\_mag\_and\_ang\_out\_ctrl<a name="ZH-CN_TOPIC_0000002471091234"></a> 【说明】 定义梯度幅值与角度计算的输出格式。 【定义】 ```
+typedef enum { OT_IVE_MAG_AND_ANG_OUT_CTRL_MAG = 0x0,/* Only the magnitude is output.*/ OT_IVE_MAG_AND_ANG_OUT_CTRL_MAG_AND_ANG = 0x1, /* The magnitude and angle are output.*/ OT_IVE_MAG_AND_ANG_OUT_CTRL_BUTT
 } ot_ive_mag_and_ang_out_ctrl;
-```
-
-【成员】
-
-<a name="table1441mcpsimp"></a>
+``` 【成员】 <a name="table1441mcpsimp"></a>
 <table><thead align="left"><tr id="row1446mcpsimp"><th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.1"><p id="p1448mcpsimp"><a name="p1448mcpsimp"></a><a name="p1448mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.2"><p id="p1450mcpsimp"><a name="p1450mcpsimp"></a><a name="p1450mcpsimp"></a>描述</p>
@@ -2345,35 +1091,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_mag\_and\_ang\_ctrl](#ot_ive_mag_and_ang_ctrl)
-
-### ot\_ive\_mag\_and\_ang\_ctrl<a name="ZH-CN_TOPIC_0000002470931264"></a>
-
-【说明】
-
-定义梯度幅值和幅角计算的控制信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_mag_and_ang_out_ctrl out_ctrl;
-    td_u16 threshld;
-    td_s8 mask[OT_IVE_MASK_NUM]; /* Template parameter. */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_mag\_and\_ang\_ctrl](#ot_ive_mag_and_ang_ctrl) ### ot\_ive\_mag\_and\_ang\_ctrl<a name="ZH-CN_TOPIC_0000002470931264"></a> 【说明】 定义梯度幅值和幅角计算的控制信息。 【定义】 ```
+typedef struct { ot_ive_mag_and_ang_out_ctrl out_ctrl; td_u16 threshld; td_s8 mask[OT_IVE_MASK_NUM]; /* Template parameter. */
 } ot_ive_mag_and_ang_ctrl;
-```
-
-【成员】
-
-<a name="table16872mcpsimp"></a>
+``` 【成员】 <a name="table16872mcpsimp"></a>
 <table><thead align="left"><tr id="row16877mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p16879mcpsimp"><a name="p16879mcpsimp"></a><a name="p16879mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p16881mcpsimp"><a name="p16881mcpsimp"></a><a name="p16881mcpsimp"></a>描述</p>
@@ -2396,33 +1117,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_mag\_and\_ang\_out\_ctrl](#ot_ive_mag_and_ang_out_ctrl)
-
-### ot\_ive\_dilate\_ctrl<a name="ZH-CN_TOPIC_0000002504091109"></a>
-
-【说明】
-
-定义膨胀控制信息。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 mask[OT_IVE_MASK_NUM]; /* The template parameter value must be 0 or 255. */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_mag\_and\_ang\_out\_ctrl](#ot_ive_mag_and_ang_out_ctrl) ### ot\_ive\_dilate\_ctrl<a name="ZH-CN_TOPIC_0000002504091109"></a> 【说明】 定义膨胀控制信息。 【定义】 ```
+typedef struct { td_u8 mask[OT_IVE_MASK_NUM]; /* The template parameter value must be 0 or 255. */
 } ot_ive_dilate_ctrl;
-```
-
-【成员】
-
-<a name="table5490mcpsimp"></a>
+``` 【成员】 <a name="table5490mcpsimp"></a>
 <table><thead align="left"><tr id="row5495mcpsimp"><th class="cellrowborder" valign="top" width="47%" id="mcps1.1.3.1.1"><p id="p5497mcpsimp"><a name="p5497mcpsimp"></a><a name="p5497mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="53%" id="mcps1.1.3.1.2"><p id="p5499mcpsimp"><a name="p5499mcpsimp"></a><a name="p5499mcpsimp"></a>描述</p>
@@ -2436,33 +1134,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_erode\_ctrl<a name="ZH-CN_TOPIC_0000002470931312"></a>
-
-【说明】
-
-定义腐蚀控制信息。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 mask[OT_IVE_MASK_NUM]; /* The template parameter value must be 0 or 255. */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_erode\_ctrl<a name="ZH-CN_TOPIC_0000002470931312"></a> 【说明】 定义腐蚀控制信息。 【定义】 ```
+typedef struct { td_u8 mask[OT_IVE_MASK_NUM]; /* The template parameter value must be 0 or 255. */
 } ot_ive_erode_ctrl;
-```
-
-【成员】
-
-<a name="table2628mcpsimp"></a>
+``` 【成员】 <a name="table2628mcpsimp"></a>
 <table><thead align="left"><tr id="row2633mcpsimp"><th class="cellrowborder" valign="top" width="47%" id="mcps1.1.3.1.1"><p id="p2635mcpsimp"><a name="p2635mcpsimp"></a><a name="p2635mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="53%" id="mcps1.1.3.1.2"><p id="p2637mcpsimp"><a name="p2637mcpsimp"></a><a name="p2637mcpsimp"></a>描述</p>
@@ -2476,41 +1151,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_threshold\_mode<a name="ZH-CN_TOPIC_0000002504091197"></a>
-
-【说明】
-
-定义图像二值化输出格式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_THRESHOLD_MODE_BINARY = 0x0,       /* src_val <= low_thr, dst_val = min_val; src_val > low_threshold, dst_val = max_val. */
-    OT_IVE_THRESHOLD_MODE_TRUNC = 0x1,        /* src_val <= low_threshold, dst_val = src_val; src_val > low_threshold, dst_val = max_val. */
-    OT_IVE_THRESHOLD_MODE_TO_MIN_VAL = 0x2,    /* src_val <= low_threshold, dst_val = min_val; src_val > low_threshold, dst_val = src_val. */
-    OT_IVE_THRESHOLD_MODE_MIN_MID_MAX = 0x3,  /* src_val <= low_threshold, dst_val = min_val;  low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = max_val. */
-    OT_IVE_THRESHOLD_MODE_ORIG_MID_MAX = 0x4,  /* src_val <= low_threshold, dst_val = src_val;  low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = max_val. */
-    OT_IVE_THRESHOLD_MODE_MIN_MID_ORI = 0x5,  /* src_val <= low_threshold, dst_val = min_val;  low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = src_val. */
-    OT_IVE_THRESHOLD_MODE_MIN_ORIG_MAX = 0x6,  /* src_val <= low_threshold, dst_val = min_val;  low_threshold < src_val <= high_threshold, dst_val = src_val; src_val > high_threshold, dst_val = max_val. */
-    OT_IVE_THRESHOLD_MODE_ORI_MID_ORIG = 0x7,  /* src_val <= low_threshold, dst_val = src_val;  low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = src_val. */
-    OT_IVE_THRESHOLD_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_threshold\_mode<a name="ZH-CN_TOPIC_0000002504091197"></a> 【说明】 定义图像二值化输出格式。 【定义】 ```
+typedef enum { OT_IVE_THRESHOLD_MODE_BINARY = 0x0, /* src_val <= low_thr, dst_val = min_val; src_val > low_threshold, dst_val = max_val. */ OT_IVE_THRESHOLD_MODE_TRUNC = 0x1, /* src_val <= low_threshold, dst_val = src_val; src_val > low_threshold, dst_val = max_val. */ OT_IVE_THRESHOLD_MODE_TO_MIN_VAL = 0x2, /* src_val <= low_threshold, dst_val = min_val; src_val > low_threshold, dst_val = src_val. */ OT_IVE_THRESHOLD_MODE_MIN_MID_MAX = 0x3, /* src_val <= low_threshold, dst_val = min_val; low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = max_val. */ OT_IVE_THRESHOLD_MODE_ORIG_MID_MAX = 0x4, /* src_val <= low_threshold, dst_val = src_val; low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = max_val. */ OT_IVE_THRESHOLD_MODE_MIN_MID_ORI = 0x5, /* src_val <= low_threshold, dst_val = min_val; low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = src_val. */ OT_IVE_THRESHOLD_MODE_MIN_ORIG_MAX = 0x6, /* src_val <= low_threshold, dst_val = min_val; low_threshold < src_val <= high_threshold, dst_val = src_val; src_val > high_threshold, dst_val = max_val. */ OT_IVE_THRESHOLD_MODE_ORI_MID_ORIG = 0x7, /* src_val <= low_threshold, dst_val = src_val; low_threshold < src_val <= high_threshold, dst_val = mid_val; src_val > high_threshold, dst_val = src_val. */ OT_IVE_THRESHOLD_MODE_BUTT
 } ot_ive_threshold_mode;
-```
-
-【成员】
-
-<a name="table975mcpsimp"></a>
+``` 【成员】 <a name="table975mcpsimp"></a>
 <table><thead align="left"><tr id="row980mcpsimp"><th class="cellrowborder" valign="top" width="49.1%" id="mcps1.1.3.1.1"><p id="p982mcpsimp"><a name="p982mcpsimp"></a><a name="p982mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50.9%" id="mcps1.1.3.1.2"><p id="p984mcpsimp"><a name="p984mcpsimp"></a><a name="p984mcpsimp"></a>描述</p>
@@ -2559,7 +1203,7 @@ typedef enum {
 </tr>
 <tr id="row1026mcpsimp"><td class="cellrowborder" valign="top" width="49.1%" headers="mcps1.1.3.1.1 "><p id="p1028mcpsimp"><a name="p1028mcpsimp"></a><a name="p1028mcpsimp"></a>OT_IVE_THRESHOLD_MODE_MIN_ORIG_MAX</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.9%" headers="mcps1.1.3.1.2 "><p id="p1030mcpsimp"><a name="p1030mcpsimp"></a><a name="p1030mcpsimp"></a>src_val ≤ low_threshold, dst_val = min_val;  low_threshold &lt; src_val ≤ high_threshold,</p>
+<td class="cellrowborder" valign="top" width="50.9%" headers="mcps1.1.3.1.2 "><p id="p1030mcpsimp"><a name="p1030mcpsimp"></a><a name="p1030mcpsimp"></a>src_val ≤ low_threshold, dst_val = min_val; low_threshold &lt; src_val ≤ high_threshold,</p>
 <p id="p1031mcpsimp"><a name="p1031mcpsimp"></a><a name="p1031mcpsimp"></a>dst_val = src_val;</p>
 <p id="p1032mcpsimp"><a name="p1032mcpsimp"></a><a name="p1032mcpsimp"></a>src_val &gt; high_threshold, dst_val = max_val。</p>
 </td>
@@ -2573,39 +1217,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式请参见ss\_mpi\_ive\_threshold中的【注意】，示意图请参见threshold 8种阈值化模式示意图。
-
-【相关数据类型及接口】
-
-[ot\_ive\_threshold\_ctrl](#ot_ive_threshold_ctrl)
-
-### ot\_ive\_threshold\_ctrl<a name="ZH-CN_TOPIC_0000002504091163"></a>
-
-【说明】
-
-定义图像二值化控制信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_threshold_mode mode;
-    td_u8 low_threshold;  /* user-defined threshold,  0<=u8LowThr<=255 */
-    td_u8 high_threshold; /* user-defined threshold, if mode<OT_IVE_THRESHOLD_MODE_MIN_MID_MAX, high_threshold is not used,
-                      else 0<=low_threshold<= high_threshold <=255; */
-    td_u8 min_val;  /* Minimum value when tri-level thresholding */
-    td_u8 mid_val;  /* Middle value when tri-level thresholding, if enMode<2, u32MidVal is not used; */
-    td_u8 max_val;  /* Maxmum value when tri-level thresholding */
+</table> 【注意事项】 计算公式请参见ss\_mpi\_ive\_threshold中的【注意】，示意图请参见threshold 8种阈值化模式示意图。 【相关数据类型及接口】 [ot\_ive\_threshold\_ctrl](#ot_ive_threshold_ctrl) ### ot\_ive\_threshold\_ctrl<a name="ZH-CN_TOPIC_0000002504091163"></a> 【说明】 定义图像二值化控制信息。 【定义】 ```
+typedef struct { ot_ive_threshold_mode mode; td_u8 low_threshold; /* user-defined threshold, 0<=u8LowThr<=255 */ td_u8 high_threshold; /* user-defined threshold, if mode<OT_IVE_THRESHOLD_MODE_MIN_MID_MAX, high_threshold is not used, else 0<=low_threshold<= high_threshold <=255; */ td_u8 min_val; /* Minimum value when tri-level thresholding */ td_u8 mid_val; /* Middle value when tri-level thresholding, if enMode<2, u32MidVal is not used; */ td_u8 max_val; /* Maxmum value when tri-level thresholding */
 } ot_ive_thresh_ctrl;
-```
-
-【成员】
-
-<a name="table829mcpsimp"></a>
+``` 【成员】 <a name="table829mcpsimp"></a>
 <table><thead align="left"><tr id="row834mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p836mcpsimp"><a name="p836mcpsimp"></a><a name="p836mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p838mcpsimp"><a name="p838mcpsimp"></a><a name="p838mcpsimp"></a>描述</p>
@@ -2648,35 +1263,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_threshold\_mode](#ot_ive_threshold_mode)
-
-### ot\_ive\_sub\_mode<a name="ZH-CN_TOPIC_0000002470931336"></a>
-
-【说明】
-
-定义两图像相减输出格式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_SUB_MODE_ABS = 0x0,   /* Absolute value of the difference */
-    OT_IVE_SUB_MODE_SHIFT = 0x1, /* The output result is obtained by shifting   the result one digit right to reserve the signed bit. */
-    OT_IVE_SUB_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_threshold\_mode](#ot_ive_threshold_mode) ### ot\_ive\_sub\_mode<a name="ZH-CN_TOPIC_0000002470931336"></a> 【说明】 定义两图像相减输出格式。 【定义】 ```
+typedef enum { OT_IVE_SUB_MODE_ABS = 0x0, /* Absolute value of the difference */ OT_IVE_SUB_MODE_SHIFT = 0x1, /* The output result is obtained by shifting the result one digit right to reserve the signed bit. */ OT_IVE_SUB_MODE_BUTT
 } ot_ive_sub_mode;
-```
-
-【成员】
-
-<a name="table17120mcpsimp"></a>
+``` 【成员】 <a name="table17120mcpsimp"></a>
 <table><thead align="left"><tr id="row17125mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p17127mcpsimp"><a name="p17127mcpsimp"></a><a name="p17127mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p17129mcpsimp"><a name="p17129mcpsimp"></a><a name="p17129mcpsimp"></a>描述</p>
@@ -2694,33 +1284,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_sub\_ctrl](#ot_ive_sub_ctrl)
-
-### ot\_ive\_sub\_ctrl<a name="ZH-CN_TOPIC_0000002471091290"></a>
-
-【说明】
-
-定义两图像相减控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_sub_mode mode;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_sub\_ctrl](#ot_ive_sub_ctrl) ### ot\_ive\_sub\_ctrl<a name="ZH-CN_TOPIC_0000002471091290"></a> 【说明】 定义两图像相减控制参数。 【定义】 ```
+typedef struct { ot_ive_sub_mode mode;
 } ot_ive_sub_ctrl;
-```
-
-【成员】
-
-<a name="table10341mcpsimp"></a>
+``` 【成员】 <a name="table10341mcpsimp"></a>
 <table><thead align="left"><tr id="row10346mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p10348mcpsimp"><a name="p10348mcpsimp"></a><a name="p10348mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p10350mcpsimp"><a name="p10350mcpsimp"></a><a name="p10350mcpsimp"></a>描述</p>
@@ -2733,36 +1300,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_sub\_mode](#ot_ive_sub_mode)
-
-### ot\_ive\_integ\_out\_ctrl<a name="ZH-CN_TOPIC_0000002504091081"></a>
-
-【说明】
-
-定义积分图输出控制参数。
-
-【定义】
-
-```
-typedef enum ot_ive_integ_out_ctrl {
-    OT_IVE_INTEG_OUT_CTRL_COMBINE  =  0x0,
-    OT_IVE_INTEG_OUT_CTRL_SUM	     =  0x1,
-    OT_IVE_INTEG_OUT_CTRL_SQRT_SUM    =  0x2,
-    OT_IVE_INTEG_OUT_CTRL_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_sub\_mode](#ot_ive_sub_mode) ### ot\_ive\_integ\_out\_ctrl<a name="ZH-CN_TOPIC_0000002504091081"></a> 【说明】 定义积分图输出控制参数。 【定义】 ```
+typedef enum ot_ive_integ_out_ctrl { OT_IVE_INTEG_OUT_CTRL_COMBINE = 0x0, OT_IVE_INTEG_OUT_CTRL_SUM = 0x1, OT_IVE_INTEG_OUT_CTRL_SQRT_SUM = 0x2, OT_IVE_INTEG_OUT_CTRL_BUTT
 }ot_ive_integ_out_ctrl;
-```
-
-【成员】
-
-<a name="table1337mcpsimp"></a>
+``` 【成员】 <a name="table1337mcpsimp"></a>
 <table><thead align="left"><tr id="row1342mcpsimp"><th class="cellrowborder" valign="top" width="53%" id="mcps1.1.3.1.1"><p id="p1344mcpsimp"><a name="p1344mcpsimp"></a><a name="p1344mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="47%" id="mcps1.1.3.1.2"><p id="p1346mcpsimp"><a name="p1346mcpsimp"></a><a name="p1346mcpsimp"></a>描述</p>
@@ -2785,33 +1326,10 @@ typedef enum ot_ive_integ_out_ctrl {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_integ\_ctrl](#ot_ive_integ_ctrl)
-
-### ot\_ive\_integ\_ctrl<a name="ZH-CN_TOPIC_0000002504091115"></a>
-
-【说明】
-
-定义积分图计算控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_integ_out_ctrl out_ctrl;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_integ\_ctrl](#ot_ive_integ_ctrl) ### ot\_ive\_integ\_ctrl<a name="ZH-CN_TOPIC_0000002504091115"></a> 【说明】 定义积分图计算控制参数。 【定义】 ```
+typedef struct { ot_ive_integ_out_ctrl out_ctrl;
 } ot_ive_integ_ctrl;
-```
-
-【成员】
-
-<a name="table5522mcpsimp"></a>
+``` 【成员】 <a name="table5522mcpsimp"></a>
 <table><thead align="left"><tr id="row5527mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p5529mcpsimp"><a name="p5529mcpsimp"></a><a name="p5529mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p5531mcpsimp"><a name="p5531mcpsimp"></a><a name="p5531mcpsimp"></a>描述</p>
@@ -2824,37 +1342,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_integ\_out\_ctrl](#ot_ive_integ_out_ctrl)
-
-### ot\_ive\_threshold\_s16\_mode<a name="ZH-CN_TOPIC_0000002504091143"></a>
-
-【说明】
-
-定义16bit有符号图像的阈值化模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_THRESHOLD_S16_MODE_S16_TO_S8_MIN_MID_MAX = 0x0,
-    OT_IVE_THRESHOLD_S16_MODE_S16_TO_S8_MIN_ORIG_MAX = 0x1,
-    OT_IVE_THRESHOLD_S16_MODE_S16_TO_U8_MIN_MID_MAX = 0x2,
-    OT_IVE_THRESHOLD_S16_MODE_S16_TO_U8_MIN_ORIG_MAX = 0x3,
-    OT_IVE_THRESHOLD_S16_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_integ\_out\_ctrl](#ot_ive_integ_out_ctrl) ### ot\_ive\_threshold\_s16\_mode<a name="ZH-CN_TOPIC_0000002504091143"></a> 【说明】 定义16bit有符号图像的阈值化模式。 【定义】 ```
+typedef enum { OT_IVE_THRESHOLD_S16_MODE_S16_TO_S8_MIN_MID_MAX = 0x0, OT_IVE_THRESHOLD_S16_MODE_S16_TO_S8_MIN_ORIG_MAX = 0x1, OT_IVE_THRESHOLD_S16_MODE_S16_TO_U8_MIN_MID_MAX = 0x2, OT_IVE_THRESHOLD_S16_MODE_S16_TO_U8_MIN_ORIG_MAX = 0x3, OT_IVE_THRESHOLD_S16_MODE_BUTT
 } ot_ive_threshold_s16_mode;
-```
-
-【成员】
-
-<a name="table892mcpsimp"></a>
+``` 【成员】 <a name="table892mcpsimp"></a>
 <table><thead align="left"><tr id="row897mcpsimp"><th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.1"><p id="p899mcpsimp"><a name="p899mcpsimp"></a><a name="p899mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.2"><p id="p901mcpsimp"><a name="p901mcpsimp"></a><a name="p901mcpsimp"></a>描述</p>
@@ -2902,38 +1393,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式请参见ss\_mpi\_ive\_threshold\_s16中的【注意】，示意图请参见 threshold\_s16 4种阈值化模式示意图。
-
-【相关数据类型及接口】
-
-[ot\_ive\_threshold\_s16\_ctrl](#ot_ive_threshold_s16_ctrl)
-
-### ot\_ive\_threshold\_s16\_ctrl<a name="ZH-CN_TOPIC_0000002504091125"></a>
-
-【说明】
-
-定义16bit有符号图像的阈值化控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_threshold_s16_mode mode;
-    td_s16 low_threshold;         /* User-defined threshold */
-    td_s16 high_threshold;        /* User-defined threshold */
-    ot_svp_8bit min_val;   /* Minimum value when tri-level thresholding */
-    ot_svp_8bit mid_val;    /* Middle value when tri-level thresholding */
-    ot_svp_8bit max_val;    /* Maxmum value when tri-level thresholding */
+</table> 【注意事项】 计算公式请参见ss\_mpi\_ive\_threshold\_s16中的【注意】，示意图请参见 threshold\_s16 4种阈值化模式示意图。 【相关数据类型及接口】 [ot\_ive\_threshold\_s16\_ctrl](#ot_ive_threshold_s16_ctrl) ### ot\_ive\_threshold\_s16\_ctrl<a name="ZH-CN_TOPIC_0000002504091125"></a> 【说明】 定义16bit有符号图像的阈值化控制参数。 【定义】 ```
+typedef struct { ot_ive_threshold_s16_mode mode; td_s16 low_threshold; /* User-defined threshold */ td_s16 high_threshold; /* User-defined threshold */ ot_svp_8bit min_val; /* Minimum value when tri-level thresholding */ ot_svp_8bit mid_val; /* Middle value when tri-level thresholding */ ot_svp_8bit max_val; /* Maxmum value when tri-level thresholding */
 } ot_ive_threshold_s16_ctrl;
-```
-
-【成员】
-
-<a name="table2850mcpsimp"></a>
+``` 【成员】 <a name="table2850mcpsimp"></a>
 <table><thead align="left"><tr id="row2855mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p2857mcpsimp"><a name="p2857mcpsimp"></a><a name="p2857mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p2859mcpsimp"><a name="p2859mcpsimp"></a><a name="p2859mcpsimp"></a>描述</p>
@@ -2971,35 +1434,9 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式请参见ss\_mpi\_ive\_threshold\_s16中的【注意】，示意图请参见threshold\_s16 4种阈值化模式示意图。
-
-【相关数据类型及接口】
-
-[ot\_ive\_threshold\_s16\_mode](#ot_ive_threshold_s16_mode)
-
-### ot\_ive\_threshold\_u16\_mode<a name="ZH-CN_TOPIC_0000002503971223"></a>
-
-【说明】
-
-定义16bti无符号图像的阈值化模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_THRESHOLD_U16_MODE_U16_TO_U8_MIN_MID_MAX = 0x0,
-    OT_IVE_THRESHOLD_U16_MODE_U16_TO_U8_MIN_ORIG_MAX = 0x1,
-    OT_IVE_THRESHOLD_U16_MODE_BUTT
- } ot_ive_threshold_u16_mode;
-```
-
-【成员】
-
-<a name="table16770mcpsimp"></a>
+</table> 【注意事项】 计算公式请参见ss\_mpi\_ive\_threshold\_s16中的【注意】，示意图请参见threshold\_s16 4种阈值化模式示意图。 【相关数据类型及接口】 [ot\_ive\_threshold\_s16\_mode](#ot_ive_threshold_s16_mode) ### ot\_ive\_threshold\_u16\_mode<a name="ZH-CN_TOPIC_0000002503971223"></a> 【说明】 定义16bti无符号图像的阈值化模式。 【定义】 ```
+typedef enum { OT_IVE_THRESHOLD_U16_MODE_U16_TO_U8_MIN_MID_MAX = 0x0, OT_IVE_THRESHOLD_U16_MODE_U16_TO_U8_MIN_ORIG_MAX = 0x1, OT_IVE_THRESHOLD_U16_MODE_BUTT } ot_ive_threshold_u16_mode;
+``` 【成员】 <a name="table16770mcpsimp"></a>
 <table><thead align="left"><tr id="row16775mcpsimp"><th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.1"><p id="p16777mcpsimp"><a name="p16777mcpsimp"></a><a name="p16777mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.2"><p id="p16779mcpsimp"><a name="p16779mcpsimp"></a><a name="p16779mcpsimp"></a>描述</p>
@@ -3027,38 +1464,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式请参见ss\_mpi\_ive\_threshold\_u16中的【注意】，示意图请参见threshold\_u16 2种阈值化模式示意图。
-
-【相关数据类型及接口】
-
-[ot\_ive\_threshold\_u16\_ctrl](#ot_ive_threshold_u16_ctrl)
-
-### ot\_ive\_threshold\_u16\_ctrl<a name="ZH-CN_TOPIC_0000002504091089"></a>
-
-【说明】
-
-定义16bit无符号图像的阈值化控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_threshold_u16_mode mode;
-    td_u16 low_threshold;
-    td_u16 high_threshold;
-    td_u8 min_val;
-    td_u8 mid_val;
-    td_u8 max_val;
+</table> 【注意事项】 计算公式请参见ss\_mpi\_ive\_threshold\_u16中的【注意】，示意图请参见threshold\_u16 2种阈值化模式示意图。 【相关数据类型及接口】 [ot\_ive\_threshold\_u16\_ctrl](#ot_ive_threshold_u16_ctrl) ### ot\_ive\_threshold\_u16\_ctrl<a name="ZH-CN_TOPIC_0000002504091089"></a> 【说明】 定义16bit无符号图像的阈值化控制参数。 【定义】 ```
+typedef struct { ot_ive_threshold_u16_mode mode; td_u16 low_threshold; td_u16 high_threshold; td_u8 min_val; td_u8 mid_val; td_u8 max_val;
 } ot_ive_threshold_u16_ctrl;
-```
-
-【成员】
-
-<a name="table11528mcpsimp"></a>
+``` 【成员】 <a name="table11528mcpsimp"></a>
 <table><thead align="left"><tr id="row11533mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p11535mcpsimp"><a name="p11535mcpsimp"></a><a name="p11535mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p11537mcpsimp"><a name="p11537mcpsimp"></a><a name="p11537mcpsimp"></a>描述</p>
@@ -3099,37 +1508,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式请参见ss\_mpi\_ive\_threshold\_u16中的【注意】，示意图请参见threshold\_u16 2种阈值化模式示意图。
-
-【相关数据类型及接口】
-
-[ot\_ive\_threshold\_u16\_mode](#ot_ive_threshold_u16_mode)
-
-### ot\_ive\_16bit\_to\_8bit\_mode<a name="ZH-CN_TOPIC_0000002471091260"></a>
-
-【说明】
-
-定义16bit图像数据到8bit图像数据的的转化模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_16BIT_TO_8BIT_MODE_S16_TO_S8 = 0x0,
-    OT_IVE_16BIT_TO_8BIT_MODE_S16_TO_U8_ABS = 0x1,
-    OT_IVE_16BIT_TO_8BIT_MODE_S16_TO_U8_BIAS = 0x2,
-    OT_IVE_16BIT_TO_8BIT_MODE_U16_TO_U8 = 0x3,
-    OT_IVE_16BIT_TO_8BIT_MODE_BUTT
+</table> 【注意事项】 计算公式请参见ss\_mpi\_ive\_threshold\_u16中的【注意】，示意图请参见threshold\_u16 2种阈值化模式示意图。 【相关数据类型及接口】 [ot\_ive\_threshold\_u16\_mode](#ot_ive_threshold_u16_mode) ### ot\_ive\_16bit\_to\_8bit\_mode<a name="ZH-CN_TOPIC_0000002471091260"></a> 【说明】 定义16bit图像数据到8bit图像数据的的转化模式。 【定义】 ```
+typedef enum { OT_IVE_16BIT_TO_8BIT_MODE_S16_TO_S8 = 0x0, OT_IVE_16BIT_TO_8BIT_MODE_S16_TO_U8_ABS = 0x1, OT_IVE_16BIT_TO_8BIT_MODE_S16_TO_U8_BIAS = 0x2, OT_IVE_16BIT_TO_8BIT_MODE_U16_TO_U8 = 0x3, OT_IVE_16BIT_TO_8BIT_MODE_BUTT
 } ot_ive_16bit_to_8bit_mode;
-```
-
-【成员】
-
-<a name="table10244mcpsimp"></a>
+``` 【成员】 <a name="table10244mcpsimp"></a>
 <table><thead align="left"><tr id="row10249mcpsimp"><th class="cellrowborder" valign="top" width="66%" id="mcps1.1.3.1.1"><p id="p10251mcpsimp"><a name="p10251mcpsimp"></a><a name="p10251mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="34%" id="mcps1.1.3.1.2"><p id="p10253mcpsimp"><a name="p10253mcpsimp"></a><a name="p10253mcpsimp"></a>描述</p>
@@ -3157,36 +1539,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式请参见ss\_mpi\_ive\_16bit\_to\_8bit中的【注意】，示意图请参见16bit\_to\_8bit 4种转换模式示意图。
-
-【相关数据类型及接口】
-
-[ot\_ive\_16bit\_to\_8bit\_ctrl](#ot_ive_16bit_to_8bit_ctrl)
-
-### ot\_ive\_16bit\_to\_8bit\_ctrl<a name="ZH-CN_TOPIC_0000002470931316"></a>
-
-【说明】
-
-定义16bit图像数据到8bit图像数据的转化控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_16bit_to_8bit_mode mode;
-    td_u16 denominator;
-    td_u8 num;
-    td_s8 bias;
+</table> 【注意事项】 计算公式请参见ss\_mpi\_ive\_16bit\_to\_8bit中的【注意】，示意图请参见16bit\_to\_8bit 4种转换模式示意图。 【相关数据类型及接口】 [ot\_ive\_16bit\_to\_8bit\_ctrl](#ot_ive_16bit_to_8bit_ctrl) ### ot\_ive\_16bit\_to\_8bit\_ctrl<a name="ZH-CN_TOPIC_0000002470931316"></a> 【说明】 定义16bit图像数据到8bit图像数据的转化控制参数。 【定义】 ```
+typedef struct { ot_ive_16bit_to_8bit_mode mode; td_u16 denominator; td_u8 num; td_s8 bias;
 } ot_ive_16bit_to_8bit_ctrl;
-```
-
-【成员】
-
-<a name="table1596mcpsimp"></a>
+``` 【成员】 <a name="table1596mcpsimp"></a>
 <table><thead align="left"><tr id="row1601mcpsimp"><th class="cellrowborder" valign="top" width="38%" id="mcps1.1.3.1.1"><p id="p1603mcpsimp"><a name="p1603mcpsimp"></a><a name="p1603mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.3.1.2"><p id="p1605mcpsimp"><a name="p1605mcpsimp"></a><a name="p1605mcpsimp"></a>描述</p>
@@ -3217,37 +1573,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   计算公式请参见ss\_mpi\_ive\_16bit\_to\_8bit中的【注意】，示意图请参见16bit\_to\_8bit 4种转换模式示意图。
--   num≤denominator，且den≠0；
-
-【相关数据类型及接口】
-
-[ot\_ive\_16bit\_to\_8bit\_mode](#ot_ive_16bit_to_8bit_mode)
-
-### ot\_ive\_order\_stats\_filter\_mode<a name="ZH-CN_TOPIC_0000002470931238"></a>
-
-【说明】
-
-定义顺序统计量滤波模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_ORDER_STATS_FILTER_MODE_MEDIAN = 0x0,
-    OT_IVE_ORDER_STATS_FILTER_MODE_MAX = 0x1,
-    OT_IVE_ORDER_STATS_FILTER_MODE_MIN = 0x2,
-    OT_IVE_ORD_STAT_FILTER_MODE_BUTT
+</table> 【注意事项】 - 计算公式请参见ss\_mpi\_ive\_16bit\_to\_8bit中的【注意】，示意图请参见16bit\_to\_8bit 4种转换模式示意图。
+- num≤denominator，且den≠0； 【相关数据类型及接口】 [ot\_ive\_16bit\_to\_8bit\_mode](#ot_ive_16bit_to_8bit_mode) ### ot\_ive\_order\_stats\_filter\_mode<a name="ZH-CN_TOPIC_0000002470931238"></a> 【说明】 定义顺序统计量滤波模式。 【定义】 ```
+typedef enum { OT_IVE_ORDER_STATS_FILTER_MODE_MEDIAN = 0x0, OT_IVE_ORDER_STATS_FILTER_MODE_MAX = 0x1, OT_IVE_ORDER_STATS_FILTER_MODE_MIN = 0x2, OT_IVE_ORD_STAT_FILTER_MODE_BUTT
 } ot_ive_order_stats_filter_mode;
-```
-
-【成员】
-
-<a name="table14561mcpsimp"></a>
+``` 【成员】 <a name="table14561mcpsimp"></a>
 <table><thead align="left"><tr id="row14566mcpsimp"><th class="cellrowborder" valign="top" width="65%" id="mcps1.1.3.1.1"><p id="p14568mcpsimp"><a name="p14568mcpsimp"></a><a name="p14568mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="35%" id="mcps1.1.3.1.2"><p id="p14570mcpsimp"><a name="p14570mcpsimp"></a><a name="p14570mcpsimp"></a>描述</p>
@@ -3270,33 +1600,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_order\_stats\_filter\_ctrl](#ot_ive_order_stats_filter_ctrl)
-
-### ot\_ive\_order\_stats\_filter\_ctrl<a name="ZH-CN_TOPIC_0000002471091240"></a>
-
-【说明】
-
-定义顺序统计量滤波控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_order_stats_filter_mode mode;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_order\_stats\_filter\_ctrl](#ot_ive_order_stats_filter_ctrl) ### ot\_ive\_order\_stats\_filter\_ctrl<a name="ZH-CN_TOPIC_0000002471091240"></a> 【说明】 定义顺序统计量滤波控制参数。 【定义】 ```
+typedef struct { ot_ive_order_stats_filter_mode mode;
 } ot_ive_order_stats_filter_ctrl;
-```
-
-【成员】
-
-<a name="table8153mcpsimp"></a>
+``` 【成员】 <a name="table8153mcpsimp"></a>
 <table><thead align="left"><tr id="row8158mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p8160mcpsimp"><a name="p8160mcpsimp"></a><a name="p8160mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p8162mcpsimp"><a name="p8162mcpsimp"></a><a name="p8162mcpsimp"></a>描述</p>
@@ -3309,33 +1616,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_order\_stats\_filter\_mode](#ot_ive_order_stats_filter_mode)
-
-### ot\_ive\_map\_u8bit\_lut\_mem<a name="ZH-CN_TOPIC_0000002471091206"></a>
-
-【说明】
-
-定义map U8C1→U8C1的查找表内存。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 map[OT_IVE_MAP_NUM];
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_order\_stats\_filter\_mode](#ot_ive_order_stats_filter_mode) ### ot\_ive\_map\_u8bit\_lut\_mem<a name="ZH-CN_TOPIC_0000002471091206"></a> 【说明】 定义map U8C1→U8C1的查找表内存。 【定义】 ```
+typedef struct { td_u8 map[OT_IVE_MAP_NUM];
 } ot_ive_map_u8bit_lut_mem;
-```
-
-【成员】
-
-<a name="table17155mcpsimp"></a>
+``` 【成员】 <a name="table17155mcpsimp"></a>
 <table><thead align="left"><tr id="row17160mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p17162mcpsimp"><a name="p17162mcpsimp"></a><a name="p17162mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p17164mcpsimp"><a name="p17164mcpsimp"></a><a name="p17164mcpsimp"></a>描述</p>
@@ -3348,33 +1632,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_map\_u16bit\_lut\_mem<a name="ZH-CN_TOPIC_0000002504091091"></a>
-
-【说明】
-
-定义map U8C1→U16C1的查找表内存。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 map[OT_IVE_MAP_NUM];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_map\_u16bit\_lut\_mem<a name="ZH-CN_TOPIC_0000002504091091"></a> 【说明】 定义map U8C1→U16C1的查找表内存。 【定义】 ```
+typedef struct { td_u16 map[OT_IVE_MAP_NUM];
 } ot_ive_map_u16bit_lut_mem;
-```
-
-【成员】
-
-<a name="table2812mcpsimp"></a>
+``` 【成员】 <a name="table2812mcpsimp"></a>
 <table><thead align="left"><tr id="row2817mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p2819mcpsimp"><a name="p2819mcpsimp"></a><a name="p2819mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p2821mcpsimp"><a name="p2821mcpsimp"></a><a name="p2821mcpsimp"></a>描述</p>
@@ -3387,33 +1648,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_map\_s16bit\_lut\_mem<a name="ZH-CN_TOPIC_0000002504091173"></a>
-
-【说明】
-
-定义map U8C1→U16C1的查找表内存。
-
-【定义】
-
-```
-typedef struct {
-    td_s16 map[OT_IVE_MAP_NUM];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_map\_s16bit\_lut\_mem<a name="ZH-CN_TOPIC_0000002504091173"></a> 【说明】 定义map U8C1→U16C1的查找表内存。 【定义】 ```
+typedef struct { td_s16 map[OT_IVE_MAP_NUM];
 } ot_ive_map_s16bit_lut_mem;
-```
-
-【成员】
-
-<a name="table16096mcpsimp"></a>
+``` 【成员】 <a name="table16096mcpsimp"></a>
 <table><thead align="left"><tr id="row16101mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p16103mcpsimp"><a name="p16103mcpsimp"></a><a name="p16103mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p16105mcpsimp"><a name="p16105mcpsimp"></a><a name="p16105mcpsimp"></a>描述</p>
@@ -3426,36 +1664,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_map\_mode<a name="ZH-CN_TOPIC_0000002470931320"></a>
-
-【说明】
-
-定义map的模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_MAP_MODE_U8 = 0x0,
-    OT_IVE_MAP_MODE_S16 = 0x1,
-    OT_IVE_MAP_MODE_U16 = 0x2,
-    OT_IVE_MAP_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_map\_mode<a name="ZH-CN_TOPIC_0000002470931320"></a> 【说明】 定义map的模式。 【定义】 ```
+typedef enum { OT_IVE_MAP_MODE_U8 = 0x0, OT_IVE_MAP_MODE_S16 = 0x1, OT_IVE_MAP_MODE_U16 = 0x2, OT_IVE_MAP_MODE_BUTT
 } ot_ive_map_mode;
-```
-
-【成员】
-
-<a name="table10138mcpsimp"></a>
+``` 【成员】 <a name="table10138mcpsimp"></a>
 <table><thead align="left"><tr id="row10143mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p10145mcpsimp"><a name="p10145mcpsimp"></a><a name="p10145mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p10147mcpsimp"><a name="p10147mcpsimp"></a><a name="p10147mcpsimp"></a>描述</p>
@@ -3478,33 +1690,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_map\_ctrl<a name="ZH-CN_TOPIC_0000002471091224"></a>
-
-【说明】
-
-定义map控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_map_mode mode;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_map\_ctrl<a name="ZH-CN_TOPIC_0000002471091224"></a> 【说明】 定义map控制参数。 【定义】 ```
+typedef struct { ot_ive_map_mode mode;
 } ot_ive_map_ctrl;
-```
-
-【成员】
-
-<a name="table15337mcpsimp"></a>
+``` 【成员】 <a name="table15337mcpsimp"></a>
 <table><thead align="left"><tr id="row15342mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p15344mcpsimp"><a name="p15344mcpsimp"></a><a name="p15344mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p15346mcpsimp"><a name="p15346mcpsimp"></a><a name="p15346mcpsimp"></a>描述</p>
@@ -3517,34 +1706,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_equalize\_hist\_ctrl\_mem<a name="ZH-CN_TOPIC_0000002471091324"></a>
-
-【说明】
-
-定义直方图均衡化辅助内存。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 hist[OT_IVE_HIST_NUM];
-    td_u8 map[OT_IVE_MAP_NUM];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_equalize\_hist\_ctrl\_mem<a name="ZH-CN_TOPIC_0000002471091324"></a> 【说明】 定义直方图均衡化辅助内存。 【定义】 ```
+typedef struct { td_u32 hist[OT_IVE_HIST_NUM]; td_u8 map[OT_IVE_MAP_NUM];
 } ot_ive_equalize_hist_ctrl_mem;
-```
-
-【成员】
-
-<a name="table1995mcpsimp"></a>
+``` 【成员】 <a name="table1995mcpsimp"></a>
 <table><thead align="left"><tr id="row2000mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p2002mcpsimp"><a name="p2002mcpsimp"></a><a name="p2002mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p2004mcpsimp"><a name="p2004mcpsimp"></a><a name="p2004mcpsimp"></a>描述</p>
@@ -3562,33 +1727,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_equalize\_hist\_ctrl](#ot_ive_equalize_hist_ctrl)
-
-### ot\_ive\_equalize\_hist\_ctrl<a name="ZH-CN_TOPIC_0000002503971189"></a>
-
-【说明】
-
-定义直方图均衡化控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_svp_mem_info mem;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_equalize\_hist\_ctrl](#ot_ive_equalize_hist_ctrl) ### ot\_ive\_equalize\_hist\_ctrl<a name="ZH-CN_TOPIC_0000002503971189"></a> 【说明】 定义直方图均衡化控制参数。 【定义】 ```
+typedef struct { ot_svp_mem_info mem;
 } ot_ive_equalize_hist_ctrl;
-```
-
-【成员】
-
-<a name="table8122mcpsimp"></a>
+``` 【成员】 <a name="table8122mcpsimp"></a>
 <table><thead align="left"><tr id="row8127mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p8129mcpsimp"><a name="p8129mcpsimp"></a><a name="p8129mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p8131mcpsimp"><a name="p8131mcpsimp"></a><a name="p8131mcpsimp"></a>描述</p>
@@ -3601,34 +1743,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_equalize\_hist\_ctrl\_mem](#ot_ive_equalize_hist_ctrl_mem)
-
-### ot\_ive\_add\_ctrl<a name="ZH-CN_TOPIC_0000002503971153"></a>
-
-【说明】
-
-定义两图像的加权加控制参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u0q16 x; /* x of "xA+yB" */
-    td_u0q16 y; /* y of "xA+yB" */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_equalize\_hist\_ctrl\_mem](#ot_ive_equalize_hist_ctrl_mem) ### ot\_ive\_add\_ctrl<a name="ZH-CN_TOPIC_0000002503971153"></a> 【说明】 定义两图像的加权加控制参数。 【定义】 ```
+typedef struct { td_u0q16 x; /* x of "xA+yB" */ td_u0q16 y; /* y of "xA+yB" */
 } ot_ive_add_ctrl;
-```
-
-【成员】
-
-<a name="table7445mcpsimp"></a>
+``` 【成员】 <a name="table7445mcpsimp"></a>
 <table><thead align="left"><tr id="row7450mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p7452mcpsimp"><a name="p7452mcpsimp"></a><a name="p7452mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p7454mcpsimp"><a name="p7454mcpsimp"></a><a name="p7454mcpsimp"></a>描述</p>
@@ -3640,42 +1758,11 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p id="p7460mcpsimp"><a name="p7460mcpsimp"></a><a name="p7460mcpsimp"></a>加权加“xA+yB”中的权重“x”。</p>
 </td>
 </tr>
-<tr id="row7461mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p id="p7463mcpsimp"><a name="p7463mcpsimp"></a><a name="p7463mcpsimp"></a>y</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p id="p7465mcpsimp"><a name="p7465mcpsimp"></a><a name="p7465mcpsimp"></a>加权加“xA+yB”中的权重“y”。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_ncc\_dst\_mem<a name="ZH-CN_TOPIC_0000002503971173"></a>
-
-【说明】
-
-定义ncc的输出内存信息。
-
-【定义】
-
-```
-typedef struct {
-    td_u64 num;
-    td_u64 quad_sum1;
-    td_u64 quad_sum2;
-    td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_EIGHT];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_ncc\_dst\_mem<a name="ZH-CN_TOPIC_0000002503971173"></a> 【说明】 定义ncc的输出内存信息。 【定义】 ```
+typedef struct { td_u64 num; td_u64 quad_sum1; td_u64 quad_sum2; td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_EIGHT];
 } ot_ive_ncc_dst_mem;
-```
-
-【成员】
-
-<a name="table3709mcpsimp"></a>
+``` 【成员】 <a name="table3709mcpsimp"></a>
 <table><thead align="left"><tr id="row3714mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p3716mcpsimp"><a name="p3716mcpsimp"></a><a name="p3716mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p3718mcpsimp"><a name="p3718mcpsimp"></a><a name="p3718mcpsimp"></a>描述</p>
@@ -3705,37 +1792,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式请参见ss\_mpi\_ive\_ncc中的【注意】。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_rgn<a name="ZH-CN_TOPIC_0000002471091252"></a>
-
-【说明】
-
-定义连通区域信息。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 area;   /* Represented by the pixel number */
-    td_u16 left;   /* Circumscribed rectangle left border */
-    td_u16 right;  /* Circumscribed rectangle right border */
-    td_u16 top;    /* Circumscribed rectangle top border */
-    td_u16 bottom; /* Circumscribed rectangle bottom border */
+</table> 【注意事项】 计算公式请参见ss\_mpi\_ive\_ncc中的【注意】。 【相关数据类型及接口】 无。 ### ot\_ive\_rgn<a name="ZH-CN_TOPIC_0000002471091252"></a> 【说明】 定义连通区域信息。 【定义】 ```
+typedef struct { td_u32 area; /* Represented by the pixel number */ td_u16 left; /* Circumscribed rectangle left border */ td_u16 right; /* Circumscribed rectangle right border */ td_u16 top; /* Circumscribed rectangle top border */ td_u16 bottom; /* Circumscribed rectangle bottom border */
 } ot_ive_rgn;
-```
-
-【成员】
-
-<a name="table4588mcpsimp"></a>
+``` 【成员】 <a name="table4588mcpsimp"></a>
 <table><thead align="left"><tr id="row4593mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p4595mcpsimp"><a name="p4595mcpsimp"></a><a name="p4595mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p4597mcpsimp"><a name="p4597mcpsimp"></a><a name="p4597mcpsimp"></a>描述</p>
@@ -3768,38 +1828,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_ccblob](#ot_ive_ccblob)
-
-### ot\_ive\_ccblob\_info<a name="ZH-CN_TOPIC_0000002503971211"></a>
-
-【说明】
-
-定义连通区域统计信息在Memory中的存储信息。
-
-【定义】
-
-```
-typedef union {
-    struct {
-        td_u32 cur_area_threshold: 23;/*Threshold of the result rgns' area*/
-        td_u32 label_status: 1;  /*1: Labeled failed ; 0: Labeled successfully*/
-        td_u32 rgn_num: 8;  /*Number of valid rgn, non-continuous stored*/
-    }bits;
-    td_u32 u32;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_ccblob](#ot_ive_ccblob) ### ot\_ive\_ccblob\_info<a name="ZH-CN_TOPIC_0000002503971211"></a> 【说明】 定义连通区域统计信息在Memory中的存储信息。 【定义】 ```
+typedef union { struct { td_u32 cur_area_threshold: 23;/*Threshold of the result rgns' area*/ td_u32 label_status: 1; /*1: Labeled failed ; 0: Labeled successfully*/ td_u32 rgn_num: 8; /*Number of valid rgn, non-continuous stored*/ }bits; td_u32 u32;
 } ot_ive_ccblob_info;
-```
-
-【成员】
-
-<a name="table5961mcpsimp"></a>
+``` 【成员】 <a name="table5961mcpsimp"></a>
 <table><thead align="left"><tr id="row5966mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p5968mcpsimp"><a name="p5968mcpsimp"></a><a name="p5968mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p5970mcpsimp"><a name="p5970mcpsimp"></a><a name="p5970mcpsimp"></a>描述</p>
@@ -3824,37 +1856,13 @@ typedef union {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   cur\_area\_threshold：32bit中的前23bit表示有效区域的面积阈值。
--   label\_status：32bit中的第24bit表示的是连通区域是否标记成功。
--   rgn\_num：32bit中后8bit表示是有效连通区域的个数。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_ccblob](#ot_ive_ccblob)
--   ss\_mpi\_ive\_ccl
-
-### ot\_ive\_ccblob<a name="ZH-CN_TOPIC_0000002503971207"></a>
-
-【说明】
-
-定义连通区域标记的输出信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_ccblob_info info;
-    ot_ive_rgn rgn[OT_IVE_MAX_RGN_NUM];  /* Valid rgns with 'cur_area_thr>0' and 'label = array_index+1' */
+</table> 【注意事项】 - cur\_area\_threshold：32bit中的前23bit表示有效区域的面积阈值。
+- label\_status：32bit中的第24bit表示的是连通区域是否标记成功。
+- rgn\_num：32bit中后8bit表示是有效连通区域的个数。 【相关数据类型及接口】 - [ot\_ive\_ccblob](#ot_ive_ccblob)
+- ss\_mpi\_ive\_ccl ### ot\_ive\_ccblob<a name="ZH-CN_TOPIC_0000002503971207"></a> 【说明】 定义连通区域标记的输出信息。 【定义】 ```
+typedef struct { ot_ive_ccblob_info info; ot_ive_rgn rgn[OT_IVE_MAX_RGN_NUM]; /* Valid rgns with 'cur_area_thr>0' and 'label = array_index+1' */
 } ot_ive_ccblob;
-```
-
-【成员】
-
-<a name="table1479mcpsimp"></a>
+``` 【成员】 <a name="table1479mcpsimp"></a>
 <table><thead align="left"><tr id="row1484mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p1486mcpsimp"><a name="p1486mcpsimp"></a><a name="p1486mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p1488mcpsimp"><a name="p1488mcpsimp"></a><a name="p1488mcpsimp"></a>描述</p>
@@ -3872,36 +1880,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_ccblob\_info](#ot_ive_ccblob_info)
--   ss\_mpi\_ive\_ccl
-
-### ot\_ive\_ccl\_mode<a name="ZH-CN_TOPIC_0000002470931332"></a>
-
-【说明】
-
-定义连通区域模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_CCL_MODE_4C = 0x0, /* 4-connected */
-    OT_IVE_CCL_MODE_8C = 0x1, /* 8-connected */
-    OT_IVE_CCL_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_ive\_ccblob\_info](#ot_ive_ccblob_info)
+- ss\_mpi\_ive\_ccl ### ot\_ive\_ccl\_mode<a name="ZH-CN_TOPIC_0000002470931332"></a> 【说明】 定义连通区域模式。 【定义】 ```
+typedef enum { OT_IVE_CCL_MODE_4C = 0x0, /* 4-connected */ OT_IVE_CCL_MODE_8C = 0x1, /* 8-connected */ OT_IVE_CCL_MODE_BUTT
 } ot_ive_ccl_mode;
-```
-
-【成员】
-
-<a name="table4551mcpsimp"></a>
+``` 【成员】 <a name="table4551mcpsimp"></a>
 <table><thead align="left"><tr id="row4556mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p4558mcpsimp"><a name="p4558mcpsimp"></a><a name="p4558mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p4560mcpsimp"><a name="p4560mcpsimp"></a><a name="p4560mcpsimp"></a>描述</p>
@@ -3919,35 +1902,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_ccl\_ctrl<a name="ZH-CN_TOPIC_0000002471091318"></a>
-
-【说明】
-
-定义连通区域标记控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_ccl_mode mode;   /* Mode */
-    td_u16 init_area_threshold;   /* Init threshold of rgn area */
-    td_u16 step;            /* Increase area step for once */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_ccl\_ctrl<a name="ZH-CN_TOPIC_0000002471091318"></a> 【说明】 定义连通区域标记控制参数。 【定义】 ```
+typedef struct { ot_ive_ccl_mode mode; /* Mode */ td_u16 init_area_threshold; /* Init threshold of rgn area */ td_u16 step; /* Increase area step for once */
 } ot_ive_ccl_ctrl;
-```
-
-【成员】
-
-<a name="table4952mcpsimp"></a>
+``` 【成员】 <a name="table4952mcpsimp"></a>
 <table><thead align="left"><tr id="row4957mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p4959mcpsimp"><a name="p4959mcpsimp"></a><a name="p4959mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p4961mcpsimp"><a name="p4961mcpsimp"></a><a name="p4961mcpsimp"></a>描述</p>
@@ -3974,40 +1932,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_ccblob](#ot_ive_ccblob)
-
-### ot\_ive\_gmm\_ctrl<a name="ZH-CN_TOPIC_0000002471091236"></a>
-
-【说明】
-
-定义GMM背景建模的控制参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u22q10 noise_var;    /* Initial noise Variance */
-    td_u22q10 max_var;      /* Max  Variance */
-    td_u22q10 min_var;      /* Min  Variance */
-    td_u0q16 learn_rate;    /* Learning rate */
-    td_u0q16 bg_ratio;      /* Background ratio */
-    td_u8q8 var_threshold;        /* Variance Threshold */
-    td_u0q16 init_wgt;   /* Initial Weight */
-    td_u8 model_num;        /* Model number: 3 or 5 */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_ccblob](#ot_ive_ccblob) ### ot\_ive\_gmm\_ctrl<a name="ZH-CN_TOPIC_0000002471091236"></a> 【说明】 定义GMM背景建模的控制参数。 【定义】 ```
+typedef struct { td_u22q10 noise_var; /* Initial noise Variance */ td_u22q10 max_var; /* Max Variance */ td_u22q10 min_var; /* Min Variance */ td_u0q16 learn_rate; /* Learning rate */ td_u0q16 bg_ratio; /* Background ratio */ td_u8q8 var_threshold; /* Variance Threshold */ td_u0q16 init_wgt; /* Initial Weight */ td_u8 model_num; /* Model number: 3 or 5 */
 } ot_ive_gmm_ctrl;
-```
-
-【成员】
-
-<a name="table5077mcpsimp"></a>
+``` 【成员】 <a name="table5077mcpsimp"></a>
 <table><thead align="left"><tr id="row5082mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p5084mcpsimp"><a name="p5084mcpsimp"></a><a name="p5084mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p5086mcpsimp"><a name="p5086mcpsimp"></a><a name="p5086mcpsimp"></a>描述</p>
@@ -4044,7 +1972,7 @@ typedef struct {
 </td>
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p5118mcpsimp"><a name="p5118mcpsimp"></a><a name="p5118mcpsimp"></a>学习速率。</p>
 <p id="p5119mcpsimp"><a name="p5119mcpsimp"></a><a name="p5119mcpsimp"></a>取值范围：[1, 65535]。</p>
-<p id="p5120mcpsimp"><a name="p5120mcpsimp"></a><a name="p5120mcpsimp"></a>对应OpenCV  MOG2中learningRate。</p>
+<p id="p5120mcpsimp"><a name="p5120mcpsimp"></a><a name="p5120mcpsimp"></a>对应OpenCV MOG2中learningRate。</p>
 <p id="p5121mcpsimp"><a name="p5121mcpsimp"></a><a name="p5121mcpsimp"></a>参考取值： if (frameNum&lt;500) (1/frameNum)*((1&lt;&lt;16)-1)；else ((1/500)*((1&lt;&lt;16)-1)。</p>
 </td>
 </tr>
@@ -4080,35 +2008,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无
-
-### ot\_ive\_gmm2\_sns\_factor\_mode<a name="ZH-CN_TOPIC_0000002471091300"></a>
-
-【说明】
-
-定义灵敏度系数模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_GMM2_SNS_FACTOR_MODE_GLOBAL = 0x0, /* Global sensitivity factor mode */
-    OT_IVE_GMM2_SNS_FACTOR_MODE_PIXEL = 0x1, /* Pixel sensitivity factor mode */
-    OT_IVE_GMM2_SNS_FACTOR_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无 ### ot\_ive\_gmm2\_sns\_factor\_mode<a name="ZH-CN_TOPIC_0000002471091300"></a> 【说明】 定义灵敏度系数模式。 【定义】 ```
+typedef enum { OT_IVE_GMM2_SNS_FACTOR_MODE_GLOBAL = 0x0, /* Global sensitivity factor mode */ OT_IVE_GMM2_SNS_FACTOR_MODE_PIXEL = 0x1, /* Pixel sensitivity factor mode */ OT_IVE_GMM2_SNS_FACTOR_MODE_BUTT
 } ot_ive_gmm2_sns_factor_mode;
-```
-
-【成员】
-
-<a name="table14300mcpsimp"></a>
+``` 【成员】 <a name="table14300mcpsimp"></a>
 <table><thead align="left"><tr id="row14305mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p14307mcpsimp"><a name="p14307mcpsimp"></a><a name="p14307mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p14309mcpsimp"><a name="p14309mcpsimp"></a><a name="p14309mcpsimp"></a>描述</p>
@@ -4126,35 +2029,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_gmm2\_life\_update\_factor\_mode<a name="ZH-CN_TOPIC_0000002503971203"></a>
-
-【说明】
-
-定义模型时长参数更新模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_GMM2_LIFE_UPDATE_FACTOR_MODE_GLOBAL = 0x0, /* Global life update factor mode */
-    OT_IVE_GMM2_LIFE_UPDATE_FACTOR_MODE_PIXEL = 0x1, /* Pixel life update factor mode */
-    OT_IVE_GMM2_LIFE_UPDATE_FACTOR_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_gmm2\_life\_update\_factor\_mode<a name="ZH-CN_TOPIC_0000002503971203"></a> 【说明】 定义模型时长参数更新模式。 【定义】 ```
+typedef enum { OT_IVE_GMM2_LIFE_UPDATE_FACTOR_MODE_GLOBAL = 0x0, /* Global life update factor mode */ OT_IVE_GMM2_LIFE_UPDATE_FACTOR_MODE_PIXEL = 0x1, /* Pixel life update factor mode */ OT_IVE_GMM2_LIFE_UPDATE_FACTOR_MODE_BUTT
 } ot_ive_gmm2_life_update_factor_mode;
-```
-
-【成员】
-
-<a name="table14094mcpsimp"></a>
+``` 【成员】 <a name="table14094mcpsimp"></a>
 <table><thead align="left"><tr id="row14099mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p14101mcpsimp"><a name="p14101mcpsimp"></a><a name="p14101mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p14103mcpsimp"><a name="p14103mcpsimp"></a><a name="p14103mcpsimp"></a>描述</p>
@@ -4172,45 +2050,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_gmm2\_ctrl<a name="ZH-CN_TOPIC_0000002504091119"></a>
-
-【说明】
-
-定义GMM2背景建模的控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_gmm2_sns_factor_mode sns_factor_mode; /* Sensitivity factor mode */
-    ot_ive_gmm2_life_update_factor_mode life_update_factor_mode; /* Life update factor mode */
-    td_u16 global_life_update_factor; /* Global life update factor (default: 4) */
-    td_u16 life_threshold; /* Life threshold (default: 5000) */
-    td_u16 freq_init_val; /* Initial frequency (default: 20000) */
-    td_u16 freq_reduce_factor; /* Frequency reduction factor (default: 0xFF00) */
-    td_u16 freq_add_factor; /* Frequency adding factor (default: 0xEF) */
-    td_u16 freq_threshold; /* Frequency threshold (default: 12000) */
-    td_u16 var_rate; /* Variation update rate (default: 1) */
-    td_u9q7 max_var; /* Max variation (default: (16 * 16)<<7) */
-    td_u9q7 min_var; /* Min variation (default: ( 8 *  8)<<7) */
-    td_u8 global_sns_factor; /* Global sensitivity factor (default: 8) */
-    td_u8 model_num; /* Model number (range: 1~5, default: 3) */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_gmm2\_ctrl<a name="ZH-CN_TOPIC_0000002504091119"></a> 【说明】 定义GMM2背景建模的控制参数。 【定义】 ```
+typedef struct { ot_ive_gmm2_sns_factor_mode sns_factor_mode; /* Sensitivity factor mode */ ot_ive_gmm2_life_update_factor_mode life_update_factor_mode; /* Life update factor mode */ td_u16 global_life_update_factor; /* Global life update factor (default: 4) */ td_u16 life_threshold; /* Life threshold (default: 5000) */ td_u16 freq_init_val; /* Initial frequency (default: 20000) */ td_u16 freq_reduce_factor; /* Frequency reduction factor (default: 0xFF00) */ td_u16 freq_add_factor; /* Frequency adding factor (default: 0xEF) */ td_u16 freq_threshold; /* Frequency threshold (default: 12000) */ td_u16 var_rate; /* Variation update rate (default: 1) */ td_u9q7 max_var; /* Max variation (default: (16 * 16)<<7) */ td_u9q7 min_var; /* Min variation (default: ( 8 * 8)<<7) */ td_u8 global_sns_factor; /* Global sensitivity factor (default: 8) */ td_u8 model_num; /* Model number (range: 1~5, default: 3) */
 } ot_ive_gmm2_ctrl;
-```
-
-【成员】
-
-<a name="table12380mcpsimp"></a>
+``` 【成员】 <a name="table12380mcpsimp"></a>
 <table><thead align="left"><tr id="row12385mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p12387mcpsimp"><a name="p12387mcpsimp"></a><a name="p12387mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p12389mcpsimp"><a name="p12389mcpsimp"></a><a name="p12389mcpsimp"></a>描述</p>
@@ -4283,34 +2126,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_canny\_stack\_size<a name="ZH-CN_TOPIC_0000002504091083"></a>
-
-【说明】
-
-定义Canny边缘前半部分计算时强边缘点栈大小结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 stack_size;  /* Stack size for output */
-    td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_TWELVE]; /* For 16 byte align */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_canny\_stack\_size<a name="ZH-CN_TOPIC_0000002504091083"></a> 【说明】 定义Canny边缘前半部分计算时强边缘点栈大小结构体。 【定义】 ```
+typedef struct { td_u32 stack_size; /* Stack size for output */ td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_TWELVE]; /* For 16 byte align */
 } ot_ive_canny_stack_size;
-```
-
-【成员】
-
-<a name="table8662mcpsimp"></a>
+``` 【成员】 <a name="table8662mcpsimp"></a>
 <table><thead align="left"><tr id="row8667mcpsimp"><th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.1"><p id="p8669mcpsimp"><a name="p8669mcpsimp"></a><a name="p8669mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.2"><p id="p8671mcpsimp"><a name="p8671mcpsimp"></a><a name="p8671mcpsimp"></a>描述</p>
@@ -4328,36 +2147,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_canny\_hys\_edge\_ctrl<a name="ZH-CN_TOPIC_0000002503971183"></a>
-
-【说明】
-
-定义Canny边缘前半部分计算任务的控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_svp_mem_info mem;
-    td_u16 low_threshold;
-    td_u16 high_threshold;
-    td_s8 mask[OT_IVE_MASK_NUM];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_canny\_hys\_edge\_ctrl<a name="ZH-CN_TOPIC_0000002503971183"></a> 【说明】 定义Canny边缘前半部分计算任务的控制参数。 【定义】 ```
+typedef struct { ot_svp_mem_info mem; td_u16 low_threshold; td_u16 high_threshold; td_s8 mask[OT_IVE_MASK_NUM];
 } ot_ive_canny_hys_edge_ctrl;
-```
-
-【成员】
-
-<a name="table3842mcpsimp"></a>
+``` 【成员】 <a name="table3842mcpsimp"></a>
 <table><thead align="left"><tr id="row3847mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p3849mcpsimp"><a name="p3849mcpsimp"></a><a name="p3849mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p3851mcpsimp"><a name="p3851mcpsimp"></a><a name="p3851mcpsimp"></a>描述</p>
@@ -4388,35 +2181,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_lbp\_compare\_mode<a name="ZH-CN_TOPIC_0000002470931250"></a>
-
-【说明】
-
-定义lbp计算的比较模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_LBP_COMPARE_MODE_NORMAL= 0x0, /* P(x)-P(center)>= bit_thr.s8Val, s(x)=1; else s(x)=0; */
-    OT_IVE_LBP_COMPARE_MODE_ABS= 0x1,    /* Abs(P(x)-P(center))>=bit_thr.u8Val, s(x)=1; else s(x)=0; */
-    OT_IVE_LBP_COMPARE_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_lbp\_compare\_mode<a name="ZH-CN_TOPIC_0000002470931250"></a> 【说明】 定义lbp计算的比较模式。 【定义】 ```
+typedef enum { OT_IVE_LBP_COMPARE_MODE_NORMAL= 0x0, /* P(x)-P(center)>= bit_thr.s8Val, s(x)=1; else s(x)=0; */ OT_IVE_LBP_COMPARE_MODE_ABS= 0x1, /* Abs(P(x)-P(center))>=bit_thr.u8Val, s(x)=1; else s(x)=0; */ OT_IVE_LBP_COMPARE_MODE_BUTT
 } ot_ive_lbp_compare_mode;
-```
-
-【成员】
-
-<a name="table15284mcpsimp"></a>
+``` 【成员】 <a name="table15284mcpsimp"></a>
 <table><thead align="left"><tr id="row15289mcpsimp"><th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.1"><p id="p15291mcpsimp"><a name="p15291mcpsimp"></a><a name="p15291mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.2"><p id="p15293mcpsimp"><a name="p15293mcpsimp"></a><a name="p15293mcpsimp"></a>描述</p>
@@ -4434,34 +2202,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式参考ss\_mpi\_ive\_lbp中的【注意】，示意图请参考lbp计算公式示意图。
-
-【相关数据类型及接口】
-
-[ot\_ive\_lbp\_ctrl](#ot_ive_lbp_ctrl)
-
-### ot\_ive\_lbp\_ctrl<a name="ZH-CN_TOPIC_0000002471091226"></a>
-
-【说明】
-
-定义lbp纹理计算控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_lbp_compare_mode mode;
-    ot_svp_8bit bit_threshold;
+</table> 【注意事项】 计算公式参考ss\_mpi\_ive\_lbp中的【注意】，示意图请参考lbp计算公式示意图。 【相关数据类型及接口】 [ot\_ive\_lbp\_ctrl](#ot_ive_lbp_ctrl) ### ot\_ive\_lbp\_ctrl<a name="ZH-CN_TOPIC_0000002471091226"></a> 【说明】 定义lbp纹理计算控制参数。 【定义】 ```
+typedef struct { ot_ive_lbp_compare_mode mode; ot_svp_8bit bit_threshold;
 } ot_ive_lbp_ctrl;
-```
-
-【成员】
-
-<a name="table13570mcpsimp"></a>
+``` 【成员】 <a name="table13570mcpsimp"></a>
 <table><thead align="left"><tr id="row13575mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p13577mcpsimp"><a name="p13577mcpsimp"></a><a name="p13577mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p13579mcpsimp"><a name="p13579mcpsimp"></a><a name="p13579mcpsimp"></a>描述</p>
@@ -4481,38 +2225,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-计算公式参考ss\_mpi\_ive\_lbp中的【注意】，示意图请参考lbp计算公式示意图。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_lbp\_compare\_mode](#ot_ive_lbp_compare_mode)
--   [ot\_svp\_8bit](#ot_svp_8bit)
-
-### ot\_ive\_norm\_grad\_out\_ctrl<a name="ZH-CN_TOPIC_0000002503971179"></a>
-
-【说明】
-
-定义归一化梯度信息计算任务输出控制枚举类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_NORM_GRAD_OUT_CTRL_HOR_AND_VER = 0x0,
-    OT_IVE_NORM_GRAD_OUT_CTRL_HOR = 0x1,
-    OT_IVE_NORM_GRAD_OUT_CTRL_VER = 0x2,
-    OT_IVE_NORM_GRAD_OUT_CTRL_COMBINE = 0x3,
-    OT_IVE_NORM_GRAD_OUT_CTRL_BUTT
+</table> 【注意事项】 计算公式参考ss\_mpi\_ive\_lbp中的【注意】，示意图请参考lbp计算公式示意图。 【相关数据类型及接口】 - [ot\_ive\_lbp\_compare\_mode](#ot_ive_lbp_compare_mode)
+- [ot\_svp\_8bit](#ot_svp_8bit) ### ot\_ive\_norm\_grad\_out\_ctrl<a name="ZH-CN_TOPIC_0000002503971179"></a> 【说明】 定义归一化梯度信息计算任务输出控制枚举类型。 【定义】 ```
+typedef enum { OT_IVE_NORM_GRAD_OUT_CTRL_HOR_AND_VER = 0x0, OT_IVE_NORM_GRAD_OUT_CTRL_HOR = 0x1, OT_IVE_NORM_GRAD_OUT_CTRL_VER = 0x2, OT_IVE_NORM_GRAD_OUT_CTRL_COMBINE = 0x3, OT_IVE_NORM_GRAD_OUT_CTRL_BUTT
 } ot_ive_norm_grad_out_ctrl;
-```
-
-【成员】
-
-<a name="table10294mcpsimp"></a>
+``` 【成员】 <a name="table10294mcpsimp"></a>
 <table><thead align="left"><tr id="row10299mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p10301mcpsimp"><a name="p10301mcpsimp"></a><a name="p10301mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p10303mcpsimp"><a name="p10303mcpsimp"></a><a name="p10303mcpsimp"></a>描述</p>
@@ -4540,35 +2257,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_norm\_grad\_ctrl](#ot_ive_norm_grad_ctrl)
-
-### ot\_ive\_norm\_grad\_ctrl<a name="ZH-CN_TOPIC_0000002470931288"></a>
-
-【说明】
-
-定义归一化梯度信息计算控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_norm_grad_out_ctrl out_ctrl;
-    td_s8 mask[OT_IVE_MASK_NUM];
-    td_u8 norm;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_norm\_grad\_ctrl](#ot_ive_norm_grad_ctrl) ### ot\_ive\_norm\_grad\_ctrl<a name="ZH-CN_TOPIC_0000002470931288"></a> 【说明】 定义归一化梯度信息计算控制参数。 【定义】 ```
+typedef struct { ot_ive_norm_grad_out_ctrl out_ctrl; td_s8 mask[OT_IVE_MASK_NUM]; td_u8 norm;
 } ot_ive_norm_grad_ctrl;
-```
-
-【成员】
-
-<a name="table8586mcpsimp"></a>
+``` 【成员】 <a name="table8586mcpsimp"></a>
 <table><thead align="left"><tr id="row8591mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p8593mcpsimp"><a name="p8593mcpsimp"></a><a name="p8593mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p8595mcpsimp"><a name="p8595mcpsimp"></a><a name="p8595mcpsimp"></a>描述</p>
@@ -4592,36 +2284,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_norm\_grad\_out\_ctrl](#ot_ive_norm_grad_out_ctrl)
-
-### ot\_ive\_lk\_optical\_flow\_pyr\_out\_mode<a name="ZH-CN_TOPIC_0000002504091077"></a>
-
-【说明】
-
-定义金字塔LK光流计算输出模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_NONE = 0,   /* Output none */
-    OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_STATUS = 1, /* Output status */
-    OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_BOTH = 2, /* Output status and err */
-    OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_norm\_grad\_out\_ctrl](#ot_ive_norm_grad_out_ctrl) ### ot\_ive\_lk\_optical\_flow\_pyr\_out\_mode<a name="ZH-CN_TOPIC_0000002504091077"></a> 【说明】 定义金字塔LK光流计算输出模式。 【定义】 ```
+typedef enum { OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_NONE = 0, /* Output none */ OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_STATUS = 1, /* Output status */ OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_BOTH = 2, /* Output status and err */ OT_IVE_LK_OPTICAL_FLOW_PYR_OUT_MODE_BUTT
 } ot_ive_lk_optical_flow_pyr_out_mode;
-```
-
-【成员】
-
-<a name="table9674mcpsimp"></a>
+``` 【成员】 <a name="table9674mcpsimp"></a>
 <table><thead align="left"><tr id="row9679mcpsimp"><th class="cellrowborder" valign="top" width="74%" id="mcps1.1.3.1.1"><p id="p9681mcpsimp"><a name="p9681mcpsimp"></a><a name="p9681mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="26%" id="mcps1.1.3.1.2"><p id="p9683mcpsimp"><a name="p9683mcpsimp"></a><a name="p9683mcpsimp"></a>描述</p>
@@ -4644,39 +2310,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_lk\_optical\_flow\_pyr\_ctrl<a name="ZH-CN_TOPIC_0000002503971181"></a>
-
-【说明】
-
-定义金字塔LK光流计算控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_lk_optical_flow_pyr_out_mode out_mode;
-    td_bool use_init_flow;   /* where to use initial flow */
-    td_u16 points_num;          /* Number of the feature points,<=500 */
-    td_u8 max_level;         /* 0<=max_level<=3 */
-    td_u0q8 min_eig_val_threshold;     /* Minimum eigenvalue threshold */
-    td_u8 iter_cnt;          /* Maximum iteration times, <=20 */
-    td_u0q8 eps;             /* Used for exit criteria: dx^2 + dy^2 < eps */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_lk\_optical\_flow\_pyr\_ctrl<a name="ZH-CN_TOPIC_0000002503971181"></a> 【说明】 定义金字塔LK光流计算控制参数。 【定义】 ```
+typedef struct { ot_ive_lk_optical_flow_pyr_out_mode out_mode; td_bool use_init_flow; /* where to use initial flow */ td_u16 points_num; /* Number of the feature points,<=500 */ td_u8 max_level; /* 0<=max_level<=3 */ td_u0q8 min_eig_val_threshold; /* Minimum eigenvalue threshold */ td_u8 iter_cnt; /* Maximum iteration times, <=20 */ td_u0q8 eps; /* Used for exit criteria: dx^2 + dy^2 < eps */
 } ot_ive_lk_optical_flow_pyr_ctrl;
-```
-
-【成员】
-
-<a name="table7531mcpsimp"></a>
+``` 【成员】 <a name="table7531mcpsimp"></a>
 <table><thead align="left"><tr id="row7536mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p7538mcpsimp"><a name="p7538mcpsimp"></a><a name="p7538mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p7540mcpsimp"><a name="p7540mcpsimp"></a><a name="p7540mcpsimp"></a>描述</p>
@@ -4726,34 +2363,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_st\_max\_eig\_val<a name="ZH-CN_TOPIC_0000002504091183"></a>
-
-【说明】
-
-定义Shi-Tomas-like角点计算时最大角点响应值结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 max_eig_val;     /* Shi-Tomasi second step output MaxEig */
-    td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_FOURTEEN]; /* For 16 byte align */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_st\_max\_eig\_val<a name="ZH-CN_TOPIC_0000002504091183"></a> 【说明】 定义Shi-Tomas-like角点计算时最大角点响应值结构体。 【定义】 ```
+typedef struct { td_u16 max_eig_val; /* Shi-Tomasi second step output MaxEig */ td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_FOURTEEN]; /* For 16 byte align */
 } ot_ive_st_max_eig_val;
-```
-
-【成员】
-
-<a name="table11223mcpsimp"></a>
+``` 【成员】 <a name="table11223mcpsimp"></a>
 <table><thead align="left"><tr id="row11228mcpsimp"><th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.1"><p id="p11230mcpsimp"><a name="p11230mcpsimp"></a><a name="p11230mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.2"><p id="p11232mcpsimp"><a name="p11232mcpsimp"></a><a name="p11232mcpsimp"></a>描述</p>
@@ -4771,34 +2384,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_ive\_st\_cand\_corner\_ctrl<a name="ZH-CN_TOPIC_0000002504091117"></a>
-
-【说明】
-
-定义Shi-Tomas-like候选角点计算控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_svp_mem_info mem;
-    td_u0q8 quality_level;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_ive\_st\_cand\_corner\_ctrl<a name="ZH-CN_TOPIC_0000002504091117"></a> 【说明】 定义Shi-Tomas-like候选角点计算控制参数。 【定义】 ```
+typedef struct { ot_svp_mem_info mem; td_u0q8 quality_level;
 } ot_ive_st_cand_corner_ctrl;
-```
-
-【成员】
-
-<a name="table6023mcpsimp"></a>
+``` 【成员】 <a name="table6023mcpsimp"></a>
 <table><thead align="left"><tr id="row6028mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p6030mcpsimp"><a name="p6030mcpsimp"></a><a name="p6030mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p6032mcpsimp"><a name="p6032mcpsimp"></a><a name="p6032mcpsimp"></a>描述</p>
@@ -4819,34 +2408,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无
-
-### ot\_ive\_st\_corner\_info<a name="ZH-CN_TOPIC_0000002503971265"></a>
-
-【说明】
-
-定义Shi-Tomas-like角点计算输出的角点信息结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 corner_num;
-    ot_svp_point_u16 corner[OT_IVE_ST_MAX_CORNER_NUM];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无 ### ot\_ive\_st\_corner\_info<a name="ZH-CN_TOPIC_0000002503971265"></a> 【说明】 定义Shi-Tomas-like角点计算输出的角点信息结构体。 【定义】 ```
+typedef struct { td_u16 corner_num; ot_svp_point_u16 corner[OT_IVE_ST_MAX_CORNER_NUM];
 } ot_ive_st_corner_info;
-```
-
-【成员】
-
-<a name="table4641mcpsimp"></a>
+``` 【成员】 <a name="table4641mcpsimp"></a>
 <table><thead align="left"><tr id="row4646mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p4648mcpsimp"><a name="p4648mcpsimp"></a><a name="p4648mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p4650mcpsimp"><a name="p4650mcpsimp"></a><a name="p4650mcpsimp"></a>描述</p>
@@ -4864,34 +2429,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_ive\_st\_corner\_ctrl<a name="ZH-CN_TOPIC_0000002471091220"></a>
-
-【说明】
-
-定义Shi-Tomas-like角点筛选控制参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 max_corner_num;
-    td_u16 min_dist;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_ive\_st\_corner\_ctrl<a name="ZH-CN_TOPIC_0000002471091220"></a> 【说明】 定义Shi-Tomas-like角点筛选控制参数。 【定义】 ```
+typedef struct { td_u16 max_corner_num; td_u16 min_dist;
 } ot_ive_st_corner_ctrl;
-```
-
-【成员】
-
-<a name="table7633mcpsimp"></a>
+``` 【成员】 <a name="table7633mcpsimp"></a>
 <table><thead align="left"><tr id="row7638mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p7640mcpsimp"><a name="p7640mcpsimp"></a><a name="p7640mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p7642mcpsimp"><a name="p7642mcpsimp"></a><a name="p7642mcpsimp"></a>描述</p>
@@ -4912,36 +2453,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_sad\_mode<a name="ZH-CN_TOPIC_0000002470931274"></a>
-
-【说明】
-
-定义SAD计算模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_SAD_MODE_MB_4X4 = 0x0,   /* 4x4 */
-    OT_IVE_SAD_MODE_MB_8X8 = 0x1,   /* 8x8 */
-    OT_IVE_SAD_MODE_MB_16X16 = 0x2, /* 16x16 */
-    OT_IVE_SAD_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_sad\_mode<a name="ZH-CN_TOPIC_0000002470931274"></a> 【说明】 定义SAD计算模式。 【定义】 ```
+typedef enum { OT_IVE_SAD_MODE_MB_4X4 = 0x0, /* 4x4 */ OT_IVE_SAD_MODE_MB_8X8 = 0x1, /* 8x8 */ OT_IVE_SAD_MODE_MB_16X16 = 0x2, /* 16x16 */ OT_IVE_SAD_MODE_BUTT
 } ot_ive_sad_mode;
-```
-
-【成员】
-
-<a name="table6803mcpsimp"></a>
+``` 【成员】 <a name="table6803mcpsimp"></a>
 <table><thead align="left"><tr id="row6808mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p6810mcpsimp"><a name="p6810mcpsimp"></a><a name="p6810mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p6812mcpsimp"><a name="p6812mcpsimp"></a><a name="p6812mcpsimp"></a>描述</p>
@@ -4964,38 +2479,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_sad\_ctrl](#ot_ive_sad_ctrl)
-
-### ot\_ive\_sad\_out\_ctrl<a name="ZH-CN_TOPIC_0000002471091278"></a>
-
-【说明】
-
-定义SAD输出控制模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_SAD_OUT_CTRL_16BIT_BOTH = 0x0, /* Output 16 bit sad and thresh */
-    OT_IVE_SAD_OUT_CTRL_8BIT_BOTH = 0x1,  /* Output 8 bit sad and thresh */
-    OT_IVE_SAD_OUT_CTRL_16BIT_SAD = 0x2,  /* Output 16 bit sad */
-    OT_IVE_SAD_OUT_CTRL_8BIT_SAD = 0x3,   /* Output 8 bit sad */
-    OT_IVE_SAD_OUT_CTRL_THRESHOLD = 0x4,   /* Output thresh,16 bits sad */
-    OT_IVE_SAD_OUT_CTRL_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_sad\_ctrl](#ot_ive_sad_ctrl) ### ot\_ive\_sad\_out\_ctrl<a name="ZH-CN_TOPIC_0000002471091278"></a> 【说明】 定义SAD输出控制模式。 【定义】 ```
+typedef enum { OT_IVE_SAD_OUT_CTRL_16BIT_BOTH = 0x0, /* Output 16 bit sad and thresh */ OT_IVE_SAD_OUT_CTRL_8BIT_BOTH = 0x1, /* Output 8 bit sad and thresh */ OT_IVE_SAD_OUT_CTRL_16BIT_SAD = 0x2, /* Output 16 bit sad */ OT_IVE_SAD_OUT_CTRL_8BIT_SAD = 0x3, /* Output 8 bit sad */ OT_IVE_SAD_OUT_CTRL_THRESHOLD = 0x4, /* Output thresh,16 bits sad */ OT_IVE_SAD_OUT_CTRL_BUTT
 } ot_ive_sad_out_ctrl;
-```
-
-【成员】
-
-<a name="table13518mcpsimp"></a>
+``` 【成员】 <a name="table13518mcpsimp"></a>
 <table><thead align="left"><tr id="row13523mcpsimp"><th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.1"><p id="p13525mcpsimp"><a name="p13525mcpsimp"></a><a name="p13525mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.2"><p id="p13527mcpsimp"><a name="p13527mcpsimp"></a><a name="p13527mcpsimp"></a>描述</p>
@@ -5028,37 +2515,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_sad\_ctrl](#ot_ive_sad_ctrl)
-
-### ot\_ive\_sad\_ctrl<a name="ZH-CN_TOPIC_0000002471091212"></a>
-
-【说明】
-
-定义SAD控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_sad_mode mode;
-    ot_ive_sad_out_ctrl out_ctrl;
-    td_u16 threshold;    /* src_val <= thr, dst_val = min_val; src_val > thr, dst_val = max_val. */
-    td_u8 min_val;      /* Min value */
-    td_u8 max_val;      /* Max value */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_sad\_ctrl](#ot_ive_sad_ctrl) ### ot\_ive\_sad\_ctrl<a name="ZH-CN_TOPIC_0000002471091212"></a> 【说明】 定义SAD控制参数。 【定义】 ```
+typedef struct { ot_ive_sad_mode mode; ot_ive_sad_out_ctrl out_ctrl; td_u16 threshold; /* src_val <= thr, dst_val = min_val; src_val > thr, dst_val = max_val. */ td_u8 min_val; /* Min value */ td_u8 max_val; /* Max value */
 } ot_ive_sad_ctrl;
-```
-
-【成员】
-
-<a name="table9090mcpsimp"></a>
+``` 【成员】 <a name="table9090mcpsimp"></a>
 <table><thead align="left"><tr id="row9095mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p9097mcpsimp"><a name="p9097mcpsimp"></a><a name="p9097mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p9099mcpsimp"><a name="p9099mcpsimp"></a><a name="p9099mcpsimp"></a>描述</p>
@@ -5093,36 +2553,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ot\_ive\_sad\_mode](#ot_ive_sad_mode)
--   [ot\_ive\_sad\_out\_ctrl](#ot_ive_sad_out_ctrl)
-
-### ot\_ive\_resize\_mode<a name="ZH-CN_TOPIC_0000002503971219"></a>
-
-【说明】
-
-定义resize的模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_RESIZE_MODE_LINEAR = 0x0, /* Bilinear interpolation */
-    OT_IVE_RESIZE_MODE_AREA = 0x1,
-    OT_IVE_RESIZE_MODE_BUTT
+</table> 【注意事项】 无 【相关数据类型及接口】 - [ot\_ive\_sad\_mode](#ot_ive_sad_mode)
+- [ot\_ive\_sad\_out\_ctrl](#ot_ive_sad_out_ctrl) ### ot\_ive\_resize\_mode<a name="ZH-CN_TOPIC_0000002503971219"></a> 【说明】 定义resize的模式。 【定义】 ```
+typedef enum { OT_IVE_RESIZE_MODE_LINEAR = 0x0, /* Bilinear interpolation */ OT_IVE_RESIZE_MODE_AREA = 0x1, OT_IVE_RESIZE_MODE_BUTT
 } ot_ive_resize_mode;
-```
-
-【成员】
-
-<a name="table14891mcpsimp"></a>
+``` 【成员】 <a name="table14891mcpsimp"></a>
 <table><thead align="left"><tr id="row14896mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p14898mcpsimp"><a name="p14898mcpsimp"></a><a name="p14898mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p14900mcpsimp"><a name="p14900mcpsimp"></a><a name="p14900mcpsimp"></a>描述</p>
@@ -5140,35 +2575,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_resize\_ctrl<a name="ZH-CN_TOPIC_0000002471091258"></a>
-
-【说明】
-
-定义resize控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_resize_mode mode;
-    ot_svp_mem_info mem;
-    td_u16 num;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_resize\_ctrl<a name="ZH-CN_TOPIC_0000002471091258"></a> 【说明】 定义resize控制参数。 【定义】 ```
+typedef struct { ot_ive_resize_mode mode; ot_svp_mem_info mem; td_u16 num;
 } ot_ive_resize_ctrl;
-```
-
-【成员】
-
-<a name="table14980mcpsimp"></a>
+``` 【成员】 <a name="table14980mcpsimp"></a>
 <table><thead align="left"><tr id="row14985mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p14987mcpsimp"><a name="p14987mcpsimp"></a><a name="p14987mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p14989mcpsimp"><a name="p14989mcpsimp"></a><a name="p14989mcpsimp"></a>描述</p>
@@ -5192,35 +2602,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_grad\_fg\_mode<a name="ZH-CN_TOPIC_0000002503971161"></a>
-
-【说明】
-
-定义梯度前景计算模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_GRAD_FG_MODE_USE_CUR_GRAD = 0x0,
-    OT_IVE_GRAD_FG_MODE_FIND_MIN_GRAD = 0x1,
-   OT_IVE_GRAD_FG_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_grad\_fg\_mode<a name="ZH-CN_TOPIC_0000002503971161"></a> 【说明】 定义梯度前景计算模式。 【定义】 ```
+typedef enum { OT_IVE_GRAD_FG_MODE_USE_CUR_GRAD = 0x0, OT_IVE_GRAD_FG_MODE_FIND_MIN_GRAD = 0x1, OT_IVE_GRAD_FG_MODE_BUTT
 } ot_ive_grad_fg_mode;
-```
-
-【成员】
-
-<a name="table11889mcpsimp"></a>
+``` 【成员】 <a name="table11889mcpsimp"></a>
 <table><thead align="left"><tr id="row11894mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p11896mcpsimp"><a name="p11896mcpsimp"></a><a name="p11896mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p11898mcpsimp"><a name="p11898mcpsimp"></a><a name="p11898mcpsimp"></a>描述</p>
@@ -5238,40 +2623,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_grad\_fg\_ctrl](#ot_ive_grad_fg_ctrl)
-
-### ot\_ive\_grad\_fg\_ctrl<a name="ZH-CN_TOPIC_0000002504091111"></a>
-
-【说明】
-
-定义计算梯度前景控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_grad_fg_mode mode;  /* Calculation mode */
-    td_u16 edw_factor;         /* Edge width adjustment factor (range: 500 to 2000; default: 1000) */
-    td_u8 crl_coef_threshold;       /* Gradient vector correlation coefficient threshold
-                                (ranges: 50 to 100; default: 80) */
-    td_u8 mag_crl_threshold;       /* Gradient amplitude threshold (range: 0 to 20; default: 4) */
-    td_u8 min_mag_diff;        /* Gradient magnitude difference threshold (range: 2 to 8; default: 2) */
-    td_u8 noise_val;           /* Gradient amplitude noise threshold (range: 1 to 8; default: 1) */
-    td_u8 edw_dark;            /* Black pixels enable flag (range: 0 (no), 1 (yes); default: 1) */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_grad\_fg\_ctrl](#ot_ive_grad_fg_ctrl) ### ot\_ive\_grad\_fg\_ctrl<a name="ZH-CN_TOPIC_0000002504091111"></a> 【说明】 定义计算梯度前景控制参数。 【定义】 ```
+typedef struct { ot_ive_grad_fg_mode mode; /* Calculation mode */ td_u16 edw_factor; /* Edge width adjustment factor (range: 500 to 2000; default: 1000) */ td_u8 crl_coef_threshold; /* Gradient vector correlation coefficient threshold (ranges: 50 to 100; default: 80) */ td_u8 mag_crl_threshold; /* Gradient amplitude threshold (range: 0 to 20; default: 4) */ td_u8 min_mag_diff; /* Gradient magnitude difference threshold (range: 2 to 8; default: 2) */ td_u8 noise_val; /* Gradient amplitude noise threshold (range: 1 to 8; default: 1) */ td_u8 edw_dark; /* Black pixels enable flag (range: 0 (no), 1 (yes); default: 1) */
 } ot_ive_grad_fg_ctrl;
-```
-
-【成员】
-
-<a name="table208mcpsimp"></a>
+``` 【成员】 <a name="table208mcpsimp"></a>
 <table><thead align="left"><tr id="row213mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p215mcpsimp"><a name="p215mcpsimp"></a><a name="p215mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p217mcpsimp"><a name="p217mcpsimp"></a><a name="p217mcpsimp"></a>描述</p>
@@ -5325,38 +2680,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_grad\_fg\_mode](#ot_ive_grad_fg_mode)
-
-### ot\_ive\_cand\_bg\_pixel<a name="ZH-CN_TOPIC_0000002503971261"></a>
-
-【说明】
-
-定义候选背景模型数据。
-
-【定义】
-
-```
-typedef struct {
-    td_u8q4f4 mean;         /* Candidate background grays value */
-    td_u16 start_time;      /* Candidate Background start time */
-    td_u16 sum_access_time; /* Candidate Background cumulative access time */
-    td_u16 short_keep_time; /* Candidate background short hold time */
-    td_u8 chg_condition;    /* Time condition for candidate background into the changing state */
-    td_u8 poten_bg_life;    /* Potential background cumulative access time */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_grad\_fg\_mode](#ot_ive_grad_fg_mode) ### ot\_ive\_cand\_bg\_pixel<a name="ZH-CN_TOPIC_0000002503971261"></a> 【说明】 定义候选背景模型数据。 【定义】 ```
+typedef struct { td_u8q4f4 mean; /* Candidate background grays value */ td_u16 start_time; /* Candidate Background start time */ td_u16 sum_access_time; /* Candidate Background cumulative access time */ td_u16 short_keep_time; /* Candidate background short hold time */ td_u8 chg_condition; /* Time condition for candidate background into the changing state */ td_u8 poten_bg_life; /* Potential background cumulative access time */
 } ot_ive_cand_bg_pixel;
-```
-
-【成员】
-
-<a name="table6458mcpsimp"></a>
+``` 【成员】 <a name="table6458mcpsimp"></a>
 <table><thead align="left"><tr id="row6463mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p6465mcpsimp"><a name="p6465mcpsimp"></a><a name="p6465mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p6467mcpsimp"><a name="p6467mcpsimp"></a><a name="p6467mcpsimp"></a>描述</p>
@@ -5394,39 +2721,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ot\_ive\_wrok\_bg\_pixel](#ot_ive_wrok_bg_pixel)
--   [ot\_ive\_bg\_model\_pixel](#ot_ive_bg_model_pixel)
-
-### ot\_ive\_wrok\_bg\_pixel<a name="ZH-CN_TOPIC_0000002503971171"></a>
-
-【说明】
-
-定义工作背景模型数据。
-
-【定义】
-
-```
-typedef struct {
-    td_u8q4f4 mean;     /* 0# background grays value */
-    td_u16 access_time;    /* Background cumulative access time */
-    td_u8 prev_gray;     /* Gray value of last pixel */
-    td_u5q3 diff_threshold;   /* Differential threshold */
-    td_u8 access_flag;     /* Background access flag */
-    td_u8 bg_gray[OT_IVE_ARR_NUM_THREE];   /* 1# ~ 3# background grays value */
+</table> 【注意事项】 无 【相关数据类型及接口】 - [ot\_ive\_wrok\_bg\_pixel](#ot_ive_wrok_bg_pixel)
+- [ot\_ive\_bg\_model\_pixel](#ot_ive_bg_model_pixel) ### ot\_ive\_wrok\_bg\_pixel<a name="ZH-CN_TOPIC_0000002503971171"></a> 【说明】 定义工作背景模型数据。 【定义】 ```
+typedef struct { td_u8q4f4 mean; /* 0# background grays value */ td_u16 access_time; /* Background cumulative access time */ td_u8 prev_gray; /* Gray value of last pixel */ td_u5q3 diff_threshold; /* Differential threshold */ td_u8 access_flag; /* Background access flag */ td_u8 bg_gray[OT_IVE_ARR_NUM_THREE]; /* 1# ~ 3# background grays value */
 } ot_ive_wrok_bg_pixel;
-```
-
-【成员】
-
-<a name="table1825mcpsimp"></a>
+``` 【成员】 <a name="table1825mcpsimp"></a>
 <table><thead align="left"><tr id="row1830mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p1832mcpsimp"><a name="p1832mcpsimp"></a><a name="p1832mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p1834mcpsimp"><a name="p1834mcpsimp"></a><a name="p1834mcpsimp"></a>描述</p>
@@ -5464,35 +2763,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_cand\_bg\_pixel](#ot_ive_cand_bg_pixel)
--   [ot\_ive\_bg\_model\_pixel](#ot_ive_bg_model_pixel)
-
-### ot\_ive\_bg\_life<a name="ZH-CN_TOPIC_0000002471091208"></a>
-
-【说明】
-
-定义背景生命力数据。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 work_bg_life[OT_IVE_ARR_NUM_THREE]; /* 1# ~ 3# background vitality */
-    td_u8 cand_bg_life;   /* Candidate background vitality */
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_ive\_cand\_bg\_pixel](#ot_ive_cand_bg_pixel)
+- [ot\_ive\_bg\_model\_pixel](#ot_ive_bg_model_pixel) ### ot\_ive\_bg\_life<a name="ZH-CN_TOPIC_0000002471091208"></a> 【说明】 定义背景生命力数据。 【定义】 ```
+typedef struct { td_u8 work_bg_life[OT_IVE_ARR_NUM_THREE]; /* 1# ~ 3# background vitality */ td_u8 cand_bg_life; /* Candidate background vitality */
 } ot_ive_bg_life;
-```
-
-【成员】
-
-<a name="table6518mcpsimp"></a>
+``` 【成员】 <a name="table6518mcpsimp"></a>
 <table><thead align="left"><tr id="row6523mcpsimp"><th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.1"><p id="p6525mcpsimp"><a name="p6525mcpsimp"></a><a name="p6525mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.2"><p id="p6527mcpsimp"><a name="p6527mcpsimp"></a><a name="p6527mcpsimp"></a>描述</p>
@@ -5510,35 +2785,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_ive\_bg\_model\_pixel](#ot_ive_bg_model_pixel)
-
-### ot\_ive\_bg\_model\_pixel<a name="ZH-CN_TOPIC_0000002503971177"></a>
-
-【说明】
-
-定义背景模型数据。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_wrok_bg_pixel work_bg_pixel;   /* Working background */
-    ot_ive_cand_bg_pixel cand_pixel;    /* Candidate background */
-    ot_ive_bg_life bg_life;             /* Background vitality */
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_ive\_bg\_model\_pixel](#ot_ive_bg_model_pixel) ### ot\_ive\_bg\_model\_pixel<a name="ZH-CN_TOPIC_0000002503971177"></a> 【说明】 定义背景模型数据。 【定义】 ```
+typedef struct { ot_ive_wrok_bg_pixel work_bg_pixel; /* Working background */ ot_ive_cand_bg_pixel cand_pixel; /* Candidate background */ ot_ive_bg_life bg_life; /* Background vitality */
 } ot_ive_bg_model_pixel;
-```
-
-【成员】
-
-<a name="table10575mcpsimp"></a>
+``` 【成员】 <a name="table10575mcpsimp"></a>
 <table><thead align="left"><tr id="row10580mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p10582mcpsimp"><a name="p10582mcpsimp"></a><a name="p10582mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p10584mcpsimp"><a name="p10584mcpsimp"></a><a name="p10584mcpsimp"></a>描述</p>
@@ -5561,37 +2811,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ot\_ive\_cand\_bg\_pixel](#ot_ive_cand_bg_pixel)
--   [ot\_ive\_wrok\_bg\_pixel](#ot_ive_wrok_bg_pixel)
--   [ot\_ive\_bg\_life](#ot_ive_bg_life)
-
-### ot\_ive\_fg\_status\_data<a name="ZH-CN_TOPIC_0000002503971239"></a>
-
-【说明】
-
-定义前景状态数据。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 pixel_num;
-    td_u32 sum_luma;
-    td_u8 reserved[OT_IVE_ARR_NUM_EIGHT];
+</table> 【注意事项】 无 【相关数据类型及接口】 - [ot\_ive\_cand\_bg\_pixel](#ot_ive_cand_bg_pixel)
+- [ot\_ive\_wrok\_bg\_pixel](#ot_ive_wrok_bg_pixel)
+- [ot\_ive\_bg\_life](#ot_ive_bg_life) ### ot\_ive\_fg\_status\_data<a name="ZH-CN_TOPIC_0000002503971239"></a> 【说明】 定义前景状态数据。 【定义】 ```
+typedef struct { td_u32 pixel_num; td_u32 sum_luma; td_u8 reserved[OT_IVE_ARR_NUM_EIGHT];
 } ot_ive_fg_status_data;
-```
-
-【成员】
-
-<a name="table9150mcpsimp"></a>
+``` 【成员】 <a name="table9150mcpsimp"></a>
 <table><thead align="left"><tr id="row9155mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p9157mcpsimp"><a name="p9157mcpsimp"></a><a name="p9157mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p9159mcpsimp"><a name="p9159mcpsimp"></a><a name="p9159mcpsimp"></a>描述</p>
@@ -5614,35 +2839,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_bg\_status\_data<a name="ZH-CN_TOPIC_0000002503971253"></a>
-
-【说明】
-
-定义背景状态数据。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 pixel_num;
-    td_u32 sum_luma;
-    td_u8 reserved[OT_IVE_ARR_NUM_EIGHT];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_bg\_status\_data<a name="ZH-CN_TOPIC_0000002503971253"></a> 【说明】 定义背景状态数据。 【定义】 ```
+typedef struct { td_u32 pixel_num; td_u32 sum_luma; td_u8 reserved[OT_IVE_ARR_NUM_EIGHT];
 } ot_ive_bg_status_data;
-```
-
-【成员】
-
-<a name="table15242mcpsimp"></a>
+``` 【成员】 <a name="table15242mcpsimp"></a>
 <table><thead align="left"><tr id="row15247mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p15249mcpsimp"><a name="p15249mcpsimp"></a><a name="p15249mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p15251mcpsimp"><a name="p15251mcpsimp"></a><a name="p15251mcpsimp"></a>描述</p>
@@ -5665,41 +2865,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_match\_bg\_model\_ctrl<a name="ZH-CN_TOPIC_0000002503971249"></a>
-
-【说明】
-
-定义背景匹配控制参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 cur_frame_num;   /* Current frame timestamp, in frame units */
-    td_u32 prev_frame_num;   /* Previous frame timestamp, in frame units */
-    td_u16 time_threshold; /* Potential background replacement time threshold range: 2 to 100 frames; default: 20) */
-    td_u8 diff_threshold_crl_coef;    /* Correlation coefficients between differential threshold and gray value (range: 0 to 5; default: 0) */
-    td_u8 diff_max_threshold;         /* Maximum of background differential threshold (range: 3 to 15; default: 6) */
-    td_u8 diff_min_threshold;         /* Minimum of background differential threshold (range: 3 to 15; default: 4) */
-    td_u8 diff_threshold_inc;         /* Dynamic Background differential threshold increment (range: 0 to 6; default: 0) */
-    td_u8 fast_learn_rate;      /* Quick background learning rate (range: 0 to 4; default: 2) */
-    td_u8 detected_chg_rgn;       /* Whether to detect change rgn (range: 0 (no), 1 (yes); default: 0) */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_match\_bg\_model\_ctrl<a name="ZH-CN_TOPIC_0000002503971249"></a> 【说明】 定义背景匹配控制参数。 【定义】 ```
+typedef struct { td_u32 cur_frame_num; /* Current frame timestamp, in frame units */ td_u32 prev_frame_num; /* Previous frame timestamp, in frame units */ td_u16 time_threshold; /* Potential background replacement time threshold range: 2 to 100 frames; default: 20) */ td_u8 diff_threshold_crl_coef; /* Correlation coefficients between differential threshold and gray value (range: 0 to 5; default: 0) */ td_u8 diff_max_threshold; /* Maximum of background differential threshold (range: 3 to 15; default: 6) */ td_u8 diff_min_threshold; /* Minimum of background differential threshold (range: 3 to 15; default: 4) */ td_u8 diff_threshold_inc; /* Dynamic Background differential threshold increment (range: 0 to 6; default: 0) */ td_u8 fast_learn_rate; /* Quick background learning rate (range: 0 to 4; default: 2) */ td_u8 detected_chg_rgn; /* Whether to detect change rgn (range: 0 (no), 1 (yes); default: 0) */
 } ot_ive_match_bg_model_ctrl;
-```
-
-【成员】
-
-<a name="table13138mcpsimp"></a>
+``` 【成员】 <a name="table13138mcpsimp"></a>
 <table><thead align="left"><tr id="row13143mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p13145mcpsimp"><a name="p13145mcpsimp"></a><a name="p13145mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p13147mcpsimp"><a name="p13147mcpsimp"></a><a name="p13147mcpsimp"></a>描述</p>
@@ -5767,56 +2936,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-### ot\_ive\_update\_bg\_model\_ctrl<a name="ZH-CN_TOPIC_0000002471091248"></a>
-
-【说明】
-
-定义背景更新控制参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 cur_frame_num;         /* Current frame timestamp, in frame units */
-    td_u32 prev_check_time;        /* The last time when background status is checked */
-    td_u32 frame_check_period;      /* Background status checking period (range: 0 to 2000 frames; default: 50) */
- 
-    td_u32 init_min_time;       /* Background initialization shortest time
-                                (range: 20 to 6000 frames; default: 100) */
-    td_u32 steady_bg_min_blend_time; /* Steady background integration shortest time (range: 20 to 6000 frames; default: 200) */
-    td_u32 steady_bg_max_blend_time; /* Steady background integration longest time (range: 20 to 40000 frames; default: 1500) */
-    td_u32 dynamic_bg_min_blend_time; /* Dynamic background integration shortest time (range: 0 to 6000 frames; default: 0) */
-    td_u32 static_detection_min_time;  /* Still detection shortest time (range: 20 to 6000 frames; default: 80) */
-    td_u16 fg_max_fade_time;     /* Foreground disappearing longest time
-                                (range: 1 to 255 seconds; default: 15) */
-    td_u16 bg_max_fade_time;     /* Background disappearing longest time
-                                (range: 1 to 255  seconds ; default: 60) */
- 
-    td_u8 steady_bg_access_time_rate_thr; /* Steady background access time ratio threshold
-                                (range: 10 to 100; default: 80) */
-    td_u8 chg_bg_access_time_rate_thr; /* Change background access time ratio threshold (range: 10 to 100; default: 60) */
-    td_u8 dynamic_bg_access_time_threshold;     /* Dynamic background access time ratio threshold (range: 0 to 50; default: 0) */
-    td_u8 dynamic_bg_depth;          /* Dynamic background depth (range: 0 to 3; default: 3) */
-    td_u8 bg_eff_state_rate_threshold;     /* Background state time ratio threshold when initializing (range: 90 to 100; default: 90) */
- 
-    td_u8 acc_bg_learn;  /* Whether to accelerate background learning (range: 0 (no), 1 (yes); default: 0) */
-    td_u8 detected_chg_rgn; /* Whether to detect change rgn (range: 0 (no), 1 (yes); default: 0) */
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ### ot\_ive\_update\_bg\_model\_ctrl<a name="ZH-CN_TOPIC_0000002471091248"></a> 【说明】 定义背景更新控制参数。 【定义】 ```
+typedef struct { td_u32 cur_frame_num; /* Current frame timestamp, in frame units */ td_u32 prev_check_time; /* The last time when background status is checked */ td_u32 frame_check_period; /* Background status checking period (range: 0 to 2000 frames; default: 50) */ td_u32 init_min_time; /* Background initialization shortest time (range: 20 to 6000 frames; default: 100) */ td_u32 steady_bg_min_blend_time; /* Steady background integration shortest time (range: 20 to 6000 frames; default: 200) */ td_u32 steady_bg_max_blend_time; /* Steady background integration longest time (range: 20 to 40000 frames; default: 1500) */ td_u32 dynamic_bg_min_blend_time; /* Dynamic background integration shortest time (range: 0 to 6000 frames; default: 0) */ td_u32 static_detection_min_time; /* Still detection shortest time (range: 20 to 6000 frames; default: 80) */ td_u16 fg_max_fade_time; /* Foreground disappearing longest time (range: 1 to 255 seconds; default: 15) */ td_u16 bg_max_fade_time; /* Background disappearing longest time (range: 1 to 255 seconds ; default: 60) */ td_u8 steady_bg_access_time_rate_thr; /* Steady background access time ratio threshold (range: 10 to 100; default: 80) */ td_u8 chg_bg_access_time_rate_thr; /* Change background access time ratio threshold (range: 10 to 100; default: 60) */ td_u8 dynamic_bg_access_time_threshold; /* Dynamic background access time ratio threshold (range: 0 to 50; default: 0) */ td_u8 dynamic_bg_depth; /* Dynamic background depth (range: 0 to 3; default: 3) */ td_u8 bg_eff_state_rate_threshold; /* Background state time ratio threshold when initializing (range: 90 to 100; default: 90) */ td_u8 acc_bg_learn; /* Whether to accelerate background learning (range: 0 (no), 1 (yes); default: 0) */ td_u8 detected_chg_rgn; /* Whether to detect change rgn (range: 0 (no), 1 (yes); default: 0) */
 } ot_ive_update_bg_model_ctrl;
-```
-
-【成员】
-
-<a name="table4356mcpsimp"></a>
+``` 【成员】 <a name="table4356mcpsimp"></a>
 <table><thead align="left"><tr id="row4361mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p4363mcpsimp"><a name="p4363mcpsimp"></a><a name="p4363mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4365mcpsimp"><a name="p4365mcpsimp"></a><a name="p4365mcpsimp"></a>描述</p>
@@ -5939,35 +3062,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-要求init\_min\_time≤ steady\_bg\_min\_blend\_time≤ steady\_bg\_max\_blend\_time。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_ann\_mlp\_accurate<a name="ZH-CN_TOPIC_0000002504091185"></a>
-
-【说明】
-
-定义ann\_mlp输入特征向量类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_ann_mlp_ACCURATE_SRC16_WGT16 = 0x0, /* input decimals' accurate 16 bit, weight 16bit */
-    OT_IVE_ann_mlp_ACCURATE_SRC14_WGT20 = 0x1, /* input decimals' accurate 14 bit, weight 20bit */
-    OT_IVE_ann_mlp_ACCURATE_BUTT
+</table> 【注意事项】 要求init\_min\_time≤ steady\_bg\_min\_blend\_time≤ steady\_bg\_max\_blend\_time。 【相关数据类型及接口】 无。 ### ot\_ive\_ann\_mlp\_accurate<a name="ZH-CN_TOPIC_0000002504091185"></a> 【说明】 定义ann\_mlp输入特征向量类型。 【定义】 ```
+typedef enum { OT_IVE_ann_mlp_ACCURATE_SRC16_WGT16 = 0x0, /* input decimals' accurate 16 bit, weight 16bit */ OT_IVE_ann_mlp_ACCURATE_SRC14_WGT20 = 0x1, /* input decimals' accurate 14 bit, weight 20bit */ OT_IVE_ann_mlp_ACCURATE_BUTT
 } ot_ive_ann_mlp_accurate;
-```
-
-【成员】
-
-<a name="table13859mcpsimp"></a>
+``` 【成员】 <a name="table13859mcpsimp"></a>
 <table><thead align="left"><tr id="row13864mcpsimp"><th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.1"><p id="p13866mcpsimp"><a name="p13866mcpsimp"></a><a name="p13866mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.2"><p id="p13868mcpsimp"><a name="p13868mcpsimp"></a><a name="p13868mcpsimp"></a>描述</p>
@@ -5985,36 +3083,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_ann\_mlp\_actv\_func<a name="ZH-CN_TOPIC_0000002503971151"></a>
-
-【说明】
-
-定义ann\_mlp激活函数枚举类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_ANN_MLP_ACTV_FUNC_IDENTITY = 0x0,
-    OT_IVE_ANN_MLP_ACTV_FUNC_SIGMOID_SYM = 0x1,
-    OT_IVE_ANN_MLP_ACTV_FUNC_GAUSSIAN = 0x2,
-    OT_IVE_ANN_MLP_ACTV_FUNC_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_ann\_mlp\_actv\_func<a name="ZH-CN_TOPIC_0000002503971151"></a> 【说明】 定义ann\_mlp激活函数枚举类型。 【定义】 ```
+typedef enum { OT_IVE_ANN_MLP_ACTV_FUNC_IDENTITY = 0x0, OT_IVE_ANN_MLP_ACTV_FUNC_SIGMOID_SYM = 0x1, OT_IVE_ANN_MLP_ACTV_FUNC_GAUSSIAN = 0x2, OT_IVE_ANN_MLP_ACTV_FUNC_BUTT
 } ot_ive_ann_mlp_actv_func;
-```
-
-【成员】
-
-<a name="table7672mcpsimp"></a>
+``` 【成员】 <a name="table7672mcpsimp"></a>
 <table><thead align="left"><tr id="row7677mcpsimp"><th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.1"><p id="p7679mcpsimp"><a name="p7679mcpsimp"></a><a name="p7679mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.2"><p id="p7681mcpsimp"><a name="p7681mcpsimp"></a><a name="p7681mcpsimp"></a>描述</p>
@@ -6037,40 +3109,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-对应函数定义参见ss\_mpi\_ive\_ann\_mlp\_predict中【注意】。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_ann\_mlp\_model<a name="ZH-CN_TOPIC_0000002503971233"></a>
-
-【说明】
-
-定义ann\_mlp模型数据结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_ann_mlp_actv_func actv_func;
-    ot_ive_ann_mlp_accurate accurate;
-    ot_svp_mem_info wgt;
-    td_u32 total_wgt_size;
-    td_u16 layer_cnt[OT_IVE_ARR_NUM_EIGHT];      /* 8 layers, including input and output layer */
-    td_u16 max_cnt;           /* MaxCount<=1024 */
-    td_u8 layer_num;            /* 2<layerNum<=8 */
-    td_u8 reserved;
+</table> 【注意事项】 对应函数定义参见ss\_mpi\_ive\_ann\_mlp\_predict中【注意】。 【相关数据类型及接口】 无。 ### ot\_ive\_ann\_mlp\_model<a name="ZH-CN_TOPIC_0000002503971233"></a> 【说明】 定义ann\_mlp模型数据结构体。 【定义】 ```
+typedef struct { ot_ive_ann_mlp_actv_func actv_func; ot_ive_ann_mlp_accurate accurate; ot_svp_mem_info wgt; td_u32 total_wgt_size; td_u16 layer_cnt[OT_IVE_ARR_NUM_EIGHT]; /* 8 layers, including input and output layer */ td_u16 max_cnt; /* MaxCount<=1024 */ td_u8 layer_num; /* 2<layerNum<=8 */ td_u8 reserved;
 } ot_ive_ann_mlp_model;
-```
-
-【成员】
-
-<a name="table1071mcpsimp"></a>
+``` 【成员】 <a name="table1071mcpsimp"></a>
 <table><thead align="left"><tr id="row1076mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p1078mcpsimp"><a name="p1078mcpsimp"></a><a name="p1078mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p1080mcpsimp"><a name="p1080mcpsimp"></a><a name="p1080mcpsimp"></a>描述</p>
@@ -6120,36 +3162,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_ann\_mlp\_actv\_func](#ot_ive_ann_mlp_actv_func)
--   [ot\_ive\_ann\_mlp\_accurate](#ot_ive_ann_mlp_accurate)
-
-### ot\_ive\_svm\_type<a name="ZH-CN_TOPIC_0000002471091314"></a>
-
-【说明】
-
-定义svm类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_SVM_TYPE_C_SVC = 0x0,
-    OT_IVE_SVM_TYPE_NU_SVC = 0x1,
-    OT_IVE_SVM_TYPE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_ive\_ann\_mlp\_actv\_func](#ot_ive_ann_mlp_actv_func)
+- [ot\_ive\_ann\_mlp\_accurate](#ot_ive_ann_mlp_accurate) ### ot\_ive\_svm\_type<a name="ZH-CN_TOPIC_0000002471091314"></a> 【说明】 定义svm类型。 【定义】 ```
+typedef enum { OT_IVE_SVM_TYPE_C_SVC = 0x0, OT_IVE_SVM_TYPE_NU_SVC = 0x1, OT_IVE_SVM_TYPE_BUTT
 } ot_ive_svm_type;
-```
-
-【成员】
-
-<a name="table16915mcpsimp"></a>
+``` 【成员】 <a name="table16915mcpsimp"></a>
 <table><thead align="left"><tr id="row16920mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p16922mcpsimp"><a name="p16922mcpsimp"></a><a name="p16922mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p16924mcpsimp"><a name="p16924mcpsimp"></a><a name="p16924mcpsimp"></a>描述</p>
@@ -6167,37 +3184,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_svm\_kernel\_type<a name="ZH-CN_TOPIC_0000002471091268"></a>
-
-【说明】
-
-定义svm核函数类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_SVM_KERNEL_TYPE_LINEAR = 0x0,
-    OT_IVE_SVM_KERNEL_TYPE_POLY = 0x1,
-    OT_IVE_SVM_KERNEL_TYPE_RBF = 0x2,
-    OT_IVE_SVM_KERNEL_TYPE_SIGMOID = 0x3,
-    OT_IVE_SVM_KERNEL_TYPE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_svm\_kernel\_type<a name="ZH-CN_TOPIC_0000002471091268"></a> 【说明】 定义svm核函数类型。 【定义】 ```
+typedef enum { OT_IVE_SVM_KERNEL_TYPE_LINEAR = 0x0, OT_IVE_SVM_KERNEL_TYPE_POLY = 0x1, OT_IVE_SVM_KERNEL_TYPE_RBF = 0x2, OT_IVE_SVM_KERNEL_TYPE_SIGMOID = 0x3, OT_IVE_SVM_KERNEL_TYPE_BUTT
 } ot_ive_svm_kernel_type;
-```
-
-【成员】
-
-<a name="table4257mcpsimp"></a>
+``` 【成员】 <a name="table4257mcpsimp"></a>
 <table><thead align="left"><tr id="row4262mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p4264mcpsimp"><a name="p4264mcpsimp"></a><a name="p4264mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p4266mcpsimp"><a name="p4266mcpsimp"></a><a name="p4266mcpsimp"></a>描述</p>
@@ -6225,40 +3215,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-对应核函数定义参见ss\_mpi\_ive\_svm\_predict中【注意】。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_svm\_model<a name="ZH-CN_TOPIC_0000002470931338"></a>
-
-【说明】
-
-定义svm模型数据结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_svm_type type;
-    ot_ive_svm_kernel_type kernel_type;
-    ot_svp_mem_info sv;   /* SV memory */
-    ot_svp_mem_info df;   /* Decision functions memory */
-    td_u32 total_df_size; /* All decision functions coef size in byte */
-    td_u16 feature_dim;
-    td_u16 sv_total;
-    td_u8 class_cnt;
+</table> 【注意事项】 对应核函数定义参见ss\_mpi\_ive\_svm\_predict中【注意】。 【相关数据类型及接口】 无。 ### ot\_ive\_svm\_model<a name="ZH-CN_TOPIC_0000002470931338"></a> 【说明】 定义svm模型数据结构体。 【定义】 ```
+typedef struct { ot_ive_svm_type type; ot_ive_svm_kernel_type kernel_type; ot_svp_mem_info sv; /* SV memory */ ot_svp_mem_info df; /* Decision functions memory */ td_u32 total_df_size; /* All decision functions coef size in byte */ td_u16 feature_dim; td_u16 sv_total; td_u8 class_cnt;
 } ot_ive_svm_model;
-```
-
-【成员】
-
-<a name="table4876mcpsimp"></a>
+``` 【成员】 <a name="table4876mcpsimp"></a>
 <table><thead align="left"><tr id="row4881mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p4883mcpsimp"><a name="p4883mcpsimp"></a><a name="p4883mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p4885mcpsimp"><a name="p4885mcpsimp"></a><a name="p4885mcpsimp"></a>描述</p>
@@ -6273,16 +3233,6 @@ typedef struct {
 <tr id="row4892mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p4894mcpsimp"><a name="p4894mcpsimp"></a><a name="p4894mcpsimp"></a>kernel_type</p>
 </td>
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p4896mcpsimp"><a name="p4896mcpsimp"></a><a name="p4896mcpsimp"></a>svm核函数类型，参考ot_ive_svm_kernel_type。</p>
-</td>
-</tr>
-<tr id="row4898mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p4900mcpsimp"><a name="p4900mcpsimp"></a><a name="p4900mcpsimp"></a>sv</p>
-</td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p4902mcpsimp"><a name="p4902mcpsimp"></a><a name="p4902mcpsimp"></a>模型数据中的支持向量，其内存排布参看ss_mpi_ive_svm_predict的【注意】。</p>
-</td>
-</tr>
-<tr id="row4904mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p4906mcpsimp"><a name="p4906mcpsimp"></a><a name="p4906mcpsimp"></a>df</p>
-</td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p4908mcpsimp"><a name="p4908mcpsimp"></a><a name="p4908mcpsimp"></a>模型数据中的判决函数参数部分。</p>
 </td>
 </tr>
 <tr id="row4909mcpsimp"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p4911mcpsimp"><a name="p4911mcpsimp"></a><a name="p4911mcpsimp"></a>total_df_size</p>
@@ -6309,37 +3259,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_svm\_type](#ot_ive_svm_type)
--   [ot\_ive\_svm\_kernel\_type](#ot_ive_svm_kernel_type)
-
-### ot\_ive\_cnn\_actv\_func<a name="ZH-CN_TOPIC_0000002470931254"></a>
-
-【说明】
-
-定义CNN 激活函数枚举类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_CNN_ACTV_FUNC_NONE = 0x0,    /* Do not taking a activation, equivalent f(x)=x */
-    OT_IVE_CNN_ACTV_FUNC_RELU = 0x1,    /* f(x)=max(0, x) */
-    OT_IVE_CNN_ACTV_FUNC_SIGMOID = 0x2, /* f(x)=1/(1+exp(-x)), not support */
-    OT_IVE_CNN_ACTV_FUNC_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_ive\_svm\_type](#ot_ive_svm_type)
+- [ot\_ive\_svm\_kernel\_type](#ot_ive_svm_kernel_type) ### ot\_ive\_cnn\_actv\_func<a name="ZH-CN_TOPIC_0000002470931254"></a> 【说明】 定义CNN 激活函数枚举类型。 【定义】 ```
+typedef enum { OT_IVE_CNN_ACTV_FUNC_NONE = 0x0, /* Do not taking a activation, equivalent f(x)=x */ OT_IVE_CNN_ACTV_FUNC_RELU = 0x1, /* f(x)=max(0, x) */ OT_IVE_CNN_ACTV_FUNC_SIGMOID = 0x2, /* f(x)=1/(1+exp(-x)), not support */ OT_IVE_CNN_ACTV_FUNC_BUTT
 } ot_ive_cnn_actv_func;
-```
-
-【成员】
-
-<a name="table159mcpsimp"></a>
+``` 【成员】 <a name="table159mcpsimp"></a>
 <table><thead align="left"><tr id="row164mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p166mcpsimp"><a name="p166mcpsimp"></a><a name="p166mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p168mcpsimp"><a name="p168mcpsimp"></a><a name="p168mcpsimp"></a>描述</p>
@@ -6362,37 +3286,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_cnn\_pooling<a name="ZH-CN_TOPIC_0000002471091230"></a>
-
-【说明】
-
-定义CNN汇聚操作枚举类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_CNN_POOLING_NONE = 0x0, /* Do not taking a pooling action */
-    OT_IVE_CNN_POOLING_MAX = 0x1,  /* Using max value of every pooling area */
-    OT_IVE_CNN_POOLING_AVG = 0x2,  /* Using average value of every pooling area */
- 
-    OT_IVE_CNN_POOLING_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_cnn\_pooling<a name="ZH-CN_TOPIC_0000002471091230"></a> 【说明】 定义CNN汇聚操作枚举类型。 【定义】 ```
+typedef enum { OT_IVE_CNN_POOLING_NONE = 0x0, /* Do not taking a pooling action */ OT_IVE_CNN_POOLING_MAX = 0x1, /* Using max value of every pooling area */ OT_IVE_CNN_POOLING_AVG = 0x2, /* Using average value of every pooling area */ OT_IVE_CNN_POOLING_BUTT
 } ot_ive_cnn_pooling;
-```
-
-【成员】
-
-<a name="table10179mcpsimp"></a>
+``` 【成员】 <a name="table10179mcpsimp"></a>
 <table><thead align="left"><tr id="row10184mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p10186mcpsimp"><a name="p10186mcpsimp"></a><a name="p10186mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p10188mcpsimp"><a name="p10188mcpsimp"></a><a name="p10188mcpsimp"></a>描述</p>
@@ -6415,42 +3312,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_cnn\_conv\_pooling<a name="ZH-CN_TOPIC_0000002471091306"></a>
-
-【说明】
-
-定义CNN单层Conv-ReLU-Pooling运算包参数结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_cnn_actv_func actv_func;   /* Type of activation function */
-    ot_ive_cnn_pooling pooling;         /* Mode of pooling method */
- 
-    td_u8 feature_map_num;  /* Number of feature maps */
-    td_u8 kernel_size;  /* Kernel size, only support 3 currently */
-    td_u8 conv_step;     /* Convolution step, only support 1 currently */
- 
-    td_u8 pool_size;     /* Pooling size, only support 2 currently */
-    td_u8 pool_step;     /* Pooling step, only support 2 currently */
-    td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_THREE];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_cnn\_conv\_pooling<a name="ZH-CN_TOPIC_0000002471091306"></a> 【说明】 定义CNN单层Conv-ReLU-Pooling运算包参数结构体。 【定义】 ```
+typedef struct { ot_ive_cnn_actv_func actv_func; /* Type of activation function */ ot_ive_cnn_pooling pooling; /* Mode of pooling method */ td_u8 feature_map_num; /* Number of feature maps */ td_u8 kernel_size; /* Kernel size, only support 3 currently */ td_u8 conv_step; /* Convolution step, only support 1 currently */ td_u8 pool_size; /* Pooling size, only support 2 currently */ td_u8 pool_step; /* Pooling step, only support 2 currently */ td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_THREE];
 } ot_ive_cnn_conv_pooling;
-```
-
-【成员】
-
-<a name="table10501mcpsimp"></a>
+``` 【成员】 <a name="table10501mcpsimp"></a>
 <table><thead align="left"><tr id="row10506mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p10508mcpsimp"><a name="p10508mcpsimp"></a><a name="p10508mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p10510mcpsimp"><a name="p10510mcpsimp"></a><a name="p10510mcpsimp"></a>描述</p>
@@ -6498,37 +3363,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_cnn\_actv\_func](#ot_ive_cnn_actv_func)
--   [ot\_ive\_cnn\_pooling](#ot_ive_cnn_pooling)
-
-### ot\_ive\_cnn\_fc\_info<a name="ZH-CN_TOPIC_0000002470931296"></a>
-
-【说明】
-
-定义CNN全链接网络参数结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 layer_cnt[OT_IVE_ARR_NUM_EIGHT];    /* Neuron number of every fully connected layers */
-    td_u16 max_cnt;         /* Max neuron number in all fully connected layers */
-    td_u8 layer_num;        /* Number of fully connected layer */
-    td_u8 reserved;
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_ive\_cnn\_actv\_func](#ot_ive_cnn_actv_func)
+- [ot\_ive\_cnn\_pooling](#ot_ive_cnn_pooling) ### ot\_ive\_cnn\_fc\_info<a name="ZH-CN_TOPIC_0000002470931296"></a> 【说明】 定义CNN全链接网络参数结构体。 【定义】 ```
+typedef struct { td_u16 layer_cnt[OT_IVE_ARR_NUM_EIGHT]; /* Neuron number of every fully connected layers */ td_u16 max_cnt; /* Max neuron number in all fully connected layers */ td_u8 layer_num; /* Number of fully connected layer */ td_u8 reserved;
 } ot_ive_cnn_fc_info;
-```
-
-【成员】
-
-<a name="table14513mcpsimp"></a>
+``` 【成员】 <a name="table14513mcpsimp"></a>
 <table><thead align="left"><tr id="row14518mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p14520mcpsimp"><a name="p14520mcpsimp"></a><a name="p14520mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p14522mcpsimp"><a name="p14522mcpsimp"></a><a name="p14522mcpsimp"></a>描述</p>
@@ -6556,45 +3395,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_cnn\_model<a name="ZH-CN_TOPIC_0000002504091131"></a>
-
-【说明】
-
-定义CNN模型参数结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_cnn_conv_pooling conv_pool[OT_IVE_ARR_NUM_EIGHT];  /* Conv-ReLU-Pooling layers info */
-    ot_ive_cnn_fc_info fc_info;  /* Fully connected layers info */
-    ot_svp_mem_info conv_kernel_bias;      /* Conv-ReLU-Pooling layers' kernels and bias */
-    td_u32 conv_kernel_bias_size;          /* Size of Conv-ReLU-Pooling layer' kernels and bias */
-    ot_svp_mem_info fc_wgt_bias;          /* Fully Connection Layers' weights and bias */
-    td_u32 fc_wgt_bias_size;              /* Size of fully connection layers weights and bias */
-    td_u32 total_mem_size;                 /* Total memory size of all kernels, weights, bias */
-    ot_svp_img_type type;                /* Image type used for the CNN model */
-    td_u32 width;                       /* Image width used for the model */
-    td_u32 height;                      /* Image height used for the model */
-    td_u16 class_cnt;                    /* Number of classes */
-    td_u8 conv_pool_layer_num;             /* Number of Conv-ReLU-Pooling layers */
-    td_u8 reserved;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_cnn\_model<a name="ZH-CN_TOPIC_0000002504091131"></a> 【说明】 定义CNN模型参数结构体。 【定义】 ```
+typedef struct { ot_ive_cnn_conv_pooling conv_pool[OT_IVE_ARR_NUM_EIGHT]; /* Conv-ReLU-Pooling layers info */ ot_ive_cnn_fc_info fc_info; /* Fully connected layers info */ ot_svp_mem_info conv_kernel_bias; /* Conv-ReLU-Pooling layers' kernels and bias */ td_u32 conv_kernel_bias_size; /* Size of Conv-ReLU-Pooling layer' kernels and bias */ ot_svp_mem_info fc_wgt_bias; /* Fully Connection Layers' weights and bias */ td_u32 fc_wgt_bias_size; /* Size of fully connection layers weights and bias */ td_u32 total_mem_size; /* Total memory size of all kernels, weights, bias */ ot_svp_img_type type; /* Image type used for the CNN model */ td_u32 width; /* Image width used for the model */ td_u32 height; /* Image height used for the model */ td_u16 class_cnt; /* Number of classes */ td_u8 conv_pool_layer_num; /* Number of Conv-ReLU-Pooling layers */ td_u8 reserved;
 } ot_ive_cnn_model;
-```
-
-【成员】
-
-<a name="table295mcpsimp"></a>
+``` 【成员】 <a name="table295mcpsimp"></a>
 <table><thead align="left"><tr id="row300mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p302mcpsimp"><a name="p302mcpsimp"></a><a name="p302mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p304mcpsimp"><a name="p304mcpsimp"></a><a name="p304mcpsimp"></a>描述</p>
@@ -6668,37 +3472,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-CNN网络模型结构参考ss\_mpi\_ive\_cnn\_predict中的【注意】。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_cnn\_actv\_func](#ot_ive_cnn_actv_func)
--   [ot\_ive\_cnn\_pooling](#ot_ive_cnn_pooling)
--   [ot\_ive\_cnn\_conv\_pooling](#ot_ive_cnn_conv_pooling)
--   [ot\_ive\_cnn\_fc\_info](#ot_ive_cnn_fc_info)
-
-### ot\_ive\_cnn\_ctrl<a name="ZH-CN_TOPIC_0000002471091238"></a>
-
-【说明】
-
-定义CNN预测任务的控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_svp_mem_info  mem;    /* Assist memory */
-    td_u32 num;             /* Input img number */
+</table> 【注意事项】 CNN网络模型结构参考ss\_mpi\_ive\_cnn\_predict中的【注意】。 【相关数据类型及接口】 - [ot\_ive\_cnn\_actv\_func](#ot_ive_cnn_actv_func)
+- [ot\_ive\_cnn\_pooling](#ot_ive_cnn_pooling)
+- [ot\_ive\_cnn\_conv\_pooling](#ot_ive_cnn_conv_pooling)
+- [ot\_ive\_cnn\_fc\_info](#ot_ive_cnn_fc_info) ### ot\_ive\_cnn\_ctrl<a name="ZH-CN_TOPIC_0000002471091238"></a> 【说明】 定义CNN预测任务的控制参数。 【定义】 ```
+typedef struct { ot_svp_mem_info mem; /* Assist memory */ td_u32 num; /* Input img number */
 } ot_ive_cnn_ctrl;
-```
-
-【成员】
-
-<a name="table7597mcpsimp"></a>
+``` 【成员】 <a name="table7597mcpsimp"></a>
 <table><thead align="left"><tr id="row7602mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p7604mcpsimp"><a name="p7604mcpsimp"></a><a name="p7604mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p7606mcpsimp"><a name="p7606mcpsimp"></a><a name="p7606mcpsimp"></a>描述</p>
@@ -6717,34 +3497,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_cnn\_result<a name="ZH-CN_TOPIC_0000002503971157"></a>
-
-【说明】
-
-定义CNN单个样本预测结果结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_s32 class_idx;       /* The most possible index of the classification */
-    td_s32 conf;      /* The confidence of the classification */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_cnn\_result<a name="ZH-CN_TOPIC_0000002503971157"></a> 【说明】 定义CNN单个样本预测结果结构体。 【定义】 ```
+typedef struct { td_s32 class_idx; /* The most possible index of the classification */ td_s32 conf; /* The confidence of the classification */
 } ot_ive_cnn_result;
-```
-
-【成员】
-
-<a name="table6420mcpsimp"></a>
+``` 【成员】 <a name="table6420mcpsimp"></a>
 <table><thead align="left"><tr id="row6425mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p6427mcpsimp"><a name="p6427mcpsimp"></a><a name="p6427mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p6429mcpsimp"><a name="p6429mcpsimp"></a><a name="p6429mcpsimp"></a>描述</p>
@@ -6762,34 +3518,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_persp\_trans\_point\_pair<a name="ZH-CN_TOPIC_0000002470931326"></a>
-
-【说明】
-
-定义透视变换点对结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_svp_point_u14q2 src_point; /* Source point */
-    ot_svp_point_u14q2 dst_point; /* Destination point */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_persp\_trans\_point\_pair<a name="ZH-CN_TOPIC_0000002470931326"></a> 【说明】 定义透视变换点对结构体。 【定义】 ```
+typedef struct { ot_svp_point_u14q2 src_point; /* Source point */ ot_svp_point_u14q2 dst_point; /* Destination point */
 } ot_ive_persp_trans_point_pair;
-```
-
-【成员】
-
-<a name="table14855mcpsimp"></a>
+``` 【成员】 <a name="table14855mcpsimp"></a>
 <table><thead align="left"><tr id="row14860mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p14862mcpsimp"><a name="p14862mcpsimp"></a><a name="p14862mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p14864mcpsimp"><a name="p14864mcpsimp"></a><a name="p14864mcpsimp"></a>描述</p>
@@ -6807,36 +3539,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_persp\_trans\_alg\_mode<a name="ZH-CN_TOPIC_0000002471091242"></a>
-
-【说明】
-
-定义透视变换算法模式枚举。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_PERSP_TRANS_ALG_MODE_NR_SIM = 0x0, /* Non-reflective similarity transform mode */
-    OT_IVE_PERSP_TRANS_ALG_MODE_SIM = 0x1,    /* Reflective similarity transform mode */
-    OT_IVE_PERSP_TRANS_ALG_MODE_AFFINE = 0x2, /* Affine transform mode */
-    OT_IVE_PERSP_TRANS_ALG_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_persp\_trans\_alg\_mode<a name="ZH-CN_TOPIC_0000002471091242"></a> 【说明】 定义透视变换算法模式枚举。 【定义】 ```
+typedef enum { OT_IVE_PERSP_TRANS_ALG_MODE_NR_SIM = 0x0, /* Non-reflective similarity transform mode */ OT_IVE_PERSP_TRANS_ALG_MODE_SIM = 0x1, /* Reflective similarity transform mode */ OT_IVE_PERSP_TRANS_ALG_MODE_AFFINE = 0x2, /* Affine transform mode */ OT_IVE_PERSP_TRANS_ALG_MODE_BUTT
 } ot_ive_persp_trans_alg_mode;
-```
-
-【成员】
-
-<a name="table7849mcpsimp"></a>
+``` 【成员】 <a name="table7849mcpsimp"></a>
 <table><thead align="left"><tr id="row7854mcpsimp"><th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.1"><p id="p7856mcpsimp"><a name="p7856mcpsimp"></a><a name="p7856mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.2"><p id="p7858mcpsimp"><a name="p7858mcpsimp"></a><a name="p7858mcpsimp"></a>描述</p>
@@ -6859,38 +3565,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_persp\_trans\_csc\_mode<a name="ZH-CN_TOPIC_0000002470931228"></a>
-
-【说明】
-
-定义透视变换色彩空间转换模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_PERSP_TRANS_CSC_MODE_NONE = 0x0,                /* No do csc */
-    OT_IVE_PERSP_TRANS_CSC_MODE_VIDEO_BT601_YUV_TO_RGB = 0x1, /* CSC: YUV2RGB, video transfer mode, RGB value range [16, 235] */
-    OT_IVE_PERSP_TRANS_CSC_MODE_VIDEO_BT709_YUV_TO_RGB = 0x2, /* CSC: YUV2RGB, video transfer mode, RGB value range [16, 235] */
-    OT_IVE_PERSP_TRANS_CSC_MODE_PIC_BT601_YUV_TO_RGB = 0x3,   /* CSC: YUV2RGB, picture transfer mode, RGB value range [0, 255] */
-    OT_IVE_PERSP_TRANS_CSC_MODE_PIC_BT709_YUV_TO_RGB = 0x4,   /* CSC: YUV2RGB, picture transfer mode, RGB value range [0, 255] */
-    OT_IVE_PERSP_TRANS_CSC_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_persp\_trans\_csc\_mode<a name="ZH-CN_TOPIC_0000002470931228"></a> 【说明】 定义透视变换色彩空间转换模式。 【定义】 ```
+typedef enum { OT_IVE_PERSP_TRANS_CSC_MODE_NONE = 0x0, /* No do csc */ OT_IVE_PERSP_TRANS_CSC_MODE_VIDEO_BT601_YUV_TO_RGB = 0x1, /* CSC: YUV2RGB, video transfer mode, RGB value range [16, 235] */ OT_IVE_PERSP_TRANS_CSC_MODE_VIDEO_BT709_YUV_TO_RGB = 0x2, /* CSC: YUV2RGB, video transfer mode, RGB value range [16, 235] */ OT_IVE_PERSP_TRANS_CSC_MODE_PIC_BT601_YUV_TO_RGB = 0x3, /* CSC: YUV2RGB, picture transfer mode, RGB value range [0, 255] */ OT_IVE_PERSP_TRANS_CSC_MODE_PIC_BT709_YUV_TO_RGB = 0x4, /* CSC: YUV2RGB, picture transfer mode, RGB value range [0, 255] */ OT_IVE_PERSP_TRANS_CSC_MODE_BUTT
 } ot_ive_persp_trans_csc_mode;
-```
-
-【成员】
-
-<a name="table4499mcpsimp"></a>
+``` 【成员】 <a name="table4499mcpsimp"></a>
 <table><thead align="left"><tr id="row4504mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p4506mcpsimp"><a name="p4506mcpsimp"></a><a name="p4506mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p4508mcpsimp"><a name="p4508mcpsimp"></a><a name="p4508mcpsimp"></a>描述</p>
@@ -6923,37 +3601,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_VIDEO\_BT601\_YUV\_TO\_RGB和OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_VIDEO\_BT709\_YUV\_TO\_RGB模式，输出满足16≤R、G、B≤235。
--   OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_RGB和OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_RGB模式，输出满足0≤R、G、B≤255。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_persp\_trans\_ctrl<a name="ZH-CN_TOPIC_0000002471091262"></a>
-
-【说明】
-
-定义透视变换控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_persp_trans_alg_mode alg_mode;   /* Alg mode */
-    ot_ive_persp_trans_csc_mode csc_mode;   /* CSC mode */
-    td_u16 roi_num;                         /* Roi number */
-    td_u16 point_pair_num;                  /* Point pair number  */
+</table> 【注意事项】 - OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_VIDEO\_BT601\_YUV\_TO\_RGB和OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_VIDEO\_BT709\_YUV\_TO\_RGB模式，输出满足16≤R、G、B≤235。
+- OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_PIC\_BT601\_YUV\_TO\_RGB和OT\_IVE\_PERSP\_TRANS\_CSC\_MODE\_PIC\_BT709\_YUV\_TO\_RGB模式，输出满足0≤R、G、B≤255。 【相关数据类型及接口】 无。 ### ot\_ive\_persp\_trans\_ctrl<a name="ZH-CN_TOPIC_0000002471091262"></a> 【说明】 定义透视变换控制参数。 【定义】 ```
+typedef struct { ot_ive_persp_trans_alg_mode alg_mode; /* Alg mode */ ot_ive_persp_trans_csc_mode csc_mode; /* CSC mode */ td_u16 roi_num; /* Roi number */ td_u16 point_pair_num; /* Point pair number */
 } ot_ive_persp_trans_ctrl;
-```
-
-【成员】
-
-<a name="table5798mcpsimp"></a>
+``` 【成员】 <a name="table5798mcpsimp"></a>
 <table><thead align="left"><tr id="row5803mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p5805mcpsimp"><a name="p5805mcpsimp"></a><a name="p5805mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p5807mcpsimp"><a name="p5807mcpsimp"></a><a name="p5807mcpsimp"></a>描述</p>
@@ -6982,46 +3634,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_core\_id<a name="ZH-CN_TOPIC_0000002504091191"></a>
-
-【说明】
-
-定义KCF的核ID。
-
-【定义】
-
-定义1：
-
-```
-typedef enum {
-    OT_IVE_KCF_CORE0 = 0x0,
-    OT_IVE_KCF_CORE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_core\_id<a name="ZH-CN_TOPIC_0000002504091191"></a> 【说明】 定义KCF的核ID。 【定义】 定义1： ```
+typedef enum { OT_IVE_KCF_CORE0 = 0x0, OT_IVE_KCF_CORE_BUTT
 } ot_ive_kcf_core_id;
-```
-
-定义2：
-
-```
-typedef enum {
-    OT_IVE_KCF_CORE0 = 0x0,
-    OT_IVE_KCF_CORE1 = 0x1,
-    OT_IVE_KCF_CORE_BUTT
+``` 定义2： ```
+typedef enum { OT_IVE_KCF_CORE0 = 0x0, OT_IVE_KCF_CORE1 = 0x1, OT_IVE_KCF_CORE_BUTT
 } ot_ive_kcf_core_id;
-```
-
-【成员】
-
-<a name="table6377mcpsimp"></a>
+``` 【成员】 <a name="table6377mcpsimp"></a>
 <table><thead align="left"><tr id="row6382mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p6384mcpsimp"><a name="p6384mcpsimp"></a><a name="p6384mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p6386mcpsimp"><a name="p6386mcpsimp"></a><a name="p6386mcpsimp"></a>描述</p>
@@ -7039,37 +3658,13 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-不同解决方案Kcf核数不一样，请具体参考发布包中ot\_common\_ive.h头文件中ot\_ive\_kcf\_core\_id定义。
-
-【相关数据类型及接口】
-
--   [ot\_ive\_kcf\_proc\_ctrl](#ot_ive_kcf_proc_ctrl)
--   [ot\_ive\_hog\_ctrl](#ot_ive_hog_ctrl)
--   ss\_mpi\_ive\_kcf\_proc
--   ss\_mpi\_ive\_hog
-
-### ot\_ive\_roi\_info<a name="ZH-CN_TOPIC_0000002503971155"></a>
-
-【说明】
-
-定义目前区域信息参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_svp_rect_s24q8 roi;
-    td_u32 roi_id;
+</table> 【注意事项】 不同解决方案Kcf核数不一样，请具体参考发布包中ot\_common\_ive.h头文件中ot\_ive\_kcf\_core\_id定义。 【相关数据类型及接口】 - [ot\_ive\_kcf\_proc\_ctrl](#ot_ive_kcf_proc_ctrl)
+- [ot\_ive\_hog\_ctrl](#ot_ive_hog_ctrl)
+- ss\_mpi\_ive\_kcf\_proc
+- ss\_mpi\_ive\_hog ### ot\_ive\_roi\_info<a name="ZH-CN_TOPIC_0000002503971155"></a> 【说明】 定义目前区域信息参数。 【定义】 ```
+typedef struct { ot_svp_rect_s24q8 roi; td_u32 roi_id;
 } ot_ive_roi_info;
-```
-
-【成员】
-
-<a name="table15911mcpsimp"></a>
+``` 【成员】 <a name="table15911mcpsimp"></a>
 <table><thead align="left"><tr id="row15916mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p15918mcpsimp"><a name="p15918mcpsimp"></a><a name="p15918mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p15920mcpsimp"><a name="p15920mcpsimp"></a><a name="p15920mcpsimp"></a>描述</p>
@@ -7087,44 +3682,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_proc\_ctrl<a name="ZH-CN_TOPIC_0000002471091264"></a>
-
-【说明】
-
-定义跟踪处理控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_csc_mode csc_mode;   /* Only support:
-    IVE_CSC_MODE_VIDEO_BT601_YUV_TO_RGB  CSC: YUV2RGB, video transfer mode,RGB value range [16, 235]
-    IVE_CSC_MODE_VIDEO_BT709_YUV_TO_RGB  CSC: YUV2RGB, video transfer mode,RGB value range [16, 235]
-    IVE_CSC_MODE_PIC_BT601_YUV_TO_RGB  CSC: YUV2RGB, picture transfer mode,RGB value range [0, 255]
-    IVE_CSC_MODE_PIC_BT709_YUV_TO_RGB  CSC: YUV2RGB, picture transfer mode,RGB value range [0, 255] */
-    ot_svp_mem_info tmp_buf;
-    td_u1q15 interp_factor; /* Blend coefficient. [0, 32768] */
-    td_u0q16 lamda;        /* The regularization coefficient. [0, 65535] */
-    td_u4q12 norm_trunc_alfa;   /* The normalization thresh. [0, 4095] */
-    td_u0q8 sigma;         /* The gaussian kernel bandwidth. [0, 255]  */
-    td_u8 resp_threshold;
-    ot_ive_kcf_core_id core_id;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_proc\_ctrl<a name="ZH-CN_TOPIC_0000002471091264"></a> 【说明】 定义跟踪处理控制参数。 【定义】 ```
+typedef struct { ot_ive_csc_mode csc_mode; /* Only support: IVE_CSC_MODE_VIDEO_BT601_YUV_TO_RGB CSC: YUV2RGB, video transfer mode,RGB value range [16, 235] IVE_CSC_MODE_VIDEO_BT709_YUV_TO_RGB CSC: YUV2RGB, video transfer mode,RGB value range [16, 235] IVE_CSC_MODE_PIC_BT601_YUV_TO_RGB CSC: YUV2RGB, picture transfer mode,RGB value range [0, 255] IVE_CSC_MODE_PIC_BT709_YUV_TO_RGB CSC: YUV2RGB, picture transfer mode,RGB value range [0, 255] */ ot_svp_mem_info tmp_buf; td_u1q15 interp_factor; /* Blend coefficient. [0, 32768] */ td_u0q16 lamda; /* The regularization coefficient. [0, 65535] */ td_u4q12 norm_trunc_alfa; /* The normalization thresh. [0, 4095] */ td_u0q8 sigma; /* The gaussian kernel bandwidth. [0, 255] */ td_u8 resp_threshold; ot_ive_kcf_core_id core_id;
 } ot_ive_kcf_proc_ctrl;
-```
-
-【成员】
-
-<a name="table2328mcpsimp"></a>
+``` 【成员】 <a name="table2328mcpsimp"></a>
 <table><thead align="left"><tr id="row2333mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p2335mcpsimp"><a name="p2335mcpsimp"></a><a name="p2335mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p2337mcpsimp"><a name="p2337mcpsimp"></a><a name="p2337mcpsimp"></a>描述</p>
@@ -7172,11 +3733,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【解决方案差异】
-
-<a name="table2380mcpsimp"></a>
+</table> 【解决方案差异】 <a name="table2380mcpsimp"></a>
 <table><thead align="left"><tr id="row2385mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p2387mcpsimp"><a name="p2387mcpsimp"></a><a name="p2387mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p2389mcpsimp"><a name="p2389mcpsimp"></a><a name="p2389mcpsimp"></a>差异</p>
@@ -7188,39 +3745,11 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p2415mcpsimp"><a name="p2415mcpsimp"></a><a name="p2415mcpsimp"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
 </td>
 </tr>
-<tr id="row181113452368"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_list\_head<a name="ZH-CN_TOPIC_0000002504091189"></a>
-
-【说明】
-
-定义链表头结构体参数。
-
-【定义】
-
-```
-typedef struct tag_ot_ive_list_head {
-    struct tag_ot_ive_list_head *next, *prev;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_list\_head<a name="ZH-CN_TOPIC_0000002504091189"></a> 【说明】 定义链表头结构体参数。 【定义】 ```
+typedef struct tag_ot_ive_list_head { struct tag_ot_ive_list_head *next, *prev;
 } ot_ive_list_head;
-```
-
-【成员】
-
-<a name="table2593mcpsimp"></a>
+``` 【成员】 <a name="table2593mcpsimp"></a>
 <table><thead align="left"><tr id="row2598mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p2600mcpsimp"><a name="p2600mcpsimp"></a><a name="p2600mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p2602mcpsimp"><a name="p2602mcpsimp"></a><a name="p2602mcpsimp"></a>描述</p>
@@ -7238,41 +3767,10 @@ typedef struct tag_ot_ive_list_head {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_obj<a name="ZH-CN_TOPIC_0000002471091292"></a>
-
-【说明】
-
-定义目标信息结构体参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_roi_info roi_info;
-    ot_svp_mem_info cos_win_x;
-    ot_svp_mem_info cos_win_y;
-    ot_svp_mem_info gauss_peak;
-    ot_svp_mem_info hog_feature;
-    ot_svp_mem_info alpha;
-    ot_svp_mem_info dst;
-    td_u3q5 padding; /* [48, 160]  */
-    td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_THREE];
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_obj<a name="ZH-CN_TOPIC_0000002471091292"></a> 【说明】 定义目标信息结构体参数。 【定义】 ```
+typedef struct { ot_ive_roi_info roi_info; ot_svp_mem_info cos_win_x; ot_svp_mem_info cos_win_y; ot_svp_mem_info gauss_peak; ot_svp_mem_info hog_feature; ot_svp_mem_info alpha; ot_svp_mem_info dst; td_u3q5 padding; /* [48, 160] */ td_u8 reserved[OT_IVE_ARR_RESERVED_NUM_THREE];
 } ot_ive_kcf_obj;
-```
-
-【成员】
-
-<a name="table10385mcpsimp"></a>
+``` 【成员】 <a name="table10385mcpsimp"></a>
 <table><thead align="left"><tr id="row10390mcpsimp"><th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.1"><p id="p10392mcpsimp"><a name="p10392mcpsimp"></a><a name="p10392mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.2"><p id="p10394mcpsimp"><a name="p10394mcpsimp"></a><a name="p10394mcpsimp"></a>描述</p>
@@ -7325,34 +3823,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_obj\_node<a name="ZH-CN_TOPIC_0000002470931324"></a>
-
-【说明】
-
-定义目标链表节点参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_list_head list;
-    ot_ive_kcf_obj kcf_obj;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_obj\_node<a name="ZH-CN_TOPIC_0000002470931324"></a> 【说明】 定义目标链表节点参数。 【定义】 ```
+typedef struct { ot_ive_list_head list; ot_ive_kcf_obj kcf_obj;
 } ot_ive_kcf_obj_node;
-```
-
-【成员】
-
-<a name="table4834mcpsimp"></a>
+``` 【成员】 <a name="table4834mcpsimp"></a>
 <table><thead align="left"><tr id="row4839mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p4841mcpsimp"><a name="p4841mcpsimp"></a><a name="p4841mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p4843mcpsimp"><a name="p4843mcpsimp"></a><a name="p4843mcpsimp"></a>描述</p>
@@ -7370,35 +3844,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_list\_state<a name="ZH-CN_TOPIC_0000002504091113"></a>
-
-【说明】
-
-定义目标链表状态枚举类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_KCF_LIST_STATE_CREATE = 0x1,
-    OT_IVE_KCF_LIST_STATE_DESTORY = 0x2,
-    OT_IVE_KCF_LIST_STATE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_list\_state<a name="ZH-CN_TOPIC_0000002504091113"></a> 【说明】 定义目标链表状态枚举类型。 【定义】 ```
+typedef enum { OT_IVE_KCF_LIST_STATE_CREATE = 0x1, OT_IVE_KCF_LIST_STATE_DESTORY = 0x2, OT_IVE_KCF_LIST_STATE_BUTT
 } ot_ive_kcf_list_state;
-```
-
-【成员】
-
-<a name="table15023mcpsimp"></a>
+``` 【成员】 <a name="table15023mcpsimp"></a>
 <table><thead align="left"><tr id="row15028mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p15030mcpsimp"><a name="p15030mcpsimp"></a><a name="p15030mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p15032mcpsimp"><a name="p15032mcpsimp"></a><a name="p15032mcpsimp"></a>描述</p>
@@ -7416,44 +3865,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_obj\_list<a name="ZH-CN_TOPIC_0000002470931236"></a>
-
-【说明】
-
-定义目标链表结构参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_kcf_obj_node *obj_node_buf;  /* The object list node address */
-    ot_ive_list_head free_obj_list;     /* The free list of object list */
-    ot_ive_list_head train_obj_list;    /* The training list of object list */
-    ot_ive_list_head track_obj_list;    /* The tracking list of object list */
-    td_u32 free_obj_num;                /* The numbers of free list */
-    td_u32 train_obj_num;               /* The numbers of training list */
-    td_u32 track_obj_num;               /* The numbers of tracking list */
-    td_u32 max_obj_num;                 /* The maximum numbers of object list */
-    ot_ive_kcf_list_state list_state;   /* The object list state */
-    td_u8 *tmp_buf;                     /* Assist buffer */
-    td_u32 width;                       /* image width */
-    td_u32 height;                      /* image height */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_obj\_list<a name="ZH-CN_TOPIC_0000002470931236"></a> 【说明】 定义目标链表结构参数。 【定义】 ```
+typedef struct { ot_ive_kcf_obj_node *obj_node_buf; /* The object list node address */ ot_ive_list_head free_obj_list; /* The free list of object list */ ot_ive_list_head train_obj_list; /* The training list of object list */ ot_ive_list_head track_obj_list; /* The tracking list of object list */ td_u32 free_obj_num; /* The numbers of free list */ td_u32 train_obj_num; /* The numbers of training list */ td_u32 track_obj_num; /* The numbers of tracking list */ td_u32 max_obj_num; /* The maximum numbers of object list */ ot_ive_kcf_list_state list_state; /* The object list state */ td_u8 *tmp_buf; /* Assist buffer */ td_u32 width; /* image width */ td_u32 height; /* image height */
 } ot_ive_kcf_obj_list;
-```
-
-【成员】
-
-<a name="table413mcpsimp"></a>
+``` 【成员】 <a name="table413mcpsimp"></a>
 <table><thead align="left"><tr id="row418mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p420mcpsimp"><a name="p420mcpsimp"></a><a name="p420mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p422mcpsimp"><a name="p422mcpsimp"></a><a name="p422mcpsimp"></a>描述</p>
@@ -7521,37 +3936,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_bbox<a name="ZH-CN_TOPIC_0000002504091101"></a>
-
-【说明】
-
-定义目标区域信息参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_kcf_obj_node *node;
-    td_s32 response; /* Bbox Response value. */
-    ot_ive_roi_info roi_info;
-    td_bool is_track_ok;
-    td_bool is_roi_refresh;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_bbox<a name="ZH-CN_TOPIC_0000002504091101"></a> 【说明】 定义目标区域信息参数。 【定义】 ```
+typedef struct { ot_ive_kcf_obj_node *node; td_s32 response; /* Bbox Response value. */ ot_ive_roi_info roi_info; td_bool is_track_ok; td_bool is_roi_refresh;
 } ot_ive_kcf_bbox;
-```
-
-【成员】
-
-<a name="table16685mcpsimp"></a>
+``` 【成员】 <a name="table16685mcpsimp"></a>
 <table><thead align="left"><tr id="row16690mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p16692mcpsimp"><a name="p16692mcpsimp"></a><a name="p16692mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p16694mcpsimp"><a name="p16694mcpsimp"></a><a name="p16694mcpsimp"></a>描述</p>
@@ -7584,34 +3972,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_kcf\_bbox\_ctrl<a name="ZH-CN_TOPIC_0000002470931278"></a>
-
-【说明】
-
-定义目标区域信息控制参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 max_bbox_num;    /* The member numbers of Bbox Array. */
-    td_s32 response_threshold;        /* Select Bbox when Bbox'Response value is greater than or equal to RespThr. */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_kcf\_bbox\_ctrl<a name="ZH-CN_TOPIC_0000002470931278"></a> 【说明】 定义目标区域信息控制参数。 【定义】 ```
+typedef struct { td_u32 max_bbox_num; /* The member numbers of Bbox Array. */ td_s32 response_threshold; /* Select Bbox when Bbox'Response value is greater than or equal to RespThr. */
 } ot_ive_kcf_bbox_ctrl;
-```
-
-【成员】
-
-<a name="table4303mcpsimp"></a>
+``` 【成员】 <a name="table4303mcpsimp"></a>
 <table><thead align="left"><tr id="row4308mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p4310mcpsimp"><a name="p4310mcpsimp"></a><a name="p4310mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p4312mcpsimp"><a name="p4312mcpsimp"></a><a name="p4312mcpsimp"></a>描述</p>
@@ -7629,35 +3993,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-### ot\_ive\_hog\_mode<a name="ZH-CN_TOPIC_0000002504091097"></a>
-
-【说明】
-
-定义HOG\(Histogram of Oriented Gradient\)特征存储模式枚举类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_IVE_HOG_MODE_VER_TANGENT_PLANE = 0x1,
-    OT_IVE_HOG_MODE_HOR_TANGENT_PLANE = 0x2,
-    OT_IVE_HOG_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 ### ot\_ive\_hog\_mode<a name="ZH-CN_TOPIC_0000002504091097"></a> 【说明】 定义HOG\(Histogram of Oriented Gradient\)特征存储模式枚举类型。 【定义】 ```
+typedef enum { OT_IVE_HOG_MODE_VER_TANGENT_PLANE = 0x1, OT_IVE_HOG_MODE_HOR_TANGENT_PLANE = 0x2, OT_IVE_HOG_MODE_BUTT
 } ot_ive_hog_mode;
-```
-
-【成员】
-
-<a name="table6598mcpsimp"></a>
+``` 【成员】 <a name="table6598mcpsimp"></a>
 <table><thead align="left"><tr id="row6603mcpsimp"><th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.1"><p id="p6605mcpsimp"><a name="p6605mcpsimp"></a><a name="p6605mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.2"><p id="p6607mcpsimp"><a name="p6607mcpsimp"></a><a name="p6607mcpsimp"></a>描述</p>
@@ -7675,45 +4014,9 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-ss\_mpi\_ive\_hog
-
-### ot\_ive\_hog\_ctrl<a name="ZH-CN_TOPIC_0000002470931248"></a>
-
-【说明】
-
-定义计算HOG\(Histogram of Oriented Gradient\)特征控制参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_ive_csc_mode csc_mode;   /* Only support:
-                                IVE_CSC_MODE_VIDEO_BT601_YUV_TO_RGB  CSC: YUV2RGB, video transfer mode,
-                                RGB value range [16, 235]
-                                IVE_CSC_MODE_VIDEO_BT709_YUV_TO_RGB  CSC: YUV2RGB, video transfer mode,
-                                RGB value range [16, 235]
-                                IVE_CSC_MODE_PIC_BT601_YUV_TORGB  CSC: YUV2RGB, picture transfer mode,
-                                RGB value range [0, 255]
-                                IVE_CSC_MODE_PIC_BT709_YUV_TO_RGB  CSC: YUV2RGB, picture transfer mode,
-                                RGB value range [0, 255] */
-    ot_ive_hog_mode hog_mode;   /* Hog mode */
-    td_u32 roi_num;             /* Roi number. [1, 64] */
-    td_u4q12 norm_trunc_alfa;    /* The normalization thresh. [0, 4095] */
-    ot_ive_kcf_core_id core_id;
-   } ot_ive_hog_ctrl;
-```
-
-【成员】
-
-<a name="table5865mcpsimp"></a>
+</table> 【注意事项】 无 【相关数据类型及接口】 ss\_mpi\_ive\_hog ### ot\_ive\_hog\_ctrl<a name="ZH-CN_TOPIC_0000002470931248"></a> 【说明】 定义计算HOG\(Histogram of Oriented Gradient\)特征控制参数。 【定义】 ```
+typedef struct { ot_ive_csc_mode csc_mode; /* Only support: IVE_CSC_MODE_VIDEO_BT601_YUV_TO_RGB CSC: YUV2RGB, video transfer mode, RGB value range [16, 235] IVE_CSC_MODE_VIDEO_BT709_YUV_TO_RGB CSC: YUV2RGB, video transfer mode, RGB value range [16, 235] IVE_CSC_MODE_PIC_BT601_YUV_TORGB CSC: YUV2RGB, picture transfer mode, RGB value range [0, 255] IVE_CSC_MODE_PIC_BT709_YUV_TO_RGB CSC: YUV2RGB, picture transfer mode, RGB value range [0, 255] */ ot_ive_hog_mode hog_mode; /* Hog mode */ td_u32 roi_num; /* Roi number. [1, 64] */ td_u4q12 norm_trunc_alfa; /* The normalization thresh. [0, 4095] */ ot_ive_kcf_core_id core_id; } ot_ive_hog_ctrl;
+``` 【成员】 <a name="table5865mcpsimp"></a>
 <table><thead align="left"><tr id="row5870mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p5872mcpsimp"><a name="p5872mcpsimp"></a><a name="p5872mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p5874mcpsimp"><a name="p5874mcpsimp"></a><a name="p5874mcpsimp"></a>描述</p>
@@ -7746,11 +4049,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【解决方案差异】
-
-<a name="table5902mcpsimp"></a>
+</table> 【解决方案差异】 <a name="table5902mcpsimp"></a>
 <table><thead align="left"><tr id="row5907mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p5909mcpsimp"><a name="p5909mcpsimp"></a><a name="p5909mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p5911mcpsimp"><a name="p5911mcpsimp"></a><a name="p5911mcpsimp"></a>差异</p>
@@ -7762,30 +4061,9 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p5937mcpsimp"><a name="p5937mcpsimp"></a><a name="p5937mcpsimp"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
 </td>
 </tr>
-<tr id="row9671651133611"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>KCF在IVE中只有一个核，默认用核0，配置其他参数无效</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-# 错误码
-## IVE错误码<a name="ZH-CN_TOPIC_0000002503971191"></a>
-
-_识别_加速引擎API错误码如下所示。
-
-**表 1** _识别_加速引擎API错误码
-
-<a name="_Ref248310770"></a>
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 # 错误码
+## IVE错误码<a name="ZH-CN_TOPIC_0000002503971191"></a> _识别_加速引擎API错误码如下所示。 **表 1** _识别_加速引擎API错误码 <a name="_Ref248310770"></a>
 <table><thead align="left"><tr id="row16952mcpsimp"><th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.4.1.1"><p id="p16954mcpsimp"><a name="p16954mcpsimp"></a><a name="p16954mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.56435643564357%" id="mcps1.2.4.1.2"><p id="p16956mcpsimp"><a name="p16956mcpsimp"></a><a name="p16956mcpsimp"></a>宏定义</p>
@@ -7942,122 +4220,18 @@ _识别_加速引擎API错误码如下所示。
 </td>
 </tr>
 </tbody>
-</table>
-
-# Proc调试信息
-## 概述<a name="ZH-CN_TOPIC_0000002504091199"></a>
-
-调试信息采用了Linux下的proc文件系统，可实时反映当前系统的运行状态，所记录的信息可供问题定位及分析时使用。
-
-【文件目录】
-
-/proc/umap
-
-【信息查看方法】
-
--   在控制台上可以使用cat命令查看信息，cat /proc/umap/ive；也可以使用其他常用的文件操作命令，例如 cp /proc/umap/ive ./，将文件拷贝到当前目录。
--   在应用程序中可以将上述文件当作普通只读文件进行读操作，例如fopen、fread等。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->参数在描述时有以下2种情况需要注意：
->-   取值为\{0, 1\}的参数，如未列出具体取值和含义的对应关系，则参数为1时表示肯定，为0时表示否定。
->-   取值为\{aaa, bbb, ccc\}的参数，未列出具体取值和含义的对应关系，但可直接根据取值aaa、bbb或ccc判断参数含义
-
-## Proc信息说明<a name="ZH-CN_TOPIC_0000002503971199"></a>
-
-【调试信息】
-
-```
-~ # cat /proc/umap/ive
- 
-[IVE]  Version: [Vx.x.x.x B0xx Release],   Build Time[Aug 2 2019, 10:08:05] 
- 
--------------------------------moudle param------------------------------
-         save_power     max_node_num
-              0               20
- 
--------------------------------ive queue info----------------------------
-      wait    busy  wait_cur_id  wait_end_id  busy_cur_id busy_end_id
-         1      -1         0              0         0                 0
- 
---------------------------------ive task info----------------------------
-       handle   task_finish    last_id    task_id   handle_wrap   finish_wrap
-             5               5            0           0               0              0
- 
------------------------------------ive runtime info---------------------
-last_inst     cnt_per_sec     max_cnt_per_sec      total_int_cnt_last_sec   
-          0                 1                      2                               4
-total_int_cnt      qt_cnt                st_cnt
-              5            0                       0
- 
-cost_tm          m_cost_tm      cost_tm_per_sec           m_cost_tm_per_sec 
-       7                   17                      17                             17
-total_int_cost_tm               last_task_hw_tm                        run_tm
-                  64                               20                             20
-----------------------------------------ive invoke info-----------------------------------------------------------------
-
-       dma          filter        csc     filter_csc       sobel      mag_ang          dilate           erode
-         0               0          0              0           0            0               0               0
-
- threshold             and        sub             or       integ         hist      thresh_s16      thresh_u16
-         0               0          0              0           0            0               0               0
-
-     16to8 ord_stat_filter    bernsen            map  equal_hist          add             xor             ncc
-         0               0          0              0           0            0               0               0
-
-       ccl             gmm      canny            lbp   norm_grad           lk       shitomasi         grad_fg
-         0               0          0              0           0            0               0               0
-
- match_mod      update_mod      radon            ann         svm      adp_thr   line_filter_h  noise_remove_h
-         0               0          0              0           0            0               0               0
-
-plate_char             sad       gmm2         resize         cnn  persp_trans
-         0               0          0              0           0            0
-
-----------------------------------------kcf module param----------------------------------------------------------------
-                          save_power                         max_node_num
-                                   1                                  128
-
-----------------------------------------kcf queue info------------------------------------------------------------------
-   core_id         wait      busy     wait_cur_id   wait_end_id   busy_cur_id   busy_end_id
-         0           0        -1             0             0             0             0
-         1           0        -1             0             0             0             0
-
-----------------------------------------kcf task info-------------------------------------------------------------------
-   core_id        handle     task_finish       last_id     task_id     handle_wrap     finish_wrap
-         0         0             384             0          63               0               0
-         1         0              0              0           0               0               0
-
-----------------------------------------kcf runtime info----------------------------------------------------------------
-   core_id    last_inst    cnt_per_sec   max_cnt_per_sec    total_int_cnt_last_sec      total_int_cnt           qt_cnt
-         0            1              1                 1                         6                  6                0
-         1            0              0                 0                         0                  0                0
-
-    st_cnt      cost_tm      m_cost_tm   cost_tm_per_sec         m_cost_tm_per_sec  total_int_cost_tm  last_task_hw_tm
-         0           12             13                12                        13                 65            47566
-         0            0              0                 0                         0                  0                0
-
-    run_tm
-        61
-        61
-
-----------------------------------------kcf invoke info-----------------------------------------------------------------
-
-   core_id             kcf             hog
-         0               6               0
-         1               0               0
-----------------------------------------ive utili info---------------------------------------------------
-  utili  
-   26
-```
-
-【调试信息分析】
-
-记录当前IVE工作状态资源信息和算子调用信息。
-
-【参数说明】
-
-<a name="table7920mcpsimp"></a>
+</table> # Proc调试信息
+## 概述<a name="ZH-CN_TOPIC_0000002504091199"></a> 调试信息采用了Linux下的proc文件系统，可实时反映当前系统的运行状态，所记录的信息可供问题定位及分析时使用。 【文件目录】 /proc/umap 【信息查看方法】 - 在控制台上可以使用cat命令查看信息，cat /proc/umap/ive；也可以使用其他常用的文件操作命令，例如 cp /proc/umap/ive ./，将文件拷贝到当前目录。
+- 在应用程序中可以将上述文件当作普通只读文件进行读操作，例如fopen、fread等。 >![](public_sys-resources/icon-note.gif) **说明：** >参数在描述时有以下2种情况需要注意：
+>- 取值为\{0, 1\}的参数，如未列出具体取值和含义的对应关系，则参数为1时表示肯定，为0时表示否定。
+>- 取值为\{aaa, bbb, ccc\}的参数，未列出具体取值和含义的对应关系，但可直接根据取值aaa、bbb或ccc判断参数含义 ## Proc信息说明<a name="ZH-CN_TOPIC_0000002503971199"></a> 【调试信息】 ```
+~ # cat /proc/umap/ive [IVE] Version: [Vx.x.x.x B0xx Release], Build Time[Aug 2 2019, 10:08:05] -------------------------------moudle param------------------------------ save_power max_node_num 0 20 -------------------------------ive queue info---------------------------- wait busy wait_cur_id wait_end_id busy_cur_id busy_end_id 1 -1 0 0 0 0 --------------------------------ive task info---------------------------- handle task_finish last_id task_id handle_wrap finish_wrap 5 5 0 0 0 0 -----------------------------------ive runtime info---------------------
+last_inst cnt_per_sec max_cnt_per_sec total_int_cnt_last_sec 0 1 2 4
+total_int_cnt qt_cnt st_cnt 5 0 0 cost_tm m_cost_tm cost_tm_per_sec m_cost_tm_per_sec 7 17 17 17
+total_int_cost_tm last_task_hw_tm run_tm 64 20 20
+----------------------------------------ive invoke info----------------------------------------------------------------- dma filter csc filter_csc sobel mag_ang dilate erode 0 0 0 0 0 0 0 0 threshold and sub or integ hist thresh_s16 thresh_u16 0 0 0 0 0 0 0 0 16to8 ord_stat_filter bernsen map equal_hist add xor ncc 0 0 0 0 0 0 0 0 ccl gmm canny lbp norm_grad lk shitomasi grad_fg 0 0 0 0 0 0 0 0 match_mod update_mod radon ann svm adp_thr line_filter_h noise_remove_h 0 0 0 0 0 0 0 0 plate_char sad gmm2 resize cnn persp_trans 0 0 0 0 0 0 ----------------------------------------kcf module param---------------------------------------------------------------- save_power max_node_num 1 128 ----------------------------------------kcf queue info------------------------------------------------------------------ core_id wait busy wait_cur_id wait_end_id busy_cur_id busy_end_id 0 0 -1 0 0 0 0 1 0 -1 0 0 0 0 ----------------------------------------kcf task info------------------------------------------------------------------- core_id handle task_finish last_id task_id handle_wrap finish_wrap 0 0 384 0 63 0 0 1 0 0 0 0 0 0 ----------------------------------------kcf runtime info---------------------------------------------------------------- core_id last_inst cnt_per_sec max_cnt_per_sec total_int_cnt_last_sec total_int_cnt qt_cnt 0 1 1 1 6 6 0 1 0 0 0 0 0 0 st_cnt cost_tm m_cost_tm cost_tm_per_sec m_cost_tm_per_sec total_int_cost_tm last_task_hw_tm 0 12 13 12 13 65 47566 0 0 0 0 0 0 0 run_tm 61 61 ----------------------------------------kcf invoke info----------------------------------------------------------------- core_id kcf hog 0 6 0 1 0 0
+----------------------------------------ive utili info--------------------------------------------------- utili 26
+``` 【调试信息分析】 记录当前IVE工作状态资源信息和算子调用信息。 【参数说明】 <a name="table7920mcpsimp"></a>
 <table><thead align="left"><tr id="row7926mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p7928mcpsimp"><a name="p7928mcpsimp"></a><a name="p7928mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p7930mcpsimp"><a name="p7930mcpsimp"></a><a name="p7930mcpsimp"></a>描述</p>
@@ -8302,19 +4476,9 @@ plate_char             sad       gmm2         resize         cnn  persp_trans
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意】
-
--   建议代码调试阶段关闭低功耗，调试完成再打开低功耗。
--   在非低功耗场景时，才会统计IVE硬件利用率。
-
-# FAQ
-## 使用PC端IVE Clib与板端IVESDK开发算法的差异<a name="ZH-CN_TOPIC_0000002504091167"></a>
-
-**表 1**  使用PC端IVE Clib与板端IVE SDK开发算法的差异
-
-<a name="table1661mcpsimp"></a>
+</table> 【注意】 - 建议代码调试阶段关闭低功耗，调试完成再打开低功耗。
+- 在非低功耗场景时，才会统计IVE硬件利用率。 # FAQ
+## 使用PC端IVE Clib与板端IVESDK开发算法的差异<a name="ZH-CN_TOPIC_0000002504091167"></a> **表 1** 使用PC端IVE Clib与板端IVE SDK开发算法的差异 <a name="table1661mcpsimp"></a>
 <table><thead align="left"><tr id="row1672mcpsimp"><th class="cellrowborder" valign="top" width="6.9306930693069315%" id="mcps1.2.5.1.1"><p xml:lang="fr-FR" id="p1674mcpsimp"><a name="p1674mcpsimp"></a><a name="p1674mcpsimp"></a>序号</p>
 </th>
 <th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.5.1.2"><p id="p1676mcpsimp"><a name="p1676mcpsimp"></a><a name="p1676mcpsimp"></a>关键词</p>
@@ -8334,87 +4498,13 @@ plate_char             sad       gmm2         resize         cnn  persp_trans
 <td class="cellrowborder" valign="top" width="42.57425742574258%" headers="mcps1.2.5.1.4 "><p xml:lang="fr-FR" id="p1690mcpsimp"><a name="p1690mcpsimp"></a><a name="p1690mcpsimp"></a>当有需要时与ss_mpi_ive_query配合查询算子是否完成。详细参考“重要概念”的“<span xml:lang="en-US" id="ph12929916407"><a name="ph12929916407"></a><a name="ph12929916407"></a>句柄</span>(handle)”</p>
 </td>
 </tr>
-<tr id="row1697mcpsimp"><td class="cellrowborder" valign="top" width="6.9306930693069315%" headers="mcps1.2.5.1.1 "><p xml:lang="fr-FR" id="p1699mcpsimp"><a name="p1699mcpsimp"></a><a name="p1699mcpsimp"></a>2</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p xml:lang="fr-FR" id="p1701mcpsimp"><a name="p1701mcpsimp"></a><a name="p1701mcpsimp"></a>is_instant</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.633663366336634%" headers="mcps1.2.5.1.3 "><p xml:lang="fr-FR" id="p1703mcpsimp"><a name="p1703mcpsimp"></a><a name="p1703mcpsimp"></a>无效</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574258%" headers="mcps1.2.5.1.4 "><p xml:lang="fr-FR" id="p1705mcpsimp"><a name="p1705mcpsimp"></a><a name="p1705mcpsimp"></a>根据算法设置可减少中断，提升性能。详细参考“重要概念”的“<span xml:lang="en-US" id="ph1777353014017"><a name="ph1777353014017"></a><a name="ph1777353014017"></a>及时返回结果标志</span>”</p>
-</td>
-</tr>
-<tr id="row1711mcpsimp"><td class="cellrowborder" valign="top" width="6.9306930693069315%" headers="mcps1.2.5.1.1 "><p xml:lang="fr-FR" id="p1713mcpsimp"><a name="p1713mcpsimp"></a><a name="p1713mcpsimp"></a>3</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p xml:lang="fr-FR" id="p1715mcpsimp"><a name="p1715mcpsimp"></a><a name="p1715mcpsimp"></a>query</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.633663366336634%" headers="mcps1.2.5.1.3 "><p xml:lang="fr-FR" id="p1717mcpsimp"><a name="p1717mcpsimp"></a><a name="p1717mcpsimp"></a>不需要查询，查询永远返回成功</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574258%" headers="mcps1.2.5.1.4 "><p xml:lang="fr-FR" id="p1719mcpsimp"><a name="p1719mcpsimp"></a><a name="p1719mcpsimp"></a>当用户需要使用IVE硬算子的结果时，必须查询任务是否完成。详细参考“重要概念”的“<span xml:lang="en-US" id="ph175614454018"><a name="ph175614454018"></a><a name="ph175614454018"></a>查询(query)</span>”以及ss_mpi_ive_query接口说明。</p>
-</td>
-</tr>
-<tr id="row1727mcpsimp"><td class="cellrowborder" valign="top" width="6.9306930693069315%" headers="mcps1.2.5.1.1 "><p xml:lang="fr-FR" id="p1729mcpsimp"><a name="p1729mcpsimp"></a><a name="p1729mcpsimp"></a>4</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p xml:lang="fr-FR" id="p1731mcpsimp"><a name="p1731mcpsimp"></a><a name="p1731mcpsimp"></a>内存开辟、物理地址、虚拟地址</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.633663366336634%" headers="mcps1.2.5.1.3 "><p xml:lang="fr-FR" id="p1733mcpsimp"><a name="p1733mcpsimp"></a><a name="p1733mcpsimp"></a>内存使用malloc开辟。由于malloc出来均为虚拟地址，所以赋值给虚拟地址。为模拟IVE硬件使用物理地址的特性，Clib也使用物理地址，所以物理地址必须赋值，且必须赋值为虚拟地址的td_u32强制类转化。</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574258%" headers="mcps1.2.5.1.4 "><p xml:lang="fr-FR" id="p1735mcpsimp"><a name="p1735mcpsimp"></a><a name="p1735mcpsimp"></a>IVE硬件使用物理地址。内存使用ss_mpi_sys_mmz_malloc/ss_mpi_sys_mmz_alloc_cached接口详细信息请参见《MPP 媒体处理软件<span xml:lang="en-US" id="ph1736mcpsimp"><a name="ph1736mcpsimp"></a><a name="ph1736mcpsimp"></a>Vx.y</span> 开发参考》）开辟，物理地址和虚拟地址由此生成；或者使用其他模块的VB内存。</p>
-</td>
-</tr>
-<tr id="row1737mcpsimp"><td class="cellrowborder" valign="top" width="6.9306930693069315%" headers="mcps1.2.5.1.1 "><p xml:lang="fr-FR" id="p1739mcpsimp"><a name="p1739mcpsimp"></a><a name="p1739mcpsimp"></a>5</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p xml:lang="fr-FR" id="p1741mcpsimp"><a name="p1741mcpsimp"></a><a name="p1741mcpsimp"></a>地址对齐</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.633663366336634%" headers="mcps1.2.5.1.3 "><p xml:lang="fr-FR" id="p1743mcpsimp"><a name="p1743mcpsimp"></a><a name="p1743mcpsimp"></a>Clib不要求地址对齐</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574258%" headers="mcps1.2.5.1.4 "><p xml:lang="fr-FR" id="p1745mcpsimp"><a name="p1745mcpsimp"></a><a name="p1745mcpsimp"></a>硬件地址按要求对齐。</p>
-</td>
-</tr>
-<tr id="row1746mcpsimp"><td class="cellrowborder" valign="top" width="6.9306930693069315%" headers="mcps1.2.5.1.1 "><p xml:lang="fr-FR" id="p1748mcpsimp"><a name="p1748mcpsimp"></a><a name="p1748mcpsimp"></a>6</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p xml:lang="fr-FR" id="p1750mcpsimp"><a name="p1750mcpsimp"></a><a name="p1750mcpsimp"></a>解决方案差异</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.633663366336634%" headers="mcps1.2.5.1.3 "><p xml:lang="fr-FR" id="p1752mcpsimp"><a name="p1752mcpsimp"></a><a name="p1752mcpsimp"></a>Clib是功能全集，接口会更新到最新版。</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574258%" headers="mcps1.2.5.1.4 "><p xml:lang="fr-FR" id="p1754mcpsimp"><a name="p1754mcpsimp"></a><a name="p1754mcpsimp"></a>解决方案根据需求，支持的功能是Clib中的子集。某些接口由于升级可能与最新版Clib不一致。</p>
-</td>
-</tr>
-<tr id="row1755mcpsimp"><td class="cellrowborder" valign="top" width="6.9306930693069315%" headers="mcps1.2.5.1.1 "><p xml:lang="fr-FR" id="p1757mcpsimp"><a name="p1757mcpsimp"></a><a name="p1757mcpsimp"></a>7</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p xml:lang="fr-FR" id="p1759mcpsimp"><a name="p1759mcpsimp"></a><a name="p1759mcpsimp"></a>异步、同步、并行、串行</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.633663366336634%" headers="mcps1.2.5.1.3 "><p xml:lang="fr-FR" id="p1761mcpsimp"><a name="p1761mcpsimp"></a><a name="p1761mcpsimp"></a>Clib的执行与算法软件均在CPU中串行执行，不存在异步问题。</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574258%" headers="mcps1.2.5.1.4 "><p xml:lang="fr-FR" id="p1763mcpsimp"><a name="p1763mcpsimp"></a><a name="p1763mcpsimp"></a>IVE硬件与CPU异步执行，可以此特性让IVE与CPU并行工作，提高性能。但是在CPU需要使用IVE的结果数据时，需要同步。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-## 使用IVE与OpenCV开发算法的区别<a name="ZH-CN_TOPIC_0000002503971169"></a>
-
-1.  IVE与CPU异步，CPU必须查询IVE任务是否完成；用OpenCV开发算法不需要；
-2.  IVE的参数一般是定点化的，内部计算也是定点的；OpenCV一般是浮点的参数和计算；故同样的功能，IVE相比OpenCV有范围和精度上的限制。
-3.  IVE使用物理地址，且对起始地址以及跨度有对齐要求；OpenCV不需要物理地址，也无对齐要求；
-4.  IVE有软硬件分工，有些算子硬件实现一部分，软件实现一部分，也就是会有硬件+软件多个接口实现一个OpenCV算子的情况。
-5.  IVE算子的控制参数尽可能与OpenCV算子对齐，方便客户从OpenCV算子适配到IVE。例如金字塔LK光流计算控制参数ot\_ive\_lk\_optical\_flow\_pyr\_ctrl结构体内的成员变量与对应的OpenCV算子输入参数变量的含义是一一对齐的；对应的浮点转定点方式可以通过IVE算子参数变量的类型\(例如td\_u0q8\)和sample样例中参数变量的赋值\(例如0.1 \* 256\)来分析其转换关系。
-6.  若从OpenCV算子适配到IVE算子的开发过程中报错导致无法运行或结果与预期不一致，建议参考sample代码先检查IVE算子的输入是否配置完备、规格和数值范围是否符合规格要求；根据检查代码的报错打印和错误码确认问题范围和原因等。
-
-## ANN/SVM查找表的建立<a name="ZH-CN_TOPIC_0000002471091298"></a>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->以函数f\(u\)建立查找表为例，建立查找表的步骤如下\(下面提到的table\_in\_lower，table\_in\_upper，table\_in\_precision，elem\_num，table\_out\_norm，table请参ot\_svp\_lut结构体说明\).
-
-1.  明确自变量u的范围：若u在\[a, b\]之间，假设r=b-a; a、b分别对应table\_in\_lower，table\_in\_upper；（ANN建表时u即为自变量u；svm建表时u对应![](figures/zh-cn_formulaimage_0000002504091435.png)或者![](figures/zh-cn_formulaimage_0000002470931574.png)，具体公式可参考ss\_mpi\_ive\_ann\_mlp\_predict和ss\_mpi\_ive\_svm\_predict的【注意】）
-2.  明确自变量1个单位的采样数g，则g=1<< table\_in\_precision；整个查找表的元素个数elem\_num =r\*g=r<< table\_in\_precision; \(ANN和SVM均对查找表有最大数目限制要求，具体参考ss\_mpi\_ive\_ann\_mlp\_predict和ss\_mpi\_ive\_svm\_predict的【注意】\)
-3.  明确值域f\(u\)的范围，由于一般需要将值域约束到\[-1, 1\]，这时候，可以使用table\_out\_norm或者1<<table\_out\_norm做除数来对f\(u\)做归一化;（ANN仅支持1<<table\_out\_norm做除数；SVM支持2种，所以ive\_xml2bin\_ui.exe中对svm的模型转换时要求输入divisor，且divisor必须与建立查找表的归一化除数一致）
-4.  根据f\(u\)的具体公式以及u的采样值，生成对应的f\(u\)查找表，保存在table中。
-
-## Cache内存的使用<a name="ZH-CN_TOPIC_0000002504091187"></a>
-
-内存开辟是否带cache，与算法软件对这片内存的使用主体相关。由于IVE是直接读取DDR内存数据，若此时使用的内存带有cache，必须刷cache来保证数据的一致性。所以若使用主体为IVE，CPU不使用或者仅使用一次，那么建议这片内存不带cache；若CPU是使用主体，建议这片内存带cache。
-
-## 打开/关闭低功耗方法<a name="ZH-CN_TOPIC_0000002504091175"></a>
-
-IVE低功耗开关是通过模块参数传递。在加载IVE ko时把模块参数save\_power值设为1（save\_power=1），即可打开低功耗，反之为关闭低功耗。默认情况下是打开低功耗。
-
+</table> ## 使用IVE与OpenCV开发算法的区别<a name="ZH-CN_TOPIC_0000002503971169"></a> 1. IVE与CPU异步，CPU必须查询IVE任务是否完成；用OpenCV开发算法不需要；
+2. IVE的参数一般是定点化的，内部计算也是定点的；OpenCV一般是浮点的参数和计算；故同样的功能，IVE相比OpenCV有范围和精度上的限制。
+3. IVE使用物理地址，且对起始地址以及跨度有对齐要求；OpenCV不需要物理地址，也无对齐要求；
+4. IVE有软硬件分工，有些算子硬件实现一部分，软件实现一部分，也就是会有硬件+软件多个接口实现一个OpenCV算子的情况。
+5. IVE算子的控制参数尽可能与OpenCV算子对齐，方便客户从OpenCV算子适配到IVE。例如金字塔LK光流计算控制参数ot\_ive\_lk\_optical\_flow\_pyr\_ctrl结构体内的成员变量与对应的OpenCV算子输入参数变量的含义是一一对齐的；对应的浮点转定点方式可以通过IVE算子参数变量的类型\(例如td\_u0q8\)和sample样例中参数变量的赋值\(例如0.1 \* 256\)来分析其转换关系。
+6. 若从OpenCV算子适配到IVE算子的开发过程中报错导致无法运行或结果与预期不一致，建议参考sample代码先检查IVE算子的输入是否配置完备、规格和数值范围是否符合规格要求；根据检查代码的报错打印和错误码确认问题范围和原因等。 ## ANN/SVM查找表的建立<a name="ZH-CN_TOPIC_0000002471091298"></a> >![](public_sys-resources/icon-note.gif) **说明：** >以函数f\(u\)建立查找表为例，建立查找表的步骤如下\(下面提到的table\_in\_lower，table\_in\_upper，table\_in\_precision，elem\_num，table\_out\_norm，table请参ot\_svp\_lut结构体说明\). 1. 明确自变量u的范围：若u在\[a, b\]之间，假设r=b-a; a、b分别对应table\_in\_lower，table\_in\_upper；（ANN建表时u即为自变量u；svm建表时u对应![](figures/zh-cn_formulaimage_0000002504091435.png)或者![](figures/zh-cn_formulaimage_0000002470931574.png)，具体公式可参考ss\_mpi\_ive\_ann\_mlp\_predict和ss\_mpi\_ive\_svm\_predict的【注意】）
+2. 明确自变量1个单位的采样数g，则g=1<< table\_in\_precision；整个查找表的元素个数elem\_num =r\*g=r<< table\_in\_precision; \(ANN和SVM均对查找表有最大数目限制要求，具体参考ss\_mpi\_ive\_ann\_mlp\_predict和ss\_mpi\_ive\_svm\_predict的【注意】\)
+3. 明确值域f\(u\)的范围，由于一般需要将值域约束到\[-1, 1\]，这时候，可以使用table\_out\_norm或者1<<table\_out\_norm做除数来对f\(u\)做归一化;（ANN仅支持1<<table\_out\_norm做除数；SVM支持2种，所以ive\_xml2bin\_ui.exe中对svm的模型转换时要求输入divisor，且divisor必须与建立查找表的归一化除数一致）
+4. 根据f\(u\)的具体公式以及u的采样值，生成对应的f\(u\)查找表，保存在table中。 ## Cache内存的使用<a name="ZH-CN_TOPIC_0000002504091187"></a> 内存开辟是否带cache，与算法软件对这片内存的使用主体相关。由于IVE是直接读取DDR内存数据，若此时使用的内存带有cache，必须刷cache来保证数据的一致性。所以若使用主体为IVE，CPU不使用或者仅使用一次，那么建议这片内存不带cache；若CPU是使用主体，建议这片内存带cache。 ## 打开/关闭低功耗方法<a name="ZH-CN_TOPIC_0000002504091175"></a> IVE低功耗开关是通过模块参数传递。在加载IVE ko时把模块参数save\_power值设为1（save\_power=1），即可打开低功耗，反之为关闭低功耗。默认情况下是打开低功耗。 

@@ -1,59 +1,18 @@
 ---
 title: "AE"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP Dev Reference/ISP Dev Reference (3-5).md
----
-
-# AE
-## Overview<a name="ZH-CN_TOPIC_0000002504084725"></a>
-
-The ISP AE module implements the following functionality: based on the automatic metering system, it obtains the current image exposure and automatically configures the lens aperture, sensor shutter, and gain to achieve optimal image quality. The auto exposure algorithm is mainly divided into aperture priority, shutter priority, and gain priority. In aperture priority mode, the algorithm prioritizes adjusting the aperture to a suitable position before allocating exposure time and gain. This is only suitable for P-Iris lenses, and it balances noise and depth of field. In shutter priority mode, the algorithm prioritizes allocating exposure time before allocating sensor gain and ISP gain, resulting in less noise in the captured image. In gain priority mode, the algorithm prioritizes allocating sensor gain and ISP gain before allocating exposure time, suitable for scenes with moving objects. The current AE algorithm also supports customers setting more flexible exposure allocation strategies. The workflow of the AE module is shown in [Figure 1](#fig78111144161318).
-
-**Figure 1** AE Module Workflow Diagram<a name="fig78111144161318"></a>  
-![](figures/AE Module Workflow Diagram "AE Module Workflow Diagram")
-## Important Concepts<a name="ZH-CN_TOPIC_0000002471084834"></a>
-
-- Exposure Time: The time during which the sensor accumulates charge, from the start of exposure of the sensor pixel to the readout of the charge.
+--- # AE
+## Overview<a name="ZH-CN_TOPIC_0000002504084725"></a> The ISP AE module implements the following functionality: based on the automatic metering system, it obtains the current image exposure and automatically configures the lens aperture, sensor shutter, and gain to achieve optimal image quality. The auto exposure algorithm is mainly divided into aperture priority, shutter priority, and gain priority. In aperture priority mode, the algorithm prioritizes adjusting the aperture to a suitable position before allocating exposure time and gain. This is only suitable for P-Iris lenses, and it balances noise and depth of field. In shutter priority mode, the algorithm prioritizes allocating exposure time before allocating sensor gain and ISP gain, resulting in less noise in the captured image. In gain priority mode, the algorithm prioritizes allocating sensor gain and ISP gain before allocating exposure time, suitable for scenes with moving objects. The current AE algorithm also supports customers setting more flexible exposure allocation strategies. The workflow of the AE module is shown in [Figure 1](#fig78111144161318). **Figure 1** AE Module Workflow Diagram<a name="fig78111144161318"></a> ![](figures/AE Module Workflow Diagram "AE Module Workflow Diagram")
+## Important Concepts<a name="ZH-CN_TOPIC_0000002471084834"></a> - Exposure Time: The time during which the sensor accumulates charge, from the start of exposure of the sensor pixel to the readout of the charge.
 - Exposure Gain: The total amplification factor for the sensor's output charge, generally including digital gain and analog gain. Analog gain introduces slightly less noise, so analog gain is typically preferred.
 - Aperture: The aperture is a mechanical device in the lens that can change the size of the aperture opening.
-- Anti-flicker: Image flicker caused by the mismatch between the power frequency of electric lights and the sensor's frame rate. Anti-flicker is generally achieved by limiting the exposure time and modifying the sensor's frame rate.
-
-## Function Description<a name="ZH-CN_TOPIC_0000002470924948"></a>
-
-The AE module consists of two parts: the ISP AE statistics information module and the AE algorithm Firmware for AE control strategy. The ISP AE statistics information module mainly provides brightness information statistics of the sensor input data. The statistics information provided includes histograms and average values, which can simultaneously provide 1024-bin histograms of the entire image and R/Gr/Gb/B four-component average statistics, as well as R/Gr/Gb/B four-component average statistics for each block when the entire image is divided into MxN blocks, as shown in [Figure 1](#fig1568813224314).
-
-**Figure 1** AE 1024-bin Statistics Histogram<a name="fig1568813224314"></a>  
-![](figures/AE 1024-bin Statistics Histogram "AE 1024-bin Statistics Histogram")
-
-The main working principle of the AE algorithm is to obtain the statistical information of the input image in real time, compare it with the set target brightness, and dynamically adjust the sensor's exposure time, gain, and lens aperture size so that the actual brightness approaches the set target brightness. Its working principle is shown in [Figure 2](#fig85992506321).
-
-**Figure 2** AE Working Principle Diagram<a name="fig85992506321"></a>  
-![](figures/AE Working Principle Diagram "AE Working Principle Diagram")
-## API Reference<a name="ZH-CN_TOPIC_0000002504084819"></a>
-
-### AE Library Interfaces<a name="ZH-CN_TOPIC_0000002471084986"></a>
-
-All AE library interfaces are only for the AE library provided by the SDK. If the customer implements their own AE library, they do not need to pay attention to these interfaces and cannot use them.
-
-- [ss_mpi_ae_register](#ZH-CN_TOPIC_0000002470925134): Register the AE library with ISP.
+- Anti-flicker: Image flicker caused by the mismatch between the power frequency of electric lights and the sensor's frame rate. Anti-flicker is generally achieved by limiting the exposure time and modifying the sensor's frame rate. ## Function Description<a name="ZH-CN_TOPIC_0000002470924948"></a> The AE module consists of two parts: the ISP AE statistics information module and the AE algorithm Firmware for AE control strategy. The ISP AE statistics information module mainly provides brightness information statistics of the sensor input data. The statistics information provided includes histograms and average values, which can simultaneously provide 1024-bin histograms of the entire image and R/Gr/Gb/B four-component average statistics, as well as R/Gr/Gb/B four-component average statistics for each block when the entire image is divided into MxN blocks, as shown in [Figure 1](#fig1568813224314). **Figure 1** AE 1024-bin Statistics Histogram<a name="fig1568813224314"></a> ![](figures/AE 1024-bin Statistics Histogram "AE 1024-bin Statistics Histogram") The main working principle of the AE algorithm is to obtain the statistical information of the input image in real time, compare it with the set target brightness, and dynamically adjust the sensor's exposure time, gain, and lens aperture size so that the actual brightness approaches the set target brightness. Its working principle is shown in [Figure 2](#fig85992506321). **Figure 2** AE Working Principle Diagram<a name="fig85992506321"></a> ![](figures/AE Working Principle Diagram "AE Working Principle Diagram")
+## API Reference<a name="ZH-CN_TOPIC_0000002504084819"></a> ### AE Library Interfaces<a name="ZH-CN_TOPIC_0000002471084986"></a> All AE library interfaces are only for the AE library provided by the SDK. If the customer implements their own AE library, they do not need to pay attention to these interfaces and cannot use them. - [ss_mpi_ae_register](#ZH-CN_TOPIC_0000002470925134): Register the AE library with ISP.
 - [ss_mpi_ae_unregister](#ZH-CN_TOPIC_0000002471084866): Unregister the AE library from ISP.
 - [ss_mpi_ae_sensor_reg_callback](#ZH-CN_TOPIC_0000002470924952): The sensor registration callback interface provided by the AE library.
-- [ss_mpi_ae_sensor_unreg_callback](#ZH-CN_TOPIC_0000002471084858): The sensor unregistration callback interface provided by the AE library.
-
-#### ss_mpi_ae_register<a name="ZH-CN_TOPIC_0000002470925134"></a>
-
-【Description】
-
-Register the AE library with ISP.
-
-【Syntax】
-
-```
+- [ss_mpi_ae_sensor_unreg_callback](#ZH-CN_TOPIC_0000002471084858): The sensor unregistration callback interface provided by the AE library. #### ss_mpi_ae_register<a name="ZH-CN_TOPIC_0000002470925134"></a> 【Description】 Register the AE library with ISP. 【Syntax】 ```
 td_s32 ss_mpi_ae_register(ot_vi_pipe vi_pipe, const ot_isp_3a_alg_lib *ae_lib);
-```
-
-【Parameters】
-
-<a name="table10192mcpsimp"></a>
+``` 【Parameters】 <a name="table10192mcpsimp"></a>
 <table><thead align="left"><tr id="row10198mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p10200mcpsimp"><a name="p10200mcpsimp"></a><a name="p10200mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p10202mcpsimp"><a name="p10202mcpsimp"></a><a name="p10202mcpsimp"></a>Description</p>
@@ -77,11 +36,7 @@ td_s32 ss_mpi_ae_register(ot_vi_pipe vi_pipe, const ot_isp_3a_alg_lib *ae_lib);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10221mcpsimp"></a>
+</table> 【Return Value】 <a name="table10221mcpsimp"></a>
 <table><thead align="left"><tr id="row10226mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10228mcpsimp"><a name="p10228mcpsimp"></a><a name="p10228mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10230mcpsimp"><a name="p10230mcpsimp"></a><a name="p10230mcpsimp"></a>Description</p>
@@ -99,49 +54,17 @@ td_s32 ss_mpi_ae_register(ot_vi_pipe vi_pipe, const ot_isp_3a_alg_lib *ae_lib);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-- This interface calls the AE registration callback interface ss_mpi_isp_ae_lib_reg_callback provided by the ISP library to implement the registration of the AE library provided by the SDK with the ISP library.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 - This interface calls the AE registration callback interface ss_mpi_isp_ae_lib_reg_callback provided by the ISP library to implement the registration of the AE library provided by the SDK with the ISP library.
 - Multiple instances of the AE library can be registered.
-- This interface does not support multi-process operations.
-
-【Example】
-
-```
+- This interface does not support multi-process operations. 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ae_lib.id = 0;
-strcpy(ae_lib.lib_name, OT_AE_LIB_NAME); 
-ss_mpi_ae_register(vi_pipe, &ae_lib);
-ae_lib.id  = 1; 
-ss_mpi_ae_register(vi_pipe, &ae_lib);
-```
-
-【Related Topics】
-
-None
-
-#### ss_mpi_ae_unregister<a name="ZH-CN_TOPIC_0000002471084866"></a>
-
-【Description】
-
-Unregister the AE library from ISP.
-
-【Syntax】
-
-```
+strcpy(ae_lib.lib_name, OT_AE_LIB_NAME); ss_mpi_ae_register(vi_pipe, &ae_lib);
+ae_lib.id = 1; ss_mpi_ae_register(vi_pipe, &ae_lib);
+``` 【Related Topics】 None #### ss_mpi_ae_unregister<a name="ZH-CN_TOPIC_0000002471084866"></a> 【Description】 Unregister the AE library from ISP. 【Syntax】 ```
 td_s32 ss_mpi_ae_unregister(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_lib);
-```
-
-【Parameters】
-
-<a name="table10270mcpsimp"></a>
+``` 【Parameters】 <a name="table10270mcpsimp"></a>
 <table><thead align="left"><tr id="row10276mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p10278mcpsimp"><a name="p10278mcpsimp"></a><a name="p10278mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p10280mcpsimp"><a name="p10280mcpsimp"></a><a name="p10280mcpsimp"></a>Description</p>
@@ -165,11 +88,7 @@ td_s32 ss_mpi_ae_unregister(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_lib);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10299mcpsimp"></a>
+</table> 【Return Value】 <a name="table10299mcpsimp"></a>
 <table><thead align="left"><tr id="row10304mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10306mcpsimp"><a name="p10306mcpsimp"></a><a name="p10306mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10308mcpsimp"><a name="p10308mcpsimp"></a><a name="p10308mcpsimp"></a>Description</p>
@@ -187,47 +106,15 @@ td_s32 ss_mpi_ae_unregister(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_lib);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-- This interface calls the AE unregistration callback interface ss_mpi_isp_ae_lib_unreg_callback provided by the ISP library to implement the unregistration of the AE library from the ISP library.
-- This interface does not support multi-process operations.
-
-【Example】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 - This interface calls the AE unregistration callback interface ss_mpi_isp_ae_lib_unreg_callback provided by the ISP library to implement the unregistration of the AE library from the ISP library.
+- This interface does not support multi-process operations. 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
-ae_lib.id = 0;strcpy(ae_lib.lib_name, OT_AE_LIB_NAME); 
-ss_mpi_ae_unregister(vi_pipe, & ae_lib);
-ae_lib.id = 1; 
-ss_mpi_ae_unregister(vi_pipe, & ae_lib);
-```
-
-【Related Topics】
-
-None
-
-#### ss_mpi_ae_sensor_reg_callback<a name="ZH-CN_TOPIC_0000002470924952"></a>
-
-【Description】
-
-The sensor registration callback interface provided by the AE library.
-
-【Syntax】
-
-```
+ae_lib.id = 0;strcpy(ae_lib.lib_name, OT_AE_LIB_NAME); ss_mpi_ae_unregister(vi_pipe, & ae_lib);
+ae_lib.id = 1; ss_mpi_ae_unregister(vi_pipe, & ae_lib);
+``` 【Related Topics】 None #### ss_mpi_ae_sensor_reg_callback<a name="ZH-CN_TOPIC_0000002470924952"></a> 【Description】 The sensor registration callback interface provided by the AE library. 【Syntax】 ```
 td_s32 ss_mpi_ae_sensor_reg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_lib, ot_isp_sns_attr_info *sns_attr_info, ot_isp_ae_sensor_register *pregister);
-```
-
-【Parameters】
-
-<a name="table10349mcpsimp"></a>
+``` 【Parameters】 <a name="table10349mcpsimp"></a>
 <table><thead align="left"><tr id="row10355mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p10357mcpsimp"><a name="p10357mcpsimp"></a><a name="p10357mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p10359mcpsimp"><a name="p10359mcpsimp"></a><a name="p10359mcpsimp"></a>Description</p>
@@ -265,11 +152,7 @@ td_s32 ss_mpi_ae_sensor_reg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_l
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10392mcpsimp"></a>
+</table> 【Return Value】 <a name="table10392mcpsimp"></a>
 <table><thead align="left"><tr id="row10397mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10399mcpsimp"><a name="p10399mcpsimp"></a><a name="p10399mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10401mcpsimp"><a name="p10401mcpsimp"></a><a name="p10401mcpsimp"></a>Description</p>
@@ -287,71 +170,33 @@ td_s32 ss_mpi_ae_sensor_reg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_l
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-- SensorId is a custom value defined in the sensor library, mainly used to verify whether the sensor registered with ISP and the sensor registered with 3A are the same sensor.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 - SensorId is a custom value defined in the sensor library, mainly used to verify whether the sensor registered with ISP and the sensor registered with 3A are the same sensor.
 - AE obtains differentiated initialization parameters and controls the sensor through a series of callback interfaces registered by the sensor.
-- This interface does not support multi-process operations.
-
-**Figure 1** Interface between the AE library and the sensor library<a name="fig192824551518"></a>  
-![](figures/Interface between the AE library and the sensor library "Interface between the AE library and the sensor library")
-
-【Example】
-
-```
+- This interface does not support multi-process operations. **Figure 1** Interface between the AE library and the sensor library<a name="fig192824551518"></a> ![](figures/Interface between the AE library and the sensor library "Interface between the AE library and the sensor library") 【Example】 ```
 ot_isp_3a_alg_lib ae_lib;
-ot_isp_ae_sensor_register  ae_register;
-ot_isp_sns_attr_info   sns_attr_info;
+ot_isp_ae_sensor_register ae_register;
+ot_isp_sns_attr_info sns_attr_info;
 ot_isp_ae_sensor_exp_func *exp_func = &ae_register.sns_exp;
 (ot_void)memset_s(exp_func, sizeof(ot_isp_ae_sensor_exp_func), 0, sizeof(ot_isp_ae_sensor_exp_func));
-exp_func->pfn_cmos_get_ae_default    = cmos_get_ae_default;
-exp_func->pfn_cmos_fps_set           = cmos_fps_set;
-exp_func->pfn_cmos_slow_framerate_set= cmos_slow_framerate_set;    
-exp_func->pfn_cmos_inttime_update    = cmos_inttime_update;
-exp_func->pfn_cmos_gains_update      = cmos_gains_update;
-exp_func->pfn_cmos_again_calc_table  = cmos_again_calc_table;
-exp_func->pfn_cmos_dgain_calc_table  = cmos_dgain_calc_table;
-exp_func->pfn_cmos_get_inttime_max   = cmos_get_inttime_max;
+exp_func->pfn_cmos_get_ae_default = cmos_get_ae_default;
+exp_func->pfn_cmos_fps_set = cmos_fps_set;
+exp_func->pfn_cmos_slow_framerate_set= cmos_slow_framerate_set; exp_func->pfn_cmos_inttime_update = cmos_inttime_update;
+exp_func->pfn_cmos_gains_update = cmos_gains_update;
+exp_func->pfn_cmos_again_calc_table = cmos_again_calc_table;
+exp_func->pfn_cmos_dgain_calc_table = cmos_dgain_calc_table;
+exp_func->pfn_cmos_get_inttime_max = cmos_get_inttime_max;
 exp_func->pfn_cmos_ae_fswdr_attr_set = cmos_ae_fswdr_attr_set;
-exp_func->pfn_cmos_ae_quick_start_status_set = cmos_ae_quick_start_status_set;
- 
-ot_vi_pipe vi_pipe = 0;
+exp_func->pfn_cmos_ae_quick_start_status_set = cmos_ae_quick_start_status_set; ot_vi_pipe vi_pipe = 0;
 ae_lib.id = 0;
 sns_attr_info.sensor_id = SENSOR_NAME_ID;
 strncpy(ae_lib.lib_name, OT_AE_LIB_NAME, sizeof(OT_AE_LIB_NAME));
 ret = ss_mpi_ae_sensor_reg_callback(vi_pipe, &ae_lib, &sns_attr_info, &ae_register);
-if (ret != TD_SUCCESS) {
-    printf("sensor register callback function to ae lib failed!\n");
-    return ret;
+if (ret != TD_SUCCESS) { printf("sensor register callback function to ae lib failed!\n"); return ret;
 }
-```
-
-【Related Topics】
-
-None
-
-#### ss_mpi_ae_sensor_unreg_callback<a name="ZH-CN_TOPIC_0000002471084858"></a>
-
-【Description】
-
-The sensor unregistration callback interface provided by the AE library.
-
-【Syntax】
-
-```
+``` 【Related Topics】 None #### ss_mpi_ae_sensor_unreg_callback<a name="ZH-CN_TOPIC_0000002471084858"></a> 【Description】 The sensor unregistration callback interface provided by the AE library. 【Syntax】 ```
 td_s32 ss_mpi_ae_sensor_unreg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae_lib, ot_sensor_id sensor_id);
-```
-
-【Parameters】
-
-<a name="table10464mcpsimp"></a>
+``` 【Parameters】 <a name="table10464mcpsimp"></a>
 <table><thead align="left"><tr id="row10470mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.4.1.1"><p id="p10472mcpsimp"><a name="p10472mcpsimp"></a><a name="p10472mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.4.1.2"><p id="p10474mcpsimp"><a name="p10474mcpsimp"></a><a name="p10474mcpsimp"></a>Description</p>
@@ -382,11 +227,7 @@ td_s32 ss_mpi_ae_sensor_unreg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10500mcpsimp"></a>
+</table> 【Return Value】 <a name="table10500mcpsimp"></a>
 <table><thead align="left"><tr id="row10505mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10507mcpsimp"><a name="p10507mcpsimp"></a><a name="p10507mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10509mcpsimp"><a name="p10509mcpsimp"></a><a name="p10509mcpsimp"></a>Description</p>
@@ -404,41 +245,17 @@ td_s32 ss_mpi_ae_sensor_unreg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *ae
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-- SensorId is a custom value defined in the sensor library, mainly used to verify whether the sensor unregistered from ISP and the sensor unregistered from 3A are the same sensor.
-- This interface does not support multi-process operations.
-
-【Example】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 - SensorId is a custom value defined in the sensor library, mainly used to verify whether the sensor unregistered from ISP and the sensor unregistered from 3A are the same sensor.
+- This interface does not support multi-process operations. 【Example】 ```
 ot_isp_3a_alg_lib ae_lib;
 ot_vi_pipe vi_pipe = 0;
 ae_lib.id = 0;
 strncpy(ae_lib.lib_name, OT_AE_LIB_NAME, sizeof(OT_AE_LIB_NAME));
 ret = ss_mpi_ae_sensor_unreg_callback(vi_pipe, &ae_lib, SENSOR_NAME_ID);
-if (ret != TD_SUCCESS) {
-    printf("sensor register callback function to ae lib failed!\n");
-    return ret;
+if (ret != TD_SUCCESS) { printf("sensor register callback function to ae lib failed!\n"); return ret;
 }
-```
-
-【Related Topics】
-
-None
-
-### AE Control Module<a name="ZH-CN_TOPIC_0000002504084901"></a>
-
-Exposure control interfaces:
-
-- [ss_mpi_isp_set_exposure_attr](#ZH-CN_TOPIC_0000002503964781): Set AE exposure attributes.
+``` 【Related Topics】 None ### AE Control Module<a name="ZH-CN_TOPIC_0000002504084901"></a> Exposure control interfaces: - [ss_mpi_isp_set_exposure_attr](#ZH-CN_TOPIC_0000002503964781): Set AE exposure attributes.
 - [ss_mpi_isp_get_exposure_attr](#ZH-CN_TOPIC_0000002504084835): Get AE exposure attributes.
 - [ss_mpi_isp_set_wdr_exposure_attr](#ZH-CN_TOPIC_0000002504084905): Set AE exposure attributes in WDR mode.
 - [ss_mpi_isp_get_wdr_exposure_attr](#ZH-CN_TOPIC_0000002470924854): Get AE exposure attributes in WDR mode.
@@ -458,23 +275,9 @@ Exposure control interfaces:
 - [ss_mpi_isp_get_ae_route_sf_attr_ex](#ZH-CN_TOPIC_0000002470925156): Get AE short frame exposure allocation strategy extension attributes.
 - [ss_mpi_isp_query_exposure_info](#ZH-CN_TOPIC_0000002503964993): Get AE internal status information.
 - [ss_mpi_isp_set_exp_convert](#ZH-CN_TOPIC_0000002470925022): Set attributes related to equal exposure conversion at different frame rates.
-- [ss_mpi_isp_get_exp_convert](#ZH-CN_TOPIC_0000002504084753): Get exposure parameter attributes related to equal exposure conversion results at different frame rates.
-
-#### ss_mpi_isp_set_exposure_attr<a name="ZH-CN_TOPIC_0000002503964781"></a>
-
-【Description】
-
-Set AE exposure attributes.
-
-【Syntax】
-
-```
+- [ss_mpi_isp_get_exp_convert](#ZH-CN_TOPIC_0000002504084753): Get exposure parameter attributes related to equal exposure conversion results at different frame rates. #### ss_mpi_isp_set_exposure_attr<a name="ZH-CN_TOPIC_0000002503964781"></a> 【Description】 Set AE exposure attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_exposure_attr (ot_vi_pipe vi_pipe, const ot_isp_exposure_attr *exp_attr);
-```
-
-【Parameters】
-
-<a name="table10602mcpsimp"></a>
+``` 【Parameters】 <a name="table10602mcpsimp"></a>
 <table><thead align="left"><tr id="row10608mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p10610mcpsimp"><a name="p10610mcpsimp"></a><a name="p10610mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p10612mcpsimp"><a name="p10612mcpsimp"></a><a name="p10612mcpsimp"></a>Description</p>
@@ -498,11 +301,7 @@ td_s32 ss_mpi_isp_set_exposure_attr (ot_vi_pipe vi_pipe, const ot_isp_exposure_a
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10631mcpsimp"></a>
+</table> 【Return Value】 <a name="table10631mcpsimp"></a>
 <table><thead align="left"><tr id="row10636mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10638mcpsimp"><a name="p10638mcpsimp"></a><a name="p10638mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10640mcpsimp"><a name="p10640mcpsimp"></a><a name="p10640mcpsimp"></a>Description</p>
@@ -520,43 +319,21 @@ td_s32 ss_mpi_isp_set_exposure_attr (ot_vi_pipe vi_pipe, const ot_isp_exposure_a
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-- When the AE exposure control type is Auto, the exposure time and exposure gain are automatically controlled by the AE algorithm. Different exposure effects can be achieved by configuring parameters in the auto exposure attribute structure [ot_isp_ae_attr](#ZH-CN_TOPIC_0000002470924872).
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 - When the AE exposure control type is Auto, the exposure time and exposure gain are automatically controlled by the AE algorithm. Different exposure effects can be achieved by configuring parameters in the auto exposure attribute structure [ot_isp_ae_attr](#ZH-CN_TOPIC_0000002470924872).
 - When the AE exposure control type is Manual, you can control the enable types (exposure time enable, sensor analog gain enable, sensor digital gain enable, ISP digital gain enable) and the corresponding exposure parameters (exposure time, sensor analog gain, sensor digital gain, ISP digital gain) through the manual exposure attribute structure manual_attr.
 - When the AE exposure control type is Auto, the parameters configured for manual exposure attributes are invalid. Similarly, when the AE exposure control type is Manual, the parameters configured for auto exposure attributes are invalid.
 - When the AE exposure control type is Manual, if the exposure parameter settings exceed the maximum (minimum) value, the sensor's supported maximum (minimum) value will be used instead.
 - Whether in auto exposure or manual exposure, the unit of exposure time is microseconds (us), and the unit of exposure gain is a multiple of 10-bit precision, i.e., 1024 represents 1x, 2048 represents 2x, etc.
 - In WDR mode, when the priority frame is set to long frame, exposure is prioritized according to the long frame exposure route. In 2-in-1 WDR mode when gain is configured separately, the short frame exposure route is adjusted based on the long frame exposure parameters. When the priority frame is set to short frame, exposure is prioritized according to the short frame exposure route. In 2-in-1 WDR mode when gain is configured separately, the long frame exposure route is adjusted based on the short frame exposure parameters.
-- In 2-in-1 WDR mode with separate gain configuration, if the sensor supports different gains for long and short frames, different sensor analog gains, sensor digital gains, and WDR gains can be achieved for long and short frames. If the sensor does not support different gains for long and short frames, different WDR gains can still be achieved for long and short frames.
-
-【Example】
-
-Auto exposure attribute setting:
-
-```
+- In 2-in-1 WDR mode with separate gain configuration, if the sensor supports different gains for long and short frames, different sensor analog gains, sensor digital gains, and WDR gains can be achieved for long and short frames. If the sensor does not support different gains for long and short frames, different WDR gains can still be achieved for long and short frames. 【Example】 Auto exposure attribute setting: ```
 ot_vi_pipe vi_pipe = 0;
-ot_isp_exposure_attr exp_attr; 
- 
-ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
-exp_attr.  bypass = TD_FALSE;   
-exp_attr. prior_frame= OT_ISP_LONG_FRAME;
-exp_attr.  ae_gain_sep_cfg= TD_FALSE; 
-exp_attr. op_type= OT_OP_MODE_AUTO;       
-exp_attr. auto_attr. exp_time_range.max = 40000;
-exp_attr. auto_attr. exp_time_range.min = 10;       
-ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
-exp_attr. auto_attr.speed = 0x80;      
-ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
-exp_attr. auto_attr. exp_attr =OT_ISP_AE_EXP_HIGHLIGHT_PRIOR;   
-exp_attr. auto_attr. hist_ratio_slope= 0x100;
+ot_isp_exposure_attr exp_attr; ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
+exp_attr. bypass = TD_FALSE; exp_attr. prior_frame= OT_ISP_LONG_FRAME;
+exp_attr. ae_gain_sep_cfg= TD_FALSE; exp_attr. op_type= OT_OP_MODE_AUTO; exp_attr. auto_attr. exp_time_range.max = 40000;
+exp_attr. auto_attr. exp_time_range.min = 10; ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
+exp_attr. auto_attr.speed = 0x80; ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
+exp_attr. auto_attr. exp_attr =OT_ISP_AE_EXP_HIGHLIGHT_PRIOR; exp_attr. auto_attr. hist_ratio_slope= 0x100;
 exp_attr. auto_attr. max_hist_offset= 0x40;
 ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
 exp_attr. auto_attr. antiflicker. enable= TD_TRUE;
@@ -565,46 +342,19 @@ exp_attr. auto_attr. antiflicker. mode= OT_ISP_ANTIFLICKER_NORMAL_MODE;
 ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
 exp_attr. auto_attr. ae_delay_attr. black_delay_frame = 10;
 exp_attr. auto_attr. ae_delay_attr. white_delay_frame = 0;
-ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);     
-```
-
-Manual exposure attribute setting:
-
-```
+ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr); ``` Manual exposure attribute setting: ```
 ot_vi_pipe vi_pipe = 0;
-ot_isp_exposure_attr exp_attr;  
-ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);exp_attr. bypass= TD_FALSE;   
-exp_attr. op_type= OT_OP_MODE_MANUAL;       
-exp_attr. manual_attr. a_gain_op_type = OT_OP_MODE_MANUAL;
+ot_isp_exposure_attr exp_attr; ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);exp_attr. bypass= TD_FALSE; exp_attr. op_type= OT_OP_MODE_MANUAL; exp_attr. manual_attr. a_gain_op_type = OT_OP_MODE_MANUAL;
 exp_attr. manual_attr. d_gain_op_type = OT_OP_MODE_MANUAL
 exp_attr. manual_attr. ispd_gain_op_type = OT_OP_MODE_MANUAL;
 exp_attr. manual_attr. exp_time_op_type = OT_OP_MODE_MANUAL;
 exp_attr. manual_attr. a_gain = 0x400;
 exp_attr. manual_attr. d_gain = 0x400;
 exp_attr. manual_attr. isp_d_gain = 0x400;
-exp_attr. manual_attr. exp_time = 0x40000;     
-ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
-```
-
-【Related Topics】
-
-[ss_mpi_isp_get_exposure_attr](#ss_mpi_isp_get_exposure_attr)
-
-#### ss_mpi_isp_get_exposure_attr<a name="ZH-CN_TOPIC_0000002504084835"></a>
-
-【Description】
-
-Get AE exposure attributes.
-
-【Syntax】
-
-```
+exp_attr. manual_attr. exp_time = 0x40000; ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr);
+``` 【Related Topics】 [ss_mpi_isp_get_exposure_attr](#ss_mpi_isp_get_exposure_attr) #### ss_mpi_isp_get_exposure_attr<a name="ZH-CN_TOPIC_0000002504084835"></a> 【Description】 Get AE exposure attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_exposure_attr *exp_attr);
-```
-
-【Parameters】
-
-<a name="table10718mcpsimp"></a>
+``` 【Parameters】 <a name="table10718mcpsimp"></a>
 <table><thead align="left"><tr id="row10724mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p10726mcpsimp"><a name="p10726mcpsimp"></a><a name="p10726mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p10728mcpsimp"><a name="p10728mcpsimp"></a><a name="p10728mcpsimp"></a>Description</p>
@@ -628,11 +378,7 @@ td_s32 ss_mpi_isp_get_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_exposure_attr *ex
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10747mcpsimp"></a>
+</table> 【Return Value】 <a name="table10747mcpsimp"></a>
 <table><thead align="left"><tr id="row10752mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10754mcpsimp"><a name="p10754mcpsimp"></a><a name="p10754mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10756mcpsimp"><a name="p10756mcpsimp"></a><a name="p10756mcpsimp"></a>Description</p>
@@ -650,40 +396,10 @@ td_s32 ss_mpi_isp_get_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_exposure_attr *ex
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_set_exposure_attr](#ss_mpi_isp_set_exposure_attr)
-
-#### ss_mpi_isp_set_wdr_exposure_attr<a name="ZH-CN_TOPIC_0000002504084905"></a>
-
-【Description】
-
-Set AE exposure attributes in WDR mode.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 [ss_mpi_isp_set_exposure_attr](#ss_mpi_isp_set_exposure_attr) #### ss_mpi_isp_set_wdr_exposure_attr<a name="ZH-CN_TOPIC_0000002504084905"></a> 【Description】 Set AE exposure attributes in WDR mode. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_wdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_wdr_exposure_attr *wdr_exp_attr);
-```
-
-【Parameters】
-
-<a name="table10788mcpsimp"></a>
+``` 【Parameters】 <a name="table10788mcpsimp"></a>
 <table><thead align="left"><tr id="row10794mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p10796mcpsimp"><a name="p10796mcpsimp"></a><a name="p10796mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p10798mcpsimp"><a name="p10798mcpsimp"></a><a name="p10798mcpsimp"></a>Description</p>
@@ -707,11 +423,7 @@ td_s32 ss_mpi_isp_set_wdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_wdr_exp
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10817mcpsimp"></a>
+</table> 【Return Value】 <a name="table10817mcpsimp"></a>
 <table><thead align="left"><tr id="row10822mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10824mcpsimp"><a name="p10824mcpsimp"></a><a name="p10824mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10826mcpsimp"><a name="p10826mcpsimp"></a><a name="p10826mcpsimp"></a>Description</p>
@@ -729,40 +441,10 @@ td_s32 ss_mpi_isp_set_wdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_wdr_exp
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_get_wdr_exposure_attr](#ss_mpi_isp_get_wdr_exposure_attr)
-
-#### ss_mpi_isp_get_wdr_exposure_attr<a name="ZH-CN_TOPIC_0000002470924854"></a>
-
-【Description】
-
-Get AE exposure attributes in WDR mode.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 [ss_mpi_isp_get_wdr_exposure_attr](#ss_mpi_isp_get_wdr_exposure_attr) #### ss_mpi_isp_get_wdr_exposure_attr<a name="ZH-CN_TOPIC_0000002470924854"></a> 【Description】 Get AE exposure attributes in WDR mode. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_wdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_wdr_exposure_attr *wdr_exp_attr);
-```
-
-【Parameters】
-
-<a name="table10858mcpsimp"></a>
+``` 【Parameters】 <a name="table10858mcpsimp"></a>
 <table><thead align="left"><tr id="row10864mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p10866mcpsimp"><a name="p10866mcpsimp"></a><a name="p10866mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p10868mcpsimp"><a name="p10868mcpsimp"></a><a name="p10868mcpsimp"></a>Description</p>
@@ -786,11 +468,7 @@ td_s32 ss_mpi_isp_get_wdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_wdr_exposure_
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10887mcpsimp"></a>
+</table> 【Return Value】 <a name="table10887mcpsimp"></a>
 <table><thead align="left"><tr id="row10892mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10894mcpsimp"><a name="p10894mcpsimp"></a><a name="p10894mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10896mcpsimp"><a name="p10896mcpsimp"></a><a name="p10896mcpsimp"></a>Description</p>
@@ -808,40 +486,10 @@ td_s32 ss_mpi_isp_get_wdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_wdr_exposure_
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libss_isp.a, libot_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_set_wdr_exposure_attr](#ss_mpi_isp_set_wdr_exposure_attr)
-
-#### ss_mpi_isp_set_hdr_exposure_attr<a name="ZH-CN_TOPIC_0000002504084737"></a>
-
-【Description】
-
-Set AE exposure attributes in HDR mode.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libss_isp.a, libot_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 [ss_mpi_isp_set_wdr_exposure_attr](#ss_mpi_isp_set_wdr_exposure_attr) #### ss_mpi_isp_set_hdr_exposure_attr<a name="ZH-CN_TOPIC_0000002504084737"></a> 【Description】 Set AE exposure attributes in HDR mode. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_hdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_hdr_exposure_attr *hdr_exp_attr);
-```
-
-【Parameters】
-
-<a name="table10929mcpsimp"></a>
+``` 【Parameters】 <a name="table10929mcpsimp"></a>
 <table><thead align="left"><tr id="row10935mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p10937mcpsimp"><a name="p10937mcpsimp"></a><a name="p10937mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p10939mcpsimp"><a name="p10939mcpsimp"></a><a name="p10939mcpsimp"></a>Description</p>
@@ -865,11 +513,7 @@ td_s32 ss_mpi_isp_set_hdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_hdr_exp
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table10958mcpsimp"></a>
+</table> 【Return Value】 <a name="table10958mcpsimp"></a>
 <table><thead align="left"><tr id="row10963mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p10965mcpsimp"><a name="p10965mcpsimp"></a><a name="p10965mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p10967mcpsimp"><a name="p10967mcpsimp"></a><a name="p10967mcpsimp"></a>Description</p>
@@ -887,40 +531,10 @@ td_s32 ss_mpi_isp_set_hdr_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_hdr_exp
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-Hi3403V100 does not support HDR mode.
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_get_hdr_exposure_attr](#ss_mpi_isp_get_hdr_exposure_attr)
-
-#### ss_mpi_isp_get_hdr_exposure_attr<a name="ZH-CN_TOPIC_0000002504084897"></a>
-
-【Description】
-
-Get AE exposure attributes in HDR mode.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 Hi3403V100 does not support HDR mode. 【Example】 None 【Related Topics】 [ss_mpi_isp_get_hdr_exposure_attr](#ss_mpi_isp_get_hdr_exposure_attr) #### ss_mpi_isp_get_hdr_exposure_attr<a name="ZH-CN_TOPIC_0000002504084897"></a> 【Description】 Get AE exposure attributes in HDR mode. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_hdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_hdr_exposure_attr *hdr_exp_attr);
-```
-
-【Parameters】
-
-<a name="table11000mcpsimp"></a>
+``` 【Parameters】 <a name="table11000mcpsimp"></a>
 <table><thead align="left"><tr id="row11006mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p11008mcpsimp"><a name="p11008mcpsimp"></a><a name="p11008mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p11010mcpsimp"><a name="p11010mcpsimp"></a><a name="p11010mcpsimp"></a>Description</p>
@@ -944,11 +558,7 @@ td_s32 ss_mpi_isp_get_hdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_hdr_exposure_
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11029mcpsimp"></a>
+</table> 【Return Value】 <a name="table11029mcpsimp"></a>
 <table><thead align="left"><tr id="row11034mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11036mcpsimp"><a name="p11036mcpsimp"></a><a name="p11036mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11038mcpsimp"><a name="p11038mcpsimp"></a><a name="p11038mcpsimp"></a>Description</p>
@@ -966,40 +576,10 @@ td_s32 ss_mpi_isp_get_hdr_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_hdr_exposure_
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-Hi3403V100 does not support HDR mode.
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_set_hdr_exposure_attr](#ss_mpi_isp_set_hdr_exposure_attr)
-
-#### ss_mpi_isp_set_smart_exposure_attr<a name="ZH-CN_TOPIC_0000002471084856"></a>
-
-【Description】
-
-Set AE exposure attributes in smart mode. Only takes effect when smart information is available.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 Hi3403V100 does not support HDR mode. 【Example】 None 【Related Topics】 [ss_mpi_isp_set_hdr_exposure_attr](#ss_mpi_isp_set_hdr_exposure_attr) #### ss_mpi_isp_set_smart_exposure_attr<a name="ZH-CN_TOPIC_0000002471084856"></a> 【Description】 Set AE exposure attributes in smart mode. Only takes effect when smart information is available. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_smart_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_smart_exposure_attr *smart_exp_attr);
-```
-
-【Parameters】
-
-<a name="table11070mcpsimp"></a>
+``` 【Parameters】 <a name="table11070mcpsimp"></a>
 <table><thead align="left"><tr id="row11076mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p11078mcpsimp"><a name="p11078mcpsimp"></a><a name="p11078mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p11080mcpsimp"><a name="p11080mcpsimp"></a><a name="p11080mcpsimp"></a>Description</p>
@@ -1023,11 +603,7 @@ td_s32 ss_mpi_isp_set_smart_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_smart
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11099mcpsimp"></a>
+</table> 【Return Value】 <a name="table11099mcpsimp"></a>
 <table><thead align="left"><tr id="row11104mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11106mcpsimp"><a name="p11106mcpsimp"></a><a name="p11106mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11108mcpsimp"><a name="p11108mcpsimp"></a><a name="p11108mcpsimp"></a>Description</p>
@@ -1045,41 +621,11 @@ td_s32 ss_mpi_isp_set_smart_exposure_attr(ot_vi_pipe vi_pipe, const ot_isp_smart
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- When customers use this function, they can obtain corresponding smart information through their own smart module and pass it to ISP. For the transfer method, refer to the ss_mpi_isp_set_smart_info interface. After ISP obtains the brightness information of faces or human figures, it will adjust the exposure accordingly so that the brightness of faces or human figures reaches the set target value.
-- For detailed usage of the interface, refer to the [ot_isp_smart_exposure_attr](#ZH-CN_TOPIC_0000002503964907) description.
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_get_smart_exposure_attr](#ss_mpi_isp_get_smart_exposure_attr)
-
-#### ss_mpi_isp_get_smart_exposure_attr<a name="ZH-CN_TOPIC_0000002504084961"></a>
-
-【Description】
-
-Get AE exposure attributes in smart mode. Only takes effect when smart information is available.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - When customers use this function, they can obtain corresponding smart information through their own smart module and pass it to ISP. For the transfer method, refer to the ss_mpi_isp_set_smart_info interface. After ISP obtains the brightness information of faces or human figures, it will adjust the exposure accordingly so that the brightness of faces or human figures reaches the set target value.
+- For detailed usage of the interface, refer to the [ot_isp_smart_exposure_attr](#ZH-CN_TOPIC_0000002503964907) description. 【Example】 None 【Related Topics】 [ss_mpi_isp_get_smart_exposure_attr](#ss_mpi_isp_get_smart_exposure_attr) #### ss_mpi_isp_get_smart_exposure_attr<a name="ZH-CN_TOPIC_0000002504084961"></a> 【Description】 Get AE exposure attributes in smart mode. Only takes effect when smart information is available. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_smart_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_smart_exposure_attr *smart_exp_attr);
-```
-
-【Parameters】
-
-<a name="table11147mcpsimp"></a>
+``` 【Parameters】 <a name="table11147mcpsimp"></a>
 <table><thead align="left"><tr id="row11153mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p11155mcpsimp"><a name="p11155mcpsimp"></a><a name="p11155mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p11157mcpsimp"><a name="p11157mcpsimp"></a><a name="p11157mcpsimp"></a>Description</p>
@@ -1103,11 +649,7 @@ td_s32 ss_mpi_isp_get_smart_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_smart_expos
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11176mcpsimp"></a>
+</table> 【Return Value】 <a name="table11176mcpsimp"></a>
 <table><thead align="left"><tr id="row11181mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11183mcpsimp"><a name="p11183mcpsimp"></a><a name="p11183mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11185mcpsimp"><a name="p11185mcpsimp"></a><a name="p11185mcpsimp"></a>Description</p>
@@ -1125,40 +667,10 @@ td_s32 ss_mpi_isp_get_smart_exposure_attr(ot_vi_pipe vi_pipe, ot_isp_smart_expos
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_set_smart_exposure_attr](#ss_mpi_isp_set_smart_exposure_attr)
-
-#### ss_mpi_isp_set_fast_face_ae_attr<a name="ZH-CN_TOPIC_0000002503964919"></a>
-
-【Description】
-
-Set AE exposure attributes in face fast convergence mode. Only takes effect when face coordinate information is available.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 [ss_mpi_isp_set_smart_exposure_attr](#ss_mpi_isp_set_smart_exposure_attr) #### ss_mpi_isp_set_fast_face_ae_attr<a name="ZH-CN_TOPIC_0000002503964919"></a> 【Description】 Set AE exposure attributes in face fast convergence mode. Only takes effect when face coordinate information is available. 【Syntax】 ```
 td_s32 ot_mpi_isp_set_fast_face_ae_attr(ot_vi_pipe vi_pipe, const ot_isp_fast_face_ae_attr *fast_face_attr);
-```
-
-【Parameters】
-
-<a name="table8703741161318"></a>
+``` 【Parameters】 <a name="table8703741161318"></a>
 <table><thead align="left"><tr id="row117491941131311"><th class="cellrowborder" valign="top" width="21.36%" id="mcps1.1.4.1.1"><p id="p774974118139"><a name="p774974118139"></a><a name="p774974118139"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="62.57%" id="mcps1.1.4.1.2"><p id="p1474911417133"><a name="p1474911417133"></a><a name="p1474911417133"></a>Description</p>
@@ -1182,11 +694,7 @@ td_s32 ot_mpi_isp_set_fast_face_ae_attr(ot_vi_pipe vi_pipe, const ot_isp_fast_fa
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table1571215419134"></a>
+</table> 【Return Value】 <a name="table1571215419134"></a>
 <table><thead align="left"><tr id="row11749154114139"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p10749164116132"><a name="p10749164116132"></a><a name="p10749164116132"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p9749134121318"><a name="p9749134121318"></a><a name="p9749134121318"></a>Description</p>
@@ -1204,43 +712,17 @@ td_s32 ot_mpi_isp_set_fast_face_ae_attr(ot_vi_pipe vi_pipe, const ot_isp_fast_fa
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Example】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ot_isp_fast_face_ae_attr fast_face_attr;
 ss_mpi_isp_get_fast_face_ae_attr (vi_pipe, &fast_face_attr);
 fast_face_attr. enable = TD_TRUE;
 ss_mpi_isp_set_fast_face_ae_attr (vi_pipe, &fast_face_attr);
-```
-
-【Related Topics】
-
-- [ss_mpi_isp_get_fast_face_ae_attr](#ss_mpi_isp_set_fast_face_ae_attr)
-- [ot_isp_fast_face_ae_attr](#ot_isp_fast_face_ae_attr)
-
-#### ss_mpi_isp_get_fast_face_ae_attr<a name="ZH-CN_TOPIC_0000002504084751"></a>
-
-【Description】
-
-Get AE exposure attributes in face fast convergence mode. Only takes effect when face coordinate information is available.
-
-【Syntax】
-
-```
+``` 【Related Topics】 - [ss_mpi_isp_get_fast_face_ae_attr](#ss_mpi_isp_set_fast_face_ae_attr)
+- [ot_isp_fast_face_ae_attr](#ot_isp_fast_face_ae_attr) #### ss_mpi_isp_get_fast_face_ae_attr<a name="ZH-CN_TOPIC_0000002504084751"></a> 【Description】 Get AE exposure attributes in face fast convergence mode. Only takes effect when face coordinate information is available. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_fast_face_ae_attr(ot_vi_pipe vi_pipe, ot_isp_fast_face_ae_attr *fast_face_attr);
-```
-
-【Parameters】
-
-<a name="table18594592169"></a>
+``` 【Parameters】 <a name="table18594592169"></a>
 <table><thead align="left"><tr id="row1911615901613"><th class="cellrowborder" valign="top" width="21.36%" id="mcps1.1.4.1.1"><p id="p211675921611"><a name="p211675921611"></a><a name="p211675921611"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="62.57%" id="mcps1.1.4.1.2"><p id="p6116115913161"><a name="p6116115913161"></a><a name="p6116115913161"></a>Description</p>
@@ -1264,11 +746,7 @@ td_s32 ss_mpi_isp_get_fast_face_ae_attr(ot_vi_pipe vi_pipe, ot_isp_fast_face_ae_
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table157095917166"></a>
+</table> 【Return Value】 <a name="table157095917166"></a>
 <table><thead align="left"><tr id="row4116135918168"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p10116145921619"><a name="p10116145921619"></a><a name="p10116145921619"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p14116859121620"><a name="p14116859121620"></a><a name="p14116859121620"></a>Description</p>
@@ -1286,43 +764,17 @@ td_s32 ss_mpi_isp_get_fast_face_ae_attr(ot_vi_pipe vi_pipe, ot_isp_fast_face_ae_
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Example】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ot_isp_fast_face_ae_attr fast_face_attr;
 ss_mpi_isp_get_fast_face_ae_attr (vi_pipe, &fast_face_attr);
 fast_face_attr. enable = TD_TRUE;
 ss_mpi_isp_set_fast_face_ae_attr (vi_pipe, &fast_face_attr);
-```
-
-【Related Topics】
-
-- [ss_mpi_isp_set_fast_face_ae_attr](#ss_mpi_isp_get_fast_face_ae_attr)
-- [ot_isp_fast_face_ae_attr](#ot_isp_fast_face_ae_attr)
-
-#### ss_mpi_isp_set_ae_route_attr<a name="ZH-CN_TOPIC_0000002504084821"></a>
-
-【Description】
-
-Set AE exposure allocation strategy attributes.
-
-【Syntax】
-
-```
+``` 【Related Topics】 - [ss_mpi_isp_set_fast_face_ae_attr](#ss_mpi_isp_get_fast_face_ae_attr)
+- [ot_isp_fast_face_ae_attr](#ot_isp_fast_face_ae_attr) #### ss_mpi_isp_set_ae_route_attr<a name="ZH-CN_TOPIC_0000002504084821"></a> 【Description】 Set AE exposure allocation strategy attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_ae_route_attr(ot_vi_pipe vi_pipe, const ot_isp_ae_route *ae_route_attr);
-```
-
-【Parameters】
-
-<a name="table11217mcpsimp"></a>
+``` 【Parameters】 <a name="table11217mcpsimp"></a>
 <table><thead align="left"><tr id="row11223mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p11225mcpsimp"><a name="p11225mcpsimp"></a><a name="p11225mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p11227mcpsimp"><a name="p11227mcpsimp"></a><a name="p11227mcpsimp"></a>Description</p>
@@ -1346,11 +798,7 @@ td_s32 ss_mpi_isp_set_ae_route_attr(ot_vi_pipe vi_pipe, const ot_isp_ae_route *a
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11246mcpsimp"></a>
+</table> 【Return Value】 <a name="table11246mcpsimp"></a>
 <table><thead align="left"><tr id="row11251mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11253mcpsimp"><a name="p11253mcpsimp"></a><a name="p11253mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11255mcpsimp"><a name="p11255mcpsimp"></a><a name="p11255mcpsimp"></a>Description</p>
@@ -1368,69 +816,18 @@ td_s32 ss_mpi_isp_set_ae_route_attr(ot_vi_pipe vi_pipe, const ot_isp_ae_route *a
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- This interface is used to set the AE exposure allocation route. The exposure calculated by AE will be allocated according to the set route. Users can set exposure priority, gain priority, or aperture priority according to their needs.
-- The AE allocation route diagram is shown in [Figure 1](#_Ref376180242). The AE allocation route follows these constraints:
-    - Supports up to 16 nodes, each node has three components: exposure time, gain, and aperture. Gain includes analog gain, digital gain, and ISP digital gain.
-    - The unit of exposure time in a node is us. It cannot be set to 0, nor too small such that the actual corresponding exposure line count is 0, otherwise an exception may occur.
-    - The aperture component only supports P-Iris, not DC-Iris. Since DC-Iris cannot be precisely controlled, the aperture component is invalid for DC-Iris and manual aperture lenses.
-    - The exposure amount of a node is the product of exposure time, gain, and aperture. The node exposure amounts increase monotonically.
-    - If the exposure amount increases between adjacent nodes, one component should increase while others remain fixed. The increasing component determines the allocation strategy for that segment.
-    - Equal exposure amount nodes are not supported.
-    - Users can set different routes for different scenarios, and the allocation route supports dynamic switching.
-    - The AE allocation route cannot be used to limit the maximum and minimum values of exposure parameters.
-    - For DC-Iris and manual aperture lenses, the default AE allocation strategy is to allocate exposure time first, then gain. For P-Iris lenses, the default strategy is to adjust the aperture first, then exposure time, and finally gain.
-    - When switching between DC-Iris and P-Iris online, the AE route will be reset to the default allocation strategy.
-    - In 2-in-1 WDR mode, when the priority frame is short frame and gain separate configuration is not enabled, the AE route does not take effect.
-    - During auto frame dropping, if the AE route is set in cmos.c, the AE route from cmos.c will be used after switching.
-    - When switching between linear mode and WDR mode, if the AE route is set in cmos.c, the route from cmos.c will be used after switching.
-    - When switching frame rate or resolution, if the user-set maximum exposure target time is greater than the maximum exposure time allowed after switching, the maximum exposure time of the route will be updated.
-    - In cases where the actually effective AE route may differ from the MPI setting, use [ss_mpi_isp_query_exposure_info](#ZH-CN_TOPIC_0000002503964993) to get the actually effective AE route.
-
-**Figure 1** AE Allocation Route Diagram<a name="_Ref376180242"></a>  
-![](figures/AE Allocation Route Diagram "AE Allocation Route Diagram")
-
-【Example】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - This interface is used to set the AE exposure allocation route. The exposure calculated by AE will be allocated according to the set route. Users can set exposure priority, gain priority, or aperture priority according to their needs.
+- The AE allocation route diagram is shown in [Figure 1](#_Ref376180242). The AE allocation route follows these constraints: - Supports up to 16 nodes, each node has three components: exposure time, gain, and aperture. Gain includes analog gain, digital gain, and ISP digital gain. - The unit of exposure time in a node is us. It cannot be set to 0, nor too small such that the actual corresponding exposure line count is 0, otherwise an exception may occur. - The aperture component only supports P-Iris, not DC-Iris. Since DC-Iris cannot be precisely controlled, the aperture component is invalid for DC-Iris and manual aperture lenses. - The exposure amount of a node is the product of exposure time, gain, and aperture. The node exposure amounts increase monotonically. - If the exposure amount increases between adjacent nodes, one component should increase while others remain fixed. The increasing component determines the allocation strategy for that segment. - Equal exposure amount nodes are not supported. - Users can set different routes for different scenarios, and the allocation route supports dynamic switching. - The AE allocation route cannot be used to limit the maximum and minimum values of exposure parameters. - For DC-Iris and manual aperture lenses, the default AE allocation strategy is to allocate exposure time first, then gain. For P-Iris lenses, the default strategy is to adjust the aperture first, then exposure time, and finally gain. - When switching between DC-Iris and P-Iris online, the AE route will be reset to the default allocation strategy. - In 2-in-1 WDR mode, when the priority frame is short frame and gain separate configuration is not enabled, the AE route does not take effect. - During auto frame dropping, if the AE route is set in cmos.c, the AE route from cmos.c will be used after switching. - When switching between linear mode and WDR mode, if the AE route is set in cmos.c, the route from cmos.c will be used after switching. - When switching frame rate or resolution, if the user-set maximum exposure target time is greater than the maximum exposure time allowed after switching, the maximum exposure time of the route will be updated. - In cases where the actually effective AE route may differ from the MPI setting, use [ss_mpi_isp_query_exposure_info](#ZH-CN_TOPIC_0000002503964993) to get the actually effective AE route. **Figure 1** AE Allocation Route Diagram<a name="_Ref376180242"></a> ![](figures/AE Allocation Route Diagram "AE Allocation Route Diagram") 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ot_isp_ae_route ae_route;
-td_u32 route_node[3][3]
-         = {{100,1024,1},{40000,1024,1},{40000,16384,1}};
- 
-ss_mpi_isp_get_ae_route_attr(vi_pipe, &ae_route);ae_route.total_num = 3;
+td_u32 route_node[3][3] = {{100,1024,1},{40000,1024,1},{40000,16384,1}}; ss_mpi_isp_get_ae_route_attr(vi_pipe, &ae_route);ae_route.total_num = 3;
 memcpy(ae_route. route_node, route_node, sizeof(route_node));
 ss_mpi_isp_set_ae_route_attr(vi_pipe, &ae_route);
-```
-
-【Related Topics】
-
-- [ss_mpi_isp_get_ae_route_attr](#ss_mpi_isp_get_ae_route_attr)
-- [ot_isp_ae_route](#ot_isp_ae_route)
-
-#### ss_mpi_isp_get_ae_route_attr<a name="ZH-CN_TOPIC_0000002471084932"></a>
-
-【Description】
-
-Get AE exposure allocation strategy attributes.
-
-【Syntax】
-
-```
+``` 【Related Topics】 - [ss_mpi_isp_get_ae_route_attr](#ss_mpi_isp_get_ae_route_attr)
+- [ot_isp_ae_route](#ot_isp_ae_route) #### ss_mpi_isp_get_ae_route_attr<a name="ZH-CN_TOPIC_0000002471084932"></a> 【Description】 Get AE exposure allocation strategy attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_ae_route_attr(ot_vi_pipe vi_pipe, ot_isp_ae_route *ae_route_attr);
-```
-
-【Parameters】
-
-<a name="table11317mcpsimp"></a>
+``` 【Parameters】 <a name="table11317mcpsimp"></a>
 <table><thead align="left"><tr id="row11323mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p11325mcpsimp"><a name="p11325mcpsimp"></a><a name="p11325mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p11327mcpsimp"><a name="p11327mcpsimp"></a><a name="p11327mcpsimp"></a>Description</p>
@@ -1454,11 +851,7 @@ td_s32 ss_mpi_isp_get_ae_route_attr(ot_vi_pipe vi_pipe, ot_isp_ae_route *ae_rout
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11346mcpsimp"></a>
+</table> 【Return Value】 <a name="table11346mcpsimp"></a>
 <table><thead align="left"><tr id="row11351mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11353mcpsimp"><a name="p11353mcpsimp"></a><a name="p11353mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11355mcpsimp"><a name="p11355mcpsimp"></a><a name="p11355mcpsimp"></a>Description</p>
@@ -1476,40 +869,10 @@ td_s32 ss_mpi_isp_get_ae_route_attr(ot_vi_pipe vi_pipe, ot_isp_ae_route *ae_rout
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_set_ae_route_attr](#ss_mpi_isp_set_ae_route_attr)
-
-#### ss_mpi_isp_set_ae_route_attr_ex<a name="ZH-CN_TOPIC_0000002503965045"></a>
-
-【Description】
-
-Set AE exposure allocation extension attributes, supporting separate configuration of sensor analog gain, sensor digital gain, and ISP digital gain in the AE allocation strategy.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 [ss_mpi_isp_set_ae_route_attr](#ss_mpi_isp_set_ae_route_attr) #### ss_mpi_isp_set_ae_route_attr_ex<a name="ZH-CN_TOPIC_0000002503965045"></a> 【Description】 Set AE exposure allocation extension attributes, supporting separate configuration of sensor analog gain, sensor digital gain, and ISP digital gain in the AE allocation strategy. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_ae_route_attr_ex(ot_vi_pipe vi_pipe, const ot_isp_ae_route_ex *ae_route_attr_ex);
-```
-
-【Parameters】
-
-<a name="table11387mcpsimp"></a>
+``` 【Parameters】 <a name="table11387mcpsimp"></a>
 <table><thead align="left"><tr id="row11393mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p11395mcpsimp"><a name="p11395mcpsimp"></a><a name="p11395mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p11397mcpsimp"><a name="p11397mcpsimp"></a><a name="p11397mcpsimp"></a>Description</p>
@@ -1533,11 +896,7 @@ td_s32 ss_mpi_isp_set_ae_route_attr_ex(ot_vi_pipe vi_pipe, const ot_isp_ae_route
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11416mcpsimp"></a>
+</table> 【Return Value】 <a name="table11416mcpsimp"></a>
 <table><thead align="left"><tr id="row11421mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11423mcpsimp"><a name="p11423mcpsimp"></a><a name="p11423mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11425mcpsimp"><a name="p11425mcpsimp"></a><a name="p11425mcpsimp"></a>Description</p>
@@ -1555,70 +914,25 @@ td_s32 ss_mpi_isp_set_ae_route_attr_ex(ot_vi_pipe vi_pipe, const ot_isp_ae_route
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- This interface is used to set AE exposure allocation extension attributes. The exposure calculated by AE will be allocated according to the set route. Users can set exposure time priority, sensor analog gain priority, sensor digital gain priority, ISP digital gain priority, and aperture priority according to their needs. This interface can be used to set the exposure allocation route in WDR mode, reducing the power frequency flicker phenomenon caused by multi-frame WDR synthesis under normal indoor illumination.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - This interface is used to set AE exposure allocation extension attributes. The exposure calculated by AE will be allocated according to the set route. Users can set exposure time priority, sensor analog gain priority, sensor digital gain priority, ISP digital gain priority, and aperture priority according to their needs. This interface can be used to set the exposure allocation route in WDR mode, reducing the power frequency flicker phenomenon caused by multi-frame WDR synthesis under normal indoor illumination.
 - Whether the AE exposure allocation extension attributes take effect can be configured through the ae_route_ex_valid parameter in the [ss_mpi_isp_set_exposure_attr](#ZH-CN_TOPIC_0000002503964781) interface. When ae_route_ex_valid is TD_TRUE, the extended AE route is used; otherwise, the normal AE route is used.
-- The AE extended allocation route follows these constraints:
-    - Supports up to 16 nodes, each node has five components: exposure time, sensor analog gain, sensor digital gain, ISP digital gain, and aperture.
-    - The unit of exposure time in a node is us.
-    - The aperture component only supports P-Iris.
-    - Node exposure amounts increase monotonically.
-    - Equal exposure amount nodes are not supported.
-    - Users can switch routes dynamically for different scenarios.
-    - The default extended allocation strategy differs for DC-Iris/manual aperture vs P-Iris lenses.
-    - For complete details, refer to the original Chinese documentation.
-
-【Example】
-
-```
+- The AE extended allocation route follows these constraints: - Supports up to 16 nodes, each node has five components: exposure time, sensor analog gain, sensor digital gain, ISP digital gain, and aperture. - The unit of exposure time in a node is us. - The aperture component only supports P-Iris. - Node exposure amounts increase monotonically. - Equal exposure amount nodes are not supported. - Users can switch routes dynamically for different scenarios. - The default extended allocation strategy differs for DC-Iris/manual aperture vs P-Iris lenses. - For complete details, refer to the original Chinese documentation. 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ot_isp_exposure_attr exp_attr;
 ot_isp_ae_route_ex ae_route_attr_ex;
-td_u32  route_ex_node [6][5]
-        = {{   30,  1024,  1024, 1024, 0},
-           {   30,  1024,  1024, 1024, 10},
-           {   30, 16384,  1024, 1024, 10},
-           {1000000, 16384,  1024, 1024, 10},
-           {1000000, 16384, 16384, 1024, 10},
-           {1000000, 16384, 16384, 4096, 10}};
+td_u32 route_ex_node [6][5] = {{ 30, 1024, 1024, 1024, 0}, { 30, 1024, 1024, 1024, 10}, { 30, 16384, 1024, 1024, 10}, {1000000, 16384, 1024, 1024, 10}, {1000000, 16384, 16384, 1024, 10}, {1000000, 16384, 16384, 4096, 10}};
 ss_mpi_isp_get_ae_route_attr_ex(vi_pipe, &ae_route_attr_ex);
-ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr); 
-exp_attr. ae_route_ex_valid = TD_TRUE;
+ss_mpi_isp_get_exposure_attr(vi_pipe, &exp_attr); exp_attr. ae_route_ex_valid = TD_TRUE;
 ae_route_attr_ex. total_num = 6;
 memcpy(ae_route_attr_ex. route_ex_node, route_ex_node, sizeof(route_ex_node));
 ss_mpi_isp_set_ae_route_attr_ex (vi_pipe, & ae_route_attr_ex);
 ss_mpi_isp_set_exposure_attr (vi_pipe, &exp_attr);
-```
-
-【Related Topics】
-
-- [ss_mpi_isp_get_ae_route_attr_ex](#ss_mpi_isp_get_ae_route_attr_ex)
+``` 【Related Topics】 - [ss_mpi_isp_get_ae_route_attr_ex](#ss_mpi_isp_get_ae_route_attr_ex)
 - [ss_mpi_isp_set_exposure_attr](#ss_mpi_isp_set_exposure_attr)
-- [ot_isp_ae_route_ex](#ot_isp_ae_route_ex)
-
-#### ss_mpi_isp_get_ae_route_attr_ex<a name="ZH-CN_TOPIC_0000002471084852"></a>
-
-【Description】
-
-Get AE exposure allocation strategy extension attributes.
-
-【Syntax】
-
-```
+- [ot_isp_ae_route_ex](#ot_isp_ae_route_ex) #### ss_mpi_isp_get_ae_route_attr_ex<a name="ZH-CN_TOPIC_0000002471084852"></a> 【Description】 Get AE exposure allocation strategy extension attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_ae_route_attr_ex(ot_vi_pipe vi_pipe, ot_isp_ae_route_ex *ae_route_attr_ex);
-```
-
-【Parameters】
-
-<a name="table11498mcpsimp"></a>
+``` 【Parameters】 <a name="table11498mcpsimp"></a>
 <table><thead align="left"><tr id="row11504mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p11506mcpsimp"><a name="p11506mcpsimp"></a><a name="p11506mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p11508mcpsimp"><a name="p11508mcpsimp"></a><a name="p11508mcpsimp"></a>Description</p>
@@ -1642,11 +956,7 @@ td_s32 ss_mpi_isp_get_ae_route_attr_ex(ot_vi_pipe vi_pipe, ot_isp_ae_route_ex *a
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11527mcpsimp"></a>
+</table> 【Return Value】 <a name="table11527mcpsimp"></a>
 <table><thead align="left"><tr id="row11532mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11534mcpsimp"><a name="p11534mcpsimp"></a><a name="p11534mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11536mcpsimp"><a name="p11536mcpsimp"></a><a name="p11536mcpsimp"></a>Description</p>
@@ -1664,40 +974,10 @@ td_s32 ss_mpi_isp_get_ae_route_attr_ex(ot_vi_pipe vi_pipe, ot_isp_ae_route_ex *a
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None.
-
-【Example】
-
-None.
-
-【Related Topics】
-
-[ss_mpi_isp_set_ae_route_attr_ex](#ss_mpi_isp_set_ae_route_attr_ex)
-
-#### ss_mpi_isp_set_ae_route_sf_attr<a name="ZH-CN_TOPIC_0000002503964803"></a>
-
-【Description】
-
-In WDR mode, set the AE short frame exposure allocation strategy attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None. 【Example】 None. 【Related Topics】 [ss_mpi_isp_set_ae_route_attr_ex](#ss_mpi_isp_set_ae_route_attr_ex) #### ss_mpi_isp_set_ae_route_sf_attr<a name="ZH-CN_TOPIC_0000002503964803"></a> 【Description】 In WDR mode, set the AE short frame exposure allocation strategy attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_ae_route_sf_attr(ot_vi_pipe vi_pipe, const ot_isp_ae_route *ae_route_sf_attr);
-```
-
-【Parameters】
-
-<a name="table11571mcpsimp"></a>
+``` 【Parameters】 <a name="table11571mcpsimp"></a>
 <table><thead align="left"><tr id="row11577mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p11579mcpsimp"><a name="p11579mcpsimp"></a><a name="p11579mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p11581mcpsimp"><a name="p11581mcpsimp"></a><a name="p11581mcpsimp"></a>Description</p>
@@ -1721,11 +1001,7 @@ td_s32 ss_mpi_isp_set_ae_route_sf_attr(ot_vi_pipe vi_pipe, const ot_isp_ae_route
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11600mcpsimp"></a>
+</table> 【Return Value】 <a name="table11600mcpsimp"></a>
 <table><thead align="left"><tr id="row11605mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11607mcpsimp"><a name="p11607mcpsimp"></a><a name="p11607mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11609mcpsimp"><a name="p11609mcpsimp"></a><a name="p11609mcpsimp"></a>Description</p>
@@ -1743,61 +1019,19 @@ td_s32 ss_mpi_isp_set_ae_route_sf_attr(ot_vi_pipe vi_pipe, const ot_isp_ae_route
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- This interface is used to set the AE short frame exposure allocation route in WDR mode. The short frame exposure calculated by AE will be allocated according to the set route. Users can set exposure priority, gain priority, or aperture priority according to their needs.
-- The AE allocation route follows these constraints:
-    - Supports up to 16 nodes, each node has three components: exposure time, gain, and aperture.
-    - The unit of exposure time in a node is us.
-    - The aperture component only supports P-Iris.
-    - Node exposure amounts increase monotonically.
-    - Equal exposure amount nodes are not supported.
-    - Users can switch routes dynamically for different scenarios.
-    - Online DC-Iris and P-Iris switching will reset the short frame AE route.
-    - Short frame AE route does not take effect when the priority frame is long frame and gain separate configuration is not enabled, or in linear mode.
-    - For complete details, refer to the original Chinese documentation.
-
-【Example】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - This interface is used to set the AE short frame exposure allocation route in WDR mode. The short frame exposure calculated by AE will be allocated according to the set route. Users can set exposure priority, gain priority, or aperture priority according to their needs.
+- The AE allocation route follows these constraints: - Supports up to 16 nodes, each node has three components: exposure time, gain, and aperture. - The unit of exposure time in a node is us. - The aperture component only supports P-Iris. - Node exposure amounts increase monotonically. - Equal exposure amount nodes are not supported. - Users can switch routes dynamically for different scenarios. - Online DC-Iris and P-Iris switching will reset the short frame AE route. - Short frame AE route does not take effect when the priority frame is long frame and gain separate configuration is not enabled, or in linear mode. - For complete details, refer to the original Chinese documentation. 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ot_isp_ae_route ae_route_sf_attr;
-td_u32 route_node [3][3]
-         = {{100,1024,1},{20000,1024,1},{20000,16384,1}};
- 
-ss_mpi_isp_get_ae_route_sf_attr (vi_pipe, &ae_route_sf_attr);
+td_u32 route_node [3][3] = {{100,1024,1},{20000,1024,1},{20000,16384,1}}; ss_mpi_isp_get_ae_route_sf_attr (vi_pipe, &ae_route_sf_attr);
 ae_route_sf_attr.total_num = 3;
 memcpy(ae_route_sf_attr.route_node, route_node, sizeof(route_node));
 ss_mpi_isp_set_ae_route_sf_attr (vi_pipe, &ae_route_sf_attr);
-```
-
-【Related Topics】
-
-- [ss_mpi_isp_get_ae_route_sf_attr](#ss_mpi_isp_get_ae_route_sf_attr)
-- [ot_isp_ae_route](#ot_isp_ae_route)
-
-#### ss_mpi_isp_get_ae_route_sf_attr<a name="ZH-CN_TOPIC_0000002471085052"></a>
-
-【Description】
-
-Get AE short frame exposure allocation strategy attributes.
-
-【Syntax】
-
-```
+``` 【Related Topics】 - [ss_mpi_isp_get_ae_route_sf_attr](#ss_mpi_isp_get_ae_route_sf_attr)
+- [ot_isp_ae_route](#ot_isp_ae_route) #### ss_mpi_isp_get_ae_route_sf_attr<a name="ZH-CN_TOPIC_0000002471085052"></a> 【Description】 Get AE short frame exposure allocation strategy attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_ae_route_sf_attr(ot_vi_pipe vi_pipe, ot_isp_ae_route *ae_route_sf_attr);
-```
-
-【Parameters】
-
-<a name="table11670mcpsimp"></a>
+``` 【Parameters】 <a name="table11670mcpsimp"></a>
 <table><thead align="left"><tr id="row11676mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p11678mcpsimp"><a name="p11678mcpsimp"></a><a name="p11678mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p11680mcpsimp"><a name="p11680mcpsimp"></a><a name="p11680mcpsimp"></a>Description</p>
@@ -1821,11 +1055,7 @@ td_s32 ss_mpi_isp_get_ae_route_sf_attr(ot_vi_pipe vi_pipe, ot_isp_ae_route *ae_r
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11699mcpsimp"></a>
+</table> 【Return Value】 <a name="table11699mcpsimp"></a>
 <table><thead align="left"><tr id="row11704mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11706mcpsimp"><a name="p11706mcpsimp"></a><a name="p11706mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11708mcpsimp"><a name="p11708mcpsimp"></a><a name="p11708mcpsimp"></a>Description</p>
@@ -1843,40 +1073,10 @@ td_s32 ss_mpi_isp_get_ae_route_sf_attr(ot_vi_pipe vi_pipe, ot_isp_ae_route *ae_r
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-[ss_mpi_isp_set_ae_route_sf_attr](#ss_mpi_isp_set_ae_route_sf_attr)
-
-#### ss_mpi_isp_set_ae_route_sf_attr_ex<a name="ZH-CN_TOPIC_0000002503964835"></a>
-
-【Description】
-
-In WDR mode, set the AE short frame exposure allocation strategy extension attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 [ss_mpi_isp_set_ae_route_sf_attr](#ss_mpi_isp_set_ae_route_sf_attr) #### ss_mpi_isp_set_ae_route_sf_attr_ex<a name="ZH-CN_TOPIC_0000002503964835"></a> 【Description】 In WDR mode, set the AE short frame exposure allocation strategy extension attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_ae_route_sf_attr_ex(ot_vi_pipe vi_pipe, const ot_isp_ae_route_ex *ae_route_sf_attr_ex);
-```
-
-【Parameters】
-
-<a name="table11740mcpsimp"></a>
+``` 【Parameters】 <a name="table11740mcpsimp"></a>
 <table><thead align="left"><tr id="row11746mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p11748mcpsimp"><a name="p11748mcpsimp"></a><a name="p11748mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p11750mcpsimp"><a name="p11750mcpsimp"></a><a name="p11750mcpsimp"></a>Description</p>
@@ -1900,11 +1100,7 @@ td_s32 ss_mpi_isp_set_ae_route_sf_attr_ex(ot_vi_pipe vi_pipe, const ot_isp_ae_ro
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11769mcpsimp"></a>
+</table> 【Return Value】 <a name="table11769mcpsimp"></a>
 <table><thead align="left"><tr id="row11774mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11776mcpsimp"><a name="p11776mcpsimp"></a><a name="p11776mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11778mcpsimp"><a name="p11778mcpsimp"></a><a name="p11778mcpsimp"></a>Description</p>
@@ -1922,62 +1118,25 @@ td_s32 ss_mpi_isp_set_ae_route_sf_attr_ex(ot_vi_pipe vi_pipe, const ot_isp_ae_ro
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- This interface is used to set the AE short frame exposure allocation extension attributes in WDR mode. The short frame exposure calculated by AE will be allocated according to the set route. Users can set exposure time priority, sensor analog gain priority, sensor digital gain priority, ISP digital gain priority, and aperture priority according to their needs.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - This interface is used to set the AE short frame exposure allocation extension attributes in WDR mode. The short frame exposure calculated by AE will be allocated according to the set route. Users can set exposure time priority, sensor analog gain priority, sensor digital gain priority, ISP digital gain priority, and aperture priority according to their needs.
 - Whether the AE exposure allocation extension attributes take effect can be configured through the ae_route_ex_valid parameter in the [ss_mpi_isp_set_exposure_attr](#ZH-CN_TOPIC_0000002503964781) interface.
-- The AE extended allocation route follows constraints similar to the standard extended route but for short frames.
-
-【Example】
-
-```
+- The AE extended allocation route follows constraints similar to the standard extended route but for short frames. 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ot_isp_exposure_attr exp_attr;
 ot_isp_ae_route_ex ae_route_sf_attr_ex;
-td_u32 route_ex_node [6][5]
-        = {{   30,  1024,  1024, 1024, 0},
-           {   30,  1024,  1024, 1024, 10},
-           {   30, 16384,  1024, 1024, 10},
-           {20000, 16384,  1024, 1024, 10},
-           {20000, 16384, 16384, 1024, 10},
-           {20000, 16384, 16384, 4096, 10}};
+td_u32 route_ex_node [6][5] = {{ 30, 1024, 1024, 1024, 0}, { 30, 1024, 1024, 1024, 10}, { 30, 16384, 1024, 1024, 10}, {20000, 16384, 1024, 1024, 10}, {20000, 16384, 16384, 1024, 10}, {20000, 16384, 16384, 4096, 10}};
 ss_mpi_isp_get_ae_route_sf_attr_ex (vi_pipe, & ae_route_sf_attr_ex);
-ss_mpi_isp_get_exposure_attr (vi_pipe, &exp_attr);    
-exp_attr. ae_route_ex_valid= TD_TRUE;
+ss_mpi_isp_get_exposure_attr (vi_pipe, &exp_attr); exp_attr. ae_route_ex_valid= TD_TRUE;
 ae_route_sf_attr_ex. total_num= 6;
 memcpy(ae_route_sf_attr_ex. route_ex_node, route_ex_node, sizeof(route_ex_node));
 ss_mpi_isp_get_ae_route_sf_attr_ex (vi_pipe, & ae_route_sf_attr_ex);
 ss_mpi_isp_set_exposure_attr (vi_pipe, &exp_attr);
-```
-
-【Related Topics】
-
-- [ss_mpi_isp_get_ae_route_sf_attr_ex](#ss_mpi_isp_get_ae_route_sf_attr_ex)
+``` 【Related Topics】 - [ss_mpi_isp_get_ae_route_sf_attr_ex](#ss_mpi_isp_get_ae_route_sf_attr_ex)
 - [ss_mpi_isp_set_exposure_attr](#ss_mpi_isp_set_exposure_attr)
-- [ot_isp_ae_route_ex](#ot_isp_ae_route_ex)
-
-#### ss_mpi_isp_get_ae_route_sf_attr_ex<a name="ZH-CN_TOPIC_0000002470925156"></a>
-
-【Description】
-
-Get AE short frame exposure allocation strategy extension attributes.
-
-【Syntax】
-
-```
+- [ot_isp_ae_route_ex](#ot_isp_ae_route_ex) #### ss_mpi_isp_get_ae_route_sf_attr_ex<a name="ZH-CN_TOPIC_0000002470925156"></a> 【Description】 Get AE short frame exposure allocation strategy extension attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_ae_route_sf_attr_ex(ot_vi_pipe vi_pipe, ot_isp_ae_route_ex *ae_route_sf_attr_ex);
-```
-
-【Parameters】
-
-<a name="table11852mcpsimp"></a>
+``` 【Parameters】 <a name="table11852mcpsimp"></a>
 <table><thead align="left"><tr id="row11858mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p11860mcpsimp"><a name="p11860mcpsimp"></a><a name="p11860mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p11862mcpsimp"><a name="p11862mcpsimp"></a><a name="p11862mcpsimp"></a>Description</p>
@@ -2001,11 +1160,7 @@ td_s32 ss_mpi_isp_get_ae_route_sf_attr_ex(ot_vi_pipe vi_pipe, ot_isp_ae_route_ex
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11881mcpsimp"></a>
+</table> 【Return Value】 <a name="table11881mcpsimp"></a>
 <table><thead align="left"><tr id="row11886mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11888mcpsimp"><a name="p11888mcpsimp"></a><a name="p11888mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11890mcpsimp"><a name="p11890mcpsimp"></a><a name="p11890mcpsimp"></a>Description</p>
@@ -2023,40 +1178,10 @@ td_s32 ss_mpi_isp_get_ae_route_sf_attr_ex(ot_vi_pipe vi_pipe, ot_isp_ae_route_ex
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None.
-
-【Example】
-
-None.
-
-【Related Topics】
-
-[ss_mpi_isp_set_ae_route_sf_attr_ex](#ss_mpi_isp_set_ae_route_sf_attr_ex)
-
-#### ss_mpi_isp_query_exposure_info<a name="ZH-CN_TOPIC_0000002503964993"></a>
-
-【Description】
-
-Get AE internal status information, including global 5-bin histogram, 1024-bin histogram, and average brightness statistics, as well as exposure time, gain, exposure amount, and the actually effective AE route during AE operation.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None. 【Example】 None. 【Related Topics】 [ss_mpi_isp_set_ae_route_sf_attr_ex](#ss_mpi_isp_set_ae_route_sf_attr_ex) #### ss_mpi_isp_query_exposure_info<a name="ZH-CN_TOPIC_0000002503964993"></a> 【Description】 Get AE internal status information, including global 5-bin histogram, 1024-bin histogram, and average brightness statistics, as well as exposure time, gain, exposure amount, and the actually effective AE route during AE operation. 【Syntax】 ```
 td_s32 ss_mpi_isp_query_exposure_info(ot_vi_pipe vi_pipe, ot_isp_exp_info *exp_info);
-```
-
-【Parameters】
-
-<a name="table11922mcpsimp"></a>
+``` 【Parameters】 <a name="table11922mcpsimp"></a>
 <table><thead align="left"><tr id="row11928mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p11930mcpsimp"><a name="p11930mcpsimp"></a><a name="p11930mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p11932mcpsimp"><a name="p11932mcpsimp"></a><a name="p11932mcpsimp"></a>Description</p>
@@ -2080,11 +1205,7 @@ td_s32 ss_mpi_isp_query_exposure_info(ot_vi_pipe vi_pipe, ot_isp_exp_info *exp_i
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table11951mcpsimp"></a>
+</table> 【Return Value】 <a name="table11951mcpsimp"></a>
 <table><thead align="left"><tr id="row11956mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p11958mcpsimp"><a name="p11958mcpsimp"></a><a name="p11958mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p11960mcpsimp"><a name="p11960mcpsimp"></a><a name="p11960mcpsimp"></a>Description</p>
@@ -2102,30 +1223,16 @@ td_s32 ss_mpi_isp_query_exposure_info(ot_vi_pipe vi_pipe, ot_isp_exp_info *exp_i
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- The obtained exposure time is in microseconds (us), and the obtained sensor analog gain, sensor digital gain, and ISP digital gain are in multiples with 10-bit precision.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - The obtained exposure time is in microseconds (us), and the obtained sensor analog gain, sensor digital gain, and ISP digital gain are in multiples with 10-bit precision.
 - The obtained exposure amount = (exposure time * exposure gain), not considering the aperture state. The exposure time is in units of lines, and the exposure gain includes sensor analog gain, sensor digital gain, and ISP digital gain.
 - The stability of AE can be determined by querying hist_error. If the absolute value of hist_error is less than the exposure tolerance deviation value, it means AE will not take action currently.
 - The AE route obtained through this interface and the AE route in Proc information are both actually effective values. However, the node exposure time in this interface is in us, while the exposure time in Proc information is in units of lines.
 - If the user uses a non-SDK provided AE algorithm, this interface needs to be implemented by the user, and the PQTOOLS xml file needs to be modified accordingly.
-- Calling this interface requires ensuring that the system is already running and statistics have been generated.
-
-【Example】
-
-```
+- Calling this interface requires ensuring that the system is already running and statistics have been generated. 【Example】 ```
 ot_vi_pipe vi_pipe = 0;
 ot_isp_exp_info exp_info;
-ss_mpi_isp_query_exposure_info (vi_pipe, &exp_info);
- 
-printf("Sensor exposure time: %d\n",exp_info.exp_time);
+ss_mpi_isp_query_exposure_info (vi_pipe, &exp_info); printf("Sensor exposure time: %d\n",exp_info.exp_time);
 printf("Analog Gain: %d\n",exp_info. a_gain);
 printf("Digital Gain: %d\n",exp_info. d_gain);
 printf("ISP Gain: %d\n",exp_info. isp_d_gain);
@@ -2134,30 +1241,11 @@ printf("Average Luminance: %d\n",exp_info. ave_lum);
 printf("Hist error: %d\n",exp_info. hist_error);
 exp_info. exposure_is_max? printf("Exposure is MAX!\n") : printf("Exposure is NOT MAX!\n");
 for(i = 0; i < 1024; i++)
-{
-     printf("Hist1024Value[%d]: %d\n",i, exp_info. ae_hist1024_value [i]);
+{ printf("Hist1024Value[%d]: %d\n",i, exp_info. ae_hist1024_value [i]);
 }
-```
-
-【Related Topics】
-
-None
-
-#### ss_mpi_isp_set_exp_convert<a name="ZH-CN_TOPIC_0000002470925022"></a>
-
-【Description】
-
-Set the exposure parameter attributes related to equal exposure conversion.
-
-【Syntax】
-
-```
+``` 【Related Topics】 None #### ss_mpi_isp_set_exp_convert<a name="ZH-CN_TOPIC_0000002470925022"></a> 【Description】 Set the exposure parameter attributes related to equal exposure conversion. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_exp_convert(ot_vi_pipe vi_pipe, ot_isp_exp_conv_param *conv_param);
-```
-
-【Parameters】
-
-<a name="table12026mcpsimp"></a>
+``` 【Parameters】 <a name="table12026mcpsimp"></a>
 <table><thead align="left"><tr id="row12032mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p12034mcpsimp"><a name="p12034mcpsimp"></a><a name="p12034mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.4.1.2"><p id="p12036mcpsimp"><a name="p12036mcpsimp"></a><a name="p12036mcpsimp"></a>Description</p>
@@ -2181,11 +1269,7 @@ td_s32 ss_mpi_isp_set_exp_convert(ot_vi_pipe vi_pipe, ot_isp_exp_conv_param *con
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12055mcpsimp"></a>
+</table> 【Return Value】 <a name="table12055mcpsimp"></a>
 <table><thead align="left"><tr id="row12060mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12062mcpsimp"><a name="p12062mcpsimp"></a><a name="p12062mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12064mcpsimp"><a name="p12064mcpsimp"></a><a name="p12064mcpsimp"></a>Description</p>
@@ -2203,55 +1287,12 @@ td_s32 ss_mpi_isp_set_exp_convert(ot_vi_pipe vi_pipe, ot_isp_exp_conv_param *con
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-As input, besides setting the input vi_pipe number, only the tar_fps member variable in conv_param needs to be set to the target frame rate.
-
-【Example】
-
-```
-ot_vi_pipe vi_pipe = 0;
-    td_s32 i;
-    ot_isp_exp_conv_param conv_param;
- 
-    conv_param. tar_fps= 3000;
- 
-    ss_mpi_isp_set_exp_convert (vi_pipe, &conv_param);
-    ss_mpi_isp_get_vd_time_out(vi_pipe, OT_ISP_VD_FE_START, 50);
-    ss_mpi_isp_get_exp_convert (vi_pipe, &conv_param);
-    for (i = 0; i < 4; i++) {
-        printf("time_reg. reg_addr [%d]: 0x%x, time_reg. reg_value [%d]: 0x%x\n", i, conv_param. time_reg [i]. reg_addr, i, conv_param. time_reg [i]. reg_value);
-        printf("again_reg. reg_addr [%d]: 0x%x, again_reg. reg_value [%d]: 0x%x\n", i, conv_param. again_reg [i]. reg_addr, i, conv_param. again_reg [i]. reg_value);
-        printf("dgain_reg. reg_addr [%d]: 0x%x, dgain_reg. reg_value [%d]: 0x%x\n", i, conv_param. dgain_reg [i]. reg_addr, i, conv_param. dgain_reg [i]. reg_value);
-    }
-```
-
-【Related Topics】
-
-None
-
-#### ss_mpi_isp_get_exp_convert<a name="ZH-CN_TOPIC_0000002504084753"></a>
-
-【Description】
-
-Get the exposure parameter attributes related to equal exposure conversion.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 As input, besides setting the input vi_pipe number, only the tar_fps member variable in conv_param needs to be set to the target frame rate. 【Example】 ```
+ot_vi_pipe vi_pipe = 0; td_s32 i; ot_isp_exp_conv_param conv_param; conv_param. tar_fps= 3000; ss_mpi_isp_set_exp_convert (vi_pipe, &conv_param); ss_mpi_isp_get_vd_time_out(vi_pipe, OT_ISP_VD_FE_START, 50); ss_mpi_isp_get_exp_convert (vi_pipe, &conv_param); for (i = 0; i < 4; i++) { printf("time_reg. reg_addr [%d]: 0x%x, time_reg. reg_value [%d]: 0x%x\n", i, conv_param. time_reg [i]. reg_addr, i, conv_param. time_reg [i]. reg_value); printf("again_reg. reg_addr [%d]: 0x%x, again_reg. reg_value [%d]: 0x%x\n", i, conv_param. again_reg [i]. reg_addr, i, conv_param. again_reg [i]. reg_value); printf("dgain_reg. reg_addr [%d]: 0x%x, dgain_reg. reg_value [%d]: 0x%x\n", i, conv_param. dgain_reg [i]. reg_addr, i, conv_param. dgain_reg [i]. reg_value); }
+``` 【Related Topics】 None #### ss_mpi_isp_get_exp_convert<a name="ZH-CN_TOPIC_0000002504084753"></a> 【Description】 Get the exposure parameter attributes related to equal exposure conversion. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_exp_convert(ot_vi_pipe vi_pipe, ot_isp_exp_conv_param *conv_param);
-```
-
-【Parameters】
-
-<a name="table12106mcpsimp"></a>
+``` 【Parameters】 <a name="table12106mcpsimp"></a>
 <table><thead align="left"><tr id="row12112mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p12114mcpsimp"><a name="p12114mcpsimp"></a><a name="p12114mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.4.1.2"><p id="p12116mcpsimp"><a name="p12116mcpsimp"></a><a name="p12116mcpsimp"></a>Description</p>
@@ -2275,11 +1316,7 @@ td_s32 ss_mpi_isp_get_exp_convert(ot_vi_pipe vi_pipe, ot_isp_exp_conv_param *con
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12135mcpsimp"></a>
+</table> 【Return Value】 <a name="table12135mcpsimp"></a>
 <table><thead align="left"><tr id="row12140mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12142mcpsimp"><a name="p12142mcpsimp"></a><a name="p12142mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12144mcpsimp"><a name="p12144mcpsimp"></a><a name="p12144mcpsimp"></a>Description</p>
@@ -2297,52 +1334,16 @@ td_s32 ss_mpi_isp_get_exp_convert(ot_vi_pipe vi_pipe, ot_isp_exp_conv_param *con
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- The converted Sensor exposure time, analog gain, and digital gain are all Sensor register values with corresponding register addresses, which can be directly written to the Sensor registers. The converted ISP digital gain is in multiples with 10-bit precision.
-- The converted Sensor exposure time, analog gain, and digital gain each have up to 10 register values and 10 register addresses.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-### AI Control Module<a name="ZH-CN_TOPIC_0000002471084878"></a>
-
-Iris control interfaces:
-
-- [ss_mpi_isp_set_iris_attr](#ZH-CN_TOPIC_0000002503964851): Set iris control attributes.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - The converted Sensor exposure time, analog gain, and digital gain are all Sensor register values with corresponding register addresses, which can be directly written to the Sensor registers. The converted ISP digital gain is in multiples with 10-bit precision.
+- The converted Sensor exposure time, analog gain, and digital gain each have up to 10 register values and 10 register addresses. 【Example】 None 【Related Topics】 None ### AI Control Module<a name="ZH-CN_TOPIC_0000002471084878"></a> Iris control interfaces: - [ss_mpi_isp_set_iris_attr](#ZH-CN_TOPIC_0000002503964851): Set iris control attributes.
 - [ss_mpi_isp_get_iris_attr](#ZH-CN_TOPIC_0000002503964783): Get iris control attributes.
 - [ss_mpi_isp_set_dciris_attr](#ZH-CN_TOPIC_0000002470924940): Set DC-Iris auto iris control attributes.
 - [ss_mpi_isp_get_dciris_attr](#ZH-CN_TOPIC_0000002504084869): Get DC-Iris auto iris control attributes.
 - [ss_mpi_isp_set_piris_attr](#ZH-CN_TOPIC_0000002503964847): Set P-Iris auto iris control attributes.
-- [ss_mpi_isp_get_piris_attr](#ZH-CN_TOPIC_0000002471084962): Get P-Iris auto iris control attributes.
-
-#### ss_mpi_isp_set_iris_attr<a name="ZH-CN_TOPIC_0000002503964851"></a>
-
-【Description】
-
-Set iris control attributes. This function can realize settings for manual iris attributes and iris type parameters.
-
-【Syntax】
-
-```
+- [ss_mpi_isp_get_piris_attr](#ZH-CN_TOPIC_0000002471084962): Get P-Iris auto iris control attributes. #### ss_mpi_isp_set_iris_attr<a name="ZH-CN_TOPIC_0000002503964851"></a> 【Description】 Set iris control attributes. This function can realize settings for manual iris attributes and iris type parameters. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_iris_attr(ot_vi_pipe vi_pipe, const ot_isp_iris_attr *iris_attr);
-```
-
-【Parameters】
-
-<a name="table12177mcpsimp"></a>
+``` 【Parameters】 <a name="table12177mcpsimp"></a>
 <table><thead align="left"><tr id="row12183mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p12185mcpsimp"><a name="p12185mcpsimp"></a><a name="p12185mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p12187mcpsimp"><a name="p12187mcpsimp"></a><a name="p12187mcpsimp"></a>Description</p>
@@ -2366,11 +1367,7 @@ td_s32 ss_mpi_isp_set_iris_attr(ot_vi_pipe vi_pipe, const ot_isp_iris_attr *iris
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12206mcpsimp"></a>
+</table> 【Return Value】 <a name="table12206mcpsimp"></a>
 <table><thead align="left"><tr id="row12211mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12213mcpsimp"><a name="p12213mcpsimp"></a><a name="p12213mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12215mcpsimp"><a name="p12215mcpsimp"></a><a name="p12215mcpsimp"></a>Description</p>
@@ -2388,44 +1385,14 @@ td_s32 ss_mpi_isp_set_iris_attr(ot_vi_pipe vi_pipe, const ot_isp_iris_attr *iris
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- Before conducting AI algorithm testing, it is recommended to confirm whether the AI circuit characteristics meet the recorder requirements.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - Before conducting AI algorithm testing, it is recommended to confirm whether the AI circuit characteristics meet the recorder requirements.
 - Set the correct iris type attribute based on the actual lens iris type being connected, and then set the relevant DC-Iris/P-Iris control attributes. If connecting a manual aperture lens, set the iris type to OT_ISP_IRIS_DC_TYPE, and it is recommended to disable AI in this case.
-- The manual iris attribute is mainly used for debugging and can be set through this MPI. For P-Iris lenses, the manual iris_fno value is affected by the maximum and minimum aperture target values. For more auto iris attribute parameters, call [ss_mpi_isp_set_dciris_attr](#ZH-CN_TOPIC_0000002470924940) and [ss_mpi_isp_get_piris_attr](#ZH-CN_TOPIC_0000002471084962) to configure.
-
-【Example】
-
-None
-
-【Related Topics】
-
-- [ot_isp_iris_attr](#ot_isp_iris_attr)
+- The manual iris attribute is mainly used for debugging and can be set through this MPI. For P-Iris lenses, the manual iris_fno value is affected by the maximum and minimum aperture target values. For more auto iris attribute parameters, call [ss_mpi_isp_set_dciris_attr](#ZH-CN_TOPIC_0000002470924940) and [ss_mpi_isp_get_piris_attr](#ZH-CN_TOPIC_0000002471084962) to configure. 【Example】 None 【Related Topics】 - [ot_isp_iris_attr](#ot_isp_iris_attr)
 - [ss_mpi_isp_set_dciris_attr](#ss_mpi_isp_set_dciris_attr)
-- [ss_mpi_isp_set_piris_attr](#ss_mpi_isp_set_piris_attr)
-
-#### ss_mpi_isp_get_iris_attr<a name="ZH-CN_TOPIC_0000002503964783"></a>
-
-【Description】
-
-Get iris control attributes.
-
-【Syntax】
-
-```
+- [ss_mpi_isp_set_piris_attr](#ss_mpi_isp_set_piris_attr) #### ss_mpi_isp_get_iris_attr<a name="ZH-CN_TOPIC_0000002503964783"></a> 【Description】 Get iris control attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_iris_attr(ot_vi_pipe vi_pipe, ot_isp_iris_attr *iris_attr);
-```
-
-【Parameters】
-
-<a name="table12260mcpsimp"></a>
+``` 【Parameters】 <a name="table12260mcpsimp"></a>
 <table><thead align="left"><tr id="row12266mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p12268mcpsimp"><a name="p12268mcpsimp"></a><a name="p12268mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p12270mcpsimp"><a name="p12270mcpsimp"></a><a name="p12270mcpsimp"></a>Description</p>
@@ -2449,11 +1416,7 @@ td_s32 ss_mpi_isp_get_iris_attr(ot_vi_pipe vi_pipe, ot_isp_iris_attr *iris_attr)
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12289mcpsimp"></a>
+</table> 【Return Value】 <a name="table12289mcpsimp"></a>
 <table><thead align="left"><tr id="row12294mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12296mcpsimp"><a name="p12296mcpsimp"></a><a name="p12296mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12298mcpsimp"><a name="p12298mcpsimp"></a><a name="p12298mcpsimp"></a>Description</p>
@@ -2471,40 +1434,10 @@ td_s32 ss_mpi_isp_get_iris_attr(ot_vi_pipe vi_pipe, ot_isp_iris_attr *iris_attr)
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-#### ss_mpi_isp_set_dciris_attr<a name="ZH-CN_TOPIC_0000002470924940"></a>
-
-【Description】
-
-Set the DC-Iris AI algorithm control attributes. This function can realize parameter settings for the DC-Iris auto iris.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 None #### ss_mpi_isp_set_dciris_attr<a name="ZH-CN_TOPIC_0000002470924940"></a> 【Description】 Set the DC-Iris AI algorithm control attributes. This function can realize parameter settings for the DC-Iris auto iris. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_dciris_attr(ot_vi_pipe vi_pipe, const ot_isp_dciris_attr *dciris_attr);
-```
-
-【Parameters】
-
-<a name="table12329mcpsimp"></a>
+``` 【Parameters】 <a name="table12329mcpsimp"></a>
 <table><thead align="left"><tr id="row12335mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p12337mcpsimp"><a name="p12337mcpsimp"></a><a name="p12337mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p12339mcpsimp"><a name="p12339mcpsimp"></a><a name="p12339mcpsimp"></a>Description</p>
@@ -2528,11 +1461,7 @@ td_s32 ss_mpi_isp_set_dciris_attr(ot_vi_pipe vi_pipe, const ot_isp_dciris_attr *
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12358mcpsimp"></a>
+</table> 【Return Value】 <a name="table12358mcpsimp"></a>
 <table><thead align="left"><tr id="row12363mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12365mcpsimp"><a name="p12365mcpsimp"></a><a name="p12365mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12367mcpsimp"><a name="p12367mcpsimp"></a><a name="p12367mcpsimp"></a>Description</p>
@@ -2550,42 +1479,12 @@ td_s32 ss_mpi_isp_set_dciris_attr(ot_vi_pipe vi_pipe, const ot_isp_dciris_attr *
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- DC-Iris iris control uses a PID algorithm. The algorithm adjusts the PWM duty cycle to control the iris size based on the image brightness. When the exposure time and gain reach the minimum target values, it enters the iris control zone. When the iris control can meet the target brightness requirements, AE returns directly, keeping the exposure time and gain unchanged. When the image brightness stabilizes and the PWM duty cycle remains at the open value for a period, the AI algorithm considers the iris fully open, exits the iris control zone, and returns control to AE.
-- When AI function is disabled, for DC-Iris lenses, the iris opens to maximum.
-
-【Example】
-
-None
-
-【Related Topics】
-
-- [ot_isp_iris_attr](#ot_isp_iris_attr)
-- [ot_isp_dciris_attr](#ot_isp_dciris_attr)
-
-#### ss_mpi_isp_get_dciris_attr<a name="ZH-CN_TOPIC_0000002504084869"></a>
-
-【Description】
-
-Get the DC-Iris auto iris control attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - DC-Iris iris control uses a PID algorithm. The algorithm adjusts the PWM duty cycle to control the iris size based on the image brightness. When the exposure time and gain reach the minimum target values, it enters the iris control zone. When the iris control can meet the target brightness requirements, AE returns directly, keeping the exposure time and gain unchanged. When the image brightness stabilizes and the PWM duty cycle remains at the open value for a period, the AI algorithm considers the iris fully open, exits the iris control zone, and returns control to AE.
+- When AI function is disabled, for DC-Iris lenses, the iris opens to maximum. 【Example】 None 【Related Topics】 - [ot_isp_iris_attr](#ot_isp_iris_attr)
+- [ot_isp_dciris_attr](#ot_isp_dciris_attr) #### ss_mpi_isp_get_dciris_attr<a name="ZH-CN_TOPIC_0000002504084869"></a> 【Description】 Get the DC-Iris auto iris control attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_dciris_attr(ot_vi_pipe vi_pipe, ot_isp_dciris_attr *dciris_attr);
-```
-
-【Parameters】
-
-<a name="table12406mcpsimp"></a>
+``` 【Parameters】 <a name="table12406mcpsimp"></a>
 <table><thead align="left"><tr id="row12412mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p12414mcpsimp"><a name="p12414mcpsimp"></a><a name="p12414mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p12416mcpsimp"><a name="p12416mcpsimp"></a><a name="p12416mcpsimp"></a>Description</p>
@@ -2609,11 +1508,7 @@ td_s32 ss_mpi_isp_get_dciris_attr(ot_vi_pipe vi_pipe, ot_isp_dciris_attr *dciris
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12435mcpsimp"></a>
+</table> 【Return Value】 <a name="table12435mcpsimp"></a>
 <table><thead align="left"><tr id="row12440mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12442mcpsimp"><a name="p12442mcpsimp"></a><a name="p12442mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12444mcpsimp"><a name="p12444mcpsimp"></a><a name="p12444mcpsimp"></a>Description</p>
@@ -2631,40 +1526,10 @@ td_s32 ss_mpi_isp_get_dciris_attr(ot_vi_pipe vi_pipe, ot_isp_dciris_attr *dciris
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-#### ss_mpi_isp_set_piris_attr<a name="ZH-CN_TOPIC_0000002503964847"></a>
-
-【Description】
-
-Set the P-Iris auto iris control attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 None #### ss_mpi_isp_set_piris_attr<a name="ZH-CN_TOPIC_0000002503964847"></a> 【Description】 Set the P-Iris auto iris control attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_set_piris_attr(ot_vi_pipe vi_pipe, const ot_isp_piris_attr *piris_attr);
-```
-
-【Parameters】
-
-<a name="table12475mcpsimp"></a>
+``` 【Parameters】 <a name="table12475mcpsimp"></a>
 <table><thead align="left"><tr id="row12481mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p12483mcpsimp"><a name="p12483mcpsimp"></a><a name="p12483mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p12485mcpsimp"><a name="p12485mcpsimp"></a><a name="p12485mcpsimp"></a>Description</p>
@@ -2688,11 +1553,7 @@ td_s32 ss_mpi_isp_set_piris_attr(ot_vi_pipe vi_pipe, const ot_isp_piris_attr *pi
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12504mcpsimp"></a>
+</table> 【Return Value】 <a name="table12504mcpsimp"></a>
 <table><thead align="left"><tr id="row12509mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12511mcpsimp"><a name="p12511mcpsimp"></a><a name="p12511mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12513mcpsimp"><a name="p12513mcpsimp"></a><a name="p12513mcpsimp"></a>Description</p>
@@ -2710,61 +1571,16 @@ td_s32 ss_mpi_isp_set_piris_attr(ot_vi_pipe vi_pipe, const ot_isp_piris_attr *pi
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-- The P-Iris auto iris control attribute contains a write-only parameter step_fno_table_change. It is recommended to assign the structure first, call the set MPI once, then call the get MPI.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 - The P-Iris auto iris control attribute contains a write-only parameter step_fno_table_change. It is recommended to assign the structure first, call the set MPI once, then call the get MPI.
 - P-Iris lens iris control is performed through the AE allocation route.
 - When AI function is disabled, for P-Iris lenses, the iris opens to the maximum aperture target value corresponding to the stepper motor position.
-- When using a single iris with multiple pipes, only one pipe can control the iris.
-
-【Example】
-
-```
-ot_vi_pipe vi_pipe = 0;
-    ot_isp_piris_attr  piris_attr, piris_attr_def;
-    td_u16 total_step_def = 93;
-    td_u16 step_count_def = 62;
-    td_u16 step_fno_table_def[1024] = {30,35,40,45,50,56,61,67,73,79,85,92,98,105,112,120,127,135,143,150,158,166,174,183,191,200,208,217,225,234,243,252,261,270,279,289,298,307,316,325,335,344,353,362,372,381,390,399,408,417,426,435,444,453,462,470,478,486,493,500,506,512};
-    ot_isp_iris_f_no  max_iris_fno_target_def = 9;
-    ot_isp_iris_f_no  min_iris_fno_target_def = 5;
-    piris_attr_def. step_fno_table_change= TD_TRUE;
-    piris_attr_def. zero_is_max= TD_TRUE;
-    piris_attr_def. step_count= step_count_def;
-    piris_attr_def. total_step= total_step_def;
-    piris_attr_def. max_iris_fno_target = max_iris_fno_target_def;
-    piris_attr_def. min_iris_fno_target = min_iris_fno_target_def;
-    memcpy(piris_attr_def. step_fno_table, step_fno_table_def, sizeof(piris_attr_def. step_fno_table));
-    ss_mpi_isp_set_piris_attr (vi_pipe, &piris_attr_def);
-    ss_mpi_isp_get_piris_attr (vi_pipe, &piris_attr);
-```
-
-【Related Topics】
-
-- [ot_isp_iris_attr](#ot_isp_iris_attr)
-- [ot_isp_piris_attr](#ot_isp_piris_attr)
-
-#### ss_mpi_isp_get_piris_attr<a name="ZH-CN_TOPIC_0000002471084962"></a>
-
-【Description】
-
-Get the P-Iris auto iris control attributes.
-
-【Syntax】
-
-```
+- When using a single iris with multiple pipes, only one pipe can control the iris. 【Example】 ```
+ot_vi_pipe vi_pipe = 0; ot_isp_piris_attr piris_attr, piris_attr_def; td_u16 total_step_def = 93; td_u16 step_count_def = 62; td_u16 step_fno_table_def[1024] = {30,35,40,45,50,56,61,67,73,79,85,92,98,105,112,120,127,135,143,150,158,166,174,183,191,200,208,217,225,234,243,252,261,270,279,289,298,307,316,325,335,344,353,362,372,381,390,399,408,417,426,435,444,453,462,470,478,486,493,500,506,512}; ot_isp_iris_f_no max_iris_fno_target_def = 9; ot_isp_iris_f_no min_iris_fno_target_def = 5; piris_attr_def. step_fno_table_change= TD_TRUE; piris_attr_def. zero_is_max= TD_TRUE; piris_attr_def. step_count= step_count_def; piris_attr_def. total_step= total_step_def; piris_attr_def. max_iris_fno_target = max_iris_fno_target_def; piris_attr_def. min_iris_fno_target = min_iris_fno_target_def; memcpy(piris_attr_def. step_fno_table, step_fno_table_def, sizeof(piris_attr_def. step_fno_table)); ss_mpi_isp_set_piris_attr (vi_pipe, &piris_attr_def); ss_mpi_isp_get_piris_attr (vi_pipe, &piris_attr);
+``` 【Related Topics】 - [ot_isp_iris_attr](#ot_isp_iris_attr)
+- [ot_isp_piris_attr](#ot_isp_piris_attr) #### ss_mpi_isp_get_piris_attr<a name="ZH-CN_TOPIC_0000002471084962"></a> 【Description】 Get the P-Iris auto iris control attributes. 【Syntax】 ```
 td_s32 ss_mpi_isp_get_piris_attr(ot_vi_pipe vi_pipe, ot_isp_piris_attr *piris_attr);
-```
-
-【Parameters】
-
-<a name="table12571mcpsimp"></a>
+``` 【Parameters】 <a name="table12571mcpsimp"></a>
 <table><thead align="left"><tr id="row12577mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p12579mcpsimp"><a name="p12579mcpsimp"></a><a name="p12579mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p12581mcpsimp"><a name="p12581mcpsimp"></a><a name="p12581mcpsimp"></a>Description</p>
@@ -2788,11 +1604,7 @@ td_s32 ss_mpi_isp_get_piris_attr(ot_vi_pipe vi_pipe, ot_isp_piris_attr *piris_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Value】
-
-<a name="table12600mcpsimp"></a>
+</table> 【Return Value】 <a name="table12600mcpsimp"></a>
 <table><thead align="left"><tr id="row12605mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p12607mcpsimp"><a name="p12607mcpsimp"></a><a name="p12607mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p12609mcpsimp"><a name="p12609mcpsimp"></a><a name="p12609mcpsimp"></a>Description</p>
@@ -2810,98 +1622,25 @@ td_s32 ss_mpi_isp_get_piris_attr(ot_vi_pipe vi_pipe, ot_isp_piris_attr *piris_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
-- Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
-- Library files: libot_isp.a, libss_isp.a, libot_ae.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## Data Types<a name="ZH-CN_TOPIC_0000002470925014"></a>
-
-### Register<a name="ZH-CN_TOPIC_0000002470925128"></a>
-
-- [OT_ISP_HIST_NUM](#ZH-CN_TOPIC_0000002470924896): Defines the number of histogram bins.
+</table> 【Requirements】 - Header files: ot_common_isp.h, ss_mpi_isp.h, ss_mpi_ae.h
+- Library files: libot_isp.a, libss_isp.a, libot_ae.a 【Notes】 None 【Example】 None 【Related Topics】 None ## Data Types<a name="ZH-CN_TOPIC_0000002470925014"></a> ### Register<a name="ZH-CN_TOPIC_0000002470925128"></a> - [OT_ISP_HIST_NUM](#ZH-CN_TOPIC_0000002470924896): Defines the number of histogram bins.
 - [OT_ISP_AI_MAX_STEP_FNO_NUM](#ZH-CN_TOPIC_0000002470924950): Defines the maximum number of aperture steps.
 - [ot_isp_ae_sensor_register](#ZH-CN_TOPIC_0000002504084731): Defines the sensor registration structure.
 - [ot_isp_ae_sensor_exp_func](#ZH-CN_TOPIC_0000002504084949): Defines the sensor callback function structure.
 - [ot_isp_ae_sensor_default](#ZH-CN_TOPIC_0000002470924862): Defines the initialization parameter structure for the AE algorithm library.
 - [ot_isp_ae_accuracy_type](#ZH-CN_TOPIC_0000002470924972): Defines the enumeration for precision types of exposure time and gain.
-- [ot_isp_ae_accuracy](#ZH-CN_TOPIC_0000002503964839): Defines the structure for precision of exposure time and gain.
-
-#### OT_ISP_HIST_NUM<a name="ZH-CN_TOPIC_0000002470924896"></a>
-
-【Description】
-
-Defines the number of histogram bins.
-
-【Definition】
-
-```
-#define OT_ISP_HIST_NUM  1024
-```
-
-【Notes】
-
-None.
-
-【Related Data Types and Interfaces】
-
-- ot_isp_fe_ae_stat_1
+- [ot_isp_ae_accuracy](#ZH-CN_TOPIC_0000002503964839): Defines the structure for precision of exposure time and gain. #### OT_ISP_HIST_NUM<a name="ZH-CN_TOPIC_0000002470924896"></a> 【Description】 Defines the number of histogram bins. 【Definition】 ```
+#define OT_ISP_HIST_NUM 1024
+``` 【Notes】 None. 【Related Data Types and Interfaces】 - ot_isp_fe_ae_stat_1
 - ot_isp_be_ae_stat_1
 - ot_isp_ae_stats
 - ot_isp_ae_stitch_stats
-- [ot_isp_exp_info](#ot_isp_exp_info)
-
-#### OT_ISP_AI_MAX_STEP_FNO_NUM<a name="ZH-CN_TOPIC_0000002470924950"></a>
-
-【Description】
-
-Defines the maximum number of aperture steps.
-
-【Definition】
-
-```
-#define OT_ISP_AI_MAX_STEP_FNO_NUM      1024
-```
-
-【Notes】
-
-None.
-
-【Related Data Types and Interfaces】
-
-[ot_isp_piris_attr](#ot_isp_piris_attr)
-
-#### ot_isp_ae_sensor_register<a name="ZH-CN_TOPIC_0000002504084731"></a>
-
-【Description】
-
-Defines the sensor registration structure.
-
-【Definition】
-
-```
-typedef struct {
-    ot_isp_ae_sensor_exp_func sns_exp;
+- [ot_isp_exp_info](#ot_isp_exp_info) #### OT_ISP_AI_MAX_STEP_FNO_NUM<a name="ZH-CN_TOPIC_0000002470924950"></a> 【Description】 Defines the maximum number of aperture steps. 【Definition】 ```
+#define OT_ISP_AI_MAX_STEP_FNO_NUM 1024
+``` 【Notes】 None. 【Related Data Types and Interfaces】 [ot_isp_piris_attr](#ot_isp_piris_attr) #### ot_isp_ae_sensor_register<a name="ZH-CN_TOPIC_0000002504084731"></a> 【Description】 Defines the sensor registration structure. 【Definition】 ```
+typedef struct { ot_isp_ae_sensor_exp_func sns_exp;
 } ot_isp_ae_sensor_register;
-```
-
-【Members】
-
-<a name="table12691mcpsimp"></a>
+``` 【Members】 <a name="table12691mcpsimp"></a>
 <table><thead align="left"><tr id="row12696mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p12698mcpsimp"><a name="p12698mcpsimp"></a><a name="p12698mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p12700mcpsimp"><a name="p12700mcpsimp"></a><a name="p12700mcpsimp"></a>Description</p>
@@ -2914,44 +1653,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-Encapsulated for extensibility.
-
-【Related Data Types and Interfaces】
-
-[ot_isp_ae_sensor_exp_func](#ot_isp_ae_sensor_exp_func)
-
-#### ot_isp_ae_sensor_exp_func<a name="ZH-CN_TOPIC_0000002504084949"></a>
-
-【Description】
-
-Defines the sensor callback function structure.
-
-【Definition】
-
-```
-typedef struct {
-    td_s32 (*pfn_cmos_get_ae_default)(ot_vi_pipe vi_pipe, ot_isp_ae_sensor_default *ae_sns_dft);
-    ot_void (*pfn_cmos_fps_set)(ot_vi_pipe vi_pipe, ot_float f32_fps, ot_isp_ae_sensor_default *ae_sns_dft);
-    ot_void (*pfn_cmos_slow_framerate_set)(ot_vi_pipe vi_pipe, td_u32 full_lines, ot_isp_ae_sensor_default *ae_sns_dft);
-    ot_void (*pfn_cmos_inttime_update)(ot_vi_pipe vi_pipe, td_u32 int_time);
-    ot_void (*pfn_cmos_gains_update)(ot_vi_pipe vi_pipe, td_u32 again, td_u32 dgain);
-    ot_void (*pfn_cmos_again_calc_table)(ot_vi_pipe vi_pipe, td_u32 *again_lin, td_u32 *again_db);
-    ot_void (*pfn_cmos_dgain_calc_table)(ot_vi_pipe vi_pipe, td_u32 *dgain_lin, td_u32 *dgain_db);
-    ot_void (*pfn_cmos_get_inttime_max)(ot_vi_pipe vi_pipe, td_u16 man_ratio_enable, td_u32 *ratio,
-                                        ot_isp_ae_int_time_range *int_time, td_u32 *lf_max_int_time);
-    ot_void (*pfn_cmos_ae_fswdr_attr_set)(ot_vi_pipe vi_pipe, ot_isp_ae_fswdr_attr *ae_fswdr_attr);
-    ot_void (*pfn_cmos_ae_quick_start_status_set)(ot_vi_pipe vi_pipe, td_bool quick_start_status);
-    ot_void (*pfn_cmos_exp_param_convert)(ot_vi_pipe vi_pipe, ot_isp_ae_convert_param *exp_param);
+</table> 【Notes】 Encapsulated for extensibility. 【Related Data Types and Interfaces】 [ot_isp_ae_sensor_exp_func](#ot_isp_ae_sensor_exp_func) #### ot_isp_ae_sensor_exp_func<a name="ZH-CN_TOPIC_0000002504084949"></a> 【Description】 Defines the sensor callback function structure. 【Definition】 ```
+typedef struct { td_s32 (*pfn_cmos_get_ae_default)(ot_vi_pipe vi_pipe, ot_isp_ae_sensor_default *ae_sns_dft); ot_void (*pfn_cmos_fps_set)(ot_vi_pipe vi_pipe, ot_float f32_fps, ot_isp_ae_sensor_default *ae_sns_dft); ot_void (*pfn_cmos_slow_framerate_set)(ot_vi_pipe vi_pipe, td_u32 full_lines, ot_isp_ae_sensor_default *ae_sns_dft); ot_void (*pfn_cmos_inttime_update)(ot_vi_pipe vi_pipe, td_u32 int_time); ot_void (*pfn_cmos_gains_update)(ot_vi_pipe vi_pipe, td_u32 again, td_u32 dgain); ot_void (*pfn_cmos_again_calc_table)(ot_vi_pipe vi_pipe, td_u32 *again_lin, td_u32 *again_db); ot_void (*pfn_cmos_dgain_calc_table)(ot_vi_pipe vi_pipe, td_u32 *dgain_lin, td_u32 *dgain_db); ot_void (*pfn_cmos_get_inttime_max)(ot_vi_pipe vi_pipe, td_u16 man_ratio_enable, td_u32 *ratio, ot_isp_ae_int_time_range *int_time, td_u32 *lf_max_int_time); ot_void (*pfn_cmos_ae_fswdr_attr_set)(ot_vi_pipe vi_pipe, ot_isp_ae_fswdr_attr *ae_fswdr_attr); ot_void (*pfn_cmos_ae_quick_start_status_set)(ot_vi_pipe vi_pipe, td_bool quick_start_status); ot_void (*pfn_cmos_exp_param_convert)(ot_vi_pipe vi_pipe, ot_isp_ae_convert_param *exp_param);
 } ot_isp_ae_sensor_exp_func;
-```
-
-【Members】
-
-<a name="table12734mcpsimp"></a>
+``` 【Members】 <a name="table12734mcpsimp"></a>
 <table><thead align="left"><tr id="row12739mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p12741mcpsimp"><a name="p12741mcpsimp"></a><a name="p12741mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p12743mcpsimp"><a name="p12743mcpsimp"></a><a name="p12743mcpsimp"></a>Description</p>
@@ -3009,97 +1714,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-- If a callback function pointer does not need to be assigned, it must be set to NULL.
+</table> 【Notes】 - If a callback function pointer does not need to be assigned, it must be set to NULL.
 - In [ot_isp_ae_sensor_default](#ZH-CN_TOPIC_0000002470924862), the precision of exposure time and gain is defined.
 - When not using the no-photosensor quick start function, pfn_cmos_ae_quick_start_status_set must be set to NULL.
-- quick_start_status is the flag for AE no-photosensor quick start convergence status.
-
-【Related Data Types and Interfaces】
-
-ot_isp_sensor_register
-
-#### ot_isp_ae_sensor_default<a name="ZH-CN_TOPIC_0000002470924862"></a>
-
-【Description】
-
-Defines the initialization parameter structure for the AE algorithm library.
-
-【Definition】
-
-```
-typedef struct {
-    td_u8   ae_compensation;
-    td_u32  lines_per500ms;
-    td_u32  flicker_freq;
-    ot_float fps;
-    td_u32  hmax_times;
-    td_u32  init_exposure;
-    td_u32  init_int_time;
-    td_u32  init_again;
-    td_u32  init_dgain;
-    td_u32  init_isp_dgain;
-    td_u32  init_ae_speed;
-    td_u32  init_ae_tolerance;
-    td_u32  full_lines_std;
-    td_u32  full_lines_max;
-    td_u32  full_lines;
-    td_u32  binning_full_lines;
-    td_u32  max_int_time;
-    td_u32  min_int_time;
-    td_u32  max_int_time_target;
-    td_u32  min_int_time_target;
-    ot_isp_ae_accuracy int_time_accu;
-    td_u32  max_again;
-    td_u32  min_again;
-    td_u32  max_again_target;
-    td_u32  min_again_target;
-    ot_isp_ae_accuracy again_accu;
-    td_u32  max_dgain;
-    td_u32  min_dgain;
-    td_u32  max_dgain_target;
-    td_u32  min_dgain_target;
-    ot_isp_ae_accuracy dgain_accu;
-    td_u32  max_isp_dgain_target;
-    td_u32  min_isp_dgain_target;
-    td_u32  isp_dgain_shift;
-    td_u32  max_int_time_step;
-    td_bool  max_time_step_enable;
-    td_u32  max_inc_time_step[OT_ISP_WDR_MAX_FRAME_NUM];
-    td_u32  max_dec_time_step[OT_ISP_WDR_MAX_FRAME_NUM];
-    td_u32  lf_max_short_time;
-    td_u32  lf_min_exposure;
-    ot_isp_ae_route ae_route_attr;
-    td_bool ae_route_ex_valid;
-    ot_isp_ae_route_ex ae_route_attr_ex;
-    ot_isp_ae_route ae_route_sf_attr;
-    ot_isp_ae_route_ex ae_route_sf_attr_ex;
-    td_u16 man_ratio_enable;
-    td_u32 arr_ratio[OT_ISP_EXP_RATIO_NUM];
-    ot_isp_iris_type  iris_type;
-    ot_isp_piris_attr piris_attr;
-    ot_isp_iris_f_no  max_iris_fno;
-    ot_isp_iris_f_no  min_iris_fno;
-    ot_isp_ae_strategy ae_exp_mode;
-    td_u16 iso_cal_coef;
-    td_u8  ae_run_interval;
-    td_u32 exp_ratio_max;
-    td_u32 exp_ratio_min;
-    td_bool diff_gain_support;
-    ot_isp_quick_start_param quick_start;
-    ot_isp_prior_frame prior_frame;
-    td_bool ae_gain_sep_cfg;
-    td_bool lhcg_support;
-    td_u32 sns_lhcg_exp_ratio;
+- quick_start_status is the flag for AE no-photosensor quick start convergence status. 【Related Data Types and Interfaces】 ot_isp_sensor_register #### ot_isp_ae_sensor_default<a name="ZH-CN_TOPIC_0000002470924862"></a> 【Description】 Defines the initialization parameter structure for the AE algorithm library. 【Definition】 ```
+typedef struct { td_u8 ae_compensation; td_u32 lines_per500ms; td_u32 flicker_freq; ot_float fps; td_u32 hmax_times; td_u32 init_exposure; td_u32 init_int_time; td_u32 init_again; td_u32 init_dgain; td_u32 init_isp_dgain; td_u32 init_ae_speed; td_u32 init_ae_tolerance; td_u32 full_lines_std; td_u32 full_lines_max; td_u32 full_lines; td_u32 binning_full_lines; td_u32 max_int_time; td_u32 min_int_time; td_u32 max_int_time_target; td_u32 min_int_time_target; ot_isp_ae_accuracy int_time_accu; td_u32 max_again; td_u32 min_again; td_u32 max_again_target; td_u32 min_again_target; ot_isp_ae_accuracy again_accu; td_u32 max_dgain; td_u32 min_dgain; td_u32 max_dgain_target; td_u32 min_dgain_target; ot_isp_ae_accuracy dgain_accu; td_u32 max_isp_dgain_target; td_u32 min_isp_dgain_target; td_u32 isp_dgain_shift; td_u32 max_int_time_step; td_bool max_time_step_enable; td_u32 max_inc_time_step[OT_ISP_WDR_MAX_FRAME_NUM]; td_u32 max_dec_time_step[OT_ISP_WDR_MAX_FRAME_NUM]; td_u32 lf_max_short_time; td_u32 lf_min_exposure; ot_isp_ae_route ae_route_attr; td_bool ae_route_ex_valid; ot_isp_ae_route_ex ae_route_attr_ex; ot_isp_ae_route ae_route_sf_attr; ot_isp_ae_route_ex ae_route_sf_attr_ex; td_u16 man_ratio_enable; td_u32 arr_ratio[OT_ISP_EXP_RATIO_NUM]; ot_isp_iris_type iris_type; ot_isp_piris_attr piris_attr; ot_isp_iris_f_no max_iris_fno; ot_isp_iris_f_no min_iris_fno; ot_isp_ae_strategy ae_exp_mode; td_u16 iso_cal_coef; td_u8 ae_run_interval; td_u32 exp_ratio_max; td_u32 exp_ratio_min; td_bool diff_gain_support; ot_isp_quick_start_param quick_start; ot_isp_prior_frame prior_frame; td_bool ae_gain_sep_cfg; td_bool lhcg_support; td_u32 sns_lhcg_exp_ratio;
 } ot_isp_ae_sensor_default;
-```
-
-【Members】
-
-<a name="table12895mcpsimp"></a>
+``` 【Members】 <a name="table12895mcpsimp"></a>
 <table><thead align="left"><tr id="row12900mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p12902mcpsimp"><a name="p12902mcpsimp"></a><a name="p12902mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p12904mcpsimp"><a name="p12904mcpsimp"></a><a name="p12904mcpsimp"></a>Description</p>

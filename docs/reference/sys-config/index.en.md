@@ -1,21 +1,9 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/SYS_CONFIG配置指南/SYS_CONFIG 配置指南.md
----
-
-# Preface
-**Overview<a name="section142mcpsimp"></a>**
-
-This document is written for engineers developing with the MPP media processing chip. Its purpose is to provide various reference information about the SYS_CONFIG sub-module of the media processing software during development, including system control, clock configuration, and pin multiplexing. This document describes the usage of each key function in SYS_CONFIG and the related configuration principles.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->This document uses the Hi3403V100 description as an example. Unless otherwise specified, the content for Hi3519AV200 is the same as for Hi3403V100.
-
-**Product Version<a name="section145mcpsimp"></a>**
-
-The product version corresponding to this document is as follows.
-
-<a name="table148mcpsimp"></a>
+--- # Preface
+**Overview<a name="section142mcpsimp"></a>** This document is written for engineers developing with the MPP media processing chip. Its purpose is to provide various reference information about the SYS_CONFIG sub-module of the media processing software during development, including system control, clock configuration, and pin multiplexing. This document describes the usage of each key function in SYS_CONFIG and the related configuration principles. >![](public_sys-resources/icon-note.gif) **Note:**
+>This document uses the Hi3403V100 description as an example. Unless otherwise specified, the content for is the same as for Hi3403V100. **Product Version<a name="section145mcpsimp"></a>** The product version corresponding to this document is as follows. <a name="table148mcpsimp"></a>
 <table><thead align="left"><tr id="row153mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>Product Version</p>
@@ -27,26 +15,13 @@ The product version corresponding to this document is as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p163mcpsimp"><a name="p163mcpsimp"></a><a name="p163mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row15828177202310"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p198461710152317"><a name="p198461710152317"></a><a name="p198461710152317"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p6846171016231"><a name="p6846171016231"></a><a name="p6846171016231"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Target Audience<a name="section164mcpsimp"></a>**
-
-This document (guide) is mainly intended for the following engineers:
-
--   Technical Support Engineers
--   Software Development Engineers
-
-**Symbol Conventions<a name="section170mcpsimp"></a>**
-
-The following symbols may appear in this document. Their meanings are as follows.
-
-<a name="table173mcpsimp"></a>
+</table> **Target Audience<a name="section164mcpsimp"></a>** This document (guide) is mainly intended for the following engineers: - Technical Support Engineers
+- Software Development Engineers **Symbol Conventions<a name="section170mcpsimp"></a>** The following symbols may appear in this document. Their meanings are as follows. <a name="table173mcpsimp"></a>
 <table><thead align="left"><tr id="row178mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p180mcpsimp"><a name="p180mcpsimp"></a><a name="p180mcpsimp"></a><strong id="b181mcpsimp"><a name="b181mcpsimp"></a><a name="b181mcpsimp"></a>Symbol</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p183mcpsimp"><a name="p183mcpsimp"></a><a name="p183mcpsimp"></a><strong id="b184mcpsimp"><a name="b184mcpsimp"></a><a name="b184mcpsimp"></a>Description</strong></p>
@@ -58,34 +33,8 @@ The following symbols may appear in this document. Their meanings are as follows
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p190mcpsimp"><a name="p190mcpsimp"></a><a name="p190mcpsimp"></a>Indicates a high-level hazard which, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row191mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p193mcpsimp"><a name="p193mcpsimp"></a><a name="p193mcpsimp"></a><a name="image104"></a><a name="image104"></a><span><img id="image104" src="figures/zh-cn_image_0000002408262290.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p195mcpsimp"><a name="p195mcpsimp"></a><a name="p195mcpsimp"></a>Indicates a medium-level hazard which, if not avoided, could result in death or serious injury.</p>
-</td>
-</tr>
-<tr id="row196mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p198mcpsimp"><a name="p198mcpsimp"></a><a name="p198mcpsimp"></a><a name="image105"></a><a name="image105"></a><span><img id="image105" src="figures/zh-cn_image_0000002408102394.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p200mcpsimp"><a name="p200mcpsimp"></a><a name="p200mcpsimp"></a>Indicates a low-level hazard which, if not avoided, could result in minor or moderate injury.</p>
-</td>
-</tr>
-<tr id="row201mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p203mcpsimp"><a name="p203mcpsimp"></a><a name="p203mcpsimp"></a><a name="image106"></a><a name="image106"></a><span><img id="image106" src="figures/zh-cn_image_0000002441661709.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p205mcpsimp"><a name="p205mcpsimp"></a><a name="p205mcpsimp"></a>Used to convey device or environmental safety alert information. Failure to avoid may result in equipment damage, data loss, reduced equipment performance, or other unpredictable consequences.</p>
-<p id="p206mcpsimp"><a name="p206mcpsimp"></a><a name="p206mcpsimp"></a>"Caution" does not involve personal injury.</p>
-</td>
-</tr>
-<tr id="row207mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p209mcpsimp"><a name="p209mcpsimp"></a><a name="p209mcpsimp"></a><a name="image107"></a><a name="image107"></a><span><img id="image107" src="figures/zh-cn_image_0000002441701561.png" height="23.94" width="67.83"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.1.3.1.2 "><p id="p211mcpsimp"><a name="p211mcpsimp"></a><a name="p211mcpsimp"></a>Supplementary explanation of key information in the main text.</p>
-<p id="p212mcpsimp"><a name="p212mcpsimp"></a><a name="p212mcpsimp"></a>"Note" is not a safety warning and does not involve personal, equipment, or environmental injury information.</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**Revision History<a name="section213mcpsimp"></a>**
-
-<a name="table215mcpsimp"></a>
+</table> **Revision History<a name="section213mcpsimp"></a>** <a name="table215mcpsimp"></a>
 <table><thead align="left"><tr id="row221mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p223mcpsimp"><a name="p223mcpsimp"></a><a name="p223mcpsimp"></a><strong id="b224mcpsimp"><a name="b224mcpsimp"></a><a name="b224mcpsimp"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26%" id="mcps1.1.4.1.2"><p id="p226mcpsimp"><a name="p226mcpsimp"></a><a name="p226mcpsimp"></a><strong id="b227mcpsimp"><a name="b227mcpsimp"></a><a name="b227mcpsimp"></a>Release Date</strong></p>
@@ -102,40 +51,12 @@ The following symbols may appear in this document. Their meanings are as follows
 </td>
 </tr>
 </tbody>
-</table>
-
-# Overview
-## SYS_CONFIG Introduction<a name="ZH-CN_TOPIC_0000002441701425"></a>
-
-SYS_CONFIG is a module for system-level and board-level configuration. Its main function is to configure the initialization environment that does not require dynamic modification when the sys_config.ko module is loaded. It includes the following parts:
-
--   Initialization
--   System Control
--   Clock Reset Configuration
--   Pin Multiplexing
-
-SYS_CONFIG is released both as a binary .ko file and as source code. The source code is located in the interdrv/sysconfig directory.
-
-To modify the SYS_CONFIG code, refer to the following documents and steps (using Hi3403V100 as an example):
-
--   To modify clock configuration and system control, first refer to the chip manual, then modify the sysconfig code.
--   To modify pin multiplexing configuration, first refer to the chip manual, then modify the sysconfig code.
-
-Depending on the video input sensor connected, the system control and chip pin multiplexing configuration may differ. This can be distinguished by the module parameter g\_sensor\_list.
-
-For example:
-
-insmod sys\_config.ko sensors="sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx" vo\_intf="bt1120"
-
-Or:
-
-insmod sys\_config.ko sensors=sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx vo\_intf=bt1120
-
-The meaning of each module parameter is shown in [Table 1](#_table34233312).
-
-**Table 1**  Module Parameter Meanings
-
-<a name="_table34233312"></a>
+</table> # Overview
+## SYS_CONFIG Introduction<a name="ZH-CN_TOPIC_0000002441701425"></a> SYS_CONFIG is a module for system-level and board-level configuration. Its main function is to configure the initialization environment that does not require dynamic modification when the sys_config.ko module is loaded. It includes the following parts: - Initialization
+- System Control
+- Clock Reset Configuration
+- Pin Multiplexing SYS_CONFIG is released both as a binary .ko file and as source code. The source code is located in the interdrv/sysconfig directory. To modify the SYS_CONFIG code, refer to the following documents and steps (using Hi3403V100 as an example): - To modify clock configuration and system control, first refer to the chip manual, then modify the sysconfig code.
+- To modify pin multiplexing configuration, first refer to the chip manual, then modify the sysconfig code. Depending on the video input sensor connected, the system control and chip pin multiplexing configuration may differ. This can be distinguished by the module parameter g\_sensor\_list. For example: insmod sys\_config.ko sensors="sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx" vo\_intf="bt1120" Or: insmod sys\_config.ko sensors=sns0=sensor0\_xxx,sns1=sensor1\_xxx,sns2=sensor2\_xxx,sns3=sensor3\_xxx vo\_intf=bt1120 The meaning of each module parameter is shown in [Table 1](#_table34233312). **Table 1** Module Parameter Meanings <a name="_table34233312"></a>
 <table><thead align="left"><tr id="row265mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.3.1.1"><p id="p267mcpsimp"><a name="p267mcpsimp"></a><a name="p267mcpsimp"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.2.3.1.2"><p id="p269mcpsimp"><a name="p269mcpsimp"></a><a name="p269mcpsimp"></a>Meaning</p>
@@ -183,47 +104,10 @@ The meaning of each module parameter is shown in [Table 1](#_table34233312).
 </td>
 </tr>
 </tbody>
-</table>
-
-Users can modify the relevant content in the SYS_CONFIG module source code file based on the actual physical environment:
-
--   Modify the corresponding system configuration according to the actual system configuration;
--   Modify the corresponding clock according to the actual system operating clock requirements;
--   Modify the pin multiplexing related content according to the actual physical circuit pin usage layout.
-
-After modification, compile and load the module .ko to complete the configuration of the desired new user environment.
-
-The SYS_CONFIG configuration flow is shown in [Figure 1](#_fig9145151194318).
-
-**Figure 1**  SYS_CONFIG Overall Flow Chart<a name="_fig9145151194318"></a>  
-![](figures/SYS_CONFIG整体流程图.png "SYS_CONFIG Overall Flow Chart")
-
-Includes the following 4 flows:
-
--   Initialization (sysconfig\_init)
-
-    Maps the addresses of the configuration registers. The main register addresses include CRG, system control, MISC, IO pin multiplexing, GPIO control, MIPI, etc.
-
--   System Control (sys\_ctl)
-
-    Configures the system control section, such as QoS settings for online/offline modes of VI and VPSS.
-
--   Clock Reset Configuration (clk\_cfg)
-
-    Configures clocks for modules such as VI, VO, SPI, I2C, etc.
-
--   Pin Multiplexing Configuration (pin\_mux)
-
-    Configures pin multiplexing for different functions based on different application scenarios.
-
-# Initialization
-SYS_CONFIG initialization performs ioremap mappings for the register addresses that need to be configured, obtaining virtual addresses that the software can operate on.
-
-The following are the register addresses mapped during SYS_CONFIG initialization.
-
-**Table 1**  MISC Register Addresses
-
-<a name="_table44115416"></a>
+</table> Users can modify the relevant content in the SYS_CONFIG module source code file based on the actual physical environment: - Modify the corresponding system configuration according to the actual system configuration;
+- Modify the corresponding clock according to the actual system operating clock requirements;
+- Modify the pin multiplexing related content according to the actual physical circuit pin usage layout. After modification, compile and load the module .ko to complete the configuration of the desired new user environment. The SYS_CONFIG configuration flow is shown in [Figure 1](#_fig9145151194318). **Figure 1** SYS_CONFIG Overall Flow Chart<a name="_fig9145151194318"></a> ![](figures/SYS_CONFIGOverallstreamgraph.png "SYS_CONFIG Overall Flow Chart") Includes the following 4 flows: - Initialization (sysconfig\_init) Maps the addresses of the configuration registers. The main register addresses include CRG, system control, MISC, IO pin multiplexing, GPIO control, MIPI, etc. - System Control (sys\_ctl) Configures the system control section, such as QoS settings for online/offline modes of VI and VPSS. - Clock Reset Configuration (clk\_cfg) Configures clocks for modules such as VI, VO, SPI, I2C, etc. - Pin Multiplexing Configuration (pin\_mux) Configures pin multiplexing for different functions based on different application scenarios. # Initialization
+SYS_CONFIG initialization performs ioremap mappings for the register addresses that need to be configured, obtaining virtual addresses that the software can operate on. The following are the register addresses mapped during SYS_CONFIG initialization. **Table 1** MISC Register Addresses <a name="_table44115416"></a>
 <table><thead align="left"><tr id="row329mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.5.1.1"><p id="p331mcpsimp"><a name="p331mcpsimp"></a><a name="p331mcpsimp"></a>Solution</p>
 </th>
 <th class="cellrowborder" valign="top" width="34%" id="mcps1.2.5.1.2"><p id="p333mcpsimp"><a name="p333mcpsimp"></a><a name="p333mcpsimp"></a>Base Address Variable</p>
@@ -244,11 +128,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </td>
 </tr>
 </tbody>
-</table>
-
-**Table 2**  Clock Reset Register Addresses
-
-<a name="_table61494432"></a>
+</table> **Table 2** Clock Reset Register Addresses <a name="_table61494432"></a>
 <table><thead align="left"><tr id="row355mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.5.1.1"><p id="p357mcpsimp"><a name="p357mcpsimp"></a><a name="p357mcpsimp"></a>Solution</p>
 </th>
 <th class="cellrowborder" valign="top" width="34%" id="mcps1.2.5.1.2"><p id="p359mcpsimp"><a name="p359mcpsimp"></a><a name="p359mcpsimp"></a>Base Address Variable</p>
@@ -269,11 +149,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </td>
 </tr>
 </tbody>
-</table>
-
-**Table 3**  Pin Multiplexing Register Addresses
-
-<a name="_table16578980"></a>
+</table> **Table 3** Pin Multiplexing Register Addresses <a name="_table16578980"></a>
 <table><thead align="left"><tr id="row381mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.2.5.1.1"><p id="p383mcpsimp"><a name="p383mcpsimp"></a><a name="p383mcpsimp"></a>Solution</p>
 </th>
 <th class="cellrowborder" valign="top" width="34%" id="mcps1.2.5.1.2"><p id="p385mcpsimp"><a name="p385mcpsimp"></a><a name="p385mcpsimp"></a>Base Address Variable</p>
@@ -301,11 +177,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </td>
 </tr>
 </tbody>
-</table>
-
-**Table 4**  GPIO Register Addresses
-
-<a name="table407mcpsimp"></a>
+</table> **Table 4** GPIO Register Addresses <a name="table407mcpsimp"></a>
 <table><thead align="left"><tr id="row415mcpsimp"><th class="cellrowborder" valign="top" width="25.742574257425744%" id="mcps1.2.5.1.1"><p id="p417mcpsimp"><a name="p417mcpsimp"></a><a name="p417mcpsimp"></a>Solution</p>
 </th>
 <th class="cellrowborder" valign="top" width="32.67326732673268%" id="mcps1.2.5.1.2"><p id="p419mcpsimp"><a name="p419mcpsimp"></a><a name="p419mcpsimp"></a>Base Address Variable</p>
@@ -326,11 +198,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </td>
 </tr>
 </tbody>
-</table>
-
-**Table 5**  SYS Register Addresses
-
-<a name="table434mcpsimp"></a>
+</table> **Table 5** SYS Register Addresses <a name="table434mcpsimp"></a>
 <table><thead align="left"><tr id="row442mcpsimp"><th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.2.5.1.1"><p id="p1278416222180"><a name="p1278416222180"></a><a name="p1278416222180"></a>Solution</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.5.1.2"><p id="p446mcpsimp"><a name="p446mcpsimp"></a><a name="p446mcpsimp"></a>Base Address Variable</p>
@@ -351,11 +219,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </td>
 </tr>
 </tbody>
-</table>
-
-**Table 6**  DDR Register Addresses
-
-<a name="table461mcpsimp"></a>
+</table> **Table 6** DDR Register Addresses <a name="table461mcpsimp"></a>
 <table><thead align="left"><tr id="row469mcpsimp"><th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.2.5.1.1"><p id="p471mcpsimp"><a name="p471mcpsimp"></a><a name="p471mcpsimp"></a>Solution</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.5.1.2"><p id="p473mcpsimp"><a name="p473mcpsimp"></a><a name="p473mcpsimp"></a>Base Address Variable</p>
@@ -376,11 +240,7 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </td>
 </tr>
 </tbody>
-</table>
-
-**Table 7**  MIPI\_TX Register Addresses
-
-<a name="_table071427174311"></a>
+</table> **Table 7** MIPI\_TX Register Addresses <a name="_table071427174311"></a>
 <table><thead align="left"><tr id="row495mcpsimp"><th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.2.5.1.1"><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>Solution</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.5.1.2"><p id="p499mcpsimp"><a name="p499mcpsimp"></a><a name="p499mcpsimp"></a>Base Address Variable</p>
@@ -401,63 +261,14 @@ The following are the register addresses mapped during SYS_CONFIG initialization
 </td>
 </tr>
 </tbody>
-</table>
-
-The register address mapping described in this chapter is the foundation for register configuration in other chapters. After completing the mapping of the register physical addresses (i.e., register addresses) in this chapter, the register virtual addresses are obtained. Through the register virtual addresses, the corresponding registers can be read and written.
-
-The operation functions are as follows:
-
-```
+</table> The register address mapping described in this chapter is the foundation for register configuration in other chapters. After completing the mapping of the register physical addresses (i.e., register addresses) in this chapter, the register virtual addresses are obtained. Through the register virtual addresses, the corresponding registers can be read and written. The operation functions are as follows: ```
 #define sys_writel(addr, value) ((*((volatile unsigned int *)(addr))) = (value))
 #define sys_read(addr) (*((volatile int *)(addr)))
-```
-
--   sys\_writel is the write function. addr is the register virtual address, and value is the value to be written to the register.
--   sys\_read is the read function. addr is the register virtual address. The result of the operation is the value read from the register.
-
-# System Control
-## VI VPSS Online/Offline Mode<a name="ZH-CN_TOPIC_0000002441701441"></a>
-
-Based on the VI VPSS online/offline mode situation, the VI VPSS online/offline mode needs to be selected.
-
-The following uses Hi3403V100 as an example.
-
-### VI VPSS Online/Offline Mode Configuration<a name="ZH-CN_TOPIC_0000002408102290"></a>
-
-[Configuration]
-
-g\_reg\_misc\_base is described in [Table 1](#_table44115416).
-
-```
-static void set_vi_online_video_norm_vpss_online_qos(void) 
-{ 
-    void *misc_base = sys_config_get_reg_misc(); 
-  
-    sys_writel(misc_base + 0x1000, 0x44777755); 
-    sys_writel(misc_base + 0x1004, 0x45455066); 
-    sys_writel(misc_base + 0x1008, 0x60050055); 
-    sys_writel(misc_base + 0x100c, 0x45433306); 
-    sys_writel(misc_base + 0x1010, 0x33333366); 
-    sys_writel(misc_base + 0x1014, 0x33503333); 
-    sys_writel(misc_base + 0x1018, 0x00044466); 
-  
-    sys_writel(misc_base + 0x101c, 0x44777765); 
-    sys_writel(misc_base + 0x1020, 0x55556066); 
-    sys_writel(misc_base + 0x1024, 0x60050056); 
-    sys_writel(misc_base + 0x1028, 0x46433306); 
-    sys_writel(misc_base + 0x102c, 0x66555377); 
-    sys_writel(misc_base + 0x1030, 0x33503663); 
-    sys_writel(misc_base + 0x1034, 0x00055577); 
-}
-```
-
-[Description]
-
-MDDRC\_QOS\_CTRL0 is the QoS register.
-
-Offset Address: 0x5000   Total Reset Value: 0x0000\_0000
-
-<a name="table535mcpsimp"></a>
+``` - sys\_writel is the write function. addr is the register virtual address, and value is the value to be written to the register.
+- sys\_read is the read function. addr is the register virtual address. The result of the operation is the value read from the register. # System Control
+## VI VPSS Online/Offline Mode<a name="ZH-CN_TOPIC_0000002441701441"></a> Based on the VI VPSS online/offline mode situation, the VI VPSS online/offline mode needs to be selected. The following uses Hi3403V100 as an example. ### VI VPSS Online/Offline Mode Configuration<a name="ZH-CN_TOPIC_0000002408102290"></a> [Configuration] g\_reg\_misc\_base is described in [Table 1](#_table44115416). ```
+static void set_vi_online_video_norm_vpss_online_qos(void) { void *misc_base = sys_config_get_reg_misc; sys_writel(misc_base + 0x1000, 0x44777755); sys_writel(misc_base + 0x1004, 0x45455066); sys_writel(misc_base + 0x1008, 0x60050055); sys_writel(misc_base + 0x100c, 0x45433306); sys_writel(misc_base + 0x1010, 0x33333366); sys_writel(misc_base + 0x1014, 0x33503333); sys_writel(misc_base + 0x1018, 0x00044466); sys_writel(misc_base + 0x101c, 0x44777765); sys_writel(misc_base + 0x1020, 0x55556066); sys_writel(misc_base + 0x1024, 0x60050056); sys_writel(misc_base + 0x1028, 0x46433306); sys_writel(misc_base + 0x102c, 0x66555377); sys_writel(misc_base + 0x1030, 0x33503663); sys_writel(misc_base + 0x1034, 0x00055577); }
+``` [Description] MDDRC\_QOS\_CTRL0 is the QoS register. Offset Address: 0x5000 Total Reset Value: 0x0000\_0000 <a name="table535mcpsimp"></a>
 <table><thead align="left"><tr id="row543mcpsimp"><th class="cellrowborder" valign="top" width="12.000000000000002%" id="mcps1.1.6.1.1"><p id="p545mcpsimp"><a name="p545mcpsimp"></a><a name="p545mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.000000000000002%" id="mcps1.1.6.1.2"><p id="p547mcpsimp"><a name="p547mcpsimp"></a><a name="p547mcpsimp"></a>Access</p>
@@ -559,56 +370,21 @@ Offset Address: 0x5000   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-Configuration value 0x44777755:
-
--   Bits[30:28]=0x4, indicates DPU write channel QoS configured to 4.
--   Bits[26:24]=0x4, indicates IVE write channel QoS configured to 4.
--   Bits[22:20]=0x7, indicates VPSS write channel QoS configured to 7.
--   Bits[18:16]=0x7, indicates VIPROC_2ND write channel QoS configured to 7.
--   Bits[14:12]=0x7, indicates VIPROC_1ST write channel QoS configured to 7.
--   Bits[10:8]=0x7, indicates VICAP write channel QoS configured to 7.
--   Bits[6:4]=0x5, indicates VDH write channel QoS configured to 5.
--   Bits[2:0]=0x5, indicates VEDU write channel QoS configured to 5.
-
-[Precautions]
-
-None.
-
-# Clock Reset Configuration
-Clocks are the foundation for normal operation of each module. The following uses Hi3403V100 as an example to describe clock-related configurations.
-
-The clock reset configuration function is as follows (the actual function implementation depends on the application scenario):
-
-```
+</table> Configuration value 0x44777755: - Bits[30:28]=0x4, indicates DPU write channel QoS configured to 4.
+- Bits[26:24]=0x4, indicates IVE write channel QoS configured to 4.
+- Bits[22:20]=0x7, indicates VPSS write channel QoS configured to 7.
+- Bits[18:16]=0x7, indicates VIPROC_2ND write channel QoS configured to 7.
+- Bits[14:12]=0x7, indicates VIPROC_1ST write channel QoS configured to 7.
+- Bits[10:8]=0x7, indicates VICAP write channel QoS configured to 7.
+- Bits[6:4]=0x5, indicates VDH write channel QoS configured to 5.
+- Bits[2:0]=0x5, indicates VEDU write channel QoS configured to 5. [Precautions] None. # Clock Reset Configuration
+Clocks are the foundation for normal operation of each module. The following uses Hi3403V100 as an example to describe clock-related configurations. The clock reset configuration function is as follows (the actual function implementation depends on the application scenario): ```
 void clk_cfg(void)
-{
-    i2c_spi_clk_cfg();
-    ……
+{ i2c_spi_clk_cfg; ……
 }
-```
-
-## VI Clock Reset Configuration<a name="ZH-CN_TOPIC_0000002441701453"></a>
-
-### VICAP Clock<a name="ZH-CN_TOPIC_0000002408262174"></a>
-
-[Configuration]
-
-g\_reg\_crg\_base is described in [Table 2](#_table61494432).
-
-```
-     /* vicap ppc&bus reset&cken, ppc 600M */
+``` ## VI Clock Reset Configuration<a name="ZH-CN_TOPIC_0000002441701453"></a> ### VICAP Clock<a name="ZH-CN_TOPIC_0000002408262174"></a> [Configuration] g\_reg\_crg\_base is described in [Table 2](#_table61494432). ``` /* vicap ppc&bus reset&cken, ppc 600M */
 sys_writel(g_reg_crg_base + 0x9140, 0x6030);
-```
-
-[Description]
-
-PERI\_CRG9296 is the VICAP clock and reset control register. Refer to the chip manual.
-
-Offset Address: 0x9140   Total Reset Value: 0x0000\_0003
-
-<a name="table673mcpsimp"></a>
+``` [Description] PERI\_CRG9296 is the VICAP clock and reset control register. Refer to the chip manual. Offset Address: 0x9140 Total Reset Value: 0x0000\_0003 <a name="table673mcpsimp"></a>
 <table><thead align="left"><tr id="row681mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.6.1.1"><p id="p683mcpsimp"><a name="p683mcpsimp"></a><a name="p683mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p685mcpsimp"><a name="p685mcpsimp"></a><a name="p685mcpsimp"></a>Access</p>
@@ -628,11 +404,11 @@ Offset Address: 0x9140   Total Reset Value: 0x0000\_0003
 <td class="cellrowborder" valign="top" width="21.21212121212121%" headers="mcps1.1.6.1.3 "><p id="p699mcpsimp"><a name="p699mcpsimp"></a><a name="p699mcpsimp"></a>vi_ppc_cksel</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.32323232323232%" headers="mcps1.1.6.1.4 "><p id="p701mcpsimp"><a name="p701mcpsimp"></a><a name="p701mcpsimp"></a>VICAP operating clock selection.</p>
-<p id="p702mcpsimp"><a name="p702mcpsimp"></a><a name="p702mcpsimp"></a>000: 150MHz;</p>
-<p id="p703mcpsimp"><a name="p703mcpsimp"></a><a name="p703mcpsimp"></a>001: 300MHz;</p>
-<p id="p704mcpsimp"><a name="p704mcpsimp"></a><a name="p704mcpsimp"></a>010: 396MHz;</p>
-<p id="p705mcpsimp"><a name="p705mcpsimp"></a><a name="p705mcpsimp"></a>011: 475MHz;</p>
-<p id="p706mcpsimp"><a name="p706mcpsimp"></a><a name="p706mcpsimp"></a>Others: 600MHz.</p>
+<p id="p702mcpsimp"><a name="p702mcpsimp"></a><a name="p702mcpsimp"></a>000: 150M Hz;</p>
+<p id="p703mcpsimp"><a name="p703mcpsimp"></a><a name="p703mcpsimp"></a>001: 300M Hz;</p>
+<p id="p704mcpsimp"><a name="p704mcpsimp"></a><a name="p704mcpsimp"></a>010: 396M Hz;</p>
+<p id="p705mcpsimp"><a name="p705mcpsimp"></a><a name="p705mcpsimp"></a>011: 475M Hz;</p>
+<p id="p706mcpsimp"><a name="p706mcpsimp"></a><a name="p706mcpsimp"></a>Others: 600M Hz.</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.13131313131313%" headers="mcps1.1.6.1.5 "><p id="p708mcpsimp"><a name="p708mcpsimp"></a><a name="p708mcpsimp"></a>0x0</p>
 </td>
@@ -690,39 +466,15 @@ Offset Address: 0x9140   Total Reset Value: 0x0000\_0003
 </td>
 </tr>
 </tbody>
-</table>
-
-Configuration value 0x6030:
-
--   Bits[14:12]=0x6, indicates clock configured to 600MHz;
--   Bits[5:4]=0x3, indicates VICAP clock gating enabled.
-
-[Precautions]
-
-The operating clock must be greater than the SENSOR clock.
-
-### PORT Clock<a name="ZH-CN_TOPIC_0000002408102198"></a>
-
-[Configuration] (Using PORT0 configuration as an example)
-
-g\_reg\_crg\_base is described in [Table 2](#_table61494432).
-
-```
+</table> Configuration value 0x6030: - Bits[14:12]=0x6, indicates clock configured to 600M Hz;
+- Bits[5:4]=0x3, indicates VICAP clock gating enabled. [Precautions] The operating clock must be greater than the SENSOR clock. ### PORT Clock<a name="ZH-CN_TOPIC_0000002408102198"></a> [Configuration] (Using PORT0 configuration as an example) g\_reg\_crg\_base is described in [Table 2](#_table61494432). ```
 /* vi port */
 sys_writel(g_reg_crg_base + 0x9148, 0xff0);
 sys_writel(g_reg_crg_base + 0x9164, 0x7010);
 sys_writel(g_reg_crg_base + 0x9184, 0x7010);
 sys_writel(g_reg_crg_base + 0x91a4, 0x7010);
 sys_writel(g_reg_crg_base + 0x91c4, 0x7010);
-```
-
-[Description]
-
-PERI\_CRG9305 is the VICAP PORT0 clock and reset control register.
-
-Offset Address: 0x9164   Total Reset Value: 0x0000\_0000
-
-<a name="table780mcpsimp"></a>
+``` [Description] PERI\_CRG9305 is the VICAP PORT0 clock and reset control register. Offset Address: 0x9164 Total Reset Value: 0x0000\_0000 <a name="table780mcpsimp"></a>
 <table><thead align="left"><tr id="row788mcpsimp"><th class="cellrowborder" valign="top" width="14.14141414141414%" id="mcps1.1.6.1.1"><p id="p790mcpsimp"><a name="p790mcpsimp"></a><a name="p790mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="14.14141414141414%" id="mcps1.1.6.1.2"><p id="p792mcpsimp"><a name="p792mcpsimp"></a><a name="p792mcpsimp"></a>Access</p>
@@ -742,14 +494,14 @@ Offset Address: 0x9164   Total Reset Value: 0x0000\_0000
 <td class="cellrowborder" valign="top" width="16.16161616161616%" headers="mcps1.1.6.1.3 "><p id="p806mcpsimp"><a name="p806mcpsimp"></a><a name="p806mcpsimp"></a>vi_p0_cksel</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.39393939393939%" headers="mcps1.1.6.1.4 "><p id="p808mcpsimp"><a name="p808mcpsimp"></a><a name="p808mcpsimp"></a>VICAP PORT0 clock selection:</p>
-<p id="p809mcpsimp"><a name="p809mcpsimp"></a><a name="p809mcpsimp"></a>000: 100MHz;</p>
-<p id="p810mcpsimp"><a name="p810mcpsimp"></a><a name="p810mcpsimp"></a>001: 150MHz;</p>
-<p id="p811mcpsimp"><a name="p811mcpsimp"></a><a name="p811mcpsimp"></a>010: 200MHz;</p>
-<p id="p812mcpsimp"><a name="p812mcpsimp"></a><a name="p812mcpsimp"></a>011: 250MHz;</p>
-<p id="p813mcpsimp"><a name="p813mcpsimp"></a><a name="p813mcpsimp"></a>100: 300MHz;</p>
-<p id="p814mcpsimp"><a name="p814mcpsimp"></a><a name="p814mcpsimp"></a>101: 396MHz;</p>
-<p id="p815mcpsimp"><a name="p815mcpsimp"></a><a name="p815mcpsimp"></a>110: 475MHz;</p>
-<p id="p816mcpsimp"><a name="p816mcpsimp"></a><a name="p816mcpsimp"></a>111: 600MHz.</p>
+<p id="p809mcpsimp"><a name="p809mcpsimp"></a><a name="p809mcpsimp"></a>000: 100M Hz;</p>
+<p id="p810mcpsimp"><a name="p810mcpsimp"></a><a name="p810mcpsimp"></a>001: 150M Hz;</p>
+<p id="p811mcpsimp"><a name="p811mcpsimp"></a><a name="p811mcpsimp"></a>010: 200M Hz;</p>
+<p id="p812mcpsimp"><a name="p812mcpsimp"></a><a name="p812mcpsimp"></a>011: 250M Hz;</p>
+<p id="p813mcpsimp"><a name="p813mcpsimp"></a><a name="p813mcpsimp"></a>100: 300M Hz;</p>
+<p id="p814mcpsimp"><a name="p814mcpsimp"></a><a name="p814mcpsimp"></a>101: 396M Hz;</p>
+<p id="p815mcpsimp"><a name="p815mcpsimp"></a><a name="p815mcpsimp"></a>110: 475M Hz;</p>
+<p id="p816mcpsimp"><a name="p816mcpsimp"></a><a name="p816mcpsimp"></a>111: 600M Hz.</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.16161616161616%" headers="mcps1.1.6.1.5 "><p id="p818mcpsimp"><a name="p818mcpsimp"></a><a name="p818mcpsimp"></a>0x0</p>
 </td>
@@ -781,32 +533,10 @@ Offset Address: 0x9164   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-Configuration value 0x7010: Bits[14:12]=0x7, indicates PORT clock configured to 600MHz.
-
-[Precautions]
-
-None.
-
-### CMOS Clock<a name="ZH-CN_TOPIC_0000002408262118"></a>
-
-[Configuration]
-
-g\_reg\_crg\_base is described in [Table 2](#_table61494432).
-
-```
+</table> Configuration value 0x7010: Bits[14:12]=0x7, indicates PORT clock configured to 600M Hz. [Precautions] None. ### CMOS Clock<a name="ZH-CN_TOPIC_0000002408262118"></a> [Configuration] g\_reg\_crg\_base is described in [Table 2](#_table61494432). ```
 /* vi cmos0 */
 sys_writel(g_reg_crg_base + 0x9160, 0x0);
-```
-
-[Description]
-
-PERI\_CRG9304 is the VI CMOS0 clock reset configuration register.
-
-Offset Address: 0x9160   Total Reset Value: 0x0000\_0000
-
-<a name="table857mcpsimp"></a>
+``` [Description] PERI\_CRG9304 is the VI CMOS0 clock reset configuration register. Offset Address: 0x9160 Total Reset Value: 0x0000\_0000 <a name="table857mcpsimp"></a>
 <table><thead align="left"><tr id="row865mcpsimp"><th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.1"><p id="p867mcpsimp"><a name="p867mcpsimp"></a><a name="p867mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p869mcpsimp"><a name="p869mcpsimp"></a><a name="p869mcpsimp"></a>Access</p>
@@ -855,38 +585,11 @@ Offset Address: 0x9160   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-Configuration value 0x0: Bits[20]=0x0, indicates VI CMOS clock phase not inverted.
-
-[Precautions]
-
-None.
-
-### SENSOR Clock<a name="ZH-CN_TOPIC_0000002408262078"></a>
-
-[Configuration] (Using SENSOR0 configuration as an example)
-
-g\_reg\_crg\_base is described in [Table 2](#_table61494432).
-
-```
+</table> Configuration value 0x0: Bits[20]=0x0, indicates VI CMOS clock phase not inverted. [Precautions] None. ### SENSOR Clock<a name="ZH-CN_TOPIC_0000002408262078"></a> [Configuration] (Using SENSOR0 configuration as an example) g\_reg\_crg\_base is described in [Table 2](#_table61494432). ```
 static void sensor_clock_config(int index, unsigned int clock)
-{
-    int offset = 0x8440;
-    offset += index * (0x20); /* sensor0 - 3 */
-    sys_writel(g_reg_crg_base + offset, clock); /* im327 clock: 0x8010 */
+{ int offset = 0x8440; offset += index * (0x20); /* sensor0 - 3 */ sys_writel(g_reg_crg_base + offset, clock); /* im327 clock: 0x8010 */
 }
-```
-
-[Description]
-
-sysconfig parses the sensor number and sensor name passed through module parameters to resolve the corresponding register address and configuration value. For example, when the module parameter is sensors=sns0=sensor0\_xxx, it resolves index=0, clock=0x8010, and the calculated offset for sensor0 is 0x8440. The SENSOR0 clock reset configuration register is used as an example for detailed description.
-
-PERI\_CRG8464 is the SENSOR0 clock reset configuration register.
-
-Offset Address: 0x8440   Total Reset Value: 0x0000\_0000
-
-<a name="table929mcpsimp"></a>
+``` [Description] sysconfig parses the sensor number and sensor name passed through module parameters to resolve the corresponding register address and configuration value. For example, when the module parameter is sensors=sns0=sensor0\_xxx, it resolves index=0, clock=0x8010, and the calculated offset for sensor0 is 0x8440. The SENSOR0 clock reset configuration register is used as an example for detailed description. PERI\_CRG8464 is the SENSOR0 clock reset configuration register. Offset Address: 0x8440 Total Reset Value: 0x0000\_0000 <a name="table929mcpsimp"></a>
 <table><thead align="left"><tr id="row937mcpsimp"><th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.1"><p id="p939mcpsimp"><a name="p939mcpsimp"></a><a name="p939mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p941mcpsimp"><a name="p941mcpsimp"></a><a name="p941mcpsimp"></a>Access</p>
@@ -906,16 +609,16 @@ Offset Address: 0x8440   Total Reset Value: 0x0000\_0000
 <td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.1.6.1.3 "><p id="p955mcpsimp"><a name="p955mcpsimp"></a><a name="p955mcpsimp"></a>sensor0_cksel</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.34343434343434%" headers="mcps1.1.6.1.4 "><p id="p957mcpsimp"><a name="p957mcpsimp"></a><a name="p957mcpsimp"></a>SENSOR0 clock (reference clock output from the chip to the sensor) selection.</p>
-<p id="p958mcpsimp"><a name="p958mcpsimp"></a><a name="p958mcpsimp"></a>0x0: 74.25MHz;</p>
-<p id="p959mcpsimp"><a name="p959mcpsimp"></a><a name="p959mcpsimp"></a>0x1: 72MHz;</p>
-<p id="p960mcpsimp"><a name="p960mcpsimp"></a><a name="p960mcpsimp"></a>0x2: 54MHz;</p>
-<p id="p961mcpsimp"><a name="p961mcpsimp"></a><a name="p961mcpsimp"></a>0x3: 50MHz;</p>
-<p id="p962mcpsimp"><a name="p962mcpsimp"></a><a name="p962mcpsimp"></a>0x4: 24MHz;</p>
-<p id="p963mcpsimp"><a name="p963mcpsimp"></a><a name="p963mcpsimp"></a>0x8: 37MHz;</p>
-<p id="p964mcpsimp"><a name="p964mcpsimp"></a><a name="p964mcpsimp"></a>0x9: 36MHz;</p>
-<p id="p965mcpsimp"><a name="p965mcpsimp"></a><a name="p965mcpsimp"></a>0xA: 27MHz;</p>
-<p id="p966mcpsimp"><a name="p966mcpsimp"></a><a name="p966mcpsimp"></a>0xB: 25MHz;</p>
-<p id="p967mcpsimp"><a name="p967mcpsimp"></a><a name="p967mcpsimp"></a>0xC: 12MHz;</p>
+<p id="p958mcpsimp"><a name="p958mcpsimp"></a><a name="p958mcpsimp"></a>0x0: 74.25M Hz;</p>
+<p id="p959mcpsimp"><a name="p959mcpsimp"></a><a name="p959mcpsimp"></a>0x1: 72M Hz;</p>
+<p id="p960mcpsimp"><a name="p960mcpsimp"></a><a name="p960mcpsimp"></a>0x2: 54M Hz;</p>
+<p id="p961mcpsimp"><a name="p961mcpsimp"></a><a name="p961mcpsimp"></a>0x3: 50M Hz;</p>
+<p id="p962mcpsimp"><a name="p962mcpsimp"></a><a name="p962mcpsimp"></a>0x4: 24M Hz;</p>
+<p id="p963mcpsimp"><a name="p963mcpsimp"></a><a name="p963mcpsimp"></a>0x8: 37M Hz;</p>
+<p id="p964mcpsimp"><a name="p964mcpsimp"></a><a name="p964mcpsimp"></a>0x9: 36M Hz;</p>
+<p id="p965mcpsimp"><a name="p965mcpsimp"></a><a name="p965mcpsimp"></a>0xA: 27M Hz;</p>
+<p id="p966mcpsimp"><a name="p966mcpsimp"></a><a name="p966mcpsimp"></a>0xB: 25M Hz;</p>
+<p id="p967mcpsimp"><a name="p967mcpsimp"></a><a name="p967mcpsimp"></a>0xC: 12M Hz;</p>
 <p id="p968mcpsimp"><a name="p968mcpsimp"></a><a name="p968mcpsimp"></a>Others: Reserved.</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.1.6.1.5 "><p id="p970mcpsimp"><a name="p970mcpsimp"></a><a name="p970mcpsimp"></a>0x0</p>
@@ -961,32 +664,9 @@ Offset Address: 0x8440   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-Configuration value 0x8010: Bits[15:12]=0x8, indicates SENSOR0 clock configured to 37MHz.
-
-[Precautions]
-
-None.
-
-### VIPROC Clock<a name="ZH-CN_TOPIC_0000002441701365"></a>
-
-[Configuration]
-
-g\_reg\_crg\_base is described in [Table 2](#_table61494432).
-
-```
-     /* viproc_pre ppc&bus reset&cken, ppc 600M */
+</table> Configuration value 0x8010: Bits[15:12]=0x8, indicates SENSOR0 clock configured to 37M Hz. [Precautions] None. ### VIPROC Clock<a name="ZH-CN_TOPIC_0000002441701365"></a> [Configuration] g\_reg\_crg\_base is described in [Table 2](#_table61494432). ``` /* viproc_pre ppc&bus reset&cken, ppc 600M */
 sys_writel(g_reg_crg_base + 0x9740, 0x4010);
-```
-
-[Description]
-
-PERI\_CRG9680 is the VIPROC clock and reset control register.
-
-Offset Address: 0x9740   Total Reset Value: 0x0000\_0000
-
-<a name="table1022mcpsimp"></a>
+``` [Description] PERI\_CRG9680 is the VIPROC clock and reset control register. Offset Address: 0x9740 Total Reset Value: 0x0000\_0000 <a name="table1022mcpsimp"></a>
 <table><thead align="left"><tr id="row1030mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.6.1.1"><p id="p1032mcpsimp"><a name="p1032mcpsimp"></a><a name="p1032mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.1.6.1.2"><p id="p1034mcpsimp"><a name="p1034mcpsimp"></a><a name="p1034mcpsimp"></a>Access</p>
@@ -1006,11 +686,11 @@ Offset Address: 0x9740   Total Reset Value: 0x0000\_0000
 <td class="cellrowborder" valign="top" width="21.21212121212121%" headers="mcps1.1.6.1.3 "><p id="p1048mcpsimp"><a name="p1048mcpsimp"></a><a name="p1048mcpsimp"></a>viproc_cksel</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.32323232323232%" headers="mcps1.1.6.1.4 "><p id="p1050mcpsimp"><a name="p1050mcpsimp"></a><a name="p1050mcpsimp"></a>VIPROC offline mode clock selection.</p>
-<p id="p1051mcpsimp"><a name="p1051mcpsimp"></a><a name="p1051mcpsimp"></a>000: 150MHz;</p>
-<p id="p1052mcpsimp"><a name="p1052mcpsimp"></a><a name="p1052mcpsimp"></a>001: 300MHz;</p>
-<p id="p1053mcpsimp"><a name="p1053mcpsimp"></a><a name="p1053mcpsimp"></a>010: 396MHz;</p>
-<p id="p1054mcpsimp"><a name="p1054mcpsimp"></a><a name="p1054mcpsimp"></a>011: 475MHz;</p>
-<p id="p1055mcpsimp"><a name="p1055mcpsimp"></a><a name="p1055mcpsimp"></a>100: 600MHz;</p>
+<p id="p1051mcpsimp"><a name="p1051mcpsimp"></a><a name="p1051mcpsimp"></a>000: 150M Hz;</p>
+<p id="p1052mcpsimp"><a name="p1052mcpsimp"></a><a name="p1052mcpsimp"></a>001: 300M Hz;</p>
+<p id="p1053mcpsimp"><a name="p1053mcpsimp"></a><a name="p1053mcpsimp"></a>010: 396M Hz;</p>
+<p id="p1054mcpsimp"><a name="p1054mcpsimp"></a><a name="p1054mcpsimp"></a>011: 475M Hz;</p>
+<p id="p1055mcpsimp"><a name="p1055mcpsimp"></a><a name="p1055mcpsimp"></a>100: 600M Hz;</p>
 <p id="p1056mcpsimp"><a name="p1056mcpsimp"></a><a name="p1056mcpsimp"></a>Others: Reserved.</p>
 </td>
 <td class="cellrowborder" valign="top" width="13.13131313131313%" headers="mcps1.1.6.1.5 "><p id="p1058mcpsimp"><a name="p1058mcpsimp"></a><a name="p1058mcpsimp"></a>0x0</p>
@@ -1043,45 +723,13 @@ Offset Address: 0x9740   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-Configuration value 0x4010:
-
--   Bits[14:12]=0x4, indicates clock configured to 600MHz;
--   Bits[4]=0x1, indicates VIPROC clock gating enabled.
-
-[Precautions]
-
-None.
-
-## SPI Clock<a name="ZH-CN_TOPIC_0000002408102226"></a>
-
-VO RGB interface output and external LCD display screens use the SPI bus. The SPI clock needs to be enabled.
-
-[Configuration]
-
-g\_reg\_crg\_base is described in [Table 2](#_table61494432).
-
-```
+</table> Configuration value 0x4010: - Bits[14:12]=0x4, indicates clock configured to 600M Hz;
+- Bits[4]=0x1, indicates VIPROC clock gating enabled. [Precautions] None. ## SPI Clock<a name="ZH-CN_TOPIC_0000002408102226"></a> VO RGB interface output and external LCD display screens use the SPI bus. The SPI clock needs to be enabled. [Configuration] g\_reg\_crg\_base is described in [Table 2](#_table61494432). ```
 static void i2c_spi_clk_cfg(void)
 {
-void *g_reg_crg_base = sys_config_get_reg_crg();
-    /* SPI */
-    sys_writel(g_reg_crg_base + 0x4480, 0x10); /* ssp0 reset&cken       */
-    sys_writel(g_reg_crg_base + 0x4488, 0x10); /* ssp1 reset&cken       */
-    sys_writel(g_reg_crg_base + 0x4490, 0x10); /* ssp2 reset&cken       */
-    sys_writel(g_reg_crg_base + 0x4498, 0x10); /* ssp3 reset&cken       */
-    sys_writel(g_reg_crg_base + 0x44a0, 0x10); /* 3wire spi reset&cken  */
+void *g_reg_crg_base = sys_config_get_reg_crg; /* SPI */ sys_writel(g_reg_crg_base + 0x4480, 0x10); /* ssp0 reset&cken */ sys_writel(g_reg_crg_base + 0x4488, 0x10); /* ssp1 reset&cken */ sys_writel(g_reg_crg_base + 0x4490, 0x10); /* ssp2 reset&cken */ sys_writel(g_reg_crg_base + 0x4498, 0x10); /* ssp3 reset&cken */ sys_writel(g_reg_crg_base + 0x44a0, 0x10); /* 3wire spi reset&cken */
 }
-```
-
-[Description]
-
-PERI\_CRG4384 is the SPI0 clock gating and reset register.
-
-Offset Address: 0x4480   Total Reset Value: 0x0000\_0000
-
-<a name="table1110mcpsimp"></a>
+``` [Description] PERI\_CRG4384 is the SPI0 clock gating and reset register. Offset Address: 0x4480 Total Reset Value: 0x0000\_0000 <a name="table1110mcpsimp"></a>
 <table><thead align="left"><tr id="row1118mcpsimp"><th class="cellrowborder" valign="top" width="15.841584158415845%" id="mcps1.1.6.1.1"><p id="p1120mcpsimp"><a name="p1120mcpsimp"></a><a name="p1120mcpsimp"></a>Bits</p>
 </th>
 <th class="cellrowborder" valign="top" width="15.841584158415845%" id="mcps1.1.6.1.2"><p id="p1122mcpsimp"><a name="p1122mcpsimp"></a><a name="p1122mcpsimp"></a>Access</p>
@@ -1143,68 +791,13 @@ Offset Address: 0x4480   Total Reset Value: 0x0000\_0000
 </td>
 </tr>
 </tbody>
-</table>
-
-Configuration value 0x10:
-
--   Bits[0]=0, indicates SPI0 reset de-asserted;
--   Bits[4]=1, indicates SPI0 clock enabled.
-
-[Precautions]
-
-None.
-
-# Pin Multiplexing
-Pin multiplexing allows the chip to flexibly use pin resources among its limited output pins to meet different scenario requirements, with pins serving different functions in different scenarios.
-
-## I2C Bus Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441701329"></a>
-
-I2C buses are generally used to configure peripheral chips. In peripheral drivers, the I2C interface is typically used to configure peripheral chips. Therefore, the corresponding pins need to be configured as I2C pins in SYS_CONFIG.
-
-### I2C Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441701345"></a>
-
-[Configuration]
-
-g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980).
-
-I2C0:
-
-```
-static void i2c0_pin_mux(void) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-    sys_writel(iocfg2_base + 0x013C, 0x2031); 
-    sys_writel(iocfg2_base + 0x0140, 0x2031); 
-}
-```
-
-I2C1:
-
-```
-static void i2c1_pin_mux(void) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-    sys_writel(iocfg2_base + 0x00E8, 0x0072); 
-    sys_writel(iocfg2_base + 0x00EC, 0x0072); 
-}
-```
-
-[Description]
-
-Taking I2C0 as an example, the I2C schematic is shown in [Figure 1](#fig13182150165411). Refer to the hardware schematic.
-
-**Figure 1**  I2C Schematic<a name="fig13182150165411"></a>  
-![](figures/I2C原理图.jpg "I2C Schematic")
-
-I2C0 requires 2 pins: I2C0\_SCL (clock) and I2C0\_SDA (data). The pin multiplexing for these 2 pins is described below.
-
-#### Clock Pin Configuration (AM19)<a name="ZH-CN_TOPIC_0000002441701373"></a>
-
-AM19 (Register: 0x0102F0140).
-
-**Table 1**  AM19 AM20 Pin Control Register
-
-<a name="_table796515471314"></a>
+</table> Configuration value 0x10: - Bits[0]=0, indicates SPI0 reset de-asserted;
+- Bits[4]=1, indicates SPI0 clock enabled. [Precautions] None. # Pin Multiplexing
+Pin multiplexing allows the chip to flexibly use pin resources among its limited output pins to meet different scenario requirements, with pins serving different functions in different scenarios. ## I2C Bus Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441701329"></a> I2C buses are generally used to configure peripheral chips. In peripheral drivers, the I2C interface is typically used to configure peripheral chips. Therefore, the corresponding pins need to be configured as I2C pins in SYS_CONFIG. ### I2C Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441701345"></a> [Configuration] g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980). I2C0: ```
+static void i2c0_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x013C, 0x2031); sys_writel(iocfg2_base + 0x0140, 0x2031); }
+``` I2C1: ```
+static void i2c1_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x00E8, 0x0072); sys_writel(iocfg2_base + 0x00EC, 0x0072); }
+``` [Description] Taking I2C0 as an example, the I2C schematic is shown in [Figure 1](#fig13182150165411). Refer to the hardware schematic. **Figure 1** I2C Schematic<a name="fig13182150165411"></a> ![](figures/I2Coriginarrangegraph.jpg "I2C Schematic") I2C0 requires 2 pins: I2C0\_SCL (clock) and I2C0\_SDA (data). The pin multiplexing for these 2 pins is described below. #### Clock Pin Configuration (AM19)<a name="ZH-CN_TOPIC_0000002441701373"></a> AM19 (Register: 0x0102F0140). **Table 1** AM19 AM20 Pin Control Register <a name="_table796515471314"></a>
 <table><thead align="left"><tr id="row1213mcpsimp"><th class="cellrowborder" valign="top" width="14.85148514851485%" id="mcps1.2.8.1.1"><p id="p1215mcpsimp"><a name="p1215mcpsimp"></a><a name="p1215mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="10.891089108910892%" id="mcps1.2.8.1.2"><p id="p1217mcpsimp"><a name="p1217mcpsimp"></a><a name="p1217mcpsimp"></a>Pin Number</p>
@@ -1234,47 +827,6 @@ AM19 (Register: 0x0102F0140).
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.2.8.1.6 "><p id="p1241mcpsimp"><a name="p1241mcpsimp"></a><a name="p1241mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.8.1.7 "><p id="p1243mcpsimp"><a name="p1243mcpsimp"></a><a name="p1243mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1244mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1246mcpsimp"><a name="p1246mcpsimp"></a><a name="p1246mcpsimp"></a>14</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1248mcpsimp"><a name="p1248mcpsimp"></a><a name="p1248mcpsimp"></a>Input level threshold select 2:</p>
-<p id="p1249mcpsimp"><a name="p1249mcpsimp"></a><a name="p1249mcpsimp"></a>0x0: Vil/ViH=1.1V/1.7V for 3.3V/5V PAD tolerant input;</p>
-<p id="p1250mcpsimp"><a name="p1250mcpsimp"></a><a name="p1250mcpsimp"></a>0x1: Vil/ViH=1.5V/2.5V for 3.3V/5V PAD tolerant input.</p>
-</td>
-</tr>
-<tr id="row1251mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1253mcpsimp"><a name="p1253mcpsimp"></a><a name="p1253mcpsimp"></a>13</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1255mcpsimp"><a name="p1255mcpsimp"></a><a name="p1255mcpsimp"></a>Input level threshold select 1:</p>
-<p id="p1256mcpsimp"><a name="p1256mcpsimp"></a><a name="p1256mcpsimp"></a>0x0: 1.8V PAD input;</p>
-<p id="p1257mcpsimp"><a name="p1257mcpsimp"></a><a name="p1257mcpsimp"></a>0x1: 3.3V/5V PAD tolerant input.</p>
-</td>
-</tr>
-<tr id="row1258mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1260mcpsimp"><a name="p1260mcpsimp"></a><a name="p1260mcpsimp"></a>12</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1262mcpsimp"><a name="p1262mcpsimp"></a><a name="p1262mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1263mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1265mcpsimp"><a name="p1265mcpsimp"></a><a name="p1265mcpsimp"></a>11</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1267mcpsimp"><a name="p1267mcpsimp"></a><a name="p1267mcpsimp"></a>Pin Schmitt input control:</p>
-<p id="p1268mcpsimp"><a name="p1268mcpsimp"></a><a name="p1268mcpsimp"></a>0x0: Off;</p>
-<p id="p1269mcpsimp"><a name="p1269mcpsimp"></a><a name="p1269mcpsimp"></a>0x1: On.</p>
-</td>
-</tr>
-<tr id="row1270mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1272mcpsimp"><a name="p1272mcpsimp"></a><a name="p1272mcpsimp"></a>10</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1274mcpsimp"><a name="p1274mcpsimp"></a><a name="p1274mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1275mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1277mcpsimp"><a name="p1277mcpsimp"></a><a name="p1277mcpsimp"></a>9</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1279mcpsimp"><a name="p1279mcpsimp"></a><a name="p1279mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1280mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1282mcpsimp"><a name="p1282mcpsimp"></a><a name="p1282mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1284mcpsimp"><a name="p1284mcpsimp"></a><a name="p1284mcpsimp"></a>Reserved.</p>
 </td>
 </tr>
 <tr id="row1285mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1287mcpsimp"><a name="p1287mcpsimp"></a><a name="p1287mcpsimp"></a>7:4</p>
@@ -1309,47 +861,6 @@ AM19 (Register: 0x0102F0140).
 <td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.8.1.7 "><p id="p1316mcpsimp"><a name="p1316mcpsimp"></a><a name="p1316mcpsimp"></a>Reserved.</p>
 </td>
 </tr>
-<tr id="row1317mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1319mcpsimp"><a name="p1319mcpsimp"></a><a name="p1319mcpsimp"></a>14</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1321mcpsimp"><a name="p1321mcpsimp"></a><a name="p1321mcpsimp"></a>Input level threshold select 2:</p>
-<p id="p1322mcpsimp"><a name="p1322mcpsimp"></a><a name="p1322mcpsimp"></a>0x0: Vil/ViH=1.1V/1.7V for 3.3V/5V PAD tolerant input;</p>
-<p id="p1323mcpsimp"><a name="p1323mcpsimp"></a><a name="p1323mcpsimp"></a>0x1: Vil/ViH=1.5V/2.5V for 3.3V/5V PAD tolerant input.</p>
-</td>
-</tr>
-<tr id="row1324mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1326mcpsimp"><a name="p1326mcpsimp"></a><a name="p1326mcpsimp"></a>13</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1328mcpsimp"><a name="p1328mcpsimp"></a><a name="p1328mcpsimp"></a>Input level threshold select 1:</p>
-<p id="p1329mcpsimp"><a name="p1329mcpsimp"></a><a name="p1329mcpsimp"></a>0x0: 1.8V PAD input;</p>
-<p id="p1330mcpsimp"><a name="p1330mcpsimp"></a><a name="p1330mcpsimp"></a>0x1: 3.3V/5V PAD tolerant input.</p>
-</td>
-</tr>
-<tr id="row1331mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1333mcpsimp"><a name="p1333mcpsimp"></a><a name="p1333mcpsimp"></a>12</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1335mcpsimp"><a name="p1335mcpsimp"></a><a name="p1335mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1336mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1338mcpsimp"><a name="p1338mcpsimp"></a><a name="p1338mcpsimp"></a>11</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1340mcpsimp"><a name="p1340mcpsimp"></a><a name="p1340mcpsimp"></a>Pin Schmitt input control:</p>
-<p id="p1341mcpsimp"><a name="p1341mcpsimp"></a><a name="p1341mcpsimp"></a>0x0: Off;</p>
-<p id="p1342mcpsimp"><a name="p1342mcpsimp"></a><a name="p1342mcpsimp"></a>0x1: On.</p>
-</td>
-</tr>
-<tr id="row1343mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1345mcpsimp"><a name="p1345mcpsimp"></a><a name="p1345mcpsimp"></a>10</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1347mcpsimp"><a name="p1347mcpsimp"></a><a name="p1347mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1348mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1350mcpsimp"><a name="p1350mcpsimp"></a><a name="p1350mcpsimp"></a>9</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1352mcpsimp"><a name="p1352mcpsimp"></a><a name="p1352mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1353mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1355mcpsimp"><a name="p1355mcpsimp"></a><a name="p1355mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1357mcpsimp"><a name="p1357mcpsimp"></a><a name="p1357mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
 <tr id="row1358mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1360mcpsimp"><a name="p1360mcpsimp"></a><a name="p1360mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1362mcpsimp"><a name="p1362mcpsimp"></a><a name="p1362mcpsimp"></a>Pin drive capability selection:</p>
@@ -1368,68 +879,13 @@ AM19 (Register: 0x0102F0140).
 </td>
 </tr>
 </tbody>
-</table>
-
-The pin has 1 multiplexing scenario: I2C0\_SCL.
-
-AM19 configuration value 0x2001:
-
--   Bits[3:0]=0x1, pin multiplexed to 1, configured as I2C0\_SCL;
--   Bits[7:4]=0x0, pin drive capability configured to level 4 (maximum), higher level value means higher drive capability;
--   Bits[13]=0x1, input level threshold select 3.3V/5V PAD.
-
-#### DATA Pin Configuration (AM20)<a name="ZH-CN_TOPIC_0000002441701409"></a>
-
-AM20 (Register: 0x0102F013C).
-
-AM20 pin control register is shown in [Table 1](#_table796515471314).
-
-The pin has 2 multiplexing scenarios: GPIO11\_4/I2C0\_SDA.
-
-AM20 configuration value 0x2001:
-
--   Bits[3:0]=0x1, pin multiplexed to 1, configured as I2C0\_SDA;
--   Bits[7:4]=0x0, pin drive capability configured to level 4 (maximum), higher level value means higher drive capability;
--   Bits[13]=0x1, input level threshold select 3.3V/5V PAD.
-
-[Precautions]
-
-None.
-
-## SPI Bus Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661509"></a>
-
-The LCD display screen IC chip connects to the main chip via the SPI bus. In the LCD screen driver, the SPI interface is typically used to configure the LCD IC chip. Therefore, the corresponding pins need to be configured as SPI pins.
-
-### SPI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661537"></a>
-
-[Configuration] (Using Hi3403V100 as an example)
-
-g\_reg\_iocfg2\_base1 is described in [Table 3](#_table16578980)
-
-```
-static void spi0_pin_mux(void) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-  
-    sys_writel(iocfg2_base + 0x01D8, 0x02b1); 
-    sys_writel(iocfg2_base + 0x01DC, 0x0251); 
-    sys_writel(iocfg2_base + 0x01E0, 0x0201); 
-    sys_writel(iocfg2_base + 0x01E4, 0x0201); 
-}
-```
-
-[Description]
-
-SPI0\_SDI (AL33), SPI0\_SDO (AL34), SPI0\_CSN (AM34), SPI0\_SCLK (AK33) pins are shown in [Figure 1](#_fig1987716341641).
-
-**Figure 1**  SPI0 Schematic<a name="_fig1987716341641"></a>  
-![](figures/SPI0原理图.jpg "SPI0 Schematic")
-
-The multiplexing configuration of the AK33 pin is used as an example. The SPI0\_SCLK (AK33) pin control register is shown in [Table 1](#_table3777103411415).
-
-**Table 1**  AK33 Pin Control Register
-
-<a name="_table3777103411415"></a>
+</table> The pin has 1 multiplexing scenario: I2C0\_SCL. AM19 configuration value 0x2001: - Bits[3:0]=0x1, pin multiplexed to 1, configured as I2C0\_SCL;
+- Bits[7:4]=0x0, pin drive capability configured to level 4 (maximum), higher level value means higher drive capability;
+- Bits[13]=0x1, input level threshold select 3.3V/5V PAD. #### DATA Pin Configuration (AM20)<a name="ZH-CN_TOPIC_0000002441701409"></a> AM20 (Register: 0x0102F013C). AM20 pin control register is shown in [Table 1](#_table796515471314). The pin has 2 multiplexing scenarios: GPIO11\_4/I2C0\_SDA. AM20 configuration value 0x2001: - Bits[3:0]=0x1, pin multiplexed to 1, configured as I2C0\_SDA;
+- Bits[7:4]=0x0, pin drive capability configured to level 4 (maximum), higher level value means higher drive capability;
+- Bits[13]=0x1, input level threshold select 3.3V/5V PAD. [Precautions] None. ## SPI Bus Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661509"></a> The LCD display screen IC chip connects to the main chip via the SPI bus. In the LCD screen driver, the SPI interface is typically used to configure the LCD IC chip. Therefore, the corresponding pins need to be configured as SPI pins. ### SPI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661537"></a> [Configuration] (Using Hi3403V100 as an example) g\_reg\_iocfg2\_base1 is described in [Table 3](#_table16578980) ```
+static void spi0_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01D8, 0x02b1); sys_writel(iocfg2_base + 0x01DC, 0x0251); sys_writel(iocfg2_base + 0x01E0, 0x0201); sys_writel(iocfg2_base + 0x01E4, 0x0201); }
+``` [Description] SPI0\_SDI (AL33), SPI0\_SDO (AL34), SPI0\_CSN (AM34), SPI0\_SCLK (AK33) pins are shown in [Figure 1](#_fig1987716341641). **Figure 1** SPI0 Schematic<a name="_fig1987716341641"></a> ![](figures/SPI0originarrangegraph.jpg "SPI0 Schematic") The multiplexing configuration of the AK33 pin is used as an example. The SPI0\_SCLK (AK33) pin control register is shown in [Table 1](#_table3777103411415). **Table 1** AK33 Pin Control Register <a name="_table3777103411415"></a>
 <table><thead align="left"><tr id="row1416mcpsimp"><th class="cellrowborder" valign="top" width="14.85148514851485%" id="mcps1.2.8.1.1"><p id="p1418mcpsimp"><a name="p1418mcpsimp"></a><a name="p1418mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="9.900990099009901%" id="mcps1.2.8.1.2"><p id="p1420mcpsimp"><a name="p1420mcpsimp"></a><a name="p1420mcpsimp"></a>Pin Number</p>
@@ -1459,47 +915,6 @@ The multiplexing configuration of the AK33 pin is used as an example. The SPI0\_
 <td class="cellrowborder" valign="top" width="11.881188118811883%" headers="mcps1.2.8.1.6 "><p id="p1444mcpsimp"><a name="p1444mcpsimp"></a><a name="p1444mcpsimp"></a>31:15</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.792079207920793%" headers="mcps1.2.8.1.7 "><p id="p1446mcpsimp"><a name="p1446mcpsimp"></a><a name="p1446mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1447mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1449mcpsimp"><a name="p1449mcpsimp"></a><a name="p1449mcpsimp"></a>14</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1451mcpsimp"><a name="p1451mcpsimp"></a><a name="p1451mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1452mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1454mcpsimp"><a name="p1454mcpsimp"></a><a name="p1454mcpsimp"></a>13</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1456mcpsimp"><a name="p1456mcpsimp"></a><a name="p1456mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1457mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1459mcpsimp"><a name="p1459mcpsimp"></a><a name="p1459mcpsimp"></a>12</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1461mcpsimp"><a name="p1461mcpsimp"></a><a name="p1461mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1462mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1464mcpsimp"><a name="p1464mcpsimp"></a><a name="p1464mcpsimp"></a>11</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1466mcpsimp"><a name="p1466mcpsimp"></a><a name="p1466mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1467mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1469mcpsimp"><a name="p1469mcpsimp"></a><a name="p1469mcpsimp"></a>10</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1471mcpsimp"><a name="p1471mcpsimp"></a><a name="p1471mcpsimp"></a>Pin slew rate control:</p>
-<p id="p1472mcpsimp"><a name="p1472mcpsimp"></a><a name="p1472mcpsimp"></a>0x0: Fast edge output;</p>
-<p id="p1473mcpsimp"><a name="p1473mcpsimp"></a><a name="p1473mcpsimp"></a>0x1: Slow edge output.</p>
-</td>
-</tr>
-<tr id="row1474mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1476mcpsimp"><a name="p1476mcpsimp"></a><a name="p1476mcpsimp"></a>9</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1478mcpsimp"><a name="p1478mcpsimp"></a><a name="p1478mcpsimp"></a>Pin pull-down control:</p>
-<p id="p1479mcpsimp"><a name="p1479mcpsimp"></a><a name="p1479mcpsimp"></a>0x0: Off;</p>
-<p id="p1480mcpsimp"><a name="p1480mcpsimp"></a><a name="p1480mcpsimp"></a>0x1: On.</p>
-</td>
-</tr>
-<tr id="row1481mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1483mcpsimp"><a name="p1483mcpsimp"></a><a name="p1483mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1485mcpsimp"><a name="p1485mcpsimp"></a><a name="p1485mcpsimp"></a>Pin pull-up control:</p>
-<p id="p1486mcpsimp"><a name="p1486mcpsimp"></a><a name="p1486mcpsimp"></a>0x0: Off;</p>
-<p id="p1487mcpsimp"><a name="p1487mcpsimp"></a><a name="p1487mcpsimp"></a>0x1: On.</p>
 </td>
 </tr>
 <tr id="row1488mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1490mcpsimp"><a name="p1490mcpsimp"></a><a name="p1490mcpsimp"></a>7:4</p>
@@ -1535,69 +950,13 @@ The multiplexing configuration of the AK33 pin is used as an example. The SPI0\_
 </td>
 </tr>
 </tbody>
-</table>
-
-AK33 pin has 4 function multiplexing options: GPIO16\_3/SPI0\_SCLK/I2C2\_SCL/SPI\_3WIRE\_CLK
-
-Current AK33 pin configuration value: 0x02b1
-
--   Bits [3:0]=1, indicates AK33 multiplexed as SPI0\_SCLK
--   Bits[7:4]=0xb, indicates drive capability select level 12
--   Bits[9]=0x1, indicates pin pull-down: On
-
-[Precautions]
-
-None.
-
-## VI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661573"></a>
-
-Video input receives video data through BT.656/BT.1120/MIPI interfaces, captures video data according to certain video reception protocols, and stores the data into specified memory areas.
-
-The following describes pin multiplexing in VICAP.
-
-### PORT Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661521"></a>
-
-#### MIPI\_RX Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102178"></a>
-
-[Configuration]
-
-g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980).
-
-Taking the MIPI\_RX PHY0 interface of Hi3403V100 as an example:
-
-```
+</table> AK33 pin has 4 function multiplexing options: GPIO16\_3/SPI0\_SCLK/I2C2\_SCL/SPI\_3WIRE\_CLK Current AK33 pin configuration value: 0x02b1 - Bits [3:0]=1, indicates AK33 multiplexed as SPI0\_SCLK
+- Bits[7:4]=0xb, indicates drive capability select level 12
+- Bits[9]=0x1, indicates pin pull-down: On [Precautions] None. ## VI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661573"></a> Video input receives video data through BT.656/BT.1120/MIPI interfaces, captures video data according to certain video reception protocols, and stores the data into specified memory areas. The following describes pin multiplexing in VICAP. ### PORT Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661521"></a> #### MIPI\_RX Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102178"></a> [Configuration] g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980). Taking the MIPI\_RX PHY0 interface of Hi3403V100 as an example: ```
 static void mipi0_rx_pin_mux(void)
-{
-    void *iocfg2_base = sys_config_get_reg_iocfg2();
-    sys_writel(iocfg2_base + 0x01B0, 0x0000);
-    sys_writel(iocfg2_base + 0x01B4, 0x0000);
-    sys_writel(iocfg2_base + 0x01C0, 0x0000);
-    sys_writel(iocfg2_base + 0x01C4, 0x0000);
-    sys_writel(iocfg2_base + 0x01B8, 0x0000);
-    sys_writel(iocfg2_base + 0x01BC, 0x0000);
-    sys_writel(iocfg2_base + 0x01A8, 0x0000);
-    sys_writel(iocfg2_base + 0x01AC, 0x0000);
-    sys_writel(iocfg2_base + 0x0198, 0x0000);
-    sys_writel(iocfg2_base + 0x019C, 0x0000);
-    sys_writel(iocfg2_base + 0x01A0, 0x0000);
-    sys_writel(iocfg2_base + 0x01A4, 0x0000);
+{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01B0, 0x0000); sys_writel(iocfg2_base + 0x01B4, 0x0000); sys_writel(iocfg2_base + 0x01C0, 0x0000); sys_writel(iocfg2_base + 0x01C4, 0x0000); sys_writel(iocfg2_base + 0x01B8, 0x0000); sys_writel(iocfg2_base + 0x01BC, 0x0000); sys_writel(iocfg2_base + 0x01A8, 0x0000); sys_writel(iocfg2_base + 0x01AC, 0x0000); sys_writel(iocfg2_base + 0x0198, 0x0000); sys_writel(iocfg2_base + 0x019C, 0x0000); sys_writel(iocfg2_base + 0x01A0, 0x0000); sys_writel(iocfg2_base + 0x01A4, 0x0000);
 }
-```
-
-[Description]
-
-The schematic is shown in [Figure 1](#_toc51764061).
-
-**Figure 1**  MIPI\_RX0 Schematic<a name="_toc51764061"></a>  
-![](figures/MIPI_RX0原理图.png "MIPI_RX0 Schematic")
-
-When the VI video capture interface is MIPI\_RX, the 10 pins shown in [Figure 1](#_toc51764061) need to be configured for MIPI\_RX related functions. The 10 pins of the MIPI interface consist of 1 pair of clock lines and 4 pairs of DATA lines, with 1 pair of pins being 1 pair of differential signals.
-
--   Clock pin configuration (using AP30 multiplexed as MIPI\_RX0\_CK0P as an example).
-
-**Table 1**  AP30 Pin Control Register
-
-<a name="table1561mcpsimp"></a>
+``` [Description] The schematic is shown in [Figure 1](#_toc51764061). **Figure 1** MIPI\_RX0 Schematic<a name="_toc51764061"></a> ![](figures/MIPI_RX0originarrangegraph.png "MIPI_RX0 Schematic") When the VI video capture interface is MIPI\_RX, the 10 pins shown in [Figure 1](#_toc51764061) need to be configured for MIPI\_RX related functions. The 10 pins of the MIPI interface consist of 1 pair of clock lines and 4 pairs of DATA lines, with 1 pair of pins being 1 pair of differential signals. - Clock pin configuration (using AP30 multiplexed as MIPI\_RX0\_CK0P as an example). **Table 1** AP30 Pin Control Register <a name="table1561mcpsimp"></a>
 <table><thead align="left"><tr id="row1572mcpsimp"><th class="cellrowborder" valign="top" width="13.591359135913592%" id="mcps1.2.8.1.1"><p id="p1574mcpsimp"><a name="p1574mcpsimp"></a><a name="p1574mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.62126212621262%" id="mcps1.2.8.1.2"><p id="p1576mcpsimp"><a name="p1576mcpsimp"></a><a name="p1576mcpsimp"></a>Pin Number</p>
@@ -1629,41 +988,6 @@ When the VI video capture interface is MIPI\_RX, the 10 pins shown in [Figure 1]
 <td class="cellrowborder" valign="top" width="21.362136213621362%" headers="mcps1.2.8.1.7 "><p id="p1602mcpsimp"><a name="p1602mcpsimp"></a><a name="p1602mcpsimp"></a>Reserved.</p>
 </td>
 </tr>
-<tr id="row1603mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1605mcpsimp"><a name="p1605mcpsimp"></a><a name="p1605mcpsimp"></a>14</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1607mcpsimp"><a name="p1607mcpsimp"></a><a name="p1607mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1608mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1610mcpsimp"><a name="p1610mcpsimp"></a><a name="p1610mcpsimp"></a>13</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1612mcpsimp"><a name="p1612mcpsimp"></a><a name="p1612mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1613mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1615mcpsimp"><a name="p1615mcpsimp"></a><a name="p1615mcpsimp"></a>12</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1617mcpsimp"><a name="p1617mcpsimp"></a><a name="p1617mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1618mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1620mcpsimp"><a name="p1620mcpsimp"></a><a name="p1620mcpsimp"></a>11</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1622mcpsimp"><a name="p1622mcpsimp"></a><a name="p1622mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1623mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1625mcpsimp"><a name="p1625mcpsimp"></a><a name="p1625mcpsimp"></a>10</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1627mcpsimp"><a name="p1627mcpsimp"></a><a name="p1627mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1628mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1630mcpsimp"><a name="p1630mcpsimp"></a><a name="p1630mcpsimp"></a>9</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1632mcpsimp"><a name="p1632mcpsimp"></a><a name="p1632mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1633mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1635mcpsimp"><a name="p1635mcpsimp"></a><a name="p1635mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1637mcpsimp"><a name="p1637mcpsimp"></a><a name="p1637mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
 <tr id="row1638mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1640mcpsimp"><a name="p1640mcpsimp"></a><a name="p1640mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1642mcpsimp"><a name="p1642mcpsimp"></a><a name="p1642mcpsimp"></a>Reserved.</p>
@@ -1678,17 +1002,7 @@ When the VI video capture interface is MIPI\_RX, the 10 pins shown in [Figure 1]
 </td>
 </tr>
 </tbody>
-</table>
-
-The pin has 2 multiplexing scenarios: MIPI\_RX0\_CK0P/GPIO15\_0.
-
-Configuration value 0x0000: Bits[3:0]=0, pin multiplexed to 0, configured as MIPI\_RX0\_CK0P.
-
--   DATA pin configuration (using AN31 multiplexed as MIPI\_RX0\_D0N as an example).
-
-**Table 2**  AN31 Pin Control Register
-
-<a name="table1655mcpsimp"></a>
+</table> The pin has 2 multiplexing scenarios: MIPI\_RX0\_CK0P/GPIO15\_0. Configuration value 0x0000: Bits[3:0]=0, pin multiplexed to 0, configured as MIPI\_RX0\_CK0P. - DATA pin configuration (using AN31 multiplexed as MIPI\_RX0\_D0N as an example). **Table 2** AN31 Pin Control Register <a name="table1655mcpsimp"></a>
 <table><thead align="left"><tr id="row1666mcpsimp"><th class="cellrowborder" valign="top" width="13.591359135913592%" id="mcps1.2.8.1.1"><p id="p1668mcpsimp"><a name="p1668mcpsimp"></a><a name="p1668mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.62126212621262%" id="mcps1.2.8.1.2"><p id="p1670mcpsimp"><a name="p1670mcpsimp"></a><a name="p1670mcpsimp"></a>Pin Number</p>
@@ -1720,41 +1034,6 @@ Configuration value 0x0000: Bits[3:0]=0, pin multiplexed to 0, configured as MIP
 <td class="cellrowborder" valign="top" width="21.362136213621362%" headers="mcps1.2.8.1.7 "><p id="p1696mcpsimp"><a name="p1696mcpsimp"></a><a name="p1696mcpsimp"></a>Reserved.</p>
 </td>
 </tr>
-<tr id="row1697mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1699mcpsimp"><a name="p1699mcpsimp"></a><a name="p1699mcpsimp"></a>14</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1701mcpsimp"><a name="p1701mcpsimp"></a><a name="p1701mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1702mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1704mcpsimp"><a name="p1704mcpsimp"></a><a name="p1704mcpsimp"></a>13</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1706mcpsimp"><a name="p1706mcpsimp"></a><a name="p1706mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1707mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1709mcpsimp"><a name="p1709mcpsimp"></a><a name="p1709mcpsimp"></a>12</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1711mcpsimp"><a name="p1711mcpsimp"></a><a name="p1711mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1712mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1714mcpsimp"><a name="p1714mcpsimp"></a><a name="p1714mcpsimp"></a>11</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1716mcpsimp"><a name="p1716mcpsimp"></a><a name="p1716mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1717mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1719mcpsimp"><a name="p1719mcpsimp"></a><a name="p1719mcpsimp"></a>10</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1721mcpsimp"><a name="p1721mcpsimp"></a><a name="p1721mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1722mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1724mcpsimp"><a name="p1724mcpsimp"></a><a name="p1724mcpsimp"></a>9</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1726mcpsimp"><a name="p1726mcpsimp"></a><a name="p1726mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1727mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1729mcpsimp"><a name="p1729mcpsimp"></a><a name="p1729mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1731mcpsimp"><a name="p1731mcpsimp"></a><a name="p1731mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
 <tr id="row1732mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1734mcpsimp"><a name="p1734mcpsimp"></a><a name="p1734mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1736mcpsimp"><a name="p1736mcpsimp"></a><a name="p1736mcpsimp"></a>Reserved.</p>
@@ -1769,56 +1048,11 @@ Configuration value 0x0000: Bits[3:0]=0, pin multiplexed to 0, configured as MIP
 </td>
 </tr>
 </tbody>
-</table>
-
-The pin has 2 multiplexing scenarios: MIPI\_RX0\_D0N /GPIO14\_3.
-
-Configuration value 0x0000: Bits[3:0]=0, pin multiplexed to 0, configured as MIPI\_RX0\_D0P.
-
-The multiplexing configuration of other pins is similar to the above example and will not be described in detail.
-
-[Precautions]
-
-None.
-
-#### BT.656 Pin Multiplexing (VI)<a name="ZH-CN_TOPIC_0000002408262106"></a>
-
-[Configuration]
-
-Taking the BT.656 interface of device 1 as an example.
-
-g\_reg\_iocfg\_base is described in [Table 3](#_table16578980).
-
-```
+</table> The pin has 2 multiplexing scenarios: MIPI\_RX0\_D0N /GPIO14\_3. Configuration value 0x0000: Bits[3:0]=0, pin multiplexed to 0, configured as MIPI\_RX0\_D0P. The multiplexing configuration of other pins is similar to the above example and will not be described in detail. [Precautions] None. #### BT.656 Pin Multiplexing (VI)<a name="ZH-CN_TOPIC_0000002408262106"></a> [Configuration] Taking the BT.656 interface of device 1 as an example. g\_reg\_iocfg\_base is described in [Table 3](#_table16578980). ```
 static void vi_bt656_mode_mux(void)
-{
-    void *iocfg2_base = sys_config_get_reg_iocfg2();
-    sys_writel(iocfg2_base + 0x0158, 0x0206);
-    sys_writel(iocfg2_base + 0x016C, 0x0006);
-    sys_writel(iocfg2_base + 0x0178, 0x0006);
-    sys_writel(iocfg2_base + 0x017C, 0x0006);
-    sys_writel(iocfg2_base + 0x0174, 0x0006);
-    sys_writel(iocfg2_base + 0x0160, 0x0206);
-    sys_writel(iocfg2_base + 0x015C, 0x0206);
-    sys_writel(iocfg2_base + 0x0164, 0x0206);
-    sys_writel(iocfg2_base + 0x0154, 0x0206);
+{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0158, 0x0206); sys_writel(iocfg2_base + 0x016C, 0x0006); sys_writel(iocfg2_base + 0x0178, 0x0006); sys_writel(iocfg2_base + 0x017C, 0x0006); sys_writel(iocfg2_base + 0x0174, 0x0006); sys_writel(iocfg2_base + 0x0160, 0x0206); sys_writel(iocfg2_base + 0x015C, 0x0206); sys_writel(iocfg2_base + 0x0164, 0x0206); sys_writel(iocfg2_base + 0x0154, 0x0206);
 }
-```
-
-[Description]
-
-The schematic is shown in [Figure 1](#_toc51764062).
-
-**Figure 1**  VI BT.656 Schematic<a name="_toc51764062"></a>  
-![](figures/VI-BT-656原理图.png "VI BT.656 Schematic")
-
-When the VI video capture interface is BT.656, the 10 pins shown in the figure above need to be configured for BT.656 related functions. The 10 pins of the BT.656 interface include a clock pin and 8 DATA pins (VI\_DATA0~VI\_DATA7).
-
--   Clock pin configuration (using AK22 multiplexed as VI\_CLK as an example):
-
-**Table 1**  AK22 Pin Control Register
-
-<a name="table1776mcpsimp"></a>
+``` [Description] The schematic is shown in [Figure 1](#_toc51764062). **Figure 1** VI BT.656 Schematic<a name="_toc51764062"></a> ![](figures/VI-BT-656originarrangegraph.png "VI BT.656 Schematic") When the VI video capture interface is BT.656, the 10 pins shown in the figure above need to be configured for BT.656 related functions. The 10 pins of the BT.656 interface include a clock pin and 8 DATA pins (VI\_DATA0~VI\_DATA7). - Clock pin configuration (using AK22 multiplexed as VI\_CLK as an example): **Table 1** AK22 Pin Control Register <a name="table1776mcpsimp"></a>
 <table><thead align="left"><tr id="row1787mcpsimp"><th class="cellrowborder" valign="top" width="14.14141414141414%" id="mcps1.2.8.1.1"><p id="p1789mcpsimp"><a name="p1789mcpsimp"></a><a name="p1789mcpsimp"></a>Register Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.121212121212121%" id="mcps1.2.8.1.2"><p id="p1791mcpsimp"><a name="p1791mcpsimp"></a><a name="p1791mcpsimp"></a>Pin Number</p>
@@ -1850,47 +1084,6 @@ When the VI video capture interface is BT.656, the 10 pins shown in the figure a
 <td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.8.1.7 "><p id="p1817mcpsimp"><a name="p1817mcpsimp"></a><a name="p1817mcpsimp"></a>Reserved.</p>
 </td>
 </tr>
-<tr id="row1818mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1820mcpsimp"><a name="p1820mcpsimp"></a><a name="p1820mcpsimp"></a>14</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1822mcpsimp"><a name="p1822mcpsimp"></a><a name="p1822mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1823mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1825mcpsimp"><a name="p1825mcpsimp"></a><a name="p1825mcpsimp"></a>13</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1827mcpsimp"><a name="p1827mcpsimp"></a><a name="p1827mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1828mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1830mcpsimp"><a name="p1830mcpsimp"></a><a name="p1830mcpsimp"></a>12</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1832mcpsimp"><a name="p1832mcpsimp"></a><a name="p1832mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1833mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1835mcpsimp"><a name="p1835mcpsimp"></a><a name="p1835mcpsimp"></a>11</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1837mcpsimp"><a name="p1837mcpsimp"></a><a name="p1837mcpsimp"></a>Reserved.</p>
-</td>
-</tr>
-<tr id="row1838mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1840mcpsimp"><a name="p1840mcpsimp"></a><a name="p1840mcpsimp"></a>10</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1842mcpsimp"><a name="p1842mcpsimp"></a><a name="p1842mcpsimp"></a>Pin slew rate control:</p>
-<p id="p1843mcpsimp"><a name="p1843mcpsimp"></a><a name="p1843mcpsimp"></a>0x0: Fast edge output;</p>
-<p id="p1844mcpsimp"><a name="p1844mcpsimp"></a><a name="p1844mcpsimp"></a>0x1: Slow edge output.</p>
-</td>
-</tr>
-<tr id="row1845mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1847mcpsimp"><a name="p1847mcpsimp"></a><a name="p1847mcpsimp"></a>9</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1849mcpsimp"><a name="p1849mcpsimp"></a><a name="p1849mcpsimp"></a>Pin pull-down control:</p>
-<p id="p1850mcpsimp"><a name="p1850mcpsimp"></a><a name="p1850mcpsimp"></a>0x0: Off;</p>
-<p id="p1851mcpsimp"><a name="p1851mcpsimp"></a><a name="p1851mcpsimp"></a>0x1: On.</p>
-</td>
-</tr>
-<tr id="row1852mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1854mcpsimp"><a name="p1854mcpsimp"></a><a name="p1854mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1856mcpsimp"><a name="p1856mcpsimp"></a><a name="p1856mcpsimp"></a>Pin pull-up control:</p>
-<p id="p1857mcpsimp"><a name="p1857mcpsimp"></a><a name="p1857mcpsimp"></a>0x0: Off;</p>
-<p id="p1858mcpsimp"><a name="p1858mcpsimp"></a><a name="p1858mcpsimp"></a>0x1: On.</p>
-</td>
-</tr>
 <tr id="row1859mcpsimp"><td class="cellrowborder" valign="top" headers="mcps1.2.8.1.1 "><p id="p1861mcpsimp"><a name="p1861mcpsimp"></a><a name="p1861mcpsimp"></a>7:4</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.8.1.2 "><p id="p1863mcpsimp"><a name="p1863mcpsimp"></a><a name="p1863mcpsimp"></a>Pin drive capability selection:</p>
@@ -1904,233 +1097,33 @@ When the VI video capture interface is BT.656, the 10 pins shown in the figure a
 </td>
 </tr>
 </tbody>
-</table>
-
-The pin has 8 multiplexing scenarios: HT\_SD2/VI\_CLK/SENSOR2\_HS/SENSOR1\_HS/SENSOR0\_HS/I2C4\_SDA/SPI1\_CSN0/GPIO12\_3.
-
-Configuration value 0x0206: Bits[3:0]=0x6, pin multiplexed to 6, configured as VI\_CLK.
-
--   DATA pin configuration:
-
-VI\_DATA0~VI\_DATA7 are the corresponding BT.656 interface related functions. Using AN24 multiplexed as VI\_DATA0 as an example, the pin has 4 multiplexing scenarios: HT\_DO6/VI\_DATA0/GPIO13\_0/MIPI\_RX1\_D0P. Configuration value 0x0006: Bits[3:0]=0x6, pin multiplexed to 6, configured as VI\_DATA0.
-
-Other pin multiplexing relationships are similar to the above examples and will not be described in detail.
-
-[Precautions]
-
-None.
-
-#### BT.1120 Pin Multiplexing (VI)<a name="ZH-CN_TOPIC_0000002408102242"></a>
-
-The BT.1120 interface consists of a clock pin (VI\_CLK) and 16 data pins (VI\_DATA0~VI\_DATA15).
-
-[Configuration]
-
-g\_reg\_iocfg\_base is described in [Table 3](#_table16578980).
-
-```
+</table> The pin has 8 multiplexing scenarios: HT\_SD2/VI\_CLK/SENSOR2\_HS/SENSOR1\_HS/SENSOR0\_HS/I2C4\_SDA/SPI1\_CSN0/GPIO12\_3. Configuration value 0x0206: Bits[3:0]=0x6, pin multiplexed to 6, configured as VI\_CLK. - DATA pin configuration: VI\_DATA0~VI\_DATA7 are the corresponding BT.656 interface related functions. Using AN24 multiplexed as VI\_DATA0 as an example, the pin has 4 multiplexing scenarios: HT\_DO6/VI\_DATA0/GPIO13\_0/MIPI\_RX1\_D0P. Configuration value 0x0006: Bits[3:0]=0x6, pin multiplexed to 6, configured as VI\_DATA0. Other pin multiplexing relationships are similar to the above examples and will not be described in detail. [Precautions] None. #### BT.1120 Pin Multiplexing (VI)<a name="ZH-CN_TOPIC_0000002408102242"></a> The BT.1120 interface consists of a clock pin (VI\_CLK) and 16 data pins (VI\_DATA0~VI\_DATA15). [Configuration] g\_reg\_iocfg\_base is described in [Table 3](#_table16578980). ```
 static void vi_bt1120_mode_mux(void)
-{
-    void *iocfg2_base = sys_config_get_reg_iocfg2();
-    sys_writel(iocfg2_base + 0x0158, 0x0206);
-    sys_writel(iocfg2_base + 0x016C, 0x0006);
-    sys_writel(iocfg2_base + 0x0178, 0x0006);
-    sys_writel(iocfg2_base + 0x017C, 0x0006);
-    sys_writel(iocfg2_base + 0x0174, 0x0006);
-    sys_writel(iocfg2_base + 0x0160, 0x0206);
-    sys_writel(iocfg2_base + 0x015C, 0x0206);
-    sys_writel(iocfg2_base + 0x0164, 0x0206);
-    sys_writel(iocfg2_base + 0x0154, 0x0206);
-    sys_writel(iocfg2_base + 0x0194, 0x0006);
-    sys_writel(iocfg2_base + 0x0190, 0x0006);
-    sys_writel(iocfg2_base + 0x0184, 0x0006);
-    sys_writel(iocfg2_base + 0x0180, 0x0006);
-    sys_writel(iocfg2_base + 0x0188, 0x0006);
-    sys_writel(iocfg2_base + 0x018C, 0x0006);
-    sys_writel(iocfg2_base + 0x0170, 0x0006);
-    sys_writel(iocfg2_base + 0x0168, 0x0006);
+{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0158, 0x0206); sys_writel(iocfg2_base + 0x016C, 0x0006); sys_writel(iocfg2_base + 0x0178, 0x0006); sys_writel(iocfg2_base + 0x017C, 0x0006); sys_writel(iocfg2_base + 0x0174, 0x0006); sys_writel(iocfg2_base + 0x0160, 0x0206); sys_writel(iocfg2_base + 0x015C, 0x0206); sys_writel(iocfg2_base + 0x0164, 0x0206); sys_writel(iocfg2_base + 0x0154, 0x0206); sys_writel(iocfg2_base + 0x0194, 0x0006); sys_writel(iocfg2_base + 0x0190, 0x0006); sys_writel(iocfg2_base + 0x0184, 0x0006); sys_writel(iocfg2_base + 0x0180, 0x0006); sys_writel(iocfg2_base + 0x0188, 0x0006); sys_writel(iocfg2_base + 0x018C, 0x0006); sys_writel(iocfg2_base + 0x0170, 0x0006); sys_writel(iocfg2_base + 0x0168, 0x0006);
 }
-```
-
-[Description]
-
-The schematic is shown in [Figure 1](#_toc51764063).
-
-**Figure 1**  VI BT.1120 Schematic<a name="_toc51764063"></a>  
-![](figures/VI-BT-1120原理图.png "VI BT.1120 Schematic")
-
-When the VI video capture interface is BT.1120, the corresponding pins in the figure above need to be configured for BT.1120 related functions. The BT.1120 interface pins consist of a clock pin and 16 DATA pins (VI\_DATA0~VI\_DATA15).
-
-The clock pin configuration is the same as described in the BT.656 section (AK22 multiplexed as VI\_CLK). VI\_DATA0~VI\_DATA7 configuration refers to the BT.656 DATA pin description. VI\_DATA8~VI\_DATA15 are additional pins configured similarly. For example, AK26 multiplexed as VI\_DATA8 has 4 multiplexing scenarios: HT\_CLK\_OUT/VI\_DATA8/GPIO14\_2/MIPI\_RX1\_D3P, configured with value 0x0006, Bits[3:0]=0x6.
-
-[Precautions]
-
-Hi3403V100 has only 1 BT.656 interface. When configuring the BT.1120 interface, in addition to configuring BT.656 pins for VI\_DATA0~DATA7, 8 additional pins need to be configured as VI\_DATA8~DATA15.
-
-#### SENSOR Reference Clock Pin<a name="ZH-CN_TOPIC_0000002441661473"></a>
-
-SENSOR pins are used to connect external sensors. The main chip provides a reference clock to the sensor.
-
-[Configuration]
-
-g\_reg\_iocfg\_base is described in [Table 3](#_table16578980).
-
-SENSOR0-3:
-
-```
+``` [Description] The schematic is shown in [Figure 1](#_toc51764063). **Figure 1** VI BT.1120 Schematic<a name="_toc51764063"></a> ![](figures/VI-BT-1120originarrangegraph.png "VI BT.1120 Schematic") When the VI video capture interface is BT.1120, the corresponding pins in the figure above need to be configured for BT.1120 related functions. The BT.1120 interface pins consist of a clock pin and 16 DATA pins (VI\_DATA0~VI\_DATA15). The clock pin configuration is the same as described in the BT.656 section (AK22 multiplexed as VI\_CLK). VI\_DATA0~VI\_DATA7 configuration refers to the BT.656 DATA pin description. VI\_DATA8~VI\_DATA15 are additional pins configured similarly. For example, AK26 multiplexed as VI\_DATA8 has 4 multiplexing scenarios: HT\_CLK\_OUT/VI\_DATA8/GPIO14\_2/MIPI\_RX1\_D3P, configured with value 0x0006, Bits[3:0]=0x6. [Precautions] Hi3403V100 has only 1 BT.656 interface. When configuring the BT.1120 interface, in addition to configuring BT.656 pins for VI\_DATA0~DATA7, 8 additional pins need to be configured as VI\_DATA8~DATA15. #### SENSOR Reference Clock Pin<a name="ZH-CN_TOPIC_0000002441661473"></a> SENSOR pins are used to connect external sensors. The main chip provides a reference clock to the sensor. [Configuration] g\_reg\_iocfg\_base is described in [Table 3](#_table16578980). SENSOR0-3: ```
 static void sensor0_pin_mux(void)
-{
-    void *iocfg2_base = sys_config_get_reg_iocfg2();
-    sys_writel(iocfg2_base + 0x01C8, 0x02d1);
-    sys_writel(iocfg2_base + 0x01CC, 0x0101);
+{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01C8, 0x02d1); sys_writel(iocfg2_base + 0x01CC, 0x0101);
 }
 static void sensor1_pin_mux(void)
-{
-    void *iocfg2_base = sys_config_get_reg_iocfg2();
-    sys_writel(iocfg2_base + 0x0150, 0x02d1);
-    sys_writel(iocfg2_base + 0x014C, 0x0201);
+{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0150, 0x02d1); sys_writel(iocfg2_base + 0x014C, 0x0201);
 }
 static void sensor2_pin_mux(void)
-{
-    void *iocfg2_base = sys_config_get_reg_iocfg2();
-    sys_writel(iocfg2_base + 0x01E8, 0x02d4);
-    sys_writel(iocfg2_base + 0x0160, 0x0205);
+{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x01E8, 0x02d4); sys_writel(iocfg2_base + 0x0160, 0x0205);
 }
 static void sensor3_pin_mux(void)
-{
-    void *iocfg2_base = sys_config_get_reg_iocfg2();
-    sys_writel(iocfg2_base + 0x0154, 0x02d2);
+{ void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x0154, 0x02d2);
 }
-```
-
-[Description]
-
-SENSOR0\_CLK (AL32), SENSOR0\_RSTN (AM32) schematic is shown in [Figure 1](#_toc51764064).
-
-**Figure 1**  SENSOR0 Schematic<a name="_toc51764064"></a>  
-![](figures/SENSOR0原理图.png "SENSOR0 Schematic")
-
-The AL32 pin (iocfg\_reg136, 0x0102F01C8) controls SENSOR0\_CLK. AL32 has 4 function multiplexing options: GPIO15\_7/SENSOR0\_CLK/SENSOR1\_CLK/SENSOR2\_CLK. Configuration value 0x02d1: Bits[3:0]=1 (SENSOR0\_CLK), Bits[7:4]=d (drive level 14), Bits[9]=1 (pull-down on).
-
-[Precautions]
-
-None.
-
-## VO Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102214"></a>
-
-### HDMI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262158"></a>
-
-[Configuration] (Using Hi3403V100 as an example)
-
-g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980).
-
-```
-static void hdmi_pin_mux(void) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-  
-    sys_writel(iocfg2_base + 0x00E4, 0x2801); 
-    sys_writel(iocfg2_base + 0x00E8, 0x6801); 
-    sys_writel(iocfg2_base + 0x00EC, 0x6801); 
+``` [Description] SENSOR0\_CLK (AL32), SENSOR0\_RSTN (AM32) schematic is shown in [Figure 1](#_toc51764064). **Figure 1** SENSOR0 Schematic<a name="_toc51764064"></a> ![](figures/SENSOR0originarrangegraph.png "SENSOR0 Schematic") The AL32 pin (iocfg\_reg136, 0x0102F01C8) controls SENSOR0\_CLK. AL32 has 4 function multiplexing options: GPIO15\_7/SENSOR0\_CLK/SENSOR1\_CLK/SENSOR2\_CLK. Configuration value 0x02d1: Bits[3:0]=1 (SENSOR0\_CLK), Bits[7:4]=d (drive level 14), Bits[9]=1 (pull-down on). [Precautions] None. ## VO Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102214"></a> ### HDMI Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262158"></a> [Configuration] (Using Hi3403V100 as an example) g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980). ```
+static void hdmi_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x00E4, 0x2801); sys_writel(iocfg2_base + 0x00E8, 0x6801); sys_writel(iocfg2_base + 0x00EC, 0x6801); }
+``` [Description] HDMI\_HOTPLUG (AK11, register iocfg\_reg79, 0x0102F00E4), HDMI\_SDA (AL11), HDMI\_SCL (AL12). **Figure 1** HDMI Schematic<a name="_fig1554832315140"></a> ![](figures/HDM Ioriginarrangegraph.jpg "HDMI Schematic") AK11 has 2 function multiplexing options: GPIO9\_2/HDMI\_HOTPLUG. Configuration value 0x2801: Bits[3:0]=1 (HDMI\_HOTPLUG), Bits[7:4]=0 (drive level 1), Bits[11]=1 (Schmitt input on), Bits[13]=1 (3.3V/5V PAD). [Precautions] None. ### MIPI\_TX Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102166"></a> [Configuration] (Using Hi3403V100 as an example) g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980). ```
+static void vo_mipi_tx_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x00D8, 0x0201); sys_writel(iocfg2_base + 0x00A0, 0x0000); sys_writel(iocfg2_base + 0x00A4, 0x0000); sys_writel(iocfg2_base + 0x00A8, 0x0000); sys_writel(iocfg2_base + 0x00AC, 0x0000); sys_writel(iocfg2_base + 0x00B0, 0x0000); sys_writel(iocfg2_base + 0x00B4, 0x0000); sys_writel(iocfg2_base + 0x00B8, 0x0000); sys_writel(iocfg2_base + 0x00BC, 0x0000); sys_writel(iocfg2_base + 0x00C0, 0x0000); sys_writel(iocfg2_base + 0x00C4, 0x0000);
 }
-```
-
-[Description]
-
-HDMI\_HOTPLUG (AK11, register iocfg\_reg79, 0x0102F00E4), HDMI\_SDA (AL11), HDMI\_SCL (AL12).
-
-**Figure 1**  HDMI Schematic<a name="_fig1554832315140"></a>  
-![](figures/HDMI原理图.jpg "HDMI Schematic")
-
-AK11 has 2 function multiplexing options: GPIO9\_2/HDMI\_HOTPLUG. Configuration value 0x2801: Bits[3:0]=1 (HDMI\_HOTPLUG), Bits[7:4]=0 (drive level 1), Bits[11]=1 (Schmitt input on), Bits[13]=1 (3.3V/5V PAD).
-
-[Precautions]
-
-None.
-
-### MIPI\_TX Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102166"></a>
-
-[Configuration] (Using Hi3403V100 as an example)
-
-g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980).
-
-```
-static void vo_mipi_tx_pin_mux(void) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-  
-    sys_writel(iocfg2_base + 0x00D8, 0x0201); 
-    sys_writel(iocfg2_base + 0x00A0, 0x0000);
-    sys_writel(iocfg2_base + 0x00A4, 0x0000);
-    sys_writel(iocfg2_base + 0x00A8, 0x0000);
-    sys_writel(iocfg2_base + 0x00AC, 0x0000);
-    sys_writel(iocfg2_base + 0x00B0, 0x0000);
-    sys_writel(iocfg2_base + 0x00B4, 0x0000);
-    sys_writel(iocfg2_base + 0x00B8, 0x0000);
-    sys_writel(iocfg2_base + 0x00BC, 0x0000);
-    sys_writel(iocfg2_base + 0x00C0, 0x0000);
-    sys_writel(iocfg2_base + 0x00C4, 0x0000);
+``` [Description] VSYNC\_TE\_MIPITX (AL4, register iocfg\_reg76, 0x0102F00D8) controls the MIPI\_TX VSYNC/TE signal. AL4 has 5 function options: GPIO0\_2/VSYNC\_TE\_MIPITX/VO\_BT1120\_DATA13/RGB\_DATA17/PWM0\_OUT15\_0\_N. Configuration value 0x0201: Bits[3:0]=1 (VSYNC\_TE\_MIPITX), Bits[7:4]=0 (level 1), Bits[9]=0 (pull-down on). **Figure 1** MIPI\_TX Schematic<a name="_fig1954917234140"></a> ![](figures/MIPI_TXoriginarrangegraph.jpg "MIPI_TX Schematic") [Precautions] Except for VSYNC\_TE\_MIPITX, the drive capability of other MIPI\_TX pins is configured by the MIPI\_TX PHY register 0x68. Default value is 0x05. ### VO BT.1120 Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262142"></a> [Configuration] (Using Hi3403V100 as an example) g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980), g\_reg\_mipi\_tx\_base is described in [Table 7](#_table071427174311). ```
+static void vo_bt_pin_mux(int vo_bt_mode) { void *iocfg2_base = sys_config_get_reg_iocfg2; vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); sys_writel(iocfg2_base + 0x00C8, 0x0682); sys_writel(iocfg2_base + 0x00A8, 0x2); sys_writel(iocfg2_base + 0x00AC, 0x2); sys_writel(iocfg2_base + 0x00B0, 0x2); sys_writel(iocfg2_base + 0x00B4, 0x2); sys_writel(iocfg2_base + 0x00B8, 0x2); sys_writel(iocfg2_base + 0x00C0, 0x2); sys_writel(iocfg2_base + 0x00C4, 0x2); sys_writel(iocfg2_base + 0x00BC, 0x2); if (vo_bt_mode == VO_BT656_MODE) return; sys_writel(iocfg2_base + 0x00D4, 0x0242); sys_writel(iocfg2_base + 0x00A0, 0x2); sys_writel(iocfg2_base + 0x00A4, 0x2); sys_writel(iocfg2_base + 0x00D0, 0x0242); sys_writel(iocfg2_base + 0x00CC, 0x0242); sys_writel(iocfg2_base + 0x00D8, 0x0242); sys_writel(iocfg2_base + 0x00E0, 0x0242); sys_writel(iocfg2_base + 0x00DC, 0x0242);
 }
-```
-
-[Description]
-
-VSYNC\_TE\_MIPITX (AL4, register iocfg\_reg76, 0x0102F00D8) controls the MIPI\_TX VSYNC/TE signal. AL4 has 5 function options: GPIO0\_2/VSYNC\_TE\_MIPITX/VO\_BT1120\_DATA13/RGB\_DATA17/PWM0\_OUT15\_0\_N. Configuration value 0x0201: Bits[3:0]=1 (VSYNC\_TE\_MIPITX), Bits[7:4]=0 (level 1), Bits[9]=0 (pull-down on).
-
-**Figure 1**  MIPI\_TX Schematic<a name="_fig1954917234140"></a>  
-![](figures/MIPI_TX原理图.jpg "MIPI_TX Schematic")
-
-[Precautions]
-
-Except for VSYNC\_TE\_MIPITX, the drive capability of other MIPI\_TX pins is configured by the MIPI\_TX PHY register 0x68. Default value is 0x05.
-
-### VO BT.1120 Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262142"></a>
-
-[Configuration] (Using Hi3403V100 as an example)
-
-g\_reg\_iocfg2\_base is described in [Table 3](#_table16578980), g\_reg\_mipi\_tx\_base is described in [Table 7](#_table071427174311).
-
-```
-static void vo_bt_pin_mux(int vo_bt_mode) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-    vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); 
-  
-    sys_writel(iocfg2_base + 0x00C8, 0x0682); 
-    sys_writel(iocfg2_base + 0x00A8, 0x2); 
-    sys_writel(iocfg2_base + 0x00AC, 0x2); 
-    sys_writel(iocfg2_base + 0x00B0, 0x2); 
-    sys_writel(iocfg2_base + 0x00B4, 0x2); 
-    sys_writel(iocfg2_base + 0x00B8, 0x2); 
-    sys_writel(iocfg2_base + 0x00C0, 0x2); 
-    sys_writel(iocfg2_base + 0x00C4, 0x2); 
-    sys_writel(iocfg2_base + 0x00BC, 0x2); 
-  
-    if (vo_bt_mode == VO_BT656_MODE) 
-        return; 
-  
-    sys_writel(iocfg2_base + 0x00D4, 0x0242);
-    sys_writel(iocfg2_base + 0x00A0, 0x2);
-    sys_writel(iocfg2_base + 0x00A4, 0x2);
-    sys_writel(iocfg2_base + 0x00D0, 0x0242);
-    sys_writel(iocfg2_base + 0x00CC, 0x0242);
-    sys_writel(iocfg2_base + 0x00D8, 0x0242);
-    sys_writel(iocfg2_base + 0x00E0, 0x0242);
-    sys_writel(iocfg2_base + 0x00DC, 0x0242);
-}
-```
-
-[Description]
-
-VO\_BT1120\_CLK (AH4, iocfg\_reg72, 0x0102F00C8) has 4 function options: GPIO8\_6/SPI2\_SCLK/VO\_BT1120\_CLK/RGB\_DATA10. Configuration 0x06f2: Bits[3:0]=2 (VO\_BT1120\_CLK), Bits[7:4]=0xf (level 16), Bits[9]=1 (pull-down on), Bits[10]=1 (slow edge).
-
-**Figure 1**  VO BT.1120 Schematic<a name="_fig1455072321410"></a>  
-![](figures/VO-BT-1120原理图.jpg "VO BT.1120 Schematic")
-![](figures/zh-cn_image_0000002441661705.jpg)
-
-The drive capability of DATA0~DATA7, DATA9, DATA10 pins is configured by the MIPI\_TX controller (levels 0~3, default level 3). The PHY register write/read sequences are provided in the original document.
-
-Write example:
+``` [Description] VO\_BT1120\_CLK (AH4, iocfg\_reg72, 0x0102F00C8) has 4 function options: GPIO8\_6/SPI2\_SCLK/VO\_BT1120\_CLK/RGB\_DATA10. Configuration 0x06f2: Bits[3:0]=2 (VO\_BT1120\_CLK), Bits[7:4]=0xf (level 16), Bits[9]=1 (pull-down on), Bits[10]=1 (slow edge). **Figure 1** VO BT.1120 Schematic<a name="_fig1455072321410"></a> ![](figures/VO-BT-1120originarrangegraph.jpg "VO BT.1120 Schematic")
+![](figures/zh-cn_image_0000002441661705.jpg) The drive capability of DATA0~DATA7, DATA9, DATA10 pins is configured by the MIPI\_TX controller (levels 0~3, default level 3). The PHY register write/read sequences are provided in the original document. Write example:
 ```
 PHY_REG_CFG1 = 0x100XX (XX = PHY register address)
 PHY_REG_CFG0 = 0x2
@@ -2138,155 +1131,19 @@ PHY_REG_CFG0 = 0x0
 PHY_REG_CFG1 = 0xYY (YY = configuration value)
 PHY_REG_CFG0 = 0x2
 PHY_REG_CFG0 = 0x0
-```
-
-Read example:
+``` Read example:
 ```
 bspmm g_reg_mipi_tx_base+0x00b8 0x10066
 bspmm g_reg_mipi_tx_base+0x00b4 0x2
 bspmm g_reg_mipi_tx_base+0x00b4 0x0
 bspmd.l g_reg_mipi_tx_base+0x00b8
-```
-
-### VO BT.656 Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102278"></a>
-
-[Configuration Example]
-
-```
-static void vo_bt_pin_mux(int vo_bt_mode) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-    vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); 
-  
-    sys_writel(iocfg2_base + 0x00C8, 0x0682); 
-    sys_writel(iocfg2_base + 0x00A8, 0x2); 
-    sys_writel(iocfg2_base + 0x00AC, 0x2); 
-    sys_writel(iocfg2_base + 0x00B0, 0x2); 
-    sys_writel(iocfg2_base + 0x00B4, 0x2); 
-    sys_writel(iocfg2_base + 0x00B8, 0x2); 
-    sys_writel(iocfg2_base + 0x00C0, 0x2); 
-    sys_writel(iocfg2_base + 0x00C4, 0x2); 
-    sys_writel(iocfg2_base + 0x00BC, 0x2); 
-  
-    if (vo_bt_mode == VO_BT656_MODE) 
-        return; 
-}
-```
-
-[Description]
-
-VO BT.656 uses DATA0~DATA7 of the VO BT.1120 interface. Refer to the VO BT.1120 section for drive capability configuration.
-
-**Figure 1**  VO BT.656 Schematic<a name="_fig355162313143"></a>  
-![](figures/VO-BT-656原理图.jpg "VO BT.656 Schematic")
-
-### RGB Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102134"></a>
-
-[Configuration Example]
-
-```
-static void vo_rgb_pin_mux(int vo_rgb_mode) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-    vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL2); 
-  
-    sys_writel(iocfg2_base + 0x0098, 0x0223); 
-    sys_writel(iocfg2_base + 0x0080, 0x0213); 
-    sys_writel(iocfg2_base + 0x008C, 0x0213); 
-    sys_writel(iocfg2_base + 0x0090, 0x0213); 
-    sys_writel(iocfg2_base + 0x00C0, 0x3); 
-    sys_writel(iocfg2_base + 0x00B8, 0x3); 
-    sys_writel(iocfg2_base + 0x00CC, 0x0233); 
-    sys_writel(iocfg2_base + 0x00D0, 0x0233); 
-    sys_writel(iocfg2_base + 0x00AC, 0x3); 
-    sys_writel(iocfg2_base + 0x00B4, 0x3); 
-  
-    if (vo_rgb_mode == VO_RGB_6BIT_MODE) return; 
-    sys_writel(iocfg2_base + 0x00B0, 0x3); 
-    sys_writel(iocfg2_base + 0x00A8, 0x3); 
-  
-    if (vo_rgb_mode == VO_RGB_8BIT_MODE) return; 
-    sys_writel(iocfg2_base + 0x00A0, 0x3); 
-    sys_writel(iocfg2_base + 0x00A4, 0x3); 
-    sys_writel(iocfg2_base + 0x00C8, 0x0233); 
-    sys_writel(iocfg2_base + 0x00D4, 0x0233); 
-    sys_writel(iocfg2_base + 0x0084, 0x0213); 
-    sys_writel(iocfg2_base + 0x0094, 0x0213); 
-    sys_writel(iocfg2_base + 0x0088, 0x0213); 
-    sys_writel(iocfg2_base + 0x009C, 0x0213); 
-  
-    if (vo_rgb_mode == VO_RGB_16BIT_MODE) return; 
-    sys_writel(iocfg2_base + 0x00E0, 0x0233); 
-    sys_writel(iocfg2_base + 0x00D8, 0x0233); 
-  
-    if (vo_rgb_mode == VO_RGB_18BIT_MODE) return; 
-    sys_writel(iocfg2_base + 0x00BC, 0x3); 
-    sys_writel(iocfg2_base + 0x00C4, 0x3); 
-    sys_writel(iocfg2_base + 0x0068, 0x0203); 
-    sys_writel(iocfg2_base + 0x006C, 0x0203); 
-    sys_writel(iocfg2_base + 0x0064, 0x0203); 
-    sys_writel(iocfg2_base + 0x0060, 0x0213); 
-}
-```
-
-[Description]
-
-RGB interface signals (RGB\_CLK, RGB\_DE, RGB\_HS, RGB\_VS, RGB\_DATA0~RGB\_DATA23) are output through various pins. Refer to schematic figures in the original document.
-
-Example: AF2 (iocfg\_reg60, 0x0102F0098) is RGB\_CLK with function options SDIO0\_CDATA3/GPIO1\_0/RGB\_CLK/VO\_BT1120\_DATA13/PWM1\_OUT10\_0\_P. Configuration 0x0223: Bits[3:0]=3 (VO\_BT1120\_DATA13 in BT mode, or RGB\_CLK in RGB mode).
-
-### Audio Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262150"></a>
-
-[Configuration]
-
-```
-static void audio_pin_mux(void) 
-{ 
-    void *iocfg2_base = sys_config_get_reg_iocfg2(); 
-    sys_writel(iocfg2_base + 0x00F4, 0x0041); 
-    sys_writel(iocfg2_base + 0x00F8, 0x0041); 
-}
-```
-
-[Description]
-
-Audio pins are configured for I2S interface functionality. Refer to the hardware schematic for specific pin connections.
-
-[Precautions]
-
-None.
-
-### Amplifier GPIO Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661489"></a>
-
-[Configuration] (Using Hi3403V100 as an example)
-
-```
-static void amp_unmute_pin_mux(void) 
-{ 
-    void *iocfg2_base = get_reg_iocfg2(); 
-    void *gpio_base = get_reg_gpio(); 
- 
-    /* GPIO10_0 */ 
-    sys_writel(iocfg2_base + 0x00FC, 0x0201); 
- 
-    /* output high */ 
-    sys_writel(gpio_base + 0xA400, 0x01); 
-    sys_writel(gpio_base + 0xA004, 0x01); 
-}
-```
-
-[Description]
-
-The amplifier chip enable is controlled via GPIO10\_0 (AP17, iocfg\_reg85, 0x0102F00FC). AP17 has 3 function options: LSADC\_CH3/GPIO10\_0/PCIE\_RST\_N. Configuration 0x00000201: Bits[3:0]=1 (GPIO10\_0), Bits[7:4]=0 (drive level 1), Bits[9:8]=2 (pull-down on, pull-up off), Bits[10]=0 (fast edge).
-
-GPIO\_DIR register (0x1109A400) Bit[0]=1 sets GPIO10\_0 as output. GPIO\_DATA register (0x1109A004) Bit[0]=1 drives the pin high.
-
-**Figure 1**  GPIO10\_0 Schematic<a name="_toc51764074"></a>  
-![](figures/GPIO10_0原理图.png "GPIO10_0 Schematic")
-
-[Precautions]
-
-None.
-
-# Other
+``` ### VO BT.656 Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102278"></a> [Configuration Example] ```
+static void vo_bt_pin_mux(int vo_bt_mode) { void *iocfg2_base = sys_config_get_reg_iocfg2; vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL3); sys_writel(iocfg2_base + 0x00C8, 0x0682); sys_writel(iocfg2_base + 0x00A8, 0x2); sys_writel(iocfg2_base + 0x00AC, 0x2); sys_writel(iocfg2_base + 0x00B0, 0x2); sys_writel(iocfg2_base + 0x00B4, 0x2); sys_writel(iocfg2_base + 0x00B8, 0x2); sys_writel(iocfg2_base + 0x00C0, 0x2); sys_writel(iocfg2_base + 0x00C4, 0x2); sys_writel(iocfg2_base + 0x00BC, 0x2); if (vo_bt_mode == VO_BT656_MODE) return; }
+``` [Description] VO BT.656 uses DATA0~DATA7 of the VO BT.1120 interface. Refer to the VO BT.1120 section for drive capability configuration. **Figure 1** VO BT.656 Schematic<a name="_fig355162313143"></a> ![](figures/VO-BT-656originarrangegraph.jpg "VO BT.656 Schematic") ### RGB Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408102134"></a> [Configuration Example] ```
+static void vo_rgb_pin_mux(int vo_rgb_mode) { void *iocfg2_base = sys_config_get_reg_iocfg2; vo_cmos_set_pin_drive_cap(MIPI_TX_DRIVE_CAP_LEVEL2); sys_writel(iocfg2_base + 0x0098, 0x0223); sys_writel(iocfg2_base + 0x0080, 0x0213); sys_writel(iocfg2_base + 0x008C, 0x0213); sys_writel(iocfg2_base + 0x0090, 0x0213); sys_writel(iocfg2_base + 0x00C0, 0x3); sys_writel(iocfg2_base + 0x00B8, 0x3); sys_writel(iocfg2_base + 0x00CC, 0x0233); sys_writel(iocfg2_base + 0x00D0, 0x0233); sys_writel(iocfg2_base + 0x00AC, 0x3); sys_writel(iocfg2_base + 0x00B4, 0x3); if (vo_rgb_mode == VO_RGB_6BIT_MODE) return; sys_writel(iocfg2_base + 0x00B0, 0x3); sys_writel(iocfg2_base + 0x00A8, 0x3); if (vo_rgb_mode == VO_RGB_8BIT_MODE) return; sys_writel(iocfg2_base + 0x00A0, 0x3); sys_writel(iocfg2_base + 0x00A4, 0x3); sys_writel(iocfg2_base + 0x00C8, 0x0233); sys_writel(iocfg2_base + 0x00D4, 0x0233); sys_writel(iocfg2_base + 0x0084, 0x0213); sys_writel(iocfg2_base + 0x0094, 0x0213); sys_writel(iocfg2_base + 0x0088, 0x0213); sys_writel(iocfg2_base + 0x009C, 0x0213); if (vo_rgb_mode == VO_RGB_16BIT_MODE) return; sys_writel(iocfg2_base + 0x00E0, 0x0233); sys_writel(iocfg2_base + 0x00D8, 0x0233); if (vo_rgb_mode == VO_RGB_18BIT_MODE) return; sys_writel(iocfg2_base + 0x00BC, 0x3); sys_writel(iocfg2_base + 0x00C4, 0x3); sys_writel(iocfg2_base + 0x0068, 0x0203); sys_writel(iocfg2_base + 0x006C, 0x0203); sys_writel(iocfg2_base + 0x0064, 0x0203); sys_writel(iocfg2_base + 0x0060, 0x0213); }
+``` [Description] RGB interface signals (RGB\_CLK, RGB\_DE, RGB\_HS, RGB\_VS, RGB\_DATA0~RGB\_DATA23) are output through various pins. Refer to schematic figures in the original document. Example: AF2 (iocfg\_reg60, 0x0102F0098) is RGB\_CLK with function options SDIO0\_CDATA3/GPIO1\_0/RGB\_CLK/VO\_BT1120\_DATA13/PWM1\_OUT10\_0\_P. Configuration 0x0223: Bits[3:0]=3 (VO\_BT1120\_DATA13 in BT mode, or RGB\_CLK in RGB mode). ### Audio Pin Multiplexing<a name="ZH-CN_TOPIC_0000002408262150"></a> [Configuration] ```
+static void audio_pin_mux(void) { void *iocfg2_base = sys_config_get_reg_iocfg2; sys_writel(iocfg2_base + 0x00F4, 0x0041); sys_writel(iocfg2_base + 0x00F8, 0x0041); }
+``` [Description] Audio pins are configured for I2S interface functionality. Refer to the hardware schematic for specific pin connections. [Precautions] None. ### Amplifier GPIO Pin Multiplexing<a name="ZH-CN_TOPIC_0000002441661489"></a> [Configuration] (Using Hi3403V100 as an example) ```
+static void amp_unmute_pin_mux(void) { void *iocfg2_base = get_reg_iocfg2; void *gpio_base = get_reg_gpio; /* GPIO10_0 */ sys_writel(iocfg2_base + 0x00FC, 0x0201); /* output high */ sys_writel(gpio_base + 0xA400, 0x01); sys_writel(gpio_base + 0xA004, 0x01); }
+``` [Description] The amplifier chip enable is controlled via GPIO10\_0 (AP17, iocfg\_reg85, 0x0102F00FC). AP17 has 3 function options: LSADC\_CH3/GPIO10\_0/PCIE\_RST\_N. Configuration 0x00000201: Bits[3:0]=1 (GPIO10\_0), Bits[7:4]=0 (drive level 1), Bits[9:8]=2 (pull-down on, pull-up off), Bits[10]=0 (fast edge). GPIO\_DIR register (0x1109A400) Bit[0]=1 sets GPIO10\_0 as output. GPIO\_DATA register (0x1109A004) Bit[0]=1 drives the pin high. **Figure 1** GPIO10\_0 Schematic<a name="_toc51764074"></a> ![](figures/GPIO10_0originarrangegraph.png "GPIO10_0 Schematic") [Precautions] None. # Other
 None.

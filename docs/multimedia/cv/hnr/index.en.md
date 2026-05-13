@@ -1,21 +1,9 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/HNR 开发参考/HNR 开发参考.md
----
-
-# Preface
-**Overview<a name="section140mcpsimp"></a>**
-
-This document is written for software development engineers and image quality development engineers using HNR, aiming to provide usage guidance and assistance during development.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->This document uses Hi3403V100 as an example. Unless otherwise specified, Hi3519AV200 content is consistent with Hi3403V100.
-
-**Product Version<a name="section143mcpsimp"></a>**
-
-The product versions corresponding to this document are as follows.
-
-<a name="table146mcpsimp"></a>
+--- # Preface
+**Overview<a name="section140mcpsimp"></a>** This document is written for software development engineers and image quality development engineers using HNR, aiming to provide usage guidance and assistance during development. >![](public_sys-resources/icon-note.gif) **Note:**
+>This document uses Hi3403V100 as an example. Unless otherwise specified, content is consistent with Hi3403V100. **Product Version<a name="section143mcpsimp"></a>** The product versions corresponding to this document are as follows. <a name="table146mcpsimp"></a>
 <table><thead align="left"><tr id="row151mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p153mcpsimp"><a name="p153mcpsimp"></a><a name="p153mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>Product Version</p>
@@ -27,19 +15,12 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p161mcpsimp"><a name="p161mcpsimp"></a><a name="p161mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row79393281419"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p761953118419"><a name="p761953118419"></a><a name="p761953118419"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p1361913118420"><a name="p1361913118420"></a><a name="p1361913118420"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Revision History<a name="section162mcpsimp"></a>**
-
-The revision history records the descriptions of each document update. The latest version of the document contains updates from all previous document versions.
-
-<a name="table1557726816410"></a>
+</table> **Revision History<a name="section162mcpsimp"></a>** The revision history records the descriptions of each document update. The latest version of the document contains updates from all previous document versions. <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a>Doc Version</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.27%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a>Release Date</p>
@@ -64,25 +45,9 @@ The revision history records the descriptions of each document update. The lates
 </td>
 </tr>
 </tbody>
-</table>
-
-# Overview
-## Overview<a name="ZH-CN_TOPIC_0000002441661549"></a>
-
-HNR (hypersensitive noise reduction) is a new type of denoising algorithm that enables imaging devices to remove noise more cleanly and retain more detail at lower illumination levels, thereby improving the sensitivity of imaging devices in extremely low light conditions. This document mainly describes the interface description and usage notes for HNR.
-
-HNR reference frame normal mode supports 3840 x 2160@30fps performance, no-reference frame mode supports 3840 x 2160@40fps, and HNR supports a maximum frame rate of 100fps.
-
-## Basic Concepts<a name="ZH-CN_TOPIC_0000002408102234"></a>
-
--   sfs (spatial filter strength), the spatial denoising strength.
--   tfs (temporal filter strength), the temporal denoising strength.
-
-## Performance<a name="ZH-CN_TOPIC_0000002441701401"></a>
-
-Linear OT_HNR_REF_MODE_NORM mode performance data is as follows.
-
-<a name="table11488022326"></a>
+</table> # Overview
+## Overview<a name="ZH-CN_TOPIC_0000002441661549"></a> HNR (hypersensitive noise reduction) is a new type of denoising algorithm that enables imaging devices to remove noise more cleanly and retain more detail at lower illumination levels, thereby improving the sensitivity of imaging devices in extremely low light conditions. This document mainly describes the interface description and usage notes for HNR. HNR reference frame normal mode supports 3840 x 2160@30fps performance, no-reference frame mode supports 3840 x 2160@40fps, and HNR supports a maximum frame rate of 100fps. ## Basic Concepts<a name="ZH-CN_TOPIC_0000002408102234"></a> - sfs (spatial filter strength), the spatial denoising strength.
+- tfs (temporal filter strength), the temporal denoising strength. ## Performance<a name="ZH-CN_TOPIC_0000002441701401"></a> Linear OT_HNR_REF_MODE_NORM mode performance data is as follows. <a name="table11488022326"></a>
 <table><thead align="left"><tr id="row353517225215"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p195350221520"><a name="p195350221520"></a><a name="p195350221520"></a>Resolution</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p135351522226"><a name="p135351522226"></a><a name="p135351522226"></a>Frame Rate</p>
@@ -115,46 +80,24 @@ Linear OT_HNR_REF_MODE_NORM mode performance data is as follows.
 </td>
 </tr>
 </tbody>
-</table>
-
-# API Reference
-This functional module provides the following APIs:
-
--   [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525): Initializes the HNR module.
--   [ss_mpi_hnr_exit](#ZH-CN_TOPIC_0000002408262170): Deinitializes the HNR module.
--   [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369): Loads the HNR configuration file.
--   [ss_mpi_hnr_unload_cfg](#ZH-CN_TOPIC_0000002441701385): Unloads the HNR configuration file.
--   [ss_mpi_hnr_set_alg_cfg](#ZH-CN_TOPIC_0000002441661513): Sets HNR algorithm configuration parameters.
--   [ss_mpi_hnr_get_alg_cfg](#ZH-CN_TOPIC_0000002441661465): Gets HNR algorithm configuration parameters.
--   [ss_mpi_hnr_enable](#ZH-CN_TOPIC_0000002408102158): Enables the HNR data stream switch.
--   [ss_mpi_hnr_disable](#ZH-CN_TOPIC_0000002408102186): Disables the HNR data stream switch.
--   [ss_mpi_hnr_set_attr](#ZH-CN_TOPIC_0000002441661457): Sets HNR attributes.
--   [ss_mpi_hnr_get_attr](#ZH-CN_TOPIC_0000002408262070): Gets HNR attributes.
--   [ss_mpi_hnr_set_input_depth](#ZH-CN_TOPIC_0000002441661493): Sets the buffer depth of the HNR input queue.
--   [ss_mpi_hnr_set_thread_attr](#ZH-CN_TOPIC_0000002441661481): Sets HNR thread attributes.
--   [ss_mpi_hnr_get_thread_attr](#ZH-CN_TOPIC_0000002408262054): Gets HNR thread attributes.
--   [ss_mpi_hnr_attach_out_vb_pool](#ZH-CN_TOPIC_0000002408262098): Binds HNR output to a video buffer VB pool.
--   [ss_mpi_hnr_detach_out_vb_pool](#ZH-CN_TOPIC_0000002441701317): Unbinds HNR output from a video buffer VB pool.
-
-## ss_mpi_hnr_init<a name="ZH-CN_TOPIC_0000002441661525"></a>
-
-【Description】
-
-Initializes the HNR module.
-
-【Syntax】
-
-```
+</table> # API Reference
+This functional module provides the following AP Is: - [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525): Initializes the HNR module.
+- [ss_mpi_hnr_exit](#ZH-CN_TOPIC_0000002408262170): Deinitializes the HNR module.
+- [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369): Loads the HNR configuration file.
+- [ss_mpi_hnr_unload_cfg](#ZH-CN_TOPIC_0000002441701385): Unloads the HNR configuration file.
+- [ss_mpi_hnr_set_alg_cfg](#ZH-CN_TOPIC_0000002441661513): Sets HNR algorithm configuration parameters.
+- [ss_mpi_hnr_get_alg_cfg](#ZH-CN_TOPIC_0000002441661465): Gets HNR algorithm configuration parameters.
+- [ss_mpi_hnr_enable](#ZH-CN_TOPIC_0000002408102158): Enables the HNR data stream switch.
+- [ss_mpi_hnr_disable](#ZH-CN_TOPIC_0000002408102186): Disables the HNR data stream switch.
+- [ss_mpi_hnr_set_attr](#ZH-CN_TOPIC_0000002441661457): Sets HNR attributes.
+- [ss_mpi_hnr_get_attr](#ZH-CN_TOPIC_0000002408262070): Gets HNR attributes.
+- [ss_mpi_hnr_set_input_depth](#ZH-CN_TOPIC_0000002441661493): Sets the buffer depth of the HNR input queue.
+- [ss_mpi_hnr_set_thread_attr](#ZH-CN_TOPIC_0000002441661481): Sets HNR thread attributes.
+- [ss_mpi_hnr_get_thread_attr](#ZH-CN_TOPIC_0000002408262054): Gets HNR thread attributes.
+- [ss_mpi_hnr_attach_out_vb_pool](#ZH-CN_TOPIC_0000002408262098): Binds HNR output to a video buffer VB pool.
+- [ss_mpi_hnr_detach_out_vb_pool](#ZH-CN_TOPIC_0000002441701317): Unbinds HNR output from a video buffer VB pool. ## ss_mpi_hnr_init<a name="ZH-CN_TOPIC_0000002441661525"></a> 【Description】 Initializes the HNR module. 【Syntax】 ```
 td_s32 ss_mpi_hnr_init(td_void);
-```
-
-【Parameters】
-
-None
-
-【Return Values】
-
-<a name="table194mcpsimp"></a>
+``` 【Parameters】 None 【Return Values】 <a name="table194mcpsimp"></a>
 <table><thead align="left"><tr id="row199mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p201mcpsimp"><a name="p201mcpsimp"></a><a name="p201mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p203mcpsimp"><a name="p203mcpsimp"></a><a name="p203mcpsimp"></a>Description</p>
@@ -172,45 +115,11 @@ None
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Does not support multi-process calls.
--   The VI and ISP modules must be initialized before calling this interface.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_exit<a name="ZH-CN_TOPIC_0000002408262170"></a>
-
-【Description】
-
-Deinitializes the HNR module.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Does not support multi-process calls.
+- The VI and ISP modules must be initialized before calling this interface. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_exit<a name="ZH-CN_TOPIC_0000002408262170"></a> 【Description】 Deinitializes the HNR module. 【Syntax】 ```
 td_void ss_mpi_hnr_exit(td_void);
-```
-
-【Parameters】
-
-None
-
-【Return Values】
-
-<a name="table234mcpsimp"></a>
+``` 【Parameters】 None 【Return Values】 <a name="table234mcpsimp"></a>
 <table><thead align="left"><tr id="row239mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p241mcpsimp"><a name="p241mcpsimp"></a><a name="p241mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p243mcpsimp"><a name="p243mcpsimp"></a><a name="p243mcpsimp"></a>Description</p>
@@ -228,41 +137,11 @@ None
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Does not support multi-process calls.
--   Before calling this interface to deinitialize the HNR module, the HNR data stream switch must be disabled.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_load_cfg<a name="ZH-CN_TOPIC_0000002441701369"></a>
-
-【Description】
-
-Loads the HNR configuration file.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Does not support multi-process calls.
+- Before calling this interface to deinitialize the HNR module, the HNR data stream switch must be disabled. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_load_cfg<a name="ZH-CN_TOPIC_0000002441701369"></a> 【Description】 Loads the HNR configuration file. 【Syntax】 ```
 td_s32 ss_mpi_hnr_load_cfg(const ot_hnr_cfg *cfg, td_s32 *cfg_id);
-```
-
-【Parameters】
-
-<a name="table276mcpsimp"></a>
+``` 【Parameters】 <a name="table276mcpsimp"></a>
 <table><thead align="left"><tr id="row282mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p284mcpsimp"><a name="p284mcpsimp"></a><a name="p284mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p286mcpsimp"><a name="p286mcpsimp"></a><a name="p286mcpsimp"></a>Description</p>
@@ -286,11 +165,7 @@ td_s32 ss_mpi_hnr_load_cfg(const ot_hnr_cfg *cfg, td_s32 *cfg_id);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table307mcpsimp"></a>
+</table> 【Return Values】 <a name="table307mcpsimp"></a>
 <table><thead align="left"><tr id="row312mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p314mcpsimp"><a name="p314mcpsimp"></a><a name="p314mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p316mcpsimp"><a name="p316mcpsimp"></a><a name="p316mcpsimp"></a>Description</p>
@@ -308,45 +183,15 @@ td_s32 ss_mpi_hnr_load_cfg(const ot_hnr_cfg *cfg, td_s32 *cfg_id);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
--   The HNR data stream must remain disabled before calling this interface.
--   Configuration files of the same type with equal image width and height cannot be loaded repeatedly.
--   Supports loading multiple configuration files, or loading the same configuration file multiple times with different resolutions.
--   Does not support multi-process calls.
--   WDR mode does not support loading snapshot models.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_unload_cfg<a name="ZH-CN_TOPIC_0000002441701385"></a>
-
-【Description】
-
-Unloads the HNR configuration file.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
+- The HNR data stream must remain disabled before calling this interface.
+- Configuration files of the same type with equal image width and height cannot be loaded repeatedly.
+- Supports loading multiple configuration files, or loading the same configuration file multiple times with different resolutions.
+- Does not support multi-process calls.
+- WDR mode does not support loading snapshot models. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_unload_cfg<a name="ZH-CN_TOPIC_0000002441701385"></a> 【Description】 Unloads the HNR configuration file. 【Syntax】 ```
 td_s32 ss_mpi_hnr_unload_cfg(td_s32 cfg_id);
-```
-
-【Parameters】
-
-<a name="table351mcpsimp"></a>
+``` 【Parameters】 <a name="table351mcpsimp"></a>
 <table><thead align="left"><tr id="row357mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p359mcpsimp"><a name="p359mcpsimp"></a><a name="p359mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p361mcpsimp"><a name="p361mcpsimp"></a><a name="p361mcpsimp"></a>Description</p>
@@ -363,11 +208,7 @@ td_s32 ss_mpi_hnr_unload_cfg(td_s32 cfg_id);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table374mcpsimp"></a>
+</table> 【Return Values】 <a name="table374mcpsimp"></a>
 <table><thead align="left"><tr id="row379mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p381mcpsimp"><a name="p381mcpsimp"></a><a name="p381mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p383mcpsimp"><a name="p383mcpsimp"></a><a name="p383mcpsimp"></a>Description</p>
@@ -385,42 +226,12 @@ td_s32 ss_mpi_hnr_unload_cfg(td_s32 cfg_id);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before the application exits, this interface must be called to release the memory resources of loaded configuration files, or [ss_mpi_hnr_exit](#ZH-CN_TOPIC_0000002408262170) can be called to release all HNR resources.
--   Does not support multi-process calls.
--   The HNR data stream switch must be disabled before calling this interface.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_set_alg_cfg<a name="ZH-CN_TOPIC_0000002441661513"></a>
-
-【Description】
-
-Sets HNR algorithm configuration parameters.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before the application exits, this interface must be called to release the memory resources of loaded configuration files, or [ss_mpi_hnr_exit](#ZH-CN_TOPIC_0000002408262170) can be called to release all HNR resources.
+- Does not support multi-process calls.
+- The HNR data stream switch must be disabled before calling this interface. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_set_alg_cfg<a name="ZH-CN_TOPIC_0000002441661513"></a> 【Description】 Sets HNR algorithm configuration parameters. 【Syntax】 ```
 td_s32 ss_mpi_hnr_set_alg_cfg(ot_vi_pipe vi_pipe, const ot_hnr_alg_cfg *cfg)
-```
-
-【Parameters】
-
-<a name="table418mcpsimp"></a>
+``` 【Parameters】 <a name="table418mcpsimp"></a>
 <table><thead align="left"><tr id="row424mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p426mcpsimp"><a name="p426mcpsimp"></a><a name="p426mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p428mcpsimp"><a name="p428mcpsimp"></a><a name="p428mcpsimp"></a>Description</p>
@@ -445,11 +256,7 @@ td_s32 ss_mpi_hnr_set_alg_cfg(ot_vi_pipe vi_pipe, const ot_hnr_alg_cfg *cfg)
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table449mcpsimp"></a>
+</table> 【Return Values】 <a name="table449mcpsimp"></a>
 <table><thead align="left"><tr id="row454mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p456mcpsimp"><a name="p456mcpsimp"></a><a name="p456mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p458mcpsimp"><a name="p458mcpsimp"></a><a name="p458mcpsimp"></a>Description</p>
@@ -467,51 +274,21 @@ td_s32 ss_mpi_hnr_set_alg_cfg(ot_vi_pipe vi_pipe, const ot_hnr_alg_cfg *cfg)
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
--   Before calling this interface, the pipe must be created and ISP must be initialized.
--   When calling this interface, the HNR data stream must remain disabled.
--   If this interface is not called, the default is reference frame mode.
--   For photo-taking scenarios, this interface must be called to set no-reference frame mode.
--   HNR reference frame normal mode supports a maximum resolution of 4096x4096; HNR no-reference frame mode (OT_HNR_REF_MODE_NONE and OT_HNR_REF_MODE_NONE_ADVANCED) supports a maximum resolution of 8192x8192.
--   The current version of HNR no-reference frame mode (OT_HNR_REF_MODE_NONE and OT_HNR_REF_MODE_NONE_ADVANCED) does not support BGGR and GRBG Bayer image data formats.
--   WDR mode does not support HNR no-reference frame mode (OT_HNR_REF_MODE_NONE and OT_HNR_REF_MODE_NONE_ADVANCED).
--   OT_HNR_REF_MODE_NONE_ADVANCED mode is only supported when the VI video mode is OT_VI_VIDEO_MODE_ADVANCED.
--   OT_HNR_REF_MODE_NONE_ADVANCED mode only supports the frame feeding method, with RunOnce recommended.
--   Input frames for OT_HNR_REF_MODE_NONE_ADVANCED mode only support non-compressed formats.
--   If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_get_alg_cfg<a name="ZH-CN_TOPIC_0000002441661465"></a>
-
-【Description】
-
-Gets HNR algorithm configuration parameters.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
+- Before calling this interface, the pipe must be created and ISP must be initialized.
+- When calling this interface, the HNR data stream must remain disabled.
+- If this interface is not called, the default is reference frame mode.
+- For photo-taking scenarios, this interface must be called to set no-reference frame mode.
+- HNR reference frame normal mode supports a maximum resolution of 4096x4096; HNR no-reference frame mode (OT_HNR_REF_MODE_NONE and OT_HNR_REF_MODE_NONE_ADVANCED) supports a maximum resolution of 8192x8192.
+- The current version of HNR no-reference frame mode (OT_HNR_REF_MODE_NONE and OT_HNR_REF_MODE_NONE_ADVANCED) does not support BGGR and GRBG Bayer image data formats.
+- WDR mode does not support HNR no-reference frame mode (OT_HNR_REF_MODE_NONE and OT_HNR_REF_MODE_NONE_ADVANCED).
+- OT_HNR_REF_MODE_NONE_ADVANCED mode is only supported when the VI video mode is OT_VI_VIDEO_MODE_ADVANCED.
+- OT_HNR_REF_MODE_NONE_ADVANCED mode only supports the frame feeding method, with Run Once recommended.
+- Input frames for OT_HNR_REF_MODE_NONE_ADVANCED mode only support non-compressed formats.
+- If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_get_alg_cfg<a name="ZH-CN_TOPIC_0000002441661465"></a> 【Description】 Gets HNR algorithm configuration parameters. 【Syntax】 ```
 td_s32 ss_mpi_hnr_get_alg_cfg(ot_vi_pipe vi_pipe, ot_hnr_alg_cfg *cfg);
-```
-
-【Parameters】
-
-<a name="table494mcpsimp"></a>
+``` 【Parameters】 <a name="table494mcpsimp"></a>
 <table><thead align="left"><tr id="row500mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p502mcpsimp"><a name="p502mcpsimp"></a><a name="p502mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p504mcpsimp"><a name="p504mcpsimp"></a><a name="p504mcpsimp"></a>Description</p>
@@ -536,11 +313,7 @@ td_s32 ss_mpi_hnr_get_alg_cfg(ot_vi_pipe vi_pipe, ot_hnr_alg_cfg *cfg);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table525mcpsimp"></a>
+</table> 【Return Values】 <a name="table525mcpsimp"></a>
 <table><thead align="left"><tr id="row530mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p532mcpsimp"><a name="p532mcpsimp"></a><a name="p532mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p534mcpsimp"><a name="p534mcpsimp"></a><a name="p534mcpsimp"></a>Description</p>
@@ -558,42 +331,12 @@ td_s32 ss_mpi_hnr_get_alg_cfg(ot_vi_pipe vi_pipe, ot_hnr_alg_cfg *cfg);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
--   Before calling this interface, the pipe must be created and ISP must be initialized.
--   If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_enable<a name="ZH-CN_TOPIC_0000002408102158"></a>
-
-【Description】
-
-Enables the HNR data stream switch.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
+- Before calling this interface, the pipe must be created and ISP must be initialized.
+- If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_enable<a name="ZH-CN_TOPIC_0000002408102158"></a> 【Description】 Enables the HNR data stream switch. 【Syntax】 ```
 td_s32 ss_mpi_hnr_enable(ot_vi_pipe vi_pipe);
-```
-
-【Parameters】
-
-<a name="table563mcpsimp"></a>
+``` 【Parameters】 <a name="table563mcpsimp"></a>
 <table><thead align="left"><tr id="row569mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p571mcpsimp"><a name="p571mcpsimp"></a><a name="p571mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p573mcpsimp"><a name="p573mcpsimp"></a><a name="p573mcpsimp"></a>Description</p>
@@ -611,11 +354,7 @@ td_s32 ss_mpi_hnr_enable(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table587mcpsimp"></a>
+</table> 【Return Values】 <a name="table587mcpsimp"></a>
 <table><thead align="left"><tr id="row592mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p594mcpsimp"><a name="p594mcpsimp"></a><a name="p594mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p596mcpsimp"><a name="p596mcpsimp"></a><a name="p596mcpsimp"></a>Description</p>
@@ -633,58 +372,18 @@ td_s32 ss_mpi_hnr_enable(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before the main process calls this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369) must be called to load the HNR configuration file.
--   Other non-main processes (e.g., PQTools) can use this interface to enable the HNR data stream without initializing HNR, but the main process must initialize the HNR module; otherwise, the data stream cannot actually be opened.
--   If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
--   Before enabling hnr, the following constraints apply:
-    -   The corresponding pipe must have been created.
-    -   The user must call the function to allocate a VB pool. VB size is calculated using the function ot_hnr_get_pic_buf_size (see the "System Control" chapter in the MPP Media Processing Software V5.0 Development Reference). The allocated VB pool needs to be attached to the corresponding PIPE.
--   If the data format of the input Bayer image is changed, [ss_mpi_hnr_disable](#ZH-CN_TOPIC_0000002408102186) must be called to disable HNR first, then re-enable the HNR data stream with this interface for the change to take effect.
--   After HNR is enabled, reference frame mode takes effect after a 4-frame delay, and no-reference frame mode takes effect after a 2-frame delay.
--   HNR only supports 12-bit Bayer image data processing. If the sensor input is not 12-bit Bayer, the VI PIPE output image data format must be set to Bayer 12bit.
--   HNR linear mode usage has the following restrictions:
-    -   If another stream uses WDR mode, the VI video mode must be set to OT_VI_VIDEO_MODE_NORM; otherwise, the BNR effect on the WDR stream will be affected.
--   HNR WDR mode usage has the following restrictions:
-    -   Only takes effect when VI is offline.
-    -   The VI video mode must be set to OT_VI_VIDEO_MODE_NORM.
-    -   HNR is recommended to bind to the long frame pipe, not a virtual pipe.
-    -   Compression must not be enabled on the pipe path.
-    -   The current version of HNR WDR mode does not support BGGR and GRBG Bayer image data formats.
-    -   normal_blend mode is not supported.
-    -   In high-performance scenarios, WDR long and short frames may lose sync, leading to abnormal WDR fusion effects.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_disable<a name="ZH-CN_TOPIC_0000002408102186"></a>
-
-【Description】
-
-Disables the HNR data stream switch.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before the main process calls this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369) must be called to load the HNR configuration file.
+- Other non-main processes (e.g., PQ Tools) can use this interface to enable the HNR data stream without initializing HNR, but the main process must initialize the HNR module; otherwise, the data stream cannot actually be opened.
+- If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
+- Before enabling hnr, the following constraints apply: - The corresponding pipe must have been created. - The user must call the function to allocate a VB pool. VB size is calculated using the function ot_hnr_get_pic_buf_size (see the "System Control" chapter in the MPP Media Processing Software V5.0 Development Reference). The allocated VB pool needs to be attached to the corresponding PIPE.
+- If the data format of the input Bayer image is changed, [ss_mpi_hnr_disable](#ZH-CN_TOPIC_0000002408102186) must be called to disable HNR first, then re-enable the HNR data stream with this interface for the change to take effect.
+- After HNR is enabled, reference frame mode takes effect after a 4-frame delay, and no-reference frame mode takes effect after a 2-frame delay.
+- HNR only supports 12-bit Bayer image data processing. If the sensor input is not 12-bit Bayer, the VI PIPE output image data format must be set to Bayer 12bit.
+- HNR linear mode usage has the following restrictions: - If another stream uses WDR mode, the VI video mode must be set to OT_VI_VIDEO_MODE_NORM; otherwise, the BNR effect on the WDR stream will be affected.
+- HNR WDR mode usage has the following restrictions: - Only takes effect when VI is offline. - The VI video mode must be set to OT_VI_VIDEO_MODE_NORM. - HNR is recommended to bind to the long frame pipe, not a virtual pipe. - Compression must not be enabled on the pipe path. - The current version of HNR WDR mode does not support BGGR and GRBG Bayer image data formats. - normal_blend mode is not supported. - In high-performance scenarios, WDR long and short frames may lose sync, leading to abnormal WDR fusion effects. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_disable<a name="ZH-CN_TOPIC_0000002408102186"></a> 【Description】 Disables the HNR data stream switch. 【Syntax】 ```
 td_s32 ss_mpi_hnr_disable(ot_vi_pipe vi_pipe);
-```
-
-【Parameters】
-
-<a name="table651mcpsimp"></a>
+``` 【Parameters】 <a name="table651mcpsimp"></a>
 <table><thead align="left"><tr id="row657mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p659mcpsimp"><a name="p659mcpsimp"></a><a name="p659mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p661mcpsimp"><a name="p661mcpsimp"></a><a name="p661mcpsimp"></a>Description</p>
@@ -702,11 +401,7 @@ td_s32 ss_mpi_hnr_disable(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table675mcpsimp"></a>
+</table> 【Return Values】 <a name="table675mcpsimp"></a>
 <table><thead align="left"><tr id="row680mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p682mcpsimp"><a name="p682mcpsimp"></a><a name="p682mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p684mcpsimp"><a name="p684mcpsimp"></a><a name="p684mcpsimp"></a>Description</p>
@@ -724,43 +419,13 @@ td_s32 ss_mpi_hnr_disable(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before the main process calls this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369) must be called to load the HNR configuration file.
--   Other non-main processes (e.g., PQTools) can use this interface to disable the HNR data stream without initializing HNR.
--   If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
--   Before destroying the corresponding pipe in the VI module, this interface must be called to disable the HNR function; otherwise, VB leakage may occur.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_set_attr<a name="ZH-CN_TOPIC_0000002441661457"></a>
-
-【Description】
-
-Sets HNR attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before the main process calls this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369) must be called to load the HNR configuration file.
+- Other non-main processes (e.g., PQ Tools) can use this interface to disable the HNR data stream without initializing HNR.
+- If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
+- Before destroying the corresponding pipe in the VI module, this interface must be called to disable the HNR function; otherwise, VB leakage may occur. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_set_attr<a name="ZH-CN_TOPIC_0000002441661457"></a> 【Description】 Sets HNR attributes. 【Syntax】 ```
 td_s32 ss_mpi_hnr_set_attr(ot_vi_pipe vi_pipe, const ot_hnr_attr *attr);
-```
-
-【Parameters】
-
-<a name="table719mcpsimp"></a>
+``` 【Parameters】 <a name="table719mcpsimp"></a>
 <table><thead align="left"><tr id="row725mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p727mcpsimp"><a name="p727mcpsimp"></a><a name="p727mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p729mcpsimp"><a name="p729mcpsimp"></a><a name="p729mcpsimp"></a>Description</p>
@@ -785,11 +450,7 @@ td_s32 ss_mpi_hnr_set_attr(ot_vi_pipe vi_pipe, const ot_hnr_attr *attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table750mcpsimp"></a>
+</table> 【Return Values】 <a name="table750mcpsimp"></a>
 <table><thead align="left"><tr id="row755mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p757mcpsimp"><a name="p757mcpsimp"></a><a name="p757mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p759mcpsimp"><a name="p759mcpsimp"></a><a name="p759mcpsimp"></a>Description</p>
@@ -807,47 +468,17 @@ td_s32 ss_mpi_hnr_set_attr(ot_vi_pipe vi_pipe, const ot_hnr_attr *attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369) must be called to load the HNR configuration file.
--   The HNR data stream switch must be enabled before this interface can successfully set HNR attributes.
--   When the VI video mode is OT_VI_VIDEO_MODE_NORM, if attr->enable is TD_FALSE, bnr_bypass must be TD_FALSE.
--   When the VI video mode is OT_VI_VIDEO_MODE_ADVANCED, bnr_bypass has no effect.
--   When the VI video mode is OT_VI_VIDEO_MODE_NORM and bnr_bypass is TD_FALSE, normal_blend can be enabled.
--   When the VI video mode is OT_VI_VIDEO_MODE_NORM and normal_blend is enabled, getting HNR-processed RAW is not supported, and ISP RunOnce HNR usage is not supported because the BE-fed RAW has not been processed by HNR.
--   When the VI video mode is OT_VI_VIDEO_MODE_NORM and normal_blend is disabled, getting HNR-processed RAW is supported, and ISP RunOnce HNR usage is supported.
--   If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_get_attr<a name="ZH-CN_TOPIC_0000002408262070"></a>
-
-【Description】
-
-Gets HNR attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and [ss_mpi_hnr_load_cfg](#ZH-CN_TOPIC_0000002441701369) must be called to load the HNR configuration file.
+- The HNR data stream switch must be enabled before this interface can successfully set HNR attributes.
+- When the VI video mode is OT_VI_VIDEO_MODE_NORM, if attr->enable is TD_FALSE, bnr_bypass must be TD_FALSE.
+- When the VI video mode is OT_VI_VIDEO_MODE_ADVANCED, bnr_bypass has no effect.
+- When the VI video mode is OT_VI_VIDEO_MODE_NORM and bnr_bypass is TD_FALSE, normal_blend can be enabled.
+- When the VI video mode is OT_VI_VIDEO_MODE_NORM and normal_blend is enabled, getting HNR-processed RAW is not supported, and ISP Run Once HNR usage is not supported because the BE-fed RAW has not been processed by HNR.
+- When the VI video mode is OT_VI_VIDEO_MODE_NORM and normal_blend is disabled, getting HNR-processed RAW is supported, and ISP Run Once HNR usage is supported.
+- If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_get_attr<a name="ZH-CN_TOPIC_0000002408262070"></a> 【Description】 Gets HNR attributes. 【Syntax】 ```
 td_s32 ss_mpi_hnr_get_attr(ot_vi_pipe vi_pipe, ot_hnr_attr *attr);
-```
-
-【Parameters】
-
-<a name="table796mcpsimp"></a>
+``` 【Parameters】 <a name="table796mcpsimp"></a>
 <table><thead align="left"><tr id="row802mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.4.1.1"><p id="p804mcpsimp"><a name="p804mcpsimp"></a><a name="p804mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.4.1.2"><p id="p806mcpsimp"><a name="p806mcpsimp"></a><a name="p806mcpsimp"></a>Description</p>
@@ -872,11 +503,7 @@ td_s32 ss_mpi_hnr_get_attr(ot_vi_pipe vi_pipe, ot_hnr_attr *attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table827mcpsimp"></a>
+</table> 【Return Values】 <a name="table827mcpsimp"></a>
 <table><thead align="left"><tr id="row832mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p834mcpsimp"><a name="p834mcpsimp"></a><a name="p834mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p836mcpsimp"><a name="p836mcpsimp"></a><a name="p836mcpsimp"></a>Description</p>
@@ -894,41 +521,11 @@ td_s32 ss_mpi_hnr_get_attr(ot_vi_pipe vi_pipe, ot_hnr_attr *attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   The HNR data stream switch must be enabled before this interface can successfully get HNR attributes.
--   If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_set_input_depth<a name="ZH-CN_TOPIC_0000002441661493"></a>
-
-【Description】
-
-Sets the buffer depth of the HNR input queue.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - The HNR data stream switch must be enabled before this interface can successfully get HNR attributes.
+- If calling this interface from a non-main process, ss_mpi_isp_mem_share or ss_mpi_isp_mem_share_all must be called first to share ISP-related MMZ buffers. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_set_input_depth<a name="ZH-CN_TOPIC_0000002441661493"></a> 【Description】 Sets the buffer depth of the HNR input queue. 【Syntax】 ```
 td_s32 ss_mpi_hnr_set_input_depth(ot_vi_pipe vi_pipe, td_u32 depth);
-```
-
-【Parameters】
-
-<a name="table865mcpsimp"></a>
+``` 【Parameters】 <a name="table865mcpsimp"></a>
 <table><thead align="left"><tr id="row871mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p873mcpsimp"><a name="p873mcpsimp"></a><a name="p873mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p875mcpsimp"><a name="p875mcpsimp"></a><a name="p875mcpsimp"></a>Description</p>
@@ -953,11 +550,7 @@ td_s32 ss_mpi_hnr_set_input_depth(ot_vi_pipe vi_pipe, td_u32 depth);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table896mcpsimp"></a>
+</table> 【Return Values】 <a name="table896mcpsimp"></a>
 <table><thead align="left"><tr id="row901mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p903mcpsimp"><a name="p903mcpsimp"></a><a name="p903mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p905mcpsimp"><a name="p905mcpsimp"></a><a name="p905mcpsimp"></a>Description</p>
@@ -975,40 +568,10 @@ td_s32 ss_mpi_hnr_set_input_depth(ot_vi_pipe vi_pipe, td_u32 depth);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
-Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and the corresponding pipe must have been created.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_set_thread_attr<a name="ZH-CN_TOPIC_0000002441661481"></a>
-
-【Description】
-
-Sets HNR thread attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module, and the corresponding pipe must have been created. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_set_thread_attr<a name="ZH-CN_TOPIC_0000002441661481"></a> 【Description】 Sets HNR thread attributes. 【Syntax】 ```
 td_s32 ss_mpi_hnr_set_thread_attr(const ot_hnr_thread_attr *thread_attr);
-```
-
-【Parameters】
-
-<a name="table719mcpsimp"></a>
+``` 【Parameters】 <a name="table719mcpsimp"></a>
 <table><thead align="left"><tr id="row725mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p727mcpsimp"><a name="p727mcpsimp"></a><a name="p727mcpsimp"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p729mcpsimp"><a name="p729mcpsimp"></a><a name="p729mcpsimp"></a>Description</p>
@@ -1025,11 +588,7 @@ td_s32 ss_mpi_hnr_set_thread_attr(const ot_hnr_thread_attr *thread_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table750mcpsimp"></a>
+</table> 【Return Values】 <a name="table750mcpsimp"></a>
 <table><thead align="left"><tr id="row755mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p757mcpsimp"><a name="p757mcpsimp"></a><a name="p757mcpsimp"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p759mcpsimp"><a name="p759mcpsimp"></a><a name="p759mcpsimp"></a>Description</p>
@@ -1047,40 +606,10 @@ td_s32 ss_mpi_hnr_set_thread_attr(const ot_hnr_thread_attr *thread_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
-This interface can be called before [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) initializing the HNR module or after enabling the HNR path for dynamic modification.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_get_thread_attr<a name="ZH-CN_TOPIC_0000002408262054"></a>
-
-【Description】
-
-Gets HNR thread attributes.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 This interface can be called before [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) initializing the HNR module or after enabling the HNR path for dynamic modification. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_get_thread_attr<a name="ZH-CN_TOPIC_0000002408262054"></a> 【Description】 Gets HNR thread attributes. 【Syntax】 ```
 td_s32 ss_mpi_hnr_get_thread_attr(const ot_hnr_thread_attr *thread_attr);
-```
-
-【Parameters】
-
-<a name="table1578315475611"></a>
+``` 【Parameters】 <a name="table1578315475611"></a>
 <table><thead align="left"><tr id="row8783114718618"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p7784144713611"><a name="p7784144713611"></a><a name="p7784144713611"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p3784184719613"><a name="p3784184719613"></a><a name="p3784184719613"></a>Description</p>
@@ -1097,11 +626,7 @@ td_s32 ss_mpi_hnr_get_thread_attr(const ot_hnr_thread_attr *thread_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table97841347266"></a>
+</table> 【Return Values】 <a name="table97841347266"></a>
 <table><thead align="left"><tr id="row4784647763"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p378419471264"><a name="p378419471264"></a><a name="p378419471264"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4784047561"><a name="p4784047561"></a><a name="p4784047561"></a>Description</p>
@@ -1119,40 +644,10 @@ td_s32 ss_mpi_hnr_get_thread_attr(const ot_hnr_thread_attr *thread_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
-None
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_attach_out_vb_pool<a name="ZH-CN_TOPIC_0000002408262098"></a>
-
-【Description】
-
-Binds HNR output to a video buffer VB pool.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 None 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_attach_out_vb_pool<a name="ZH-CN_TOPIC_0000002408262098"></a> 【Description】 Binds HNR output to a video buffer VB pool. 【Syntax】 ```
 td_s32 ss_mpi_hnr_attach_out_vb_pool(ot_vi_pipe vi_pipe, ot_vb_pool vb_pool);
-```
-
-【Parameters】
-
-<a name="table1010413506202"></a>
+``` 【Parameters】 <a name="table1010413506202"></a>
 <table><thead align="left"><tr id="row3104850192012"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p810445072017"><a name="p810445072017"></a><a name="p810445072017"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p191041250122018"><a name="p191041250122018"></a><a name="p191041250122018"></a>Description</p>
@@ -1177,11 +672,7 @@ td_s32 ss_mpi_hnr_attach_out_vb_pool(ot_vi_pipe vi_pipe, ot_vb_pool vb_pool);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table1810575010201"></a>
+</table> 【Return Values】 <a name="table1810575010201"></a>
 <table><thead align="left"><tr id="row13105205052018"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1510595052016"><a name="p1510595052016"></a><a name="p1510595052016"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p710535022013"><a name="p710535022013"></a><a name="p710535022013"></a>Description</p>
@@ -1199,42 +690,12 @@ td_s32 ss_mpi_hnr_attach_out_vb_pool(ot_vi_pipe vi_pipe, ot_vb_pool vb_pool);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
--   The HNR data stream must remain disabled before calling this interface.
--   Recommended for use only in VI stagger input scenarios when the VI video mode is OT_VI_VIDEO_MODE_NORM; using it in other scenarios may reduce VB utilization.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-## ss_mpi_hnr_detach_out_vb_pool<a name="ZH-CN_TOPIC_0000002441701317"></a>
-
-【Description】
-
-Unbinds HNR output from a video buffer VB pool.
-
-【Syntax】
-
-```
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
+- The HNR data stream must remain disabled before calling this interface.
+- Recommended for use only in VI stagger input scenarios when the VI video mode is OT_VI_VIDEO_MODE_NORM; using it in other scenarios may reduce VB utilization. 【Example】 None 【Related Topics】 None ## ss_mpi_hnr_detach_out_vb_pool<a name="ZH-CN_TOPIC_0000002441701317"></a> 【Description】 Unbinds HNR output from a video buffer VB pool. 【Syntax】 ```
 td_s32 ss_mpi_hnr_detach_out_vb_pool(ot_vi_pipe vi_pipe);
-```
-
-【Parameters】
-
-<a name="table14616149162819"></a>
+``` 【Parameters】 <a name="table14616149162819"></a>
 <table><thead align="left"><tr id="row86161449132817"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p761615496286"><a name="p761615496286"></a><a name="p761615496286"></a>Parameter Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p56162492284"><a name="p56162492284"></a><a name="p56162492284"></a>Description</p>
@@ -1252,11 +713,7 @@ td_s32 ss_mpi_hnr_detach_out_vb_pool(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Return Values】
-
-<a name="table461744915286"></a>
+</table> 【Return Values】 <a name="table461744915286"></a>
 <table><thead align="left"><tr id="row13617154902818"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p16617449152814"><a name="p16617449152814"></a><a name="p16617449152814"></a>Return Value</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p361784992819"><a name="p361784992819"></a><a name="p361784992819"></a>Description</p>
@@ -1274,78 +731,23 @@ td_s32 ss_mpi_hnr_detach_out_vb_pool(ot_vi_pipe vi_pipe);
 </td>
 </tr>
 </tbody>
-</table>
-
-【Requirements】
-
--   Header file: ss_mpi_hnr.h
--   Library file: libss_hnr.a
-
-【Notes】
-
--   Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
--   The HNR data stream must remain disabled before calling this interface.
-
-【Example】
-
-None
-
-【Related Topics】
-
-None
-
-# Data Types
-HNR module-related data types are defined as follows:
-
--   [OT_HNR_MAX_CFG_NUM](#ZH-CN_TOPIC_0000002408262082): Defines the maximum number of HNR configuration files supported for loading.
--   [ot_hnr_mem_info](#ZH-CN_TOPIC_0000002441701333): Defines HNR configuration file memory information.
--   [ot_hnr_cfg](#ZH-CN_TOPIC_0000002408102170): Defines HNR configuration file information.
--   [ot_hnr_param](#ZH-CN_TOPIC_0000002441701305): Defines HNR image effect parameters.
--   [ot_hnr_manual_attr](#ZH-CN_TOPIC_0000002408102146): Defines HNR manual parameters.
--   [ot_hnr_attr](#ZH-CN_TOPIC_0000002408102266): Defines HNR attributes.
--   [ot_hnr_ref_mode](#ZH-CN_TOPIC_0000002408102250): Defines HNR reference frame mode.
--   [ot_hnr_alg_cfg](#ZH-CN_TOPIC_0000002441701357): Defines HNR algorithm configuration parameters.
--   [ot_hnr_thread_attr](#ZH-CN_TOPIC_0000002441661533): Defines HNR thread configuration parameters.
-
-## OT_HNR_MAX_CFG_NUM<a name="ZH-CN_TOPIC_0000002408262082"></a>
-
-【Description】
-
-Defines the maximum number of HNR configuration files supported for loading.
-
-【Definition】
-
-```
-#define OT_HNR_MAX_CFG_NUM  32
-```
-
-【Notes】
-
-None
-
-【Related Data Types and Interfaces】
-
-None
-
-## ot_hnr_mem_info<a name="ZH-CN_TOPIC_0000002441701333"></a>
-
-【Description】
-
-HNR configuration file memory information.
-
-【Definition】
-
-```
-typedef struct {
-    td_phys_addr_t phys_addr;
-    td_void *virt_addr;
-    td_u32  size;
+</table> 【Requirements】 - Header file: ss_mpi_hnr.h
+- Library file: libss_hnr.a 【Notes】 - Before calling this interface, [ss_mpi_hnr_init](#ZH-CN_TOPIC_0000002441661525) must be called to initialize the HNR module.
+- The HNR data stream must remain disabled before calling this interface. 【Example】 None 【Related Topics】 None # Data Types
+HNR module-related data types are defined as follows: - [OT_HNR_MAX_CFG_NUM](#ZH-CN_TOPIC_0000002408262082): Defines the maximum number of HNR configuration files supported for loading.
+- [ot_hnr_mem_info](#ZH-CN_TOPIC_0000002441701333): Defines HNR configuration file memory information.
+- [ot_hnr_cfg](#ZH-CN_TOPIC_0000002408102170): Defines HNR configuration file information.
+- [ot_hnr_param](#ZH-CN_TOPIC_0000002441701305): Defines HNR image effect parameters.
+- [ot_hnr_manual_attr](#ZH-CN_TOPIC_0000002408102146): Defines HNR manual parameters.
+- [ot_hnr_attr](#ZH-CN_TOPIC_0000002408102266): Defines HNR attributes.
+- [ot_hnr_ref_mode](#ZH-CN_TOPIC_0000002408102250): Defines HNR reference frame mode.
+- [ot_hnr_alg_cfg](#ZH-CN_TOPIC_0000002441701357): Defines HNR algorithm configuration parameters.
+- [ot_hnr_thread_attr](#ZH-CN_TOPIC_0000002441661533): Defines HNR thread configuration parameters. ## OT_HNR_MAX_CFG_NUM<a name="ZH-CN_TOPIC_0000002408262082"></a> 【Description】 Defines the maximum number of HNR configuration files supported for loading. 【Definition】 ```
+#define OT_HNR_MAX_CFG_NUM 32
+``` 【Notes】 None 【Related Data Types and Interfaces】 None ## ot_hnr_mem_info<a name="ZH-CN_TOPIC_0000002441701333"></a> 【Description】 HNR configuration file memory information. 【Definition】 ```
+typedef struct { td_phys_addr_t phys_addr; td_void *virt_addr; td_u32 size;
 } ot_hnr_mem_info;
-```
-
-【Members】
-
-<a name="table976mcpsimp"></a>
+``` 【Members】 <a name="table976mcpsimp"></a>
 <table><thead align="left"><tr id="row981mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p983mcpsimp"><a name="p983mcpsimp"></a><a name="p983mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p985mcpsimp"><a name="p985mcpsimp"></a><a name="p985mcpsimp"></a>Description</p>
@@ -1369,35 +771,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-None
-
-【Related Data Types and Interfaces】
-
-[ot_hnr_cfg](#ot_hnr_cfg)
-
-## ot_hnr_cfg<a name="ZH-CN_TOPIC_0000002408102170"></a>
-
-【Description】
-
-HNR configuration file information.
-
-【Definition】
-
-```
-typedef struct {
-    ot_hnr_mem_info mem_info;
-    ot_size image_size;
-    td_bool is_wdr_mode;
+</table> 【Notes】 None 【Related Data Types and Interfaces】 [ot_hnr_cfg](#ot_hnr_cfg) ## ot_hnr_cfg<a name="ZH-CN_TOPIC_0000002408102170"></a> 【Description】 HNR configuration file information. 【Definition】 ```
+typedef struct { ot_hnr_mem_info mem_info; ot_size image_size; td_bool is_wdr_mode;
 } ot_hnr_cfg;
-```
-
-【Members】
-
-<a name="table1020mcpsimp"></a>
+``` 【Members】 <a name="table1020mcpsimp"></a>
 <table><thead align="left"><tr id="row1025mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p1027mcpsimp"><a name="p1027mcpsimp"></a><a name="p1027mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p1029mcpsimp"><a name="p1029mcpsimp"></a><a name="p1029mcpsimp"></a>Description</p>
@@ -1420,37 +797,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
--   The user must ensure the integrity and correctness of the configuration file information stored in memory; otherwise, runtime anomalies may occur.
--   When loading a configuration file, the supported image resolution must be specified.
--   The width and height of supported image resolutions must be integer multiples of 4.
--   The image resolution supported by HNR reference frame mode is consistent with the VI PIPE offline image size range. See the "Video Input" chapter in the MPP Media Processing Software V5.0 Development Reference for details.
-
-【Related Data Types and Interfaces】
-
-None
-
-## ot_hnr_param<a name="ZH-CN_TOPIC_0000002441701305"></a>
-
-【Description】
-
-Defines HNR image effect parameters.
-
-【Definition】
-
-```
-typedef struct {
-    td_u32 sfs;
-    td_u32 tfs;
+</table> 【Notes】 - The user must ensure the integrity and correctness of the configuration file information stored in memory; otherwise, runtime anomalies may occur.
+- When loading a configuration file, the supported image resolution must be specified.
+- The width and height of supported image resolutions must be integer multiples of 4.
+- The image resolution supported by HNR reference frame mode is consistent with the VI PIPE offline image size range. See the "Video Input" chapter in the MPP Media Processing Software V5.0 Development Reference for details. 【Related Data Types and Interfaces】 None ## ot_hnr_param<a name="ZH-CN_TOPIC_0000002441701305"></a> 【Description】 Defines HNR image effect parameters. 【Definition】 ```
+typedef struct { td_u32 sfs; td_u32 tfs;
 } ot_hnr_param;
-```
-
-【Members】
-
-<a name="table1064mcpsimp"></a>
+``` 【Members】 <a name="table1064mcpsimp"></a>
 <table><thead align="left"><tr id="row1069mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p1071mcpsimp"><a name="p1071mcpsimp"></a><a name="p1071mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p1073mcpsimp"><a name="p1073mcpsimp"></a><a name="p1073mcpsimp"></a>Description</p>
@@ -1470,33 +823,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-In the current version, the tfs parameter is not yet effective. For parameter adjustment, refer to the HNR Tuning Guide.
-
-【Related Data Types and Interfaces】
-
-[ot_hnr_manual_attr](#ot_hnr_manual_attr)
-
-## ot_hnr_manual_attr<a name="ZH-CN_TOPIC_0000002408102146"></a>
-
-【Description】
-
-Defines HNR manual parameters.
-
-【Definition】
-
-```
-typedef struct {
-    ot_hnr_param param;
+</table> 【Notes】 In the current version, the tfs parameter is not yet effective. For parameter adjustment, refer to the HNR Tuning Guide. 【Related Data Types and Interfaces】 [ot_hnr_manual_attr](#ot_hnr_manual_attr) ## ot_hnr_manual_attr<a name="ZH-CN_TOPIC_0000002408102146"></a> 【Description】 Defines HNR manual parameters. 【Definition】 ```
+typedef struct { ot_hnr_param param;
 } ot_hnr_manual_attr;
-```
-
-【Members】
-
-<a name="table1102mcpsimp"></a>
+``` 【Members】 <a name="table1102mcpsimp"></a>
 <table><thead align="left"><tr id="row1107mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p1109mcpsimp"><a name="p1109mcpsimp"></a><a name="p1109mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p1111mcpsimp"><a name="p1111mcpsimp"></a><a name="p1111mcpsimp"></a>Description</p>
@@ -1509,38 +839,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-None
-
-【Related Data Types and Interfaces】
-
-[ot_hnr_attr](#ot_hnr_attr)
-
-## ot_hnr_attr<a name="ZH-CN_TOPIC_0000002408102266"></a>
-
-【Description】
-
-Defines HNR attributes.
-
-【Definition】
-
-```
-typedef struct {
-    td_bool enable;
-    td_bool bnr_bypass;
-    td_bool normal_blend;
-    ot_op_mode op_type;
-    ot_hnr_manual_attr manual_attr;
-    ot_hnr_auto_attr auto_attr;
+</table> 【Notes】 None 【Related Data Types and Interfaces】 [ot_hnr_attr](#ot_hnr_attr) ## ot_hnr_attr<a name="ZH-CN_TOPIC_0000002408102266"></a> 【Description】 Defines HNR attributes. 【Definition】 ```
+typedef struct { td_bool enable; td_bool bnr_bypass; td_bool normal_blend; ot_op_mode op_type; ot_hnr_manual_attr manual_attr; ot_hnr_auto_attr auto_attr;
 } ot_hnr_attr;
-```
-
-【Members】
-
-<a name="table1138mcpsimp"></a>
+``` 【Members】 <a name="table1138mcpsimp"></a>
 <table><thead align="left"><tr id="row1143mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p1145mcpsimp"><a name="p1145mcpsimp"></a><a name="p1145mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p1147mcpsimp"><a name="p1147mcpsimp"></a><a name="p1147mcpsimp"></a>Description</p>
@@ -1579,37 +881,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-This version only supports manual mode parameters and does not support auto mode parameter configuration.
-
-【Related Data Types and Interfaces】
-
-None
-
-## ot_hnr_ref_mode<a name="ZH-CN_TOPIC_0000002408102250"></a>
-
-【Description】
-
-Defines HNR reference frame mode.
-
-【Definition】
-
-```
-typedef enum {
-    OT_HNR_REF_MODE_NORM = 0,
-    OT_HNR_REF_MODE_NONE,
-    OT_HNR_REF_MODE_NONE_ADVANCED,
-    OT_HNR_REF_MODE_NORM_FACE,
-    OT_HNR_REF_MODE_BUTT
+</table> 【Notes】 This version only supports manual mode parameters and does not support auto mode parameter configuration. 【Related Data Types and Interfaces】 None ## ot_hnr_ref_mode<a name="ZH-CN_TOPIC_0000002408102250"></a> 【Description】 Defines HNR reference frame mode. 【Definition】 ```
+typedef enum { OT_HNR_REF_MODE_NORM = 0, OT_HNR_REF_MODE_NONE, OT_HNR_REF_MODE_NONE_ADVANCED, OT_HNR_REF_MODE_NORM_FACE, OT_HNR_REF_MODE_BUTT
 } ot_hnr_ref_mode;
-```
-
-【Members】
-
-<a name="table1190mcpsimp"></a>
+``` 【Members】 <a name="table1190mcpsimp"></a>
 <table><thead align="left"><tr id="row1195mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p1197mcpsimp"><a name="p1197mcpsimp"></a><a name="p1197mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p1199mcpsimp"><a name="p1199mcpsimp"></a><a name="p1199mcpsimp"></a>Description</p>
@@ -1637,33 +912,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-For photo-taking scenarios, choose HNR no-reference frame mode or HNR no-reference frame advanced mode.
-
-【Related Data Types and Interfaces】
-
-[ot_hnr_alg_cfg](#ot_hnr_alg_cfg)
-
-## ot_hnr_alg_cfg<a name="ZH-CN_TOPIC_0000002441701357"></a>
-
-【Description】
-
-Defines HNR algorithm configuration parameters.
-
-【Definition】
-
-```
-typedef struct {
-    ot_hnr_ref_mode ref_mode;
+</table> 【Notes】 For photo-taking scenarios, choose HNR no-reference frame mode or HNR no-reference frame advanced mode. 【Related Data Types and Interfaces】 [ot_hnr_alg_cfg](#ot_hnr_alg_cfg) ## ot_hnr_alg_cfg<a name="ZH-CN_TOPIC_0000002441701357"></a> 【Description】 Defines HNR algorithm configuration parameters. 【Definition】 ```
+typedef struct { ot_hnr_ref_mode ref_mode;
 } ot_hnr_alg_cfg;
-```
-
-【Members】
-
-<a name="table1225mcpsimp"></a>
+``` 【Members】 <a name="table1225mcpsimp"></a>
 <table><thead align="left"><tr id="row1230mcpsimp"><th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.1"><p id="p1232mcpsimp"><a name="p1232mcpsimp"></a><a name="p1232mcpsimp"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.2"><p id="p1234mcpsimp"><a name="p1234mcpsimp"></a><a name="p1234mcpsimp"></a>Description</p>
@@ -1676,33 +928,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-None
-
-【Related Data Types and Interfaces】
-
-None
-
-## ot_hnr_thread_attr<a name="ZH-CN_TOPIC_0000002441661533"></a>
-
-【Description】
-
-Defines HNR thread attributes.
-
-【Definition】
-
-```
-typedef struct {
-    td_u32 cpu_id;
+</table> 【Notes】 None 【Related Data Types and Interfaces】 None ## ot_hnr_thread_attr<a name="ZH-CN_TOPIC_0000002441661533"></a> 【Description】 Defines HNR thread attributes. 【Definition】 ```
+typedef struct { td_u32 cpu_id;
 } ot_hnr_thread_attr;
-```
-
-【Members】
-
-<a name="table439015344443"></a>
+``` 【Members】 <a name="table439015344443"></a>
 <table><thead align="left"><tr id="row16390173444411"><th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.1"><p id="p7390734124410"><a name="p7390734124410"></a><a name="p7390734124410"></a>Member Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.2"><p id="p3390734174417"><a name="p3390734174417"></a><a name="p3390734174417"></a>Description</p>
@@ -1715,68 +944,16 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【Notes】
-
-None
-
-【Related Data Types and Interfaces】
-
-None
-
-# Proc Debug Information
-## Overview<a name="ZH-CN_TOPIC_0000002408262154"></a>
-
-Debug information uses the Linux proc filesystem, which can reflect the current system running status in real time. The recorded information can be used for issue location and analysis.
-
-【File Directory】
-
-/proc/umap
-
-【Information Viewing Method】
-
--   On the console, use the cat command to view information: cat /proc/umap/isp or cat /proc/umap/pqp. Other commonly used file operation commands can also be used, such as cp /proc/umap/isp ./ or cp /proc/umap/pqp ./, to copy the file to the current directory.
--   In applications, the above files can be read as ordinary read-only files, such as using fopen, fread, etc.
-
->![](public_sys-resources/icon-note.gif) **Note:**
+</table> 【Notes】 None 【Related Data Types and Interfaces】 None # Proc Debug Information
+## Overview<a name="ZH-CN_TOPIC_0000002408262154"></a> Debug information uses the Linux proc filesystem, which can reflect the current system running status in real time. The recorded information can be used for issue location and analysis. 【File Directory】 /proc/umap 【Information Viewing Method】 - On the console, use the cat command to view information: cat /proc/umap/isp or cat /proc/umap/pqp. Other commonly used file operation commands can also be used, such as cp /proc/umap/isp ./ or cp /proc/umap/pqp ./, to copy the file to the current directory.
+- In applications, the above files can be read as ordinary read-only files, such as using fopen, fread, etc. >![](public_sys-resources/icon-note.gif) **Note:**
 >There are two cases to note when describing parameters:
->-   For parameters with values {0, 1}, if the mapping between specific values and meanings is not listed, 1 indicates affirmative and 0 indicates negative.
->-   For parameters with values {aaa, bbb, ccc}, if the mapping between specific values and meanings is not listed, the meaning can be inferred directly from the values aaa, bbb, or ccc.
-
-## Proc Information Description<a name="ZH-CN_TOPIC_0000002441661569"></a>
-
-### HNR Debug Information Description<a name="ZH-CN_TOPIC_0000002408262134"></a>
-
-【Debug Information】
-
-```
-# cat /proc/umap/isp 
- 
-[ISP] Version: [MPP_Vx.x.x.x B0xx Release], Build Time[mm dd yyyy, hh:mm:ss]
+>- For parameters with values {0, 1}, if the mapping between specific values and meanings is not listed, 1 indicates affirmative and 0 indicates negative.
+>- For parameters with values {aaa, bbb, ccc}, if the mapping between specific values and meanings is not listed, the meaning can be inferred directly from the values aaa, bbb, or ccc. ## Proc Information Description<a name="ZH-CN_TOPIC_0000002441661569"></a> ### HNR Debug Information Description<a name="ZH-CN_TOPIC_0000002408262134"></a> 【Debug Information】 ```
+# cat /proc/umap/isp [ISP] Version: [MPP_Vx.x.x.x B0xx Release], Build Time[mm dd yyyy, hh:mm:ss]
 ----------------------------------------hnr info------------------------------------------------------------------------
-hnr_en   attr_en       sfs   set_bnr_bypass bnr_bypass_status  long_frame_mode   normal_blend     normal_blend_status
-1         1        31                1                 0                N                   0                       0
- 
-    cfg_id     width     height     is_wdr   ref_mode  version_id
-        0      3840      2160        N   norm     2021082801
- 
-   vi_pipe       iso    handle  busy_node  free_node  ref_mode  input_depth  ref_cnt work_time   slp_cnt  slp_time
-        0      3521        1         2         1      norm         8               1     12226        26     12231 
- 
-```
-
-【Notes】
-
-HNR-related proc information can be viewed only after the HNR data stream is enabled for the first time.
-
-【Debug Information Analysis】
-
-Records current HNR working status and resource information, mainly including HNR user settings, loaded configuration file information, and task status information.
-
-【Parameter Description】
-
-<a name="table1278mcpsimp"></a>
+hnr_en attr_en sfs set_bnr_bypass bnr_bypass_status long_frame_mode normal_blend normal_blend_status
+1 1 31 1 0 N 0 0 cfg_id width height is_wdr ref_mode version_id 0 3840 2160 N norm 2021082801 vi_pipe iso handle busy_node free_node ref_mode input_depth ref_cnt work_time slp_cnt slp_time 0 3521 1 2 1 norm 8 1 12226 26 12231 ``` 【Notes】 HNR-related proc information can be viewed only after the HNR data stream is enabled for the first time. 【Debug Information Analysis】 Records current HNR working status and resource information, mainly including HNR user settings, loaded configuration file information, and task status information. 【Parameter Description】 <a name="table1278mcpsimp"></a>
 <table><thead align="left"><tr id="row1284mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p1286mcpsimp"><a name="p1286mcpsimp"></a><a name="p1286mcpsimp"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p1288mcpsimp"><a name="p1288mcpsimp"></a><a name="p1288mcpsimp"></a>Description</p>
@@ -1927,48 +1104,9 @@ Records current HNR working status and resource information, mainly including HN
 </td>
 </tr>
 </tbody>
-</table>
-
-### PQP Debug Information Description<a name="ZH-CN_TOPIC_0000002441701433"></a>
-
-【Debug Information】
-
-```
-# cat /proc/umap/pqp 
- 
-[PQP] Version: [Vx.x.x.x B0xx Release], Build Time[mm  dd yyyy, hh:mm:ss]
-----------------------------------------pqp module param------------------------------
-   dev_id       high_profile
-        0             N
-
--------------------------------- pqp task queue info----------------------------------
-   dev_id     wait_queue_id   work_queue_id   wait_head_idx    wait_tail_idx
-        0                0               -1               0              0
-   work_head_idx   work_tail_idx
-                0             0
- 
--------------------------------------- pqp task info -----------------------------------
-   dev_id   handle   task_send    task_finish  last_finish_id  start_task_id  handle_wrap
-        0        0           0            0            0             0            0
-   finish_wrap
-            0
- 
--------------------------------------- pqp perf info------------------------------------
-    dev_id  irq_num_per_sec  last_irq_time  max_irq_time  last_task_time
-         0                0            0              0             0
- 
---------------------------------------- pqp err info-------------------------------------
- dev_id  query_timeout_num  hw_timeout_num  hw_err_num
-      0                   0                 0            0 
-```
-
-【Debug Information Analysis】
-
-Records current PQP working status resource information, mainly including PQP queue status information, task status information, performance information, and error information.
-
-【Parameter Description】
-
-<a name="table1426mcpsimp"></a>
+</table> ### PQP Debug Information Description<a name="ZH-CN_TOPIC_0000002441701433"></a> 【Debug Information】 ```
+# cat /proc/umap/pqp [PQP] Version: [Vx.x.x.x B0xx Release], Build Time[mm dd yyyy, hh:mm:ss]
+----------------------------------------pqp module param------------------------------ dev_id high_profile 0 N -------------------------------- pqp task queue info---------------------------------- dev_id wait_queue_id work_queue_id wait_head_idx wait_tail_idx 0 0 -1 0 0 work_head_idx work_tail_idx 0 0 -------------------------------------- pqp task info ----------------------------------- dev_id handle task_send task_finish last_finish_id start_task_id handle_wrap 0 0 0 0 0 0 0 finish_wrap 0 -------------------------------------- pqp perf info------------------------------------ dev_id irq_num_per_sec last_irq_time max_irq_time last_task_time 0 0 0 0 0 --------------------------------------- pqp err info------------------------------------- dev_id query_timeout_num hw_timeout_num hw_err_num 0 0 0 0 ``` 【Debug Information Analysis】 Records current PQP working status resource information, mainly including PQP queue status information, task status information, performance information, and error information. 【Parameter Description】 <a name="table1426mcpsimp"></a>
 <table><thead align="left"><tr id="row1432mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p1434mcpsimp"><a name="p1434mcpsimp"></a><a name="p1434mcpsimp"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p1436mcpsimp"><a name="p1436mcpsimp"></a><a name="p1436mcpsimp"></a>Description</p>
@@ -2060,14 +1198,8 @@ Records current PQP working status resource information, mainly including PQP qu
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p>Number of hardware execution errors.</p></td>
 </tr>
 </tbody>
-</table>
-
-# Error Codes
-HNR error codes are as follows.
-
-**Table 1** HNR API error codes
-
-<a name="_Ref248290030"></a>
+</table> # Error Codes
+HNR error codes are as follows. **Table 1** HNR API error codes <a name="_Ref248290030"></a>
 <table><thead align="left"><tr id="row1613mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.2.4.1.1"><p id="p1615mcpsimp"><a name="p1615mcpsimp"></a><a name="p1615mcpsimp"></a>Error Code</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.2.4.1.2"><p id="p1617mcpsimp"><a name="p1617mcpsimp"></a><a name="p1617mcpsimp"></a>Macro Definition</p>

@@ -1,18 +1,8 @@
 ---
 title: "Preface"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/精度比对工具使用指南/精度比对工具使用指南.md
----
-
-# Preface
-**Overview<a name="section430mcpsimp"></a>**
-
-This document provides a detailed description of the constraints, data preparation, and specific comparison operation guidance for the accuracy comparison tool, as well as methods for dump data format conversion and viewing.
-
-**Product Version<a name="section300mcpsimp"></a>**
-
-The product versions corresponding to this document are as follows.
-
-<a name="table303mcpsimp"></a>
+--- # Preface
+**Overview<a name="section430mcpsimp"></a>** This document provides a detailed description of the constraints, data preparation, and specific comparison operation guidance for the accuracy comparison tool, as well as methods for dump data format conversion and viewing. **Product Version<a name="section300mcpsimp"></a>** The product versions corresponding to this document are as follows. <a name="table303mcpsimp"></a>
 <table><thead align="left"><tr id="row308mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p310mcpsimp"><a name="p310mcpsimp"></a><a name="p310mcpsimp"></a>Product Name</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p312mcpsimp"><a name="p312mcpsimp"></a><a name="p312mcpsimp"></a>Product Version</p>
@@ -24,26 +14,13 @@ The product versions corresponding to this document are as follows.
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p318mcpsimp"><a name="p318mcpsimp"></a><a name="p318mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row1376073312191"><td class="cellrowborder" valign="top" width="45%" headers="mcps1.1.3.1.1 "><p id="p5760533111913"><a name="p5760533111913"></a><a name="p5760533111913"></a>Hi3519AV200</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.00000000000001%" headers="mcps1.1.3.1.2 "><p id="p6760333131918"><a name="p6760333131918"></a><a name="p6760333131918"></a>V100</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-**Intended Audience<a name="section433mcpsimp"></a>**
-
-This document is mainly applicable to developers.
-
--   Technical Support Engineer
--   Software Development Engineer
-
-**Symbol Conventions<a name="section133020216410"></a>**
-
-The following symbols may appear in this document, and their meanings are as described below.
-
-<a name="table2622507016410"></a>
+</table> **Intended Audience<a name="section433mcpsimp"></a>** This document is mainly applicable to developers. - Technical Support Engineer
+- Software Development Engineer **Symbol Conventions<a name="section133020216410"></a>** The following symbols may appear in this document, and their meanings are as described below. <a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a>Symbol</p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a>Description</p>
@@ -55,34 +32,8 @@ The following symbols may appear in this document, and their meanings are as des
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>Indicates a high-risk hazard which, if not avoided, will result in death or serious injury.</p>
 </td>
 </tr>
-<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408583278.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>Indicates a medium-risk hazard which, if not avoided, could result in death or serious injury.</p>
-</td>
-</tr>
-<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408423370.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>Indicates a low-risk hazard which, if not avoided, could result in minor or moderate injury.</p>
-</td>
-</tr>
-<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002408423378.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>Used to convey equipment or environmental safety warning information. Failure to avoid may result in equipment damage, data loss, reduced equipment performance, or other unpredictable consequences.</p>
-<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>"Caution" does not involve personal injury.</p>
-</td>
-</tr>
-<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002441982669.png"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>Supplementary explanation of key information in the main text.</p>
-<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>"Note" is not a safety warning and does not involve personal, equipment, or environmental hazard information.</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**Revision History<a name="section2467512116410"></a>**
-
-<a name="table1557726816410"></a>
+</table> **Revision History<a name="section2467512116410"></a>** <a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>Document Version</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="20.22%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>Release Date</strong></p>
@@ -99,24 +50,8 @@ The following symbols may appear in this document, and their meanings are as des
 </td>
 </tr>
 </tbody>
-</table>
-
-# Features and Constraints
-## Introduction<a name="ZH-CN_TOPIC_0000002442022477"></a>
-
-ATC optimizes the model during model conversion, including operator elimination, operator fusion, and operator splitting. This may cause deviations between the operation results of self-implemented operators and those of industry-standard operators (such as Caffe). Therefore, a tool is needed to compare the gap between the two, helping developers quickly resolve operator accuracy issues.
-
-The accuracy comparison tool is designed to resolve model accuracy issues by comparing the operation results of self-implemented model operators with those of standard operators such as Caffe, to identify the operator where the error occurs. Currently, the following comparison methods are provided.
-
-Vector comparison, including cosine similarity, maximum absolute error, accumulated relative error, relative Euclidean distance, KLD divergence, and standard deviation algorithm comparisons.
-
-## Features<a name="ZH-CN_TOPIC_0000002442022485"></a>
-
-In the current version, Vector comparison supports comparing dump data generated by running on the SoC with Ground Truth (npy data generated by running on GPU/CPU), and also supports comparison of quantized and non-quantized data. Before performing the comparison, ensure the data has been prepared according to your comparison scenario, as shown in [Table 1](#table7281152114211).
-
-**Table 1** Accuracy Comparison Scenarios
-
-<a name="table7281152114211"></a>
+</table> # Features and Constraints
+## Introduction<a name="ZH-CN_TOPIC_0000002442022477"></a> ATC optimizes the model during model conversion, including operator elimination, operator fusion, and operator splitting. This may cause deviations between the operation results of self-implemented operators and those of industry-standard operators (such as Caffe). Therefore, a tool is needed to compare the gap between the two, helping developers quickly resolve operator accuracy issues. The accuracy comparison tool is designed to resolve model accuracy issues by comparing the operation results of self-implemented model operators with those of standard operators such as Caffe, to identify the operator where the error occurs. Currently, the following comparison methods are provided. Vector comparison, including cosine similarity, maximum absolute error, accumulated relative error, relative Euclidean distance, KLD divergence, and standard deviation algorithm comparisons. ## Features<a name="ZH-CN_TOPIC_0000002442022485"></a> In the current version, Vector comparison supports comparing dump data generated by running on the SoC with Ground Truth (npy data generated by running on GPU/CPU), and also supports comparison of quantized and non-quantized data. Before performing the comparison, ensure the data has been prepared according to your comparison scenario, as shown in [Table 1](#table7281152114211). **Table 1** Accuracy Comparison Scenarios <a name="table7281152114211"></a>
 <table><thead align="left"><tr id="row450mcpsimp"><th class="cellrowborder" valign="top" width="11%" id="mcps1.2.4.1.1"><p id="p452mcpsimp"><a name="p452mcpsimp"></a><a name="p452mcpsimp"></a>No.</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.2.4.1.2"><p id="p454mcpsimp"><a name="p454mcpsimp"></a><a name="p454mcpsimp"></a>Data to Compare (My Output)</p>
@@ -132,86 +67,13 @@ In the current version, Vector comparison supports comparing dump data generated
 <td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p464mcpsimp"><a name="p464mcpsimp"></a><a name="p464mcpsimp"></a>npy file (or dump data) of non-quantized original model (Caffe)</p>
 </td>
 </tr>
-<tr id="row465mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p467mcpsimp"><a name="p467mcpsimp"></a><a name="p467mcpsimp"></a>2</p>
-</td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.2 "><p id="p469mcpsimp"><a name="p469mcpsimp"></a><a name="p469mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p471mcpsimp"><a name="p471mcpsimp"></a><a name="p471mcpsimp"></a>npy file (or dump data) of non-quantized original model (Caffe)</p>
-</td>
-</tr>
-<tr id="row472mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p474mcpsimp"><a name="p474mcpsimp"></a><a name="p474mcpsimp"></a>3</p>
-</td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.2 "><p id="p476mcpsimp"><a name="p476mcpsimp"></a><a name="p476mcpsimp"></a>npy file (or dump data) of quantized original model (Caffe)</p>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p478mcpsimp"><a name="p478mcpsimp"></a><a name="p478mcpsimp"></a>npy file (or dump data) of non-quantized original model (Caffe)</p>
-</td>
-</tr>
-<tr id="row479mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p481mcpsimp"><a name="p481mcpsimp"></a><a name="p481mcpsimp"></a>4</p>
-</td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.2 "><p id="p483mcpsimp"><a name="p483mcpsimp"></a><a name="p483mcpsimp"></a>Dump data from original model running on ATC</p>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p485mcpsimp"><a name="p485mcpsimp"></a><a name="p485mcpsimp"></a>npy file (or dump data) of non-quantized original model (Caffe)</p>
-</td>
-</tr>
-<tr id="row486mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p488mcpsimp"><a name="p488mcpsimp"></a><a name="p488mcpsimp"></a>5</p>
-</td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.2 "><p id="p490mcpsimp"><a name="p490mcpsimp"></a><a name="p490mcpsimp"></a>Dump data from quantized offline model running on SoC</p>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p492mcpsimp"><a name="p492mcpsimp"></a><a name="p492mcpsimp"></a>npy file (or dump data) of quantized original model (Caffe)</p>
-</td>
-</tr>
-<tr id="row493mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p495mcpsimp"><a name="p495mcpsimp"></a><a name="p495mcpsimp"></a>6</p>
-</td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.2 "><p id="p497mcpsimp"><a name="p497mcpsimp"></a><a name="p497mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p499mcpsimp"><a name="p499mcpsimp"></a><a name="p499mcpsimp"></a>Dump data from original model running on ATC</p>
-</td>
-</tr>
-<tr id="row500mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p502mcpsimp"><a name="p502mcpsimp"></a><a name="p502mcpsimp"></a>7</p>
-</td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.2 "><p id="p504mcpsimp"><a name="p504mcpsimp"></a><a name="p504mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p506mcpsimp"><a name="p506mcpsimp"></a><a name="p506mcpsimp"></a>npy file (or dump data) of quantized original model (Caffe)</p>
-</td>
-</tr>
-<tr id="row507mcpsimp"><td class="cellrowborder" valign="top" width="11%" headers="mcps1.2.4.1.1 "><p id="p509mcpsimp"><a name="p509mcpsimp"></a><a name="p509mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.2 "><p id="p511mcpsimp"><a name="p511mcpsimp"></a><a name="p511mcpsimp"></a>Dump data from quantized offline model running on SoC</p>
-</td>
-<td class="cellrowborder" valign="top" width="46%" headers="mcps1.2.4.1.3 "><p id="p513mcpsimp"><a name="p513mcpsimp"></a><a name="p513mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-## Constraints and Notes<a name="ZH-CN_TOPIC_0000002442022473"></a>
-
--   Before using the accuracy comparison tool, refer to the "Driver and Development Environment Installation Guide" to set up the development environment. This document uses the HLAAUser ordinary user installation, with the default installation path /home/HLAAUser /Ascend as an example to describe the accuracy comparison operation methods. Replace paths with your actual environment during operation. Ensure that HLAAUser has read or read/write permissions on all example paths in this document.
--   Many examples or notes in this document mention the runtime environment. Replace it based on the actual situation. Standard form: Ascend EP (Endpoint) environment indicates the Host side; Ascend RC (Root Complex) environment indicates the board-side environment; Open form: indicates the Device side.
--   When using the accuracy comparison tool, ensure the hardware environment meets the requirements: CPU 8 cores 2.6GHz, memory 16GB; otherwise, the comparison may be slow.
--   The accuracy comparison tool requires Python 3.7.5.
--   Dump data types supported by accuracy comparison:
-    -   FLOAT
-    -   FLOAT16
-    -   DT\_INT8
-    -   DT\_UINT8
-    -   DT\_INT16
-    -   DT\_UINT16
-    -   DT\_INT32
-    -   DT\_INT64
-    -   DT\_UINT32
-    -   DT\_UINT64
-    -   DT\_BOOL
-    -   DT\_DOUBLE
-
-# Comparison Data Preparation
-## Data Format Requirements<a name="ZH-CN_TOPIC_0000002441982629"></a>
-
-The current version supports multiple comparison methods. Therefore, dump and npy data file naming must meet the following requirements.
-
-**Table 1** Data File Naming Rules
-
-<a name="table542mcpsimp"></a>
+</table> ## Constraints and Notes<a name="ZH-CN_TOPIC_0000002442022473"></a> - Before using the accuracy comparison tool, refer to the "Driver and Development Environment Installation Guide" to set up the development environment. This document uses the HLAA User ordinary user installation, with the default installation path /home/HLAA User /Ascend as an example to describe the accuracy comparison operation methods. Replace paths with your actual environment during operation. Ensure that HLAA User has read or read/write permissions on all example paths in this document.
+- Many examples or notes in this document mention the runtime environment. Replace it based on the actual situation. Standard form: Ascend EP (Endpoint) environment indicates the Host side; Ascend RC (Root Complex) environment indicates the board-side environment; Open form: indicates the Device side.
+- When using the accuracy comparison tool, ensure the hardware environment meets the requirements: CPU 8 cores 2.6G Hz, memory 16GB; otherwise, the comparison may be slow.
+- The accuracy comparison tool requires Python 3.7.5.
+- Dump data types supported by accuracy comparison: - FLOAT - FLOAT16 - DT\_INT8 - DT\_UINT8 - DT\_INT16 - DT\_UINT16 - DT\_INT32 - DT\_INT64 - DT\_UINT32 - DT\_UINT64 - DT\_BOOL - DT\_DOUBLE # Comparison Data Preparation
+## Data Format Requirements<a name="ZH-CN_TOPIC_0000002441982629"></a> The current version supports multiple comparison methods. Therefore, dump and npy data file naming must meet the following requirements. **Table 1** Data File Naming Rules <a name="table542mcpsimp"></a>
 <table><thead align="left"><tr id="row549mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.2.4.1.1"><p id="p551mcpsimp"><a name="p551mcpsimp"></a><a name="p551mcpsimp"></a>Data Type</p>
 </th>
 <th class="cellrowborder" valign="top" width="35%" id="mcps1.2.4.1.2"><p id="p553mcpsimp"><a name="p553mcpsimp"></a><a name="p553mcpsimp"></a>Naming Format</p>
@@ -243,350 +105,26 @@ The current version supports multiple comparison methods. Therefore, dump and np
 </td>
 </tr>
 </tbody>
-</table>
-
-## Preparing Offline Model Dump Data Files (ACL Interface Method)<a name="ZH-CN_TOPIC_0000002408423330"></a>
-
-### Prerequisites<a name="ZH-CN_TOPIC_0000002441982641"></a>
-
-Before preparing dump data, refer to the "ATC Tool Usage Guide" for model conversion to prepare the offline model file. If model quantization is involved, refer to the "AMCT Usage Guide (Caffe)" and "AMCT Usage Guide (PyTorch)" to complete quantization before model conversion, generating the quantized offline model file. Then use the generated model file to compile and run the application project, ensuring the project works normally.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->-   When executing the model compression tool, a quantization fusion rule file is generated simultaneously, which will be used during accuracy comparison.
->-   Two interface methods are available for dumping data: the svp\_acl\_init\(\) interface and the svp\_acl\_mdl\_set\_dump\(\) interface.
->    For detailed usage of the svp\_acl\_init\(\) and svp\_acl\_mdl\_set\_dump\(\) interfaces, refer to the "Application Development Guide".
-
-### Dumping Data<a name="ZH-CN_TOPIC_0000002408423338"></a>
-
-Follow these steps to dump offline model data:
-
-1.  Open the project file, check the called svp\_acl\_init\(\) or svp\_acl\_mdl\_set\_dump\(\) function, and obtain the acl.json file path.
-
-    >![](public_sys-resources/icon-note.gif) **Note:**
-    >If **svp\_acl\_init**\(\) or **svp\_acl\_mdl\_set\_dump**\(\) is initialized as empty, modify the function to add the path of the acl.json created in [step 2](#li3175123813116). The acl.json path here is relative to the binary file generated by the project compilation.
-
-2.  <a name="li3175123813116"></a>Modify the acl.json file in the located directory (create it if it does not exist; it is recommended to place it in the out directory after project compilation), add dump configuration in the following format. Parameter descriptions are shown in [Table 1](#table32318383312).
-
-    ```
-    {
-             "dump":{
-                      "dump_list":[
-                                {        "model_name":"ResNet-101"
-                                },
-                                {
-                                         "model_name":"ResNet-50",
-                                         "layer":[
-                                               "conv1conv1_relu",
-                                               "res2a_branch2ares2a_branch2a_relu",
-                                               "res2a_branch1",
-                                               "pool1"
-                                         ]
-                                }
-                      ],
-                      "dump_path":"/home/HLAAUser /output",
-                    "dump_mode":"output"
-             }
-    }
-    ```
-
-    **Table 1** acl.json File Format Description
-
-    <a name="table32318383312"></a>
-    <table><thead align="left"><tr id="row2176438123113"><th class="cellrowborder" valign="top" width="13.270000000000001%" id="mcps1.2.6.1.1"><p id="p11176123873116"><a name="p11176123873116"></a><a name="p11176123873116"></a>Configuration Item</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="11.219999999999999%" id="mcps1.2.6.1.2"><p id="p317612385319"><a name="p317612385319"></a><a name="p317612385319"></a>Description</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="26.979999999999997%" id="mcps1.2.6.1.3"><p id="p191761638103119"><a name="p191761638103119"></a><a name="p191761638103119"></a>Value</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="9.75%" id="mcps1.2.6.1.4"><p id="p6176438173114"><a name="p6176438173114"></a><a name="p6176438173114"></a>Required</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="38.78%" id="mcps1.2.6.1.5"><p id="p31761138173112"><a name="p31761138173112"></a><a name="p31761138173112"></a>Remarks</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row1917673814317"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p317614382314"><a name="p317614382314"></a><a name="p317614382314"></a>dump</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p131761738133116"><a name="p131761738133116"></a><a name="p131761738133116"></a>--</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p6176113817315"><a name="p6176113817315"></a><a name="p6176113817315"></a>--</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p817643820312"><a name="p817643820312"></a><a name="p817643820312"></a>Yes</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><a name="ul217613823118"></a><a name="ul217613823118"></a><ul id="ul217613823118"><li>AA CPU operators without output will not generate dump data.</li><li>In partial operator dump scenarios, since the data operator does not execute on AA CPU or AA Core, only by filling in the successor nodes of the data node operator along with the data node operator can the data node operator data be dumped.</li></ul>
-    </td>
-    </tr>
-    <tr id="row91761438183116"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p817618381316"><a name="p817618381316"></a><a name="p817618381316"></a>dump_list</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p917610388311"><a name="p917610388311"></a><a name="p917610388311"></a>List of full-network models to dump</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p4376513204720"><a name="p4376513204720"></a><a name="p4376513204720"></a>If multiple models need dumping, create dump configuration for each model, separated by commas.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p191764381319"><a name="p191764381319"></a><a name="p191764381319"></a>Yes</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p1517643823110"><a name="p1517643823110"></a><a name="p1517643823110"></a>--</p>
-    </td>
-    </tr>
-    <tr id="row91769388315"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p91761238163110"><a name="p91761238163110"></a><a name="p91761238163110"></a>model_name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p817793863113"><a name="p817793863113"></a><a name="p817793863113"></a>Model name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p11932182282910"><a name="p11932182282910"></a><a name="p11932182282910"></a>When the model is loaded via memory, configure it to the value of the outermost "name" field in the json file after ATC model conversion.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p717713853113"><a name="p717713853113"></a><a name="p717713853113"></a>Yes</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p11484116105216"><a name="p11484116105216"></a><a name="p11484116105216"></a>The model_name value for each model must be unique.</p>
-    <p id="p3929515181916"><a name="p3929515181916"></a><a name="p3929515181916"></a>Generate the model json file using the ATC command, find the "name" field value in the json file. The model name is outside the "graph" field, and operator names are inside the "graph" field. For the method to generate the json file, refer to <a href="#ZH-CN_TOPIC_0000002441982633">2</a> in the comparison steps.</p>
-    </td>
-    </tr>
-    <tr id="row417723863120"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p217720381319"><a name="p217720381319"></a><a name="p217720381319"></a>layer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p417711389316"><a name="p417711389316"></a><a name="p417711389316"></a>Operator name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><a name="ul1217773812315"></a><a name="ul1217773812315"></a><ul id="ul1217773812315"><li>When dumping specified partial operators, configure the layer field in the specified format, with one operator name per line, separated by commas.</li><li>When dumping all operators of the model, the layer field is not needed.</li></ul>
-    </td>
-    <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p19177638193118"><a name="p19177638193118"></a><a name="p19177638193118"></a>No</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p917773813117"><a name="p917773813117"></a><a name="p917773813117"></a>On developer boards with relatively poor IO performance, full dumping is not recommended as it may cause execution timeout due to excessive data volume. Please specify operators for dumping.</p>
-    </td>
-    </tr>
-    <tr id="row517713384310"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p16177123818314"><a name="p16177123818314"></a><a name="p16177123818314"></a>dump_path</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p51771038203113"><a name="p51771038203113"></a><a name="p51771038203113"></a>Directory for storing dump data files in the runtime environment</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p181771338163119"><a name="p181771338163119"></a><a name="p181771338163119"></a>Supports absolute or relative paths:</p>
-    <a name="ul7177123811315"></a><a name="ul7177123811315"></a><ul id="ul7177123811315"><li>Absolute path starts with "/", e.g., /home/HLAAUser /output.</li><li>Relative path starts directly with a directory name, e.g., output.</li></ul>
-    <p id="p151771838163115"><a name="p151771838163115"></a><a name="p151771838163115"></a>For example, if dump_path is configured as /home/HLAAUser /output, dump data files are stored in /home/HLAAUser /output.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p1017733813315"><a name="p1017733813315"></a><a name="p1017733813315"></a>Yes</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p1178133819318"><a name="p1178133819318"></a><a name="p1178133819318"></a>The directory specified by this parameter must be created in advance, and the runtime user configured during installation must have read/write permissions.</p>
-    </td>
-    </tr>
-    <tr id="row1717803812315"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p1817811382316"><a name="p1817811382316"></a><a name="p1817811382316"></a>dump_mode</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p12178183823117"><a name="p12178183823117"></a><a name="p12178183823117"></a>Dump data mode</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><a name="ul171781338193119"></a><a name="ul171781338193119"></a><ul id="ul171781338193119"><li>input: dump operator input data.</li><li>output: dump operator output data.</li><li>all: dump operator input and output data.</li></ul>
-    </td>
-    <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p71784384316"><a name="p71784384316"></a><a name="p71784384316"></a>Yes</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p10178938103118"><a name="p10178938103118"></a><a name="p10178938103118"></a>In SoC (SS626V100) form, dump_mode temporarily does not support Input and All.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-3.  Run the application project to generate dump data files.
-
-    After the project runs, the generated dump data files can be viewed in the runtime environment. Path and format description:
-
-    ```
-    {dump_path}/{time}/{deviceid}/{model_name}/{model_id}/{data_index}/{dump file}
-    For single operator model dumping: {dump_path}/{time}/{deviceid}/{dump file}
-    ```
-
-    **Table 2** Simulator Generated Dump Data File Path Description
-
-    <a name="table1471123823118"></a>
-    <table><thead align="left"><tr id="row1178638183117"><th class="cellrowborder" valign="top" width="16.16%" id="mcps1.2.4.1.1"><p id="p18178838173116"><a name="p18178838173116"></a><a name="p18178838173116"></a>Path Key</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="50.51%" id="mcps1.2.4.1.2"><p id="p1617814382313"><a name="p1617814382313"></a><a name="p1617814382313"></a>Description</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="33.33%" id="mcps1.2.4.1.3"><p id="p1217843814317"><a name="p1217843814317"></a><a name="p1217843814317"></a>Remarks</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row11781338163112"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p20178183812314"><a name="p20178183812314"></a><a name="p20178183812314"></a>dump_path</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p171798387316"><a name="p171798387316"></a><a name="p171798387316"></a>Directory configured in acl.json for storing dump data files</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p13179103812317"><a name="p13179103812317"></a><a name="p13179103812317"></a>--</p>
-    </td>
-    </tr>
-    <tr id="row0179638193110"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1917910387316"><a name="p1917910387316"></a><a name="p1917910387316"></a>time</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p61796384315"><a name="p61796384315"></a><a name="p61796384315"></a>Time when dump data file was written to disk</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p16179143819315"><a name="p16179143819315"></a><a name="p16179143819315"></a>Format: YYYYMMDDHHMMSS</p>
-    </td>
-    </tr>
-    <tr id="row1017917386311"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p21791538173120"><a name="p21791538173120"></a><a name="p21791538173120"></a>deviceid</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p17179153815315"><a name="p17179153815315"></a><a name="p17179153815315"></a>Device ID number</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p1517983813115"><a name="p1517983813115"></a><a name="p1517983813115"></a>--</p>
-    </td>
-    </tr>
-    <tr id="row8179338133114"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p7179438143118"><a name="p7179438143118"></a><a name="p7179438143118"></a>model_name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p3179123812315"><a name="p3179123812315"></a><a name="p3179123812315"></a>Model name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p1217943811319"><a name="p1217943811319"></a><a name="p1217943811319"></a>If model_name contains ".", "/", "\", or spaces, they are converted to underscores.</p>
-    </td>
-    </tr>
-    <tr id="row16179183810311"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p101793387319"><a name="p101793387319"></a><a name="p101793387319"></a>model_id</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p1217903823119"><a name="p1217903823119"></a><a name="p1217903823119"></a>Model ID number</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p617963817310"><a name="p617963817310"></a><a name="p617963817310"></a>--</p>
-    </td>
-    </tr>
-    <tr id="row517963811318"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p11801385319"><a name="p11801385319"></a><a name="p11801385319"></a>data_index</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p218023883119"><a name="p218023883119"></a><a name="p218023883119"></a>A sequence number maintained for each Task ID execution count, starting from 0. Each time the Task dumps data, the number increments by 1.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p3180138133118"><a name="p3180138133118"></a><a name="p3180138133118"></a>Refer to "9.8.2 svp_acl_mdl_execute" in the "Application Development Guide".</p>
-    </td>
-    </tr>
-    <tr id="row318053863115"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p151801386316"><a name="p151801386316"></a><a name="p151801386316"></a>dump file</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p3180138163111"><a name="p3180138163111"></a><a name="p3180138163111"></a>Naming rule format: {op_name}.{op_index}.{timestamp}.dump</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p171803384316"><a name="p171803384316"></a><a name="p171803384316"></a>If op_type or op_name contains ".", "/", "\", or spaces, they are converted to underscores.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-    **Table 3** SoC Generated Dump Data File Path Description
-
-    <a name="table114362055361"></a>
-    <table><thead align="left"><tr id="row3436145514611"><th class="cellrowborder" valign="top" width="16.16%" id="mcps1.2.4.1.1"><p id="p104361955866"><a name="p104361955866"></a><a name="p104361955866"></a>Path Key</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="50.51%" id="mcps1.2.4.1.2"><p id="p1143619551614"><a name="p1143619551614"></a><a name="p1143619551614"></a>Description</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="33.33%" id="mcps1.2.4.1.3"><p id="p164369550619"><a name="p164369550619"></a><a name="p164369550619"></a>Remarks</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row16436175512620"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1443617554619"><a name="p1443617554619"></a><a name="p1443617554619"></a>dump_path</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p24361255066"><a name="p24361255066"></a><a name="p24361255066"></a>Directory configured in acl.json for storing dump data files</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p134364559619"><a name="p134364559619"></a><a name="p134364559619"></a>--</p>
-    </td>
-    </tr>
-    <tr id="row0436165514617"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p184361455968"><a name="p184361455968"></a><a name="p184361455968"></a>time</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p7436655768"><a name="p7436655768"></a><a name="p7436655768"></a>Time when dump data file was written to disk</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p44361855962"><a name="p44361855962"></a><a name="p44361855962"></a>Format: YYYYMMDDHHMMSS</p>
-    </td>
-    </tr>
-    <tr id="row14436555263"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1343619551161"><a name="p1343619551161"></a><a name="p1343619551161"></a>deviceid</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p2043614551861"><a name="p2043614551861"></a><a name="p2043614551861"></a>Device ID number</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p5436155261"><a name="p5436155261"></a><a name="p5436155261"></a>--</p>
-    </td>
-    </tr>
-    <tr id="row1943695512613"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1436165517616"><a name="p1436165517616"></a><a name="p1436165517616"></a>model_name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p84364551965"><a name="p84364551965"></a><a name="p84364551965"></a>Model name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p24361455360"><a name="p24361455360"></a><a name="p24361455360"></a>If model_name contains ".", "/", "\", or spaces, they are converted to underscores.</p>
-    </td>
-    </tr>
-    <tr id="row1436175519611"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p15436185520615"><a name="p15436185520615"></a><a name="p15436185520615"></a>model_id</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p1543612551561"><a name="p1543612551561"></a><a name="p1543612551561"></a>Corresponding ID number generated on the board side, starting from 0. Each time data is dumped, the number increments by 1.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p19436165519618"><a name="p19436165519618"></a><a name="p19436165519618"></a>Refer to "9.8 Model Loading and Execution" in the "Application Development Guide".</p>
-    </td>
-    </tr>
-    <tr id="row44361455863"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p164364551168"><a name="p164364551168"></a><a name="p164364551168"></a>data_index</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p16436455865"><a name="p16436455865"></a><a name="p16436455865"></a>A sequence number maintained for each Task ID execution count, starting from 0. Each time the Task dumps data, the number increments by 1.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p174371551618"><a name="p174371551618"></a><a name="p174371551618"></a>Refer to "9.8.2 svp_acl_mdl_execute" in the "Application Development Guide".</p>
-    </td>
-    </tr>
-    <tr id="row1543718551969"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p5437105514618"><a name="p5437105514618"></a><a name="p5437105514618"></a>dump file</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p1343712557611"><a name="p1343712557611"></a><a name="p1343712557611"></a>Naming rule format: {op_type}.{op_name}.{output_index}.{timestamp}. If the file name length exceeds the OS file name length limit (usually 255 characters), the dump file will be renamed to a random number, and the mapping can be found in mapping.csv in the same directory.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p174372551169"><a name="p174372551169"></a><a name="p174372551169"></a>If op_type or op_name contains ".", "/", "\", or spaces, they are converted to underscores.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-## Preparing Caffe Model npy Data Files<a name="ZH-CN_TOPIC_0000002441982649"></a>
-
-This version does not provide Caffe model npy data generation functionality. Please install the Caffe environment yourself and prepare the Caffe original data "\*.npy" files in advance. We only provide sample code for generating numpy-format Caffe original data "\*.npy" files that meet accuracy comparison requirements.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->For how to prepare original Caffe model npy data, you can refer to the forum post [Operator Accuracy Comparison Tool Benchmark Data Generation Environment Setup Guide (Caffe + TensorFlow)](https://bbs.huaweicloud.com/blogs/181059) or obtain other methods on your own. The post is for reference only.
-
-Caffe original npy data file preparation requirements:
-
--   File content is saved in numpy format.
--   File naming follows the format op\_name.output\_index.timestamp.npy. Set the numpy data file name to include the output\_index field with a value of 0, ensuring the output\_index of the converted dump data is 0. Accuracy comparison starts from the first data with output\_index 0; otherwise, there will be no comparison results.
--   To ensure the generated .npy files meet naming requirements, remove in-place operations from the original Caffe model file and generate a new .prototxt model file for generating .npy files (for example, if there are four fused operators A, B, C, D with in-place not removed, the dump output will be the result of operator D, but the naming starts with operator A, causing the file not to be found during comparison). For quantization scenarios, install the model compression tool on the environment first, then execute the in-place removal command. For installation methods, refer to the "AMCT Usage Guide (Caffe)".
-
-    Enter `/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/toolkit/tools/operator_cmp/compare` directory and execute the command to remove in-place operations. An example command is as follows:
-
-    **python3.7.5 inplace_layer_process.pyc -i /home/user/resnet50.prototxt**
-
-    After executing the command, the `new_resnet50.prototxt` file with in-place removed is generated in the `/home/user` directory.
-
--   For quantization scenarios: To ensure accuracy within error tolerance, the preprocessing data during Caffe model inference must be consistent with the preprocessing data during Caffe model compression.
-
-To output "\*.npy" data files that meet accuracy comparison requirements, add the following sample code after the inference code:
-
-```
-    #read prototxt file
-     net_param = caffe_pb2.NetParameter()
-     with open(self.model_file_path, 'rb') as model_file:
-         google.protobuf.text_format.Parse(model_file.read(), net_param)
-
-         # save data to numpy file
-         for layer in net_param.layer:
-             name = layer.name.replace("/", "_").replace(".", "_")
-             index = 0
-             for top in layer.top:
-                 data = net.blobs[top].data[...]
-                 file_name = name + "." + str(index) + "." + str(
-                     round(time.time() * 1000000)) + ".npy"
-                 output_dump_path = os.path.join(self.output_path, file_name)
-                 np.save(output_dump_path, data)
-                 os.chmod(output_dump_path, FILE_PERMISSION_FLAG)
-                 print('The dump data of "' + layer.name
-                       + '" has been saved to "' + output_dump_path + '".')
-                 index += 1
-```
-
-After adding the above code, run the Caffe model application project to generate compliant "\*.npy" data files.
-
-# Vector Comparison
-## Constraints<a name="ZH-CN_TOPIC_0000002441982637"></a>
-
-The Vector command-line comparison provides two methods: full-network comparison and single-operator comparison. Choose the comparison method based on the comparison scenario.
-
-Vector comparison usage constraints:
-
--   Ensure the offline model dump file and the Caffe model npy file are data from the same model. If they are not from the same model but share the same operator names, comparison can still be performed, but the result data will only show comparison results for matching operators.
--   For FastRcnn network scenarios, the Proposal operator and subsequent operators may not meet accuracy standards; this is normal. The final result is determined by the actual bounding box output.
--   If operators in the original graph are fused during graph compilation, causing the operator's output to have no corresponding output in the compiled model, that operator cannot be compared.
--   If structural modifications are made to the graph during compilation (such as stride splitting, L1 fusion, L2 fusion), the operator's input or output cannot be compared.
--   If the same operator has dump data on both sides but the shapes differ (offline model operator shape is smaller) or the format does not support conversion, that operator cannot be compared.
--   When the model conversion applies additional preprocessing to the input data, causing the original model input format to differ from the offline model's data operator input format (e.g., data input is YUV in AAPP scenarios), the data operator comparison result is abnormal and not meaningful.
--   If the same operator on both sides has multiple inputs but the input order is inconsistent, the input comparison result for that operator is unreliable.
--   If the corresponding fusion rules are not disabled, the quantization operator will be fused with the previous operator, making the operator's output comparison result unreliable.
--   Operators that have undergone quantization processing in the quantized model cannot be compared; only dequantized outputs can be compared. Operators that have not undergone quantization processing in the quantized model are not affected. For example, the output of the AscendQuant operator in a quantized model cannot be compared.
-
-## Comparison Data Description<a name="ZH-CN_TOPIC_0000002441982645"></a>
-
-Before performing Vector comparison, prepare the comparison data according to the requirements in [Table 1](#d0e1441) based on the Vector comparison scenario you will use.
-
->![](public_sys-resources/icon-note.gif) **Note:**
+</table> ## Preparing Offline Model Dump Data Files (ACL Interface Method)<a name="ZH-CN_TOPIC_0000002408423330"></a> ### Prerequisites<a name="ZH-CN_TOPIC_0000002441982641"></a> Before preparing dump data, refer to the "ATC Tool Usage Guide" for model conversion to prepare the offline model file. If model quantization is involved, refer to the "AMCT Usage Guide (Caffe)" and "AMCT Usage Guide (Py Torch)" to complete quantization before model conversion, generating the quantized offline model file. Then use the generated model file to compile and run the application project, ensuring the project works normally. >![](public_sys-resources/icon-note.gif) **Note:**
+>- When executing the model compression tool, a quantization fusion rule file is generated simultaneously, which will be used during accuracy comparison.
+>- Two interface methods are available for dumping data: the svp\_acl\_init\(\) interface and the svp\_acl\_mdl\_set\_dump\(\) interface.
+> For detailed usage of the svp\_acl\_init\(\) and svp\_acl\_mdl\_set\_dump\(\) interfaces, refer to the "Application Development Guide". ### Dumping Data<a name="ZH-CN_TOPIC_0000002408423338"></a> Follow these steps to dump offline model data: 1. Open the project file, check the called svp\_acl\_init\(\) or svp\_acl\_mdl\_set\_dump\(\) function, and obtain the acl.json file path. >![](public_sys-resources/icon-note.gif) **Note:** >If **svp\_acl\_init**\(\) or **svp\_acl\_mdl\_set\_dump**\(\) is initialized as empty, modify the function to add the path of the acl.json created in [step 2](#li3175123813116). The acl.json path here is relative to the binary file generated by the project compilation. 2. <a name="li3175123813116"></a>Modify the acl.json file in the located directory (create it if it does not exist; it is recommended to place it in the out directory after project compilation), add dump configuration in the following format. Parameter descriptions are shown in [Table 1](#table32318383312). ``` { "dump":{ "dump_list":[ { "model_name":"ResNet-101" }, { "model_name":"ResNet-50", "layer":[ "conv1conv1_relu", "res2a_branch2ares2a_branch2a_relu", "res2a_branch1", "pool1" ] } ], "dump_path":"/home/HLAAUser /output", "dump_mode":"output" } } ``` **Table 1** acl.json File Format Description <a name="table32318383312"></a> <table><thead align="left"><tr id="row2176438123113"><th class="cellrowborder" valign="top" width="13.270000000000001%" id="mcps1.2.6.1.1"><p id="p11176123873116"><a name="p11176123873116"></a><a name="p11176123873116"></a>Configuration Item</p> </th> <th class="cellrowborder" valign="top" width="11.219999999999999%" id="mcps1.2.6.1.2"><p id="p317612385319"><a name="p317612385319"></a><a name="p317612385319"></a>Description</p> </th> <th class="cellrowborder" valign="top" width="26.979999999999997%" id="mcps1.2.6.1.3"><p id="p191761638103119"><a name="p191761638103119"></a><a name="p191761638103119"></a>Value</p> </th> <th class="cellrowborder" valign="top" width="9.75%" id="mcps1.2.6.1.4"><p id="p6176438173114"><a name="p6176438173114"></a><a name="p6176438173114"></a>Required</p> </th> <th class="cellrowborder" valign="top" width="38.78%" id="mcps1.2.6.1.5"><p id="p31761138173112"><a name="p31761138173112"></a><a name="p31761138173112"></a>Remarks</p> </th> </tr> </thead> <tbody><tr id="row1917673814317"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p317614382314"><a name="p317614382314"></a><a name="p317614382314"></a>dump</p> </td> <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p131761738133116"><a name="p131761738133116"></a><a name="p131761738133116"></a>--</p> </td> <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p6176113817315"><a name="p6176113817315"></a><a name="p6176113817315"></a>--</p> </td> <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p817643820312"><a name="p817643820312"></a><a name="p817643820312"></a>Yes</p> </td> <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><a name="ul217613823118"></a><a name="ul217613823118"></a><ul id="ul217613823118"><li>AA CPU operators without output will not generate dump data.</li><li>In partial operator dump scenarios, since the data operator does not execute on AA CPU or AA Core, only by filling in the successor nodes of the data node operator along with the data node operator can the data node operator data be dumped.</li></ul> </td> </tr> <tr id="row91761438183116"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p817618381316"><a name="p817618381316"></a><a name="p817618381316"></a>dump_list</p> </td> <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p917610388311"><a name="p917610388311"></a><a name="p917610388311"></a>List of full-network models to dump</p> </td> <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p4376513204720"><a name="p4376513204720"></a><a name="p4376513204720"></a>If multiple models need dumping, create dump configuration for each model, separated by commas.</p> </td> <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p191764381319"><a name="p191764381319"></a><a name="p191764381319"></a>Yes</p> </td> <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p1517643823110"><a name="p1517643823110"></a><a name="p1517643823110"></a>--</p> </td> </tr> <tr id="row91769388315"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p91761238163110"><a name="p91761238163110"></a><a name="p91761238163110"></a>model_name</p> </td> <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p817793863113"><a name="p817793863113"></a><a name="p817793863113"></a>Model name</p> </td> <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p11932182282910"><a name="p11932182282910"></a><a name="p11932182282910"></a>When the model is loaded via memory, configure it to the value of the outermost "name" field in the json file after ATC model conversion.</p> </td> <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p717713853113"><a name="p717713853113"></a><a name="p717713853113"></a>Yes</p> </td> <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p11484116105216"><a name="p11484116105216"></a><a name="p11484116105216"></a>The model_name value for each model must be unique.</p> <p id="p3929515181916"><a name="p3929515181916"></a><a name="p3929515181916"></a>Generate the model json file using the ATC command, find the "name" field value in the json file. The model name is outside the "graph" field, and operator names are inside the "graph" field. For the method to generate the json file, refer to <a href="#ZH-CN_TOPIC_0000002441982633">2</a> in the comparison steps.</p> </td> </tr> <tr id="row417723863120"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p217720381319"><a name="p217720381319"></a><a name="p217720381319"></a>layer</p> </td> <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p417711389316"><a name="p417711389316"></a><a name="p417711389316"></a>Operator name</p> </td> <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><a name="ul1217773812315"></a><a name="ul1217773812315"></a><ul id="ul1217773812315"><li>When dumping specified partial operators, configure the layer field in the specified format, with one operator name per line, separated by commas.</li><li>When dumping all operators of the model, the layer field is not needed.</li></ul> </td> <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p19177638193118"><a name="p19177638193118"></a><a name="p19177638193118"></a>No</p> </td> <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p917773813117"><a name="p917773813117"></a><a name="p917773813117"></a>On developer boards with relatively poor IO performance, full dumping is not recommended as it may cause execution timeout due to excessive data volume. Please specify operators for dumping.</p> </td> </tr> <tr id="row517713384310"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p16177123818314"><a name="p16177123818314"></a><a name="p16177123818314"></a>dump_path</p> </td> <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p51771038203113"><a name="p51771038203113"></a><a name="p51771038203113"></a>Directory for storing dump data files in the runtime environment</p> </td> <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><p id="p181771338163119"><a name="p181771338163119"></a><a name="p181771338163119"></a>Supports absolute or relative paths:</p> <a name="ul7177123811315"></a><a name="ul7177123811315"></a><ul id="ul7177123811315"><li>Absolute path starts with "/", e.g., /home/HLAA User /output.</li><li>Relative path starts directly with a directory name, e.g., output.</li></ul> <p id="p151771838163115"><a name="p151771838163115"></a><a name="p151771838163115"></a>For example, if dump_path is configured as /home/HLAA User /output, dump data files are stored in /home/HLAA User /output.</p> </td> <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p1017733813315"><a name="p1017733813315"></a><a name="p1017733813315"></a>Yes</p> </td> <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p1178133819318"><a name="p1178133819318"></a><a name="p1178133819318"></a>The directory specified by this parameter must be created in advance, and the runtime user configured during installation must have read/write permissions.</p> </td> </tr> <tr id="row1717803812315"><td class="cellrowborder" valign="top" width="13.270000000000001%" headers="mcps1.2.6.1.1 "><p id="p1817811382316"><a name="p1817811382316"></a><a name="p1817811382316"></a>dump_mode</p> </td> <td class="cellrowborder" valign="top" width="11.219999999999999%" headers="mcps1.2.6.1.2 "><p id="p12178183823117"><a name="p12178183823117"></a><a name="p12178183823117"></a>Dump data mode</p> </td> <td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.2.6.1.3 "><a name="ul171781338193119"></a><a name="ul171781338193119"></a><ul id="ul171781338193119"><li>input: dump operator input data.</li><li>output: dump operator output data.</li><li>all: dump operator input and output data.</li></ul> </td> <td class="cellrowborder" valign="top" width="9.75%" headers="mcps1.2.6.1.4 "><p id="p71784384316"><a name="p71784384316"></a><a name="p71784384316"></a>Yes</p> </td> <td class="cellrowborder" valign="top" width="38.78%" headers="mcps1.2.6.1.5 "><p id="p10178938103118"><a name="p10178938103118"></a><a name="p10178938103118"></a>In SoC form, dump_mode temporarily does not support Input and All.</p> </td> </tr> </tbody> </table> 3. Run the application project to generate dump data files. After the project runs, the generated dump data files can be viewed in the runtime environment. Path and format description: ``` {dump_path}/{time}/{deviceid}/{model_name}/{model_id}/{data_index}/{dump file} For single operator model dumping: {dump_path}/{time}/{deviceid}/{dump file} ``` **Table 2** Simulator Generated Dump Data File Path Description <a name="table1471123823118"></a> <table><thead align="left"><tr id="row1178638183117"><th class="cellrowborder" valign="top" width="16.16%" id="mcps1.2.4.1.1"><p id="p18178838173116"><a name="p18178838173116"></a><a name="p18178838173116"></a>Path Key</p> </th> <th class="cellrowborder" valign="top" width="50.51%" id="mcps1.2.4.1.2"><p id="p1617814382313"><a name="p1617814382313"></a><a name="p1617814382313"></a>Description</p> </th> <th class="cellrowborder" valign="top" width="33.33%" id="mcps1.2.4.1.3"><p id="p1217843814317"><a name="p1217843814317"></a><a name="p1217843814317"></a>Remarks</p> </th> </tr> </thead> <tbody><tr id="row11781338163112"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p20178183812314"><a name="p20178183812314"></a><a name="p20178183812314"></a>dump_path</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p171798387316"><a name="p171798387316"></a><a name="p171798387316"></a>Directory configured in acl.json for storing dump data files</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p13179103812317"><a name="p13179103812317"></a><a name="p13179103812317"></a>--</p> </td> </tr> <tr id="row0179638193110"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1917910387316"><a name="p1917910387316"></a><a name="p1917910387316"></a>time</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p61796384315"><a name="p61796384315"></a><a name="p61796384315"></a>Time when dump data file was written to disk</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p16179143819315"><a name="p16179143819315"></a><a name="p16179143819315"></a>Format: YYYYMMDDHHMMSS</p> </td> </tr> <tr id="row1017917386311"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p21791538173120"><a name="p21791538173120"></a><a name="p21791538173120"></a>deviceid</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p17179153815315"><a name="p17179153815315"></a><a name="p17179153815315"></a>Device ID number</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p1517983813115"><a name="p1517983813115"></a><a name="p1517983813115"></a>--</p> </td> </tr> <tr id="row8179338133114"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p7179438143118"><a name="p7179438143118"></a><a name="p7179438143118"></a>model_name</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p3179123812315"><a name="p3179123812315"></a><a name="p3179123812315"></a>Model name</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p1217943811319"><a name="p1217943811319"></a><a name="p1217943811319"></a>If model_name contains ".", "/", "\", or spaces, they are converted to underscores.</p> </td> </tr> <tr id="row16179183810311"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p101793387319"><a name="p101793387319"></a><a name="p101793387319"></a>model_id</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p1217903823119"><a name="p1217903823119"></a><a name="p1217903823119"></a>Model ID number</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p617963817310"><a name="p617963817310"></a><a name="p617963817310"></a>--</p> </td> </tr> <tr id="row517963811318"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p11801385319"><a name="p11801385319"></a><a name="p11801385319"></a>data_index</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p218023883119"><a name="p218023883119"></a><a name="p218023883119"></a>A sequence number maintained for each Task ID execution count, starting from 0. Each time the Task dumps data, the number increments by 1.</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p3180138133118"><a name="p3180138133118"></a><a name="p3180138133118"></a>Refer to "9.8.2 svp_acl_mdl_execute" in the "Application Development Guide".</p> </td> </tr> <tr id="row318053863115"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p151801386316"><a name="p151801386316"></a><a name="p151801386316"></a>dump file</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p3180138163111"><a name="p3180138163111"></a><a name="p3180138163111"></a>Naming rule format: {op_name}.{op_index}.{timestamp}.dump</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p171803384316"><a name="p171803384316"></a><a name="p171803384316"></a>If op_type or op_name contains ".", "/", "\", or spaces, they are converted to underscores.</p> </td> </tr> </tbody> </table> **Table 3** SoC Generated Dump Data File Path Description <a name="table114362055361"></a> <table><thead align="left"><tr id="row3436145514611"><th class="cellrowborder" valign="top" width="16.16%" id="mcps1.2.4.1.1"><p id="p104361955866"><a name="p104361955866"></a><a name="p104361955866"></a>Path Key</p> </th> <th class="cellrowborder" valign="top" width="50.51%" id="mcps1.2.4.1.2"><p id="p1143619551614"><a name="p1143619551614"></a><a name="p1143619551614"></a>Description</p> </th> <th class="cellrowborder" valign="top" width="33.33%" id="mcps1.2.4.1.3"><p id="p164369550619"><a name="p164369550619"></a><a name="p164369550619"></a>Remarks</p> </th> </tr> </thead> <tbody><tr id="row16436175512620"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1443617554619"><a name="p1443617554619"></a><a name="p1443617554619"></a>dump_path</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p24361255066"><a name="p24361255066"></a><a name="p24361255066"></a>Directory configured in acl.json for storing dump data files</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p134364559619"><a name="p134364559619"></a><a name="p134364559619"></a>--</p> </td> </tr> <tr id="row0436165514617"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p184361455968"><a name="p184361455968"></a><a name="p184361455968"></a>time</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p7436655768"><a name="p7436655768"></a><a name="p7436655768"></a>Time when dump data file was written to disk</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p44361855962"><a name="p44361855962"></a><a name="p44361855962"></a>Format: YYYYMMDDHHMMSS</p> </td> </tr> <tr id="row14436555263"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1343619551161"><a name="p1343619551161"></a><a name="p1343619551161"></a>deviceid</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p2043614551861"><a name="p2043614551861"></a><a name="p2043614551861"></a>Device ID number</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p5436155261"><a name="p5436155261"></a><a name="p5436155261"></a>--</p> </td> </tr> <tr id="row1943695512613"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p1436165517616"><a name="p1436165517616"></a><a name="p1436165517616"></a>model_name</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p84364551965"><a name="p84364551965"></a><a name="p84364551965"></a>Model name</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p24361455360"><a name="p24361455360"></a><a name="p24361455360"></a>If model_name contains ".", "/", "\", or spaces, they are converted to underscores.</p> </td> </tr> <tr id="row1436175519611"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p15436185520615"><a name="p15436185520615"></a><a name="p15436185520615"></a>model_id</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p1543612551561"><a name="p1543612551561"></a><a name="p1543612551561"></a>Corresponding ID number generated on the board side, starting from 0. Each time data is dumped, the number increments by 1.</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p19436165519618"><a name="p19436165519618"></a><a name="p19436165519618"></a>Refer to "9.8 Model Loading and Execution" in the "Application Development Guide".</p> </td> </tr> <tr id="row44361455863"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p164364551168"><a name="p164364551168"></a><a name="p164364551168"></a>data_index</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p16436455865"><a name="p16436455865"></a><a name="p16436455865"></a>A sequence number maintained for each Task ID execution count, starting from 0. Each time the Task dumps data, the number increments by 1.</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p174371551618"><a name="p174371551618"></a><a name="p174371551618"></a>Refer to "9.8.2 svp_acl_mdl_execute" in the "Application Development Guide".</p> </td> </tr> <tr id="row1543718551969"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.1 "><p id="p5437105514618"><a name="p5437105514618"></a><a name="p5437105514618"></a>dump file</p> </td> <td class="cellrowborder" valign="top" width="50.51%" headers="mcps1.2.4.1.2 "><p id="p1343712557611"><a name="p1343712557611"></a><a name="p1343712557611"></a>Naming rule format: {op_type}.{op_name}.{output_index}.{timestamp}. If the file name length exceeds the OS file name length limit (usually 255 characters), the dump file will be renamed to a random number, and the mapping can be found in mapping.csv in the same directory.</p> </td> <td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.3 "><p id="p174372551169"><a name="p174372551169"></a><a name="p174372551169"></a>If op_type or op_name contains ".", "/", "\", or spaces, they are converted to underscores.</p> </td> </tr> </tbody> </table> ## Preparing Caffe Model npy Data Files<a name="ZH-CN_TOPIC_0000002441982649"></a> This version does not provide Caffe model npy data generation functionality. Please install the Caffe environment yourself and prepare the Caffe original data "\*.npy" files in advance. We only provide sample code for generating numpy-format Caffe original data "\*.npy" files that meet accuracy comparison requirements. >![](public_sys-resources/icon-note.gif) **Note:**
+>For how to prepare original Caffe model npy data, you can refer to the forum post [Operator Accuracy Comparison Tool Benchmark Data Generation Environment Setup Guide (Caffe + Tensor Flow)](https:/bbs.huaweicloud.com/blogs/181059) or obtain other methods on your own. The post is for reference only. Caffe original npy data file preparation requirements: - File content is saved in numpy format.
+- File naming follows the format op\_name.output\_index.timestamp.npy. Set the numpy data file name to include the output\_index field with a value of 0, ensuring the output\_index of the converted dump data is 0. Accuracy comparison starts from the first data with output\_index 0; otherwise, there will be no comparison results.
+- To ensure the generated .npy files meet naming requirements, remove in-place operations from the original Caffe model file and generate a new .prototxt model file for generating .npy files (for example, if there are four fused operators A, B, C, D with in-place not removed, the dump output will be the result of operator D, but the naming starts with operator A, causing the file not to be found during comparison). For quantization scenarios, install the model compression tool on the environment first, then execute the in-place removal command. For installation methods, refer to the "AMCT Usage Guide (Caffe)". Enter `/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/toolkit/tools/operator_cmp/compare` directory and execute the command to remove in-place operations. An example command is as follows: **python3.7.5 inplace_layer_process.pyc -i /home/user/resnet50.prototxt** After executing the command, the `new_resnet50.prototxt` file with in-place removed is generated in the `/home/user` directory. - For quantization scenarios: To ensure accuracy within error tolerance, the preprocessing data during Caffe model inference must be consistent with the preprocessing data during Caffe model compression. To output "\*.npy" data files that meet accuracy comparison requirements, add the following sample code after the inference code: ``` #read prototxt file net_param = caffe_pb2.NetParameter with open(self.model_file_path, 'rb') as model_file: google.protobuf.text_format.Parse(model_file.read, net_param) # save data to numpy file for layer in net_param.layer: name = layer.name.replace("/", "_").replace(".", "_") index = 0 for top in layer.top: data = net.blobs[top].data[...] file_name = name + "." + str(index) + "." + str( round(time.time * 1000000)) + ".npy" output_dump_path = os.path.join(self.output_path, file_name) np.save(output_dump_path, data) os.chmod(output_dump_path, FILE_PERMISSION_FLAG) print('The dump data of "' + layer.name + '" has been saved to "' + output_dump_path + '".') index += 1
+``` After adding the above code, run the Caffe model application project to generate compliant "\*.npy" data files. # Vector Comparison
+## Constraints<a name="ZH-CN_TOPIC_0000002441982637"></a> The Vector command-line comparison provides two methods: full-network comparison and single-operator comparison. Choose the comparison method based on the comparison scenario. Vector comparison usage constraints: - Ensure the offline model dump file and the Caffe model npy file are data from the same model. If they are not from the same model but share the same operator names, comparison can still be performed, but the result data will only show comparison results for matching operators.
+- For Fast Rcnn network scenarios, the Proposal operator and subsequent operators may not meet accuracy standards; this is normal. The final result is determined by the actual bounding box output.
+- If operators in the original graph are fused during graph compilation, causing the operator's output to have no corresponding output in the compiled model, that operator cannot be compared.
+- If structural modifications are made to the graph during compilation (such as stride splitting, L1 fusion, L2 fusion), the operator's input or output cannot be compared.
+- If the same operator has dump data on both sides but the shapes differ (offline model operator shape is smaller) or the format does not support conversion, that operator cannot be compared.
+- When the model conversion applies additional preprocessing to the input data, causing the original model input format to differ from the offline model's data operator input format (e.g., data input is YUV in AAPP scenarios), the data operator comparison result is abnormal and not meaningful.
+- If the same operator on both sides has multiple inputs but the input order is inconsistent, the input comparison result for that operator is unreliable.
+- If the corresponding fusion rules are not disabled, the quantization operator will be fused with the previous operator, making the operator's output comparison result unreliable.
+- Operators that have undergone quantization processing in the quantized model cannot be compared; only dequantized outputs can be compared. Operators that have not undergone quantization processing in the quantized model are not affected. For example, the output of the Ascend Quant operator in a quantized model cannot be compared. ## Comparison Data Description<a name="ZH-CN_TOPIC_0000002441982645"></a> Before performing Vector comparison, prepare the comparison data according to the requirements in [Table 1](#d0e1441) based on the Vector comparison scenario you will use. >![](public_sys-resources/icon-note.gif) **Note:**
 >My Output offline model file and quantization fusion rule file usage scenarios:
->-   Offline model file: Select this model file when comparing dump data generated by SoC with Ground Truth.
->-   Quantization fusion rule file: This file must be selected whenever quantized and non-quantized data are being compared.
-
-**Table 1** Data Preparation Before Vector Comparison
-
-<a name="d0e1441"></a>
+>- Offline model file: Select this model file when comparing dump data generated by SoC with Ground Truth.
+>- Quantization fusion rule file: This file must be selected whenever quantized and non-quantized data are being compared. **Table 1** Data Preparation Before Vector Comparison <a name="d0e1441"></a>
 <table><thead align="left"><tr id="row850mcpsimp"><th class="cellrowborder" valign="top" width="10.101010101010102%" id="mcps1.2.5.1.1"><p id="p852mcpsimp"><a name="p852mcpsimp"></a><a name="p852mcpsimp"></a>No.</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.28282828282828%" id="mcps1.2.5.1.2"><p id="p854mcpsimp"><a name="p854mcpsimp"></a><a name="p854mcpsimp"></a>Data to Compare (My Output)</p>
@@ -606,95 +144,10 @@ Before performing Vector comparison, prepare the comparison data according to th
 <td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><a name="ul868mcpsimp"></a><a name="ul868mcpsimp"></a><ul id="ul868mcpsimp"><li>Quantized offline model file (*.om)</li><li>Quantization fusion rule file after model miniaturization (json file)</li></ul>
 </td>
 </tr>
-<tr id="row871mcpsimp"><td class="cellrowborder" valign="top" width="10.101010101010102%" headers="mcps1.2.5.1.1 "><p id="p873mcpsimp"><a name="p873mcpsimp"></a><a name="p873mcpsimp"></a>2</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.5.1.2 "><p id="p875mcpsimp"><a name="p875mcpsimp"></a><a name="p875mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.902990299029902%" headers="mcps1.2.5.1.3 "><p id="p877mcpsimp"><a name="p877mcpsimp"></a><a name="p877mcpsimp"></a>npy file (or dump data) of non-quantized original model (Caffe)</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><a name="ul879mcpsimp"></a><a name="ul879mcpsimp"></a><ul id="ul879mcpsimp"><li>Quantized offline model file (*.om)</li><li>Quantization fusion rule file after model miniaturization (json file)</li></ul>
-</td>
-</tr>
-<tr id="row882mcpsimp"><td class="cellrowborder" valign="top" width="10.101010101010102%" headers="mcps1.2.5.1.1 "><p id="p884mcpsimp"><a name="p884mcpsimp"></a><a name="p884mcpsimp"></a>3</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.5.1.2 "><p id="p886mcpsimp"><a name="p886mcpsimp"></a><a name="p886mcpsimp"></a>npy file (or dump data) of quantized original model (Caffe)</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.902990299029902%" headers="mcps1.2.5.1.3 "><p id="p888mcpsimp"><a name="p888mcpsimp"></a><a name="p888mcpsimp"></a>npy file (or dump data) of non-quantized original model (Caffe)</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><a name="ul890mcpsimp"></a><a name="ul890mcpsimp"></a><ul id="ul890mcpsimp"><li>Quantization fusion rule file after model miniaturization (json file)</li></ul>
-</td>
-</tr>
-<tr id="row892mcpsimp"><td class="cellrowborder" valign="top" width="10.101010101010102%" headers="mcps1.2.5.1.1 "><p id="p894mcpsimp"><a name="p894mcpsimp"></a><a name="p894mcpsimp"></a>4</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.5.1.2 "><p id="p896mcpsimp"><a name="p896mcpsimp"></a><a name="p896mcpsimp"></a>Dump data from original model running on ATC</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.902990299029902%" headers="mcps1.2.5.1.3 "><p id="p898mcpsimp"><a name="p898mcpsimp"></a><a name="p898mcpsimp"></a>npy file (or dump data) of non-quantized original model (Caffe)</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><a name="ul900mcpsimp"></a><a name="ul900mcpsimp"></a><ul id="ul900mcpsimp"><li>Quantized offline model file (*.om)</li></ul>
-</td>
-</tr>
-<tr id="row902mcpsimp"><td class="cellrowborder" valign="top" width="10.101010101010102%" headers="mcps1.2.5.1.1 "><p id="p904mcpsimp"><a name="p904mcpsimp"></a><a name="p904mcpsimp"></a>5</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.5.1.2 "><p id="p906mcpsimp"><a name="p906mcpsimp"></a><a name="p906mcpsimp"></a>Dump data from quantized offline model running on SoC</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.902990299029902%" headers="mcps1.2.5.1.3 "><p id="p908mcpsimp"><a name="p908mcpsimp"></a><a name="p908mcpsimp"></a>npy file (or dump data) of quantized original model (Caffe)</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><a name="ul910mcpsimp"></a><a name="ul910mcpsimp"></a><ul id="ul910mcpsimp"><li>Quantized offline model file (*.om)</li></ul>
-</td>
-</tr>
-<tr id="row912mcpsimp"><td class="cellrowborder" valign="top" width="10.101010101010102%" headers="mcps1.2.5.1.1 "><p id="p914mcpsimp"><a name="p914mcpsimp"></a><a name="p914mcpsimp"></a>6</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.5.1.2 "><p id="p916mcpsimp"><a name="p916mcpsimp"></a><a name="p916mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.902990299029902%" headers="mcps1.2.5.1.3 "><p id="p918mcpsimp"><a name="p918mcpsimp"></a><a name="p918mcpsimp"></a>npy file (or dump data) of quantized original model (Caffe)</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><a name="ul920mcpsimp"></a><a name="ul920mcpsimp"></a><ul id="ul920mcpsimp"><li>Quantized offline model file (*.om)</li></ul>
-</td>
-</tr>
-<tr id="row922mcpsimp"><td class="cellrowborder" valign="top" width="10.101010101010102%" headers="mcps1.2.5.1.1 "><p id="p924mcpsimp"><a name="p924mcpsimp"></a><a name="p924mcpsimp"></a>7</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.5.1.2 "><p id="p926mcpsimp"><a name="p926mcpsimp"></a><a name="p926mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.902990299029902%" headers="mcps1.2.5.1.3 "><p id="p928mcpsimp"><a name="p928mcpsimp"></a><a name="p928mcpsimp"></a>Dump data from original model running on ATC</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><p id="p930mcpsimp"><a name="p930mcpsimp"></a><a name="p930mcpsimp"></a>None</p>
-</td>
-</tr>
-<tr id="row931mcpsimp"><td class="cellrowborder" valign="top" width="10.101010101010102%" headers="mcps1.2.5.1.1 "><p id="p933mcpsimp"><a name="p933mcpsimp"></a><a name="p933mcpsimp"></a>8</p>
-</td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.5.1.2 "><p id="p935mcpsimp"><a name="p935mcpsimp"></a><a name="p935mcpsimp"></a>Dump data from quantized offline model running on SoC</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.902990299029902%" headers="mcps1.2.5.1.3 "><p id="p937mcpsimp"><a name="p937mcpsimp"></a><a name="p937mcpsimp"></a>Dump data from quantized offline model running on simulator</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.71317131713171%" headers="mcps1.2.5.1.4 "><p id="p939mcpsimp"><a name="p939mcpsimp"></a><a name="p939mcpsimp"></a>None</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-## Full-Network Comparison<a name="ZH-CN_TOPIC_0000002442022481"></a>
-
-### Command Format Description<a name="ZH-CN_TOPIC_0000002408423358"></a>
-
-The msaccucmp.pyc script tool is an accuracy comparison command-line tool written in Python. Its functionality and installation path are as follows:
-
-Functions: Full-network comparison and single-operator comparison.
-
-Path: $\{INSTALL\_DIR\}/toolkit/tools/operator\_cmp/compare
-
-The Vector comparison command-line format is as follows:
-
-```
+</table> ## Full-Network Comparison<a name="ZH-CN_TOPIC_0000002442022481"></a> ### Command Format Description<a name="ZH-CN_TOPIC_0000002408423358"></a> The msaccucmp.pyc script tool is an accuracy comparison command-line tool written in Python. Its functionality and installation path are as follows: Functions: Full-network comparison and single-operator comparison. Path: $\{INSTALL\_DIR\}/toolkit/tools/operator\_cmp/compare The Vector comparison command-line format is as follows: ```
 python3.7.5 msaccucmp.pyc compare -m my_dump_path -g golden_dump_path [-f fusion_rule_file] [-q quant_fusion_rule_file] [-out output] [-c custom_script_path] [-v version]
-```
-
-Command-line parameter descriptions are shown in [Table 1](#d0e1596).
-
-The msaccucmp.pyc tool is saved in the directory: CANN installation path/\{version\}/x86\_64-linux/toolkit/tools/operator\_cmp/compare.
-
-**Table 1** Full-Network Comparison Command-Line Parameters
-
-<a name="d0e1596"></a>
+``` Command-line parameter descriptions are shown in [Table 1](#d0e1596). The msaccucmp.pyc tool is saved in the directory: CANN installation path/\{version\}/x86\_64-linux/toolkit/tools/operator\_cmp/compare. **Table 1** Full-Network Comparison Command-Line Parameters <a name="d0e1596"></a>
 <table><thead align="left"><tr id="row952mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.2.4.1.1"><p id="p954mcpsimp"><a name="p954mcpsimp"></a><a name="p954mcpsimp"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.2"><p id="p957mcpsimp"><a name="p957mcpsimp"></a><a name="p957mcpsimp"></a>Description</p>
@@ -760,130 +213,15 @@ The msaccucmp.pyc tool is saved in the directory: CANN installation path/\{versi
 </td>
 </tr>
 </tbody>
-</table>
-
-Select the -f or -q parameter correctly based on the data type prepared according to [Comparison Data Description](#ZH-CN_TOPIC_0000002441982645).
-
-### Comparison Steps<a name="ZH-CN_TOPIC_0000002441982633"></a>
-
-Operation steps for the Vector comparison command-line method.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->-   The .json file and directory names in this section are examples. Replace them based on your actual environment. Ensure the HLAAUser has read/write permissions on the --out result storage path.
->-   This section uses non-quantized SoC dump data compared with non-quantized Caffe model npy data as an example. Parameter descriptions below are based on this example. Replace them based on your actual situation.
->-   If comparing two dump datasets generated by SoC running the same model, ensure the input count, output count, format, and shape are exactly the same; otherwise, comparison cannot be performed. In this scenario, only the -m, -g, and -out parameters are needed; -f and -q parameters are not required.
->-   If a "MemoryError" occurs during execution, the data volume is too large, causing memory overflow. Split the board-side dump data files into multiple directories and compare them one by one.
-
-1.  Log in to the development environment as the HLAAUser user.
-2.  Execute the export command to set environment variables and generate the json file.
-
-    Set environment variables:
-
-    ```
-    export LD_LIBRARY_PATH=/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/third_party_lib:${LD_LIBRARY_PATH}
-    ```
-
-    Generate the json file:
-
-    ```
-    /home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/bin/atc --mode=1 --om=/home/HLAAUser /data/resnet50.om --json=/home/HLAAUser /data/resnet50.json
-    ```
-
-3.  Enter the `/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/toolkit/tools/operator_cmp/compare` directory.
-4.  Execute the Vector comparison command. Example command:
-
-    ```
-    python3.7.5 msaccucmp.pyc compare -m /home/HLAAUser /MyApp_mind/resnet50 -g /home/HLAAUser /Standard_caffe/resnet50 -f /home/HLAAUser /data/resnet50.json -out /home/HLAAUser /result
-    ```
-
-    The content of the Vector comparison result result\_*.csv file is shown in [Figure 1](#fig2347194551315).
-
-    **Figure 1** Comparison Result<a name="fig2347194551315"></a>
-    ![](figures/比对结果.png "Comparison Result")
-
-    **Table 1** Output Parameter Description
-
-    <a name="table778413440131"></a>
-    <table><thead align="left"><tr id="row10347104541317"><th class="cellrowborder" valign="top" width="20.06%" id="mcps1.2.3.1.1"><p id="p8347174541315"><a name="p8347174541315"></a><a name="p8347174541315"></a>Parameter</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="79.94%" id="mcps1.2.3.1.2"><p id="p15347194541310"><a name="p15347194541310"></a><a name="p15347194541310"></a>Description</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row034714457134"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p73471145121315"><a name="p73471145121315"></a><a name="p73471145121315"></a>LeftOp</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p10347184521312"><a name="p10347184521312"></a><a name="p10347184521312"></a>Operator name of the My Output model</p>
-    </td>
-    </tr>
-    <tr id="row534711458136"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p73478451132"><a name="p73478451132"></a><a name="p73478451132"></a>RightOp</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p43471845131318"><a name="p43471845131318"></a><a name="p43471845131318"></a>Operator name of the Ground Truth model</p>
-    </td>
-    </tr>
-    <tr id="row93474457131"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p103489455130"><a name="p103489455130"></a><a name="p103489455130"></a>TensorIndex</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p33481945141313"><a name="p33481945141313"></a><a name="p33481945141313"></a>input ID and output ID of the My Output model operator</p>
-    </td>
-    </tr>
-    <tr id="row16348124501312"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p203484456131"><a name="p203484456131"></a><a name="p203484456131"></a>CosineSimilarity</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p103485456134"><a name="p103485456134"></a><a name="p103485456134"></a>Result of cosine similarity algorithm comparison, range [-1,1]. A result closer to 1 indicates greater similarity; closer to -1 indicates more opposite values.</p>
-    </td>
-    </tr>
-    <tr id="row1134820459136"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p9348945181315"><a name="p9348945181315"></a><a name="p9348945181315"></a>MaxAbsoluteError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p23483458136"><a name="p23483458136"></a><a name="p23483458136"></a>Result of maximum absolute error algorithm comparison, range 0 to infinity. A value closer to 0 indicates greater similarity; a larger value indicates greater difference.</p>
-    </td>
-    </tr>
-    <tr id="row1348114519132"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p133481145111310"><a name="p133481145111310"></a><a name="p133481145111310"></a>AccumulatedRelativeError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p1634834510132"><a name="p1634834510132"></a><a name="p1634834510132"></a>Result of accumulated relative error algorithm comparison, range 0 to infinity. A value closer to 0 indicates greater similarity; a larger value indicates greater difference.</p>
-    </td>
-    </tr>
-    <tr id="row1634834519136"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p2034854511137"><a name="p2034854511137"></a><a name="p2034854511137"></a>RelativeEuclideanDistance</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p334810452137"><a name="p334810452137"></a><a name="p334810452137"></a>Result of relative Euclidean distance algorithm comparison, range 0 to infinity. A value closer to 0 indicates greater similarity; a larger value indicates greater difference.</p>
-    </td>
-    </tr>
-    <tr id="row183481454137"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p0348204551317"><a name="p0348204551317"></a><a name="p0348204551317"></a>KullbackLeiblerDivergence</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p134834511134"><a name="p134834511134"></a><a name="p134834511134"></a>Result of KLD divergence algorithm comparison, range 0 to infinity. The smaller the KL divergence, the better the match between the true distribution and the approximate distribution.</p>
-    </td>
-    </tr>
-    <tr id="row17348545101318"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p14348174581311"><a name="p14348174581311"></a><a name="p14348174581311"></a>StandardDeviation</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p7348184511131"><a name="p7348184511131"></a><a name="p7348184511131"></a>Result of standard deviation algorithm comparison, range 0 to infinity. The smaller the standard deviation, the less dispersion, indicating values are closer to the mean. This column shows the mean and standard deviation for both My Output and Ground Truth data sets. The first set shows My Output model dump data values (mean; standard deviation), and the second set shows Ground Truth model dump data values (mean; standard deviation).</p>
-    </td>
-    </tr>
-    <tr id="row53481345131320"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p1534816455132"><a name="p1534816455132"></a><a name="p1534816455132"></a>CompareFailReason</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p183481945121316"><a name="p183481945121316"></a><a name="p183481945121316"></a>Reason why the operator could not be compared</p>
-    </td>
-    </tr>
-    <tr id="row14348124561318"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="p1348114515134"><a name="p1348114515134"></a><a name="p1348114515134"></a>Remarks:</p>
-    <a name="ul12348545101316"></a><a name="ul12348545101316"></a><ul id="ul12348545101316"><li>"*" indicates a newly added operator with no corresponding original operator; "NaN" means no comparison result.</li><li>If cosine similarity and KLD divergence results are NaN but other algorithms have comparison data, it indicates that the left or right data is 0. If KLD divergence result is inf, it indicates that one value in the right data is 0. If the comparison result is nan, it indicates that the dump data contains nan.</li></ul>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-## Single-Operator Comparison<a name="ZH-CN_TOPIC_0000002442022489"></a>
-
-### Command Format Description<a name="ZH-CN_TOPIC_0000002408583262"></a>
-
-The Vector comparison command-line format is as follows:
-
-```
+</table> Select the -f or -q parameter correctly based on the data type prepared according to [Comparison Data Description](#ZH-CN_TOPIC_0000002441982645). ### Comparison Steps<a name="ZH-CN_TOPIC_0000002441982633"></a> Operation steps for the Vector comparison command-line method. >![](public_sys-resources/icon-note.gif) **Note:**
+>- The .json file and directory names in this section are examples. Replace them based on your actual environment. Ensure the HLAA User has read/write permissions on the --out result storage path.
+>- This section uses non-quantized SoC dump data compared with non-quantized Caffe model npy data as an example. Parameter descriptions below are based on this example. Replace them based on your actual situation.
+>- If comparing two dump datasets generated by SoC running the same model, ensure the input count, output count, format, and shape are exactly the same; otherwise, comparison cannot be performed. In this scenario, only the -m, -g, and -out parameters are needed; -f and -q parameters are not required.
+>- If a "Memory Error" occurs during execution, the data volume is too large, causing memory overflow. Split the board-side dump data files into multiple directories and compare them one by one. 1. Log in to the development environment as the HLAA User user.
+2. Execute the export command to set environment variables and generate the json file. Set environment variables: ``` export LD_LIBRARY_PATH=/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/third_party_lib:${LD_LIBRARY_PATH} ``` Generate the json file: ``` /home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/bin/atc --mode=1 --om=/home/HLAA User /data/resnet50.om --json=/home/HLAA User /data/resnet50.json ``` 3. Enter the `/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/toolkit/tools/operator_cmp/compare` directory.
+4. Execute the Vector comparison command. Example command: ``` python3.7.5 msaccucmp.pyc compare -m /home/HLAAUser /MyApp_mind/resnet50 -g /home/HLAAUser /Standard_caffe/resnet50 -f /home/HLAAUser /data/resnet50.json -out /home/HLAA User /result ``` The content of the Vector comparison result result\_*.csv file is shown in [Figure 1](#fig2347194551315). **Figure 1** Comparison Result<a name="fig2347194551315"></a> ![](figures/Compare To Result.png "Comparison Result") **Table 1** Output Parameter Description <a name="table778413440131"></a> <table><thead align="left"><tr id="row10347104541317"><th class="cellrowborder" valign="top" width="20.06%" id="mcps1.2.3.1.1"><p id="p8347174541315"><a name="p8347174541315"></a><a name="p8347174541315"></a>Parameter</p> </th> <th class="cellrowborder" valign="top" width="79.94%" id="mcps1.2.3.1.2"><p id="p15347194541310"><a name="p15347194541310"></a><a name="p15347194541310"></a>Description</p> </th> </tr> </thead> <tbody><tr id="row034714457134"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p73471145121315"><a name="p73471145121315"></a><a name="p73471145121315"></a>Left Op</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p10347184521312"><a name="p10347184521312"></a><a name="p10347184521312"></a>Operator name of the My Output model</p> </td> </tr> <tr id="row534711458136"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p73478451132"><a name="p73478451132"></a><a name="p73478451132"></a>Right Op</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p43471845131318"><a name="p43471845131318"></a><a name="p43471845131318"></a>Operator name of the Ground Truth model</p> </td> </tr> <tr id="row93474457131"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p103489455130"><a name="p103489455130"></a><a name="p103489455130"></a>Tensor Index</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p33481945141313"><a name="p33481945141313"></a><a name="p33481945141313"></a>input ID and output ID of the My Output model operator</p> </td> </tr> <tr id="row16348124501312"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p203484456131"><a name="p203484456131"></a><a name="p203484456131"></a>Cosine Similarity</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p103485456134"><a name="p103485456134"></a><a name="p103485456134"></a>Result of cosine similarity algorithm comparison, range [-1,1]. A result closer to 1 indicates greater similarity; closer to -1 indicates more opposite values.</p> </td> </tr> <tr id="row1134820459136"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p9348945181315"><a name="p9348945181315"></a><a name="p9348945181315"></a>Max Absolute Error</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p23483458136"><a name="p23483458136"></a><a name="p23483458136"></a>Result of maximum absolute error algorithm comparison, range 0 to infinity. A value closer to 0 indicates greater similarity; a larger value indicates greater difference.</p> </td> </tr> <tr id="row1348114519132"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p133481145111310"><a name="p133481145111310"></a><a name="p133481145111310"></a>Accumulated Relative Error</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p1634834510132"><a name="p1634834510132"></a><a name="p1634834510132"></a>Result of accumulated relative error algorithm comparison, range 0 to infinity. A value closer to 0 indicates greater similarity; a larger value indicates greater difference.</p> </td> </tr> <tr id="row1634834519136"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p2034854511137"><a name="p2034854511137"></a><a name="p2034854511137"></a>Relative Euclidean Distance</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p334810452137"><a name="p334810452137"></a><a name="p334810452137"></a>Result of relative Euclidean distance algorithm comparison, range 0 to infinity. A value closer to 0 indicates greater similarity; a larger value indicates greater difference.</p> </td> </tr> <tr id="row183481454137"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p0348204551317"><a name="p0348204551317"></a><a name="p0348204551317"></a>Kullback Leibler Divergence</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p134834511134"><a name="p134834511134"></a><a name="p134834511134"></a>Result of KLD divergence algorithm comparison, range 0 to infinity. The smaller the KL divergence, the better the match between the true distribution and the approximate distribution.</p> </td> </tr> <tr id="row17348545101318"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p14348174581311"><a name="p14348174581311"></a><a name="p14348174581311"></a>Standard Deviation</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p7348184511131"><a name="p7348184511131"></a><a name="p7348184511131"></a>Result of standard deviation algorithm comparison, range 0 to infinity. The smaller the standard deviation, the less dispersion, indicating values are closer to the mean. This column shows the mean and standard deviation for both My Output and Ground Truth data sets. The first set shows My Output model dump data values (mean; standard deviation), and the second set shows Ground Truth model dump data values (mean; standard deviation).</p> </td> </tr> <tr id="row53481345131320"><td class="cellrowborder" valign="top" width="20.06%" headers="mcps1.2.3.1.1 "><p id="p1534816455132"><a name="p1534816455132"></a><a name="p1534816455132"></a>Compare Fail Reason</p> </td> <td class="cellrowborder" valign="top" width="79.94%" headers="mcps1.2.3.1.2 "><p id="p183481945121316"><a name="p183481945121316"></a><a name="p183481945121316"></a>Reason why the operator could not be compared</p> </td> </tr> <tr id="row14348124561318"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="p1348114515134"><a name="p1348114515134"></a><a name="p1348114515134"></a>Remarks:</p> <a name="ul12348545101316"></a><a name="ul12348545101316"></a><ul id="ul12348545101316"><li>"*" indicates a newly added operator with no corresponding original operator; "NaN" means no comparison result.</li><li>If cosine similarity and KLD divergence results are NaN but other algorithms have comparison data, it indicates that the left or right data is 0. If KLD divergence result is inf, it indicates that one value in the right data is 0. If the comparison result is nan, it indicates that the dump data contains nan.</li></ul> </td> </tr> </tbody> </table> ## Single-Operator Comparison<a name="ZH-CN_TOPIC_0000002442022489"></a> ### Command Format Description<a name="ZH-CN_TOPIC_0000002408583262"></a> The Vector comparison command-line format is as follows: ```
 python3.7.5 msaccucmp.pyc compare -m my_dump_path -g golden_dump_path [-f fusion_rule_file] [-q quant_fusion_rule_file] [-out output] [-op op_name] [-o output_tensor] [-i input_tensor] [-c custom_script_path] [-v version]
-```
-
-The msaccucmp.pyc tool is saved in the directory: **CANN installation path**/\{version\}/x86\_64-linux/toolkit/tools/operator\_cmp/compare.
-
-Command-line parameter descriptions are shown in [Table 1](#d0e1925).
-
-**Table 1** Single-Operator Comparison Command-Line Parameters
-
-<a name="d0e1925"></a>
+``` The msaccucmp.pyc tool is saved in the directory: **CANN installation path**/\{version\}/x86\_64-linux/toolkit/tools/operator\_cmp/compare. Command-line parameter descriptions are shown in [Table 1](#d0e1925). **Table 1** Single-Operator Comparison Command-Line Parameters <a name="d0e1925"></a>
 <table><thead align="left"><tr id="row1140mcpsimp"><th class="cellrowborder" valign="top" width="19.000000000000004%" id="mcps1.2.4.1.1"><p id="p1142mcpsimp"><a name="p1142mcpsimp"></a><a name="p1142mcpsimp"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" width="73.00000000000001%" id="mcps1.2.4.1.2"><p id="p1145mcpsimp"><a name="p1145mcpsimp"></a><a name="p1145mcpsimp"></a>Description</p>
@@ -974,160 +312,15 @@ Command-line parameter descriptions are shown in [Table 1](#d0e1925).
 </td>
 </tr>
 </tbody>
-</table>
-
-Select the -f or -q parameter correctly based on the data type prepared according to [Comparison Data Description](#ZH-CN_TOPIC_0000002441982645).
-
-### Comparison Steps<a name="ZH-CN_TOPIC_0000002408423334"></a>
-
-Operation steps for the Vector comparison command-line method.
-
->![](public_sys-resources/icon-note.gif) **Note:**
->-   The .json file and directory names in this section are examples. Replace them based on your actual environment. Ensure the HLAAUser has read/write permissions on the --out result storage path.
->-   This section uses non-quantized SoC dump data compared with non-quantized Caffe model npy data as an example. Parameter descriptions below are based on this example. Replace them based on your actual situation.
->-   Single-operator accuracy comparison is not supported for two dump datasets generated by SoC running the same model.
-
-1.  Log in to the development environment as the HLAAUser user.
-2.  Execute the export command to set environment variables and generate the json file.
-
-    Set environment variables:
-
-    ```
-    export LD_LIBRARY_PATH=/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/third_party_lib:${LD_LIBRARY_PATH}
-    ```
-
-    Generate the json file:
-
-    ```
-    /home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/bin/atc --mode=1 --om=/home/HLAAUser /data/resnet50.om --json=/home/HLAAUser /data/resnet50.json
-    ```
-
-3.  Enter the `/home/HLAAUser/Ascend/toolkit/tools/operator_cmp/compare` directory.
-4.  Execute the Vector comparison command. Example command:
-
-    ```
-    python3.7.5 msaccucmp.pyc compare -m /home/HLAAUser /MyApp_mind/resnet50 -g /home/HLAAUser /Standard_caffe/resnet50 -f /home/HLAAUser /data/resnet50.json -out /home/HLAAUser /result  -op pool5 -i 0
-    ```
-
-    The Vector comparison result file content is shown in [Figure 1](#fig45813472518) and [Figure 2](#fig8591943253).
-
-    **Figure 1** Single-Operator Comparison Summary Result<a name="fig45813472518"></a>
-    ![](figures/单算子比对概要结果.png "Single-Operator Comparison Summary Result")
-
-    The single-operator comparison summary result is stored in "\{op\_name\}\_input\_\{index\}\_summary.txt" or "\{op\_name\}\_output\_\{index\}\_summary.txt" files. Parameter descriptions are as follows.
-
-    **Table 1** Single-Operator Comparison Summary Result Parameters
-
-    <a name="table1984163172511"></a>
-    <table><thead align="left"><tr id="row1759449257"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.2.3.1.1"><p id="p155934202511"><a name="p155934202511"></a><a name="p155934202511"></a>Parameter</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="75.76%" id="mcps1.2.3.1.2"><p id="p1596417258"><a name="p1596417258"></a><a name="p1596417258"></a>Description</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row1659140255"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p165984172512"><a name="p165984172512"></a><a name="p165984172512"></a>TotalCount</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p9591643257"><a name="p9591643257"></a><a name="p9591643257"></a>Number of dump data items for this operator</p>
-    </td>
-    </tr>
-    <tr id="row459164112520"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p4598452510"><a name="p4598452510"></a><a name="p4598452510"></a>LeftOp</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p55954182518"><a name="p55954182518"></a><a name="p55954182518"></a>Operator name of the My Output model</p>
-    </td>
-    </tr>
-    <tr id="row5592492517"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p3592422517"><a name="p3592422517"></a><a name="p3592422517"></a>RightOp</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p85934112516"><a name="p85934112516"></a><a name="p85934112516"></a>Operator name of the Ground Truth model</p>
-    </td>
-    </tr>
-    <tr id="row15924202517"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p145913410251"><a name="p145913410251"></a><a name="p145913410251"></a>Format</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p155954152518"><a name="p155954152518"></a><a name="p155954152518"></a>Data format</p>
-    </td>
-    </tr>
-    <tr id="row15913472514"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p259104122510"><a name="p259104122510"></a><a name="p259104122510"></a>MinAbsoluteError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p659154132516"><a name="p659154132516"></a><a name="p659154132516"></a>Minimum absolute error</p>
-    </td>
-    </tr>
-    <tr id="row1559545256"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p75944132513"><a name="p75944132513"></a><a name="p75944132513"></a>MaxAbsoluteError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p1059154192516"><a name="p1059154192516"></a><a name="p1059154192516"></a>Maximum absolute error</p>
-    </td>
-    </tr>
-    <tr id="row1659184182515"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p55910416252"><a name="p55910416252"></a><a name="p55910416252"></a>MinRelativeError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p2592414253"><a name="p2592414253"></a><a name="p2592414253"></a>Minimum relative error</p>
-    </td>
-    </tr>
-    <tr id="row259749258"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p115984182511"><a name="p115984182511"></a><a name="p115984182511"></a>MaxRelativeError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p14595418250"><a name="p14595418250"></a><a name="p14595418250"></a>Maximum relative error</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-    **Figure 2** Single-Operator Detailed Comparison Result<a name="fig8591943253"></a>
-    ![](figures/单算子详细比对结果.png "Single-Operator Detailed Comparison Result")
-
-    The single-operator detailed comparison result is stored in "\{op\_name\}\_input\_\{index\}\_\{file\_index\}.csv" or "\{op\_name\}\_output\_\{index\}\_\{file\_index\}.csv" files, each file recording up to 1 million data items. The column parameter descriptions in [Figure 2](#fig8591943253) are as follows.
-
-    **Table 2** Single-Operator Detailed Comparison Result Parameters
-
-    <a name="table1098918314257"></a>
-    <table><thead align="left"><tr id="row7601541256"><th class="cellrowborder" valign="top" width="12.120000000000001%" id="mcps1.2.3.1.1"><p id="p66013452514"><a name="p66013452514"></a><a name="p66013452514"></a>Parameter</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="87.88%" id="mcps1.2.3.1.2"><p id="p146010413254"><a name="p146010413254"></a><a name="p146010413254"></a>Description</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row1760747255"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p1160184182520"><a name="p1160184182520"></a><a name="p1160184182520"></a>N C H W</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p166034182510"><a name="p166034182510"></a><a name="p166034182510"></a>Data coordinate point</p>
-    </td>
-    </tr>
-    <tr id="row160154152513"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p136034162510"><a name="p136034162510"></a><a name="p136034162510"></a>Left</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p15602422515"><a name="p15602422515"></a><a name="p15602422515"></a>Dump value of the My Output model operator</p>
-    </td>
-    </tr>
-    <tr id="row12602411258"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p1860843253"><a name="p1860843253"></a><a name="p1860843253"></a>Right</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p12602417257"><a name="p12602417257"></a><a name="p12602417257"></a>Dump value of the Ground Truth model operator</p>
-    </td>
-    </tr>
-    <tr id="row5607415258"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p9607413255"><a name="p9607413255"></a><a name="p9607413255"></a>RelativeError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p196064182514"><a name="p196064182514"></a><a name="p196064182514"></a>Relative error, obtained by dividing the AbsoluteError by the Ground Truth model operator dump value. When the Ground Truth operator dump value is 0, this field displays "-".</p>
-    </td>
-    </tr>
-    <tr id="row12602414252"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p1460743251"><a name="p1460743251"></a><a name="p1460743251"></a>AbsoluteError</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p860104132518"><a name="p860104132518"></a><a name="p860104132518"></a>Absolute error, obtained by subtracting the Ground Truth model operator dump value from the My Output model operator dump value and taking the absolute value.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-# Appendix
-## How to Perform Dump Data File Format Conversion<a name="ZH-CN_TOPIC_0000002442022469"></a>
-
-### Performing Dump Data File Format Conversion<a name="ZH-CN_TOPIC_0000002441982653"></a>
-
-This version provides dump data file format conversion capability, allowing users to convert dump data files generated by SoC into numpy data files as needed for easy viewing.
-
-This functionality is implemented through the msaccucmp.pyc script, located at `/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/toolkit/tools/operator_cmp/compare`. The command format is as follows:
-
-```
+</table> Select the -f or -q parameter correctly based on the data type prepared according to [Comparison Data Description](#ZH-CN_TOPIC_0000002441982645). ### Comparison Steps<a name="ZH-CN_TOPIC_0000002408423334"></a> Operation steps for the Vector comparison command-line method. >![](public_sys-resources/icon-note.gif) **Note:**
+>- The .json file and directory names in this section are examples. Replace them based on your actual environment. Ensure the HLAA User has read/write permissions on the --out result storage path.
+>- This section uses non-quantized SoC dump data compared with non-quantized Caffe model npy data as an example. Parameter descriptions below are based on this example. Replace them based on your actual situation.
+>- Single-operator accuracy comparison is not supported for two dump datasets generated by SoC running the same model. 1. Log in to the development environment as the HLAA User user.
+2. Execute the export command to set environment variables and generate the json file. Set environment variables: ``` export LD_LIBRARY_PATH=/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/third_party_lib:${LD_LIBRARY_PATH} ``` Generate the json file: ``` /home/HLAAUser /Ascend/ascend-toolkit/svp_latest/atc/bin/atc --mode=1 --om=/home/HLAA User /data/resnet50.om --json=/home/HLAA User /data/resnet50.json ``` 3. Enter the `/home/HLAA User/Ascend/toolkit/tools/operator_cmp/compare` directory.
+4. Execute the Vector comparison command. Example command: ``` python3.7.5 msaccucmp.pyc compare -m /home/HLAAUser /MyApp_mind/resnet50 -g /home/HLAAUser /Standard_caffe/resnet50 -f /home/HLAAUser /data/resnet50.json -out /home/HLAA User /result -op pool5 -i 0 ``` The Vector comparison result file content is shown in [Figure 1](#fig45813472518) and [Figure 2](#fig8591943253). **Figure 1** Single-Operator Comparison Summary Result<a name="fig45813472518"></a> ![](figures/singlechild Compare Toneed Result.png "Single-Operator Comparison Summary Result") The single-operator comparison summary result is stored in "\{op\_name\}\_input\_\{index\}\_summary.txt" or "\{op\_name\}\_output\_\{index\}\_summary.txt" files. Parameter descriptions are as follows. **Table 1** Single-Operator Comparison Summary Result Parameters <a name="table1984163172511"></a> <table><thead align="left"><tr id="row1759449257"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.2.3.1.1"><p id="p155934202511"><a name="p155934202511"></a><a name="p155934202511"></a>Parameter</p> </th> <th class="cellrowborder" valign="top" width="75.76%" id="mcps1.2.3.1.2"><p id="p1596417258"><a name="p1596417258"></a><a name="p1596417258"></a>Description</p> </th> </tr> </thead> <tbody><tr id="row1659140255"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p165984172512"><a name="p165984172512"></a><a name="p165984172512"></a>Total Count</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p9591643257"><a name="p9591643257"></a><a name="p9591643257"></a>Number of dump data items for this operator</p> </td> </tr> <tr id="row459164112520"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p4598452510"><a name="p4598452510"></a><a name="p4598452510"></a>Left Op</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p55954182518"><a name="p55954182518"></a><a name="p55954182518"></a>Operator name of the My Output model</p> </td> </tr> <tr id="row5592492517"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p3592422517"><a name="p3592422517"></a><a name="p3592422517"></a>Right Op</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p85934112516"><a name="p85934112516"></a><a name="p85934112516"></a>Operator name of the Ground Truth model</p> </td> </tr> <tr id="row15924202517"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p145913410251"><a name="p145913410251"></a><a name="p145913410251"></a>Format</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p155954152518"><a name="p155954152518"></a><a name="p155954152518"></a>Data format</p> </td> </tr> <tr id="row15913472514"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p259104122510"><a name="p259104122510"></a><a name="p259104122510"></a>Min Absolute Error</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p659154132516"><a name="p659154132516"></a><a name="p659154132516"></a>Minimum absolute error</p> </td> </tr> <tr id="row1559545256"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p75944132513"><a name="p75944132513"></a><a name="p75944132513"></a>Max Absolute Error</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p1059154192516"><a name="p1059154192516"></a><a name="p1059154192516"></a>Maximum absolute error</p> </td> </tr> <tr id="row1659184182515"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p55910416252"><a name="p55910416252"></a><a name="p55910416252"></a>Min Relative Error</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p2592414253"><a name="p2592414253"></a><a name="p2592414253"></a>Minimum relative error</p> </td> </tr> <tr id="row259749258"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p115984182511"><a name="p115984182511"></a><a name="p115984182511"></a>Max Relative Error</p> </td> <td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p14595418250"><a name="p14595418250"></a><a name="p14595418250"></a>Maximum relative error</p> </td> </tr> </tbody> </table> **Figure 2** Single-Operator Detailed Comparison Result<a name="fig8591943253"></a> ![](figures/singlechild Detailed Compare To Result.png "Single-Operator Detailed Comparison Result") The single-operator detailed comparison result is stored in "\{op\_name\}\_input\_\{index\}\_\{file\_index\}.csv" or "\{op\_name\}\_output\_\{index\}\_\{file\_index\}.csv" files, each file recording up to 1 million data items. The column parameter descriptions in [Figure 2](#fig8591943253) are as follows. **Table 2** Single-Operator Detailed Comparison Result Parameters <a name="table1098918314257"></a> <table><thead align="left"><tr id="row7601541256"><th class="cellrowborder" valign="top" width="12.120000000000001%" id="mcps1.2.3.1.1"><p id="p66013452514"><a name="p66013452514"></a><a name="p66013452514"></a>Parameter</p> </th> <th class="cellrowborder" valign="top" width="87.88%" id="mcps1.2.3.1.2"><p id="p146010413254"><a name="p146010413254"></a><a name="p146010413254"></a>Description</p> </th> </tr> </thead> <tbody><tr id="row1760747255"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p1160184182520"><a name="p1160184182520"></a><a name="p1160184182520"></a>N C H W</p> </td> <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p166034182510"><a name="p166034182510"></a><a name="p166034182510"></a>Data coordinate point</p> </td> </tr> <tr id="row160154152513"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p136034162510"><a name="p136034162510"></a><a name="p136034162510"></a>Left</p> </td> <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p15602422515"><a name="p15602422515"></a><a name="p15602422515"></a>Dump value of the My Output model operator</p> </td> </tr> <tr id="row12602411258"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p1860843253"><a name="p1860843253"></a><a name="p1860843253"></a>Right</p> </td> <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p12602417257"><a name="p12602417257"></a><a name="p12602417257"></a>Dump value of the Ground Truth model operator</p> </td> </tr> <tr id="row5607415258"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p9607413255"><a name="p9607413255"></a><a name="p9607413255"></a>Relative Error</p> </td> <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p196064182514"><a name="p196064182514"></a><a name="p196064182514"></a>Relative error, obtained by dividing the Absolute Error by the Ground Truth model operator dump value. When the Ground Truth operator dump value is 0, this field displays "-".</p> </td> </tr> <tr id="row12602414252"><td class="cellrowborder" valign="top" width="12.120000000000001%" headers="mcps1.2.3.1.1 "><p id="p1460743251"><a name="p1460743251"></a><a name="p1460743251"></a>Absolute Error</p> </td> <td class="cellrowborder" valign="top" width="87.88%" headers="mcps1.2.3.1.2 "><p id="p860104132518"><a name="p860104132518"></a><a name="p860104132518"></a>Absolute error, obtained by subtracting the Ground Truth model operator dump value from the My Output model operator dump value and taking the absolute value.</p> </td> </tr> </tbody> </table> # Appendix
+## How to Perform Dump Data File Format Conversion<a name="ZH-CN_TOPIC_0000002442022469"></a> ### Performing Dump Data File Format Conversion<a name="ZH-CN_TOPIC_0000002441982653"></a> This version provides dump data file format conversion capability, allowing users to convert dump data files generated by SoC into numpy data files as needed for easy viewing. This functionality is implemented through the msaccucmp.pyc script, located at `/home/HLAAUser /Ascend/ascend-toolkit/svp_latest/toolkit/tools/operator_cmp/compare`. The command format is as follows: ```
 python3.7.5 msaccucmp.pyc convert -d dump_file [-out output] [-f format -s shape] [-o output_tensor] [-i input_tensor] [-c custom_script_path] [-v version] [-t type]
-```
-
-The command parameter descriptions are shown in [Table 1](#d0e2397).
-
-**Table 1** Format Conversion Parameters
-
-<a name="d0e2397"></a>
+``` The command parameter descriptions are shown in [Table 1](#d0e2397). **Table 1** Format Conversion Parameters <a name="d0e2397"></a>
 <table><thead align="left"><tr id="row116mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.2.4.1.1"><p id="p118mcpsimp"><a name="p118mcpsimp"></a><a name="p118mcpsimp"></a>Parameter</p>
 </th>
 <th class="cellrowborder" valign="top" width="62.739999999999995%" id="mcps1.2.4.1.2"><p id="p121mcpsimp"><a name="p121mcpsimp"></a><a name="p121mcpsimp"></a>Description</p>
@@ -1210,79 +403,21 @@ The command parameter descriptions are shown in [Table 1](#d0e2397).
 </td>
 </tr>
 </tbody>
-</table>
-
->![](public_sys-resources/icon-note.gif) **Note:**
+</table> >![](public_sys-resources/icon-note.gif) **Note:**
 >numpy format results are saved as "original_filename.output.\{index\}.npy" or "original_filename.input.\{index\}.npy".
 >binary format results are saved as "original_filename.output.\{index\}.\{shape\}.\{data\_type\}.\{format\}.bin" or "original_filename.input.\{index\}.\{shape\}.\{data\_type\}.\{format\}.bin", shape format example: 1\_3\_224\_224.
 >The currently built-in Format conversions support the following types:
->-   FRACTAL\_NZ to NCHW
->-   FRACTAL\_NZ to NHWC
->-   FRACTAL\_NZ to ND
->-   HWCN to FRACTAL\_Z
->-   HWCN to NCHW
->-   HWCN to NHWC
->-   NC1HWC0 to HWCN
->-   NC1HWC0 to NCHW
->-   NC1HWC0 to NHWC
->-   NCHW to FRACTAL\_Z
->-   NCHW to NHWC
->-   NHWC to FRACTAL\_Z
->-   NHWC to HWCN
->-   NHWC to NCHW
-
-### Preparing a Custom Format Conversion .py File<a name="ZH-CN_TOPIC_0000002408583254"></a>
-
-To meet user requirements for custom Format conversion, prepare the following:
-
--   The .py file name must follow the rule: "convert\_\{format\_from\}\_to\_\{format\_to\}.py", where format\_from and format\_to support the following types:
-    -   NCHW
-    -   NHWC
-    -   ND
-    -   NC1HWC0
-    -   FRACTAL\_Z
-    -   NC1C0HWPAD
-    -   NHWC1C0
-    -   FSR\_NCHW
-    -   FRACTAL\_DECONV
-    -   C1HWNC0
-    -   FRACTAL\_DECONV\_TRANSPOSE
-    -   FRACTAL\_DECONV\_SP\_STRIDE\_TRANS
-    -   NC1HWC0\_C04
-    -   FRACTAL\_Z\_C04
-    -   CHWN
-    -   DECONV\_SP\_STRIDE8\_TRANS
-    -   NC1KHKWHWC0
-    -   BN\_WEIGHT
-    -   FILTER\_HWCK
-    -   HWCN
-    -   LOOKUP\_LOOKUPS
-    -   LOOKUP\_KEYS
-    -   LOOKUP\_VALUE
-    -   LOOKUP\_OUTPUT
-    -   LOOKUP\_HITS
-    -   MD
-    -   NDHWC
-    -   C1HWNCoC0
-    -   FRACTAL\_NZ
-
--   The .py file content must follow the following rules:
-
-    ```
-    def convert(shape_from, shape_to, array):
-         return numpy_array
-    ```
-
-    Parameter descriptions:
-
-    shape\_from: The shape of the array data before conversion, a one-dimensional array.
-
-    shape\_to: The shape of the array data after conversion, a one-dimensional array (optional).
-
-    array: Original one-dimensional data.
-
-    Return value: Converted numpy array.
-
--   The .py file storage directory must meet:
-
-    The .py file must be stored in the "format\_convert" directory. If this directory does not exist, create it.
+>- FRACTAL\_NZ to NCHW
+>- FRACTAL\_NZ to NHWC
+>- FRACTAL\_NZ to ND
+>- HWCN to FRACTAL\_Z
+>- HWCN to NCHW
+>- HWCN to NHWC
+>- NC1HWC0 to HWCN
+>- NC1HWC0 to NCHW
+>- NC1HWC0 to NHWC
+>- NCHW to FRACTAL\_Z
+>- NCHW to NHWC
+>- NHWC to FRACTAL\_Z
+>- NHWC to HWCN
+>- NHWC to NCHW ### Preparing a Custom Format Conversion .py File<a name="ZH-CN_TOPIC_0000002408583254"></a> To meet user requirements for custom Format conversion, prepare the following: - The .py file name must follow the rule: "convert\_\{format\_from\}\_to\_\{format\_to\}.py", where format\_from and format\_to support the following types: - NCHW - NHWC - ND - NC1HWC0 - FRACTAL\_Z - NC1C0HWPAD - NHWC1C0 - FSR\_NCHW - FRACTAL\_DECONV - C1HWNC0 - FRACTAL\_DECONV\_TRANSPOSE - FRACTAL\_DECONV\_SP\_STRIDE\_TRANS - NC1HWC0\_C04 - FRACTAL\_Z\_C04 - CHWN - DECONV\_SP\_STRIDE8\_TRANS - NC1KHKWHWC0 - BN\_WEIGHT - FILTER\_HWCK - HWCN - LOOKUP\_LOOKUPS - LOOKUP\_KEYS - LOOKUP\_VALUE - LOOKUP\_OUTPUT - LOOKUP\_HITS - MD - NDHWC - C1HWN CoC0 - FRACTAL\_NZ - The .py file content must follow the following rules: ``` def convert(shape_from, shape_to, array): return numpy_array ``` Parameter descriptions: shape\_from: The shape of the array data before conversion, a one-dimensional array. shape\_to: The shape of the array data after conversion, a one-dimensional array (optional). array: Original one-dimensional data. Return value: Converted numpy array. - The .py file storage directory must meet: The .py file must be stored in the "format\_convert" directory. If this directory does not exist, create it.

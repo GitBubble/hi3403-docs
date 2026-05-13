@@ -1,74 +1,11 @@
 ---
 title: "IMP"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/ISP 开发参考/ISP 开发参考（6）.md
----
-
-# IMP
-IMP是指影响图像效果的模块，对应API接口必须在调用ss\_mpi\_isp\_init接口之后才能调用。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Sharpen<a name="ZH-CN_TOPIC_0000002470925214"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470924874"></a>
-
-Sharpen模块用于增强图像的清晰度，包括调节图像边缘的锐化属性和增强图像的细节和纹理的清晰度，同时还能分别独立控制图像的带方向的边缘和无方向的细节纹理的锐化强度。此外，还能控制锐化后的图像的overshoot（白边白点）和undershoot（黑边黑点），以及抑制噪声的增强。
-
-### API参考<a name="ZH-CN_TOPIC_0000002470924988"></a>
-
--   [ss\_mpi\_isp\_set\_sharpen\_attr](#ZH-CN_TOPIC_0000002504084757)：设置图像锐化属性。
--   [ss\_mpi\_isp\_get\_sharpen\_attr](#ZH-CN_TOPIC_0000002503964843)：获取图像锐化属性。
-
-
-
-#### ss\_mpi\_isp\_set\_sharpen\_attr<a name="ZH-CN_TOPIC_0000002504084757"></a>
-
-【描述】
-
-设定图像锐化属性。
-
-【语法】
-
-```
+--- # IMP
+IMP是指影响图像效果的模块，对应API接口必须在调用ss\_mpi\_isp\_init接口之后才能调用。 ## Sharpen<a name="ZH-CN_TOPIC_0000002470925214"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470924874"></a> Sharpen模块用于增强图像的清晰度，包括调节图像边缘的锐化属性和增强图像的细节和纹理的清晰度，同时还能分别独立控制图像的带方向的边缘和无方向的细节纹理的锐化强度。此外，还能控制锐化后的图像的overshoot（白边白点）和undershoot（黑边黑点），以及抑制噪声的增强。 ### API参考<a name="ZH-CN_TOPIC_0000002470924988"></a> - [ss\_mpi\_isp\_set\_sharpen\_attr](#ZH-CN_TOPIC_0000002504084757)：设置图像锐化属性。
+- [ss\_mpi\_isp\_get\_sharpen\_attr](#ZH-CN_TOPIC_0000002503964843)：获取图像锐化属性。 #### ss\_mpi\_isp\_set\_sharpen\_attr<a name="ZH-CN_TOPIC_0000002504084757"></a> 【描述】 设定图像锐化属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_sharpen_attr(ot_vi_pipe vi_pipe, const ot_isp_sharpen_attr *shp_attr);
-```
-
-【参数】
-
-<a name="table20464mcpsimp"></a>
+``` 【参数】 <a name="table20464mcpsimp"></a>
 <table><thead align="left"><tr id="row20470mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p20472mcpsimp"><a name="p20472mcpsimp"></a><a name="p20472mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p20474mcpsimp"><a name="p20474mcpsimp"></a><a name="p20474mcpsimp"></a>描述</p>
@@ -92,11 +29,7 @@ td_s32 ss_mpi_isp_set_sharpen_attr(ot_vi_pipe vi_pipe, const ot_isp_sharpen_attr
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table20493mcpsimp"></a>
+</table> 【返回值】 <a name="table20493mcpsimp"></a>
 <table><thead align="left"><tr id="row20498mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p20500mcpsimp"><a name="p20500mcpsimp"></a><a name="p20500mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p20502mcpsimp"><a name="p20502mcpsimp"></a><a name="p20502mcpsimp"></a>描述</p>
@@ -108,46 +41,11 @@ td_s32 ss_mpi_isp_set_sharpen_attr(ot_vi_pipe vi_pipe, const ot_isp_sharpen_attr
 <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p20507mcpsimp"><a name="p20507mcpsimp"></a><a name="p20507mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row20508mcpsimp"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.1.3.1.1 "><p id="p20510mcpsimp"><a name="p20510mcpsimp"></a><a name="p20510mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p20512mcpsimp"><a name="p20512mcpsimp"></a><a name="p20512mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_sharpen\_attr](#ss_mpi_isp_get_sharpen_attr)
-
-#### ss\_mpi\_isp\_get\_sharpen\_attr<a name="ZH-CN_TOPIC_0000002503964843"></a>
-
-【描述】
-
-获取图像锐化属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_sharpen\_attr](#ss_mpi_isp_get_sharpen_attr) #### ss\_mpi\_isp\_get\_sharpen\_attr<a name="ZH-CN_TOPIC_0000002503964843"></a> 【描述】 获取图像锐化属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_sharpen_attr(ot_vi_pipe vi_pipe, ot_isp_sharpen_attr *shp_attr);
-```
-
-【参数】
-
-<a name="table20534mcpsimp"></a>
+``` 【参数】 <a name="table20534mcpsimp"></a>
 <table><thead align="left"><tr id="row20540mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p20542mcpsimp"><a name="p20542mcpsimp"></a><a name="p20542mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p20544mcpsimp"><a name="p20544mcpsimp"></a><a name="p20544mcpsimp"></a>描述</p>
@@ -171,11 +69,7 @@ td_s32 ss_mpi_isp_get_sharpen_attr(ot_vi_pipe vi_pipe, ot_isp_sharpen_attr *shp_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table20563mcpsimp"></a>
+</table> 【返回值】 <a name="table20563mcpsimp"></a>
 <table><thead align="left"><tr id="row20568mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p20570mcpsimp"><a name="p20570mcpsimp"></a><a name="p20570mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p20572mcpsimp"><a name="p20572mcpsimp"></a><a name="p20572mcpsimp"></a>描述</p>
@@ -187,128 +81,23 @@ td_s32 ss_mpi_isp_get_sharpen_attr(ot_vi_pipe vi_pipe, ot_isp_sharpen_attr *shp_
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p20577mcpsimp"><a name="p20577mcpsimp"></a><a name="p20577mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row20578mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p20580mcpsimp"><a name="p20580mcpsimp"></a><a name="p20580mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p20582mcpsimp"><a name="p20582mcpsimp"></a><a name="p20582mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_sharpen\_attr](#ss_mpi_isp_set_sharpen_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002504084939"></a>
-
--   [OT\_ISP\_SHARPEN\_LUMA\_NUM](#ZH-CN_TOPIC_0000002504084895)：亮度锐化权重区间数
--   [OT\_ISP\_SHARPEN\_GAIN\_NUM](#ZH-CN_TOPIC_0000002503964815)：细节锐化权重区间数
--   [ot\_isp\_sharpen\_manual\_attr](#ZH-CN_TOPIC_0000002470925194)：定义ISP Sharpen手动属性。
--   [ot\_isp\_sharpen\_auto\_attr](#ZH-CN_TOPIC_0000002470924892)：定义ISP Sharpen自动属性。
--   [ot\_isp\_sharpen\_detail\_map](#ZH-CN_TOPIC_0000002504085051)：是否显示图像细节灰度图。
--   [ot\_isp\_sharpen\_attr](#ZH-CN_TOPIC_0000002503965141)：定义ISP Sharpen属性。
-
-
-
-
-
-
-
-#### OT\_ISP\_SHARPEN\_LUMA\_NUM<a name="ZH-CN_TOPIC_0000002504084895"></a>
-
-【说明】
-
-亮度锐化权重区间数。
-
-【定义】
-
-```
-#define OT_ISP_SHARPEN_LUMA_NUM         32
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_sharpen\_manual\_attr](#ot_isp_sharpen_manual_attr)
--   [ot\_isp\_sharpen\_auto\_attr](#ot_isp_sharpen_auto_attr)
-
-#### OT\_ISP\_SHARPEN\_GAIN\_NUM<a name="ZH-CN_TOPIC_0000002503964815"></a>
-
-【说明】
-
-细节锐化权重区间数。
-
-【定义】
-
-```
-#define OT_ISP_SHARPEN_GAIN_NUM         32
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_sharpen\_manual\_attr](#ot_isp_sharpen_manual_attr)
--   [ot\_isp\_sharpen\_auto\_attr](#ot_isp_sharpen_auto_attr)
-
-#### ot\_isp\_sharpen\_manual\_attr<a name="ZH-CN_TOPIC_0000002470925194"></a>
-
-【说明】
-
-定义ISP Sharpen手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8  luma_wgt[OT_ISP_SHARPEN_LUMA_NUM];
-    td_u16 texture_strength[OT_ISP_SHARPEN_GAIN_NUM];
-    td_u16 edge_strength[OT_ISP_SHARPEN_GAIN_NUM];
-    td_u16 texture_freq;
-    td_u16 edge_freq;
-    td_u8  over_shoot;
-    td_u8  under_shoot;
-    td_u16 motion_texture_strength[OT_ISP_SHARPEN_GAIN_NUM];
-    td_u16 motion_edge_strength[OT_ISP_SHARPEN_GAIN_NUM];
-    td_u16 motion_texture_freq;
-    td_u16 motion_edge_freq;
-    td_u8  motion_over_shoot;
-    td_u8  motion_under_shoot;
-    td_u8  shoot_sup_strength;
-    td_u8  shoot_sup_adj;
-    td_u8  detail_ctrl;
-    td_u8  detail_ctrl_threshold;
-    td_u8  edge_filt_strength;
-    td_u8  edge_filt_max_cap;
-    td_u8  r_gain;
-    td_u8  g_gain;
-    td_u8  b_gain;
-    td_u8  skin_gain;
-    td_u16 max_sharp_gain;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_sharpen\_attr](#ss_mpi_isp_set_sharpen_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002504084939"></a> - [OT\_ISP\_SHARPEN\_LUMA\_NUM](#ZH-CN_TOPIC_0000002504084895)：亮度锐化权重区间数
+- [OT\_ISP\_SHARPEN\_GAIN\_NUM](#ZH-CN_TOPIC_0000002503964815)：细节锐化权重区间数
+- [ot\_isp\_sharpen\_manual\_attr](#ZH-CN_TOPIC_0000002470925194)：定义ISP Sharpen手动属性。
+- [ot\_isp\_sharpen\_auto\_attr](#ZH-CN_TOPIC_0000002470924892)：定义ISP Sharpen自动属性。
+- [ot\_isp\_sharpen\_detail\_map](#ZH-CN_TOPIC_0000002504085051)：是否显示图像细节灰度图。
+- [ot\_isp\_sharpen\_attr](#ZH-CN_TOPIC_0000002503965141)：定义ISP Sharpen属性。 #### OT\_ISP\_SHARPEN\_LUMA\_NUM<a name="ZH-CN_TOPIC_0000002504084895"></a> 【说明】 亮度锐化权重区间数。 【定义】 ```
+#define OT_ISP_SHARPEN_LUMA_NUM 32
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_sharpen\_manual\_attr](#ot_isp_sharpen_manual_attr)
+- [ot\_isp\_sharpen\_auto\_attr](#ot_isp_sharpen_auto_attr) #### OT\_ISP\_SHARPEN\_GAIN\_NUM<a name="ZH-CN_TOPIC_0000002503964815"></a> 【说明】 细节锐化权重区间数。 【定义】 ```
+#define OT_ISP_SHARPEN_GAIN_NUM 32
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_sharpen\_manual\_attr](#ot_isp_sharpen_manual_attr)
+- [ot\_isp\_sharpen\_auto\_attr](#ot_isp_sharpen_auto_attr) #### ot\_isp\_sharpen\_manual\_attr<a name="ZH-CN_TOPIC_0000002470925194"></a> 【说明】 定义ISP Sharpen手动属性。 【定义】 ```
+typedef struct { td_u8 luma_wgt[OT_ISP_SHARPEN_LUMA_NUM]; td_u16 texture_strength[OT_ISP_SHARPEN_GAIN_NUM]; td_u16 edge_strength[OT_ISP_SHARPEN_GAIN_NUM]; td_u16 texture_freq; td_u16 edge_freq; td_u8 over_shoot; td_u8 under_shoot; td_u16 motion_texture_strength[OT_ISP_SHARPEN_GAIN_NUM]; td_u16 motion_edge_strength[OT_ISP_SHARPEN_GAIN_NUM]; td_u16 motion_texture_freq; td_u16 motion_edge_freq; td_u8 motion_over_shoot; td_u8 motion_under_shoot; td_u8 shoot_sup_strength; td_u8 shoot_sup_adj; td_u8 detail_ctrl; td_u8 detail_ctrl_threshold; td_u8 edge_filt_strength; td_u8 edge_filt_max_cap; td_u8 r_gain; td_u8 g_gain; td_u8 b_gain; td_u8 skin_gain; td_u16 max_sharp_gain;
 } ot_isp_sharpen_manual_attr;
-```
-
-【成员】
-
-<a name="_Ref503540528"></a>
+``` 【成员】 <a name="_Ref503540528"></a>
 <table><thead align="left"><tr id="row20673mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p20675mcpsimp"><a name="p20675mcpsimp"></a><a name="p20675mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p20677mcpsimp"><a name="p20677mcpsimp"></a><a name="p20677mcpsimp"></a>描述</p>
@@ -473,61 +262,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-**图 1**  Sharpen的像素亮度luma和锐化强度luma\_wgt的关系曲线<a name="fig14519101916320"></a>  
-![](figures/Sharpen的像素亮度luma和锐化强度luma_wgt的关系曲线.png "Sharpen的像素亮度luma和锐化强度luma_wgt的关系曲线")
-
-**图 2**  texture\_strength\[[OT\_ISP\_SHARPEN\_GAIN\_NUM](#ZH-CN_TOPIC_0000002503964815)\]强度曲线示意图<a name="fig128971450123212"></a>  
-![](figures/texture_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图.png "texture_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图")
-
-强度曲线的横坐标var是从图像中提取的方差统计特征，横坐标var被均分为32段，用于区分出图像的Flat Area（平坦区域）、Weak Texture（弱纹理）、Texture（纹理）和Strong Texture（强纹理）。纵坐标就是强度参数texture\_strength的32个强度值，用户可以通过设置该曲线上的32个强度值来为平坦区域、弱纹理区域、纹理区域和强纹理区域设置不同的锐化强度。这4个区域并没有明显的区分界限，都是连续过渡，用户可以通过实际效果来调整纵坐标强度来为不同的区域设置不同的强度。
-
-**图 3**  edge\_strength\[[OT\_ISP\_SHARPEN\_GAIN\_NUM](#ZH-CN_TOPIC_0000002503964815)\]强度曲线示意图<a name="fig5809162318332"></a>  
-![](figures/edge_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图.png "edge_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图")
-
-强度曲线的横坐标var是从图像中提取的方差统计值，横坐标var被均分为32段，用于区分出图像的Flat Area（平坦区域）、Weak Edge（弱边缘）、Edge（边缘）和Strong Edge（强边缘）。纵坐标就是强度参数edge\_strength的32个强度值，用户可以通过设置该曲线上的32个强度值来为平坦区域、弱边缘、边缘和强边缘设置不同的锐化强度。这4个区域并没有明显的区分界限，都是连续过渡，用户可以通过实际效果来调整纵坐标强度来为不同的区域设置不同的强度。
-
-#### ot\_isp\_sharpen\_auto\_attr<a name="ZH-CN_TOPIC_0000002470924892"></a>
-
-【说明】
-
-定义ISP Sharpen自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8  luma_wgt[OT_ISP_SHARPEN_LUMA_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 texture_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 edge_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 texture_freq[OT_ISP_AUTO_ISO_NUM];
-    td_u16 edge_freq[OT_ISP_AUTO_ISO_NUM];
-    td_u8  over_shoot[OT_ISP_AUTO_ISO_NUM];
-    td_u8  under_shoot[OT_ISP_AUTO_ISO_NUM];
-    td_u16 motion_texture_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 motion_edge_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 motion_texture_freq[OT_ISP_AUTO_ISO_NUM];
-    td_u16 motion_edge_freq[OT_ISP_AUTO_ISO_NUM];
-    td_u8  motion_over_shoot[OT_ISP_AUTO_ISO_NUM];
-    td_u8  motion_under_shoot[OT_ISP_AUTO_ISO_NUM];
-    td_u8  shoot_sup_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8  shoot_sup_adj[OT_ISP_AUTO_ISO_NUM];
-    td_u8  detail_ctrl[OT_ISP_AUTO_ISO_NUM];
-    td_u8  detail_ctrl_threshold[OT_ISP_AUTO_ISO_NUM];
-    td_u8  edge_filt_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8  edge_filt_max_cap[OT_ISP_AUTO_ISO_NUM];
-    td_u8  r_gain[OT_ISP_AUTO_ISO_NUM];
-    td_u8  g_gain[OT_ISP_AUTO_ISO_NUM];
-    td_u8  b_gain[OT_ISP_AUTO_ISO_NUM];
-    td_u8  skin_gain[OT_ISP_AUTO_ISO_NUM];
-    td_u16 max_sharp_gain[OT_ISP_AUTO_ISO_NUM];
+</table> **图 1** Sharpen的像素亮度luma和锐化强度luma\_wgt的关系曲线<a name="fig14519101916320"></a> ![](figures/Sharpen的像素亮度luma和锐化强度luma_wgt的关系曲线.png "Sharpen的像素亮度luma和锐化强度luma_wgt的关系曲线") **图 2** texture\_strength\[[OT\_ISP\_SHARPEN\_GAIN\_NUM](#ZH-CN_TOPIC_0000002503964815)\]强度曲线示意图<a name="fig128971450123212"></a> ![](figures/texture_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图.png "texture_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图") 强度曲线的横坐标var是从图像中提取的方差统计特征，横坐标var被均分为32段，用于区分出图像的Flat Area（平坦区域）、Weak Texture（弱纹理）、Texture（纹理）和Strong Texture（强纹理）。纵坐标就是强度参数texture\_strength的32个强度值，用户可以通过设置该曲线上的32个强度值来为平坦区域、弱纹理区域、纹理区域和强纹理区域设置不同的锐化强度。这4个区域并没有明显的区分界限，都是连续过渡，用户可以通过实际效果来调整纵坐标强度来为不同的区域设置不同的强度。 **图 3** edge\_strength\[[OT\_ISP\_SHARPEN\_GAIN\_NUM](#ZH-CN_TOPIC_0000002503964815)\]强度曲线示意图<a name="fig5809162318332"></a> ![](figures/edge_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图.png "edge_strength-OT_ISP_SHARPEN_GAIN_NUM-强度曲线示意图") 强度曲线的横坐标var是从图像中提取的方差统计值，横坐标var被均分为32段，用于区分出图像的Flat Area（平坦区域）、Weak Edge（弱边缘）、Edge（边缘）和Strong Edge（强边缘）。纵坐标就是强度参数edge\_strength的32个强度值，用户可以通过设置该曲线上的32个强度值来为平坦区域、弱边缘、边缘和强边缘设置不同的锐化强度。这4个区域并没有明显的区分界限，都是连续过渡，用户可以通过实际效果来调整纵坐标强度来为不同的区域设置不同的强度。 #### ot\_isp\_sharpen\_auto\_attr<a name="ZH-CN_TOPIC_0000002470924892"></a> 【说明】 定义ISP Sharpen自动属性。 【定义】 ```
+typedef struct { td_u8 luma_wgt[OT_ISP_SHARPEN_LUMA_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 texture_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 edge_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 texture_freq[OT_ISP_AUTO_ISO_NUM]; td_u16 edge_freq[OT_ISP_AUTO_ISO_NUM]; td_u8 over_shoot[OT_ISP_AUTO_ISO_NUM]; td_u8 under_shoot[OT_ISP_AUTO_ISO_NUM]; td_u16 motion_texture_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 motion_edge_strength[OT_ISP_SHARPEN_GAIN_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 motion_texture_freq[OT_ISP_AUTO_ISO_NUM]; td_u16 motion_edge_freq[OT_ISP_AUTO_ISO_NUM]; td_u8 motion_over_shoot[OT_ISP_AUTO_ISO_NUM]; td_u8 motion_under_shoot[OT_ISP_AUTO_ISO_NUM]; td_u8 shoot_sup_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 shoot_sup_adj[OT_ISP_AUTO_ISO_NUM]; td_u8 detail_ctrl[OT_ISP_AUTO_ISO_NUM]; td_u8 detail_ctrl_threshold[OT_ISP_AUTO_ISO_NUM]; td_u8 edge_filt_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 edge_filt_max_cap[OT_ISP_AUTO_ISO_NUM]; td_u8 r_gain[OT_ISP_AUTO_ISO_NUM]; td_u8 g_gain[OT_ISP_AUTO_ISO_NUM]; td_u8 b_gain[OT_ISP_AUTO_ISO_NUM]; td_u8 skin_gain[OT_ISP_AUTO_ISO_NUM]; td_u16 max_sharp_gain[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_sharpen_auto_attr;
-```
-
-【成员】
-
-<a name="table20967mcpsimp"></a>
+``` 【成员】 <a name="table20967mcpsimp"></a>
 <table><thead align="left"><tr id="row20972mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p20974mcpsimp"><a name="p20974mcpsimp"></a><a name="p20974mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p20976mcpsimp"><a name="p20976mcpsimp"></a><a name="p20976mcpsimp"></a>描述</p>
@@ -692,31 +430,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Auto档参数分别对应sensor在16种不同增益（Again\*Dgain\* ISPDgain\(times\)）情况下的设置值，成员参数的含义与Manual档cmos成员参数一致。16种增益为：1、2、4、8、16、32、64、128、256、512、1024、2048、4096、8192、16384、32768。
-
-#### ot\_isp\_sharpen\_detail\_map<a name="ZH-CN_TOPIC_0000002504085051"></a>
-
-【说明】
-
-是否显示图像细节灰度图。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_SHARPEN_NORMAL = 0,
-    OT_ISP_SHARPEN_DETAIL,
-    OT_ISP_SHARPEN_BUTT
+</table> 【注意事项】 Auto档参数分别对应sensor在16种不同增益（Again\*Dgain\* ISPDgain\(times\)）情况下的设置值，成员参数的含义与Manual档cmos成员参数一致。16种增益为：1、2、4、8、16、32、64、128、256、512、1024、2048、4096、8192、16384、32768。 #### ot\_isp\_sharpen\_detail\_map<a name="ZH-CN_TOPIC_0000002504085051"></a> 【说明】 是否显示图像细节灰度图。 【定义】 ```
+typedef enum { OT_ISP_SHARPEN_NORMAL = 0, OT_ISP_SHARPEN_DETAIL, OT_ISP_SHARPEN_BUTT
 } ot_isp_sharpen_detail_map;
-```
-
-【成员】
-
-<a name="table21158mcpsimp"></a>
+``` 【成员】 <a name="table21158mcpsimp"></a>
 <table><thead align="left"><tr id="row21163mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p21165mcpsimp"><a name="p21165mcpsimp"></a><a name="p21165mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p21167mcpsimp"><a name="p21167mcpsimp"></a><a name="p21167mcpsimp"></a>描述</p>
@@ -734,46 +451,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_sharpen\_attr](#ot_isp_sharpen_attr)
-
-#### ot\_isp\_sharpen\_attr<a name="ZH-CN_TOPIC_0000002503965141"></a>
-
-【说明】
-
-定义ISP Sharpen属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;
-    td_bool motion_en;
-    td_u8   motion_threshold0;
-    td_u8   motion_threshold1; 
-    td_u16  motion_gain0;
-    td_u16  motion_gain1;
-    td_u8   skin_umin;
-    td_u8   skin_vmin;
-    td_u8   skin_umax;
-    td_u8   skin_vmax;
-    ot_op_mode op_type;
-    ot_isp_sharpen_detail_map  detail_map;
-    ot_isp_sharpen_manual_attr manual_attr;
-    ot_isp_sharpen_auto_attr  auto_attr;
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_sharpen\_attr](#ot_isp_sharpen_attr) #### ot\_isp\_sharpen\_attr<a name="ZH-CN_TOPIC_0000002503965141"></a> 【说明】 定义ISP Sharpen属性。 【定义】 ```
+typedef struct { td_bool en; td_bool motion_en; td_u8 motion_threshold0; td_u8 motion_threshold1; td_u16 motion_gain0; td_u16 motion_gain1; td_u8 skin_umin; td_u8 skin_vmin; td_u8 skin_umax; td_u8 skin_vmax; ot_op_mode op_type; ot_isp_sharpen_detail_map detail_map; ot_isp_sharpen_manual_attr manual_attr; ot_isp_sharpen_auto_attr auto_attr;
 } ot_isp_sharpen_attr;
-```
-
-【成员】
-
-<a name="table21210mcpsimp"></a>
+``` 【成员】 <a name="table21210mcpsimp"></a>
 <table><thead align="left"><tr id="row21215mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.3.1.1"><p id="p21217mcpsimp"><a name="p21217mcpsimp"></a><a name="p21217mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="76%" id="mcps1.1.3.1.2"><p id="p21219mcpsimp"><a name="p21219mcpsimp"></a><a name="p21219mcpsimp"></a>描述</p>
@@ -862,52 +543,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Sharpen功能分为自动和手动：
-
--   en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动Sharpen功能。此时sharpen的强度值与系统增益的关系请参见成员变量。
--   en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动Sharpen功能。
--   运动区域判定采用BNR运动检测模块上一帧结果，因此只有当BNR运动检测使能时，此功能方可生效；生效时存在一帧图像延迟，因此建议运动区域与静止区域参数不要差异太大，否则容易出现运动与静止区域图像分层。
--   运动区域判定采用BNR运动检测结果，由于噪声影响，部分静止区域可能也会判定为运动，部分平坦运动区域可能判定为静止，因此运动参数可能会影响静止区域，静止参数可能会影响运动区域。
-
-【相关数据类型及接口】
-
-无
-
-## Gamma<a name="ZH-CN_TOPIC_0000002471085182"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470925176"></a>
-
-Gamma模块对图像进行亮度空间非线性转换以适配输出设备。Gamma模块校正R、G、B时调用同一组Gamma表，Gamma表各节点之间的间距相同，节点之间的图像像素值使用线性插值生成。
-
-### API参考<a name="ZH-CN_TOPIC_0000002504084967"></a>
-
--   [ss\_mpi\_isp\_set\_gamma\_attr](#ZH-CN_TOPIC_0000002470924914)：设置Gamma属性。
--   [ss\_mpi\_isp\_get\_gamma\_attr](#ZH-CN_TOPIC_0000002471085092)：获取Gamma属性。
-
-
-
-#### ss\_mpi\_isp\_set\_gamma\_attr<a name="ZH-CN_TOPIC_0000002470924914"></a>
-
-【描述】
-
-设置Gamma属性。
-
-【语法】
-
-```
+</table> 【注意事项】 Sharpen功能分为自动和手动： - en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动Sharpen功能。此时sharpen的强度值与系统增益的关系请参见成员变量。
+- en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动Sharpen功能。
+- 运动区域判定采用BNR运动检测模块上一帧结果，因此只有当BNR运动检测使能时，此功能方可生效；生效时存在一帧图像延迟，因此建议运动区域与静止区域参数不要差异太大，否则容易出现运动与静止区域图像分层。
+- 运动区域判定采用BNR运动检测结果，由于噪声影响，部分静止区域可能也会判定为运动，部分平坦运动区域可能判定为静止，因此运动参数可能会影响静止区域，静止参数可能会影响运动区域。 【相关数据类型及接口】 无 ## Gamma<a name="ZH-CN_TOPIC_0000002471085182"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470925176"></a> Gamma模块对图像进行亮度空间非线性转换以适配输出设备。Gamma模块校正R、G、B时调用同一组Gamma表，Gamma表各节点之间的间距相同，节点之间的图像像素值使用线性插值生成。 ### API参考<a name="ZH-CN_TOPIC_0000002504084967"></a> - [ss\_mpi\_isp\_set\_gamma\_attr](#ZH-CN_TOPIC_0000002470924914)：设置Gamma属性。
+- [ss\_mpi\_isp\_get\_gamma\_attr](#ZH-CN_TOPIC_0000002471085092)：获取Gamma属性。 #### ss\_mpi\_isp\_set\_gamma\_attr<a name="ZH-CN_TOPIC_0000002470924914"></a> 【描述】 设置Gamma属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_gamma_attr(ot_vi_pipe vi_pipe, const ot_isp_gamma_attr *gamma_attr);
-```
-
-【参数】
-
-<a name="table21334mcpsimp"></a>
+``` 【参数】 <a name="table21334mcpsimp"></a>
 <table><thead align="left"><tr id="row21340mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p21342mcpsimp"><a name="p21342mcpsimp"></a><a name="p21342mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p21344mcpsimp"><a name="p21344mcpsimp"></a><a name="p21344mcpsimp"></a>描述</p>
@@ -931,11 +573,7 @@ td_s32 ss_mpi_isp_set_gamma_attr(ot_vi_pipe vi_pipe, const ot_isp_gamma_attr *ga
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table21363mcpsimp"></a>
+</table> 【返回值】 <a name="table21363mcpsimp"></a>
 <table><thead align="left"><tr id="row21368mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p21370mcpsimp"><a name="p21370mcpsimp"></a><a name="p21370mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p21372mcpsimp"><a name="p21372mcpsimp"></a><a name="p21372mcpsimp"></a>描述</p>
@@ -947,47 +585,10 @@ td_s32 ss_mpi_isp_set_gamma_attr(ot_vi_pipe vi_pipe, const ot_isp_gamma_attr *ga
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21377mcpsimp"><a name="p21377mcpsimp"></a><a name="p21377mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row21378mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p21380mcpsimp"><a name="p21380mcpsimp"></a><a name="p21380mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21382mcpsimp"><a name="p21382mcpsimp"></a><a name="p21382mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
-头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
-
-库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_gamma\_attr](#ss_mpi_isp_get_gamma_attr)
-
-#### ss\_mpi\_isp\_get\_gamma\_attr<a name="ZH-CN_TOPIC_0000002471085092"></a>
-
-【描述】
-
-获取Gamma属性。
-
-【语法】
-
-```
+</table> 【需求】 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_gamma\_attr](#ss_mpi_isp_get_gamma_attr) #### ss\_mpi\_isp\_get\_gamma\_attr<a name="ZH-CN_TOPIC_0000002471085092"></a> 【描述】 获取Gamma属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_gamma_attr(ot_vi_pipe vi_pipe, ot_isp_gamma_attr *gamma_attr) ;
-```
-
-【参数】
-
-<a name="table21404mcpsimp"></a>
+``` 【参数】 <a name="table21404mcpsimp"></a>
 <table><thead align="left"><tr id="row21410mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p21412mcpsimp"><a name="p21412mcpsimp"></a><a name="p21412mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p21414mcpsimp"><a name="p21414mcpsimp"></a><a name="p21414mcpsimp"></a>描述</p>
@@ -1011,11 +612,7 @@ td_s32 ss_mpi_isp_get_gamma_attr(ot_vi_pipe vi_pipe, ot_isp_gamma_attr *gamma_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table21433mcpsimp"></a>
+</table> 【返回值】 <a name="table21433mcpsimp"></a>
 <table><thead align="left"><tr id="row21438mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p21440mcpsimp"><a name="p21440mcpsimp"></a><a name="p21440mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p21442mcpsimp"><a name="p21442mcpsimp"></a><a name="p21442mcpsimp"></a>描述</p>
@@ -1027,81 +624,16 @@ td_s32 ss_mpi_isp_get_gamma_attr(ot_vi_pipe vi_pipe, ot_isp_gamma_attr *gamma_at
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21447mcpsimp"><a name="p21447mcpsimp"></a><a name="p21447mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row21448mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p21450mcpsimp"><a name="p21450mcpsimp"></a><a name="p21450mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21452mcpsimp"><a name="p21452mcpsimp"></a><a name="p21452mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
-头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
-
-库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_gamma\_attr](#ss_mpi_isp_set_gamma_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470924944"></a>
-
--   [OT\_ISP\_GAMMA\_NODE\_NUM](#ZH-CN_TOPIC_0000002470925002)：Gamma表的分段节点数。
--   [ot\_isp\_gamma\_attr](#ZH-CN_TOPIC_0000002503964797)：定义ISP Gamma校正属性。
--   [ot\_isp\_gamma\_curve\_type](#ZH-CN_TOPIC_0000002504084761)：定义ISP Gamma传输曲线类型。
-
-
-
-
-#### OT\_ISP\_GAMMA\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002470925002"></a>
-
-【说明】
-
-Gamma表的分段节点数。
-
-【定义】
-
-```
-#define OT_ISP_GAMMA_NODE_NUM           1025
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_gamma\_attr](#ot_isp_gamma_attr)
-
-#### ot\_isp\_gamma\_attr<a name="ZH-CN_TOPIC_0000002503964797"></a>
-
-【说明】
-
-定义ISP Gamma校正属性。
-
-【定义】
-
-```
+</table> 【需求】 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_gamma\_attr](#ss_mpi_isp_set_gamma_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002470924944"></a> - [OT\_ISP\_GAMMA\_NODE\_NUM](#ZH-CN_TOPIC_0000002470925002)：Gamma表的分段节点数。
+- [ot\_isp\_gamma\_attr](#ZH-CN_TOPIC_0000002503964797)：定义ISP Gamma校正属性。
+- [ot\_isp\_gamma\_curve\_type](#ZH-CN_TOPIC_0000002504084761)：定义ISP Gamma传输曲线类型。 #### OT\_ISP\_GAMMA\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002470925002"></a> 【说明】 Gamma表的分段节点数。 【定义】 ```
+#define OT_ISP_GAMMA_NODE_NUM 1025
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_gamma\_attr](#ot_isp_gamma_attr) #### ot\_isp\_gamma\_attr<a name="ZH-CN_TOPIC_0000002503964797"></a> 【说明】 定义ISP Gamma校正属性。 【定义】 ```
 typedef struct
-{
-    td_bool                     enable;
-    td_u16                      table[OT_ISP_GAMMA_NODE_NUM];
-    ot_isp_gamma_curve_type    curve_type;
+{ td_bool enable; td_u16 table[OT_ISP_GAMMA_NODE_NUM]; ot_isp_gamma_curve_type curve_type;
 } ot_isp_gamma_attr;
-```
-
-【成员】
-
-<a name="table21503mcpsimp"></a>
+``` 【成员】 <a name="table21503mcpsimp"></a>
 <table><thead align="left"><tr id="row21508mcpsimp"><th class="cellrowborder" valign="top" width="47%" id="mcps1.1.3.1.1"><p id="p21510mcpsimp"><a name="p21510mcpsimp"></a><a name="p21510mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="53%" id="mcps1.1.3.1.2"><p id="p21512mcpsimp"><a name="p21512mcpsimp"></a><a name="p21512mcpsimp"></a>描述</p>
@@ -1129,39 +661,12 @@ typedef struct
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   Gamma校正R、G、B调用同一组Gamma Table。
--   curve\_type选择为OT\_ISP\_GAMMA\_CURVE\_DEFAULT、OT\_ISP\_GAMMA\_CURVE\_SRGB、OT\_ISP\_GAMMA\_CURVE\_HDR等三种模式时，系统会自动配置预设的曲线，此时通过工具拖拉曲线均不生效。只有选择OT\_ISP\_GAMMA\_CURVE\_USER\_DEFINE时，才能通过工具进行曲线修改。
--   使用任意类型的预设曲线后，可以切换成OT\_ISP\_GAMMA\_CURVE\_USER\_DEFINE并以预设曲线为基础进行Gamma调试。
-
-【相关数据类型及接口】
-
-无。
-
-#### ot\_isp\_gamma\_curve\_type<a name="ZH-CN_TOPIC_0000002504084761"></a>
-
-【说明】
-
-定义Gamma曲线类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_GAMMA_CURVE_DEFAULT = 0x0,
-    OT_ISP_GAMMA_CURVE_SRGB,
-    OT_ISP_GAMMA_CURVE_HDR,
-    OT_ISP_GAMMA_CURVE_USER_DEFINE,
-    OT_ISP_GAMMA_CURVE_BUTT
+</table> 【注意事项】 - Gamma校正R、G、B调用同一组Gamma Table。
+- curve\_type选择为OT\_ISP\_GAMMA\_CURVE\_DEFAULT、OT\_ISP\_GAMMA\_CURVE\_SRGB、OT\_ISP\_GAMMA\_CURVE\_HDR等三种模式时，系统会自动配置预设的曲线，此时通过工具拖拉曲线均不生效。只有选择OT\_ISP\_GAMMA\_CURVE\_USER\_DEFINE时，才能通过工具进行曲线修改。
+- 使用任意类型的预设曲线后，可以切换成OT\_ISP\_GAMMA\_CURVE\_USER\_DEFINE并以预设曲线为基础进行Gamma调试。 【相关数据类型及接口】 无。 #### ot\_isp\_gamma\_curve\_type<a name="ZH-CN_TOPIC_0000002504084761"></a> 【说明】 定义Gamma曲线类型。 【定义】 ```
+typedef enum { OT_ISP_GAMMA_CURVE_DEFAULT = 0x0, OT_ISP_GAMMA_CURVE_SRGB, OT_ISP_GAMMA_CURVE_HDR, OT_ISP_GAMMA_CURVE_USER_DEFINE, OT_ISP_GAMMA_CURVE_BUTT
 } ot_isp_gamma_curve_type;
-```
-
-【成员】
-
-<a name="table21563mcpsimp"></a>
+``` 【成员】 <a name="table21563mcpsimp"></a>
 <table><thead align="left"><tr id="row21568mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p21570mcpsimp"><a name="p21570mcpsimp"></a><a name="p21570mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p21572mcpsimp"><a name="p21572mcpsimp"></a><a name="p21572mcpsimp"></a>描述</p>
@@ -1194,51 +699,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-用户自定义Gamma曲线时，必须确保Gamma表配置正确。WDR模式下的Gamma曲线与线性模式不一样，可以通过PQ Tools工具生成。
-
-【相关数据类型及接口】
-
-无。
-
-## DRC<a name="ZH-CN_TOPIC_0000002471084976"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470925060"></a>
-
-DRC算法用于对WDR合成后的数据进行动态范围压缩（Dynamic Range Compression）。图像一般需要在显示设备上显示，CRT显示器的动态范围一般只有<50dB，而WDR合成后的数据的动态范围可以达到120dB，如果直接在CRT显示器上显示，就会由于动态范围不匹配的问题，造成丢失亮度较高或者较低处的细节。
-
-DRC算法的目的就是要使真实场景的观察者和显示设备的观察者都能获得相同的视觉感受。DRC算法将高动态范围的图像压缩到显示器的动态范围，同时尽可能保留原图像的细节和对比度。
-
-**图 1**  动态范围压缩<a name="fig040711214316"></a>  
-![](figures/动态范围压缩.png "动态范围压缩")
-### API参考<a name="ZH-CN_TOPIC_0000002503965163"></a>
-
--   [ss\_mpi\_isp\_set\_drc\_attr](#ZH-CN_TOPIC_0000002470925106)：设置动态范围压缩参数。
--   [ss\_mpi\_isp\_get\_drc\_attr](#ZH-CN_TOPIC_0000002504084695)：获取动态范围压缩参数。
-
-
-
-#### ss\_mpi\_isp\_set\_drc\_attr<a name="ZH-CN_TOPIC_0000002470925106"></a>
-
-【描述】
-
-设置动态范围压缩参数。
-
-【语法】
-
-```
+</table> 【注意事项】 用户自定义Gamma曲线时，必须确保Gamma表配置正确。WDR模式下的Gamma曲线与线性模式不一样，可以通过PQ Tools工具生成。 【相关数据类型及接口】 无。 ## DRC<a name="ZH-CN_TOPIC_0000002471084976"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470925060"></a> DRC算法用于对WDR合成后的数据进行动态范围压缩（Dynamic Range Compression）。图像一般需要在显示设备上显示，CRT显示器的动态范围一般只有<50dB，而WDR合成后的数据的动态范围可以达到120dB，如果直接在CRT显示器上显示，就会由于动态范围不匹配的问题，造成丢失亮度较高或者较低处的细节。 DRC算法的目的就是要使真实场景的观察者和显示设备的观察者都能获得相同的视觉感受。DRC算法将高动态范围的图像压缩到显示器的动态范围，同时尽可能保留原图像的细节和对比度。 **图 1** 动态范围压缩<a name="fig040711214316"></a> ![](figures/动态范围压缩.png "动态范围压缩")
+### API参考<a name="ZH-CN_TOPIC_0000002503965163"></a> - [ss\_mpi\_isp\_set\_drc\_attr](#ZH-CN_TOPIC_0000002470925106)：设置动态范围压缩参数。
+- [ss\_mpi\_isp\_get\_drc\_attr](#ZH-CN_TOPIC_0000002504084695)：获取动态范围压缩参数。 #### ss\_mpi\_isp\_set\_drc\_attr<a name="ZH-CN_TOPIC_0000002470925106"></a> 【描述】 设置动态范围压缩参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_drc_attr(ot_vi_pipe vi_pipe, const ot_isp_drc_attr*drc_attr);
-```
-
-【参数】
-
-<a name="table21622mcpsimp"></a>
+``` 【参数】 <a name="table21622mcpsimp"></a>
 <table><thead align="left"><tr id="row21628mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p21630mcpsimp"><a name="p21630mcpsimp"></a><a name="p21630mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p21632mcpsimp"><a name="p21632mcpsimp"></a><a name="p21632mcpsimp"></a>描述</p>
@@ -1262,11 +727,7 @@ td_s32 ss_mpi_isp_set_drc_attr(ot_vi_pipe vi_pipe, const ot_isp_drc_attr*drc_att
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table21651mcpsimp"></a>
+</table> 【返回值】 <a name="table21651mcpsimp"></a>
 <table><thead align="left"><tr id="row21656mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p21658mcpsimp"><a name="p21658mcpsimp"></a><a name="p21658mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p21660mcpsimp"><a name="p21660mcpsimp"></a><a name="p21660mcpsimp"></a>描述</p>
@@ -1278,46 +739,11 @@ td_s32 ss_mpi_isp_set_drc_attr(ot_vi_pipe vi_pipe, const ot_isp_drc_attr*drc_att
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21666mcpsimp"><a name="p21666mcpsimp"></a><a name="p21666mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row21667mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p21669mcpsimp"><a name="p21669mcpsimp"></a><a name="p21669mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21671mcpsimp"><a name="p21671mcpsimp"></a><a name="p21671mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_drc\_attr](#ss_mpi_isp_get_drc_attr)
-
-#### ss\_mpi\_isp\_get\_drc\_attr<a name="ZH-CN_TOPIC_0000002504084695"></a>
-
-【描述】
-
-获取动态范围压缩参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_drc\_attr](#ss_mpi_isp_get_drc_attr) #### ss\_mpi\_isp\_get\_drc\_attr<a name="ZH-CN_TOPIC_0000002504084695"></a> 【描述】 获取动态范围压缩参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_drc_attr(ot_vi_pipe vi_pipe, ot_isp_drc_attr *drc_attr);
-```
-
-【参数】
-
-<a name="table21692mcpsimp"></a>
+``` 【参数】 <a name="table21692mcpsimp"></a>
 <table><thead align="left"><tr id="row21698mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p21700mcpsimp"><a name="p21700mcpsimp"></a><a name="p21700mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p21702mcpsimp"><a name="p21702mcpsimp"></a><a name="p21702mcpsimp"></a>描述</p>
@@ -1341,11 +767,7 @@ td_s32 ss_mpi_isp_get_drc_attr(ot_vi_pipe vi_pipe, ot_isp_drc_attr *drc_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table21721mcpsimp"></a>
+</table> 【返回值】 <a name="table21721mcpsimp"></a>
 <table><thead align="left"><tr id="row21726mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p21728mcpsimp"><a name="p21728mcpsimp"></a><a name="p21728mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p21730mcpsimp"><a name="p21730mcpsimp"></a><a name="p21730mcpsimp"></a>描述</p>
@@ -1357,149 +779,28 @@ td_s32 ss_mpi_isp_get_drc_attr(ot_vi_pipe vi_pipe, ot_isp_drc_attr *drc_attr);
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21736mcpsimp"><a name="p21736mcpsimp"></a><a name="p21736mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row21737mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p21739mcpsimp"><a name="p21739mcpsimp"></a><a name="p21739mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p21741mcpsimp"><a name="p21741mcpsimp"></a><a name="p21741mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_drc\_attr](#ss_mpi_isp_set_drc_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503964971"></a>
-
--   [OT\_ISP\_DRC\_FLTX\_NODE\_NUM](#ZH-CN_TOPIC_0000002471084886)：定义ISP DRC Filter X子滤波器个数。
--   [OT\_ISP\_DRC\_CC\_NODE\_NUM](#ZH-CN_TOPIC_0000002504084921)：定义ISP DRC Color Correction LUT节点个数。
--   [OT\_ISP\_DRC\_TM\_NODE\_NUM](#ZH-CN_TOPIC_0000002504084809)：定义ISP DRC Tone Mapping LUT节点个数。
--   [OT\_ISP\_DRC\_LMIX\_NODE\_NUM](#ZH-CN_TOPIC_0000002504084883)：定义ISP DRC Local Mixing LUT节点个数。
--   [ot\_isp\_drc\_manual\_attr](#ZH-CN_TOPIC_0000002471084844)：定义ISP DRC手动属性。
--   [ot\_isp\_drc\_auto\_attr](#ZH-CN_TOPIC_0000002503964987)：定义ISP DRC自动属性。
--   [ot\_isp\_drc\_curve\_select](#ZH-CN_TOPIC_0000002470924936)：定义ISP DRC Tone Mapping曲线类型。
--   [ot\_isp\_drc\_asymmetry\_curve\_attr](#ZH-CN_TOPIC_0000002471085144)：定义ISP DRC Asymmetry Curve属性。
--   [ot\_isp\_drc\_attr](#ZH-CN_TOPIC_0000002503964789)：定义ISP DRC属性。
-
-
-
-
-
-
-
-
-
-
-#### OT\_ISP\_DRC\_FLTX\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002471084886"></a>
-
-【说明】
-
-DRC Filter X子滤波器个数。
-
-【定义】
-
-```
-#define OT_ISP_DRC_FLTX_NODE_NUM        3
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### OT\_ISP\_DRC\_CC\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504084921"></a>
-
-【说明】
-
-DRC Color Correction （颜色校正） LUT节点个数。
-
-【定义】
-
-```
-#define OT_ISP_DRC_CC_NODE_NUM          33
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### OT\_ISP\_DRC\_TM\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504084809"></a>
-
-【说明】
-
-DRC Tone Mapping LUT节点个数。
-
-【定义】
-
-```
-#define OT_ISP_DRC_TM_NODE_NUM          200
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### OT\_ISP\_DRC\_LMIX\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504084883"></a>
-
-【说明】
-
-DRC Local Mixing（细节增强）LUT节点个数。
-
-【定义】
-
-```
-#define OT_ISP_DRC_LMIX_NODE_NUM          33
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### ot\_isp\_drc\_manual\_attr<a name="ZH-CN_TOPIC_0000002471084844"></a>
-
-【说明】
-
-定义ISP DRC手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  strength;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_drc\_attr](#ss_mpi_isp_set_drc_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503964971"></a> - [OT\_ISP\_DRC\_FLTX\_NODE\_NUM](#ZH-CN_TOPIC_0000002471084886)：定义ISP DRC Filter X子滤波器个数。
+- [OT\_ISP\_DRC\_CC\_NODE\_NUM](#ZH-CN_TOPIC_0000002504084921)：定义ISP DRC Color Correction LUT节点个数。
+- [OT\_ISP\_DRC\_TM\_NODE\_NUM](#ZH-CN_TOPIC_0000002504084809)：定义ISP DRC Tone Mapping LUT节点个数。
+- [OT\_ISP\_DRC\_LMIX\_NODE\_NUM](#ZH-CN_TOPIC_0000002504084883)：定义ISP DRC Local Mixing LUT节点个数。
+- [ot\_isp\_drc\_manual\_attr](#ZH-CN_TOPIC_0000002471084844)：定义ISP DRC手动属性。
+- [ot\_isp\_drc\_auto\_attr](#ZH-CN_TOPIC_0000002503964987)：定义ISP DRC自动属性。
+- [ot\_isp\_drc\_curve\_select](#ZH-CN_TOPIC_0000002470924936)：定义ISP DRC Tone Mapping曲线类型。
+- [ot\_isp\_drc\_asymmetry\_curve\_attr](#ZH-CN_TOPIC_0000002471085144)：定义ISP DRC Asymmetry Curve属性。
+- [ot\_isp\_drc\_attr](#ZH-CN_TOPIC_0000002503964789)：定义ISP DRC属性。 #### OT\_ISP\_DRC\_FLTX\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002471084886"></a> 【说明】 DRC Filter X子滤波器个数。 【定义】 ```
+#define OT_ISP_DRC_FLTX_NODE_NUM 3
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### OT\_ISP\_DRC\_CC\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504084921"></a> 【说明】 DRC Color Correction （颜色校正） LUT节点个数。 【定义】 ```
+#define OT_ISP_DRC_CC_NODE_NUM 33
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### OT\_ISP\_DRC\_TM\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504084809"></a> 【说明】 DRC Tone Mapping LUT节点个数。 【定义】 ```
+#define OT_ISP_DRC_TM_NODE_NUM 200
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### OT\_ISP\_DRC\_LMIX\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002504084883"></a> 【说明】 DRC Local Mixing（细节增强）LUT节点个数。 【定义】 ```
+#define OT_ISP_DRC_LMIX_NODE_NUM 33
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### ot\_isp\_drc\_manual\_attr<a name="ZH-CN_TOPIC_0000002471084844"></a> 【说明】 定义ISP DRC手动属性。 【定义】 ```
+typedef struct { td_u16 strength;
 } ot_isp_drc_manual_attr;
-```
-
-【成员】
-
-<a name="table21828mcpsimp"></a>
+``` 【成员】 <a name="table21828mcpsimp"></a>
 <table><thead align="left"><tr id="row21833mcpsimp"><th class="cellrowborder" valign="top" width="34%" id="mcps1.1.3.1.1"><p id="p21835mcpsimp"><a name="p21835mcpsimp"></a><a name="p21835mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.3.1.2"><p id="p21837mcpsimp"><a name="p21837mcpsimp"></a><a name="p21837mcpsimp"></a>描述</p>
@@ -1513,35 +814,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-在线性和WDR模式下均可以达到最大值。
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### ot\_isp\_drc\_auto\_attr<a name="ZH-CN_TOPIC_0000002503964987"></a>
-
-【说明】
-
-定义ISP DRC自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  strength;
-    td_u16  strength_max;
-    td_u16  strength_min;
+</table> 【注意事项】 在线性和WDR模式下均可以达到最大值。 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### ot\_isp\_drc\_auto\_attr<a name="ZH-CN_TOPIC_0000002503964987"></a> 【说明】 定义ISP DRC自动属性。 【定义】 ```
+typedef struct { td_u16 strength; td_u16 strength_max; td_u16 strength_min;
 } ot_isp_drc_auto_attr;
-```
-
-【成员】
-
-<a name="table21860mcpsimp"></a>
+``` 【成员】 <a name="table21860mcpsimp"></a>
 <table><thead align="left"><tr id="row21865mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p21867mcpsimp"><a name="p21867mcpsimp"></a><a name="p21867mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p21869mcpsimp"><a name="p21869mcpsimp"></a><a name="p21869mcpsimp"></a>描述</p>
@@ -1564,40 +840,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   实际生效强度为：算法AUTO模式计算出的强度 \* strength / 512。
--   注意strength\_max必须大于等于strength\_min，否则两个参数均不生效。
--   线性和WDR自动模式下DRC强度的建议取值范围不同，u16StrengthMax/Min的建议取值范围也不同：
-    -   线性自动模式下，strength\_max和strength\_min的建议取值范围为\[0x0, 0x200\]，其中strength\_max默认值为0x200，strength\_min默认值为0x0；
-    -   在WDR自动模式下，strength\_max和strength\_min的建议取值范围为\[0x200, 0x3FF\]，其中strength\_max默认值为0x3FF，strength\_min默认值为0x200。
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### ot\_isp\_drc\_asymmetry\_curve\_attr<a name="ZH-CN_TOPIC_0000002471085144"></a>
-
-【说明】
-
-定义ISP DRC Asymmetry Curve属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 asymmetry;
-    td_u8 second_pole;
-    td_u8 stretch;
-    td_u8 compress;
+</table> 【注意事项】 - 实际生效强度为：算法AUTO模式计算出的强度 \* strength / 512。
+- 注意strength\_max必须大于等于strength\_min，否则两个参数均不生效。
+- 线性和WDR自动模式下DRC强度的建议取值范围不同，u16StrengthMax/Min的建议取值范围也不同： - 线性自动模式下，strength\_max和strength\_min的建议取值范围为\[0x0, 0x200\]，其中strength\_max默认值为0x200，strength\_min默认值为0x0； - 在WDR自动模式下，strength\_max和strength\_min的建议取值范围为\[0x200, 0x3FF\]，其中strength\_max默认值为0x3FF，strength\_min默认值为0x200。 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### ot\_isp\_drc\_asymmetry\_curve\_attr<a name="ZH-CN_TOPIC_0000002471085144"></a> 【说明】 定义ISP DRC Asymmetry Curve属性。 【定义】 ```
+typedef struct { td_u8 asymmetry; td_u8 second_pole; td_u8 stretch; td_u8 compress;
 } ot_isp_drc_asymmetry_curve_attr;
-```
-
-【成员】
-
-<a name="table21908mcpsimp"></a>
+``` 【成员】 <a name="table21908mcpsimp"></a>
 <table><thead align="left"><tr id="row21913mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p21915mcpsimp"><a name="p21915mcpsimp"></a><a name="p21915mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p21917mcpsimp"><a name="p21917mcpsimp"></a><a name="p21917mcpsimp"></a>描述</p>
@@ -1627,35 +875,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### ot\_isp\_drc\_curve\_select<a name="ZH-CN_TOPIC_0000002470924936"></a>
-
-【说明】
-
-定义ISP DRC Tone Mapping曲线类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_DRC_CURVE_ASYMMETRY = 0x0,
-    OT_ISP_DRC_CURVE_USER,
-    OT_ISP_DRC_CURVE_BUTT
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### ot\_isp\_drc\_curve\_select<a name="ZH-CN_TOPIC_0000002470924936"></a> 【说明】 定义ISP DRC Tone Mapping曲线类型。 【定义】 ```
+typedef enum { OT_ISP_DRC_CURVE_ASYMMETRY = 0x0, OT_ISP_DRC_CURVE_USER, OT_ISP_DRC_CURVE_BUTT
 } ot_isp_drc_curve_select;
-```
-
-【成员】
-
-<a name="table21956mcpsimp"></a>
+``` 【成员】 <a name="table21956mcpsimp"></a>
 <table><thead align="left"><tr id="row21961mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p21963mcpsimp"><a name="p21963mcpsimp"></a><a name="p21963mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p21965mcpsimp"><a name="p21965mcpsimp"></a><a name="p21965mcpsimp"></a>描述</p>
@@ -1678,77 +901,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-#### ot\_isp\_drc\_attr<a name="ZH-CN_TOPIC_0000002503964789"></a>
-
-【说明】
-
-定义ISP DRC属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool enable;
-    ot_isp_drc_curve_select curve_select;
-    td_u8  purple_reduction_strength;
-    td_u8  bright_gain_limit;
-    td_u8  bright_gain_limit_step;
-    td_u8  dark_gain_limit_luma;
-    td_u8  dark_gain_limit_chroma;
-    td_u8  contrast_ctrl;
-    td_u8  rim_reduction_strength;
-    td_u8  rim_reduction_threshold;
-    td_u16 color_correction_lut[OT_ISP_DRC_CC_NODE_NUM];
-    td_u16 tone_mapping_value[OT_ISP_DRC_TM_NODE_NUM];
-    td_u8  spatial_filter_coef;
-    td_u8  range_filter_coef;
-    td_u8  detail_adjust_coef;
-    td_u8  local_mixing_bright[OT_ISP_DRC_LMIX_NODE_NUM];
-    td_u8  local_mixing_dark[OT_ISP_DRC_LMIX_NODE_NUM];
-    td_u8  filter_coef_x[OT_ISP_DRC_FLTX_NODE_NUM];
-    td_u8  filter_low_threshold_x[OT_ISP_DRC_FLTX_NODE_NUM];
-    td_u8  filter_high_threshold_x[OT_ISP_DRC_FLTX_NODE_NUM];
-    td_u8  detail_adjust_coef_x;
-    td_u8  local_mixing_bright_x[OT_ISP_DRC_LMIX_NODE_NUM];
-    td_u8  local_mixing_dark_x[OT_ISP_DRC_LMIX_NODE_NUM];
-    td_u8  blend_luma_max;
-    td_u8  blend_luma_bright_min;
-    td_u8  blend_luma_bright_threshold;
-    td_u8  blend_luma_bright_slope;
-    td_u8  blend_luma_dark_min;
-    td_u8  blend_luma_dark_threshold;
-    td_u8  blend_luma_dark_slope;
-    td_u8  blend_detail_max;
-    td_u8  blend_detail_bright_min;
-    td_u8  blend_detail_bright_threshold;
-    td_u8  blend_detail_bright_slope;
-    td_u8  blend_detail_dark_min;
-    td_u8  blend_detail_dark_threshold;
-    td_u8  blend_detail_dark_slope;
-    td_u8  detail_adjust_coef_blend;
-    td_u8  low_saturation_color_ctrl;
-    td_u8  high_saturation_color_ctrl;
-    td_bool color_correction_ctrl;
-    ot_op_mode op_type;
-    ot_isp_drc_manual_attr manual_attr;
-    ot_isp_drc_auto_attr   auto_attr;
-    ot_isp_drc_asymmetry_curve_attr asymmetry_curve;
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) #### ot\_isp\_drc\_attr<a name="ZH-CN_TOPIC_0000002503964789"></a> 【说明】 定义ISP DRC属性。 【定义】 ```
+typedef struct { td_bool enable; ot_isp_drc_curve_select curve_select; td_u8 purple_reduction_strength; td_u8 bright_gain_limit; td_u8 bright_gain_limit_step; td_u8 dark_gain_limit_luma; td_u8 dark_gain_limit_chroma; td_u8 contrast_ctrl; td_u8 rim_reduction_strength; td_u8 rim_reduction_threshold; td_u16 color_correction_lut[OT_ISP_DRC_CC_NODE_NUM]; td_u16 tone_mapping_value[OT_ISP_DRC_TM_NODE_NUM]; td_u8 spatial_filter_coef; td_u8 range_filter_coef; td_u8 detail_adjust_coef; td_u8 local_mixing_bright[OT_ISP_DRC_LMIX_NODE_NUM]; td_u8 local_mixing_dark[OT_ISP_DRC_LMIX_NODE_NUM]; td_u8 filter_coef_x[OT_ISP_DRC_FLTX_NODE_NUM]; td_u8 filter_low_threshold_x[OT_ISP_DRC_FLTX_NODE_NUM]; td_u8 filter_high_threshold_x[OT_ISP_DRC_FLTX_NODE_NUM]; td_u8 detail_adjust_coef_x; td_u8 local_mixing_bright_x[OT_ISP_DRC_LMIX_NODE_NUM]; td_u8 local_mixing_dark_x[OT_ISP_DRC_LMIX_NODE_NUM]; td_u8 blend_luma_max; td_u8 blend_luma_bright_min; td_u8 blend_luma_bright_threshold; td_u8 blend_luma_bright_slope; td_u8 blend_luma_dark_min; td_u8 blend_luma_dark_threshold; td_u8 blend_luma_dark_slope; td_u8 blend_detail_max; td_u8 blend_detail_bright_min; td_u8 blend_detail_bright_threshold; td_u8 blend_detail_bright_slope; td_u8 blend_detail_dark_min; td_u8 blend_detail_dark_threshold; td_u8 blend_detail_dark_slope; td_u8 detail_adjust_coef_blend; td_u8 low_saturation_color_ctrl; td_u8 high_saturation_color_ctrl; td_bool color_correction_ctrl; ot_op_mode op_type; ot_isp_drc_manual_attr manual_attr; ot_isp_drc_auto_attr auto_attr; ot_isp_drc_asymmetry_curve_attr asymmetry_curve;
 } ot_isp_drc_attr;
-```
-
-【成员】
-
-<a name="table22064mcpsimp"></a>
+``` 【成员】 <a name="table22064mcpsimp"></a>
 <table><thead align="left"><tr id="row22069mcpsimp"><th class="cellrowborder" valign="top" width="38%" id="mcps1.1.3.1.1"><p id="p22071mcpsimp"><a name="p22071mcpsimp"></a><a name="p22071mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.3.1.2"><p id="p22073mcpsimp"><a name="p22073mcpsimp"></a><a name="p22073mcpsimp"></a>描述</p>
@@ -1989,63 +1145,16 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   DRC功能分为自动和手动, DRC实际生效强度在自动模式下会根据场景自适应，而在手动模式下完全由用户配置：
-    -   op\_type为OT\_OP\_MODE\_AUTO，使用自动DRC功能;
-    -   op\_type设置为OT\_OP\_MODE\_MANUAL使用手动DRC功能。
-
--   参数asymmetry，second\_pole, stretch和compress对Asymmetry Curve形状的影响趋势请参考《ISP  图像调优指南》DRC相关章节。
--   线性模式和WDR长帧模式下，DRC只有Filter生效，FilterX不生效，因此FilterX相关滤波参数和融合参数均不生效。
--   建议color\_correction\_lut的值不要调试过小，因为降低饱和度的同时会带来高频细节的损失，用户可以配合CA模块来调试整体饱和度。
--   参数color\_correction\_ctrl会影响DRC模块中所有降饱和度相关的参数（即purple\_reduction\_strength, dark\_gain\_limit\_chroma, color\_correction\_lut）的效果。当降饱和度相关参数较强时，不建议将其设置为1，否则可能导致画面偏绿。
--   dark\_gain\_limit\_luma和dark\_gain\_limit\_chroma两个接口的实际效果不完全平滑，即参数在两个相邻值之间切换时，效果可能存在跳变。
-
-【相关数据类型及接口】
-
-无。
-
-## Mesh Shading<a name="ZH-CN_TOPIC_0000002504084945"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470925100"></a>
-
-LSC模块主要用来处理由于镜头光学折射不均匀导致的镜头周围出现阴影的情况。目前流行的处理方式有Radial（同轴圆）方式以及Mesh（网格）方式。
-
-在Hi3403V100中 Mesh Shading算法使用Mesh（网格）方式对画面进行标定/矫正，算法会将整个Bayer域画面分割成32\*32个子区域，这32\*32个区域大小大致相等。
-
-在数据处理过程中，算法将分别对RAW域中的每个通道进行处理。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085046"></a>
-
--   [ss\_mpi\_isp\_set\_mesh\_shading\_attr](#ZH-CN_TOPIC_0000002471085058)：设定Mesh Shading算法参数。
--   [ss\_mpi\_isp\_get\_mesh\_shading\_attr](#ZH-CN_TOPIC_0000002470925048)：获取Mesh Shading算法参数。
--   [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ZH-CN_TOPIC_0000002470925160)：设定Mesh Shading增益表属性。
--   [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ZH-CN_TOPIC_0000002504084899)：获取Mesh Shading增益表属性。
-
-
-
-
-
-#### ss\_mpi\_isp\_set\_mesh\_shading\_attr<a name="ZH-CN_TOPIC_0000002471085058"></a>
-
-【描述】
-
-设置Mesh Shading算法参数。
-
-【语法】
-
-```
+</table> 【注意事项】 - DRC功能分为自动和手动, DRC实际生效强度在自动模式下会根据场景自适应，而在手动模式下完全由用户配置： - op\_type为OT\_OP\_MODE\_AUTO，使用自动DRC功能; - op\_type设置为OT\_OP\_MODE\_MANUAL使用手动DRC功能。 - 参数asymmetry，second\_pole, stretch和compress对Asymmetry Curve形状的影响趋势请参考《ISP 图像调优指南》DRC相关章节。
+- 线性模式和WDR长帧模式下，DRC只有Filter生效，FilterX不生效，因此FilterX相关滤波参数和融合参数均不生效。
+- 建议color\_correction\_lut的值不要调试过小，因为降低饱和度的同时会带来高频细节的损失，用户可以配合CA模块来调试整体饱和度。
+- 参数color\_correction\_ctrl会影响DRC模块中所有降饱和度相关的参数（即purple\_reduction\_strength, dark\_gain\_limit\_chroma, color\_correction\_lut）的效果。当降饱和度相关参数较强时，不建议将其设置为1，否则可能导致画面偏绿。
+- dark\_gain\_limit\_luma和dark\_gain\_limit\_chroma两个接口的实际效果不完全平滑，即参数在两个相邻值之间切换时，效果可能存在跳变。 【相关数据类型及接口】 无。 ## Mesh Shading<a name="ZH-CN_TOPIC_0000002504084945"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470925100"></a> LSC模块主要用来处理由于镜头光学折射不均匀导致的镜头周围出现阴影的情况。目前流行的处理方式有Radial（同轴圆）方式以及Mesh（网格）方式。 在Hi3403V100中 Mesh Shading算法使用Mesh（网格）方式对画面进行标定/矫正，算法会将整个Bayer域画面分割成32\*32个子区域，这32\*32个区域大小大致相等。 在数据处理过程中，算法将分别对RAW域中的每个通道进行处理。 ### API参考<a name="ZH-CN_TOPIC_0000002471085046"></a> - [ss\_mpi\_isp\_set\_mesh\_shading\_attr](#ZH-CN_TOPIC_0000002471085058)：设定Mesh Shading算法参数。
+- [ss\_mpi\_isp\_get\_mesh\_shading\_attr](#ZH-CN_TOPIC_0000002470925048)：获取Mesh Shading算法参数。
+- [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ZH-CN_TOPIC_0000002470925160)：设定Mesh Shading增益表属性。
+- [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ZH-CN_TOPIC_0000002504084899)：获取Mesh Shading增益表属性。 #### ss\_mpi\_isp\_set\_mesh\_shading\_attr<a name="ZH-CN_TOPIC_0000002471085058"></a> 【描述】 设置Mesh Shading算法参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_mesh_shading_attr(ot_vi_pipe vi_pipe, const ot_isp_shading_attr *shading_attr);
-```
-
-【参数】
-
-<a name="table22441mcpsimp"></a>
+``` 【参数】 <a name="table22441mcpsimp"></a>
 <table><thead align="left"><tr id="row22447mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p22449mcpsimp"><a name="p22449mcpsimp"></a><a name="p22449mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p22451mcpsimp"><a name="p22451mcpsimp"></a><a name="p22451mcpsimp"></a>描述</p>
@@ -2069,11 +1178,7 @@ td_s32 ss_mpi_isp_set_mesh_shading_attr(ot_vi_pipe vi_pipe, const ot_isp_shading
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table22470mcpsimp"></a>
+</table> 【返回值】 <a name="table22470mcpsimp"></a>
 <table><thead align="left"><tr id="row22475mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p22477mcpsimp"><a name="p22477mcpsimp"></a><a name="p22477mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p22479mcpsimp"><a name="p22479mcpsimp"></a><a name="p22479mcpsimp"></a>描述</p>
@@ -2085,46 +1190,11 @@ td_s32 ss_mpi_isp_set_mesh_shading_attr(ot_vi_pipe vi_pipe, const ot_isp_shading
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22484mcpsimp"><a name="p22484mcpsimp"></a><a name="p22484mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row22485mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p id="p22487mcpsimp"><a name="p22487mcpsimp"></a><a name="p22487mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22489mcpsimp"><a name="p22489mcpsimp"></a><a name="p22489mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a, libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_mesh\_shading\_attr](#ss_mpi_isp_get_mesh_shading_attr)
-
-#### ss\_mpi\_isp\_get\_mesh\_shading\_attr<a name="ZH-CN_TOPIC_0000002470925048"></a>
-
-【描述】
-
-获取Mesh Shading算法参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a, libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_mesh\_shading\_attr](#ss_mpi_isp_get_mesh_shading_attr) #### ss\_mpi\_isp\_get\_mesh\_shading\_attr<a name="ZH-CN_TOPIC_0000002470925048"></a> 【描述】 获取Mesh Shading算法参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_mesh_shading_attr(ot_vi_pipe vi_pipe, ot_isp_shading_attr *shading_attr);
-```
-
-【参数】
-
-<a name="table22512mcpsimp"></a>
+``` 【参数】 <a name="table22512mcpsimp"></a>
 <table><thead align="left"><tr id="row22518mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p22520mcpsimp"><a name="p22520mcpsimp"></a><a name="p22520mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p22522mcpsimp"><a name="p22522mcpsimp"></a><a name="p22522mcpsimp"></a>描述</p>
@@ -2148,11 +1218,7 @@ td_s32 ss_mpi_isp_get_mesh_shading_attr(ot_vi_pipe vi_pipe, ot_isp_shading_attr 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table22541mcpsimp"></a>
+</table> 【返回值】 <a name="table22541mcpsimp"></a>
 <table><thead align="left"><tr id="row22546mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p22548mcpsimp"><a name="p22548mcpsimp"></a><a name="p22548mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p22550mcpsimp"><a name="p22550mcpsimp"></a><a name="p22550mcpsimp"></a>描述</p>
@@ -2164,46 +1230,11 @@ td_s32 ss_mpi_isp_get_mesh_shading_attr(ot_vi_pipe vi_pipe, ot_isp_shading_attr 
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22555mcpsimp"><a name="p22555mcpsimp"></a><a name="p22555mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row22556mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p id="p22558mcpsimp"><a name="p22558mcpsimp"></a><a name="p22558mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22560mcpsimp"><a name="p22560mcpsimp"></a><a name="p22560mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a, libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_mesh\_shading\_attr](#ss_mpi_isp_set_mesh_shading_attr)
-
-#### ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr<a name="ZH-CN_TOPIC_0000002470925160"></a>
-
-【描述】
-
-设定Mesh Shading增益表属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a, libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_mesh\_shading\_attr](#ss_mpi_isp_set_mesh_shading_attr) #### ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr<a name="ZH-CN_TOPIC_0000002470925160"></a> 【描述】 设定Mesh Shading增益表属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_mesh_shading_gain_lut_attr(ot_vi_pipe vi_pipe, const ot_isp_shading_lut_attr *shading_lut_attr);
-```
-
-【参数】
-
-<a name="table22583mcpsimp"></a>
+``` 【参数】 <a name="table22583mcpsimp"></a>
 <table><thead align="left"><tr id="row22589mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p22591mcpsimp"><a name="p22591mcpsimp"></a><a name="p22591mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p22593mcpsimp"><a name="p22593mcpsimp"></a><a name="p22593mcpsimp"></a>描述</p>
@@ -2227,11 +1258,7 @@ td_s32 ss_mpi_isp_set_mesh_shading_gain_lut_attr(ot_vi_pipe vi_pipe, const ot_is
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table22612mcpsimp"></a>
+</table> 【返回值】 <a name="table22612mcpsimp"></a>
 <table><thead align="left"><tr id="row22617mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p22619mcpsimp"><a name="p22619mcpsimp"></a><a name="p22619mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p22621mcpsimp"><a name="p22621mcpsimp"></a><a name="p22621mcpsimp"></a>描述</p>
@@ -2243,46 +1270,11 @@ td_s32 ss_mpi_isp_set_mesh_shading_gain_lut_attr(ot_vi_pipe vi_pipe, const ot_is
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22626mcpsimp"><a name="p22626mcpsimp"></a><a name="p22626mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row22627mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p id="p22629mcpsimp"><a name="p22629mcpsimp"></a><a name="p22629mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22631mcpsimp"><a name="p22631mcpsimp"></a><a name="p22631mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr)
-
-#### ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr<a name="ZH-CN_TOPIC_0000002504084899"></a>
-
-【描述】
-
-获取Mesh Shading增益表属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr) #### ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr<a name="ZH-CN_TOPIC_0000002504084899"></a> 【描述】 获取Mesh Shading增益表属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_mesh_shading_gain_lut_attr(ot_vi_pipe vi_pipe, ot_isp_shading_lut_attr *shading_lut_attr);
-```
-
-【参数】
-
-<a name="table22654mcpsimp"></a>
+``` 【参数】 <a name="table22654mcpsimp"></a>
 <table><thead align="left"><tr id="row22660mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p22662mcpsimp"><a name="p22662mcpsimp"></a><a name="p22662mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p22664mcpsimp"><a name="p22664mcpsimp"></a><a name="p22664mcpsimp"></a>描述</p>
@@ -2306,11 +1298,7 @@ td_s32 ss_mpi_isp_get_mesh_shading_gain_lut_attr(ot_vi_pipe vi_pipe, ot_isp_shad
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table22683mcpsimp"></a>
+</table> 【返回值】 <a name="table22683mcpsimp"></a>
 <table><thead align="left"><tr id="row22688mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p22690mcpsimp"><a name="p22690mcpsimp"></a><a name="p22690mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p22692mcpsimp"><a name="p22692mcpsimp"></a><a name="p22692mcpsimp"></a>描述</p>
@@ -2322,150 +1310,27 @@ td_s32 ss_mpi_isp_get_mesh_shading_gain_lut_attr(ot_vi_pipe vi_pipe, ot_isp_shad
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22697mcpsimp"><a name="p22697mcpsimp"></a><a name="p22697mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row22698mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p id="p22700mcpsimp"><a name="p22700mcpsimp"></a><a name="p22700mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p22702mcpsimp"><a name="p22702mcpsimp"></a><a name="p22702mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503965147"></a>
-
--   [OT\_ISP\_RLSC\_POINTS](#ZH-CN_TOPIC_0000002470925016)：定义BNR参考LSC增益表的长度。
--   [OT\_ISP\_MLSC\_X\_HALF\_GRID\_NUM](#ZH-CN_TOPIC_0000002470924934)：x方向上mesh分块数量的一半。
--   [OT\_ISP\_MLSC\_Y\_HALF\_GRID\_NUM](#ZH-CN_TOPIC_0000002470924910)：y方向上mesh分块数量的一半。
--   [OT\_ISP\_MLSC\_GAIN\_LUT\_NUM](#ZH-CN_TOPIC_0000002470925110)：定义Mesh Shading Lut表的长度。
--   [ot\_isp\_shading\_attr](#ZH-CN_TOPIC_0000002504084991)：定义Mesh Shading算法参数。
--   [ot\_isp\_shading\_gain\_lut](#ZH-CN_TOPIC_0000002470924878)：定义Mesh Shading增益表的参数。
--   [ot\_isp\_bnr\_lsc\_gain\_lut](#ZH-CN_TOPIC_0000002470924954)：定义BNR参考LSC增益表的参数。
--   [ot\_isp\_shading\_lut\_attr](#ZH-CN_TOPIC_0000002503964785)：定义Mesh Shading增益表属性。
-
-
-
-
-
-
-
-
-
-#### OT\_ISP\_RLSC\_POINTS<a name="ZH-CN_TOPIC_0000002470925016"></a>
-
-【说明】
-
-定义BNR参考LSC增益表的长度。
-
-【定义】
-
-```
-#define OT_ISP_RLSC_POINTS                129
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_bnr\_lsc\_gain\_lut](#ot_isp_bnr_lsc_gain_lut)
-
-#### OT\_ISP\_MLSC\_X\_HALF\_GRID\_NUM<a name="ZH-CN_TOPIC_0000002470924934"></a>
-
-【说明】
-
-x方向上mesh分块数量的一半。
-
-【定义】
-
-```
-#define OT_ISP_MLSC_X_HALF_GRID_NUM       ((OT_ISP_LSC_GRID_COL - 1) / 2)
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr)
-
-#### OT\_ISP\_MLSC\_Y\_HALF\_GRID\_NUM<a name="ZH-CN_TOPIC_0000002470924910"></a>
-
-【说明】
-
-y方向上mesh分块数量的一半。
-
-【定义】
-
-```
-#define OT_ISP_MLSC_Y_HALF_GRID_NUM       ((OT_ISP_LSC_GRID_ROW - 1) / 2)
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr)
-
-#### OT\_ISP\_MLSC\_GAIN\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002470925110"></a>
-
-【说明】
-
-定义Mesh Shading Lut表的长度。
-
-【定义】
-
-```
-#define OT_ISP_MLSC_GAIN_LUT_NUM          2
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr)
-
-#### ot\_isp\_shading\_attr<a name="ZH-CN_TOPIC_0000002504084991"></a>
-
-【说明】
-
-定义Mesh Shading算法参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool  en;
-    td_u16  mesh_strength;
-    td_u16  blend_ratio;
-    td_u16  bnr_lsc_auto_en;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503965147"></a> - [OT\_ISP\_RLSC\_POINTS](#ZH-CN_TOPIC_0000002470925016)：定义BNR参考LSC增益表的长度。
+- [OT\_ISP\_MLSC\_X\_HALF\_GRID\_NUM](#ZH-CN_TOPIC_0000002470924934)：x方向上mesh分块数量的一半。
+- [OT\_ISP\_MLSC\_Y\_HALF\_GRID\_NUM](#ZH-CN_TOPIC_0000002470924910)：y方向上mesh分块数量的一半。
+- [OT\_ISP\_MLSC\_GAIN\_LUT\_NUM](#ZH-CN_TOPIC_0000002470925110)：定义Mesh Shading Lut表的长度。
+- [ot\_isp\_shading\_attr](#ZH-CN_TOPIC_0000002504084991)：定义Mesh Shading算法参数。
+- [ot\_isp\_shading\_gain\_lut](#ZH-CN_TOPIC_0000002470924878)：定义Mesh Shading增益表的参数。
+- [ot\_isp\_bnr\_lsc\_gain\_lut](#ZH-CN_TOPIC_0000002470924954)：定义BNR参考LSC增益表的参数。
+- [ot\_isp\_shading\_lut\_attr](#ZH-CN_TOPIC_0000002503964785)：定义Mesh Shading增益表属性。 #### OT\_ISP\_RLSC\_POINTS<a name="ZH-CN_TOPIC_0000002470925016"></a> 【说明】 定义BNR参考LSC增益表的长度。 【定义】 ```
+#define OT_ISP_RLSC_POINTS 129
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_bnr\_lsc\_gain\_lut](#ot_isp_bnr_lsc_gain_lut) #### OT\_ISP\_MLSC\_X\_HALF\_GRID\_NUM<a name="ZH-CN_TOPIC_0000002470924934"></a> 【说明】 x方向上mesh分块数量的一半。 【定义】 ```
+#define OT_ISP_MLSC_X_HALF_GRID_NUM ((OT_ISP_LSC_GRID_COL - 1) / 2)
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr) #### OT\_ISP\_MLSC\_Y\_HALF\_GRID\_NUM<a name="ZH-CN_TOPIC_0000002470924910"></a> 【说明】 y方向上mesh分块数量的一半。 【定义】 ```
+#define OT_ISP_MLSC_Y_HALF_GRID_NUM ((OT_ISP_LSC_GRID_ROW - 1) / 2)
+``` 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr) #### OT\_ISP\_MLSC\_GAIN\_LUT\_NUM<a name="ZH-CN_TOPIC_0000002470925110"></a> 【说明】 定义Mesh Shading Lut表的长度。 【定义】 ```
+#define OT_ISP_MLSC_GAIN_LUT_NUM 2
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr) #### ot\_isp\_shading\_attr<a name="ZH-CN_TOPIC_0000002504084991"></a> 【说明】 定义Mesh Shading算法参数。 【定义】 ```
+typedef struct { td_bool en; td_u16 mesh_strength; td_u16 blend_ratio; td_u16 bnr_lsc_auto_en;
 } ot_isp_shading_attr;
-```
-
-【成员】
-
-<a name="table22800mcpsimp"></a>
+``` 【成员】 <a name="table22800mcpsimp"></a>
 <table><thead align="left"><tr id="row22805mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p22807mcpsimp"><a name="p22807mcpsimp"></a><a name="p22807mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p22809mcpsimp"><a name="p22809mcpsimp"></a><a name="p22809mcpsimp"></a>描述</p>
@@ -2501,37 +1366,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_isp\_set\_mesh\_shading\_attr](#ss_mpi_isp_set_mesh_shading_attr)
--   [ss\_mpi\_isp\_get\_mesh\_shading\_attr](#ss_mpi_isp_get_mesh_shading_attr)
-
-#### ot\_isp\_shading\_gain\_lut<a name="ZH-CN_TOPIC_0000002470924878"></a>
-
-【说明】
-
-定义Mesh Shading增益表参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  r_gain[OT_ISP_LSC_GRID_POINTS];
-    td_u16  gr_gain[OT_ISP_LSC_GRID_POINTS];
-    td_u16  gb_gain[OT_ISP_LSC_GRID_POINTS];
-    td_u16  b_gain[OT_ISP_LSC_GRID_POINTS];
+</table> 【注意事项】 无 【相关数据类型及接口】 - [ss\_mpi\_isp\_set\_mesh\_shading\_attr](#ss_mpi_isp_set_mesh_shading_attr)
+- [ss\_mpi\_isp\_get\_mesh\_shading\_attr](#ss_mpi_isp_get_mesh_shading_attr) #### ot\_isp\_shading\_gain\_lut<a name="ZH-CN_TOPIC_0000002470924878"></a> 【说明】 定义Mesh Shading增益表参数。 【定义】 ```
+typedef struct { td_u16 r_gain[OT_ISP_LSC_GRID_POINTS]; td_u16 gr_gain[OT_ISP_LSC_GRID_POINTS]; td_u16 gb_gain[OT_ISP_LSC_GRID_POINTS]; td_u16 b_gain[OT_ISP_LSC_GRID_POINTS];
 } ot_isp_shading_gain_lut;
-```
-
-【成员】
-
-<a name="table22871mcpsimp"></a>
+``` 【成员】 <a name="table22871mcpsimp"></a>
 <table><thead align="left"><tr id="row22876mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p22878mcpsimp"><a name="p22878mcpsimp"></a><a name="p22878mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p22880mcpsimp"><a name="p22880mcpsimp"></a><a name="p22880mcpsimp"></a>描述</p>
@@ -2563,38 +1402,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   增益表的默认配置与ot\_isp\_cmos\_alg\_key中的bit1\(Lsc 标志位\)有关，如果bit1\(Lsc=1\)，则采用cmos\_ex.h中的配置值作为默认值；否则默认配置为1倍增益。
--   增益表的精度与mesh\_scale的值有关系，详参[表1](#_Ref48031211)。在mesh\_scale配置为默认值4的情况下，增益表配置为0值表示增益为1倍。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr)
--   [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr)
-
-#### ot\_isp\_bnr\_lsc\_gain\_lut<a name="ZH-CN_TOPIC_0000002470924954"></a>
-
-【说明】
-
-定义BayerNR所参考的LSC增益表参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  r_gain[OT_ISP_RLSC_POINTS];  
-    td_u16  gr_gain[OT_ISP_RLSC_POINTS];
-    td_u16  gb_gain[OT_ISP_RLSC_POINTS];
-    td_u16  b_gain[OT_ISP_RLSC_POINTS];
+</table> 【注意事项】 - 增益表的默认配置与ot\_isp\_cmos\_alg\_key中的bit1\(Lsc 标志位\)有关，如果bit1\(Lsc=1\)，则采用cmos\_ex.h中的配置值作为默认值；否则默认配置为1倍增益。
+- 增益表的精度与mesh\_scale的值有关系，详参[表1](#_Ref48031211)。在mesh\_scale配置为默认值4的情况下，增益表配置为0值表示增益为1倍。 【相关数据类型及接口】 - [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr)
+- [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr) #### ot\_isp\_bnr\_lsc\_gain\_lut<a name="ZH-CN_TOPIC_0000002470924954"></a> 【说明】 定义BayerNR所参考的LSC增益表参数。 【定义】 ```
+typedef struct { td_u16 r_gain[OT_ISP_RLSC_POINTS]; td_u16 gr_gain[OT_ISP_RLSC_POINTS]; td_u16 gb_gain[OT_ISP_RLSC_POINTS]; td_u16 b_gain[OT_ISP_RLSC_POINTS];
 } ot_isp_bnr_lsc_gain_lut;
-```
-
-【成员】
-
-<a name="table22957mcpsimp"></a>
+``` 【成员】 <a name="table22957mcpsimp"></a>
 <table><thead align="left"><tr id="row22962mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p22964mcpsimp"><a name="p22964mcpsimp"></a><a name="p22964mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p22966mcpsimp"><a name="p22966mcpsimp"></a><a name="p22966mcpsimp"></a>描述</p>
@@ -2626,39 +1439,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr)
--   [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr)
--   [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr)
-
-#### ot\_isp\_shading\_lut\_attr<a name="ZH-CN_TOPIC_0000002503964785"></a>
-
-【说明】
-
-定义Mesh Shading增益表属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8   mesh_scale;
-    td_u16  x_grid_width[OT_ISP_MLSC_X_HALF_GRID_NUM];
-    td_u16  y_grid_width[OT_ISP_MLSC_Y_HALF_GRID_NUM];
-    ot_isp_shading_gain_lut lsc_gain_lut[OT_ISP_MLSC_GAIN_LUT_NUM];
-    ot_isp_bnr_lsc_gain_lut bnr_lsc_gain_lut;
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_shading\_lut\_attr](#ot_isp_shading_lut_attr)
+- [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr)
+- [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr) #### ot\_isp\_shading\_lut\_attr<a name="ZH-CN_TOPIC_0000002503964785"></a> 【说明】 定义Mesh Shading增益表属性。 【定义】 ```
+typedef struct { td_u8 mesh_scale; td_u16 x_grid_width[OT_ISP_MLSC_X_HALF_GRID_NUM]; td_u16 y_grid_width[OT_ISP_MLSC_Y_HALF_GRID_NUM]; ot_isp_shading_gain_lut lsc_gain_lut[OT_ISP_MLSC_GAIN_LUT_NUM]; ot_isp_bnr_lsc_gain_lut bnr_lsc_gain_lut;
 } ot_isp_shading_lut_attr;
-```
-
-【成员】
-
-<a name="table23038mcpsimp"></a>
+``` 【成员】 <a name="table23038mcpsimp"></a>
 <table><thead align="left"><tr id="row23043mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p23045mcpsimp"><a name="p23045mcpsimp"></a><a name="p23045mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p23047mcpsimp"><a name="p23047mcpsimp"></a><a name="p23047mcpsimp"></a>描述</p>
@@ -2696,22 +1482,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   调整x\_grid\_width或y\_grid\_width里的值即调整分区宽度或者高度。注意由于整体画面为上下、左右对称，因此每当设置一个分区的宽度或者高度时，其对称分区的宽度或高度也会相应发生变化。改变后的分区宽度与高度请满足总和为原画面大小宽度或高度的四分之一。由于调节比较复杂并容易造成Color Shading现象，一般不建议手动调节。分辨率切换的时候，x\_grid\_width与y\_grid\_width自动重新配置。
--   硬件基于配置的两组色温下的增益表以及blend\_ratio进行插值得到当前色温下的校正增益表的计算，从而校正整幅图像的shading现象，其中blend\_ratio为lsc\_gain\_lut\[0\]对应的权重。
--   在单光源模式下，lsc\_gain\_lut结构体需要配置成一致，此时需要配置成标定的第一个光源。
--   增益位宽为10bit，即最大值为1023。
-    -   当mesh\_scale为0至3时，增益的表示与其他算法一致，增益精度从高到低，取值范围从小变大，1倍增益不为0；
-    -   当mesh\_scale为4至7时，精度从高到低，取值范围从小变大，增益的表示方式略有差异，实际的增益计算方式为通用增益减去对应精度的1倍增益，比如mesh\_scale为5时，按照增益精度为1.9，若通用增益为886，1倍对应增益512，那么实际的增益为886-512=374，这种表示方式下，最小的增益为1倍，但是表示的范围比上一种要大。
-
--   在能够完全校正的情况下，增益精度mesh\_scale应该下尽量选择精度高的档位，提高校正的准确度，例如当mesh\_scale为0或4时都能校正，应当选择4。对于某些镜头阴影特别严重的极端情况下，存在无法完全校正的可能，当选择较大增益倍数（如mesh\_scale为3）校正时，可能会在边缘处出现暗条纹，此时需要降低增益倍数来提高精度（设mesh\_scale为 2或7），重新标定，直到暗条纹消失为止。
-
-**表 1**  mesh\_scale与增益精度对应关系
-
-<a name="_Ref48031211"></a>
+</table> 【注意事项】 - 调整x\_grid\_width或y\_grid\_width里的值即调整分区宽度或者高度。注意由于整体画面为上下、左右对称，因此每当设置一个分区的宽度或者高度时，其对称分区的宽度或高度也会相应发生变化。改变后的分区宽度与高度请满足总和为原画面大小宽度或高度的四分之一。由于调节比较复杂并容易造成Color Shading现象，一般不建议手动调节。分辨率切换的时候，x\_grid\_width与y\_grid\_width自动重新配置。
+- 硬件基于配置的两组色温下的增益表以及blend\_ratio进行插值得到当前色温下的校正增益表的计算，从而校正整幅图像的shading现象，其中blend\_ratio为lsc\_gain\_lut\[0\]对应的权重。
+- 在单光源模式下，lsc\_gain\_lut结构体需要配置成一致，此时需要配置成标定的第一个光源。
+- 增益位宽为10bit，即最大值为1023。 - 当mesh\_scale为0至3时，增益的表示与其他算法一致，增益精度从高到低，取值范围从小变大，1倍增益不为0； - 当mesh\_scale为4至7时，精度从高到低，取值范围从小变大，增益的表示方式略有差异，实际的增益计算方式为通用增益减去对应精度的1倍增益，比如mesh\_scale为5时，按照增益精度为1.9，若通用增益为886，1倍对应增益512，那么实际的增益为886-512=374，这种表示方式下，最小的增益为1倍，但是表示的范围比上一种要大。 - 在能够完全校正的情况下，增益精度mesh\_scale应该下尽量选择精度高的档位，提高校正的准确度，例如当mesh\_scale为0或4时都能校正，应当选择4。对于某些镜头阴影特别严重的极端情况下，存在无法完全校正的可能，当选择较大增益倍数（如mesh\_scale为3）校正时，可能会在边缘处出现暗条纹，此时需要降低增益倍数来提高精度（设mesh\_scale为 2或7），重新标定，直到暗条纹消失为止。 **表 1** mesh\_scale与增益精度对应关系 <a name="_Ref48031211"></a>
 <table><thead align="left"><tr id="row23110mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.2.5.1.1"><p xml:lang="sv-SE" id="p23112mcpsimp"><a name="p23112mcpsimp"></a><a name="p23112mcpsimp"></a>mesh_scale</p>
 </th>
 <th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.2"><p id="p23114mcpsimp"><a name="p23114mcpsimp"></a><a name="p23114mcpsimp"></a>增益表的数据格式</p>
@@ -2731,128 +1505,18 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23128mcpsimp"><a name="p23128mcpsimp"></a><a name="p23128mcpsimp"></a>512</p>
 </td>
 </tr>
-<tr id="row23129mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.1 "><p id="p23131mcpsimp"><a name="p23131mcpsimp"></a><a name="p23131mcpsimp"></a>1</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p23133mcpsimp"><a name="p23133mcpsimp"></a><a name="p23133mcpsimp"></a>2.8</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p23135mcpsimp"><a name="p23135mcpsimp"></a><a name="p23135mcpsimp"></a>[0,4)</p>
-</td>
-<td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23137mcpsimp"><a name="p23137mcpsimp"></a><a name="p23137mcpsimp"></a>256</p>
-</td>
-</tr>
-<tr id="row23138mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.1 "><p id="p23140mcpsimp"><a name="p23140mcpsimp"></a><a name="p23140mcpsimp"></a>2</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p23142mcpsimp"><a name="p23142mcpsimp"></a><a name="p23142mcpsimp"></a>3.7</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p23144mcpsimp"><a name="p23144mcpsimp"></a><a name="p23144mcpsimp"></a>[0,8)</p>
-</td>
-<td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23146mcpsimp"><a name="p23146mcpsimp"></a><a name="p23146mcpsimp"></a>128</p>
-</td>
-</tr>
-<tr id="row23147mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.1 "><p id="p23149mcpsimp"><a name="p23149mcpsimp"></a><a name="p23149mcpsimp"></a>3</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p23151mcpsimp"><a name="p23151mcpsimp"></a><a name="p23151mcpsimp"></a>4.6</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p23153mcpsimp"><a name="p23153mcpsimp"></a><a name="p23153mcpsimp"></a>[0,16)</p>
-</td>
-<td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23155mcpsimp"><a name="p23155mcpsimp"></a><a name="p23155mcpsimp"></a>64</p>
-</td>
-</tr>
-<tr id="row23156mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.1 "><p id="p23158mcpsimp"><a name="p23158mcpsimp"></a><a name="p23158mcpsimp"></a>4</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p23160mcpsimp"><a name="p23160mcpsimp"></a><a name="p23160mcpsimp"></a>0.10</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p23162mcpsimp"><a name="p23162mcpsimp"></a><a name="p23162mcpsimp"></a>[1,2)</p>
-</td>
-<td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23164mcpsimp"><a name="p23164mcpsimp"></a><a name="p23164mcpsimp"></a>0</p>
-</td>
-</tr>
-<tr id="row23165mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.1 "><p id="p23167mcpsimp"><a name="p23167mcpsimp"></a><a name="p23167mcpsimp"></a>5</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p23169mcpsimp"><a name="p23169mcpsimp"></a><a name="p23169mcpsimp"></a>1.9</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p23171mcpsimp"><a name="p23171mcpsimp"></a><a name="p23171mcpsimp"></a>[1,3)</p>
-</td>
-<td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23173mcpsimp"><a name="p23173mcpsimp"></a><a name="p23173mcpsimp"></a>0</p>
-</td>
-</tr>
-<tr id="row23174mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.1 "><p id="p23176mcpsimp"><a name="p23176mcpsimp"></a><a name="p23176mcpsimp"></a>6</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p23178mcpsimp"><a name="p23178mcpsimp"></a><a name="p23178mcpsimp"></a>2.8</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p23180mcpsimp"><a name="p23180mcpsimp"></a><a name="p23180mcpsimp"></a>[1,5)</p>
-</td>
-<td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23182mcpsimp"><a name="p23182mcpsimp"></a><a name="p23182mcpsimp"></a>0</p>
-</td>
-</tr>
-<tr id="row23183mcpsimp"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.1 "><p id="p23185mcpsimp"><a name="p23185mcpsimp"></a><a name="p23185mcpsimp"></a>7</p>
-</td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p23187mcpsimp"><a name="p23187mcpsimp"></a><a name="p23187mcpsimp"></a>3.7</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p23189mcpsimp"><a name="p23189mcpsimp"></a><a name="p23189mcpsimp"></a>[1,9)</p>
-</td>
-<td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.4 "><p id="p23191mcpsimp"><a name="p23191mcpsimp"></a><a name="p23191mcpsimp"></a>0</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【相关数据类型及接口】
-
--   [ot\_isp\_shading\_lut\_attr](#ZH-CN_TOPIC_0000001174659280)
--   [ot\_isp\_bnr\_lsc\_gain\_lut](#ot_isp_bnr_lsc_gain_lut)
--   [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr)
--   [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr)
-
-## Defect Pixel<a name="ZH-CN_TOPIC_0000002471085180"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085160"></a>
-
-DPC算法通过在5x5的窗口中通过某些坏点检测算法找到该窗口中明显异于临近像素的坏点。该模块主要包含以下两种模式：
-
--   静态坏点标定/校正有两种流程：亮点和暗点流程
-    -   在亮点流程中，光圈处于关闭状态，启动坏点标定程序，得到坏点坐标信息。坏点个数的总数由坏点校正模块的memory决定的。得到的坏点通过临近像素的中值滤波进行校正。
-    -   在暗点流程中，光圈处于正常打开状态，要求平坦背景，最好使用灰度箱固定光源，图像整体平均亮度大约为最大亮度50%，或Bayer格式中B通道亮度为最大亮度20%左右，启动坏点检测程序，得到坏点坐标。坏点个数的总数是由坏点校正模块的memory决定的。得到的坏点通过临近像素的中值滤波进行校正。
-
-        注意：Hi3403V100 DPC所能支持的最大静态坏点数为6144。
-
--   动态坏点检测/校正
-
-    在这种模式中，校正模块使用动态检测方法的进行坏点检测，能够校正的坏点个数是没有限制的。这种模式总体上相对于静态模式更不可靠，但是在低照度情况下强烈推荐使用动态坏点校正功能，可以校正更多的坏点以及明显改善图像偏色的问题。
-
-### API参考<a name="ZH-CN_TOPIC_0000002503964793"></a>
-
--   [ss\_mpi\_isp\_set\_dp\_calibrate](#ZH-CN_TOPIC_0000002471084938)：设置静态坏点标定参数。
--   [ss\_mpi\_isp\_get\_dp\_calibrate](#ZH-CN_TOPIC_0000002470924850)：获取静态坏点标定结果。
--   [ss\_mpi\_isp\_set\_dp\_static\_attr](#ZH-CN_TOPIC_0000002503965113)：设置静态坏点校正属性。
--   [ss\_mpi\_isp\_get\_dp\_static\_attr](#ZH-CN_TOPIC_0000002503964983)：获取静态坏点校正属性。
--   [ss\_mpi\_isp\_set\_dp\_dynamic\_attr](#ZH-CN_TOPIC_0000002503964845)：设置动态坏点校正属性。
--   [ss\_mpi\_isp\_get\_dp\_dynamic\_attr](#ZH-CN_TOPIC_0000002504084931)：获取动态坏点校正属性。
-
-
-
-
-
-
-
-#### ss\_mpi\_isp\_set\_dp\_calibrate<a name="ZH-CN_TOPIC_0000002471084938"></a>
-
-【描述】
-
-设置静态坏点标定参数。
-
-【语法】
-
-```
+</table> 【相关数据类型及接口】 - [ot\_isp\_shading\_lut\_attr](#ZH-CN_TOPIC_0000001174659280)
+- [ot\_isp\_bnr\_lsc\_gain\_lut](#ot_isp_bnr_lsc_gain_lut)
+- [ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_set_mesh_shading_gain_lut_attr)
+- [ss\_mpi\_isp\_get\_mesh\_shading\_gain\_lut\_attr](#ss_mpi_isp_get_mesh_shading_gain_lut_attr) ## Defect Pixel<a name="ZH-CN_TOPIC_0000002471085180"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085160"></a> DPC算法通过在5x5的窗口中通过某些坏点检测算法找到该窗口中明显异于临近像素的坏点。该模块主要包含以下两种模式： - 静态坏点标定/校正有两种流程：亮点和暗点流程 - 在亮点流程中，光圈处于关闭状态，启动坏点标定程序，得到坏点坐标信息。坏点个数的总数由坏点校正模块的memory决定的。得到的坏点通过临近像素的中值滤波进行校正。 - 在暗点流程中，光圈处于正常打开状态，要求平坦背景，最好使用灰度箱固定光源，图像整体平均亮度大约为最大亮度50%，或Bayer格式中B通道亮度为最大亮度20%左右，启动坏点检测程序，得到坏点坐标。坏点个数的总数是由坏点校正模块的memory决定的。得到的坏点通过临近像素的中值滤波进行校正。 注意：Hi3403V100 DPC所能支持的最大静态坏点数为6144。 - 动态坏点检测/校正 在这种模式中，校正模块使用动态检测方法的进行坏点检测，能够校正的坏点个数是没有限制的。这种模式总体上相对于静态模式更不可靠，但是在低照度情况下强烈推荐使用动态坏点校正功能，可以校正更多的坏点以及明显改善图像偏色的问题。 ### API参考<a name="ZH-CN_TOPIC_0000002503964793"></a> - [ss\_mpi\_isp\_set\_dp\_calibrate](#ZH-CN_TOPIC_0000002471084938)：设置静态坏点标定参数。
+- [ss\_mpi\_isp\_get\_dp\_calibrate](#ZH-CN_TOPIC_0000002470924850)：获取静态坏点标定结果。
+- [ss\_mpi\_isp\_set\_dp\_static\_attr](#ZH-CN_TOPIC_0000002503965113)：设置静态坏点校正属性。
+- [ss\_mpi\_isp\_get\_dp\_static\_attr](#ZH-CN_TOPIC_0000002503964983)：获取静态坏点校正属性。
+- [ss\_mpi\_isp\_set\_dp\_dynamic\_attr](#ZH-CN_TOPIC_0000002503964845)：设置动态坏点校正属性。
+- [ss\_mpi\_isp\_get\_dp\_dynamic\_attr](#ZH-CN_TOPIC_0000002504084931)：获取动态坏点校正属性。 #### ss\_mpi\_isp\_set\_dp\_calibrate<a name="ZH-CN_TOPIC_0000002471084938"></a> 【描述】 设置静态坏点标定参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_dp_calibrate(ot_vi_pipe vi_pipe, const ot_isp_dp_static_calibrate *dp_calibrate);
-```
-
-【参数】
-
-<a name="table23235mcpsimp"></a>
+``` 【参数】 <a name="table23235mcpsimp"></a>
 <table><thead align="left"><tr id="row23241mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p23243mcpsimp"><a name="p23243mcpsimp"></a><a name="p23243mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p23245mcpsimp"><a name="p23245mcpsimp"></a><a name="p23245mcpsimp"></a>描述</p>
@@ -2876,11 +1540,7 @@ td_s32 ss_mpi_isp_set_dp_calibrate(ot_vi_pipe vi_pipe, const ot_isp_dp_static_ca
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table23264mcpsimp"></a>
+</table> 【返回值】 <a name="table23264mcpsimp"></a>
 <table><thead align="left"><tr id="row23269mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p23271mcpsimp"><a name="p23271mcpsimp"></a><a name="p23271mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p23273mcpsimp"><a name="p23273mcpsimp"></a><a name="p23273mcpsimp"></a>描述</p>
@@ -2892,30 +1552,11 @@ td_s32 ss_mpi_isp_set_dp_calibrate(ot_vi_pipe vi_pipe, const ot_isp_dp_static_ca
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23278mcpsimp"><a name="p23278mcpsimp"></a><a name="p23278mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row23279mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p23281mcpsimp"><a name="p23281mcpsimp"></a><a name="p23281mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23283mcpsimp"><a name="p23283mcpsimp"></a><a name="p23283mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
--   该接口为静态坏点标定接口，坏点标定只需启动一次，标定完成之后自动关闭标定使能，恢复为正常的坏点校正模式。亮坏点检测的环境为：使用最小的模拟增益和数字增益，降帧率到5～6fps，使曝光时间为200ms（系统自动完成），遮黑镜头或关闭光圈（需手动操作）；暗坏点检测的环境为：光圈处于正常打开状态，要求平坦背景，最好使用辉度箱固定光源，图像整体平均亮度大约为最大亮度50%，或Bayer格式中B通道亮度为最大亮度20%左右。
--   支持WDR模式下静态坏点标定。WDR模式下默认选择短帧进行静态坏点标定，推荐在标定前，通过ss\_mpi\_isp\_set\_module\_ctrl接口的bit2\_chn\_select变量选择长帧，再启动静态坏点标定。一般情况下，长帧的标定即可满足需求。若特殊情况下，长帧标定后仍然有坏点残留，可通过bit2\_chn\_select变量选择中/短帧再次进行标定，并将多个坏点表合并成一个表。
--   拼接模式不支持静态坏点标定。
-
-【举例】
-
-以标定亮点为例：
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 - 该接口为静态坏点标定接口，坏点标定只需启动一次，标定完成之后自动关闭标定使能，恢复为正常的坏点校正模式。亮坏点检测的环境为：使用最小的模拟增益和数字增益，降帧率到5～6fps，使曝光时间为200ms（系统自动完成），遮黑镜头或关闭光圈（需手动操作）；暗坏点检测的环境为：光圈处于正常打开状态，要求平坦背景，最好使用辉度箱固定光源，图像整体平均亮度大约为最大亮度50%，或Bayer格式中B通道亮度为最大亮度20%左右。
+- 支持WDR模式下静态坏点标定。WDR模式下默认选择短帧进行静态坏点标定，推荐在标定前，通过ss\_mpi\_isp\_set\_module\_ctrl接口的bit2\_chn\_select变量选择长帧，再启动静态坏点标定。一般情况下，长帧的标定即可满足需求。若特殊情况下，长帧标定后仍然有坏点残留，可通过bit2\_chn\_select变量选择中/短帧再次进行标定，并将多个坏点表合并成一个表。
+- 拼接模式不支持静态坏点标定。 【举例】 以标定亮点为例： ```
 ot_isp_dp_static_calibrate dpc_calib;
 dpc_calib.enable_detect = 1; /* 使能静态坏点标定 */
 dpc_calib.static_dp_type = 0;
@@ -2924,27 +1565,9 @@ dpc_calib.count_min = 1;
 dpc_calib.start_thresh = 1;
 dpc_calib.time_limit = 0x640;
 ss_mpi_isp_set_dp_calibrate(vi_pipe, &dpc_calib);
-```
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_dp\_calibrate](#ss_mpi_isp_get_dp_calibrate)
-
-#### ss\_mpi\_isp\_get\_dp\_calibrate<a name="ZH-CN_TOPIC_0000002470924850"></a>
-
-【描述】
-
-获取静态坏点标定结果。
-
-【语法】
-
-```
+``` 【相关主题】 [ss\_mpi\_isp\_get\_dp\_calibrate](#ss_mpi_isp_get_dp_calibrate) #### ss\_mpi\_isp\_get\_dp\_calibrate<a name="ZH-CN_TOPIC_0000002470924850"></a> 【描述】 获取静态坏点标定结果。 【语法】 ```
 td_s32 ss_mpi_isp_get_dp_calibrate (ot_vi_pipe vi_pipe, ot_isp_dp_static_calibrate *dp_calibrate);
-```
-
-【参数】
-
-<a name="table23318mcpsimp"></a>
+``` 【参数】 <a name="table23318mcpsimp"></a>
 <table><thead align="left"><tr id="row23324mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p23326mcpsimp"><a name="p23326mcpsimp"></a><a name="p23326mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p23328mcpsimp"><a name="p23328mcpsimp"></a><a name="p23328mcpsimp"></a>描述</p>
@@ -2968,11 +1591,7 @@ td_s32 ss_mpi_isp_get_dp_calibrate (ot_vi_pipe vi_pipe, ot_isp_dp_static_calibra
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table23347mcpsimp"></a>
+</table> 【返回值】 <a name="table23347mcpsimp"></a>
 <table><thead align="left"><tr id="row23352mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p23354mcpsimp"><a name="p23354mcpsimp"></a><a name="p23354mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p23356mcpsimp"><a name="p23356mcpsimp"></a><a name="p23356mcpsimp"></a>描述</p>
@@ -2984,61 +1603,21 @@ td_s32 ss_mpi_isp_get_dp_calibrate (ot_vi_pipe vi_pipe, ot_isp_dp_static_calibra
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23361mcpsimp"><a name="p23361mcpsimp"></a><a name="p23361mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row23362mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p23364mcpsimp"><a name="p23364mcpsimp"></a><a name="p23364mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23366mcpsimp"><a name="p23366mcpsimp"></a><a name="p23366mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-以获取亮点标定结果为例：
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 以获取亮点标定结果为例： ```
 td_u16 i;
 td_u16 bright_bp_num = 0;
 td_u32 bright_table[SS_MPI_STATIC_DP_COUNT_MAX];
 ss_mpi_isp_get_dp_calibrate(vi_pipe, &dpc_calib);
-while(dpc_calib.status == OT_ISP_STATE_INIT) {
-     sleep(1);
-     ss_mpi_isp_get_dp_calibrate(vi_pipe, &dpc_calib);
+while(dpc_calib.status == OT_ISP_STATE_INIT) { sleep(1); ss_mpi_isp_get_dp_calibrate(vi_pipe, &dpc_calib);
 }
 bright_bp_num = dpc_calib.count;
-for (i = 0; i < bright_bp_num; i++) {
-     bright_table[i] = dpc_calib.table[i];
+for (i = 0; i < bright_bp_num; i++) { bright_table[i] = dpc_calib.table[i];
 }
-```
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_dp\_calibrate](#ss_mpi_isp_set_dp_calibrate)
-
-#### ss\_mpi\_isp\_set\_dp\_static\_attr<a name="ZH-CN_TOPIC_0000002503965113"></a>
-
-【描述】
-
-设置静态坏点属性，合并坏点表，将坏点坐标信息与坏点数目写入系统内存。
-
-【语法】
-
-```
+``` 【相关主题】 [ss\_mpi\_isp\_set\_dp\_calibrate](#ss_mpi_isp_set_dp_calibrate) #### ss\_mpi\_isp\_set\_dp\_static\_attr<a name="ZH-CN_TOPIC_0000002503965113"></a> 【描述】 设置静态坏点属性，合并坏点表，将坏点坐标信息与坏点数目写入系统内存。 【语法】 ```
 td_s32 ss_mpi_isp_set_dp_static_attr(ot_vi_pipe vi_pipe, const ot_isp_dp_static_attr *dp_static_attr);
-```
-
-【参数】
-
-<a name="table23402mcpsimp"></a>
+``` 【参数】 <a name="table23402mcpsimp"></a>
 <table><thead align="left"><tr id="row23408mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p23410mcpsimp"><a name="p23410mcpsimp"></a><a name="p23410mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p23412mcpsimp"><a name="p23412mcpsimp"></a><a name="p23412mcpsimp"></a>描述</p>
@@ -3062,11 +1641,7 @@ td_s32 ss_mpi_isp_set_dp_static_attr(ot_vi_pipe vi_pipe, const ot_isp_dp_static_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table23431mcpsimp"></a>
+</table> 【返回值】 <a name="table23431mcpsimp"></a>
 <table><thead align="left"><tr id="row23436mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p23438mcpsimp"><a name="p23438mcpsimp"></a><a name="p23438mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p23440mcpsimp"><a name="p23440mcpsimp"></a><a name="p23440mcpsimp"></a>描述</p>
@@ -3078,57 +1653,20 @@ td_s32 ss_mpi_isp_set_dp_static_attr(ot_vi_pipe vi_pipe, const ot_isp_dp_static_
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23445mcpsimp"><a name="p23445mcpsimp"></a><a name="p23445mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row23446mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p23448mcpsimp"><a name="p23448mcpsimp"></a><a name="p23448mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23450mcpsimp"><a name="p23450mcpsimp"></a><a name="p23450mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-每一路ISP BE所能支持的最大静态坏点个数为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL\(在Hi3403V100中，OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL = 2048\)，因此DPC模块所能支持的最大静态坏点个数为count = OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL \* \(当前业务场景下ISP BE的分块数目\)。则亮点数目bright\_count <= count且dark\_count <= count，若亮点表和暗点表中有same个重复的坏点，则bright\_count + dark\_count – same < =count。ISP BE的分块数目参考ISP Proc信息中的” block\_num”。
-
-【举例】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 每一路ISP BE所能支持的最大静态坏点个数为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL\(在Hi3403V100中，OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL = 2048\)，因此DPC模块所能支持的最大静态坏点个数为count = OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL \* \(当前业务场景下ISP BE的分块数目\)。则亮点数目bright\_count <= count且dark\_count <= count，若亮点表和暗点表中有same个重复的坏点，则bright\_count + dark\_count – same < =count。ISP BE的分块数目参考ISP Proc信息中的” block\_num”。 【举例】 ```
 ot_isp_dp_static_attr dpc_static_attr;
 dpc_static_attr.bright_count = bright_bp_number;
 dpc_static_attr.dark_count = dark_bp_number;
-for (i = 0; i < bright_bp_number; i++) {
-         dpc_static_attr.bright_table[i] = bright_table [i];
+for (i = 0; i < bright_bp_number; i++) { dpc_static_attr.bright_table[i] = bright_table [i];
 }
-for (i = 0; i < dark_bp_number; i++) {
-         dpc_static_attr.dark_table[i] = dark_table [i];
+for (i = 0; i < dark_bp_number; i++) { dpc_static_attr.dark_table[i] = dark_table [i];
 }
 ss_mpi_isp_set_dp_static_attr (vi_pipe,& dpc_static_attr);
-```
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_dp\_static\_attr](#ss_mpi_isp_get_dp_static_attr)
-
-#### ss\_mpi\_isp\_get\_dp\_static\_attr<a name="ZH-CN_TOPIC_0000002503964983"></a>
-
-【描述】
-
-获取静态坏点属性。
-
-【语法】
-
-```
+``` 【相关主题】 [ss\_mpi\_isp\_get\_dp\_static\_attr](#ss_mpi_isp_get_dp_static_attr) #### ss\_mpi\_isp\_get\_dp\_static\_attr<a name="ZH-CN_TOPIC_0000002503964983"></a> 【描述】 获取静态坏点属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_dp_static_attr(ot_vi_pipe vi_pipe, ot_isp_dp_static_attr *dp_static_attr);
-```
-
-【参数】
-
-<a name="table23483mcpsimp"></a>
+``` 【参数】 <a name="table23483mcpsimp"></a>
 <table><thead align="left"><tr id="row23489mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p23491mcpsimp"><a name="p23491mcpsimp"></a><a name="p23491mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.489999999999995%" id="mcps1.1.4.1.2"><p id="p23493mcpsimp"><a name="p23493mcpsimp"></a><a name="p23493mcpsimp"></a>描述</p>
@@ -3152,11 +1690,7 @@ td_s32 ss_mpi_isp_get_dp_static_attr(ot_vi_pipe vi_pipe, ot_isp_dp_static_attr *
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table23512mcpsimp"></a>
+</table> 【返回值】 <a name="table23512mcpsimp"></a>
 <table><thead align="left"><tr id="row23517mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p23519mcpsimp"><a name="p23519mcpsimp"></a><a name="p23519mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p23521mcpsimp"><a name="p23521mcpsimp"></a><a name="p23521mcpsimp"></a>描述</p>
@@ -3168,54 +1702,18 @@ td_s32 ss_mpi_isp_get_dp_static_attr(ot_vi_pipe vi_pipe, ot_isp_dp_static_attr *
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23526mcpsimp"><a name="p23526mcpsimp"></a><a name="p23526mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row23527mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p23529mcpsimp"><a name="p23529mcpsimp"></a><a name="p23529mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23531mcpsimp"><a name="p23531mcpsimp"></a><a name="p23531mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-在设置静态坏点属性中，亮点坏点表中表示亮坏点坐标信息，暗坏点表中则保存的是暗坏点坐标信息；而获取静态坏点属性时，亮点坏点表中保存的是所有坏点的坐标信息。
-
-【举例】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 在设置静态坏点属性中，亮点坏点表中表示亮坏点坐标信息，暗坏点表中则保存的是暗坏点坐标信息；而获取静态坏点属性时，亮点坏点表中保存的是所有坏点的坐标信息。 【举例】 ```
 td_u16 bp_number = 0;
 td_u32 bp_table[OT_ISP_STATIC_DP_COUNT_MAX];
 ss_mpi_isp_get_dp_static_attr (vi_pipe, dp_static_attr);
 bp_number = dp_static_attr.bright_count;
-for (i = 0; i < bp_number; i++) {
-    bp_table[i] = dp_static_attr.bright_table[i];
+for (i = 0; i < bp_number; i++) { bp_table[i] = dp_static_attr.bright_table[i];
 }
-```
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_dp\_static\_attr](#ss_mpi_isp_set_dp_static_attr)
-
-#### ss\_mpi\_isp\_set\_dp\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002503964845"></a>
-
-【描述】
-
-设置动态坏点调试属性。
-
-【语法】
-
-```
-td_s32  ss_mpi_isp_set_dp_dynamic_attr (ot_vi_pipe vi_pipe, const ot_isp_dp_dynamic_attr *dp_dynamic_attr);
-```
-
-【参数】
-
-<a name="table23562mcpsimp"></a>
+``` 【相关主题】 [ss\_mpi\_isp\_set\_dp\_static\_attr](#ss_mpi_isp_set_dp_static_attr) #### ss\_mpi\_isp\_set\_dp\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002503964845"></a> 【描述】 设置动态坏点调试属性。 【语法】 ```
+td_s32 ss_mpi_isp_set_dp_dynamic_attr (ot_vi_pipe vi_pipe, const ot_isp_dp_dynamic_attr *dp_dynamic_attr);
+``` 【参数】 <a name="table23562mcpsimp"></a>
 <table><thead align="left"><tr id="row23568mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.4.1.1"><p id="p23570mcpsimp"><a name="p23570mcpsimp"></a><a name="p23570mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p23572mcpsimp"><a name="p23572mcpsimp"></a><a name="p23572mcpsimp"></a>描述</p>
@@ -3239,11 +1737,7 @@ td_s32  ss_mpi_isp_set_dp_dynamic_attr (ot_vi_pipe vi_pipe, const ot_isp_dp_dyna
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table23591mcpsimp"></a>
+</table> 【返回值】 <a name="table23591mcpsimp"></a>
 <table><thead align="left"><tr id="row23596mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p23598mcpsimp"><a name="p23598mcpsimp"></a><a name="p23598mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p23600mcpsimp"><a name="p23600mcpsimp"></a><a name="p23600mcpsimp"></a>描述</p>
@@ -3255,46 +1749,11 @@ td_s32  ss_mpi_isp_set_dp_dynamic_attr (ot_vi_pipe vi_pipe, const ot_isp_dp_dyna
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23606mcpsimp"><a name="p23606mcpsimp"></a><a name="p23606mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row23607mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p23609mcpsimp"><a name="p23609mcpsimp"></a><a name="p23609mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23611mcpsimp"><a name="p23611mcpsimp"></a><a name="p23611mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_dp\_dynamic\_attr](#ss_mpi_isp_get_dp_dynamic_attr)
-
-#### ss\_mpi\_isp\_get\_dp\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002504084931"></a>
-
-【描述】
-
-获取动态坏点调试属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_dp\_dynamic\_attr](#ss_mpi_isp_get_dp_dynamic_attr) #### ss\_mpi\_isp\_get\_dp\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002504084931"></a> 【描述】 获取动态坏点调试属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_dp_dynamic_attr(ot_vi_pipe vi_pipe, ot_isp_dp_dynamic_attr *dp_dynamic_attr);
-```
-
-【参数】
-
-<a name="table23632mcpsimp"></a>
+``` 【参数】 <a name="table23632mcpsimp"></a>
 <table><thead align="left"><tr id="row23638mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p23640mcpsimp"><a name="p23640mcpsimp"></a><a name="p23640mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46.39%" id="mcps1.1.4.1.2"><p id="p23642mcpsimp"><a name="p23642mcpsimp"></a><a name="p23642mcpsimp"></a>描述</p>
@@ -3318,11 +1777,7 @@ td_s32 ss_mpi_isp_get_dp_dynamic_attr(ot_vi_pipe vi_pipe, ot_isp_dp_dynamic_attr
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table23661mcpsimp"></a>
+</table> 【返回值】 <a name="table23661mcpsimp"></a>
 <table><thead align="left"><tr id="row23666mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p23668mcpsimp"><a name="p23668mcpsimp"></a><a name="p23668mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p23670mcpsimp"><a name="p23670mcpsimp"></a><a name="p23670mcpsimp"></a>描述</p>
@@ -3334,91 +1789,23 @@ td_s32 ss_mpi_isp_get_dp_dynamic_attr(ot_vi_pipe vi_pipe, ot_isp_dp_dynamic_attr
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23676mcpsimp"><a name="p23676mcpsimp"></a><a name="p23676mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row23677mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p23679mcpsimp"><a name="p23679mcpsimp"></a><a name="p23679mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p23681mcpsimp"><a name="p23681mcpsimp"></a><a name="p23681mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_dp\_dynamic\_attr](#ss_mpi_isp_set_dp_dynamic_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503965001"></a>
-
--   [OT\_ISP\_STATIC\_DP\_COUNT\_MAX](#ZH-CN_TOPIC_0000002503965041)：DPC支持的最大静态坏点个数
--   [ot\_isp\_static\_dp\_type](#ZH-CN_TOPIC_0000002471084996)：静态坏点标定类型。
--   [ot\_isp\_status](#ZH-CN_TOPIC_0000002504084847)：ISP校正（检测）状态。
--   [ot\_isp\_dp\_static\_calibrate](#ZH-CN_TOPIC_0000002471085164)：静态坏点标定属性。
--   [ot\_isp\_dp\_static\_attr](#ZH-CN_TOPIC_0000002470925144)：静态坏点校正属性。
--   [ot\_isp\_dp\_dynamic\_manual\_attr](#ZH-CN_TOPIC_0000002504085081)：定义动态坏点校正的手动属性。
--   [ot\_isp\_dp\_dynamic\_auto\_attr](#ZH-CN_TOPIC_0000002504084765)：定义动态坏点校正的自动属性。
--   [ot\_isp\_dp\_dynamic\_attr](#ZH-CN_TOPIC_0000002504084911)：定义动态坏点校正属性。
-
-
-
-
-
-
-
-
-
-#### OT\_ISP\_STATIC\_DP\_COUNT\_MAX<a name="ZH-CN_TOPIC_0000002503965041"></a>
-
-【说明】
-
-DPC支持的最大静态坏点个数。
-
-【定义】
-
-```
-#define OT_ISP_STATIC_DP_COUNT_NORMAL      2048
-#define OT_ISP_STATIC_DP_COUNT_MAX         (OT_ISP_STATIC_DP_COUNT_NORMAL * OT_ISP_STRIPING_MAX_NUM)
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_dp\_static\_calibrate](#ot_isp_dp_static_calibrate)
--   [ot\_isp\_dp\_static\_attr](#ot_isp_dp_static_attr)
-
-#### ot\_isp\_static\_dp\_type<a name="ZH-CN_TOPIC_0000002471084996"></a>
-
-【说明】
-
-定义静态坏点标定类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_STATIC_DP_BRIGHT = 0x0,
-    OT_ISP_STATIC_DP_DARK,
-    OT_ISP_STATIC_DP_BUTT
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_dp\_dynamic\_attr](#ss_mpi_isp_set_dp_dynamic_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503965001"></a> - [OT\_ISP\_STATIC\_DP\_COUNT\_MAX](#ZH-CN_TOPIC_0000002503965041)：DPC支持的最大静态坏点个数
+- [ot\_isp\_static\_dp\_type](#ZH-CN_TOPIC_0000002471084996)：静态坏点标定类型。
+- [ot\_isp\_status](#ZH-CN_TOPIC_0000002504084847)：ISP校正（检测）状态。
+- [ot\_isp\_dp\_static\_calibrate](#ZH-CN_TOPIC_0000002471085164)：静态坏点标定属性。
+- [ot\_isp\_dp\_static\_attr](#ZH-CN_TOPIC_0000002470925144)：静态坏点校正属性。
+- [ot\_isp\_dp\_dynamic\_manual\_attr](#ZH-CN_TOPIC_0000002504085081)：定义动态坏点校正的手动属性。
+- [ot\_isp\_dp\_dynamic\_auto\_attr](#ZH-CN_TOPIC_0000002504084765)：定义动态坏点校正的自动属性。
+- [ot\_isp\_dp\_dynamic\_attr](#ZH-CN_TOPIC_0000002504084911)：定义动态坏点校正属性。 #### OT\_ISP\_STATIC\_DP\_COUNT\_MAX<a name="ZH-CN_TOPIC_0000002503965041"></a> 【说明】 DPC支持的最大静态坏点个数。 【定义】 ```
+#define OT_ISP_STATIC_DP_COUNT_NORMAL 2048
+#define OT_ISP_STATIC_DP_COUNT_MAX (OT_ISP_STATIC_DP_COUNT_NORMAL * OT_ISP_STRIPING_MAX_NUM)
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_dp\_static\_calibrate](#ot_isp_dp_static_calibrate)
+- [ot\_isp\_dp\_static\_attr](#ot_isp_dp_static_attr) #### ot\_isp\_static\_dp\_type<a name="ZH-CN_TOPIC_0000002471084996"></a> 【说明】 定义静态坏点标定类型。 【定义】 ```
+typedef enum { OT_ISP_STATIC_DP_BRIGHT = 0x0, OT_ISP_STATIC_DP_DARK, OT_ISP_STATIC_DP_BUTT
 } ot_isp_static_dp_type;
-```
-
-【成员】
-
-<a name="table23740mcpsimp"></a>
+``` 【成员】 <a name="table23740mcpsimp"></a>
 <table><thead align="left"><tr id="row23745mcpsimp"><th class="cellrowborder" valign="top" width="40%" id="mcps1.1.3.1.1"><p id="p23747mcpsimp"><a name="p23747mcpsimp"></a><a name="p23747mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.3.1.2"><p id="p23749mcpsimp"><a name="p23749mcpsimp"></a><a name="p23749mcpsimp"></a>描述</p>
@@ -3436,36 +1823,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_dp\_static\_calibrate](#ot_isp_dp_static_calibrate)
-
-#### ot\_isp\_status<a name="ZH-CN_TOPIC_0000002504084847"></a>
-
-【说明】
-
-定义ISP校正（检测）状态。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_STATE_INIT     = 0,
-    OT_ISP_STATE_SUCCESS  = 1,
-    OT_ISP_STATE_TIMEOUT  = 2,
-    OT_ISP_STATE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_dp\_static\_calibrate](#ot_isp_dp_static_calibrate) #### ot\_isp\_status<a name="ZH-CN_TOPIC_0000002504084847"></a> 【说明】 定义ISP校正（检测）状态。 【定义】 ```
+typedef enum { OT_ISP_STATE_INIT = 0, OT_ISP_STATE_SUCCESS = 1, OT_ISP_STATE_TIMEOUT = 2, OT_ISP_STATE_BUTT
 } ot_isp_status;
-```
-
-【成员】
-
-<a name="table23778mcpsimp"></a>
+``` 【成员】 <a name="table23778mcpsimp"></a>
 <table><thead align="left"><tr id="row23783mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p23785mcpsimp"><a name="p23785mcpsimp"></a><a name="p23785mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p23787mcpsimp"><a name="p23787mcpsimp"></a><a name="p23787mcpsimp"></a>描述</p>
@@ -3488,42 +1849,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-只读。
-
-【相关数据类型及接口】
-
-[ot\_isp\_dp\_static\_calibrate](#ot_isp_dp_static_calibrate)
-
-#### ot\_isp\_dp\_static\_calibrate<a name="ZH-CN_TOPIC_0000002471085164"></a>
-
-【说明】
-
-定义静态坏点标定的属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool enable_detect;
-    ot_isp_static_dp_type static_dp_type;
-    td_u8  start_thresh;
-    td_u16 count_max;
-    td_u16 count_min;
-    td_u16 time_limit;
-    td_u32 table[OT_ISP_STATIC_DP_COUNT_MAX]; 
-    td_u8  finish_thresh;
-    td_u16 count;
-    ot_isp_status status;
+</table> 【注意事项】 只读。 【相关数据类型及接口】 [ot\_isp\_dp\_static\_calibrate](#ot_isp_dp_static_calibrate) #### ot\_isp\_dp\_static\_calibrate<a name="ZH-CN_TOPIC_0000002471085164"></a> 【说明】 定义静态坏点标定的属性。 【定义】 ```
+typedef struct { td_bool enable_detect; ot_isp_static_dp_type static_dp_type; td_u8 start_thresh; td_u16 count_max; td_u16 count_min; td_u16 time_limit; td_u32 table[OT_ISP_STATIC_DP_COUNT_MAX]; td_u8 finish_thresh; td_u16 count; ot_isp_status status;
 } ot_isp_dp_static_calibrate;
-```
-
-【成员】
-
-<a name="table23831mcpsimp"></a>
+``` 【成员】 <a name="table23831mcpsimp"></a>
 <table><thead align="left"><tr id="row23836mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p23838mcpsimp"><a name="p23838mcpsimp"></a><a name="p23838mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p23840mcpsimp"><a name="p23840mcpsimp"></a><a name="p23840mcpsimp"></a>描述</p>
@@ -3596,44 +1925,16 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   count\_max的配置值与当前的业务场景有关系。每一路ISP BE所能支持的静态坏点个数为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL，则count\_max的最大值为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL \* \(当前业务场景下ISP BE的分块数目\)，ISP BE的分块数目参考“Proc 调试信息说明”中的” block\_num”。
--   坏点检测算法检测成功的标准：检测出的坏点数量是否在\[count\_min, count\_max\)。所以不同类型的sensor在做坏点检测时需微调这两个值。
--   系统支持的坏点个数上限是OT\_ISP\_STATIC\_DP\_COUNT\_MAX。当sensor坏点个数大于OT\_ISP\_STATIC\_DP\_COUNT\_MAX, 系统反馈坏点个数等于OT\_ISP\_STATIC\_DP\_COUNT\_MAX。因此，坏点个数等于OT\_ISP\_STATIC\_DP\_COUNT\_MAX不能反映当前实际坏点检况。
--   finish\_thresh只作为输出。针对同类型的sensor，参考finish\_thresh值，设置合理的start\_thresh，能加快静态坏点校正过程。
--   每次调用标定接口[ss\_mpi\_isp\_set\_dp\_calibrate](#ZH-CN_TOPIC_0000002471084938)时，算法内部会自动将status恢复为OT\_ISP\_STATE\_INIT状态。
--   标定亮坏点时，推荐降帧，亮坏点超时时间近似等于time\_limit/8秒。标定暗坏点时，不做降帧动作，暗坏点超时时间近似等于time\_limit/48秒。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_static\_dp\_type](#ot_isp_static_dp_type)
--   [ot\_isp\_status](#ot_isp_status)
-
-#### ot\_isp\_dp\_static\_attr<a name="ZH-CN_TOPIC_0000002470925144"></a>
-
-【说明】
-
-定义静态坏点校正属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool enable;
-    td_u16  bright_count;
-    td_u16  dark_count;
-    td_u32  bright_table[OT_ISP_STATIC_DP_COUNT_MAX];
-    td_u32  dark_table[OT_ISP_STATIC_DP_COUNT_MAX];
-    td_bool show;
+</table> 【注意事项】 - count\_max的配置值与当前的业务场景有关系。每一路ISP BE所能支持的静态坏点个数为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL，则count\_max的最大值为OT\_ISP\_STATIC\_DP\_COUNT\_NORMAL \* \(当前业务场景下ISP BE的分块数目\)，ISP BE的分块数目参考“Proc 调试信息说明”中的” block\_num”。
+- 坏点检测算法检测成功的标准：检测出的坏点数量是否在\[count\_min, count\_max\)。所以不同类型的sensor在做坏点检测时需微调这两个值。
+- 系统支持的坏点个数上限是OT\_ISP\_STATIC\_DP\_COUNT\_MAX。当sensor坏点个数大于OT\_ISP\_STATIC\_DP\_COUNT\_MAX, 系统反馈坏点个数等于OT\_ISP\_STATIC\_DP\_COUNT\_MAX。因此，坏点个数等于OT\_ISP\_STATIC\_DP\_COUNT\_MAX不能反映当前实际坏点检况。
+- finish\_thresh只作为输出。针对同类型的sensor，参考finish\_thresh值，设置合理的start\_thresh，能加快静态坏点校正过程。
+- 每次调用标定接口[ss\_mpi\_isp\_set\_dp\_calibrate](#ZH-CN_TOPIC_0000002471084938)时，算法内部会自动将status恢复为OT\_ISP\_STATE\_INIT状态。
+- 标定亮坏点时，推荐降帧，亮坏点超时时间近似等于time\_limit/8秒。标定暗坏点时，不做降帧动作，暗坏点超时时间近似等于time\_limit/48秒。 【相关数据类型及接口】 - [ot\_isp\_static\_dp\_type](#ot_isp_static_dp_type)
+- [ot\_isp\_status](#ot_isp_status) #### ot\_isp\_dp\_static\_attr<a name="ZH-CN_TOPIC_0000002470925144"></a> 【说明】 定义静态坏点校正属性。 【定义】 ```
+typedef struct { td_bool enable; td_u16 bright_count; td_u16 dark_count; td_u32 bright_table[OT_ISP_STATIC_DP_COUNT_MAX]; td_u32 dark_table[OT_ISP_STATIC_DP_COUNT_MAX]; td_bool show;
 } ot_isp_dp_static_attr;
-```
-
-【成员】
-
-<a name="table23957mcpsimp"></a>
+``` 【成员】 <a name="table23957mcpsimp"></a>
 <table><thead align="left"><tr id="row23962mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p23964mcpsimp"><a name="p23964mcpsimp"></a><a name="p23964mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p23966mcpsimp"><a name="p23966mcpsimp"></a><a name="p23966mcpsimp"></a>描述</p>
@@ -3687,34 +1988,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-enable\_detect、show与enable是3个互斥的设置，并且对应的优先级是逐次降低的。
-
-【相关数据类型及接口】
-
-无。
-
-#### ot\_isp\_dp\_dynamic\_manual\_attr<a name="ZH-CN_TOPIC_0000002504085081"></a>
-
-【说明】
-
-定义动态坏点校正的手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  strength;
-    td_u16  blend_ratio;
+</table> 【注意事项】 enable\_detect、show与enable是3个互斥的设置，并且对应的优先级是逐次降低的。 【相关数据类型及接口】 无。 #### ot\_isp\_dp\_dynamic\_manual\_attr<a name="ZH-CN_TOPIC_0000002504085081"></a> 【说明】 定义动态坏点校正的手动属性。 【定义】 ```
+typedef struct { td_u16 strength; td_u16 blend_ratio;
 } ot_isp_dp_dynamic_manual_attr;
-```
-
-【成员】
-
-<a name="table24039mcpsimp"></a>
+``` 【成员】 <a name="table24039mcpsimp"></a>
 <table><thead align="left"><tr id="row24044mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p24046mcpsimp"><a name="p24046mcpsimp"></a><a name="p24046mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p24048mcpsimp"><a name="p24048mcpsimp"></a><a name="p24048mcpsimp"></a>描述</p>
@@ -3734,35 +2011,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   strength的选择与ISO值有很大的关系，ISO越高，对应的strength应该越大，在图像中坏点校正较好时，图像中偏红严重，此时可以再调节blend\_ratio 改善图像质量。
--   blend\_ratio 值越大，图像越模糊。
-
-【相关数据类型及接口】
-
-[ot\_isp\_dp\_dynamic\_attr](#ot_isp_dp_dynamic_attr)
-
-#### ot\_isp\_dp\_dynamic\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084765"></a>
-
-【说明】
-
-定义动态坏点校正的自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  strength[OT_ISP_AUTO_ISO_NUM];
-    td_u16  blend_ratio[OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 - strength的选择与ISO值有很大的关系，ISO越高，对应的strength应该越大，在图像中坏点校正较好时，图像中偏红严重，此时可以再调节blend\_ratio 改善图像质量。
+- blend\_ratio 值越大，图像越模糊。 【相关数据类型及接口】 [ot\_isp\_dp\_dynamic\_attr](#ot_isp_dp_dynamic_attr) #### ot\_isp\_dp\_dynamic\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084765"></a> 【说明】 定义动态坏点校正的自动属性。 【定义】 ```
+typedef struct { td_u16 strength[OT_ISP_AUTO_ISO_NUM]; td_u16 blend_ratio[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_dp_dynamic_auto_attr;
-```
-
-【成员】
-
-<a name="_Ref48032486"></a>
+``` 【成员】 <a name="_Ref48032486"></a>
 <table><thead align="left"><tr id="row24085mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p24087mcpsimp"><a name="p24087mcpsimp"></a><a name="p24087mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p24089mcpsimp"><a name="p24089mcpsimp"></a><a name="p24089mcpsimp"></a>描述</p>
@@ -3782,11 +2035,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 1**  strength\[16\]在不同增益情况下对应的设置值
-
-<a name="table24106mcpsimp"></a>
+</table> **表 1** strength\[16\]在不同增益情况下对应的设置值 <a name="table24106mcpsimp"></a>
 <table><thead align="left"><tr id="row24111mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.2.3.1.1"><p xml:lang="sv-SE" id="p24113mcpsimp"><a name="p24113mcpsimp"></a><a name="p24113mcpsimp"></a>strength</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.2.3.1.2"><p id="p24115mcpsimp"><a name="p24115mcpsimp"></a><a name="p24115mcpsimp"></a>Again*Dgain*ISPDgain(times)</p>
@@ -3874,42 +2123,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   该结构体中的默认值均在sensor\_cmos.c中，如果用户需要修改默认值，请修改相应参数。如果用户需要对接新的sensor，请参考已经提供的其它sensor的默认值。
--   在WDR模式与线性模式之下，Again\*Dgain\*ISPDgain没有差异。
-
-【相关数据类型及接口】
-
-[ot\_isp\_dp\_dynamic\_attr](#ot_isp_dp_dynamic_attr)
-
-#### ot\_isp\_dp\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002504084911"></a>
-
-【说明】
-
-定义动态坏点校正属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool enable;
-    td_bool sup_twinkle_en;
-    td_s8   soft_thr;
-    td_u8   soft_slope;
-    ot_op_mode op_type;
-    ot_isp_dp_dynamic_manual_attr manual_attr;
-    ot_isp_dp_dynamic_auto_attr  auto_attr;
-    td_u8 bright_strength;
-    td_u8 dark_strength;
+</table> 【注意事项】 - 该结构体中的默认值均在sensor\_cmos.c中，如果用户需要修改默认值，请修改相应参数。如果用户需要对接新的sensor，请参考已经提供的其它sensor的默认值。
+- 在WDR模式与线性模式之下，Again\*Dgain\*ISPDgain没有差异。 【相关数据类型及接口】 [ot\_isp\_dp\_dynamic\_attr](#ot_isp_dp_dynamic_attr) #### ot\_isp\_dp\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002504084911"></a> 【说明】 定义动态坏点校正属性。 【定义】 ```
+typedef struct { td_bool enable; td_bool sup_twinkle_en; td_s8 soft_thr; td_u8 soft_slope; ot_op_mode op_type; ot_isp_dp_dynamic_manual_attr manual_attr; ot_isp_dp_dynamic_auto_attr auto_attr; td_u8 bright_strength; td_u8 dark_strength;
 } ot_isp_dp_dynamic_attr;
-```
-
-【成员】
-
-<a name="table24227mcpsimp"></a>
+``` 【成员】 <a name="table24227mcpsimp"></a>
 <table><thead align="left"><tr id="row24232mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p24234mcpsimp"><a name="p24234mcpsimp"></a><a name="p24234mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p24236mcpsimp"><a name="p24236mcpsimp"></a><a name="p24236mcpsimp"></a>描述</p>
@@ -3971,66 +2189,18 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   闪烁抑制功能与strength存在联动关系，soft\_thr和soft\_slope取值不合理时，调节strength，有可能在strength的某些档位之间存在校正效果的突变，因此建议在保证soft\_thr和soft\_slope的配置值不明显影响图像的清晰度的前提下，调节strength，看坏点的校正以及闪烁抑制的效果。
--   soft\_slope参数设置过大，图像会模糊，同时可能会出现伪彩等副作用，因此soft\_slope应设置为不明显影响图像清晰度的参数。
--   strength和blend\_ratio参数设置过大，图像会模糊，同时可能出现伪彩等副作用。
--   bright\_strength主要影响亮区效果，对暗区有轻微影响。dark\_strength主要影响暗区效果，对亮区有轻微影响。
--   WDR模式下建议调整bright\_strength和dark\_strength参数以优化图像效果。
-    -   bright\_strength，dark\_strength 大于64时，去坏点能力增强，小于64时，去坏点能力减弱；
-    -   建议bright\_strength参数调小，改善亮区细节；
-    -   建议dark\_strength参数调大，改善暗区坏点残留情况。
-
-【相关数据类型及接口】
-
--   ot\_op\_mode
--   [ot\_isp\_dp\_dynamic\_manual\_attr](#ot_isp_dp_dynamic_manual_attr)
--   [ot\_isp\_dp\_dynamic\_auto\_attr](#ot_isp_dp_dynamic_auto_attr)
-
-## Crosstalk Removal<a name="ZH-CN_TOPIC_0000002504084817"></a>
-
-
-
-
-
-### 概述<a name="ZH-CN_TOPIC_0000002504084867"></a>
-
-Crosstalk Removal模块的主要功能是为了平衡raw数据上临近像素Gr和Gb之间的差异，能够有效防止demosaic插值算法产生的方格或其他类似pattern。由于sensor可能会因为特殊角度的光线入射而产生Crosstalk，形成一些pattern，根本原因就是因为临近像素值之间Gr和Gb值域不一致。
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085102"></a>
-
-如Crosstalk 门限图所示，横坐标表示Gr与Gb之间的差值，即|Gr-Gb|，纵坐标表示处理的强度值。图中的Threshold，slope与参数中的threshold，slope不完全对应，只是算法的大致示意。
-
--   当Gr与Gb之间的差值小于Threshold值时，都按照最大的强度值0.5进行处理，Threshold值越大，图像整体被处理的强度越大；
--   当Gr与Gb之间的差值大于Threshold值时，由slope控制处理的强度，当slope值越大，整体处理强度衰减得越慢，也就是处理的强度越大。
-
-**图 1**  Crosstalk 门限<a name="_Ref49417361"></a>  
-![](figures/Crosstalk-门限.png "Crosstalk-门限")
-### API参考<a name="ZH-CN_TOPIC_0000002471084840"></a>
-
--   [ss\_mpi\_isp\_set\_crosstalk\_attr](#ZH-CN_TOPIC_0000002470925204)：设定Crosstalk 属性。
--   [ss\_mpi\_isp\_get\_crosstalk\_attr](#ZH-CN_TOPIC_0000002503965165)：获取Crosstalk 属性。
-
-
-
-#### ss\_mpi\_isp\_set\_crosstalk\_attr<a name="ZH-CN_TOPIC_0000002470925204"></a>
-
-【描述】
-
-设定Crosstalk 属性。
-
-【语法】
-
-```
+</table> 【注意事项】 - 闪烁抑制功能与strength存在联动关系，soft\_thr和soft\_slope取值不合理时，调节strength，有可能在strength的某些档位之间存在校正效果的突变，因此建议在保证soft\_thr和soft\_slope的配置值不明显影响图像的清晰度的前提下，调节strength，看坏点的校正以及闪烁抑制的效果。
+- soft\_slope参数设置过大，图像会模糊，同时可能会出现伪彩等副作用，因此soft\_slope应设置为不明显影响图像清晰度的参数。
+- strength和blend\_ratio参数设置过大，图像会模糊，同时可能出现伪彩等副作用。
+- bright\_strength主要影响亮区效果，对暗区有轻微影响。dark\_strength主要影响暗区效果，对亮区有轻微影响。
+- WDR模式下建议调整bright\_strength和dark\_strength参数以优化图像效果。 - bright\_strength，dark\_strength 大于64时，去坏点能力增强，小于64时，去坏点能力减弱； - 建议bright\_strength参数调小，改善亮区细节； - 建议dark\_strength参数调大，改善暗区坏点残留情况。 【相关数据类型及接口】 - ot\_op\_mode
+- [ot\_isp\_dp\_dynamic\_manual\_attr](#ot_isp_dp_dynamic_manual_attr)
+- [ot\_isp\_dp\_dynamic\_auto\_attr](#ot_isp_dp_dynamic_auto_attr) ## Crosstalk Removal<a name="ZH-CN_TOPIC_0000002504084817"></a> ### 概述<a name="ZH-CN_TOPIC_0000002504084867"></a> Crosstalk Removal模块的主要功能是为了平衡raw数据上临近像素Gr和Gb之间的差异，能够有效防止demosaic插值算法产生的方格或其他类似pattern。由于sensor可能会因为特殊角度的光线入射而产生Crosstalk，形成一些pattern，根本原因就是因为临近像素值之间Gr和Gb值域不一致。 ### 功能描述<a name="ZH-CN_TOPIC_0000002471085102"></a> 如Crosstalk 门限图所示，横坐标表示Gr与Gb之间的差值，即|Gr-Gb|，纵坐标表示处理的强度值。图中的Threshold，slope与参数中的threshold，slope不完全对应，只是算法的大致示意。 - 当Gr与Gb之间的差值小于Threshold值时，都按照最大的强度值0.5进行处理，Threshold值越大，图像整体被处理的强度越大；
+- 当Gr与Gb之间的差值大于Threshold值时，由slope控制处理的强度，当slope值越大，整体处理强度衰减得越慢，也就是处理的强度越大。 **图 1** Crosstalk 门限<a name="_Ref49417361"></a> ![](figures/Crosstalk-门限.png "Crosstalk-门限")
+### API参考<a name="ZH-CN_TOPIC_0000002471084840"></a> - [ss\_mpi\_isp\_set\_crosstalk\_attr](#ZH-CN_TOPIC_0000002470925204)：设定Crosstalk 属性。
+- [ss\_mpi\_isp\_get\_crosstalk\_attr](#ZH-CN_TOPIC_0000002503965165)：获取Crosstalk 属性。 #### ss\_mpi\_isp\_set\_crosstalk\_attr<a name="ZH-CN_TOPIC_0000002470925204"></a> 【描述】 设定Crosstalk 属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_crosstalk_attr(ot_vi_pipe vi_pipe, const ot_isp_cr_attr *cr_attr);
-```
-
-【参数】
-
-<a name="table24360mcpsimp"></a>
+``` 【参数】 <a name="table24360mcpsimp"></a>
 <table><thead align="left"><tr id="row24366mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p24368mcpsimp"><a name="p24368mcpsimp"></a><a name="p24368mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p24370mcpsimp"><a name="p24370mcpsimp"></a><a name="p24370mcpsimp"></a>描述</p>
@@ -4054,11 +2224,7 @@ td_s32 ss_mpi_isp_set_crosstalk_attr(ot_vi_pipe vi_pipe, const ot_isp_cr_attr *c
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table24389mcpsimp"></a>
+</table> 【返回值】 <a name="table24389mcpsimp"></a>
 <table><thead align="left"><tr id="row24394mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p24396mcpsimp"><a name="p24396mcpsimp"></a><a name="p24396mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p24398mcpsimp"><a name="p24398mcpsimp"></a><a name="p24398mcpsimp"></a>描述</p>
@@ -4070,46 +2236,11 @@ td_s32 ss_mpi_isp_set_crosstalk_attr(ot_vi_pipe vi_pipe, const ot_isp_cr_attr *c
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p24404mcpsimp"><a name="p24404mcpsimp"></a><a name="p24404mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row24405mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p24407mcpsimp"><a name="p24407mcpsimp"></a><a name="p24407mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p24409mcpsimp"><a name="p24409mcpsimp"></a><a name="p24409mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a, libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_crosstalk\_attr](#ss_mpi_isp_get_crosstalk_attr)
-
-#### ss\_mpi\_isp\_get\_crosstalk\_attr<a name="ZH-CN_TOPIC_0000002503965165"></a>
-
-【描述】
-
-获取Crosstalk 属性。
-
-【语法】
-
-```
-td_s32  ss_mpi_isp_get_crosstalk_attr (ot_vi_pipe vi_pipe, ot_isp_cr_attr *cr_attr);
-```
-
-【参数】
-
-<a name="table24431mcpsimp"></a>
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a, libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_crosstalk\_attr](#ss_mpi_isp_get_crosstalk_attr) #### ss\_mpi\_isp\_get\_crosstalk\_attr<a name="ZH-CN_TOPIC_0000002503965165"></a> 【描述】 获取Crosstalk 属性。 【语法】 ```
+td_s32 ss_mpi_isp_get_crosstalk_attr (ot_vi_pipe vi_pipe, ot_isp_cr_attr *cr_attr);
+``` 【参数】 <a name="table24431mcpsimp"></a>
 <table><thead align="left"><tr id="row24437mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p24439mcpsimp"><a name="p24439mcpsimp"></a><a name="p24439mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p24441mcpsimp"><a name="p24441mcpsimp"></a><a name="p24441mcpsimp"></a>描述</p>
@@ -4133,11 +2264,7 @@ td_s32  ss_mpi_isp_get_crosstalk_attr (ot_vi_pipe vi_pipe, ot_isp_cr_attr *cr_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table24460mcpsimp"></a>
+</table> 【返回值】 <a name="table24460mcpsimp"></a>
 <table><thead align="left"><tr id="row24465mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p24467mcpsimp"><a name="p24467mcpsimp"></a><a name="p24467mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p24469mcpsimp"><a name="p24469mcpsimp"></a><a name="p24469mcpsimp"></a>描述</p>
@@ -4149,57 +2276,12 @@ td_s32  ss_mpi_isp_get_crosstalk_attr (ot_vi_pipe vi_pipe, ot_isp_cr_attr *cr_at
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p24475mcpsimp"><a name="p24475mcpsimp"></a><a name="p24475mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row24476mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p24478mcpsimp"><a name="p24478mcpsimp"></a><a name="p24478mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p24480mcpsimp"><a name="p24480mcpsimp"></a><a name="p24480mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a, libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_crosstalk\_attr](#ss_mpi_isp_set_crosstalk_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470924986"></a>
-
-
-#### ot\_isp\_cr\_attr<a name="ZH-CN_TOPIC_0000002471084916"></a>
-
-【说明】
-
-定义ISP Crosstalk 属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool  en;
-    td_u8   slope;
-    td_u8   sensi_slope;
-    td_u16  sensi_threshold;
-    td_u16  threshold[OT_ISP_AUTO_ISO_NUM]; 
-    td_u16  strength[OT_ISP_AUTO_ISO_NUM];
-    td_u16  np_offset[OT_ISP_AUTO_ISO_NUM];
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a, libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_crosstalk\_attr](#ss_mpi_isp_set_crosstalk_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002470924986"></a> #### ot\_isp\_cr\_attr<a name="ZH-CN_TOPIC_0000002471084916"></a> 【说明】 定义ISP Crosstalk 属性。 【定义】 ```
+typedef struct { td_bool en; td_u8 slope; td_u8 sensi_slope; td_u16 sensi_threshold; td_u16 threshold[OT_ISP_AUTO_ISO_NUM]; td_u16 strength[OT_ISP_AUTO_ISO_NUM]; td_u16 np_offset[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_cr_attr;
-```
-
-【成员】
-
-<a name="table24519mcpsimp"></a>
+``` 【成员】 <a name="table24519mcpsimp"></a>
 <table><thead align="left"><tr id="row24529mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p24531mcpsimp"><a name="p24531mcpsimp"></a><a name="p24531mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p24533mcpsimp"><a name="p24533mcpsimp"></a><a name="p24533mcpsimp"></a>描述</p>
@@ -4247,11 +2329,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 1** strength \[OT\_ISP\_AUTO\_ISO\_NUM\]在不同的增益情况下的设置值
-
-<a name="table24578mcpsimp"></a>
+</table> **表 1** strength \[OT\_ISP\_AUTO\_ISO\_NUM\]在不同的增益情况下的设置值 <a name="table24578mcpsimp"></a>
 <table><thead align="left"><tr id="row24583mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.2.3.1.1"><p xml:lang="sv-SE" id="p24585mcpsimp"><a name="p24585mcpsimp"></a><a name="p24585mcpsimp"></a>strength</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.2.3.1.2"><p id="p24587mcpsimp"><a name="p24587mcpsimp"></a><a name="p24587mcpsimp"></a>Again*Dgain*ISPDgain (times)</p>
@@ -4339,49 +2417,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   sensi\_threshold参数变化会影响threshold参数的表现，建议先调节sensi\_threshold使之固定，再调节threshold。
--   各参数请在默认值附近微调，调试不当可能会在边缘或细节处出现伪彩，或使其变模糊。
--   不支持RGBIR Pattern的Crosstalk功能。使能RGBIR，Crosstalk功能会自动关闭，相关参数调节无效。
-
-【相关数据类型及接口】
-
-无。
-
-## 去噪算法<a name="ZH-CN_TOPIC_0000002504084747"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470924956"></a>
-
-图像去噪是数字图像处理中的重要环节和步骤，去噪效果将对后续图像处理产生影响。该去噪模块基于噪声标定结果，建立更符合噪声特性的去噪模型，且可根据不同sensor做标定模型定制化。NR在Bayer域进行空域去噪处理和时域去噪处理。利用动静检测机制，对图像分前景和背景分别处理，来抑制噪声，提高整体图像信噪比。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471084896"></a>
-
--   [ss\_mpi\_isp\_set\_nr\_attr](#ZH-CN_TOPIC_0000002504084729)：设置NR参数。
--   [ss\_mpi\_isp\_get\_nr\_attr](#ZH-CN_TOPIC_0000002470924978)：获取NR参数。
-
-
-
-#### ss\_mpi\_isp\_set\_nr\_attr<a name="ZH-CN_TOPIC_0000002504084729"></a>
-
-【描述】
-
-设置NR参数。
-
-【语法】
-
-```
+</table> 【注意事项】 - sensi\_threshold参数变化会影响threshold参数的表现，建议先调节sensi\_threshold使之固定，再调节threshold。
+- 各参数请在默认值附近微调，调试不当可能会在边缘或细节处出现伪彩，或使其变模糊。
+- 不支持RGBIR Pattern的Crosstalk功能。使能RGBIR，Crosstalk功能会自动关闭，相关参数调节无效。 【相关数据类型及接口】 无。 ## 去噪算法<a name="ZH-CN_TOPIC_0000002504084747"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470924956"></a> 图像去噪是数字图像处理中的重要环节和步骤，去噪效果将对后续图像处理产生影响。该去噪模块基于噪声标定结果，建立更符合噪声特性的去噪模型，且可根据不同sensor做标定模型定制化。NR在Bayer域进行空域去噪处理和时域去噪处理。利用动静检测机制，对图像分前景和背景分别处理，来抑制噪声，提高整体图像信噪比。 ### API参考<a name="ZH-CN_TOPIC_0000002471084896"></a> - [ss\_mpi\_isp\_set\_nr\_attr](#ZH-CN_TOPIC_0000002504084729)：设置NR参数。
+- [ss\_mpi\_isp\_get\_nr\_attr](#ZH-CN_TOPIC_0000002470924978)：获取NR参数。 #### ss\_mpi\_isp\_set\_nr\_attr<a name="ZH-CN_TOPIC_0000002504084729"></a> 【描述】 设置NR参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_nr_attr(ot_vi_pipe vi_pipe, const ot_isp_nr_attr *nr_attr)
-```
-
-【参数】
-
-<a name="table24693mcpsimp"></a>
+``` 【参数】 <a name="table24693mcpsimp"></a>
 <table><thead align="left"><tr id="row24699mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p24701mcpsimp"><a name="p24701mcpsimp"></a><a name="p24701mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p24703mcpsimp"><a name="p24703mcpsimp"></a><a name="p24703mcpsimp"></a>描述</p>
@@ -4405,11 +2446,7 @@ td_s32 ss_mpi_isp_set_nr_attr(ot_vi_pipe vi_pipe, const ot_isp_nr_attr *nr_attr)
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table24722mcpsimp"></a>
+</table> 【返回值】 <a name="table24722mcpsimp"></a>
 <table><thead align="left"><tr id="row24727mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p24729mcpsimp"><a name="p24729mcpsimp"></a><a name="p24729mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p24731mcpsimp"><a name="p24731mcpsimp"></a><a name="p24731mcpsimp"></a>描述</p>
@@ -4421,46 +2458,11 @@ td_s32 ss_mpi_isp_set_nr_attr(ot_vi_pipe vi_pipe, const ot_isp_nr_attr *nr_attr)
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p24736mcpsimp"><a name="p24736mcpsimp"></a><a name="p24736mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row24737mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p24739mcpsimp"><a name="p24739mcpsimp"></a><a name="p24739mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p24741mcpsimp"><a name="p24741mcpsimp"></a><a name="p24741mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_nr\_attr](#ss_mpi_isp_get_nr_attr)
-
-#### ss\_mpi\_isp\_get\_nr\_attr<a name="ZH-CN_TOPIC_0000002470924978"></a>
-
-【描述】
-
-获取噪声抑制参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_nr\_attr](#ss_mpi_isp_get_nr_attr) #### ss\_mpi\_isp\_get\_nr\_attr<a name="ZH-CN_TOPIC_0000002470924978"></a> 【描述】 获取噪声抑制参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_nr_attr(ot_vi_pipe vi_pipe, ot_isp_nr_attr *nr_attr)
-```
-
-【参数】
-
-<a name="table24764mcpsimp"></a>
+``` 【参数】 <a name="table24764mcpsimp"></a>
 <table><thead align="left"><tr id="row24770mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p24772mcpsimp"><a name="p24772mcpsimp"></a><a name="p24772mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.4.1.2"><p id="p24774mcpsimp"><a name="p24774mcpsimp"></a><a name="p24774mcpsimp"></a>描述</p>
@@ -4484,11 +2486,7 @@ td_s32 ss_mpi_isp_get_nr_attr(ot_vi_pipe vi_pipe, ot_isp_nr_attr *nr_attr)
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table24793mcpsimp"></a>
+</table> 【返回值】 <a name="table24793mcpsimp"></a>
 <table><thead align="left"><tr id="row24798mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p24800mcpsimp"><a name="p24800mcpsimp"></a><a name="p24800mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p24802mcpsimp"><a name="p24802mcpsimp"></a><a name="p24802mcpsimp"></a>描述</p>
@@ -4500,115 +2498,26 @@ td_s32 ss_mpi_isp_get_nr_attr(ot_vi_pipe vi_pipe, ot_isp_nr_attr *nr_attr)
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p24807mcpsimp"><a name="p24807mcpsimp"></a><a name="p24807mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row24808mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p24810mcpsimp"><a name="p24810mcpsimp"></a><a name="p24810mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p24812mcpsimp"><a name="p24812mcpsimp"></a><a name="p24812mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_nr\_attr](#ZH-CN_TOPIC_0000001220137539)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503964813"></a>
-
--   [OT\_ISP\_BAYERNR\_LUT\_LENGTH](#ZH-CN_TOPIC_0000002503964855)：定义nr亮度回叠表长度。
--   [ot\_isp\_bnr\_sfm0\_mode](#ZH-CN_TOPIC_0000002503965173)：定义nr sfm0滤波器的两种滤波模式。
--   [ot\_isp\_nr\_snr\_attr](#ZH-CN_TOPIC_0000002504084973)：定义ISP NR空域属性。
--   [ot\_isp\_nr\_tnr\_attr](#ZH-CN_TOPIC_0000002503965179)：定义ISP NR时域属性。
--   [ot\_isp\_nr\_snr\_manual\_attr](#ZH-CN_TOPIC_0000002471085066)：定义ISP NR空域手动属性。
--   [ot\_isp\_nr\_snr\_auto\_attr](#ZH-CN_TOPIC_0000002504084789)：定义ISP NR空域自动属性。
--   [ot\_isp\_nr\_tnr\_manual\_attr](#ZH-CN_TOPIC_0000002470925174)：定义ISP NR时域手动属性。
--   [ot\_isp\_nr\_tnr\_auto\_attr](#ZH-CN_TOPIC_0000002504084711)：定义ISP NR时域自动属性。
--   [ot\_isp\_nr\_wdr\_attr](#ZH-CN_TOPIC_0000002503964857)：定义ISP NR在WDR模式下属性。
--   [ot\_isp\_nr\_attr](#ZH-CN_TOPIC_0000002503965101)：定义ISP NR属性。
-
-
-
-
-
-
-
-
-
-
-
-#### OT\_ISP\_BAYERNR\_LUT\_LENGTH<a name="ZH-CN_TOPIC_0000002503964855"></a>
-
-【说明】
-
-定义nr亮度回叠表长度。
-
-【定义】
-
-```
-#define OT_ISP_BAYERNR_LUT_LENGTH       33
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_bnr\_sfm0\_mode<a name="ZH-CN_TOPIC_0000002503965173"></a>
-
-【说明】
-
-定义nr sfm0滤波器的两种滤波模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_BNR_EX = 0,
-    OT_ISP_BNR_NORM = 1,
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_nr\_attr](#ZH-CN_TOPIC_0000001220137539) ### 数据类型<a name="ZH-CN_TOPIC_0000002503964813"></a> - [OT\_ISP\_BAYERNR\_LUT\_LENGTH](#ZH-CN_TOPIC_0000002503964855)：定义nr亮度回叠表长度。
+- [ot\_isp\_bnr\_sfm0\_mode](#ZH-CN_TOPIC_0000002503965173)：定义nr sfm0滤波器的两种滤波模式。
+- [ot\_isp\_nr\_snr\_attr](#ZH-CN_TOPIC_0000002504084973)：定义ISP NR空域属性。
+- [ot\_isp\_nr\_tnr\_attr](#ZH-CN_TOPIC_0000002503965179)：定义ISP NR时域属性。
+- [ot\_isp\_nr\_snr\_manual\_attr](#ZH-CN_TOPIC_0000002471085066)：定义ISP NR空域手动属性。
+- [ot\_isp\_nr\_snr\_auto\_attr](#ZH-CN_TOPIC_0000002504084789)：定义ISP NR空域自动属性。
+- [ot\_isp\_nr\_tnr\_manual\_attr](#ZH-CN_TOPIC_0000002470925174)：定义ISP NR时域手动属性。
+- [ot\_isp\_nr\_tnr\_auto\_attr](#ZH-CN_TOPIC_0000002504084711)：定义ISP NR时域自动属性。
+- [ot\_isp\_nr\_wdr\_attr](#ZH-CN_TOPIC_0000002503964857)：定义ISP NR在WDR模式下属性。
+- [ot\_isp\_nr\_attr](#ZH-CN_TOPIC_0000002503965101)：定义ISP NR属性。 #### OT\_ISP\_BAYERNR\_LUT\_LENGTH<a name="ZH-CN_TOPIC_0000002503964855"></a> 【说明】 定义nr亮度回叠表长度。 【定义】 ```
+#define OT_ISP_BAYERNR_LUT_LENGTH 33
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_bnr\_sfm0\_mode<a name="ZH-CN_TOPIC_0000002503965173"></a> 【说明】 定义nr sfm0滤波器的两种滤波模式。 【定义】 ```
+typedef enum { OT_ISP_BNR_EX = 0, OT_ISP_BNR_NORM = 1,
 } ot_isp_bnr_sfm0_mode;
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_snr\_attr<a name="ZH-CN_TOPIC_0000002504084973"></a>
-
-【说明】
-
-定义ISP NR空域属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_nr_snr_auto_attr   snr_auto;
-    ot_isp_nr_snr_manual_attr snr_manual;
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_snr\_attr<a name="ZH-CN_TOPIC_0000002504084973"></a> 【说明】 定义ISP NR空域属性。 【定义】 ```
+typedef struct { ot_isp_nr_snr_auto_attr snr_auto; ot_isp_nr_snr_manual_attr snr_manual;
 } ot_isp_nr_snr_attr;
-```
-
-【成员】
-
-<a name="table24888mcpsimp"></a>
+``` 【成员】 <a name="table24888mcpsimp"></a>
 <table><thead align="left"><tr id="row24893mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.1.3.1.1"><p id="p24895mcpsimp"><a name="p24895mcpsimp"></a><a name="p24895mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="81%" id="mcps1.1.3.1.2"><p id="p24897mcpsimp"><a name="p24897mcpsimp"></a><a name="p24897mcpsimp"></a>描述</p>
@@ -4626,34 +2535,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_tnr\_attr<a name="ZH-CN_TOPIC_0000002503965179"></a>
-
-【说明】
-
-定义ISP NR时域属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_nr_tnr_auto_attr   tnr_auto;
-    ot_isp_nr_tnr_manual_attr tnr_manual;
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_tnr\_attr<a name="ZH-CN_TOPIC_0000002503965179"></a> 【说明】 定义ISP NR时域属性。 【定义】 ```
+typedef struct { ot_isp_nr_tnr_auto_attr tnr_auto; ot_isp_nr_tnr_manual_attr tnr_manual;
 } ot_isp_nr_tnr_attr;
-```
-
-【成员】
-
-<a name="table24925mcpsimp"></a>
+``` 【成员】 <a name="table24925mcpsimp"></a>
 <table><thead align="left"><tr id="row24930mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.1.3.1.1"><p id="p24932mcpsimp"><a name="p24932mcpsimp"></a><a name="p24932mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="81%" id="mcps1.1.3.1.2"><p id="p24934mcpsimp"><a name="p24934mcpsimp"></a><a name="p24934mcpsimp"></a>描述</p>
@@ -4671,43 +2556,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_snr\_manual\_attr<a name="ZH-CN_TOPIC_0000002471085066"></a>
-
-【说明】
-
-定义ISP NR空域手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8                 sfm_threshold;
-    ot_isp_bnr_sfm0_mode  sfm0_mode;    
-    td_u16    sfm0_coarse_strength[OT_ISP_BAYER_CHN_NUM];
-    td_u8     sfm0_ex_strength;
-    td_u8     sfm0_ex_detail_prot;
-    td_u8     sfm0_norm_edge_strength;
-    td_u8     sfm1_detail_prot;
-    td_u8     sfm1_coarse_strength;
-    td_u8     fine_strength;
-    td_u16    coring_wgt;
-    td_u8     coring_mot_thresh;
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_snr\_manual\_attr<a name="ZH-CN_TOPIC_0000002471085066"></a> 【说明】 定义ISP NR空域手动属性。 【定义】 ```
+typedef struct { td_u8 sfm_threshold; ot_isp_bnr_sfm0_mode sfm0_mode; td_u16 sfm0_coarse_strength[OT_ISP_BAYER_CHN_NUM]; td_u8 sfm0_ex_strength; td_u8 sfm0_ex_detail_prot; td_u8 sfm0_norm_edge_strength; td_u8 sfm1_detail_prot; td_u8 sfm1_coarse_strength; td_u8 fine_strength; td_u16 coring_wgt; td_u8 coring_mot_thresh;
 } ot_isp_nr_snr_manual_attr;
-```
-
-【成员】
-
-<a name="table24972mcpsimp"></a>
+``` 【成员】 <a name="table24972mcpsimp"></a>
 <table><thead align="left"><tr id="row24977mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p24979mcpsimp"><a name="p24979mcpsimp"></a><a name="p24979mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p24981mcpsimp"><a name="p24981mcpsimp"></a><a name="p24981mcpsimp"></a>描述</p>
@@ -4786,44 +2638,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   注意各参数的取值范围。
--   低照度下，参数sfm0\_coarse\_strength  与  fine\_strength  同时调到最大值时，容易出现由于去噪强度过大导致的边缘虚化，建议根据效果调到合适取值。
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_snr\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084789"></a>
-
-【说明】
-
-定义ISP NR空域自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8  sfm_threshold[OT_ISP_AUTO_ISO_NUM];
-    ot_isp_bnr_sfm0_mode  sfm0_mode[OT_ISP_AUTO_ISO_NUM];
-    td_u16  sfm0_coarse_strength[OT_ISP_BAYER_CHN_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u8  sfm0_ex_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8  sfm0_ex_detail_prot[OT_ISP_AUTO_ISO_NUM];
-    td_u8  sfm0_norm_edge_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8  sfm1_detail_prot[OT_ISP_AUTO_ISO_NUM];
-    td_u8  sfm1_coarse_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8  fine_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u16 coring_wgt[OT_ISP_AUTO_ISO_NUM];
-    td_u8  coring_mot_thresh[OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 - 注意各参数的取值范围。
+- 低照度下，参数sfm0\_coarse\_strength 与 fine\_strength 同时调到最大值时，容易出现由于去噪强度过大导致的边缘虚化，建议根据效果调到合适取值。 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_snr\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084789"></a> 【说明】 定义ISP NR空域自动属性。 【定义】 ```
+typedef struct { td_u8 sfm_threshold[OT_ISP_AUTO_ISO_NUM]; ot_isp_bnr_sfm0_mode sfm0_mode[OT_ISP_AUTO_ISO_NUM]; td_u16 sfm0_coarse_strength[OT_ISP_BAYER_CHN_NUM][OT_ISP_AUTO_ISO_NUM]; td_u8 sfm0_ex_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 sfm0_ex_detail_prot[OT_ISP_AUTO_ISO_NUM]; td_u8 sfm0_norm_edge_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 sfm1_detail_prot[OT_ISP_AUTO_ISO_NUM]; td_u8 sfm1_coarse_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 fine_strength[OT_ISP_AUTO_ISO_NUM]; td_u16 coring_wgt[OT_ISP_AUTO_ISO_NUM]; td_u8 coring_mot_thresh[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_nr_snr_auto_attr;
-```
-
-【成员】
-
-<a name="table25096mcpsimp"></a>
+``` 【成员】 <a name="table25096mcpsimp"></a>
 <table><thead align="left"><tr id="row25101mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p25103mcpsimp"><a name="p25103mcpsimp"></a><a name="p25103mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p25105mcpsimp"><a name="p25105mcpsimp"></a><a name="p25105mcpsimp"></a>描述</p>
@@ -4902,47 +2721,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   注意各参数的取值范围。
--   低照度下，参数sfm0\_coarse\_strength  与  fine\_strength  同时调到最大值时，容易出现由于去噪强度过大导致的边缘虚化，建议根据效果调到合适取值。
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_tnr\_manual\_attr<a name="ZH-CN_TOPIC_0000002470925174"></a>
-
-【说明】
-
-定义ISP NR时域手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool md_mode;   
-    td_u8   md_anti_flicker_strength;  
-    td_u8   md_static_ratio;      
-    td_u8   md_static_fine_strength;    
-    td_u8   tss;    
-    td_u8   tfr;   
-    td_u8   tfs;    
-    td_bool user_define_md;           
-    td_s16  user_define_slope;  
-    td_u16  user_define_dark_thresh;  
-    td_u8   user_define_color_thresh;
-    td_u8   sfr_r;  
-    td_u8   sfr_g;  
-    td_u8   sfr_b;  
-} ot_isp_nr_tnr_manual_attr;
-```
-
-【成员】
-
-<a name="table25208mcpsimp"></a>
+</table> 【注意事项】 - 注意各参数的取值范围。
+- 低照度下，参数sfm0\_coarse\_strength 与 fine\_strength 同时调到最大值时，容易出现由于去噪强度过大导致的边缘虚化，建议根据效果调到合适取值。 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_tnr\_manual\_attr<a name="ZH-CN_TOPIC_0000002470925174"></a> 【说明】 定义ISP NR时域手动属性。 【定义】 ```
+typedef struct { td_bool md_mode; td_u8 md_anti_flicker_strength; td_u8 md_static_ratio; td_u8 md_static_fine_strength; td_u8 tss; td_u8 tfr; td_u8 tfs; td_bool user_define_md; td_s16 user_define_slope; td_u16 user_define_dark_thresh; td_u8 user_define_color_thresh; td_u8 sfr_r; td_u8 sfr_g; td_u8 sfr_b; } ot_isp_nr_tnr_manual_attr;
+``` 【成员】 <a name="table25208mcpsimp"></a>
 <table><thead align="left"><tr id="row25213mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p25215mcpsimp"><a name="p25215mcpsimp"></a><a name="p25215mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p25217mcpsimp"><a name="p25217mcpsimp"></a><a name="p25217mcpsimp"></a>描述</p>
@@ -5036,46 +2818,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-注意各参数的取值范围。
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_tnr\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084711"></a>
-
-【说明】
-
-定义ISP NR时域自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool md_mode [OT_ISP_AUTO_ISO_NUM];
-    td_u8   md_anti_flicker_strength [OT_ISP_AUTO_ISO_NUM];
-    td_u8   md_static_ratio [OT_ISP_AUTO_ISO_NUM];
-    td_u8   md_static_fine_strength [OT_ISP_AUTO_ISO_NUM];
-    td_u8   tss [OT_ISP_AUTO_ISO_NUM];
-    td_u8   tfr [OT_ISP_AUTO_ISO_NUM];
-    td_u8   tfs [OT_ISP_AUTO_ISO_NUM];
-    td_bool user_define_md [OT_ISP_AUTO_ISO_NUM];
-    td_s16  user_define_slope [OT_ISP_AUTO_ISO_NUM];
-    td_u16  user_define_dark_thresh [OT_ISP_AUTO_ISO_NUM];
-    td_u8   user_define_color_thresh [OT_ISP_AUTO_ISO_NUM];
-    td_u8   sfr_r [OT_ISP_AUTO_ISO_NUM];
-    td_u8   sfr_g [OT_ISP_AUTO_ISO_NUM];
-    td_u8   sfr_b [OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 注意各参数的取值范围。 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_tnr\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084711"></a> 【说明】 定义ISP NR时域自动属性。 【定义】 ```
+typedef struct { td_bool md_mode [OT_ISP_AUTO_ISO_NUM]; td_u8 md_anti_flicker_strength [OT_ISP_AUTO_ISO_NUM]; td_u8 md_static_ratio [OT_ISP_AUTO_ISO_NUM]; td_u8 md_static_fine_strength [OT_ISP_AUTO_ISO_NUM]; td_u8 tss [OT_ISP_AUTO_ISO_NUM]; td_u8 tfr [OT_ISP_AUTO_ISO_NUM]; td_u8 tfs [OT_ISP_AUTO_ISO_NUM]; td_bool user_define_md [OT_ISP_AUTO_ISO_NUM]; td_s16 user_define_slope [OT_ISP_AUTO_ISO_NUM]; td_u16 user_define_dark_thresh [OT_ISP_AUTO_ISO_NUM]; td_u8 user_define_color_thresh [OT_ISP_AUTO_ISO_NUM]; td_u8 sfr_r [OT_ISP_AUTO_ISO_NUM]; td_u8 sfr_g [OT_ISP_AUTO_ISO_NUM]; td_u8 sfr_b [OT_ISP_AUTO_ISO_NUM];
 } ot_isp_nr_tnr_auto_attr;
-```
-
-【成员】
-
-<a name="table25345mcpsimp"></a>
+``` 【成员】 <a name="table25345mcpsimp"></a>
 <table><thead align="left"><tr id="row25350mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p25352mcpsimp"><a name="p25352mcpsimp"></a><a name="p25352mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p25354mcpsimp"><a name="p25354mcpsimp"></a><a name="p25354mcpsimp"></a>描述</p>
@@ -5169,38 +2915,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-注意各参数的取值范围。
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_wdr\_attr<a name="ZH-CN_TOPIC_0000002503964857"></a>
-
-【说明】
-
-定义ISP NR在WDR模式下属性，与自动/手动模式并行。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 snr_sfm0_wdr_strength[OT_ISP_WDR_MAX_FRAME_NUM];
-    td_u8 snr_sfm0_fusion_strength[OT_ISP_WDR_MAX_FRAME_NUM];
-    td_u8 snr_sfm1_wdr_strength;
-    td_u8 snr_sfm1_fusion_strength;
-    td_u8 md_wdr_strength[OT_ISP_WDR_MAX_FRAME_NUM];
-    td_u8 md_fusion_strength[OT_ISP_WDR_MAX_FRAME_NUM];
+</table> 【注意事项】 注意各参数的取值范围。 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_wdr\_attr<a name="ZH-CN_TOPIC_0000002503964857"></a> 【说明】 定义ISP NR在WDR模式下属性，与自动/手动模式并行。 【定义】 ```
+typedef struct { td_u8 snr_sfm0_wdr_strength[OT_ISP_WDR_MAX_FRAME_NUM]; td_u8 snr_sfm0_fusion_strength[OT_ISP_WDR_MAX_FRAME_NUM]; td_u8 snr_sfm1_wdr_strength; td_u8 snr_sfm1_fusion_strength; td_u8 md_wdr_strength[OT_ISP_WDR_MAX_FRAME_NUM]; td_u8 md_fusion_strength[OT_ISP_WDR_MAX_FRAME_NUM];
 } ot_isp_nr_wdr_attr;
-```
-
-【成员】
-
-<a name="table25465mcpsimp"></a>
+``` 【成员】 <a name="table25465mcpsimp"></a>
 <table><thead align="left"><tr id="row25470mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p25472mcpsimp"><a name="p25472mcpsimp"></a><a name="p25472mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p25474mcpsimp"><a name="p25474mcpsimp"></a><a name="p25474mcpsimp"></a>描述</p>
@@ -5274,43 +2992,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   ISP NR的WDR相关功能不支持在OT\_VI\_VIDEO\_MODE\_ADVANCED模式下使用。
--   注意各参数的取值范围。
-
-【相关数据类型及接口】
-
-[ot\_isp\_nr\_attr](#ot_isp_nr_attr)
-
-#### ot\_isp\_nr\_attr<a name="ZH-CN_TOPIC_0000002503965101"></a>
-
-【说明】
-
-定义ISP NR属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool    en;
-    ot_op_mode op_type;     
-    td_bool    tnr_en;
-    td_bool    lsc_nr_en;
-    td_u8      lsc_ratio1;
-    td_u8      lsc_ratio2;
-    td_u16     coring_ratio[OT_ISP_BAYERNR_LUT_LENGTH];  
-    ot_isp_nr_snr_attr   snr_cfg;
-    ot_isp_nr_tnr_attr   tnr_cfg;
-    ot_isp_nr_wdr_attr   wdr_cfg;
+</table> 【注意事项】 - ISP NR的WDR相关功能不支持在OT\_VI\_VIDEO\_MODE\_ADVANCED模式下使用。
+- 注意各参数的取值范围。 【相关数据类型及接口】 [ot\_isp\_nr\_attr](#ot_isp_nr_attr) #### ot\_isp\_nr\_attr<a name="ZH-CN_TOPIC_0000002503965101"></a> 【说明】 定义ISP NR属性。 【定义】 ```
+typedef struct { td_bool en; ot_op_mode op_type; td_bool tnr_en; td_bool lsc_nr_en; td_u8 lsc_ratio1; td_u8 lsc_ratio2; td_u16 coring_ratio[OT_ISP_BAYERNR_LUT_LENGTH]; ot_isp_nr_snr_attr snr_cfg; ot_isp_nr_tnr_attr tnr_cfg; ot_isp_nr_wdr_attr wdr_cfg;
 } ot_isp_nr_attr;
-```
-
-【成员】
-
-<a name="table25580mcpsimp"></a>
+``` 【成员】 <a name="table25580mcpsimp"></a>
 <table><thead align="left"><tr id="row25585mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p25587mcpsimp"><a name="p25587mcpsimp"></a><a name="p25587mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p25589mcpsimp"><a name="p25589mcpsimp"></a><a name="p25589mcpsimp"></a>描述</p>
@@ -5379,53 +3065,14 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-NR功能分为自动和手动参数：
-
--   en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动NR功能。
--   en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动NR功能。
--   当工作在WDR模式下，NR整体去噪强度参数wdr\_cfg生效。
--   BNR参考LSC去噪功能需要在LSC模块打开下调试，当LSC模块本身关闭时，BNR参考LSC不生效。
--   BNR时域打开时，在一些通路模式切换的场景，比如帧率切换，可能会出现时域重新收敛导致的噪声闪烁的现象。
-
-【相关数据类型及接口】
-
-无。
-
-## Dehaze<a name="ZH-CN_TOPIC_0000002470924958"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504084855"></a>
-
-Dehaze是通过动态的改变图象的对比度和亮度来实现的，将图像分块，统计每块内的像素值，估算出雾的浓度，根据局部自适应曲线调整去雾强度。Dehaze分为手动和自动模式，两种模式下均可调节去雾强度。
-
-### API参考<a name="ZH-CN_TOPIC_0000002504084833"></a>
-
--   [ss\_mpi\_isp\_set\_dehaze\_attr](#ZH-CN_TOPIC_0000002470924876)：设置去雾属性。
--   [ss\_mpi\_isp\_get\_dehaze\_attr](#ZH-CN_TOPIC_0000002470925172)：获取去雾属性。
-
-
-
-#### ss\_mpi\_isp\_set\_dehaze\_attr<a name="ZH-CN_TOPIC_0000002470924876"></a>
-
-【描述】
-
-设置Dehaze属性。
-
-【语法】
-
-```
+</table> 【注意事项】 NR功能分为自动和手动参数： - en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动NR功能。
+- en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动NR功能。
+- 当工作在WDR模式下，NR整体去噪强度参数wdr\_cfg生效。
+- BNR参考LSC去噪功能需要在LSC模块打开下调试，当LSC模块本身关闭时，BNR参考LSC不生效。
+- BNR时域打开时，在一些通路模式切换的场景，比如帧率切换，可能会出现时域重新收敛导致的噪声闪烁的现象。 【相关数据类型及接口】 无。 ## Dehaze<a name="ZH-CN_TOPIC_0000002470924958"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504084855"></a> Dehaze是通过动态的改变图象的对比度和亮度来实现的，将图像分块，统计每块内的像素值，估算出雾的浓度，根据局部自适应曲线调整去雾强度。Dehaze分为手动和自动模式，两种模式下均可调节去雾强度。 ### API参考<a name="ZH-CN_TOPIC_0000002504084833"></a> - [ss\_mpi\_isp\_set\_dehaze\_attr](#ZH-CN_TOPIC_0000002470924876)：设置去雾属性。
+- [ss\_mpi\_isp\_get\_dehaze\_attr](#ZH-CN_TOPIC_0000002470925172)：获取去雾属性。 #### ss\_mpi\_isp\_set\_dehaze\_attr<a name="ZH-CN_TOPIC_0000002470924876"></a> 【描述】 设置Dehaze属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_dehaze_attr(ot_vi_pipe vi_pipe, const ot_isp_dehaze_attr *dehaze_attr) ;
-```
-
-【参数】
-
-<a name="table25684mcpsimp"></a>
+``` 【参数】 <a name="table25684mcpsimp"></a>
 <table><thead align="left"><tr id="row25690mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p25692mcpsimp"><a name="p25692mcpsimp"></a><a name="p25692mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p25694mcpsimp"><a name="p25694mcpsimp"></a><a name="p25694mcpsimp"></a>描述</p>
@@ -5449,11 +3096,7 @@ td_s32 ss_mpi_isp_set_dehaze_attr(ot_vi_pipe vi_pipe, const ot_isp_dehaze_attr *
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table25713mcpsimp"></a>
+</table> 【返回值】 <a name="table25713mcpsimp"></a>
 <table><thead align="left"><tr id="row25718mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p25720mcpsimp"><a name="p25720mcpsimp"></a><a name="p25720mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p25722mcpsimp"><a name="p25722mcpsimp"></a><a name="p25722mcpsimp"></a>描述</p>
@@ -5465,46 +3108,11 @@ td_s32 ss_mpi_isp_set_dehaze_attr(ot_vi_pipe vi_pipe, const ot_isp_dehaze_attr *
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p25727mcpsimp"><a name="p25727mcpsimp"></a><a name="p25727mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row25728mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p25730mcpsimp"><a name="p25730mcpsimp"></a><a name="p25730mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p25732mcpsimp"><a name="p25732mcpsimp"></a><a name="p25732mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_dehaze\_attr](#ss_mpi_isp_get_dehaze_attr)
-
-#### ss\_mpi\_isp\_get\_dehaze\_attr<a name="ZH-CN_TOPIC_0000002470925172"></a>
-
-【描述】
-
-获取Dehaze属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_dehaze\_attr](#ss_mpi_isp_get_dehaze_attr) #### ss\_mpi\_isp\_get\_dehaze\_attr<a name="ZH-CN_TOPIC_0000002470925172"></a> 【描述】 获取Dehaze属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_dehaze_attr(ot_vi_pipe vi_pipe, ot_isp_dehaze_attr *dehaze_attr) ;
-```
-
-【参数】
-
-<a name="table25754mcpsimp"></a>
+``` 【参数】 <a name="table25754mcpsimp"></a>
 <table><thead align="left"><tr id="row25760mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p25762mcpsimp"><a name="p25762mcpsimp"></a><a name="p25762mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p25764mcpsimp"><a name="p25764mcpsimp"></a><a name="p25764mcpsimp"></a>描述</p>
@@ -5528,11 +3136,7 @@ td_s32 ss_mpi_isp_get_dehaze_attr(ot_vi_pipe vi_pipe, ot_isp_dehaze_attr *dehaze
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table25783mcpsimp"></a>
+</table> 【返回值】 <a name="table25783mcpsimp"></a>
 <table><thead align="left"><tr id="row25788mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p25790mcpsimp"><a name="p25790mcpsimp"></a><a name="p25790mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p25792mcpsimp"><a name="p25792mcpsimp"></a><a name="p25792mcpsimp"></a>描述</p>
@@ -5544,79 +3148,17 @@ td_s32 ss_mpi_isp_get_dehaze_attr(ot_vi_pipe vi_pipe, ot_isp_dehaze_attr *dehaze
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p25797mcpsimp"><a name="p25797mcpsimp"></a><a name="p25797mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row25798mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p25800mcpsimp"><a name="p25800mcpsimp"></a><a name="p25800mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p25802mcpsimp"><a name="p25802mcpsimp"></a><a name="p25802mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_dehaze\_attr](#ss_mpi_isp_set_dehaze_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471085158"></a>
-
--   [OT\_ISP\_DEHAZE\_LUT\_SIZE](#ZH-CN_TOPIC_0000002471085074)：定义去雾LUT的大小。
--   [ot\_isp\_dehaze\_manual\_attr](#ZH-CN_TOPIC_0000002504085049)：定义去雾手动模式属性。
--   [ot\_isp\_dehaze\_auto\_attr](#ZH-CN_TOPIC_0000002470925124)：定义去雾自动模式属性。
--   [ot\_isp\_dehaze\_attr](#ZH-CN_TOPIC_0000002504084907)：定义ISP去雾属性。
-
-
-
-
-
-#### OT\_ISP\_DEHAZE\_LUT\_SIZE<a name="ZH-CN_TOPIC_0000002471085074"></a>
-
-【说明】
-
-定义去雾LUT的大小。
-
-【定义】
-
-```
-#define OT_ISP_DEHAZE_LUT_SIZE          256
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_dehaze\_attr](#ot_isp_dehaze_attr)
-
-#### ot\_isp\_dehaze\_manual\_attr<a name="ZH-CN_TOPIC_0000002504085049"></a>
-
-【说明】
-
-定义去雾手动模式属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 strength;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_dehaze\_attr](#ss_mpi_isp_set_dehaze_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002471085158"></a> - [OT\_ISP\_DEHAZE\_LUT\_SIZE](#ZH-CN_TOPIC_0000002471085074)：定义去雾LUT的大小。
+- [ot\_isp\_dehaze\_manual\_attr](#ZH-CN_TOPIC_0000002504085049)：定义去雾手动模式属性。
+- [ot\_isp\_dehaze\_auto\_attr](#ZH-CN_TOPIC_0000002470925124)：定义去雾自动模式属性。
+- [ot\_isp\_dehaze\_attr](#ZH-CN_TOPIC_0000002504084907)：定义ISP去雾属性。 #### OT\_ISP\_DEHAZE\_LUT\_SIZE<a name="ZH-CN_TOPIC_0000002471085074"></a> 【说明】 定义去雾LUT的大小。 【定义】 ```
+#define OT_ISP_DEHAZE_LUT_SIZE 256
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_dehaze\_attr](#ot_isp_dehaze_attr) #### ot\_isp\_dehaze\_manual\_attr<a name="ZH-CN_TOPIC_0000002504085049"></a> 【说明】 定义去雾手动模式属性。 【定义】 ```
+typedef struct { td_u8 strength;
 } ot_isp_dehaze_manual_attr;
-```
-
-【成员】
-
-<a name="table25848mcpsimp"></a>
+``` 【成员】 <a name="table25848mcpsimp"></a>
 <table><thead align="left"><tr id="row25853mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p25855mcpsimp"><a name="p25855mcpsimp"></a><a name="p25855mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p25857mcpsimp"><a name="p25857mcpsimp"></a><a name="p25857mcpsimp"></a>描述</p>
@@ -5629,33 +3171,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dehaze\_auto\_attr<a name="ZH-CN_TOPIC_0000002470925124"></a>
-
-【说明】
-
-定义去雾自动模式属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 strength;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dehaze\_auto\_attr<a name="ZH-CN_TOPIC_0000002470925124"></a> 【说明】 定义去雾自动模式属性。 【定义】 ```
+typedef struct { td_u8 strength;
 } ot_isp_dehaze_auto_attr;
-```
-
-【成员】
-
-<a name="table25876mcpsimp"></a>
+``` 【成员】 <a name="table25876mcpsimp"></a>
 <table><thead align="left"><tr id="row25881mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.3.1.1"><p id="p25883mcpsimp"><a name="p25883mcpsimp"></a><a name="p25883mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="84%" id="mcps1.1.3.1.2"><p id="p25885mcpsimp"><a name="p25885mcpsimp"></a><a name="p25885mcpsimp"></a>描述</p>
@@ -5668,40 +3187,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dehaze\_attr<a name="ZH-CN_TOPIC_0000002504084907"></a>
-
-【说明】
-
-定义ISP去雾属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool  en;
-    td_bool  user_lut_en;
-    td_u8    dehaze_lut[OT_ISP_DEHAZE_LUT_SIZE];
-    ot_op_mode                op_type;
-    ot_isp_dehaze_manual_attr manual_attr;
-    ot_isp_dehaze_auto_attr   auto_attr;
-    td_u16       tmprflt_incr_coef;
-    td_u16       tmprflt_decr_coef;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dehaze\_attr<a name="ZH-CN_TOPIC_0000002504084907"></a> 【说明】 定义ISP去雾属性。 【定义】 ```
+typedef struct { td_bool en; td_bool user_lut_en; td_u8 dehaze_lut[OT_ISP_DEHAZE_LUT_SIZE]; ot_op_mode op_type; ot_isp_dehaze_manual_attr manual_attr; ot_isp_dehaze_auto_attr auto_attr; td_u16 tmprflt_incr_coef; td_u16 tmprflt_decr_coef;
 } ot_isp_dehaze_attr;
-```
-
-【成员】
-
-<a name="table25920mcpsimp"></a>
+``` 【成员】 <a name="table25920mcpsimp"></a>
 <table><thead align="left"><tr id="row25925mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p25927mcpsimp"><a name="p25927mcpsimp"></a><a name="p25927mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p25929mcpsimp"><a name="p25929mcpsimp"></a><a name="p25929mcpsimp"></a>描述</p>
@@ -5749,51 +3238,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-去雾使能后，为了避免画面异常，延迟三帧，图像第四帧生效。
-
-【相关数据类型及接口】
-
-无
-
-## 去伪彩<a name="ZH-CN_TOPIC_0000002503964915"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504084735"></a>
-
-高频分量在图像插值时易引起高频混叠。用镜头对准一个分辨率测试卡，当sensor表面没有OLPF时，在分辨率的高频部分容易出现伪彩。
-
-去除伪彩主要是指去除高频部分因插值错误所导致的伪彩现象。增大去伪彩强度值会减弱伪彩现象，但可能导致正常的颜色灰度化。
-
-该模块原理是计算出伪彩出现区域及范围，通过可配去伪彩强度寄存器值调整去伪彩强度值，将RGB三个通道值灰度化，从而达到减弱伪彩现象的目的。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085206"></a>
-
--   [ss\_mpi\_isp\_set\_anti\_false\_color\_attr](#ZH-CN_TOPIC_0000002470925210)：设置AntiFalseColor参数。
--   [ss\_mpi\_isp\_get\_anti\_false\_color\_attr](#ZH-CN_TOPIC_0000002470925042)：获取AntiFalseColor参数。
-
-
-
-#### ss\_mpi\_isp\_set\_anti\_false\_color\_attr<a name="ZH-CN_TOPIC_0000002470925210"></a>
-
-【描述】
-
-设置AntiFalseColor参数。
-
-【语法】
-
-```
+</table> 【注意事项】 去雾使能后，为了避免画面异常，延迟三帧，图像第四帧生效。 【相关数据类型及接口】 无 ## 去伪彩<a name="ZH-CN_TOPIC_0000002503964915"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504084735"></a> 高频分量在图像插值时易引起高频混叠。用镜头对准一个分辨率测试卡，当sensor表面没有OLPF时，在分辨率的高频部分容易出现伪彩。 去除伪彩主要是指去除高频部分因插值错误所导致的伪彩现象。增大去伪彩强度值会减弱伪彩现象，但可能导致正常的颜色灰度化。 该模块原理是计算出伪彩出现区域及范围，通过可配去伪彩强度寄存器值调整去伪彩强度值，将RGB三个通道值灰度化，从而达到减弱伪彩现象的目的。 ### API参考<a name="ZH-CN_TOPIC_0000002471085206"></a> - [ss\_mpi\_isp\_set\_anti\_false\_color\_attr](#ZH-CN_TOPIC_0000002470925210)：设置AntiFalseColor参数。
+- [ss\_mpi\_isp\_get\_anti\_false\_color\_attr](#ZH-CN_TOPIC_0000002470925042)：获取AntiFalseColor参数。 #### ss\_mpi\_isp\_set\_anti\_false\_color\_attr<a name="ZH-CN_TOPIC_0000002470925210"></a> 【描述】 设置AntiFalseColor参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_anti_false_color_attr(ot_vi_pipe vi_pipe, const ot_isp_anti_false_color_attr *anti_false_color);
-```
-
-【参数】
-
-<a name="table25998mcpsimp"></a>
+``` 【参数】 <a name="table25998mcpsimp"></a>
 <table><thead align="left"><tr id="row26004mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p26006mcpsimp"><a name="p26006mcpsimp"></a><a name="p26006mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p26008mcpsimp"><a name="p26008mcpsimp"></a><a name="p26008mcpsimp"></a>描述</p>
@@ -5817,11 +3265,7 @@ td_s32 ss_mpi_isp_set_anti_false_color_attr(ot_vi_pipe vi_pipe, const ot_isp_ant
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table26027mcpsimp"></a>
+</table> 【返回值】 <a name="table26027mcpsimp"></a>
 <table><thead align="left"><tr id="row26032mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p26034mcpsimp"><a name="p26034mcpsimp"></a><a name="p26034mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p26036mcpsimp"><a name="p26036mcpsimp"></a><a name="p26036mcpsimp"></a>描述</p>
@@ -5833,46 +3277,11 @@ td_s32 ss_mpi_isp_set_anti_false_color_attr(ot_vi_pipe vi_pipe, const ot_isp_ant
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p26042mcpsimp"><a name="p26042mcpsimp"></a><a name="p26042mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row26043mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p26045mcpsimp"><a name="p26045mcpsimp"></a><a name="p26045mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p26047mcpsimp"><a name="p26047mcpsimp"></a><a name="p26047mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a, libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_anti\_false\_color\_attr](#ss_mpi_isp_get_anti_false_color_attr)
-
-#### ss\_mpi\_isp\_get\_anti\_false\_color\_attr<a name="ZH-CN_TOPIC_0000002470925042"></a>
-
-【描述】
-
-获取AntiFalseColor参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a, libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_anti\_false\_color\_attr](#ss_mpi_isp_get_anti_false_color_attr) #### ss\_mpi\_isp\_get\_anti\_false\_color\_attr<a name="ZH-CN_TOPIC_0000002470925042"></a> 【描述】 获取AntiFalseColor参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_anti_false_color_attr(ot_vi_pipe vi_pipe, ot_isp_anti_false_color_attr *anti_false_color);
-```
-
-【参数】
-
-<a name="table26069mcpsimp"></a>
+``` 【参数】 <a name="table26069mcpsimp"></a>
 <table><thead align="left"><tr id="row26075mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p26077mcpsimp"><a name="p26077mcpsimp"></a><a name="p26077mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.4.1.2"><p id="p26079mcpsimp"><a name="p26079mcpsimp"></a><a name="p26079mcpsimp"></a>描述</p>
@@ -5896,11 +3305,7 @@ td_s32 ss_mpi_isp_get_anti_false_color_attr(ot_vi_pipe vi_pipe, ot_isp_anti_fals
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table26098mcpsimp"></a>
+</table> 【返回值】 <a name="table26098mcpsimp"></a>
 <table><thead align="left"><tr id="row26103mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p26105mcpsimp"><a name="p26105mcpsimp"></a><a name="p26105mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p26107mcpsimp"><a name="p26107mcpsimp"></a><a name="p26107mcpsimp"></a>描述</p>
@@ -5912,58 +3317,14 @@ td_s32 ss_mpi_isp_get_anti_false_color_attr(ot_vi_pipe vi_pipe, ot_isp_anti_fals
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p26113mcpsimp"><a name="p26113mcpsimp"></a><a name="p26113mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row26114mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p26116mcpsimp"><a name="p26116mcpsimp"></a><a name="p26116mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p26118mcpsimp"><a name="p26118mcpsimp"></a><a name="p26118mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_anti\_false\_color\_attr](#ss_mpi_isp_set_anti_false_color_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470925024"></a>
-
--   [ot\_isp\_anti\_false\_color\_manual\_attr](#ZH-CN_TOPIC_0000002471085088)：定义ISP ANTIFALSECOLOR手动属性。
--   [ot\_isp\_anti\_false\_color\_auto\_attr](#ZH-CN_TOPIC_0000002471085012)：定义ISP ANTIFALSECOLOR自动属性。
--   [ot\_isp\_anti\_false\_color\_attr](#ZH-CN_TOPIC_0000002504084763)：定义ISP ANTIFALSECOLOR属性。
-
-
-
-
-#### ot\_isp\_anti\_false\_color\_manual\_attr<a name="ZH-CN_TOPIC_0000002471085088"></a>
-
-【说明】
-
-定义ISP ANTIFALSECOLOR手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8    threshold;
-    td_u8    strength;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_anti\_false\_color\_attr](#ss_mpi_isp_set_anti_false_color_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002470925024"></a> - [ot\_isp\_anti\_false\_color\_manual\_attr](#ZH-CN_TOPIC_0000002471085088)：定义ISP ANTIFALSECOLOR手动属性。
+- [ot\_isp\_anti\_false\_color\_auto\_attr](#ZH-CN_TOPIC_0000002471085012)：定义ISP ANTIFALSECOLOR自动属性。
+- [ot\_isp\_anti\_false\_color\_attr](#ZH-CN_TOPIC_0000002504084763)：定义ISP ANTIFALSECOLOR属性。 #### ot\_isp\_anti\_false\_color\_manual\_attr<a name="ZH-CN_TOPIC_0000002471085088"></a> 【说明】 定义ISP ANTIFALSECOLOR手动属性。 【定义】 ```
+typedef struct { td_u8 threshold; td_u8 strength;
 } ot_isp_anti_false_color_manual_attr;
-```
-
-【成员】
-
-<a name="table26152mcpsimp"></a>
+``` 【成员】 <a name="table26152mcpsimp"></a>
 <table><thead align="left"><tr id="row26157mcpsimp"><th class="cellrowborder" valign="top" width="38%" id="mcps1.1.3.1.1"><p id="p26159mcpsimp"><a name="p26159mcpsimp"></a><a name="p26159mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.3.1.2"><p id="p26161mcpsimp"><a name="p26161mcpsimp"></a><a name="p26161mcpsimp"></a>描述</p>
@@ -5983,34 +3344,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-注意各参数的取值范围。
-
-【相关数据类型及接口】
-
-[ot\_isp\_anti\_false\_color\_attr](#ot_isp_anti_false_color_attr)
-
-#### ot\_isp\_anti\_false\_color\_auto\_attr<a name="ZH-CN_TOPIC_0000002471085012"></a>
-
-【说明】
-
-定义ISP ANTIFALSECOLOR自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8  threshold[OT_ISP_AUTO_ISO_NUM];
-    td_u8  strength[OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 注意各参数的取值范围。 【相关数据类型及接口】 [ot\_isp\_anti\_false\_color\_attr](#ot_isp_anti_false_color_attr) #### ot\_isp\_anti\_false\_color\_auto\_attr<a name="ZH-CN_TOPIC_0000002471085012"></a> 【说明】 定义ISP ANTIFALSECOLOR自动属性。 【定义】 ```
+typedef struct { td_u8 threshold[OT_ISP_AUTO_ISO_NUM]; td_u8 strength[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_anti_false_color_auto_attr;
-```
-
-【成员】
-
-<a name="table26195mcpsimp"></a>
+``` 【成员】 <a name="table26195mcpsimp"></a>
 <table><thead align="left"><tr id="row26200mcpsimp"><th class="cellrowborder" valign="top" width="34%" id="mcps1.1.3.1.1"><p id="p26202mcpsimp"><a name="p26202mcpsimp"></a><a name="p26202mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.3.1.2"><p id="p26204mcpsimp"><a name="p26204mcpsimp"></a><a name="p26204mcpsimp"></a>描述</p>
@@ -6030,36 +3367,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-注意各参数的取值范围。
-
-【相关数据类型及接口】
-
-[ot\_isp\_anti\_false\_color\_attr](#ot_isp_anti_false_color_attr)
-
-#### ot\_isp\_anti\_false\_color\_attr<a name="ZH-CN_TOPIC_0000002504084763"></a>
-
-【说明】
-
-定义ISP ANTIFALSECOLOR属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool  en;
-    ot_op_mode op_type;
-    ot_isp_anti_false_color_manual_attr manual_attr;
-    ot_isp_anti_false_color_auto_attr   auto_attr;
+</table> 【注意事项】 注意各参数的取值范围。 【相关数据类型及接口】 [ot\_isp\_anti\_false\_color\_attr](#ot_isp_anti_false_color_attr) #### ot\_isp\_anti\_false\_color\_attr<a name="ZH-CN_TOPIC_0000002504084763"></a> 【说明】 定义ISP ANTIFALSECOLOR属性。 【定义】 ```
+typedef struct { td_bool en; ot_op_mode op_type; ot_isp_anti_false_color_manual_attr manual_attr; ot_isp_anti_false_color_auto_attr auto_attr;
 } ot_isp_anti_false_color_attr;
-```
-
-【成员】
-
-<a name="table26241mcpsimp"></a>
+``` 【成员】 <a name="table26241mcpsimp"></a>
 <table><thead align="left"><tr id="row26246mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p26248mcpsimp"><a name="p26248mcpsimp"></a><a name="p26248mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p26250mcpsimp"><a name="p26250mcpsimp"></a><a name="p26250mcpsimp"></a>描述</p>
@@ -6092,57 +3403,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-ANTIFALSECOLOR功能分为自动和手动参数：
-
--   en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动ANTIFALSECOLOR功能。
--   en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动ANTIFALSECOLOR功能。
-
-【相关数据类型及接口】
-
-无。
-
-## 去马赛克<a name="ZH-CN_TOPIC_0000002471085200"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085040"></a>
-
-Demosaic模块实现的功能是：将输入的Bayer数据转化成RGB数据。CFA（Color Filter Array，彩色滤波阵列）得到的Bayer数据，每一像素点只能获得R、G、B三基色中的一种彩色分量值。为获得彩色图像，需要利用当前像素及周围像素的色彩分量值，估计出当前点缺失的其他两个分量值（如[图1](#fig15860155811308)所示）。
-
-该模块能输出较高的图像分辨率，对弱细节及清晰度有较大提升。
-
-**图 1**  去马赛克处理图<a name="fig15860155811308"></a>  
-![](figures/去马赛克处理图.png "去马赛克处理图")
->![](public_sys-resources/icon-notice.gif) **须知：** 
->在处理高频黑白图像时，由于去马赛克模块对输入Bayer CFA数据进行了插值，因此在高频区域容易发生混叠，导致出现打开去马赛克模块高频区域清晰度反而下降的情况，此为正常现象。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085034"></a>
-
--   [ss\_mpi\_isp\_set\_demosaic\_attr](#ZH-CN_TOPIC_0000002471085204)：设置Demosaic参数。
--   [ss\_mpi\_isp\_get\_demosaic\_attr](#ZH-CN_TOPIC_0000002471085156)：获取Demosaic参数。
-
-
-
-#### ss\_mpi\_isp\_set\_demosaic\_attr<a name="ZH-CN_TOPIC_0000002471085204"></a>
-
-【描述】
-
-设置Demosaic参数。
-
-【语法】
-
-```
+</table> 【注意事项】 ANTIFALSECOLOR功能分为自动和手动参数： - en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动ANTIFALSECOLOR功能。
+- en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动ANTIFALSECOLOR功能。 【相关数据类型及接口】 无。 ## 去马赛克<a name="ZH-CN_TOPIC_0000002471085200"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085040"></a> Demosaic模块实现的功能是：将输入的Bayer数据转化成RGB数据。CFA（Color Filter Array，彩色滤波阵列）得到的Bayer数据，每一像素点只能获得R、G、B三基色中的一种彩色分量值。为获得彩色图像，需要利用当前像素及周围像素的色彩分量值，估计出当前点缺失的其他两个分量值（如[图1](#fig15860155811308)所示）。 该模块能输出较高的图像分辨率，对弱细节及清晰度有较大提升。 **图 1** 去马赛克处理图<a name="fig15860155811308"></a> ![](figures/去马赛克处理图.png "去马赛克处理图")
+>![](public_sys-resources/icon-notice.gif) **须知：** >在处理高频黑白图像时，由于去马赛克模块对输入Bayer CFA数据进行了插值，因此在高频区域容易发生混叠，导致出现打开去马赛克模块高频区域清晰度反而下降的情况，此为正常现象。 ### API参考<a name="ZH-CN_TOPIC_0000002471085034"></a> - [ss\_mpi\_isp\_set\_demosaic\_attr](#ZH-CN_TOPIC_0000002471085204)：设置Demosaic参数。
+- [ss\_mpi\_isp\_get\_demosaic\_attr](#ZH-CN_TOPIC_0000002471085156)：获取Demosaic参数。 #### ss\_mpi\_isp\_set\_demosaic\_attr<a name="ZH-CN_TOPIC_0000002471085204"></a> 【描述】 设置Demosaic参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_demosaic_attr(ot_vi_pipe vi_pipe, const ot_isp_demosaic_attr *demosaic_attr);
-```
-
-【参数】
-
-<a name="table26306mcpsimp"></a>
+``` 【参数】 <a name="table26306mcpsimp"></a>
 <table><thead align="left"><tr id="row26312mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p26314mcpsimp"><a name="p26314mcpsimp"></a><a name="p26314mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p26316mcpsimp"><a name="p26316mcpsimp"></a><a name="p26316mcpsimp"></a>描述</p>
@@ -6166,11 +3432,7 @@ td_s32 ss_mpi_isp_set_demosaic_attr(ot_vi_pipe vi_pipe, const ot_isp_demosaic_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table26335mcpsimp"></a>
+</table> 【返回值】 <a name="table26335mcpsimp"></a>
 <table><thead align="left"><tr id="row26340mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p26342mcpsimp"><a name="p26342mcpsimp"></a><a name="p26342mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p26344mcpsimp"><a name="p26344mcpsimp"></a><a name="p26344mcpsimp"></a>描述</p>
@@ -6182,46 +3444,11 @@ td_s32 ss_mpi_isp_set_demosaic_attr(ot_vi_pipe vi_pipe, const ot_isp_demosaic_at
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p26349mcpsimp"><a name="p26349mcpsimp"></a><a name="p26349mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row26350mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p26352mcpsimp"><a name="p26352mcpsimp"></a><a name="p26352mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p26354mcpsimp"><a name="p26354mcpsimp"></a><a name="p26354mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_demosaic\_attr](#ss_mpi_isp_get_demosaic_attr)
-
-#### ss\_mpi\_isp\_get\_demosaic\_attr<a name="ZH-CN_TOPIC_0000002471085156"></a>
-
-【描述】
-
-获取Demosaic参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_demosaic\_attr](#ss_mpi_isp_get_demosaic_attr) #### ss\_mpi\_isp\_get\_demosaic\_attr<a name="ZH-CN_TOPIC_0000002471085156"></a> 【描述】 获取Demosaic参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_demosaic_attr(ot_vi_pipe vi_pipe, ot_isp_demosaic_attr *demosaic_attr);
-```
-
-【参数】
-
-<a name="table26376mcpsimp"></a>
+``` 【参数】 <a name="table26376mcpsimp"></a>
 <table><thead align="left"><tr id="row26382mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p26384mcpsimp"><a name="p26384mcpsimp"></a><a name="p26384mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.4.1.2"><p id="p26386mcpsimp"><a name="p26386mcpsimp"></a><a name="p26386mcpsimp"></a>描述</p>
@@ -6245,11 +3472,7 @@ td_s32 ss_mpi_isp_get_demosaic_attr(ot_vi_pipe vi_pipe, ot_isp_demosaic_attr *de
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table26405mcpsimp"></a>
+</table> 【返回值】 <a name="table26405mcpsimp"></a>
 <table><thead align="left"><tr id="row26410mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p26412mcpsimp"><a name="p26412mcpsimp"></a><a name="p26412mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p26414mcpsimp"><a name="p26414mcpsimp"></a><a name="p26414mcpsimp"></a>描述</p>
@@ -6261,64 +3484,13 @@ td_s32 ss_mpi_isp_get_demosaic_attr(ot_vi_pipe vi_pipe, ot_isp_demosaic_attr *de
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p26419mcpsimp"><a name="p26419mcpsimp"></a><a name="p26419mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row26420mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p26422mcpsimp"><a name="p26422mcpsimp"></a><a name="p26422mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p26424mcpsimp"><a name="p26424mcpsimp"></a><a name="p26424mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_demosaic\_attr](#ss_mpi_isp_set_demosaic_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503965099"></a>
-
--   [ot\_isp\_demosaic\_manual\_attr](#ZH-CN_TOPIC_0000002503965139)：定义ISP DEMOSAIC手动属性。
--   [ot\_isp\_demosaic\_auto\_attr](#ZH-CN_TOPIC_0000002504084993)：定义ISP DEMOSAIC自动属性。
--   [ot\_isp\_demosaic\_attr](#ZH-CN_TOPIC_0000002471084872)：定义ISP DEMOSAIC属性。
-
-
-
-
-#### ot\_isp\_demosaic\_manual\_attr<a name="ZH-CN_TOPIC_0000002503965139"></a>
-
-【说明】
-
-定义ISP DEMOSAIC手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8   nddm_strength;  
-    td_u8   nddm_mf_detail_strength;    
-    td_u8   nddm_hf_detail_strength;      
-    td_u8   detail_smooth_range;      
-    td_u8   color_noise_f_threshold; 
-    td_u8   color_noise_f_strength;  
-    td_u8   color_noise_y_threshold;   
-    td_u8   color_noise_y_strength;   
-} ot_isp_demosaic_manual_attr;
-```
-
-【成员】
-
-<a name="table26466mcpsimp"></a>
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_demosaic\_attr](#ss_mpi_isp_set_demosaic_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503965099"></a> - [ot\_isp\_demosaic\_manual\_attr](#ZH-CN_TOPIC_0000002503965139)：定义ISP DEMOSAIC手动属性。
+- [ot\_isp\_demosaic\_auto\_attr](#ZH-CN_TOPIC_0000002504084993)：定义ISP DEMOSAIC自动属性。
+- [ot\_isp\_demosaic\_attr](#ZH-CN_TOPIC_0000002471084872)：定义ISP DEMOSAIC属性。 #### ot\_isp\_demosaic\_manual\_attr<a name="ZH-CN_TOPIC_0000002503965139"></a> 【说明】 定义ISP DEMOSAIC手动属性。 【定义】 ```
+typedef struct { td_u8 nddm_strength; td_u8 nddm_mf_detail_strength; td_u8 nddm_hf_detail_strength; td_u8 detail_smooth_range; td_u8 color_noise_f_threshold; td_u8 color_noise_f_strength; td_u8 color_noise_y_threshold; td_u8 color_noise_y_strength; } ot_isp_demosaic_manual_attr;
+``` 【成员】 <a name="table26466mcpsimp"></a>
 <table><thead align="left"><tr id="row26471mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.1.3.1.1"><p id="p26473mcpsimp"><a name="p26473mcpsimp"></a><a name="p26473mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.3.1.2"><p id="p26475mcpsimp"><a name="p26475mcpsimp"></a><a name="p26475mcpsimp"></a>描述</p>
@@ -6372,41 +3544,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   在红外模式下，或者在CCM饱和度设定成0，输出灰度图的情况下，需要将color\_noise\_y\_threshold  和color\_noise\_y\_strength参数都设定成0，关闭降低颜色噪声的功能。
--   color\_noise\_f\_threshold由于算法采取的是硬钳位方法进行判断是否需要降低饱和度，因此如果这个参数设置的过大，在有一定亮噪的情况下，会出现颜色过渡异常的情况。
-
-【相关数据类型及接口】
-
-[ot\_isp\_demosaic\_attr](#ot_isp_demosaic_attr)
-
-#### ot\_isp\_demosaic\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084993"></a>
-
-【说明】
-
-定义ISP DEMOSAIC自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8   nddm_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8   nddm_mf_detail_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8   nddm_hf_detail_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8   detail_smooth_range[OT_ISP_AUTO_ISO_NUM];
-    td_u8   color_noise_f_threshold[OT_ISP_AUTO_ISO_NUM];
-    td_u8   color_noise_f_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u8   color_noise_y_threshold[OT_ISP_AUTO_ISO_NUM];
-    td_u8   color_noise_y_strength[OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 - 在红外模式下，或者在CCM饱和度设定成0，输出灰度图的情况下，需要将color\_noise\_y\_threshold 和color\_noise\_y\_strength参数都设定成0，关闭降低颜色噪声的功能。
+- color\_noise\_f\_threshold由于算法采取的是硬钳位方法进行判断是否需要降低饱和度，因此如果这个参数设置的过大，在有一定亮噪的情况下，会出现颜色过渡异常的情况。 【相关数据类型及接口】 [ot\_isp\_demosaic\_attr](#ot_isp_demosaic_attr) #### ot\_isp\_demosaic\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084993"></a> 【说明】 定义ISP DEMOSAIC自动属性。 【定义】 ```
+typedef struct { td_u8 nddm_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 nddm_mf_detail_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 nddm_hf_detail_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 detail_smooth_range[OT_ISP_AUTO_ISO_NUM]; td_u8 color_noise_f_threshold[OT_ISP_AUTO_ISO_NUM]; td_u8 color_noise_f_strength[OT_ISP_AUTO_ISO_NUM]; td_u8 color_noise_y_threshold[OT_ISP_AUTO_ISO_NUM]; td_u8 color_noise_y_strength[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_demosaic_auto_attr;
-```
-
-【成员】
-
-<a name="table26575mcpsimp"></a>
+``` 【成员】 <a name="table26575mcpsimp"></a>
 <table><thead align="left"><tr id="row26580mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p26582mcpsimp"><a name="p26582mcpsimp"></a><a name="p26582mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p26584mcpsimp"><a name="p26584mcpsimp"></a><a name="p26584mcpsimp"></a>描述</p>
@@ -6460,36 +3602,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-注意各参数的取值范围。
-
-【相关数据类型及接口】
-
-[ot\_isp\_demosaic\_attr](#ot_isp_demosaic_attr)
-
-#### ot\_isp\_demosaic\_attr<a name="ZH-CN_TOPIC_0000002471084872"></a>
-
-【说明】
-
-定义ISP DEMOSAIC属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;
-    ot_op_mode op_type;
-    ot_isp_demosaic_manual_attr manual_attr;
-    ot_isp_demosaic_auto_attr   auto_attr;
+</table> 【注意事项】 注意各参数的取值范围。 【相关数据类型及接口】 [ot\_isp\_demosaic\_attr](#ot_isp_demosaic_attr) #### ot\_isp\_demosaic\_attr<a name="ZH-CN_TOPIC_0000002471084872"></a> 【说明】 定义ISP DEMOSAIC属性。 【定义】 ```
+typedef struct { td_bool en; ot_op_mode op_type; ot_isp_demosaic_manual_attr manual_attr; ot_isp_demosaic_auto_attr auto_attr;
 } ot_isp_demosaic_attr;
-```
-
-【成员】
-
-<a name="table26654mcpsimp"></a>
+``` 【成员】 <a name="table26654mcpsimp"></a>
 <table><thead align="left"><tr id="row26659mcpsimp"><th class="cellrowborder" valign="top" width="26%" id="mcps1.1.3.1.1"><p id="p26661mcpsimp"><a name="p26661mcpsimp"></a><a name="p26661mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="74%" id="mcps1.1.3.1.2"><p id="p26663mcpsimp"><a name="p26663mcpsimp"></a><a name="p26663mcpsimp"></a>描述</p>
@@ -6521,50 +3637,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-DEMOSAIC功能分为自动和手动参数：
-
--   en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动DEMOSAIC功能。
--   en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动DEMOSAIC功能。
-
-【相关数据类型及接口】
-
-无。
-
-## BayerSharpen<a name="ZH-CN_TOPIC_0000002471085192"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085006"></a>
-
-BayerSharpen模块用于增强图像的清晰度，包括调节图像边缘的锐化属性和增强图像的细节和纹理，同时还能控制图像水平和垂直方向的边缘锐化的强度。此外，还能控制锐化后的图像的overshoot和undershoot，以及抑制噪声的增强。
-
-### API参考<a name="ZH-CN_TOPIC_0000002504085061"></a>
-
--   [ss\_mpi\_isp\_set\_bayershp\_attr](#ZH-CN_TOPIC_0000002503964941)：设置图像锐化属性。
--   [ss\_mpi\_isp\_get\_bayershp\_attr](#ZH-CN_TOPIC_0000002471085138)：获取图像锐化属性。
-
-
-
-#### ss\_mpi\_isp\_set\_bayershp\_attr<a name="ZH-CN_TOPIC_0000002503964941"></a>
-
-【描述】
-
-设定图像锐化属性。
-
-【语法】
-
-```
+</table> 【注意事项】 DEMOSAIC功能分为自动和手动参数： - en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动DEMOSAIC功能。
+- en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动DEMOSAIC功能。 【相关数据类型及接口】 无。 ## BayerSharpen<a name="ZH-CN_TOPIC_0000002471085192"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085006"></a> BayerSharpen模块用于增强图像的清晰度，包括调节图像边缘的锐化属性和增强图像的细节和纹理，同时还能控制图像水平和垂直方向的边缘锐化的强度。此外，还能控制锐化后的图像的overshoot和undershoot，以及抑制噪声的增强。 ### API参考<a name="ZH-CN_TOPIC_0000002504085061"></a> - [ss\_mpi\_isp\_set\_bayershp\_attr](#ZH-CN_TOPIC_0000002503964941)：设置图像锐化属性。
+- [ss\_mpi\_isp\_get\_bayershp\_attr](#ZH-CN_TOPIC_0000002471085138)：获取图像锐化属性。 #### ss\_mpi\_isp\_set\_bayershp\_attr<a name="ZH-CN_TOPIC_0000002503964941"></a> 【描述】 设定图像锐化属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_bayershp_attr(ot_vi_pipe vi_pipe, const ot_isp_bayershp_attr *bshp_attr);
-```
-
-【参数】
-
-<a name="table26715mcpsimp"></a>
+``` 【参数】 <a name="table26715mcpsimp"></a>
 <table><thead align="left"><tr id="row26721mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p26723mcpsimp"><a name="p26723mcpsimp"></a><a name="p26723mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p26725mcpsimp"><a name="p26725mcpsimp"></a><a name="p26725mcpsimp"></a>描述</p>
@@ -6588,11 +3665,7 @@ td_s32 ss_mpi_isp_set_bayershp_attr(ot_vi_pipe vi_pipe, const ot_isp_bayershp_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table26744mcpsimp"></a>
+</table> 【返回值】 <a name="table26744mcpsimp"></a>
 <table><thead align="left"><tr id="row26749mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p26751mcpsimp"><a name="p26751mcpsimp"></a><a name="p26751mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p26753mcpsimp"><a name="p26753mcpsimp"></a><a name="p26753mcpsimp"></a>描述</p>
@@ -6604,46 +3677,11 @@ td_s32 ss_mpi_isp_set_bayershp_attr(ot_vi_pipe vi_pipe, const ot_isp_bayershp_at
 <td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p26758mcpsimp"><a name="p26758mcpsimp"></a><a name="p26758mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row26759mcpsimp"><td class="cellrowborder" valign="top" width="43%" headers="mcps1.1.3.1.1 "><p id="p26761mcpsimp"><a name="p26761mcpsimp"></a><a name="p26761mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.99999999999999%" headers="mcps1.1.3.1.2 "><p id="p26763mcpsimp"><a name="p26763mcpsimp"></a><a name="p26763mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_bayershp\_attr](#ss_mpi_isp_get_bayershp_attr)
-
-#### ss\_mpi\_isp\_get\_bayershp\_attr<a name="ZH-CN_TOPIC_0000002471085138"></a>
-
-【描述】
-
-获取图像锐化属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_bayershp\_attr](#ss_mpi_isp_get_bayershp_attr) #### ss\_mpi\_isp\_get\_bayershp\_attr<a name="ZH-CN_TOPIC_0000002471085138"></a> 【描述】 获取图像锐化属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_bayershp_attr(ot_vi_pipe vi_pipe, ot_isp_bayershp_attr *bshp_attr);
-```
-
-【参数】
-
-<a name="table26785mcpsimp"></a>
+``` 【参数】 <a name="table26785mcpsimp"></a>
 <table><thead align="left"><tr id="row26791mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p26793mcpsimp"><a name="p26793mcpsimp"></a><a name="p26793mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54.13%" id="mcps1.1.4.1.2"><p id="p26795mcpsimp"><a name="p26795mcpsimp"></a><a name="p26795mcpsimp"></a>描述</p>
@@ -6667,11 +3705,7 @@ td_s32 ss_mpi_isp_get_bayershp_attr(ot_vi_pipe vi_pipe, ot_isp_bayershp_attr *bs
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table26814mcpsimp"></a>
+</table> 【返回值】 <a name="table26814mcpsimp"></a>
 <table><thead align="left"><tr id="row26819mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p26821mcpsimp"><a name="p26821mcpsimp"></a><a name="p26821mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p26823mcpsimp"><a name="p26823mcpsimp"></a><a name="p26823mcpsimp"></a>描述</p>
@@ -6683,113 +3717,21 @@ td_s32 ss_mpi_isp_get_bayershp_attr(ot_vi_pipe vi_pipe, ot_isp_bayershp_attr *bs
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p26828mcpsimp"><a name="p26828mcpsimp"></a><a name="p26828mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row26829mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p26831mcpsimp"><a name="p26831mcpsimp"></a><a name="p26831mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p26833mcpsimp"><a name="p26833mcpsimp"></a><a name="p26833mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_bayershp\_attr](#ZH-CN_TOPIC_0000001220057615)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471084992"></a>
-
--   [OT\_ISP\_BSHP\_LUMA\_WGT\_NUM](#ZH-CN_TOPIC_0000002504084779)：定义Bayer Sharpen亮度锐化权重区间数。
--   [OT\_ISP\_BSHP\_HALF\_CURVE\_NUM](#ZH-CN_TOPIC_0000002504084727)：定义Bayer Sharpen细节锐化区间数。
--   [ot\_isp\_bayershp\_manual\_attr](#ZH-CN_TOPIC_0000002503964795)：定义Bayer Sharpen手动属性。
--   [ot\_isp\_bayershp\_auto\_attr](#ZH-CN_TOPIC_0000002504084805)：定义Bayer Sharpen自动属性。
--   [ot\_isp\_bayershp\_attr](#ZH-CN_TOPIC_0000002503964989)：定义Bayer Sharpen属性。
-
-
-
-
-
-
-#### OT\_ISP\_BSHP\_LUMA\_WGT\_NUM<a name="ZH-CN_TOPIC_0000002504084779"></a>
-
-【说明】
-
-定义Bayer Sharpen亮度锐化权重区间数。
-
-【定义】
-
-```
-#define OT_ISP_BSHP_LUMA_WGT_NUM        32
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_bayershp\_manual\_attr](#ot_isp_bayershp_manual_attr)
--   [ot\_isp\_bayershp\_auto\_attr](#ot_isp_bayershp_auto_attr)
-
-#### OT\_ISP\_BSHP\_HALF\_CURVE\_NUM<a name="ZH-CN_TOPIC_0000002504084727"></a>
-
-【说明】
-
-定义Bayer Sharpen细节锐化区间数。
-
-【定义】
-
-```
-#define OT_ISP_BSHP_HALF_CURVE_NUM        32
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_bayershp\_manual\_attr](#ot_isp_bayershp_manual_attr)
--   [ot\_isp\_bayershp\_auto\_attr](#ot_isp_bayershp_auto_attr)
-
-#### ot\_isp\_bayershp\_manual\_attr<a name="ZH-CN_TOPIC_0000002503964795"></a>
-
-【说明】
-
-定义Bayer Sharpen手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8  luma_wgt[OT_ISP_BSHP_LUMA_WGT_NUM];                      
-    td_u16 edge_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM];            
-    td_u16 texture_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM];
-    td_u16 edge_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM];            
-    td_u16 texture_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM];
-    td_u8  edge_filt_strength;                                      
-    td_u16 texture_max_gain;                                        
-    td_u16 edge_max_gain;                                           
-    td_u16 overshoot;                                               
-    td_u16 undershoot;                                              
-    td_u16 g_chn_gain;                                              
-} ot_isp_bayershp_manual_attr;
-```
-
-【成员】
-
-<a name="table26920mcpsimp"></a>
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_bayershp\_attr](#ZH-CN_TOPIC_0000001220057615) ### 数据类型<a name="ZH-CN_TOPIC_0000002471084992"></a> - [OT\_ISP\_BSHP\_LUMA\_WGT\_NUM](#ZH-CN_TOPIC_0000002504084779)：定义Bayer Sharpen亮度锐化权重区间数。
+- [OT\_ISP\_BSHP\_HALF\_CURVE\_NUM](#ZH-CN_TOPIC_0000002504084727)：定义Bayer Sharpen细节锐化区间数。
+- [ot\_isp\_bayershp\_manual\_attr](#ZH-CN_TOPIC_0000002503964795)：定义Bayer Sharpen手动属性。
+- [ot\_isp\_bayershp\_auto\_attr](#ZH-CN_TOPIC_0000002504084805)：定义Bayer Sharpen自动属性。
+- [ot\_isp\_bayershp\_attr](#ZH-CN_TOPIC_0000002503964989)：定义Bayer Sharpen属性。 #### OT\_ISP\_BSHP\_LUMA\_WGT\_NUM<a name="ZH-CN_TOPIC_0000002504084779"></a> 【说明】 定义Bayer Sharpen亮度锐化权重区间数。 【定义】 ```
+#define OT_ISP_BSHP_LUMA_WGT_NUM 32
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_bayershp\_manual\_attr](#ot_isp_bayershp_manual_attr)
+- [ot\_isp\_bayershp\_auto\_attr](#ot_isp_bayershp_auto_attr) #### OT\_ISP\_BSHP\_HALF\_CURVE\_NUM<a name="ZH-CN_TOPIC_0000002504084727"></a> 【说明】 定义Bayer Sharpen细节锐化区间数。 【定义】 ```
+#define OT_ISP_BSHP_HALF_CURVE_NUM 32
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_bayershp\_manual\_attr](#ot_isp_bayershp_manual_attr)
+- [ot\_isp\_bayershp\_auto\_attr](#ot_isp_bayershp_auto_attr) #### ot\_isp\_bayershp\_manual\_attr<a name="ZH-CN_TOPIC_0000002503964795"></a> 【说明】 定义Bayer Sharpen手动属性。 【定义】 ```
+typedef struct { td_u8 luma_wgt[OT_ISP_BSHP_LUMA_WGT_NUM]; td_u16 edge_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM]; td_u16 texture_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM]; td_u16 edge_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM]; td_u16 texture_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM]; td_u8 edge_filt_strength; td_u16 texture_max_gain; td_u16 edge_max_gain; td_u16 overshoot; td_u16 undershoot; td_u16 g_chn_gain; } ot_isp_bayershp_manual_attr;
+``` 【成员】 <a name="table26920mcpsimp"></a>
 <table><thead align="left"><tr id="row26925mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p26927mcpsimp"><a name="p26927mcpsimp"></a><a name="p26927mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p26929mcpsimp"><a name="p26929mcpsimp"></a><a name="p26929mcpsimp"></a>描述</p>
@@ -6863,43 +3805,9 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-#### ot\_isp\_bayershp\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084805"></a>
-
-【说明】
-
-定义Bayer Sharpen自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8  luma_wgt[OT_ISP_BSHP_LUMA_WGT_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 edge_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 texture_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 edge_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16 texture_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u8  edge_filt_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u16 texture_max_gain[OT_ISP_AUTO_ISO_NUM];
-    td_u16 edge_max_gain[OT_ISP_AUTO_ISO_NUM];
-    td_u16 overshoot[OT_ISP_AUTO_ISO_NUM];                                       
-    td_u16 undershoot[OT_ISP_AUTO_ISO_NUM];                                      
-    td_u16 g_chn_gain[OT_ISP_AUTO_ISO_NUM];                                      
-} ot_isp_bayershp_auto_attr;
-```
-
-【成员】
-
-<a name="table27068mcpsimp"></a>
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 #### ot\_isp\_bayershp\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084805"></a> 【说明】 定义Bayer Sharpen自动属性。 【定义】 ```
+typedef struct { td_u8 luma_wgt[OT_ISP_BSHP_LUMA_WGT_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 edge_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 texture_mf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 edge_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 texture_hf_strength[OT_ISP_BSHP_HALF_CURVE_NUM][OT_ISP_AUTO_ISO_NUM]; td_u8 edge_filt_strength[OT_ISP_AUTO_ISO_NUM]; td_u16 texture_max_gain[OT_ISP_AUTO_ISO_NUM]; td_u16 edge_max_gain[OT_ISP_AUTO_ISO_NUM]; td_u16 overshoot[OT_ISP_AUTO_ISO_NUM]; td_u16 undershoot[OT_ISP_AUTO_ISO_NUM]; td_u16 g_chn_gain[OT_ISP_AUTO_ISO_NUM]; } ot_isp_bayershp_auto_attr;
+``` 【成员】 <a name="table27068mcpsimp"></a>
 <table><thead align="left"><tr id="row27073mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p27075mcpsimp"><a name="p27075mcpsimp"></a><a name="p27075mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p27077mcpsimp"><a name="p27077mcpsimp"></a><a name="p27077mcpsimp"></a>描述</p>
@@ -6973,36 +3881,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-#### ot\_isp\_bayershp\_attr<a name="ZH-CN_TOPIC_0000002503964989"></a>
-
-【说明】
-
-定义Bayer Sharpen属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;
-    ot_op_mode op_type;
-    ot_isp_bayershp_manual_attr manual_attr;
-    ot_isp_bayershp_auto_attr  auto_attr;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 #### ot\_isp\_bayershp\_attr<a name="ZH-CN_TOPIC_0000002503964989"></a> 【说明】 定义Bayer Sharpen属性。 【定义】 ```
+typedef struct { td_bool en; ot_op_mode op_type; ot_isp_bayershp_manual_attr manual_attr; ot_isp_bayershp_auto_attr auto_attr;
 } ot_isp_bayershp_attr;
-```
-
-【成员】
-
-<a name="table27185mcpsimp"></a>
+``` 【成员】 <a name="table27185mcpsimp"></a>
 <table><thead align="left"><tr id="row27190mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.1.3.1.1"><p id="p27192mcpsimp"><a name="p27192mcpsimp"></a><a name="p27192mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="81%" id="mcps1.1.3.1.2"><p id="p27194mcpsimp"><a name="p27194mcpsimp"></a><a name="p27194mcpsimp"></a>描述</p>
@@ -7036,52 +3918,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Bayer Sharpen功能分为自动和手动：
-
--   en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动Bayer Sharpen功能。此时bayer sharpen的强度值与系统增益的关系请参见成员变量。
--   en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动Bayer Sharpen功能。
--   edge\_filt\_strength边缘平滑强度。该参数值越大，边缘越平滑干净，但也会出现细节连成线条的现象。
-
-【相关数据类型及接口】
-
-无
-
-## 黑电平<a name="ZH-CN_TOPIC_0000002503965159"></a>
-
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470924920"></a>
-
-黑电平通常指没有外界光线输入时，sensor仍会输出的亮度值。ISP需要减去这个亮度值，以进行颜色的处理。
-
-### API参考<a name="ZH-CN_TOPIC_0000002503965145"></a>
-
--   [ss\_mpi\_isp\_set\_black\_level\_attr](#ZH-CN_TOPIC_0000002504084925)：设置黑电平属性。
--   [ss\_mpi\_isp\_get\_black\_level\_attr](#ZH-CN_TOPIC_0000002470925118)：获取黑电平属性。
-
-
-
-#### ss\_mpi\_isp\_set\_black\_level\_attr<a name="ZH-CN_TOPIC_0000002504084925"></a>
-
-【描述】
-
-设置黑电平属性。
-
-【语法】
-
-```
+</table> 【注意事项】 Bayer Sharpen功能分为自动和手动： - en为TD\_TRUE，op\_type为OT\_OP\_MODE\_AUTO，使用自动Bayer Sharpen功能。此时bayer sharpen的强度值与系统增益的关系请参见成员变量。
+- en设置为TD\_TRUE，op\_type设置为OT\_OP\_MODE\_MANUAL使用手动Bayer Sharpen功能。
+- edge\_filt\_strength边缘平滑强度。该参数值越大，边缘越平滑干净，但也会出现细节连成线条的现象。 【相关数据类型及接口】 无 ## 黑电平<a name="ZH-CN_TOPIC_0000002503965159"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470924920"></a> 黑电平通常指没有外界光线输入时，sensor仍会输出的亮度值。ISP需要减去这个亮度值，以进行颜色的处理。 ### API参考<a name="ZH-CN_TOPIC_0000002503965145"></a> - [ss\_mpi\_isp\_set\_black\_level\_attr](#ZH-CN_TOPIC_0000002504084925)：设置黑电平属性。
+- [ss\_mpi\_isp\_get\_black\_level\_attr](#ZH-CN_TOPIC_0000002470925118)：获取黑电平属性。 #### ss\_mpi\_isp\_set\_black\_level\_attr<a name="ZH-CN_TOPIC_0000002504084925"></a> 【描述】 设置黑电平属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_black_level_attr(ot_vi_pipe vi_pipe, const ot_isp_black_level_attr *black_level);
-```
-
-【参数】
-
-<a name="table27248mcpsimp"></a>
+``` 【参数】 <a name="table27248mcpsimp"></a>
 <table><thead align="left"><tr id="row27254mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p27256mcpsimp"><a name="p27256mcpsimp"></a><a name="p27256mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p27258mcpsimp"><a name="p27258mcpsimp"></a><a name="p27258mcpsimp"></a>描述</p>
@@ -7105,11 +3947,7 @@ td_s32 ss_mpi_isp_set_black_level_attr(ot_vi_pipe vi_pipe, const ot_isp_black_le
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table27277mcpsimp"></a>
+</table> 【返回值】 <a name="table27277mcpsimp"></a>
 <table><thead align="left"><tr id="row27282mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p27284mcpsimp"><a name="p27284mcpsimp"></a><a name="p27284mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p27286mcpsimp"><a name="p27286mcpsimp"></a><a name="p27286mcpsimp"></a>描述</p>
@@ -7121,51 +3959,16 @@ td_s32 ss_mpi_isp_set_black_level_attr(ot_vi_pipe vi_pipe, const ot_isp_black_le
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p27291mcpsimp"><a name="p27291mcpsimp"></a><a name="p27291mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row27292mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p27294mcpsimp"><a name="p27294mcpsimp"></a><a name="p27294mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p27296mcpsimp"><a name="p27296mcpsimp"></a><a name="p27296mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
--   如果接口配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_AUTO模式：若cmos.c里面的ot\_isp\_black\_level\_auto\_attr结构体成员update设置为TD\_TRUE，则表示始终使用cmos.c内联动的黑电平配置，而update设置为TD\_FALSE，则表示使用cmos.c非联动的黑电平配置；如果接口配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_MANUAL模式：此时接口配置的手动黑电平配置会生效，ISP内部采用接口配置值；如果接口配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC，则采用dynamic blc算法统计OB区得到的黑电平配置值。Dynamic blc算法可以实时统计OB区的黑电平，在OB区黑电平与可见光黑电平差值确定的情况下可以防止黑电平飘移。Dynamic blc模式调节iso时，拉满again后不能调节dgain，只能调节ispdgain。
--   线性模式下，black level模块集成在isp dgain 模块中，所以bypass isp dgain会同时关闭isp dgain模块中的black level功能。对图像质量影响较大。
--   WDR模式下，black level模块集成在WDR模块中。WDR模式的通路配置与线性通路配置类似。要注意对于同一款sensor而言，线性模式和WDR模式的ob区datatype和sensor驱动配置可能是不一样的，要和sensor厂家的fae对清楚。
--   如果使用虚拟pipe，即vi\_pipe\>=4时，不支持将black\_level\_mode配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC。sensor built-in模式下，同样不支持将black\_level\_mode配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC。
--   Manual、auto、dynamic blc模式中的黑电平值均指代sensor的黑电平值，若sensor黑电平随sensor gain/温度漂移较严重，而同时希望ISP的算法看到一组稳定的黑电平值，此时可以使能user\_black\_level\_en，在FE的BLC模块中减去sensor黑电平与自定义黑电平之间的差异，这样ISP的所有模块所使用的黑电平均为user\_black\_level。
--   如果在使能user\_black\_level\_en的情况下采集 raw数据，所采集raw数据的黑电平为user\_black\_level。此时如果需要灌所采集的raw进行调试，需要disable user\_black\_level\_en，black\_level\_mode配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_MANUAL，manual\_attr.black\_level的值配置为user\_black\_level。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-#### ss\_mpi\_isp\_get\_black\_level\_attr<a name="ZH-CN_TOPIC_0000002470925118"></a>
-
-【描述】
-
-获取黑电平属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 - 如果接口配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_AUTO模式：若cmos.c里面的ot\_isp\_black\_level\_auto\_attr结构体成员update设置为TD\_TRUE，则表示始终使用cmos.c内联动的黑电平配置，而update设置为TD\_FALSE，则表示使用cmos.c非联动的黑电平配置；如果接口配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_MANUAL模式：此时接口配置的手动黑电平配置会生效，ISP内部采用接口配置值；如果接口配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC，则采用dynamic blc算法统计OB区得到的黑电平配置值。Dynamic blc算法可以实时统计OB区的黑电平，在OB区黑电平与可见光黑电平差值确定的情况下可以防止黑电平飘移。Dynamic blc模式调节iso时，拉满again后不能调节dgain，只能调节ispdgain。
+- 线性模式下，black level模块集成在isp dgain 模块中，所以bypass isp dgain会同时关闭isp dgain模块中的black level功能。对图像质量影响较大。
+- WDR模式下，black level模块集成在WDR模块中。WDR模式的通路配置与线性通路配置类似。要注意对于同一款sensor而言，线性模式和WDR模式的ob区datatype和sensor驱动配置可能是不一样的，要和sensor厂家的fae对清楚。
+- 如果使用虚拟pipe，即vi\_pipe\>=4时，不支持将black\_level\_mode配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC。sensor built-in模式下，同样不支持将black\_level\_mode配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC。
+- Manual、auto、dynamic blc模式中的黑电平值均指代sensor的黑电平值，若sensor黑电平随sensor gain/温度漂移较严重，而同时希望ISP的算法看到一组稳定的黑电平值，此时可以使能user\_black\_level\_en，在FE的BLC模块中减去sensor黑电平与自定义黑电平之间的差异，这样ISP的所有模块所使用的黑电平均为user\_black\_level。
+- 如果在使能user\_black\_level\_en的情况下采集 raw数据，所采集raw数据的黑电平为user\_black\_level。此时如果需要灌所采集的raw进行调试，需要disable user\_black\_level\_en，black\_level\_mode配置为OT\_ISP\_BLACK\_LEVEL\_MODE\_MANUAL，manual\_attr.black\_level的值配置为user\_black\_level。 【举例】 无 【相关主题】 无 #### ss\_mpi\_isp\_get\_black\_level\_attr<a name="ZH-CN_TOPIC_0000002470925118"></a> 【描述】 获取黑电平属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_black_level_attr(ot_vi_pipe vi_pipe, ot_isp_black_level_attr *black_level);
-```
-
-【参数】
-
-<a name="table27329mcpsimp"></a>
+``` 【参数】 <a name="table27329mcpsimp"></a>
 <table><thead align="left"><tr id="row27335mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p27337mcpsimp"><a name="p27337mcpsimp"></a><a name="p27337mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p27339mcpsimp"><a name="p27339mcpsimp"></a><a name="p27339mcpsimp"></a>描述</p>
@@ -7189,11 +3992,7 @@ td_s32 ss_mpi_isp_get_black_level_attr(ot_vi_pipe vi_pipe, ot_isp_black_level_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table27358mcpsimp"></a>
+</table> 【返回值】 <a name="table27358mcpsimp"></a>
 <table><thead align="left"><tr id="row27363mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p27365mcpsimp"><a name="p27365mcpsimp"></a><a name="p27365mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p27367mcpsimp"><a name="p27367mcpsimp"></a><a name="p27367mcpsimp"></a>描述</p>
@@ -7205,64 +4004,16 @@ td_s32 ss_mpi_isp_get_black_level_attr(ot_vi_pipe vi_pipe, ot_isp_black_level_at
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p27373mcpsimp"><a name="p27373mcpsimp"></a><a name="p27373mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row27374mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p27376mcpsimp"><a name="p27376mcpsimp"></a><a name="p27376mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p27378mcpsimp"><a name="p27378mcpsimp"></a><a name="p27378mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471085188"></a>
-
--   [ot\_isp\_black\_level\_mode](#ZH-CN_TOPIC_0000002503964895)：定义黑电平工作类型。
--   [ot\_isp\_black\_level\_manual\_attr](#ZH-CN_TOPIC_0000002504084983)：定义手动黑电平属性。
--   [ot\_isp\_black\_level\_dynamic\_pattern](#ZH-CN_TOPIC_0000002504085033)：定义dynamic BLC统计数据的Bayer格式属性。
--   [ot\_isp\_black\_level\_dynamic\_attr](#ZH-CN_TOPIC_0000002471084936)：定义dynamic BLC属性。
--   [ot\_isp\_black\_level\_attr](#ZH-CN_TOPIC_0000002470925040)：定义黑电平属性。
-
-
-
-
-
-
-#### ot\_isp\_black\_level\_mode<a name="ZH-CN_TOPIC_0000002503964895"></a>
-
-【说明】
-
-定义黑电平工作类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_BLACK_LEVEL_MODE_AUTO    = 0,
-    OT_ISP_BLACK_LEVEL_MODE_MANUAL  = 1,
-    OT_ISP_BLACK_LEVEL_MODE_DYNAMIC = 2,
-    OT_ISP_BLACK_LEVEL_MODE_BUTT
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 无 ### 数据类型<a name="ZH-CN_TOPIC_0000002471085188"></a> - [ot\_isp\_black\_level\_mode](#ZH-CN_TOPIC_0000002503964895)：定义黑电平工作类型。
+- [ot\_isp\_black\_level\_manual\_attr](#ZH-CN_TOPIC_0000002504084983)：定义手动黑电平属性。
+- [ot\_isp\_black\_level\_dynamic\_pattern](#ZH-CN_TOPIC_0000002504085033)：定义dynamic BLC统计数据的Bayer格式属性。
+- [ot\_isp\_black\_level\_dynamic\_attr](#ZH-CN_TOPIC_0000002471084936)：定义dynamic BLC属性。
+- [ot\_isp\_black\_level\_attr](#ZH-CN_TOPIC_0000002470925040)：定义黑电平属性。 #### ot\_isp\_black\_level\_mode<a name="ZH-CN_TOPIC_0000002503964895"></a> 【说明】 定义黑电平工作类型。 【定义】 ```
+typedef enum { OT_ISP_BLACK_LEVEL_MODE_AUTO = 0, OT_ISP_BLACK_LEVEL_MODE_MANUAL = 1, OT_ISP_BLACK_LEVEL_MODE_DYNAMIC = 2, OT_ISP_BLACK_LEVEL_MODE_BUTT
 } ot_isp_black_level_mode;
-```
-
-【成员】
-
-<a name="table27421mcpsimp"></a>
+``` 【成员】 <a name="table27421mcpsimp"></a>
 <table><thead align="left"><tr id="row27426mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p27428mcpsimp"><a name="p27428mcpsimp"></a><a name="p27428mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p27430mcpsimp"><a name="p27430mcpsimp"></a><a name="p27430mcpsimp"></a>描述</p>
@@ -7285,33 +4036,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr)
-
-#### ot\_isp\_black\_level\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084983"></a>
-
-【说明】
-
-定义手动黑电平属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 black_level[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM];
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr) #### ot\_isp\_black\_level\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084983"></a> 【说明】 定义手动黑电平属性。 【定义】 ```
+typedef struct { td_u16 black_level[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM];
 } ot_isp_black_level_manual_attr;
-```
-
-【成员】
-
-<a name="table27463mcpsimp"></a>
+``` 【成员】 <a name="table27463mcpsimp"></a>
 <table><thead align="left"><tr id="row27468mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p27470mcpsimp"><a name="p27470mcpsimp"></a><a name="p27470mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p27472mcpsimp"><a name="p27472mcpsimp"></a><a name="p27472mcpsimp"></a>描述</p>
@@ -7329,35 +4057,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr)
-
-#### ot\_isp\_black\_level\_dynamic\_pattern<a name="ZH-CN_TOPIC_0000002504085033"></a>
-
-【说明】
-
-定义dynamic BLC统计数据的Bayer格式属性。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_DYNAMIC_PATTERN_RGB  = 0,
-    OT_ISP_DYNAMIC_PATTERN_RGBIR,
-    OT_ISP_DYNAMIC_PATTERN_BUTT
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr) #### ot\_isp\_black\_level\_dynamic\_pattern<a name="ZH-CN_TOPIC_0000002504085033"></a> 【说明】 定义dynamic BLC统计数据的Bayer格式属性。 【定义】 ```
+typedef enum { OT_ISP_DYNAMIC_PATTERN_RGB = 0, OT_ISP_DYNAMIC_PATTERN_RGBIR, OT_ISP_DYNAMIC_PATTERN_BUTT
 } ot_isp_black_level_dynamic_pattern;
-```
-
-【成员】
-
-<a name="table27504mcpsimp"></a>
+``` 【成员】 <a name="table27504mcpsimp"></a>
 <table><thead align="left"><tr id="row27509mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p27511mcpsimp"><a name="p27511mcpsimp"></a><a name="p27511mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p27513mcpsimp"><a name="p27513mcpsimp"></a><a name="p27513mcpsimp"></a>描述</p>
@@ -7375,42 +4078,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr)
-
-#### ot\_isp\_black\_level\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002471084936"></a>
-
-【说明】
-
-定义dynamic BLC属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_black_level_dynamic_pattern pattern;
-    ot_rect ob_area;
-    td_u16  low_threshold;
-    td_u16  high_threshold;
-    td_s16  offset[OT_ISP_AUTO_ISO_NUM];
-    td_u16 tolerance;
-    td_u8  filter_strength;
-    td_bool separate_en;
-    td_u16  calibration_black_level[OT_ISP_AUTO_ISO_NUM];
-    td_u16  filter_thr;
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr) #### ot\_isp\_black\_level\_dynamic\_attr<a name="ZH-CN_TOPIC_0000002471084936"></a> 【说明】 定义dynamic BLC属性。 【定义】 ```
+typedef struct { ot_isp_black_level_dynamic_pattern pattern; ot_rect ob_area; td_u16 low_threshold; td_u16 high_threshold; td_s16 offset[OT_ISP_AUTO_ISO_NUM]; td_u16 tolerance; td_u8 filter_strength; td_bool separate_en; td_u16 calibration_black_level[OT_ISP_AUTO_ISO_NUM]; td_u16 filter_thr;
 } ot_isp_black_level_dynamic_attr;
-```
-
-【成员】
-
-<a name="table27554mcpsimp"></a>
+``` 【成员】 <a name="table27554mcpsimp"></a>
 <table><thead align="left"><tr id="row27560mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p27562mcpsimp"><a name="p27562mcpsimp"></a><a name="p27562mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p27564mcpsimp"><a name="p27564mcpsimp"></a><a name="p27564mcpsimp"></a>描述</p>
@@ -7476,11 +4147,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 1**  offset在不同的增益情况下的设置值
-
-<a name="table27621mcpsimp"></a>
+</table> **表 1** offset在不同的增益情况下的设置值 <a name="table27621mcpsimp"></a>
 <table><thead align="left"><tr id="row27627mcpsimp"><th class="cellrowborder" valign="top" width="26.26262626262626%" id="mcps1.2.4.1.1"><p id="p27629mcpsimp"><a name="p27629mcpsimp"></a><a name="p27629mcpsimp"></a>offset</p>
 </th>
 <th class="cellrowborder" valign="top" width="38.38383838383838%" id="mcps1.2.4.1.2"><p id="p27631mcpsimp"><a name="p27631mcpsimp"></a><a name="p27631mcpsimp"></a>Again*Dgain (倍数)</p>
@@ -7602,71 +4269,17 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-1.  使用user\_black\_level时要确保sensor黑电平小于user\_black\_level。
-2.  使用dynamic\_blc时，当iso快速变化，时域滤波器需要更换上一帧blc参数，否则会导致黑电平无法快速收敛到实际值，从而导致图像偏色。filter\_thr为调整时域滤波器参数的阈值。当上一帧黑电平与当前帧的黑电平差值大于设定的filter\_thr时，将上一帧黑电平的值改为当前帧黑电平再进行时域滤波。若差值小于filter\_thr，则不改变上一帧黑电平的值，直接进行时域滤波。
-
-    滤波公式：当前帧黑电平 = 上一帧黑电平 \* 滤波强度 + 当前帧黑电平 \* （1 – 滤波强度）
-
-    有阈值判断的滤波过程：
-
-    ![](figures/zh-cn_image_0000002504085117.png)
-
-    没有阈值判断的滤波过程：
-
-    ![](figures/zh-cn_image_0000002470925264.png)
-
-3.  offset和calibration\_black\_level可以用在线标定工具dynamic\_blc\_online\_cali标定得到。dynamic\_blc\_online\_cali有写好的sample。
-
-    要先确保mipi数据中包含OB区，才能打开DynamicBLC模式对OB区进行统计。数据处理流程如[图1](#fig158111138577)所示。
-
-4.  BLC模式不支持动态切换，一开始要用Dynamic BLC模式且在乎前几帧效果，要在sensor序列里关闭clamp。clamp是开关sensor内部黑电平校正的参数。
-5.  Sensor驱动里一定要配置clamp信息，clamp信息可以在isp的proc打印信息里查询。如果没有配置clamp信息，proc信息里会显示none。
-
-    低照下动态黑电平会剧烈震荡，因此要打开时域滤波，否则画面会不停的闪烁。
-
-6.  使用dynamic blc需要关闭sensor内部黑电平校正，关闭sensor内部黑电平校正后，若OB区的黑电平和可见光区的黑电平差别较大或者sensor黑电平过大影响user\_black\_level使用需要关闭sensor\_dgain。
-
-**图 1**  数据处理流程<a name="fig158111138577"></a>  
-![](figures/数据处理流程.png "数据处理流程")
-
-因此若要使用Dynamic BLC模块基于OB区统计得到合理的黑电平值，整个数据处理通路的配置说明如下：
-
--   sensor驱动配置：在驱动中添加可以读出ob区的sensor序列。若启动Dynamic BLC模块一定要关闭sensor中的BLC校正功能。
--   mipi配置：确保mipi的裁剪区域包含OB区。若OB区的datatype与可见光区域图像的datatype不一样，则需要修改mipi的datatype配置，可通过调用OT\_MIPI\_SET\_EXT\_DATA\_TYPE接口实现，接口的具体信息请参见《MIPI 使用指南》。若Dynamic BLC模块异常要检查mipi检测到的分辨率是否为包含OB区的分辨率。
--   VI dev配置：宽高与mipi输出宽高保持一致。
--   pub attr配置：配置wnd\_rect中的起始坐标和宽高信息，使用ISP裁剪功能裁剪掉OB区，保证ISP FE和BE处理的数据为不带OB区的raw数据。
--   VI pipe attr和chn info中的宽高配置为ISP裁剪后的宽高。
--   由于sensor gain值较大时，动态黑电平会严重飘移，所以calibration\_black\_level的标定值不够准确，从而导致等曝光量切换时会有颜色闪烁。但是不会影响开关灯这种极限场景的图像效果。
-
-【相关数据类型及接口】
-
-[ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr)
-
-#### ot\_isp\_black\_level\_attr<a name="ZH-CN_TOPIC_0000002470925040"></a>
-
-【说明】
-
-定义ISP黑电平属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool  user_black_level_en;
-    td_u16   user_black_level[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM];
-    ot_isp_black_level_mode         black_level_mode;
-    ot_isp_black_level_manual_attr  manual_attr;
-    ot_isp_black_level_dynamic_attr dynamic_attr;
+</table> 【注意事项】 1. 使用user\_black\_level时要确保sensor黑电平小于user\_black\_level。
+2. 使用dynamic\_blc时，当iso快速变化，时域滤波器需要更换上一帧blc参数，否则会导致黑电平无法快速收敛到实际值，从而导致图像偏色。filter\_thr为调整时域滤波器参数的阈值。当上一帧黑电平与当前帧的黑电平差值大于设定的filter\_thr时，将上一帧黑电平的值改为当前帧黑电平再进行时域滤波。若差值小于filter\_thr，则不改变上一帧黑电平的值，直接进行时域滤波。 滤波公式：当前帧黑电平 = 上一帧黑电平 \* 滤波强度 + 当前帧黑电平 \* （1 – 滤波强度） 有阈值判断的滤波过程： ![](figures/zh-cn_image_0000002504085117.png) 没有阈值判断的滤波过程： ![](figures/zh-cn_image_0000002470925264.png) 3. offset和calibration\_black\_level可以用在线标定工具dynamic\_blc\_online\_cali标定得到。dynamic\_blc\_online\_cali有写好的sample。 要先确保mipi数据中包含OB区，才能打开DynamicBLC模式对OB区进行统计。数据处理流程如[图1](#fig158111138577)所示。 4. BLC模式不支持动态切换，一开始要用Dynamic BLC模式且在乎前几帧效果，要在sensor序列里关闭clamp。clamp是开关sensor内部黑电平校正的参数。
+5. Sensor驱动里一定要配置clamp信息，clamp信息可以在isp的proc打印信息里查询。如果没有配置clamp信息，proc信息里会显示none。 低照下动态黑电平会剧烈震荡，因此要打开时域滤波，否则画面会不停的闪烁。 6. 使用dynamic blc需要关闭sensor内部黑电平校正，关闭sensor内部黑电平校正后，若OB区的黑电平和可见光区的黑电平差别较大或者sensor黑电平过大影响user\_black\_level使用需要关闭sensor\_dgain。 **图 1** 数据处理流程<a name="fig158111138577"></a> ![](figures/数据处理流程.png "数据处理流程") 因此若要使用Dynamic BLC模块基于OB区统计得到合理的黑电平值，整个数据处理通路的配置说明如下： - sensor驱动配置：在驱动中添加可以读出ob区的sensor序列。若启动Dynamic BLC模块一定要关闭sensor中的BLC校正功能。
+- mipi配置：确保mipi的裁剪区域包含OB区。若OB区的datatype与可见光区域图像的datatype不一样，则需要修改mipi的datatype配置，可通过调用OT\_MIPI\_SET\_EXT\_DATA\_TYPE接口实现，接口的具体信息请参见《MIPI 使用指南》。若Dynamic BLC模块异常要检查mipi检测到的分辨率是否为包含OB区的分辨率。
+- VI dev配置：宽高与mipi输出宽高保持一致。
+- pub attr配置：配置wnd\_rect中的起始坐标和宽高信息，使用ISP裁剪功能裁剪掉OB区，保证ISP FE和BE处理的数据为不带OB区的raw数据。
+- VI pipe attr和chn info中的宽高配置为ISP裁剪后的宽高。
+- 由于sensor gain值较大时，动态黑电平会严重飘移，所以calibration\_black\_level的标定值不够准确，从而导致等曝光量切换时会有颜色闪烁。但是不会影响开关灯这种极限场景的图像效果。 【相关数据类型及接口】 [ot\_isp\_black\_level\_attr](#ot_isp_black_level_attr) #### ot\_isp\_black\_level\_attr<a name="ZH-CN_TOPIC_0000002470925040"></a> 【说明】 定义ISP黑电平属性。 【定义】 ```
+typedef struct { td_bool user_black_level_en; td_u16 user_black_level[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM]; ot_isp_black_level_mode black_level_mode; ot_isp_black_level_manual_attr manual_attr; ot_isp_black_level_dynamic_attr dynamic_attr;
 } ot_isp_black_level_attr;
-```
-
-【成员】
-
-<a name="table27796mcpsimp"></a>
+``` 【成员】 <a name="table27796mcpsimp"></a>
 <table><thead align="left"><tr id="row27801mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p27803mcpsimp"><a name="p27803mcpsimp"></a><a name="p27803mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p27805mcpsimp"><a name="p27805mcpsimp"></a><a name="p27805mcpsimp"></a>描述</p>
@@ -7709,93 +4322,21 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   Sensor built-in模式下不支持使能user\_black\_level\_en。
--   如果使用虚拟pipe，即vi\_pipe\>=4时，不支持使能user\_black\_level\_en。
-
-【相关数据类型及接口】
-
-无
-
-### 黑电平标定工具<a name="ZH-CN_TOPIC_0000002504084859"></a>
-
-
-#### 功能描述<a name="ZH-CN_TOPIC_0000002470925166"></a>
-
-黑电平标定工具用于标定offset和calibration\_black\_level。在高iso条件下，可见光区的黑电平均值和OB区的黑电平均值会有差异。offset用于补偿OB区黑电平，使其与可见光区黑电平保持一致。按照14bit的raw数据进行配置。当环境光发生变化时，AE在第N帧重新计算出曝光信息。在N+1帧将第N帧的曝光信息配置给sensor。第N帧的曝光信息会在第N+3帧的RAW中生效。由于BLC会受到iso的影响所以第N+3帧的BLC发生了变化，但第N+3帧减的还是第N+2帧的黑电平，所以图像会偏色。calibration\_black\_level用于计算补偿第N+3帧的黑电平，使其与可见光区黑电平保持一致，解决图像的偏色问题。按照14bit的raw数据进行配置。
-
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
->黑电平标定结果通过修正实际统计黑电平实现个体差异校正。因此，用户通过MPI接口修改标定结果，会导致标定失效。
-
-黑电平标定工具实现在量产过程中，针对不同机器的差异进行对黑电平补偿参数标定的功能。用户可以使用在线标定工具dynamic\_blc\_online\_cali标定得到offset和calibration\_black\_level。再调用[ss\_mpi\_isp\_set\_black\_level\_attr](#ZH-CN_TOPIC_0000002504084925)接口配置offset和calibration\_black\_level。同时生成带有offset和calibration\_black\_level标定结果的TXT文件。
-
-注意事项：
-
--   标定sample工具介绍详见：readme.txt
--   标定sample工具可手动裁剪标定区域。所裁剪的画面越大，耗时越长。选定的iso档位越多，耗时越长。
--   标定完成后sample会自动将标定数据导入，无需手动导入。
-
-黑电平补偿参数的校正过程：
-
-1.  修改sensor驱动\(sns\_name\_cmos\_ex.h\)。将OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC改为动态BLC。
-2.  将设备的光圈完全关闭，或者使用镜头盖将镜头输入遮挡，确保无光线进入；
-3.  以sample为例，起线性业务\( ./sample\_vio 0 \)；
-4.  运行标定工具dynamic\_blc\_online\_cali\( ./ dynamic\_blc\_online\_cali 0 30 8 100 100 100 100 \)。
-
-## 去FPN<a name="ZH-CN_TOPIC_0000002470924868"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085228"></a>
-
-Sensor将光信号转换成电信号，再通过数百万个ADC器件后输出图像。每个像素结构中的光电二极管的尺寸、掺杂浓度、生产过程中的沾污以及MOS场效应管的参数的偏差等都会造成像素输出信号的变化，由于这些偏差造成的噪声对于给定的单个像素它是固定的，这种噪声就是固定模式噪声FPN（Fixed Pattern Noise）。
-
-去FPN模块就是要把这些固定模式噪声消除。
-
-FPN的标定过程：
-
-1.  首先确定FPN在哪个ISO下最为严重，在此ISO下固定增益，关闭镜头的光圈，让sensor采集黑帧。
-2.  启动标定，当第一帧过来时，把满足标定条件的RAW数据写到内存 ，当第二帧过来时，通过读出端口把内存中的黑帧读出来与第二帧进行累加后再通过写出端口再写回内存，后面的帧也是这样，但是最后一帧写出时会对累加的黑帧平均后再写回内存。
-3.  当求平均写出后，标定结束。此时，内存中就把低照度下的固定模式噪声存储下来了，然后，把该黑帧存储到外存上即可。
-
-**图 1**  FPN标定示意图<a name="fig860711813412"></a>  
-![](figures/FPN标定示意图.png "FPN标定示意图")
-
-FPN的校正过程：
-
-1.  把标定好的黑帧从外存载入到内存中。
-2.  当从sensor采集的带FPN的正常图像过来后，用每帧都减去在内存中的黑帧，从而就得到了消除FPN后的校正帧。
-
-**图 2**  FPN校正示意图<a name="fig977310014714"></a>  
-![](figures/FPN校正示意图.png "FPN校正示意图")
-### API参考<a name="ZH-CN_TOPIC_0000002471085090"></a>
-
--   [ss\_mpi\_isp\_fpn\_calibrate](#ZH-CN_TOPIC_0000002504085029)：设置去FPN标定属性。
--   [ss\_mpi\_isp\_set\_fpn\_attr](#ZH-CN_TOPIC_0000002504084823)：设置去FPN属性。
--   [ss\_mpi\_isp\_get\_fpn\_attr](#ZH-CN_TOPIC_0000002504085057)：获取去FPN属性。
-
-
-
-
-#### ss\_mpi\_isp\_fpn\_calibrate<a name="ZH-CN_TOPIC_0000002504085029"></a>
-
-【描述】
-
-设置去FPN标定属性。
-
-【语法】
-
-```
+</table> 【注意事项】 - Sensor built-in模式下不支持使能user\_black\_level\_en。
+- 如果使用虚拟pipe，即vi\_pipe\>=4时，不支持使能user\_black\_level\_en。 【相关数据类型及接口】 无 ### 黑电平标定工具<a name="ZH-CN_TOPIC_0000002504084859"></a> #### 功能描述<a name="ZH-CN_TOPIC_0000002470925166"></a> 黑电平标定工具用于标定offset和calibration\_black\_level。在高iso条件下，可见光区的黑电平均值和OB区的黑电平均值会有差异。offset用于补偿OB区黑电平，使其与可见光区黑电平保持一致。按照14bit的raw数据进行配置。当环境光发生变化时，AE在第N帧重新计算出曝光信息。在N+1帧将第N帧的曝光信息配置给sensor。第N帧的曝光信息会在第N+3帧的RAW中生效。由于BLC会受到iso的影响所以第N+3帧的BLC发生了变化，但第N+3帧减的还是第N+2帧的黑电平，所以图像会偏色。calibration\_black\_level用于计算补偿第N+3帧的黑电平，使其与可见光区黑电平保持一致，解决图像的偏色问题。按照14bit的raw数据进行配置。 >![](public_sys-resources/icon-caution.gif) **CAUTION:** >黑电平标定结果通过修正实际统计黑电平实现个体差异校正。因此，用户通过MPI接口修改标定结果，会导致标定失效。 黑电平标定工具实现在量产过程中，针对不同机器的差异进行对黑电平补偿参数标定的功能。用户可以使用在线标定工具dynamic\_blc\_online\_cali标定得到offset和calibration\_black\_level。再调用[ss\_mpi\_isp\_set\_black\_level\_attr](#ZH-CN_TOPIC_0000002504084925)接口配置offset和calibration\_black\_level。同时生成带有offset和calibration\_black\_level标定结果的TXT文件。 注意事项： - 标定sample工具介绍详见：readme.txt
+- 标定sample工具可手动裁剪标定区域。所裁剪的画面越大，耗时越长。选定的iso档位越多，耗时越长。
+- 标定完成后sample会自动将标定数据导入，无需手动导入。 黑电平补偿参数的校正过程： 1. 修改sensor驱动\(sns\_name\_cmos\_ex.h\)。将OT\_ISP\_BLACK\_LEVEL\_MODE\_DYNAMIC改为动态BLC。
+2. 将设备的光圈完全关闭，或者使用镜头盖将镜头输入遮挡，确保无光线进入；
+3. 以sample为例，起线性业务\( ./sample\_vio 0 \)；
+4. 运行标定工具dynamic\_blc\_online\_cali\( ./ dynamic\_blc\_online\_cali 0 30 8 100 100 100 100 \)。 ## 去FPN<a name="ZH-CN_TOPIC_0000002470924868"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085228"></a> Sensor将光信号转换成电信号，再通过数百万个ADC器件后输出图像。每个像素结构中的光电二极管的尺寸、掺杂浓度、生产过程中的沾污以及MOS场效应管的参数的偏差等都会造成像素输出信号的变化，由于这些偏差造成的噪声对于给定的单个像素它是固定的，这种噪声就是固定模式噪声FPN（Fixed Pattern Noise）。 去FPN模块就是要把这些固定模式噪声消除。 FPN的标定过程： 1. 首先确定FPN在哪个ISO下最为严重，在此ISO下固定增益，关闭镜头的光圈，让sensor采集黑帧。
+2. 启动标定，当第一帧过来时，把满足标定条件的RAW数据写到内存 ，当第二帧过来时，通过读出端口把内存中的黑帧读出来与第二帧进行累加后再通过写出端口再写回内存，后面的帧也是这样，但是最后一帧写出时会对累加的黑帧平均后再写回内存。
+3. 当求平均写出后，标定结束。此时，内存中就把低照度下的固定模式噪声存储下来了，然后，把该黑帧存储到外存上即可。 **图 1** FPN标定示意图<a name="fig860711813412"></a> ![](figures/FPN标定示意图.png "FPN标定示意图") FPN的校正过程： 1. 把标定好的黑帧从外存载入到内存中。
+2. 当从sensor采集的带FPN的正常图像过来后，用每帧都减去在内存中的黑帧，从而就得到了消除FPN后的校正帧。 **图 2** FPN校正示意图<a name="fig977310014714"></a> ![](figures/FPN校正示意图.png "FPN校正示意图")
+### API参考<a name="ZH-CN_TOPIC_0000002471085090"></a> - [ss\_mpi\_isp\_fpn\_calibrate](#ZH-CN_TOPIC_0000002504085029)：设置去FPN标定属性。
+- [ss\_mpi\_isp\_set\_fpn\_attr](#ZH-CN_TOPIC_0000002504084823)：设置去FPN属性。
+- [ss\_mpi\_isp\_get\_fpn\_attr](#ZH-CN_TOPIC_0000002504085057)：获取去FPN属性。 #### ss\_mpi\_isp\_fpn\_calibrate<a name="ZH-CN_TOPIC_0000002504085029"></a> 【描述】 设置去FPN标定属性。 【语法】 ```
 td_s32 ss_mpi_isp_fpn_calibrate(ot_vi_pipe vi_pipe, ot_isp_fpn_calibrate_attr *calibrate_attr);
-```
-
-【参数】
-
-<a name="table27909mcpsimp"></a>
+``` 【参数】 <a name="table27909mcpsimp"></a>
 <table><thead align="left"><tr id="row27915mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p27917mcpsimp"><a name="p27917mcpsimp"></a><a name="p27917mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p27919mcpsimp"><a name="p27919mcpsimp"></a><a name="p27919mcpsimp"></a>描述</p>
@@ -7819,11 +4360,7 @@ td_s32 ss_mpi_isp_fpn_calibrate(ot_vi_pipe vi_pipe, ot_isp_fpn_calibrate_attr *c
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table27938mcpsimp"></a>
+</table> 【返回值】 <a name="table27938mcpsimp"></a>
 <table><thead align="left"><tr id="row27943mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p27945mcpsimp"><a name="p27945mcpsimp"></a><a name="p27945mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p27947mcpsimp"><a name="p27947mcpsimp"></a><a name="p27947mcpsimp"></a>描述</p>
@@ -7835,56 +4372,21 @@ td_s32 ss_mpi_isp_fpn_calibrate(ot_vi_pipe vi_pipe, ot_isp_fpn_calibrate_attr *c
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p27952mcpsimp"><a name="p27952mcpsimp"></a><a name="p27952mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row27953mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p27955mcpsimp"><a name="p27955mcpsimp"></a><a name="p27955mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p27957mcpsimp"><a name="p27957mcpsimp"></a><a name="p27957mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
--   标定时用的内存注意要按16bit进行分配，标定完成之后要把黑帧/行，ISO，黑帧的长度、OFFSET、是否压缩标志等保存到外部存储介质，在校正的时候要用到这些信息。
--   当VI的PIPE处于VI在线或VI离线才支持FPN标定。
--   当VI处于离线OT\_VI\_VIDEO\_MODE\_NORM模式下，图像宽度大于4096时，不支持FPN标定；当图像面积大于3840x2160时，不支持离线OT\_VI\_VIDEO\_MODE\_NORM模式标定，可能会出现标定失败的现象，可使用OT\_VI\_VIDEO\_MODE\_ADVANCED模式标出黑帧。
--   当VI处于OT\_VI\_STITCH\_CFG\_MODE\_SYNC模式下，不支持FPN标定。
--   图像宽度大于4096时，只支持OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP格式的黑帧标定。
--   Hi3403V100 FPN标定不支持压缩，只能是非压缩模式。
--   在WDR模式下，FPN不支持标定。
--   VI物理通道使能时，不支持开启FPN标定。
--   当VI模块的PIPE有销毁操作时（例如：分辨率切换、WDR模式切换等情况），保存在VI模块的FPN属性会丢失，FPN功能需要在VI模块的PIPE创建后重新配置才能恢复。
--   FPN校正接口具有一定的延时，如关闭FPN校正后需要再次进行FPN标定，则需要等待几帧时间再调用FPN标定接口。
--   该标定接口为阻塞接口，等待标定完成后返回，超时时间为1600ms。
-
-【举例】
-
-标定过程请参考sample vio代码。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_fpn\_attr](#ss_mpi_isp_set_fpn_attr)
-
-#### ss\_mpi\_isp\_set\_fpn\_attr<a name="ZH-CN_TOPIC_0000002504084823"></a>
-
-【描述】
-
-设置去FPN属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 - 标定时用的内存注意要按16bit进行分配，标定完成之后要把黑帧/行，ISO，黑帧的长度、OFFSET、是否压缩标志等保存到外部存储介质，在校正的时候要用到这些信息。
+- 当VI的PIPE处于VI在线或VI离线才支持FPN标定。
+- 当VI处于离线OT\_VI\_VIDEO\_MODE\_NORM模式下，图像宽度大于4096时，不支持FPN标定；当图像面积大于3840x2160时，不支持离线OT\_VI\_VIDEO\_MODE\_NORM模式标定，可能会出现标定失败的现象，可使用OT\_VI\_VIDEO\_MODE\_ADVANCED模式标出黑帧。
+- 当VI处于OT\_VI\_STITCH\_CFG\_MODE\_SYNC模式下，不支持FPN标定。
+- 图像宽度大于4096时，只支持OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP格式的黑帧标定。
+- Hi3403V100 FPN标定不支持压缩，只能是非压缩模式。
+- 在WDR模式下，FPN不支持标定。
+- VI物理通道使能时，不支持开启FPN标定。
+- 当VI模块的PIPE有销毁操作时（例如：分辨率切换、WDR模式切换等情况），保存在VI模块的FPN属性会丢失，FPN功能需要在VI模块的PIPE创建后重新配置才能恢复。
+- FPN校正接口具有一定的延时，如关闭FPN校正后需要再次进行FPN标定，则需要等待几帧时间再调用FPN标定接口。
+- 该标定接口为阻塞接口，等待标定完成后返回，超时时间为1600ms。 【举例】 标定过程请参考sample vio代码。 【相关主题】 [ss\_mpi\_isp\_set\_fpn\_attr](#ss_mpi_isp_set_fpn_attr) #### ss\_mpi\_isp\_set\_fpn\_attr<a name="ZH-CN_TOPIC_0000002504084823"></a> 【描述】 设置去FPN属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_fpn_attr(ot_vi_pipe vi_pipe, const ot_isp_fpn_attr *fpn_attr);
-```
-
-【参数】
-
-<a name="table27986mcpsimp"></a>
+``` 【参数】 <a name="table27986mcpsimp"></a>
 <table><thead align="left"><tr id="row27992mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p27994mcpsimp"><a name="p27994mcpsimp"></a><a name="p27994mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p27996mcpsimp"><a name="p27996mcpsimp"></a><a name="p27996mcpsimp"></a>描述</p>
@@ -7908,11 +4410,7 @@ td_s32 ss_mpi_isp_set_fpn_attr(ot_vi_pipe vi_pipe, const ot_isp_fpn_attr *fpn_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table28015mcpsimp"></a>
+</table> 【返回值】 <a name="table28015mcpsimp"></a>
 <table><thead align="left"><tr id="row28020mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p28022mcpsimp"><a name="p28022mcpsimp"></a><a name="p28022mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p28024mcpsimp"><a name="p28024mcpsimp"></a><a name="p28024mcpsimp"></a>描述</p>
@@ -7924,52 +4422,17 @@ td_s32 ss_mpi_isp_set_fpn_attr(ot_vi_pipe vi_pipe, const ot_isp_fpn_attr *fpn_at
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28029mcpsimp"><a name="p28029mcpsimp"></a><a name="p28029mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row28030mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p28032mcpsimp"><a name="p28032mcpsimp"></a><a name="p28032mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28034mcpsimp"><a name="p28034mcpsimp"></a><a name="p28034mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
--   Hi3403V100 FPN校正不支持压缩，只能是非压缩模式。
--   图像宽度大于4096时，只支持OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP格式的黑帧校正。
--   当VI处于OT\_VI\_STITCH\_CFG\_MODE\_SYNC模式下，不支持FPN校正。
--   3合 1 WDR模式下不支持FPN校正。
--   FPN校正开启时，不支持从线性到WDR之间相互切换，切换前需先关闭FPN。
--   FPN不支持在虚拟pipe下开启。
--   根据标定时候保存的黑帧信息，读出OFFSET、ISO等信息，同时要把黑帧读入内存，这些是在校正时要输入信息。如果用户选择为自动模式时，会根据校正时的ISO来自动调节校正的强度；而手动模式会根据用户输入的校正强度进行校正。
-
-【举例】
-
-校正过程请参考sample vio代码。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_fpn\_attr](#ss_mpi_isp_get_fpn_attr)
-
-#### ss\_mpi\_isp\_get\_fpn\_attr<a name="ZH-CN_TOPIC_0000002504085057"></a>
-
-【描述】
-
-获取去FPN属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 - Hi3403V100 FPN校正不支持压缩，只能是非压缩模式。
+- 图像宽度大于4096时，只支持OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP格式的黑帧校正。
+- 当VI处于OT\_VI\_STITCH\_CFG\_MODE\_SYNC模式下，不支持FPN校正。
+- 3合 1 WDR模式下不支持FPN校正。
+- FPN校正开启时，不支持从线性到WDR之间相互切换，切换前需先关闭FPN。
+- FPN不支持在虚拟pipe下开启。
+- 根据标定时候保存的黑帧信息，读出OFFSET、ISO等信息，同时要把黑帧读入内存，这些是在校正时要输入信息。如果用户选择为自动模式时，会根据校正时的ISO来自动调节校正的强度；而手动模式会根据用户输入的校正强度进行校正。 【举例】 校正过程请参考sample vio代码。 【相关主题】 [ss\_mpi\_isp\_get\_fpn\_attr](#ss_mpi_isp_get_fpn_attr) #### ss\_mpi\_isp\_get\_fpn\_attr<a name="ZH-CN_TOPIC_0000002504085057"></a> 【描述】 获取去FPN属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_fpn_attr(ot_vi_pipe vi_pipe, ot_isp_fpn_attr *fpn_attr);
-```
-
-【参数】
-
-<a name="table28063mcpsimp"></a>
+``` 【参数】 <a name="table28063mcpsimp"></a>
 <table><thead align="left"><tr id="row28069mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p28071mcpsimp"><a name="p28071mcpsimp"></a><a name="p28071mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p28073mcpsimp"><a name="p28073mcpsimp"></a><a name="p28073mcpsimp"></a>描述</p>
@@ -7993,11 +4456,7 @@ td_s32 ss_mpi_isp_get_fpn_attr(ot_vi_pipe vi_pipe, ot_isp_fpn_attr *fpn_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table28092mcpsimp"></a>
+</table> 【返回值】 <a name="table28092mcpsimp"></a>
 <table><thead align="left"><tr id="row28097mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p28099mcpsimp"><a name="p28099mcpsimp"></a><a name="p28099mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p28101mcpsimp"><a name="p28101mcpsimp"></a><a name="p28101mcpsimp"></a>描述</p>
@@ -8009,68 +4468,18 @@ td_s32 ss_mpi_isp_get_fpn_attr(ot_vi_pipe vi_pipe, ot_isp_fpn_attr *fpn_attr);
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28106mcpsimp"><a name="p28106mcpsimp"></a><a name="p28106mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row28107mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p28109mcpsimp"><a name="p28109mcpsimp"></a><a name="p28109mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28111mcpsimp"><a name="p28111mcpsimp"></a><a name="p28111mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_fpn\_attr](#ss_mpi_isp_set_fpn_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503964947"></a>
-
--   [ot\_isp\_fpn\_frame\_info](#ZH-CN_TOPIC_0000002470925228)：定义去FPN的标定黑帧信息。
--   [ot\_isp\_fpn\_calibrate\_attr](#ZH-CN_TOPIC_0000002503965083)：定义去FPN的标定属性。
--   [ot\_isp\_fpn\_attr](#ZH-CN_TOPIC_0000002504085041)：定义去FPN的校正属性。
--   [ot\_isp\_fpn\_manual\_attr](#ZH-CN_TOPIC_0000002470925036)：定义去FPN在手动模式的校正属性。
--   [ot\_isp\_fpn\_auto\_attr](#ZH-CN_TOPIC_0000002471085000)：定义去FPN在自动模式的校正属性。
--   [ot\_isp\_fpn\_type](#ZH-CN_TOPIC_0000002471085104)：定义去FPN类型。
--   [ot\_isp\_fpn\_out\_mode](#ZH-CN_TOPIC_0000002503965077)：定义去FPN标定输出的模式。
-
-
-
-
-
-
-
-
-#### ot\_isp\_fpn\_frame\_info<a name="ZH-CN_TOPIC_0000002470925228"></a>
-
-【说明】
-
-定义去FPN的标定黑帧信息。
-
-【定义】
-
-```
-typedef struct {
-    td_u32              iso;
-    td_u32              offset[OT_ISP_STRIPING_MAX_NUM]; 
-    td_u32              frm_size;
-    ot_video_frame_info fpn_frame;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_fpn\_attr](#ss_mpi_isp_set_fpn_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503964947"></a> - [ot\_isp\_fpn\_frame\_info](#ZH-CN_TOPIC_0000002470925228)：定义去FPN的标定黑帧信息。
+- [ot\_isp\_fpn\_calibrate\_attr](#ZH-CN_TOPIC_0000002503965083)：定义去FPN的标定属性。
+- [ot\_isp\_fpn\_attr](#ZH-CN_TOPIC_0000002504085041)：定义去FPN的校正属性。
+- [ot\_isp\_fpn\_manual\_attr](#ZH-CN_TOPIC_0000002470925036)：定义去FPN在手动模式的校正属性。
+- [ot\_isp\_fpn\_auto\_attr](#ZH-CN_TOPIC_0000002471085000)：定义去FPN在自动模式的校正属性。
+- [ot\_isp\_fpn\_type](#ZH-CN_TOPIC_0000002471085104)：定义去FPN类型。
+- [ot\_isp\_fpn\_out\_mode](#ZH-CN_TOPIC_0000002503965077)：定义去FPN标定输出的模式。 #### ot\_isp\_fpn\_frame\_info<a name="ZH-CN_TOPIC_0000002470925228"></a> 【说明】 定义去FPN的标定黑帧信息。 【定义】 ```
+typedef struct { td_u32 iso; td_u32 offset[OT_ISP_STRIPING_MAX_NUM]; td_u32 frm_size; ot_video_frame_info fpn_frame;
 } ot_isp_fpn_frame_info;
-```
-
-【成员】
-
-<a name="table28156mcpsimp"></a>
+``` 【成员】 <a name="table28156mcpsimp"></a>
 <table><thead align="left"><tr id="row28161mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.1.3.1.1"><p id="p28163mcpsimp"><a name="p28163mcpsimp"></a><a name="p28163mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="81%" id="mcps1.1.3.1.2"><p id="p28165mcpsimp"><a name="p28165mcpsimp"></a><a name="p28165mcpsimp"></a>描述</p>
@@ -8100,39 +4509,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   使用FPN时，图像宽度要求为16的整数倍，否则标定的黑帧或校正后的图像会有异常。
--   offset可以在/proc/umap/isp中查询得到。
--   当标定时选择的黑帧pixel\_format是OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP时，黑帧是非紧凑型的raw；当pixel\_format是其他时，黑帧是紧凑型的raw，像素位宽和选择的位宽一致。
-
-【相关数据类型及接口】
-
-[ot\_isp\_fpn\_calibrate\_attr](#ot_isp_fpn_calibrate_attr)
-
-#### ot\_isp\_fpn\_calibrate\_attr<a name="ZH-CN_TOPIC_0000002503965083"></a>
-
-【说明】
-
-定义去FPN的标定属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u32                 threshold;
-    td_u32                 frame_num;
-    ot_isp_fpn_type        fpn_type;
-    ot_isp_fpn_frame_info  fpn_cali_frame;
-    ot_isp_fpn_out_mode   fpn_mode;
+</table> 【注意事项】 - 使用FPN时，图像宽度要求为16的整数倍，否则标定的黑帧或校正后的图像会有异常。
+- offset可以在/proc/umap/isp中查询得到。
+- 当标定时选择的黑帧pixel\_format是OT\_PIXEL\_FORMAT\_RGB\_BAYER\_16BPP时，黑帧是非紧凑型的raw；当pixel\_format是其他时，黑帧是紧凑型的raw，像素位宽和选择的位宽一致。 【相关数据类型及接口】 [ot\_isp\_fpn\_calibrate\_attr](#ot_isp_fpn_calibrate_attr) #### ot\_isp\_fpn\_calibrate\_attr<a name="ZH-CN_TOPIC_0000002503965083"></a> 【说明】 定义去FPN的标定属性。 【定义】 ```
+typedef struct { td_u32 threshold; td_u32 frame_num; ot_isp_fpn_type fpn_type; ot_isp_fpn_frame_info fpn_cali_frame; ot_isp_fpn_out_mode fpn_mode;
 } ot_isp_fpn_calibrate_attr;
-```
-
-【成员】
-
-<a name="table28212mcpsimp"></a>
+``` 【成员】 <a name="table28212mcpsimp"></a>
 <table><thead align="left"><tr id="row28217mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p28219mcpsimp"><a name="p28219mcpsimp"></a><a name="p28219mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p28221mcpsimp"><a name="p28221mcpsimp"></a><a name="p28221mcpsimp"></a>描述</p>
@@ -8166,39 +4548,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-阈值与标定时保存黑帧的比特数相关，假设标定时保存的比特数是N，则阈值一般取\(2^N\)\>\>2。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_fpn\_frame\_info](#ot_isp_fpn_frame_info)
--   [ot\_isp\_fpn\_attr](#ot_isp_fpn_attr)
-
-#### ot\_isp\_fpn\_attr<a name="ZH-CN_TOPIC_0000002504085041"></a>
-
-【说明】
-
-定义去FPN的校正属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool                enable;
-    ot_op_mode            op_type;
-    ot_isp_fpn_type        fpn_type;
-    ot_isp_fpn_frame_info  fpn_frm_info;
-    ot_isp_fpn_manual_attr manual_attr;
-    ot_isp_fpn_auto_attr   auto_attr;
+</table> 【注意事项】 阈值与标定时保存黑帧的比特数相关，假设标定时保存的比特数是N，则阈值一般取\(2^N\)\>\>2。 【相关数据类型及接口】 - [ot\_isp\_fpn\_frame\_info](#ot_isp_fpn_frame_info)
+- [ot\_isp\_fpn\_attr](#ot_isp_fpn_attr) #### ot\_isp\_fpn\_attr<a name="ZH-CN_TOPIC_0000002504085041"></a> 【说明】 定义去FPN的校正属性。 【定义】 ```
+typedef struct { td_bool enable; ot_op_mode op_type; ot_isp_fpn_type fpn_type; ot_isp_fpn_frame_info fpn_frm_info; ot_isp_fpn_manual_attr manual_attr; ot_isp_fpn_auto_attr auto_attr;
 } ot_isp_fpn_attr;
-```
-
-【成员】
-
-<a name="table28276mcpsimp"></a>
+``` 【成员】 <a name="table28276mcpsimp"></a>
 <table><thead align="left"><tr id="row28281mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p28283mcpsimp"><a name="p28283mcpsimp"></a><a name="p28283mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p28285mcpsimp"><a name="p28285mcpsimp"></a><a name="p28285mcpsimp"></a>描述</p>
@@ -8236,36 +4590,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-校正模式分为手动与自动模式，手动模式需要用户设置校正强度，而自动模式不需要设置校正强度，系统会根据当前图像的ISO计算出校正强度，进行动态校正。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_isp\_set\_fpn\_attr](#ss_mpi_isp_set_fpn_attr)
--   [ss\_mpi\_isp\_get\_fpn\_attr](#ss_mpi_isp_get_fpn_attr)
--   [ot\_isp\_fpn\_manual\_attr](#ot_isp_fpn_manual_attr)
--   [ot\_isp\_fpn\_auto\_attr](#ot_isp_fpn_auto_attr)
-
-#### ot\_isp\_fpn\_manual\_attr<a name="ZH-CN_TOPIC_0000002470925036"></a>
-
-【说明】
-
-定义去FPN在手动模式的校正属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u32  strength;
+</table> 【注意事项】 校正模式分为手动与自动模式，手动模式需要用户设置校正强度，而自动模式不需要设置校正强度，系统会根据当前图像的ISO计算出校正强度，进行动态校正。 【相关数据类型及接口】 - [ss\_mpi\_isp\_set\_fpn\_attr](#ss_mpi_isp_set_fpn_attr)
+- [ss\_mpi\_isp\_get\_fpn\_attr](#ss_mpi_isp_get_fpn_attr)
+- [ot\_isp\_fpn\_manual\_attr](#ot_isp_fpn_manual_attr)
+- [ot\_isp\_fpn\_auto\_attr](#ot_isp_fpn_auto_attr) #### ot\_isp\_fpn\_manual\_attr<a name="ZH-CN_TOPIC_0000002470925036"></a> 【说明】 定义去FPN在手动模式的校正属性。 【定义】 ```
+typedef struct { td_u32 strength;
 } ot_isp_fpn_manual_attr;
-```
-
-【成员】
-
-<a name="table28337mcpsimp"></a>
+``` 【成员】 <a name="table28337mcpsimp"></a>
 <table><thead align="left"><tr id="row28342mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.3.1.1"><p id="p28344mcpsimp"><a name="p28344mcpsimp"></a><a name="p28344mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="85%" id="mcps1.1.3.1.2"><p id="p28346mcpsimp"><a name="p28346mcpsimp"></a><a name="p28346mcpsimp"></a>描述</p>
@@ -8278,33 +4609,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_fpn\_auto\_attr<a name="ZH-CN_TOPIC_0000002471085000"></a>
-
-【说明】
-
-定义去FPN在自动模式的校正属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 strength;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_fpn\_auto\_attr<a name="ZH-CN_TOPIC_0000002471085000"></a> 【说明】 定义去FPN在自动模式的校正属性。 【定义】 ```
+typedef struct { td_u32 strength;
 } ot_isp_fpn_auto_attr;
-```
-
-【成员】
-
-<a name="table28365mcpsimp"></a>
+``` 【成员】 <a name="table28365mcpsimp"></a>
 <table><thead align="left"><tr id="row28370mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.3.1.1"><p id="p28372mcpsimp"><a name="p28372mcpsimp"></a><a name="p28372mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="84%" id="mcps1.1.3.1.2"><p id="p28374mcpsimp"><a name="p28374mcpsimp"></a><a name="p28374mcpsimp"></a>描述</p>
@@ -8318,38 +4626,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-自动模式下，strength根据标定时的ISO与当前ISO动态调整。
-
--   当前ISO大于标定时的ISO，strength大于256；
--   当前ISO小于标定时的ISO，strength小于256。
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_fpn\_type<a name="ZH-CN_TOPIC_0000002471085104"></a>
-
-【说明】
-
-定义去FPN类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_FPN_TYPE_FRAME = 0,
-    OT_ISP_FPN_TYPE_LINE = 1,
-    OT_ISP_FPN_TYPE_BUTT
+</table> 【注意事项】 自动模式下，strength根据标定时的ISO与当前ISO动态调整。 - 当前ISO大于标定时的ISO，strength大于256；
+- 当前ISO小于标定时的ISO，strength小于256。 【相关数据类型及接口】 无 #### ot\_isp\_fpn\_type<a name="ZH-CN_TOPIC_0000002471085104"></a> 【说明】 定义去FPN类型。 【定义】 ```
+typedef enum { OT_ISP_FPN_TYPE_FRAME = 0, OT_ISP_FPN_TYPE_LINE = 1, OT_ISP_FPN_TYPE_BUTT
 } ot_isp_fpn_type;
-```
-
-【成员】
-
-<a name="table28399mcpsimp"></a>
+``` 【成员】 <a name="table28399mcpsimp"></a>
 <table><thead align="left"><tr id="row28404mcpsimp"><th class="cellrowborder" valign="top" width="38%" id="mcps1.1.3.1.1"><p id="p28406mcpsimp"><a name="p28406mcpsimp"></a><a name="p28406mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.3.1.2"><p id="p28408mcpsimp"><a name="p28408mcpsimp"></a><a name="p28408mcpsimp"></a>描述</p>
@@ -8367,35 +4648,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_fpn\_out\_mode<a name="ZH-CN_TOPIC_0000002503965077"></a>
-
-【说明】
-
-定义FPN标定帧输出的模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_FPN_OUT_MODE_NORM = 0,
-    OT_ISP_FPN_OUT_MODE_HIGH,
-    OT_ISP_FPN_OUT_MODE_BUTT
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_fpn\_out\_mode<a name="ZH-CN_TOPIC_0000002503965077"></a> 【说明】 定义FPN标定帧输出的模式。 【定义】 ```
+typedef enum { OT_ISP_FPN_OUT_MODE_NORM = 0, OT_ISP_FPN_OUT_MODE_HIGH, OT_ISP_FPN_OUT_MODE_BUTT
 } ot_isp_fpn_out_mode;
-```
-
-【成员】
-
-<a name="table28434mcpsimp"></a>
+``` 【成员】 <a name="table28434mcpsimp"></a>
 <table><thead align="left"><tr id="row28439mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p28441mcpsimp"><a name="p28441mcpsimp"></a><a name="p28441mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p28443mcpsimp"><a name="p28443mcpsimp"></a><a name="p28443mcpsimp"></a>描述</p>
@@ -8413,60 +4669,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   普通FPN标定，请选择OT\_ISP\_FPN\_OUT\_MODE\_NORM模式。
--   对于标定16帧以上的场景，需要使用OT\_ISP\_FPN\_OUT\_MODE\_HIGH模式，具体用法参考fpn标定的sample。
-
-【相关数据类型及接口】
-
-[ot\_isp\_fpn\_calibrate\_attr](#ot_isp_fpn_calibrate_attr)
-
-## CA<a name="ZH-CN_TOPIC_0000002470925112"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504084871"></a>
-
-颜色调整模块支持在YUV空间进行色域调整的操作，这个模块下有两个模式，一个是CA模式，另外一个是CP模式（热成像上色），工作的时候，两者只能二选一。
-
-在CA模式下，通过下面的公式可以将一个像素点（Y，U，V）映射到另一个像素点（Y’,U’,V’）。
-
-Y’=Y;
-
-U’=aU;
-
-V’=aV;
-
-其中a是转换系数，采用这组公式可以在一定程度上保持亮度和色调的恒定，对像素点的饱和度做一个调整。转换系数a和像素点亮度Y联系，就可以根据亮度的变化来调整饱和度，达到局部调整饱和度的目的，亮处的颜色更鲜艳，暗处的色噪不明显。同时，转换系数a和ISP的ISO值联系，达到降低低照度下的暗处色噪的目的。
-
-在CP模式下，热成像的图像只有亮度信息，该模式下通过亮度信息Y查找上色的色板，查找对应的YUV的值作为输出的值。其中，色板是通过YUV格式存储的。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085038"></a>
-
--   [ss\_mpi\_isp\_set\_ca\_attr](#ZH-CN_TOPIC_0000002470924970)：设置CA属性。
--   [ss\_mpi\_isp\_get\_ca\_attr](#ZH-CN_TOPIC_0000002470925026)：获取CA属性。
-
-
-
-#### ss\_mpi\_isp\_set\_ca\_attr<a name="ZH-CN_TOPIC_0000002470924970"></a>
-
-【描述】
-
-设置CA属性。
-
-【语法】
-
-```
+</table> 【注意事项】 - 普通FPN标定，请选择OT\_ISP\_FPN\_OUT\_MODE\_NORM模式。
+- 对于标定16帧以上的场景，需要使用OT\_ISP\_FPN\_OUT\_MODE\_HIGH模式，具体用法参考fpn标定的sample。 【相关数据类型及接口】 [ot\_isp\_fpn\_calibrate\_attr](#ot_isp_fpn_calibrate_attr) ## CA<a name="ZH-CN_TOPIC_0000002470925112"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504084871"></a> 颜色调整模块支持在YUV空间进行色域调整的操作，这个模块下有两个模式，一个是CA模式，另外一个是CP模式（热成像上色），工作的时候，两者只能二选一。 在CA模式下，通过下面的公式可以将一个像素点（Y，U，V）映射到另一个像素点（Y’,U’,V’）。 Y’=Y; U’=aU; V’=aV; 其中a是转换系数，采用这组公式可以在一定程度上保持亮度和色调的恒定，对像素点的饱和度做一个调整。转换系数a和像素点亮度Y联系，就可以根据亮度的变化来调整饱和度，达到局部调整饱和度的目的，亮处的颜色更鲜艳，暗处的色噪不明显。同时，转换系数a和ISP的ISO值联系，达到降低低照度下的暗处色噪的目的。 在CP模式下，热成像的图像只有亮度信息，该模式下通过亮度信息Y查找上色的色板，查找对应的YUV的值作为输出的值。其中，色板是通过YUV格式存储的。 ### API参考<a name="ZH-CN_TOPIC_0000002471085038"></a> - [ss\_mpi\_isp\_set\_ca\_attr](#ZH-CN_TOPIC_0000002470924970)：设置CA属性。
+- [ss\_mpi\_isp\_get\_ca\_attr](#ZH-CN_TOPIC_0000002470925026)：获取CA属性。 #### ss\_mpi\_isp\_set\_ca\_attr<a name="ZH-CN_TOPIC_0000002470924970"></a> 【描述】 设置CA属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_ca_attr (ot_vi_pipe vi_pipe, const ot_isp_ca_attr *ca_attr);
-```
-
-【参数】
-
-<a name="table28488mcpsimp"></a>
+``` 【参数】 <a name="table28488mcpsimp"></a>
 <table><thead align="left"><tr id="row28494mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p28496mcpsimp"><a name="p28496mcpsimp"></a><a name="p28496mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p28498mcpsimp"><a name="p28498mcpsimp"></a><a name="p28498mcpsimp"></a>描述</p>
@@ -8490,11 +4697,7 @@ td_s32 ss_mpi_isp_set_ca_attr (ot_vi_pipe vi_pipe, const ot_isp_ca_attr *ca_attr
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table28517mcpsimp"></a>
+</table> 【返回值】 <a name="table28517mcpsimp"></a>
 <table><thead align="left"><tr id="row28522mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p28524mcpsimp"><a name="p28524mcpsimp"></a><a name="p28524mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p28526mcpsimp"><a name="p28526mcpsimp"></a><a name="p28526mcpsimp"></a>描述</p>
@@ -8506,46 +4709,11 @@ td_s32 ss_mpi_isp_set_ca_attr (ot_vi_pipe vi_pipe, const ot_isp_ca_attr *ca_attr
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28531mcpsimp"><a name="p28531mcpsimp"></a><a name="p28531mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row28532mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p28534mcpsimp"><a name="p28534mcpsimp"></a><a name="p28534mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28536mcpsimp"><a name="p28536mcpsimp"></a><a name="p28536mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_ca\_attr](#ss_mpi_isp_get_ca_attr)
-
-#### ss\_mpi\_isp\_get\_ca\_attr<a name="ZH-CN_TOPIC_0000002470925026"></a>
-
-【描述】
-
-获取CA属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_ca\_attr](#ss_mpi_isp_get_ca_attr) #### ss\_mpi\_isp\_get\_ca\_attr<a name="ZH-CN_TOPIC_0000002470925026"></a> 【描述】 获取CA属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_ca_attr(ot_vi_pipe vi_pipe, ot_isp_ca_attr *ca_attr);
-```
-
-【参数】
-
-<a name="table28559mcpsimp"></a>
+``` 【参数】 <a name="table28559mcpsimp"></a>
 <table><thead align="left"><tr id="row28565mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p28567mcpsimp"><a name="p28567mcpsimp"></a><a name="p28567mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p28569mcpsimp"><a name="p28569mcpsimp"></a><a name="p28569mcpsimp"></a>描述</p>
@@ -8569,11 +4737,7 @@ td_s32 ss_mpi_isp_get_ca_attr(ot_vi_pipe vi_pipe, ot_isp_ca_attr *ca_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table28588mcpsimp"></a>
+</table> 【返回值】 <a name="table28588mcpsimp"></a>
 <table><thead align="left"><tr id="row28593mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p28595mcpsimp"><a name="p28595mcpsimp"></a><a name="p28595mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p28597mcpsimp"><a name="p28597mcpsimp"></a><a name="p28597mcpsimp"></a>描述</p>
@@ -8585,84 +4749,19 @@ td_s32 ss_mpi_isp_get_ca_attr(ot_vi_pipe vi_pipe, ot_isp_ca_attr *ca_attr);
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28602mcpsimp"><a name="p28602mcpsimp"></a><a name="p28602mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row28603mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p28605mcpsimp"><a name="p28605mcpsimp"></a><a name="p28605mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28607mcpsimp"><a name="p28607mcpsimp"></a><a name="p28607mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-HDR模式，默认关闭CA，客户可以自行设置打开。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_ca\_attr](#ss_mpi_isp_set_ca_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471084922"></a>
-
--   [OT\_ISP\_CA\_YRATIO\_LUT\_LENGTH](#ZH-CN_TOPIC_0000002504084803)：CA的数据分格。
--   [ot\_isp\_ca\_type](#ZH-CN_TOPIC_0000002503964991)：色彩调整模块的工作模式，0为CA模式，1为CP模式。
--   [ot\_isp\_ca\_lut](#ZH-CN_TOPIC_0000002503964943)：CA模式的属性。
--   [ot\_isp\_cp\_lut](#ZH-CN_TOPIC_0000002470925056)：CP模式的属性。
--   [ot\_isp\_ca\_attr](#ZH-CN_TOPIC_0000002470925138)：定义颜色调整模块的属性，包含了CA模式属性和CP模式属性。
-
-
-
-
-
-
-#### OT\_ISP\_CA\_YRATIO\_LUT\_LENGTH<a name="ZH-CN_TOPIC_0000002504084803"></a>
-
-【说明】
-
-CA的数据分格，CA模式下为亮度等分，CP模式下为YUV数据等分。
-
-【定义】
-
-```
-#define OT_ISP_CA_YRATIO_LUT_LENGTH               256
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_ca\_lut](#ot_isp_ca_lut)
--   [ot\_isp\_cp\_lut](#ot_isp_cp_lut)
-
-#### ot\_isp\_ca\_type<a name="ZH-CN_TOPIC_0000002503964991"></a>
-
-【说明】
-
-定义颜色调整模块的工作模式。0为CA模式，1为CP模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_CA_ENABLE = 0x0,
-    OT_ISP_CP_ENABLE,
-    OT_ISP_CA_BUTT
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 HDR模式，默认关闭CA，客户可以自行设置打开。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_ca\_attr](#ss_mpi_isp_set_ca_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002471084922"></a> - [OT\_ISP\_CA\_YRATIO\_LUT\_LENGTH](#ZH-CN_TOPIC_0000002504084803)：CA的数据分格。
+- [ot\_isp\_ca\_type](#ZH-CN_TOPIC_0000002503964991)：色彩调整模块的工作模式，0为CA模式，1为CP模式。
+- [ot\_isp\_ca\_lut](#ZH-CN_TOPIC_0000002503964943)：CA模式的属性。
+- [ot\_isp\_cp\_lut](#ZH-CN_TOPIC_0000002470925056)：CP模式的属性。
+- [ot\_isp\_ca\_attr](#ZH-CN_TOPIC_0000002470925138)：定义颜色调整模块的属性，包含了CA模式属性和CP模式属性。 #### OT\_ISP\_CA\_YRATIO\_LUT\_LENGTH<a name="ZH-CN_TOPIC_0000002504084803"></a> 【说明】 CA的数据分格，CA模式下为亮度等分，CP模式下为YUV数据等分。 【定义】 ```
+#define OT_ISP_CA_YRATIO_LUT_LENGTH 256
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_ca\_lut](#ot_isp_ca_lut)
+- [ot\_isp\_cp\_lut](#ot_isp_cp_lut) #### ot\_isp\_ca\_type<a name="ZH-CN_TOPIC_0000002503964991"></a> 【说明】 定义颜色调整模块的工作模式。0为CA模式，1为CP模式。 【定义】 ```
+typedef enum { OT_ISP_CA_ENABLE = 0x0, OT_ISP_CP_ENABLE, OT_ISP_CA_BUTT
 } ot_isp_ca_type;
-```
-
-【成员】
-
-<a name="table28678mcpsimp"></a>
+``` 【成员】 <a name="table28678mcpsimp"></a>
 <table><thead align="left"><tr id="row28683mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p28685mcpsimp"><a name="p28685mcpsimp"></a><a name="p28685mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p28687mcpsimp"><a name="p28687mcpsimp"></a><a name="p28687mcpsimp"></a>描述</p>
@@ -8680,34 +4779,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_ca\_lut<a name="ZH-CN_TOPIC_0000002503964943"></a>
-
-【说明】
-
-定义CA模式的属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u32  y_ratio_lut[OT_ISP_CA_YRATIO_LUT_LENGTH];  /* RW;Range:[0,2047];Format:1.11 */
-    td_s32  iso_ratio[OT_ISP_AUTO_ISO_NUM];         /* RW;Range:[0,2047];Format:1.10 */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无 #### ot\_isp\_ca\_lut<a name="ZH-CN_TOPIC_0000002503964943"></a> 【说明】 定义CA模式的属性。 【定义】 ```
+typedef struct { td_u32 y_ratio_lut[OT_ISP_CA_YRATIO_LUT_LENGTH]; /* RW;Range:[0,2047];Format:1.11 */ td_s32 iso_ratio[OT_ISP_AUTO_ISO_NUM]; /* RW;Range:[0,2047];Format:1.10 */
 } ot_isp_ca_lut;
-```
-
-【成员】
-
-<a name="table28719mcpsimp"></a>
+``` 【成员】 <a name="table28719mcpsimp"></a>
 <table><thead align="left"><tr id="row28724mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p28726mcpsimp"><a name="p28726mcpsimp"></a><a name="p28726mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p28728mcpsimp"><a name="p28728mcpsimp"></a><a name="p28728mcpsimp"></a>描述</p>
@@ -8727,35 +4802,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_cp\_lut<a name="ZH-CN_TOPIC_0000002470925056"></a>
-
-【说明】
-
-定义CP模式的属性，也就是色板的YUV值。
-
-【定义】
-
-```
-typedef struct {
-    td_u8   cp_lut_y[OT_ISP_CA_YRATIO_LUT_LENGTH]; /* RW;Range:[0,255];Format:8.0; */
-    td_u8   cp_lut_u[OT_ISP_CA_YRATIO_LUT_LENGTH]; /* RW;Range:[0,255];Format:8.0; */
-    td_u8   cp_lut_v[OT_ISP_CA_YRATIO_LUT_LENGTH]; /* RW;Range:[0,255];Format:8.0; */
+</table> 【注意事项】 无。 【相关数据类型及接口】 无 #### ot\_isp\_cp\_lut<a name="ZH-CN_TOPIC_0000002470925056"></a> 【说明】 定义CP模式的属性，也就是色板的YUV值。 【定义】 ```
+typedef struct { td_u8 cp_lut_y[OT_ISP_CA_YRATIO_LUT_LENGTH]; /* RW;Range:[0,255];Format:8.0; */ td_u8 cp_lut_u[OT_ISP_CA_YRATIO_LUT_LENGTH]; /* RW;Range:[0,255];Format:8.0; */ td_u8 cp_lut_v[OT_ISP_CA_YRATIO_LUT_LENGTH]; /* RW;Range:[0,255];Format:8.0; */
 } ot_isp_cp_lut;
-```
-
-【成员】
-
-<a name="table28764mcpsimp"></a>
+``` 【成员】 <a name="table28764mcpsimp"></a>
 <table><thead align="left"><tr id="row28769mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p28771mcpsimp"><a name="p28771mcpsimp"></a><a name="p28771mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p28773mcpsimp"><a name="p28773mcpsimp"></a><a name="p28773mcpsimp"></a>描述</p>
@@ -8781,36 +4831,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-无。
-
-#### ot\_isp\_ca\_attr<a name="ZH-CN_TOPIC_0000002470925138"></a>
-
-【说明】
-
-定义颜色调整模块的属性，包含了CA模式属性和CP模式属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;             /* RW;Range:[0x0,0x1];Format:1.0 */
-    ot_isp_ca_type ca_cp_en;
-    ot_isp_ca_lut  ca;
-    ot_isp_cp_lut  cp;
+</table> 【注意事项】 无。 【相关数据类型及接口】 无。 #### ot\_isp\_ca\_attr<a name="ZH-CN_TOPIC_0000002470925138"></a> 【说明】 定义颜色调整模块的属性，包含了CA模式属性和CP模式属性。 【定义】 ```
+typedef struct { td_bool en; /* RW;Range:[0x0,0x1];Format:1.0 */ ot_isp_ca_type ca_cp_en; ot_isp_ca_lut ca; ot_isp_cp_lut cp;
 } ot_isp_ca_attr;
-```
-
-【成员】
-
-<a name="table28811mcpsimp"></a>
+``` 【成员】 <a name="table28811mcpsimp"></a>
 <table><thead align="left"><tr id="row28816mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p28818mcpsimp"><a name="p28818mcpsimp"></a><a name="p28818mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p28820mcpsimp"><a name="p28820mcpsimp"></a><a name="p28820mcpsimp"></a>描述</p>
@@ -8828,74 +4852,14 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p28832mcpsimp"><a name="p28832mcpsimp"></a><a name="p28832mcpsimp"></a>色彩调整模块的工作模式。</p>
 </td>
 </tr>
-<tr id="row28833mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p28835mcpsimp"><a name="p28835mcpsimp"></a><a name="p28835mcpsimp"></a>ca</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p28837mcpsimp"><a name="p28837mcpsimp"></a><a name="p28837mcpsimp"></a>CA模式的属性。</p>
-</td>
-</tr>
-<tr id="row28838mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p28840mcpsimp"><a name="p28840mcpsimp"></a><a name="p28840mcpsimp"></a>cp</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p28842mcpsimp"><a name="p28842mcpsimp"></a><a name="p28842mcpsimp"></a>CP模式的属性。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## CAC<a name="ZH-CN_TOPIC_0000002470924984"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085048"></a>
-
-色差\(Chromatic Aberration\)是指光学上透镜无法将各种波长的光聚焦在同一点上的现象，是一种与镜头有关的缺陷，它产生的主要原因是不同波长的光具有不同的折射率（色散现象）。色差可以分为如下的两类：
-
--   轴向色差\(Axial Chromatic Aberration\)
-    -   透镜对于不同的光会有不同的折射率，因此不同颜色的光会聚焦在不同的焦平面上，大口径镜头容易产生这种色差，缩小光圈可以减弱轴向色差。
-    -   人眼对于G通道更敏感，一般G通道可以正确对焦，从而引起R、B的模糊，造成高光区与低光区交界处出现明显的紫边表现。
-    -   具有明显的局部特性，因此校正紫边时采用Local CAC。
-
--   横向色差\(Lateral Chromatic Aberration\)
-    -   透镜的放大倍数也与折射率有关，它使得不同波长光线的像高不同，即不同波长的光会聚焦在焦平面上不同的位置，会造成R、G、B 3通道具有不同的影像高度，在影像上产生色的错位。
-    -   越偏离图像中心，横向色差越明显，一般横向色差表现为物体相对的两侧边缘出现不同的颜色，但具体表现为什么颜色与镜头组密切相关，不同的镜头组会表现出不同种类的颜色边缘。
-    -   具有全局特性，在校正时采用ACAC。
-
-**图 1**  色差图解<a name="fig132774915195"></a>  
-![](figures/色差图解.png "色差图解")
-### API参考<a name="ZH-CN_TOPIC_0000002470925068"></a>
-
--   [ss\_mpi\_isp\_set\_local\_cac\_attr](#ZH-CN_TOPIC_0000002470925168)：设置紫边检测校正参数。
--   [ss\_mpi\_isp\_get\_local\_cac\_attr](#ZH-CN_TOPIC_0000002470924976)：获取紫边检测校正参数。
--   [ss\_mpi\_isp\_set\_acac\_attr](#ZH-CN_TOPIC_0000002471085068)：设置色差校正参数。
--   [ss\_mpi\_isp\_get\_acac\_attr](#ZH-CN_TOPIC_0000002504085071)：获取色差校正参数。
-
-
-
-
-
-#### ss\_mpi\_isp\_set\_local\_cac\_attr<a name="ZH-CN_TOPIC_0000002470925168"></a>
-
-【描述】
-
-设置紫边检测校正参数。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## CAC<a name="ZH-CN_TOPIC_0000002470924984"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085048"></a> 色差\(Chromatic Aberration\)是指光学上透镜无法将各种波长的光聚焦在同一点上的现象，是一种与镜头有关的缺陷，它产生的主要原因是不同波长的光具有不同的折射率（色散现象）。色差可以分为如下的两类： - 轴向色差\(Axial Chromatic Aberration\) - 透镜对于不同的光会有不同的折射率，因此不同颜色的光会聚焦在不同的焦平面上，大口径镜头容易产生这种色差，缩小光圈可以减弱轴向色差。 - 人眼对于G通道更敏感，一般G通道可以正确对焦，从而引起R、B的模糊，造成高光区与低光区交界处出现明显的紫边表现。 - 具有明显的局部特性，因此校正紫边时采用Local CAC。 - 横向色差\(Lateral Chromatic Aberration\) - 透镜的放大倍数也与折射率有关，它使得不同波长光线的像高不同，即不同波长的光会聚焦在焦平面上不同的位置，会造成R、G、B 3通道具有不同的影像高度，在影像上产生色的错位。 - 越偏离图像中心，横向色差越明显，一般横向色差表现为物体相对的两侧边缘出现不同的颜色，但具体表现为什么颜色与镜头组密切相关，不同的镜头组会表现出不同种类的颜色边缘。 - 具有全局特性，在校正时采用ACAC。 **图 1** 色差图解<a name="fig132774915195"></a> ![](figures/色差图解.png "色差图解")
+### API参考<a name="ZH-CN_TOPIC_0000002470925068"></a> - [ss\_mpi\_isp\_set\_local\_cac\_attr](#ZH-CN_TOPIC_0000002470925168)：设置紫边检测校正参数。
+- [ss\_mpi\_isp\_get\_local\_cac\_attr](#ZH-CN_TOPIC_0000002470924976)：获取紫边检测校正参数。
+- [ss\_mpi\_isp\_set\_acac\_attr](#ZH-CN_TOPIC_0000002471085068)：设置色差校正参数。
+- [ss\_mpi\_isp\_get\_acac\_attr](#ZH-CN_TOPIC_0000002504085071)：获取色差校正参数。 #### ss\_mpi\_isp\_set\_local\_cac\_attr<a name="ZH-CN_TOPIC_0000002470925168"></a> 【描述】 设置紫边检测校正参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_local_cac_attr(ot_vi_pipe vi_pipe, const ot_isp_local_cac_attr *local_cac_attr);
-```
-
-【参数】
-
-<a name="table28886mcpsimp"></a>
+``` 【参数】 <a name="table28886mcpsimp"></a>
 <table><thead align="left"><tr id="row28892mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p28894mcpsimp"><a name="p28894mcpsimp"></a><a name="p28894mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p28896mcpsimp"><a name="p28896mcpsimp"></a><a name="p28896mcpsimp"></a>描述</p>
@@ -8919,11 +4883,7 @@ td_s32 ss_mpi_isp_set_local_cac_attr(ot_vi_pipe vi_pipe, const ot_isp_local_cac_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table28915mcpsimp"></a>
+</table> 【返回值】 <a name="table28915mcpsimp"></a>
 <table><thead align="left"><tr id="row28920mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p28922mcpsimp"><a name="p28922mcpsimp"></a><a name="p28922mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p28924mcpsimp"><a name="p28924mcpsimp"></a><a name="p28924mcpsimp"></a>描述</p>
@@ -8935,46 +4895,11 @@ td_s32 ss_mpi_isp_set_local_cac_attr(ot_vi_pipe vi_pipe, const ot_isp_local_cac_
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28930mcpsimp"><a name="p28930mcpsimp"></a><a name="p28930mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row28931mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p28933mcpsimp"><a name="p28933mcpsimp"></a><a name="p28933mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28935mcpsimp"><a name="p28935mcpsimp"></a><a name="p28935mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_local\_cac\_attr](#ss_mpi_isp_get_local_cac_attr)
-
-#### ss\_mpi\_isp\_get\_local\_cac\_attr<a name="ZH-CN_TOPIC_0000002470924976"></a>
-
-【描述】
-
-获取紫边检测校正参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_local\_cac\_attr](#ss_mpi_isp_get_local_cac_attr) #### ss\_mpi\_isp\_get\_local\_cac\_attr<a name="ZH-CN_TOPIC_0000002470924976"></a> 【描述】 获取紫边检测校正参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_local_cac_attr(ot_vi_pipe vi_pipe, ot_isp_local_cac_attr *local_cac_attr);
-```
-
-【参数】
-
-<a name="table28956mcpsimp"></a>
+``` 【参数】 <a name="table28956mcpsimp"></a>
 <table><thead align="left"><tr id="row28962mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p28964mcpsimp"><a name="p28964mcpsimp"></a><a name="p28964mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54.52%" id="mcps1.1.4.1.2"><p id="p28966mcpsimp"><a name="p28966mcpsimp"></a><a name="p28966mcpsimp"></a>描述</p>
@@ -8998,11 +4923,7 @@ td_s32 ss_mpi_isp_get_local_cac_attr(ot_vi_pipe vi_pipe, ot_isp_local_cac_attr *
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table28985mcpsimp"></a>
+</table> 【返回值】 <a name="table28985mcpsimp"></a>
 <table><thead align="left"><tr id="row28990mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p28992mcpsimp"><a name="p28992mcpsimp"></a><a name="p28992mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p28994mcpsimp"><a name="p28994mcpsimp"></a><a name="p28994mcpsimp"></a>描述</p>
@@ -9014,46 +4935,11 @@ td_s32 ss_mpi_isp_get_local_cac_attr(ot_vi_pipe vi_pipe, ot_isp_local_cac_attr *
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p28999mcpsimp"><a name="p28999mcpsimp"></a><a name="p28999mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row29000mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p29002mcpsimp"><a name="p29002mcpsimp"></a><a name="p29002mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29004mcpsimp"><a name="p29004mcpsimp"></a><a name="p29004mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_local\_cac\_attr](#ss_mpi_isp_set_local_cac_attr)
-
-#### ss\_mpi\_isp\_set\_acac\_attr<a name="ZH-CN_TOPIC_0000002471085068"></a>
-
-【描述】
-
-设置横向色差校正参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_local\_cac\_attr](#ss_mpi_isp_set_local_cac_attr) #### ss\_mpi\_isp\_set\_acac\_attr<a name="ZH-CN_TOPIC_0000002471085068"></a> 【描述】 设置横向色差校正参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_acac_attr(ot_vi_pipe vi_pipe, const ot_isp_acac_attr *acac_attr);
-```
-
-【参数】
-
-<a name="table29026mcpsimp"></a>
+``` 【参数】 <a name="table29026mcpsimp"></a>
 <table><thead align="left"><tr id="row29032mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p29034mcpsimp"><a name="p29034mcpsimp"></a><a name="p29034mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p29036mcpsimp"><a name="p29036mcpsimp"></a><a name="p29036mcpsimp"></a>描述</p>
@@ -9077,11 +4963,7 @@ td_s32 ss_mpi_isp_set_acac_attr(ot_vi_pipe vi_pipe, const ot_isp_acac_attr *acac
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table29055mcpsimp"></a>
+</table> 【返回值】 <a name="table29055mcpsimp"></a>
 <table><thead align="left"><tr id="row29060mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p29062mcpsimp"><a name="p29062mcpsimp"></a><a name="p29062mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p29064mcpsimp"><a name="p29064mcpsimp"></a><a name="p29064mcpsimp"></a>描述</p>
@@ -9093,46 +4975,11 @@ td_s32 ss_mpi_isp_set_acac_attr(ot_vi_pipe vi_pipe, const ot_isp_acac_attr *acac
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29069mcpsimp"><a name="p29069mcpsimp"></a><a name="p29069mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row29070mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p29072mcpsimp"><a name="p29072mcpsimp"></a><a name="p29072mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29074mcpsimp"><a name="p29074mcpsimp"></a><a name="p29074mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_local\_cac\_attr](#ss_mpi_isp_get_local_cac_attr)
-
-#### ss\_mpi\_isp\_get\_acac\_attr<a name="ZH-CN_TOPIC_0000002504085071"></a>
-
-【描述】
-
-获取色差校正参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_local\_cac\_attr](#ss_mpi_isp_get_local_cac_attr) #### ss\_mpi\_isp\_get\_acac\_attr<a name="ZH-CN_TOPIC_0000002504085071"></a> 【描述】 获取色差校正参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_acac_attr(ot_vi_pipe vi_pipe, ot_isp_acac_attr *acac_attr);
-```
-
-【参数】
-
-<a name="table29096mcpsimp"></a>
+``` 【参数】 <a name="table29096mcpsimp"></a>
 <table><thead align="left"><tr id="row29102mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p29104mcpsimp"><a name="p29104mcpsimp"></a><a name="p29104mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48.59%" id="mcps1.1.4.1.2"><p id="p29106mcpsimp"><a name="p29106mcpsimp"></a><a name="p29106mcpsimp"></a>描述</p>
@@ -9156,11 +5003,7 @@ td_s32 ss_mpi_isp_get_acac_attr(ot_vi_pipe vi_pipe, ot_isp_acac_attr *acac_attr)
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table29125mcpsimp"></a>
+</table> 【返回值】 <a name="table29125mcpsimp"></a>
 <table><thead align="left"><tr id="row29130mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p29132mcpsimp"><a name="p29132mcpsimp"></a><a name="p29132mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p29134mcpsimp"><a name="p29134mcpsimp"></a><a name="p29134mcpsimp"></a>描述</p>
@@ -9172,131 +5015,26 @@ td_s32 ss_mpi_isp_get_acac_attr(ot_vi_pipe vi_pipe, ot_isp_acac_attr *acac_attr)
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29139mcpsimp"><a name="p29139mcpsimp"></a><a name="p29139mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row29140mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p29142mcpsimp"><a name="p29142mcpsimp"></a><a name="p29142mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29144mcpsimp"><a name="p29144mcpsimp"></a><a name="p29144mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_local\_cac\_attr](#ss_mpi_isp_set_local_cac_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002504084701"></a>
-
--   [OT\_ISP\_LCAC\_EXP\_RATIO\_NUM](#ZH-CN_TOPIC_0000002503965161)：定义local CAC与曝光比联动时曝光比档位数。
--   [OT\_ISP\_LCAC\_DET\_NUM](#ZH-CN_TOPIC_0000002471085064)：定义local CAC高亮检测模块检测阈值的个数。
--   [OT\_ISP\_ACAC\_THR\_NUM](#ZH-CN_TOPIC_0000002470925028)：定义ACAC边缘检测阈值的个数。
--   [ot\_isp\_depurplestr\_manual\_attr](#ZH-CN_TOPIC_0000002503965151)：紫边校正手动属性。
--   [ot\_isp\_depurplestr\_auto\_attr](#ZH-CN_TOPIC_0000002471085114)：紫边校正自动属性。
--   [ot\_isp\_local\_cac\_attr](#ZH-CN_TOPIC_0000002471084972)：紫边检测校正属性。
--   [ot\_isp\_acac\_attr](#ZH-CN_TOPIC_0000002503964933)：横向色差校正属性。
--   [ot\_isp\_acac\_manual\_attr](#ZH-CN_TOPIC_0000002504084721)：横向色差校正手动属性。
--   [ot\_isp\_acac\_auto\_attr](#ZH-CN_TOPIC_0000002504084797)：横向色差校正自动属性。
-
-
-
-
-
-
-
-
-
-
-#### OT\_ISP\_LCAC\_EXP\_RATIO\_NUM<a name="ZH-CN_TOPIC_0000002503965161"></a>
-
-【说明】
-
-定义local CAC与曝光比联动时曝光比档位数。
-
-【定义】
-
-```
-#define OT_ISP_LCAC_EXP_RATIO_NUM       16
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_depurplestr\_auto\_attr](#ot_isp_depurplestr_auto_attr)
-
-#### OT\_ISP\_LCAC\_DET\_NUM<a name="ZH-CN_TOPIC_0000002471085064"></a>
-
-【说明】
-
-定义local CAC高亮检测模块检测阈值的个数
-
-【定义】
-
-```
-#define OT_ISP_LCAC_DET_NUM             3
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_local\_cac\_attr](#ot_isp_local_cac_attr)
-
-#### OT\_ISP\_ACAC\_THR\_NUM<a name="ZH-CN_TOPIC_0000002470925028"></a>
-
-【说明】
-
-定义ACAC边缘检测阈值的个数
-
-【定义】
-
-```
-#define OT_ISP_ACAC_THR_NUM             2
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_acac\_auto\_attr](#ot_isp_acac_auto_attr)
--   [ot\_isp\_acac\_manual\_attr](#ot_isp_acac_manual_attr)
-
-#### ot\_isp\_depurplestr\_manual\_attr<a name="ZH-CN_TOPIC_0000002503965151"></a>
-
-【说明】
-
-定义紫边校正手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 de_purple_cr_strength;  
-    td_u8 de_purple_cb_strength;  
-} ot_isp_depurplestr_manual_attr;
-```
-
-【成员】
-
-<a name="table29227mcpsimp"></a>
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_local\_cac\_attr](#ss_mpi_isp_set_local_cac_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002504084701"></a> - [OT\_ISP\_LCAC\_EXP\_RATIO\_NUM](#ZH-CN_TOPIC_0000002503965161)：定义local CAC与曝光比联动时曝光比档位数。
+- [OT\_ISP\_LCAC\_DET\_NUM](#ZH-CN_TOPIC_0000002471085064)：定义local CAC高亮检测模块检测阈值的个数。
+- [OT\_ISP\_ACAC\_THR\_NUM](#ZH-CN_TOPIC_0000002470925028)：定义ACAC边缘检测阈值的个数。
+- [ot\_isp\_depurplestr\_manual\_attr](#ZH-CN_TOPIC_0000002503965151)：紫边校正手动属性。
+- [ot\_isp\_depurplestr\_auto\_attr](#ZH-CN_TOPIC_0000002471085114)：紫边校正自动属性。
+- [ot\_isp\_local\_cac\_attr](#ZH-CN_TOPIC_0000002471084972)：紫边检测校正属性。
+- [ot\_isp\_acac\_attr](#ZH-CN_TOPIC_0000002503964933)：横向色差校正属性。
+- [ot\_isp\_acac\_manual\_attr](#ZH-CN_TOPIC_0000002504084721)：横向色差校正手动属性。
+- [ot\_isp\_acac\_auto\_attr](#ZH-CN_TOPIC_0000002504084797)：横向色差校正自动属性。 #### OT\_ISP\_LCAC\_EXP\_RATIO\_NUM<a name="ZH-CN_TOPIC_0000002503965161"></a> 【说明】 定义local CAC与曝光比联动时曝光比档位数。 【定义】 ```
+#define OT_ISP_LCAC_EXP_RATIO_NUM 16
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_depurplestr\_auto\_attr](#ot_isp_depurplestr_auto_attr) #### OT\_ISP\_LCAC\_DET\_NUM<a name="ZH-CN_TOPIC_0000002471085064"></a> 【说明】 定义local CAC高亮检测模块检测阈值的个数 【定义】 ```
+#define OT_ISP_LCAC_DET_NUM 3
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_local\_cac\_attr](#ot_isp_local_cac_attr) #### OT\_ISP\_ACAC\_THR\_NUM<a name="ZH-CN_TOPIC_0000002470925028"></a> 【说明】 定义ACAC边缘检测阈值的个数 【定义】 ```
+#define OT_ISP_ACAC_THR_NUM 2
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_acac\_auto\_attr](#ot_isp_acac_auto_attr)
+- [ot\_isp\_acac\_manual\_attr](#ot_isp_acac_manual_attr) #### ot\_isp\_depurplestr\_manual\_attr<a name="ZH-CN_TOPIC_0000002503965151"></a> 【说明】 定义紫边校正手动属性。 【定义】 ```
+typedef struct { td_u8 de_purple_cr_strength; td_u8 de_purple_cb_strength; } ot_isp_depurplestr_manual_attr;
+``` 【成员】 <a name="table29227mcpsimp"></a>
 <table><thead align="left"><tr id="row29232mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p29234mcpsimp"><a name="p29234mcpsimp"></a><a name="p29234mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p29236mcpsimp"><a name="p29236mcpsimp"></a><a name="p29236mcpsimp"></a>描述</p>
@@ -9314,34 +5052,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-de\_purple\_cb\_strength和 de\_purple\_cr\_strength校正强度过大，可能出现边界不连续现象或闪烁现象。
-
-【相关数据类型及接口】
-
-[ot\_isp\_local\_cac\_attr](#ot_isp_local_cac_attr)
-
-#### ot\_isp\_depurplestr\_auto\_attr<a name="ZH-CN_TOPIC_0000002471085114"></a>
-
-【说明】
-
-定义紫边校正自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 de_purple_cr_strength[OT_ISP_LCAC_EXP_RATIO_NUM];
-    td_u8 de_purple_cb_strength[OT_ISP_LCAC_EXP_RATIO_NUM];
+</table> 【注意事项】 de\_purple\_cb\_strength和 de\_purple\_cr\_strength校正强度过大，可能出现边界不连续现象或闪烁现象。 【相关数据类型及接口】 [ot\_isp\_local\_cac\_attr](#ot_isp_local_cac_attr) #### ot\_isp\_depurplestr\_auto\_attr<a name="ZH-CN_TOPIC_0000002471085114"></a> 【说明】 定义紫边校正自动属性。 【定义】 ```
+typedef struct { td_u8 de_purple_cr_strength[OT_ISP_LCAC_EXP_RATIO_NUM]; td_u8 de_purple_cb_strength[OT_ISP_LCAC_EXP_RATIO_NUM];
 } ot_isp_depurplestr_auto_attr;
-```
-
-【成员】
-
-<a name="table29268mcpsimp"></a>
+``` 【成员】 <a name="table29268mcpsimp"></a>
 <table><thead align="left"><tr id="row29275mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p29277mcpsimp"><a name="p29277mcpsimp"></a><a name="p29277mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p29279mcpsimp"><a name="p29279mcpsimp"></a><a name="p29279mcpsimp"></a>描述</p>
@@ -9361,11 +5075,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-**表 1**  de\_purple\_cr\_strength\[16\]在不同曝光比情况下对应的设置值
-
-<a name="table29299mcpsimp"></a>
+</table> **表 1** de\_purple\_cr\_strength\[16\]在不同曝光比情况下对应的设置值 <a name="table29299mcpsimp"></a>
 <table><thead align="left"><tr id="row29304mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.2.3.1.1"><p xml:lang="sv-SE" id="p29306mcpsimp"><a name="p29306mcpsimp"></a><a name="p29306mcpsimp"></a>de_purple_cr_strength</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.2.3.1.2"><p id="p29308mcpsimp"><a name="p29308mcpsimp"></a><a name="p29308mcpsimp"></a>曝光比</p>
@@ -9453,45 +5163,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   曝光比是WDR模式下才有的概念，线性模式下获取的曝光比值总为1，因此在线性模式下虽然有联动，生效的总是第一组配置值。
--   在built-in WDR模式下，本参数并不和曝光比联动，为与线性模式区分，生效的总是最后一组即曝光比为16384的配置值。
--   在WDR自动长帧模式和WDR长帧模式下，曝光比生效的总是第一组配置，不会发生变化。
-
-【相关数据类型及接口】
-
-[ot\_isp\_local\_cac\_attr](#ot_isp_local_cac_attr)
-
-#### ot\_isp\_local\_cac\_attr<a name="ZH-CN_TOPIC_0000002471084972"></a>
-
-【说明】
-
-紫边检测校正属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;
-    td_u16  purple_detect_range;
-    td_u16  var_threshold;
-    td_u16  r_detect_threshold[OT_ISP_LCAC_DET_NUM];
-    td_u16  g_detect_threshold[OT_ISP_LCAC_DET_NUM];
-    td_u16  b_detect_threshold[OT_ISP_LCAC_DET_NUM];
-    td_u16  l_detect_threshold[OT_ISP_LCAC_DET_NUM];
-    td_s16  cb_cr_ratio[OT_ISP_LCAC_DET_NUM];
-    ot_op_mode     op_type;
-    ot_isp_depurplestr_manual_attr manual_attr;
-    ot_isp_depurplestr_auto_attr   auto_attr;
+</table> 【注意事项】 - 曝光比是WDR模式下才有的概念，线性模式下获取的曝光比值总为1，因此在线性模式下虽然有联动，生效的总是第一组配置值。
+- 在built-in WDR模式下，本参数并不和曝光比联动，为与线性模式区分，生效的总是最后一组即曝光比为16384的配置值。
+- 在WDR自动长帧模式和WDR长帧模式下，曝光比生效的总是第一组配置，不会发生变化。 【相关数据类型及接口】 [ot\_isp\_local\_cac\_attr](#ot_isp_local_cac_attr) #### ot\_isp\_local\_cac\_attr<a name="ZH-CN_TOPIC_0000002471084972"></a> 【说明】 紫边检测校正属性。 【定义】 ```
+typedef struct { td_bool en; td_u16 purple_detect_range; td_u16 var_threshold; td_u16 r_detect_threshold[OT_ISP_LCAC_DET_NUM]; td_u16 g_detect_threshold[OT_ISP_LCAC_DET_NUM]; td_u16 b_detect_threshold[OT_ISP_LCAC_DET_NUM]; td_u16 l_detect_threshold[OT_ISP_LCAC_DET_NUM]; td_s16 cb_cr_ratio[OT_ISP_LCAC_DET_NUM]; ot_op_mode op_type; ot_isp_depurplestr_manual_attr manual_attr; ot_isp_depurplestr_auto_attr auto_attr;
 } ot_isp_local_cac_attr;
-```
-
-【成员】
-
-<a name="table29430mcpsimp"></a>
+``` 【成员】 <a name="table29430mcpsimp"></a>
 <table><thead align="left"><tr id="row29435mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p29437mcpsimp"><a name="p29437mcpsimp"></a><a name="p29437mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p29439mcpsimp"><a name="p29439mcpsimp"></a><a name="p29439mcpsimp"></a>描述</p>
@@ -9568,41 +5245,14 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   由于算法设计，LocalCAC矫正强度会受到Demosaic结果影响。因此将LocalCAC强度设为最小时依然会保留一定去紫边能力，对高光处紫边表现有一定影响。如果想完全关闭LocalCAC效果需直接将en置为FALSE。
--   在紫边很宽的时候，若cb\_cr\_ratio的值未达到完全检测出紫边，会导致部分紫边去除，部分紫边残留而形成锯齿。
--   有一些紫边比较严重的场景，R或者B容易出现饱和的情况，这时，b\_detect\_threshold或者r\_detect\_threshold在最大值附近有去除紫边不平滑的现象。需要跟de\_purple\_cr\_strength和de\_purple\_cb\_strength联合调整。
-
-【相关数据类型及接口】
-
--   ot\_op\_mode
--   [ot\_isp\_depurplestr\_manual\_attr](#ot_isp_depurplestr_manual_attr)
--   [ot\_isp\_depurplestr\_auto\_attr](#ot_isp_depurplestr_auto_attr)
-
-#### ot\_isp\_acac\_attr<a name="ZH-CN_TOPIC_0000002503964933"></a>
-
-【说明】
-
-定义色差校正属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool  en;
-    td_u8   detect_mode;
-    ot_op_mode      op_type;
-    ot_isp_acac_auto_attr    auto_attr;
-    ot_isp_acac_manual_attr  manual_attr;
+</table> 【注意事项】 - 由于算法设计，LocalCAC矫正强度会受到Demosaic结果影响。因此将LocalCAC强度设为最小时依然会保留一定去紫边能力，对高光处紫边表现有一定影响。如果想完全关闭LocalCAC效果需直接将en置为FALSE。
+- 在紫边很宽的时候，若cb\_cr\_ratio的值未达到完全检测出紫边，会导致部分紫边去除，部分紫边残留而形成锯齿。
+- 有一些紫边比较严重的场景，R或者B容易出现饱和的情况，这时，b\_detect\_threshold或者r\_detect\_threshold在最大值附近有去除紫边不平滑的现象。需要跟de\_purple\_cr\_strength和de\_purple\_cb\_strength联合调整。 【相关数据类型及接口】 - ot\_op\_mode
+- [ot\_isp\_depurplestr\_manual\_attr](#ot_isp_depurplestr_manual_attr)
+- [ot\_isp\_depurplestr\_auto\_attr](#ot_isp_depurplestr_auto_attr) #### ot\_isp\_acac\_attr<a name="ZH-CN_TOPIC_0000002503964933"></a> 【说明】 定义色差校正属性。 【定义】 ```
+typedef struct { td_bool en; td_u8 detect_mode; ot_op_mode op_type; ot_isp_acac_auto_attr auto_attr; ot_isp_acac_manual_attr manual_attr;
 } ot_isp_acac_attr;
-```
-
-【成员】
-
-<a name="table29551mcpsimp"></a>
+``` 【成员】 <a name="table29551mcpsimp"></a>
 <table><thead align="left"><tr id="row29556mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p29558mcpsimp"><a name="p29558mcpsimp"></a><a name="p29558mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p29560mcpsimp"><a name="p29560mcpsimp"></a><a name="p29560mcpsimp"></a>描述</p>
@@ -9645,41 +5295,9 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-detect\_mode建议调试为0模式，1模式下针对紫边做了扩充，黄边，绿边等颜色边可能变差。
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_acac\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084721"></a>
-
-【说明】
-
-定义色差校正手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  edge_threshold[OT_ISP_ACAC_THR_NUM];  
-    td_u16  edge_gain;            
-    td_s16  purple_upper_limit;   
-    td_s16  purple_lower_limit;   
-    td_u16  purple_sat_threshold;  
-    td_u16  purple_alpha;      
-    td_u16  edge_alpha;        
-    td_u16  fcc_y_strength;    
-    td_u16  fcc_rb_strength;   
-} ot_isp_acac_manual_attr;
-```
-
-【成员】
-
-<a name="table29620mcpsimp"></a>
+</table> 【注意事项】 detect\_mode建议调试为0模式，1模式下针对紫边做了扩充，黄边，绿边等颜色边可能变差。 【相关数据类型及接口】 无 #### ot\_isp\_acac\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084721"></a> 【说明】 定义色差校正手动属性。 【定义】 ```
+typedef struct { td_u16 edge_threshold[OT_ISP_ACAC_THR_NUM]; td_u16 edge_gain; td_s16 purple_upper_limit; td_s16 purple_lower_limit; td_u16 purple_sat_threshold; td_u16 purple_alpha; td_u16 edge_alpha; td_u16 fcc_y_strength; td_u16 fcc_rb_strength; } ot_isp_acac_manual_attr;
+``` 【成员】 <a name="table29620mcpsimp"></a>
 <table><thead align="left"><tr id="row29625mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p29627mcpsimp"><a name="p29627mcpsimp"></a><a name="p29627mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p29629mcpsimp"><a name="p29629mcpsimp"></a><a name="p29629mcpsimp"></a>描述</p>
@@ -9741,43 +5359,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   edge\_threshold调小，容易出现边缘信息过多，导致带颜色的边缘出现颜色腐蚀而丢失，不建议这个参数调试太小。
--   fcc\_y\_strength，fcc\_rb\_strength开很强的时候，如果edge\_alpha也很强，容易出现颜色边缘颜色被拉灰。
--   当fcc\_y\_strength调节不足时可能出现紫边分层的现象。
-
-【相关数据类型及接口】
-
-无。
-
-#### ot\_isp\_acac\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084797"></a>
-
-【说明】
-
-定义色差校正自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  edge_threshold[OT_ISP_ACAC_THR_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u16  edge_gain[OT_ISP_AUTO_ISO_NUM];
-    td_s16  purple_upper_limit[OT_ISP_AUTO_ISO_NUM];
-    td_s16  purple_lower_limit[OT_ISP_AUTO_ISO_NUM];
-    td_u16  purple_sat_threshold[OT_ISP_AUTO_ISO_NUM];
-    td_u16  purple_alpha[OT_ISP_AUTO_ISO_NUM];
-    td_u16  edge_alpha[OT_ISP_AUTO_ISO_NUM];  
-    td_u16  fcc_y_strength[OT_ISP_AUTO_ISO_NUM];
-    td_u16  fcc_rb_strength[OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 - edge\_threshold调小，容易出现边缘信息过多，导致带颜色的边缘出现颜色腐蚀而丢失，不建议这个参数调试太小。
+- fcc\_y\_strength，fcc\_rb\_strength开很强的时候，如果edge\_alpha也很强，容易出现颜色边缘颜色被拉灰。
+- 当fcc\_y\_strength调节不足时可能出现紫边分层的现象。 【相关数据类型及接口】 无。 #### ot\_isp\_acac\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084797"></a> 【说明】 定义色差校正自动属性。 【定义】 ```
+typedef struct { td_u16 edge_threshold[OT_ISP_ACAC_THR_NUM][OT_ISP_AUTO_ISO_NUM]; td_u16 edge_gain[OT_ISP_AUTO_ISO_NUM]; td_s16 purple_upper_limit[OT_ISP_AUTO_ISO_NUM]; td_s16 purple_lower_limit[OT_ISP_AUTO_ISO_NUM]; td_u16 purple_sat_threshold[OT_ISP_AUTO_ISO_NUM]; td_u16 purple_alpha[OT_ISP_AUTO_ISO_NUM]; td_u16 edge_alpha[OT_ISP_AUTO_ISO_NUM]; td_u16 fcc_y_strength[OT_ISP_AUTO_ISO_NUM]; td_u16 fcc_rb_strength[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_acac_auto_attr;
-```
-
-【成员】
-
-<a name="table29731mcpsimp"></a>
+``` 【成员】 <a name="table29731mcpsimp"></a>
 <table><thead align="left"><tr id="row29736mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p29738mcpsimp"><a name="p29738mcpsimp"></a><a name="p29738mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p29740mcpsimp"><a name="p29740mcpsimp"></a><a name="p29740mcpsimp"></a>描述</p>
@@ -9838,62 +5425,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无。
-
-## WDR<a name="ZH-CN_TOPIC_0000002503964833"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470925054"></a>
-
-由于传统的图像传感器的动态范围比较低，因此，如果用传统的图像传感器拍摄高动态范围的场景，就会要么亮处过曝，丢失很多细节；要么暗处曝光不足，细节难以分辨。为了记录高动态范围场景的每一个细节，可以采用多次曝光图像合成的方法。
-
-WDR算法的目的就是将从sensor输出的长短帧数据合成为一帧20bit的数据。如[图1](#_Ref498504952)所示，长短帧数据是先缓存在DDR中，然后同时给WDR模块进行合成。合成的原则是择优选取，即对于比较亮的区域，采用短帧数据，而对于比较暗的区域，采用长帧数据。
-
-**图 1**  WDR算法合成模型<a name="_Ref498504952"></a>  
-![](figures/WDR算法合成模型.png "WDR算法合成模型")
--   本模块可以通过[ot\_isp\_wdr\_merge\_mode](#ZH-CN_TOPIC_0000002504085037)来决定合成的方式。若该值为0，则用传统的WDR功能合成；若该值为1，则打开Fusion功能，即用来改善Flicker现象；其中[ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787)结构体用来控制传统的WDR功能，而[ot\_isp\_fusion\_attr](#ZH-CN_TOPIC_0000002504085067)结构体用来控制Fusion功能。
--   传统的WDR，包括以下功能：
-    -   可以去除鬼影。通过[ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787)  来选择融合区域是采用短帧还是长帧；
-    -   可以通过short\_threshold 和 long\_threshold 来控制选择长短帧的范围。即对于大于short\_threshold的像素选择短帧，小于long\_threshold 的像素选择长帧，而对于在两者之间的像素采用长短帧融合的方式；
-    -   可以通过force\_long\_low\_threshold和force\_long\_hig\_threshold来控制运动区域选择长帧，对于亮度小于force\_long\_low\_threshold的运动区域强制选择长帧，亮度大于force\_long\_hig\_threshold的运动区域不强制选择长帧，对于亮度在两者之间的运动区域采用长短帧融合的方式；
-    -   可以通过md\_thr\_low\_gain，md\_thr\_hig\_gain来控制运动检测；
-    -   可以通过md\_ref\_flicker 来决定运动检测是否参考Flicker检测结果；
-    -   可以通过short\_expo\_chk 来控制WDR融合是否检查短帧数据大小。
-
--   Fusion功能指适用于一般的室内场景（非宽动态）以及夜晚场景，用来改善工频闪问题。其中fusion\_threshold \[4\]是用来控制Fusion选择时每帧的阈值。
-
-### API参考<a name="ZH-CN_TOPIC_0000002470925232"></a>
-
--   [ss\_mpi\_isp\_set\_fswdr\_attr](#ZH-CN_TOPIC_0000002503964935)：设置动态范围压缩参数。
--   [ss\_mpi\_isp\_get\_fswdr\_attr](#ZH-CN_TOPIC_0000002503965023)：获取动态范围压缩参数。
-
-
-
-#### ss\_mpi\_isp\_set\_fswdr\_attr<a name="ZH-CN_TOPIC_0000002503964935"></a>
-
-【描述】
-
-设置帧合成参数。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 无。 ## WDR<a name="ZH-CN_TOPIC_0000002503964833"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470925054"></a> 由于传统的图像传感器的动态范围比较低，因此，如果用传统的图像传感器拍摄高动态范围的场景，就会要么亮处过曝，丢失很多细节；要么暗处曝光不足，细节难以分辨。为了记录高动态范围场景的每一个细节，可以采用多次曝光图像合成的方法。 WDR算法的目的就是将从sensor输出的长短帧数据合成为一帧20bit的数据。如[图1](#_Ref498504952)所示，长短帧数据是先缓存在DDR中，然后同时给WDR模块进行合成。合成的原则是择优选取，即对于比较亮的区域，采用短帧数据，而对于比较暗的区域，采用长帧数据。 **图 1** WDR算法合成模型<a name="_Ref498504952"></a> ![](figures/WDR算法合成模型.png "WDR算法合成模型")
+- 本模块可以通过[ot\_isp\_wdr\_merge\_mode](#ZH-CN_TOPIC_0000002504085037)来决定合成的方式。若该值为0，则用传统的WDR功能合成；若该值为1，则打开Fusion功能，即用来改善Flicker现象；其中[ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787)结构体用来控制传统的WDR功能，而[ot\_isp\_fusion\_attr](#ZH-CN_TOPIC_0000002504085067)结构体用来控制Fusion功能。
+- 传统的WDR，包括以下功能： - 可以去除鬼影。通过[ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787) 来选择融合区域是采用短帧还是长帧； - 可以通过short\_threshold 和 long\_threshold 来控制选择长短帧的范围。即对于大于short\_threshold的像素选择短帧，小于long\_threshold 的像素选择长帧，而对于在两者之间的像素采用长短帧融合的方式； - 可以通过force\_long\_low\_threshold和force\_long\_hig\_threshold来控制运动区域选择长帧，对于亮度小于force\_long\_low\_threshold的运动区域强制选择长帧，亮度大于force\_long\_hig\_threshold的运动区域不强制选择长帧，对于亮度在两者之间的运动区域采用长短帧融合的方式； - 可以通过md\_thr\_low\_gain，md\_thr\_hig\_gain来控制运动检测； - 可以通过md\_ref\_flicker 来决定运动检测是否参考Flicker检测结果； - 可以通过short\_expo\_chk 来控制WDR融合是否检查短帧数据大小。 - Fusion功能指适用于一般的室内场景（非宽动态）以及夜晚场景，用来改善工频闪问题。其中fusion\_threshold \[4\]是用来控制Fusion选择时每帧的阈值。 ### API参考<a name="ZH-CN_TOPIC_0000002470925232"></a> - [ss\_mpi\_isp\_set\_fswdr\_attr](#ZH-CN_TOPIC_0000002503964935)：设置动态范围压缩参数。
+- [ss\_mpi\_isp\_get\_fswdr\_attr](#ZH-CN_TOPIC_0000002503965023)：获取动态范围压缩参数。 #### ss\_mpi\_isp\_set\_fswdr\_attr<a name="ZH-CN_TOPIC_0000002503964935"></a> 【描述】 设置帧合成参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_fswdr_attr(ot_vi_pipe vi_pipe, const ot_isp_wdr_fs_attr *fswdr_attr)
-```
-
-【参数】
-
-<a name="table29846mcpsimp"></a>
+``` 【参数】 <a name="table29846mcpsimp"></a>
 <table><thead align="left"><tr id="row29852mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p29854mcpsimp"><a name="p29854mcpsimp"></a><a name="p29854mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p29856mcpsimp"><a name="p29856mcpsimp"></a><a name="p29856mcpsimp"></a>描述</p>
@@ -9917,11 +5454,7 @@ td_s32 ss_mpi_isp_set_fswdr_attr(ot_vi_pipe vi_pipe, const ot_isp_wdr_fs_attr *f
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table29875mcpsimp"></a>
+</table> 【返回值】 <a name="table29875mcpsimp"></a>
 <table><thead align="left"><tr id="row29880mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p29882mcpsimp"><a name="p29882mcpsimp"></a><a name="p29882mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p29884mcpsimp"><a name="p29884mcpsimp"></a><a name="p29884mcpsimp"></a>描述</p>
@@ -9933,46 +5466,11 @@ td_s32 ss_mpi_isp_set_fswdr_attr(ot_vi_pipe vi_pipe, const ot_isp_wdr_fs_attr *f
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29889mcpsimp"><a name="p29889mcpsimp"></a><a name="p29889mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row29890mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p29892mcpsimp"><a name="p29892mcpsimp"></a><a name="p29892mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29894mcpsimp"><a name="p29894mcpsimp"></a><a name="p29894mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_fswdr\_attr](#ss_mpi_isp_get_fswdr_attr)
-
-#### ss\_mpi\_isp\_get\_fswdr\_attr<a name="ZH-CN_TOPIC_0000002503965023"></a>
-
-【描述】
-
-获取帧合成参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_fswdr\_attr](#ss_mpi_isp_get_fswdr_attr) #### ss\_mpi\_isp\_get\_fswdr\_attr<a name="ZH-CN_TOPIC_0000002503965023"></a> 【描述】 获取帧合成参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_fswdr_attr (ot_vi_pipe vi_pipe, ot_isp_wdr_fs_attr *fswdr_attr )
-```
-
-【参数】
-
-<a name="table29917mcpsimp"></a>
+``` 【参数】 <a name="table29917mcpsimp"></a>
 <table><thead align="left"><tr id="row29923mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p29925mcpsimp"><a name="p29925mcpsimp"></a><a name="p29925mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.4.1.2"><p id="p29927mcpsimp"><a name="p29927mcpsimp"></a><a name="p29927mcpsimp"></a>描述</p>
@@ -9996,11 +5494,7 @@ td_s32 ss_mpi_isp_get_fswdr_attr (ot_vi_pipe vi_pipe, ot_isp_wdr_fs_attr *fswdr_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table29946mcpsimp"></a>
+</table> 【返回值】 <a name="table29946mcpsimp"></a>
 <table><thead align="left"><tr id="row29951mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p29953mcpsimp"><a name="p29953mcpsimp"></a><a name="p29953mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p29955mcpsimp"><a name="p29955mcpsimp"></a><a name="p29955mcpsimp"></a>描述</p>
@@ -10012,91 +5506,22 @@ td_s32 ss_mpi_isp_get_fswdr_attr (ot_vi_pipe vi_pipe, ot_isp_wdr_fs_attr *fswdr_
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29960mcpsimp"><a name="p29960mcpsimp"></a><a name="p29960mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row29961mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p29963mcpsimp"><a name="p29963mcpsimp"></a><a name="p29963mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p29965mcpsimp"><a name="p29965mcpsimp"></a><a name="p29965mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_fswdr\_attr](#ss_mpi_isp_set_fswdr_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503965085"></a>
-
--   [OT\_ISP\_WDR\_RATIO\_NUM](#ZH-CN_TOPIC_0000002503965091)：定义用于gain插值的WDR曝光比档位数。
--   [ot\_isp\_wdr\_merge\_mode](#ZH-CN_TOPIC_0000002504085037)：定义ISP 合成方式属性。
--   [ot\_isp\_fswdr\_mdt\_attr](#ZH-CN_TOPIC_0000002471084904)：定义ISP FSWDR运动检测的属性。
--   [ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787)：定义ISP FSWDR combime属性。
--   [ot\_isp\_fusion\_attr](#ZH-CN_TOPIC_0000002504085067)：定义ISP FUSION属性。
--   [ot\_isp\_wdr\_wb\_gain\_pos](#ZH-CN_TOPIC_0000002504084713): 定义白平衡增益在ISP的位置属性
--   [ot\_isp\_fswdr\_manual\_attr](#ZH-CN_TOPIC_0000002471085076)：定义ISP FSWDR手动属性。
--   [ot\_isp\_fswdr\_auto\_attr](#ZH-CN_TOPIC_0000002504084849)：定义ISP FSWDR自动属性。
--   [ot\_isp\_wdr\_fs\_attr](#ZH-CN_TOPIC_0000002471085126)：定义ISP FSWDR属性。
-
-
-
-
-
-
-
-
-
-
-#### OT\_ISP\_WDR\_RATIO\_NUM<a name="ZH-CN_TOPIC_0000002503965091"></a>
-
-【说明】
-
-定义用于gain插值的WDR曝光比档位数。
-
-【定义】
-
-```
-#define OT_ISP_WDR_RATIO_NUM            10
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_fswdr\_auto\_attr](#ot_isp_fswdr_auto_attr)
-
-#### ot\_isp\_wdr\_merge\_mode<a name="ZH-CN_TOPIC_0000002504085037"></a>
-
-【说明】
-
-定义ISP合成方式属性。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_MERGE_WDR_MODE      = 0,
-    OT_ISP_MERGE_FUSION_MODE   = 1,
-    OT_ISP_MERGE_BUTT
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_fswdr\_attr](#ss_mpi_isp_set_fswdr_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503965085"></a> - [OT\_ISP\_WDR\_RATIO\_NUM](#ZH-CN_TOPIC_0000002503965091)：定义用于gain插值的WDR曝光比档位数。
+- [ot\_isp\_wdr\_merge\_mode](#ZH-CN_TOPIC_0000002504085037)：定义ISP 合成方式属性。
+- [ot\_isp\_fswdr\_mdt\_attr](#ZH-CN_TOPIC_0000002471084904)：定义ISP FSWDR运动检测的属性。
+- [ot\_isp\_wdr\_combine\_attr](#ZH-CN_TOPIC_0000002504084787)：定义ISP FSWDR combime属性。
+- [ot\_isp\_fusion\_attr](#ZH-CN_TOPIC_0000002504085067)：定义ISP FUSION属性。
+- [ot\_isp\_wdr\_wb\_gain\_pos](#ZH-CN_TOPIC_0000002504084713): 定义白平衡增益在ISP的位置属性
+- [ot\_isp\_fswdr\_manual\_attr](#ZH-CN_TOPIC_0000002471085076)：定义ISP FSWDR手动属性。
+- [ot\_isp\_fswdr\_auto\_attr](#ZH-CN_TOPIC_0000002504084849)：定义ISP FSWDR自动属性。
+- [ot\_isp\_wdr\_fs\_attr](#ZH-CN_TOPIC_0000002471085126)：定义ISP FSWDR属性。 #### OT\_ISP\_WDR\_RATIO\_NUM<a name="ZH-CN_TOPIC_0000002503965091"></a> 【说明】 定义用于gain插值的WDR曝光比档位数。 【定义】 ```
+#define OT_ISP_WDR_RATIO_NUM 10
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_fswdr\_auto\_attr](#ot_isp_fswdr_auto_attr) #### ot\_isp\_wdr\_merge\_mode<a name="ZH-CN_TOPIC_0000002504085037"></a> 【说明】 定义ISP合成方式属性。 【定义】 ```
+typedef enum { OT_ISP_MERGE_WDR_MODE = 0, OT_ISP_MERGE_FUSION_MODE = 1, OT_ISP_MERGE_BUTT
 } ot_isp_wdr_merge_mode;
-```
-
-【成员】
-
-<a name="table30024mcpsimp"></a>
+``` 【成员】 <a name="table30024mcpsimp"></a>
 <table><thead align="left"><tr id="row30029mcpsimp"><th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.3.1.1"><p id="p30031mcpsimp"><a name="p30031mcpsimp"></a><a name="p30031mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="44%" id="mcps1.1.3.1.2"><p id="p30033mcpsimp"><a name="p30033mcpsimp"></a><a name="p30033mcpsimp"></a>描述</p>
@@ -10119,41 +5544,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr)
-
-#### ot\_isp\_fswdr\_mdt\_attr<a name="ZH-CN_TOPIC_0000002471084904"></a>
-
-【说明】
-
-定义ISPFSWDR运动检测属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool short_expo_chk;
-    td_u16  short_check_threshold;
-    td_bool md_ref_flicker;
-    td_u8   mdt_still_threshold;
-    td_u8   mdt_full_threshold;
-    td_u8   mdt_long_blend;
-    ot_op_mode op_type;
-    ot_isp_fswdr_manual_attr manual_attr;
-    ot_isp_fswdr_auto_attr   auto_attr;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr) #### ot\_isp\_fswdr\_mdt\_attr<a name="ZH-CN_TOPIC_0000002471084904"></a> 【说明】 定义ISPFSWDR运动检测属性。 【定义】 ```
+typedef struct { td_bool short_expo_chk; td_u16 short_check_threshold; td_bool md_ref_flicker; td_u8 mdt_still_threshold; td_u8 mdt_full_threshold; td_u8 mdt_long_blend; ot_op_mode op_type; ot_isp_fswdr_manual_attr manual_attr; ot_isp_fswdr_auto_attr auto_attr;
 } ot_isp_fswdr_mdt_attr;
-```
-
-【成员】
-
-<a name="table30075mcpsimp"></a>
+``` 【成员】 <a name="table30075mcpsimp"></a>
 <table><thead align="left"><tr id="row30080mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p30082mcpsimp"><a name="p30082mcpsimp"></a><a name="p30082mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p30084mcpsimp"><a name="p30084mcpsimp"></a><a name="p30084mcpsimp"></a>描述</p>
@@ -10217,42 +5611,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr)
-
-#### ot\_isp\_wdr\_combine\_attr<a name="ZH-CN_TOPIC_0000002504084787"></a>
-
-【说明】
-
-定义ISPFSWDR combine属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool motion_comp;
-    td_bool forcelong_coarse;
-    td_u16  short_threshold;
-    td_u16  long_threshold;
-    td_bool force_long;
-    td_u16  force_long_low_threshold; 
-    td_u16  force_long_hig_threshold; 
-    ot_isp_fswdr_mdt_attr wdr_mdt;
-    td_u16  forcelong_coarse_low_threshold; 
-    td_u16  forcelong_coarse_high_threshold;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr) #### ot\_isp\_wdr\_combine\_attr<a name="ZH-CN_TOPIC_0000002504084787"></a> 【说明】 定义ISPFSWDR combine属性。 【定义】 ```
+typedef struct { td_bool motion_comp; td_bool forcelong_coarse; td_u16 short_threshold; td_u16 long_threshold; td_bool force_long; td_u16 force_long_low_threshold; td_u16 force_long_hig_threshold; ot_isp_fswdr_mdt_attr wdr_mdt; td_u16 forcelong_coarse_low_threshold; td_u16 forcelong_coarse_high_threshold;
 } ot_isp_wdr_combine_attr;
-```
-
-【成员】
-
-<a name="table30167mcpsimp"></a>
+``` 【成员】 <a name="table30167mcpsimp"></a>
 <table><thead align="left"><tr id="row30172mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p30174mcpsimp"><a name="p30174mcpsimp"></a><a name="p30174mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p30176mcpsimp"><a name="p30176mcpsimp"></a><a name="p30176mcpsimp"></a>描述</p>
@@ -10326,33 +5688,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-注意force\_long\_low\_threshold应小于force\_long\_hig\_threshold。
-
-【相关数据类型及接口】
-
-[ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr)
-
-#### ot\_isp\_fusion\_attr<a name="ZH-CN_TOPIC_0000002504085067"></a>
-
-【说明】
-
-定义ISP FUSION属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16  fusion_threshold[OT_ISP_WDR_MAX_FRAME_NUM];
+</table> 【注意事项】 注意force\_long\_low\_threshold应小于force\_long\_hig\_threshold。 【相关数据类型及接口】 [ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr) #### ot\_isp\_fusion\_attr<a name="ZH-CN_TOPIC_0000002504085067"></a> 【说明】 定义ISP FUSION属性。 【定义】 ```
+typedef struct { td_u16 fusion_threshold[OT_ISP_WDR_MAX_FRAME_NUM];
 } ot_isp_fusion_attr;
-```
-
-【成员】
-
-<a name="table30258mcpsimp"></a>
+``` 【成员】 <a name="table30258mcpsimp"></a>
 <table><thead align="left"><tr id="row30263mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p30265mcpsimp"><a name="p30265mcpsimp"></a><a name="p30265mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p30267mcpsimp"><a name="p30267mcpsimp"></a><a name="p30267mcpsimp"></a>描述</p>
@@ -10366,35 +5705,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr)
-
-#### ot\_isp\_wdr\_wb\_gain\_pos<a name="ZH-CN_TOPIC_0000002504084713"></a>
-
-【说明】
-
-定义白平衡增益在ISP的位置属性。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_WDR_WBGAIN_IN_DG1         = 0,
-    OT_ISP_WDR_WBGAIN_IN_WB          = 1,
-    OT_ISP_WDR_WBGAIN_POS_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_wdr\_fs\_attr](#ot_isp_wdr_fs_attr) #### ot\_isp\_wdr\_wb\_gain\_pos<a name="ZH-CN_TOPIC_0000002504084713"></a> 【说明】 定义白平衡增益在ISP的位置属性。 【定义】 ```
+typedef enum { OT_ISP_WDR_WBGAIN_IN_DG1 = 0, OT_ISP_WDR_WBGAIN_IN_WB = 1, OT_ISP_WDR_WBGAIN_POS_BUTT
 } ot_isp_wdr_wb_gain_pos;
-```
-
-【成员】
-
-<a name="table30292mcpsimp"></a>
+``` 【成员】 <a name="table30292mcpsimp"></a>
 <table><thead align="left"><tr id="row30297mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p30299mcpsimp"><a name="p30299mcpsimp"></a><a name="p30299mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p30301mcpsimp"><a name="p30301mcpsimp"></a><a name="p30301mcpsimp"></a>描述</p>
@@ -10417,34 +5731,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Hi3403V100仅支持白平衡增益配置在WB处。
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_fswdr\_manual\_attr<a name="ZH-CN_TOPIC_0000002471085076"></a>
-
-【说明】
-
-定义ISP FSWDR手动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 md_thr_low_gain;
-    td_u8 md_thr_hig_gain;
+</table> 【注意事项】 Hi3403V100仅支持白平衡增益配置在WB处。 【相关数据类型及接口】 无 #### ot\_isp\_fswdr\_manual\_attr<a name="ZH-CN_TOPIC_0000002471085076"></a> 【说明】 定义ISP FSWDR手动属性。 【定义】 ```
+typedef struct { td_u8 md_thr_low_gain; td_u8 md_thr_hig_gain;
 } ot_isp_fswdr_manual_attr;
-```
-
-【成员】
-
-<a name="table30331mcpsimp"></a>
+``` 【成员】 <a name="table30331mcpsimp"></a>
 <table><thead align="left"><tr id="row30336mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p30338mcpsimp"><a name="p30338mcpsimp"></a><a name="p30338mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p30340mcpsimp"><a name="p30340mcpsimp"></a><a name="p30340mcpsimp"></a>描述</p>
@@ -10462,30 +5752,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【相关数据类型及接口】
-
-[ot\_isp\_fswdr\_mdt\_attr](#ot_isp_fswdr_mdt_attr)
-
-#### ot\_isp\_fswdr\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084849"></a>
-
-【说明】
-
-定义ISP FSWDR自动属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 md_thr_low_gain[OT_ISP_WDR_RATIO_NUM][OT_ISP_AUTO_ISO_NUM];
-    td_u8 md_thr_hig_gain[OT_ISP_WDR_RATIO_NUM][OT_ISP_AUTO_ISO_NUM];
+</table> 【相关数据类型及接口】 [ot\_isp\_fswdr\_mdt\_attr](#ot_isp_fswdr_mdt_attr) #### ot\_isp\_fswdr\_auto\_attr<a name="ZH-CN_TOPIC_0000002504084849"></a> 【说明】 定义ISP FSWDR自动属性。 【定义】 ```
+typedef struct { td_u8 md_thr_low_gain[OT_ISP_WDR_RATIO_NUM][OT_ISP_AUTO_ISO_NUM]; td_u8 md_thr_hig_gain[OT_ISP_WDR_RATIO_NUM][OT_ISP_AUTO_ISO_NUM];
 } ot_isp_fswdr_auto_attr;
-```
-
-【成员】
-
-<a name="table30370mcpsimp"></a>
+``` 【成员】 <a name="table30370mcpsimp"></a>
 <table><thead align="left"><tr id="row30375mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p30377mcpsimp"><a name="p30377mcpsimp"></a><a name="p30377mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p30379mcpsimp"><a name="p30379mcpsimp"></a><a name="p30379mcpsimp"></a>描述</p>
@@ -10505,31 +5775,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【相关数据类型及接口】
-
-[ot\_isp\_fswdr\_mdt\_attr](#ot_isp_fswdr_mdt_attr)
-
-#### ot\_isp\_wdr\_fs\_attr<a name="ZH-CN_TOPIC_0000002471085126"></a>
-
-【说明】
-
-定义ISP FSWDR属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_wdr_merge_mode   wdr_merge_mode;
-    ot_isp_wdr_combine_attr wdr_combine;
-    ot_isp_fusion_attr      fusion_attr;
+</table> 【相关数据类型及接口】 [ot\_isp\_fswdr\_mdt\_attr](#ot_isp_fswdr_mdt_attr) #### ot\_isp\_wdr\_fs\_attr<a name="ZH-CN_TOPIC_0000002471085126"></a> 【说明】 定义ISP FSWDR属性。 【定义】 ```
+typedef struct { ot_isp_wdr_merge_mode wdr_merge_mode; ot_isp_wdr_combine_attr wdr_combine; ot_isp_fusion_attr fusion_attr;
 } ot_isp_wdr_fs_attr;
-```
-
-【成员】
-
-<a name="table30416mcpsimp"></a>
+``` 【成员】 <a name="table30416mcpsimp"></a>
 <table><thead align="left"><tr id="row30421mcpsimp"><th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.3.1.1"><p id="p30423mcpsimp"><a name="p30423mcpsimp"></a><a name="p30423mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="72%" id="mcps1.1.3.1.2"><p id="p30425mcpsimp"><a name="p30425mcpsimp"></a><a name="p30425mcpsimp"></a>描述</p>
@@ -10556,82 +5805,18 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-WDR功能分为自动和手动：
-
--   op\_type  为OT\_OP\_MODE\_AUTO，使用自动WDR功能。
--   op\_type  设置为OT\_OP\_MODE\_MANUAL，使用手动WDR功能。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_isp\_set\_fswdr\_attr](#ss_mpi_isp_set_fswdr_attr)
-
-## AWB量产标定工具<a name="ZH-CN_TOPIC_0000002504084875"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002503964911"></a>
-
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
->AWB量产标定结果通过修正AWB的静态白平衡系数实现个体差异校正。因此，用户通过MPI接口修改静态白平衡系数，会导致量产标定失效。
-
-AWB量产标定工具实现在量产过程中，针对不同机器的差异进行对AWB差异参数校正的功能。用户可以调用ss\_mpi\_isp\_get\_lightbox\_gain接口，在色温范围4500K到6500K的均匀光源下的均匀背景环境下，获取图像中心若干个块的Rgain和Bgain的均值，即AWB增益，用于量产过程中矫正不同机器的AWB差异参数。
-
-AWB差异参数的校正过程：
-
-1.  小规模试产过程中进行：取若干台样机，分别放置到量产标定环境（色温范围4500K到6500K，均匀光源，均匀背景），待AE稳定后（避免RGrGbB任一分量饱和），调用ss\_mpi\_isp\_get\_lightbox\_gain接口，得到每台样机在量产标定环境的AWB增益值（请参考ot\_isp\_awb\_calibration\_gain结构体定义）。
-2.  小规模试产过程中进行：根据步骤1中若干台样机在量产标定环境的AWB增益，由用户自己确定其中一台机器作为GoldenSample。推荐基于GoldenSample机器完成AWB, CCM标定，同时GoldenSample作为AWB差异参数校准的基准。
-3.  取GoldenSample，采集多个色温下24色卡Raw数据，完成AWB、CCM标定流程（标定得到静态白平衡系数、普朗克曲线参数、色温曲线参数、多色温CCM矩阵系数等）。
-4.  将GoldenSample标定得到的AWB、CCM参数通过cmos.c文件的cmos\_get\_awb\_default接口配置。定义cmos.c文件的GOLDEN\_RGAIN=GoldenSample在量产标定环境得到的avg\_r\_gain，定义cmos.c文件的GOLDEN\_BGAIN=GoldenSample在量产标定环境得到的avg\_b\_gain。
-5.  若用户不进行步骤1、2，则任意选取一台机器作为GoldenSample，完成步骤3、4的操作。
-6.  量产过程中进行：取任意一台需要矫正的机器作为Sample，重复步骤1，得到该台机器在量产标定环境的AWB增益。通过cmos.c中的sensor\_set\_init对Sample的AWB增益进行配置。\(请参考ot\_isp\_init\_attr和ot\_isp\_awb\_calibration\_gain结构体定义。ot\_isp\_init\_attr. sample\_r\_gain =Sample在量产标定环境得到的avg\_r\_gain，ot\_isp\_init\_attr  sample\_b\_gain =Sample在量产标定环境得到的avg\_b\_gain\)。
-7.  AWB程序将会根据GoldenSample机器的AWB增益以及Sample机器的AWB增益实现对Sample机器的AWB差异参数的校正，改善机器个体之间的颜色一致性。
-
-    **图 1**  AWB小规模试产过程中确定GoldenSample流程图<a name="fig30489mcpsimp"></a>  
-    ![](figures/AWB小规模试产过程中确定GoldenSample流程图.png "AWB小规模试产过程中确定GoldenSample流程图")
-### API参考<a name="ZH-CN_TOPIC_0000002470925064"></a>
-
-请参考2.2小节中的ss\_mpi\_isp\_get\_lightbox\_gain。
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470925192"></a>
-
-请参考2.3小节中的ot\_isp\_awb\_calibration\_gain。
-
-## ColorTone<a name="ZH-CN_TOPIC_0000002470924966"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504084771"></a>
-
-ColorTone提供色调调节接口，用户可通过该接口实现图像颜色偏红、偏绿、偏蓝等喜好调节。
-
-### API参考<a name="ZH-CN_TOPIC_0000002504084999"></a>
-
--   [ss\_mpi\_isp\_set\_color\_tone\_attr](#ZH-CN_TOPIC_0000002470925220)：设置色调的参数。
--   [ss\_mpi\_isp\_get\_color\_tone\_attr](#ZH-CN_TOPIC_0000002504085039)：获取色调的参数。
-
-
-
-#### ss\_mpi\_isp\_set\_color\_tone\_attr<a name="ZH-CN_TOPIC_0000002470925220"></a>
-
-【描述】
-
-设置色调的参数。
-
-【语法】
-
-```
+</table> 【注意事项】 WDR功能分为自动和手动： - op\_type 为OT\_OP\_MODE\_AUTO，使用自动WDR功能。
+- op\_type 设置为OT\_OP\_MODE\_MANUAL，使用手动WDR功能。 【相关数据类型及接口】 [ss\_mpi\_isp\_set\_fswdr\_attr](#ss_mpi_isp_set_fswdr_attr) ## AWB量产标定工具<a name="ZH-CN_TOPIC_0000002504084875"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002503964911"></a> >![](public_sys-resources/icon-caution.gif) **CAUTION:** >AWB量产标定结果通过修正AWB的静态白平衡系数实现个体差异校正。因此，用户通过MPI接口修改静态白平衡系数，会导致量产标定失效。 AWB量产标定工具实现在量产过程中，针对不同机器的差异进行对AWB差异参数校正的功能。用户可以调用ss\_mpi\_isp\_get\_lightbox\_gain接口，在色温范围4500K到6500K的均匀光源下的均匀背景环境下，获取图像中心若干个块的Rgain和Bgain的均值，即AWB增益，用于量产过程中矫正不同机器的AWB差异参数。 AWB差异参数的校正过程： 1. 小规模试产过程中进行：取若干台样机，分别放置到量产标定环境（色温范围4500K到6500K，均匀光源，均匀背景），待AE稳定后（避免RGrGbB任一分量饱和），调用ss\_mpi\_isp\_get\_lightbox\_gain接口，得到每台样机在量产标定环境的AWB增益值（请参考ot\_isp\_awb\_calibration\_gain结构体定义）。
+2. 小规模试产过程中进行：根据步骤1中若干台样机在量产标定环境的AWB增益，由用户自己确定其中一台机器作为GoldenSample。推荐基于GoldenSample机器完成AWB, CCM标定，同时GoldenSample作为AWB差异参数校准的基准。
+3. 取GoldenSample，采集多个色温下24色卡Raw数据，完成AWB、CCM标定流程（标定得到静态白平衡系数、普朗克曲线参数、色温曲线参数、多色温CCM矩阵系数等）。
+4. 将GoldenSample标定得到的AWB、CCM参数通过cmos.c文件的cmos\_get\_awb\_default接口配置。定义cmos.c文件的GOLDEN\_RGAIN=GoldenSample在量产标定环境得到的avg\_r\_gain，定义cmos.c文件的GOLDEN\_BGAIN=GoldenSample在量产标定环境得到的avg\_b\_gain。
+5. 若用户不进行步骤1、2，则任意选取一台机器作为GoldenSample，完成步骤3、4的操作。
+6. 量产过程中进行：取任意一台需要矫正的机器作为Sample，重复步骤1，得到该台机器在量产标定环境的AWB增益。通过cmos.c中的sensor\_set\_init对Sample的AWB增益进行配置。\(请参考ot\_isp\_init\_attr和ot\_isp\_awb\_calibration\_gain结构体定义。ot\_isp\_init\_attr. sample\_r\_gain =Sample在量产标定环境得到的avg\_r\_gain，ot\_isp\_init\_attr sample\_b\_gain =Sample在量产标定环境得到的avg\_b\_gain\)。
+7. AWB程序将会根据GoldenSample机器的AWB增益以及Sample机器的AWB增益实现对Sample机器的AWB差异参数的校正，改善机器个体之间的颜色一致性。 **图 1** AWB小规模试产过程中确定GoldenSample流程图<a name="fig30489mcpsimp"></a> ![](figures/AWB小规模试产过程中确定GoldenSample流程图.png "AWB小规模试产过程中确定GoldenSample流程图")
+### API参考<a name="ZH-CN_TOPIC_0000002470925064"></a> 请参考2.2小节中的ss\_mpi\_isp\_get\_lightbox\_gain。 ### 数据类型<a name="ZH-CN_TOPIC_0000002470925192"></a> 请参考2.3小节中的ot\_isp\_awb\_calibration\_gain。 ## ColorTone<a name="ZH-CN_TOPIC_0000002470924966"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504084771"></a> ColorTone提供色调调节接口，用户可通过该接口实现图像颜色偏红、偏绿、偏蓝等喜好调节。 ### API参考<a name="ZH-CN_TOPIC_0000002504084999"></a> - [ss\_mpi\_isp\_set\_color\_tone\_attr](#ZH-CN_TOPIC_0000002470925220)：设置色调的参数。
+- [ss\_mpi\_isp\_get\_color\_tone\_attr](#ZH-CN_TOPIC_0000002504085039)：获取色调的参数。 #### ss\_mpi\_isp\_set\_color\_tone\_attr<a name="ZH-CN_TOPIC_0000002470925220"></a> 【描述】 设置色调的参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_color_tone_attr(ot_vi_pipe vi_pipe, const ot_isp_color_tone_attr *ct_attr);
-```
-
-【参数】
-
-<a name="table30521mcpsimp"></a>
+``` 【参数】 <a name="table30521mcpsimp"></a>
 <table><thead align="left"><tr id="row30527mcpsimp"><th class="cellrowborder" valign="top" width="37.37373737373737%" id="mcps1.1.4.1.1"><p id="p30529mcpsimp"><a name="p30529mcpsimp"></a><a name="p30529mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46.464646464646464%" id="mcps1.1.4.1.2"><p id="p30531mcpsimp"><a name="p30531mcpsimp"></a><a name="p30531mcpsimp"></a>描述</p>
@@ -10655,11 +5840,7 @@ td_s32 ss_mpi_isp_set_color_tone_attr(ot_vi_pipe vi_pipe, const ot_isp_color_ton
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table30550mcpsimp"></a>
+</table> 【返回值】 <a name="table30550mcpsimp"></a>
 <table><thead align="left"><tr id="row30555mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p30557mcpsimp"><a name="p30557mcpsimp"></a><a name="p30557mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p30559mcpsimp"><a name="p30559mcpsimp"></a><a name="p30559mcpsimp"></a>描述</p>
@@ -10671,46 +5852,11 @@ td_s32 ss_mpi_isp_set_color_tone_attr(ot_vi_pipe vi_pipe, const ot_isp_color_ton
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30564mcpsimp"><a name="p30564mcpsimp"></a><a name="p30564mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row30565mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p30567mcpsimp"><a name="p30567mcpsimp"></a><a name="p30567mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30569mcpsimp"><a name="p30569mcpsimp"></a><a name="p30569mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_awb.h、ss\_mpi\_awb.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a、libot\_awb.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_color\_tone\_attr](#ss_mpi_isp_get_color_tone_attr)
-
-#### ss\_mpi\_isp\_get\_color\_tone\_attr<a name="ZH-CN_TOPIC_0000002504085039"></a>
-
-【描述】
-
-获取色调的参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_awb.h、ss\_mpi\_awb.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a、libot\_awb.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_color\_tone\_attr](#ss_mpi_isp_get_color_tone_attr) #### ss\_mpi\_isp\_get\_color\_tone\_attr<a name="ZH-CN_TOPIC_0000002504085039"></a> 【描述】 获取色调的参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_color_tone_attr(ot_vi_pipe vi_pipe, ot_isp_color_tone_attr *ct_attr);
-```
-
-【参数】
-
-<a name="table30594mcpsimp"></a>
+``` 【参数】 <a name="table30594mcpsimp"></a>
 <table><thead align="left"><tr id="row30600mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.4.1.1"><p id="p30602mcpsimp"><a name="p30602mcpsimp"></a><a name="p30602mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.1.4.1.2"><p id="p30604mcpsimp"><a name="p30604mcpsimp"></a><a name="p30604mcpsimp"></a>描述</p>
@@ -10734,11 +5880,7 @@ td_s32 ss_mpi_isp_get_color_tone_attr(ot_vi_pipe vi_pipe, ot_isp_color_tone_attr
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table30623mcpsimp"></a>
+</table> 【返回值】 <a name="table30623mcpsimp"></a>
 <table><thead align="left"><tr id="row30628mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p30630mcpsimp"><a name="p30630mcpsimp"></a><a name="p30630mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p30632mcpsimp"><a name="p30632mcpsimp"></a><a name="p30632mcpsimp"></a>描述</p>
@@ -10750,55 +5892,12 @@ td_s32 ss_mpi_isp_get_color_tone_attr(ot_vi_pipe vi_pipe, ot_isp_color_tone_attr
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30637mcpsimp"><a name="p30637mcpsimp"></a><a name="p30637mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row30638mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p30640mcpsimp"><a name="p30640mcpsimp"></a><a name="p30640mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30642mcpsimp"><a name="p30642mcpsimp"></a><a name="p30642mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_awb.h、ss\_mpi\_awb.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a、libot\_awb.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_color\_tone\_attr](#ss_mpi_isp_set_color_tone_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470925090"></a>
-
-[ot\_isp\_color\_tone\_attr](#ZH-CN_TOPIC_0000002503964963)：定义色调调整属性。
-
-
-#### ot\_isp\_color\_tone\_attr<a name="ZH-CN_TOPIC_0000002503964963"></a>
-
-【说明】
-
-定义色调调整属性。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 red_cast_gain;
-    td_u16 green_cast_gain;
-    td_u16 blue_cast_gain;
+</table> 【需求】 - 头文件：ot\_common\_awb.h、ss\_mpi\_awb.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a、libot\_awb.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_color\_tone\_attr](#ss_mpi_isp_set_color_tone_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002470925090"></a> [ot\_isp\_color\_tone\_attr](#ZH-CN_TOPIC_0000002503964963)：定义色调调整属性。 #### ot\_isp\_color\_tone\_attr<a name="ZH-CN_TOPIC_0000002503964963"></a> 【说明】 定义色调调整属性。 【定义】 ```
+typedef struct { td_u16 red_cast_gain; td_u16 green_cast_gain; td_u16 blue_cast_gain;
 } ot_isp_color_tone_attr;
-```
-
-【成员】
-
-<a name="table30672mcpsimp"></a>
+``` 【成员】 <a name="table30672mcpsimp"></a>
 <table><thead align="left"><tr id="row30677mcpsimp"><th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.1"><p id="p30679mcpsimp"><a name="p30679mcpsimp"></a><a name="p30679mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.2"><p id="p30681mcpsimp"><a name="p30681mcpsimp"></a><a name="p30681mcpsimp"></a>描述</p>
@@ -10824,47 +5923,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-ColorTone支持客户调节固定的颜色风格，与色温无关。
-
-【相关数据类型及接口】
-
-无
-
-## LDCI<a name="ZH-CN_TOPIC_0000002471084892"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470924856"></a>
-
-LDCI是局域自动对比度增强的简称（Local Dynamic Contrast Improvement）。该算法采用局域直方图均衡来增强图像局部对比度，提升暗区细节。
-
-### API参考<a name="ZH-CN_TOPIC_0000002504084827"></a>
-
--   [ss\_mpi\_isp\_set\_ldci\_attr](#ZH-CN_TOPIC_0000002471084854)：设置LDCI属性参数。
--   [ss\_mpi\_isp\_get\_ldci\_attr](#ZH-CN_TOPIC_0000002504084981)：获取LDCI属性参数。
-
-
-
-#### ss\_mpi\_isp\_set\_ldci\_attr<a name="ZH-CN_TOPIC_0000002471084854"></a>
-
-【描述】
-
-设置LDCI属性参数。
-
-【语法】
-
-```
+</table> 【注意事项】 ColorTone支持客户调节固定的颜色风格，与色温无关。 【相关数据类型及接口】 无 ## LDCI<a name="ZH-CN_TOPIC_0000002471084892"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470924856"></a> LDCI是局域自动对比度增强的简称（Local Dynamic Contrast Improvement）。该算法采用局域直方图均衡来增强图像局部对比度，提升暗区细节。 ### API参考<a name="ZH-CN_TOPIC_0000002504084827"></a> - [ss\_mpi\_isp\_set\_ldci\_attr](#ZH-CN_TOPIC_0000002471084854)：设置LDCI属性参数。
+- [ss\_mpi\_isp\_get\_ldci\_attr](#ZH-CN_TOPIC_0000002504084981)：获取LDCI属性参数。 #### ss\_mpi\_isp\_set\_ldci\_attr<a name="ZH-CN_TOPIC_0000002471084854"></a> 【描述】 设置LDCI属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_ldci_attr(ot_vi_pipe vi_pipe, const ot_isp_ldci_attr *ldci_attr);
-```
-
-【参数】
-
-<a name="table30726mcpsimp"></a>
+``` 【参数】 <a name="table30726mcpsimp"></a>
 <table><thead align="left"><tr id="row30732mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p30734mcpsimp"><a name="p30734mcpsimp"></a><a name="p30734mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p30736mcpsimp"><a name="p30736mcpsimp"></a><a name="p30736mcpsimp"></a>描述</p>
@@ -10888,11 +5950,7 @@ td_s32 ss_mpi_isp_set_ldci_attr(ot_vi_pipe vi_pipe, const ot_isp_ldci_attr *ldci
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table30755mcpsimp"></a>
+</table> 【返回值】 <a name="table30755mcpsimp"></a>
 <table><thead align="left"><tr id="row30760mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p30762mcpsimp"><a name="p30762mcpsimp"></a><a name="p30762mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p30764mcpsimp"><a name="p30764mcpsimp"></a><a name="p30764mcpsimp"></a>描述</p>
@@ -10904,46 +5962,11 @@ td_s32 ss_mpi_isp_set_ldci_attr(ot_vi_pipe vi_pipe, const ot_isp_ldci_attr *ldci
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30770mcpsimp"><a name="p30770mcpsimp"></a><a name="p30770mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row30771mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p30773mcpsimp"><a name="p30773mcpsimp"></a><a name="p30773mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30775mcpsimp"><a name="p30775mcpsimp"></a><a name="p30775mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_ldci\_attr](#ss_mpi_isp_get_ldci_attr)
-
-#### ss\_mpi\_isp\_get\_ldci\_attr<a name="ZH-CN_TOPIC_0000002504084981"></a>
-
-【描述】
-
-获取LDCI属性参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_ldci\_attr](#ss_mpi_isp_get_ldci_attr) #### ss\_mpi\_isp\_get\_ldci\_attr<a name="ZH-CN_TOPIC_0000002504084981"></a> 【描述】 获取LDCI属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_ldci_attr(ot_vi_pipe vi_pipe, ot_isp_ldci_attr *ldci_attr) ;
-```
-
-【参数】
-
-<a name="table30797mcpsimp"></a>
+``` 【参数】 <a name="table30797mcpsimp"></a>
 <table><thead align="left"><tr id="row30803mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p30805mcpsimp"><a name="p30805mcpsimp"></a><a name="p30805mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p30807mcpsimp"><a name="p30807mcpsimp"></a><a name="p30807mcpsimp"></a>描述</p>
@@ -10967,11 +5990,7 @@ td_s32 ss_mpi_isp_get_ldci_attr(ot_vi_pipe vi_pipe, ot_isp_ldci_attr *ldci_attr)
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table30826mcpsimp"></a>
+</table> 【返回值】 <a name="table30826mcpsimp"></a>
 <table><thead align="left"><tr id="row30831mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p30833mcpsimp"><a name="p30833mcpsimp"></a><a name="p30833mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p30835mcpsimp"><a name="p30835mcpsimp"></a><a name="p30835mcpsimp"></a>描述</p>
@@ -10983,63 +6002,16 @@ td_s32 ss_mpi_isp_get_ldci_attr(ot_vi_pipe vi_pipe, ot_isp_ldci_attr *ldci_attr)
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30841mcpsimp"><a name="p30841mcpsimp"></a><a name="p30841mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row30842mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p30844mcpsimp"><a name="p30844mcpsimp"></a><a name="p30844mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p30846mcpsimp"><a name="p30846mcpsimp"></a><a name="p30846mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_ldci\_attr](#ss_mpi_isp_set_ldci_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503964969"></a>
-
--   [ot\_isp\_ldci\_gauss\_coef\_attr](#ZH-CN_TOPIC_0000002471085042)：定义GAUSS曲线属性参数。
--   [ot\_isp\_ldci\_he\_wgt\_attr](#ZH-CN_TOPIC_0000002470925052)：定义直方图均衡权重属性参数。
--   [ot\_isp\_ldci\_manual\_attr](#ZH-CN_TOPIC_0000002504084995)：定义LDCI手动模式属性参数。
--   [ot\_isp\_ldci\_auto\_attr](#ZH-CN_TOPIC_0000002471084952)：定义LDCI自动模式属性参数。
--   [ot\_isp\_ldci\_attr](#ZH-CN_TOPIC_0000002471085024)：定义LDCI属性参数。
-
-
-
-
-
-
-#### ot\_isp\_ldci\_gauss\_coef\_attr<a name="ZH-CN_TOPIC_0000002471085042"></a>
-
-【说明】
-
-定义GAUSS分布属性参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 wgt;
-    td_u8 sigma;
-    td_u8 mean;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_ldci\_attr](#ss_mpi_isp_set_ldci_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503964969"></a> - [ot\_isp\_ldci\_gauss\_coef\_attr](#ZH-CN_TOPIC_0000002471085042)：定义GAUSS曲线属性参数。
+- [ot\_isp\_ldci\_he\_wgt\_attr](#ZH-CN_TOPIC_0000002470925052)：定义直方图均衡权重属性参数。
+- [ot\_isp\_ldci\_manual\_attr](#ZH-CN_TOPIC_0000002504084995)：定义LDCI手动模式属性参数。
+- [ot\_isp\_ldci\_auto\_attr](#ZH-CN_TOPIC_0000002471084952)：定义LDCI自动模式属性参数。
+- [ot\_isp\_ldci\_attr](#ZH-CN_TOPIC_0000002471085024)：定义LDCI属性参数。 #### ot\_isp\_ldci\_gauss\_coef\_attr<a name="ZH-CN_TOPIC_0000002471085042"></a> 【说明】 定义GAUSS分布属性参数。 【定义】 ```
+typedef struct { td_u8 wgt; td_u8 sigma; td_u8 mean;
 } ot_isp_ldci_gauss_coef_attr;
-```
-
-【成员】
-
-<a name="table30894mcpsimp"></a>
+``` 【成员】 <a name="table30894mcpsimp"></a>
 <table><thead align="left"><tr id="row30899mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.3.1.1"><p id="p30901mcpsimp"><a name="p30901mcpsimp"></a><a name="p30901mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="86%" id="mcps1.1.3.1.2"><p id="p30903mcpsimp"><a name="p30903mcpsimp"></a><a name="p30903mcpsimp"></a>描述</p>
@@ -11063,34 +6035,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_ldci\_he\_wgt\_attr<a name="ZH-CN_TOPIC_0000002470925052"></a>
-
-【说明】
-
-定义直方图均衡与原图融合权重属性参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_ldci_gauss_coef_attr  he_pos_wgt;
-    ot_isp_ldci_gauss_coef_attr  he_neg_wgt;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_ldci\_he\_wgt\_attr<a name="ZH-CN_TOPIC_0000002470925052"></a> 【说明】 定义直方图均衡与原图融合权重属性参数。 【定义】 ```
+typedef struct { ot_isp_ldci_gauss_coef_attr he_pos_wgt; ot_isp_ldci_gauss_coef_attr he_neg_wgt;
 } ot_isp_ldci_he_wgt_attr;
-```
-
-【成员】
-
-<a name="table30937mcpsimp"></a>
+``` 【成员】 <a name="table30937mcpsimp"></a>
 <table><thead align="left"><tr id="row30942mcpsimp"><th class="cellrowborder" valign="top" width="17%" id="mcps1.1.3.1.1"><p id="p30944mcpsimp"><a name="p30944mcpsimp"></a><a name="p30944mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="83%" id="mcps1.1.3.1.2"><p id="p30946mcpsimp"><a name="p30946mcpsimp"></a><a name="p30946mcpsimp"></a>描述</p>
@@ -11108,34 +6056,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_ldci\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084995"></a>
-
-【说明】
-
-定义LDCI手动模式属性参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_ldci_he_wgt_attr  he_wgt[OT_ISP_AUTO_ISO_NUM];
-    td_u16                blc_ctrl[OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_ldci\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084995"></a> 【说明】 定义LDCI手动模式属性参数。 【定义】 ```
+typedef struct { ot_isp_ldci_he_wgt_attr he_wgt[OT_ISP_AUTO_ISO_NUM]; td_u16 blc_ctrl[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_ldci_manual_attr;
-```
-
-【成员】
-
-<a name="table30975mcpsimp"></a>
+``` 【成员】 <a name="table30975mcpsimp"></a>
 <table><thead align="left"><tr id="row30980mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.3.1.1"><p id="p30982mcpsimp"><a name="p30982mcpsimp"></a><a name="p30982mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="86%" id="mcps1.1.3.1.2"><p id="p30984mcpsimp"><a name="p30984mcpsimp"></a><a name="p30984mcpsimp"></a>描述</p>
@@ -11153,34 +6077,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_ldci\_auto\_attr<a name="ZH-CN_TOPIC_0000002471084952"></a>
-
-【说明】
-
-定义LDCI自动模式下属性参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_ldci_he_wgt_attr  he_wgt[OT_ISP_AUTO_ISO_NUM];
-    td_u16                 blc_ctrl[OT_ISP_AUTO_ISO_NUM];
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_ldci\_auto\_attr<a name="ZH-CN_TOPIC_0000002471084952"></a> 【说明】 定义LDCI自动模式下属性参数。 【定义】 ```
+typedef struct { ot_isp_ldci_he_wgt_attr he_wgt[OT_ISP_AUTO_ISO_NUM]; td_u16 blc_ctrl[OT_ISP_AUTO_ISO_NUM];
 } ot_isp_ldci_auto_attr;
-```
-
-【成员】
-
-<a name="table31013mcpsimp"></a>
+``` 【成员】 <a name="table31013mcpsimp"></a>
 <table><thead align="left"><tr id="row31018mcpsimp"><th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.1"><p id="p31020mcpsimp"><a name="p31020mcpsimp"></a><a name="p31020mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.2"><p id="p31022mcpsimp"><a name="p31022mcpsimp"></a><a name="p31022mcpsimp"></a>描述</p>
@@ -11198,39 +6098,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_ldci\_attr<a name="ZH-CN_TOPIC_0000002471085024"></a>
-
-【说明】
-
-定义LDCI属性参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool                 en;
-    td_u8                   gauss_lpf_sigma;
-    ot_op_mode              op_type;
-    ot_isp_ldci_manual_attr manual_attr;
-    ot_isp_ldci_auto_attr  auto_attr;
-    td_u16                  tpr_incr_coef;
-    td_u16                  tpr_decr_coef;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_ldci\_attr<a name="ZH-CN_TOPIC_0000002471085024"></a> 【说明】 定义LDCI属性参数。 【定义】 ```
+typedef struct { td_bool en; td_u8 gauss_lpf_sigma; ot_op_mode op_type; ot_isp_ldci_manual_attr manual_attr; ot_isp_ldci_auto_attr auto_attr; td_u16 tpr_incr_coef; td_u16 tpr_decr_coef;
 } ot_isp_ldci_attr;
-```
-
-【成员】
-
-<a name="table31060mcpsimp"></a>
+``` 【成员】 <a name="table31060mcpsimp"></a>
 <table><thead align="left"><tr id="row31065mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p31067mcpsimp"><a name="p31067mcpsimp"></a><a name="p31067mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p31069mcpsimp"><a name="p31069mcpsimp"></a><a name="p31069mcpsimp"></a>描述</p>
@@ -11275,47 +6146,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## Radial Crop<a name="ZH-CN_TOPIC_0000002503965135"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504084873"></a>
-
-Hi3403V100是在YUV域对图像进行radial crop操作，将设定半径之外的地方直接拉黑掉。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471084954"></a>
-
--   [ss\_mpi\_isp\_set\_rc\_attr](#ZH-CN_TOPIC_0000002471085022)：设定Radial Crop属性。
--   [ss\_mpi\_isp\_get\_rc\_attr](#ZH-CN_TOPIC_0000002471084918)：获取Radial Crop属性。
-
-
-
-#### ss\_mpi\_isp\_set\_rc\_attr<a name="ZH-CN_TOPIC_0000002471085022"></a>
-
-【描述】
-
-设定Radial Crop 属性。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## Radial Crop<a name="ZH-CN_TOPIC_0000002503965135"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504084873"></a> Hi3403V100是在YUV域对图像进行radial crop操作，将设定半径之外的地方直接拉黑掉。 ### API参考<a name="ZH-CN_TOPIC_0000002471084954"></a> - [ss\_mpi\_isp\_set\_rc\_attr](#ZH-CN_TOPIC_0000002471085022)：设定Radial Crop属性。
+- [ss\_mpi\_isp\_get\_rc\_attr](#ZH-CN_TOPIC_0000002471084918)：获取Radial Crop属性。 #### ss\_mpi\_isp\_set\_rc\_attr<a name="ZH-CN_TOPIC_0000002471085022"></a> 【描述】 设定Radial Crop 属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_rc_attr(ot_vi_pipe vi_pipe, const ot_isp_rc_attr *rc_attr);
-```
-
-【参数】
-
-<a name="table31135mcpsimp"></a>
+``` 【参数】 <a name="table31135mcpsimp"></a>
 <table><thead align="left"><tr id="row31141mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p31143mcpsimp"><a name="p31143mcpsimp"></a><a name="p31143mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p31145mcpsimp"><a name="p31145mcpsimp"></a><a name="p31145mcpsimp"></a>描述</p>
@@ -11339,11 +6173,7 @@ td_s32 ss_mpi_isp_set_rc_attr(ot_vi_pipe vi_pipe, const ot_isp_rc_attr *rc_attr)
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31164mcpsimp"></a>
+</table> 【返回值】 <a name="table31164mcpsimp"></a>
 <table><thead align="left"><tr id="row31169mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31171mcpsimp"><a name="p31171mcpsimp"></a><a name="p31171mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31173mcpsimp"><a name="p31173mcpsimp"></a><a name="p31173mcpsimp"></a>描述</p>
@@ -11355,46 +6185,11 @@ td_s32 ss_mpi_isp_set_rc_attr(ot_vi_pipe vi_pipe, const ot_isp_rc_attr *rc_attr)
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31178mcpsimp"><a name="p31178mcpsimp"></a><a name="p31178mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31179mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31181mcpsimp"><a name="p31181mcpsimp"></a><a name="p31181mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31183mcpsimp"><a name="p31183mcpsimp"></a><a name="p31183mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_rc\_attr](#ss_mpi_isp_get_rc_attr)
-
-#### ss\_mpi\_isp\_get\_rc\_attr<a name="ZH-CN_TOPIC_0000002471084918"></a>
-
-【描述】
-
-获取Radial Crop属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_rc\_attr](#ss_mpi_isp_get_rc_attr) #### ss\_mpi\_isp\_get\_rc\_attr<a name="ZH-CN_TOPIC_0000002471084918"></a> 【描述】 获取Radial Crop属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_rc_attr (ot_vi_pipe vi_pipe, ot_isp_rc_attr *rc_attr);
-```
-
-【参数】
-
-<a name="table31206mcpsimp"></a>
+``` 【参数】 <a name="table31206mcpsimp"></a>
 <table><thead align="left"><tr id="row31212mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p31214mcpsimp"><a name="p31214mcpsimp"></a><a name="p31214mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p31216mcpsimp"><a name="p31216mcpsimp"></a><a name="p31216mcpsimp"></a>描述</p>
@@ -11418,11 +6213,7 @@ td_s32 ss_mpi_isp_get_rc_attr (ot_vi_pipe vi_pipe, ot_isp_rc_attr *rc_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31235mcpsimp"></a>
+</table> 【返回值】 <a name="table31235mcpsimp"></a>
 <table><thead align="left"><tr id="row31240mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31242mcpsimp"><a name="p31242mcpsimp"></a><a name="p31242mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31244mcpsimp"><a name="p31244mcpsimp"></a><a name="p31244mcpsimp"></a>描述</p>
@@ -11434,55 +6225,12 @@ td_s32 ss_mpi_isp_get_rc_attr (ot_vi_pipe vi_pipe, ot_isp_rc_attr *rc_attr);
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31250mcpsimp"><a name="p31250mcpsimp"></a><a name="p31250mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31251mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31253mcpsimp"><a name="p31253mcpsimp"></a><a name="p31253mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31255mcpsimp"><a name="p31255mcpsimp"></a><a name="p31255mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_rc\_attr](#ss_mpi_isp_set_rc_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503964979"></a>
-
-[ot\_isp\_rc\_attr](#ZH-CN_TOPIC_0000002504084705)：定义ISP Radial Crop属性。
-
-
-#### ot\_isp\_rc\_attr<a name="ZH-CN_TOPIC_0000002504084705"></a>
-
-【说明】
-
-定义ISP Radial Crop 属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;
-    ot_point center_coord;
-    td_u32 radius;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_rc\_attr](#ss_mpi_isp_set_rc_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002503964979"></a> [ot\_isp\_rc\_attr](#ZH-CN_TOPIC_0000002504084705)：定义ISP Radial Crop属性。 #### ot\_isp\_rc\_attr<a name="ZH-CN_TOPIC_0000002504084705"></a> 【说明】 定义ISP Radial Crop 属性。 【定义】 ```
+typedef struct { td_bool en; ot_point center_coord; td_u32 radius;
 } ot_isp_rc_attr;
-```
-
-【成员】
-
-<a name="table31283mcpsimp"></a>
+``` 【成员】 <a name="table31283mcpsimp"></a>
 <table><thead align="left"><tr id="row31288mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.3.1.1"><p id="p31290mcpsimp"><a name="p31290mcpsimp"></a><a name="p31290mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="80%" id="mcps1.1.3.1.2"><p id="p31292mcpsimp"><a name="p31292mcpsimp"></a><a name="p31292mcpsimp"></a>描述</p>
@@ -11514,48 +6262,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-中心点的坐标以及半径的配置值可以直接采用fisheye算法的标定结果，分辨率切换之后，对应的中心点坐标与半径也要随之更新，以避免图像的不正常。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_isp\_set\_rc\_attr](#ss_mpi_isp_set_rc_attr)
--   [ss\_mpi\_isp\_get\_rc\_attr](#ss_mpi_isp_get_rc_attr)
-
-## CSC<a name="ZH-CN_TOPIC_0000002503964863"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002503965089"></a>
-
-色彩空间转换模块\(Color Space Conversion\)，用来将RGB信号转换成符合标准的YUV信号。
-
-### API参考<a name="ZH-CN_TOPIC_0000002504084977"></a>
-
--   [ss\_mpi\_isp\_set\_csc\_attr](#ZH-CN_TOPIC_0000002471084838)：设定CSC（色彩空间转换）模块属性。
--   [ss\_mpi\_isp\_get\_csc\_attr](#ZH-CN_TOPIC_0000002503965025)：获取CSC（色彩空间转换）模块属性。
-
-
-
-#### ss\_mpi\_isp\_set\_csc\_attr<a name="ZH-CN_TOPIC_0000002471084838"></a>
-
-【描述】
-
-设定CSC（色彩空间转换）属性。
-
-【语法】
-
-```
+</table> 【注意事项】 中心点的坐标以及半径的配置值可以直接采用fisheye算法的标定结果，分辨率切换之后，对应的中心点坐标与半径也要随之更新，以避免图像的不正常。 【相关数据类型及接口】 - [ss\_mpi\_isp\_set\_rc\_attr](#ss_mpi_isp_set_rc_attr)
+- [ss\_mpi\_isp\_get\_rc\_attr](#ss_mpi_isp_get_rc_attr) ## CSC<a name="ZH-CN_TOPIC_0000002503964863"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002503965089"></a> 色彩空间转换模块\(Color Space Conversion\)，用来将RGB信号转换成符合标准的YUV信号。 ### API参考<a name="ZH-CN_TOPIC_0000002504084977"></a> - [ss\_mpi\_isp\_set\_csc\_attr](#ZH-CN_TOPIC_0000002471084838)：设定CSC（色彩空间转换）模块属性。
+- [ss\_mpi\_isp\_get\_csc\_attr](#ZH-CN_TOPIC_0000002503965025)：获取CSC（色彩空间转换）模块属性。 #### ss\_mpi\_isp\_set\_csc\_attr<a name="ZH-CN_TOPIC_0000002471084838"></a> 【描述】 设定CSC（色彩空间转换）属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_csc_attr (ot_vi_pipe vi_pipe, const ot_isp_csc_attr *csc_attr);
-```
-
-【参数】
-
-<a name="table31351mcpsimp"></a>
+``` 【参数】 <a name="table31351mcpsimp"></a>
 <table><thead align="left"><tr id="row31357mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p31359mcpsimp"><a name="p31359mcpsimp"></a><a name="p31359mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p31361mcpsimp"><a name="p31361mcpsimp"></a><a name="p31361mcpsimp"></a>描述</p>
@@ -11579,11 +6290,7 @@ td_s32 ss_mpi_isp_set_csc_attr (ot_vi_pipe vi_pipe, const ot_isp_csc_attr *csc_a
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31380mcpsimp"></a>
+</table> 【返回值】 <a name="table31380mcpsimp"></a>
 <table><thead align="left"><tr id="row31385mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31387mcpsimp"><a name="p31387mcpsimp"></a><a name="p31387mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31389mcpsimp"><a name="p31389mcpsimp"></a><a name="p31389mcpsimp"></a>描述</p>
@@ -11595,46 +6302,11 @@ td_s32 ss_mpi_isp_set_csc_attr (ot_vi_pipe vi_pipe, const ot_isp_csc_attr *csc_a
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31394mcpsimp"><a name="p31394mcpsimp"></a><a name="p31394mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31395mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31397mcpsimp"><a name="p31397mcpsimp"></a><a name="p31397mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31399mcpsimp"><a name="p31399mcpsimp"></a><a name="p31399mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_csc\_attr](#ss_mpi_isp_get_csc_attr)
-
-#### ss\_mpi\_isp\_get\_csc\_attr<a name="ZH-CN_TOPIC_0000002503965025"></a>
-
-【描述】
-
-获取CSC（色彩空间转换）属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_csc\_attr](#ss_mpi_isp_get_csc_attr) #### ss\_mpi\_isp\_get\_csc\_attr<a name="ZH-CN_TOPIC_0000002503965025"></a> 【描述】 获取CSC（色彩空间转换）属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_csc_attr (ot_vi_pipe vi_pipe, ot_isp_csc_attr *csc_attr);
-```
-
-【参数】
-
-<a name="table31421mcpsimp"></a>
+``` 【参数】 <a name="table31421mcpsimp"></a>
 <table><thead align="left"><tr id="row31427mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p31429mcpsimp"><a name="p31429mcpsimp"></a><a name="p31429mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p31431mcpsimp"><a name="p31431mcpsimp"></a><a name="p31431mcpsimp"></a>描述</p>
@@ -11658,11 +6330,7 @@ td_s32 ss_mpi_isp_get_csc_attr (ot_vi_pipe vi_pipe, ot_isp_csc_attr *csc_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31450mcpsimp"></a>
+</table> 【返回值】 <a name="table31450mcpsimp"></a>
 <table><thead align="left"><tr id="row31455mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31457mcpsimp"><a name="p31457mcpsimp"></a><a name="p31457mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31459mcpsimp"><a name="p31459mcpsimp"></a><a name="p31459mcpsimp"></a>描述</p>
@@ -11674,109 +6342,19 @@ td_s32 ss_mpi_isp_get_csc_attr (ot_vi_pipe vi_pipe, ot_isp_csc_attr *csc_attr);
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31464mcpsimp"><a name="p31464mcpsimp"></a><a name="p31464mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31465mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31467mcpsimp"><a name="p31467mcpsimp"></a><a name="p31467mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31469mcpsimp"><a name="p31469mcpsimp"></a><a name="p31469mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_csc\_attr](#ss_mpi_isp_set_csc_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471085050"></a>
-
--   [OT\_ISP\_CSC\_DC\_NUM](#ZH-CN_TOPIC_0000002504084947)：YUV偏移量的个数。
--   [OT\_ISP\_CSC\_COEF\_NUM](#ZH-CN_TOPIC_0000002471084960)：YUV转换系数的个数。
--   [ot\_isp\_csc\_attr](#ZH-CN_TOPIC_0000002503964937)：定义ISP 色彩空间转换模块属性。
--   [ot\_isp\_csc\_matrx](#ZH-CN_TOPIC_0000002503964819)：定义色彩空间转换矩阵系数。
-
-
-
-
-
-#### OT\_ISP\_CSC\_DC\_NUM<a name="ZH-CN_TOPIC_0000002504084947"></a>
-
-【说明】
-
-YUV偏移量的个数。
-
-【定义】
-
-```
-#define OT_ISP_CSC_DC_NUM               3
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_csc\_matrx](#ot_isp_csc_matrx)
-
-#### OT\_ISP\_CSC\_COEF\_NUM<a name="ZH-CN_TOPIC_0000002471084960"></a>
-
-【说明】
-
-YUV转换系数的个数。
-
-【定义】
-
-```
-#define OT_ISP_CSC_COEF_NUM             9
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_csc\_matrx](#ot_isp_csc_matrx)
-
-#### ot\_isp\_csc\_attr<a name="ZH-CN_TOPIC_0000002503964937"></a>
-
-【说明】
-
-定义ISP 色彩空间转换模块属性。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;                 /* RW; Range:[0, 1];Format:1.0; Enable/Disable CSC Function */
-    ot_color_gamut color_gamut; /* RW; Range: [0, 3]; Color gamut type; Not Support COLOR_GAMUT_BT2020 */
-    td_u8   hue;              /* RW; Range:[0, 100];Format:8.0; Csc Hue Value */
-    td_u8   luma;             /* RW; Range:[0, 100];Format:8.0; Csc Luma Value */
-    td_u8   contr;            /* RW; Range:[0, 100];Format:8.0; Csc Contrast Value */
-    td_u8   satu;             /* RW; Range:[0, 100];Format:8.0; Csc Saturation Value */
-    td_bool limited_range_en; /* RW; Range: [0x0, 0x1];
-                                 Enable/Disable: Enable Limited range output mode(default full range output) */
-    td_bool ext_csc_en;       /* RW; Range: [0x0, 0x1]; Enable/Disable: Enable extended luma range */
-    td_bool ct_mode_en;       /* RW; Range: [0x0, 0x1]; Enable/Disable: Enable ct mode */
-    ot_isp_csc_matrx csc_magtrx;     /* RW; Color Space Conversion matrix */
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_csc\_attr](#ss_mpi_isp_set_csc_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002471085050"></a> - [OT\_ISP\_CSC\_DC\_NUM](#ZH-CN_TOPIC_0000002504084947)：YUV偏移量的个数。
+- [OT\_ISP\_CSC\_COEF\_NUM](#ZH-CN_TOPIC_0000002471084960)：YUV转换系数的个数。
+- [ot\_isp\_csc\_attr](#ZH-CN_TOPIC_0000002503964937)：定义ISP 色彩空间转换模块属性。
+- [ot\_isp\_csc\_matrx](#ZH-CN_TOPIC_0000002503964819)：定义色彩空间转换矩阵系数。 #### OT\_ISP\_CSC\_DC\_NUM<a name="ZH-CN_TOPIC_0000002504084947"></a> 【说明】 YUV偏移量的个数。 【定义】 ```
+#define OT_ISP_CSC_DC_NUM 3
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_csc\_matrx](#ot_isp_csc_matrx) #### OT\_ISP\_CSC\_COEF\_NUM<a name="ZH-CN_TOPIC_0000002471084960"></a> 【说明】 YUV转换系数的个数。 【定义】 ```
+#define OT_ISP_CSC_COEF_NUM 9
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_csc\_matrx](#ot_isp_csc_matrx) #### ot\_isp\_csc\_attr<a name="ZH-CN_TOPIC_0000002503964937"></a> 【说明】 定义ISP 色彩空间转换模块属性。 【定义】 ```
+typedef struct { td_bool en; /* RW; Range:[0, 1];Format:1.0; Enable/Disable CSC Function */ ot_color_gamut color_gamut; /* RW; Range: [0, 3]; Color gamut type; Not Support COLOR_GAMUT_BT2020 */ td_u8 hue; /* RW; Range:[0, 100];Format:8.0; Csc Hue Value */ td_u8 luma; /* RW; Range:[0, 100];Format:8.0; Csc Luma Value */ td_u8 contr; /* RW; Range:[0, 100];Format:8.0; Csc Contrast Value */ td_u8 satu; /* RW; Range:[0, 100];Format:8.0; Csc Saturation Value */ td_bool limited_range_en; /* RW; Range: [0x0, 0x1]; Enable/Disable: Enable Limited range output mode(default full range output) */ td_bool ext_csc_en; /* RW; Range: [0x0, 0x1]; Enable/Disable: Enable extended luma range */ td_bool ct_mode_en; /* RW; Range: [0x0, 0x1]; Enable/Disable: Enable ct mode */ ot_isp_csc_matrx csc_magtrx; /* RW; Color Space Conversion matrix */
 } ot_isp_csc_attr;
-```
-
-【成员】
-
-<a name="table31539mcpsimp"></a>
+``` 【成员】 <a name="table31539mcpsimp"></a>
 <table><thead align="left"><tr id="row31544mcpsimp"><th class="cellrowborder" valign="top" width="19%" id="mcps1.1.3.1.1"><p id="p31546mcpsimp"><a name="p31546mcpsimp"></a><a name="p31546mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="81%" id="mcps1.1.3.1.2"><p id="p31548mcpsimp"><a name="p31548mcpsimp"></a><a name="p31548mcpsimp"></a>描述</p>
@@ -11854,44 +6432,16 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   color\_gamut中可选择OT\_COLOR\_GAMUT\_BT601，OT\_COLOR\_GAMUT\_BT709，OT\_COLOR\_GAMUT\_BT2020，OT\_COLOR\_GAMUT\_USER四种模式。Hi3403V100不支持OT\_COLOR\_GAMUT\_BT2020模式。在选择OT\_COLOR\_GAMUT\_USER模式下，可根据实际情况自由设定csc\_magtrx的参数来进行色彩空间转换。
--   如果将contr值调小（20左右）时，在平坦区域容易出现等高线，出现的原因是因为contr值调小后，会影响画面的动态范围，导致原本0\~255（或者10bit 0\~1023）的动态范围缩小到原来的20%左右，因此在平坦区域如果有亮度变化，则非常容易产生量化误差出现等高线。
--   Hue，luma，contr，satu参数实现的色调，亮度，对比度，饱和度调节的功能是在当前的色彩空间转换矩阵基础上进行的。当这些参数不在默认值时，会对YUV值的范围产生影响，即VI输出端的YUV数据不会准确的在Full range或Limited range规定的值的范围内。建议limited\_range\_en配置为Full range。
--   CSC后的模块，比如Sharpen，LDCI，CA等模块，会对YUV数据进行处理。当开启这些模块时，VI输出端的YUV数据不会准确的在Full range或Limited range规定的值的范围内。建议limited\_range\_en配置为Full range。
--   当需要系统最终输出的YUV数据在Limited range规定的数值范围内时，可以将CSC的limited\_range\_en配置为Full range。设置ot\_vpss\_nrx\_v2中的limit\_range\_en参数，在VPSS输出端得到Limited range的YUV数据。ot\_vpss\_nrx\_v2的定义见《Hi3403V100/Hi3519AV200100  3DNR参数配置说明》。
--   当系统接入YUV数据，需要通过CSC进行YUV和RGB数据之间的转换时，可以按照需要将CSC的limited\_range\_en配置为Full range或Limited range，或者配置ot\_isp\_csc\_matrx参数。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_isp\_set\_csc\_attr](#ss_mpi_isp_set_csc_attr)
--   [ss\_mpi\_isp\_get\_csc\_attr](#ss_mpi_isp_get_csc_attr)
-
-#### ot\_isp\_csc\_matrx<a name="ZH-CN_TOPIC_0000002503964819"></a>
-
-【说明】
-
-定义色彩空间转换矩阵系数。
-
-【定义】
-
-```
-typedef struct {
-    td_s16 csc_in_dc[OT_ISP_CSC_DC_NUM]; /* RW; Range:[-1024, 1023]; Format: 11.0;
-                                         Input dc component for csc matrix */
-    td_s16 csc_out_dc[OT_ISP_CSC_DC_NUM]; /* RW; Range:[-1024, 1023]; Format: 11.0;
-                                         Output dc component for csc matrix */
-    td_s16 csc_coef[OT_ISP_CSC_COEF_NUM]; /* RW; Range:[-4096, 4095]; Format: 5.10; 
-                                          3x3 coefficients for csc matrix */
+</table> 【注意事项】 - color\_gamut中可选择OT\_COLOR\_GAMUT\_BT601，OT\_COLOR\_GAMUT\_BT709，OT\_COLOR\_GAMUT\_BT2020，OT\_COLOR\_GAMUT\_USER四种模式。Hi3403V100不支持OT\_COLOR\_GAMUT\_BT2020模式。在选择OT\_COLOR\_GAMUT\_USER模式下，可根据实际情况自由设定csc\_magtrx的参数来进行色彩空间转换。
+- 如果将contr值调小（20左右）时，在平坦区域容易出现等高线，出现的原因是因为contr值调小后，会影响画面的动态范围，导致原本0\~255（或者10bit 0\~1023）的动态范围缩小到原来的20%左右，因此在平坦区域如果有亮度变化，则非常容易产生量化误差出现等高线。
+- Hue，luma，contr，satu参数实现的色调，亮度，对比度，饱和度调节的功能是在当前的色彩空间转换矩阵基础上进行的。当这些参数不在默认值时，会对YUV值的范围产生影响，即VI输出端的YUV数据不会准确的在Full range或Limited range规定的值的范围内。建议limited\_range\_en配置为Full range。
+- CSC后的模块，比如Sharpen，LDCI，CA等模块，会对YUV数据进行处理。当开启这些模块时，VI输出端的YUV数据不会准确的在Full range或Limited range规定的值的范围内。建议limited\_range\_en配置为Full range。
+- 当需要系统最终输出的YUV数据在Limited range规定的数值范围内时，可以将CSC的limited\_range\_en配置为Full range。设置ot\_vpss\_nrx\_v2中的limit\_range\_en参数，在VPSS输出端得到Limited range的YUV数据。ot\_vpss\_nrx\_v2的定义见《Hi3403V100/100 3DNR参数配置说明》。
+- 当系统接入YUV数据，需要通过CSC进行YUV和RGB数据之间的转换时，可以按照需要将CSC的limited\_range\_en配置为Full range或Limited range，或者配置ot\_isp\_csc\_matrx参数。 【相关数据类型及接口】 - [ss\_mpi\_isp\_set\_csc\_attr](#ss_mpi_isp_set_csc_attr)
+- [ss\_mpi\_isp\_get\_csc\_attr](#ss_mpi_isp_get_csc_attr) #### ot\_isp\_csc\_matrx<a name="ZH-CN_TOPIC_0000002503964819"></a> 【说明】 定义色彩空间转换矩阵系数。 【定义】 ```
+typedef struct { td_s16 csc_in_dc[OT_ISP_CSC_DC_NUM]; /* RW; Range:[-1024, 1023]; Format: 11.0; Input dc component for csc matrix */ td_s16 csc_out_dc[OT_ISP_CSC_DC_NUM]; /* RW; Range:[-1024, 1023]; Format: 11.0; Output dc component for csc matrix */ td_s16 csc_coef[OT_ISP_CSC_COEF_NUM]; /* RW; Range:[-4096, 4095]; Format: 5.10; 3x3 coefficients for csc matrix */
 } ot_isp_csc_matrx;
-```
-
-【成员】
-
-<a name="table31656mcpsimp"></a>
+``` 【成员】 <a name="table31656mcpsimp"></a>
 <table><thead align="left"><tr id="row31661mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p31663mcpsimp"><a name="p31663mcpsimp"></a><a name="p31663mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p31665mcpsimp"><a name="p31665mcpsimp"></a><a name="p31665mcpsimp"></a>描述</p>
@@ -11917,64 +6467,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_csc\_attr](#ot_isp_csc_attr)
-
-## CLUT<a name="ZH-CN_TOPIC_0000002470925122"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470925084"></a>
-
-COLOR\_3D\_LUT是利用线性RGB空间17x17x17分格的3D LUT实现复杂的颜色调整操作，比如亮度的调整，饱和度的调整，色调的调整。阴影区域，中间亮度区域，高亮区域分别调整。
-
-它将像素的RGB信号的bit高位用来查找像素点位于表中的位置，利用RGB信号的bit低位用来在表的一个方格中插值出精确的偏移量。将偏移量应用于原像素值，得到调整后的最终像素值，从而使颜色得到调节。
-
-**图 1**  COLOR\_3D\_LUT示意图<a name="fig124162592215"></a>  
-![](figures/COLOR_3D_LUT示意图.png "COLOR_3D_LUT示意图")
-
-该单元通过查表的方式，获取R、G以及B分别的调节量ΔR、ΔG和ΔB。
-
-总共需要三类查找表，R、G和B各一张表。
-
-Hi3403V100：大小分别为R：17x17x17x10bit，G：17x17x17x10bit，B：17x17x17x10bit，即R的调节量为\[-511,511\]，G的调节量为\[-511,511\]，B的调节量为\[-511,511\]。
-
-CLUT调节量处理的数据是\[0, 4095\]范围的12bit线性RGB数据。
-
-### API参考<a name="ZH-CN_TOPIC_0000002503965019"></a>
-
--   [ss\_mpi\_isp\_set\_clut\_attr](#ZH-CN_TOPIC_0000002503964951)：设置CLUT属性。
--   [ss\_mpi\_isp\_get\_clut\_attr](#ZH-CN_TOPIC_0000002504084843)：获取CLUT属性。
--   [ss\_mpi\_isp\_set\_clut\_coeff](#ZH-CN_TOPIC_0000002504084841)：设置CLUT系数。
--   [ss\_mpi\_isp\_get\_clut\_coeff](#ZH-CN_TOPIC_0000002503964805)：获取CLUT系数。
-
-
-
-
-
-#### ss\_mpi\_isp\_set\_clut\_attr<a name="ZH-CN_TOPIC_0000002503964951"></a>
-
-【描述】
-
-设置CLUT属性。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_csc\_attr](#ot_isp_csc_attr) ## CLUT<a name="ZH-CN_TOPIC_0000002470925122"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470925084"></a> COLOR\_3D\_LUT是利用线性RGB空间17x17x17分格的3D LUT实现复杂的颜色调整操作，比如亮度的调整，饱和度的调整，色调的调整。阴影区域，中间亮度区域，高亮区域分别调整。 它将像素的RGB信号的bit高位用来查找像素点位于表中的位置，利用RGB信号的bit低位用来在表的一个方格中插值出精确的偏移量。将偏移量应用于原像素值，得到调整后的最终像素值，从而使颜色得到调节。 **图 1** COLOR\_3D\_LUT示意图<a name="fig124162592215"></a> ![](figures/COLOR_3D_LUT示意图.png "COLOR_3D_LUT示意图") 该单元通过查表的方式，获取R、G以及B分别的调节量ΔR、ΔG和ΔB。 总共需要三类查找表，R、G和B各一张表。 Hi3403V100：大小分别为R：17x17x17x10bit，G：17x17x17x10bit，B：17x17x17x10bit，即R的调节量为\[-511,511\]，G的调节量为\[-511,511\]，B的调节量为\[-511,511\]。 CLUT调节量处理的数据是\[0, 4095\]范围的12bit线性RGB数据。 ### API参考<a name="ZH-CN_TOPIC_0000002503965019"></a> - [ss\_mpi\_isp\_set\_clut\_attr](#ZH-CN_TOPIC_0000002503964951)：设置CLUT属性。
+- [ss\_mpi\_isp\_get\_clut\_attr](#ZH-CN_TOPIC_0000002504084843)：获取CLUT属性。
+- [ss\_mpi\_isp\_set\_clut\_coeff](#ZH-CN_TOPIC_0000002504084841)：设置CLUT系数。
+- [ss\_mpi\_isp\_get\_clut\_coeff](#ZH-CN_TOPIC_0000002503964805)：获取CLUT系数。 #### ss\_mpi\_isp\_set\_clut\_attr<a name="ZH-CN_TOPIC_0000002503964951"></a> 【描述】 设置CLUT属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_clut_attr (ot_vi_pipe vi_pipe, const ot_isp_clut_attr *clut_attr);
-```
-
-【参数】
-
-<a name="table31730mcpsimp"></a>
+``` 【参数】 <a name="table31730mcpsimp"></a>
 <table><thead align="left"><tr id="row31736mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p31738mcpsimp"><a name="p31738mcpsimp"></a><a name="p31738mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p31740mcpsimp"><a name="p31740mcpsimp"></a><a name="p31740mcpsimp"></a>描述</p>
@@ -11998,11 +6496,7 @@ td_s32 ss_mpi_isp_set_clut_attr (ot_vi_pipe vi_pipe, const ot_isp_clut_attr *clu
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31759mcpsimp"></a>
+</table> 【返回值】 <a name="table31759mcpsimp"></a>
 <table><thead align="left"><tr id="row31764mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31766mcpsimp"><a name="p31766mcpsimp"></a><a name="p31766mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31768mcpsimp"><a name="p31768mcpsimp"></a><a name="p31768mcpsimp"></a>描述</p>
@@ -12014,47 +6508,10 @@ td_s32 ss_mpi_isp_set_clut_attr (ot_vi_pipe vi_pipe, const ot_isp_clut_attr *clu
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31773mcpsimp"><a name="p31773mcpsimp"></a><a name="p31773mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31774mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31776mcpsimp"><a name="p31776mcpsimp"></a><a name="p31776mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31778mcpsimp"><a name="p31778mcpsimp"></a><a name="p31778mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
-头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
-
-库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_clut\_attr](#ss_mpi_isp_get_clut_attr)
-
-#### ss\_mpi\_isp\_get\_clut\_attr<a name="ZH-CN_TOPIC_0000002504084843"></a>
-
-【描述】
-
-获取CLUT属性。
-
-【语法】
-
-```
+</table> 【需求】 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_clut\_attr](#ss_mpi_isp_get_clut_attr) #### ss\_mpi\_isp\_get\_clut\_attr<a name="ZH-CN_TOPIC_0000002504084843"></a> 【描述】 获取CLUT属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_clut_attr (ot_vi_pipe vi_pipe, ot_isp_clut_attr *clut_attr);
-```
-
-【参数】
-
-<a name="table31800mcpsimp"></a>
+``` 【参数】 <a name="table31800mcpsimp"></a>
 <table><thead align="left"><tr id="row31806mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p31808mcpsimp"><a name="p31808mcpsimp"></a><a name="p31808mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p31810mcpsimp"><a name="p31810mcpsimp"></a><a name="p31810mcpsimp"></a>描述</p>
@@ -12078,11 +6535,7 @@ td_s32 ss_mpi_isp_get_clut_attr (ot_vi_pipe vi_pipe, ot_isp_clut_attr *clut_attr
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31828mcpsimp"></a>
+</table> 【返回值】 <a name="table31828mcpsimp"></a>
 <table><thead align="left"><tr id="row31833mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31835mcpsimp"><a name="p31835mcpsimp"></a><a name="p31835mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31837mcpsimp"><a name="p31837mcpsimp"></a><a name="p31837mcpsimp"></a>描述</p>
@@ -12094,47 +6547,10 @@ td_s32 ss_mpi_isp_get_clut_attr (ot_vi_pipe vi_pipe, ot_isp_clut_attr *clut_attr
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31843mcpsimp"><a name="p31843mcpsimp"></a><a name="p31843mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31844mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31846mcpsimp"><a name="p31846mcpsimp"></a><a name="p31846mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31848mcpsimp"><a name="p31848mcpsimp"></a><a name="p31848mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
-头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
-
-库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_clut\_attr](#ss_mpi_isp_set_clut_attr)
-
-#### ss\_mpi\_isp\_set\_clut\_coeff<a name="ZH-CN_TOPIC_0000002504084841"></a>
-
-【描述】
-
-设置CLUT系数。
-
-【语法】
-
-```
+</table> 【需求】 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_clut\_attr](#ss_mpi_isp_set_clut_attr) #### ss\_mpi\_isp\_set\_clut\_coeff<a name="ZH-CN_TOPIC_0000002504084841"></a> 【描述】 设置CLUT系数。 【语法】 ```
 td_s32 ss_mpi_isp_set_clut_coeff(ot_vi_pipe vi_pipe, const ot_isp_clut_lut *clut_lut);
-```
-
-【参数】
-
-<a name="table31870mcpsimp"></a>
+``` 【参数】 <a name="table31870mcpsimp"></a>
 <table><thead align="left"><tr id="row31876mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p31878mcpsimp"><a name="p31878mcpsimp"></a><a name="p31878mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p31880mcpsimp"><a name="p31880mcpsimp"></a><a name="p31880mcpsimp"></a>描述</p>
@@ -12158,11 +6574,7 @@ td_s32 ss_mpi_isp_set_clut_coeff(ot_vi_pipe vi_pipe, const ot_isp_clut_lut *clut
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31899mcpsimp"></a>
+</table> 【返回值】 <a name="table31899mcpsimp"></a>
 <table><thead align="left"><tr id="row31904mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31906mcpsimp"><a name="p31906mcpsimp"></a><a name="p31906mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31908mcpsimp"><a name="p31908mcpsimp"></a><a name="p31908mcpsimp"></a>描述</p>
@@ -12174,46 +6586,11 @@ td_s32 ss_mpi_isp_set_clut_coeff(ot_vi_pipe vi_pipe, const ot_isp_clut_lut *clut
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31913mcpsimp"><a name="p31913mcpsimp"></a><a name="p31913mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31914mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31916mcpsimp"><a name="p31916mcpsimp"></a><a name="p31916mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31918mcpsimp"><a name="p31918mcpsimp"></a><a name="p31918mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_clut\_coeff](#ss_mpi_isp_get_clut_coeff)
-
-#### ss\_mpi\_isp\_get\_clut\_coeff<a name="ZH-CN_TOPIC_0000002503964805"></a>
-
-【描述】
-
-获取CLUT系数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_clut\_coeff](#ss_mpi_isp_get_clut_coeff) #### ss\_mpi\_isp\_get\_clut\_coeff<a name="ZH-CN_TOPIC_0000002503964805"></a> 【描述】 获取CLUT系数。 【语法】 ```
 td_s32 ss_mpi_isp_get_clut_coeff (ot_vi_pipe vi_pipe, ot_isp_clut_lut *clut_lut);
-```
-
-【参数】
-
-<a name="table31942mcpsimp"></a>
+``` 【参数】 <a name="table31942mcpsimp"></a>
 <table><thead align="left"><tr id="row31948mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p31950mcpsimp"><a name="p31950mcpsimp"></a><a name="p31950mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.4.1.2"><p id="p31952mcpsimp"><a name="p31952mcpsimp"></a><a name="p31952mcpsimp"></a>描述</p>
@@ -12237,11 +6614,7 @@ td_s32 ss_mpi_isp_get_clut_coeff (ot_vi_pipe vi_pipe, ot_isp_clut_lut *clut_lut)
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table31971mcpsimp"></a>
+</table> 【返回值】 <a name="table31971mcpsimp"></a>
 <table><thead align="left"><tr id="row31976mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p31978mcpsimp"><a name="p31978mcpsimp"></a><a name="p31978mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p31980mcpsimp"><a name="p31980mcpsimp"></a><a name="p31980mcpsimp"></a>描述</p>
@@ -12253,80 +6626,16 @@ td_s32 ss_mpi_isp_get_clut_coeff (ot_vi_pipe vi_pipe, ot_isp_clut_lut *clut_lut)
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31985mcpsimp"><a name="p31985mcpsimp"></a><a name="p31985mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row31986mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p31988mcpsimp"><a name="p31988mcpsimp"></a><a name="p31988mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p31990mcpsimp"><a name="p31990mcpsimp"></a><a name="p31990mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_clut\_coeff](#ss_mpi_isp_set_clut_coeff)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471084998"></a>
-
--   [OT\_ISP\_CLUT\_LUT\_LENGTH](#ZH-CN_TOPIC_0000002504085063)：CLUT表的存储长度。
--   [ot\_isp\_clut\_attr](#ZH-CN_TOPIC_0000002471085166)：CLUT的增益。
--   [ot\_isp\_clut\_lut](#ZH-CN_TOPIC_0000002471085016)：CLUT的查找表。
-
-
-
-
-#### OT\_ISP\_CLUT\_LUT\_LENGTH<a name="ZH-CN_TOPIC_0000002504085063"></a>
-
-【说明】
-
-CLUT表转换成芯片专用格式后的存储长度。
-
-【定义】
-
-```
-#define OT_ISP_CLUT_LUT_LENGTH                    5508
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_clut\_lut](#ot_isp_clut_lut)
-
-#### ot\_isp\_clut\_attr<a name="ZH-CN_TOPIC_0000002471085166"></a>
-
-【说明】
-
-定义CLUT的增益。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en; /* RW; Range:[0, 1];Format:1.0; Enable/Disable CLUT Function */
-    td_u32  gain_r; /* RW; Range:[0, 4095];Format:12.0 */
-    td_u32  gain_g; /* RW; Range:[0, 4095];Format:12.0 */
-    td_u32  gain_b; /* RW; Range:[0, 4095];Format:12.0 */
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_clut\_coeff](#ss_mpi_isp_set_clut_coeff) ### 数据类型<a name="ZH-CN_TOPIC_0000002471084998"></a> - [OT\_ISP\_CLUT\_LUT\_LENGTH](#ZH-CN_TOPIC_0000002504085063)：CLUT表的存储长度。
+- [ot\_isp\_clut\_attr](#ZH-CN_TOPIC_0000002471085166)：CLUT的增益。
+- [ot\_isp\_clut\_lut](#ZH-CN_TOPIC_0000002471085016)：CLUT的查找表。 #### OT\_ISP\_CLUT\_LUT\_LENGTH<a name="ZH-CN_TOPIC_0000002504085063"></a> 【说明】 CLUT表转换成芯片专用格式后的存储长度。 【定义】 ```
+#define OT_ISP_CLUT_LUT_LENGTH 5508
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_clut\_lut](#ot_isp_clut_lut) #### ot\_isp\_clut\_attr<a name="ZH-CN_TOPIC_0000002471085166"></a> 【说明】 定义CLUT的增益。 【定义】 ```
+typedef struct { td_bool en; /* RW; Range:[0, 1];Format:1.0; Enable/Disable CLUT Function */ td_u32 gain_r; /* RW; Range:[0, 4095];Format:12.0 */ td_u32 gain_g; /* RW; Range:[0, 4095];Format:12.0 */ td_u32 gain_b; /* RW; Range:[0, 4095];Format:12.0 */
 } ot_isp_clut_attr;
-```
-
-【成员】
-
-<a name="table32038mcpsimp"></a>
+``` 【成员】 <a name="table32038mcpsimp"></a>
 <table><thead align="left"><tr id="row32043mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p32045mcpsimp"><a name="p32045mcpsimp"></a><a name="p32045mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p32047mcpsimp"><a name="p32047mcpsimp"></a><a name="p32047mcpsimp"></a>描述</p>
@@ -12354,33 +6663,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-增益设定为512时，相当于增益是1.0。增益和LUT查表得出的调整量相乘，得到实际调整量。实际调整量和输入RGB值相加得到输出RGB值。Hi3403V100建议默认增益为512。
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_clut\_lut<a name="ZH-CN_TOPIC_0000002471085016"></a>
-
-【说明】
-
-定义CLUT的查找表。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 lut[OT_ISP_CLUT_LUT_LENGTH];  /* RW; Range: Hi3403V100 = [0, 1073741823] */
+</table> 【注意事项】 增益设定为512时，相当于增益是1.0。增益和LUT查表得出的调整量相乘，得到实际调整量。实际调整量和输入RGB值相加得到输出RGB值。Hi3403V100建议默认增益为512。 【相关数据类型及接口】 无 #### ot\_isp\_clut\_lut<a name="ZH-CN_TOPIC_0000002471085016"></a> 【说明】 定义CLUT的查找表。 【定义】 ```
+typedef struct { td_u32 lut[OT_ISP_CLUT_LUT_LENGTH]; /* RW; Range: Hi3403V100 = [0, 1073741823] */
 } ot_isp_clut_lut;
-```
-
-【成员】
-
-<a name="table32086mcpsimp"></a>
+``` 【成员】 <a name="table32086mcpsimp"></a>
 <table><thead align="left"><tr id="row32091mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.3.1.1"><p id="p32093mcpsimp"><a name="p32093mcpsimp"></a><a name="p32093mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="79%" id="mcps1.1.3.1.2"><p id="p32095mcpsimp"><a name="p32095mcpsimp"></a><a name="p32095mcpsimp"></a>描述</p>
@@ -12394,134 +6680,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-由于采用了压缩存储的格式，这个表的内容会由PQTools生成。一般用户在PQTools界面调试后可以生成这个格式的LUT，不需要关心数据格式。
-
-对于Hi3403V100的用户：
-
-如果用户不使用PQTools，需要将自行生成的3D LUT表加载到芯片。需要做的工作是将17x17x17x3的LUT放入8x3的LUT，然后将8x3的LUT紧凑排列填入长度为5508的LUT。
-
-17x17x17x3的LUT每个元素的范围为\[-511, 511\]，使用10bit有符号数表示。
-
-将17x17x17x3的LUT取成8x3的LUT的过程为：
-
-三维表的下标为偶数时定义为0，下标为奇数时定义为1。R\[i\]\[j\]\[k\]，G\[i\]\[j\]\[k\]，B\[i\]\[j\]\[k\]中的i代表r的分格，j代表b的分格，k代表g的分格，即ijk代表三维表的地址坐标，对应的是rbg的排列顺序。R\[i\]\[j\]\[k\]，G\[i\]\[j\]\[k\]，B\[i\]\[j\]\[k\]的值是deltaR，deltaG，deltaB的值。用C代表RGB，真值表如下所示：
-
-![](figures/1.png)
-
-上图对应的伪代码如下所示：
-
-```
-for(k = 0; k < 17; k++)
-         {
-                  for(j = 0; j < 17; j++)
-                  {
-                            for(i = 0; i < 17; i++)
-                            {
-                                     switch((i&1) + ((j&1)<<1) + ((k&1)<<2))
-                                     {
-                                     case 0:R0[n0]=R[i][j][k];
-                          G0[n0]=G[i][j][k];
-                          B0[n0]=B[i][j][k];
-                                     case 1:R1[n1]=R[i][j][k];
-                          G1[n1]=G[i][j][k];
-                          B1[n1]=B[i][j][k];
-                                     case 2:R2[n2]=R[i][j][k];
-                          G2[n2]=G[i][j][k];
-                          B2[n2]=B[i][j][k];
-                                     case 3:R3[n3]=R[i][j][k];
-                          G3[n3]=G[i][j][k];
-                          B3[n3]=B[i][j][k];
-                                     case 4:R4[n4]=R[i][j][k];
-                          G4[n4]=G[i][j][k];
-                          B4[n4]=B[i][j][k];
-                                     case 5:R5[n5]=R[i][j][k];
-                          G5[n5]=G[i][j][k];
-                          B5[n5]=B[i][j][k];
-                                     case 6:R6[n6]=R[i][j][k];
-                          G6[n6]=G[i][j][k];
-                          B6[n6]=B[i][j][k];
-                                     case 7:R7[n7]=R[i][j][k];
-                          G7[n7]=G[i][j][k];
-                          B7[n7]=B[i][j][k];
-                                      }
-                            }
-                 }
-       }
-```
-
-用C代表RGB，取成的8个LUT分别为c0\[729\]、c1\[648\]、c2\[648\]、c3\[576\]、c4\[648\]、c5\[576\]、c6\[576\]、c7\[512\]。
-
-下面的描述用\_0代表一维数组c0\[729\]第0个数据，\_1代表一维数组c0\[729\]第1个数据。
-
-8x3的LUT按照每3个数据紧凑排列到1个32bit数据内的格式定义为：
-
-\{2’b00,B0\_0,G0\_0,R0\_0\},
-
-\{2’b00,B1\_0,G1\_0,R1\_0\},
-
-\{2’b00,B2\_0,G2\_0,R2\_0\},
-
-\{2’b00,B3\_0,G3\_0,R3\_0\},
-
-\{2’b00,B0\_1,G0\_1,R0\_1\},
-
-\{2’b00,B1\_1,G1\_1,R1\_1\},
-
-\{2’b00,B2\_1,G2\_1,R2\_1\},
-
-\{2’b00,B3\_1,G3\_1,R3\_1\},
-
-\{......\},
-
-上述格式可视化如下图所示：
-
-![](figures/22.png)
-
-整体看如下图所示：
-
-![](figures/33.png)
-
-8x3的LUT按照c0\[729\]  占用空间729 x 4 = 2916和c4\[648\]占用空间648 x 4 = 2592连续存储成一个长度为5508的一维数组。
-
-【相关数据类型及接口】
-
-无
-
-## PreGamma<a name="ZH-CN_TOPIC_0000002470924928"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504085015"></a>
-
-PreGamma是类似Gamma对图像进行亮度空间非线性转换模块，在DRC之前对动态范围进行适当压缩。 PreGamma插值点数为257，精度为20bit，节点之间的图像像素值使用线性插值生成。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085174"></a>
-
--   [ss\_mpi\_isp\_set\_pregamma\_attr](#ZH-CN_TOPIC_0000002504084865)：设置PreGamma属性参数。
--   [ss\_mpi\_isp\_get\_pregamma\_attr](#ZH-CN_TOPIC_0000002471085150)：获取PreGamma属性参数。
-
-
-
-#### ss\_mpi\_isp\_set\_pregamma\_attr<a name="ZH-CN_TOPIC_0000002504084865"></a>
-
-【描述】
-
-设置PreGamma属性参数。
-
-【语法】
-
-```
+</table> 【注意事项】 由于采用了压缩存储的格式，这个表的内容会由PQTools生成。一般用户在PQTools界面调试后可以生成这个格式的LUT，不需要关心数据格式。 对于Hi3403V100的用户： 如果用户不使用PQTools，需要将自行生成的3D LUT表加载到芯片。需要做的工作是将17x17x17x3的LUT放入8x3的LUT，然后将8x3的LUT紧凑排列填入长度为5508的LUT。 17x17x17x3的LUT每个元素的范围为\[-511, 511\]，使用10bit有符号数表示。 将17x17x17x3的LUT取成8x3的LUT的过程为： 三维表的下标为偶数时定义为0，下标为奇数时定义为1。R\[i\]\[j\]\[k\]，G\[i\]\[j\]\[k\]，B\[i\]\[j\]\[k\]中的i代表r的分格，j代表b的分格，k代表g的分格，即ijk代表三维表的地址坐标，对应的是rbg的排列顺序。R\[i\]\[j\]\[k\]，G\[i\]\[j\]\[k\]，B\[i\]\[j\]\[k\]的值是deltaR，deltaG，deltaB的值。用C代表RGB，真值表如下所示： ![](figures/1.png) 上图对应的伪代码如下所示： ```
+for(k = 0; k < 17; k++) { for(j = 0; j < 17; j++) { for(i = 0; i < 17; i++) { switch((i&1) + ((j&1)<<1) + ((k&1)<<2)) { case 0:R0[n0]=R[i][j][k]; G0[n0]=G[i][j][k]; B0[n0]=B[i][j][k]; case 1:R1[n1]=R[i][j][k]; G1[n1]=G[i][j][k]; B1[n1]=B[i][j][k]; case 2:R2[n2]=R[i][j][k]; G2[n2]=G[i][j][k]; B2[n2]=B[i][j][k]; case 3:R3[n3]=R[i][j][k]; G3[n3]=G[i][j][k]; B3[n3]=B[i][j][k]; case 4:R4[n4]=R[i][j][k]; G4[n4]=G[i][j][k]; B4[n4]=B[i][j][k]; case 5:R5[n5]=R[i][j][k]; G5[n5]=G[i][j][k]; B5[n5]=B[i][j][k]; case 6:R6[n6]=R[i][j][k]; G6[n6]=G[i][j][k]; B6[n6]=B[i][j][k]; case 7:R7[n7]=R[i][j][k]; G7[n7]=G[i][j][k]; B7[n7]=B[i][j][k]; } } } }
+``` 用C代表RGB，取成的8个LUT分别为c0\[729\]、c1\[648\]、c2\[648\]、c3\[576\]、c4\[648\]、c5\[576\]、c6\[576\]、c7\[512\]。 下面的描述用\_0代表一维数组c0\[729\]第0个数据，\_1代表一维数组c0\[729\]第1个数据。 8x3的LUT按照每3个数据紧凑排列到1个32bit数据内的格式定义为： \{2’b00,B0\_0,G0\_0,R0\_0\}, \{2’b00,B1\_0,G1\_0,R1\_0\}, \{2’b00,B2\_0,G2\_0,R2\_0\}, \{2’b00,B3\_0,G3\_0,R3\_0\}, \{2’b00,B0\_1,G0\_1,R0\_1\}, \{2’b00,B1\_1,G1\_1,R1\_1\}, \{2’b00,B2\_1,G2\_1,R2\_1\}, \{2’b00,B3\_1,G3\_1,R3\_1\}, \{......\}, 上述格式可视化如下图所示： ![](figures/22.png) 整体看如下图所示： ![](figures/33.png) 8x3的LUT按照c0\[729\] 占用空间729 x 4 = 2916和c4\[648\]占用空间648 x 4 = 2592连续存储成一个长度为5508的一维数组。 【相关数据类型及接口】 无 ## PreGamma<a name="ZH-CN_TOPIC_0000002470924928"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504085015"></a> PreGamma是类似Gamma对图像进行亮度空间非线性转换模块，在DRC之前对动态范围进行适当压缩。 PreGamma插值点数为257，精度为20bit，节点之间的图像像素值使用线性插值生成。 ### API参考<a name="ZH-CN_TOPIC_0000002471085174"></a> - [ss\_mpi\_isp\_set\_pregamma\_attr](#ZH-CN_TOPIC_0000002504084865)：设置PreGamma属性参数。
+- [ss\_mpi\_isp\_get\_pregamma\_attr](#ZH-CN_TOPIC_0000002471085150)：获取PreGamma属性参数。 #### ss\_mpi\_isp\_set\_pregamma\_attr<a name="ZH-CN_TOPIC_0000002504084865"></a> 【描述】 设置PreGamma属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_pregamma_attr(ot_vi_pipe vi_pipe, const ot_isp_pregamma_attr *pregamma_attr)
-```
-
-【参数】
-
-<a name="table32194mcpsimp"></a>
+``` 【参数】 <a name="table32194mcpsimp"></a>
 <table><thead align="left"><tr id="row32200mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p32202mcpsimp"><a name="p32202mcpsimp"></a><a name="p32202mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p32204mcpsimp"><a name="p32204mcpsimp"></a><a name="p32204mcpsimp"></a>描述</p>
@@ -12545,11 +6709,7 @@ td_s32 ss_mpi_isp_set_pregamma_attr(ot_vi_pipe vi_pipe, const ot_isp_pregamma_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table32223mcpsimp"></a>
+</table> 【返回值】 <a name="table32223mcpsimp"></a>
 <table><thead align="left"><tr id="row32228mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p32230mcpsimp"><a name="p32230mcpsimp"></a><a name="p32230mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p32232mcpsimp"><a name="p32232mcpsimp"></a><a name="p32232mcpsimp"></a>描述</p>
@@ -12561,46 +6721,11 @@ td_s32 ss_mpi_isp_set_pregamma_attr(ot_vi_pipe vi_pipe, const ot_isp_pregamma_at
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32238mcpsimp"><a name="p32238mcpsimp"></a><a name="p32238mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row32239mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p32241mcpsimp"><a name="p32241mcpsimp"></a><a name="p32241mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32243mcpsimp"><a name="p32243mcpsimp"></a><a name="p32243mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_pregamma\_attr](#ss_mpi_isp_get_pregamma_attr)
-
-#### ss\_mpi\_isp\_get\_pregamma\_attr<a name="ZH-CN_TOPIC_0000002471085150"></a>
-
-【描述】
-
-获取PreGamma属性参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_pregamma\_attr](#ss_mpi_isp_get_pregamma_attr) #### ss\_mpi\_isp\_get\_pregamma\_attr<a name="ZH-CN_TOPIC_0000002471085150"></a> 【描述】 获取PreGamma属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_pregamma_attr(ot_vi_pipe vi_pipe, ot_isp_pregamma_attr *pregamma_attr)
-```
-
-【参数】
-
-<a name="table32264mcpsimp"></a>
+``` 【参数】 <a name="table32264mcpsimp"></a>
 <table><thead align="left"><tr id="row32270mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p32272mcpsimp"><a name="p32272mcpsimp"></a><a name="p32272mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p32274mcpsimp"><a name="p32274mcpsimp"></a><a name="p32274mcpsimp"></a>描述</p>
@@ -12624,11 +6749,7 @@ td_s32 ss_mpi_isp_get_pregamma_attr(ot_vi_pipe vi_pipe, ot_isp_pregamma_attr *pr
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table32293mcpsimp"></a>
+</table> 【返回值】 <a name="table32293mcpsimp"></a>
 <table><thead align="left"><tr id="row32298mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p32300mcpsimp"><a name="p32300mcpsimp"></a><a name="p32300mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p32302mcpsimp"><a name="p32302mcpsimp"></a><a name="p32302mcpsimp"></a>描述</p>
@@ -12640,76 +6761,15 @@ td_s32 ss_mpi_isp_get_pregamma_attr(ot_vi_pipe vi_pipe, ot_isp_pregamma_attr *pr
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32308mcpsimp"><a name="p32308mcpsimp"></a><a name="p32308mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row32309mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p32311mcpsimp"><a name="p32311mcpsimp"></a><a name="p32311mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32313mcpsimp"><a name="p32313mcpsimp"></a><a name="p32313mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_pregamma\_attr](#ss_mpi_isp_set_pregamma_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002504085047"></a>
-
--   [OT\_ISP\_PREGAMMA\_NODE\_NUM](#ZH-CN_TOPIC_0000002471085130)：定义PreGamma LUT的节点个数。
--   [ot\_isp\_pregamma\_attr](#ZH-CN_TOPIC_0000002471085098)：定义PreGamma属性参数。
-
-
-
-#### OT\_ISP\_PREGAMMA\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002471085130"></a>
-
-【说明】
-
-定义PreGamma LUT的节点个数。
-
-【定义】
-
-```
-#define OT_ISP_PREGAMMA_NODE_NUM        257
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_pregamma\_attr](#ot_isp_pregamma_attr)
-
-#### ot\_isp\_pregamma\_attr<a name="ZH-CN_TOPIC_0000002471085098"></a>
-
-【说明】
-
-定义PreGamma属性参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool enable;
-    td_u32  table[OT_ISP_PREGAMMA_NODE_NUM];
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_pregamma\_attr](#ss_mpi_isp_set_pregamma_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002504085047"></a> - [OT\_ISP\_PREGAMMA\_NODE\_NUM](#ZH-CN_TOPIC_0000002471085130)：定义PreGamma LUT的节点个数。
+- [ot\_isp\_pregamma\_attr](#ZH-CN_TOPIC_0000002471085098)：定义PreGamma属性参数。 #### OT\_ISP\_PREGAMMA\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002471085130"></a> 【说明】 定义PreGamma LUT的节点个数。 【定义】 ```
+#define OT_ISP_PREGAMMA_NODE_NUM 257
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_pregamma\_attr](#ot_isp_pregamma_attr) #### ot\_isp\_pregamma\_attr<a name="ZH-CN_TOPIC_0000002471085098"></a> 【说明】 定义PreGamma属性参数。 【定义】 ```
+typedef struct { td_bool enable; td_u32 table[OT_ISP_PREGAMMA_NODE_NUM];
 } ot_isp_pregamma_attr;
-```
-
-【成员】
-
-<a name="table32360mcpsimp"></a>
+``` 【成员】 <a name="table32360mcpsimp"></a>
 <table><thead align="left"><tr id="row32365mcpsimp"><th class="cellrowborder" valign="top" width="47%" id="mcps1.1.3.1.1"><p id="p32367mcpsimp"><a name="p32367mcpsimp"></a><a name="p32367mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="53%" id="mcps1.1.3.1.2"><p id="p32369mcpsimp"><a name="p32369mcpsimp"></a><a name="p32369mcpsimp"></a>描述</p>
@@ -12727,46 +6787,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   PreGamma模块和DRC模块存在耦合，其只在DRC使能时才生效。
--   PreGamma在当前平台上改为非均匀分布LUT，以提升暗区的调试精度，因此上一代平台的参数无法直接复用。建议基于此前参数所对应的曲线形状，在当前平台上重新调试出类似曲线，以实现效果的同步。
-
-【相关数据类型及接口】
-
-[ot\_isp\_drc\_attr](#ot_isp_drc_attr)
-
-## 获取ISP模块虚拟地址<a name="ZH-CN_TOPIC_0000002504084915"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504085021"></a>
-
-从地址空间来分，当前ISP模块可分为五个部分：AE库、AWB库、AF库、ISP物理寄存器模块、ISP其他模块。
-
-### API参考<a name="ZH-CN_TOPIC_0000002503964875"></a>
-
-[ss\_mpi\_isp\_get\_isp\_reg\_attr](#ZH-CN_TOPIC_0000002470925140)：获取ISP基地址属性。
-
-
-#### ss\_mpi\_isp\_get\_isp\_reg\_attr<a name="ZH-CN_TOPIC_0000002470925140"></a>
-
-【描述】
-
-获取ISP基地址属性。
-
-【语法】
-
-```
+</table> 【注意事项】 - PreGamma模块和DRC模块存在耦合，其只在DRC使能时才生效。
+- PreGamma在当前平台上改为非均匀分布LUT，以提升暗区的调试精度，因此上一代平台的参数无法直接复用。建议基于此前参数所对应的曲线形状，在当前平台上重新调试出类似曲线，以实现效果的同步。 【相关数据类型及接口】 [ot\_isp\_drc\_attr](#ot_isp_drc_attr) ## 获取ISP模块虚拟地址<a name="ZH-CN_TOPIC_0000002504084915"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504085021"></a> 从地址空间来分，当前ISP模块可分为五个部分：AE库、AWB库、AF库、ISP物理寄存器模块、ISP其他模块。 ### API参考<a name="ZH-CN_TOPIC_0000002503964875"></a> [ss\_mpi\_isp\_get\_isp\_reg\_attr](#ZH-CN_TOPIC_0000002470925140)：获取ISP基地址属性。 #### ss\_mpi\_isp\_get\_isp\_reg\_attr<a name="ZH-CN_TOPIC_0000002470925140"></a> 【描述】 获取ISP基地址属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_isp_reg_attr(ot_vi_pipe vi_pipe, ot_isp_reg_attr *isp_reg_attr);
-```
-
-【参数】
-
-<a name="table32406mcpsimp"></a>
+``` 【参数】 <a name="table32406mcpsimp"></a>
 <table><thead align="left"><tr id="row32412mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p32414mcpsimp"><a name="p32414mcpsimp"></a><a name="p32414mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p32416mcpsimp"><a name="p32416mcpsimp"></a><a name="p32416mcpsimp"></a>描述</p>
@@ -12790,11 +6814,7 @@ td_s32 ss_mpi_isp_get_isp_reg_attr(ot_vi_pipe vi_pipe, ot_isp_reg_attr *isp_reg_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table32435mcpsimp"></a>
+</table> 【返回值】 <a name="table32435mcpsimp"></a>
 <table><thead align="left"><tr id="row32440mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p32442mcpsimp"><a name="p32442mcpsimp"></a><a name="p32442mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p32444mcpsimp"><a name="p32444mcpsimp"></a><a name="p32444mcpsimp"></a>描述</p>
@@ -12806,58 +6826,12 @@ td_s32 ss_mpi_isp_get_isp_reg_attr(ot_vi_pipe vi_pipe, ot_isp_reg_attr *isp_reg_
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32449mcpsimp"><a name="p32449mcpsimp"></a><a name="p32449mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row32450mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p32452mcpsimp"><a name="p32452mcpsimp"></a><a name="p32452mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32454mcpsimp"><a name="p32454mcpsimp"></a><a name="p32454mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-当前ISP模块虚拟地址不提供AF模块的虚拟地址。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470925062"></a>
-
-[ot\_isp\_reg\_attr](#ZH-CN_TOPIC_0000002503964867)：定义ISP各子模块寄存器的虚拟地址属性。
-
-
-#### ot\_isp\_reg\_attr<a name="ZH-CN_TOPIC_0000002503964867"></a>
-
-【说明】
-
-定义ISP各子模块寄存器的虚拟地址属性。
-
-【定义】
-
-```
-typedef struct {
-    ot_void *isp_ext_reg_addr;
-    td_u32  isp_ext_reg_size;
-    ot_void *ae_ext_reg_addr;
-    td_u32  ae_ext_reg_size;
-    ot_void *awb_ext_reg_addr;
-    td_u32  awb_ext_reg_size;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 当前ISP模块虚拟地址不提供AF模块的虚拟地址。 【举例】 无 【相关主题】 无 ### 数据类型<a name="ZH-CN_TOPIC_0000002470925062"></a> [ot\_isp\_reg\_attr](#ZH-CN_TOPIC_0000002503964867)：定义ISP各子模块寄存器的虚拟地址属性。 #### ot\_isp\_reg\_attr<a name="ZH-CN_TOPIC_0000002503964867"></a> 【说明】 定义ISP各子模块寄存器的虚拟地址属性。 【定义】 ```
+typedef struct { ot_void *isp_ext_reg_addr; td_u32 isp_ext_reg_size; ot_void *ae_ext_reg_addr; td_u32 ae_ext_reg_size; ot_void *awb_ext_reg_addr; td_u32 awb_ext_reg_size;
 } ot_isp_reg_attr;
-```
-
-【成员】
-
-<a name="table32484mcpsimp"></a>
+``` 【成员】 <a name="table32484mcpsimp"></a>
 <table><thead align="left"><tr id="row32489mcpsimp"><th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.1.3.1.1"><p id="p32491mcpsimp"><a name="p32491mcpsimp"></a><a name="p32491mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="72%" id="mcps1.1.3.1.2"><p id="p32493mcpsimp"><a name="p32493mcpsimp"></a><a name="p32493mcpsimp"></a>描述</p>
@@ -12895,47 +6869,9 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## 查询内部状态信息<a name="ZH-CN_TOPIC_0000002470924974"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002470924930"></a>
-
-Inner State Information接口的作用是输出数个与ISO相关的参数其逻辑寄存器当前配置的真实值。
-
-用户在调试过程中可以通过MPI接口读取这些真实值参数，观察参数强度是否正确配置。通过该接口用户只可以获取参数，而非操作改变该寄存器里的值。
-
-### API参考<a name="ZH-CN_TOPIC_0000002504084845"></a>
-
-[ss\_mpi\_isp\_query\_inner\_state\_info](#ZH-CN_TOPIC_0000002471084910)：获取内部寄存器实际强度配置信息和内部状态。
-
-
-#### ss\_mpi\_isp\_query\_inner\_state\_info<a name="ZH-CN_TOPIC_0000002471084910"></a>
-
-【描述】
-
-获取内部寄存器实际强度配置和内部状态。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## 查询内部状态信息<a name="ZH-CN_TOPIC_0000002470924974"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002470924930"></a> Inner State Information接口的作用是输出数个与ISO相关的参数其逻辑寄存器当前配置的真实值。 用户在调试过程中可以通过MPI接口读取这些真实值参数，观察参数强度是否正确配置。通过该接口用户只可以获取参数，而非操作改变该寄存器里的值。 ### API参考<a name="ZH-CN_TOPIC_0000002504084845"></a> [ss\_mpi\_isp\_query\_inner\_state\_info](#ZH-CN_TOPIC_0000002471084910)：获取内部寄存器实际强度配置信息和内部状态。 #### ss\_mpi\_isp\_query\_inner\_state\_info<a name="ZH-CN_TOPIC_0000002471084910"></a> 【描述】 获取内部寄存器实际强度配置和内部状态。 【语法】 ```
 td_s32 ss_mpi_isp_query_inner_state_info(ot_vi_pipe vi_pipe, ot_isp_inner_state_info *inner_state_info);
-```
-
-【参数】
-
-<a name="table32545mcpsimp"></a>
+``` 【参数】 <a name="table32545mcpsimp"></a>
 <table><thead align="left"><tr id="row32551mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p32553mcpsimp"><a name="p32553mcpsimp"></a><a name="p32553mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p32555mcpsimp"><a name="p32555mcpsimp"></a><a name="p32555mcpsimp"></a>描述</p>
@@ -12959,11 +6895,7 @@ td_s32 ss_mpi_isp_query_inner_state_info(ot_vi_pipe vi_pipe, ot_isp_inner_state_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table32574mcpsimp"></a>
+</table> 【返回值】 <a name="table32574mcpsimp"></a>
 <table><thead align="left"><tr id="row32579mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p32581mcpsimp"><a name="p32581mcpsimp"></a><a name="p32581mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p32583mcpsimp"><a name="p32583mcpsimp"></a><a name="p32583mcpsimp"></a>描述</p>
@@ -12975,73 +6907,14 @@ td_s32 ss_mpi_isp_query_inner_state_info(ot_vi_pipe vi_pipe, ot_isp_inner_state_
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32588mcpsimp"><a name="p32588mcpsimp"></a><a name="p32588mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row32589mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p32591mcpsimp"><a name="p32591mcpsimp"></a><a name="p32591mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32593mcpsimp"><a name="p32593mcpsimp"></a><a name="p32593mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
--   当用户切换分辨率或者在线性模式和WDR模式之间切换时候，可以调用这个接口来查询切换是否已经完成。
--   分辨率/帧率切换时，只查询 res\_switch\_finish标记。模式切换时，只查询 wdr\_switch\_finish标记。
--   业务正常运转时，在不改变WDR模式的情况下，合法调用ss\_mpi\_isp\_set\_pub\_attr，查询到的wdr\_switch\_finish始终为1。
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002503965031"></a>
-
-[ot\_isp\_inner\_state\_info](#ZH-CN_TOPIC_0000002503965153)：定义内部寄存器实际配置信息参数。
-
-
-#### ot\_isp\_inner\_state\_info<a name="ZH-CN_TOPIC_0000002503965153"></a>
-
-【说明】
-
-定义内部寄存器实际配置信息参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 texture_strength[OT_ISP_SHARPEN_GAIN_NUM];
-    td_u16 edge_strength[OT_ISP_SHARPEN_GAIN_NUM];
-    td_u16 texture_freq;
-    td_u16 edge_freq;
-    td_u8  over_shoot;
-    td_u8  under_shoot;
-    td_u8  shoot_sup_strength;
-    td_u8   nr_lsc_ratio;
-    td_u16  coarse_strength[OT_ISP_BAYER_CHN_NUM];
-    td_u8   wdr_frame_strength[OT_ISP_WDR_MAX_FRAME_NUM];
-    td_u8   fine_strength;
-    td_u16  coring_wgt;
-    td_u16 dehaze_strength_actual;
-    td_u16 drc_strength_actual;
-    td_u32 wdr_exp_ratio_actual[OT_ISP_WDR_MAX_FRAME_NUM - 1];
-    td_bool wdr_switch_finish;
-    td_bool res_switch_finish;
-    td_u16  black_level_actual[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM];
-    td_u16  sns_black_level[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM];
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 - 当用户切换分辨率或者在线性模式和WDR模式之间切换时候，可以调用这个接口来查询切换是否已经完成。
+- 分辨率/帧率切换时，只查询 res\_switch\_finish标记。模式切换时，只查询 wdr\_switch\_finish标记。
+- 业务正常运转时，在不改变WDR模式的情况下，合法调用ss\_mpi\_isp\_set\_pub\_attr，查询到的wdr\_switch\_finish始终为1。 【举例】 无 【相关主题】 无 ### 数据类型<a name="ZH-CN_TOPIC_0000002503965031"></a> [ot\_isp\_inner\_state\_info](#ZH-CN_TOPIC_0000002503965153)：定义内部寄存器实际配置信息参数。 #### ot\_isp\_inner\_state\_info<a name="ZH-CN_TOPIC_0000002503965153"></a> 【说明】 定义内部寄存器实际配置信息参数。 【定义】 ```
+typedef struct { td_u16 texture_strength[OT_ISP_SHARPEN_GAIN_NUM]; td_u16 edge_strength[OT_ISP_SHARPEN_GAIN_NUM]; td_u16 texture_freq; td_u16 edge_freq; td_u8 over_shoot; td_u8 under_shoot; td_u8 shoot_sup_strength; td_u8 nr_lsc_ratio; td_u16 coarse_strength[OT_ISP_BAYER_CHN_NUM]; td_u8 wdr_frame_strength[OT_ISP_WDR_MAX_FRAME_NUM]; td_u8 fine_strength; td_u16 coring_wgt; td_u16 dehaze_strength_actual; td_u16 drc_strength_actual; td_u32 wdr_exp_ratio_actual[OT_ISP_WDR_MAX_FRAME_NUM - 1]; td_bool wdr_switch_finish; td_bool res_switch_finish; td_u16 black_level_actual[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM]; td_u16 sns_black_level[OT_ISP_WDR_MAX_FRAME_NUM][OT_ISP_BAYER_CHN_NUM];
 } ot_isp_inner_state_info;
-```
-
-【成员】
-
-<a name="table32655mcpsimp"></a>
+``` 【成员】 <a name="table32655mcpsimp"></a>
 <table><thead align="left"><tr id="row32660mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p32662mcpsimp"><a name="p32662mcpsimp"></a><a name="p32662mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p32664mcpsimp"><a name="p32664mcpsimp"></a><a name="p32664mcpsimp"></a>描述</p>
@@ -13162,49 +7035,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-使用user\_black\_level\_en后，black\_level\_actual为user\_black\_level；不使能user\_black\_level\_en时，black\_level\_actual与sns\_black\_level的值是一致的。
-
-【相关数据类型及接口】
-
-无
-
-## DNG<a name="ZH-CN_TOPIC_0000002503964931"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085184"></a>
-
-DNG \(Digital Negative\)是Adobe开发的一种开放的**raw image file format**，里面使用的tag基本上都定义在TIFF或者TIFF/EP中，在DNG Sepcification中只是定义或者建议了数据的组织方式，颜色空间的转换等等。DNG spec标准文档来定义和确定具体的dng数据格式，对标准文档中定义的标签和规定，根据实际应用场景和客户需求选择必要的最小集合实现。将raw数据封装成标准dng文件，可以由dng解析工具进行解析。
-
-### API参考<a name="ZH-CN_TOPIC_0000002470925092"></a>
-
--   [ss\_mpi\_isp\_get\_dng\_image\_static\_info](#ZH-CN_TOPIC_0000002503965003)：获取DNG静态信息。
--   [ss\_mpi\_isp\_set\_dng\_color\_param](#ZH-CN_TOPIC_0000002503965007)：设置DNG颜色信息。
--   [ss\_mpi\_isp\_get\_dng\_color\_param](#ZH-CN_TOPIC_0000002470924992)：获取DNG颜色信息。
-
-
-
-
-#### ss\_mpi\_isp\_get\_dng\_image\_static\_info<a name="ZH-CN_TOPIC_0000002503965003"></a>
-
-【描述】
-
-获取DNG静态信息。
-
-【语法】
-
-```
+</table> 【注意事项】 使用user\_black\_level\_en后，black\_level\_actual为user\_black\_level；不使能user\_black\_level\_en时，black\_level\_actual与sns\_black\_level的值是一致的。 【相关数据类型及接口】 无 ## DNG<a name="ZH-CN_TOPIC_0000002503964931"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085184"></a> DNG \(Digital Negative\)是Adobe开发的一种开放的**raw image file format**，里面使用的tag基本上都定义在TIFF或者TIFF/EP中，在DNG Sepcification中只是定义或者建议了数据的组织方式，颜色空间的转换等等。DNG spec标准文档来定义和确定具体的dng数据格式，对标准文档中定义的标签和规定，根据实际应用场景和客户需求选择必要的最小集合实现。将raw数据封装成标准dng文件，可以由dng解析工具进行解析。 ### API参考<a name="ZH-CN_TOPIC_0000002470925092"></a> - [ss\_mpi\_isp\_get\_dng\_image\_static\_info](#ZH-CN_TOPIC_0000002503965003)：获取DNG静态信息。
+- [ss\_mpi\_isp\_set\_dng\_color\_param](#ZH-CN_TOPIC_0000002503965007)：设置DNG颜色信息。
+- [ss\_mpi\_isp\_get\_dng\_color\_param](#ZH-CN_TOPIC_0000002470924992)：获取DNG颜色信息。 #### ss\_mpi\_isp\_get\_dng\_image\_static\_info<a name="ZH-CN_TOPIC_0000002503965003"></a> 【描述】 获取DNG静态信息。 【语法】 ```
 td_s32 ss_mpi_isp_get_dng_image_static_info(ot_vi_pipe vi_pipe , ot_isp_dng_image_static_info *dng_image_static_info);
-```
-
-【参数】
-
-<a name="table32820mcpsimp"></a>
+``` 【参数】 <a name="table32820mcpsimp"></a>
 <table><thead align="left"><tr id="row32826mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p32828mcpsimp"><a name="p32828mcpsimp"></a><a name="p32828mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p32830mcpsimp"><a name="p32830mcpsimp"></a><a name="p32830mcpsimp"></a>描述</p>
@@ -13228,11 +7063,7 @@ td_s32 ss_mpi_isp_get_dng_image_static_info(ot_vi_pipe vi_pipe , ot_isp_dng_imag
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table32849mcpsimp"></a>
+</table> 【返回值】 <a name="table32849mcpsimp"></a>
 <table><thead align="left"><tr id="row32854mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p32856mcpsimp"><a name="p32856mcpsimp"></a><a name="p32856mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p32858mcpsimp"><a name="p32858mcpsimp"></a><a name="p32858mcpsimp"></a>描述</p>
@@ -13244,46 +7075,11 @@ td_s32 ss_mpi_isp_get_dng_image_static_info(ot_vi_pipe vi_pipe , ot_isp_dng_imag
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32863mcpsimp"><a name="p32863mcpsimp"></a><a name="p32863mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row32864mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p32866mcpsimp"><a name="p32866mcpsimp"></a><a name="p32866mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32868mcpsimp"><a name="p32868mcpsimp"></a><a name="p32868mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-#### ss\_mpi\_isp\_set\_dng\_color\_param<a name="ZH-CN_TOPIC_0000002503965007"></a>
-
-【描述】
-
-设置DNG颜色信息。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 无 #### ss\_mpi\_isp\_set\_dng\_color\_param<a name="ZH-CN_TOPIC_0000002503965007"></a> 【描述】 设置DNG颜色信息。 【语法】 ```
 td_s32 ss_mpi_isp_set_dng_color_param(ot_vi_pipe vi_pipe , const ot_isp_dng_color_param *dng_color_param);
-```
-
-【参数】
-
-<a name="table32889mcpsimp"></a>
+``` 【参数】 <a name="table32889mcpsimp"></a>
 <table><thead align="left"><tr id="row32895mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p32897mcpsimp"><a name="p32897mcpsimp"></a><a name="p32897mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54.269999999999996%" id="mcps1.1.4.1.2"><p id="p32899mcpsimp"><a name="p32899mcpsimp"></a><a name="p32899mcpsimp"></a>描述</p>
@@ -13307,11 +7103,7 @@ td_s32 ss_mpi_isp_set_dng_color_param(ot_vi_pipe vi_pipe , const ot_isp_dng_colo
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table32918mcpsimp"></a>
+</table> 【返回值】 <a name="table32918mcpsimp"></a>
 <table><thead align="left"><tr id="row32923mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p32925mcpsimp"><a name="p32925mcpsimp"></a><a name="p32925mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p32927mcpsimp"><a name="p32927mcpsimp"></a><a name="p32927mcpsimp"></a>描述</p>
@@ -13323,46 +7115,11 @@ td_s32 ss_mpi_isp_set_dng_color_param(ot_vi_pipe vi_pipe , const ot_isp_dng_colo
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32932mcpsimp"><a name="p32932mcpsimp"></a><a name="p32932mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row32933mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p32935mcpsimp"><a name="p32935mcpsimp"></a><a name="p32935mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p32937mcpsimp"><a name="p32937mcpsimp"></a><a name="p32937mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-#### ss\_mpi\_isp\_get\_dng\_color\_param<a name="ZH-CN_TOPIC_0000002470924992"></a>
-
-【描述】
-
-获取DNG颜色信息。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 无 #### ss\_mpi\_isp\_get\_dng\_color\_param<a name="ZH-CN_TOPIC_0000002470924992"></a> 【描述】 获取DNG颜色信息。 【语法】 ```
 td_s32 ss_mpi_isp_get_dng_color_param(ot_vi_pipe vi_pipe, ot_isp_dng_color_param *dng_color_param);
-```
-
-【参数】
-
-<a name="table32958mcpsimp"></a>
+``` 【参数】 <a name="table32958mcpsimp"></a>
 <table><thead align="left"><tr id="row32964mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p32966mcpsimp"><a name="p32966mcpsimp"></a><a name="p32966mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p32968mcpsimp"><a name="p32968mcpsimp"></a><a name="p32968mcpsimp"></a>描述</p>
@@ -13386,11 +7143,7 @@ td_s32 ss_mpi_isp_get_dng_color_param(ot_vi_pipe vi_pipe, ot_isp_dng_color_param
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table32987mcpsimp"></a>
+</table> 【返回值】 <a name="table32987mcpsimp"></a>
 <table><thead align="left"><tr id="row32992mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p32994mcpsimp"><a name="p32994mcpsimp"></a><a name="p32994mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p32996mcpsimp"><a name="p32996mcpsimp"></a><a name="p32996mcpsimp"></a>描述</p>
@@ -13402,99 +7155,23 @@ td_s32 ss_mpi_isp_get_dng_color_param(ot_vi_pipe vi_pipe, ot_isp_dng_color_param
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p33001mcpsimp"><a name="p33001mcpsimp"></a><a name="p33001mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row33002mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p33004mcpsimp"><a name="p33004mcpsimp"></a><a name="p33004mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p33006mcpsimp"><a name="p33006mcpsimp"></a><a name="p33006mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471085216"></a>
-
--   [OT\_CFACOLORPLANE](#ZH-CN_TOPIC_0000002503964831)：滤色阵列的数目。
--   [ot\_isp\_dng\_image\_static\_info](#ZH-CN_TOPIC_0000002504084917)：定义DNG静态格式信息。
--   [ot\_isp\_dng\_color\_param](#ZH-CN_TOPIC_0000002471084968)：定义DNG白平衡校正系数。
--   [ot\_isp\_dng\_cfa\_layout\_type](#ZH-CN_TOPIC_0000002504084851)：定义滤色阵列类型。
--   [ot\_isp\_dng\_srational](#ZH-CN_TOPIC_0000002470925078)：定义DNG除法结构体。
--   [ot\_isp\_dng\_black\_level\_repeat\_dim](#ZH-CN_TOPIC_0000002470925058)：定义黑电平像素重复维度。
--   [ot\_isp\_dng\_default\_scale](#ZH-CN_TOPIC_0000002470925186)：定义将图像转换成方形像素默认的缩放系数。
--   [ot\_isp\_dng\_repeat\_pattern\_dim](#ZH-CN_TOPIC_0000002504084923)：定义DNG颜色分量重复次数。
--   [ot\_isp\_dng\_raw\_format](#ZH-CN_TOPIC_0000002470924912)：定义DNG RAW格式。
--   [ot\_isp\_dng\_wb\_gain](#ZH-CN_TOPIC_0000002470925152)：定义在不同光源下的白平衡增益校正值。
-
-
-
-
-
-
-
-
-
-
-
-#### OT\_CFACOLORPLANE<a name="ZH-CN_TOPIC_0000002503964831"></a>
-
-【说明】
-
-滤色阵列的数目。
-
-【定义】
-
-```
-#define OT_CFACOLORPLANE           3
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_dng\_raw\_format](#ot_isp_dng_raw_format)
-
-#### ot\_isp\_dng\_image\_static\_info<a name="ZH-CN_TOPIC_0000002504084917"></a>
-
-【说明】
-
-定义DNG静态格式信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_dng_raw_format dng_raw_format;
-    ot_isp_dng_srational color_matrix1[OT_ISP_CCM_MATRIX_SIZE];
-    ot_isp_dng_srational color_matrix2[OT_ISP_CCM_MATRIX_SIZE];
-    ot_isp_dng_srational camera_calibration1[OT_ISP_CCM_MATRIX_SIZE];
-    ot_isp_dng_srational camera_calibration2[OT_ISP_CCM_MATRIX_SIZE];
-    ot_isp_dng_srational forwad_matrix1[OT_ISP_CCM_MATRIX_SIZE];
-    ot_isp_dng_srational forwad_matrix2[OT_ISP_CCM_MATRIX_SIZE];
-    td_u8  calibration_illuminant1;
-    td_u8  calibration_illuminant2;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 无 ### 数据类型<a name="ZH-CN_TOPIC_0000002471085216"></a> - [OT\_CFACOLORPLANE](#ZH-CN_TOPIC_0000002503964831)：滤色阵列的数目。
+- [ot\_isp\_dng\_image\_static\_info](#ZH-CN_TOPIC_0000002504084917)：定义DNG静态格式信息。
+- [ot\_isp\_dng\_color\_param](#ZH-CN_TOPIC_0000002471084968)：定义DNG白平衡校正系数。
+- [ot\_isp\_dng\_cfa\_layout\_type](#ZH-CN_TOPIC_0000002504084851)：定义滤色阵列类型。
+- [ot\_isp\_dng\_srational](#ZH-CN_TOPIC_0000002470925078)：定义DNG除法结构体。
+- [ot\_isp\_dng\_black\_level\_repeat\_dim](#ZH-CN_TOPIC_0000002470925058)：定义黑电平像素重复维度。
+- [ot\_isp\_dng\_default\_scale](#ZH-CN_TOPIC_0000002470925186)：定义将图像转换成方形像素默认的缩放系数。
+- [ot\_isp\_dng\_repeat\_pattern\_dim](#ZH-CN_TOPIC_0000002504084923)：定义DNG颜色分量重复次数。
+- [ot\_isp\_dng\_raw\_format](#ZH-CN_TOPIC_0000002470924912)：定义DNG RAW格式。
+- [ot\_isp\_dng\_wb\_gain](#ZH-CN_TOPIC_0000002470925152)：定义在不同光源下的白平衡增益校正值。 #### OT\_CFACOLORPLANE<a name="ZH-CN_TOPIC_0000002503964831"></a> 【说明】 滤色阵列的数目。 【定义】 ```
+#define OT_CFACOLORPLANE 3
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_dng\_raw\_format](#ot_isp_dng_raw_format) #### ot\_isp\_dng\_image\_static\_info<a name="ZH-CN_TOPIC_0000002504084917"></a> 【说明】 定义DNG静态格式信息。 【定义】 ```
+typedef struct { ot_isp_dng_raw_format dng_raw_format; ot_isp_dng_srational color_matrix1[OT_ISP_CCM_MATRIX_SIZE]; ot_isp_dng_srational color_matrix2[OT_ISP_CCM_MATRIX_SIZE]; ot_isp_dng_srational camera_calibration1[OT_ISP_CCM_MATRIX_SIZE]; ot_isp_dng_srational camera_calibration2[OT_ISP_CCM_MATRIX_SIZE]; ot_isp_dng_srational forwad_matrix1[OT_ISP_CCM_MATRIX_SIZE]; ot_isp_dng_srational forwad_matrix2[OT_ISP_CCM_MATRIX_SIZE]; td_u8 calibration_illuminant1; td_u8 calibration_illuminant2;
 } ot_isp_dng_image_static_info;
-```
-
-【成员】
-
-<a name="table33092mcpsimp"></a>
+``` 【成员】 <a name="table33092mcpsimp"></a>
 <table><thead align="left"><tr id="row33097mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p33099mcpsimp"><a name="p33099mcpsimp"></a><a name="p33099mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p33101mcpsimp"><a name="p33101mcpsimp"></a><a name="p33101mcpsimp"></a>描述</p>
@@ -13528,12 +7205,12 @@ typedef struct {
 </tr>
 <tr id="row33128mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p33130mcpsimp"><a name="p33130mcpsimp"></a><a name="p33130mcpsimp"></a>forwad_matrix1</p>
 </td>
-<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p33132mcpsimp"><a name="p33132mcpsimp"></a><a name="p33132mcpsimp"></a>在第一组校正光源下，相机颜色到XYZ  D50颜色的转换矩阵。</p>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p33132mcpsimp"><a name="p33132mcpsimp"></a><a name="p33132mcpsimp"></a>在第一组校正光源下，相机颜色到XYZ D50颜色的转换矩阵。</p>
 </td>
 </tr>
 <tr id="row33133mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p33135mcpsimp"><a name="p33135mcpsimp"></a><a name="p33135mcpsimp"></a>forwad_matrix2</p>
 </td>
-<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p33137mcpsimp"><a name="p33137mcpsimp"></a><a name="p33137mcpsimp"></a>在第二组校正光源下，相机颜色到XYZ  D50颜色的转换矩阵。</p>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p33137mcpsimp"><a name="p33137mcpsimp"></a><a name="p33137mcpsimp"></a>在第二组校正光源下，相机颜色到XYZ D50颜色的转换矩阵。</p>
 </td>
 </tr>
 <tr id="row33138mcpsimp"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p33140mcpsimp"><a name="p33140mcpsimp"></a><a name="p33140mcpsimp"></a>calibration_illuminant1</p>
@@ -13547,34 +7224,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_color\_param<a name="ZH-CN_TOPIC_0000002471084968"></a>
-
-【说明】
-
-定义DNG白平衡校正系数。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_dng_wb_gain wb_gain1;
-    ot_isp_dng_wb_gain wb_gain2;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_color\_param<a name="ZH-CN_TOPIC_0000002471084968"></a> 【说明】 定义DNG白平衡校正系数。 【定义】 ```
+typedef struct { ot_isp_dng_wb_gain wb_gain1; ot_isp_dng_wb_gain wb_gain2;
 } ot_isp_dng_color_param;
-```
-
-【成员】
-
-<a name="table33164mcpsimp"></a>
+``` 【成员】 <a name="table33164mcpsimp"></a>
 <table><thead align="left"><tr id="row33169mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.3.1.1"><p id="p33171mcpsimp"><a name="p33171mcpsimp"></a><a name="p33171mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="76%" id="mcps1.1.3.1.2"><p id="p33173mcpsimp"><a name="p33173mcpsimp"></a><a name="p33173mcpsimp"></a>描述</p>
@@ -13592,42 +7245,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_cfa\_layout\_type<a name="ZH-CN_TOPIC_0000002504084851"></a>
-
-【说明】
-
-定义DNG 滤色阵列类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_CFALAYOUT_TYPE_RECTANGULAR = 1,
-    OT_ISP_CFALAYOUT_TYPE_A,
-    OT_ISP_CFALAYOUT_TYPE_B,
-    OT_ISP_CFALAYOUT_TYPE_C,
-    OT_ISP_CFALAYOUT_TYPE_D,
-    OT_ISP_CFALAYOUT_TYPE_E,
-    OT_ISP_CFALAYOUT_TYPE_F,
-    OT_ISP_CFALAYOUT_TYPE_G,
-    OT_ISP_CFALAYOUT_TYPE_H,
-    OT_ISP_CFALAYOUT_TYPE_BUTT
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_cfa\_layout\_type<a name="ZH-CN_TOPIC_0000002504084851"></a> 【说明】 定义DNG 滤色阵列类型。 【定义】 ```
+typedef enum { OT_ISP_CFALAYOUT_TYPE_RECTANGULAR = 1, OT_ISP_CFALAYOUT_TYPE_A, OT_ISP_CFALAYOUT_TYPE_B, OT_ISP_CFALAYOUT_TYPE_C, OT_ISP_CFALAYOUT_TYPE_D, OT_ISP_CFALAYOUT_TYPE_E, OT_ISP_CFALAYOUT_TYPE_F, OT_ISP_CFALAYOUT_TYPE_G, OT_ISP_CFALAYOUT_TYPE_H, OT_ISP_CFALAYOUT_TYPE_BUTT
 } ot_isp_dng_cfa_layout_type;
-```
-
-【成员】
-
-<a name="table33206mcpsimp"></a>
+``` 【成员】 <a name="table33206mcpsimp"></a>
 <table><thead align="left"><tr id="row33211mcpsimp"><th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.1"><p id="p33213mcpsimp"><a name="p33213mcpsimp"></a><a name="p33213mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.2"><p id="p33215mcpsimp"><a name="p33215mcpsimp"></a><a name="p33215mcpsimp"></a>描述</p>
@@ -13685,34 +7306,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_srational<a name="ZH-CN_TOPIC_0000002470925078"></a>
-
-【说明】
-
-定义DNG 除法结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_s32 numerator;
-    td_s32 denominator;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_srational<a name="ZH-CN_TOPIC_0000002470925078"></a> 【说明】 定义DNG 除法结构体。 【定义】 ```
+typedef struct { td_s32 numerator; td_s32 denominator;
 } ot_isp_dng_srational;
-```
-
-【成员】
-
-<a name="table33280mcpsimp"></a>
+``` 【成员】 <a name="table33280mcpsimp"></a>
 <table><thead align="left"><tr id="row33285mcpsimp"><th class="cellrowborder" valign="top" width="62%" id="mcps1.1.3.1.1"><p id="p33287mcpsimp"><a name="p33287mcpsimp"></a><a name="p33287mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="38%" id="mcps1.1.3.1.2"><p id="p33289mcpsimp"><a name="p33289mcpsimp"></a><a name="p33289mcpsimp"></a>描述</p>
@@ -13730,34 +7327,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_black\_level\_repeat\_dim<a name="ZH-CN_TOPIC_0000002470925058"></a>
-
-【说明】
-
-定义黑电平像素重复维度。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 repeat_row;
-    td_u16 repeat_col;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_black\_level\_repeat\_dim<a name="ZH-CN_TOPIC_0000002470925058"></a> 【说明】 定义黑电平像素重复维度。 【定义】 ```
+typedef struct { td_u16 repeat_row; td_u16 repeat_col;
 } ot_isp_dng_black_level_repeat_dim;
-```
-
-【成员】
-
-<a name="table33314mcpsimp"></a>
+``` 【成员】 <a name="table33314mcpsimp"></a>
 <table><thead align="left"><tr id="row33319mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p33321mcpsimp"><a name="p33321mcpsimp"></a><a name="p33321mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p33323mcpsimp"><a name="p33323mcpsimp"></a><a name="p33323mcpsimp"></a>描述</p>
@@ -13775,34 +7348,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_default\_scale<a name="ZH-CN_TOPIC_0000002470925186"></a>
-
-【说明】
-
-定义将图像转换成方形像素默认的缩放系数。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_dng_srational default_scale_hor;
-    ot_isp_dng_srational default_scale_ver;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_default\_scale<a name="ZH-CN_TOPIC_0000002470925186"></a> 【说明】 定义将图像转换成方形像素默认的缩放系数。 【定义】 ```
+typedef struct { ot_isp_dng_srational default_scale_hor; ot_isp_dng_srational default_scale_ver;
 } ot_isp_dng_default_scale;
-```
-
-【成员】
-
-<a name="table33350mcpsimp"></a>
+``` 【成员】 <a name="table33350mcpsimp"></a>
 <table><thead align="left"><tr id="row33355mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p33357mcpsimp"><a name="p33357mcpsimp"></a><a name="p33357mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p33359mcpsimp"><a name="p33359mcpsimp"></a><a name="p33359mcpsimp"></a>描述</p>
@@ -13820,34 +7369,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_repeat\_pattern\_dim<a name="ZH-CN_TOPIC_0000002504084923"></a>
-
-【说明】
-
-定义DNG颜色分量重复次数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 repeat_pattern_dim_row;
-    td_u16 repeat_pattern_dim_col;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_repeat\_pattern\_dim<a name="ZH-CN_TOPIC_0000002504084923"></a> 【说明】 定义DNG颜色分量重复次数。 【定义】 ```
+typedef struct { td_u16 repeat_pattern_dim_row; td_u16 repeat_pattern_dim_col;
 } ot_isp_dng_repeat_pattern_dim;
-```
-
-【成员】
-
-<a name="table33384mcpsimp"></a>
+``` 【成员】 <a name="table33384mcpsimp"></a>
 <table><thead align="left"><tr id="row33389mcpsimp"><th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.1"><p id="p33391mcpsimp"><a name="p33391mcpsimp"></a><a name="p33391mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.2"><p id="p33393mcpsimp"><a name="p33393mcpsimp"></a><a name="p33393mcpsimp"></a>描述</p>
@@ -13865,40 +7390,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_raw\_format<a name="ZH-CN_TOPIC_0000002470924912"></a>
-
-【说明】
-
-定义DNG RAW数据格式。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 bits_per_sample;
-    td_u8 cfa_plane_color[OT_CFACOLORPLANE];
-    ot_isp_dng_cfa_layout_type cfa_layout;
-    ot_isp_dng_black_level_repeat_dim black_level_repeat_dim;
-    td_u32 white_level;
-    ot_isp_dng_default_scale default_scale;
-    ot_isp_dng_repeat_pattern_dim cfa_repeat_pattern_dim;
-    td_u8 cfa_pattern[OT_ISP_BAYER_CHN_NUM];
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_raw\_format<a name="ZH-CN_TOPIC_0000002470924912"></a> 【说明】 定义DNG RAW数据格式。 【定义】 ```
+typedef struct { td_u8 bits_per_sample; td_u8 cfa_plane_color[OT_CFACOLORPLANE]; ot_isp_dng_cfa_layout_type cfa_layout; ot_isp_dng_black_level_repeat_dim black_level_repeat_dim; td_u32 white_level; ot_isp_dng_default_scale default_scale; ot_isp_dng_repeat_pattern_dim cfa_repeat_pattern_dim; td_u8 cfa_pattern[OT_ISP_BAYER_CHN_NUM];
 } ot_isp_dng_raw_format;
-```
-
-【成员】
-
-<a name="table33431mcpsimp"></a>
+``` 【成员】 <a name="table33431mcpsimp"></a>
 <table><thead align="left"><tr id="row33436mcpsimp"><th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.1"><p id="p33438mcpsimp"><a name="p33438mcpsimp"></a><a name="p33438mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.2"><p id="p33440mcpsimp"><a name="p33440mcpsimp"></a><a name="p33440mcpsimp"></a>描述</p>
@@ -13946,35 +7441,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_dng\_wb\_gain<a name="ZH-CN_TOPIC_0000002470925152"></a>
-
-【说明】
-
-定义DNG 白平衡校正系数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 r_gain;
-    td_u16 g_gain;
-    td_u16 b_gain;
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_dng\_wb\_gain<a name="ZH-CN_TOPIC_0000002470925152"></a> 【说明】 定义DNG 白平衡校正系数。 【定义】 ```
+typedef struct { td_u16 r_gain; td_u16 g_gain; td_u16 b_gain;
 } ot_isp_dng_wb_gain;
-```
-
-【成员】
-
-<a name="table33496mcpsimp"></a>
+``` 【成员】 <a name="table33496mcpsimp"></a>
 <table><thead align="left"><tr id="row33501mcpsimp"><th class="cellrowborder" valign="top" width="42%" id="mcps1.1.3.1.1"><p id="p33503mcpsimp"><a name="p33503mcpsimp"></a><a name="p33503mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.3.1.2"><p id="p33505mcpsimp"><a name="p33505mcpsimp"></a><a name="p33505mcpsimp"></a>描述</p>
@@ -13997,56 +7467,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## MeshShading量产标定工具<a name="ZH-CN_TOPIC_0000002470925162"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504084717"></a>
-
-本模块用于在Hi3403V100上实现对单一光源的在线Mesh LSC标定功能。具体调用实例可参考开发包中的lsc\_online\_cali用例。本模块可针对单一光源生成符合Hi3403V100中Mesh LSC的标定数据。
-
-在使用本模块进行标定过程中，标定环境与离线标定MLSC时需要的标定环境相同。
-
-在进行Mesh LSC在线标定前，首先需要确定mesh\_scale的大小，具体做法为：在需要标定的一批次镜头中，挑选几个典型的镜头样本，将样本镜头在实验室环境运行量产Shading在线标定的用例并预设mesh\_scale的值，例如预设的mesh\_scale =1，运行用例的时候，报出以下打印Please set mesh scale to 2，表示当前挑选的镜头的Shading的倍数大于4倍，且小于8倍，将打印推荐的mesh\_scale=2重新进行预设，并运行Mesh LSC在线标定程序得到MeshShading Table，将MeshShading Table和mesh\_scale导入到PQ工具中，开启Mesh Shading校正模块，观察画面的四周的镜头阴影区是否得到合理校正且画面整体亮度无异常。如果镜头的Shading得到了合理的校正，接下来将实验室环境得到mesh\_scale值，再大规模应用到产线标定中。
-
-以上做法是基于假设同一批次的镜头，Shading的程度表现差异不大，如果不同批次的镜头，需要在实验室环境重新确定MeshScale的大小。
-
-MeshShading差异的校正过程：
-
-1.  产线上Shading校正时，对于消费类sensor不同的模式，可以在线抓取其中最大分辨率下对应光源的RAW\(如5000K色温\)，其余模式下的分辨率，可以根据与最大分辨率的相对位置，调用[ss\_mpi\_isp\_mesh\_shading\_calibration](#ZH-CN_TOPIC_0000002504084937)接口，标定得到对应光源RAW的MeshShading Table表。
-2.  在步骤1得到MeshShading Table表的基础上，用户调用[ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ZH-CN_TOPIC_0000002470925160)接口将生成的MeshShading Table表写入到板端的Flash，以便于下次机器上电能够获取到相关的Mesh Shading Table表。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085060"></a>
-
-[ss\_mpi\_isp\_mesh\_shading\_calibration](#ZH-CN_TOPIC_0000002504084937)：获取Mesh LSC在线标定结果。
-
-
-#### ss\_mpi\_isp\_mesh\_shading\_calibration<a name="ZH-CN_TOPIC_0000002504084937"></a>
-
-【描述】
-
-获取Mesh LSC在线标定结果。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## MeshShading量产标定工具<a name="ZH-CN_TOPIC_0000002470925162"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504084717"></a> 本模块用于在Hi3403V100上实现对单一光源的在线Mesh LSC标定功能。具体调用实例可参考开发包中的lsc\_online\_cali用例。本模块可针对单一光源生成符合Hi3403V100中Mesh LSC的标定数据。 在使用本模块进行标定过程中，标定环境与离线标定MLSC时需要的标定环境相同。 在进行Mesh LSC在线标定前，首先需要确定mesh\_scale的大小，具体做法为：在需要标定的一批次镜头中，挑选几个典型的镜头样本，将样本镜头在实验室环境运行量产Shading在线标定的用例并预设mesh\_scale的值，例如预设的mesh\_scale =1，运行用例的时候，报出以下打印Please set mesh scale to 2，表示当前挑选的镜头的Shading的倍数大于4倍，且小于8倍，将打印推荐的mesh\_scale=2重新进行预设，并运行Mesh LSC在线标定程序得到MeshShading Table，将MeshShading Table和mesh\_scale导入到PQ工具中，开启Mesh Shading校正模块，观察画面的四周的镜头阴影区是否得到合理校正且画面整体亮度无异常。如果镜头的Shading得到了合理的校正，接下来将实验室环境得到mesh\_scale值，再大规模应用到产线标定中。 以上做法是基于假设同一批次的镜头，Shading的程度表现差异不大，如果不同批次的镜头，需要在实验室环境重新确定MeshScale的大小。 MeshShading差异的校正过程： 1. 产线上Shading校正时，对于消费类sensor不同的模式，可以在线抓取其中最大分辨率下对应光源的RAW\(如5000K色温\)，其余模式下的分辨率，可以根据与最大分辨率的相对位置，调用[ss\_mpi\_isp\_mesh\_shading\_calibration](#ZH-CN_TOPIC_0000002504084937)接口，标定得到对应光源RAW的MeshShading Table表。
+2. 在步骤1得到MeshShading Table表的基础上，用户调用[ss\_mpi\_isp\_set\_mesh\_shading\_gain\_lut\_attr](#ZH-CN_TOPIC_0000002470925160)接口将生成的MeshShading Table表写入到板端的Flash，以便于下次机器上电能够获取到相关的Mesh Shading Table表。 ### API参考<a name="ZH-CN_TOPIC_0000002471085060"></a> [ss\_mpi\_isp\_mesh\_shading\_calibration](#ZH-CN_TOPIC_0000002504084937)：获取Mesh LSC在线标定结果。 #### ss\_mpi\_isp\_mesh\_shading\_calibration<a name="ZH-CN_TOPIC_0000002504084937"></a> 【描述】 获取Mesh LSC在线标定结果。 【语法】 ```
 td_s32 ss_mpi_isp_mesh_shading_calibration(ot_vi_pipe vi_pipe, td_u16 *src_raw, ot_isp_mlsc_calibration_cfg *mlsc_cali_cfg, ot_isp_mesh_shading_table *mlsc_table)
-```
-
-【参数】
-
-<a name="table33571mcpsimp"></a>
+``` 【参数】 <a name="table33571mcpsimp"></a>
 <table><thead align="left"><tr id="row33577mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.4.1.1"><p id="p33579mcpsimp"><a name="p33579mcpsimp"></a><a name="p33579mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p33581mcpsimp"><a name="p33581mcpsimp"></a><a name="p33581mcpsimp"></a>描述</p>
@@ -14084,11 +7508,7 @@ td_s32 ss_mpi_isp_mesh_shading_calibration(ot_vi_pipe vi_pipe, td_u16 *src_raw, 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table33614mcpsimp"></a>
+</table> 【返回值】 <a name="table33614mcpsimp"></a>
 <table><thead align="left"><tr id="row33619mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p33621mcpsimp"><a name="p33621mcpsimp"></a><a name="p33621mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p33623mcpsimp"><a name="p33623mcpsimp"></a><a name="p33623mcpsimp"></a>描述</p>
@@ -14100,71 +7520,14 @@ td_s32 ss_mpi_isp_mesh_shading_calibration(ot_vi_pipe vi_pipe, td_u16 *src_raw, 
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p33628mcpsimp"><a name="p33628mcpsimp"></a><a name="p33628mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row33629mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p33631mcpsimp"><a name="p33631mcpsimp"></a><a name="p33631mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p33633mcpsimp"><a name="p33633mcpsimp"></a><a name="p33633mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-请参考sample\(mpp/sample/lsc\_online\_cali\)当中的在线标定（lsc\_online\_cali）对该接口的使用方法。如果用户需要自行调用，请注意src\_raw是一个指向图像Raw数据的指针，接口内部无法对传入数据的长度进行检验，必须在外部分配正确，否则会出现内存越界错误。分配的空间长度与mlsc\_cali\_cfg结构体中定义的长和宽相关，请按照下面的示例来分配Raw的内存空间：
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 请参考sample\(mpp/sample/lsc\_online\_cali\)当中的在线标定（lsc\_online\_cali）对该接口的使用方法。如果用户需要自行调用，请注意src\_raw是一个指向图像Raw数据的指针，接口内部无法对传入数据的长度进行检验，必须在外部分配正确，否则会出现内存越界错误。分配的空间长度与mlsc\_cali\_cfg结构体中定义的长和宽相关，请按照下面的示例来分配Raw的内存空间： ```
 src_raw = (td_u16 *)malloc(mlsc_cali_cfg->img_height * mlsc_cali_cfg->img_width * sizeof(td_u16))
-```
-
-【举例】
-
-无
-
-【相关主题】
-
-无
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471084894"></a>
-
--   [ot\_isp\_mlsc\_calibration\_cfg](#ZH-CN_TOPIC_0000002504085011)：定义MLSC在线标定CFG参数信息。
--   [ot\_isp\_mesh\_shading\_table](#ZH-CN_TOPIC_0000002471084966)：定义MLSC标定结果格式。
-
-
-
-#### ot\_isp\_mlsc\_calibration\_cfg<a name="ZH-CN_TOPIC_0000002504085011"></a>
-
-【说明】
-
-定义MLSC在线标定CFG参数信息。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_bayer_format bayer;   
-    ot_isp_bayer_raw_bit raw_bit;  
-    td_u16 img_height; 
-    td_u16 img_width;
-    td_u16 dst_img_height;
-    td_u16 dst_img_width;
-    td_u16 offset_x;
-    td_u16 offset_y;
-    td_u32 mesh_scale;
-    td_u16 blc_offset_r; 
-    td_u16 blc_offset_gr;
-    td_u16 blc_offset_gb;
-    td_u16 blc_offset_b; 
-} ot_isp_mlsc_calibration_cfg;
-```
-
-【成员】
-
-<a name="table33680mcpsimp"></a>
+``` 【举例】 无 【相关主题】 无 ### 数据类型<a name="ZH-CN_TOPIC_0000002471084894"></a> - [ot\_isp\_mlsc\_calibration\_cfg](#ZH-CN_TOPIC_0000002504085011)：定义MLSC在线标定CFG参数信息。
+- [ot\_isp\_mesh\_shading\_table](#ZH-CN_TOPIC_0000002471084966)：定义MLSC标定结果格式。 #### ot\_isp\_mlsc\_calibration\_cfg<a name="ZH-CN_TOPIC_0000002504085011"></a> 【说明】 定义MLSC在线标定CFG参数信息。 【定义】 ```
+typedef struct { ot_isp_bayer_format bayer; ot_isp_bayer_raw_bit raw_bit; td_u16 img_height; td_u16 img_width; td_u16 dst_img_height; td_u16 dst_img_width; td_u16 offset_x; td_u16 offset_y; td_u32 mesh_scale; td_u16 blc_offset_r; td_u16 blc_offset_gr; td_u16 blc_offset_gb; td_u16 blc_offset_b; } ot_isp_mlsc_calibration_cfg;
+``` 【成员】 <a name="table33680mcpsimp"></a>
 <table><thead align="left"><tr id="row33685mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p33687mcpsimp"><a name="p33687mcpsimp"></a><a name="p33687mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p33689mcpsimp"><a name="p33689mcpsimp"></a><a name="p33689mcpsimp"></a>描述</p>
@@ -14250,13 +7613,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-mesh\_scale的取值范围为\[0, 7\]，其分别对应的Gain值精度选择如下：
-
-<a name="table33771mcpsimp"></a>
+</table> 【注意事项】 mesh\_scale的取值范围为\[0, 7\]，其分别对应的Gain值精度选择如下： <a name="table33771mcpsimp"></a>
 <table><thead align="left"><tr id="row33777mcpsimp"><th class="cellrowborder" valign="top" width="34%" id="mcps1.1.4.1.1"><p id="p33779mcpsimp"><a name="p33779mcpsimp"></a><a name="p33779mcpsimp"></a>mesh_scale</p>
 </th>
 <th class="cellrowborder" valign="top" width="33%" id="mcps1.1.4.1.2"><p id="p33781mcpsimp"><a name="p33781mcpsimp"></a><a name="p33781mcpsimp"></a>对应精度</p>
@@ -14272,86 +7629,12 @@ mesh\_scale的取值范围为\[0, 7\]，其分别对应的Gain值精度选择如
 <td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33790mcpsimp"><a name="p33790mcpsimp"></a><a name="p33790mcpsimp"></a>0~2</p>
 </td>
 </tr>
-<tr id="row33791mcpsimp"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.1.4.1.1 "><p id="p33793mcpsimp"><a name="p33793mcpsimp"></a><a name="p33793mcpsimp"></a>1</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.2 "><p id="p33795mcpsimp"><a name="p33795mcpsimp"></a><a name="p33795mcpsimp"></a>2.8</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33797mcpsimp"><a name="p33797mcpsimp"></a><a name="p33797mcpsimp"></a>0~4</p>
-</td>
-</tr>
-<tr id="row33798mcpsimp"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.1.4.1.1 "><p id="p33800mcpsimp"><a name="p33800mcpsimp"></a><a name="p33800mcpsimp"></a>2</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.2 "><p id="p33802mcpsimp"><a name="p33802mcpsimp"></a><a name="p33802mcpsimp"></a>3.7</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33804mcpsimp"><a name="p33804mcpsimp"></a><a name="p33804mcpsimp"></a>0~8</p>
-</td>
-</tr>
-<tr id="row33805mcpsimp"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.1.4.1.1 "><p id="p33807mcpsimp"><a name="p33807mcpsimp"></a><a name="p33807mcpsimp"></a>3</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.2 "><p id="p33809mcpsimp"><a name="p33809mcpsimp"></a><a name="p33809mcpsimp"></a>4.6</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33811mcpsimp"><a name="p33811mcpsimp"></a><a name="p33811mcpsimp"></a>0~16</p>
-</td>
-</tr>
-<tr id="row33812mcpsimp"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.1.4.1.1 "><p id="p33814mcpsimp"><a name="p33814mcpsimp"></a><a name="p33814mcpsimp"></a>4</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.2 "><p id="p33816mcpsimp"><a name="p33816mcpsimp"></a><a name="p33816mcpsimp"></a>0.10</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33818mcpsimp"><a name="p33818mcpsimp"></a><a name="p33818mcpsimp"></a>1~2</p>
-</td>
-</tr>
-<tr id="row33819mcpsimp"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.1.4.1.1 "><p id="p33821mcpsimp"><a name="p33821mcpsimp"></a><a name="p33821mcpsimp"></a>5</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.2 "><p id="p33823mcpsimp"><a name="p33823mcpsimp"></a><a name="p33823mcpsimp"></a>1.9</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33825mcpsimp"><a name="p33825mcpsimp"></a><a name="p33825mcpsimp"></a>1~3</p>
-</td>
-</tr>
-<tr id="row33826mcpsimp"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.1.4.1.1 "><p id="p33828mcpsimp"><a name="p33828mcpsimp"></a><a name="p33828mcpsimp"></a>6</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.2 "><p id="p33830mcpsimp"><a name="p33830mcpsimp"></a><a name="p33830mcpsimp"></a>2.8</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33832mcpsimp"><a name="p33832mcpsimp"></a><a name="p33832mcpsimp"></a>1~5</p>
-</td>
-</tr>
-<tr id="row33833mcpsimp"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.1.4.1.1 "><p id="p33835mcpsimp"><a name="p33835mcpsimp"></a><a name="p33835mcpsimp"></a>7</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.2 "><p id="p33837mcpsimp"><a name="p33837mcpsimp"></a><a name="p33837mcpsimp"></a>3.7</p>
-</td>
-<td class="cellrowborder" valign="top" width="33%" headers="mcps1.1.4.1.3 "><p id="p33839mcpsimp"><a name="p33839mcpsimp"></a><a name="p33839mcpsimp"></a>1~9</p>
-</td>
-</tr>
 </tbody>
-</table>
-
--   Mesh Shading在线标定时需要减去黑电平，设置各颜色通道的黑电平时要以12bit为基准，因此输入Raw的比特位宽也一定要相同。
--   当使用裁剪的接口dst\_img\_height，dst\_img\_width，offset\_x，offset\_y时，注意偏移值和裁剪图像的宽高不要超出输入图像的宽高。
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_mesh\_shading\_table<a name="ZH-CN_TOPIC_0000002471084966"></a>
-
-【说明】
-
-定义MLSC标定结果格式。
-
-【定义】
-
-```
-typedef struct {
-    td_u8   mesh_scale;
-    td_u16  x_grid_width[OT_ISP_MLSC_X_HALF_GRID_NUM];
-    td_u16  y_grid_width[OT_ISP_MLSC_Y_HALF_GRID_NUM];
-    ot_isp_shading_gain_lut  lsc_gain_lut;
-    ot_isp_bnr_lsc_gain_lut   bnr_lsc_gain_lut;
+</table> - Mesh Shading在线标定时需要减去黑电平，设置各颜色通道的黑电平时要以12bit为基准，因此输入Raw的比特位宽也一定要相同。
+- 当使用裁剪的接口dst\_img\_height，dst\_img\_width，offset\_x，offset\_y时，注意偏移值和裁剪图像的宽高不要超出输入图像的宽高。 【相关数据类型及接口】 无 #### ot\_isp\_mesh\_shading\_table<a name="ZH-CN_TOPIC_0000002471084966"></a> 【说明】 定义MLSC标定结果格式。 【定义】 ```
+typedef struct { td_u8 mesh_scale; td_u16 x_grid_width[OT_ISP_MLSC_X_HALF_GRID_NUM]; td_u16 y_grid_width[OT_ISP_MLSC_Y_HALF_GRID_NUM]; ot_isp_shading_gain_lut lsc_gain_lut; ot_isp_bnr_lsc_gain_lut bnr_lsc_gain_lut;
 } ot_isp_mesh_shading_table;
-```
-
-【成员】
-
-<a name="table33868mcpsimp"></a>
+``` 【成员】 <a name="table33868mcpsimp"></a>
 <table><thead align="left"><tr id="row33873mcpsimp"><th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.1"><p id="p33875mcpsimp"><a name="p33875mcpsimp"></a><a name="p33875mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.2"><p id="p33877mcpsimp"><a name="p33877mcpsimp"></a><a name="p33877mcpsimp"></a>描述</p>
@@ -14389,55 +7672,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## RGB-IR<a name="ZH-CN_TOPIC_0000002503964859"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504085005"></a>
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->目前市售大部分用于_录像机_产品形态的RGB-IR 4x4 pattern芯片波长在近红外区间（NIR，波长为850nm）。如果需要使用RGB-IR sensor需要同时配合对应波长的双通滤光片使用。
-
-RGBIR分为RGBIR4X4模式及RGBIR Normal模式。RGBIR4X4模式支持输入RGB-IR4x4单通道信号，输出正常Bayer格式raw信号及IR raw信号供其他应用；RGBIR Normal模式支持输入Bayer raw及IR raw双通道信号，输出Bayer格式信号。非RGB-IR4x4信号可通过软件（如DSP）拆分为Bayer raw及IR raw，并使用RGBIR Normal模式实现减IR串扰处理。（RGB-IR 2x2 pattern和RGB-IR 4x4 pattern的区别请参考[图1](#_Ref528675870)和[图2](#fig10536657133417)）。
-
-**图 1**  传统RGB-IR 2x2 pattern排列<a name="_Ref528675870"></a>  
-![](figures/传统RGB-IR-2x2-pattern排列.png "传统RGB-IR-2x2-pattern排列")
-
-**图 2**  RGB-IR 4x4 pattern排列<a name="fig10536657133417"></a>  
-![](figures/RGB-IR-4x4-pattern排列.png "RGB-IR-4x4-pattern排列")
-### API参考<a name="ZH-CN_TOPIC_0000002470925004"></a>
-
--   [ss\_mpi\_isp\_set\_rgbir\_attr](#ZH-CN_TOPIC_0000002504084935)：设定RGBIR属性。
--   [ss\_mpi\_isp\_get\_rgbir\_attr](#ZH-CN_TOPIC_0000002471084984)：获取RGBIR属性。
-
-
-
-#### ss\_mpi\_isp\_set\_rgbir\_attr<a name="ZH-CN_TOPIC_0000002504084935"></a>
-
-【描述】
-
-设定RGBIR属性。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## RGB-IR<a name="ZH-CN_TOPIC_0000002503964859"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504085005"></a> >![](public_sys-resources/icon-notice.gif) **须知：** >目前市售大部分用于_录像机_产品形态的RGB-IR 4x4 pattern芯片波长在近红外区间（NIR，波长为850nm）。如果需要使用RGB-IR sensor需要同时配合对应波长的双通滤光片使用。 RGBIR分为RGBIR4X4模式及RGBIR Normal模式。RGBIR4X4模式支持输入RGB-IR4x4单通道信号，输出正常Bayer格式raw信号及IR raw信号供其他应用；RGBIR Normal模式支持输入Bayer raw及IR raw双通道信号，输出Bayer格式信号。非RGB-IR4x4信号可通过软件（如DSP）拆分为Bayer raw及IR raw，并使用RGBIR Normal模式实现减IR串扰处理。（RGB-IR 2x2 pattern和RGB-IR 4x4 pattern的区别请参考[图1](#_Ref528675870)和[图2](#fig10536657133417)）。 **图 1** 传统RGB-IR 2x2 pattern排列<a name="_Ref528675870"></a> ![](figures/传统RGB-IR-2x2-pattern排列.png "传统RGB-IR-2x2-pattern排列") **图 2** RGB-IR 4x4 pattern排列<a name="fig10536657133417"></a> ![](figures/RGB-IR-4x4-pattern排列.png "RGB-IR-4x4-pattern排列")
+### API参考<a name="ZH-CN_TOPIC_0000002470925004"></a> - [ss\_mpi\_isp\_set\_rgbir\_attr](#ZH-CN_TOPIC_0000002504084935)：设定RGBIR属性。
+- [ss\_mpi\_isp\_get\_rgbir\_attr](#ZH-CN_TOPIC_0000002471084984)：获取RGBIR属性。 #### ss\_mpi\_isp\_set\_rgbir\_attr<a name="ZH-CN_TOPIC_0000002504084935"></a> 【描述】 设定RGBIR属性。 【语法】 ```
 td_s32 ss_mpi_isp_set_rgbir_attr(ot_vi_pipe vi_pipe, const ot_isp_rgbir_attr *rgbir_attr)
-```
-
-【参数】
-
-<a name="table33947mcpsimp"></a>
+``` 【参数】 <a name="table33947mcpsimp"></a>
 <table><thead align="left"><tr id="row33953mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p33955mcpsimp"><a name="p33955mcpsimp"></a><a name="p33955mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p33957mcpsimp"><a name="p33957mcpsimp"></a><a name="p33957mcpsimp"></a>描述</p>
@@ -14461,11 +7700,7 @@ td_s32 ss_mpi_isp_set_rgbir_attr(ot_vi_pipe vi_pipe, const ot_isp_rgbir_attr *rg
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table33976mcpsimp"></a>
+</table> 【返回值】 <a name="table33976mcpsimp"></a>
 <table><thead align="left"><tr id="row33981mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p33983mcpsimp"><a name="p33983mcpsimp"></a><a name="p33983mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p33985mcpsimp"><a name="p33985mcpsimp"></a><a name="p33985mcpsimp"></a>描述</p>
@@ -14477,46 +7712,11 @@ td_s32 ss_mpi_isp_set_rgbir_attr(ot_vi_pipe vi_pipe, const ot_isp_rgbir_attr *rg
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p33990mcpsimp"><a name="p33990mcpsimp"></a><a name="p33990mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row33991mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p33993mcpsimp"><a name="p33993mcpsimp"></a><a name="p33993mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p33995mcpsimp"><a name="p33995mcpsimp"></a><a name="p33995mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_rgbir\_attr](#ss_mpi_isp_get_rgbir_attr)
-
-#### ss\_mpi\_isp\_get\_rgbir\_attr<a name="ZH-CN_TOPIC_0000002471084984"></a>
-
-【描述】
-
-获取RGBIR属性。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_get\_rgbir\_attr](#ss_mpi_isp_get_rgbir_attr) #### ss\_mpi\_isp\_get\_rgbir\_attr<a name="ZH-CN_TOPIC_0000002471084984"></a> 【描述】 获取RGBIR属性。 【语法】 ```
 td_s32 ss_mpi_isp_get_rgbir_attr(ot_vi_pipe vi_pipe, ot_isp_rgbir_attr *rgbir_attr)
-```
-
-【参数】
-
-<a name="table34017mcpsimp"></a>
+``` 【参数】 <a name="table34017mcpsimp"></a>
 <table><thead align="left"><tr id="row34023mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p34025mcpsimp"><a name="p34025mcpsimp"></a><a name="p34025mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p34027mcpsimp"><a name="p34027mcpsimp"></a><a name="p34027mcpsimp"></a>描述</p>
@@ -14540,11 +7740,7 @@ td_s32 ss_mpi_isp_get_rgbir_attr(ot_vi_pipe vi_pipe, ot_isp_rgbir_attr *rgbir_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table34046mcpsimp"></a>
+</table> 【返回值】 <a name="table34046mcpsimp"></a>
 <table><thead align="left"><tr id="row34051mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p34053mcpsimp"><a name="p34053mcpsimp"></a><a name="p34053mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p34055mcpsimp"><a name="p34055mcpsimp"></a><a name="p34055mcpsimp"></a>描述</p>
@@ -14556,131 +7752,25 @@ td_s32 ss_mpi_isp_get_rgbir_attr(ot_vi_pipe vi_pipe, ot_isp_rgbir_attr *rgbir_at
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p34061mcpsimp"><a name="p34061mcpsimp"></a><a name="p34061mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row34062mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p34064mcpsimp"><a name="p34064mcpsimp"></a><a name="p34064mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p34066mcpsimp"><a name="p34066mcpsimp"></a><a name="p34066mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-不支持设置[ot\_isp\_rgbir\_attr](#ZH-CN_TOPIC_0000002470925222)参数ot\_isp\_rgbir\_cfg字段中ot\_isp\_rgbir\_mode字段为OT\_ISP\_RGBIR\_MODE\_NORMAL模式，如设置为该模式接口返回OT\_ERR\_ISP\_NOT\_SUPPORT错误码。
-
-【举例】
-
-无。
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_rgbir\_attr](#ss_mpi_isp_set_rgbir_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470925230"></a>
-
--   [OT\_ISP\_RGBIR\_CTRL\_NUM](#ZH-CN_TOPIC_0000002471084906)：定义RGBIR控制通道数，针对R/B共2通道。
--   [OT\_ISP\_RGBIR\_CROSSTALK\_NUM](#ZH-CN_TOPIC_0000002470924980)：定义RGBIR串扰通道数，针对R/G/B共3通道。
--   [OT\_ISP\_RGBIR\_CVTMAT\_NUM](#ZH-CN_TOPIC_0000002471084880)：定义RGBIR转换矩阵数量。
--   [ot\_isp\_rgbir\_cfg](#ZH-CN_TOPIC_0000002471085140)：定义RGBIR模块功能类参数。
--   [ot\_isp\_rgbir\_attr](#ZH-CN_TOPIC_0000002470925222)：定义RGBIR模块参数接口。
--   [ot\_isp\_ir\_bayer\_format](#ZH-CN_TOPIC_0000002503965081)：定义RGBIR输入Pattern类型。
--   [ot\_isp\_ir\_cvtmat\_mode](#ZH-CN_TOPIC_0000002470925142)：定义IR转换矩阵模式。
--   [ot\_isp\_rgbir\_mode](#ZH-CN_TOPIC_0000002470925184)：定义RGBIR处理模式。
-
-
-
-
-
-
-
-
-
-#### OT\_ISP\_RGBIR\_CTRL\_NUM<a name="ZH-CN_TOPIC_0000002471084906"></a>
-
-【说明】
-
-定义RGBIR控制通道数。
-
-【定义】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 不支持设置[ot\_isp\_rgbir\_attr](#ZH-CN_TOPIC_0000002470925222)参数ot\_isp\_rgbir\_cfg字段中ot\_isp\_rgbir\_mode字段为OT\_ISP\_RGBIR\_MODE\_NORMAL模式，如设置为该模式接口返回OT\_ERR\_ISP\_NOT\_SUPPORT错误码。 【举例】 无。 【相关主题】 [ss\_mpi\_isp\_set\_rgbir\_attr](#ss_mpi_isp_set_rgbir_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002470925230"></a> - [OT\_ISP\_RGBIR\_CTRL\_NUM](#ZH-CN_TOPIC_0000002471084906)：定义RGBIR控制通道数，针对R/B共2通道。
+- [OT\_ISP\_RGBIR\_CROSSTALK\_NUM](#ZH-CN_TOPIC_0000002470924980)：定义RGBIR串扰通道数，针对R/G/B共3通道。
+- [OT\_ISP\_RGBIR\_CVTMAT\_NUM](#ZH-CN_TOPIC_0000002471084880)：定义RGBIR转换矩阵数量。
+- [ot\_isp\_rgbir\_cfg](#ZH-CN_TOPIC_0000002471085140)：定义RGBIR模块功能类参数。
+- [ot\_isp\_rgbir\_attr](#ZH-CN_TOPIC_0000002470925222)：定义RGBIR模块参数接口。
+- [ot\_isp\_ir\_bayer\_format](#ZH-CN_TOPIC_0000002503965081)：定义RGBIR输入Pattern类型。
+- [ot\_isp\_ir\_cvtmat\_mode](#ZH-CN_TOPIC_0000002470925142)：定义IR转换矩阵模式。
+- [ot\_isp\_rgbir\_mode](#ZH-CN_TOPIC_0000002470925184)：定义RGBIR处理模式。 #### OT\_ISP\_RGBIR\_CTRL\_NUM<a name="ZH-CN_TOPIC_0000002471084906"></a> 【说明】 定义RGBIR控制通道数。 【定义】 ```
 #define OT_ISP_RGBIR_CTRL_NUM 2
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
-
-#### OT\_ISP\_RGBIR\_CROSSTALK\_NUM<a name="ZH-CN_TOPIC_0000002470924980"></a>
-
-【说明】
-
-定义RGBIR串扰通道数，针对R/G/B共3通道。
-
-【定义】
-
-```
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr) #### OT\_ISP\_RGBIR\_CROSSTALK\_NUM<a name="ZH-CN_TOPIC_0000002470924980"></a> 【说明】 定义RGBIR串扰通道数，针对R/G/B共3通道。 【定义】 ```
 #define OT_ISP_RGBIR_CROSSTALK_NUM 3
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
-
-#### OT\_ISP\_RGBIR\_CVTMAT\_NUM<a name="ZH-CN_TOPIC_0000002471084880"></a>
-
-【说明】
-
-定义RGBIR转换矩阵数量。
-
-【定义】
-
-```
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr) #### OT\_ISP\_RGBIR\_CVTMAT\_NUM<a name="ZH-CN_TOPIC_0000002471084880"></a> 【说明】 定义RGBIR转换矩阵数量。 【定义】 ```
 #define OT_ISP_RGBIR_CVTMAT_NUM 12
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
-
-#### ot\_isp\_rgbir\_cfg<a name="ZH-CN_TOPIC_0000002471085140"></a>
-
-【说明】
-
-定义RGBIR模块功能类参数。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_rgbir_mode mode;
-    ot_isp_bayer_format    out_pattern;
-    ot_isp_ir_bayer_format  in_rgbir_pattern;
-    ot_isp_bayer_format    in_bayer_pattern;
-    td_bool  is_ir_upscale;
+``` 【注意事项】 无。 【相关数据类型及接口】 [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr) #### ot\_isp\_rgbir\_cfg<a name="ZH-CN_TOPIC_0000002471085140"></a> 【说明】 定义RGBIR模块功能类参数。 【定义】 ```
+typedef struct { ot_isp_rgbir_mode mode; ot_isp_bayer_format out_pattern; ot_isp_ir_bayer_format in_rgbir_pattern; ot_isp_bayer_format in_bayer_pattern; td_bool is_ir_upscale;
 } ot_isp_rgbir_cfg;
-```
-
-【成员】
-
-<a name="table34155mcpsimp"></a>
+``` 【成员】 <a name="table34155mcpsimp"></a>
 <table><thead align="left"><tr id="row34160mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p34162mcpsimp"><a name="p34162mcpsimp"></a><a name="p34162mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p34164mcpsimp"><a name="p34164mcpsimp"></a><a name="p34164mcpsimp"></a>描述</p>
@@ -14718,49 +7808,14 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   in\_rgbir\_pattern仅在RGBIR4x4模式下有效；
--   in\_bayer\_pattern及is\_ir\_upscale仅在RGBIR Normal模式下有效。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
--   ot\_isp\_bayer\_format
--   [ot\_isp\_ir\_bayer\_format](#ot_isp_ir_bayer_format)
-
-#### ot\_isp\_rgbir\_attr<a name="ZH-CN_TOPIC_0000002470925222"></a>
-
-【说明】
-
-定义RGBIR模块参数接口。
-
-【定义】
-
-```
+</table> 【注意事项】 - in\_rgbir\_pattern仅在RGBIR4x4模式下有效；
+- in\_bayer\_pattern及is\_ir\_upscale仅在RGBIR Normal模式下有效。 【相关数据类型及接口】 - [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
+- ot\_isp\_bayer\_format
+- [ot\_isp\_ir\_bayer\_format](#ot_isp_ir_bayer_format) #### ot\_isp\_rgbir\_attr<a name="ZH-CN_TOPIC_0000002470925222"></a> 【说明】 定义RGBIR模块参数接口。 【定义】 ```
 typedef struct
-{
-    td_bool rgbir_en;
-    ot_isp_rgbir_cfg rgbir_cfg;
-    td_u32  ir_sum_info;
-    td_bool auto_gain_en;
-    td_u16  auto_gain;
-    td_bool smooth_en;
-    td_u16  exp_ctrl[OT_ISP_RGBIR_CTRL_NUM];
-    td_u16  exp_gain[OT_ISP_RGBIR_CTRL_NUM];
-    td_bool ir_rm_en;
-    td_u16  ir_rm_ratio[OT_ISP_RGBIR_CROSSTALK_NUM];
-    ot_isp_ir_cvtmat_mode ir_cvtmat_mode;
-    td_s16  cvt_matrix[OT_ISP_RGBIR_CVTMAT_NUM];
-    td_u16  wb_ctrl_strength[OT_ISP_RGBIR_CTRL_NUM];
+{ td_bool rgbir_en; ot_isp_rgbir_cfg rgbir_cfg; td_u32 ir_sum_info; td_bool auto_gain_en; td_u16 auto_gain; td_bool smooth_en; td_u16 exp_ctrl[OT_ISP_RGBIR_CTRL_NUM]; td_u16 exp_gain[OT_ISP_RGBIR_CTRL_NUM]; td_bool ir_rm_en; td_u16 ir_rm_ratio[OT_ISP_RGBIR_CROSSTALK_NUM]; ot_isp_ir_cvtmat_mode ir_cvtmat_mode; td_s16 cvt_matrix[OT_ISP_RGBIR_CVTMAT_NUM]; td_u16 wb_ctrl_strength[OT_ISP_RGBIR_CTRL_NUM];
 } ot_isp_rgbir_attr;
-```
-
-【成员】
-
-<a name="table34246mcpsimp"></a>
+``` 【成员】 <a name="table34246mcpsimp"></a>
 <table><thead align="left"><tr id="row34251mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p34253mcpsimp"><a name="p34253mcpsimp"></a><a name="p34253mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p34255mcpsimp"><a name="p34255mcpsimp"></a><a name="p34255mcpsimp"></a>描述</p>
@@ -14845,42 +7900,11 @@ typedef struct
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ot\_isp\_rgbir\_cfg](#ot_isp_rgbir_cfg)
--   [ot\_isp\_ir\_cvtmat\_mode](#ot_isp_ir_cvtmat_mode)
-
-#### ot\_isp\_ir\_bayer\_format<a name="ZH-CN_TOPIC_0000002503965081"></a>
-
-【说明】
-
-定义IR pattern输入Pattern类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_IRBAYER_GRGBI = 0,
-    OT_ISP_IRBAYER_RGBGI = 1,
-    OT_ISP_IRBAYER_GBGRI = 2,
-    OT_ISP_IRBAYER_BGRGI = 3,
-    OT_ISP_IRBAYER_IGRGB = 4,
-    OT_ISP_IRBAYER_IRGBG = 5,
-    OT_ISP_IRBAYER_IBGRG = 6,
-    OT_ISP_IRBAYER_IGBGR = 7,
-    OT_ISP_IRBAYER_BUTT
+</table> 【注意事项】 无 【相关数据类型及接口】 - [ot\_isp\_rgbir\_cfg](#ot_isp_rgbir_cfg)
+- [ot\_isp\_ir\_cvtmat\_mode](#ot_isp_ir_cvtmat_mode) #### ot\_isp\_ir\_bayer\_format<a name="ZH-CN_TOPIC_0000002503965081"></a> 【说明】 定义IR pattern输入Pattern类型。 【定义】 ```
+typedef enum { OT_ISP_IRBAYER_GRGBI = 0, OT_ISP_IRBAYER_RGBGI = 1, OT_ISP_IRBAYER_GBGRI = 2, OT_ISP_IRBAYER_BGRGI = 3, OT_ISP_IRBAYER_IGRGB = 4, OT_ISP_IRBAYER_IRGBG = 5, OT_ISP_IRBAYER_IBGRG = 6, OT_ISP_IRBAYER_IGBGR = 7, OT_ISP_IRBAYER_BUTT
 } ot_isp_ir_bayer_format;
-```
-
-【成员】
-
-<a name="table34359mcpsimp"></a>
+``` 【成员】 <a name="table34359mcpsimp"></a>
 <table><thead align="left"><tr id="row34364mcpsimp"><th class="cellrowborder" valign="top" width="33%" id="mcps1.1.3.1.1"><p id="p34366mcpsimp"><a name="p34366mcpsimp"></a><a name="p34366mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.3.1.2"><p id="p34368mcpsimp"><a name="p34368mcpsimp"></a><a name="p34368mcpsimp"></a>描述</p>
@@ -14960,37 +7984,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_isp\_rgbir\_cfg](#ot_isp_rgbir_cfg)
--   [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
-
-#### ot\_isp\_ir\_cvtmat\_mode<a name="ZH-CN_TOPIC_0000002470925142"></a>
-
-【说明】
-
-定义RGBIR转换矩阵模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_IR_CVTMAT_MODE_NORMAL = 0,
-    OT_ISP_IR_CVTMAT_MODE_MONO,
-    OT_ISP_IR_CVTMAT_MODE_USER,
-    OT_ISP_IR_CVTMAT_MODE_BUTT
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_isp\_rgbir\_cfg](#ot_isp_rgbir_cfg)
+- [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr) #### ot\_isp\_ir\_cvtmat\_mode<a name="ZH-CN_TOPIC_0000002470925142"></a> 【说明】 定义RGBIR转换矩阵模式。 【定义】 ```
+typedef enum { OT_ISP_IR_CVTMAT_MODE_NORMAL = 0, OT_ISP_IR_CVTMAT_MODE_MONO, OT_ISP_IR_CVTMAT_MODE_USER, OT_ISP_IR_CVTMAT_MODE_BUTT
 } ot_isp_ir_cvtmat_mode;
-```
-
-【成员】
-
-<a name="table34462mcpsimp"></a>
+``` 【成员】 <a name="table34462mcpsimp"></a>
 <table><thead align="left"><tr id="row34467mcpsimp"><th class="cellrowborder" valign="top" width="33%" id="mcps1.1.3.1.1"><p id="p34469mcpsimp"><a name="p34469mcpsimp"></a><a name="p34469mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.3.1.2"><p id="p34471mcpsimp"><a name="p34471mcpsimp"></a><a name="p34471mcpsimp"></a>描述</p>
@@ -15013,35 +8011,10 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
-
-#### ot\_isp\_rgbir\_mode<a name="ZH-CN_TOPIC_0000002470925184"></a>
-
-【说明】
-
-定义RGBIR处理模式。
-
-【定义】
-
-```
-typedef enum {
-    OT_ISP_RGBIR_MODE_RGBIR4X4 = 0,
-    OT_ISP_RGBIR_MODE_NORMAL,
-    OT_ISP_RGBIR_MODE_BUTT
+</table> 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr) #### ot\_isp\_rgbir\_mode<a name="ZH-CN_TOPIC_0000002470925184"></a> 【说明】 定义RGBIR处理模式。 【定义】 ```
+typedef enum { OT_ISP_RGBIR_MODE_RGBIR4X4 = 0, OT_ISP_RGBIR_MODE_NORMAL, OT_ISP_RGBIR_MODE_BUTT
 } ot_isp_rgbir_mode;
-```
-
-【成员】
-
-<a name="table34504mcpsimp"></a>
+``` 【成员】 <a name="table34504mcpsimp"></a>
 <table><thead align="left"><tr id="row34509mcpsimp"><th class="cellrowborder" valign="top" width="33%" id="mcps1.1.3.1.1"><p id="p34511mcpsimp"><a name="p34511mcpsimp"></a><a name="p34511mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.3.1.2"><p id="p34513mcpsimp"><a name="p34513mcpsimp"></a><a name="p34513mcpsimp"></a>描述</p>
@@ -15059,50 +8032,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
--   [ot\_isp\_rgbir\_cfg](#ot_isp_rgbir_cfg)
--   [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr)
-
-## Auto Flicker Type Detection<a name="ZH-CN_TOPIC_0000002503964893"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504085043"></a>
-
-Auto Flicker Type Detection （自动工频闪类型检测）是一个结合软件和硬件一起实现的算法。该算法能够计算出当前环境光源的频闪频率是50Hz还是60Hz。
-
->![](public_sys-resources/icon-notice.gif) **须知：** 
->-   在某些环境中，当存在有50Hz光源和60Hz光源来回变动的情况时（比如在室内50Hz的灯光下，用户可能会关闭灯光，打开60Hz光源的电视），Camera无法应用合适的抗闪参数。所以此时需要检测出当前环境光源的工频闪频率，Camera根据当前环境光源的工频闪频率适配合适的抗闪参数。
->-   目前工频闪类型计算在vpss节点获取图像数据进行计算，前端的DIS、LDC、鱼眼校正等模块如果对图像的内容形态改变过大会影响工频闪类型计算的准确性。另外图像噪声过大，也会影响工频闪类型计算的准确性。
-
-### API参考<a name="ZH-CN_TOPIC_0000002503964853"></a>
-
-[ss\_mpi\_isp\_calc\_flicker\_type](#ZH-CN_TOPIC_0000002471084948):  获取工频闪类型检测的结果。
-
-
-#### ss\_mpi\_isp\_calc\_flicker\_type<a name="ZH-CN_TOPIC_0000002471084948"></a>
-
-【描述】
-
-输出帧信息，获取工频闪类型检测的结果。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 - [ot\_isp\_rgbir\_cfg](#ot_isp_rgbir_cfg)
+- [ot\_isp\_rgbir\_attr](#ot_isp_rgbir_attr) ## Auto Flicker Type Detection<a name="ZH-CN_TOPIC_0000002503964893"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504085043"></a> Auto Flicker Type Detection （自动工频闪类型检测）是一个结合软件和硬件一起实现的算法。该算法能够计算出当前环境光源的频闪频率是50Hz还是60Hz。 >![](public_sys-resources/icon-notice.gif) **须知：** >- 在某些环境中，当存在有50Hz光源和60Hz光源来回变动的情况时（比如在室内50Hz的灯光下，用户可能会关闭灯光，打开60Hz光源的电视），Camera无法应用合适的抗闪参数。所以此时需要检测出当前环境光源的工频闪频率，Camera根据当前环境光源的工频闪频率适配合适的抗闪参数。
+>- 目前工频闪类型计算在vpss节点获取图像数据进行计算，前端的DIS、LDC、鱼眼校正等模块如果对图像的内容形态改变过大会影响工频闪类型计算的准确性。另外图像噪声过大，也会影响工频闪类型计算的准确性。 ### API参考<a name="ZH-CN_TOPIC_0000002503964853"></a> [ss\_mpi\_isp\_calc\_flicker\_type](#ZH-CN_TOPIC_0000002471084948): 获取工频闪类型检测的结果。 #### ss\_mpi\_isp\_calc\_flicker\_type<a name="ZH-CN_TOPIC_0000002471084948"></a> 【描述】 输出帧信息，获取工频闪类型检测的结果。 【语法】 ```
 ss_mpi_isp_calc_flicker_type(ot_vi_pipe vi_pipe, ot_isp_calc_flicker_input *input_param, ot_isp_calc_flicker_output *output_param, ot_video_frame_info frame[], td_u32 array_size);
-```
-
-【参数】
-
-<a name="table34555mcpsimp"></a>
+``` 【参数】 <a name="table34555mcpsimp"></a>
 <table><thead align="left"><tr id="row34561mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p34563mcpsimp"><a name="p34563mcpsimp"></a><a name="p34563mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p34565mcpsimp"><a name="p34565mcpsimp"></a><a name="p34565mcpsimp"></a>描述</p>
@@ -15148,11 +8082,7 @@ ss_mpi_isp_calc_flicker_type(ot_vi_pipe vi_pipe, ot_isp_calc_flicker_input *inpu
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table34606mcpsimp"></a>
+</table> 【返回值】 <a name="table34606mcpsimp"></a>
 <table><thead align="left"><tr id="row34611mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p34613mcpsimp"><a name="p34613mcpsimp"></a><a name="p34613mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p34615mcpsimp"><a name="p34615mcpsimp"></a><a name="p34615mcpsimp"></a>描述</p>
@@ -15164,31 +8094,14 @@ ss_mpi_isp_calc_flicker_type(ot_vi_pipe vi_pipe, ot_isp_calc_flicker_input *inpu
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p34620mcpsimp"><a name="p34620mcpsimp"></a><a name="p34620mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row34621mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p34623mcpsimp"><a name="p34623mcpsimp"></a><a name="p34623mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p34625mcpsimp"><a name="p34625mcpsimp"></a><a name="p34625mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ss\_mpi\_isp.h
--   库文件：libot\_calcflicker.a
-
-【注意】
-
--   必须使用连续的3帧数据进行计算，输入的array\_size帧数需要等于3。同时frame\[\]指向的数据必须保证有效。
--   计算的帧数据的分辨率不能超过ISP模块最大能够处理的图像分辨率。
--   为了加快计算速度，接口内部使用VGS硬件模块参与计算，所以用于计算工频闪的图像分辨率不能超过VGS的最大处理分辨率范围。
--   在不同频闪混合的光源下，比如光源环境同时存在50Hz和60Hz的光源，或者工频闪光源只占整个环境光源非常小的一部分，容易出现误判。
--   Sample用例中有使用ss\_mpi\_vpss\_get\_grp\_frame接口（接口具体信息请参见《MPP 媒体处理软件V5.0 开发参考》的VPSS章节）获取3帧数据，但此接口只在Vpss模块工作在离线模式时才有效。当Vpss处于在线模式时，无法获取有效帧数据进行工频闪类型计算。
--   可以参考附录“工频闪类型自适应Sample用例处理流程” 。
-
-【举例】
-
-```
+</table> 【需求】 - 头文件：ss\_mpi\_isp.h
+- 库文件：libot\_calcflicker.a 【注意】 - 必须使用连续的3帧数据进行计算，输入的array\_size帧数需要等于3。同时frame\[\]指向的数据必须保证有效。
+- 计算的帧数据的分辨率不能超过ISP模块最大能够处理的图像分辨率。
+- 为了加快计算速度，接口内部使用VGS硬件模块参与计算，所以用于计算工频闪的图像分辨率不能超过VGS的最大处理分辨率范围。
+- 在不同频闪混合的光源下，比如光源环境同时存在50Hz和60Hz的光源，或者工频闪光源只占整个环境光源非常小的一部分，容易出现误判。
+- Sample用例中有使用ss\_mpi\_vpss\_get\_grp\_frame接口（接口具体信息请参见《MPP 媒体处理软件V5.0 开发参考》的VPSS章节）获取3帧数据，但此接口只在Vpss模块工作在离线模式时才有效。当Vpss处于在线模式时，无法获取有效帧数据进行工频闪类型计算。
+- 可以参考附录“工频闪类型自适应Sample用例处理流程” 。 【举例】 ```
 ot_vi_pipe vi_pipe = 0;
 td_u16 frame_num = 3;
 ot_video_frame_info frame[3];
@@ -15201,36 +8114,11 @@ input_param.lines_per_second = exp_info.lines_per500ms*2
 获取3帧连续帧数据给 frame[3](此处略)
 .. .. ..
 ret = ss_mpi_isp_calc_flicker_type(vi_pipe, input_param, output_param, frame, frame_num);
-```
-
-【相关主题】
-
-无
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471085110"></a>
-
--   [ot\_isp\_calc\_flicker\_input](#ZH-CN_TOPIC_0000002504084857)：定义计算工频闪需要的输入参数。
--   [ot\_isp\_calc\_flicker\_output](#ZH-CN_TOPIC_0000002504084927)：定义自动工频闪类型检测输出结果。
-
-
-
-#### ot\_isp\_calc\_flicker\_input<a name="ZH-CN_TOPIC_0000002504084857"></a>
-
-【说明】
-
-定义计算工频闪输入参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 lines_per_second;
+``` 【相关主题】 无 ### 数据类型<a name="ZH-CN_TOPIC_0000002471085110"></a> - [ot\_isp\_calc\_flicker\_input](#ZH-CN_TOPIC_0000002504084857)：定义计算工频闪需要的输入参数。
+- [ot\_isp\_calc\_flicker\_output](#ZH-CN_TOPIC_0000002504084927)：定义自动工频闪类型检测输出结果。 #### ot\_isp\_calc\_flicker\_input<a name="ZH-CN_TOPIC_0000002504084857"></a> 【说明】 定义计算工频闪输入参数。 【定义】 ```
+typedef struct { td_u32 lines_per_second;
 } ot_isp_calc_flicker_input;
-```
-
-【成员】
-
-<a name="table34678mcpsimp"></a>
+``` 【成员】 <a name="table34678mcpsimp"></a>
 <table><thead align="left"><tr id="row34683mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p34685mcpsimp"><a name="p34685mcpsimp"></a><a name="p34685mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p34687mcpsimp"><a name="p34687mcpsimp"></a><a name="p34687mcpsimp"></a>描述</p>
@@ -15244,34 +8132,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   lines\_per\_second 等于1秒的最大总曝光行数，比如一帧的最大曝光时间为1125行，帧率为30fps，那么lines\_per\_second = 1125\*30。通常，可以使用ot\_isp\_exp\_info这个结构体成员变量lines\_per500ms乘以2。
--   需要注意这里的1行时间需要和1行数据的Readout Timing的时间相等，一般sensor的曝光行数单位时间和Readout 1行的时间相同，需要注意少部分sensor的Readout 1行时间等于2行，那么计算lines\_per\_second时需要除以2。其他等效倍率则除以相应的倍率。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_isp\_calc\_flicker\_type](#ss_mpi_isp_calc_flicker_type)
-
-#### ot\_isp\_calc\_flicker\_output<a name="ZH-CN_TOPIC_0000002504084927"></a>
-
-【说明】
-
-定义自动工频闪类型检测输出结果。
-
-【定义】
-
-```
-typedef struct {
-    ot_isp_calc_flicker_type flicker_type;  /*The calculate result of flicker type*/
+</table> 【注意事项】 - lines\_per\_second 等于1秒的最大总曝光行数，比如一帧的最大曝光时间为1125行，帧率为30fps，那么lines\_per\_second = 1125\*30。通常，可以使用ot\_isp\_exp\_info这个结构体成员变量lines\_per500ms乘以2。
+- 需要注意这里的1行时间需要和1行数据的Readout Timing的时间相等，一般sensor的曝光行数单位时间和Readout 1行的时间相同，需要注意少部分sensor的Readout 1行时间等于2行，那么计算lines\_per\_second时需要除以2。其他等效倍率则除以相应的倍率。 【相关数据类型及接口】 [ss\_mpi\_isp\_calc\_flicker\_type](#ss_mpi_isp_calc_flicker_type) #### ot\_isp\_calc\_flicker\_output<a name="ZH-CN_TOPIC_0000002504084927"></a> 【说明】 定义自动工频闪类型检测输出结果。 【定义】 ```
+typedef struct { ot_isp_calc_flicker_type flicker_type; /*The calculate result of flicker type*/
 } ot_isp_calc_flicker_output;
-```
-
-【成员】
-
-<a name="table34712mcpsimp"></a>
+``` 【成员】 <a name="table34712mcpsimp"></a>
 <table><thead align="left"><tr id="row34717mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p34719mcpsimp"><a name="p34719mcpsimp"></a><a name="p34719mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p34721mcpsimp"><a name="p34721mcpsimp"></a><a name="p34721mcpsimp"></a>描述</p>
@@ -15285,47 +8150,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ss\_mpi\_isp\_calc\_flicker\_type](#ss_mpi_isp_calc_flicker_type)
-
-## Auto ColorShading<a name="ZH-CN_TOPIC_0000002504084837"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085054"></a>
-
-Auto Color Shading \(ACS\)算法是一个软件上实现的算法，该算法能够根据场景自适应地生成LSC的校正表，通过配置Mesh Shading的Lut校正表，从而能够减轻或消除镜头和sensor造成的color shading。该算法需要在使用前进行标定，标定的数据预先放入cmos.c中。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085194"></a>
-
--   [ss\_mpi\_isp\_set\_auto\_color\_shading\_attr](#ZH-CN_TOPIC_0000002503965067)：设置Auto Color Shading属性参数。
--   [ss\_mpi\_isp\_get\_auto\_color\_shading\_attr](#ZH-CN_TOPIC_0000002504084825)：获取Auto Color Shading属性参数。
-
-
-
-#### ss\_mpi\_isp\_set\_auto\_color\_shading\_attr<a name="ZH-CN_TOPIC_0000002503965067"></a>
-
-【描述】
-
-设置Auto Color Shading属性参数。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 [ss\_mpi\_isp\_calc\_flicker\_type](#ss_mpi_isp_calc_flicker_type) ## Auto ColorShading<a name="ZH-CN_TOPIC_0000002504084837"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085054"></a> Auto Color Shading \(ACS\)算法是一个软件上实现的算法，该算法能够根据场景自适应地生成LSC的校正表，通过配置Mesh Shading的Lut校正表，从而能够减轻或消除镜头和sensor造成的color shading。该算法需要在使用前进行标定，标定的数据预先放入cmos.c中。 ### API参考<a name="ZH-CN_TOPIC_0000002471085194"></a> - [ss\_mpi\_isp\_set\_auto\_color\_shading\_attr](#ZH-CN_TOPIC_0000002503965067)：设置Auto Color Shading属性参数。
+- [ss\_mpi\_isp\_get\_auto\_color\_shading\_attr](#ZH-CN_TOPIC_0000002504084825)：获取Auto Color Shading属性参数。 #### ss\_mpi\_isp\_set\_auto\_color\_shading\_attr<a name="ZH-CN_TOPIC_0000002503965067"></a> 【描述】 设置Auto Color Shading属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_auto_color_shading_attr(ot_vi_pipe vi_pipe, const ot_isp_acs_attr *acs_attr);
-```
-
-【参数】
-
-<a name="table34770mcpsimp"></a>
+``` 【参数】 <a name="table34770mcpsimp"></a>
 <table><thead align="left"><tr id="row34776mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p34778mcpsimp"><a name="p34778mcpsimp"></a><a name="p34778mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p34780mcpsimp"><a name="p34780mcpsimp"></a><a name="p34780mcpsimp"></a>描述</p>
@@ -15349,11 +8177,7 @@ td_s32 ss_mpi_isp_set_auto_color_shading_attr(ot_vi_pipe vi_pipe, const ot_isp_a
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table34799mcpsimp"></a>
+</table> 【返回值】 <a name="table34799mcpsimp"></a>
 <table><thead align="left"><tr id="row34804mcpsimp"><th class="cellrowborder" valign="top" width="26.979999999999997%" id="mcps1.1.3.1.1"><p id="p34806mcpsimp"><a name="p34806mcpsimp"></a><a name="p34806mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73.02%" id="mcps1.1.3.1.2"><p id="p34808mcpsimp"><a name="p34808mcpsimp"></a><a name="p34808mcpsimp"></a>描述</p>
@@ -15365,46 +8189,11 @@ td_s32 ss_mpi_isp_set_auto_color_shading_attr(ot_vi_pipe vi_pipe, const ot_isp_a
 <td class="cellrowborder" valign="top" width="73.02%" headers="mcps1.1.3.1.2 "><p id="p34813mcpsimp"><a name="p34813mcpsimp"></a><a name="p34813mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row34814mcpsimp"><td class="cellrowborder" valign="top" width="26.979999999999997%" headers="mcps1.1.3.1.1 "><p id="p34816mcpsimp"><a name="p34816mcpsimp"></a><a name="p34816mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73.02%" headers="mcps1.1.3.1.2 "><p id="p34818mcpsimp"><a name="p34818mcpsimp"></a><a name="p34818mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_acs.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_auto\_color\_shading\_attr](#ss_mpi_isp_get_auto_color_shading_attr)
-
-#### ss\_mpi\_isp\_get\_auto\_color\_shading\_attr<a name="ZH-CN_TOPIC_0000002504084825"></a>
-
-【描述】
-
-获取Auto Color Shading属性参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_acs.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_auto\_color\_shading\_attr](#ss_mpi_isp_get_auto_color_shading_attr) #### ss\_mpi\_isp\_get\_auto\_color\_shading\_attr<a name="ZH-CN_TOPIC_0000002504084825"></a> 【描述】 获取Auto Color Shading属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_auto_color_shading_attr(ot_vi_pipe vi_pipe, ot_isp_acs_attr *acs_attr);
-```
-
-【参数】
-
-<a name="table34840mcpsimp"></a>
+``` 【参数】 <a name="table34840mcpsimp"></a>
 <table><thead align="left"><tr id="row34846mcpsimp"><th class="cellrowborder" valign="top" width="23.000000000000004%" id="mcps1.1.4.1.1"><p id="p34848mcpsimp"><a name="p34848mcpsimp"></a><a name="p34848mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52.870000000000005%" id="mcps1.1.4.1.2"><p id="p34850mcpsimp"><a name="p34850mcpsimp"></a><a name="p34850mcpsimp"></a>描述</p>
@@ -15428,11 +8217,7 @@ td_s32 ss_mpi_isp_get_auto_color_shading_attr(ot_vi_pipe vi_pipe, ot_isp_acs_att
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table34869mcpsimp"></a>
+</table> 【返回值】 <a name="table34869mcpsimp"></a>
 <table><thead align="left"><tr id="row34874mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p34876mcpsimp"><a name="p34876mcpsimp"></a><a name="p34876mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p34878mcpsimp"><a name="p34878mcpsimp"></a><a name="p34878mcpsimp"></a>描述</p>
@@ -15444,56 +8229,12 @@ td_s32 ss_mpi_isp_get_auto_color_shading_attr(ot_vi_pipe vi_pipe, ot_isp_acs_att
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p34883mcpsimp"><a name="p34883mcpsimp"></a><a name="p34883mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row34884mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p34886mcpsimp"><a name="p34886mcpsimp"></a><a name="p34886mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p34888mcpsimp"><a name="p34888mcpsimp"></a><a name="p34888mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_acs.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_auto\_color\_shading\_attr](#ss_mpi_isp_set_auto_color_shading_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002471084908"></a>
-
-[ot\_isp\_acs\_attr](#ZH-CN_TOPIC_0000002471085062)：定义Auto Color Shading属性参数。
-
-
-#### ot\_isp\_acs\_attr<a name="ZH-CN_TOPIC_0000002471085062"></a>
-
-【说明】
-
-定义Auto Color Shading属性参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool en;
-    td_u16 y_strength;
-    td_u16 run_interval;
-    td_bool lock_en;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_acs.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_auto\_color\_shading\_attr](#ss_mpi_isp_set_auto_color_shading_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002471084908"></a> [ot\_isp\_acs\_attr](#ZH-CN_TOPIC_0000002471085062)：定义Auto Color Shading属性参数。 #### ot\_isp\_acs\_attr<a name="ZH-CN_TOPIC_0000002471085062"></a> 【说明】 定义Auto Color Shading属性参数。 【定义】 ```
+typedef struct { td_bool en; td_u16 y_strength; td_u16 run_interval; td_bool lock_en;
 } ot_isp_acs_attr;
-```
-
-【成员】
-
-<a name="table34922mcpsimp"></a>
+``` 【成员】 <a name="table34922mcpsimp"></a>
 <table><thead align="left"><tr id="row34927mcpsimp"><th class="cellrowborder" valign="top" width="17%" id="mcps1.1.3.1.1"><p id="p34929mcpsimp"><a name="p34929mcpsimp"></a><a name="p34929mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="83%" id="mcps1.1.3.1.2"><p id="p34931mcpsimp"><a name="p34931mcpsimp"></a><a name="p34931mcpsimp"></a>描述</p>
@@ -15525,50 +8266,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   ACS模块开关与LSC的模块开关互不影响。ACS算法通过调用LSC的接口来配置Lut校正表，需要看到ACS模块效果时，Mesh Shading模块开关必须使能。
--   关闭ACS模块使能开关时，LSC的Lut表会恢复到未开ACS前的状态。
--   ACS会参考mesh\_scale的值来配置LSC相应的Lut表，cmos中bit1\_lsc使能时会参考cmos中LSC的mesh\_scale配置。
--   推荐mesh\_scale的值取0\~3，而不是4\~7，因为4\~7无法表示小于1倍的值，当y\_strength的值较小时，校正Color Shading可能需要小于1倍的值。
-
-【相关数据类型及接口】
-
-无
-
-## Color Rebalance<a name="ZH-CN_TOPIC_0000002503965079"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002471085218"></a>
-
-Color Rebalance \(CRB\)算法是局部的红蓝增益调节，该算法在WDR模式下，能够根据场景自适应地调节，从而能够减轻或消除WDR场景下的高亮区域附近暗区偏红的问题。该算法在线性模式下不生效。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085030"></a>
-
--   [ss\_mpi\_isp\_set\_crb\_attr](#ZH-CN_TOPIC_0000002471085198)：设置CRB属性参数。
--   [ss\_mpi\_isp\_get\_crb\_attr](#ZH-CN_TOPIC_0000002471084942)：获取CRB属性参数。
-
-
-
-#### ss\_mpi\_isp\_set\_crb\_attr<a name="ZH-CN_TOPIC_0000002471085198"></a>
-
-【描述】
-
-设置CRB属性参数。
-
-【语法】
-
-```
+</table> 【注意事项】 - ACS模块开关与LSC的模块开关互不影响。ACS算法通过调用LSC的接口来配置Lut校正表，需要看到ACS模块效果时，Mesh Shading模块开关必须使能。
+- 关闭ACS模块使能开关时，LSC的Lut表会恢复到未开ACS前的状态。
+- ACS会参考mesh\_scale的值来配置LSC相应的Lut表，cmos中bit1\_lsc使能时会参考cmos中LSC的mesh\_scale配置。
+- 推荐mesh\_scale的值取0\~3，而不是4\~7，因为4\~7无法表示小于1倍的值，当y\_strength的值较小时，校正Color Shading可能需要小于1倍的值。 【相关数据类型及接口】 无 ## Color Rebalance<a name="ZH-CN_TOPIC_0000002503965079"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002471085218"></a> Color Rebalance \(CRB\)算法是局部的红蓝增益调节，该算法在WDR模式下，能够根据场景自适应地调节，从而能够减轻或消除WDR场景下的高亮区域附近暗区偏红的问题。该算法在线性模式下不生效。 ### API参考<a name="ZH-CN_TOPIC_0000002471085030"></a> - [ss\_mpi\_isp\_set\_crb\_attr](#ZH-CN_TOPIC_0000002471085198)：设置CRB属性参数。
+- [ss\_mpi\_isp\_get\_crb\_attr](#ZH-CN_TOPIC_0000002471084942)：获取CRB属性参数。 #### ss\_mpi\_isp\_set\_crb\_attr<a name="ZH-CN_TOPIC_0000002471085198"></a> 【描述】 设置CRB属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_crb_attr (ot_vi_pipe vi_pipe, const ot_isp_crb_attr * crb_attr);
-```
-
-【参数】
-
-<a name="table34986mcpsimp"></a>
+``` 【参数】 <a name="table34986mcpsimp"></a>
 <table><thead align="left"><tr id="row34992mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p34994mcpsimp"><a name="p34994mcpsimp"></a><a name="p34994mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p34996mcpsimp"><a name="p34996mcpsimp"></a><a name="p34996mcpsimp"></a>描述</p>
@@ -15592,11 +8296,7 @@ td_s32 ss_mpi_isp_set_crb_attr (ot_vi_pipe vi_pipe, const ot_isp_crb_attr * crb_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table35015mcpsimp"></a>
+</table> 【返回值】 <a name="table35015mcpsimp"></a>
 <table><thead align="left"><tr id="row35020mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p35022mcpsimp"><a name="p35022mcpsimp"></a><a name="p35022mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p35024mcpsimp"><a name="p35024mcpsimp"></a><a name="p35024mcpsimp"></a>描述</p>
@@ -15608,46 +8308,11 @@ td_s32 ss_mpi_isp_set_crb_attr (ot_vi_pipe vi_pipe, const ot_isp_crb_attr * crb_
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35029mcpsimp"><a name="p35029mcpsimp"></a><a name="p35029mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row35030mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p35032mcpsimp"><a name="p35032mcpsimp"></a><a name="p35032mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35034mcpsimp"><a name="p35034mcpsimp"></a><a name="p35034mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_crb\_attr](#ss_mpi_isp_get_crb_attr)
-
-#### ss\_mpi\_isp\_get\_crb\_attr<a name="ZH-CN_TOPIC_0000002471084942"></a>
-
-【描述】
-
-获取CRB属性参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_crb\_attr](#ss_mpi_isp_get_crb_attr) #### ss\_mpi\_isp\_get\_crb\_attr<a name="ZH-CN_TOPIC_0000002471084942"></a> 【描述】 获取CRB属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_crb_attr (ot_vi_pipe vi_pipe, ot_isp_crb_attr * crb_attr);
-```
-
-【参数】
-
-<a name="table35056mcpsimp"></a>
+``` 【参数】 <a name="table35056mcpsimp"></a>
 <table><thead align="left"><tr id="row35062mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p35064mcpsimp"><a name="p35064mcpsimp"></a><a name="p35064mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="53.16%" id="mcps1.1.4.1.2"><p id="p35066mcpsimp"><a name="p35066mcpsimp"></a><a name="p35066mcpsimp"></a>描述</p>
@@ -15671,11 +8336,7 @@ td_s32 ss_mpi_isp_get_crb_attr (ot_vi_pipe vi_pipe, ot_isp_crb_attr * crb_attr);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table35085mcpsimp"></a>
+</table> 【返回值】 <a name="table35085mcpsimp"></a>
 <table><thead align="left"><tr id="row35090mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p35092mcpsimp"><a name="p35092mcpsimp"></a><a name="p35092mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p35094mcpsimp"><a name="p35094mcpsimp"></a><a name="p35094mcpsimp"></a>描述</p>
@@ -15687,60 +8348,14 @@ td_s32 ss_mpi_isp_get_crb_attr (ot_vi_pipe vi_pipe, ot_isp_crb_attr * crb_attr);
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35099mcpsimp"><a name="p35099mcpsimp"></a><a name="p35099mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row35100mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p35102mcpsimp"><a name="p35102mcpsimp"></a><a name="p35102mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35104mcpsimp"><a name="p35104mcpsimp"></a><a name="p35104mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_crb\_attr](#ss_mpi_isp_set_crb_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002470925196"></a>
-
--   [ot\_isp\_crb\_attr](#ZH-CN_TOPIC_0000002504085023)：定义CRB属性参数。
--   [ot\_isp\_crb\_auto\_attr](#ZH-CN_TOPIC_0000002503964995)：定义CRB自动参数。
--   [ot\_isp\_crb\_manual\_attr](#ZH-CN_TOPIC_0000002504084965)：定义CRB手动参数。
-
-
-
-
-#### ot\_isp\_crb\_attr<a name="ZH-CN_TOPIC_0000002504085023"></a>
-
-【说明】
-
-定义CRB属性参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool                  en;
-    ot_op_mode             op_type;
-    ot_isp_crb_auto_attr     auto_attr;
-    ot_isp_crb_manual_attr   manual_attr;
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_crb\_attr](#ss_mpi_isp_set_crb_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002470925196"></a> - [ot\_isp\_crb\_attr](#ZH-CN_TOPIC_0000002504085023)：定义CRB属性参数。
+- [ot\_isp\_crb\_auto\_attr](#ZH-CN_TOPIC_0000002503964995)：定义CRB自动参数。
+- [ot\_isp\_crb\_manual\_attr](#ZH-CN_TOPIC_0000002504084965)：定义CRB手动参数。 #### ot\_isp\_crb\_attr<a name="ZH-CN_TOPIC_0000002504085023"></a> 【说明】 定义CRB属性参数。 【定义】 ```
+typedef struct { td_bool en; ot_op_mode op_type; ot_isp_crb_auto_attr auto_attr; ot_isp_crb_manual_attr manual_attr;
 } ot_isp_crb_attr;
-```
-
-【成员】
-
-<a name="table35154mcpsimp"></a>
+``` 【成员】 <a name="table35154mcpsimp"></a>
 <table><thead align="left"><tr id="row35159mcpsimp"><th class="cellrowborder" valign="top" width="31%" id="mcps1.1.3.1.1"><p id="p35161mcpsimp"><a name="p35161mcpsimp"></a><a name="p35161mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="69%" id="mcps1.1.3.1.2"><p id="p35163mcpsimp"><a name="p35163mcpsimp"></a><a name="p35163mcpsimp"></a>描述</p>
@@ -15770,34 +8385,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_crb\_auto\_attr<a name="ZH-CN_TOPIC_0000002503964995"></a>
-
-【说明】
-
-定义CRB自动参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 r_gain_limit[OT_ISP_WDR_RATIO_NUM]; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; R gain 1024 to gainLimit */
-    td_u16 b_gain_limit[OT_ISP_WDR_RATIO_NUM]; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; B gain 1024 to gainLimit */
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_crb\_auto\_attr<a name="ZH-CN_TOPIC_0000002503964995"></a> 【说明】 定义CRB自动参数。 【定义】 ```
+typedef struct { td_u16 r_gain_limit[OT_ISP_WDR_RATIO_NUM]; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; R gain 1024 to gainLimit */ td_u16 b_gain_limit[OT_ISP_WDR_RATIO_NUM]; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; B gain 1024 to gainLimit */
 } ot_isp_crb_auto_attr;
-```
-
-【成员】
-
-<a name="table35206mcpsimp"></a>
+``` 【成员】 <a name="table35206mcpsimp"></a>
 <table><thead align="left"><tr id="row35211mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p35213mcpsimp"><a name="p35213mcpsimp"></a><a name="p35213mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p35215mcpsimp"><a name="p35215mcpsimp"></a><a name="p35215mcpsimp"></a>描述</p>
@@ -15817,34 +8408,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-#### ot\_isp\_crb\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084965"></a>
-
-【说明】
-
-定义CRB手动参数。
-
-【定义】
-
-```
-typedef struct {
-    td_u16 r_gain_limit; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; gain of R color channel 1024 to RgainLimit */
-    td_u16 b_gain_limit; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; gain of B color channel 1024 to BgainLimit */
+</table> 【注意事项】 无 【相关数据类型及接口】 无 #### ot\_isp\_crb\_manual\_attr<a name="ZH-CN_TOPIC_0000002504084965"></a> 【说明】 定义CRB手动参数。 【定义】 ```
+typedef struct { td_u16 r_gain_limit; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; gain of R color channel 1024 to RgainLimit */ td_u16 b_gain_limit; /* RW; Range: [0x1FF, 0x7FF]; Format:1.10; gain of B color channel 1024 to BgainLimit */
 } ot_isp_crb_manual_attr;
-```
-
-【成员】
-
-<a name="table35244mcpsimp"></a>
+``` 【成员】 <a name="table35244mcpsimp"></a>
 <table><thead align="left"><tr id="row35249mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p35251mcpsimp"><a name="p35251mcpsimp"></a><a name="p35251mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p35253mcpsimp"><a name="p35253mcpsimp"></a><a name="p35253mcpsimp"></a>描述</p>
@@ -15864,47 +8431,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-无
-
-## Expander<a name="ZH-CN_TOPIC_0000002471085220"></a>
-
-
-
-
-### 功能描述<a name="ZH-CN_TOPIC_0000002504084783"></a>
-
-部分sensor内部会做多帧曝光的融合，融合后数据位宽会增大，导致输出成本增大。为减少输出的成本，sensor内部会做数据分段压缩，将数据压缩到一个比较小的位宽。在ISP中为了将数据还原，需要将sensor内部压缩的数据，进行解压缩。
-
-### API参考<a name="ZH-CN_TOPIC_0000002471085084"></a>
-
--   [ss\_mpi\_isp\_set\_expander\_attr](#ZH-CN_TOPIC_0000002471085120)：设置expander属性参数。
--   [ss\_mpi\_isp\_get\_expander\_attr](#ZH-CN_TOPIC_0000002503965059)：获取expander属性参数。
-
-
-
-#### ss\_mpi\_isp\_set\_expander\_attr<a name="ZH-CN_TOPIC_0000002471085120"></a>
-
-【描述】
-
-设置expander属性参数。
-
-【语法】
-
-```
+</table> 【注意事项】 无 【相关数据类型及接口】 无 ## Expander<a name="ZH-CN_TOPIC_0000002471085220"></a> ### 功能描述<a name="ZH-CN_TOPIC_0000002504084783"></a> 部分sensor内部会做多帧曝光的融合，融合后数据位宽会增大，导致输出成本增大。为减少输出的成本，sensor内部会做数据分段压缩，将数据压缩到一个比较小的位宽。在ISP中为了将数据还原，需要将sensor内部压缩的数据，进行解压缩。 ### API参考<a name="ZH-CN_TOPIC_0000002471085084"></a> - [ss\_mpi\_isp\_set\_expander\_attr](#ZH-CN_TOPIC_0000002471085120)：设置expander属性参数。
+- [ss\_mpi\_isp\_get\_expander\_attr](#ZH-CN_TOPIC_0000002503965059)：获取expander属性参数。 #### ss\_mpi\_isp\_set\_expander\_attr<a name="ZH-CN_TOPIC_0000002471085120"></a> 【描述】 设置expander属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_set_expander_attr(ot_vi_pipe vi_pipe, const ot_isp_expander_attr *expander_attr);
-```
-
-【参数】
-
-<a name="table35295mcpsimp"></a>
+``` 【参数】 <a name="table35295mcpsimp"></a>
 <table><thead align="left"><tr id="row35301mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p35303mcpsimp"><a name="p35303mcpsimp"></a><a name="p35303mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p35305mcpsimp"><a name="p35305mcpsimp"></a><a name="p35305mcpsimp"></a>描述</p>
@@ -15928,11 +8458,7 @@ td_s32 ss_mpi_isp_set_expander_attr(ot_vi_pipe vi_pipe, const ot_isp_expander_at
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table35324mcpsimp"></a>
+</table> 【返回值】 <a name="table35324mcpsimp"></a>
 <table><thead align="left"><tr id="row35329mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p35331mcpsimp"><a name="p35331mcpsimp"></a><a name="p35331mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p35333mcpsimp"><a name="p35333mcpsimp"></a><a name="p35333mcpsimp"></a>描述</p>
@@ -15944,46 +8470,11 @@ td_s32 ss_mpi_isp_set_expander_attr(ot_vi_pipe vi_pipe, const ot_isp_expander_at
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35338mcpsimp"><a name="p35338mcpsimp"></a><a name="p35338mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row35339mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p35341mcpsimp"><a name="p35341mcpsimp"></a><a name="p35341mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35343mcpsimp"><a name="p35343mcpsimp"></a><a name="p35343mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_get\_expander\_attr](#ss_mpi_isp_get_expander_attr)
-
-#### ss\_mpi\_isp\_get\_expander\_attr<a name="ZH-CN_TOPIC_0000002503965059"></a>
-
-【描述】
-
-获取expander属性参数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_get\_expander\_attr](#ss_mpi_isp_get_expander_attr) #### ss\_mpi\_isp\_get\_expander\_attr<a name="ZH-CN_TOPIC_0000002503965059"></a> 【描述】 获取expander属性参数。 【语法】 ```
 td_s32 ss_mpi_isp_get_expander_attr(ot_vi_pipe vi_pipe, ot_isp_expander_attr *expander_attr);
-```
-
-【参数】
-
-<a name="table35365mcpsimp"></a>
+``` 【参数】 <a name="table35365mcpsimp"></a>
 <table><thead align="left"><tr id="row35371mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p35373mcpsimp"><a name="p35373mcpsimp"></a><a name="p35373mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54.72%" id="mcps1.1.4.1.2"><p id="p35375mcpsimp"><a name="p35375mcpsimp"></a><a name="p35375mcpsimp"></a>描述</p>
@@ -16007,11 +8498,7 @@ td_s32 ss_mpi_isp_get_expander_attr(ot_vi_pipe vi_pipe, ot_isp_expander_attr *ex
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table35394mcpsimp"></a>
+</table> 【返回值】 <a name="table35394mcpsimp"></a>
 <table><thead align="left"><tr id="row35399mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p35401mcpsimp"><a name="p35401mcpsimp"></a><a name="p35401mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p35403mcpsimp"><a name="p35403mcpsimp"></a><a name="p35403mcpsimp"></a>描述</p>
@@ -16023,101 +8510,18 @@ td_s32 ss_mpi_isp_get_expander_attr(ot_vi_pipe vi_pipe, ot_isp_expander_attr *ex
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35408mcpsimp"><a name="p35408mcpsimp"></a><a name="p35408mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row35409mcpsimp"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p35411mcpsimp"><a name="p35411mcpsimp"></a><a name="p35411mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p35413mcpsimp"><a name="p35413mcpsimp"></a><a name="p35413mcpsimp"></a>失败，其值为<span xml:lang="sv-SE" id="ph10195517299"><a name="ph10195517299"></a><a name="ph10195517299"></a>错误码</span>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
--   库文件：libot\_isp.a、libss\_isp.a
-
-【注意】
-
-无
-
-【举例】
-
-无
-
-【相关主题】
-
-[ss\_mpi\_isp\_set\_expander\_attr](#ss_mpi_isp_set_expander_attr)
-
-### 数据类型<a name="ZH-CN_TOPIC_0000002504084953"></a>
-
--   [OT\_ISP\_EXPANDER\_NODE\_NUM](#ZH-CN_TOPIC_0000002503965013)：定义expander lut的深度。
--   [OT\_ISP\_EXPANDER\_POINT\_NUM\_MAX](#ZH-CN_TOPIC_0000002470925072)：定义expander拐点数目的最大值。
--   [ot\_isp\_expander\_attr](#ZH-CN_TOPIC_0000002503965015)：定义expander属性参数。
-
-
-
-
-#### OT\_ISP\_EXPANDER\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002503965013"></a>
-
-【说明】
-
-定义expander lut的深度。
-
-【定义】
-
-```
-#define OT_ISP_EXPANDER_NODE_NUM   257
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_expander\_attr](#ot_isp_expander_attr)
-
-#### OT\_ISP\_EXPANDER\_POINT\_NUM\_MAX<a name="ZH-CN_TOPIC_0000002470925072"></a>
-
-【说明】
-
-定义expander拐点数目的最大值。
-
-【定义】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_isp.h、ss\_mpi\_isp.h
+- 库文件：libot\_isp.a、libss\_isp.a 【注意】 无 【举例】 无 【相关主题】 [ss\_mpi\_isp\_set\_expander\_attr](#ss_mpi_isp_set_expander_attr) ### 数据类型<a name="ZH-CN_TOPIC_0000002504084953"></a> - [OT\_ISP\_EXPANDER\_NODE\_NUM](#ZH-CN_TOPIC_0000002503965013)：定义expander lut的深度。
+- [OT\_ISP\_EXPANDER\_POINT\_NUM\_MAX](#ZH-CN_TOPIC_0000002470925072)：定义expander拐点数目的最大值。
+- [ot\_isp\_expander\_attr](#ZH-CN_TOPIC_0000002503965015)：定义expander属性参数。 #### OT\_ISP\_EXPANDER\_NODE\_NUM<a name="ZH-CN_TOPIC_0000002503965013"></a> 【说明】 定义expander lut的深度。 【定义】 ```
+#define OT_ISP_EXPANDER_NODE_NUM 257
+``` 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_expander\_attr](#ot_isp_expander_attr) #### OT\_ISP\_EXPANDER\_POINT\_NUM\_MAX<a name="ZH-CN_TOPIC_0000002470925072"></a> 【说明】 定义expander拐点数目的最大值。 【定义】 ```
 #define OT_ISP_EXPANDER_POINT_NUM_MAX (OT_ISP_EXPANDER_NODE_NUM - 1)
-```
-
-【注意事项】
-
-无
-
-【相关数据类型及接口】
-
-[ot\_isp\_expander\_attr](#ot_isp_expander_attr)
-
-#### ot\_isp\_expander\_attr<a name="ZH-CN_TOPIC_0000002503965015"></a>
-
-【说明】
-
-定义expander属性参数。
-
-【定义】
-
-```
-typedef struct {
-    td_bool  en;
-    td_u8    bit_depth_in;
-    td_u8    bit_depth_out;
-    td_u16   knee_point_num;
-    ot_point knee_point_coord[OT_ISP_EXPANDER_POINT_NUM_MAX];
+``` 【注意事项】 无 【相关数据类型及接口】 [ot\_isp\_expander\_attr](#ot_isp_expander_attr) #### ot\_isp\_expander\_attr<a name="ZH-CN_TOPIC_0000002503965015"></a> 【说明】 定义expander属性参数。 【定义】 ```
+typedef struct { td_bool en; td_u8 bit_depth_in; td_u8 bit_depth_out; td_u16 knee_point_num; ot_point knee_point_coord[OT_ISP_EXPANDER_POINT_NUM_MAX];
 } ot_isp_expander_attr;
-```
-
-【成员】
-
-<a name="table35526mcpsimp"></a>
+``` 【成员】 <a name="table35526mcpsimp"></a>
 <table><thead align="left"><tr id="row35531mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p35533mcpsimp"><a name="p35533mcpsimp"></a><a name="p35533mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p35535mcpsimp"><a name="p35535mcpsimp"></a><a name="p35535mcpsimp"></a>描述</p>
@@ -16156,24 +8560,7 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-在sensor手册中会给出sensor在sensor built-in模式下内部压缩时使用的拐点配置，需要将这几个拐点配置按照对应的原则进行转换，然后配置到knee\_point\_coord中即可。
-
-Hi3403V100转换原则如下：
-
--   knee\_point\_coord的横坐标x需要根据sensor压缩曲线转换到\[0,256\]之间（8bit），例如sensor压缩输出的后有效数据位宽是12bit，则需要将sensor压缩曲线拐点的纵坐标右移4bit得到knee\_point\_coord的横坐标x；
--   knee\_point\_coord的纵坐标y需要根据sensor压缩曲线转换到\[0,1048576\]之间（20bit），例如sensor合成有效数据未压缩之前有效位宽是16bit，则需要将sensor压缩曲线的拐点的横坐标左移4bit，得到knee\_point\_coord的纵坐标y。
--   不必配置\(0,0\)的拐点坐标，代码内部在进行插值时，会自动将\(0,0\)作为第一个拐点坐标。
-
-高频次的动态修改expander的拐点配置，可能会导致同一幅图像使用不同的解压缩曲线
-
-expander拐点会影响built-in模式下BE黑电平的配置，动态调节expander拐点，图像可能会有颜色的跳变。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_isp\_set\_expander\_attr](#ss_mpi_isp_set_expander_attr)
--   [ss\_mpi\_isp\_get\_expander\_attr](#ss_mpi_isp_get_expander_attr)
-
+</table> 【注意事项】 在sensor手册中会给出sensor在sensor built-in模式下内部压缩时使用的拐点配置，需要将这几个拐点配置按照对应的原则进行转换，然后配置到knee\_point\_coord中即可。 Hi3403V100转换原则如下： - knee\_point\_coord的横坐标x需要根据sensor压缩曲线转换到\[0,256\]之间（8bit），例如sensor压缩输出的后有效数据位宽是12bit，则需要将sensor压缩曲线拐点的纵坐标右移4bit得到knee\_point\_coord的横坐标x；
+- knee\_point\_coord的纵坐标y需要根据sensor压缩曲线转换到\[0,1048576\]之间（20bit），例如sensor合成有效数据未压缩之前有效位宽是16bit，则需要将sensor压缩曲线的拐点的横坐标左移4bit，得到knee\_point\_coord的纵坐标y。
+- 不必配置\(0,0\)的拐点坐标，代码内部在进行插值时，会自动将\(0,0\)作为第一个拐点坐标。 高频次的动态修改expander的拐点配置，可能会导致同一幅图像使用不同的解压缩曲线 expander拐点会影响built-in模式下BE黑电平的配置，动态调节expander拐点，图像可能会有颜色的跳变。 【相关数据类型及接口】 - [ss\_mpi\_isp\_set\_expander\_attr](#ss_mpi_isp_set_expander_attr)
+- [ss\_mpi\_isp\_get\_expander\_attr](#ss_mpi_isp_get_expander_attr) 

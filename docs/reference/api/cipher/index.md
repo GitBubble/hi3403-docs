@@ -1,21 +1,8 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/CIPHER API 参考/CIPHER API 参考.md
----
-
-# 前言
-**概述<a name="section5005mcpsimp"></a>**
-
-CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC摘要算法，随机数算法，以及RSA不对称算法，主要用于对音视频码流进行加解密及数据合法性验证等场景。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->本文未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
-
-**产品版本<a name="section5008mcpsimp"></a>**
-
-与本文档相对应的产品版本如下。
-
-<a name="table5011mcpsimp"></a>
+--- # 前言
+**概述<a name="section5005mcpsimp"></a>** CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC摘要算法，随机数算法，以及RSA不对称算法，主要用于对音视频码流进行加解密及数据合法性验证等场景。 >![](public_sys-resources/icon-note.gif) **说明：** >本文未有特殊说明，与Hi3403V100内容完全一致。 **产品版本<a name="section5008mcpsimp"></a>** 与本文档相对应的产品版本如下。 <a name="table5011mcpsimp"></a>
 <table><thead align="left"><tr id="row5016mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p5018mcpsimp"><a name="p5018mcpsimp"></a><a name="p5018mcpsimp"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p5020mcpsimp"><a name="p5020mcpsimp"></a><a name="p5020mcpsimp"></a>产品版本</p>
@@ -27,31 +14,9 @@ CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5026mcpsimp"><a name="p5026mcpsimp"></a><a name="p5026mcpsimp"></a>V100</p>
 </td>
 </tr>
-<tr id="row5027mcpsimp"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p5029mcpsimp"><a name="p5029mcpsimp"></a><a name="p5029mcpsimp"></a>SS626</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p5031mcpsimp"><a name="p5031mcpsimp"></a><a name="p5031mcpsimp"></a>V100</p>
-</td>
-</tr>
-<tr id="row10245112718406"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
-</td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**读者对象<a name="section5032mcpsimp"></a>**
-
-本文档（本指南）主要适用于以下工程师：
-
--   技术支持工程师
--   软件开发工程师
-
-**符号约定<a name="section5038mcpsimp"></a>**
-
-在本文中可能出现下列标志，它们所代表的含义如下。
-
-<a name="table5041mcpsimp"></a>
+</table> **读者对象<a name="section5032mcpsimp"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
+- 软件开发工程师 **符号约定<a name="section5038mcpsimp"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table5041mcpsimp"></a>
 <table><thead align="left"><tr id="row5046mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.3.1.1"><p id="p5048mcpsimp"><a name="p5048mcpsimp"></a><a name="p5048mcpsimp"></a>符号</p>
 </th>
 <th class="cellrowborder" valign="top" width="77%" id="mcps1.1.3.1.2"><p id="p5050mcpsimp"><a name="p5050mcpsimp"></a><a name="p5050mcpsimp"></a>说明</p>
@@ -63,36 +28,8 @@ CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC
 <td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5056mcpsimp"><a name="p5056mcpsimp"></a><a name="p5056mcpsimp"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
-<tr id="row5057mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5059mcpsimp"><a name="p5059mcpsimp"></a><a name="p5059mcpsimp"></a><a name="image217"></a><a name="image217"></a><span><img id="image217" src="figures/zh-cn_image_0000002408093786.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5061mcpsimp"><a name="p5061mcpsimp"></a><a name="p5061mcpsimp"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row5062mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5064mcpsimp"><a name="p5064mcpsimp"></a><a name="p5064mcpsimp"></a><a name="image218"></a><a name="image218"></a><span><img id="image218" src="figures/zh-cn_image_0000002408253682.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5066mcpsimp"><a name="p5066mcpsimp"></a><a name="p5066mcpsimp"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
-</td>
-</tr>
-<tr id="row5067mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5069mcpsimp"><a name="p5069mcpsimp"></a><a name="p5069mcpsimp"></a><a name="image219"></a><a name="image219"></a><span><img id="image219" src="figures/zh-cn_image_0000002441572941.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5071mcpsimp"><a name="p5071mcpsimp"></a><a name="p5071mcpsimp"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
-<p id="p5072mcpsimp"><a name="p5072mcpsimp"></a><a name="p5072mcpsimp"></a>“须知”不涉及人身伤害。</p>
-</td>
-</tr>
-<tr id="row5073mcpsimp"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.1.3.1.1 "><p class="msonormal" id="p5075mcpsimp"><a name="p5075mcpsimp"></a><a name="p5075mcpsimp"></a><a name="image220"></a><a name="image220"></a><span><img id="image220" src="figures/zh-cn_image_0000002441572945.png" height="27.93" width="75.81"></span></p>
-</td>
-<td class="cellrowborder" valign="top" width="77%" headers="mcps1.1.3.1.2 "><p id="p5077mcpsimp"><a name="p5077mcpsimp"></a><a name="p5077mcpsimp"></a>对正文中重点信息的补充说明。</p>
-<p id="p5078mcpsimp"><a name="p5078mcpsimp"></a><a name="p5078mcpsimp"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-**修订记录<a name="section5079mcpsimp"></a>**
-
-修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。
-
-<a name="table2161mcpsimp"></a>
+</table> **修订记录<a name="section5079mcpsimp"></a>** 修订记录累积了每次文档更新的说明。最新版本的文档包含以前所有文档版本的更新内容。 <a name="table2161mcpsimp"></a>
 <table><thead align="left"><tr id="row2167mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p2169mcpsimp"><a name="p2169mcpsimp"></a><a name="p2169mcpsimp"></a>文档版本</p>
 </th>
 <th class="cellrowborder" valign="top" width="26%" id="mcps1.1.4.1.2"><p id="p2171mcpsimp"><a name="p2171mcpsimp"></a><a name="p2171mcpsimp"></a>发布日期</p>
@@ -109,82 +46,21 @@ CIPHER是安全算法模块，它提供了AES对称加解密算法，HASH及HMAC
 </td>
 </tr>
 </tbody>
-</table>
-
-# 概述
-## 概述<a name="ZH-CN_TOPIC_0000002408093758"></a>
-
-CIPHER是安全算法模块，其提供了包括AES对称加解密算法，RSA不对称加解密算法，随机数生成，以及支持HASH、HMAC等摘要算法，主要用于对音视频码流进行加解密保护，用户合法性认证等场景。各功能划分如下。
-
-
-
-
-
-
-
-
-### 对称加解密算法<a name="ZH-CN_TOPIC_0000002408093762"></a>
-
--   AES：支持ECB/CBC/CFB/OFB/CTR/CCM/GCM等工作模式。CCM/GCM模式下，加解密结束后需获取一次TAG值。
--   以上算法除了CTR/CCM/GCM，其它算法、模式的数据长度必须按块大小对齐；CCM/GCM的N、A需要靠软件按标准把各个字段封装成块大小对齐的数据块；各种工作模式支持一次实现多个分组的加解密运算，也支持一次实现单个分组的加解密运算。
--   Hi3403V100、SS626V100支持申请15个通道。
--   ECB模式安全性低，该模式仅用于调试，不能用于产品。
-
-### 不对称加解密算法<a name="ZH-CN_TOPIC_0000002441572925"></a>
-
-RSA：支持密钥位宽2048/3072/4096 bits。
-
-### 随机数生成<a name="ZH-CN_TOPIC_0000002408253654"></a>
-
-RNG：支持DRBG，以更高速率获取随机数。
-
-### 摘要算法<a name="ZH-CN_TOPIC_0000002441572917"></a>
-
-HASH：
-
--   支持SHA256/SHA384/SHA512；
--   支持HMAC256/HMAC384/HMAC512；
--   支持软件多通道，最多可以申请15个软件通道。
-
-### 算法标准<a name="ZH-CN_TOPIC_0000002441653073"></a>
-
-以上各功能模块涉及的算法及工作模式符合以下标准：
-
--   AES算法的实现符合FIPS 197标准，其支持的工作模式符合以下标准：
-    -   ECB、CBC、1/8/128-CFB、128-OFB、CTR几种工作模式符合NIST special800-38a标准
-    -   CCM工作模式符合NIST special800-38c标准
-    -   GCM工作模式符合NIST special800-38d标准
-
--   RSA支持公钥加密私钥解密、私钥加密公钥解密、签名及验签等功能，各种模式的数据填充方式符合PKCS\#1标准。支持PKCS\#1 V1.5和PKCS\#1 V2.1填充方式。在加解密模式时，PKCS\#1 V2.1填充方式为OAEP；在签名验签模式时，PKCS\#1 V2.1填充方式为PSS。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   对称加解密算法的工作模式主要有：
->    ECB（Electronic codebook，电子密码本模式）、CBC（Cipher-block chaining，密码分组链接模式）、CFB（Cipher feedback，密文反馈模式）、OFB（Output feedback，输出反馈模式）、CTR（Counter mode，计数器模式）、CCM（counter with CBC-MAC，CTR加密模式和消息认证码CMAC算法的混合）、GCM（Galois/Counter Mode，伽罗华域/计数器模式），主要由工作在计数器模式下的分组密码和在伽罗华域GF（2^128）上的哈希运算组成。CCM模式在加解密的同时生成CMAC检验值，GCM模式使用GHASH生成认证信息，解密时的CMAC要和加密时的CMAC一样才说明解密是正确的，常用在需要同时加密和认证的领域，欲了解算法的详细内容，请参考相关文献。
->-   块密码学中，将需要加密/解密的消息块分成数块：
->    ECB模式中，对每个块进行独立加密/解密，块与块之间没有依赖；非ECB模式中，块与块之间有依赖性，并且为了保证每条消息的唯一性，在第一个块中需要使用初始化向量IV。
-
-### CIPHER使用注意事项<a name="ZH-CN_TOPIC_0000002408093774"></a>
-
-CIPHER部署在不同场景下时，使用方式可能会有所不同。
-
--   在LiteOS环境下，链接CIPHER的静态库libss\_cipher.a。
--   在Linux环境下，用户态使用CIPHER可以通过链接静态库libss\_cipher.a或动态库libss\_cipher.so的方式，依赖libsecurec.a或libsecurec.so。内核态CIPHER使用模块插入方式，即insmod ot\_cipher.ko，需要依赖ot\_osal.ko， ot\_base.ko，sys\_config.ko，ot\_sys.ko，此方式CIPHER默认依赖MMZ地址。
--   在OPTEE环境下
-    -   用户态调用CIPHER对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应更改为ot\_tee\_xxx；
-    -   内核态调用CIPHER对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应更改为ot\_drv\_xxx。
-
--   在UBOOT环境下，用户态调用CIPHER对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应变更为ot\_mpi\_xxx。
-
-### 规格差异说明<a name="ZH-CN_TOPIC_0000002441572921"></a>
-
-CIPHER支持的AES、HASH、RSA不同解决方案间的配置差异如[表1](#_Ref47627660)所示。
-
-**表 1**  规格差异说明
-
-<a name="_Ref47627660"></a>
+</table> # 概述
+## 概述<a name="ZH-CN_TOPIC_0000002408093758"></a> CIPHER是安全算法模块，其提供了包括AES对称加解密算法，RSA不对称加解密算法，随机数生成，以及支持HASH、HMAC等摘要算法，主要用于对音视频码流进行加解密保护，用户合法性认证等场景。各功能划分如下。 ### 对称加解密算法<a name="ZH-CN_TOPIC_0000002408093762"></a> - AES：支持ECB/CBC/CFB/OFB/CTR/CCM/GCM等工作模式。CCM/GCM模式下，加解密结束后需获取一次TAG值。
+- 以上算法除了CTR/CCM/GCM，其它算法、模式的数据长度必须按块大小对齐；CCM/GCM的N、A需要靠软件按标准把各个字段封装成块大小对齐的数据块；各种工作模式支持一次实现多个分组的加解密运算，也支持一次实现单个分组的加解密运算。
+- Hi3403V100、支持申请15个通道。
+- ECB模式安全性低，该模式仅用于调试，不能用于产品。 ### 不对称加解密算法<a name="ZH-CN_TOPIC_0000002441572925"></a> RSA：支持密钥位宽2048/3072/4096 bits。 ### 随机数生成<a name="ZH-CN_TOPIC_0000002408253654"></a> RNG：支持DRBG，以更高速率获取随机数。 ### 摘要算法<a name="ZH-CN_TOPIC_0000002441572917"></a> HASH： - 支持SHA256/SHA384/SHA512；
+- 支持HMAC256/HMAC384/HMAC512；
+- 支持软件多通道，最多可以申请15个软件通道。 ### 算法标准<a name="ZH-CN_TOPIC_0000002441653073"></a> 以上各功能模块涉及的算法及工作模式符合以下标准： - AES算法的实现符合FIPS 197标准，其支持的工作模式符合以下标准： - ECB、CBC、1/8/128-CFB、128-OFB、CTR几种工作模式符合NIST special800-38a标准 - CCM工作模式符合NIST special800-38c标准 - GCM工作模式符合NIST special800-38d标准 - RSA支持公钥加密私钥解密、私钥加密公钥解密、签名及验签等功能，各种模式的数据填充方式符合PKCS\#1标准。支持PKCS\#1 V1.5和PKCS\#1 V2.1填充方式。在加解密模式时，PKCS\#1 V2.1填充方式为OAEP；在签名验签模式时，PKCS\#1 V2.1填充方式为PSS。 >![](public_sys-resources/icon-note.gif) **说明：** >- 对称加解密算法的工作模式主要有：
+> ECB（Electronic codebook，电子密码本模式）、CBC（Cipher-block chaining，密码分组链接模式）、CFB（Cipher feedback，密文反馈模式）、OFB（Output feedback，输出反馈模式）、CTR（Counter mode，计数器模式）、CCM（counter with CBC-MAC，CTR加密模式和消息认证码CMAC算法的混合）、GCM（Galois/Counter Mode，伽罗华域/计数器模式），主要由工作在计数器模式下的分组密码和在伽罗华域GF（2^128）上的哈希运算组成。CCM模式在加解密的同时生成CMAC检验值，GCM模式使用GHASH生成认证信息，解密时的CMAC要和加密时的CMAC一样才说明解密是正确的，常用在需要同时加密和认证的领域，欲了解算法的详细内容，请参考相关文献。
+>- 块密码学中，将需要加密/解密的消息块分成数块：
+> ECB模式中，对每个块进行独立加密/解密，块与块之间没有依赖；非ECB模式中，块与块之间有依赖性，并且为了保证每条消息的唯一性，在第一个块中需要使用初始化向量IV。 ### CIPHER使用注意事项<a name="ZH-CN_TOPIC_0000002408093774"></a> CIPHER部署在不同场景下时，使用方式可能会有所不同。 - 在LiteOS环境下，链接CIPHER的静态库libss\_cipher.a。
+- 在Linux环境下，用户态使用CIPHER可以通过链接静态库libss\_cipher.a或动态库libss\_cipher.so的方式，依赖libsecurec.a或libsecurec.so。内核态CIPHER使用模块插入方式，即insmod ot\_cipher.ko，需要依赖ot\_osal.ko， ot\_base.ko，sys\_config.ko，ot\_sys.ko，此方式CIPHER默认依赖MMZ地址。
+- 在OPTEE环境下 - 用户态调用CIPHER对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应更改为ot\_tee\_xxx； - 内核态调用CIPHER对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应更改为ot\_drv\_xxx。 - 在UBOOT环境下，用户态调用CIPHER对外接口由Linux环境下的ss\_mpi\_xxx命名形式对应变更为ot\_mpi\_xxx。 ### 规格差异说明<a name="ZH-CN_TOPIC_0000002441572921"></a> CIPHER支持的AES、HASH、RSA不同解决方案间的配置差异如[表1](#_Ref47627660)所示。 **表 1** 规格差异说明 <a name="_Ref47627660"></a>
 <table><thead align="left"><tr id="row153mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.2.3.1.1"><p id="p155mcpsimp"><a name="p155mcpsimp"></a><a name="p155mcpsimp"></a>规格差异</p>
 </th>
-<th class="cellrowborder" valign="top" width="46%" id="mcps1.2.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>Hi3403V100、SS626V100</p>
+<th class="cellrowborder" valign="top" width="46%" id="mcps1.2.3.1.2"><p id="p157mcpsimp"><a name="p157mcpsimp"></a><a name="p157mcpsimp"></a>Hi3403V100、</p>
 </th>
 </tr>
 </thead>
@@ -236,388 +112,92 @@ CIPHER支持的AES、HASH、RSA不同解决方案间的配置差异如[表1](#_R
 </td>
 </tr>
 </tbody>
-</table>
-
-## 使用流程<a name="ZH-CN_TOPIC_0000002408253578"></a>
-
-
-
-
-
-
-
-
-
-### 单包数据加解密（对称加解密算法）<a name="ZH-CN_TOPIC_0000002408093702"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002441572877"></a>
-
-对单包数据进行加密或解密。当物理内存中有一段码流数据需要进行加/解密时，获取物理地址后在用户层调用CIPHER模块实现加/解密，或当虚拟内存中有一段数据需要进行加/解密时，获取虚拟地址后在用户层调用CIPHER模块实现加/解密。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002408093670"></a>
-
-1.  CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)。
-2.  创建CIPHER句柄。调用接口[ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)。
-3.  创建KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)。
-4.  绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)。
-5.  配置CIPHER控制信息。包含加解密算法、工作模式等信息。调用接口[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)。
-6.  配置密钥。请参考《KLAD API 参考》1.2.1 明文KEY传递或1.2.2 ROOTKEY传递。
-7.  加解密数据。用户可调用以下任意接口加解密数据。
-    -   物理内存中数据的单包加密--[ss\_mpi\_cipher\_encrypt](#ss_mpi_cipher_encrypt)
-    -   物理内存中数据的单包解密--[ss\_mpi\_cipher\_decrypt](#ss_mpi_cipher_decrypt)
-    -   虚拟内存中数据的单包加密--[ss\_mpi\_cipher\_encrypt\_virt](#ss_mpi_cipher_encrypt_virt)
-    -   虚拟内存中数据的单包解密--[ss\_mpi\_cipher\_decrypt\_virt](#ss_mpi_cipher_decrypt_virt)
-
-8.  解绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)。
-9.  销毁KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_destroy](#ZH-CN_TOPIC_0000002408093686)。
+</table> ## 使用流程<a name="ZH-CN_TOPIC_0000002408253578"></a> ### 单包数据加解密（对称加解密算法）<a name="ZH-CN_TOPIC_0000002408093702"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002441572877"></a> 对单包数据进行加密或解密。当物理内存中有一段码流数据需要进行加/解密时，获取物理地址后在用户层调用CIPHER模块实现加/解密，或当虚拟内存中有一段数据需要进行加/解密时，获取虚拟地址后在用户层调用CIPHER模块实现加/解密。 #### 工作流程<a name="ZH-CN_TOPIC_0000002408093670"></a> 1. CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)。
+2. 创建CIPHER句柄。调用接口[ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)。
+3. 创建KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)。
+4. 绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)。
+5. 配置CIPHER控制信息。包含加解密算法、工作模式等信息。调用接口[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)。
+6. 配置密钥。请参考《KLAD API 参考》1.2.1 明文KEY传递或1.2.2 ROOTKEY传递。
+7. 加解密数据。用户可调用以下任意接口加解密数据。 - 物理内存中数据的单包加密--[ss\_mpi\_cipher\_encrypt](#ss_mpi_cipher_encrypt) - 物理内存中数据的单包解密--[ss\_mpi\_cipher\_decrypt](#ss_mpi_cipher_decrypt) - 虚拟内存中数据的单包加密--[ss\_mpi\_cipher\_encrypt\_virt](#ss_mpi_cipher_encrypt_virt) - 虚拟内存中数据的单包解密--[ss\_mpi\_cipher\_decrypt\_virt](#ss_mpi_cipher_decrypt_virt) 8. 解绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)。
+9. 销毁KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_destroy](#ZH-CN_TOPIC_0000002408093686)。
 10. 销毁CIPHER句柄。调用接口[ss\_mpi\_cipher\_destroy](#ZH-CN_TOPIC_0000002408253590)。
-11. CIPHER设备去初始化。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002441653001"></a>
-
-使用CIPHER模块时，请特别注意以下几点。
-
--   该接口支持AES对称加解密算法。
--   各算法支持ECB/CBC/CFB/OFB/CTR/CCM/GCM等工作模式。CCM/GCM工作模式加解密请参考“[CCM/GCM加解密（对称加解密算法）](#ZH-CN_TOPIC_0000002441653033)”章节。
--   在进行加密、解密运算前必须先获取CIPHER句柄，当长时间不使用时可以释放，建议加密、解密各获取一个句柄，每个句柄只进行加密或者只进行解密操作。
--   支持对不带cache的物理空间连续的内存数据进行加密、解密（如果是带cache的，需要用户自己执行刷cache操作）和对虚拟空间的内存数据进行加密、解密（用户可以使用malloc等申请虚拟地址）。
--   CIPHER内部采用DMA方式传输数据，所以调用[ss\_mpi\_cipher\_encrypt](#ZH-CN_TOPIC_0000002441652993)或[ss\_mpi\_cipher\_decrypt](#ZH-CN_TOPIC_0000002441572865)接口进行数据的加密或解密时，传入的地址参数为数据的物理地址。当调用[ss\_mpi\_cipher\_encrypt\_virt](#ZH-CN_TOPIC_0000002408253614)或[ss\_mpi\_cipher\_decrypt\_virt](#ZH-CN_TOPIC_0000002441572833)接口进行数据的加密或解密时，传入的地址参数为数据的虚拟地址。
--   加密、解密的源地址、目的地址可以相同，即可以在原地（密文、明文使用同一块buffer）进行数据的加密和解密。
--   使用非ECB模式进行CIPHER的加解密时，需要使用初始化向量IV（Initial Vector）。
--   配置IV时有以下两个场景（以解密数据块为例）：
-
-    **【场景1】**
-
-    每次调用CIPHER时都需要更新IV，此时请设置chg\_flags = OT\_CIPHER\_IV\_CHG\_ALL\_PACK，并正确配置IV值。
-
-    函数调用顺序请参考：
-
-    ```
-    ss_mpi_cipher_set_cfg()  // should set chg_flags = OT_CIPHER_IV_CHG_ALL_PACK and update iv
-    ss_mpi_cipher_decrypt()
-    ss_mpi_cipher_set_cfg()  // should set chg_flags = OT_CIPHER_IV_CHG_ALL_PACK and update iv
-    ss_mpi_cipher_decrypt()
-    ….
-    ss_mpi_cipher_set_cfg()  // should set chg_flags = OT_CIPHER_IV_CHG_ALL_PACK and update iv
-    ss_mpi_cipher_decrypt()
-    ```
-
-    **图 1**  CIPHER应用场景1，每次调用都需要更新IV<a name="fig134088540378"></a>  
-    ![](figures/CIPHER应用场景1-每次调用都需要更新IV.png "CIPHER应用场景1-每次调用都需要更新IV")
-
-    **【场景2】**
-
-    只需第一次调用CIPHER时设置IV，此时请设置chg\_flags = OT\_CIPHER\_IV\_CHG\_ONE\_PACK，且配置IV值。
-
-    函数调用顺序请参考：
-
-    ```
-    ss_mpi_cipher_set_cfg()  // should set chg_flags = OT_CIPHER_IV_CHG_ONE_PACK and update iv
-    ss_mpi_cipher_decrypt()
-    ss_mpi_cipher_decrypt()
-    ss_mpi_cipher_decrypt()
-    ```
-
-    **图 2**  CIPHER应用场景2，只在第一次调用时配置IV<a name="fig45629317391"></a>  
-    ![](figures/CIPHER应用场景2-只在第一次调用时配置IV.png "CIPHER应用场景2-只在第一次调用时配置IV")
-
-    请结合实际场景进行IV的配置。
-
--   单包加解密的IV向量可继承。创建一路CIPHER，配置属性（假设配置的工作模式需要使用IV向量）之后，每次调用单包加解密接口时，IV向量会依次轮流使用。
-
-    例如：用户需依次加密数据0，数据1。向量为a,b,c,d。用户加密完数据0之后，数据0的最后一个分块数据使用了IV向量中的b进行加密处理；此时，用户再加密数据1时，数据1的第一个分块数据将会使用IV向量c进行加密，然后依次为d,a,b,c,d…。
-
-    因此在加解密时，必须要保证两次向量使用的一致性。重新配置CIPHER控制信息将设置IV向量从第一个开始
-
--   CCM、GCM在计算完成后需要获取TAG值，解密的TAG要和加密时一样解密才成功。
-
-### 多包数据加解密（对称加解密算法）<a name="ZH-CN_TOPIC_0000002408253610"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002441572933"></a>
-
-对多个数据包进行加密或解密。当物理内存中有多段码流数据需要进行加/解密时，获取物理地址后在用户层调用CIPHER模块实现加/解密。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002441652989"></a>
-
-1.  CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)。
-2.  创建CIPHER句柄。调用接口[ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)。
-3.  创建KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)。
-4.  绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)。
-5.  配置CIPHER控制信息。包含加解密算法、工作模式等信息。调用接口[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)。
-6.  配置密钥。请参考《KLAD API 参考》1.2.1 明文KEY传递或1.2.2 ROOTKEY传递。
-7.  加解密数据。用户可调用以下任意接口加解密数据。
-    -   多包加密--[ss\_mpi\_cipher\_encrypt\_multi\_pack](#ss_mpi_cipher_encrypt_multi_pack)
-    -   多包解密--[ss\_mpi\_cipher\_decrypt\_multi\_pack](#ss_mpi_cipher_decrypt_multi_pack)
-
-8.  解绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)。
-9.  销毁KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_destroy](#ZH-CN_TOPIC_0000002408093686)。
+11. CIPHER设备去初始化。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)。 #### 注意事项<a name="ZH-CN_TOPIC_0000002441653001"></a> 使用CIPHER模块时，请特别注意以下几点。 - 该接口支持AES对称加解密算法。
+- 各算法支持ECB/CBC/CFB/OFB/CTR/CCM/GCM等工作模式。CCM/GCM工作模式加解密请参考“[CCM/GCM加解密（对称加解密算法）](#ZH-CN_TOPIC_0000002441653033)”章节。
+- 在进行加密、解密运算前必须先获取CIPHER句柄，当长时间不使用时可以释放，建议加密、解密各获取一个句柄，每个句柄只进行加密或者只进行解密操作。
+- 支持对不带cache的物理空间连续的内存数据进行加密、解密（如果是带cache的，需要用户自己执行刷cache操作）和对虚拟空间的内存数据进行加密、解密（用户可以使用malloc等申请虚拟地址）。
+- CIPHER内部采用DMA方式传输数据，所以调用[ss\_mpi\_cipher\_encrypt](#ZH-CN_TOPIC_0000002441652993)或[ss\_mpi\_cipher\_decrypt](#ZH-CN_TOPIC_0000002441572865)接口进行数据的加密或解密时，传入的地址参数为数据的物理地址。当调用[ss\_mpi\_cipher\_encrypt\_virt](#ZH-CN_TOPIC_0000002408253614)或[ss\_mpi\_cipher\_decrypt\_virt](#ZH-CN_TOPIC_0000002441572833)接口进行数据的加密或解密时，传入的地址参数为数据的虚拟地址。
+- 加密、解密的源地址、目的地址可以相同，即可以在原地（密文、明文使用同一块buffer）进行数据的加密和解密。
+- 使用非ECB模式进行CIPHER的加解密时，需要使用初始化向量IV（Initial Vector）。
+- 配置IV时有以下两个场景（以解密数据块为例）： **【场景1】** 每次调用CIPHER时都需要更新IV，此时请设置chg\_flags = OT\_CIPHER\_IV\_CHG\_ALL\_PACK，并正确配置IV值。 函数调用顺序请参考： ``` ss_mpi_cipher_set_cfg / should set chg_flags = OT_CIPHER_IV_CHG_ALL_PACK and update iv ss_mpi_cipher_decrypt ss_mpi_cipher_set_cfg / should set chg_flags = OT_CIPHER_IV_CHG_ALL_PACK and update iv ss_mpi_cipher_decrypt …. ss_mpi_cipher_set_cfg / should set chg_flags = OT_CIPHER_IV_CHG_ALL_PACK and update iv ss_mpi_cipher_decrypt ``` **图 1** CIPHER应用场景1，每次调用都需要更新IV<a name="fig134088540378"></a> ![](figures/CIPHER应用场景1-每次调用都需要更新IV.png "CIPHER应用场景1-每次调用都需要更新IV") **【场景2】** 只需第一次调用CIPHER时设置IV，此时请设置chg\_flags = OT\_CIPHER\_IV\_CHG\_ONE\_PACK，且配置IV值。 函数调用顺序请参考： ``` ss_mpi_cipher_set_cfg / should set chg_flags = OT_CIPHER_IV_CHG_ONE_PACK and update iv ss_mpi_cipher_decrypt ss_mpi_cipher_decrypt ss_mpi_cipher_decrypt ``` **图 2** CIPHER应用场景2，只在第一次调用时配置IV<a name="fig45629317391"></a> ![](figures/CIPHER应用场景2-只在第一次调用时配置IV.png "CIPHER应用场景2-只在第一次调用时配置IV") 请结合实际场景进行IV的配置。 - 单包加解密的IV向量可继承。创建一路CIPHER，配置属性（假设配置的工作模式需要使用IV向量）之后，每次调用单包加解密接口时，IV向量会依次轮流使用。 例如：用户需依次加密数据0，数据1。向量为a,b,c,d。用户加密完数据0之后，数据0的最后一个分块数据使用了IV向量中的b进行加密处理；此时，用户再加密数据1时，数据1的第一个分块数据将会使用IV向量c进行加密，然后依次为d,a,b,c,d…。 因此在加解密时，必须要保证两次向量使用的一致性。重新配置CIPHER控制信息将设置IV向量从第一个开始 - CCM、GCM在计算完成后需要获取TAG值，解密的TAG要和加密时一样解密才成功。 ### 多包数据加解密（对称加解密算法）<a name="ZH-CN_TOPIC_0000002408253610"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002441572933"></a> 对多个数据包进行加密或解密。当物理内存中有多段码流数据需要进行加/解密时，获取物理地址后在用户层调用CIPHER模块实现加/解密。 #### 工作流程<a name="ZH-CN_TOPIC_0000002441652989"></a> 1. CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)。
+2. 创建CIPHER句柄。调用接口[ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)。
+3. 创建KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)。
+4. 绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)。
+5. 配置CIPHER控制信息。包含加解密算法、工作模式等信息。调用接口[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)。
+6. 配置密钥。请参考《KLAD API 参考》1.2.1 明文KEY传递或1.2.2 ROOTKEY传递。
+7. 加解密数据。用户可调用以下任意接口加解密数据。 - 多包加密--[ss\_mpi\_cipher\_encrypt\_multi\_pack](#ss_mpi_cipher_encrypt_multi_pack) - 多包解密--[ss\_mpi\_cipher\_decrypt\_multi\_pack](#ss_mpi_cipher_decrypt_multi_pack) 8. 解绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)。
+9. 销毁KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_destroy](#ZH-CN_TOPIC_0000002408093686)。
 10. 销毁CIPHER句柄。调用接口[ss\_mpi\_cipher\_destroy](#ZH-CN_TOPIC_0000002408253590)。
-11. CIPHER设备去初始化。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002441572861"></a>
-
--   进行多包加解密时，最多支持同时加解密5000个包。
--   对于多个包的操作，每个包都使用[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)配置的向量进行运算，IV作用域是可配置的，前一个包的向量运算结果可以作为下一个包的IV，或者每个包IV都是独立运算的（前一次函数调用的结果不会影响后一次函数调用的运算结果）。
--   进行多包加解密时，需要使用物理地址作为地址参数。
--   其它注意事项同“[单包数据加解密（对称加解密算法）](#ZH-CN_TOPIC_0000002408093702)”章节。
-
-### CCM/GCM加解密（对称加解密算法）<a name="ZH-CN_TOPIC_0000002441653033"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002441572893"></a>
-
-对数据进行CCM加解密。该算法请参考：SP800-38C\_updated-July20\_2007\_CCM. The CCM Mode for Authentication and Confidentiality。
-
-对数据进行GCM加解密。该算法请参考：SP-800-38D-GCM. Galois/Counter Mode \(GCM\) and GMAC。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002441572849"></a>
-
-1.  CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)。
-2.  创建CIPHER句柄。调用接口[ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)。
-3.  创建KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)。
-4.  绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)。
-5.  配置CIPHER控制信息。包含加解密算法、工作模式等信息。调用接口[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)。
-6.  配置密钥。请参考《KLAD API 参考》1.2.1 明文KEY传递或1.2.2 ROOTKEY传递。
-7.  加解密数据。用户可调用以下任意接口加解密数据。
-    -   物理内存中数据加密--[ss\_mpi\_cipher\_encrypt](#ss_mpi_cipher_encrypt)
-    -   物理内存中数据解密--[ss\_mpi\_cipher\_decrypt](#ss_mpi_cipher_decrypt)
-    -   虚拟内存中数据加密--[ss\_mpi\_cipher\_encrypt\_virt](#ss_mpi_cipher_encrypt_virt)
-    -   虚拟内存中数据解密--[ss\_mpi\_cipher\_decrypt\_virt](#ss_mpi_cipher_decrypt_virt)
-
-8.  获取TAG值。调用接口[ss\_mpi\_cipher\_get\_tag](#ZH-CN_TOPIC_0000002441653053)。
-9.  解绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)。
+11. CIPHER设备去初始化。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)。 #### 注意事项<a name="ZH-CN_TOPIC_0000002441572861"></a> - 进行多包加解密时，最多支持同时加解密5000个包。
+- 对于多个包的操作，每个包都使用[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)配置的向量进行运算，IV作用域是可配置的，前一个包的向量运算结果可以作为下一个包的IV，或者每个包IV都是独立运算的（前一次函数调用的结果不会影响后一次函数调用的运算结果）。
+- 进行多包加解密时，需要使用物理地址作为地址参数。
+- 其它注意事项同“[单包数据加解密（对称加解密算法）](#ZH-CN_TOPIC_0000002408093702)”章节。 ### CCM/GCM加解密（对称加解密算法）<a name="ZH-CN_TOPIC_0000002441653033"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002441572893"></a> 对数据进行CCM加解密。该算法请参考：SP800-38C\_updated-July20\_2007\_CCM. The CCM Mode for Authentication and Confidentiality。 对数据进行GCM加解密。该算法请参考：SP-800-38D-GCM. Galois/Counter Mode \(GCM\) and GMAC。 #### 工作流程<a name="ZH-CN_TOPIC_0000002441572849"></a> 1. CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)。
+2. 创建CIPHER句柄。调用接口[ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)。
+3. 创建KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)。
+4. 绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)。
+5. 配置CIPHER控制信息。包含加解密算法、工作模式等信息。调用接口[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)。
+6. 配置密钥。请参考《KLAD API 参考》1.2.1 明文KEY传递或1.2.2 ROOTKEY传递。
+7. 加解密数据。用户可调用以下任意接口加解密数据。 - 物理内存中数据加密--[ss\_mpi\_cipher\_encrypt](#ss_mpi_cipher_encrypt) - 物理内存中数据解密--[ss\_mpi\_cipher\_decrypt](#ss_mpi_cipher_decrypt) - 虚拟内存中数据加密--[ss\_mpi\_cipher\_encrypt\_virt](#ss_mpi_cipher_encrypt_virt) - 虚拟内存中数据解密--[ss\_mpi\_cipher\_decrypt\_virt](#ss_mpi_cipher_decrypt_virt) 8. 获取TAG值。调用接口[ss\_mpi\_cipher\_get\_tag](#ZH-CN_TOPIC_0000002441653053)。
+9. 解绑定CIPHER和KEYSLOT句柄。调用接口[ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)。
 10. 销毁KEYSLOT句柄。调用接口[ss\_mpi\_keyslot\_destroy](#ZH-CN_TOPIC_0000002408093686)。
 11. 销毁CIPHER句柄。调用接口[ss\_mpi\_cipher\_destroy](#ZH-CN_TOPIC_0000002408253590)。
-12. CIPHER设备去初始化。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002441653021"></a>
-
--   CCM/GCM密钥长度为128/192/256 bits\(硬件 key 只支持 128/256 bits\)。CCM/GCM解密产生的TAG值必须和加密时一样，解密结果才是正确的。
--   AES-CCM模式由AES CTR加密模式和CBC-MAC认证算法构成，既可以保证数据的保密性，也能保证数据的完整性。
-    -   根据CCM算法原理，向量IV长度iv\_len可取\{7, 8, 9, 10, 11, 12, 13\} bytes，IV存放算法标准中的Nonce数据N，加密数据的长度用n个Byte表示，且应满足条件：iv\_len+n=15, 所以iv\_len为13时，n为2，此时加密数据长度最长为65535bytes，其它以此类推。
-    -   CCM加密时的向量N、关联数据A取值必须与解密时保持一致。
-
--   AES-GCM模式由AES CTR和GHASH构成，既可以保证数据的保密性，也能保证数据的完整性。
-    -   根据GCM算法原理，GCM的向量IV长度iv\_len可取范围为\[1\~16\]。
-    -   GCM加密时的关联数据A取值必须与解密时保持一致。
-
-### HASH计算（摘要算法）<a name="ZH-CN_TOPIC_0000002408253626"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002441572829"></a>
-
-计算数据的HASH值，可选择SHA256/SHA384/SHA512。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002408253594"></a>
-
-1.  CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
-2.  <a name="li16799101725513"></a>创建一路HASH，获取HASH句柄，选择HASH算法。调用接口[ss\_mpi\_cipher\_hash\_init](#ZH-CN_TOPIC_0000002408093678)完成。
-3.  <a name="li579917172559"></a>输入数据，逐个数据块依次计算HASH值。调用接口[ss\_mpi\_cipher\_hash\_update](#ZH-CN_TOPIC_0000002408253598)完成。
-4.  如果摘要未计算完成，再次执行[3](#li579917172559)。
-5.  <a name="li379991710553"></a>完成摘要计算，结束输入，获取计算结果。调用接口[ss\_mpi\_cipher\_hash\_final](#ZH-CN_TOPIC_0000002408093722)完成。
-6.  关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002441572881"></a>
-
-支持软件多通道，可同时进行多个HASH运算， 即执行[2](#li16799101725513)启动一个HASH运算，在本次HASH计算未完成（即未执行[5](#li379991710553)）之前，可申请一个新通道启动另一个HASH运算，直到申请不到通道为止。
-
-最多支持15个HASH软件通道，15个通道可同时都被打开，但同一时间内只有一个通道在进行运算。
-
-### HMAC计算（摘要算法）<a name="ZH-CN_TOPIC_0000002408093738"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002408253646"></a>
-
-计算数据的HMAC值。基于的HASH算法为 SHA256/SHA384/SHA512。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002441572869"></a>
-
-HMAC运算开发操作步骤如下：
-
-1.  调用[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)初始化CIPHER模块。
-2.  <a name="li132961530185714"></a>调用[ss\_mpi\_cipher\_hash\_init](#ZH-CN_TOPIC_0000002408093678)选择使用的HASH算法，并配置HMAC计算的密钥，初始化HASH模块。
-3.  调用[ss\_mpi\_cipher\_hash\_update](#ZH-CN_TOPIC_0000002408253598)输入数据，可以一个BLOCK接一个BLOCK输入。
-4.  <a name="li19296113055717"></a>调用[ss\_mpi\_cipher\_hash\_final](#ZH-CN_TOPIC_0000002408093722)结束输入，并输出HMAC值。
-5.  调用[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)  去初始化CIPHER设备。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002441653081"></a>
-
-支持软件多通道，可同时进行多个HMAC运算， 即执行[2](#li132961530185714)启动一个HMAC运算，在本次HMAC计算未完成（即未执行[4](#li19296113055717)）之前，可申请一个新通道启动另一个HMAC运算，直到申请不到通道为止。
-
-HMAC和HASH共用15个软件通道，15个通道可同时都被打开，但同一时间内只有一个通道在进行运算。
-
-### 随机数生成<a name="ZH-CN_TOPIC_0000002408093746"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002441652997"></a>
-
-获取硬件产生的真随机数。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002441653029"></a>
-
-生成随机数据的过程如下：
-
-1.  CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
-2.  获取32bits的随机数。调用接口[ss\_mpi\_cipher\_get\_random\_num](#ZH-CN_TOPIC_0000002408253630)完成。
-3.  关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002408253634"></a>
-
-无。
-
-### RSA加解密（不对称加解密算法）<a name="ZH-CN_TOPIC_0000002441652977"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002408253574"></a>
-
-对数据进行RSA不对称算法进行加解密，当使用公钥加密的数据，必须使用私钥进行解密，反之，使用私钥加密的数据，必须使用公钥进行解密。
-
-该算法请参考：rfc3447. RSA Cryptography Specifications。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002408093726"></a>
-
-对数据进行不对称的RSA加解密的过程如下：
-
-1.  CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
-2.  对数据进行加解密。根据使用的密钥不同，分为4个接口，用户可以调用以下任一接口进行加解密等。
-    -   公钥加密--  [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt)
-    -   私钥解密--  [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt)
-    -   私钥加密--  [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt)
-    -   公钥解密--  [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt)
-
-3.  关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002408253670"></a>
-
-RSA密钥位宽可选2048、3072及4096。根据RSA算法原理，明文和密文都必须比公钥N小，所以待加解密的数据长度必须小于或等于密钥的长度，惯用 做法是在待加解密的数据的高位补0等，使其长度和公钥N相等，但其值比公钥N小。支持PKCS\#1 V1.5和PKCS\#1 V2.1填充方式，其中PKCS\#1 V1.5为弱填充方式，客户不建议使用该填充方式，PKCS\#1 V2.1填充方式为OAEP。注意：op-tee、uboot环境不支持RSA私钥，priv\_key用p/q/dp/dq/qp代替d。
-
-### RSA签名及验签（不对称加解密算法）<a name="ZH-CN_TOPIC_0000002408093674"></a>
-
-
-
-
-#### 场景说明<a name="ZH-CN_TOPIC_0000002441653017"></a>
-
-对数据进行RSA签名及验签时，使用私钥进行数据签名，使用公钥进行数据验签。
-
-该算法请参考：rfc3447. RSA Cryptography Specifications。
-
-#### 工作流程<a name="ZH-CN_TOPIC_0000002408093734"></a>
-
-对数据进行不对称的RSA签名及验签的过程如下：
-
-1.  CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
-2.  对数据进行签名验证，调用以下接口签名验证。
-    -   私钥签名--[ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
-    -   公钥验证--[ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
-
-3.  关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。
-
-#### 注意事项<a name="ZH-CN_TOPIC_0000002441653065"></a>
-
-RSA密钥位宽可选2048、3072及4096。根据RSA算法原理，明文和密文都必须比公钥小，所以待加解密的数据长度必须小于或等于密钥的长度，惯用作法是先计算待签名数据的HASH值，接着将HASH值填充成长度和公钥N相等但其值比公钥N小的数据，然后再进行加密。支持PKCS\#1 V1.5和PKCS\#1 V2.1填充方式，其中PKCS\#1 V1.5为弱填充方式，客户不要该填充方式，PKCS\#1 V2.1填充方式为PSS。注意：op-tee、uboot环境不支持RSA私钥，priv\_key用p/q/dp/dq/qp代替d。
-
-# API参考
-CIPHER提供以下API：
-
--   [ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)：初始化CIPHER模块。
--   [ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)：去初始化CIPHER模块。
--   [ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)：对称加解密时创建一路的CIPHER句柄。
--   [ss\_mpi\_cipher\_destroy](#ZH-CN_TOPIC_0000002408253590)：对称加解密时销毁已存在的CIPHER句柄。
--   [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)：对称加解密时配置CIPHER通道对应的控制信息。
--   [ss\_mpi\_cipher\_get\_cfg](#ZH-CN_TOPIC_0000002441572913)：对称加解密时获取CIPHER通道对应的配置信息。
--   [ss\_mpi\_cipher\_encrypt](#ZH-CN_TOPIC_0000002441652993)：对称加解密时单包数据加密功能。
--   [ss\_mpi\_cipher\_decrypt](#ZH-CN_TOPIC_0000002441572865)：对称加解密时单包数据解密功能。
--   [ss\_mpi\_cipher\_encrypt\_virt](#ZH-CN_TOPIC_0000002408253614)：对称加解密时对数据进行加密。
--   [ss\_mpi\_cipher\_decrypt\_virt](#ZH-CN_TOPIC_0000002441572833)：对称加解密时对数据进行解密。
--   [ss\_mpi\_cipher\_encrypt\_multi\_pack](#ZH-CN_TOPIC_0000002408093690)：对称加解密时多包数据加密功能。
--   [ss\_mpi\_cipher\_decrypt\_multi\_pack](#ZH-CN_TOPIC_0000002441653025)：对称加解密时多包数据解密功能。
--   [ss\_mpi\_cipher\_get\_tag](#ZH-CN_TOPIC_0000002441653053)：对称加解密时CCM/GCM模式获取TAG值。
--   [ss\_mpi\_cipher\_hash\_init](#ZH-CN_TOPIC_0000002408093678)：HASH、HMAC计算初始化功能。
--   [ss\_mpi\_cipher\_hash\_update](#ZH-CN_TOPIC_0000002408253598)：HASH、HMAC计算数据输入功能。
--   [ss\_mpi\_cipher\_hash\_final](#ZH-CN_TOPIC_0000002408093722)：HASH、HMAC计算最终结果输出功能。
--   [ss\_mpi\_cipher\_get\_random\_num](#ZH-CN_TOPIC_0000002408253630)：获取随机数功能。
--   [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ZH-CN_TOPIC_0000002408253586)：使用RSA公钥加密一段明文。
--   [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ZH-CN_TOPIC_0000002408093710)：使用RSA私钥解密一段密文。
--   [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ZH-CN_TOPIC_0000002441653041)：使用RSA私钥加密一段明文。
--   [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ZH-CN_TOPIC_0000002408253566)：使用RSA公钥解密一段密文。
--   [ss\_mpi\_cipher\_rsa\_sign](#ZH-CN_TOPIC_0000002441653009)：使用RSA私钥签名一段文本。
--   [ss\_mpi\_cipher\_rsa\_verify](#ZH-CN_TOPIC_0000002408253618)：使用RSA公钥验证一段文本。
--   [ss\_mpi\_cipher\_sm2\_encrypt](#ZH-CN_TOPIC_0000002441572901)：使用SM2公钥加密一段明文。
--   [ss\_mpi\_cipher\_sm2\_decrypt](#ZH-CN_TOPIC_0000002441653061)：使用SM2私钥解密一段密文。
--   [ss\_mpi\_cipher\_sm2\_sign](#ZH-CN_TOPIC_0000002408253606)：使用SM2签名一段文本。
--   [ss\_mpi\_cipher\_sm2\_verify](#ZH-CN_TOPIC_0000002408093770)：使用SM2验证一段文本。
--   [ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)：对称加解密时创建一路keyslot句柄。
--   [ss\_mpi\_keyslot\_destroy](#ZH-CN_TOPIC_0000002408093686)：对称加解密时销毁一路keyslot句柄。
--   [ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)：对称加解密时cipher句柄与keyslot句柄绑定。
--   [ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)：对称加解密时cipher句柄与keyslot句柄解绑定。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ss\_mpi\_cipher\_init<a name="ZH-CN_TOPIC_0000002408093694"></a>
-
-【描述】
-
-初始化CIPHER模块。
-
-【语法】
-
-```
+12. CIPHER设备去初始化。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)。 #### 注意事项<a name="ZH-CN_TOPIC_0000002441653021"></a> - CCM/GCM密钥长度为128/192/256 bits\(硬件 key 只支持 128/256 bits\)。CCM/GCM解密产生的TAG值必须和加密时一样，解密结果才是正确的。
+- AES-CCM模式由AES CTR加密模式和CBC-MAC认证算法构成，既可以保证数据的保密性，也能保证数据的完整性。 - 根据CCM算法原理，向量IV长度iv\_len可取\{7, 8, 9, 10, 11, 12, 13\} bytes，IV存放算法标准中的Nonce数据N，加密数据的长度用n个Byte表示，且应满足条件：iv\_len+n=15, 所以iv\_len为13时，n为2，此时加密数据长度最长为65535bytes，其它以此类推。 - CCM加密时的向量N、关联数据A取值必须与解密时保持一致。 - AES-GCM模式由AES CTR和GHASH构成，既可以保证数据的保密性，也能保证数据的完整性。 - 根据GCM算法原理，GCM的向量IV长度iv\_len可取范围为\[1\~16\]。 - GCM加密时的关联数据A取值必须与解密时保持一致。 ### HASH计算（摘要算法）<a name="ZH-CN_TOPIC_0000002408253626"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002441572829"></a> 计算数据的HASH值，可选择SHA256/SHA384/SHA512。 #### 工作流程<a name="ZH-CN_TOPIC_0000002408253594"></a> 1. CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
+2. <a name="li16799101725513"></a>创建一路HASH，获取HASH句柄，选择HASH算法。调用接口[ss\_mpi\_cipher\_hash\_init](#ZH-CN_TOPIC_0000002408093678)完成。
+3. <a name="li579917172559"></a>输入数据，逐个数据块依次计算HASH值。调用接口[ss\_mpi\_cipher\_hash\_update](#ZH-CN_TOPIC_0000002408253598)完成。
+4. 如果摘要未计算完成，再次执行[3](#li579917172559)。
+5. <a name="li379991710553"></a>完成摘要计算，结束输入，获取计算结果。调用接口[ss\_mpi\_cipher\_hash\_final](#ZH-CN_TOPIC_0000002408093722)完成。
+6. 关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。 #### 注意事项<a name="ZH-CN_TOPIC_0000002441572881"></a> 支持软件多通道，可同时进行多个HASH运算， 即执行[2](#li16799101725513)启动一个HASH运算，在本次HASH计算未完成（即未执行[5](#li379991710553)）之前，可申请一个新通道启动另一个HASH运算，直到申请不到通道为止。 最多支持15个HASH软件通道，15个通道可同时都被打开，但同一时间内只有一个通道在进行运算。 ### HMAC计算（摘要算法）<a name="ZH-CN_TOPIC_0000002408093738"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002408253646"></a> 计算数据的HMAC值。基于的HASH算法为 SHA256/SHA384/SHA512。 #### 工作流程<a name="ZH-CN_TOPIC_0000002441572869"></a> HMAC运算开发操作步骤如下： 1. 调用[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)初始化CIPHER模块。
+2. <a name="li132961530185714"></a>调用[ss\_mpi\_cipher\_hash\_init](#ZH-CN_TOPIC_0000002408093678)选择使用的HASH算法，并配置HMAC计算的密钥，初始化HASH模块。
+3. 调用[ss\_mpi\_cipher\_hash\_update](#ZH-CN_TOPIC_0000002408253598)输入数据，可以一个BLOCK接一个BLOCK输入。
+4. <a name="li19296113055717"></a>调用[ss\_mpi\_cipher\_hash\_final](#ZH-CN_TOPIC_0000002408093722)结束输入，并输出HMAC值。
+5. 调用[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905) 去初始化CIPHER设备。 #### 注意事项<a name="ZH-CN_TOPIC_0000002441653081"></a> 支持软件多通道，可同时进行多个HMAC运算， 即执行[2](#li132961530185714)启动一个HMAC运算，在本次HMAC计算未完成（即未执行[4](#li19296113055717)）之前，可申请一个新通道启动另一个HMAC运算，直到申请不到通道为止。 HMAC和HASH共用15个软件通道，15个通道可同时都被打开，但同一时间内只有一个通道在进行运算。 ### 随机数生成<a name="ZH-CN_TOPIC_0000002408093746"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002441652997"></a> 获取硬件产生的真随机数。 #### 工作流程<a name="ZH-CN_TOPIC_0000002441653029"></a> 生成随机数据的过程如下： 1. CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
+2. 获取32bits的随机数。调用接口[ss\_mpi\_cipher\_get\_random\_num](#ZH-CN_TOPIC_0000002408253630)完成。
+3. 关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。 #### 注意事项<a name="ZH-CN_TOPIC_0000002408253634"></a> 无。 ### RSA加解密（不对称加解密算法）<a name="ZH-CN_TOPIC_0000002441652977"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002408253574"></a> 对数据进行RSA不对称算法进行加解密，当使用公钥加密的数据，必须使用私钥进行解密，反之，使用私钥加密的数据，必须使用公钥进行解密。 该算法请参考：rfc3447. RSA Cryptography Specifications。 #### 工作流程<a name="ZH-CN_TOPIC_0000002408093726"></a> 对数据进行不对称的RSA加解密的过程如下： 1. CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
+2. 对数据进行加解密。根据使用的密钥不同，分为4个接口，用户可以调用以下任一接口进行加解密等。 - 公钥加密-- [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt) - 私钥解密-- [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt) - 私钥加密-- [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt) - 公钥解密-- [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt) 3. 关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。 #### 注意事项<a name="ZH-CN_TOPIC_0000002408253670"></a> RSA密钥位宽可选2048、3072及4096。根据RSA算法原理，明文和密文都必须比公钥N小，所以待加解密的数据长度必须小于或等于密钥的长度，惯用 做法是在待加解密的数据的高位补0等，使其长度和公钥N相等，但其值比公钥N小。支持PKCS\#1 V1.5和PKCS\#1 V2.1填充方式，其中PKCS\#1 V1.5为弱填充方式，客户不建议使用该填充方式，PKCS\#1 V2.1填充方式为OAEP。注意：op-tee、uboot环境不支持RSA私钥，priv\_key用p/q/dp/dq/qp代替d。 ### RSA签名及验签（不对称加解密算法）<a name="ZH-CN_TOPIC_0000002408093674"></a> #### 场景说明<a name="ZH-CN_TOPIC_0000002441653017"></a> 对数据进行RSA签名及验签时，使用私钥进行数据签名，使用公钥进行数据验签。 该算法请参考：rfc3447. RSA Cryptography Specifications。 #### 工作流程<a name="ZH-CN_TOPIC_0000002408093734"></a> 对数据进行不对称的RSA签名及验签的过程如下： 1. CIPHER设备初始化。调用接口[ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)完成。
+2. 对数据进行签名验证，调用以下接口签名验证。 - 私钥签名--[ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign) - 公钥验证--[ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify) 3. 关闭CIPHER设备。调用接口[ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)完成。 #### 注意事项<a name="ZH-CN_TOPIC_0000002441653065"></a> RSA密钥位宽可选2048、3072及4096。根据RSA算法原理，明文和密文都必须比公钥小，所以待加解密的数据长度必须小于或等于密钥的长度，惯用作法是先计算待签名数据的HASH值，接着将HASH值填充成长度和公钥N相等但其值比公钥N小的数据，然后再进行加密。支持PKCS\#1 V1.5和PKCS\#1 V2.1填充方式，其中PKCS\#1 V1.5为弱填充方式，客户不要该填充方式，PKCS\#1 V2.1填充方式为PSS。注意：op-tee、uboot环境不支持RSA私钥，priv\_key用p/q/dp/dq/qp代替d。 # API参考
+CIPHER提供以下API： - [ss\_mpi\_cipher\_init](#ZH-CN_TOPIC_0000002408093694)：初始化CIPHER模块。
+- [ss\_mpi\_cipher\_deinit](#ZH-CN_TOPIC_0000002441572905)：去初始化CIPHER模块。
+- [ss\_mpi\_cipher\_create](#ZH-CN_TOPIC_0000002408253570)：对称加解密时创建一路的CIPHER句柄。
+- [ss\_mpi\_cipher\_destroy](#ZH-CN_TOPIC_0000002408253590)：对称加解密时销毁已存在的CIPHER句柄。
+- [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)：对称加解密时配置CIPHER通道对应的控制信息。
+- [ss\_mpi\_cipher\_get\_cfg](#ZH-CN_TOPIC_0000002441572913)：对称加解密时获取CIPHER通道对应的配置信息。
+- [ss\_mpi\_cipher\_encrypt](#ZH-CN_TOPIC_0000002441652993)：对称加解密时单包数据加密功能。
+- [ss\_mpi\_cipher\_decrypt](#ZH-CN_TOPIC_0000002441572865)：对称加解密时单包数据解密功能。
+- [ss\_mpi\_cipher\_encrypt\_virt](#ZH-CN_TOPIC_0000002408253614)：对称加解密时对数据进行加密。
+- [ss\_mpi\_cipher\_decrypt\_virt](#ZH-CN_TOPIC_0000002441572833)：对称加解密时对数据进行解密。
+- [ss\_mpi\_cipher\_encrypt\_multi\_pack](#ZH-CN_TOPIC_0000002408093690)：对称加解密时多包数据加密功能。
+- [ss\_mpi\_cipher\_decrypt\_multi\_pack](#ZH-CN_TOPIC_0000002441653025)：对称加解密时多包数据解密功能。
+- [ss\_mpi\_cipher\_get\_tag](#ZH-CN_TOPIC_0000002441653053)：对称加解密时CCM/GCM模式获取TAG值。
+- [ss\_mpi\_cipher\_hash\_init](#ZH-CN_TOPIC_0000002408093678)：HASH、HMAC计算初始化功能。
+- [ss\_mpi\_cipher\_hash\_update](#ZH-CN_TOPIC_0000002408253598)：HASH、HMAC计算数据输入功能。
+- [ss\_mpi\_cipher\_hash\_final](#ZH-CN_TOPIC_0000002408093722)：HASH、HMAC计算最终结果输出功能。
+- [ss\_mpi\_cipher\_get\_random\_num](#ZH-CN_TOPIC_0000002408253630)：获取随机数功能。
+- [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ZH-CN_TOPIC_0000002408253586)：使用RSA公钥加密一段明文。
+- [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ZH-CN_TOPIC_0000002408093710)：使用RSA私钥解密一段密文。
+- [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ZH-CN_TOPIC_0000002441653041)：使用RSA私钥加密一段明文。
+- [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ZH-CN_TOPIC_0000002408253566)：使用RSA公钥解密一段密文。
+- [ss\_mpi\_cipher\_rsa\_sign](#ZH-CN_TOPIC_0000002441653009)：使用RSA私钥签名一段文本。
+- [ss\_mpi\_cipher\_rsa\_verify](#ZH-CN_TOPIC_0000002408253618)：使用RSA公钥验证一段文本。
+- [ss\_mpi\_cipher\_sm2\_encrypt](#ZH-CN_TOPIC_0000002441572901)：使用SM2公钥加密一段明文。
+- [ss\_mpi\_cipher\_sm2\_decrypt](#ZH-CN_TOPIC_0000002441653061)：使用SM2私钥解密一段密文。
+- [ss\_mpi\_cipher\_sm2\_sign](#ZH-CN_TOPIC_0000002408253606)：使用SM2签名一段文本。
+- [ss\_mpi\_cipher\_sm2\_verify](#ZH-CN_TOPIC_0000002408093770)：使用SM2验证一段文本。
+- [ss\_mpi\_keyslot\_create](#ZH-CN_TOPIC_0000002441572909)：对称加解密时创建一路keyslot句柄。
+- [ss\_mpi\_keyslot\_destroy](#ZH-CN_TOPIC_0000002408093686)：对称加解密时销毁一路keyslot句柄。
+- [ss\_mpi\_cipher\_attach](#ZH-CN_TOPIC_0000002408093718)：对称加解密时cipher句柄与keyslot句柄绑定。
+- [ss\_mpi\_cipher\_detach](#ZH-CN_TOPIC_0000002441653049)：对称加解密时cipher句柄与keyslot句柄解绑定。 ## ss\_mpi\_cipher\_init<a name="ZH-CN_TOPIC_0000002408093694"></a> 【描述】 初始化CIPHER模块。 【语法】 ```
 td_s32 ss_mpi_cipher_init(td_void);
-```
-
-【参数】
-
-无。
-
-【返回值】
-
-<a name="table535mcpsimp"></a>
+``` 【参数】 无。 【返回值】 <a name="table535mcpsimp"></a>
 <table><thead align="left"><tr id="row540mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p542mcpsimp"><a name="p542mcpsimp"></a><a name="p542mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p544mcpsimp"><a name="p544mcpsimp"></a><a name="p544mcpsimp"></a>描述</p>
@@ -629,48 +209,13 @@ td_s32 ss_mpi_cipher_init(td_void);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p550mcpsimp"><a name="p550mcpsimp"></a><a name="p550mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row551mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p553mcpsimp"><a name="p553mcpsimp"></a><a name="p553mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p555mcpsimp"><a name="p555mcpsimp"></a><a name="p555mcpsimp"></a>参见<a href="#ZH-CN_TOPIC_0000002408253662">错误码</a>。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   支持多次调用。
--   初始化和去初始化成对使用。
--   内核态不需要调用此接口。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_deinit<a name="ZH-CN_TOPIC_0000002441572905"></a>
-
-【描述】
-
-去初始化CIPHER模块。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - 支持多次调用。
+- 初始化和去初始化成对使用。
+- 内核态不需要调用此接口。 【举例】 无。 ## ss\_mpi\_cipher\_deinit<a name="ZH-CN_TOPIC_0000002441572905"></a> 【描述】 去初始化CIPHER模块。 【语法】 ```
 td_s32 ss_mpi_cipher_deinit(td_void);
-```
-
-【参数】
-
-无。
-
-【返回值】
-
-<a name="table575mcpsimp"></a>
+``` 【参数】 无。 【返回值】 <a name="table575mcpsimp"></a>
 <table><thead align="left"><tr id="row580mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p582mcpsimp"><a name="p582mcpsimp"></a><a name="p582mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p584mcpsimp"><a name="p584mcpsimp"></a><a name="p584mcpsimp"></a>描述</p>
@@ -682,43 +227,12 @@ td_s32 ss_mpi_cipher_deinit(td_void);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p590mcpsimp"><a name="p590mcpsimp"></a><a name="p590mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row591mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p593mcpsimp"><a name="p593mcpsimp"></a><a name="p593mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p595mcpsimp"><a name="p595mcpsimp"></a><a name="p595mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   支持多次调用。
--   初始化和去初始化成对使用。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_create<a name="ZH-CN_TOPIC_0000002408253570"></a>
-
-【描述】
-
-对称算法加解密时创建的CIPHER句柄。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - 支持多次调用。
+- 初始化和去初始化成对使用。 【举例】 无。 ## ss\_mpi\_cipher\_create<a name="ZH-CN_TOPIC_0000002408253570"></a> 【描述】 对称算法加解密时创建的CIPHER句柄。 【语法】 ```
 td_s32 ss_mpi_cipher_create (td_handle *handle, const ot_cipher_attr *cipher_attr);
-```
-
-【参数】
-
-<a name="table615mcpsimp"></a>
+``` 【参数】 <a name="table615mcpsimp"></a>
 <table><thead align="left"><tr id="row621mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p623mcpsimp"><a name="p623mcpsimp"></a><a name="p623mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p625mcpsimp"><a name="p625mcpsimp"></a><a name="p625mcpsimp"></a>描述</p>
@@ -742,11 +256,7 @@ td_s32 ss_mpi_cipher_create (td_handle *handle, const ot_cipher_attr *cipher_att
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table644mcpsimp"></a>
+</table> 【返回值】 <a name="table644mcpsimp"></a>
 <table><thead align="left"><tr id="row649mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p651mcpsimp"><a name="p651mcpsimp"></a><a name="p651mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p653mcpsimp"><a name="p653mcpsimp"></a><a name="p653mcpsimp"></a>描述</p>
@@ -758,44 +268,13 @@ td_s32 ss_mpi_cipher_create (td_handle *handle, const ot_cipher_attr *cipher_att
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p659mcpsimp"><a name="p659mcpsimp"></a><a name="p659mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row660mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p662mcpsimp"><a name="p662mcpsimp"></a><a name="p662mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p664mcpsimp"><a name="p664mcpsimp"></a><a name="p664mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   handle、cipher\_attr不能为空。
--   Hi3403V100、SS626V100支持15路CIPHER通道。
--   使用完通道后，应销毁对应的通道。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_destroy<a name="ZH-CN_TOPIC_0000002408253590"></a>
-
-【描述】
-
-对称算法加解密时销毁的CIPHER句柄。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - handle、cipher\_attr不能为空。
+- Hi3403V100、支持15路CIPHER通道。
+- 使用完通道后，应销毁对应的通道。 【举例】 无。 ## ss\_mpi\_cipher\_destroy<a name="ZH-CN_TOPIC_0000002408253590"></a> 【描述】 对称算法加解密时销毁的CIPHER句柄。 【语法】 ```
 td_s32 ss_mpi_cipher_destroy (td_handle handle);
-```
-
-【参数】
-
-<a name="table683mcpsimp"></a>
+``` 【参数】 <a name="table683mcpsimp"></a>
 <table><thead align="left"><tr id="row689mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p691mcpsimp"><a name="p691mcpsimp"></a><a name="p691mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p693mcpsimp"><a name="p693mcpsimp"></a><a name="p693mcpsimp"></a>描述</p>
@@ -812,11 +291,7 @@ td_s32 ss_mpi_cipher_destroy (td_handle handle);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table705mcpsimp"></a>
+</table> 【返回值】 <a name="table705mcpsimp"></a>
 <table><thead align="left"><tr id="row710mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p712mcpsimp"><a name="p712mcpsimp"></a><a name="p712mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p714mcpsimp"><a name="p714mcpsimp"></a><a name="p714mcpsimp"></a>描述</p>
@@ -828,42 +303,11 @@ td_s32 ss_mpi_cipher_destroy (td_handle handle);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p720mcpsimp"><a name="p720mcpsimp"></a><a name="p720mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row721mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p723mcpsimp"><a name="p723mcpsimp"></a><a name="p723mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p725mcpsimp"><a name="p725mcpsimp"></a><a name="p725mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
-创建与销毁通道成对使用。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_set\_cfg<a name="ZH-CN_TOPIC_0000002408253622"></a>
-
-【描述】
-
-对称加解密时配置CIPHER通道对应的信息。详细配置请参见结构体[ot\_cipher\_ctrl](#ZH-CN_TOPIC_0000002441652985)。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 创建与销毁通道成对使用。 【举例】 无。 ## ss\_mpi\_cipher\_set\_cfg<a name="ZH-CN_TOPIC_0000002408253622"></a> 【描述】 对称加解密时配置CIPHER通道对应的信息。详细配置请参见结构体[ot\_cipher\_ctrl](#ZH-CN_TOPIC_0000002441652985)。 【语法】 ```
 td_s32 ss_mpi_cipher_set_cfg (td_handle handle, const ot_cipher_ctrl *ctrl);
-```
-
-【参数】
-
-<a name="table745mcpsimp"></a>
+``` 【参数】 <a name="table745mcpsimp"></a>
 <table><thead align="left"><tr id="row751mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p753mcpsimp"><a name="p753mcpsimp"></a><a name="p753mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p755mcpsimp"><a name="p755mcpsimp"></a><a name="p755mcpsimp"></a>描述</p>
@@ -887,11 +331,7 @@ td_s32 ss_mpi_cipher_set_cfg (td_handle handle, const ot_cipher_ctrl *ctrl);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table774mcpsimp"></a>
+</table> 【返回值】 <a name="table774mcpsimp"></a>
 <table><thead align="left"><tr id="row779mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p781mcpsimp"><a name="p781mcpsimp"></a><a name="p781mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p783mcpsimp"><a name="p783mcpsimp"></a><a name="p783mcpsimp"></a>描述</p>
@@ -903,43 +343,12 @@ td_s32 ss_mpi_cipher_set_cfg (td_handle handle, const ot_cipher_ctrl *ctrl);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p789mcpsimp"><a name="p789mcpsimp"></a><a name="p789mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row790mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p792mcpsimp"><a name="p792mcpsimp"></a><a name="p792mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p794mcpsimp"><a name="p794mcpsimp"></a><a name="p794mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   ctrl不能为空。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_get\_cfg<a name="ZH-CN_TOPIC_0000002441572913"></a>
-
-【描述】
-
-对称加解密时获取CIPHER通道对应的配置信息。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- ctrl不能为空。 【举例】 无。 ## ss\_mpi\_cipher\_get\_cfg<a name="ZH-CN_TOPIC_0000002441572913"></a> 【描述】 对称加解密时获取CIPHER通道对应的配置信息。 【语法】 ```
 td_s32 ss_mpi_cipher_get_cfg(td_handle handle, ot_cipher_ctrl *ctrl);
-```
-
-【参数】
-
-<a name="table814mcpsimp"></a>
+``` 【参数】 <a name="table814mcpsimp"></a>
 <table><thead align="left"><tr id="row820mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p822mcpsimp"><a name="p822mcpsimp"></a><a name="p822mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="65.35%" id="mcps1.1.4.1.2"><p id="p824mcpsimp"><a name="p824mcpsimp"></a><a name="p824mcpsimp"></a>描述</p>
@@ -963,11 +372,7 @@ td_s32 ss_mpi_cipher_get_cfg(td_handle handle, ot_cipher_ctrl *ctrl);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table843mcpsimp"></a>
+</table> 【返回值】 <a name="table843mcpsimp"></a>
 <table><thead align="left"><tr id="row848mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p850mcpsimp"><a name="p850mcpsimp"></a><a name="p850mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p852mcpsimp"><a name="p852mcpsimp"></a><a name="p852mcpsimp"></a>描述</p>
@@ -979,43 +384,12 @@ td_s32 ss_mpi_cipher_get_cfg(td_handle handle, ot_cipher_ctrl *ctrl);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p858mcpsimp"><a name="p858mcpsimp"></a><a name="p858mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row859mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p861mcpsimp"><a name="p861mcpsimp"></a><a name="p861mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p863mcpsimp"><a name="p863mcpsimp"></a><a name="p863mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   ctrl不能为空。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_encrypt<a name="ZH-CN_TOPIC_0000002441652993"></a>
-
-【描述】
-
-对称加解密时对物理内存数据进行加密。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- ctrl不能为空。 【举例】 无。 ## ss\_mpi\_cipher\_encrypt<a name="ZH-CN_TOPIC_0000002441652993"></a> 【描述】 对称加解密时对物理内存数据进行加密。 【语法】 ```
 td_s32 ss_mpi_cipher_encrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_phys_addr_t dst_phys_addr, td_u32 byte_len);
-```
-
-【参数】
-
-<a name="table882mcpsimp"></a>
+``` 【参数】 <a name="table882mcpsimp"></a>
 <table><thead align="left"><tr id="row888mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p890mcpsimp"><a name="p890mcpsimp"></a><a name="p890mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p892mcpsimp"><a name="p892mcpsimp"></a><a name="p892mcpsimp"></a>描述</p>
@@ -1053,11 +427,7 @@ td_s32 ss_mpi_cipher_encrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table925mcpsimp"></a>
+</table> 【返回值】 <a name="table925mcpsimp"></a>
 <table><thead align="left"><tr id="row930mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p932mcpsimp"><a name="p932mcpsimp"></a><a name="p932mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p934mcpsimp"><a name="p934mcpsimp"></a><a name="p934mcpsimp"></a>描述</p>
@@ -1069,46 +439,15 @@ td_s32 ss_mpi_cipher_encrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p940mcpsimp"><a name="p940mcpsimp"></a><a name="p940mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row941mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p943mcpsimp"><a name="p943mcpsimp"></a><a name="p943mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p945mcpsimp"><a name="p945mcpsimp"></a><a name="p945mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   可多次调用，需配合  [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)  使用，使用方法可参考  [注意事项](#ZH-CN_TOPIC_0000002441653065)。
--   模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
--   加密源地址、目的地址可以相同。
--   optee平台不支持。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_decrypt<a name="ZH-CN_TOPIC_0000002441572865"></a>
-
-【描述】
-
-对称加解密时对物理内存数据进行解密。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- 可多次调用，需配合 [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622) 使用，使用方法可参考 [注意事项](#ZH-CN_TOPIC_0000002441653065)。
+- 模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
+- 加密源地址、目的地址可以相同。
+- optee平台不支持。 【举例】 无。 ## ss\_mpi\_cipher\_decrypt<a name="ZH-CN_TOPIC_0000002441572865"></a> 【描述】 对称加解密时对物理内存数据进行解密。 【语法】 ```
 td_s32 ss_mpi_cipher_decrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_phys_addr_t dst_phys_addr, td_u32 byte_len);
-```
-
-【参数】
-
-<a name="table966mcpsimp"></a>
+``` 【参数】 <a name="table966mcpsimp"></a>
 <table><thead align="left"><tr id="row972mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p974mcpsimp"><a name="p974mcpsimp"></a><a name="p974mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p976mcpsimp"><a name="p976mcpsimp"></a><a name="p976mcpsimp"></a>描述</p>
@@ -1146,11 +485,7 @@ td_s32 ss_mpi_cipher_decrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1009mcpsimp"></a>
+</table> 【返回值】 <a name="table1009mcpsimp"></a>
 <table><thead align="left"><tr id="row1014mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1016mcpsimp"><a name="p1016mcpsimp"></a><a name="p1016mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1018mcpsimp"><a name="p1018mcpsimp"></a><a name="p1018mcpsimp"></a>描述</p>
@@ -1162,46 +497,15 @@ td_s32 ss_mpi_cipher_decrypt(td_handle handle, td_phys_addr_t src_phys_addr, td_
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1024mcpsimp"><a name="p1024mcpsimp"></a><a name="p1024mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1025mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1027mcpsimp"><a name="p1027mcpsimp"></a><a name="p1027mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1029mcpsimp"><a name="p1029mcpsimp"></a><a name="p1029mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   可多次调用，需配合  [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)  使用，使用方法可参考  [注意事项](#ZH-CN_TOPIC_0000002441653065)。
--   模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
--   解密的源地址、目的地址可以相同。
--   optee平台不支持。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_encrypt\_virt<a name="ZH-CN_TOPIC_0000002408253614"></a>
-
-【描述】
-
-对称加解密时对虚拟内存数据进行加密。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- 可多次调用，需配合 [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622) 使用，使用方法可参考 [注意事项](#ZH-CN_TOPIC_0000002441653065)。
+- 模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
+- 解密的源地址、目的地址可以相同。
+- optee平台不支持。 【举例】 无。 ## ss\_mpi\_cipher\_encrypt\_virt<a name="ZH-CN_TOPIC_0000002408253614"></a> 【描述】 对称加解密时对虚拟内存数据进行加密。 【语法】 ```
 td_s32 ss_mpi_cipher_encrypt_virt(td_handle handle, const td_u8 *src_data, td_u8 *dst_data, td_u32 byte_len);
-```
-
-【参数】
-
-<a name="table1050mcpsimp"></a>
+``` 【参数】 <a name="table1050mcpsimp"></a>
 <table><thead align="left"><tr id="row1056mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p1058mcpsimp"><a name="p1058mcpsimp"></a><a name="p1058mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p1060mcpsimp"><a name="p1060mcpsimp"></a><a name="p1060mcpsimp"></a>描述</p>
@@ -1239,11 +543,7 @@ td_s32 ss_mpi_cipher_encrypt_virt(td_handle handle, const td_u8 *src_data, td_u8
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1093mcpsimp"></a>
+</table> 【返回值】 <a name="table1093mcpsimp"></a>
 <table><thead align="left"><tr id="row1098mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1100mcpsimp"><a name="p1100mcpsimp"></a><a name="p1100mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1102mcpsimp"><a name="p1102mcpsimp"></a><a name="p1102mcpsimp"></a>描述</p>
@@ -1255,46 +555,15 @@ td_s32 ss_mpi_cipher_encrypt_virt(td_handle handle, const td_u8 *src_data, td_u8
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1108mcpsimp"><a name="p1108mcpsimp"></a><a name="p1108mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1109mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1111mcpsimp"><a name="p1111mcpsimp"></a><a name="p1111mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1113mcpsimp"><a name="p1113mcpsimp"></a><a name="p1113mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   可多次调用，需配合   [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)  使用，使用方法可参考“[注意事项](#ZH-CN_TOPIC_0000002441653065)” 。
--   模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
--   加密的源地址、目的地址可以相同。
--   一次加密的数据长度byte\_len最大不能超过4M。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_decrypt\_virt<a name="ZH-CN_TOPIC_0000002441572833"></a>
-
-【描述】
-
-对称加解密时对虚拟内存数据进行解密。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- 可多次调用，需配合 [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622) 使用，使用方法可参考“[注意事项](#ZH-CN_TOPIC_0000002441653065)” 。
+- 模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
+- 加密的源地址、目的地址可以相同。
+- 一次加密的数据长度byte\_len最大不能超过4M。 【举例】 无。 ## ss\_mpi\_cipher\_decrypt\_virt<a name="ZH-CN_TOPIC_0000002441572833"></a> 【描述】 对称加解密时对虚拟内存数据进行解密。 【语法】 ```
 td_s32 ss_mpi_cipher_decrypt_virt(td_handle handle, const td_u8 *src_data, td_u8 *dst_data, td_u32 byte_len);
-```
-
-【参数】
-
-<a name="table1134mcpsimp"></a>
+``` 【参数】 <a name="table1134mcpsimp"></a>
 <table><thead align="left"><tr id="row1140mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p1142mcpsimp"><a name="p1142mcpsimp"></a><a name="p1142mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p1144mcpsimp"><a name="p1144mcpsimp"></a><a name="p1144mcpsimp"></a>描述</p>
@@ -1332,11 +601,7 @@ td_s32 ss_mpi_cipher_decrypt_virt(td_handle handle, const td_u8 *src_data, td_u8
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1177mcpsimp"></a>
+</table> 【返回值】 <a name="table1177mcpsimp"></a>
 <table><thead align="left"><tr id="row1182mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1184mcpsimp"><a name="p1184mcpsimp"></a><a name="p1184mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1186mcpsimp"><a name="p1186mcpsimp"></a><a name="p1186mcpsimp"></a>描述</p>
@@ -1348,47 +613,16 @@ td_s32 ss_mpi_cipher_decrypt_virt(td_handle handle, const td_u8 *src_data, td_u8
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1192mcpsimp"><a name="p1192mcpsimp"></a><a name="p1192mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1193mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1195mcpsimp"><a name="p1195mcpsimp"></a><a name="p1195mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1197mcpsimp"><a name="p1197mcpsimp"></a><a name="p1197mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   可多次调用，需配合[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)  使用，使用方法可参考“[注意事项](#ZH-CN_TOPIC_0000002441653065)” 。
--   模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
--   解密的源地址、目的地址可以相同。
--   一次解密的数据长度byte\_len最大不能超过4M。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_encrypt\_multi\_pack<a name="ZH-CN_TOPIC_0000002408093690"></a>
-
-【描述】
-
-对称加解密时进行多个包数据的加密。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- 可多次调用，需配合[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622) 使用，使用方法可参考“[注意事项](#ZH-CN_TOPIC_0000002441653065)” 。
+- 模式为CTR/CCM/GCM时数据的长度为任意长度，其他模式要求block对齐。
+- 解密的源地址、目的地址可以相同。
+- 一次解密的数据长度byte\_len最大不能超过4M。 【举例】 无。 ## ss\_mpi\_cipher\_encrypt\_multi\_pack<a name="ZH-CN_TOPIC_0000002408093690"></a> 【描述】 对称加解密时进行多个包数据的加密。 【语法】 ```
 td_s32 ss_mpi_cipher_encrypt_multi_pack(td_handle handle, const ot_cipher_data *data_pack,
 td_u32 data_pack_num);
-```
-
-【参数】
-
-<a name="table1220mcpsimp"></a>
+``` 【参数】 <a name="table1220mcpsimp"></a>
 <table><thead align="left"><tr id="row1226mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p1228mcpsimp"><a name="p1228mcpsimp"></a><a name="p1228mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1230mcpsimp"><a name="p1230mcpsimp"></a><a name="p1230mcpsimp"></a>描述</p>
@@ -1419,11 +653,7 @@ td_u32 data_pack_num);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1256mcpsimp"></a>
+</table> 【返回值】 <a name="table1256mcpsimp"></a>
 <table><thead align="left"><tr id="row1261mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1263mcpsimp"><a name="p1263mcpsimp"></a><a name="p1263mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1265mcpsimp"><a name="p1265mcpsimp"></a><a name="p1265mcpsimp"></a>描述</p>
@@ -1435,47 +665,16 @@ td_u32 data_pack_num);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1271mcpsimp"><a name="p1271mcpsimp"></a><a name="p1271mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1272mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1274mcpsimp"><a name="p1274mcpsimp"></a><a name="p1274mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1276mcpsimp"><a name="p1276mcpsimp"></a><a name="p1276mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   可多次调用，需配合  [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)使用，使用方法可参考 “[注意事项](#ZH-CN_TOPIC_0000002441653065)”。
--   对于多个包的操作，每个包都使用[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)配置的向量进行运算，前一个包的向量运算结果不会作用于下一个包的运算，每个包都是独立运算的。前一次函数调用的结果也不会影响后一次函数调用的运算结果。
--   加密的源地址、目的地址可以相同。
--   data\_pack\_num取值范围为1\~5000。
--   optee平台不支持。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_decrypt\_multi\_pack<a name="ZH-CN_TOPIC_0000002441653025"></a>
-
-【描述】
-
-对称加解密时进行多个包数据的解密。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- 可多次调用，需配合 [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)使用，使用方法可参考 “[注意事项](#ZH-CN_TOPIC_0000002441653065)”。
+- 对于多个包的操作，每个包都使用[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)配置的向量进行运算，前一个包的向量运算结果不会作用于下一个包的运算，每个包都是独立运算的。前一次函数调用的结果也不会影响后一次函数调用的运算结果。
+- 加密的源地址、目的地址可以相同。
+- data\_pack\_num取值范围为1\~5000。
+- optee平台不支持。 【举例】 无。 ## ss\_mpi\_cipher\_decrypt\_multi\_pack<a name="ZH-CN_TOPIC_0000002441653025"></a> 【描述】 对称加解密时进行多个包数据的解密。 【语法】 ```
 td_s32 ss_mpi_cipher_decrypt_multi_pack(td_handle handle, const ot_cipher_data *data_pack, td_u32 data_pack_num);
-```
-
-【参数】
-
-<a name="table1301mcpsimp"></a>
+``` 【参数】 <a name="table1301mcpsimp"></a>
 <table><thead align="left"><tr id="row1307mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p1309mcpsimp"><a name="p1309mcpsimp"></a><a name="p1309mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p1311mcpsimp"><a name="p1311mcpsimp"></a><a name="p1311mcpsimp"></a>描述</p>
@@ -1506,11 +705,7 @@ td_s32 ss_mpi_cipher_decrypt_multi_pack(td_handle handle, const ot_cipher_data *
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1337mcpsimp"></a>
+</table> 【返回值】 <a name="table1337mcpsimp"></a>
 <table><thead align="left"><tr id="row1342mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1344mcpsimp"><a name="p1344mcpsimp"></a><a name="p1344mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1346mcpsimp"><a name="p1346mcpsimp"></a><a name="p1346mcpsimp"></a>描述</p>
@@ -1522,47 +717,16 @@ td_s32 ss_mpi_cipher_decrypt_multi_pack(td_handle handle, const ot_cipher_data *
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1352mcpsimp"><a name="p1352mcpsimp"></a><a name="p1352mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1353mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1355mcpsimp"><a name="p1355mcpsimp"></a><a name="p1355mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1357mcpsimp"><a name="p1357mcpsimp"></a><a name="p1357mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   可多次调用，需配合  [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)  使用，使用方法可参考 “[注意事项](#ZH-CN_TOPIC_0000002441653065)”。
--   对于多个包的操作，每个包都使用[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)配置的向量进行运算，前一个包的向量运算结果不会作用于下一个包的运算，每个包都是独立运算的。前一次函数调用的结果也不会影响后一次函数调用的运算结果。
--   解密的源地址、目的地址可以相同。
--   data\_pack\_num取值范围为1\~5000。
--   optee平台不支持。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_get\_tag<a name="ZH-CN_TOPIC_0000002441653053"></a>
-
-【描述】
-
-对称加解密时CCM/GCM模式获取TAG值。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- 可多次调用，需配合 [ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622) 使用，使用方法可参考 “[注意事项](#ZH-CN_TOPIC_0000002441653065)”。
+- 对于多个包的操作，每个包都使用[ss\_mpi\_cipher\_set\_cfg](#ZH-CN_TOPIC_0000002408253622)配置的向量进行运算，前一个包的向量运算结果不会作用于下一个包的运算，每个包都是独立运算的。前一次函数调用的结果也不会影响后一次函数调用的运算结果。
+- 解密的源地址、目的地址可以相同。
+- data\_pack\_num取值范围为1\~5000。
+- optee平台不支持。 【举例】 无。 ## ss\_mpi\_cipher\_get\_tag<a name="ZH-CN_TOPIC_0000002441653053"></a> 【描述】 对称加解密时CCM/GCM模式获取TAG值。 【语法】 ```
 td_s32 ss_mpi_cipher_get_tag(td_handle handle, td_u8 *tag, td_u32 tag_len);
-```
-
-【参数】
-
-<a name="table1379mcpsimp"></a>
+``` 【参数】 <a name="table1379mcpsimp"></a>
 <table><thead align="left"><tr id="row1385mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p1387mcpsimp"><a name="p1387mcpsimp"></a><a name="p1387mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1389mcpsimp"><a name="p1389mcpsimp"></a><a name="p1389mcpsimp"></a>描述</p>
@@ -1593,11 +757,7 @@ td_s32 ss_mpi_cipher_get_tag(td_handle handle, td_u8 *tag, td_u32 tag_len);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1415mcpsimp"></a>
+</table> 【返回值】 <a name="table1415mcpsimp"></a>
 <table><thead align="left"><tr id="row1420mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1422mcpsimp"><a name="p1422mcpsimp"></a><a name="p1422mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1424mcpsimp"><a name="p1424mcpsimp"></a><a name="p1424mcpsimp"></a>描述</p>
@@ -1609,45 +769,14 @@ td_s32 ss_mpi_cipher_get_tag(td_handle handle, td_u8 *tag, td_u32 tag_len);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1430mcpsimp"><a name="p1430mcpsimp"></a><a name="p1430mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1431mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1433mcpsimp"><a name="p1433mcpsimp"></a><a name="p1433mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1435mcpsimp"><a name="p1435mcpsimp"></a><a name="p1435mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   CIPHER句柄必须已创建。
--   tag不能为空。
--   输入tag\_len小于[ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ZH-CN_TOPIC_0000002441572857)结构体成员tag\_len指定的值时，接口异常。
--   只有在CCM、GCM模式下此接口才有效。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_hash\_init<a name="ZH-CN_TOPIC_0000002408093678"></a>
-
-【描述】
-
-初始化HASH模块。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - CIPHER句柄必须已创建。
+- tag不能为空。
+- 输入tag\_len小于[ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ZH-CN_TOPIC_0000002441572857)结构体成员tag\_len指定的值时，接口异常。
+- 只有在CCM、GCM模式下此接口才有效。 【举例】 无。 ## ss\_mpi\_cipher\_hash\_init<a name="ZH-CN_TOPIC_0000002408093678"></a> 【描述】 初始化HASH模块。 【语法】 ```
 td_s32 ss_mpi_cipher_hash_init(const ot_cipher_hash_attr *hash_attr, td_handle *handle);
-```
-
-【参数】
-
-<a name="table1458mcpsimp"></a>
+``` 【参数】 <a name="table1458mcpsimp"></a>
 <table><thead align="left"><tr id="row1464mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p1466mcpsimp"><a name="p1466mcpsimp"></a><a name="p1466mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1468mcpsimp"><a name="p1468mcpsimp"></a><a name="p1468mcpsimp"></a>描述</p>
@@ -1671,11 +800,7 @@ td_s32 ss_mpi_cipher_hash_init(const ot_cipher_hash_attr *hash_attr, td_handle *
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1487mcpsimp"></a>
+</table> 【返回值】 <a name="table1487mcpsimp"></a>
 <table><thead align="left"><tr id="row1492mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1494mcpsimp"><a name="p1494mcpsimp"></a><a name="p1494mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1496mcpsimp"><a name="p1496mcpsimp"></a><a name="p1496mcpsimp"></a>描述</p>
@@ -1687,43 +812,12 @@ td_s32 ss_mpi_cipher_hash_init(const ot_cipher_hash_attr *hash_attr, td_handle *
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1502mcpsimp"><a name="p1502mcpsimp"></a><a name="p1502mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1503mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1505mcpsimp"><a name="p1505mcpsimp"></a><a name="p1505mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1507mcpsimp"><a name="p1507mcpsimp"></a><a name="p1507mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   hash\_attr，handle不能为空。
--   如果有其他程序正在使用HASH模块，返回失败状态。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_hash\_update<a name="ZH-CN_TOPIC_0000002408253598"></a>
-
-【描述】
-
-计算hash值。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - hash\_attr，handle不能为空。
+- 如果有其他程序正在使用HASH模块，返回失败状态。 【举例】 无。 ## ss\_mpi\_cipher\_hash\_update<a name="ZH-CN_TOPIC_0000002408253598"></a> 【描述】 计算hash值。 【语法】 ```
 td_s32 ss_mpi_cipher_hash_update(td_handle handle, const td_u8 *in_data, td_u32 in_data_len);
-```
-
-【参数】
-
-<a name="table1525mcpsimp"></a>
+``` 【参数】 <a name="table1525mcpsimp"></a>
 <table><thead align="left"><tr id="row1531mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p1533mcpsimp"><a name="p1533mcpsimp"></a><a name="p1533mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1535mcpsimp"><a name="p1535mcpsimp"></a><a name="p1535mcpsimp"></a>描述</p>
@@ -1754,11 +848,7 @@ td_s32 ss_mpi_cipher_hash_update(td_handle handle, const td_u8 *in_data, td_u32 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1561mcpsimp"></a>
+</table> 【返回值】 <a name="table1561mcpsimp"></a>
 <table><thead align="left"><tr id="row1566mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1568mcpsimp"><a name="p1568mcpsimp"></a><a name="p1568mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1570mcpsimp"><a name="p1570mcpsimp"></a><a name="p1570mcpsimp"></a>描述</p>
@@ -1770,43 +860,12 @@ td_s32 ss_mpi_cipher_hash_update(td_handle handle, const td_u8 *in_data, td_u32 
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1576mcpsimp"><a name="p1576mcpsimp"></a><a name="p1576mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1577mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1579mcpsimp"><a name="p1579mcpsimp"></a><a name="p1579mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1581mcpsimp"><a name="p1581mcpsimp"></a><a name="p1581mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   Hash句柄必须已经创建。
--   可以分多次调用，每次计算若干个block。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_hash\_final<a name="ZH-CN_TOPIC_0000002408093722"></a>
-
-【描述】
-
-获取hash值。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - Hash句柄必须已经创建。
+- 可以分多次调用，每次计算若干个block。 【举例】 无。 ## ss\_mpi\_cipher\_hash\_final<a name="ZH-CN_TOPIC_0000002408093722"></a> 【描述】 获取hash值。 【语法】 ```
 td_s32 ss_mpi_cipher_hash_final(td_handle handle, td_u8 *out_hash, td_u32 out_hash_len);
-```
-
-【参数】
-
-<a name="table1601mcpsimp"></a>
+``` 【参数】 <a name="table1601mcpsimp"></a>
 <table><thead align="left"><tr id="row1607mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.4.1.1"><p id="p1609mcpsimp"><a name="p1609mcpsimp"></a><a name="p1609mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p1611mcpsimp"><a name="p1611mcpsimp"></a><a name="p1611mcpsimp"></a>描述</p>
@@ -1837,11 +896,7 @@ td_s32 ss_mpi_cipher_hash_final(td_handle handle, td_u8 *out_hash, td_u32 out_ha
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1637mcpsimp"></a>
+</table> 【返回值】 <a name="table1637mcpsimp"></a>
 <table><thead align="left"><tr id="row1642mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1644mcpsimp"><a name="p1644mcpsimp"></a><a name="p1644mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1646mcpsimp"><a name="p1646mcpsimp"></a><a name="p1646mcpsimp"></a>描述</p>
@@ -1853,42 +908,11 @@ td_s32 ss_mpi_cipher_hash_final(td_handle handle, td_u8 *out_hash, td_u32 out_ha
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1652mcpsimp"><a name="p1652mcpsimp"></a><a name="p1652mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1653mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1655mcpsimp"><a name="p1655mcpsimp"></a><a name="p1655mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1657mcpsimp"><a name="p1657mcpsimp"></a><a name="p1657mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
-out\_hash\_len不能小于指定hash的输出长度。sha256输出长度为32byte，sha384输出长度为48byte，sha512输出长度为64byte，sm3输出长度为32byte。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_get\_random\_num<a name="ZH-CN_TOPIC_0000002408253630"></a>
-
-【描述】
-
-生成随机数。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 out\_hash\_len不能小于指定hash的输出长度。sha256输出长度为32byte，sha384输出长度为48byte，sha512输出长度为64byte，sm3输出长度为32byte。 【举例】 无。 ## ss\_mpi\_cipher\_get\_random\_num<a name="ZH-CN_TOPIC_0000002408253630"></a> 【描述】 生成随机数。 【语法】 ```
 td_s32 ss_mpi_cipher_get_random_num(td_u32 *random_num);
-```
-
-【参数】
-
-<a name="table1673mcpsimp"></a>
+``` 【参数】 <a name="table1673mcpsimp"></a>
 <table><thead align="left"><tr id="row1679mcpsimp"><th class="cellrowborder" valign="top" width="28.71%" id="mcps1.1.4.1.1"><p id="p1681mcpsimp"><a name="p1681mcpsimp"></a><a name="p1681mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="51.49%" id="mcps1.1.4.1.2"><p id="p1683mcpsimp"><a name="p1683mcpsimp"></a><a name="p1683mcpsimp"></a>描述</p>
@@ -1905,11 +929,7 @@ td_s32 ss_mpi_cipher_get_random_num(td_u32 *random_num);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1695mcpsimp"></a>
+</table> 【返回值】 <a name="table1695mcpsimp"></a>
 <table><thead align="left"><tr id="row1700mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1702mcpsimp"><a name="p1702mcpsimp"></a><a name="p1702mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1704mcpsimp"><a name="p1704mcpsimp"></a><a name="p1704mcpsimp"></a>描述</p>
@@ -1921,42 +941,11 @@ td_s32 ss_mpi_cipher_get_random_num(td_u32 *random_num);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1710mcpsimp"><a name="p1710mcpsimp"></a><a name="p1710mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1711mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1713mcpsimp"><a name="p1713mcpsimp"></a><a name="p1713mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1715mcpsimp"><a name="p1715mcpsimp"></a><a name="p1715mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
-random\_num不能为空。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_rsa\_public\_encrypt<a name="ZH-CN_TOPIC_0000002408253586"></a>
-
-【描述】
-
-使用RSA公钥加密一段明文。
-
-【语法】
-
-```
-td_s32 ss_mpi_cipher_rsa_public_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type sha_type, const ot_cipher_rsa_public_key *rsa_key,    const ot_cipher_common_data *plain_txt, ot_cipher_common_data*cipher_txt);
-```
-
-【参数】
-
-<a name="table1740mcpsimp"></a>
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 random\_num不能为空。 【举例】 无。 ## ss\_mpi\_cipher\_rsa\_public\_encrypt<a name="ZH-CN_TOPIC_0000002408253586"></a> 【描述】 使用RSA公钥加密一段明文。 【语法】 ```
+td_s32 ss_mpi_cipher_rsa_public_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type sha_type, const ot_cipher_rsa_public_key *rsa_key, const ot_cipher_common_data *plain_txt, ot_cipher_common_data*cipher_txt);
+``` 【参数】 <a name="table1740mcpsimp"></a>
 <table><thead align="left"><tr id="row1746mcpsimp"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.1.4.1.1"><p id="p1748mcpsimp"><a name="p1748mcpsimp"></a><a name="p1748mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.589999999999996%" id="mcps1.1.4.1.2"><p id="p1750mcpsimp"><a name="p1750mcpsimp"></a><a name="p1750mcpsimp"></a>描述</p>
@@ -2001,11 +990,7 @@ td_s32 ss_mpi_cipher_rsa_public_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_h
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1791mcpsimp"></a>
+</table> 【返回值】 <a name="table1791mcpsimp"></a>
 <table><thead align="left"><tr id="row1796mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1798mcpsimp"><a name="p1798mcpsimp"></a><a name="p1798mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1800mcpsimp"><a name="p1800mcpsimp"></a><a name="p1800mcpsimp"></a>描述</p>
@@ -2017,44 +1002,13 @@ td_s32 ss_mpi_cipher_rsa_public_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_h
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1806mcpsimp"><a name="p1806mcpsimp"></a><a name="p1806mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1807mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1809mcpsimp"><a name="p1809mcpsimp"></a><a name="p1809mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1811mcpsimp"><a name="p1811mcpsimp"></a><a name="p1811mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   rsa\_key，plain\_txt，cipher\_txt不能为空。
--   cipher\_txt的成员data\_len即是加密的数据缓冲区长度，也是加密输出的数据长度。缓冲区长度不能小于输出的数据长度。
--   RSA填充方式为OT\_CIPHER\_RSA\_SCHEME\_PKCS1\_V15时，sha\_type不影响加解密结果。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_rsa\_private\_decrypt<a name="ZH-CN_TOPIC_0000002408093710"></a>
-
-【描述】
-
-使用RSA私钥解密一段密文。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - rsa\_key，plain\_txt，cipher\_txt不能为空。
+- cipher\_txt的成员data\_len即是加密的数据缓冲区长度，也是加密输出的数据长度。缓冲区长度不能小于输出的数据长度。
+- RSA填充方式为OT\_CIPHER\_RSA\_SCHEME\_PKCS1\_V15时，sha\_type不影响加解密结果。 【举例】 无。 ## ss\_mpi\_cipher\_rsa\_private\_decrypt<a name="ZH-CN_TOPIC_0000002408093710"></a> 【描述】 使用RSA私钥解密一段密文。 【语法】 ```
 td_s32 ss_mpi_cipher_rsa_private_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type sha_type, const ot_cipher_rsa_private_key *rsa_key, const ot_cipher_common_data *cipher_txt, ot_cipher_common_data*plain_txt);
-```
-
-【参数】
-
-<a name="table1836mcpsimp"></a>
+``` 【参数】 <a name="table1836mcpsimp"></a>
 <table><thead align="left"><tr id="row1842mcpsimp"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.1.4.1.1"><p id="p1844mcpsimp"><a name="p1844mcpsimp"></a><a name="p1844mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.589999999999996%" id="mcps1.1.4.1.2"><p id="p1846mcpsimp"><a name="p1846mcpsimp"></a><a name="p1846mcpsimp"></a>描述</p>
@@ -2099,11 +1053,7 @@ td_s32 ss_mpi_cipher_rsa_private_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1887mcpsimp"></a>
+</table> 【返回值】 <a name="table1887mcpsimp"></a>
 <table><thead align="left"><tr id="row1892mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1894mcpsimp"><a name="p1894mcpsimp"></a><a name="p1894mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1896mcpsimp"><a name="p1896mcpsimp"></a><a name="p1896mcpsimp"></a>描述</p>
@@ -2115,43 +1065,12 @@ td_s32 ss_mpi_cipher_rsa_private_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1902mcpsimp"><a name="p1902mcpsimp"></a><a name="p1902mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1903mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p1905mcpsimp"><a name="p1905mcpsimp"></a><a name="p1905mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1907mcpsimp"><a name="p1907mcpsimp"></a><a name="p1907mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   rsa\_key，plain\_txt，cipher\_txt不能为空。
--   plain\_txt的成员data\_len即是解密的数据缓冲区长度，也是解密输出的数据长度。缓冲区长度不能小于输出的数据长度。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_rsa\_private\_encrypt<a name="ZH-CN_TOPIC_0000002441653041"></a>
-
-【描述】
-
-使用RSA私钥加密一段明文。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - rsa\_key，plain\_txt，cipher\_txt不能为空。
+- plain\_txt的成员data\_len即是解密的数据缓冲区长度，也是解密输出的数据长度。缓冲区长度不能小于输出的数据长度。 【举例】 无。 ## ss\_mpi\_cipher\_rsa\_private\_encrypt<a name="ZH-CN_TOPIC_0000002441653041"></a> 【描述】 使用RSA私钥加密一段明文。 【语法】 ```
 td_s32 ss_mpi_cipher_rsa_private_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type sha_type, const ot_cipher_rsa_private_key *rsa_key, const ot_cipher_common_data *plain_txt, ot_cipher_common_data *cipher_txt);
-```
-
-【参数】
-
-<a name="table1932mcpsimp"></a>
+``` 【参数】 <a name="table1932mcpsimp"></a>
 <table><thead align="left"><tr id="row1938mcpsimp"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.1.4.1.1"><p id="p1940mcpsimp"><a name="p1940mcpsimp"></a><a name="p1940mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="58.589999999999996%" id="mcps1.1.4.1.2"><p id="p1942mcpsimp"><a name="p1942mcpsimp"></a><a name="p1942mcpsimp"></a>描述</p>
@@ -2196,11 +1115,7 @@ td_s32 ss_mpi_cipher_rsa_private_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table1983mcpsimp"></a>
+</table> 【返回值】 <a name="table1983mcpsimp"></a>
 <table><thead align="left"><tr id="row1988mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p1990mcpsimp"><a name="p1990mcpsimp"></a><a name="p1990mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p1992mcpsimp"><a name="p1992mcpsimp"></a><a name="p1992mcpsimp"></a>描述</p>
@@ -2212,43 +1127,12 @@ td_s32 ss_mpi_cipher_rsa_private_encrypt(ot_cipher_rsa_scheme scheme, ot_cipher_
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p1998mcpsimp"><a name="p1998mcpsimp"></a><a name="p1998mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row1999mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2001mcpsimp"><a name="p2001mcpsimp"></a><a name="p2001mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2003mcpsimp"><a name="p2003mcpsimp"></a><a name="p2003mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   rsa\_key，plain\_txt，cipher\_txt不能为空。
--   cipher\_txt的成员data\_len即是加密的数据缓冲区长度，也是加密输出的数据长度。缓冲区长度不能小于输出的数据长度。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_rsa\_public\_decrypt<a name="ZH-CN_TOPIC_0000002408253566"></a>
-
-【描述】
-
-使用RSA公钥解密一段密文。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - rsa\_key，plain\_txt，cipher\_txt不能为空。
+- cipher\_txt的成员data\_len即是加密的数据缓冲区长度，也是加密输出的数据长度。缓冲区长度不能小于输出的数据长度。 【举例】 无。 ## ss\_mpi\_cipher\_rsa\_public\_decrypt<a name="ZH-CN_TOPIC_0000002408253566"></a> 【描述】 使用RSA公钥解密一段密文。 【语法】 ```
 td_s32 ss_mpi_cipher_rsa_public_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type sha_type, const ot_cipher_rsa_public_key *rsa_key, const ot_cipher_common_data *cipher_txt, ot_cipher_common_data *plain_txt);
-```
-
-【参数】
-
-<a name="table2028mcpsimp"></a>
+``` 【参数】 <a name="table2028mcpsimp"></a>
 <table><thead align="left"><tr id="row2034mcpsimp"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.1.4.1.1"><p id="p2036mcpsimp"><a name="p2036mcpsimp"></a><a name="p2036mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="49%" id="mcps1.1.4.1.2"><p id="p2038mcpsimp"><a name="p2038mcpsimp"></a><a name="p2038mcpsimp"></a>描述</p>
@@ -2293,11 +1177,7 @@ td_s32 ss_mpi_cipher_rsa_public_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_h
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2079mcpsimp"></a>
+</table> 【返回值】 <a name="table2079mcpsimp"></a>
 <table><thead align="left"><tr id="row2084mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2086mcpsimp"><a name="p2086mcpsimp"></a><a name="p2086mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2088mcpsimp"><a name="p2088mcpsimp"></a><a name="p2088mcpsimp"></a>描述</p>
@@ -2309,43 +1189,12 @@ td_s32 ss_mpi_cipher_rsa_public_decrypt(ot_cipher_rsa_scheme scheme, ot_cipher_h
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2094mcpsimp"><a name="p2094mcpsimp"></a><a name="p2094mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2095mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2097mcpsimp"><a name="p2097mcpsimp"></a><a name="p2097mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2099mcpsimp"><a name="p2099mcpsimp"></a><a name="p2099mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   rsa\_key，plain\_txt，cipher\_txt不能为空。
--   plain\_txt的成员data\_len即是解密的数据缓冲区长度，也是解密输出的数据长度。缓冲区长度不能小于输出的数据长度。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_rsa\_sign<a name="ZH-CN_TOPIC_0000002441653009"></a>
-
-【描述】
-
-使用RSA私钥签名一段文本。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - rsa\_key，plain\_txt，cipher\_txt不能为空。
+- plain\_txt的成员data\_len即是解密的数据缓冲区长度，也是解密输出的数据长度。缓冲区长度不能小于输出的数据长度。 【举例】 无。 ## ss\_mpi\_cipher\_rsa\_sign<a name="ZH-CN_TOPIC_0000002441653009"></a> 【描述】 使用RSA私钥签名一段文本。 【语法】 ```
 td_s32 ss_mpi_cipher_rsa_sign(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type sha_type, const ot_cipher_rsa_private_key *rsa_key, const ot_cipher_sign_in_data *rsa_data, ot_cipher_common_data *sign_data);
-```
-
-【参数】
-
-<a name="table2124mcpsimp"></a>
+``` 【参数】 <a name="table2124mcpsimp"></a>
 <table><thead align="left"><tr id="row2130mcpsimp"><th class="cellrowborder" valign="top" width="24.240000000000002%" id="mcps1.1.4.1.1"><p id="p2132mcpsimp"><a name="p2132mcpsimp"></a><a name="p2132mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="49.76%" id="mcps1.1.4.1.2"><p id="p2134mcpsimp"><a name="p2134mcpsimp"></a><a name="p2134mcpsimp"></a>描述</p>
@@ -2390,11 +1239,7 @@ td_s32 ss_mpi_cipher_rsa_sign(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type s
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2175mcpsimp"></a>
+</table> 【返回值】 <a name="table2175mcpsimp"></a>
 <table><thead align="left"><tr id="row2180mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2182mcpsimp"><a name="p2182mcpsimp"></a><a name="p2182mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2184mcpsimp"><a name="p2184mcpsimp"></a><a name="p2184mcpsimp"></a>描述</p>
@@ -2406,43 +1251,12 @@ td_s32 ss_mpi_cipher_rsa_sign(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type s
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2190mcpsimp"><a name="p2190mcpsimp"></a><a name="p2190mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2191mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2193mcpsimp"><a name="p2193mcpsimp"></a><a name="p2193mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2195mcpsimp"><a name="p2195mcpsimp"></a><a name="p2195mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   rsa\_key，rsa\_data，sign\_data不能为空。
--   sign\_data的成员data\_len即是签名的数据缓冲区长度，也是签名输出的数据长度。缓冲区长度不能小于输出的数据长度。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_rsa\_verify<a name="ZH-CN_TOPIC_0000002408253618"></a>
-
-【描述】
-
-使用RSA公钥验证一段文本。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - rsa\_key，rsa\_data，sign\_data不能为空。
+- sign\_data的成员data\_len即是签名的数据缓冲区长度，也是签名输出的数据长度。缓冲区长度不能小于输出的数据长度。 【举例】 无。 ## ss\_mpi\_cipher\_rsa\_verify<a name="ZH-CN_TOPIC_0000002408253618"></a> 【描述】 使用RSA公钥验证一段文本。 【语法】 ```
 td_s32 ss_mpi_cipher_rsa_verify(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type sha_type, const ot_cipher_rsa_public_key *rsa_key, const ot_cipher_sign_in_data *rsa_data, const ot_cipher_common_data *sign_data);
-```
-
-【参数】
-
-<a name="table2220mcpsimp"></a>
+``` 【参数】 <a name="table2220mcpsimp"></a>
 <table><thead align="left"><tr id="row2226mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2228mcpsimp"><a name="p2228mcpsimp"></a><a name="p2228mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2230mcpsimp"><a name="p2230mcpsimp"></a><a name="p2230mcpsimp"></a>描述</p>
@@ -2487,11 +1301,7 @@ td_s32 ss_mpi_cipher_rsa_verify(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2271mcpsimp"></a>
+</table> 【返回值】 <a name="table2271mcpsimp"></a>
 <table><thead align="left"><tr id="row2276mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2278mcpsimp"><a name="p2278mcpsimp"></a><a name="p2278mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2280mcpsimp"><a name="p2280mcpsimp"></a><a name="p2280mcpsimp"></a>描述</p>
@@ -2503,43 +1313,12 @@ td_s32 ss_mpi_cipher_rsa_verify(ot_cipher_rsa_scheme scheme, ot_cipher_hash_type
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2286mcpsimp"><a name="p2286mcpsimp"></a><a name="p2286mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2287mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2289mcpsimp"><a name="p2289mcpsimp"></a><a name="p2289mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2291mcpsimp"><a name="p2291mcpsimp"></a><a name="p2291mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   rsa\_key，rsa\_data，sign\_data不能为空。
--   sign\_data的成员data\_len必须与rsa\_key的n\_len保持一致。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_sm2\_encrypt<a name="ZH-CN_TOPIC_0000002441572901"></a>
-
-【描述】
-
-使用SM2公钥加密一段明文。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - rsa\_key，rsa\_data，sign\_data不能为空。
+- sign\_data的成员data\_len必须与rsa\_key的n\_len保持一致。 【举例】 无。 ## ss\_mpi\_cipher\_sm2\_encrypt<a name="ZH-CN_TOPIC_0000002441572901"></a> 【描述】 使用SM2公钥加密一段明文。 【语法】 ```
 td_s32 ss_mpi_cipher_sm2_encrypt(const ot_cipher_sm2_public_key *sm2_key, const ot_cipher_common_data *plain_txt, ot_cipher_common_data*cipher_txt);
-```
-
-【参数】
-
-<a name="table2312mcpsimp"></a>
+``` 【参数】 <a name="table2312mcpsimp"></a>
 <table><thead align="left"><tr id="row2318mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2320mcpsimp"><a name="p2320mcpsimp"></a><a name="p2320mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2322mcpsimp"><a name="p2322mcpsimp"></a><a name="p2322mcpsimp"></a>描述</p>
@@ -2570,11 +1349,7 @@ td_s32 ss_mpi_cipher_sm2_encrypt(const ot_cipher_sm2_public_key *sm2_key, const 
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2349mcpsimp"></a>
+</table> 【返回值】 <a name="table2349mcpsimp"></a>
 <table><thead align="left"><tr id="row2354mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2356mcpsimp"><a name="p2356mcpsimp"></a><a name="p2356mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2358mcpsimp"><a name="p2358mcpsimp"></a><a name="p2358mcpsimp"></a>描述</p>
@@ -2586,44 +1361,13 @@ td_s32 ss_mpi_cipher_sm2_encrypt(const ot_cipher_sm2_public_key *sm2_key, const 
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2364mcpsimp"><a name="p2364mcpsimp"></a><a name="p2364mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2365mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2367mcpsimp"><a name="p2367mcpsimp"></a><a name="p2367mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2369mcpsimp"><a name="p2369mcpsimp"></a><a name="p2369mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   sm2\_key，plain\_txt，cipher\_txt不能为空。
--   cipher\_txt的成员data\_len即是加密的数据缓冲区长度，也是加密输出的数据长度。缓冲区长度不能小于输出的数据长度。
--   Hi3403V100、SS626V100不支持SM2接口。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_sm2\_decrypt<a name="ZH-CN_TOPIC_0000002441653061"></a>
-
-【描述】
-
-使用SM2私钥解密一段密文。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - sm2\_key，plain\_txt，cipher\_txt不能为空。
+- cipher\_txt的成员data\_len即是加密的数据缓冲区长度，也是加密输出的数据长度。缓冲区长度不能小于输出的数据长度。
+- Hi3403V100、不支持SM2接口。 【举例】 无。 ## ss\_mpi\_cipher\_sm2\_decrypt<a name="ZH-CN_TOPIC_0000002441653061"></a> 【描述】 使用SM2私钥解密一段密文。 【语法】 ```
 td_s32 ss_mpi_cipher_sm2_decrypt(const ot_cipher_sm2_private_key *sm2_key, const ot_cipher_common_data *cipher_txt, ot_cipher_common_data*plain_txt);
-```
-
-【参数】
-
-<a name="table2391mcpsimp"></a>
+``` 【参数】 <a name="table2391mcpsimp"></a>
 <table><thead align="left"><tr id="row2397mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2399mcpsimp"><a name="p2399mcpsimp"></a><a name="p2399mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2401mcpsimp"><a name="p2401mcpsimp"></a><a name="p2401mcpsimp"></a>描述</p>
@@ -2654,11 +1398,7 @@ td_s32 ss_mpi_cipher_sm2_decrypt(const ot_cipher_sm2_private_key *sm2_key, const
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2428mcpsimp"></a>
+</table> 【返回值】 <a name="table2428mcpsimp"></a>
 <table><thead align="left"><tr id="row2433mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2435mcpsimp"><a name="p2435mcpsimp"></a><a name="p2435mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2437mcpsimp"><a name="p2437mcpsimp"></a><a name="p2437mcpsimp"></a>描述</p>
@@ -2670,44 +1410,13 @@ td_s32 ss_mpi_cipher_sm2_decrypt(const ot_cipher_sm2_private_key *sm2_key, const
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2443mcpsimp"><a name="p2443mcpsimp"></a><a name="p2443mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2444mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2446mcpsimp"><a name="p2446mcpsimp"></a><a name="p2446mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2448mcpsimp"><a name="p2448mcpsimp"></a><a name="p2448mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   sm2\_key，plain\_txt，cipher\_txt不能为空。
--   plain\_txt的成员data\_len即是解密的数据缓冲区长度，也是解密输出的数据长度。缓冲区长度不能小于输出的数据长度。
--   Hi3403V100、SS626V100不支持SM2接口。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_sm2\_sign<a name="ZH-CN_TOPIC_0000002408253606"></a>
-
-【描述】
-
-使用SM2签名一段文本。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - sm2\_key，plain\_txt，cipher\_txt不能为空。
+- plain\_txt的成员data\_len即是解密的数据缓冲区长度，也是解密输出的数据长度。缓冲区长度不能小于输出的数据长度。
+- Hi3403V100、不支持SM2接口。 【举例】 无。 ## ss\_mpi\_cipher\_sm2\_sign<a name="ZH-CN_TOPIC_0000002408253606"></a> 【描述】 使用SM2签名一段文本。 【语法】 ```
 td_s32 ss_mpi_cipher_sm2_sign(const ot_cipher_sm2_sign *sm2_sign, const ot_cipher_sign_in_data *sm2_data, ot_cipher_sm2_sign_data *sign_data);
-```
-
-【参数】
-
-<a name="table2470mcpsimp"></a>
+``` 【参数】 <a name="table2470mcpsimp"></a>
 <table><thead align="left"><tr id="row2476mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2478mcpsimp"><a name="p2478mcpsimp"></a><a name="p2478mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2480mcpsimp"><a name="p2480mcpsimp"></a><a name="p2480mcpsimp"></a>描述</p>
@@ -2738,11 +1447,7 @@ td_s32 ss_mpi_cipher_sm2_sign(const ot_cipher_sm2_sign *sm2_sign, const ot_ciphe
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2507mcpsimp"></a>
+</table> 【返回值】 <a name="table2507mcpsimp"></a>
 <table><thead align="left"><tr id="row2512mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2514mcpsimp"><a name="p2514mcpsimp"></a><a name="p2514mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2516mcpsimp"><a name="p2516mcpsimp"></a><a name="p2516mcpsimp"></a>描述</p>
@@ -2754,44 +1459,13 @@ td_s32 ss_mpi_cipher_sm2_sign(const ot_cipher_sm2_sign *sm2_sign, const ot_ciphe
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2522mcpsimp"><a name="p2522mcpsimp"></a><a name="p2522mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2523mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2525mcpsimp"><a name="p2525mcpsimp"></a><a name="p2525mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2527mcpsimp"><a name="p2527mcpsimp"></a><a name="p2527mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   sm2\_sign，sm2\_data，sign\_data不能为空。
--   当前SM2只支持签名数据类型OT\_CIPHER\_SIGN\_TYPE\_MSG。
--   Hi3403V100、SS626V100不支持SM2接口。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_sm2\_verify<a name="ZH-CN_TOPIC_0000002408093770"></a>
-
-【描述】
-
-使用SM2验证一段文本。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - sm2\_sign，sm2\_data，sign\_data不能为空。
+- 当前SM2只支持签名数据类型OT\_CIPHER\_SIGN\_TYPE\_MSG。
+- Hi3403V100、不支持SM2接口。 【举例】 无。 ## ss\_mpi\_cipher\_sm2\_verify<a name="ZH-CN_TOPIC_0000002408093770"></a> 【描述】 使用SM2验证一段文本。 【语法】 ```
 td_s32 ss_mpi_cipher_sm2_verify(const ot_cipher_sm2_verify *sm2_verify, const ot_cipher_sign_in_data *sm2_data, const ot_cipher_sm2_sign_data*sign_data);
-```
-
-【参数】
-
-<a name="table2549mcpsimp"></a>
+``` 【参数】 <a name="table2549mcpsimp"></a>
 <table><thead align="left"><tr id="row2555mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2557mcpsimp"><a name="p2557mcpsimp"></a><a name="p2557mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2559mcpsimp"><a name="p2559mcpsimp"></a><a name="p2559mcpsimp"></a>描述</p>
@@ -2822,11 +1496,7 @@ td_s32 ss_mpi_cipher_sm2_verify(const ot_cipher_sm2_verify *sm2_verify, const ot
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2586mcpsimp"></a>
+</table> 【返回值】 <a name="table2586mcpsimp"></a>
 <table><thead align="left"><tr id="row2591mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2593mcpsimp"><a name="p2593mcpsimp"></a><a name="p2593mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2595mcpsimp"><a name="p2595mcpsimp"></a><a name="p2595mcpsimp"></a>描述</p>
@@ -2838,44 +1508,13 @@ td_s32 ss_mpi_cipher_sm2_verify(const ot_cipher_sm2_verify *sm2_verify, const ot
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2601mcpsimp"><a name="p2601mcpsimp"></a><a name="p2601mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2602mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2604mcpsimp"><a name="p2604mcpsimp"></a><a name="p2604mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2606mcpsimp"><a name="p2606mcpsimp"></a><a name="p2606mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   sm2\_verify，sm2\_data，sign\_data不能为空。
--   当前SM2只支持签名数据类型OT\_CIPHER\_SIGN\_TYPE\_MSG。
--   Hi3403V100、SS626V100不支持SM2接口。
-
-【举例】
-
-无。
-
-## ss\_mpi\_keyslot\_create<a name="ZH-CN_TOPIC_0000002441572909"></a>
-
-【描述】
-
-对称加解密时创建的keyslot句柄。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - sm2\_verify，sm2\_data，sign\_data不能为空。
+- 当前SM2只支持签名数据类型OT\_CIPHER\_SIGN\_TYPE\_MSG。
+- Hi3403V100、不支持SM2接口。 【举例】 无。 ## ss\_mpi\_keyslot\_create<a name="ZH-CN_TOPIC_0000002441572909"></a> 【描述】 对称加解密时创建的keyslot句柄。 【语法】 ```
 td_s32 ss_mpi_keyslot_create(const ot_keyslot_attr *attr, td_handle *keyslot);
-```
-
-【参数】
-
-<a name="table2627mcpsimp"></a>
+``` 【参数】 <a name="table2627mcpsimp"></a>
 <table><thead align="left"><tr id="row2633mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2635mcpsimp"><a name="p2635mcpsimp"></a><a name="p2635mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2637mcpsimp"><a name="p2637mcpsimp"></a><a name="p2637mcpsimp"></a>描述</p>
@@ -2899,11 +1538,7 @@ td_s32 ss_mpi_keyslot_create(const ot_keyslot_attr *attr, td_handle *keyslot);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2656mcpsimp"></a>
+</table> 【返回值】 <a name="table2656mcpsimp"></a>
 <table><thead align="left"><tr id="row2661mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2663mcpsimp"><a name="p2663mcpsimp"></a><a name="p2663mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2665mcpsimp"><a name="p2665mcpsimp"></a><a name="p2665mcpsimp"></a>描述</p>
@@ -2915,44 +1550,13 @@ td_s32 ss_mpi_keyslot_create(const ot_keyslot_attr *attr, td_handle *keyslot);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2671mcpsimp"><a name="p2671mcpsimp"></a><a name="p2671mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2672mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2674mcpsimp"><a name="p2674mcpsimp"></a><a name="p2674mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2676mcpsimp"><a name="p2676mcpsimp"></a><a name="p2676mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   attr、keyslot不能为空。
--   使用完通道后，应销毁对应的通道。
--   最多可创建16个软件通道。
-
-【举例】
-
-无。
-
-## ss\_mpi\_keyslot\_destroy<a name="ZH-CN_TOPIC_0000002408093686"></a>
-
-【描述】
-
-对称加解密时销毁的keyslot句柄。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - attr、keyslot不能为空。
+- 使用完通道后，应销毁对应的通道。
+- 最多可创建16个软件通道。 【举例】 无。 ## ss\_mpi\_keyslot\_destroy<a name="ZH-CN_TOPIC_0000002408093686"></a> 【描述】 对称加解密时销毁的keyslot句柄。 【语法】 ```
 td_s32 ss_mpi_keyslot_destroy (td_handle keyslot);
-```
-
-【参数】
-
-<a name="table2695mcpsimp"></a>
+``` 【参数】 <a name="table2695mcpsimp"></a>
 <table><thead align="left"><tr id="row2701mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2703mcpsimp"><a name="p2703mcpsimp"></a><a name="p2703mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2705mcpsimp"><a name="p2705mcpsimp"></a><a name="p2705mcpsimp"></a>描述</p>
@@ -2969,11 +1573,7 @@ td_s32 ss_mpi_keyslot_destroy (td_handle keyslot);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2717mcpsimp"></a>
+</table> 【返回值】 <a name="table2717mcpsimp"></a>
 <table><thead align="left"><tr id="row2722mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2724mcpsimp"><a name="p2724mcpsimp"></a><a name="p2724mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2726mcpsimp"><a name="p2726mcpsimp"></a><a name="p2726mcpsimp"></a>描述</p>
@@ -2985,43 +1585,12 @@ td_s32 ss_mpi_keyslot_destroy (td_handle keyslot);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2732mcpsimp"><a name="p2732mcpsimp"></a><a name="p2732mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2733mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2735mcpsimp"><a name="p2735mcpsimp"></a><a name="p2735mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2737mcpsimp"><a name="p2737mcpsimp"></a><a name="p2737mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   keyslot句柄必须已创建。
--   创建和销毁keyslot通道必须成对存在。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_attach<a name="ZH-CN_TOPIC_0000002408093718"></a>
-
-【描述】
-
-对称加解密时cipher句柄与keyslot句柄绑定。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - keyslot句柄必须已创建。
+- 创建和销毁keyslot通道必须成对存在。 【举例】 无。 ## ss\_mpi\_cipher\_attach<a name="ZH-CN_TOPIC_0000002408093718"></a> 【描述】 对称加解密时cipher句柄与keyslot句柄绑定。 【语法】 ```
 td_s32 ss_mpi_cipher_attach(td_handle cipher, td_handle keyslot);
-```
-
-【参数】
-
-<a name="table2755mcpsimp"></a>
+``` 【参数】 <a name="table2755mcpsimp"></a>
 <table><thead align="left"><tr id="row2761mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2763mcpsimp"><a name="p2763mcpsimp"></a><a name="p2763mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2765mcpsimp"><a name="p2765mcpsimp"></a><a name="p2765mcpsimp"></a>描述</p>
@@ -3045,11 +1614,7 @@ td_s32 ss_mpi_cipher_attach(td_handle cipher, td_handle keyslot);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2784mcpsimp"></a>
+</table> 【返回值】 <a name="table2784mcpsimp"></a>
 <table><thead align="left"><tr id="row2789mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2791mcpsimp"><a name="p2791mcpsimp"></a><a name="p2791mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2793mcpsimp"><a name="p2793mcpsimp"></a><a name="p2793mcpsimp"></a>描述</p>
@@ -3061,43 +1626,12 @@ td_s32 ss_mpi_cipher_attach(td_handle cipher, td_handle keyslot);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2799mcpsimp"><a name="p2799mcpsimp"></a><a name="p2799mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2800mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2802mcpsimp"><a name="p2802mcpsimp"></a><a name="p2802mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2804mcpsimp"><a name="p2804mcpsimp"></a><a name="p2804mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   cipher、keyslot句柄必须已创建。在句柄未创建的情况下，句柄之间的绑定可能成功，但是会导致功能的失败。
--   绑定和解绑定必须成对使用。
-
-【举例】
-
-无。
-
-## ss\_mpi\_cipher\_detach<a name="ZH-CN_TOPIC_0000002441653049"></a>
-
-【描述】
-
-对称加解密时cipher 句柄与keyslot句柄解绑定。
-
-【语法】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - cipher、keyslot句柄必须已创建。在句柄未创建的情况下，句柄之间的绑定可能成功，但是会导致功能的失败。
+- 绑定和解绑定必须成对使用。 【举例】 无。 ## ss\_mpi\_cipher\_detach<a name="ZH-CN_TOPIC_0000002441653049"></a> 【描述】 对称加解密时cipher 句柄与keyslot句柄解绑定。 【语法】 ```
 td_s32 ss_mpi_cipher_detach(td_handle cipher, td_handle keyslot);
-```
-
-【参数】
-
-<a name="table2822mcpsimp"></a>
+``` 【参数】 <a name="table2822mcpsimp"></a>
 <table><thead align="left"><tr id="row2828mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.4.1.1"><p id="p2830mcpsimp"><a name="p2830mcpsimp"></a><a name="p2830mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.00000000000001%" id="mcps1.1.4.1.2"><p id="p2832mcpsimp"><a name="p2832mcpsimp"></a><a name="p2832mcpsimp"></a>描述</p>
@@ -3121,11 +1655,7 @@ td_s32 ss_mpi_cipher_detach(td_handle cipher, td_handle keyslot);
 </td>
 </tr>
 </tbody>
-</table>
-
-【返回值】
-
-<a name="table2851mcpsimp"></a>
+</table> 【返回值】 <a name="table2851mcpsimp"></a>
 <table><thead align="left"><tr id="row2856mcpsimp"><th class="cellrowborder" valign="top" width="36%" id="mcps1.1.3.1.1"><p id="p2858mcpsimp"><a name="p2858mcpsimp"></a><a name="p2858mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.3.1.2"><p id="p2860mcpsimp"><a name="p2860mcpsimp"></a><a name="p2860mcpsimp"></a>描述</p>
@@ -3137,117 +1667,45 @@ td_s32 ss_mpi_cipher_detach(td_handle cipher, td_handle keyslot);
 <td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2866mcpsimp"><a name="p2866mcpsimp"></a><a name="p2866mcpsimp"></a>成功。</p>
 </td>
 </tr>
-<tr id="row2867mcpsimp"><td class="cellrowborder" valign="top" width="36%" headers="mcps1.1.3.1.1 "><p id="p2869mcpsimp"><a name="p2869mcpsimp"></a><a name="p2869mcpsimp"></a>非0</p>
-</td>
-<td class="cellrowborder" valign="top" width="64%" headers="mcps1.1.3.1.2 "><p id="p2871mcpsimp"><a name="p2871mcpsimp"></a><a name="p2871mcpsimp"></a>参见错误码。</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【需求】
-
--   头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
--   库文件：libss\_cipher.a、libss\_cipher.so
-
-【注意】
-
--   cipher、keyslot句柄必须已创建。
--   绑定和解绑定必须成对使用。
-
-【举例】
-
-无。
-
-# 数据类型
-相关数据类型、数据结构定义如下（其他公共数据类型定义请参考ot\_type.h）：
-
--   [ot\_cipher\_work\_mode](#ZH-CN_TOPIC_0000002408093766)：定义CIPHER工作模式。
--   [ot\_cipher\_alg](#ZH-CN_TOPIC_0000002441572889)：定义CIPHER加密算法。
--   [ot\_cipher\_key\_len](#ZH-CN_TOPIC_0000002441653057)：定义CIPHER密钥长度。
--   [ot\_cipher\_bit\_width](#ZH-CN_TOPIC_0000002441572837)：定义CIPHER加密位宽。
--   [ot\_cipher\_ctrl\_chg\_flag](#ZH-CN_TOPIC_0000002408093706)：定义CIPHER 向量变更标志。
--   [ot\_cipher\_type](#ZH-CN_TOPIC_0000002441572897)：定义CIPHER加解密类型选择。
--   [ot\_cipher\_attr](#ZH-CN_TOPIC_0000002408093754)：定义CIPHER加解密属性结构体。
--   [ot\_cipher\_ctrl\_aes](#ZH-CN_TOPIC_0000002408253582)：AES加密控制信息结构体。
--   [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ZH-CN_TOPIC_0000002441572857)：AES-CCM、AES-GCM 加密控制信息结构体。
--   [ot\_cipher\_ctrl\_sm4](#ZH-CN_TOPIC_0000002408253642)：定义SM4加密控制信息结构体。
--   [ot\_cipher\_ctrl](#ZH-CN_TOPIC_0000002441652985)：定义加密控制信息结构体。
--   [ot\_cipher\_data](#ZH-CN_TOPIC_0000002441653005)：定义CIPHER加解密数据。
--   [ot\_cipher\_hash\_type](#ZH-CN_TOPIC_0000002441653037)：定义CIPHER哈希算法类型。
--   [ot\_cipher\_hash\_attr](#ZH-CN_TOPIC_0000002408253650)：定义CIPHER哈希算法初始化输入结构体。
--   [ot\_cipher\_common\_data](#ZH-CN_TOPIC_0000002408093682)：定义通用输入输出数据格式。
--   [ot\_cipher\_rsa\_scheme](#ZH-CN_TOPIC_0000002408253602)：定义RSA算法填充。
--   [ot\_cipher\_rsa\_public\_key](#ZH-CN_TOPIC_0000002408253666)：定义RSA公钥结构体。
--   [ot\_cipher\_rsa\_private\_key](#ZH-CN_TOPIC_0000002441653077)：定义RSA私钥结构体。
--   [ot\_cipher\_sign\_type](#ZH-CN_TOPIC_0000002441572853)：定义非对称算法签名验签输入数据类型。
--   [ot\_cipher\_sign\_in\_data](#ZH-CN_TOPIC_0000002408093714)：定义非对称算法签名验签输入数据结构体。
--   [ot\_cipher\_sm2\_public\_key](#ZH-CN_TOPIC_0000002408093742)：定义SM2公钥结构体。
--   [ot\_cipher\_sm2\_private\_key](#ZH-CN_TOPIC_0000002441572841)：定义SM2私钥结构体。
--   [ot\_cipher\_sm2\_sign](#ZH-CN_TOPIC_0000002441653013)：定义SM2签名结构体。
--   [ot\_cipher\_sm2\_verify](#ZH-CN_TOPIC_0000002441572885)：定义SM2验签结构体。
--   [ot\_cipher\_sm2\_sign\_data](#ZH-CN_TOPIC_0000002441653045)：定义SM2签名验签数据结构体。
--   [ot\_keyslot\_type](#ZH-CN_TOPIC_0000002441572929)：keyslot类型枚举值。
--   [ot\_keyslot\_secure\_mode](#ZH-CN_TOPIC_0000002441572873)：keyslot安全模式枚举值。
--   [ot\_keyslot\_attr](#ZH-CN_TOPIC_0000002408093730)：keyslot属性结构体。
--   [OT\_CIPHER\_MAX\_IV\_SIZE\_IN\_WORD](#ZH-CN_TOPIC_0000002441652981)：CIPHER 的IV最大长度。
--   [OT\_CIPHER\_SM2\_LEN\_IN\_WORD](#ZH-CN_TOPIC_0000002408093698)：SM2密钥、签名验签数据长度。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ot\_cipher\_work\_mode<a name="ZH-CN_TOPIC_0000002408093766"></a>
-
-【说明】
-
-定义CIPHER工作模式。
-
-【定义】
-
-```
+</table> 【需求】 - 头文件：ot\_common\_cipher.h、ss\_mpi\_cipher.h
+- 库文件：libss\_cipher.a、libss\_cipher.so 【注意】 - cipher、keyslot句柄必须已创建。
+- 绑定和解绑定必须成对使用。 【举例】 无。 # 数据类型
+相关数据类型、数据结构定义如下（其他公共数据类型定义请参考ot\_type.h）： - [ot\_cipher\_work\_mode](#ZH-CN_TOPIC_0000002408093766)：定义CIPHER工作模式。
+- [ot\_cipher\_alg](#ZH-CN_TOPIC_0000002441572889)：定义CIPHER加密算法。
+- [ot\_cipher\_key\_len](#ZH-CN_TOPIC_0000002441653057)：定义CIPHER密钥长度。
+- [ot\_cipher\_bit\_width](#ZH-CN_TOPIC_0000002441572837)：定义CIPHER加密位宽。
+- [ot\_cipher\_ctrl\_chg\_flag](#ZH-CN_TOPIC_0000002408093706)：定义CIPHER 向量变更标志。
+- [ot\_cipher\_type](#ZH-CN_TOPIC_0000002441572897)：定义CIPHER加解密类型选择。
+- [ot\_cipher\_attr](#ZH-CN_TOPIC_0000002408093754)：定义CIPHER加解密属性结构体。
+- [ot\_cipher\_ctrl\_aes](#ZH-CN_TOPIC_0000002408253582)：AES加密控制信息结构体。
+- [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ZH-CN_TOPIC_0000002441572857)：AES-CCM、AES-GCM 加密控制信息结构体。
+- [ot\_cipher\_ctrl\_sm4](#ZH-CN_TOPIC_0000002408253642)：定义SM4加密控制信息结构体。
+- [ot\_cipher\_ctrl](#ZH-CN_TOPIC_0000002441652985)：定义加密控制信息结构体。
+- [ot\_cipher\_data](#ZH-CN_TOPIC_0000002441653005)：定义CIPHER加解密数据。
+- [ot\_cipher\_hash\_type](#ZH-CN_TOPIC_0000002441653037)：定义CIPHER哈希算法类型。
+- [ot\_cipher\_hash\_attr](#ZH-CN_TOPIC_0000002408253650)：定义CIPHER哈希算法初始化输入结构体。
+- [ot\_cipher\_common\_data](#ZH-CN_TOPIC_0000002408093682)：定义通用输入输出数据格式。
+- [ot\_cipher\_rsa\_scheme](#ZH-CN_TOPIC_0000002408253602)：定义RSA算法填充。
+- [ot\_cipher\_rsa\_public\_key](#ZH-CN_TOPIC_0000002408253666)：定义RSA公钥结构体。
+- [ot\_cipher\_rsa\_private\_key](#ZH-CN_TOPIC_0000002441653077)：定义RSA私钥结构体。
+- [ot\_cipher\_sign\_type](#ZH-CN_TOPIC_0000002441572853)：定义非对称算法签名验签输入数据类型。
+- [ot\_cipher\_sign\_in\_data](#ZH-CN_TOPIC_0000002408093714)：定义非对称算法签名验签输入数据结构体。
+- [ot\_cipher\_sm2\_public\_key](#ZH-CN_TOPIC_0000002408093742)：定义SM2公钥结构体。
+- [ot\_cipher\_sm2\_private\_key](#ZH-CN_TOPIC_0000002441572841)：定义SM2私钥结构体。
+- [ot\_cipher\_sm2\_sign](#ZH-CN_TOPIC_0000002441653013)：定义SM2签名结构体。
+- [ot\_cipher\_sm2\_verify](#ZH-CN_TOPIC_0000002441572885)：定义SM2验签结构体。
+- [ot\_cipher\_sm2\_sign\_data](#ZH-CN_TOPIC_0000002441653045)：定义SM2签名验签数据结构体。
+- [ot\_keyslot\_type](#ZH-CN_TOPIC_0000002441572929)：keyslot类型枚举值。
+- [ot\_keyslot\_secure\_mode](#ZH-CN_TOPIC_0000002441572873)：keyslot安全模式枚举值。
+- [ot\_keyslot\_attr](#ZH-CN_TOPIC_0000002408093730)：keyslot属性结构体。
+- [OT\_CIPHER\_MAX\_IV\_SIZE\_IN\_WORD](#ZH-CN_TOPIC_0000002441652981)：CIPHER 的IV最大长度。
+- [OT\_CIPHER\_SM2\_LEN\_IN\_WORD](#ZH-CN_TOPIC_0000002408093698)：SM2密钥、签名验签数据长度。 ## ot\_cipher\_work\_mode<a name="ZH-CN_TOPIC_0000002408093766"></a> 【说明】 定义CIPHER工作模式。 【定义】 ```
 /* Cipher work mode */
 typedef enum {
-OT_CIPHER_WORK_MODE_ECB     = 0x0,
-    OT_CIPHER_WORK_MODE_CBC,
-    OT_CIPHER_WORK_MODE_CFB,
-    OT_CIPHER_WORK_MODE_OFB,
-    OT_CIPHER_WORK_MODE_CTR,
-    OT_CIPHER_WORK_MODE_CCM,
-    OT_CIPHER_WORK_MODE_GCM,
-    OT_CIPHER_WORK_MODE_BUTT,
+OT_CIPHER_WORK_MODE_ECB = 0x0, OT_CIPHER_WORK_MODE_CBC, OT_CIPHER_WORK_MODE_CFB, OT_CIPHER_WORK_MODE_OFB, OT_CIPHER_WORK_MODE_CTR, OT_CIPHER_WORK_MODE_CCM, OT_CIPHER_WORK_MODE_GCM, OT_CIPHER_WORK_MODE_BUTT,
 } ot_cipher_work_mode;
-```
-
-【成员】
-
-<a name="table2980mcpsimp"></a>
+``` 【成员】 <a name="table2980mcpsimp"></a>
 <table><thead align="left"><tr id="row2985mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p2987mcpsimp"><a name="p2987mcpsimp"></a><a name="p2987mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p2989mcpsimp"><a name="p2989mcpsimp"></a><a name="p2989mcpsimp"></a>描述</p>
@@ -3295,40 +1753,13 @@ OT_CIPHER_WORK_MODE_ECB     = 0x0,
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-ECB/CBC/CFB/OFB模式输入数据长度必须block对齐。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_alg<a name="ZH-CN_TOPIC_0000002441572889"></a>
-
-【说明】
-
-定义CIPHER加密算法。
-
-【定义】
-
-```
+</table> 【注意事项】 ECB/CBC/CFB/OFB模式输入数据长度必须block对齐。 【相关数据类型及接口】 - [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_alg<a name="ZH-CN_TOPIC_0000002441572889"></a> 【说明】 定义CIPHER加密算法。 【定义】 ```
 /* Cipher algorithm */
-typedef enum {
-    OT_CIPHER_ALG_AES           = 0x0,  /* Advanced encryption standard (AES) algorithm */
-    OT_CIPHER_ALG_SM1,                  /* SM1 algorithm. */
-    OT_CIPHER_ALG_SM4,                  /* SM4 algorithm. */
-    OT_CIPHER_ALG_DMA,                  /* DMA copy. */
-    OT_CIPHER_ALG_BUTT,
+typedef enum { OT_CIPHER_ALG_AES = 0x0, /* Advanced encryption standard (AES) algorithm */ OT_CIPHER_ALG_SM1, /* SM1 algorithm. */ OT_CIPHER_ALG_SM4, /* SM4 algorithm. */ OT_CIPHER_ALG_DMA, /* DMA copy. */ OT_CIPHER_ALG_BUTT,
 } ot_cipher_alg;
-```
-
-【成员】
-
-<a name="table3054mcpsimp"></a>
+``` 【成员】 <a name="table3054mcpsimp"></a>
 <table><thead align="left"><tr id="row3059mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3061mcpsimp"><a name="p3061mcpsimp"></a><a name="p3061mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3063mcpsimp"><a name="p3063mcpsimp"></a><a name="p3063mcpsimp"></a>描述</p>
@@ -3361,40 +1792,13 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Hi3403V100、SS626V100不支持SM1、SM4。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_key\_len<a name="ZH-CN_TOPIC_0000002441653057"></a>
-
-【说明】
-
-定义CIPHER密钥长度。
-
-【定义】
-
-```
+</table> 【注意事项】 Hi3403V100、不支持SM1、SM4。 【相关数据类型及接口】 - [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_key\_len<a name="ZH-CN_TOPIC_0000002441653057"></a> 【说明】 定义CIPHER密钥长度。 【定义】 ```
 /* Key length */
-typedef enum {
-    OT_CIPHER_KEY_DEFAULT       = 0x0,
-    OT_CIPHER_KEY_AES_128BIT     = 0x0,
-    OT_CIPHER_KEY_AES_192BIT     = 0x1,
-    OT_CIPHER_KEY_AES_256BIT     = 0x2,
-    OT_CIPHER_KEY_LEN_BUTT      = 0x3,
+typedef enum { OT_CIPHER_KEY_DEFAULT = 0x0, OT_CIPHER_KEY_AES_128BIT = 0x0, OT_CIPHER_KEY_AES_192BIT = 0x1, OT_CIPHER_KEY_AES_256BIT = 0x2, OT_CIPHER_KEY_LEN_BUTT = 0x3,
 } ot_cipher_key_len;
-```
-
-【成员】
-
-<a name="table3113mcpsimp"></a>
+``` 【成员】 <a name="table3113mcpsimp"></a>
 <table><thead align="left"><tr id="row3118mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3120mcpsimp"><a name="p3120mcpsimp"></a><a name="p3120mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3122mcpsimp"><a name="p3122mcpsimp"></a><a name="p3122mcpsimp"></a>描述</p>
@@ -3427,42 +1831,15 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-AES的密钥长度可以为128bit，192bit或256bit。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
--   [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ot_cipher_ctrl_aes_ccm_gcm)
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_bit\_width<a name="ZH-CN_TOPIC_0000002441572837"></a>
-
-【说明】
-
-定义CIPHER加密位宽。
-
-【定义】
-
-```
+</table> 【注意事项】 AES的密钥长度可以为128bit，192bit或256bit。 【相关数据类型及接口】 - [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
+- [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ot_cipher_ctrl_aes_ccm_gcm)
+- [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_bit\_width<a name="ZH-CN_TOPIC_0000002441572837"></a> 【说明】 定义CIPHER加密位宽。 【定义】 ```
 /* Cipher bit width */
-typedef enum {
-    OT_CIPHER_BIT_WIDTH_1BIT    = 0x0,  /* 1-bit width */
-    OT_CIPHER_BIT_WIDTH_8BIT    = 0x1,  /* 8-bit width */
-    OT_CIPHER_BIT_WIDTH_64BIT   = 0x2,  /* 64-bit width */
-    OT_CIPHER_BIT_WIDTH_128BIT  = 0x3,  /* 128-bit width */
-    OT_CIPHER_BIT_WIDTH_BUTT,
+typedef enum { OT_CIPHER_BIT_WIDTH_1BIT = 0x0, /* 1-bit width */ OT_CIPHER_BIT_WIDTH_8BIT = 0x1, /* 8-bit width */ OT_CIPHER_BIT_WIDTH_64BIT = 0x2, /* 64-bit width */ OT_CIPHER_BIT_WIDTH_128BIT = 0x3, /* 128-bit width */ OT_CIPHER_BIT_WIDTH_BUTT,
 } ot_cipher_bit_width;
-```
-
-【成员】
-
-<a name="table3177mcpsimp"></a>
+``` 【成员】 <a name="table3177mcpsimp"></a>
 <table><thead align="left"><tr id="row3182mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3184mcpsimp"><a name="p3184mcpsimp"></a><a name="p3184mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3186mcpsimp"><a name="p3186mcpsimp"></a><a name="p3186mcpsimp"></a>描述</p>
@@ -3495,40 +1872,14 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_ctrl\_chg\_flag<a name="ZH-CN_TOPIC_0000002408093706"></a>
-
-【说明】
-
-定义CIPHER 向量变更标志。
-
-【定义】
-
-```
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
+- [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_ctrl\_chg\_flag<a name="ZH-CN_TOPIC_0000002408093706"></a> 【说明】 定义CIPHER 向量变更标志。 【定义】 ```
 /* Cipher control parameters */
-typedef enum {
-    OT_CIPHER_IV_CHG_NONE = 0,            /** CIPHER set key and don't set IV */
-    OT_CIPHER_IV_CHG_ONE_PACK,           /** CIPHER set key and IV for first package */
-    OT_CIPHER_IV_CHG_ALL_PACK,            /** CIPHER set key and IV for all package */
-    OT_CIPHER_IV_CHG_BUTT,
+typedef enum { OT_CIPHER_IV_CHG_NONE = 0, /** CIPHER set key and don't set IV */ OT_CIPHER_IV_CHG_ONE_PACK, /** CIPHER set key and IV for first package */ OT_CIPHER_IV_CHG_ALL_PACK, /** CIPHER set key and IV for all package */ OT_CIPHER_IV_CHG_BUTT,
 } ot_cipher_ctrl_chg_flag;
-```
-
-【成员】
-
-<a name="table3238mcpsimp"></a>
+``` 【成员】 <a name="table3238mcpsimp"></a>
 <table><thead align="left"><tr id="row3243mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p3245mcpsimp"><a name="p3245mcpsimp"></a><a name="p3245mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p3247mcpsimp"><a name="p3247mcpsimp"></a><a name="p3247mcpsimp"></a>描述</p>
@@ -3556,39 +1907,15 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
--   [ot\_cipher\_ctrl\_sm4](#ot_cipher_ctrl_sm4)
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_type<a name="ZH-CN_TOPIC_0000002441572897"></a>
-
-【说明】
-
-定义CIPHER加解密类型选择。
-
-【定义】
-
-```
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
+- [ot\_cipher\_ctrl\_sm4](#ot_cipher_ctrl_sm4)
+- [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_type<a name="ZH-CN_TOPIC_0000002441572897"></a> 【说明】 定义CIPHER加解密类型选择。 【定义】 ```
 /* Encryption/Decryption type selecting */
-typedef enum {
-    OT_CIPHER_TYPE_NORMAL       = 0x0,
-    OT_CIPHER_TYPE_BUTT,
+typedef enum { OT_CIPHER_TYPE_NORMAL = 0x0, OT_CIPHER_TYPE_BUTT,
 } ot_cipher_type;
-```
-
-【成员】
-
-<a name="table3294mcpsimp"></a>
+``` 【成员】 <a name="table3294mcpsimp"></a>
 <table><thead align="left"><tr id="row3299mcpsimp"><th class="cellrowborder" valign="top" width="45%" id="mcps1.1.3.1.1"><p id="p3301mcpsimp"><a name="p3301mcpsimp"></a><a name="p3301mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.3.1.2"><p id="p3303mcpsimp"><a name="p3303mcpsimp"></a><a name="p3303mcpsimp"></a>描述</p>
@@ -3606,35 +1933,12 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_attr](#ot_cipher_attr)
--   [ss\_mpi\_cipher\_create](#ss_mpi_cipher_create)
-
-## ot\_cipher\_attr<a name="ZH-CN_TOPIC_0000002408093754"></a>
-
-【说明】
-
-定义CIPHER加解密属性结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_cipher\_attr](#ot_cipher_attr)
+- [ss\_mpi\_cipher\_create](#ss_mpi_cipher_create) ## ot\_cipher\_attr<a name="ZH-CN_TOPIC_0000002408093754"></a> 【说明】 定义CIPHER加解密属性结构体。 【定义】 ```
 /* Structure of the cipher type */
-typedef struct {
-    ot_cipher_type cipher_type;
+typedef struct { ot_cipher_type cipher_type;
 } ot_cipher_attr;
-```
-
-【成员】
-
-<a name="table3334mcpsimp"></a>
+``` 【成员】 <a name="table3334mcpsimp"></a>
 <table><thead align="left"><tr id="row3339mcpsimp"><th class="cellrowborder" valign="top" width="59%" id="mcps1.1.3.1.1"><p id="p3341mcpsimp"><a name="p3341mcpsimp"></a><a name="p3341mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.3.1.2"><p id="p3343mcpsimp"><a name="p3343mcpsimp"></a><a name="p3343mcpsimp"></a>描述</p>
@@ -3647,37 +1951,11 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_cipher\_create](#ss_mpi_cipher_create)
-
-## ot\_cipher\_ctrl\_aes<a name="ZH-CN_TOPIC_0000002408253582"></a>
-
-【说明】
-
-AES加密控制信息结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ss\_mpi\_cipher\_create](#ss_mpi_cipher_create) ## ot\_cipher\_ctrl\_aes<a name="ZH-CN_TOPIC_0000002408253582"></a> 【说明】 AES加密控制信息结构体。 【定义】 ```
 /* Structure of the cipher AES control information */
-typedef struct {
-    td_u32 iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD];   /* Initialization vector (IV) for 4 byte */
-    ot_cipher_bit_width bit_width;                  /* Bit width for encryption or decryption */
-    ot_cipher_key_len key_len;                     /* Key length */
-    ot_cipher_ctrl_chg_flag chg_flags;
+typedef struct { td_u32 iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD]; /* Initialization vector (IV) for 4 byte */ ot_cipher_bit_width bit_width; /* Bit width for encryption or decryption */ ot_cipher_key_len key_len; /* Key length */ ot_cipher_ctrl_chg_flag chg_flags;
 } ot_cipher_ctrl_aes;
-```
-
-【成员】
-
-<a name="table3372mcpsimp"></a>
+``` 【成员】 <a name="table3372mcpsimp"></a>
 <table><thead align="left"><tr id="row3377mcpsimp"><th class="cellrowborder" valign="top" width="63%" id="mcps1.1.3.1.1"><p id="p3379mcpsimp"><a name="p3379mcpsimp"></a><a name="p3379mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="37%" id="mcps1.1.3.1.2"><p id="p3381mcpsimp"><a name="p3381mcpsimp"></a><a name="p3381mcpsimp"></a>描述</p>
@@ -3705,42 +1983,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-AES支持的工作模式为：ECB/CBC/CFB/OFB/CTR，其中CFB支持的位宽可以为1、8、128bit，OFB模式仅支持128bit位宽。其他模式默认只支持128bit位宽。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_ctrl\_aes\_ccm\_gcm<a name="ZH-CN_TOPIC_0000002441572857"></a>
-
-【说明】
-
-AES-CCM、AES-GCM加密控制信息结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 AES支持的工作模式为：ECB/CBC/CFB/OFB/CTR，其中CFB支持的位宽可以为1、8、128bit，OFB模式仅支持128bit位宽。其他模式默认只支持128bit位宽。 【相关数据类型及接口】 - [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_ctrl\_aes\_ccm\_gcm<a name="ZH-CN_TOPIC_0000002441572857"></a> 【说明】 AES-CCM、AES-GCM加密控制信息结构体。 【定义】 ```
 /* Structure of the cipher AES CCM/GCM control information */
-typedef struct {
-    td_u32 iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD];
-    ot_cipher_key_len key_len;
-    td_u32 iv_len;
-    td_u32 tag_len;
-    td_u32 aad_len;
-    td_phys_addr_t aad_phys_addr;
-    td_u8 *aad_addr;
+typedef struct { td_u32 iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD]; ot_cipher_key_len key_len; td_u32 iv_len; td_u32 tag_len; td_u32 aad_len; td_phys_addr_t aad_phys_addr; td_u8 *aad_addr;
 } ot_cipher_ctrl_aes_ccm_gcm;
-```
-
-【成员】
-
-<a name="table3435mcpsimp"></a>
+``` 【成员】 <a name="table3435mcpsimp"></a>
 <table><thead align="left"><tr id="row3440mcpsimp"><th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.3.1.1"><p id="p3442mcpsimp"><a name="p3442mcpsimp"></a><a name="p3442mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="43%" id="mcps1.1.3.1.2"><p id="p3444mcpsimp"><a name="p3444mcpsimp"></a><a name="p3444mcpsimp"></a>描述</p>
@@ -3783,39 +2032,15 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   对于CCM：向量iv长度iv\_len可取\{7, 8, 9, 10, 11, 12, 13\} byte，iv存放算法标准中的Nonce数据N。加密数据的长度用n个Byte表示，且应满足条件：iv\_len+n=15。因此，iv\_len为13时，n为2，此时加密数据长度最长为65535byte，其它以此类推。tag的长度tag\_len可取\{4, 6, 8, 10, 12, 14, 16\}byte，CCM加密时的向量N、关联数据A取值必须与解密时保持一致。
--   对于GCM：向量iv长度iv\_len可取范围为\[1\~16\]byte，tag的长度tag\_len可为\{12, 13, 14, 15, 16\}byte，特殊情况可取4、8byte，GCM加密时的关联数据A取值必须与解密时保持一致。
--   linux平台关联数据A只支持物理地址，optee平台关联数据A只支持虚拟地址，linux平台请将物理地址传给aad\_phys\_addr，optee平台请将虚拟地址传给aad\_phys\_addr。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_ctrl\_sm4<a name="ZH-CN_TOPIC_0000002408253642"></a>
-
-【说明】
-
-定义SM4加密控制信息结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 - 对于CCM：向量iv长度iv\_len可取\{7, 8, 9, 10, 11, 12, 13\} byte，iv存放算法标准中的Nonce数据N。加密数据的长度用n个Byte表示，且应满足条件：iv\_len+n=15。因此，iv\_len为13时，n为2，此时加密数据长度最长为65535byte，其它以此类推。tag的长度tag\_len可取\{4, 6, 8, 10, 12, 14, 16\}byte，CCM加密时的向量N、关联数据A取值必须与解密时保持一致。
+- 对于GCM：向量iv长度iv\_len可取范围为\[1\~16\]byte，tag的长度tag\_len可为\{12, 13, 14, 15, 16\}byte，特殊情况可取4、8byte，GCM加密时的关联数据A取值必须与解密时保持一致。
+- linux平台关联数据A只支持物理地址，optee平台关联数据A只支持虚拟地址，linux平台请将物理地址传给aad\_phys\_addr，optee平台请将虚拟地址传给aad\_phys\_addr。 【相关数据类型及接口】 - [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_ctrl\_sm4<a name="ZH-CN_TOPIC_0000002408253642"></a> 【说明】 定义SM4加密控制信息结构体。 【定义】 ```
 /* Structure of the cipher SM4 control information */
-typedef struct {
-    td_u32 iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD];    /* (IV) */
-    ot_cipher_ctrl_chg_flag chg_flags;
+typedef struct { td_u32 iv[OT_CIPHER_MAX_IV_SIZE_IN_WORD]; /* (IV) */ ot_cipher_ctrl_chg_flag chg_flags;
 } ot_cipher_ctrl_sm4;
-```
-
-【成员】
-
-<a name="table3505mcpsimp"></a>
+``` 【成员】 <a name="table3505mcpsimp"></a>
 <table><thead align="left"><tr id="row3510mcpsimp"><th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.1"><p id="p3512mcpsimp"><a name="p3512mcpsimp"></a><a name="p3512mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.2"><p id="p3514mcpsimp"><a name="p3514mcpsimp"></a><a name="p3514mcpsimp"></a>描述</p>
@@ -3833,44 +2058,15 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   SM4支持的工作模式为：ECB/CBC/CFB/OFB/CTR，其中CFB支持的位宽可以为1、8、128bit，OFB模式仅支持128bit位宽。
--   ECB模式可以不配置iv。
--   Hi3403V100、SS626V100不支持SM4。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_ctrl<a name="ZH-CN_TOPIC_0000002441652985"></a>
-
-【说明】
-
-定义加密控制信息结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 - SM4支持的工作模式为：ECB/CBC/CFB/OFB/CTR，其中CFB支持的位宽可以为1、8、128bit，OFB模式仅支持128bit位宽。
+- ECB模式可以不配置iv。
+- Hi3403V100、不支持SM4。 【相关数据类型及接口】 - [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_ctrl<a name="ZH-CN_TOPIC_0000002441652985"></a> 【说明】 定义加密控制信息结构体。 【定义】 ```
 /* Structure of the cipher control information */
-typedef struct {
-    ot_cipher_alg alg;                                     /* cipher algorithm */
-    ot_cipher_work_mode work_mode;                      /* algorithm work mode */
-    union {
-        ot_cipher_ctrl_aes aes_ctrl;                         /* AES ECB/CBC/CFB/OFB/CTR control */
-        ot_cipher_ctrl_aes_ccm_gcm aes_ccm_gcm_ctrl;       /* AES CCM/GCM control */
-        ot_cipher_ctrl_sm4 sm4_ctrl;                        /* SM4 ECB/CBC/CFB/OFB/CTR control */
-    };
+typedef struct { ot_cipher_alg alg; /* cipher algorithm */ ot_cipher_work_mode work_mode; /* algorithm work mode */ union { ot_cipher_ctrl_aes aes_ctrl; /* AES ECB/CBC/CFB/OFB/CTR control */ ot_cipher_ctrl_aes_ccm_gcm aes_ccm_gcm_ctrl; /* AES CCM/GCM control */ ot_cipher_ctrl_sm4 sm4_ctrl; /* SM4 ECB/CBC/CFB/OFB/CTR control */ };
 } ot_cipher_ctrl;
-```
-
-【成员】
-
-<a name="table3567mcpsimp"></a>
+``` 【成员】 <a name="table3567mcpsimp"></a>
 <table><thead align="left"><tr id="row3572mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p3574mcpsimp"><a name="p3574mcpsimp"></a><a name="p3574mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p3576mcpsimp"><a name="p3576mcpsimp"></a><a name="p3576mcpsimp"></a>描述</p>
@@ -3903,39 +2099,14 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   当算法 alg 为 OT\_CIPHER\_ALG\_AES 且工作模式 work\_mode 为 OT\_CIPHER\_WORK\_MODE\_ECB、OT\_CIPHER\_WORK\_MODE\_CBC、OT\_CIPHER\_WORK\_MODE\_CFB、OT\_CIPHER\_WORK\_MODE\_OFB、OT\_CIPHER\_WORK\_MODE\_CTR中的一种时，联合体指向的结构体为  [ot\_cipher\_ctrl\_aes](#ZH-CN_TOPIC_0000002408253582)。
--   当算法 alg 为 OT\_CIPHER\_ALG\_AES 且工作模式 work\_mode 为 OT\_CIPHER\_WORK\_MODE\_CCM、OT\_CIPHER\_WORK\_MODE\_GCM中的一种时，联合体指向的结构体为  [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ZH-CN_TOPIC_0000002441572857)。
--   当算法 alg 为 OT\_CIPHER\_ALG\_SM4 且工作模式 work\_mode 为 OT\_CIPHER\_WORK\_MODE\_ECB、OT\_CIPHER\_WORK\_MODE\_CBC、OT\_CIPHER\_WORK\_MODE\_CFB、OT\_CIPHER\_WORK\_MODE\_OFB、OT\_CIPHER\_WORK\_MODE\_CTR中的一种时，联合体指向的结构体为  [ot\_cipher\_ctrl\_sm4](#ZH-CN_TOPIC_0000002408253642)。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## ot\_cipher\_data<a name="ZH-CN_TOPIC_0000002441653005"></a>
-
-【说明】
-
-定义CIPHER加解密数据。
-
-【定义】
-
-```
+</table> 【注意事项】 - 当算法 alg 为 OT\_CIPHER\_ALG\_AES 且工作模式 work\_mode 为 OT\_CIPHER\_WORK\_MODE\_ECB、OT\_CIPHER\_WORK\_MODE\_CBC、OT\_CIPHER\_WORK\_MODE\_CFB、OT\_CIPHER\_WORK\_MODE\_OFB、OT\_CIPHER\_WORK\_MODE\_CTR中的一种时，联合体指向的结构体为 [ot\_cipher\_ctrl\_aes](#ZH-CN_TOPIC_0000002408253582)。
+- 当算法 alg 为 OT\_CIPHER\_ALG\_AES 且工作模式 work\_mode 为 OT\_CIPHER\_WORK\_MODE\_CCM、OT\_CIPHER\_WORK\_MODE\_GCM中的一种时，联合体指向的结构体为 [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ZH-CN_TOPIC_0000002441572857)。
+- 当算法 alg 为 OT\_CIPHER\_ALG\_SM4 且工作模式 work\_mode 为 OT\_CIPHER\_WORK\_MODE\_ECB、OT\_CIPHER\_WORK\_MODE\_CBC、OT\_CIPHER\_WORK\_MODE\_CFB、OT\_CIPHER\_WORK\_MODE\_OFB、OT\_CIPHER\_WORK\_MODE\_CTR中的一种时，联合体指向的结构体为 [ot\_cipher\_ctrl\_sm4](#ZH-CN_TOPIC_0000002408253642)。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## ot\_cipher\_data<a name="ZH-CN_TOPIC_0000002441653005"></a> 【说明】 定义CIPHER加解密数据。 【定义】 ```
 /* Cipher data */
-typedef struct {
-    td_phys_addr_t src_phys_addr;       /* phy address of the original data */
-    td_phys_addr_t dst_phys_addr;       /* phy address of the purpose data */
-    td_u32 byte_len;                    /* cipher data length*/
+typedef struct { td_phys_addr_t src_phys_addr; /* phy address of the original data */ td_phys_addr_t dst_phys_addr; /* phy address of the purpose data */ td_u32 byte_len; /* cipher data length*/
 } ot_cipher_data;
-```
-
-【成员】
-
-<a name="table3633mcpsimp"></a>
+``` 【成员】 <a name="table3633mcpsimp"></a>
 <table><thead align="left"><tr id="row3638mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3640mcpsimp"><a name="p3640mcpsimp"></a><a name="p3640mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3642mcpsimp"><a name="p3642mcpsimp"></a><a name="p3642mcpsimp"></a>描述</p>
@@ -3958,47 +2129,12 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_encrypt\_multi\_pack](#ss_mpi_cipher_encrypt_multi_pack)
--   [ss\_mpi\_cipher\_decrypt\_multi\_pack](#ss_mpi_cipher_decrypt_multi_pack)
-
-## ot\_cipher\_hash\_type<a name="ZH-CN_TOPIC_0000002441653037"></a>
-
-【说明】
-
-定义CIPHER哈希算法类型。
-
-【定义】
-
-```
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_encrypt\_multi\_pack](#ss_mpi_cipher_encrypt_multi_pack)
+- [ss\_mpi\_cipher\_decrypt\_multi\_pack](#ss_mpi_cipher_decrypt_multi_pack) ## ot\_cipher\_hash\_type<a name="ZH-CN_TOPIC_0000002441653037"></a> 【说明】 定义CIPHER哈希算法类型。 【定义】 ```
 /* Hash algorithm type */
-typedef enum {
-    OT_CIPHER_HASH_TYPE_SHA1         = 0x00,
-    OT_CIPHER_HASH_TYPE_SHA224,
-    OT_CIPHER_HASH_TYPE_SHA256,
-    OT_CIPHER_HASH_TYPE_SHA384,
-    OT_CIPHER_HASH_TYPE_SHA512,
-    OT_CIPHER_HASH_TYPE_SM3          =  0x10,
-    OT_CIPHER_HASH_TYPE_HMAC_SHA1    =  0x20,
-    OT_CIPHER_HASH_TYPE_HMAC_SHA224,
-    OT_CIPHER_HASH_TYPE_HMAC_SHA256,
-    OT_CIPHER_HASH_TYPE_HMAC_SHA384,
-    OT_CIPHER_HASH_TYPE_HMAC_SHA512,
-    OT_CIPHER_HASH_TYPE_HMAC_SM3     =  0x30,
-    OT_CIPHER_HASH_TYPE_BUTT,
+typedef enum { OT_CIPHER_HASH_TYPE_SHA1 = 0x00, OT_CIPHER_HASH_TYPE_SHA224, OT_CIPHER_HASH_TYPE_SHA256, OT_CIPHER_HASH_TYPE_SHA384, OT_CIPHER_HASH_TYPE_SHA512, OT_CIPHER_HASH_TYPE_SM3 = 0x10, OT_CIPHER_HASH_TYPE_HMAC_SHA1 = 0x20, OT_CIPHER_HASH_TYPE_HMAC_SHA224, OT_CIPHER_HASH_TYPE_HMAC_SHA256, OT_CIPHER_HASH_TYPE_HMAC_SHA384, OT_CIPHER_HASH_TYPE_HMAC_SHA512, OT_CIPHER_HASH_TYPE_HMAC_SM3 = 0x30, OT_CIPHER_HASH_TYPE_BUTT,
 } ot_cipher_hash_type;
-```
-
-【成员】
-
-<a name="table3689mcpsimp"></a>
+``` 【成员】 <a name="table3689mcpsimp"></a>
 <table><thead align="left"><tr id="row3694mcpsimp"><th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.1"><p id="p3696mcpsimp"><a name="p3696mcpsimp"></a><a name="p3696mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.2"><p id="p3698mcpsimp"><a name="p3698mcpsimp"></a><a name="p3698mcpsimp"></a>描述</p>
@@ -4071,38 +2207,13 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   不支持SHA1、SHA224、HMAC-SHA1、HMAC-SHA224。
--   Hi3403V100、SS626V100不支持SM3、HMAC-SM3。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_hash\_attr](#ot_cipher_hash_attr)
--   [ss\_mpi\_cipher\_hash\_init](#ss_mpi_cipher_hash_init)
-
-## ot\_cipher\_hash\_attr<a name="ZH-CN_TOPIC_0000002408253650"></a>
-
-【说明】
-
-定义CIPHER哈希算法初始化输入结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 - 不支持SHA1、SHA224、HMAC-SHA1、HMAC-SHA224。
+- Hi3403V100、不支持SM3、HMAC-SM3。 【相关数据类型及接口】 - [ot\_cipher\_hash\_attr](#ot_cipher_hash_attr)
+- [ss\_mpi\_cipher\_hash\_init](#ss_mpi_cipher_hash_init) ## ot\_cipher\_hash\_attr<a name="ZH-CN_TOPIC_0000002408253650"></a> 【说明】 定义CIPHER哈希算法初始化输入结构体。 【定义】 ```
 /* Hash init struct input */
-typedef struct {
-    td_u8 *hmac_key;
-    td_u32 hmac_key_len;
-    ot_cipher_hash_type sha_type;
+typedef struct { td_u8 *hmac_key; td_u32 hmac_key_len; ot_cipher_hash_type sha_type;
 } ot_cipher_hash_attr;
-```
-
-【成员】
-
-<a name="table3788mcpsimp"></a>
+``` 【成员】 <a name="table3788mcpsimp"></a>
 <table><thead align="left"><tr id="row3793mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3795mcpsimp"><a name="p3795mcpsimp"></a><a name="p3795mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3797mcpsimp"><a name="p3797mcpsimp"></a><a name="p3797mcpsimp"></a>描述</p>
@@ -4125,34 +2236,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_cipher\_hash\_init](#ss_mpi_cipher_hash_init)
-
-## ot\_cipher\_common\_data<a name="ZH-CN_TOPIC_0000002408093682"></a>
-
-【说明】
-
-定义通用输入输出数据格式结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u8 *data;
-    td_u32 data_len;
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ss\_mpi\_cipher\_hash\_init](#ss_mpi_cipher_hash_init) ## ot\_cipher\_common\_data<a name="ZH-CN_TOPIC_0000002408093682"></a> 【说明】 定义通用输入输出数据格式结构体。 【定义】 ```
+typedef struct { td_u8 *data; td_u32 data_len;
 } ot_cipher_common_data;
-```
-
-【成员】
-
-<a name="table3829mcpsimp"></a>
+``` 【成员】 <a name="table3829mcpsimp"></a>
 <table><thead align="left"><tr id="row3834mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p3836mcpsimp"><a name="p3836mcpsimp"></a><a name="p3836mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p3838mcpsimp"><a name="p3838mcpsimp"></a><a name="p3838mcpsimp"></a>描述</p>
@@ -4170,42 +2257,17 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-data\_len作为输入时，为输入的缓冲区长度；作为输出时，即是输出的缓冲区长度，同时也是输出数据的长度，缓冲区长度不能小于输出数据的长度。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt)
--   [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt)
--   [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt)
--   [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt)
--   [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
--   [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
--   [ss\_mpi\_cipher\_sm2\_encrypt](#ss_mpi_cipher_sm2_encrypt)
--   [ss\_mpi\_cipher\_sm2\_decrypt](#ss_mpi_cipher_sm2_decrypt)
-
-## ot\_cipher\_rsa\_scheme<a name="ZH-CN_TOPIC_0000002408253602"></a>
-
-【说明】
-
-定义RSA算法填充方式。
-
-【定义】
-
-```
-typedef enum {
-    OT_CIPHER_RSA_SCHEME_PKCS1_V15 = 0x00,  /* PKCS#1 V15 */
-    OT_CIPHER_RSA_SCHEME_PKCS1_V21,         /* PKCS#1 V21, PSS for signing, OAEP for encryption */
-    OT_CIPHER_RSA_SCHEME_BUTT,
+</table> 【注意事项】 data\_len作为输入时，为输入的缓冲区长度；作为输出时，即是输出的缓冲区长度，同时也是输出数据的长度，缓冲区长度不能小于输出数据的长度。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt)
+- [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt)
+- [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt)
+- [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt)
+- [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
+- [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
+- [ss\_mpi\_cipher\_sm2\_encrypt](#ss_mpi_cipher_sm2_encrypt)
+- [ss\_mpi\_cipher\_sm2\_decrypt](#ss_mpi_cipher_sm2_decrypt) ## ot\_cipher\_rsa\_scheme<a name="ZH-CN_TOPIC_0000002408253602"></a> 【说明】 定义RSA算法填充方式。 【定义】 ```
+typedef enum { OT_CIPHER_RSA_SCHEME_PKCS1_V15 = 0x00, /* PKCS#1 V15 */ OT_CIPHER_RSA_SCHEME_PKCS1_V21, /* PKCS#1 V21, PSS for signing, OAEP for encryption */ OT_CIPHER_RSA_SCHEME_BUTT,
 } ot_cipher_rsa_scheme;
-```
-
-【成员】
-
-<a name="table3881mcpsimp"></a>
+``` 【成员】 <a name="table3881mcpsimp"></a>
 <table><thead align="left"><tr id="row3886mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3888mcpsimp"><a name="p3888mcpsimp"></a><a name="p3888mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3890mcpsimp"><a name="p3890mcpsimp"></a><a name="p3890mcpsimp"></a>描述</p>
@@ -4228,42 +2290,16 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-建议使用PKCS\#1 V21填充方式，其他方式为弱填充或不安全填充方式。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt)
--   [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt)
--   [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt)
--   [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt)
--   [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
--   [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
-
-## ot\_cipher\_rsa\_public\_key<a name="ZH-CN_TOPIC_0000002408253666"></a>
-
-【说明】
-
-定义RSA公钥结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 建议使用PKCS\#1 V21填充方式，其他方式为弱填充或不安全填充方式。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt)
+- [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt)
+- [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt)
+- [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt)
+- [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
+- [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify) ## ot\_cipher\_rsa\_public\_key<a name="ZH-CN_TOPIC_0000002408253666"></a> 【说明】 定义RSA公钥结构体。 【定义】 ```
 /* RSA pub key struct */
-typedef struct {
-    td_u8  *n;      /* Point to pub modulus  */
-    td_u8  *e;      /* Point to pub exponent */
-    td_u16 n_len;   /* Length of pub modulus, max value is 512Byte */
-    td_u16 e_len;   /* Length of pub exponent, max value is 512Byte */
+typedef struct { td_u8 *n; /* Point to pub modulus */ td_u8 *e; /* Point to pub exponent */ td_u16 n_len; /* Length of pub modulus, max value is 512Byte */ td_u16 e_len; /* Length of pub exponent, max value is 512Byte */
 } ot_cipher_rsa_public_key;
-```
-
-【成员】
-
-<a name="table3938mcpsimp"></a>
+``` 【成员】 <a name="table3938mcpsimp"></a>
 <table><thead align="left"><tr id="row3943mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p3945mcpsimp"><a name="p3945mcpsimp"></a><a name="p3945mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p3947mcpsimp"><a name="p3947mcpsimp"></a><a name="p3947mcpsimp"></a>描述</p>
@@ -4273,11 +2309,6 @@ typedef struct {
 <tbody><tr id="row3949mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p3951mcpsimp"><a name="p3951mcpsimp"></a><a name="p3951mcpsimp"></a>n</p>
 </td>
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p3953mcpsimp"><a name="p3953mcpsimp"></a><a name="p3953mcpsimp"></a>指向RSA公钥N的指针</p>
-</td>
-</tr>
-<tr id="row3954mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p3956mcpsimp"><a name="p3956mcpsimp"></a><a name="p3956mcpsimp"></a>e</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p3958mcpsimp"><a name="p3958mcpsimp"></a><a name="p3958mcpsimp"></a>指向RSA公钥E的指针</p>
 </td>
 </tr>
 <tr id="row3959mcpsimp"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p3961mcpsimp"><a name="p3961mcpsimp"></a><a name="p3961mcpsimp"></a>n_len</p>
@@ -4291,51 +2322,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-n、e不能为空。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt)
--   [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt)
--   [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
-
-## ot\_cipher\_rsa\_private\_key<a name="ZH-CN_TOPIC_0000002441653077"></a>
-
-【说明】
-
-定义RSA私钥结构体。
-
-【定义】
-
-```
+</table> 【注意事项】 n、e不能为空。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_rsa\_public\_encrypt](#ss_mpi_cipher_rsa_public_encrypt)
+- [ss\_mpi\_cipher\_rsa\_public\_decrypt](#ss_mpi_cipher_rsa_public_decrypt)
+- [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify) ## ot\_cipher\_rsa\_private\_key<a name="ZH-CN_TOPIC_0000002441653077"></a> 【说明】 定义RSA私钥结构体。 【定义】 ```
 /* RSA private key struct */
-typedef struct {
-    td_u8 *n;         /* Pub modulus    */
-    td_u8 *e;         /* Pub exponent   */
-    td_u8 *d;         /* Private exponent  */
-    td_u8 *p;         /* 1st prime factor  */
-    td_u8 *q;         /* 2nd prime factor  */
-    td_u8 *dp;        /* d % (p - 1) */
-    td_u8 *dq;        /* d % (q - 1) */
-    td_u8 *qp;        /* 1 / (q % p) */
-    td_u16 n_len;     /* Length of pub modulus */
-    td_u16 e_len;     /* Length of pub exponent */
-    td_u16 d_len;     /* Length of private exponent */
-    td_u16 p_len;
-    td_u16 q_len;
-    td_u16 dp_len;
-    td_u16 dq_len;
-    td_u16 qp_len;
+typedef struct { td_u8 *n; /* Pub modulus */ td_u8 *e; /* Pub exponent */ td_u8 *d; /* Private exponent */ td_u8 *p; /* 1st prime factor */ td_u8 *q; /* 2nd prime factor */ td_u8 *dp; /* d % (p - 1) */ td_u8 *dq; /* d % (q - 1) */ td_u8 *qp; /* 1 / (q % p) */ td_u16 n_len; /* Length of pub modulus */ td_u16 e_len; /* Length of pub exponent */ td_u16 d_len; /* Length of private exponent */ td_u16 p_len; td_u16 q_len; td_u16 dp_len; td_u16 dq_len; td_u16 qp_len;
 } ot_cipher_rsa_private_key;
-```
-
-【成员】
-
-<a name="table4004mcpsimp"></a>
+``` 【成员】 <a name="table4004mcpsimp"></a>
 <table><thead align="left"><tr id="row4009mcpsimp"><th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.1"><p id="p4011mcpsimp"><a name="p4011mcpsimp"></a><a name="p4011mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.2"><p id="p4013mcpsimp"><a name="p4013mcpsimp"></a><a name="p4013mcpsimp"></a>描述</p>
@@ -4345,41 +2338,6 @@ typedef struct {
 <tbody><tr id="row4015mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4017mcpsimp"><a name="p4017mcpsimp"></a><a name="p4017mcpsimp"></a>n</p>
 </td>
 <td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p id="p4019mcpsimp"><a name="p4019mcpsimp"></a><a name="p4019mcpsimp"></a>指向RSA私钥n的指针</p>
-</td>
-</tr>
-<tr id="row4020mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4022mcpsimp"><a name="p4022mcpsimp"></a><a name="p4022mcpsimp"></a>e</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p4024mcpsimp"><a name="p4024mcpsimp"></a><a name="p4024mcpsimp"></a>指向RSA私钥e的指针</p>
-</td>
-</tr>
-<tr id="row4025mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4027mcpsimp"><a name="p4027mcpsimp"></a><a name="p4027mcpsimp"></a>d</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p4029mcpsimp"><a name="p4029mcpsimp"></a><a name="p4029mcpsimp"></a>指向RSA私钥d的指针</p>
-</td>
-</tr>
-<tr id="row4030mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4032mcpsimp"><a name="p4032mcpsimp"></a><a name="p4032mcpsimp"></a>p</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p4034mcpsimp"><a name="p4034mcpsimp"></a><a name="p4034mcpsimp"></a>指向RSA私钥p的指针</p>
-</td>
-</tr>
-<tr id="row4035mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4037mcpsimp"><a name="p4037mcpsimp"></a><a name="p4037mcpsimp"></a>q</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p4039mcpsimp"><a name="p4039mcpsimp"></a><a name="p4039mcpsimp"></a>指向RSA私钥q的指针</p>
-</td>
-</tr>
-<tr id="row4040mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4042mcpsimp"><a name="p4042mcpsimp"></a><a name="p4042mcpsimp"></a>dp</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p4044mcpsimp"><a name="p4044mcpsimp"></a><a name="p4044mcpsimp"></a>指向RSA私钥dp的指针</p>
-</td>
-</tr>
-<tr id="row4045mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4047mcpsimp"><a name="p4047mcpsimp"></a><a name="p4047mcpsimp"></a>dq</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p4049mcpsimp"><a name="p4049mcpsimp"></a><a name="p4049mcpsimp"></a>指向RSA私钥dq的指针</p>
-</td>
-</tr>
-<tr id="row4050mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4052mcpsimp"><a name="p4052mcpsimp"></a><a name="p4052mcpsimp"></a>qp</p>
-</td>
-<td class="cellrowborder" valign="top" width="52%" headers="mcps1.1.3.1.2 "><p xml:lang="de-DE" id="p4054mcpsimp"><a name="p4054mcpsimp"></a><a name="p4054mcpsimp"></a>指向RSA私钥qp的指针</p>
 </td>
 </tr>
 <tr id="row4055mcpsimp"><td class="cellrowborder" valign="top" width="48%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4057mcpsimp"><a name="p4057mcpsimp"></a><a name="p4057mcpsimp"></a>n_len</p>
@@ -4423,38 +2381,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   n不能为空。
--   d为非空时，e、p、q、dp、dq、qp可以为空；d为空时，p、q、dp、dq、qp不能为空。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt)
--   [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt)
--   [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
-
-## ot\_cipher\_sign\_type<a name="ZH-CN_TOPIC_0000002441572853"></a>
-
-【说明】
-
-定义非对称算法签名验签输入数据类型。
-
-【定义】
-
-```
-typedef enum {
-    OT_CIPHER_SIGN_TYPE_MSG = 0x00,
-    OT_CIPHER_SIGN_TYPE_HASH,
-    OT_CIPHER_SIGN_TYPE_BUTT,
+</table> 【注意事项】 - n不能为空。
+- d为非空时，e、p、q、dp、dq、qp可以为空；d为空时，p、q、dp、dq、qp不能为空。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_rsa\_private\_encrypt](#ss_mpi_cipher_rsa_private_encrypt)
+- [ss\_mpi\_cipher\_rsa\_private\_decrypt](#ss_mpi_cipher_rsa_private_decrypt)
+- [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign) ## ot\_cipher\_sign\_type<a name="ZH-CN_TOPIC_0000002441572853"></a> 【说明】 定义非对称算法签名验签输入数据类型。 【定义】 ```
+typedef enum { OT_CIPHER_SIGN_TYPE_MSG = 0x00, OT_CIPHER_SIGN_TYPE_HASH, OT_CIPHER_SIGN_TYPE_BUTT,
 } ot_cipher_sign_type;
-```
-
-【成员】
-
-<a name="table4118mcpsimp"></a>
+``` 【成员】 <a name="table4118mcpsimp"></a>
 <table><thead align="left"><tr id="row4123mcpsimp"><th class="cellrowborder" valign="top" width="46%" id="mcps1.1.3.1.1"><p id="p4125mcpsimp"><a name="p4125mcpsimp"></a><a name="p4125mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="54%" id="mcps1.1.3.1.2"><p id="p4127mcpsimp"><a name="p4127mcpsimp"></a><a name="p4127mcpsimp"></a>描述</p>
@@ -4477,39 +2410,14 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
--   对于RSA算法，既支持OT\_CIPHER\_SIGN\_TYPE\_MSG，也支持OT\_CIPHER\_SIGN\_TYPE\_HASH。
--   对于SM2算法，当前仅支持OT\_CIPHER\_SIGN\_TYPE\_MSG。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
--   [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
--   [ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign)
--   [ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify)
-
-## ot\_cipher\_sign\_in\_data<a name="ZH-CN_TOPIC_0000002408093714"></a>
-
-【说明】
-
-定义非对称算法签名验签输入数据结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_cipher_sign_type sign_type;
-    td_u8 *input;
-    td_u32 input_len;
+</table> 【注意事项】 - 对于RSA算法，既支持OT\_CIPHER\_SIGN\_TYPE\_MSG，也支持OT\_CIPHER\_SIGN\_TYPE\_HASH。
+- 对于SM2算法，当前仅支持OT\_CIPHER\_SIGN\_TYPE\_MSG。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
+- [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
+- [ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign)
+- [ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify) ## ot\_cipher\_sign\_in\_data<a name="ZH-CN_TOPIC_0000002408093714"></a> 【说明】 定义非对称算法签名验签输入数据结构体。 【定义】 ```
+typedef struct { ot_cipher_sign_type sign_type; td_u8 *input; td_u32 input_len;
 } ot_cipher_sign_in_data;
-```
-
-【成员】
-
-<a name="table4175mcpsimp"></a>
+``` 【成员】 <a name="table4175mcpsimp"></a>
 <table><thead align="left"><tr id="row4180mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4182mcpsimp"><a name="p4182mcpsimp"></a><a name="p4182mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4184mcpsimp"><a name="p4184mcpsimp"></a><a name="p4184mcpsimp"></a>描述</p>
@@ -4532,37 +2440,13 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
--   [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
--   [ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign)
--   [ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify)
-
-## ot\_cipher\_sm2\_public\_key<a name="ZH-CN_TOPIC_0000002408093742"></a>
-
-【说明】
-
-定义SM2公钥结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 px[OT_CIPHER_SM2_LEN_IN_WORD];
-    td_u32 py[OT_CIPHER_SM2_LEN_IN_WORD];
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_rsa\_sign](#ss_mpi_cipher_rsa_sign)
+- [ss\_mpi\_cipher\_rsa\_verify](#ss_mpi_cipher_rsa_verify)
+- [ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign)
+- [ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify) ## ot\_cipher\_sm2\_public\_key<a name="ZH-CN_TOPIC_0000002408093742"></a> 【说明】 定义SM2公钥结构体。 【定义】 ```
+typedef struct { td_u32 px[OT_CIPHER_SM2_LEN_IN_WORD]; td_u32 py[OT_CIPHER_SM2_LEN_IN_WORD];
 } ot_cipher_sm2_public_key;
-```
-
-【成员】
-
-<a name="table4230mcpsimp"></a>
+``` 【成员】 <a name="table4230mcpsimp"></a>
 <table><thead align="left"><tr id="row4235mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4237mcpsimp"><a name="p4237mcpsimp"></a><a name="p4237mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4239mcpsimp"><a name="p4239mcpsimp"></a><a name="p4239mcpsimp"></a>描述</p>
@@ -4574,39 +2458,11 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4245mcpsimp"><a name="p4245mcpsimp"></a><a name="p4245mcpsimp"></a>公钥点p的x轴坐标</p>
 </td>
 </tr>
-<tr id="row4246mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4248mcpsimp"><a name="p4248mcpsimp"></a><a name="p4248mcpsimp"></a>py</p>
-</td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4250mcpsimp"><a name="p4250mcpsimp"></a><a name="p4250mcpsimp"></a>公钥点p的y轴坐标</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Hi3403V100、SS626V100不支持SM2。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_cipher\_sm2\_encrypt](#ss_mpi_cipher_sm2_encrypt)
-
-## ot\_cipher\_sm2\_private\_key<a name="ZH-CN_TOPIC_0000002441572841"></a>
-
-【说明】
-
-定义SM2私钥结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 d[OT_CIPHER_SM2_LEN_IN_WORD];
+</table> 【注意事项】 Hi3403V100、不支持SM2。 【相关数据类型及接口】 [ss\_mpi\_cipher\_sm2\_encrypt](#ss_mpi_cipher_sm2_encrypt) ## ot\_cipher\_sm2\_private\_key<a name="ZH-CN_TOPIC_0000002441572841"></a> 【说明】 定义SM2私钥结构体。 【定义】 ```
+typedef struct { td_u32 d[OT_CIPHER_SM2_LEN_IN_WORD];
 } ot_cipher_sm2_private_key;
-```
-
-【成员】
-
-<a name="table4268mcpsimp"></a>
+``` 【成员】 <a name="table4268mcpsimp"></a>
 <table><thead align="left"><tr id="row4273mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4275mcpsimp"><a name="p4275mcpsimp"></a><a name="p4275mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4277mcpsimp"><a name="p4277mcpsimp"></a><a name="p4277mcpsimp"></a>描述</p>
@@ -4619,37 +2475,10 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Hi3403V100、SS626V100不支持SM2。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_cipher\_sm2\_decrypt](#ss_mpi_cipher_sm2_decrypt)
-
-## ot\_cipher\_sm2\_sign<a name="ZH-CN_TOPIC_0000002441653013"></a>
-
-【说明】
-
-定义SM2签名结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 d[OT_CIPHER_SM2_LEN_IN_WORD];
-    td_u32 px[OT_CIPHER_SM2_LEN_IN_WORD];
-    td_u32 py[OT_CIPHER_SM2_LEN_IN_WORD];
-    td_u8 *id;
-    td_u16 id_len;
+</table> 【注意事项】 Hi3403V100、不支持SM2。 【相关数据类型及接口】 [ss\_mpi\_cipher\_sm2\_decrypt](#ss_mpi_cipher_sm2_decrypt) ## ot\_cipher\_sm2\_sign<a name="ZH-CN_TOPIC_0000002441653013"></a> 【说明】 定义SM2签名结构体。 【定义】 ```
+typedef struct { td_u32 d[OT_CIPHER_SM2_LEN_IN_WORD]; td_u32 px[OT_CIPHER_SM2_LEN_IN_WORD]; td_u32 py[OT_CIPHER_SM2_LEN_IN_WORD]; td_u8 *id; td_u16 id_len;
 } ot_cipher_sm2_sign;
-```
-
-【成员】
-
-<a name="table4311mcpsimp"></a>
+``` 【成员】 <a name="table4311mcpsimp"></a>
 <table><thead align="left"><tr id="row4316mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4318mcpsimp"><a name="p4318mcpsimp"></a><a name="p4318mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4320mcpsimp"><a name="p4320mcpsimp"></a><a name="p4320mcpsimp"></a>描述</p>
@@ -4661,57 +2490,16 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4326mcpsimp"><a name="p4326mcpsimp"></a><a name="p4326mcpsimp"></a>SM2私钥d的数值</p>
 </td>
 </tr>
-<tr id="row4327mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4329mcpsimp"><a name="p4329mcpsimp"></a><a name="p4329mcpsimp"></a>px</p>
-</td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4331mcpsimp"><a name="p4331mcpsimp"></a><a name="p4331mcpsimp"></a>SM2公钥点p的x轴坐标</p>
-</td>
-</tr>
-<tr id="row4332mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4334mcpsimp"><a name="p4334mcpsimp"></a><a name="p4334mcpsimp"></a>py</p>
-</td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4336mcpsimp"><a name="p4336mcpsimp"></a><a name="p4336mcpsimp"></a>SM2公钥点p的y轴坐标</p>
-</td>
-</tr>
-<tr id="row4337mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4339mcpsimp"><a name="p4339mcpsimp"></a><a name="p4339mcpsimp"></a>id</p>
-</td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4341mcpsimp"><a name="p4341mcpsimp"></a><a name="p4341mcpsimp"></a>SM2签名的身份ID</p>
-</td>
-</tr>
 <tr id="row4342mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4344mcpsimp"><a name="p4344mcpsimp"></a><a name="p4344mcpsimp"></a>id_len</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4346mcpsimp"><a name="p4346mcpsimp"></a><a name="p4346mcpsimp"></a>SM2签名的身份ID长度</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Hi3403V100、SS626V100不支持SM2。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign)
-
-## ot\_cipher\_sm2\_verify<a name="ZH-CN_TOPIC_0000002441572885"></a>
-
-【说明】
-
-定义SM2验签结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 px[OT_CIPHER_SM2_LEN_IN_WORD];
-    td_u32 py[OT_CIPHER_SM2_LEN_IN_WORD];
-    td_u8 *id;
-    td_u16 id_len;
+</table> 【注意事项】 Hi3403V100、不支持SM2。 【相关数据类型及接口】 [ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign) ## ot\_cipher\_sm2\_verify<a name="ZH-CN_TOPIC_0000002441572885"></a> 【说明】 定义SM2验签结构体。 【定义】 ```
+typedef struct { td_u32 px[OT_CIPHER_SM2_LEN_IN_WORD]; td_u32 py[OT_CIPHER_SM2_LEN_IN_WORD]; td_u8 *id; td_u16 id_len;
 } ot_cipher_sm2_verify;
-```
-
-【成员】
-
-<a name="table4370mcpsimp"></a>
+``` 【成员】 <a name="table4370mcpsimp"></a>
 <table><thead align="left"><tr id="row4375mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4377mcpsimp"><a name="p4377mcpsimp"></a><a name="p4377mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4379mcpsimp"><a name="p4379mcpsimp"></a><a name="p4379mcpsimp"></a>描述</p>
@@ -4723,50 +2511,16 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4385mcpsimp"><a name="p4385mcpsimp"></a><a name="p4385mcpsimp"></a>SM2公钥点p的x轴坐标</p>
 </td>
 </tr>
-<tr id="row4386mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4388mcpsimp"><a name="p4388mcpsimp"></a><a name="p4388mcpsimp"></a>py</p>
-</td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4390mcpsimp"><a name="p4390mcpsimp"></a><a name="p4390mcpsimp"></a>SM2公钥点p的y轴坐标</p>
-</td>
-</tr>
-<tr id="row4391mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4393mcpsimp"><a name="p4393mcpsimp"></a><a name="p4393mcpsimp"></a>id</p>
-</td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4395mcpsimp"><a name="p4395mcpsimp"></a><a name="p4395mcpsimp"></a>SM2验签的身份ID</p>
-</td>
-</tr>
 <tr id="row4396mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4398mcpsimp"><a name="p4398mcpsimp"></a><a name="p4398mcpsimp"></a>id_len</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4400mcpsimp"><a name="p4400mcpsimp"></a><a name="p4400mcpsimp"></a>SM2验签的身份ID长度</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Hi3403V100、SS626V100不支持SM2。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify)
-
-## ot\_cipher\_sm2\_sign\_data<a name="ZH-CN_TOPIC_0000002441653045"></a>
-
-【说明】
-
-定义SM2签名验签数据结构体。
-
-【定义】
-
-```
-typedef struct {
-    td_u32 r[OT_CIPHER_SM2_LEN_IN_WORD];
-    td_u32 s[OT_CIPHER_SM2_LEN_IN_WORD];
+</table> 【注意事项】 Hi3403V100、不支持SM2。 【相关数据类型及接口】 [ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify) ## ot\_cipher\_sm2\_sign\_data<a name="ZH-CN_TOPIC_0000002441653045"></a> 【说明】 定义SM2签名验签数据结构体。 【定义】 ```
+typedef struct { td_u32 r[OT_CIPHER_SM2_LEN_IN_WORD]; td_u32 s[OT_CIPHER_SM2_LEN_IN_WORD];
 } ot_cipher_sm2_sign_data;
-```
-
-【成员】
-
-<a name="table4422mcpsimp"></a>
+``` 【成员】 <a name="table4422mcpsimp"></a>
 <table><thead align="left"><tr id="row4427mcpsimp"><th class="cellrowborder" valign="top" width="39%" id="mcps1.1.3.1.1"><p id="p4429mcpsimp"><a name="p4429mcpsimp"></a><a name="p4429mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.3.1.2"><p id="p4431mcpsimp"><a name="p4431mcpsimp"></a><a name="p4431mcpsimp"></a>描述</p>
@@ -4778,41 +2532,12 @@ typedef struct {
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4437mcpsimp"><a name="p4437mcpsimp"></a><a name="p4437mcpsimp"></a>SM2签名的数据值r</p>
 </td>
 </tr>
-<tr id="row4438mcpsimp"><td class="cellrowborder" valign="top" width="39%" headers="mcps1.1.3.1.1 "><p xml:lang="de-DE" id="p4440mcpsimp"><a name="p4440mcpsimp"></a><a name="p4440mcpsimp"></a>s</p>
-</td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.1.3.1.2 "><p id="p4442mcpsimp"><a name="p4442mcpsimp"></a><a name="p4442mcpsimp"></a>SM2签名的数据值s</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-【注意事项】
-
-Hi3403V100、SS626V100不支持SM2。
-
-【相关数据类型及接口】
-
--   [ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign)
--   [ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify)
-
-## ot\_keyslot\_type<a name="ZH-CN_TOPIC_0000002441572929"></a>
-
-【说明】
-
-keyslot类型枚举值。
-
-【定义】
-
-```
-typedef enum {
-    OT_KEYSLOT_TYPE_MCIPHER,            /* keyslot is used for mcipher. */
-    OT_KEYSLOT_TYPE_BUTT,
+</table> 【注意事项】 Hi3403V100、不支持SM2。 【相关数据类型及接口】 - [ss\_mpi\_cipher\_sm2\_sign](#ss_mpi_cipher_sm2_sign)
+- [ss\_mpi\_cipher\_sm2\_verify](#ss_mpi_cipher_sm2_verify) ## ot\_keyslot\_type<a name="ZH-CN_TOPIC_0000002441572929"></a> 【说明】 keyslot类型枚举值。 【定义】 ```
+typedef enum { OT_KEYSLOT_TYPE_MCIPHER, /* keyslot is used for mcipher. */ OT_KEYSLOT_TYPE_BUTT,
 } ot_keyslot_type;
-```
-
-【成员】
-
-<a name="table4461mcpsimp"></a>
+``` 【成员】 <a name="table4461mcpsimp"></a>
 <table><thead align="left"><tr id="row4466mcpsimp"><th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.1"><p id="p4468mcpsimp"><a name="p4468mcpsimp"></a><a name="p4468mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.2"><p id="p4470mcpsimp"><a name="p4470mcpsimp"></a><a name="p4470mcpsimp"></a>描述</p>
@@ -4830,36 +2555,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_keyslot\_attr](#ot_keyslot_attr)
--   [ss\_mpi\_keyslot\_create](#ss_mpi_keyslot_create)
-
-## ot\_keyslot\_secure\_mode<a name="ZH-CN_TOPIC_0000002441572873"></a>
-
-【说明】
-
-keyslot安全模式枚举值。
-
-【定义】
-
-```
-typedef enum {
-    OT_KEYSLOT_SECURE_MODE_NONE = 0x00, /* no secure. */
-    OT_KEYSLOT_SECURE_MODE_TEE,         /* tee. */
-    OT_KEYSLOT_SECURE_MODE_BUTT,
+</table> 【注意事项】 无。 【相关数据类型及接口】 - [ot\_keyslot\_attr](#ot_keyslot_attr)
+- [ss\_mpi\_keyslot\_create](#ss_mpi_keyslot_create) ## ot\_keyslot\_secure\_mode<a name="ZH-CN_TOPIC_0000002441572873"></a> 【说明】 keyslot安全模式枚举值。 【定义】 ```
+typedef enum { OT_KEYSLOT_SECURE_MODE_NONE = 0x00, /* no secure. */ OT_KEYSLOT_SECURE_MODE_TEE, /* tee. */ OT_KEYSLOT_SECURE_MODE_BUTT,
 } ot_keyslot_secure_mode;
-```
-
-【成员】
-
-<a name="table4501mcpsimp"></a>
+``` 【成员】 <a name="table4501mcpsimp"></a>
 <table><thead align="left"><tr id="row4506mcpsimp"><th class="cellrowborder" valign="top" width="51%" id="mcps1.1.3.1.1"><p id="p4508mcpsimp"><a name="p4508mcpsimp"></a><a name="p4508mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="49%" id="mcps1.1.3.1.2"><p id="p4510mcpsimp"><a name="p4510mcpsimp"></a><a name="p4510mcpsimp"></a>描述</p>
@@ -4882,35 +2582,11 @@ typedef enum {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-非安全CPU不能绑定TEE安全模式，安全CPU可绑定非安模式。
-
-【相关数据类型及接口】
-
--   [ot\_keyslot\_attr](#ot_keyslot_attr)
--   [ss\_mpi\_keyslot\_create](#ss_mpi_keyslot_create)
-
-## ot\_keyslot\_attr<a name="ZH-CN_TOPIC_0000002408093730"></a>
-
-【说明】
-
-keyslot属性结构体。
-
-【定义】
-
-```
-typedef struct {
-    ot_keyslot_type type;
-    ot_keyslot_secure_mode secure_mode;
+</table> 【注意事项】 非安全CPU不能绑定TEE安全模式，安全CPU可绑定非安模式。 【相关数据类型及接口】 - [ot\_keyslot\_attr](#ot_keyslot_attr)
+- [ss\_mpi\_keyslot\_create](#ss_mpi_keyslot_create) ## ot\_keyslot\_attr<a name="ZH-CN_TOPIC_0000002408093730"></a> 【说明】 keyslot属性结构体。 【定义】 ```
+typedef struct { ot_keyslot_type type; ot_keyslot_secure_mode secure_mode;
 } ot_keyslot_attr;
-```
-
-【成员】
-
-<a name="table4548mcpsimp"></a>
+``` 【成员】 <a name="table4548mcpsimp"></a>
 <table><thead align="left"><tr id="row4553mcpsimp"><th class="cellrowborder" valign="top" width="52%" id="mcps1.1.3.1.1"><p id="p4555mcpsimp"><a name="p4555mcpsimp"></a><a name="p4555mcpsimp"></a>成员名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.1.3.1.2"><p id="p4557mcpsimp"><a name="p4557mcpsimp"></a><a name="p4557mcpsimp"></a>描述</p>
@@ -4928,71 +2604,21 @@ typedef struct {
 </td>
 </tr>
 </tbody>
-</table>
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
-[ss\_mpi\_keyslot\_create](#ss_mpi_keyslot_create)
-
-## OT\_CIPHER\_MAX\_IV\_SIZE\_IN\_WORD<a name="ZH-CN_TOPIC_0000002441652981"></a>
-
-【说明】
-
-CIPHER 的IV最大长度。
-
-【定义】
-
-```
-#define OT_CIPHER_MAX_IV_SIZE_IN_WORD  4
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
--   [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ot_cipher_ctrl_aes_ccm_gcm)
--   [ot\_cipher\_ctrl\_sm4](#ot_cipher_ctrl_sm4)
--   [ot\_cipher\_ctrl](#ot_cipher_ctrl)
--   [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
--   [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg)
-
-## OT\_CIPHER\_SM2\_LEN\_IN\_WORD<a name="ZH-CN_TOPIC_0000002408093698"></a>
-
-【说明】
-
-SM2密钥、签名验签数据长度。
-
-【定义】
-
-```
-#define OT_CIPHER_SM2_LEN_IN_WORD           8
-```
-
-【注意事项】
-
-无。
-
-【相关数据类型及接口】
-
--   [ot\_cipher\_sm2\_public\_key](#ot_cipher_sm2_public_key)
--   [ot\_cipher\_sm2\_private\_key](#ot_cipher_sm2_private_key)
--   [ot\_cipher\_sm2\_sign](#ot_cipher_sm2_sign)
--   [ot\_cipher\_sm2\_verify](#ot_cipher_sm2_verify)
--   [ot\_cipher\_sm2\_sign\_data](#ot_cipher_sm2_sign_data)
-
-# 错误码
-CIPHER提供的错误码如下所示。
-
-**表 1**  CIPHER模块的错误码
-
-<a name="_Ref448994233"></a>
+</table> 【注意事项】 无。 【相关数据类型及接口】 [ss\_mpi\_keyslot\_create](#ss_mpi_keyslot_create) ## OT\_CIPHER\_MAX\_IV\_SIZE\_IN\_WORD<a name="ZH-CN_TOPIC_0000002441652981"></a> 【说明】 CIPHER 的IV最大长度。 【定义】 ```
+#define OT_CIPHER_MAX_IV_SIZE_IN_WORD 4
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_cipher\_ctrl\_aes](#ot_cipher_ctrl_aes)
+- [ot\_cipher\_ctrl\_aes\_ccm\_gcm](#ot_cipher_ctrl_aes_ccm_gcm)
+- [ot\_cipher\_ctrl\_sm4](#ot_cipher_ctrl_sm4)
+- [ot\_cipher\_ctrl](#ot_cipher_ctrl)
+- [ss\_mpi\_cipher\_set\_cfg](#ss_mpi_cipher_set_cfg)
+- [ss\_mpi\_cipher\_get\_cfg](#ss_mpi_cipher_get_cfg) ## OT\_CIPHER\_SM2\_LEN\_IN\_WORD<a name="ZH-CN_TOPIC_0000002408093698"></a> 【说明】 SM2密钥、签名验签数据长度。 【定义】 ```
+#define OT_CIPHER_SM2_LEN_IN_WORD 8
+``` 【注意事项】 无。 【相关数据类型及接口】 - [ot\_cipher\_sm2\_public\_key](#ot_cipher_sm2_public_key)
+- [ot\_cipher\_sm2\_private\_key](#ot_cipher_sm2_private_key)
+- [ot\_cipher\_sm2\_sign](#ot_cipher_sm2_sign)
+- [ot\_cipher\_sm2\_verify](#ot_cipher_sm2_verify)
+- [ot\_cipher\_sm2\_sign\_data](#ot_cipher_sm2_sign_data) # 错误码
+CIPHER提供的错误码如下所示。 **表 1** CIPHER模块的错误码 <a name="_Ref448994233"></a>
 <table><thead align="left"><tr id="row4626mcpsimp"><th class="cellrowborder" valign="top" width="18.81%" id="mcps1.2.4.1.1"><p id="p4628mcpsimp"><a name="p4628mcpsimp"></a><a name="p4628mcpsimp"></a>错误代码</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.44%" id="mcps1.2.4.1.2"><p id="p4630mcpsimp"><a name="p4630mcpsimp"></a><a name="p4630mcpsimp"></a>宏定义</p>
@@ -5197,67 +2823,46 @@ CIPHER提供的错误码如下所示。
 <td class="cellrowborder" valign="top" width="24.75%" headers="mcps1.2.4.1.3 "><p id="p4829mcpsimp"><a name="p4829mcpsimp"></a><a name="p4829mcpsimp"></a>调用安全函数失败</p>
 </td>
 </tr>
-<tr id="row4830mcpsimp"><td class="cellrowborder" valign="top" width="18.81%" headers="mcps1.2.4.1.1 "><p id="p4832mcpsimp"><a name="p4832mcpsimp"></a><a name="p4832mcpsimp"></a>-1</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.44%" headers="mcps1.2.4.1.2 "><p id="p4834mcpsimp"><a name="p4834mcpsimp"></a><a name="p4834mcpsimp"></a>TD_FAILURE</p>
-</td>
-<td class="cellrowborder" valign="top" width="24.75%" headers="mcps1.2.4.1.3 "><p id="p4836mcpsimp"><a name="p4836mcpsimp"></a><a name="p4836mcpsimp"></a>操作失败</p>
-</td>
-</tr>
 </tbody>
-</table>
-
-# Proc调试信息
-## CIPHER状态<a name="ZH-CN_TOPIC_0000002408093750"></a>
-
-【调试信息】
-
-```
+</table> # Proc调试信息
+## CIPHER状态<a name="ZH-CN_TOPIC_0000002408093750"></a> 【调试信息】 ```
 执行 cat /proc/umap/cipher
-[CIPHER] Version: [V1.0.0.0 B010 Release], Build Time[Apr  7 2021, 16:08:45]
+[CIPHER] Version: [V1.0.0.0 B010 Release], Build Time[Apr 7 2021, 16:08:45]
 ---------------------------------------- cipher status --------------------
-chn_id   status   decrypt   alg    mode   key_len     addr in/out
-01     open       0      AES   CCM     128    73cb0004/73cb1004
-02     close      0      AES   ECB     000    00000000/00000000
-03     close      0      AES   ECB     000    00000000/00000000
-04     close      0      AES   ECB     000    00000000/00000000
-05     close      0      AES   ECB     000    00000000/00000000
-06     close      0      AES   ECB     000    00000000/00000000
-07     close      0      AES   ECB     000    00000000/00000000
-08     close      0      AES   ECB     000    00000000/00000000
-09     close      0      AES   ECB     000    00000000/00000000
-10     close      0      AES   ECB     000    00000000/00000000
-11     close      0      AES   ECB     000    00000000/00000000
-12     close      0      AES   ECB     000    00000000/00000000
-13     close      0      AES   ECB     000    00000000/00000000
-14     close      0      AES   ECB     000    00000000/00000000
-15     close      0      AES   ECB     000    00000000/00000000
+chn_id status decrypt alg mode key_len addr in/out
+01 open 0 AES CCM 128 73cb0004/73cb1004
+02 close 0 AES ECB 000 00000000/00000000
+03 close 0 AES ECB 000 00000000/00000000
+04 close 0 AES ECB 000 00000000/00000000
+05 close 0 AES ECB 000 00000000/00000000
+06 close 0 AES ECB 000 00000000/00000000
+07 close 0 AES ECB 000 00000000/00000000
+08 close 0 AES ECB 000 00000000/00000000
+09 close 0 AES ECB 000 00000000/00000000
+10 close 0 AES ECB 000 00000000/00000000
+11 close 0 AES ECB 000 00000000/00000000
+12 close 0 AES ECB 000 00000000/00000000
+13 close 0 AES ECB 000 00000000/00000000
+14 close 0 AES ECB 000 00000000/00000000
+15 close 0 AES ECB 000 00000000/00000000
 ---------------------------------------------
-key_from   int_raw     int_en   int_status   iv_out
-00         0         0         0       07101112050000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-00         0         0         0       00000000000000000000000000000000
-```
-
-【调试信息分析】
-
-记录当前CIPHER各个通道的配置信息。
-
-【参数说明】
-
-<a name="table4879mcpsimp"></a>
+key_from int_raw int_en int_status iv_out
+00 0 0 0 07101112050000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+00 0 0 0 00000000000000000000000000000000
+``` 【调试信息分析】 记录当前CIPHER各个通道的配置信息。 【参数说明】 <a name="table4879mcpsimp"></a>
 <table><thead align="left"><tr id="row4885mcpsimp"><th class="cellrowborder" colspan="2" valign="top" id="mcps1.1.4.1.1"><p id="p4887mcpsimp"><a name="p4887mcpsimp"></a><a name="p4887mcpsimp"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" id="mcps1.1.4.1.2"><p id="p4889mcpsimp"><a name="p4889mcpsimp"></a><a name="p4889mcpsimp"></a>描述</p>
@@ -5327,5 +2932,4 @@ key_from   int_raw     int_en   int_status   iv_out
 </td>
 </tr>
 </tbody>
-</table>
-
+</table> 
