@@ -333,12 +333,12 @@ This section assumes that Xplorer 8.0.7 has already been installed on Windows an
     After installation, the newly installed configuration core appears under **Configurations** in the System Overview panel, as shown in [Figure 3](#fig1742717500572). The Otechn\_VisionQ6\_v3 configuration core is now installed successfully.
 
     **Figure 3**  Viewing the installed configuration core<a name="fig1742717500572"></a>  
-    ![](figures/查看安装好的配置核.png "查看安装好的配置核")
+    ![](figures/查看安装好的configuration核.png "查看安装好的configuration核")
 
 3.  When running a project (using HelloWorld as an example), select **C: Otechn\_VisionQ6\_v3** as shown in [Figure 4](#fig185297106715) to use the Otechn\_VisionQ6\_v3 configuration core.
 
     **Figure 4**  Project creation window<a name="fig185297106715"></a>  
-    ![](figures/创建的工程界面.png "创建的工程界面")
+    ![](figures/create的工程界面.png "create的工程界面")
 ## memmap Configuration<a name="ZH-CN_TOPIC_0000002408292238"></a>
 
 The memmap.xmm file is located in the `dsp_liteos/dspxx/liteos/dspxx_ldscripts` directory of the release package, where `xx` represents a number. The DSP memory layout is generated from the memmap.xmm configuration file; users can use this file to understand and analyze the DSP memory layout. The memory map can be modified to suit the development environment. Refer to the *Xtensa® Linker Support Packages (LSPs) Reference Manual* for details on memmap.xmm.
@@ -350,12 +350,12 @@ Procedure:
 1.  Click **Tools -> Stack Usage** in Xplorer.
 
     **Figure 1**  Stack usage inspection interface<a name="fig19428194743813"></a>  
-    ![](figures/查看栈信息操作界面.png "查看栈信息操作界面")
+    ![](figures/查看栈information操作界面.png "查看栈information操作界面")
 
 2.  A Stack Usage window appears. Select a project, right-click the compiled executable file, select **Binary File Info**, then select **Stack Usage** to view the stack usage for that file.
 
     **Figure 2**  Stack usage display window<a name="fig1931604853914"></a>  
-    ![](figures/显示栈信息窗口.png "显示栈信息窗口")
+    ![](figures/显示栈information窗口.png "显示栈information窗口")
 ## Installing the DSP Toolchain and Configuration Core on Linux<a name="ZH-CN_TOPIC_0000002441731497"></a>
 
 For installing the Cadence DSP toolchain and configuration core on Linux, refer to the official Cadence document `dev_tools_install_guide.pdf`. When developing board-side DSP programs using the accompanying SDK package, it is recommended to install the DSP toolchain and configuration core as described below.

@@ -119,7 +119,7 @@ The ISP Image Tuning Guide is a document that guides users through image tuning.
 The relationship diagram of documents related to the Image Tuning Guide is shown in [Figure 1](#fig3895711632).
 
 **Figure 1** Relationship between the Image Tuning Guide and Other Documents<a name="fig3895711632"></a>
-![](figures/图像调优指南及其他文档的关系.png "Relationship between the Image Tuning Guide and Other Documents")
+![](figures/image调优指南及其他文档的关系.png "Relationship between the Image Tuning Guide and Other Documents")
 
 Chapter 1 of this document mainly explains the document relationships involved in the PQ tuning process. Chapter 2 provides a system overview of the ISP, including the ISP functional block diagram and a brief introduction to each module. Chapter 3 mainly introduces the operation steps and precautions for the entire image tuning process. Starting from Chapter 4, the debugging methods for each sub-module are introduced separately.
 
@@ -349,7 +349,7 @@ Currently, the Hi3403V100 for recorder application scenarios mainly includes two
 For Linear mode, image quality mainly focuses on the following dimensions: brightness, sharpness and noise, transparency, and color reproduction. The modules involved in brightness include Auto Exposure (AE), DRC, and Shading correction. The modules mainly involved in sharpness and noise include Demosaic, YUV Sharpen, Bayersharpen, NR, DPC, and 3DNR. The modules involved in transparency mainly include Gamma, LDCI, Dehaze, and DRC. The modules involved in color reproduction mainly include AWB, CCM, CLUT, and CA. The overall architecture diagram for Linear mode image tuning in recorder application scenarios is shown in [Figure 1](#fig10361143815417).
 
 **Figure 1** Recorder Application Scenario Linear Mode Image Tuning Architecture<a name="fig10361143815417"></a>
-![](figures/录像机应用场景线性模式图像调优架构图.png "Recorder Application Scenario Linear Mode Image Tuning Architecture")
+![](figures/录像机application scenario线性Modeimage调优架构图.png "Recorder Application Scenario Linear Mode Image Tuning Architecture")
 
 The main work that needs to be carried out before image quality tuning is as follows.
 
@@ -377,12 +377,12 @@ After completing the Sensor integration and Sensor lens calibration work, you ca
 The scenes for Linear mode debugging mainly include laboratory still-life scenes and outdoor real-world scenes. Generally, it is necessary to simulate scenes with different illuminance levels covered by the Sensor being debugged in the laboratory still-life scene, including well-lit scenes and low-light scenes. In the laboratory still-life scene, brightness, color, transparency, sharpness, and noise need to be debugged appropriately at different illuminance levels. After the ISP modules are debugged reasonably in the laboratory still-life scene, fine-tuning is required in real-world scenes based on different recorder application scenarios. This needs to cover daytime and nighttime scenes at traffic intersections, outdoor nighttime low-light scenes, outdoor daytime scenes with rich texture details (including sunny and cloudy weather), and outdoor evening scenes with rich sunset texture details. In this way, the image effect adaptation of Linear mode can cover the needs of different ISO values and different application scenarios. The specific tuning scene sequence for Linear mode is shown in [Figure 3](#fig14254231111219).
 
 **Figure 3** Linear Mode Image Tuning Scene Diagram<a name="fig14254231111219"></a>
-![](figures/线性模式图像调优的场景图.png "Linear Mode Image Tuning Scene Diagram")
+![](figures/线性Modeimage调优的场景图.png "Linear Mode Image Tuning Scene Diagram")
 
 The basic sequence of debugging each ISP module in Linear mode is shown in [Figure 4](#fig1190512651416).
 
 **Figure 4** Image Quality Dimension Debugging Sequence Diagram<a name="fig1190512651416"></a>
-![](figures/图像质量关注维度调试的顺序图.png "Image Quality Dimension Debugging Sequence Diagram")
+![](figures/image质量关注维度调试的顺序图.png "Image Quality Dimension Debugging Sequence Diagram")
 
 Combined with the typical Linear mode debugging scenes (laboratory still-life and laboratory standard light source light box environments), the debugging methods for the main dimensions of image quality concern are introduced. [Figure 5](#_Ref500231242) shows the laboratory still-life debugging scene.
 
@@ -421,12 +421,12 @@ Environment preparation before color adjustment: accurate black level correction
 2.  Capture raw files of a 24-color checker under D50, TL84, and A light sources in a laboratory light box scene, and generate the CCM saturation matrix using the calibration tool. During CCM calibration, note that when using a custom ISP Gamma value, ensure the corresponding LAB reference values match. Mismatched ISP Gamma and LAB Reference may prevent the combined linear adjustments of AWB and CCM from achieving the target image appearance. If the saturation effect of the image is not satisfactory in actual application scenarios, manually adjust the saturation based on the color issues observed. [Figure 8](#_Ref500253148) shows an example of the saturation matrix obtained from CCM calibration at three color temperatures (D50, TL84, A).
 
     **Figure 8** Example of CCM Calibration Saturation Matrix at Three Color Temperatures (D50, TL84, A)<a name="_Ref500253148"></a>
-    ![](figures/CCM标定的三组色温(D50-TL84-A)的饱和度矩阵示例.png "Example of CCM Calibration Saturation Matrix at Three Color Temperatures (D50, TL84, A)")
+    ![](figures/CCM标定的三组Color Temperature(D50-TL84-A)的Saturation矩阵示例.png "Example of CCM Calibration Saturation Matrix at Three Color Temperatures (D50, TL84, A)")
 
 3.  After calibrating the AWB static white balance coefficients and CCM saturation matrix, configure them into the Sensor driver. Capture 24-color checker images under eight different light sources in the laboratory light box scene, and use the Imatest tool to test the color indicators of the 24-color checker. If the 24-color checker indicators meet the requirements, the calibrated AWB static white balance coefficients and CCM saturation matrix can be preliminarily considered satisfactory. Figure "24-Color Checker Image Captured at D50 Color Temperature" and Figure "Color Reproduction Indicators Obtained via Imatest" show examples of the 24-color checker image captured under the D50 light source and the corresponding color reproduction indicators obtained via Imatest.
 
     **Figure 9** 24-Color Checker Image Captured at D50 Color Temperature<a name="_Ref500231653"></a>
-    ![](figures/D50色温抓取的24色卡图.jpg "24-Color Checker Image Captured at D50 Color Temperature")
+    ![](figures/D50Color Temperature抓取的24色卡图.jpg "24-Color Checker Image Captured at D50 Color Temperature")
 
     **Figure 10** Color Reproduction Indicators Obtained via Imatest<a name="_Ref500231699"></a>
     ![](figures/通过Imatest得到的色彩还原指标.png "Color Reproduction Indicators Obtained via Imatest")
@@ -445,7 +445,7 @@ Environment preparation before contrast adjustment: correct black level correcti
 1.  Adjust Gamma parameters. Gamma parameters are the basic module affecting image contrast. Using a real still-life scene as an example, adjust the Gamma parameters so that the resolution chart in the bright area and the doll details in the dark area are both preserved without loss, and the image achieves good contrast. [Figure 11](#_Ref515959136) shows the dark area details and bright area details affected by the Gamma curve (red boxes).
 
     **Figure 11** Example of Areas Affected by the Gamma Curve in a Still-Life Scene<a name="_Ref515959136"></a>
-    ![](figures/静物场景Gamma曲线影响的区域示例.jpg "Example of Areas Affected by the Gamma Curve in a Still-Life Scene")
+    ![](figures/静物场景Gamma曲线影响的region示例.jpg "Example of Areas Affected by the Gamma Curve in a Still-Life Scene")
 
 2.  After adjusting the Gamma parameters, if more refined contrast is needed, it is recommended to primarily use LDCI with Dehaze as a supplement. LDCI provides local contrast enhancement, improving the detail performance of local bright and dark areas. Dehaze should only be used as a supplement; excessive Dehaze adjustment can cause loss of dark area details and color cast. For specific single-point tuning instructions for LDCI and Dehaze, refer to the "[LDCI](#ZH-CN_TOPIC_0000002424362134)" and "[Dehaze](#ZH-CN_TOPIC_0000002457840893)" sections.
 3.  Based on the optimized Gamma, LDCI, and Dehaze parameters, test the grayscale of a grayscale card under a laboratory light box D50 light source environment, and check whether the number of grayscale levels meets the requirements. Generally, at least 18 grayscale levels or more are required. Otherwise, the current image contrast is too high, resulting in loss of dark area details. [Figure 12](#_Ref515959139) shows an example of a grayscale card under a laboratory light box D50 light source environment.
@@ -500,7 +500,7 @@ Modules affecting image sharpness and noise mainly include NR, Demosaic, DPC dyn
 For WDR mode, image quality mainly focuses on the following dimensions: image dynamic range, brightness, sharpness and noise, transparency, color reproduction, and motion trailing performance in the synthesis area. The modules involved in brightness mainly include AE, DRC, and Shading correction. The image dynamic range mainly involves the scene exposure ratio and DRC. Sharpness and noise mainly involve Demosaic, Bayersharpen, YUV Sharpen, NR, DPC, and 3DNR. Transparency mainly involves Gamma, LDCI, Dehaze, and DRC. Color reproduction mainly involves AWB, CCM, CA, CLUT, and CRB. Motion trailing performance in the synthesis area mainly involves the WDR and exposure ratio modules. Typical application scenarios for WDR mode include capturing people in backlit scenes and capturing license plates in high-light scenes. For WDR backlit scenes capturing people, the goal is to see the face clearly. For high-light scenes capturing license plates, the goal is to suppress the headlight halo and see the license plate clearly. The overall architecture diagram for WDR mode image tuning in recorder application scenarios is shown in [Figure 1](#fig12293141163118).
 
 **Figure 1** Recorder Application Scenario WDR Mode Image Tuning Architecture<a name="fig12293141163118"></a>
-![](figures/录像机应用场景WDR模式图像调优架构图.png "Recorder Application Scenario WDR Mode Image Tuning Architecture")
+![](figures/录像机application scenarioWDRModeimage调优架构图.png "Recorder Application Scenario WDR Mode Image Tuning Architecture")
 
 Before WDR mode image quality tuning, Sensor integration and Sensor lens calibration are required. The WDR mode Sensor integration steps can refer to the description of Sensor integration in the "[Linear Mode Image Quality Tuning](#ZH-CN_TOPIC_0000002457840933)" section. For Sensor lens calibration, the calibration parameters for AWB, Shading, NoiseProfile, and DPC static bad pixels can refer to the Linear mode calibration parameters. Since CCM operates after DRC, and DRC makes the data nonlinear, the following three points should be noted when calibrating CCM in WDR mode:
 
@@ -519,7 +519,7 @@ For the application requirement of brightening the face in backlit conditions, t
 Set up a typical WDR scene in the laboratory. The scene should include bright areas, dark areas, and a backlit face, as shown in [Figure 1](#_Ref500232236). The red boxes include the dark area, outdoor sky bright area, and backlit face image.
 
 **Figure 1** Recorder Application Scenario WDR Indoor Typical Application Scene<a name="_Ref500232236"></a>
-![](figures/录像机应用场景WDR室内典型应用场景.jpg "Recorder Application Scenario WDR Indoor Typical Application Scene")
+![](figures/录像机application scenarioWDR室内典型application scenario.jpg "Recorder Application Scenario WDR Indoor Typical Application Scene")
 
 **Brightness Dimension**<a name="section1365262415359"></a>
 
@@ -552,12 +552,12 @@ The DRC ToneMapping curve debugging strategy needs to work together with the Gam
 Brighten the face area while suppressing the dark area to improve face brightness while maintaining scene contrast, resulting in the Gamma curve shown in [Figure 4](#_Ref500232799).
 
 **Figure 4** Gamma Curve for Brightening Face Based on Gamma = 0.8<a name="_Ref500232799"></a>
-![](figures/Gamma-0-8基础上提升小脸亮度的曲线.png "Gamma Curve for Brightening Face Based on Gamma 0.8")
+![](figures/Gamma-0-8基础上提升小脸luminance的曲线.png "Gamma Curve for Brightening Face Based on Gamma 0.8")
 
 Based on the Gamma curve, debug the DRC Asymmetry curve. To brighten the face area, the Asymmetry curve needs to increase the backlit brightness. The specific debugging curve is shown in [Figure 5](#_Ref500232856).
 
 **Figure 5** Asymmetry Curve Shape for Brightening Face<a name="_Ref500232856"></a>
-![](figures/提升小脸亮度的Asymmetry曲线形状.png "Asymmetry Curve Shape for Brightening Face")
+![](figures/提升小脸luminance的Asymmetry曲线形状.png "Asymmetry Curve Shape for Brightening Face")
 
 The DRC Asymmetry curve and Gamma curve need to be iteratively tuned based on the actual wide dynamic scene to achieve appropriate face brightness under backlit conditions. For WDR backlit face effect optimization, customers can also use custom curves for the DRC curve, providing a more flexible debugging approach.
 
@@ -588,7 +588,7 @@ For the strong light suppression scenario requirements in traffic capture applic
 Set up a debugging environment in a nighttime traffic application scene. It is generally recommended to use a traffic intersection or a gate/barrier scene, as shown in [Figure 1](#_Ref504553341).
 
 **Figure 1** Example of Nighttime Traffic Application Scene<a name="_Ref504553341"></a>
-![](figures/夜晚交通应用场景示例图.png "Example of Nighttime Traffic Application Scene")
+![](figures/夜晚交通application scenario示例图.png "Example of Nighttime Traffic Application Scene")
 
 The overall debugging steps for the traffic strong light suppression scene are similar to the WDR backlit typical application scene. This section focuses on the differences in each image quality dimension debugging between the strong light suppression scene and the WDR backlit typical application scene.
 
@@ -633,7 +633,7 @@ The modules and entry conditions affecting the contrast dimension in strong ligh
 -   For the Dehaze module, it is recommended to use a custom curve. The specific custom curve shape is shown in [Figure 4](#_Ref504567603). The main purpose is to suppress headlight halos through dehazing while minimizing the loss of brightness in dark areas.
 
 **Figure 4** Example of Dehaze Custom Curve<a name="_Ref504567603"></a>
-![](figures/去雾自定义曲线的示例图.png "Example of Dehaze Custom Curve")
+![](figures/Dehaze自定义曲线的示例图.png "Example of Dehaze Custom Curve")
 -   The debugging approach for LDCI in the strong light suppression scene is mainly to improve the local contrast of the license plate. It is generally recommended to make the LDCI debugging more localized. However, note that in nighttime scenes, LDCI debugging can increase headlight halos. Therefore, a balance needs to be struck between the size of the headlight halo and the local contrast performance of the license plate.
 
 **Sharpness and Noise Dimensions**<a name="section13539101449"></a>
@@ -654,7 +654,7 @@ The Sharpen module is used to enhance image sharpness. It can perform independen
 [Figure 1](#fig2506236456) shows the system block diagram of the Sharpen module. The parts in black font are the data flow diagram of the sharpen module, and the parts in red font are the adjustment parameter interfaces exposed to users.
 
 **Figure 1** Sharpen Module System Block Diagram<a name="fig2506236456"></a>
-![](figures/Sharpen模块的系统框图.png "Sharpen Module System Block Diagram")
+![](figures/Sharpenmodule的系统框图.png "Sharpen Module System Block Diagram")
 ### Key Parameters<a name="ZH-CN_TOPIC_0000002424202226"></a>
 
 **Table 1** Sharpen Key Parameters
@@ -884,12 +884,12 @@ The Sharpen debugging steps are as follows:
 Since most color cameras use a single sensor to capture image information, and each sensor surface is covered with a CFA (Color Filter Array), each pixel can only obtain one color component among the three primary colors R, G, B.
 
 **Figure 1** Single Sensor Capturing Image Information<a name="_Ref457638430"></a>
-![](figures/单传感器获取图像信息.png "Single Sensor Capturing Image Information")
+![](figures/单传感器Getsimageinformation.png "Single Sensor Capturing Image Information")
 
 The function implemented by the Demosaic module is to convert the input Bayer data into RGB data. To obtain a color image, the missing two component values at the current point need to be estimated using the color component values of the current pixel and its surrounding pixels.
 
 **Figure 2** Demosaic Function<a name="fig118124712595"></a>
-![](figures/demosaic功能.png "Demosaic Function")
+![](figures/demosaicfunction.png "Demosaic Function")
 ### Key Parameters<a name="ZH-CN_TOPIC_0000002457840833"></a>
 
 **Table 1** Demosaic Key Parameters
@@ -1073,7 +1073,7 @@ The Sharpen debugging steps are as follows:
 Image denoising is an important part of digital image processing. The denoising effect affects subsequent image processing. Based on noise calibration results, this denoising module establishes a denoising model that better matches noise characteristics and can be customized for different sensors. NR performs spatial and temporal denoising in the Bayer domain. Using motion/static detection, the image is processed separately for foreground and background to suppress noise and improve the overall signal-to-noise ratio and uniformity.
 
 **Figure 1** NR Functional Principle Diagram<a name="_Ref500231359"></a>
-![](figures/NR功能原理图.png "NR Functional Principle Diagram")
+![](figures/NRfunction原理图.png "NR Functional Principle Diagram")
 
 ### Key Parameters and Debugging Steps
 

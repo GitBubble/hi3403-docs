@@ -21,7 +21,7 @@ Beginner-Friendly Getting Started Guide — from choosing a board to booting you
 
     ---
 
-Compare Topeet, Wildfire, Ebina, and RKH side by side — features, price, and best-fit scenarios at a glance.
+    Compare Topeet, Wildfire, Ebina, and RKH side by side — features, price, and best-fit scenarios at a glance.
 
     [:octicons-arrow-right-24: Enter](board-picker.md)
 

@@ -999,14 +999,14 @@ typedef struct {
 The default interface parameters for Hi3403V100 YUV 3DNR parameters are shown in [Figure 1](#ref515453020).
 
 **Figure 1**  3DNR parameter interface parameter screen<a name="ref515453020"></a>  
-![](figures/3DNR参数的接口参数界面.png "3DNR参数的接口参数界面")
+![](figures/3DNRparameters的interfaceparameters界面.png "3DNRparameters的interfaceparameters界面")
 
 The luminance denoising (NRy) of 3DNR consists of four series-connected denoising functions, divided into 4 levels numbered N0, N1, N2, N3. Due to implementation differences, series effects, etc., filters of the same number and type at different levels may not produce completely identical results.
 
 N0~N2 can select temporal filtering and spatial filtering. N3 is a pure spatial filter (with temporal assistance). The color filter is independent of the luminance filter, divided into two levels, C1 and C2, as shown in [Figure 2](#ref515443368).
 
 **Figure 2**  3DNR parameter numbering diagram<a name="ref515443368"></a>  
-![](figures/3DNR参数编号示意图.png "3DNR参数编号示意图")
+![](figures/3DNRparameters编号示意图.png "3DNRparameters编号示意图")
 >![](public_sys-resources/icon-note.gif) **Note:** 
 >-   The X in nX\*\* and mX\*\* parameters represents the level number, referring to the nth level. For example, n0sf2 specifically refers to the N0 level parameter in the nXsf2 series parameters, and m1id0 specifically refers to the first-level parameter in the mXid0 series.
 >-   [en] enables the denoising function for that level. 0 indicates the function at this level is off, 1 indicates the function is active. Parameters marked in red font are parameters not recommended for adjustment.

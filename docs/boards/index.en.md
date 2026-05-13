@@ -15,7 +15,7 @@ The Hi3403 platform currently supports the following Hi3403V100 development boar
 
     ---
 
-Manufactured by Topeet (迅为). The official SDK reference board — richest peripherals and most complete documentation. Recommended for beginners.
+    Manufactured by Topeet (迅为). The official SDK reference board — richest peripherals and most complete documentation. Recommended for beginners.
 
     [:octicons-arrow-right-24: Enter](topeet/index.md)
 
@@ -23,7 +23,7 @@ Manufactured by Topeet (迅为). The official SDK reference board — richest pe
 
     ---
 
-Manufactured by Wildfire (野火). Ships with pre-installed Buildroot and an active community ecosystem.
+    Manufactured by Wildfire (野火). Ships with pre-installed Buildroot and an active community ecosystem.
 
     [:octicons-arrow-right-24: Enter](lubancat/index.md)
 

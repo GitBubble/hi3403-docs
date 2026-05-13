@@ -121,7 +121,7 @@ The following symbols may appear in this document, with their meanings described
 The SVP ATC Graph functional architecture is shown in [Figure 1](#fig2817181918158). It is not limited to frameworks such as Caffe or Onnx. Users can construct graphs through open API interfaces and compile them into offline models for inference on the hardware acceleration processor on the device.
 
 **Figure 1** SVP ATC Graph Functional Architecture<a name="fig2817181918158"></a>  
-![](figures/SVP-ATC-Graph功能架构.png "SVP-ATC-Graph Functional Architecture")
+![](figures/SVP-ATC-Graphfunction架构.png "SVP-ATC-Graph Functional Architecture")
 ## Running Process<a name="ZH-CN_TOPIC_0000002408582630"></a>
 
 The user-side call flow for model conversion using SVP ATC Graph is shown in [Figure 1](#fig11567732171618).

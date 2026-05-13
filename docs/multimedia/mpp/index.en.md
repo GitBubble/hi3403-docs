@@ -17,11 +17,11 @@ reference* are split out for chapter-by-chapter browsing.
 
 -   __00 · Foreword__
 
-    [:octicons-arrow-right-24: Open](00-前言.md)
+    [:octicons-arrow-right-24: Open](00-Preface.md)
 
 -   __01 · Overview__
 
-    [:octicons-arrow-right-24: Open](01-概述.md)
+    [:octicons-arrow-right-24: Open](01-Overview.md)
 
 -   __02 · System control__
 
@@ -29,19 +29,19 @@ reference* are split out for chapter-by-chapter browsing.
 
 -   __03 · Video input (VI)__
 
-    [:octicons-arrow-right-24: Open](03-视频输入.md)
+    [:octicons-arrow-right-24: Open](03-Video Input.md)
 
 -   __04 · Video output (VO) 4.1–4.3__
 
-    [:octicons-arrow-right-24: Open](04-视频输出-41-43.md)
+    [:octicons-arrow-right-24: Open](04-Video Output-41-43.md)
 
 -   __04 · Video output (VO) 4.4–4.5__
 
-    [:octicons-arrow-right-24: Open](04-视频输出-44-45.md)
+    [:octicons-arrow-right-24: Open](04-Video Output-44-45.md)
 
 -   __05 · Video processing subsystem (VPSS)__
 
-    [:octicons-arrow-right-24: Open](05-视频处理子系统.md)
+    [:octicons-arrow-right-24: Open](05-Video Processing Subsystem.md)
 
 -   __06 · Video encoding (VENC) 6.1–6.3__
 
@@ -53,11 +53,11 @@ reference* are split out for chapter-by-chapter browsing.
 
 -   __07 · Video decoding (VDEC)__
 
-    [:octicons-arrow-right-24: Open](07-视频解码.md)
+    [:octicons-arrow-right-24: Open](07-视频decoding.md)
 
 -   __08 · Region management (RGN)__
 
-    [:octicons-arrow-right-24: Open](08-区域管理.md)
+    [:octicons-arrow-right-24: Open](08-region管理.md)
 
 -   __09 · Audio 9.1–9.3__
 
@@ -81,10 +81,10 @@ reference* are split out for chapter-by-chapter browsing.
 
 -   __13 · `proc` debug info 13.1–13.15__
 
-    [:octicons-arrow-right-24: Open](13-proc调试信息-131-1315.md)
+    [:octicons-arrow-right-24: Open](13-proc调试information-131-1315.md)
 
 -   __13 · `proc` debug info 13.16–13.29__
 
-    [:octicons-arrow-right-24: Open](13-proc调试信息-1316-1329.md)
+    [:octicons-arrow-right-24: Open](13-proc调试information-1316-1329.md)
 
 </div>

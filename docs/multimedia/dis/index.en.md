@@ -358,7 +358,7 @@ When using, simply execute the make command in the motionsensor directory to obt
 The principle of DIS obtaining gyroscope data is shown in [Figure 1](#fig12185191732514).
 
 **Figure 1**  Schematic diagram of DIS obtaining gyroscope data<a name="fig12185191732514"></a>  
-![](figures/DIS获取陀螺仪数据原理图.png "DIS获取陀螺仪数据原理图")
+![](figures/DISGets陀螺仪数据原理图.png "DISGets陀螺仪数据原理图")
 
 Gyroscope data is stored in the allocated Gyro Data buffer. After starting the gyroscope driver, the gyroscope driver internally starts a timer that continuously reads gyroscope data from the gyroscope FIFO, timestamps each group of data, and writes the data to the Gyro Data buffer. The DIS driver obtains the gyroscope data for the corresponding time period from the Gyro Data buffer based on the start timestamp and end timestamp of each frame for stabilization processing.
 
@@ -378,9 +378,9 @@ When using DIS gyroscope-related algorithms, first correctly match the coordinat
 The DIS algorithm references the image coordinate system. The IMU (gyroscope) coordinate system can be determined by looking at the position of the black dot on the chip in the IMU datasheet. For example, the coordinate system of a certain gyroscope model is shown in [Figure 2](#fig1600174122810).
 
 **Figure 1**  Image coordinate system (lens facing forward in the Zc direction for shooting)<a name="_Ref452476337"></a>  
-![](figures/图像坐标系（镜头朝前Zc方向拍摄）.png "图像坐标系（镜头朝前Zc方向拍摄）")")
+![](figures/imageCoordinates系（镜头朝前Zc方向拍摄）.png "imageCoordinates系（镜头朝前Zc方向拍摄）")")
 **Figure 2**  Gyroscope coordinate system<a name="fig1600174122810"></a>  
-![](figures/陀螺仪坐标系.png "陀螺仪坐标系")
+![](figures/陀螺仪Coordinates系.png "陀螺仪Coordinates系")
 
 The following describes how to convert coordinate system directions using two different gyroscope installation positions as examples. For other installation positions, please extrapolate accordingly.
 
