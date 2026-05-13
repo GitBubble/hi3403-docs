@@ -40,6 +40,6 @@ development reference.
 
     Vendor ISP development reference, by chapter.
 
-    [:octicons-arrow-right-24: Open](dev-ref/isp-开发参考-1-2.md)
+    [:octicons-arrow-right-24: Open](dev-ref/isp-Development Reference-1-2.md)
 
 </div>

@@ -45,46 +45,46 @@ reference* are split out for chapter-by-chapter browsing.
 
 -   __06 · Video encoding (VENC) 6.1–6.3__
 
-    [:octicons-arrow-right-24: Open](06-视频编码-61-63.md)
+    [:octicons-arrow-right-24: Open](06-video encoding-61-63.md)
 
 -   __06 · Video encoding (VENC) 6.4–6.5__
 
-    [:octicons-arrow-right-24: Open](06-视频编码-64-65.md)
+    [:octicons-arrow-right-24: Open](06-video encoding-64-65.md)
 
 -   __07 · Video decoding (VDEC)__
 
-    [:octicons-arrow-right-24: Open](07-视频decoding.md)
+    [:octicons-arrow-right-24: Open](07-video-decoding.md)
 
 -   __08 · Region management (RGN)__
 
-    [:octicons-arrow-right-24: Open](08-region管理.md)
+    [:octicons-arrow-right-24: Open](08-region-management.md)
 
 -   __09 · Audio 9.1–9.3__
 
-    [:octicons-arrow-right-24: Open](09-音频-91-93.md)
+    [:octicons-arrow-right-24: Open](09-audio-91-93.md)
 
 -   __09 · Audio 9.4–9.5__
 
-    [:octicons-arrow-right-24: Open](09-音频-94-95.md)
+    [:octicons-arrow-right-24: Open](09-audio-94-95.md)
 
 -   __10 · Video graphics subsystem__
 
-    [:octicons-arrow-right-24: Open](10-视频图形子系统.md)
+    [:octicons-arrow-right-24: Open](10-video graphicssub-system .md)
 
 -   __11 · Geometric distortion correction subsystem__
 
-    [:octicons-arrow-right-24: Open](11-几何畸变矫正子系统.md)
+    [:octicons-arrow-right-24: Open](11-geometric-distortion-correction.md)
 
 -   __12 · Splice__
 
-    [:octicons-arrow-right-24: Open](12拼接.md)
+    [:octicons-arrow-right-24: Open](12-stitching.md)
 
 -   __13 · `proc` debug info 13.1–13.15__
 
-    [:octicons-arrow-right-24: Open](13-proc调试information-131-1315.md)
+    [:octicons-arrow-right-24: Open](13-proc-debug-information-131-1315.md)
 
 -   __13 · `proc` debug info 13.16–13.29__
 
-    [:octicons-arrow-right-24: Open](13-proc调试information-1316-1329.md)
+    [:octicons-arrow-right-24: Open](13-proc-debug-information-1316-1329.md)
 
 </div>
