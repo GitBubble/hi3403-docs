@@ -9,15 +9,15 @@ Beginner-Friendly Getting Started Guide — from choosing a board to booting you
 
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __fast start__
+-   :material-clock-fast:{ .lg .middle } __Quick Start__
 
     ---
 
-    Select the board → flash the image → Connect the serial port → Log in. Go through the entire process in one page.
+    Choose a board → flash the image → connect the serial port → log in. The full workflow on a single page.
 
     [:octicons-arrow-right-24: Enter](quickstart.md)
 
--   :material-help-circle-outline:{ .lg .middle } __Select development board__
+-   :material-help-circle-outline:{ .lg .middle } __Choose a Board__
 
     ---
 
