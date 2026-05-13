@@ -1,8 +1,21 @@
 ---
 title: "前言"
 source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 参考/IVE API 参考（1--2）.md
---- # 前言
-**概述<a name="section4537382116410"></a>** 本文档为使用媒体处理芯片的IVE协处理器进行_识别_分析方案开发的程序员而写，目的是供您在开发过程中查阅IVE协处理器支持的各种参考信息，包括API、头文件、错误码、Proc信息等。 >![](public_sys-resources/icon-note.gif) **说明：** >本文未有特殊说明，与Hi3403V100内容完全一致。 **产品版本<a name="section155321452151615"></a>** 与本文档相对应的产品版本如下。 <a name="table10537205211163"></a>
+---
+
+# 前言
+**概述<a name="section4537382116410"></a>**
+
+本文档为使用媒体处理芯片的IVE协处理器进行_识别_分析方案开发的程序员而写，目的是供您在开发过程中查阅IVE协处理器支持的各种参考信息，包括API、头文件、错误码、Proc信息等。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>本文未有特殊说明，Hi3519AV200与Hi3403V100内容完全一致。
+
+**产品版本<a name="section155321452151615"></a>**
+
+与本文档相对应的产品版本如下。
+
+<a name="table10537205211163"></a>
 <table><thead align="left"><tr id="row16570155221618"><th class="cellrowborder" valign="top" width="31.759999999999998%" id="mcps1.1.3.1.1"><p id="p6570452161616"><a name="p6570452161616"></a><a name="p6570452161616"></a>产品名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68.24%" id="mcps1.1.3.1.2"><p id="p1157017526160"><a name="p1157017526160"></a><a name="p1157017526160"></a>产品版本</p>
@@ -14,9 +27,26 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 
 <td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p1557185217161"><a name="p1557185217161"></a><a name="p1557185217161"></a>V100</p>
 </td>
 </tr>
+<tr id="row1712262811434"><td class="cellrowborder" valign="top" width="31.759999999999998%" headers="mcps1.1.3.1.1 "><p id="p8622349102117"><a name="p8622349102117"></a><a name="p8622349102117"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="68.24%" headers="mcps1.1.3.1.2 "><p id="p9185184311112"><a name="p9185184311112"></a><a name="p9185184311112"></a>V100</p>
+</td>
+</tr>
 </tbody>
-</table> **读者对象<a name="section4378592816410"></a>** 本文档（本指南）主要适用于以下工程师： - 技术支持工程师
-- 软件开发工程师 **符号约定<a name="section133020216410"></a>** 在本文中可能出现下列标志，它们所代表的含义如下。 <a name="table2622507016410"></a>
+</table>
+
+**读者对象<a name="section4378592816410"></a>**
+
+本文档（本指南）主要适用于以下工程师：
+
+-   技术支持工程师
+-   软件开发工程师
+
+**符号约定<a name="section133020216410"></a>**
+
+在本文中可能出现下列标志，它们所代表的含义如下。
+
+<a name="table2622507016410"></a>
 <table><thead align="left"><tr id="row1530720816410"><th class="cellrowborder" valign="top" width="20.580000000000002%" id="mcps1.1.3.1.1"><p id="p6450074116410"><a name="p6450074116410"></a><a name="p6450074116410"></a><strong id="b2136615816410"><a name="b2136615816410"></a><a name="b2136615816410"></a>符号</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="79.42%" id="mcps1.1.3.1.2"><p id="p5435366816410"><a name="p5435366816410"></a><a name="p5435366816410"></a><strong id="b5941558116410"><a name="b5941558116410"></a><a name="b5941558116410"></a>说明</strong></p>
@@ -28,8 +58,34 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 
 <td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p1757432116410"><a name="p1757432116410"></a><a name="p1757432116410"></a>表示如不避免则将会导致死亡或严重伤害的具有高等级风险的危害。</p>
 </td>
 </tr>
+<tr id="row466863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1432579516410"><a name="p1432579516410"></a><a name="p1432579516410"></a><a name="image4895582316410"></a><a name="image4895582316410"></a><span><img class="" id="image4895582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474400314.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p959197916410"><a name="p959197916410"></a><a name="p959197916410"></a>表示如不避免则可能导致死亡或严重伤害的具有中等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row123863216410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p1232579516410"><a name="p1232579516410"></a><a name="p1232579516410"></a><a name="image1235582316410"></a><a name="image1235582316410"></a><span><img class="" id="image1235582316410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002506720227.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p123197916410"><a name="p123197916410"></a><a name="p123197916410"></a>表示如不避免则可能导致轻微或中度伤害的具有低等级风险的危害。</p>
+</td>
+</tr>
+<tr id="row5786682116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p2204984716410"><a name="p2204984716410"></a><a name="p2204984716410"></a><a name="image4504446716410"></a><a name="image4504446716410"></a><span><img class="" id="image4504446716410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002506640279.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4388861916410"><a name="p4388861916410"></a><a name="p4388861916410"></a>用于传递设备或环境安全警示信息。如不避免则可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果。</p>
+<p id="p1238861916410"><a name="p1238861916410"></a><a name="p1238861916410"></a>“须知”不涉及人身伤害。</p>
+</td>
+</tr>
+<tr id="row2856923116410"><td class="cellrowborder" valign="top" width="20.580000000000002%" headers="mcps1.1.3.1.1 "><p id="p5555360116410"><a name="p5555360116410"></a><a name="p5555360116410"></a><a name="image799324016410"></a><a name="image799324016410"></a><span><img class="" id="image799324016410" height="25.270000000000003" width="67.83" src="figures/zh-cn_image_0000002474560254.png"></span></p>
+</td>
+<td class="cellrowborder" valign="top" width="79.42%" headers="mcps1.1.3.1.2 "><p id="p4612588116410"><a name="p4612588116410"></a><a name="p4612588116410"></a>对正文中重点信息的补充说明。</p>
+<p id="p1232588116410"><a name="p1232588116410"></a><a name="p1232588116410"></a>“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息。</p>
+</td>
+</tr>
 </tbody>
-</table> **修改记录<a name="section2467512116410"></a>** <a name="table1557726816410"></a>
+</table>
+
+**修改记录<a name="section2467512116410"></a>**
+
+<a name="table1557726816410"></a>
 <table><thead align="left"><tr id="row2942532716410"><th class="cellrowborder" valign="top" width="20.72%" id="mcps1.1.4.1.1"><p id="p3778275416410"><a name="p3778275416410"></a><a name="p3778275416410"></a><strong id="b5687322716410"><a name="b5687322716410"></a><a name="b5687322716410"></a>文档版本</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="26.119999999999997%" id="mcps1.1.4.1.2"><p id="p5627845516410"><a name="p5627845516410"></a><a name="p5627845516410"></a><strong id="b5800814916410"><a name="b5800814916410"></a><a name="b5800814916410"></a>发布日期</strong></p>
@@ -46,9 +102,79 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 
 </td>
 </tr>
 </tbody>
-</table> # 概述
-## 概述<a name="ZH-CN_TOPIC_0000002470931328"></a> IVE（_Identification_ Video Engine）是媒体处理芯片_识别_分析系统中的硬件加速模块。用户基于IVE开发_识别_分析方案可以加速_识别_分析，降低CPU占用。当前IVE提供的算子可以支撑开发视频诊断、周界防范等_识别_分析方案。 ## 功能描述<a name="ZH-CN_TOPIC_0000002471091280"></a> ### 重要概念<a name="ZH-CN_TOPIC_0000002503971263"></a> - 句柄\(handle\) 用户在调用算子创建任务时，系统会为每个任务分配一个handle，用于标识不同的任务。 - 及时返回结果标志is\_instant 用户在创建某个任务后，希望及时得到该任务完成的信息，则需要在创建该任务时，将is\_instant设置为TD\_TRUE。否则，如果用户不关心该任务是否完成，建议将is\_instant设置为TD\_FALSE，这样可以与后续任务组链执行，减少中断次数，提升性能。 - 查询\(query\) 用户根据系统返回的handle，调用ss\_mpi\_ive\_query可以查询对应算子任务是否完成。 - 及时刷cache IVE硬件只能从DDR中获取数据。如果用户在调用IVE任务时，访问空间可cache而且CPU曾经访问，为了保证IVE输入输出数据不被CPU cahce干扰，此时用户需要调用ss\_mpi\_sys\_mmz\_flush\_cache接口刷cache（详细信息请参见《MPP 媒体处理软件Vx.y 开发参考》），将数据从cache刷到DDR，以供IVE使用。 - 跨度（stride）：与图像或二维数据的width度量一致的量，如[图1](#fig1615616519207)所示。 - ot\_svp\_img图像数据跨度，表示图像一行以“像素”计算的单元个数，“像素”位宽可以是8bit，16bit等。 - ot\_svp\_data二维数据跨度，表示二维数据一行的字节数，即为[图1](#fig1615616519207)中n=8的情况。 可以将ot\_svp\_img看成一个“像素”用8bit表示的图像，那么跨度即统一表述为图像或二维数据的一行以“像素”计算的单元个数。 **图 1** 跨度（stride）示意图<a name="fig1615616519207"></a> ![](figures/跨度（stride）示意图.png "跨度（stride）示意图")
-- 对齐 硬件为了快速访问内存首地址或者跨行访问数据，要求内存地址或内存跨度必须为对齐系数的倍数。 - 数据内存首地址对齐 当前IVE算子对其输入输出有要求1byte对齐、2byte对齐以及16byte对齐的，具体见各算子API参考中的参数要求。 - 跨度对齐 对于二维广义图像、二维单分量数据以及一维数组数据的跨度均必须满足16“像素”对齐。 >![](public_sys-resources/icon-notice.gif) **须知：** >在使用DDR4时，为提高访存效率，建议首地址使用256字节对齐，stride使用256“像素”的奇数倍对齐。如果是使用64位操作系统，需要使用到的MMZ地址必须是在一个4GB空间内，否则会出现异常。 - 输入、输出数据类型（具体结构定义请参见“数据类型和数据结构”） - 二维广义图像数据 ot\_svp\_img、ot\_svp\_src\_img、ot\_svp\_dst\_img，图像的类型参考ot\_svp\_img\_type，具体的内存分配如OT\_SVP\_IMG\_TYPE\_U8C1 \\ OT\_SVP\_IMG\_TYPE\_S8C1 \\ OT\_SVP\_IMG\_TYPE\_S16C1 \\ OT\_SVP\_IMG\_TYPE\_U16C1 \\ OT\_SVP\_IMG\_TYPE\_S32C1 \\ OT\_SVP\_IMG\_TYPE\_U32C1 \\ OT\_SVP\_IMG\_TYPE\_S64C1 \\ OT\_SVP\_IMG\_TYPE\_U64C1 类型的ot\_svp\_img图像图～OT\_SVP\_IMG\_TYPE\_U8C3\_PLANAR类型的ot\_svp\_img图像图所示。 **注意：当前所有算子输入输出的二维广义图像数据的高宽均需为偶数。** - 二维单分量数据 ot\_svp\_data，以byte为单位的二维数据，主要用于dma等，其内存如[图11](#fig41189544118)所示；根据类型ot\_svp\_img可以转化为单个或多个ot\_svp\_data。 - 一维数据 ot\_svp\_mem\_info、ot\_svp\_src\_mem\_info、ot\_svp\_dst\_mem\_info，表示一维数据，如hist的统计数据、gmm的模型数据、lk\_optical\_flow的角点输入等；其内存如[图12](#fig1518002910213)所示。 - 二维广义图像类型 **表 1** 二维广义图像类型表1 <a name="table15404mcpsimp"></a>
+</table>
+
+# 概述
+## 概述<a name="ZH-CN_TOPIC_0000002470931328"></a>
+
+IVE（_Identification_  Video Engine）是媒体处理芯片_识别_分析系统中的硬件加速模块。用户基于IVE开发_识别_分析方案可以加速_识别_分析，降低CPU占用。当前IVE提供的算子可以支撑开发视频诊断、周界防范等_识别_分析方案。
+
+## 功能描述<a name="ZH-CN_TOPIC_0000002471091280"></a>
+
+
+
+### 重要概念<a name="ZH-CN_TOPIC_0000002503971263"></a>
+
+-   句柄\(handle\)
+
+    用户在调用算子创建任务时，系统会为每个任务分配一个handle，用于标识不同的任务。
+
+-   及时返回结果标志is\_instant
+
+    用户在创建某个任务后，希望及时得到该任务完成的信息，则需要在创建该任务时，将is\_instant设置为TD\_TRUE。否则，如果用户不关心该任务是否完成，建议将is\_instant设置为TD\_FALSE，这样可以与后续任务组链执行，减少中断次数，提升性能。
+
+-   查询\(query\)
+
+    用户根据系统返回的handle，调用ss\_mpi\_ive\_query可以查询对应算子任务是否完成。
+
+-   及时刷cache
+
+    IVE硬件只能从DDR中获取数据。如果用户在调用IVE任务时，访问空间可cache而且CPU曾经访问，为了保证IVE输入输出数据不被CPU cahce干扰，此时用户需要调用ss\_mpi\_sys\_mmz\_flush\_cache接口刷cache（详细信息请参见《MPP 媒体处理软件Vx.y 开发参考》），将数据从cache刷到DDR，以供IVE使用。
+
+-   跨度（stride）：与图像或二维数据的width度量一致的量，如[图1](#fig1615616519207)所示。
+
+    -   ot\_svp\_img图像数据跨度，表示图像一行以“像素”计算的单元个数，“像素”位宽可以是8bit，16bit等。
+    -   ot\_svp\_data二维数据跨度，表示二维数据一行的字节数，即为[图1](#fig1615616519207)中n=8的情况。
+
+    可以将ot\_svp\_img看成一个“像素”用8bit表示的图像，那么跨度即统一表述为图像或二维数据的一行以“像素”计算的单元个数。
+
+**图 1**  跨度（stride）示意图<a name="fig1615616519207"></a>  
+![](figures/跨度（stride）示意图.png "跨度（stride）示意图")
+-   对齐
+
+    硬件为了快速访问内存首地址或者跨行访问数据，要求内存地址或内存跨度必须为对齐系数的倍数。
+
+    -   数据内存首地址对齐
+
+        当前IVE算子对其输入输出有要求1byte对齐、2byte对齐以及16byte对齐的，具体见各算子API参考中的参数要求。
+
+    -   跨度对齐
+
+        对于二维广义图像、二维单分量数据以及一维数组数据的跨度均必须满足16“像素”对齐。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>在使用DDR4时，为提高访存效率，建议首地址使用256字节对齐，stride使用256“像素”的奇数倍对齐。如果是使用64位操作系统，需要使用到的MMZ地址必须是在一个4GB空间内，否则会出现异常。
+
+-   输入、输出数据类型（具体结构定义请参见“数据类型和数据结构”）
+    -   二维广义图像数据
+
+        ot\_svp\_img、ot\_svp\_src\_img、ot\_svp\_dst\_img，图像的类型参考ot\_svp\_img\_type，具体的内存分配如OT\_SVP\_IMG\_TYPE\_U8C1 \\ OT\_SVP\_IMG\_TYPE\_S8C1 \\ OT\_SVP\_IMG\_TYPE\_S16C1 \\ OT\_SVP\_IMG\_TYPE\_U16C1 \\ OT\_SVP\_IMG\_TYPE\_S32C1 \\ OT\_SVP\_IMG\_TYPE\_U32C1 \\ OT\_SVP\_IMG\_TYPE\_S64C1 \\ OT\_SVP\_IMG\_TYPE\_U64C1 类型的ot\_svp\_img图像图～OT\_SVP\_IMG\_TYPE\_U8C3\_PLANAR类型的ot\_svp\_img图像图所示。
+
+        **注意：当前所有算子输入输出的二维广义图像数据的高宽均需为偶数。**
+
+    -   二维单分量数据
+
+        ot\_svp\_data，以byte为单位的二维数据，主要用于dma等，其内存如[图11](#fig41189544118)所示；根据类型ot\_svp\_img可以转化为单个或多个ot\_svp\_data。
+
+    -   一维数据
+
+        ot\_svp\_mem\_info、ot\_svp\_src\_mem\_info、ot\_svp\_dst\_mem\_info，表示一维数据，如hist的统计数据、gmm的模型数据、lk\_optical\_flow的角点输入等；其内存如[图12](#fig1518002910213)所示。
+
+-   二维广义图像类型
+
+**表 1**  二维广义图像类型表1
+
+<a name="table15404mcpsimp"></a>
 <table><thead align="left"><tr id="row15412mcpsimp"><th class="cellrowborder" valign="top" width="20.712071207120715%" id="mcps1.2.5.1.1"><p id="p15414mcpsimp"><a name="p15414mcpsimp"></a><a name="p15414mcpsimp"></a>类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.733073307330734%" id="mcps1.2.5.1.2"><p id="p15416mcpsimp"><a name="p15416mcpsimp"></a><a name="p15416mcpsimp"></a>图像描述</p>
@@ -204,73 +330,229 @@ source: /sessions/sharp-sweet-allen/mnt/hi3403-build/pegasus/docs/zh-CN/IVE API 
 </td>
 </tr>
 </tbody>
-</table> - 特殊输出数据类型 - Integ组合输出（OT\_IVE\_INTEG\_OUT\_CTRL\_COMBINE） - 用OT\_SVP\_IMG\_TYPE\_U64C1类型的ot\_svp\_img，S（图像和）占低28bit，SQ（图像平方和）占高36bit。格式如图 积分图（OT\_SVP\_IMG\_TYPE\_U64C1）组合输出示意图所示。 - 直方图输出如直方图输出格式示意图所示。 **图 2** OT\_SVP\_IMG\_TYPE\_U8C1 \\ OT\_SVP\_IMG\_TYPE\_S8C1 \\ OT\_SVP\_IMG\_TYPE\_S16C1 \\ OT\_SVP\_IMG\_TYPE\_U16C1 \\ OT\_SVP\_IMG\_TYPE\_S32C1 \\ OT\_SVP\_IMG\_TYPE\_U32C1 \\ OT\_SVP\_IMG\_TYPE\_S64C1 \\ OT\_SVP\_IMG\_TYPE\_U64C1 类型的ot\_svp\_img图像<a name="fig134745715231"></a> ![](figures/OT_SVP_IMG_TYPE_U8C1-OT_SVP_IMG_TYPE_S8C1-OT_SVP_IMG_TYPE_S16C1-OT_SVP_IMG_TYPE_U16C1-OT_SVP_IMG_TYP.png "OT_SVP_IMG_TYPE_U8C1-OT_SVP_IMG_TYPE_S8C1-OT_SVP_IMG_TYPE_S16C1-OT_SVP_IMG_TYPE_U16C1-OT_SVP_IMG_TYP") **图 3** OT\_SVP\_IMG\_TYPE\_YUV420SP类型的ot\_svp\_img图像<a name="fig5654131372716"></a> ![](figures/OT_SVP_IMG_TYPE_YUV420SP类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV420SP类型的ot_svp_img图像") 注：格式与ot\_pixel\_format的OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420对应。 **图 4** OT\_SVP\_IMG\_TYPE\_YUV422SP类型的ot\_svp\_img图像<a name="fig674947195410"></a> ![](figures/OT_SVP_IMG_TYPE_YUV422SP类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV422SP类型的ot_svp_img图像") 注： - 这里V在前，U在后，phys\_addr\[2\]和virt\_addr\[2\]可配置为U的首地址，即phys\_addr\[1\]+1和virt\_addr\[1\]+1。
-- 格式与ot\_pixel\_format的OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_422对应。 **图 5** OT\_SVP\_IMG\_TYPE\_YUV420P类型的ot\_svp\_img图像<a name="fig125145135718"></a> ![](figures/OT_SVP_IMG_TYPE_YUV420P类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV420P类型的ot_svp_img图像") **图 6** OT\_SVP\_IMG\_TYPE\_YUV422P类型的ot\_svp\_img图像<a name="fig18174113416577"></a> ![](figures/OT_SVP_IMG_TYPE_YUV422P类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV422P类型的ot_svp_img图像") **图 7** OT\_SVP\_IMG\_TYPE\_S8C2\_PACKAGE类型的ot\_svp\_img图像<a name="fig1696145375811"></a> ![](figures/OT_SVP_IMG_TYPE_S8C2_PACKAGE类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_S8C2_PACKAGE类型的ot_svp_img图像") **图 8** OT\_SVP\_IMG\_TYPE\_S8C2\_PLANAR类型的ot\_svp\_img图像<a name="fig1926523165910"></a> ![](figures/OT_SVP_IMG_TYPE_S8C2_PLANAR类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_S8C2_PLANAR类型的ot_svp_img图像") **图 9** OT\_SVP\_IMG\_TYPE\_U8C3\_PACKAGE类型的ot\_svp\_img图像<a name="fig1945335617599"></a> ![](figures/OT_SVP_IMG_TYPE_U8C3_PACKAGE类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_U8C3_PACKAGE类型的ot_svp_img图像") 注：对于RGB\_PACKAGE图像，是以“B0G0R0B1G1R1…”形式存储，B在最前面； 对于HSV\_PACKAGE图像，是以“H0S0V0H1S1V1…”形式存储，H在最前面； 对于LAB\_PACKAGE图像，是以“L0A0B0L1A1B1…”形式存储，L在最前面。 **图 10** OT\_SVP\_IMG\_TYPE\_U8C3\_PLANAR类型的ot\_svp\_img图像<a name="fig162899491108"></a> ![](figures/OT_SVP_IMG_TYPE_U8C3_PLANAR类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_U8C3_PLANAR类型的ot_svp_img图像") 注： 对于RGB\_PLANAR图像，指针数组virt\_addr\[3\]按顺序分别存储B、G、R的指针，而数组stride\[3\]分别为B、G、R的跨度； 对于HSV\_PLANAR图像，指针数组virt\_addr\[3\]按顺序分别存储H、S、V的指针，而数组stride\[3\]分别为H、S、V的跨度； 对于LAB\_PLANAR图像，指针数组virt\_addr\[3\]按顺序分别存储L、A、B的指针，而数组stride\[3\]分别为L、A、B的跨度； **图 11** ot\_svp\_data 类型的数据内存示意<a name="fig41189544118"></a> ![](figures/ot_svp_data-类型的数据内存示意.png "ot_svp_data-类型的数据内存示意") **图 12** ot\_svp\_mem\_info 类型的数据内存示意<a name="fig1518002910213"></a> ![](figures/ot_svp_mem_info-类型的数据内存示意.png "ot_svp_mem_info-类型的数据内存示意") **图 13** 积分图（OT\_SVP\_IMG\_TYPE\_U64C1）组合输出示意<a name="fig187188113314"></a> ![](figures/积分图（OT_SVP_IMG_TYPE_U64C1）组合输出示意.png "积分图（OT_SVP_IMG_TYPE_U64C1）组合输出示意") **图 14** 直方图输出格式示意<a name="fig1457715441337"></a> ![](figures/直方图输出格式示意.png "直方图输出格式示意")
-- 块数据类型 ot\_svp\_blob、ot\_svp\_src\_blob、ot\_svp\_dst\_blob，类型参考ot\_svp\_blob\_type，具体的内存分布见《SVPx.0 API参考》中的blob的描述。 ### 使用示意<a name="ZH-CN_TOPIC_0000002470931304"></a> - 用户根据需求调用相应的算子接口创建任务，指定is\_instant类型，并记录该任务返回的handle号。
-- 根据返回的handle号，指定阻塞方式，可以查询到该任务的完成状态。 具体可参见[ss\_mpi\_ive\_query](#ZH-CN_TOPIC_0000002470931246)中的【举例】。 # API参考
-IVE模块提供了创建任务和查询任务的基本接口。 该功能模块提供以下MPI： - [ss\_mpi\_ive\_dma](#ZH-CN_TOPIC_0000002504091099)：创建直接内存访问任务。
-- [ss\_mpi\_ive\_filter](#ZH-CN_TOPIC_0000002470931284)：创建5x5模板滤波任务。
-- [ss\_mpi\_ive\_csc](#ZH-CN_TOPIC_0000002470931294)：创建色彩空间转换任务。
-- [ss\_mpi\_ive\_filter\_and\_csc](#ZH-CN_TOPIC_0000002470931218)：创建模板滤波加色彩空间转换复合任务
-- [ss\_mpi\_ive\_sobel](#ZH-CN_TOPIC_0000002471091284)：创建5x5模板sobel-like梯度计算任务。
-- [ss\_mpi\_ive\_mag\_and\_ang](#ZH-CN_TOPIC_0000002470931308)：创建5x5模板计算梯度幅值与幅角任务。
-- [ss\_mpi\_ive\_dilate](#ZH-CN_TOPIC_0000002503971205)：创建膨胀任务。
-- [ss\_mpi\_ive\_erode](#ZH-CN_TOPIC_0000002503971269)：创建腐蚀任务。
-- [ss\_mpi\_ive\_threshold](#ZH-CN_TOPIC_0000002471091326)：创建图像二值化任务。
-- [ss\_mpi\_ive\_and](#ZH-CN_TOPIC_0000002504091087)：创建两二值图像相与任务。
-- [ss\_mpi\_ive\_sub](#ZH-CN_TOPIC_0000002503971163)：创建两灰度图像相减任务。
-- [ss\_mpi\_ive\_or](#ZH-CN_TOPIC_0000002471091296)：创建两二值图像相或任务。
-- [ss\_mpi\_ive\_integ](#ZH-CN_TOPIC_0000002470931322)：创建积分图统计任务。
-- [ss\_mpi\_ive\_hist](#ZH-CN_TOPIC_0000002504091123)：创建直方图统计任务。
-- [ss\_mpi\_ive\_threshold\_s16](#ZH-CN_TOPIC_0000002470931220)：创建s16数据到8bit数据阈值化任务。
-- [ss\_mpi\_ive\_threshold\_u16](#ZH-CN_TOPIC_0000002470931242)：创建u16数据到u8数据阈值化任务。
-- [ss\_mpi\_ive\_16bit\_to\_8bit](#ZH-CN_TOPIC_0000002471091216)：创建16bit数据到8bit数据线性转化任务。
-- [ss\_mpi\_ive\_order\_stats\_filter](#ZH-CN_TOPIC_0000002504091093)：创建3x3模板顺序统计量滤波任务。
-- [ss\_mpi\_ive\_map](#ZH-CN_TOPIC_0000002470931234)：创建Map（映射u8-\>u8\\u8-\>u16\\u8-\>s16赋值）任务。
-- [ss\_mpi\_ive\_equalize\_hist](#ZH-CN_TOPIC_0000002471091322)：创建灰度图像的直方图均衡化计算任务。
-- [ss\_mpi\_ive\_add](#ZH-CN_TOPIC_0000002504091171)：创建两灰度图像的加权加计算任务。
-- [ss\_mpi\_ive\_xor](#ZH-CN_TOPIC_0000002504091203)：创建两二值图的异或计算任务。
-- [ss\_mpi\_ive\_ncc](#ZH-CN_TOPIC_0000002503971167)：创建两相同分辨率图像的归一化互相关系数计算任务。
-- [ss\_mpi\_ive\_ccl](#ZH-CN_TOPIC_0000002504091151)：创建二值图像的连通区域标记任务。
-- [ss\_mpi\_ive\_gmm](#ZH-CN_TOPIC_0000002503971147)：创建gmm背景建模任务。
-- [ss\_mpi\_ive\_gmm2](#ZH-CN_TOPIC_0000002504091155)：创建gmm2背景建模任务。
-- [ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)：创建灰度图的canny强弱边缘提取任务。
-- [ss\_mpi\_ive\_canny\_edge](#ZH-CN_TOPIC_0000002470931286)：灰度图的canny边缘提取的后半部：连接边缘点，形成canny边缘图。
-- [ss\_mpi\_ive\_lbp](#ZH-CN_TOPIC_0000002503971201)：创建lbp计算任务。
-- [ss\_mpi\_ive\_norm\_grad](#ZH-CN_TOPIC_0000002503971195)：创建归一化梯度计算任务，梯度均分量均归一化到s8。
-- [ss\_mpi\_ive\_lk\_optical\_flow\_pyr](#ZH-CN_TOPIC_0000002504091135)：创建多层金字塔LK光流计算任务。
-- [ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)：灰度图像Shi-Tomasi-like角点计算的前半部：计算候选角点。
-- [ss\_mpi\_ive\_st\_corner](#ZH-CN_TOPIC_0000002470931280)：灰度图像Shi-Tomasi-like角点计算的后半部：按规则挑选角点。
-- [ss\_mpi\_ive\_sad](#ZH-CN_TOPIC_0000002471091328)：计算两幅图像按4x4\\8x8\\16x16分块的16 bit\\8 bit SAD图像，以及对SAD进行阈值化输出。
-- [ss\_mpi\_ive\_resize](#ZH-CN_TOPIC_0000002503971235)：创建图像缩放任务。
-- [ss\_mpi\_ive\_grad\_fg](#ZH-CN_TOPIC_0000002471091316)：根据背景图像和当前帧图像的梯度信息计算梯度前景图像。
-- [ss\_mpi\_ive\_match\_bg\_model](#ZH-CN_TOPIC_0000002470931334)：基于CodeBook演进的背景模型匹配。
-- [ss\_mpi\_ive\_update\_bg\_model](#ZH-CN_TOPIC_0000002504091095)：基于CodeBook演进的背景模型更新。
-- [ss\_mpi\_ive\_ann\_mlp\_load\_model](#ZH-CN_TOPIC_0000002504091075)：读取ann\_mlp模型文件，初始化模型数据。
-- [ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ZH-CN_TOPIC_0000002504091139)：去初始化ann模型数据。
-- [ss\_mpi\_ive\_ann\_mlp\_predict](#ZH-CN_TOPIC_0000002471091294)：创建同一模型多个样本ann\_mlp预测任务。
-- [ss\_mpi\_ive\_svm\_load\_model](#ZH-CN_TOPIC_0000002471091276)：读取svm模型文件，初始化模型数据。
-- [ss\_mpi\_ive\_svm\_unload\_model](#ZH-CN_TOPIC_0000002504091133)：去初始化svm模型数据。
-- [ss\_mpi\_ive\_svm\_predict](#ZH-CN_TOPIC_0000002504091105)：创建同一模型的多个样本svm预测任务。
-- [ss\_mpi\_ive\_cnn\_load\_model](#ZH-CN_TOPIC_0000002471091312)：读取cnn模型文件，生成cnn网络模型。
-- [ss\_mpi\_ive\_cnn\_unload\_model](#ZH-CN_TOPIC_0000002470931302)：卸载cnn网络模型，释放内存。
-- [ss\_mpi\_ive\_cnn\_predict](#ZH-CN_TOPIC_0000002470931276)：用已有模型对一个或多个输入样本进行预测，并输出预测结果。
-- [ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)：接收cnn\_predict结果，执行softmax运算来预测每个样本图像的类别，并输出置信度最高的类别\(rank-1\)以及对应的置信度。
-- [ss\_mpi\_ive\_persp\_trans](#ZH-CN_TOPIC_0000002503971185)：根据输入源图的区域位置和点对信息做相应的透视变换。
-- [ss\_mpi\_ive\_kcf\_get\_mem\_size](#ZH-CN_TOPIC_0000002470931306)：获取需要创建目标对象数的内存大小。
-- [ss\_mpi\_ive\_kcf\_create\_obj\_list](#ZH-CN_TOPIC_0000002504091179)：创建目标链表。
-- [ss\_mpi\_ive\_kcf\_destroy\_obj\_list](#ZH-CN_TOPIC_0000002503971237)：销毁目标链表。
-- [ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ZH-CN_TOPIC_0000002504091153)：创建高斯峰值。
-- [ss\_mpi\_ive\_kcf\_create\_cos\_win](#ZH-CN_TOPIC_0000002470931252)：创建汉宁窗。
-- [ss\_mpi\_ive\_kcf\_get\_train\_obj](#ZH-CN_TOPIC_0000002471091232)：获取需要训练的目标对象。
-- [ss\_mpi\_ive\_kcf\_proc](#ZH-CN_TOPIC_0000002503971241)：提交目标给硬件处理。
-- [ss\_mpi\_ive\_kcf\_get\_obj\_bbox](#ZH-CN_TOPIC_0000002503971245)：获取目标区域跟踪结果信息。
-- [ss\_mpi\_ive\_kcf\_judge\_obj\_bbox\_track\_state](#ZH-CN_TOPIC_0000002471091288)：判断目标区域跟踪状态。
-- [ss\_mpi\_ive\_kcf\_obj\_update](#ZH-CN_TOPIC_0000002470931270)：更新目标信息。
-- [ss\_mpi\_ive\_hog](#ZH-CN_TOPIC_0000002504091165)：计算给定区域的HOG\(Histogram of Oriented Gradient\)特征。
-- [ss\_mpi\_ive\_query](#ZH-CN_TOPIC_0000002470931246)：查询已创建任务完成情况。 >![](public_sys-resources/icon-notice.gif) **须知：** >用户开辟的内存需要用户保证开辟的内存的正确性，例如[ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ZH-CN_TOPIC_0000002504091153)中的gauss\_peak的内存由用户开辟，但是随意更改虚拟地址的值就会造成段错误。 ## ss\_mpi\_ive\_dma<a name="ZH-CN_TOPIC_0000002504091099"></a> 【描述】 创建直接内存访问任务，支持快速拷贝、间隔拷贝、内存填充：可实现数据从一块内存快速拷贝到另一块内存，或者从一块内存有规律的拷贝一些数据到另一块内存，或者对一块内存进行填充操作。 【语法】 ```
+</table>
+
+-   特殊输出数据类型
+    -   Integ组合输出（OT\_IVE\_INTEG\_OUT\_CTRL\_COMBINE）
+    -   用OT\_SVP\_IMG\_TYPE\_U64C1类型的ot\_svp\_img，S（图像和）占低28bit，SQ（图像平方和）占高36bit。格式如图 积分图（OT\_SVP\_IMG\_TYPE\_U64C1）组合输出示意图所示。
+    -   直方图输出如直方图输出格式示意图所示。
+
+**图 2**  OT\_SVP\_IMG\_TYPE\_U8C1 \\ OT\_SVP\_IMG\_TYPE\_S8C1 \\ OT\_SVP\_IMG\_TYPE\_S16C1 \\ OT\_SVP\_IMG\_TYPE\_U16C1 \\ OT\_SVP\_IMG\_TYPE\_S32C1 \\ OT\_SVP\_IMG\_TYPE\_U32C1 \\ OT\_SVP\_IMG\_TYPE\_S64C1 \\ OT\_SVP\_IMG\_TYPE\_U64C1 类型的ot\_svp\_img图像<a name="fig134745715231"></a>  
+![](figures/OT_SVP_IMG_TYPE_U8C1-OT_SVP_IMG_TYPE_S8C1-OT_SVP_IMG_TYPE_S16C1-OT_SVP_IMG_TYPE_U16C1-OT_SVP_IMG_TYP.png "OT_SVP_IMG_TYPE_U8C1-OT_SVP_IMG_TYPE_S8C1-OT_SVP_IMG_TYPE_S16C1-OT_SVP_IMG_TYPE_U16C1-OT_SVP_IMG_TYP")
+
+**图 3**  OT\_SVP\_IMG\_TYPE\_YUV420SP类型的ot\_svp\_img图像<a name="fig5654131372716"></a>  
+![](figures/OT_SVP_IMG_TYPE_YUV420SP类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV420SP类型的ot_svp_img图像")
+
+注：格式与ot\_pixel\_format的OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_420对应。
+
+**图 4**  OT\_SVP\_IMG\_TYPE\_YUV422SP类型的ot\_svp\_img图像<a name="fig674947195410"></a>  
+![](figures/OT_SVP_IMG_TYPE_YUV422SP类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV422SP类型的ot_svp_img图像")
+
+注：
+
+-   这里V在前，U在后，phys\_addr\[2\]和virt\_addr\[2\]可配置为U的首地址，即phys\_addr\[1\]+1和virt\_addr\[1\]+1。
+-   格式与ot\_pixel\_format的OT\_PIXEL\_FORMAT\_YVU\_SEMIPLANAR\_422对应。
+
+**图 5**  OT\_SVP\_IMG\_TYPE\_YUV420P类型的ot\_svp\_img图像<a name="fig125145135718"></a>  
+![](figures/OT_SVP_IMG_TYPE_YUV420P类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV420P类型的ot_svp_img图像")
+
+**图 6**  OT\_SVP\_IMG\_TYPE\_YUV422P类型的ot\_svp\_img图像<a name="fig18174113416577"></a>  
+![](figures/OT_SVP_IMG_TYPE_YUV422P类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_YUV422P类型的ot_svp_img图像")
+
+**图 7**  OT\_SVP\_IMG\_TYPE\_S8C2\_PACKAGE类型的ot\_svp\_img图像<a name="fig1696145375811"></a>  
+![](figures/OT_SVP_IMG_TYPE_S8C2_PACKAGE类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_S8C2_PACKAGE类型的ot_svp_img图像")
+
+**图 8**  OT\_SVP\_IMG\_TYPE\_S8C2\_PLANAR类型的ot\_svp\_img图像<a name="fig1926523165910"></a>  
+![](figures/OT_SVP_IMG_TYPE_S8C2_PLANAR类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_S8C2_PLANAR类型的ot_svp_img图像")
+
+**图 9**  OT\_SVP\_IMG\_TYPE\_U8C3\_PACKAGE类型的ot\_svp\_img图像<a name="fig1945335617599"></a>  
+![](figures/OT_SVP_IMG_TYPE_U8C3_PACKAGE类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_U8C3_PACKAGE类型的ot_svp_img图像")
+
+注：对于RGB\_PACKAGE图像，是以“B0G0R0B1G1R1…”形式存储，B在最前面；
+
+对于HSV\_PACKAGE图像，是以“H0S0V0H1S1V1…”形式存储，H在最前面；
+
+对于LAB\_PACKAGE图像，是以“L0A0B0L1A1B1…”形式存储，L在最前面。
+
+**图 10**  OT\_SVP\_IMG\_TYPE\_U8C3\_PLANAR类型的ot\_svp\_img图像<a name="fig162899491108"></a>  
+![](figures/OT_SVP_IMG_TYPE_U8C3_PLANAR类型的ot_svp_img图像.png "OT_SVP_IMG_TYPE_U8C3_PLANAR类型的ot_svp_img图像")
+
+注：
+
+对于RGB\_PLANAR图像，指针数组virt\_addr\[3\]按顺序分别存储B、G、R的指针，而数组stride\[3\]分别为B、G、R的跨度；
+
+对于HSV\_PLANAR图像，指针数组virt\_addr\[3\]按顺序分别存储H、S、V的指针，而数组stride\[3\]分别为H、S、V的跨度；
+
+对于LAB\_PLANAR图像，指针数组virt\_addr\[3\]按顺序分别存储L、A、B的指针，而数组stride\[3\]分别为L、A、B的跨度；
+
+**图 11**  ot\_svp\_data 类型的数据内存示意<a name="fig41189544118"></a>  
+![](figures/ot_svp_data-类型的数据内存示意.png "ot_svp_data-类型的数据内存示意")
+
+**图 12**  ot\_svp\_mem\_info 类型的数据内存示意<a name="fig1518002910213"></a>  
+![](figures/ot_svp_mem_info-类型的数据内存示意.png "ot_svp_mem_info-类型的数据内存示意")
+
+**图 13**  积分图（OT\_SVP\_IMG\_TYPE\_U64C1）组合输出示意<a name="fig187188113314"></a>  
+![](figures/积分图（OT_SVP_IMG_TYPE_U64C1）组合输出示意.png "积分图（OT_SVP_IMG_TYPE_U64C1）组合输出示意")
+
+**图 14**  直方图输出格式示意<a name="fig1457715441337"></a>  
+![](figures/直方图输出格式示意.png "直方图输出格式示意")
+-   块数据类型
+
+    ot\_svp\_blob、ot\_svp\_src\_blob、ot\_svp\_dst\_blob，类型参考ot\_svp\_blob\_type，具体的内存分布见《SVPx.0 API参考》中的blob的描述。
+
+### 使用示意<a name="ZH-CN_TOPIC_0000002470931304"></a>
+
+-   用户根据需求调用相应的算子接口创建任务，指定is\_instant类型，并记录该任务返回的handle号。
+-   根据返回的handle号，指定阻塞方式，可以查询到该任务的完成状态。
+
+    具体可参见[ss\_mpi\_ive\_query](#ZH-CN_TOPIC_0000002470931246)中的【举例】。
+
+# API参考
+IVE模块提供了创建任务和查询任务的基本接口。
+
+该功能模块提供以下MPI：
+
+-   [ss\_mpi\_ive\_dma](#ZH-CN_TOPIC_0000002504091099)：创建直接内存访问任务。
+-   [ss\_mpi\_ive\_filter](#ZH-CN_TOPIC_0000002470931284)：创建5x5模板滤波任务。
+-   [ss\_mpi\_ive\_csc](#ZH-CN_TOPIC_0000002470931294)：创建色彩空间转换任务。
+-   [ss\_mpi\_ive\_filter\_and\_csc](#ZH-CN_TOPIC_0000002470931218)：创建模板滤波加色彩空间转换复合任务
+-   [ss\_mpi\_ive\_sobel](#ZH-CN_TOPIC_0000002471091284)：创建5x5模板sobel-like梯度计算任务。
+-   [ss\_mpi\_ive\_mag\_and\_ang](#ZH-CN_TOPIC_0000002470931308)：创建5x5模板计算梯度幅值与幅角任务。
+-   [ss\_mpi\_ive\_dilate](#ZH-CN_TOPIC_0000002503971205)：创建膨胀任务。
+-   [ss\_mpi\_ive\_erode](#ZH-CN_TOPIC_0000002503971269)：创建腐蚀任务。
+-   [ss\_mpi\_ive\_threshold](#ZH-CN_TOPIC_0000002471091326)：创建图像二值化任务。
+-   [ss\_mpi\_ive\_and](#ZH-CN_TOPIC_0000002504091087)：创建两二值图像相与任务。
+-   [ss\_mpi\_ive\_sub](#ZH-CN_TOPIC_0000002503971163)：创建两灰度图像相减任务。
+-   [ss\_mpi\_ive\_or](#ZH-CN_TOPIC_0000002471091296)：创建两二值图像相或任务。
+-   [ss\_mpi\_ive\_integ](#ZH-CN_TOPIC_0000002470931322)：创建积分图统计任务。
+-   [ss\_mpi\_ive\_hist](#ZH-CN_TOPIC_0000002504091123)：创建直方图统计任务。
+-   [ss\_mpi\_ive\_threshold\_s16](#ZH-CN_TOPIC_0000002470931220)：创建s16数据到8bit数据阈值化任务。
+-   [ss\_mpi\_ive\_threshold\_u16](#ZH-CN_TOPIC_0000002470931242)：创建u16数据到u8数据阈值化任务。
+-   [ss\_mpi\_ive\_16bit\_to\_8bit](#ZH-CN_TOPIC_0000002471091216)：创建16bit数据到8bit数据线性转化任务。
+-   [ss\_mpi\_ive\_order\_stats\_filter](#ZH-CN_TOPIC_0000002504091093)：创建3x3模板顺序统计量滤波任务。
+-   [ss\_mpi\_ive\_map](#ZH-CN_TOPIC_0000002470931234)：创建Map（映射u8-\>u8\\u8-\>u16\\u8-\>s16赋值）任务。
+-   [ss\_mpi\_ive\_equalize\_hist](#ZH-CN_TOPIC_0000002471091322)：创建灰度图像的直方图均衡化计算任务。
+-   [ss\_mpi\_ive\_add](#ZH-CN_TOPIC_0000002504091171)：创建两灰度图像的加权加计算任务。
+-   [ss\_mpi\_ive\_xor](#ZH-CN_TOPIC_0000002504091203)：创建两二值图的异或计算任务。
+-   [ss\_mpi\_ive\_ncc](#ZH-CN_TOPIC_0000002503971167)：创建两相同分辨率图像的归一化互相关系数计算任务。
+-   [ss\_mpi\_ive\_ccl](#ZH-CN_TOPIC_0000002504091151)：创建二值图像的连通区域标记任务。
+-   [ss\_mpi\_ive\_gmm](#ZH-CN_TOPIC_0000002503971147)：创建gmm背景建模任务。
+-   [ss\_mpi\_ive\_gmm2](#ZH-CN_TOPIC_0000002504091155)：创建gmm2背景建模任务。
+-   [ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)：创建灰度图的canny强弱边缘提取任务。
+-   [ss\_mpi\_ive\_canny\_edge](#ZH-CN_TOPIC_0000002470931286)：灰度图的canny边缘提取的后半部：连接边缘点，形成canny边缘图。
+-   [ss\_mpi\_ive\_lbp](#ZH-CN_TOPIC_0000002503971201)：创建lbp计算任务。
+-   [ss\_mpi\_ive\_norm\_grad](#ZH-CN_TOPIC_0000002503971195)：创建归一化梯度计算任务，梯度均分量均归一化到s8。
+-   [ss\_mpi\_ive\_lk\_optical\_flow\_pyr](#ZH-CN_TOPIC_0000002504091135)：创建多层金字塔LK光流计算任务。
+-   [ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)：灰度图像Shi-Tomasi-like角点计算的前半部：计算候选角点。
+-   [ss\_mpi\_ive\_st\_corner](#ZH-CN_TOPIC_0000002470931280)：灰度图像Shi-Tomasi-like角点计算的后半部：按规则挑选角点。
+-   [ss\_mpi\_ive\_sad](#ZH-CN_TOPIC_0000002471091328)：计算两幅图像按4x4\\8x8\\16x16分块的16 bit\\8 bit SAD图像，以及对SAD进行阈值化输出。
+-   [ss\_mpi\_ive\_resize](#ZH-CN_TOPIC_0000002503971235)：创建图像缩放任务。
+-   [ss\_mpi\_ive\_grad\_fg](#ZH-CN_TOPIC_0000002471091316)：根据背景图像和当前帧图像的梯度信息计算梯度前景图像。
+-   [ss\_mpi\_ive\_match\_bg\_model](#ZH-CN_TOPIC_0000002470931334)：基于CodeBook演进的背景模型匹配。
+-   [ss\_mpi\_ive\_update\_bg\_model](#ZH-CN_TOPIC_0000002504091095)：基于CodeBook演进的背景模型更新。
+-   [ss\_mpi\_ive\_ann\_mlp\_load\_model](#ZH-CN_TOPIC_0000002504091075)：读取ann\_mlp模型文件，初始化模型数据。
+-   [ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ZH-CN_TOPIC_0000002504091139)：去初始化ann模型数据。
+-   [ss\_mpi\_ive\_ann\_mlp\_predict](#ZH-CN_TOPIC_0000002471091294)：创建同一模型多个样本ann\_mlp预测任务。
+-   [ss\_mpi\_ive\_svm\_load\_model](#ZH-CN_TOPIC_0000002471091276)：读取svm模型文件，初始化模型数据。
+-   [ss\_mpi\_ive\_svm\_unload\_model](#ZH-CN_TOPIC_0000002504091133)：去初始化svm模型数据。
+-   [ss\_mpi\_ive\_svm\_predict](#ZH-CN_TOPIC_0000002504091105)：创建同一模型的多个样本svm预测任务。
+-   [ss\_mpi\_ive\_cnn\_load\_model](#ZH-CN_TOPIC_0000002471091312)：读取cnn模型文件，生成cnn网络模型。
+-   [ss\_mpi\_ive\_cnn\_unload\_model](#ZH-CN_TOPIC_0000002470931302)：卸载cnn网络模型，释放内存。
+-   [ss\_mpi\_ive\_cnn\_predict](#ZH-CN_TOPIC_0000002470931276)：用已有模型对一个或多个输入样本进行预测，并输出预测结果。
+-   [ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)：接收cnn\_predict结果，执行softmax运算来预测每个样本图像的类别，并输出置信度最高的类别\(rank-1\)以及对应的置信度。
+-   [ss\_mpi\_ive\_persp\_trans](#ZH-CN_TOPIC_0000002503971185)：根据输入源图的区域位置和点对信息做相应的透视变换。
+-   [ss\_mpi\_ive\_kcf\_get\_mem\_size](#ZH-CN_TOPIC_0000002470931306)：获取需要创建目标对象数的内存大小。
+-   [ss\_mpi\_ive\_kcf\_create\_obj\_list](#ZH-CN_TOPIC_0000002504091179)：创建目标链表。
+-   [ss\_mpi\_ive\_kcf\_destroy\_obj\_list](#ZH-CN_TOPIC_0000002503971237)：销毁目标链表。
+-   [ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ZH-CN_TOPIC_0000002504091153)：创建高斯峰值。
+-   [ss\_mpi\_ive\_kcf\_create\_cos\_win](#ZH-CN_TOPIC_0000002470931252)：创建汉宁窗。
+-   [ss\_mpi\_ive\_kcf\_get\_train\_obj](#ZH-CN_TOPIC_0000002471091232)：获取需要训练的目标对象。
+-   [ss\_mpi\_ive\_kcf\_proc](#ZH-CN_TOPIC_0000002503971241)：提交目标给硬件处理。
+-   [ss\_mpi\_ive\_kcf\_get\_obj\_bbox](#ZH-CN_TOPIC_0000002503971245)：获取目标区域跟踪结果信息。
+-   [ss\_mpi\_ive\_kcf\_judge\_obj\_bbox\_track\_state](#ZH-CN_TOPIC_0000002471091288)：判断目标区域跟踪状态。
+-   [ss\_mpi\_ive\_kcf\_obj\_update](#ZH-CN_TOPIC_0000002470931270)：更新目标信息。
+-   [ss\_mpi\_ive\_hog](#ZH-CN_TOPIC_0000002504091165)：计算给定区域的HOG\(Histogram of Oriented Gradient\)特征。
+-   [ss\_mpi\_ive\_query](#ZH-CN_TOPIC_0000002470931246)：查询已创建任务完成情况。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>用户开辟的内存需要用户保证开辟的内存的正确性，例如[ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ZH-CN_TOPIC_0000002504091153)中的gauss\_peak的内存由用户开辟，但是随意更改虚拟地址的值就会造成段错误。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ss\_mpi\_ive\_dma<a name="ZH-CN_TOPIC_0000002504091099"></a>
+
+【描述】
+
+创建直接内存访问任务，支持快速拷贝、间隔拷贝、内存填充：可实现数据从一块内存快速拷贝到另一块内存，或者从一块内存有规律的拷贝一些数据到另一块内存，或者对一块内存进行填充操作。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_dma(ot_ive_handle *handle, const ot_svp_data *src, const ot_svp_dst_data *dst, const ot_ive_dma_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table5167mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table5167mcpsimp"></a>
 <table><thead align="left"><tr id="row5173mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p5175mcpsimp"><a name="p5175mcpsimp"></a><a name="p5175mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="41%" id="mcps1.1.4.1.2"><p id="p5177mcpsimp"><a name="p5177mcpsimp"></a><a name="p5177mcpsimp"></a>描述</p>
@@ -319,7 +601,15 @@ td_s32 ss_mpi_ive_dma(ot_ive_handle *handle, const ot_svp_data *src, const ot_sv
 </td>
 </tr>
 </tbody>
-</table> 注： Copy模式是指OT\_IVE\_DMA\_MODE\_DIRECT\_COPY和OT\_IVE\_DMA\_MODE\_INTERVAL\_COPY模式； Set模式是指OT\_IVE\_DMA\_MODE\_SET\_3BYTE和OT\_IVE\_DMA\_MODE\_SET\_8BYTE模式。 <a name="table5223mcpsimp"></a>
+</table>
+
+注：
+
+Copy模式是指OT\_IVE\_DMA\_MODE\_DIRECT\_COPY和OT\_IVE\_DMA\_MODE\_INTERVAL\_COPY模式；
+
+Set模式是指OT\_IVE\_DMA\_MODE\_SET\_3BYTE和OT\_IVE\_DMA\_MODE\_SET\_8BYTE模式。
+
+<a name="table5223mcpsimp"></a>
 <table><thead align="left"><tr id="row5230mcpsimp"><th class="cellrowborder" valign="top" width="17.82178217821782%" id="mcps1.1.5.1.1"><p id="p5232mcpsimp"><a name="p5232mcpsimp"></a><a name="p5232mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="26.732673267326728%" id="mcps1.1.5.1.2"><p id="p5234mcpsimp"><a name="p5234mcpsimp"></a><a name="p5234mcpsimp"></a>支持类型</p>
@@ -350,7 +640,11 @@ td_s32 ss_mpi_ive_dma(ot_ive_handle *handle, const ot_svp_data *src, const ot_sv
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table5260mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table5260mcpsimp"></a>
 <table><thead align="left"><tr id="row5265mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p5267mcpsimp"><a name="p5267mcpsimp"></a><a name="p5267mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p5269mcpsimp"><a name="p5269mcpsimp"></a><a name="p5269mcpsimp"></a>描述</p>
@@ -362,12 +656,69 @@ td_s32 ss_mpi_ive_dma(ot_ive_handle *handle, const ot_svp_data *src, const ot_sv
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5275mcpsimp"><a name="p5275mcpsimp"></a><a name="p5275mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row5276mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p5278mcpsimp"><a name="p5278mcpsimp"></a><a name="p5278mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5280mcpsimp"><a name="p5280mcpsimp"></a><a name="p5280mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - OT\_IVE\_DMA\_MODE\_DIRECT\_COPY：快速拷贝模式。 可实现从大块内存中扣取小块内存，如[图1](#fig4891747121518)所示，计算公式如下： _I_<sub>out \(_x, y_\) =_I_</sub> <sub>\(_x, y_\)</sub> \(0≤x≤width, 0≤y≤height\) 其中<sub>_I_</sub> <sub>\(_x, y_\)</sub> 对应src，<sub>_I_out \(_x, y_\)</sub>对应dst。 **图 1** 快速拷贝示意图<a name="fig4891747121518"></a> ![](figures/快速拷贝示意图.png "快速拷贝示意图")
-- OT\_IVE\_DMA\_MODE\_INTERVAL\_COPY：间隔拷贝模式 - 要求源数据宽度为hor\_seg\_size的倍数； - 间隔拷贝的方式：将每ver\_seg\_rows行中第一行数据分割为hor\_seg\_size大小的段，拷贝每段中的前elem\_size大小的字节。如[图2](#fig4242047161711)所示。 - OT\_IVE\_DMA\_MODE\_SET\_3BYTE：3字节填充模式 仅使用src，用val的低3字节对源数据进行填充操作；当一行末尾不够3字节时，用val的低字节填充。 - OT\_IVE\_DMA\_MODE\_SET\_8BYTE：8字节填充模式 仅使用src，用val对源数据进行填充操作；当一行的末尾不足8字节时，用val的低字节填充。 **图 2** 间隔拷贝示意图<a name="fig4242047161711"></a> ![](figures/间隔拷贝示意图.png "间隔拷贝示意图") 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_filter<a name="ZH-CN_TOPIC_0000002470931284"></a> 【描述】 创建5x5模板滤波任务，通过配置不同的模板系数，可以实现不同的滤波。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   OT\_IVE\_DMA\_MODE\_DIRECT\_COPY：快速拷贝模式。
+
+    可实现从大块内存中扣取小块内存，如[图1](#fig4891747121518)所示，计算公式如下：
+
+    _I_<sub>out \(_x, y_\) =_I_</sub> <sub>\(_x, y_\)</sub>        \(0≤x≤width, 0≤y≤height\)
+
+    其中<sub>_I_</sub> <sub>\(_x, y_\)</sub>  对应src，<sub>_I_out \(_x, y_\)</sub>对应dst。
+
+    **图 1**  快速拷贝示意图<a name="fig4891747121518"></a>  
+    ![](figures/快速拷贝示意图.png "快速拷贝示意图")
+-   OT\_IVE\_DMA\_MODE\_INTERVAL\_COPY：间隔拷贝模式
+    -   要求源数据宽度为hor\_seg\_size的倍数；
+    -   间隔拷贝的方式：将每ver\_seg\_rows行中第一行数据分割为hor\_seg\_size大小的段，拷贝每段中的前elem\_size大小的字节。如[图2](#fig4242047161711)所示。
+
+-   OT\_IVE\_DMA\_MODE\_SET\_3BYTE：3字节填充模式
+
+    仅使用src，用val的低3字节对源数据进行填充操作；当一行末尾不够3字节时，用val的低字节填充。
+
+-   OT\_IVE\_DMA\_MODE\_SET\_8BYTE：8字节填充模式
+
+    仅使用src，用val对源数据进行填充操作；当一行的末尾不足8字节时，用val的低字节填充。
+
+    **图 2**  间隔拷贝示意图<a name="fig4242047161711"></a>  
+    ![](figures/间隔拷贝示意图.png "间隔拷贝示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_filter<a name="ZH-CN_TOPIC_0000002470931284"></a>
+
+【描述】
+
+创建5x5模板滤波任务，通过配置不同的模板系数，可以实现不同的滤波。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_filter(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_filter_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table2445mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2445mcpsimp"></a>
 <table><thead align="left"><tr id="row2451mcpsimp"><th class="cellrowborder" valign="top" width="25.742574257425744%" id="mcps1.1.4.1.1"><p id="p2453mcpsimp"><a name="p2453mcpsimp"></a><a name="p2453mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="48.51485148514851%" id="mcps1.1.4.1.2"><p id="p2455mcpsimp"><a name="p2455mcpsimp"></a><a name="p2455mcpsimp"></a>描述</p>
@@ -417,7 +768,9 @@ td_s32 ss_mpi_ive_filter(ot_ive_handle *handle, const ot_svp_src_img *src, const
 </td>
 </tr>
 </tbody>
-</table> <a name="table2499mcpsimp"></a>
+</table>
+
+<a name="table2499mcpsimp"></a>
 <table><thead align="left"><tr id="row2506mcpsimp"><th class="cellrowborder" valign="top" width="14.14141414141414%" id="mcps1.1.5.1.1"><p id="p2508mcpsimp"><a name="p2508mcpsimp"></a><a name="p2508mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.1.5.1.2"><p id="p2510mcpsimp"><a name="p2510mcpsimp"></a><a name="p2510mcpsimp"></a>支持图像类型</p>
@@ -447,7 +800,13 @@ td_s32 ss_mpi_ive_filter(ot_ive_handle *handle, const ot_svp_src_img *src, const
 </td>
 </tr>
 </tbody>
-</table> 注：U8C1\\YUV420SP\\YUV422SP均为ot\_svp\_img\_type成员的简写，后续其他的成员在表述中也用相同的规则简写。 【返回值】 <a name="table2538mcpsimp"></a>
+</table>
+
+注：U8C1\\YUV420SP\\YUV422SP均为ot\_svp\_img\_type成员的简写，后续其他的成员在表述中也用相同的规则简写。
+
+【返回值】
+
+<a name="table2538mcpsimp"></a>
 <table><thead align="left"><tr id="row2543mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2545mcpsimp"><a name="p2545mcpsimp"></a><a name="p2545mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2547mcpsimp"><a name="p2547mcpsimp"></a><a name="p2547mcpsimp"></a>描述</p>
@@ -459,13 +818,59 @@ td_s32 ss_mpi_ive_filter(ot_ive_handle *handle, const ot_svp_src_img *src, const
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2553mcpsimp"><a name="p2553mcpsimp"></a><a name="p2553mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2554mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2556mcpsimp"><a name="p2556mcpsimp"></a><a name="p2556mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5280mcpsimp"><a name="p5280mcpsimp"></a><a name="p5280mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 当源数据为YUV420SP、YUV422SP类型时，要求输出数据跨度一致。
-- filter计算公式示意如[图1](#fig721294952415)所示。 **图 1** filter计算公式示意图<a name="fig721294952415"></a> ![](figures/filter计算公式示意图.png "filter计算公式示意图") 其中，<sub>_I _\(_x, y_\)</sub>对应src，<sub>_I__out _\(_x, y_\)</sub>对应dst，_coef_ \(mask\)对应ctrl中的mask\[25\]，norm对应ctrl中的norm。 - 经典高斯模板如下。 ![](figures/zh-cn_formulaimage_0000002503971429.png) _norm =4_ _norm =8 norm =8_ 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_filter\_and\_csc](#ss_mpi_ive_filter_and_csc)
-- [ss\_mpi\_ive\_order\_stats\_filter](#ss_mpi_ive_order_stats_filter) ## ss\_mpi\_ive\_csc<a name="ZH-CN_TOPIC_0000002470931294"></a> 【描述】 创建色彩空间转换任务，可实现YUV\_TO\_RGB\\YUV\_TO\_HSV\\YUV\_TO\_LAB\\RGB\_TO\_YUV的色彩空间转换。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   当源数据为YUV420SP、YUV422SP类型时，要求输出数据跨度一致。
+-   filter计算公式示意如[图1](#fig721294952415)所示。
+
+**图 1**  filter计算公式示意图<a name="fig721294952415"></a>  
+![](figures/filter计算公式示意图.png "filter计算公式示意图")
+
+其中，<sub>_I _\(_x, y_\)</sub>对应src，<sub>_I__out _\(_x, y_\)</sub>对应dst，_coef_  \(mask\)对应ctrl中的mask\[25\]，norm对应ctrl中的norm。
+
+-   经典高斯模板如下。
+
+![](figures/zh-cn_formulaimage_0000002503971429.png)
+
+_norm =4_ _norm =8              norm =8_
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_filter\_and\_csc](#ss_mpi_ive_filter_and_csc)
+-   [ss\_mpi\_ive\_order\_stats\_filter](#ss_mpi_ive_order_stats_filter)
+
+## ss\_mpi\_ive\_csc<a name="ZH-CN_TOPIC_0000002470931294"></a>
+
+【描述】
+
+创建色彩空间转换任务，可实现YUV\_TO\_RGB\\YUV\_TO\_HSV\\YUV\_TO\_LAB\\RGB\_TO\_YUV的色彩空间转换。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_csc(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_csc_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table11264mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table11264mcpsimp"></a>
 <table><thead align="left"><tr id="row11270mcpsimp"><th class="cellrowborder" valign="top" width="19.800000000000004%" id="mcps1.1.4.1.1"><p id="p11272mcpsimp"><a name="p11272mcpsimp"></a><a name="p11272mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64.36%" id="mcps1.1.4.1.2"><p id="p11274mcpsimp"><a name="p11274mcpsimp"></a><a name="p11274mcpsimp"></a>描述</p>
@@ -515,7 +920,9 @@ td_s32 ss_mpi_ive_csc(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> <a name="table11318mcpsimp"></a>
+</table>
+
+<a name="table11318mcpsimp"></a>
 <table><thead align="left"><tr id="row11325mcpsimp"><th class="cellrowborder" valign="top" width="19.801980198019802%" id="mcps1.1.5.1.1"><p id="p11327mcpsimp"><a name="p11327mcpsimp"></a><a name="p11327mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.07390739073907%" id="mcps1.1.5.1.2"><p id="p11329mcpsimp"><a name="p11329mcpsimp"></a><a name="p11329mcpsimp"></a>支持图像类型</p>
@@ -545,7 +952,11 @@ td_s32 ss_mpi_ive_csc(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table11354mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table11354mcpsimp"></a>
 <table><thead align="left"><tr id="row11359mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p11361mcpsimp"><a name="p11361mcpsimp"></a><a name="p11361mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p11363mcpsimp"><a name="p11363mcpsimp"></a><a name="p11363mcpsimp"></a>描述</p>
@@ -557,13 +968,51 @@ td_s32 ss_mpi_ive_csc(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11369mcpsimp"><a name="p11369mcpsimp"></a><a name="p11369mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row11370mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p11372mcpsimp"><a name="p11372mcpsimp"></a><a name="p11372mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11374mcpsimp"><a name="p11374mcpsimp"></a><a name="p11374mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 当输出数据为U8C3\_PLANAR、YUV420SP、YUV422SP类型时，要求输出数据跨度一致。
-- 支持12种工作模式，不同的模式其输出的取值范围不一样，具体请参见ot\_ive\_csc\_mode。
-- YUV\_TO\_HSV、YUV\_TO\_LAB参考OpenCV中的实现方法。 >![](public_sys-resources/icon-note.gif) **说明：** >本文档中所提到的OpenCV，均指OpenCV 2.4.8版本。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_filter\_and\_csc](#ss_mpi_ive_filter_and_csc) ## ss\_mpi\_ive\_filter\_and\_csc<a name="ZH-CN_TOPIC_0000002470931218"></a> 【描述】 创建5x5模板滤波和YUV\_TO\_RGB色彩空间转换复合任务，通过一次创建完成两种功能。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   当输出数据为U8C3\_PLANAR、YUV420SP、YUV422SP类型时，要求输出数据跨度一致。
+-   支持12种工作模式，不同的模式其输出的取值范围不一样，具体请参见ot\_ive\_csc\_mode。
+-   YUV\_TO\_HSV、YUV\_TO\_LAB参考OpenCV中的实现方法。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>本文档中所提到的OpenCV，均指OpenCV 2.4.8版本。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_filter\_and\_csc](#ss_mpi_ive_filter_and_csc)
+
+## ss\_mpi\_ive\_filter\_and\_csc<a name="ZH-CN_TOPIC_0000002470931218"></a>
+
+【描述】
+
+创建5x5模板滤波和YUV\_TO\_RGB色彩空间转换复合任务，通过一次创建完成两种功能。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_filter_and_csc(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_filter_and_csc_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table14715mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table14715mcpsimp"></a>
 <table><thead align="left"><tr id="row14721mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p14723mcpsimp"><a name="p14723mcpsimp"></a><a name="p14723mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p14725mcpsimp"><a name="p14725mcpsimp"></a><a name="p14725mcpsimp"></a>描述</p>
@@ -613,7 +1062,9 @@ td_s32 ss_mpi_ive_filter_and_csc(ot_ive_handle *handle, const ot_svp_src_img *sr
 </td>
 </tr>
 </tbody>
-</table> <a name="table14769mcpsimp"></a>
+</table>
+
+<a name="table14769mcpsimp"></a>
 <table><thead align="left"><tr id="row14776mcpsimp"><th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.1.5.1.1"><p id="p14778mcpsimp"><a name="p14778mcpsimp"></a><a name="p14778mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="46%" id="mcps1.1.5.1.2"><p id="p14780mcpsimp"><a name="p14780mcpsimp"></a><a name="p14780mcpsimp"></a>支持图像类型</p>
@@ -643,7 +1094,11 @@ td_s32 ss_mpi_ive_filter_and_csc(ot_ive_handle *handle, const ot_svp_src_img *sr
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table14805mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table14805mcpsimp"></a>
 <table><thead align="left"><tr id="row14810mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p14812mcpsimp"><a name="p14812mcpsimp"></a><a name="p14812mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p14814mcpsimp"><a name="p14814mcpsimp"></a><a name="p14814mcpsimp"></a>描述</p>
@@ -655,12 +1110,47 @@ td_s32 ss_mpi_ive_filter_and_csc(ot_ive_handle *handle, const ot_svp_src_img *sr
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14820mcpsimp"><a name="p14820mcpsimp"></a><a name="p14820mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row14821mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p14823mcpsimp"><a name="p14823mcpsimp"></a><a name="p14823mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14825mcpsimp"><a name="p14825mcpsimp"></a><a name="p14825mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 当输出数据为U8C3\_PLANAR类型时，要求输出数据跨度一致。
-- 仅支持YUV\_TO\_RGB的4种工作模式，具体参见ot\_ive\_csc\_mode。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_filter](#ss_mpi_ive_filter) ## ss\_mpi\_ive\_sobel<a name="ZH-CN_TOPIC_0000002471091284"></a> 【描述】 创建5x5模板sobel-like梯度计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   当输出数据为U8C3\_PLANAR类型时，要求输出数据跨度一致。
+-   仅支持YUV\_TO\_RGB的4种工作模式，具体参见ot\_ive\_csc\_mode。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_filter](#ss_mpi_ive_filter)
+
+## ss\_mpi\_ive\_sobel<a name="ZH-CN_TOPIC_0000002471091284"></a>
+
+【描述】
+
+创建5x5模板sobel-like梯度计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_sobel(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst_h, const ot_svp_dst_img *dst_v, const ot_ive_sobel_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table14337mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table14337mcpsimp"></a>
 <table><thead align="left"><tr id="row14343mcpsimp"><th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.1"><p id="p14345mcpsimp"><a name="p14345mcpsimp"></a><a name="p14345mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="67%" id="mcps1.1.4.1.2"><p id="p14347mcpsimp"><a name="p14347mcpsimp"></a><a name="p14347mcpsimp"></a>描述</p>
@@ -718,7 +1208,9 @@ td_s32 ss_mpi_ive_sobel(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 </td>
 </tr>
 </tbody>
-</table> <a name="table14399mcpsimp"></a>
+</table>
+
+<a name="table14399mcpsimp"></a>
 <table><thead align="left"><tr id="row14406mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p14408mcpsimp"><a name="p14408mcpsimp"></a><a name="p14408mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p14410mcpsimp"><a name="p14410mcpsimp"></a><a name="p14410mcpsimp"></a>支持图像类型</p>
@@ -757,7 +1249,11 @@ td_s32 ss_mpi_ive_sobel(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table14444mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table14444mcpsimp"></a>
 <table><thead align="left"><tr id="row14449mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p14451mcpsimp"><a name="p14451mcpsimp"></a><a name="p14451mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p14453mcpsimp"><a name="p14453mcpsimp"></a><a name="p14453mcpsimp"></a>描述</p>
@@ -769,14 +1265,70 @@ td_s32 ss_mpi_ive_sobel(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14459mcpsimp"><a name="p14459mcpsimp"></a><a name="p14459mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row14460mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p14462mcpsimp"><a name="p14462mcpsimp"></a><a name="p14462mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14464mcpsimp"><a name="p14464mcpsimp"></a><a name="p14464mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可配置3种输出模式，参考ot\_ive\_sobel\_out\_ctrl。
-- 当输出模式为OT\_IVE\_SOBEL\_OUT\_CTRL\_BOTH时，要求dst\_h和dst\_v跨度一致。
-- sobel计算公式示意如[图1](#fig023253424811)所示。 **图 1** sobel计算公式示意图<a name="fig023253424811"></a> ![](figures/sobel计算公式示意图.png "sobel计算公式示意图") 其中，![](figures/zh-cn_formulaimage_0000002470931532.png)对应src，![](figures/zh-cn_formulaimage_0000002504091385.png)对应dst\_h，![](figures/zh-cn_formulaimage_0000002504091381.png)对应dst\_v，![](figures/zh-cn_formulaimage_0000002504091375.png) \(mask\)为ctrl中的mask\[25\] - sobel模板 ![](figures/zh-cn_formulaimage_0000002504091383.png) ![](figures/zh-cn_formulaimage_0000002470931518.png) - scharr模板 ![](figures/zh-cn_formulaimage_0000002504091387.png) - 拉普拉斯模板 ![](figures/zh-cn_formulaimage_0000002504091389.png) ![](figures/zh-cn_formulaimage_0000002471091526.png) 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_mag\_and\_ang](#ss_mpi_ive_mag_and_ang)
-- [ss\_mpi\_ive\_norm\_grad](#ss_mpi_ive_norm_grad) ## ss\_mpi\_ive\_mag\_and\_ang<a name="ZH-CN_TOPIC_0000002470931308"></a> 【描述】 创建5x5模板梯度幅值与幅角计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可配置3种输出模式，参考ot\_ive\_sobel\_out\_ctrl。
+-   当输出模式为OT\_IVE\_SOBEL\_OUT\_CTRL\_BOTH时，要求dst\_h和dst\_v跨度一致。
+-   sobel计算公式示意如[图1](#fig023253424811)所示。
+
+**图 1**  sobel计算公式示意图<a name="fig023253424811"></a>  
+![](figures/sobel计算公式示意图.png "sobel计算公式示意图")
+
+其中，![](figures/zh-cn_formulaimage_0000002470931532.png)对应src，![](figures/zh-cn_formulaimage_0000002504091385.png)对应dst\_h，![](figures/zh-cn_formulaimage_0000002504091381.png)对应dst\_v，![](figures/zh-cn_formulaimage_0000002504091375.png)  \(mask\)为ctrl中的mask\[25\]
+
+-   sobel模板
+
+    ![](figures/zh-cn_formulaimage_0000002504091383.png)
+
+    ![](figures/zh-cn_formulaimage_0000002470931518.png)
+
+-   scharr模板
+
+    ![](figures/zh-cn_formulaimage_0000002504091387.png)
+
+-   拉普拉斯模板
+
+    ![](figures/zh-cn_formulaimage_0000002504091389.png)
+
+    ![](figures/zh-cn_formulaimage_0000002471091526.png)
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_mag\_and\_ang](#ss_mpi_ive_mag_and_ang)
+-   [ss\_mpi\_ive\_norm\_grad](#ss_mpi_ive_norm_grad)
+
+## ss\_mpi\_ive\_mag\_and\_ang<a name="ZH-CN_TOPIC_0000002470931308"></a>
+
+【描述】
+
+创建5x5模板梯度幅值与幅角计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_mag_and_ang(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst_mag, const ot_svp_dst_img *dst_ang, const ot_ive_mag_and_ang_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table7276mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table7276mcpsimp"></a>
 <table><thead align="left"><tr id="row7282mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.4.1.1"><p id="p7284mcpsimp"><a name="p7284mcpsimp"></a><a name="p7284mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.99999999999999%" id="mcps1.1.4.1.2"><p id="p7286mcpsimp"><a name="p7286mcpsimp"></a><a name="p7286mcpsimp"></a>描述</p>
@@ -835,7 +1387,9 @@ td_s32 ss_mpi_ive_mag_and_ang(ot_ive_handle *handle, const ot_svp_src_img *src, 
 </td>
 </tr>
 </tbody>
-</table> <a name="table7339mcpsimp"></a>
+</table>
+
+<a name="table7339mcpsimp"></a>
 <table><thead align="left"><tr id="row7346mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p7348mcpsimp"><a name="p7348mcpsimp"></a><a name="p7348mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p7350mcpsimp"><a name="p7350mcpsimp"></a><a name="p7350mcpsimp"></a>支持图像类型</p>
@@ -874,7 +1428,11 @@ td_s32 ss_mpi_ive_mag_and_ang(ot_ive_handle *handle, const ot_svp_src_img *src, 
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table7384mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table7384mcpsimp"></a>
 <table><thead align="left"><tr id="row7389mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p7391mcpsimp"><a name="p7391mcpsimp"></a><a name="p7391mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p7393mcpsimp"><a name="p7393mcpsimp"></a><a name="p7393mcpsimp"></a>描述</p>
@@ -886,16 +1444,62 @@ td_s32 ss_mpi_ive_mag_and_ang(ot_ive_handle *handle, const ot_svp_src_img *src, 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7399mcpsimp"><a name="p7399mcpsimp"></a><a name="p7399mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row7400mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p7402mcpsimp"><a name="p7402mcpsimp"></a><a name="p7402mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可配置2种输出模式，具体参见ot\_ive\_mag\_and\_ang\_out\_ctrl。
-- 当输出模式为OT\_IVE\_MAG\_AND\_ANG\_OUT\_CTRL\_MAG\_AND\_ANG时，要求dst\_mag和dst\_ang跨度一致。
-- 用户可以通过ctrl-\>threshold对幅值图进行threshold操作\(可以用来实现EOH\)，计算公式如下： ![](figures/zh-cn_formulaimage_0000002503971485.png) 其中，![](figures/zh-cn_formulaimage_0000002470931534.png)对应dst\_mag。 **图 1** mag\_and\_ang计算示意图<a name="fig12486154181013"></a> ![](figures/mag_and_ang计算示意图.png "mag_and_ang计算示意图")
-![](figures/zh-cn_formulaimage_0000002470931540.png) ![](figures/2-5-2.png) ![](figures/zh-cn_formulaimage_0000002504091393.png)根据![](figures/zh-cn_formulaimage_0000002470931528.png)、![](figures/zh-cn_formulaimage_0000002470931538.png)以及![](figures/zh-cn_formulaimage_0000002471091540.png)取对应上图中0～7的方向值。其中，![](figures/zh-cn_formulaimage_0000002470931526.png)对应src，![](figures/zh-cn_formulaimage_0000002471091538.png)对应dst\_mag，![](figures/zh-cn_formulaimage_0000002503971483.png)对应dst\_ang，![](figures/zh-cn_formulaimage_0000002470931530.png)\(mask\)为ctrl中的mask\[25\]。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_canny\_hys\_edge](#ss_mpi_ive_canny_hys_edge)
-- [ss\_mpi\_ive\_canny\_edge](#ss_mpi_ive_canny_edge)
-- [ss\_mpi\_ive\_sobel](#ss_mpi_ive_sobel) ## ss\_mpi\_ive\_dilate<a name="ZH-CN_TOPIC_0000002503971205"></a> 【描述】 创建二值图像5x5模板膨胀任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可配置2种输出模式，具体参见ot\_ive\_mag\_and\_ang\_out\_ctrl。
+-   当输出模式为OT\_IVE\_MAG\_AND\_ANG\_OUT\_CTRL\_MAG\_AND\_ANG时，要求dst\_mag和dst\_ang跨度一致。
+-   用户可以通过ctrl-\>threshold对幅值图进行threshold操作\(可以用来实现EOH\)，计算公式如下：
+
+    ![](figures/zh-cn_formulaimage_0000002503971485.png)
+
+    其中，![](figures/zh-cn_formulaimage_0000002470931534.png)对应dst\_mag。
+
+**图 1**  mag\_and\_ang计算示意图<a name="fig12486154181013"></a>  
+![](figures/mag_and_ang计算示意图.png "mag_and_ang计算示意图")
+![](figures/zh-cn_formulaimage_0000002470931540.png)
+
+![](figures/2-5-2.png)
+
+![](figures/zh-cn_formulaimage_0000002504091393.png)根据![](figures/zh-cn_formulaimage_0000002470931528.png)、![](figures/zh-cn_formulaimage_0000002470931538.png)以及![](figures/zh-cn_formulaimage_0000002471091540.png)取对应上图中0～7的方向值。其中，![](figures/zh-cn_formulaimage_0000002470931526.png)对应src，![](figures/zh-cn_formulaimage_0000002471091538.png)对应dst\_mag，![](figures/zh-cn_formulaimage_0000002503971483.png)对应dst\_ang，![](figures/zh-cn_formulaimage_0000002470931530.png)\(mask\)为ctrl中的mask\[25\]。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_canny\_hys\_edge](#ss_mpi_ive_canny_hys_edge)
+-   [ss\_mpi\_ive\_canny\_edge](#ss_mpi_ive_canny_edge)
+-   [ss\_mpi\_ive\_sobel](#ss_mpi_ive_sobel)
+
+## ss\_mpi\_ive\_dilate<a name="ZH-CN_TOPIC_0000002503971205"></a>
+
+【描述】
+
+创建二值图像5x5模板膨胀任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_dilate(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_dilate_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table9715mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table9715mcpsimp"></a>
 <table><thead align="left"><tr id="row9721mcpsimp"><th class="cellrowborder" valign="top" width="19.8%" id="mcps1.1.4.1.1"><p id="p9723mcpsimp"><a name="p9723mcpsimp"></a><a name="p9723mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62.38%" id="mcps1.1.4.1.2"><p id="p9725mcpsimp"><a name="p9725mcpsimp"></a><a name="p9725mcpsimp"></a>描述</p>
@@ -944,7 +1548,9 @@ td_s32 ss_mpi_ive_dilate(ot_ive_handle *handle, const ot_svp_src_img *src, const
 </td>
 </tr>
 </tbody>
-</table> <a name="table9768mcpsimp"></a>
+</table>
+
+<a name="table9768mcpsimp"></a>
 <table><thead align="left"><tr id="row9775mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.5.1.1"><p id="p9777mcpsimp"><a name="p9777mcpsimp"></a><a name="p9777mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.28282828282828%" id="mcps1.1.5.1.2"><p id="p9779mcpsimp"><a name="p9779mcpsimp"></a><a name="p9779mcpsimp"></a>支持图像类型</p>
@@ -974,7 +1580,11 @@ td_s32 ss_mpi_ive_dilate(ot_ive_handle *handle, const ot_svp_src_img *src, const
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table9804mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table9804mcpsimp"></a>
 <table><thead align="left"><tr id="row9809mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p9811mcpsimp"><a name="p9811mcpsimp"></a><a name="p9811mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p9813mcpsimp"><a name="p9813mcpsimp"></a><a name="p9813mcpsimp"></a>描述</p>
@@ -986,14 +1596,62 @@ td_s32 ss_mpi_ive_dilate(ot_ive_handle *handle, const ot_svp_src_img *src, const
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p9819mcpsimp"><a name="p9819mcpsimp"></a><a name="p9819mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row9820mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p9822mcpsimp"><a name="p9822mcpsimp"></a><a name="p9822mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p9824mcpsimp"><a name="p9824mcpsimp"></a><a name="p9824mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_ mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 模板系数只能为0或255。
-- 模板样例 ![](figures/zh-cn_formulaimage_0000002471091488.png) ![](figures/zh-cn_formulaimage_0000002504091353.png) ![](figures/zh-cn_formulaimage_0000002470931492.png) ![](figures/zh-cn_formulaimage_0000002471091490.png) ![](figures/zh-cn_formulaimage_0000002471091478.png) ![](figures/zh-cn_formulaimage_0000002504091359.png) **图 1** dilate计算公式示意图<a name="fig9560216103916"></a> ![](figures/dilate计算公式示意图.png "dilate计算公式示意图")
-![](figures/zh-cn_formulaimage_0000002503971419.png) ![](figures/zh-cn_formulaimage_0000002503971435.png) 其中，公式中|为位或运算，&为位与运算，%为取余运算。![](figures/zh-cn_formulaimage_0000002470931488.png)对应src，![](figures/zh-cn_formulaimage_0000002504091351.png)对应dst，![](figures/zh-cn_formulaimage_0000002470931490.png)\(mask\)对应ctrl中的mask\[25\]。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_erode](#ss_mpi_ive_erode)
-- [ss\_mpi\_ive\_order\_stats\_filter](#ss_mpi_ive_order_stats_filter) ## ss\_mpi\_ive\_erode<a name="ZH-CN_TOPIC_0000002503971269"></a> 【描述】 创建二值图像5x5模板腐蚀任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_ mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   模板系数只能为0或255。
+-   模板样例
+
+    ![](figures/zh-cn_formulaimage_0000002471091488.png) ![](figures/zh-cn_formulaimage_0000002504091353.png)
+
+    ![](figures/zh-cn_formulaimage_0000002470931492.png) ![](figures/zh-cn_formulaimage_0000002471091490.png)
+
+    ![](figures/zh-cn_formulaimage_0000002471091478.png) ![](figures/zh-cn_formulaimage_0000002504091359.png)
+
+**图 1**  dilate计算公式示意图<a name="fig9560216103916"></a>  
+![](figures/dilate计算公式示意图.png "dilate计算公式示意图")
+![](figures/zh-cn_formulaimage_0000002503971419.png)
+
+![](figures/zh-cn_formulaimage_0000002503971435.png)
+
+其中，公式中|为位或运算，&为位与运算，%为取余运算。![](figures/zh-cn_formulaimage_0000002470931488.png)对应src，![](figures/zh-cn_formulaimage_0000002504091351.png)对应dst，![](figures/zh-cn_formulaimage_0000002470931490.png)\(mask\)对应ctrl中的mask\[25\]。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_erode](#ss_mpi_ive_erode)
+-   [ss\_mpi\_ive\_order\_stats\_filter](#ss_mpi_ive_order_stats_filter)
+
+## ss\_mpi\_ive\_erode<a name="ZH-CN_TOPIC_0000002503971269"></a>
+
+【描述】
+
+创建二值图像5x5模板腐蚀任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_erode(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_erode_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table2667mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2667mcpsimp"></a>
 <table><thead align="left"><tr id="row2673mcpsimp"><th class="cellrowborder" valign="top" width="19.8%" id="mcps1.1.4.1.1"><p id="p2675mcpsimp"><a name="p2675mcpsimp"></a><a name="p2675mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62.38%" id="mcps1.1.4.1.2"><p id="p2677mcpsimp"><a name="p2677mcpsimp"></a><a name="p2677mcpsimp"></a>描述</p>
@@ -1042,7 +1700,9 @@ td_s32 ss_mpi_ive_erode(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 </td>
 </tr>
 </tbody>
-</table> <a name="table2720mcpsimp"></a>
+</table>
+
+<a name="table2720mcpsimp"></a>
 <table><thead align="left"><tr id="row2727mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p2729mcpsimp"><a name="p2729mcpsimp"></a><a name="p2729mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p2731mcpsimp"><a name="p2731mcpsimp"></a><a name="p2731mcpsimp"></a>支持图像类型</p>
@@ -1072,7 +1732,11 @@ td_s32 ss_mpi_ive_erode(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table2756mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table2756mcpsimp"></a>
 <table><thead align="left"><tr id="row2761mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2763mcpsimp"><a name="p2763mcpsimp"></a><a name="p2763mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2765mcpsimp"><a name="p2765mcpsimp"></a><a name="p2765mcpsimp"></a>描述</p>
@@ -1084,14 +1748,62 @@ td_s32 ss_mpi_ive_erode(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2771mcpsimp"><a name="p2771mcpsimp"></a><a name="p2771mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2772mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2774mcpsimp"><a name="p2774mcpsimp"></a><a name="p2774mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2776mcpsimp"><a name="p2776mcpsimp"></a><a name="p2776mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 模板系数只能为0或255。
-- 模板样例 ![](figures/zh-cn_formulaimage_0000002503971575.png) ![](figures/zh-cn_formulaimage_0000002503971569.png) ![](figures/zh-cn_formulaimage_0000002471091624.png) ![](figures/zh-cn_formulaimage_0000002471091622.png) ![](figures/zh-cn_formulaimage_0000002504091477.png) ![](figures/zh-cn_formulaimage_0000002471091628.png) **图 1** erode计算公式示意图<a name="fig149692467233"></a> ![](figures/erode计算公式示意图.png "erode计算公式示意图")
-![](figures/zh-cn_formulaimage_0000002503971573.png) ![](figures/zh-cn_formulaimage_0000002504091483.png) 其中，公式中|为位或运算，&为位与运算，%为取余运算。![](figures/zh-cn_formulaimage_0000002504091485.png)对应src，![](figures/zh-cn_formulaimage_0000002504091479.png)对应dst，![](figures/zh-cn_formulaimage_0000002471091626.png)\(mask\)对应ctrl中的mask\[25\]。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_dilate](#ss_mpi_ive_dilate)
-- [ss\_mpi\_ive\_order\_stats\_filter](#ss_mpi_ive_order_stats_filter) ## ss\_mpi\_ive\_threshold<a name="ZH-CN_TOPIC_0000002471091326"></a> 【描述】 创建灰度图像阈值化任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   模板系数只能为0或255。
+-   模板样例
+
+    ![](figures/zh-cn_formulaimage_0000002503971575.png) ![](figures/zh-cn_formulaimage_0000002503971569.png)
+
+    ![](figures/zh-cn_formulaimage_0000002471091624.png) ![](figures/zh-cn_formulaimage_0000002471091622.png)
+
+    ![](figures/zh-cn_formulaimage_0000002504091477.png) ![](figures/zh-cn_formulaimage_0000002471091628.png)
+
+**图 1**  erode计算公式示意图<a name="fig149692467233"></a>  
+![](figures/erode计算公式示意图.png "erode计算公式示意图")
+![](figures/zh-cn_formulaimage_0000002503971573.png)
+
+![](figures/zh-cn_formulaimage_0000002504091483.png)
+
+其中，公式中|为位或运算，&为位与运算，%为取余运算。![](figures/zh-cn_formulaimage_0000002504091485.png)对应src，![](figures/zh-cn_formulaimage_0000002504091479.png)对应dst，![](figures/zh-cn_formulaimage_0000002471091626.png)\(mask\)对应ctrl中的mask\[25\]。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_dilate](#ss_mpi_ive_dilate)
+-   [ss\_mpi\_ive\_order\_stats\_filter](#ss_mpi_ive_order_stats_filter)
+
+## ss\_mpi\_ive\_threshold<a name="ZH-CN_TOPIC_0000002471091326"></a>
+
+【描述】
+
+创建灰度图像阈值化任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_threshold(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_threshold_ctrl *ctrl, td_bool is_instant );
-``` 【参数】 <a name="table6634mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table6634mcpsimp"></a>
 <table><thead align="left"><tr id="row6640mcpsimp"><th class="cellrowborder" valign="top" width="19.8%" id="mcps1.1.4.1.1"><p id="p6642mcpsimp"><a name="p6642mcpsimp"></a><a name="p6642mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62.38%" id="mcps1.1.4.1.2"><p id="p6644mcpsimp"><a name="p6644mcpsimp"></a><a name="p6644mcpsimp"></a>描述</p>
@@ -1140,7 +1852,9 @@ td_s32 ss_mpi_ive_threshold(ot_ive_handle *handle, const ot_svp_src_img *src, co
 </td>
 </tr>
 </tbody>
-</table> <a name="table6687mcpsimp"></a>
+</table>
+
+<a name="table6687mcpsimp"></a>
 <table><thead align="left"><tr id="row6694mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p6696mcpsimp"><a name="p6696mcpsimp"></a><a name="p6696mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p6698mcpsimp"><a name="p6698mcpsimp"></a><a name="p6698mcpsimp"></a>支持图像类型</p>
@@ -1170,7 +1884,11 @@ td_s32 ss_mpi_ive_threshold(ot_ive_handle *handle, const ot_svp_src_img *src, co
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table6723mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table6723mcpsimp"></a>
 <table><thead align="left"><tr id="row6728mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p6730mcpsimp"><a name="p6730mcpsimp"></a><a name="p6730mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p6732mcpsimp"><a name="p6732mcpsimp"></a><a name="p6732mcpsimp"></a>描述</p>
@@ -1182,13 +1900,101 @@ td_s32 ss_mpi_ive_threshold(ot_ive_handle *handle, const ot_svp_src_img *src, co
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p6738mcpsimp"><a name="p6738mcpsimp"></a><a name="p6738mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row6739mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p6741mcpsimp"><a name="p6741mcpsimp"></a><a name="p6741mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可以配置8种运算模式，具体参见ot\_ive\_threshold\_mode。
-- 计算公式 - OT\_IVE\_THRESHOLD\_MODE\_BINARY： ![](figures/zh-cn_formulaimage_0000002504091471.png) ![](figures/zh-cn_formulaimage_0000002470931586.png)、![](figures/zh-cn_formulaimage_0000002471091572.png)无需赋值。 - OT\_IVE\_THRESHOLD\_MODE\_TRUNC： ![](figures/zh-cn_formulaimage_0000002504091441.png) ![](figures/zh-cn_formulaimage_0000002471091562.png)、![](figures/zh-cn_formulaimage_0000002470931606.png)_、_![](figures/zh-cn_formulaimage_0000002503971547.png) _无需赋值。_ - OT\_IVE\_THRESHOLD\_MODE\_TO\_MINVAL： ![](figures/zh-cn_formulaimage_0000002471091608.png) ![](figures/zh-cn_formulaimage_0000002503971527.png)、![](figures/zh-cn_formulaimage_0000002471091592.png)、![](figures/zh-cn_formulaimage_0000002470931600.png) 无需赋值。 - OT\_IVE\_THRESHOLD\_MODE\_MIN\_MID\_MAX： ![](figures/zh-cn_formulaimage_0000002471091570.png) - OT\_IVE\_THRESHOLD\_MODE\_ORIG\_MID\_MAX： ![](figures/zh-cn_formulaimage_0000002503971533.png) ![](figures/zh-cn_formulaimage_0000002503971551.png)无需赋值。 - OT\_IVE\_THRESHOLD\_MODE\_MIN\_MID\_ORI： ![](figures/zh-cn_formulaimage_0000002504091443.png) ![](figures/zh-cn_formulaimage_0000002471091564.png)无需赋值。 - OT\_IVE\_THRESHOLD\_MODE\_MIN\_ORIG\_MAX： ![](figures/zh-cn_formulaimage_0000002503971517.png) ![](figures/zh-cn_formulaimage_0000002471091566.png)无需赋值。 - OT\_IVE\_THRESHOLD\_MODE\_ORI\_MID\_ORIG： ![](figures/zh-cn_formulaimage_0000002503971509.png) ![](figures/zh-cn_formulaimage_0000002470931604.png)、![](figures/zh-cn_formulaimage_0000002503971503.png)无需赋值。 其中，![](figures/zh-cn_formulaimage_0000002470931576.png) 对应src，![](figures/zh-cn_formulaimage_0000002471091586.png) 对应dst，mode、low\_thr、high\_thr、min\_val、mid\_val和max\_val分别对应ctrl的mode、low\_threshold、high\_threshold、min\_val、mid\_val和max\_val。具体示意图如[图1](#fig168991845172718)所示。 - ctrl中的min\_val、mid\_val和max\_val并不需要满足变量命名含义中的大小关系。 **图 1** threshold 8种阈值化模式示意图<a name="fig168991845172718"></a> ![](figures/threshold-8种阈值化模式示意图.png "threshold-8种阈值化模式示意图") 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_threshold\_s16](#ss_mpi_ive_threshold_s16)
-- [ss\_mpi\_ive\_threshold\_u16](#ss_mpi_ive_threshold_u16) ## ss\_mpi\_ive\_and<a name="ZH-CN_TOPIC_0000002504091087"></a> 【描述】 创建两二值图像相与任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可以配置8种运算模式，具体参见ot\_ive\_threshold\_mode。
+-   计算公式
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_BINARY：
+
+        ![](figures/zh-cn_formulaimage_0000002504091471.png)
+
+        ![](figures/zh-cn_formulaimage_0000002470931586.png)、![](figures/zh-cn_formulaimage_0000002471091572.png)无需赋值。
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_TRUNC：
+
+        ![](figures/zh-cn_formulaimage_0000002504091441.png)
+
+        ![](figures/zh-cn_formulaimage_0000002471091562.png)、![](figures/zh-cn_formulaimage_0000002470931606.png)_、_![](figures/zh-cn_formulaimage_0000002503971547.png) _无需赋值。_
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_TO\_MINVAL：
+
+        ![](figures/zh-cn_formulaimage_0000002471091608.png)
+
+        ![](figures/zh-cn_formulaimage_0000002503971527.png)、![](figures/zh-cn_formulaimage_0000002471091592.png)、![](figures/zh-cn_formulaimage_0000002470931600.png)  无需赋值。
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_MIN\_MID\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002471091570.png)
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_ORIG\_MID\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002503971533.png)
+
+        ![](figures/zh-cn_formulaimage_0000002503971551.png)无需赋值。
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_MIN\_MID\_ORI：
+
+        ![](figures/zh-cn_formulaimage_0000002504091443.png)
+
+        ![](figures/zh-cn_formulaimage_0000002471091564.png)无需赋值。
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_MIN\_ORIG\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002503971517.png)
+
+        ![](figures/zh-cn_formulaimage_0000002471091566.png)无需赋值。
+
+    -   OT\_IVE\_THRESHOLD\_MODE\_ORI\_MID\_ORIG：
+
+        ![](figures/zh-cn_formulaimage_0000002503971509.png)
+
+        ![](figures/zh-cn_formulaimage_0000002470931604.png)、![](figures/zh-cn_formulaimage_0000002503971503.png)无需赋值。
+
+    其中，![](figures/zh-cn_formulaimage_0000002470931576.png)  对应src，![](figures/zh-cn_formulaimage_0000002471091586.png)  对应dst，mode、low\_thr、high\_thr、min\_val、mid\_val和max\_val分别对应ctrl的mode、low\_threshold、high\_threshold、min\_val、mid\_val和max\_val。具体示意图如[图1](#fig168991845172718)所示。
+
+-   ctrl中的min\_val、mid\_val和max\_val并不需要满足变量命名含义中的大小关系。
+
+**图 1**  threshold 8种阈值化模式示意图<a name="fig168991845172718"></a>  
+![](figures/threshold-8种阈值化模式示意图.png "threshold-8种阈值化模式示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_threshold\_s16](#ss_mpi_ive_threshold_s16)
+-   [ss\_mpi\_ive\_threshold\_u16](#ss_mpi_ive_threshold_u16)
+
+## ss\_mpi\_ive\_and<a name="ZH-CN_TOPIC_0000002504091087"></a>
+
+【描述】
+
+创建两二值图像相与任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_and(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot_svp_src_img *src2, const ot_svp_dst_img *dst, td_bool is_instant );
-``` 【参数】 <a name="table2952mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2952mcpsimp"></a>
 <table><thead align="left"><tr id="row2958mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p2960mcpsimp"><a name="p2960mcpsimp"></a><a name="p2960mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.4.1.2"><p id="p2962mcpsimp"><a name="p2962mcpsimp"></a><a name="p2962mcpsimp"></a>描述</p>
@@ -1239,7 +2045,9 @@ td_s32 ss_mpi_ive_and(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table3007mcpsimp"></a>
+</table>
+
+<a name="table3007mcpsimp"></a>
 <table><thead align="left"><tr id="row3014mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.5.1.1"><p id="p3016mcpsimp"><a name="p3016mcpsimp"></a><a name="p3016mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.28282828282828%" id="mcps1.1.5.1.2"><p id="p3018mcpsimp"><a name="p3018mcpsimp"></a><a name="p3018mcpsimp"></a>支持图像类型</p>
@@ -1278,7 +2086,11 @@ td_s32 ss_mpi_ive_and(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table3052mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table3052mcpsimp"></a>
 <table><thead align="left"><tr id="row3057mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3059mcpsimp"><a name="p3059mcpsimp"></a><a name="p3059mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3061mcpsimp"><a name="p3061mcpsimp"></a><a name="p3061mcpsimp"></a>描述</p>
@@ -1290,12 +2102,51 @@ td_s32 ss_mpi_ive_and(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3067mcpsimp"><a name="p3067mcpsimp"></a><a name="p3067mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row3068mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p3070mcpsimp"><a name="p3070mcpsimp"></a><a name="p3070mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3072mcpsimp"><a name="p3072mcpsimp"></a><a name="p3072mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 计算公式如下： ![](figures/zh-cn_formulaimage_0000002471091354.png) 其中，![](figures/zh-cn_formulaimage_0000002471091348.png)对应src1，![](figures/zh-cn_formulaimage_0000002504091217.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971299.png)对应dst 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_or](#ss_mpi_ive_or)
-- [ss\_mpi\_ive\_xor](#ss_mpi_ive_xor) ## ss\_mpi\_ive\_sub<a name="ZH-CN_TOPIC_0000002503971163"></a> 【描述】 创建两灰度图像相减任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+计算公式如下：
+
+![](figures/zh-cn_formulaimage_0000002471091354.png)
+
+其中，![](figures/zh-cn_formulaimage_0000002471091348.png)对应src1，![](figures/zh-cn_formulaimage_0000002504091217.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971299.png)对应dst
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_or](#ss_mpi_ive_or)
+-   [ss\_mpi\_ive\_xor](#ss_mpi_ive_xor)
+
+## ss\_mpi\_ive\_sub<a name="ZH-CN_TOPIC_0000002503971163"></a>
+
+【描述】
+
+创建两灰度图像相减任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_sub(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot_svp_src_img *src2, const ot_svp_dst_img *dst, const ot_ive_sub_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table11926mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table11926mcpsimp"></a>
 <table><thead align="left"><tr id="row11932mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p11934mcpsimp"><a name="p11934mcpsimp"></a><a name="p11934mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66.34%" id="mcps1.1.4.1.2"><p id="p11936mcpsimp"><a name="p11936mcpsimp"></a><a name="p11936mcpsimp"></a>描述</p>
@@ -1353,7 +2204,9 @@ td_s32 ss_mpi_ive_sub(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table11988mcpsimp"></a>
+</table>
+
+<a name="table11988mcpsimp"></a>
 <table><thead align="left"><tr id="row11995mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p11997mcpsimp"><a name="p11997mcpsimp"></a><a name="p11997mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p11999mcpsimp"><a name="p11999mcpsimp"></a><a name="p11999mcpsimp"></a>支持图像类型</p>
@@ -1392,7 +2245,11 @@ td_s32 ss_mpi_ive_sub(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table12033mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table12033mcpsimp"></a>
 <table><thead align="left"><tr id="row12038mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p12040mcpsimp"><a name="p12040mcpsimp"></a><a name="p12040mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p12042mcpsimp"><a name="p12042mcpsimp"></a><a name="p12042mcpsimp"></a>描述</p>
@@ -1404,12 +2261,56 @@ td_s32 ss_mpi_ive_sub(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12048mcpsimp"><a name="p12048mcpsimp"></a><a name="p12048mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row12049mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p12051mcpsimp"><a name="p12051mcpsimp"></a><a name="p12051mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可以配置2种输出格式，具体参见ot\_ive\_sub\_mode。
-- OT\_IVE\_SUB\_MODE\_ABS - 计算公式：![](figures/zh-cn_formulaimage_0000002471091374.png) - 输出格式：U8C1 - OT\_IVE\_SUB\_MODE\_SHIFT - 计算公式：![](figures/zh-cn_formulaimage_0000002503971319.png) - 输出格式：S8C1 其中，![](figures/zh-cn_formulaimage_0000002471091384.png) 对应src1，![](figures/zh-cn_formulaimage_0000002470931386.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971325.png)对应dst。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_add](#ss_mpi_ive_add) ## ss\_mpi\_ive\_or<a name="ZH-CN_TOPIC_0000002471091296"></a> 【描述】 创建两二值图像相或任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可以配置2种输出格式，具体参见ot\_ive\_sub\_mode。
+-   OT\_IVE\_SUB\_MODE\_ABS
+    -   计算公式：![](figures/zh-cn_formulaimage_0000002471091374.png)
+    -   输出格式：U8C1
+
+-   OT\_IVE\_SUB\_MODE\_SHIFT
+
+    -   计算公式：![](figures/zh-cn_formulaimage_0000002503971319.png)
+    -   输出格式：S8C1
+
+    其中，![](figures/zh-cn_formulaimage_0000002471091384.png)  对应src1，![](figures/zh-cn_formulaimage_0000002470931386.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971325.png)对应dst。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_add](#ss_mpi_ive_add)
+
+## ss\_mpi\_ive\_or<a name="ZH-CN_TOPIC_0000002471091296"></a>
+
+【描述】
+
+创建两二值图像相或任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_or(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot_svp_src_img *src2, const ot_svp_dst_img *dst, td_bool is_instant);
-``` 【参数】 <a name="table8184mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table8184mcpsimp"></a>
 <table><thead align="left"><tr id="row8190mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p8192mcpsimp"><a name="p8192mcpsimp"></a><a name="p8192mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p8194mcpsimp"><a name="p8194mcpsimp"></a><a name="p8194mcpsimp"></a>描述</p>
@@ -1460,7 +2361,9 @@ td_s32 ss_mpi_ive_or(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot
 </td>
 </tr>
 </tbody>
-</table> <a name="table8239mcpsimp"></a>
+</table>
+
+<a name="table8239mcpsimp"></a>
 <table><thead align="left"><tr id="row8246mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p8248mcpsimp"><a name="p8248mcpsimp"></a><a name="p8248mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.21212121212121%" id="mcps1.1.5.1.2"><p id="p8250mcpsimp"><a name="p8250mcpsimp"></a><a name="p8250mcpsimp"></a>支持图像类型</p>
@@ -1499,7 +2402,11 @@ td_s32 ss_mpi_ive_or(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table8284mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table8284mcpsimp"></a>
 <table><thead align="left"><tr id="row8289mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p8291mcpsimp"><a name="p8291mcpsimp"></a><a name="p8291mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p8293mcpsimp"><a name="p8293mcpsimp"></a><a name="p8293mcpsimp"></a>描述</p>
@@ -1511,12 +2418,51 @@ td_s32 ss_mpi_ive_or(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p8299mcpsimp"><a name="p8299mcpsimp"></a><a name="p8299mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row8300mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p8302mcpsimp"><a name="p8302mcpsimp"></a><a name="p8302mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p8304mcpsimp"><a name="p8304mcpsimp"></a><a name="p8304mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 计算公式如下： ![](figures/zh-cn_formulaimage_0000002471091554.png) 其中，![](figures/zh-cn_formulaimage_0000002470931564.png)对应src1，![](figures/zh-cn_formulaimage_0000002503971505.png)对应src2，![](figures/zh-cn_formulaimage_0000002470931566.png) 对应dst。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_and](#ss_mpi_ive_and)
-- [ss\_mpi\_ive\_xor](#ss_mpi_ive_xor) ## ss\_mpi\_ive\_integ<a name="ZH-CN_TOPIC_0000002470931322"></a> 【描述】 创建灰度图像的积分图计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+计算公式如下：
+
+![](figures/zh-cn_formulaimage_0000002471091554.png)
+
+其中，![](figures/zh-cn_formulaimage_0000002470931564.png)对应src1，![](figures/zh-cn_formulaimage_0000002503971505.png)对应src2，![](figures/zh-cn_formulaimage_0000002470931566.png)  对应dst。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_and](#ss_mpi_ive_and)
+-   [ss\_mpi\_ive\_xor](#ss_mpi_ive_xor)
+
+## ss\_mpi\_ive\_integ<a name="ZH-CN_TOPIC_0000002470931322"></a>
+
+【描述】
+
+创建灰度图像的积分图计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_integ(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_integ_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table16465mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table16465mcpsimp"></a>
 <table><thead align="left"><tr id="row16471mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p16473mcpsimp"><a name="p16473mcpsimp"></a><a name="p16473mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p16475mcpsimp"><a name="p16475mcpsimp"></a><a name="p16475mcpsimp"></a>描述</p>
@@ -1566,7 +2512,9 @@ td_s32 ss_mpi_ive_integ(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 </td>
 </tr>
 </tbody>
-</table> <a name="table16519mcpsimp"></a>
+</table>
+
+<a name="table16519mcpsimp"></a>
 <table><thead align="left"><tr id="row16526mcpsimp"><th class="cellrowborder" valign="top" width="18.000000000000004%" id="mcps1.1.5.1.1"><p id="p16528mcpsimp"><a name="p16528mcpsimp"></a><a name="p16528mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="29.000000000000004%" id="mcps1.1.5.1.2"><p id="p16530mcpsimp"><a name="p16530mcpsimp"></a><a name="p16530mcpsimp"></a>支持图像类型</p>
@@ -1596,7 +2544,11 @@ td_s32 ss_mpi_ive_integ(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table16555mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table16555mcpsimp"></a>
 <table><thead align="left"><tr id="row16560mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p16562mcpsimp"><a name="p16562mcpsimp"></a><a name="p16562mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p16564mcpsimp"><a name="p16564mcpsimp"></a><a name="p16564mcpsimp"></a>描述</p>
@@ -1608,11 +2560,58 @@ td_s32 ss_mpi_ive_integ(ot_ive_handle *handle, const ot_svp_src_img *src, const 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p16570mcpsimp"><a name="p16570mcpsimp"></a><a name="p16570mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row16571mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p16573mcpsimp"><a name="p16573mcpsimp"></a><a name="p16573mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p16575mcpsimp"><a name="p16575mcpsimp"></a><a name="p16575mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - OT\_IVE\_INTEG\_OUT\_CTRL\_COMBINE，组合输出模式，输出图像类型必须为OT\_SVP\_IMG\_TYPE\_U64C1，参见[图13](#fig187188113314)，计算公式如下： ![](figures/zh-cn_formulaimage_0000002504091423.png) - OT\_IVE\_INTEG\_OUT\_CTRL\_SUM，仅和积分图输出模式，输出图像类型必须为OT\_SVP\_IMG\_TYPE\_U32C1，计算公式如下： ![](figures/zh-cn_formulaimage_0000002504091425.png) - OT\_IVE\_INTEG\_OUT\_CTRL\_SQRT\_SUM，仅平方和积分图输出，输出图像类型必须为OT\_SVP\_IMG\_TYPE\_U64C1，计算公式如下： ![](figures/zh-cn_formulaimage_0000002471091560.png) 其中，![](figures/zh-cn_formulaimage_0000002503971497.png)_ _对应src，![](figures/zh-cn_formulaimage_0000002470931562.png)_ _对应dst。 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_hist<a name="ZH-CN_TOPIC_0000002504091123"></a> 【描述】 创建灰度图像的直方图统计任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   OT\_IVE\_INTEG\_OUT\_CTRL\_COMBINE，组合输出模式，输出图像类型必须为OT\_SVP\_IMG\_TYPE\_U64C1，参见[图13](#fig187188113314)，计算公式如下：
+
+    ![](figures/zh-cn_formulaimage_0000002504091423.png)
+
+-   OT\_IVE\_INTEG\_OUT\_CTRL\_SUM，仅和积分图输出模式，输出图像类型必须为OT\_SVP\_IMG\_TYPE\_U32C1，计算公式如下：
+
+    ![](figures/zh-cn_formulaimage_0000002504091425.png)
+
+-   OT\_IVE\_INTEG\_OUT\_CTRL\_SQRT\_SUM，仅平方和积分图输出，输出图像类型必须为OT\_SVP\_IMG\_TYPE\_U64C1，计算公式如下：
+
+    ![](figures/zh-cn_formulaimage_0000002471091560.png)
+
+其中，![](figures/zh-cn_formulaimage_0000002503971497.png)_ _对应src，![](figures/zh-cn_formulaimage_0000002470931562.png)_ _对应dst。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_hist<a name="ZH-CN_TOPIC_0000002504091123"></a>
+
+【描述】
+
+创建灰度图像的直方图统计任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_hist(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_mem_info *dst, td_bool is_instant);
-``` 【参数】 <a name="table2031mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2031mcpsimp"></a>
 <table><thead align="left"><tr id="row2037mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p2039mcpsimp"><a name="p2039mcpsimp"></a><a name="p2039mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p2041mcpsimp"><a name="p2041mcpsimp"></a><a name="p2041mcpsimp"></a>描述</p>
@@ -1655,7 +2654,9 @@ td_s32 ss_mpi_ive_hist(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table2079mcpsimp"></a>
+</table>
+
+<a name="table2079mcpsimp"></a>
 <table><thead align="left"><tr id="row2086mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p2088mcpsimp"><a name="p2088mcpsimp"></a><a name="p2088mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p2090mcpsimp"><a name="p2090mcpsimp"></a><a name="p2090mcpsimp"></a>支持图像类型</p>
@@ -1685,7 +2686,11 @@ td_s32 ss_mpi_ive_hist(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table2115mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table2115mcpsimp"></a>
 <table><thead align="left"><tr id="row2120mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2122mcpsimp"><a name="p2122mcpsimp"></a><a name="p2122mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2124mcpsimp"><a name="p2124mcpsimp"></a><a name="p2124mcpsimp"></a>描述</p>
@@ -1697,11 +2702,50 @@ td_s32 ss_mpi_ive_hist(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2130mcpsimp"><a name="p2130mcpsimp"></a><a name="p2130mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2131mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2133mcpsimp"><a name="p2133mcpsimp"></a><a name="p2133mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 计算公式如下： ![](figures/zh-cn_formulaimage_0000002470931458.png) 其中，![](figures/zh-cn_formulaimage_0000002470931456.png)对应src，![](figures/zh-cn_formulaimage_0000002470931460.png)对应dst。 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_threshold\_s16<a name="ZH-CN_TOPIC_0000002470931220"></a> 【描述】 创建s16数据到8bit数据的阈值化任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+计算公式如下：
+
+![](figures/zh-cn_formulaimage_0000002470931458.png)
+
+其中，![](figures/zh-cn_formulaimage_0000002470931456.png)对应src，![](figures/zh-cn_formulaimage_0000002470931460.png)对应dst。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_threshold\_s16<a name="ZH-CN_TOPIC_0000002470931220"></a>
+
+【描述】
+
+创建s16数据到8bit数据的阈值化任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_threshold_s16(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_threshold_s16_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table10854mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table10854mcpsimp"></a>
 <table><thead align="left"><tr id="row10860mcpsimp"><th class="cellrowborder" valign="top" width="21.21%" id="mcps1.1.4.1.1"><p id="p10862mcpsimp"><a name="p10862mcpsimp"></a><a name="p10862mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.559999999999995%" id="mcps1.1.4.1.2"><p id="p10864mcpsimp"><a name="p10864mcpsimp"></a><a name="p10864mcpsimp"></a>描述</p>
@@ -1750,7 +2794,9 @@ td_s32 ss_mpi_ive_threshold_s16(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> <a name="table10907mcpsimp"></a>
+</table>
+
+<a name="table10907mcpsimp"></a>
 <table><thead align="left"><tr id="row10914mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p10916mcpsimp"><a name="p10916mcpsimp"></a><a name="p10916mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p10918mcpsimp"><a name="p10918mcpsimp"></a><a name="p10918mcpsimp"></a>支持图像类型</p>
@@ -1780,7 +2826,11 @@ td_s32 ss_mpi_ive_threshold_s16(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table10943mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table10943mcpsimp"></a>
 <table><thead align="left"><tr id="row10948mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p10950mcpsimp"><a name="p10950mcpsimp"></a><a name="p10950mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p10952mcpsimp"><a name="p10952mcpsimp"></a><a name="p10952mcpsimp"></a>描述</p>
@@ -1792,13 +2842,87 @@ td_s32 ss_mpi_ive_threshold_s16(ot_ive_handle *handle, const ot_svp_src_img *src
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10958mcpsimp"><a name="p10958mcpsimp"></a><a name="p10958mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row10959mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p10961mcpsimp"><a name="p10961mcpsimp"></a><a name="p10961mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10963mcpsimp"><a name="p10963mcpsimp"></a><a name="p10963mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可配置4种运算模式，参考ot\_ive\_threshold\_s16\_mode。
-- 计算公式 - OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_S8\_MIN\_MID\_MAX： ![](figures/zh-cn_formulaimage_0000002471091396.png) 要求：-32768≤![](figures/zh-cn_formulaimage_0000002504091239.png)≤![](figures/zh-cn_formulaimage_0000002504091243.png)≤32767； -128≤![](figures/zh-cn_formulaimage_0000002471091386.png)、![](figures/zh-cn_formulaimage_0000002503971293.png)、![](figures/zh-cn_formulaimage_0000002504091241.png)≤127。 - OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_S8\_MIN\_ORIG\_MAX： ![](figures/zh-cn_formulaimage_0000002504091233.png) 要求：-129≤![](figures/zh-cn_formulaimage_0000002504091269.png)≤![](figures/zh-cn_formulaimage_0000002504091271.png)≤127； -128≤![](figures/zh-cn_formulaimage_0000002503971329.png)、![](figures/zh-cn_formulaimage_0000002504091275.png)≤127； - OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_U8\_MIN\_MID\_MAX： ![](figures/zh-cn_formulaimage_0000002503971305.png) 要求：-32768≤![](figures/zh-cn_formulaimage_0000002504091245.png)≤![](figures/zh-cn_formulaimage_0000002471091340.png)≤32767； 0≤![](figures/zh-cn_formulaimage_0000002504091267.png)、![](figures/zh-cn_formulaimage_0000002471091356.png)、![](figures/zh-cn_formulaimage_0000002503971321.png)≤255。 - OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_U8\_MIN\_ORIG\_MAX： ![](figures/zh-cn_formulaimage_0000002504091261.png) 要求：-1≤![](figures/zh-cn_formulaimage_0000002503971301.png)≤![](figures/zh-cn_formulaimage_0000002471091344.png)≤255； 0≤![](figures/zh-cn_formulaimage_0000002471091378.png)、![](figures/zh-cn_formulaimage_0000002503971287.png)≤255。 其中，![](figures/zh-cn_formulaimage_0000002503971333.png)对应src，![](figures/zh-cn_formulaimage_0000002503971281.png)对应dst，mode、low\_thr、high\_thr、min\_val、mid\_val和max\_val分别对应thrS16Ctrl的mode、low\_threshold、high\_threshold、min\_val、mid\_val和max\_val。具体示意图如[图1](#fig552482942812)所示。 - ctrl中的min\_val、mid\_val和max\_val并不需要满足变量命名含义中的大小关系。 **图 1** threshold\_s16 4种阈值化模式示意图<a name="fig552482942812"></a> ![](figures/threshold_s16-4种阈值化模式示意图.png "threshold_s16-4种阈值化模式示意图") 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_threshold\_u16](#ss_mpi_ive_threshold_u16)
-- [ss\_mpi\_ive\_16bit\_to\_8bit](#ss_mpi_ive_16bit_to_8bit) ## ss\_mpi\_ive\_threshold\_u16<a name="ZH-CN_TOPIC_0000002470931242"></a> 【描述】 创建u16数据到u8数据的阈值化任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可配置4种运算模式，参考ot\_ive\_threshold\_s16\_mode。
+-   计算公式
+
+    -   OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_S8\_MIN\_MID\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002471091396.png)
+
+        要求：-32768≤![](figures/zh-cn_formulaimage_0000002504091239.png)≤![](figures/zh-cn_formulaimage_0000002504091243.png)≤32767；
+
+        -128≤![](figures/zh-cn_formulaimage_0000002471091386.png)、![](figures/zh-cn_formulaimage_0000002503971293.png)、![](figures/zh-cn_formulaimage_0000002504091241.png)≤127。
+
+    -   OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_S8\_MIN\_ORIG\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002504091233.png)
+
+        要求：-129≤![](figures/zh-cn_formulaimage_0000002504091269.png)≤![](figures/zh-cn_formulaimage_0000002504091271.png)≤127；
+
+        -128≤![](figures/zh-cn_formulaimage_0000002503971329.png)、![](figures/zh-cn_formulaimage_0000002504091275.png)≤127；
+
+    -   OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_U8\_MIN\_MID\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002503971305.png)
+
+        要求：-32768≤![](figures/zh-cn_formulaimage_0000002504091245.png)≤![](figures/zh-cn_formulaimage_0000002471091340.png)≤32767；
+
+        0≤![](figures/zh-cn_formulaimage_0000002504091267.png)、![](figures/zh-cn_formulaimage_0000002471091356.png)、![](figures/zh-cn_formulaimage_0000002503971321.png)≤255。
+
+    -   OT\_IVE\_THRESHOLD\_S16\_MODE\_S16\_TO\_U8\_MIN\_ORIG\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002504091261.png)
+
+        要求：-1≤![](figures/zh-cn_formulaimage_0000002503971301.png)≤![](figures/zh-cn_formulaimage_0000002471091344.png)≤255；
+
+        0≤![](figures/zh-cn_formulaimage_0000002471091378.png)、![](figures/zh-cn_formulaimage_0000002503971287.png)≤255。
+
+    其中，![](figures/zh-cn_formulaimage_0000002503971333.png)对应src，![](figures/zh-cn_formulaimage_0000002503971281.png)对应dst，mode、low\_thr、high\_thr、min\_val、mid\_val和max\_val分别对应thrS16Ctrl的mode、low\_threshold、high\_threshold、min\_val、mid\_val和max\_val。具体示意图如[图1](#fig552482942812)所示。
+
+-   ctrl中的min\_val、mid\_val和max\_val并不需要满足变量命名含义中的大小关系。
+
+**图 1**  threshold\_s16 4种阈值化模式示意图<a name="fig552482942812"></a>  
+![](figures/threshold_s16-4种阈值化模式示意图.png "threshold_s16-4种阈值化模式示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_threshold\_u16](#ss_mpi_ive_threshold_u16)
+-   [ss\_mpi\_ive\_16bit\_to\_8bit](#ss_mpi_ive_16bit_to_8bit)
+
+## ss\_mpi\_ive\_threshold\_u16<a name="ZH-CN_TOPIC_0000002470931242"></a>
+
+【描述】
+
+创建u16数据到u8数据的阈值化任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_threshold_u16(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_threshold_u16_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table5642mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table5642mcpsimp"></a>
 <table><thead align="left"><tr id="row5648mcpsimp"><th class="cellrowborder" valign="top" width="22.000000000000004%" id="mcps1.1.4.1.1"><p id="p5650mcpsimp"><a name="p5650mcpsimp"></a><a name="p5650mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="57.00000000000001%" id="mcps1.1.4.1.2"><p id="p5652mcpsimp"><a name="p5652mcpsimp"></a><a name="p5652mcpsimp"></a>描述</p>
@@ -1848,7 +2972,9 @@ td_s32 ss_mpi_ive_threshold_u16(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> <a name="table5696mcpsimp"></a>
+</table>
+
+<a name="table5696mcpsimp"></a>
 <table><thead align="left"><tr id="row5703mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p5705mcpsimp"><a name="p5705mcpsimp"></a><a name="p5705mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p5707mcpsimp"><a name="p5707mcpsimp"></a><a name="p5707mcpsimp"></a>支持图像类型</p>
@@ -1878,7 +3004,11 @@ td_s32 ss_mpi_ive_threshold_u16(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table5732mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table5732mcpsimp"></a>
 <table><thead align="left"><tr id="row5737mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p5739mcpsimp"><a name="p5739mcpsimp"></a><a name="p5739mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p5741mcpsimp"><a name="p5741mcpsimp"></a><a name="p5741mcpsimp"></a>描述</p>
@@ -1890,13 +3020,67 @@ td_s32 ss_mpi_ive_threshold_u16(ot_ive_handle *handle, const ot_svp_src_img *src
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5747mcpsimp"><a name="p5747mcpsimp"></a><a name="p5747mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row5748mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p5750mcpsimp"><a name="p5750mcpsimp"></a><a name="p5750mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可配置2种运算模式，参考ot\_ive\_threshold\_u16\_mode。
-- 计算公式 - OT\_IVE\_THRESHOLD\_U16\_MODE\_U16\_TO\_U8\_MIN\_MID\_MAX： ![](figures/zh-cn_formulaimage_0000002470931448.png) 要求：0≤![](figures/zh-cn_formulaimage_0000002503971379.png)≤![](figures/zh-cn_formulaimage_0000002470931438.png)≤65535； - OT\_IVE\_THRESHOLD\_U16\_MODE\_U16\_TO\_U8\_MIN\_ORIG\_MAX： ![](figures/zh-cn_formulaimage_0000002504091301.png) 要求：0≤![](figures/zh-cn_formulaimage_0000002503971381.png)≤![](figures/zh-cn_formulaimage_0000002470931450.png)≤255； 其中，![](figures/zh-cn_formulaimage_0000002470931452.png)对应src，![](figures/zh-cn_formulaimage_0000002503971377.png)对应dst，mode、low\_thr、high\_thr、min\_val、mid\_val和max\_val分别对应ctrl的mode、low\_threshold、high\_threshold、min\_val、mid\_val和max\_val。具体示意图如[图1](#fig11573123011116)所示。 - ctrl中的min\_val、mid\_val和max\_val并不需要满足变量命名含义中的大小关系。 **图 1** threshold\_u16 2种阈值化模式示意图<a name="fig11573123011116"></a> ![](figures/threshold_u16-2种阈值化模式示意图.png "threshold_u16-2种阈值化模式示意图") 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_threshold\_s16](#ss_mpi_ive_threshold_s16)
-- [ss\_mpi\_ive\_16bit\_to\_8bit](#ss_mpi_ive_16bit_to_8bit) ## ss\_mpi\_ive\_16bit\_to\_8bit<a name="ZH-CN_TOPIC_0000002471091216"></a> 【描述】 创建16bit图像数据到8bit图像数据的线性转化任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可配置2种运算模式，参考ot\_ive\_threshold\_u16\_mode。
+-   计算公式
+
+    -   OT\_IVE\_THRESHOLD\_U16\_MODE\_U16\_TO\_U8\_MIN\_MID\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002470931448.png)
+
+        要求：0≤![](figures/zh-cn_formulaimage_0000002503971379.png)≤![](figures/zh-cn_formulaimage_0000002470931438.png)≤65535；
+
+    -   OT\_IVE\_THRESHOLD\_U16\_MODE\_U16\_TO\_U8\_MIN\_ORIG\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002504091301.png)
+
+        要求：0≤![](figures/zh-cn_formulaimage_0000002503971381.png)≤![](figures/zh-cn_formulaimage_0000002470931450.png)≤255；
+
+    其中，![](figures/zh-cn_formulaimage_0000002470931452.png)对应src，![](figures/zh-cn_formulaimage_0000002503971377.png)对应dst，mode、low\_thr、high\_thr、min\_val、mid\_val和max\_val分别对应ctrl的mode、low\_threshold、high\_threshold、min\_val、mid\_val和max\_val。具体示意图如[图1](#fig11573123011116)所示。
+
+-   ctrl中的min\_val、mid\_val和max\_val并不需要满足变量命名含义中的大小关系。
+
+**图 1**  threshold\_u16 2种阈值化模式示意图<a name="fig11573123011116"></a>  
+![](figures/threshold_u16-2种阈值化模式示意图.png "threshold_u16-2种阈值化模式示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_threshold\_s16](#ss_mpi_ive_threshold_s16)
+-   [ss\_mpi\_ive\_16bit\_to\_8bit](#ss_mpi_ive_16bit_to_8bit)
+
+## ss\_mpi\_ive\_16bit\_to\_8bit<a name="ZH-CN_TOPIC_0000002471091216"></a>
+
+【描述】
+
+创建16bit图像数据到8bit图像数据的线性转化任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_16bit_to_8bit(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_16bit_to_8bit_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table2161mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table2161mcpsimp"></a>
 <table><thead align="left"><tr id="row2167mcpsimp"><th class="cellrowborder" valign="top" width="28.71%" id="mcps1.1.4.1.1"><p id="p2169mcpsimp"><a name="p2169mcpsimp"></a><a name="p2169mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="51.49%" id="mcps1.1.4.1.2"><p id="p2171mcpsimp"><a name="p2171mcpsimp"></a><a name="p2171mcpsimp"></a>描述</p>
@@ -1946,7 +3130,9 @@ td_s32 ss_mpi_ive_16bit_to_8bit(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> <a name="table2215mcpsimp"></a>
+</table>
+
+<a name="table2215mcpsimp"></a>
 <table><thead align="left"><tr id="row2222mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p2224mcpsimp"><a name="p2224mcpsimp"></a><a name="p2224mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p2226mcpsimp"><a name="p2226mcpsimp"></a><a name="p2226mcpsimp"></a>支持图像类型</p>
@@ -1976,7 +3162,11 @@ td_s32 ss_mpi_ive_16bit_to_8bit(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table2251mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table2251mcpsimp"></a>
 <table><thead align="left"><tr id="row2256mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p2258mcpsimp"><a name="p2258mcpsimp"></a><a name="p2258mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p2260mcpsimp"><a name="p2260mcpsimp"></a><a name="p2260mcpsimp"></a>描述</p>
@@ -1988,13 +3178,71 @@ td_s32 ss_mpi_ive_16bit_to_8bit(ot_ive_handle *handle, const ot_svp_src_img *src
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p2266mcpsimp"><a name="p2266mcpsimp"></a><a name="p2266mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row2267mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p2269mcpsimp"><a name="p2269mcpsimp"></a><a name="p2269mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可配置4种模式，具体参考ot\_ive\_16bit\_to\_8bit\_mode。
-- 计算公式 - OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_S16\_TO\_S8： ![](figures/zh-cn_formulaimage_0000002471091358.png) - OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_S16\_TO\_U8\_ABS： ![](figures/zh-cn_formulaimage_0000002504091237.png) - OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_S16\_TO\_U8\_BIAS： ![](figures/zh-cn_formulaimage_0000002470931378.png) - OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_U16\_TO\_U8： ![](figures/zh-cn_formulaimage_0000002470931380.png) 其中，![](figures/zh-cn_formulaimage_0000002503971291.png)对应src，其中，![](figures/zh-cn_formulaimage_0000002503971307.png)对应dst，mode、![](figures/zh-cn_formulaimage_0000002471091346.png)、![](figures/zh-cn_formulaimage_0000002470931360.png)和![](figures/zh-cn_formulaimage_0000002470931370.png)分别对应ctrl的mode、num、den、bias。具体示意图如[图1](#fig136048151080)所示。 要求：num ≤ den，且den≠0。 **图 1** 16bit\_to\_8bit 4种转换模式示意图<a name="fig136048151080"></a> ![](figures/16bit_to_8bit-4种转换模式示意图.png "16bit_to_8bit-4种转换模式示意图") 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_threshold\_s16](#ss_mpi_ive_threshold_s16)
-- [ss\_mpi\_ive\_threshold\_u16](#ss_mpi_ive_threshold_u16) ## ss\_mpi\_ive\_order\_stats\_filter<a name="ZH-CN_TOPIC_0000002504091093"></a> 【描述】 创建3x3模板顺序统计量滤波任务，可进行Median、Max、Min滤波。 【语法】 ```
-td_s32 ss_mpi_ive_order_stats_filter(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_order_stats_filter_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table3480mcpsimp"></a>
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可配置4种模式，具体参考ot\_ive\_16bit\_to\_8bit\_mode。
+-   计算公式
+
+    -   OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_S16\_TO\_S8：
+
+        ![](figures/zh-cn_formulaimage_0000002471091358.png)
+
+    -   OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_S16\_TO\_U8\_ABS：
+
+        ![](figures/zh-cn_formulaimage_0000002504091237.png)
+
+    -   OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_S16\_TO\_U8\_BIAS：
+
+        ![](figures/zh-cn_formulaimage_0000002470931378.png)
+
+    -   OT\_IVE\_16BIT\_TO\_8BIT\_MODE\_U16\_TO\_U8：
+
+        ![](figures/zh-cn_formulaimage_0000002470931380.png)
+
+    其中，![](figures/zh-cn_formulaimage_0000002503971291.png)对应src，其中，![](figures/zh-cn_formulaimage_0000002503971307.png)对应dst，mode、![](figures/zh-cn_formulaimage_0000002471091346.png)、![](figures/zh-cn_formulaimage_0000002470931360.png)和![](figures/zh-cn_formulaimage_0000002470931370.png)分别对应ctrl的mode、num、den、bias。具体示意图如[图1](#fig136048151080)所示。
+
+    要求：num ≤ den，且den≠0。
+
+    **图 1**  16bit\_to\_8bit 4种转换模式示意图<a name="fig136048151080"></a>  
+    ![](figures/16bit_to_8bit-4种转换模式示意图.png "16bit_to_8bit-4种转换模式示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_threshold\_s16](#ss_mpi_ive_threshold_s16)
+-   [ss\_mpi\_ive\_threshold\_u16](#ss_mpi_ive_threshold_u16)
+
+## ss\_mpi\_ive\_order\_stats\_filter<a name="ZH-CN_TOPIC_0000002504091093"></a>
+
+【描述】
+
+创建3x3模板顺序统计量滤波任务，可进行Median、Max、Min滤波。
+
+【语法】
+
+```
+td_s32 ss_mpi_ive_order_stats_filter(ot_ive_handle *handle, const ot_svp_src_img *src,  const ot_svp_dst_img *dst, const ot_ive_order_stats_filter_ctrl *ctrl, td_bool is_instant);
+```
+
+【参数】
+
+<a name="table3480mcpsimp"></a>
 <table><thead align="left"><tr id="row3486mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p3488mcpsimp"><a name="p3488mcpsimp"></a><a name="p3488mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p3490mcpsimp"><a name="p3490mcpsimp"></a><a name="p3490mcpsimp"></a>描述</p>
@@ -2044,7 +3292,9 @@ td_s32 ss_mpi_ive_order_stats_filter(ot_ive_handle *handle, const ot_svp_src_img
 </td>
 </tr>
 </tbody>
-</table> <a name="table3534mcpsimp"></a>
+</table>
+
+<a name="table3534mcpsimp"></a>
 <table><thead align="left"><tr id="row3541mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p3543mcpsimp"><a name="p3543mcpsimp"></a><a name="p3543mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p3545mcpsimp"><a name="p3545mcpsimp"></a><a name="p3545mcpsimp"></a>支持图像类型</p>
@@ -2074,7 +3324,11 @@ td_s32 ss_mpi_ive_order_stats_filter(ot_ive_handle *handle, const ot_svp_src_img
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table3570mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table3570mcpsimp"></a>
 <table><thead align="left"><tr id="row3575mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3577mcpsimp"><a name="p3577mcpsimp"></a><a name="p3577mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3579mcpsimp"><a name="p3579mcpsimp"></a><a name="p3579mcpsimp"></a>描述</p>
@@ -2086,14 +3340,63 @@ td_s32 ss_mpi_ive_order_stats_filter(ot_ive_handle *handle, const ot_svp_src_img
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3585mcpsimp"><a name="p3585mcpsimp"></a><a name="p3585mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row3586mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p3588mcpsimp"><a name="p3588mcpsimp"></a><a name="p3588mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 可配置3种滤波模式，参考ot\_ive\_order\_stats\_filter\_mode。
-- 计算公式 - OT\_IVE\_ORDER\_STATS\_FILTER\_MODE\_MEDIAN： ![](figures/zh-cn_formulaimage_0000002471091380.png) - OT\_IVE\_ORDER\_STATS\_FILTER\_MODE\_MAX： ![](figures/zh-cn_formulaimage_0000002470931400.png) - OT\_IVE\_ORDER\_STATS\_FILTER\_MODE\_MIN： ![](figures/zh-cn_formulaimage_0000002504091249.png) 其中，![](figures/zh-cn_formulaimage_0000002471091388.png)对应src，![](figures/zh-cn_formulaimage_0000002503971323.png) 对应dst。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_filter](#ss_mpi_ive_filter)
-- [ss\_mpi\_ive\_dilate](#ss_mpi_ive_dilate)
-- [ss\_mpi\_ive\_erode](#ss_mpi_ive_erode) ## ss\_mpi\_ive\_map<a name="ZH-CN_TOPIC_0000002470931234"></a> 【描述】 创建map（映射赋值）任务，对源图像中的每个像素，查找map查找表中的值，赋予目标图像相应像素查找表中的值，支持U8C1→U8C1、U8C1→U16C1、U8C1→S16C1 3种模式的映射。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   可配置3种滤波模式，参考ot\_ive\_order\_stats\_filter\_mode。
+-   计算公式
+
+    -   OT\_IVE\_ORDER\_STATS\_FILTER\_MODE\_MEDIAN：
+
+        ![](figures/zh-cn_formulaimage_0000002471091380.png)
+
+    -   OT\_IVE\_ORDER\_STATS\_FILTER\_MODE\_MAX：
+
+        ![](figures/zh-cn_formulaimage_0000002470931400.png)
+
+    -   OT\_IVE\_ORDER\_STATS\_FILTER\_MODE\_MIN：
+
+        ![](figures/zh-cn_formulaimage_0000002504091249.png)
+
+    其中，![](figures/zh-cn_formulaimage_0000002471091388.png)对应src，![](figures/zh-cn_formulaimage_0000002503971323.png)  对应dst。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_filter](#ss_mpi_ive_filter)
+-   [ss\_mpi\_ive\_dilate](#ss_mpi_ive_dilate)
+-   [ss\_mpi\_ive\_erode](#ss_mpi_ive_erode)
+
+## ss\_mpi\_ive\_map<a name="ZH-CN_TOPIC_0000002470931234"></a>
+
+【描述】
+
+创建map（映射赋值）任务，对源图像中的每个像素，查找map查找表中的值，赋予目标图像相应像素查找表中的值，支持U8C1→U8C1、U8C1→U16C1、U8C1→S16C1 3种模式的映射。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_map(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_src_mem_info *map, const ot_svp_dst_img *dst, const ot_ive_map_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table16127mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table16127mcpsimp"></a>
 <table><thead align="left"><tr id="row16133mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p16135mcpsimp"><a name="p16135mcpsimp"></a><a name="p16135mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p16137mcpsimp"><a name="p16137mcpsimp"></a><a name="p16137mcpsimp"></a>描述</p>
@@ -2152,7 +3455,9 @@ td_s32 ss_mpi_ive_map(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> <a name="table16190mcpsimp"></a>
+</table>
+
+<a name="table16190mcpsimp"></a>
 <table><thead align="left"><tr id="row16197mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.5.1.1"><p id="p16199mcpsimp"><a name="p16199mcpsimp"></a><a name="p16199mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="31.313131313131308%" id="mcps1.1.5.1.2"><p id="p16201mcpsimp"><a name="p16201mcpsimp"></a><a name="p16201mcpsimp"></a>支持图像类型</p>
@@ -2191,7 +3496,11 @@ td_s32 ss_mpi_ive_map(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table16235mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table16235mcpsimp"></a>
 <table><thead align="left"><tr id="row16240mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p16242mcpsimp"><a name="p16242mcpsimp"></a><a name="p16242mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p16244mcpsimp"><a name="p16244mcpsimp"></a><a name="p16244mcpsimp"></a>描述</p>
@@ -2203,11 +3512,55 @@ td_s32 ss_mpi_ive_map(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p16250mcpsimp"><a name="p16250mcpsimp"></a><a name="p16250mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row16251mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p16253mcpsimp"><a name="p16253mcpsimp"></a><a name="p16253mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 计算公式如下： ![](figures/zh-cn_formulaimage_0000002470931422.png) 其中，![](figures/zh-cn_formulaimage_0000002470931428.png)对应src，![](figures/zh-cn_formulaimage_0000002470931424.png) 对应dst，![](figures/zh-cn_formulaimage_0000002470931426.png)对应map。 - map的内存配置根据ctrl-\>mode配置不同： - OT\_IVE\_MAP\_MODE\_U8，配置sizeof\(ot\_ive\_map\_u8bit\_lut\_mem\); - OT\_IVE\_MAP\_MODE\_U16，配置sizeof\(ot\_ive\_map\_u16bit\_lut\_mem\); - OT\_IVE\_MAP\_MODE\_S16，配置sizeof\(ot\_ive\_map\_s16bit\_lut\_mem\). 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_equalize\_hist<a name="ZH-CN_TOPIC_0000002471091322"></a> 【描述】 创建灰度图像的直方图均衡化计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   计算公式如下：
+
+    ![](figures/zh-cn_formulaimage_0000002470931422.png)
+
+    其中，![](figures/zh-cn_formulaimage_0000002470931428.png)对应src，![](figures/zh-cn_formulaimage_0000002470931424.png)  对应dst，![](figures/zh-cn_formulaimage_0000002470931426.png)对应map。
+
+-   map的内存配置根据ctrl-\>mode配置不同：
+    -   OT\_IVE\_MAP\_MODE\_U8，配置sizeof\(ot\_ive\_map\_u8bit\_lut\_mem\);
+    -   OT\_IVE\_MAP\_MODE\_U16，配置sizeof\(ot\_ive\_map\_u16bit\_lut\_mem\);
+    -   OT\_IVE\_MAP\_MODE\_S16，配置sizeof\(ot\_ive\_map\_s16bit\_lut\_mem\).
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_equalize\_hist<a name="ZH-CN_TOPIC_0000002471091322"></a>
+
+【描述】
+
+创建灰度图像的直方图均衡化计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_equalize_hist(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_equalize_hist_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table12652mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table12652mcpsimp"></a>
 <table><thead align="left"><tr id="row12658mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.4.1.1"><p id="p12660mcpsimp"><a name="p12660mcpsimp"></a><a name="p12660mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.00000000000001%" id="mcps1.1.4.1.2"><p id="p12662mcpsimp"><a name="p12662mcpsimp"></a><a name="p12662mcpsimp"></a>描述</p>
@@ -2257,7 +3610,9 @@ td_s32 ss_mpi_ive_equalize_hist(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> <a name="table12706mcpsimp"></a>
+</table>
+
+<a name="table12706mcpsimp"></a>
 <table><thead align="left"><tr id="row12713mcpsimp"><th class="cellrowborder" valign="top" width="27.27272727272727%" id="mcps1.1.5.1.1"><p id="p12715mcpsimp"><a name="p12715mcpsimp"></a><a name="p12715mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="22.222222222222225%" id="mcps1.1.5.1.2"><p id="p12717mcpsimp"><a name="p12717mcpsimp"></a><a name="p12717mcpsimp"></a>支持图像类型</p>
@@ -2296,7 +3651,11 @@ td_s32 ss_mpi_ive_equalize_hist(ot_ive_handle *handle, const ot_svp_src_img *src
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table12751mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table12751mcpsimp"></a>
 <table><thead align="left"><tr id="row12756mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p12758mcpsimp"><a name="p12758mcpsimp"></a><a name="p12758mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p12760mcpsimp"><a name="p12760mcpsimp"></a><a name="p12760mcpsimp"></a>描述</p>
@@ -2308,12 +3667,47 @@ td_s32 ss_mpi_ive_equalize_hist(ot_ive_handle *handle, const ot_svp_src_img *src
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12766mcpsimp"><a name="p12766mcpsimp"></a><a name="p12766mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row12767mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p12769mcpsimp"><a name="p12769mcpsimp"></a><a name="p12769mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12771mcpsimp"><a name="p12771mcpsimp"></a><a name="p12771mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - ctrl中的mem，至少需开辟sizeof\(ot\_ive\_equalize\_hist\_ctrl\_mem\)字节大小。
-- 与OpenCV中直方图均衡化计算过程一致。 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_add<a name="ZH-CN_TOPIC_0000002504091171"></a> 【描述】 创建两灰度图像的加权加计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   ctrl中的mem，至少需开辟sizeof\(ot\_ive\_equalize\_hist\_ctrl\_mem\)字节大小。
+-   与OpenCV中直方图均衡化计算过程一致。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_add<a name="ZH-CN_TOPIC_0000002504091171"></a>
+
+【描述】
+
+创建两灰度图像的加权加计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_add(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot_svp_src_img *src2, const ot_svp_dst_img *dst, const ot_ive_add_ctrl *ctrl, td_bool is_instant );
-``` 【参数】 <a name="table4679mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table4679mcpsimp"></a>
 <table><thead align="left"><tr id="row4685mcpsimp"><th class="cellrowborder" valign="top" width="18%" id="mcps1.1.4.1.1"><p id="p4687mcpsimp"><a name="p4687mcpsimp"></a><a name="p4687mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p4689mcpsimp"><a name="p4689mcpsimp"></a><a name="p4689mcpsimp"></a>描述</p>
@@ -2371,7 +3765,9 @@ td_s32 ss_mpi_ive_add(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table4741mcpsimp"></a>
+</table>
+
+<a name="table4741mcpsimp"></a>
 <table><thead align="left"><tr id="row4748mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p4750mcpsimp"><a name="p4750mcpsimp"></a><a name="p4750mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p4752mcpsimp"><a name="p4752mcpsimp"></a><a name="p4752mcpsimp"></a>支持图像类型</p>
@@ -2410,7 +3806,11 @@ td_s32 ss_mpi_ive_add(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table4786mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table4786mcpsimp"></a>
 <table><thead align="left"><tr id="row4791mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p4793mcpsimp"><a name="p4793mcpsimp"></a><a name="p4793mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4795mcpsimp"><a name="p4795mcpsimp"></a><a name="p4795mcpsimp"></a>描述</p>
@@ -2422,11 +3822,48 @@ td_s32 ss_mpi_ive_add(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p4801mcpsimp"><a name="p4801mcpsimp"></a><a name="p4801mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row4802mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p4804mcpsimp"><a name="p4804mcpsimp"></a><a name="p4804mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p4806mcpsimp"><a name="p4806mcpsimp"></a><a name="p4806mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 计算公式如下： ![](figures/zh-cn_formulaimage_0000002503971471.png) 其中，![](figures/zh-cn_formulaimage_0000002504091401.png)对应src1，![](figures/zh-cn_formulaimage_0000002504091397.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971477.png)对应dst；x，y为ctrl中的x，y；若定点化前，x和y满足x+y\>1，则当计算结果超过8bit取低8bit作为最终结果。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_sub](#ss_mpi_ive_sub) ## ss\_mpi\_ive\_xor<a name="ZH-CN_TOPIC_0000002504091203"></a> 【描述】 创建两二值图的异或计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+计算公式如下：
+
+![](figures/zh-cn_formulaimage_0000002503971471.png)  其中，![](figures/zh-cn_formulaimage_0000002504091401.png)对应src1，![](figures/zh-cn_formulaimage_0000002504091397.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971477.png)对应dst；x，y为ctrl中的x，y；若定点化前，x和y满足x+y\>1，则当计算结果超过8bit取低8bit作为最终结果。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_sub](#ss_mpi_ive_sub)
+
+## ss\_mpi\_ive\_xor<a name="ZH-CN_TOPIC_0000002504091203"></a>
+
+【描述】
+
+创建两二值图的异或计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_xor(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot_svp_src_img *src2, const ot_svp_dst_img *dst, td_bool is_instant);
-``` 【参数】 <a name="table15689mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table15689mcpsimp"></a>
 <table><thead align="left"><tr id="row15695mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p15697mcpsimp"><a name="p15697mcpsimp"></a><a name="p15697mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p15699mcpsimp"><a name="p15699mcpsimp"></a><a name="p15699mcpsimp"></a>描述</p>
@@ -2477,7 +3914,9 @@ td_s32 ss_mpi_ive_xor(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table15744mcpsimp"></a>
+</table>
+
+<a name="table15744mcpsimp"></a>
 <table><thead align="left"><tr id="row15751mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p15753mcpsimp"><a name="p15753mcpsimp"></a><a name="p15753mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p15755mcpsimp"><a name="p15755mcpsimp"></a><a name="p15755mcpsimp"></a>支持图像类型</p>
@@ -2516,7 +3955,11 @@ td_s32 ss_mpi_ive_xor(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table15789mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table15789mcpsimp"></a>
 <table><thead align="left"><tr id="row15794mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p15796mcpsimp"><a name="p15796mcpsimp"></a><a name="p15796mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p15798mcpsimp"><a name="p15798mcpsimp"></a><a name="p15798mcpsimp"></a>描述</p>
@@ -2528,12 +3971,51 @@ td_s32 ss_mpi_ive_xor(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p15804mcpsimp"><a name="p15804mcpsimp"></a><a name="p15804mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row15805mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p15807mcpsimp"><a name="p15807mcpsimp"></a><a name="p15807mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 计算公式如下： ![](figures/zh-cn_formulaimage_0000002471091584.png) 其中，![](figures/zh-cn_formulaimage_0000002503971525.png) 对应src1，![](figures/zh-cn_formulaimage_0000002504091453.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971535.png)对应dst。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_and](#ss_mpi_ive_and)
-- [ss\_mpi\_ive\_or](#ss_mpi_ive_or) ## ss\_mpi\_ive\_ncc<a name="ZH-CN_TOPIC_0000002503971167"></a> 【描述】 创建两相同分辨率灰度图像的归一化互相关系数计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+计算公式如下：
+
+![](figures/zh-cn_formulaimage_0000002471091584.png)
+
+其中，![](figures/zh-cn_formulaimage_0000002503971525.png)  对应src1，![](figures/zh-cn_formulaimage_0000002504091453.png)对应src2，![](figures/zh-cn_formulaimage_0000002503971535.png)对应dst。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_and](#ss_mpi_ive_and)
+-   [ss\_mpi\_ive\_or](#ss_mpi_ive_or)
+
+## ss\_mpi\_ive\_ncc<a name="ZH-CN_TOPIC_0000002503971167"></a>
+
+【描述】
+
+创建两相同分辨率灰度图像的归一化互相关系数计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_ncc(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot_svp_src_img *src2, const ot_svp_dst_mem_info *dst, td_bool is_instant);
-``` 【参数】 <a name="table13222mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table13222mcpsimp"></a>
 <table><thead align="left"><tr id="row13228mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p13230mcpsimp"><a name="p13230mcpsimp"></a><a name="p13230mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p13232mcpsimp"><a name="p13232mcpsimp"></a><a name="p13232mcpsimp"></a>描述</p>
@@ -2585,7 +4067,9 @@ td_s32 ss_mpi_ive_ncc(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table13279mcpsimp"></a>
+</table>
+
+<a name="table13279mcpsimp"></a>
 <table><thead align="left"><tr id="row13286mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p13288mcpsimp"><a name="p13288mcpsimp"></a><a name="p13288mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p13290mcpsimp"><a name="p13290mcpsimp"></a><a name="p13290mcpsimp"></a>支持图像类型</p>
@@ -2624,7 +4108,11 @@ td_s32 ss_mpi_ive_ncc(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table13324mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table13324mcpsimp"></a>
 <table><thead align="left"><tr id="row13329mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p13331mcpsimp"><a name="p13331mcpsimp"></a><a name="p13331mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p13333mcpsimp"><a name="p13333mcpsimp"></a><a name="p13333mcpsimp"></a>描述</p>
@@ -2636,11 +4124,50 @@ td_s32 ss_mpi_ive_ncc(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13339mcpsimp"><a name="p13339mcpsimp"></a><a name="p13339mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row13340mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p13342mcpsimp"><a name="p13342mcpsimp"></a><a name="p13342mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13344mcpsimp"><a name="p13344mcpsimp"></a><a name="p13344mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 计算公式如下 ![](figures/zh-cn_formulaimage_0000002470931404.png) - 仅输出上面公式的分子、开方之前的两个分母项，即num、quad\_sum1、quad\_sum2，每个变量占64bit，在内存中按照上述顺序依次排布，分别对应上面公式的![](figures/zh-cn_formulaimage_0000002470931412.png)、![](figures/zh-cn_formulaimage_0000002470931406.png)、![](figures/zh-cn_formulaimage_0000002470931408.png)。 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_ccl<a name="ZH-CN_TOPIC_0000002504091151"></a> 【描述】 创建二值图像的连通区域标记任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   计算公式如下
+
+    ![](figures/zh-cn_formulaimage_0000002470931404.png)
+
+-   仅输出上面公式的分子、开方之前的两个分母项，即num、quad\_sum1、quad\_sum2，每个变量占64bit，在内存中按照上述顺序依次排布，分别对应上面公式的![](figures/zh-cn_formulaimage_0000002470931412.png)、![](figures/zh-cn_formulaimage_0000002470931406.png)、![](figures/zh-cn_formulaimage_0000002470931408.png)。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_ccl<a name="ZH-CN_TOPIC_0000002504091151"></a>
+
+【描述】
+
+创建二值图像的连通区域标记任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_ccl(ot_ive_handle *handle, const ot_svp_img *src_dst, const ot_svp_dst_mem_info *blob, const ot_ive_ccl_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table10620mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table10620mcpsimp"></a>
 <table><thead align="left"><tr id="row10626mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p10628mcpsimp"><a name="p10628mcpsimp"></a><a name="p10628mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66%" id="mcps1.1.4.1.2"><p id="p10630mcpsimp"><a name="p10630mcpsimp"></a><a name="p10630mcpsimp"></a>描述</p>
@@ -2691,7 +4218,9 @@ td_s32 ss_mpi_ive_ccl(ot_ive_handle *handle, const ot_svp_img *src_dst, const ot
 </td>
 </tr>
 </tbody>
-</table> <a name="table10676mcpsimp"></a>
+</table>
+
+<a name="table10676mcpsimp"></a>
 <table><thead align="left"><tr id="row10683mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p10685mcpsimp"><a name="p10685mcpsimp"></a><a name="p10685mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="21.21212121212121%" id="mcps1.1.5.1.2"><p id="p10687mcpsimp"><a name="p10687mcpsimp"></a><a name="p10687mcpsimp"></a>支持图像类型</p>
@@ -2722,7 +4251,11 @@ td_s32 ss_mpi_ive_ccl(ot_ive_handle *handle, const ot_svp_img *src_dst, const ot
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table10713mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table10713mcpsimp"></a>
 <table><thead align="left"><tr id="row10718mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p10720mcpsimp"><a name="p10720mcpsimp"></a><a name="p10720mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p10722mcpsimp"><a name="p10722mcpsimp"></a><a name="p10722mcpsimp"></a>描述</p>
@@ -2734,16 +4267,51 @@ td_s32 ss_mpi_ive_ccl(ot_ive_handle *handle, const ot_svp_img *src_dst, const ot
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10728mcpsimp"><a name="p10728mcpsimp"></a><a name="p10728mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row10729mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p10731mcpsimp"><a name="p10731mcpsimp"></a><a name="p10731mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10733mcpsimp"><a name="p10733mcpsimp"></a><a name="p10733mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 连通区域的信息保存在blob-\>rgn中。
-- blob-\>info.bits.rgn\_num表示有效的连通区域数目，最多254个有效的连通区域；有效的连通区域的面积大于blob-\>info.cur\_area\_threshold，标记号为其所在blob-\>rgn数组元素的下标+1。有效的连通区域并不一定连续地存储在数组中，而很可能是间断的分布在数组中。
-- 若blob-\>info.label\_status为0，则标记成功（一个区域一个标记）；若为-1，则标记失败（一个区域多个标记或者多个区域共用一个标记）。对于后者，若用户需要正确的标记号，还需要再次根据blob中的外接矩形信息重新标记。不管标记是否成功，连通区域的外接矩形信息一定是正确可用的。
-- 输出的连通区域会用ctrl-\>init\_area\_threshold进行筛选，面积小于等于ctrl-\>init\_area\_threshold均会被置为0。
-- 当连通区域数目大于254，会用ctrl-\>init\_area\_threshold删除面积小的连通区域；若ctrl-\>init\_area\_threshold不满足删除条件，会以ctrl-\>step为步长，增大删除连通区域的面积阈值。
-- 最终的面积阈值存储在blob-\>cur\_area\_threshold中。 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_gmm<a name="ZH-CN_TOPIC_0000002503971147"></a> 【描述】 创建GMM背景建模任务，支持灰度图、RGB\_PACKAGE图像的GMM背景建模，高斯模型个数为3或者5。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   连通区域的信息保存在blob-\>rgn中。
+-   blob-\>info.bits.rgn\_num表示有效的连通区域数目，最多254个有效的连通区域；有效的连通区域的面积大于blob-\>info.cur\_area\_threshold，标记号为其所在blob-\>rgn数组元素的下标+1。有效的连通区域并不一定连续地存储在数组中，而很可能是间断的分布在数组中。
+-   若blob-\>info.label\_status为0，则标记成功（一个区域一个标记）；若为-1，则标记失败（一个区域多个标记或者多个区域共用一个标记）。对于后者，若用户需要正确的标记号，还需要再次根据blob中的外接矩形信息重新标记。不管标记是否成功，连通区域的外接矩形信息一定是正确可用的。
+-   输出的连通区域会用ctrl-\>init\_area\_threshold进行筛选，面积小于等于ctrl-\>init\_area\_threshold均会被置为0。
+-   当连通区域数目大于254，会用ctrl-\>init\_area\_threshold删除面积小的连通区域；若ctrl-\>init\_area\_threshold不满足删除条件，会以ctrl-\>step为步长，增大删除连通区域的面积阈值。
+-   最终的面积阈值存储在blob-\>cur\_area\_threshold中。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_gmm<a name="ZH-CN_TOPIC_0000002503971147"></a>
+
+【描述】
+
+创建GMM背景建模任务，支持灰度图、RGB\_PACKAGE图像的GMM背景建模，高斯模型个数为3或者5。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_gmm(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *fg, const ot_svp_dst_img *bg, const ot_svp_mem_info *model, const ot_ive_gmm_ctrl *ctrl, td_bool is_instant );
-``` 【参数】 <a name="table12473mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table12473mcpsimp"></a>
 <table><thead align="left"><tr id="row12479mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p12481mcpsimp"><a name="p12481mcpsimp"></a><a name="p12481mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p12483mcpsimp"><a name="p12483mcpsimp"></a><a name="p12483mcpsimp"></a>描述</p>
@@ -2766,6 +4334,24 @@ td_s32 ss_mpi_ive_gmm(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 <p id="p12500mcpsimp"><a name="p12500mcpsimp"></a><a name="p12500mcpsimp"></a>不能为空。</p>
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.3 "><p id="p12502mcpsimp"><a name="p12502mcpsimp"></a><a name="p12502mcpsimp"></a>输入</p>
+</td>
+</tr>
+<tr id="row12503mcpsimp"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.1 "><p id="p12505mcpsimp"><a name="p12505mcpsimp"></a><a name="p12505mcpsimp"></a>fg</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.4.1.2 "><p id="p12507mcpsimp"><a name="p12507mcpsimp"></a><a name="p12507mcpsimp"></a>前景图像指针。</p>
+<p id="p12508mcpsimp"><a name="p12508mcpsimp"></a><a name="p12508mcpsimp"></a>不能为空。</p>
+<p id="p12509mcpsimp"><a name="p12509mcpsimp"></a><a name="p12509mcpsimp"></a>高、宽同src。</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.3 "><p id="p12511mcpsimp"><a name="p12511mcpsimp"></a><a name="p12511mcpsimp"></a>输出</p>
+</td>
+</tr>
+<tr id="row12512mcpsimp"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.1 "><p id="p12514mcpsimp"><a name="p12514mcpsimp"></a><a name="p12514mcpsimp"></a>bg</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.4.1.2 "><p id="p12516mcpsimp"><a name="p12516mcpsimp"></a><a name="p12516mcpsimp"></a>背景图像指针。</p>
+<p id="p12517mcpsimp"><a name="p12517mcpsimp"></a><a name="p12517mcpsimp"></a>不能为空。</p>
+<p id="p12518mcpsimp"><a name="p12518mcpsimp"></a><a name="p12518mcpsimp"></a>高、宽同src。</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.3 "><p id="p12520mcpsimp"><a name="p12520mcpsimp"></a><a name="p12520mcpsimp"></a>输出</p>
 </td>
 </tr>
 <tr id="row12521mcpsimp"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.1.4.1.1 "><p id="p12523mcpsimp"><a name="p12523mcpsimp"></a><a name="p12523mcpsimp"></a>model</p>
@@ -2793,7 +4379,11 @@ td_s32 ss_mpi_ive_gmm(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table12546mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table12546mcpsimp"></a>
 <table><thead align="left"><tr id="row12551mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p12553mcpsimp"><a name="p12553mcpsimp"></a><a name="p12553mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p12555mcpsimp"><a name="p12555mcpsimp"></a><a name="p12555mcpsimp"></a>描述</p>
@@ -2805,8 +4395,17 @@ td_s32 ss_mpi_ive_gmm(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12561mcpsimp"><a name="p12561mcpsimp"></a><a name="p12561mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row12562mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p12564mcpsimp"><a name="p12564mcpsimp"></a><a name="p12564mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table12571mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table12571mcpsimp"></a>
 <table><thead align="left"><tr id="row12576mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p12578mcpsimp"><a name="p12578mcpsimp"></a><a name="p12578mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p12580mcpsimp"><a name="p12580mcpsimp"></a><a name="p12580mcpsimp"></a>差异</p>
@@ -2818,16 +4417,67 @@ td_s32 ss_mpi_ive_gmm(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p12606mcpsimp"><a name="p12606mcpsimp"></a><a name="p12606mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row132305283332"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - GMM的实现方式参考了OpenCV中的MOG和MOG2。
-- 源图像类型只能为U8C1或U8C3\_PACKAGE，分别用于灰度图和RGB图的GMM背景建模。
-- 前景图像是二值图，类型只能为U8C1；背景图像与源图像类型一致。
-- 灰度图像GMM采用n个\(n=3 或 5\)高斯模型，model的内存排列方式如[图1](#fig754317171213)所示。 **图 1** 灰度图像GMM模型的内存配置示意图<a name="fig754317171213"></a> ![](figures/灰度图像GMM模型的内存配置示意图.png "灰度图像GMM模型的内存配置示意图") 一个像素的单个高斯模型参数weight用2字节、mean用2字节、var用3字节；因此model需要分配的内存大小： model-\>size = 7 \* src-\>width \* src-\>height \* ctrl-\>model\_num - RGB图像GMM采用n个\(n=3 或 5\}\)高斯模型，model的内存排列方式如[图2](#fig17504123319149)所示。 **图 2** RGB图像GMM模型的内存配置示意图<a name="fig17504123319149"></a> ![](figures/RGB图像GMM模型的内存配置示意图.png "RGB图像GMM模型的内存配置示意图") 一个像素的单个高斯模型参数weight用2字节、mean\[3\]用2\*3字节、var用3字节；因此model需要分配的内存大小： model-\>size = 11 \* src-\>width \* src-\>height \* ctrl-\>model\_num 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
-- [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
-- [ss\_mpi\_ive\_gmm2](#ss_mpi_ive_gmm2) ## ss\_mpi\_ive\_gmm2<a name="ZH-CN_TOPIC_0000002504091155"></a> 【描述】 创建GMM背景建模任务，支持1-5个高斯模型，支持灰度图和RGB\_PACKAGE图输入，支持全局及像素级别的灵敏度系数以及前景模型时长更新系数。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   GMM的实现方式参考了OpenCV中的MOG和MOG2。
+-   源图像类型只能为U8C1或U8C3\_PACKAGE，分别用于灰度图和RGB图的GMM背景建模。
+-   前景图像是二值图，类型只能为U8C1；背景图像与源图像类型一致。
+-   灰度图像GMM采用n个\(n=3 或 5\)高斯模型，model的内存排列方式如[图1](#fig754317171213)所示。
+
+    **图 1**  灰度图像GMM模型的内存配置示意图<a name="fig754317171213"></a>  
+    ![](figures/灰度图像GMM模型的内存配置示意图.png "灰度图像GMM模型的内存配置示意图")
+
+    一个像素的单个高斯模型参数weight用2字节、mean用2字节、var用3字节；因此model需要分配的内存大小：
+
+    model-\>size = 7 \* src-\>width \* src-\>height \* ctrl-\>model\_num
+
+-   RGB图像GMM采用n个\(n=3 或 5\}\)高斯模型，model的内存排列方式如[图2](#fig17504123319149)所示。
+
+    **图 2**  RGB图像GMM模型的内存配置示意图<a name="fig17504123319149"></a>  
+    ![](figures/RGB图像GMM模型的内存配置示意图.png "RGB图像GMM模型的内存配置示意图")
+
+一个像素的单个高斯模型参数weight用2字节、mean\[3\]用2\*3字节、var用3字节；因此model需要分配的内存大小：
+
+model-\>size = 11 \* src-\>width \* src-\>height \* ctrl-\>model\_num
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
+-   [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
+-   [ss\_mpi\_ive\_gmm2](#ss_mpi_ive_gmm2)
+
+## ss\_mpi\_ive\_gmm2<a name="ZH-CN_TOPIC_0000002504091155"></a>
+
+【描述】
+
+创建GMM背景建模任务，支持1-5个高斯模型，支持灰度图和RGB\_PACKAGE图输入，支持全局及像素级别的灵敏度系数以及前景模型时长更新系数。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_gmm2(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_src_img *factor, const ot_svp_dst_img *fg, const ot_svp_dst_img *bg, const ot_svp_dst_img *match_model_info, const ot_svp_mem_info *model, const ot_ive_gmm2_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table6847mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table6847mcpsimp"></a>
 <table><thead align="left"><tr id="row6853mcpsimp"><th class="cellrowborder" valign="top" width="26.729999999999997%" id="mcps1.1.4.1.1"><p id="p6855mcpsimp"><a name="p6855mcpsimp"></a><a name="p6855mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="55.45%" id="mcps1.1.4.1.2"><p id="p6857mcpsimp"><a name="p6857mcpsimp"></a><a name="p6857mcpsimp"></a>描述</p>
@@ -2859,6 +4509,24 @@ td_s32 ss_mpi_ive_gmm2(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 <p id="p6883mcpsimp"><a name="p6883mcpsimp"></a><a name="p6883mcpsimp"></a>ctrl-&gt; life_update_factor_mode均使用全局模式时可以为空。</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.82%" headers="mcps1.1.4.1.3 "><p id="p6885mcpsimp"><a name="p6885mcpsimp"></a><a name="p6885mcpsimp"></a>输入</p>
+</td>
+</tr>
+<tr id="row6886mcpsimp"><td class="cellrowborder" valign="top" width="26.729999999999997%" headers="mcps1.1.4.1.1 "><p id="p6888mcpsimp"><a name="p6888mcpsimp"></a><a name="p6888mcpsimp"></a>fg</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.45%" headers="mcps1.1.4.1.2 "><p id="p6890mcpsimp"><a name="p6890mcpsimp"></a><a name="p6890mcpsimp"></a>前景图像指针。</p>
+<p id="p6891mcpsimp"><a name="p6891mcpsimp"></a><a name="p6891mcpsimp"></a>不能为空。</p>
+<p id="p6892mcpsimp"><a name="p6892mcpsimp"></a><a name="p6892mcpsimp"></a>高、宽同src。</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.82%" headers="mcps1.1.4.1.3 "><p id="p6894mcpsimp"><a name="p6894mcpsimp"></a><a name="p6894mcpsimp"></a>输出</p>
+</td>
+</tr>
+<tr id="row6895mcpsimp"><td class="cellrowborder" valign="top" width="26.729999999999997%" headers="mcps1.1.4.1.1 "><p id="p6897mcpsimp"><a name="p6897mcpsimp"></a><a name="p6897mcpsimp"></a>bg</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.45%" headers="mcps1.1.4.1.2 "><p id="p6899mcpsimp"><a name="p6899mcpsimp"></a><a name="p6899mcpsimp"></a>背景图像指针。</p>
+<p id="p6900mcpsimp"><a name="p6900mcpsimp"></a><a name="p6900mcpsimp"></a>不能为空。</p>
+<p id="p6901mcpsimp"><a name="p6901mcpsimp"></a><a name="p6901mcpsimp"></a>高、宽同src。</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.82%" headers="mcps1.1.4.1.3 "><p id="p6903mcpsimp"><a name="p6903mcpsimp"></a><a name="p6903mcpsimp"></a>输出</p>
 </td>
 </tr>
 <tr id="row6904mcpsimp"><td class="cellrowborder" valign="top" width="26.729999999999997%" headers="mcps1.1.4.1.1 "><p id="p6906mcpsimp"><a name="p6906mcpsimp"></a><a name="p6906mcpsimp"></a>match_model_info</p>
@@ -2894,7 +4562,9 @@ td_s32 ss_mpi_ive_gmm2(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table6936mcpsimp"></a>
+</table>
+
+<a name="table6936mcpsimp"></a>
 <table><thead align="left"><tr id="row6943mcpsimp"><th class="cellrowborder" valign="top" width="24%" id="mcps1.1.5.1.1"><p id="p6945mcpsimp"><a name="p6945mcpsimp"></a><a name="p6945mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="30%" id="mcps1.1.5.1.2"><p id="p6947mcpsimp"><a name="p6947mcpsimp"></a><a name="p6947mcpsimp"></a>支持图像类型</p>
@@ -2923,6 +4593,24 @@ td_s32 ss_mpi_ive_gmm2(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 <td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.1.5.1.4 "><p id="p6970mcpsimp"><a name="p6970mcpsimp"></a><a name="p6970mcpsimp"></a>同src</p>
 </td>
 </tr>
+<tr id="row6971mcpsimp"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.1.5.1.1 "><p id="p6973mcpsimp"><a name="p6973mcpsimp"></a><a name="p6973mcpsimp"></a>fg</p>
+</td>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.5.1.2 "><p id="p6975mcpsimp"><a name="p6975mcpsimp"></a><a name="p6975mcpsimp"></a>U8C1的二值图</p>
+</td>
+<td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.5.1.3 "><p id="p6977mcpsimp"><a name="p6977mcpsimp"></a><a name="p6977mcpsimp"></a>16 byte</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.1.5.1.4 "><p id="p6979mcpsimp"><a name="p6979mcpsimp"></a><a name="p6979mcpsimp"></a>同src</p>
+</td>
+</tr>
+<tr id="row6980mcpsimp"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.1.5.1.1 "><p id="p6982mcpsimp"><a name="p6982mcpsimp"></a><a name="p6982mcpsimp"></a>bg</p>
+</td>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.5.1.2 "><p id="p6984mcpsimp"><a name="p6984mcpsimp"></a><a name="p6984mcpsimp"></a>同src</p>
+</td>
+<td class="cellrowborder" valign="top" width="18%" headers="mcps1.1.5.1.3 "><p id="p6986mcpsimp"><a name="p6986mcpsimp"></a><a name="p6986mcpsimp"></a>16 byte</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.1.5.1.4 "><p id="p6988mcpsimp"><a name="p6988mcpsimp"></a><a name="p6988mcpsimp"></a>同src</p>
+</td>
+</tr>
 <tr id="row6989mcpsimp"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.1.5.1.1 "><p id="p6991mcpsimp"><a name="p6991mcpsimp"></a><a name="p6991mcpsimp"></a>match_model_info</p>
 </td>
 <td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.5.1.2 "><p id="p6993mcpsimp"><a name="p6993mcpsimp"></a><a name="p6993mcpsimp"></a>U8C1</p>
@@ -2942,7 +4630,11 @@ td_s32 ss_mpi_ive_gmm2(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table7008mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table7008mcpsimp"></a>
 <table><thead align="left"><tr id="row7013mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p7015mcpsimp"><a name="p7015mcpsimp"></a><a name="p7015mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p7017mcpsimp"><a name="p7017mcpsimp"></a><a name="p7017mcpsimp"></a>描述</p>
@@ -2954,17 +4646,78 @@ td_s32 ss_mpi_ive_gmm2(ot_ive_handle *handle, const ot_svp_src_img *src, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7023mcpsimp"><a name="p7023mcpsimp"></a><a name="p7023mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row7024mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p7026mcpsimp"><a name="p7026mcpsimp"></a><a name="p7026mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7028mcpsimp"><a name="p7028mcpsimp"></a><a name="p7028mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - GMM2在参考了OPENCV的MOG和MOG2的基础上，增加了像素级别的参数控制。
-- 源图像src类型只能为U8C1或U8C3\_PACKAGE，分别用于灰度图和RGB图的GMM背景建模。
-- 模型更新参数factor为U16C1图像：每个元素用16 bit表示，低8 bit为灵敏度系数，用于控制模型匹配时方差倍数；高8 bit为前景模型时长更新参数，用于控制背景模型形成时间。
-- 模型匹配系数指针match\_model\_info为U8C1图像：每个元素用8bit表示，低1 bit为高斯模型匹配标志，0表示匹配失败，1表示匹配成功；高7 bit为频率最大模型序号。
-- GMM2的频率参数（ctrl中的freq\_init\_val、freq\_redu\_factor、freq\_add\_factor freq\_threshold）用于控制模型排序和模型有效时间。 - freq\_init\_val 越大，模型有效时间越大； - freq\_redu\_factor 越大，模型有效时间越长，模型频率通过乘以频率衰减系数freq\_redu\_factor /65536，达到频率衰减的目的； - freq\_add\_factor 越大，模型有效时间越长； - freq\_threshold 越大，模型有效时间越短。 - GMM2的模型时长参数\(ctrl中的life\_threshold \)用于控制前景模型成为背景的间。 - life\_threshold越大，前景持续时间越长； - 单高斯模型下，模型时长参数不生效。 - 灰度图像GMM2采用n个（1≤n≤5）高斯模型，model的内存排列方式如[图1](#fig182212111197)所示。 **图 1** 灰度图像GMM2模型的内存配置示意图<a name="fig182212111197"></a> ![](figures/灰度图像GMM2模型的内存配置示意图.png "灰度图像GMM2模型的内存配置示意图") 一个像素的单个高斯模型参数mean用2字节，var用2字节，freq用2字节，life用2字节；因此model需要分配的内存大小： model-\>size = 8 \* src-\>width\*src-\>height \* ctrl-\>model\_num - RGB图像GMM2采用n个（1≤n≤5）高斯模型，model的内存排列方式如[图2](#fig9558648172313)所示。 **图 2** RGB图像GMM2模型的内存配置示意图<a name="fig9558648172313"></a> ![](figures/RGB图像GMM2模型的内存配置示意图.png "RGB图像GMM2模型的内存配置示意图") 一个像素的单个高斯模型参数mean\[3\]用6字节，var用2字节，freq用2字节，life用2字节；因此model需要分配的内存大小： model-\>size = 12 \* src-\>width\*src-\>height \* ctrl-\>model\_num 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
-- [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
-- [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm) ## ss\_mpi\_ive\_canny\_hys\_edge<a name="ZH-CN_TOPIC_0000002503971215"></a> 【描述】 灰度图的Canny边缘提取的前半部：求梯度、计算梯度幅值幅角、磁滞阈值化及非极大抑制。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   GMM2在参考了OPENCV的MOG和MOG2的基础上，增加了像素级别的参数控制。
+-   源图像src类型只能为U8C1或U8C3\_PACKAGE，分别用于灰度图和RGB图的GMM背景建模。
+-   模型更新参数factor为U16C1图像：每个元素用16 bit表示，低8 bit为灵敏度系数，用于控制模型匹配时方差倍数；高8 bit为前景模型时长更新参数，用于控制背景模型形成时间。
+-   模型匹配系数指针match\_model\_info为U8C1图像：每个元素用8bit表示，低1 bit为高斯模型匹配标志，0表示匹配失败，1表示匹配成功；高7 bit为频率最大模型序号。
+-   GMM2的频率参数（ctrl中的freq\_init\_val、freq\_redu\_factor、freq\_add\_factor  freq\_threshold）用于控制模型排序和模型有效时间。
+    -   freq\_init\_val 越大，模型有效时间越大；
+    -   freq\_redu\_factor 越大，模型有效时间越长，模型频率通过乘以频率衰减系数freq\_redu\_factor /65536，达到频率衰减的目的；
+    -   freq\_add\_factor 越大，模型有效时间越长；
+    -   freq\_threshold 越大，模型有效时间越短。
+
+-   GMM2的模型时长参数\(ctrl中的life\_threshold \)用于控制前景模型成为背景的间。
+    -   life\_threshold越大，前景持续时间越长；
+    -   单高斯模型下，模型时长参数不生效。
+
+-   灰度图像GMM2采用n个（1≤n≤5）高斯模型，model的内存排列方式如[图1](#fig182212111197)所示。
+
+    **图 1**  灰度图像GMM2模型的内存配置示意图<a name="fig182212111197"></a>  
+    ![](figures/灰度图像GMM2模型的内存配置示意图.png "灰度图像GMM2模型的内存配置示意图")
+
+    一个像素的单个高斯模型参数mean用2字节，var用2字节，freq用2字节，life用2字节；因此model需要分配的内存大小：
+
+    model-\>size = 8 \* src-\>width\*src-\>height \* ctrl-\>model\_num
+
+-   RGB图像GMM2采用n个（1≤n≤5）高斯模型，model的内存排列方式如[图2](#fig9558648172313)所示。
+
+    **图 2**  RGB图像GMM2模型的内存配置示意图<a name="fig9558648172313"></a>  
+    ![](figures/RGB图像GMM2模型的内存配置示意图.png "RGB图像GMM2模型的内存配置示意图")
+
+一个像素的单个高斯模型参数mean\[3\]用6字节，var用2字节，freq用2字节，life用2字节；因此model需要分配的内存大小：
+
+model-\>size = 12 \* src-\>width\*src-\>height \* ctrl-\>model\_num
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
+-   [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
+-   [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm)
+
+## ss\_mpi\_ive\_canny\_hys\_edge<a name="ZH-CN_TOPIC_0000002503971215"></a>
+
+【描述】
+
+灰度图的Canny边缘提取的前半部：求梯度、计算梯度幅值幅角、磁滞阈值化及非极大抑制。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_canny_hys_edge(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *edge, const ot_svp_dst_mem_info *stack, const ot_ive_canny_hys_edge_ctrl *ctrl, td_bool is_instant );
-``` 【参数】 <a name="table6062mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table6062mcpsimp"></a>
 <table><thead align="left"><tr id="row6068mcpsimp"><th class="cellrowborder" valign="top" width="20%" id="mcps1.1.4.1.1"><p id="p6070mcpsimp"><a name="p6070mcpsimp"></a><a name="p6070mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p6072mcpsimp"><a name="p6072mcpsimp"></a><a name="p6072mcpsimp"></a>描述</p>
@@ -3025,7 +4778,9 @@ td_s32 ss_mpi_ive_canny_hys_edge(ot_ive_handle *handle, const ot_svp_src_img *sr
 </td>
 </tr>
 </tbody>
-</table> <a name="table6129mcpsimp"></a>
+</table>
+
+<a name="table6129mcpsimp"></a>
 <table><thead align="left"><tr id="row6136mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p6138mcpsimp"><a name="p6138mcpsimp"></a><a name="p6138mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p6140mcpsimp"><a name="p6140mcpsimp"></a><a name="p6140mcpsimp"></a>支持图像类型</p>
@@ -3073,7 +4828,11 @@ td_s32 ss_mpi_ive_canny_hys_edge(ot_ive_handle *handle, const ot_svp_src_img *sr
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table6183mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table6183mcpsimp"></a>
 <table><thead align="left"><tr id="row6188mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p6190mcpsimp"><a name="p6190mcpsimp"></a><a name="p6190mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p6192mcpsimp"><a name="p6192mcpsimp"></a><a name="p6192mcpsimp"></a>描述</p>
@@ -3085,12 +4844,58 @@ td_s32 ss_mpi_ive_canny_hys_edge(ot_ive_handle *handle, const ot_svp_src_img *sr
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p6198mcpsimp"><a name="p6198mcpsimp"></a><a name="p6198mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row6199mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p6201mcpsimp"><a name="p6201mcpsimp"></a><a name="p6201mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p6203mcpsimp"><a name="p6203mcpsimp"></a><a name="p6203mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - edge仅有0、1、2三个取值： - 0表示弱边缘点 - 1表示非边缘点 - 2表示强边缘点 - stack中存储强边缘点的坐标信息。
-- ctrl-\>mem至少需要分配的内存大小 ctrl-\>mem.size =（src-\>width + \(16 - src-\>width % 16\) % 16）\* 3 \* src-\>height。 - 该任务完成后，必须要使用[ss\_mpi\_ive\_canny\_edge](#ZH-CN_TOPIC_0000002470931286)函数才能输出Canny边缘图像。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_canny\_edge](#ss_mpi_ive_canny_edge) ## ss\_mpi\_ive\_canny\_edge<a name="ZH-CN_TOPIC_0000002470931286"></a> 【描述】 灰度图的Canny边缘提取的后半部：连接边缘点，形成Canny边缘图。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   edge仅有0、1、2三个取值：
+    -   0表示弱边缘点
+    -   1表示非边缘点
+    -   2表示强边缘点
+
+-   stack中存储强边缘点的坐标信息。
+-   ctrl-\>mem至少需要分配的内存大小
+
+ctrl-\>mem.size
+
+=（src-\>width + \(16 - src-\>width % 16\) % 16）\* 3 \* src-\>height。
+
+-   该任务完成后，必须要使用[ss\_mpi\_ive\_canny\_edge](#ZH-CN_TOPIC_0000002470931286)函数才能输出Canny边缘图像。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_canny\_edge](#ss_mpi_ive_canny_edge)
+
+## ss\_mpi\_ive\_canny\_edge<a name="ZH-CN_TOPIC_0000002470931286"></a>
+
+【描述】
+
+灰度图的Canny边缘提取的后半部：连接边缘点，形成Canny边缘图。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_canny_edge(const ot_svp_img *edge, const ot_svp_mem_info *stack);
-``` 【参数】 <a name="table12253mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table12253mcpsimp"></a>
 <table><thead align="left"><tr id="row12259mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p12261mcpsimp"><a name="p12261mcpsimp"></a><a name="p12261mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62.38%" id="mcps1.1.4.1.2"><p id="p12263mcpsimp"><a name="p12263mcpsimp"></a><a name="p12263mcpsimp"></a>描述</p>
@@ -3117,7 +4922,9 @@ td_s32 ss_mpi_ive_canny_edge(const ot_svp_img *edge, const ot_svp_mem_info *stac
 </td>
 </tr>
 </tbody>
-</table> <a name="table12284mcpsimp"></a>
+</table>
+
+<a name="table12284mcpsimp"></a>
 <table><thead align="left"><tr id="row12291mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p12293mcpsimp"><a name="p12293mcpsimp"></a><a name="p12293mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p12295mcpsimp"><a name="p12295mcpsimp"></a><a name="p12295mcpsimp"></a>支持图像类型</p>
@@ -3147,7 +4954,11 @@ td_s32 ss_mpi_ive_canny_edge(const ot_svp_img *edge, const ot_svp_mem_info *stac
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table12320mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table12320mcpsimp"></a>
 <table><thead align="left"><tr id="row12325mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p12327mcpsimp"><a name="p12327mcpsimp"></a><a name="p12327mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p12329mcpsimp"><a name="p12329mcpsimp"></a><a name="p12329mcpsimp"></a>描述</p>
@@ -3159,11 +4970,46 @@ td_s32 ss_mpi_ive_canny_edge(const ot_svp_img *edge, const ot_svp_mem_info *stac
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12335mcpsimp"><a name="p12335mcpsimp"></a><a name="p12335mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row12336mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p12338mcpsimp"><a name="p12338mcpsimp"></a><a name="p12338mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12340mcpsimp"><a name="p12340mcpsimp"></a><a name="p12340mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 使用该接口前必须调用[ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)，在保证[ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)任务完成的情况下，使用[ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)的输出edge、stack作为该接口的参数输入。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_canny\_hys\_edge](#ss_mpi_ive_canny_hys_edge) ## ss\_mpi\_ive\_lbp<a name="ZH-CN_TOPIC_0000002503971201"></a> 【描述】 创建lbp计算任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+使用该接口前必须调用[ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)，在保证[ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)任务完成的情况下，使用[ss\_mpi\_ive\_canny\_hys\_edge](#ZH-CN_TOPIC_0000002503971215)的输出edge、stack作为该接口的参数输入。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_canny\_hys\_edge](#ss_mpi_ive_canny_hys_edge)
+
+## ss\_mpi\_ive\_lbp<a name="ZH-CN_TOPIC_0000002503971201"></a>
+
+【描述】
+
+创建lbp计算任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_lbp(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst, const ot_ive_lbp_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table13372mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table13372mcpsimp"></a>
 <table><thead align="left"><tr id="row13378mcpsimp"><th class="cellrowborder" valign="top" width="16%" id="mcps1.1.4.1.1"><p id="p13380mcpsimp"><a name="p13380mcpsimp"></a><a name="p13380mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.4.1.2"><p id="p13382mcpsimp"><a name="p13382mcpsimp"></a><a name="p13382mcpsimp"></a>描述</p>
@@ -3213,7 +5059,9 @@ td_s32 ss_mpi_ive_lbp(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> <a name="table13426mcpsimp"></a>
+</table>
+
+<a name="table13426mcpsimp"></a>
 <table><thead align="left"><tr id="row13433mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p13435mcpsimp"><a name="p13435mcpsimp"></a><a name="p13435mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p13437mcpsimp"><a name="p13437mcpsimp"></a><a name="p13437mcpsimp"></a>支持图像类型</p>
@@ -3243,7 +5091,11 @@ td_s32 ss_mpi_ive_lbp(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table13462mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table13462mcpsimp"></a>
 <table><thead align="left"><tr id="row13467mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p13469mcpsimp"><a name="p13469mcpsimp"></a><a name="p13469mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p13471mcpsimp"><a name="p13471mcpsimp"></a><a name="p13471mcpsimp"></a>描述</p>
@@ -3255,12 +5107,58 @@ td_s32 ss_mpi_ive_lbp(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13477mcpsimp"><a name="p13477mcpsimp"></a><a name="p13477mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row13478mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p13480mcpsimp"><a name="p13480mcpsimp"></a><a name="p13480mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13482mcpsimp"><a name="p13482mcpsimp"></a><a name="p13482mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 LBP计算公式如[图1](#fig15702172044811)所示。 **图 1** lbp计算公式示意图<a name="fig15702172044811"></a> ![](figures/lbp计算公式示意图.png "lbp计算公式示意图")
-- OT\_IVE\_LBP\_COMPARE\_MODE\_NORMAL ![](figures/zh-cn_formulaimage_0000002504091335.png),其中 ![](figures/zh-cn_formulaimage_0000002471091468.png); - OT\_IVE\_LBP\_COMPARE\_MODE\_ABS ![](figures/zh-cn_formulaimage_0000002503971409.png),其中 ![](figures/zh-cn_formulaimage_0000002471091464.png); 其中，![](figures/zh-cn_formulaimage_0000002503971403.png)对应src，![](figures/zh-cn_formulaimage_0000002503971411.png)对应dst，![](figures/zh-cn_formulaimage_0000002471091470.png)对应ctrl-\>bit\_threshold。 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_norm\_grad<a name="ZH-CN_TOPIC_0000002503971195"></a> 【描述】 创建归一化梯度计算任务，梯度分量均归一化到s8。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+LBP计算公式如[图1](#fig15702172044811)所示。
+
+**图 1**  lbp计算公式示意图<a name="fig15702172044811"></a>  
+![](figures/lbp计算公式示意图.png "lbp计算公式示意图")
+-   OT\_IVE\_LBP\_COMPARE\_MODE\_NORMAL
+
+    ![](figures/zh-cn_formulaimage_0000002504091335.png),其中  ![](figures/zh-cn_formulaimage_0000002471091468.png);
+
+-   OT\_IVE\_LBP\_COMPARE\_MODE\_ABS
+
+    ![](figures/zh-cn_formulaimage_0000002503971409.png),其中  ![](figures/zh-cn_formulaimage_0000002471091464.png);
+
+其中，![](figures/zh-cn_formulaimage_0000002503971403.png)对应src，![](figures/zh-cn_formulaimage_0000002503971411.png)对应dst，![](figures/zh-cn_formulaimage_0000002471091470.png)对应ctrl-\>bit\_threshold。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_norm\_grad<a name="ZH-CN_TOPIC_0000002503971195"></a>
+
+【描述】
+
+创建归一化梯度计算任务，梯度分量均归一化到s8。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_norm_grad(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *dst_h, const ot_svp_dst_img *dst_v, const ot_svp_dst_img *dst_hv, const ot_ive_norm_grad_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table7085mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table7085mcpsimp"></a>
 <table><thead align="left"><tr id="row7091mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p7093mcpsimp"><a name="p7093mcpsimp"></a><a name="p7093mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p7095mcpsimp"><a name="p7095mcpsimp"></a><a name="p7095mcpsimp"></a>描述</p>
@@ -3324,7 +5222,9 @@ td_s32 ss_mpi_ive_norm_grad(ot_ive_handle *handle, const ot_svp_src_img *src, co
 </td>
 </tr>
 </tbody>
-</table> <a name="table7154mcpsimp"></a>
+</table>
+
+<a name="table7154mcpsimp"></a>
 <table><thead align="left"><tr id="row7161mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p7163mcpsimp"><a name="p7163mcpsimp"></a><a name="p7163mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p7165mcpsimp"><a name="p7165mcpsimp"></a><a name="p7165mcpsimp"></a>支持图像类型</p>
@@ -3372,7 +5272,11 @@ td_s32 ss_mpi_ive_norm_grad(ot_ive_handle *handle, const ot_svp_src_img *src, co
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table7208mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table7208mcpsimp"></a>
 <table><thead align="left"><tr id="row7213mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p7215mcpsimp"><a name="p7215mcpsimp"></a><a name="p7215mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p7217mcpsimp"><a name="p7217mcpsimp"></a><a name="p7217mcpsimp"></a>描述</p>
@@ -3384,12 +5288,56 @@ td_s32 ss_mpi_ive_norm_grad(ot_ive_handle *handle, const ot_svp_src_img *src, co
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7223mcpsimp"><a name="p7223mcpsimp"></a><a name="p7223mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row7224mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p7226mcpsimp"><a name="p7226mcpsimp"></a><a name="p7226mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7228mcpsimp"><a name="p7228mcpsimp"></a><a name="p7228mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 控制参数中输出模式如下： - OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_HOR\_AND\_VER时，dst\_h和dst\_v指针不能为空，且要求跨度一致； - OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_HOR时，dst\_h不能为空； - OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_VER时，dst\_v不能为空； - OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_COMBINE时，dst\_hv不能为空。 - norm\_grad计算公式如[图1](#fig193657347590)所示。 **图 1** norm\_grad计算公式示意图<a name="fig193657347590"></a> ![](figures/norm_grad计算公式示意图.png "norm_grad计算公式示意图")
-![](figures/zh-cn_formulaimage_0000002504091329.png) 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_sobel](#ss_mpi_ive_sobel) ## ss\_mpi\_ive\_lk\_optical\_flow\_pyr<a name="ZH-CN_TOPIC_0000002504091135"></a> 【描述】 创建多层金字塔LK光流计算任务。 【语法】 ```
-td_s32 ss_mpi_ive_lk_optical_flow_pyr(ot_ive_handle *handle, const ot_svp_src_img src_prev_pyr[], const ot_svp_src_img src_next_pyr[],const ot_svp_src_mem_info *prev_points, const ot_svp_mem_info *next_points, const ot_svp_dst_mem_info *status, const ot_svp_dst_mem_info *err, const ot_ive_lk_optical_flow_pyr_ctrl *ctrl, td_bool is_instant );
-``` 【参数】 <a name="table13614mcpsimp"></a>
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   控制参数中输出模式如下：
+    -   OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_HOR\_AND\_VER时，dst\_h和dst\_v指针不能为空，且要求跨度一致；
+    -   OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_HOR时，dst\_h不能为空；
+    -   OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_VER时，dst\_v不能为空；
+    -   OT\_IVE\_NORM\_GRAD\_OUT\_CTRL\_COMBINE时，dst\_hv不能为空。
+
+-   norm\_grad计算公式如[图1](#fig193657347590)所示。
+
+**图 1**  norm\_grad计算公式示意图<a name="fig193657347590"></a>  
+![](figures/norm_grad计算公式示意图.png "norm_grad计算公式示意图")
+![](figures/zh-cn_formulaimage_0000002504091329.png)
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_sobel](#ss_mpi_ive_sobel)
+
+## ss\_mpi\_ive\_lk\_optical\_flow\_pyr<a name="ZH-CN_TOPIC_0000002504091135"></a>
+
+【描述】
+
+创建多层金字塔LK光流计算任务。
+
+【语法】
+
+```
+td_s32 ss_mpi_ive_lk_optical_flow_pyr(ot_ive_handle *handle, const ot_svp_src_img src_prev_pyr[], const  ot_svp_src_img src_next_pyr[],const ot_svp_src_mem_info *prev_points, const ot_svp_mem_info *next_points, const ot_svp_dst_mem_info *status, const ot_svp_dst_mem_info *err, const ot_ive_lk_optical_flow_pyr_ctrl *ctrl, td_bool is_instant );
+```
+
+【参数】
+
+<a name="table13614mcpsimp"></a>
 <table><thead align="left"><tr id="row13620mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p13622mcpsimp"><a name="p13622mcpsimp"></a><a name="p13622mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p13624mcpsimp"><a name="p13624mcpsimp"></a><a name="p13624mcpsimp"></a>描述</p>
@@ -3474,7 +5422,9 @@ td_s32 ss_mpi_ive_lk_optical_flow_pyr(ot_ive_handle *handle, const ot_svp_src_im
 </td>
 </tr>
 </tbody>
-</table> <a name="table13707mcpsimp"></a>
+</table>
+
+<a name="table13707mcpsimp"></a>
 <table><thead align="left"><tr id="row13714mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.5.1.1"><p id="p13716mcpsimp"><a name="p13716mcpsimp"></a><a name="p13716mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="21%" id="mcps1.1.5.1.2"><p id="p13718mcpsimp"><a name="p13718mcpsimp"></a><a name="p13718mcpsimp"></a>支持图像类型</p>
@@ -3562,7 +5512,11 @@ td_s32 ss_mpi_ive_lk_optical_flow_pyr(ot_ive_handle *handle, const ot_svp_src_im
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table13799mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table13799mcpsimp"></a>
 <table><thead align="left"><tr id="row13804mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p13806mcpsimp"><a name="p13806mcpsimp"></a><a name="p13806mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p13808mcpsimp"><a name="p13808mcpsimp"></a><a name="p13808mcpsimp"></a>描述</p>
@@ -3574,17 +5528,63 @@ td_s32 ss_mpi_ive_lk_optical_flow_pyr(ot_ive_handle *handle, const ot_svp_src_im
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13814mcpsimp"><a name="p13814mcpsimp"></a><a name="p13814mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row13815mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p13817mcpsimp"><a name="p13817mcpsimp"></a><a name="p13817mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13819mcpsimp"><a name="p13819mcpsimp"></a><a name="p13819mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - ctrl-\> max\_level取值范围\[0, 3\]，对应金字塔层数为\[1, 4\]。
-- 求解下面的光流方程中，仅用到特征点周围7X7像素的来计算对应的![](figures/zh-cn_formulaimage_0000002503971397.png)、![](figures/zh-cn_formulaimage_0000002504091317.png)、![](figures/zh-cn_formulaimage_0000002504091323.png) ![](figures/zh-cn_formulaimage_0000002471091458.png) 其中，![](figures/zh-cn_formulaimage_0000002504091319.png)、![](figures/zh-cn_formulaimage_0000002471091450.png)、![](figures/zh-cn_formulaimage_0000002503971399.png)分别表示当前图像在x、y方向的偏导，当前图像与前一帧图像的差分。 - 以3层金字塔LK光流计算为例，要求每层图像的高、宽是上一层图像高、宽的一半，其计算示意图如[图1](#fig19671108289)所示。 **图 1** 3层金字塔LK光流计算示意图<a name="fig19671108289"></a> ![](figures/3层金字塔LK光流计算示意图.png "3层金字塔LK光流计算示意图")
-- 根据输入的特征点坐标，计算出3层金字塔特征点对应的坐标：p0，p1，p2；若需要初始光流，计算出m0，m1，m2；否则m0=p0，m1=p1，m2=p2；
-- 以m2作为输入求出在第2层上的光流终点n2；
-- 计算出n2在第1层的对应坐标n1，以n1作为输入求出第1层上的光流终点q1；
-- 计算出q1在第一层的对应坐标q0，以q0作为输入求出第0层上的光流终点q；
-- 若第0层不是原始图像，根据第0层与原始图像的的比例关系可以得到LK光流的最终点p。 **请注意设计和使用限制：每个特征点仅以该特征点为中心固定大小窗口的数据进行计算，若迭代计算过程中，该特征点位移目标点超出该固定大小窗口会导致计算光流失败。** 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_st\_cand\_corner<a name="ZH-CN_TOPIC_0000002471091320"></a> 【描述】 灰度图像Shi-Tomasi-like角点计算的前半部：计算候选角点。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   ctrl-\> max\_level取值范围\[0, 3\]，对应金字塔层数为\[1, 4\]。
+-   求解下面的光流方程中，仅用到特征点周围7X7像素的来计算对应的![](figures/zh-cn_formulaimage_0000002503971397.png)、![](figures/zh-cn_formulaimage_0000002504091317.png)、![](figures/zh-cn_formulaimage_0000002504091323.png)
+
+    ![](figures/zh-cn_formulaimage_0000002471091458.png)
+
+    其中，![](figures/zh-cn_formulaimage_0000002504091319.png)、![](figures/zh-cn_formulaimage_0000002471091450.png)、![](figures/zh-cn_formulaimage_0000002503971399.png)分别表示当前图像在x、y方向的偏导，当前图像与前一帧图像的差分。
+
+-   以3层金字塔LK光流计算为例，要求每层图像的高、宽是上一层图像高、宽的一半，其计算示意图如[图1](#fig19671108289)所示。
+
+**图 1**  3层金字塔LK光流计算示意图<a name="fig19671108289"></a>  
+![](figures/3层金字塔LK光流计算示意图.png "3层金字塔LK光流计算示意图")
+-   根据输入的特征点坐标，计算出3层金字塔特征点对应的坐标：p0，p1，p2；若需要初始光流，计算出m0，m1，m2；否则m0=p0，m1=p1，m2=p2；
+-   以m2作为输入求出在第2层上的光流终点n2；
+-   计算出n2在第1层的对应坐标n1，以n1作为输入求出第1层上的光流终点q1；
+-   计算出q1在第一层的对应坐标q0，以q0作为输入求出第0层上的光流终点q；
+-   若第0层不是原始图像，根据第0层与原始图像的的比例关系可以得到LK光流的最终点p。
+
+**请注意设计和使用限制：每个特征点仅以该特征点为中心固定大小窗口的数据进行计算，若迭代计算过程中，该特征点位移目标点超出该固定大小窗口会导致计算光流失败。**
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_st\_cand\_corner<a name="ZH-CN_TOPIC_0000002471091320"></a>
+
+【描述】
+
+灰度图像Shi-Tomasi-like角点计算的前半部：计算候选角点。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_st_cand_corner(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_dst_img *cand_corner, const ot_ive_st_cand_corner_ctrl *ctrl, td_bool is_instant );
-``` 【参数】 <a name="table3112mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table3112mcpsimp"></a>
 <table><thead align="left"><tr id="row3118mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.4.1.1"><p id="p3120mcpsimp"><a name="p3120mcpsimp"></a><a name="p3120mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.4.1.2"><p id="p3122mcpsimp"><a name="p3122mcpsimp"></a><a name="p3122mcpsimp"></a>描述</p>
@@ -3634,7 +5634,9 @@ td_s32 ss_mpi_ive_st_cand_corner(ot_ive_handle *handle, const ot_svp_src_img *sr
 </td>
 </tr>
 </tbody>
-</table> <a name="table3166mcpsimp"></a>
+</table>
+
+<a name="table3166mcpsimp"></a>
 <table><thead align="left"><tr id="row3173mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p3175mcpsimp"><a name="p3175mcpsimp"></a><a name="p3175mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p3177mcpsimp"><a name="p3177mcpsimp"></a><a name="p3177mcpsimp"></a>支持图像类型</p>
@@ -3673,7 +5675,11 @@ td_s32 ss_mpi_ive_st_cand_corner(ot_ive_handle *handle, const ot_svp_src_img *sr
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table3211mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table3211mcpsimp"></a>
 <table><thead align="left"><tr id="row3216mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3218mcpsimp"><a name="p3218mcpsimp"></a><a name="p3218mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3220mcpsimp"><a name="p3220mcpsimp"></a><a name="p3220mcpsimp"></a>描述</p>
@@ -3685,12 +5691,51 @@ td_s32 ss_mpi_ive_st_cand_corner(ot_ive_handle *handle, const ot_svp_src_img *sr
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3226mcpsimp"><a name="p3226mcpsimp"></a><a name="p3226mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row3227mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p3229mcpsimp"><a name="p3229mcpsimp"></a><a name="p3229mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3231mcpsimp"><a name="p3231mcpsimp"></a><a name="p3231mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 与OpenCV中ShiTomas角点计算原理类似。
-- ctrl-\>mem至少需开辟的内存大小： ctrl-\>mem.size= 4 \* （src-\>width + \(16 - src-\>width % 16\) % 16） \* src-\>height+ sizeof\(ot\_ive\_st\_max\_eig\_val\)。 - 该任务完成后，必须要使用[ss\_mpi\_ive\_st\_corner](#ZH-CN_TOPIC_0000002470931280)函数才能得到真正的角点。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_st\_corner](#ss_mpi_ive_st_corner) ## ss\_mpi\_ive\_st\_corner<a name="ZH-CN_TOPIC_0000002470931280"></a> 【描述】 灰度图像Shi-Tomasi-like角点计算的后半部：按规则挑选角点。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   与OpenCV中ShiTomas角点计算原理类似。
+-   ctrl-\>mem至少需开辟的内存大小：
+
+    ctrl-\>mem.size= 4 \* （src-\>width + \(16 - src-\>width % 16\) % 16） \* src-\>height+ sizeof\(ot\_ive\_st\_max\_eig\_val\)。
+
+-   该任务完成后，必须要使用[ss\_mpi\_ive\_st\_corner](#ZH-CN_TOPIC_0000002470931280)函数才能得到真正的角点。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_st\_corner](#ss_mpi_ive_st_corner)
+
+## ss\_mpi\_ive\_st\_corner<a name="ZH-CN_TOPIC_0000002470931280"></a>
+
+【描述】
+
+灰度图像Shi-Tomasi-like角点计算的后半部：按规则挑选角点。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_st_corner(const ot_svp_src_img *cand_corner, const ot_svp_dst_mem_info *corner, const ot_ive_st_corner_ctrl *ctrl);
-``` 【参数】 <a name="table3891mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table3891mcpsimp"></a>
 <table><thead align="left"><tr id="row3897mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p3899mcpsimp"><a name="p3899mcpsimp"></a><a name="p3899mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p3901mcpsimp"><a name="p3901mcpsimp"></a><a name="p3901mcpsimp"></a>描述</p>
@@ -3726,7 +5771,9 @@ td_s32 ss_mpi_ive_st_corner(const ot_svp_src_img *cand_corner, const ot_svp_dst_
 </td>
 </tr>
 </tbody>
-</table> <a name="table3932mcpsimp"></a>
+</table>
+
+<a name="table3932mcpsimp"></a>
 <table><thead align="left"><tr id="row3939mcpsimp"><th class="cellrowborder" valign="top" width="33%" id="mcps1.1.5.1.1"><p id="p3941mcpsimp"><a name="p3941mcpsimp"></a><a name="p3941mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="18%" id="mcps1.1.5.1.2"><p id="p3943mcpsimp"><a name="p3943mcpsimp"></a><a name="p3943mcpsimp"></a>支持图像类型</p>
@@ -3747,7 +5794,11 @@ td_s32 ss_mpi_ive_st_corner(const ot_svp_src_img *cand_corner, const ot_svp_dst_
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table3959mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table3959mcpsimp"></a>
 <table><thead align="left"><tr id="row3964mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3966mcpsimp"><a name="p3966mcpsimp"></a><a name="p3966mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3968mcpsimp"><a name="p3968mcpsimp"></a><a name="p3968mcpsimp"></a>描述</p>
@@ -3759,13 +5810,48 @@ td_s32 ss_mpi_ive_st_corner(const ot_svp_src_img *cand_corner, const ot_svp_dst_
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3974mcpsimp"><a name="p3974mcpsimp"></a><a name="p3974mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row3975mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p3977mcpsimp"><a name="p3977mcpsimp"></a><a name="p3977mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3979mcpsimp"><a name="p3979mcpsimp"></a><a name="p3979mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 与OpenCV中ShiTomas角点计算原理类似。
-- corner-\>corner\_num表示最终得到的角点数目。
-- 使用该接口前必须调用[ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)，在保证[ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)任务完成的情况下，使用[ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)的输出cand\_corner作为该接口的参数输入。 【举例】 无。 【相关主题】 [ss\_mpi\_ive\_st\_cand\_corner](#ss_mpi_ive_st_cand_corner) ## ss\_mpi\_ive\_sad<a name="ZH-CN_TOPIC_0000002471091328"></a> 【描述】 计算两幅图像按4x4\\8x8\\16x16分块的16 bit\\8 bit SAD图像，以及对SAD进行阈值化输出。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   与OpenCV中ShiTomas角点计算原理类似。
+-   corner-\>corner\_num表示最终得到的角点数目。
+-   使用该接口前必须调用[ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)，在保证[ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)任务完成的情况下，使用[ss\_mpi\_ive\_st\_cand\_corner](#ZH-CN_TOPIC_0000002471091320)的输出cand\_corner作为该接口的参数输入。
+
+【举例】
+
+无。
+
+【相关主题】
+
+[ss\_mpi\_ive\_st\_cand\_corner](#ss_mpi_ive_st_cand_corner)
+
+## ss\_mpi\_ive\_sad<a name="ZH-CN_TOPIC_0000002471091328"></a>
+
+【描述】
+
+计算两幅图像按4x4\\8x8\\16x16分块的16 bit\\8 bit SAD图像，以及对SAD进行阈值化输出。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_sad(ot_ive_handle *handle, const ot_svp_src_img *src1, const ot_svp_src_img *src2, const ot_svp_dst_img *sad, const ot_svp_dst_img *threshold, const ot_ive_sad_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table12958mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table12958mcpsimp"></a>
 <table><thead align="left"><tr id="row12964mcpsimp"><th class="cellrowborder" valign="top" width="17.82%" id="mcps1.1.4.1.1"><p id="p12966mcpsimp"><a name="p12966mcpsimp"></a><a name="p12966mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="66.34%" id="mcps1.1.4.1.2"><p id="p12968mcpsimp"><a name="p12968mcpsimp"></a><a name="p12968mcpsimp"></a>描述</p>
@@ -3833,7 +5919,9 @@ td_s32 ss_mpi_ive_sad(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> <a name="table13030mcpsimp"></a>
+</table>
+
+<a name="table13030mcpsimp"></a>
 <table><thead align="left"><tr id="row13037mcpsimp"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.1.5.1.1"><p id="p13039mcpsimp"><a name="p13039mcpsimp"></a><a name="p13039mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="24.242424242424242%" id="mcps1.1.5.1.2"><p id="p13041mcpsimp"><a name="p13041mcpsimp"></a><a name="p13041mcpsimp"></a>支持图像类型</p>
@@ -3881,7 +5969,11 @@ td_s32 ss_mpi_ive_sad(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table13084mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table13084mcpsimp"></a>
 <table><thead align="left"><tr id="row13089mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p13091mcpsimp"><a name="p13091mcpsimp"></a><a name="p13091mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p13093mcpsimp"><a name="p13093mcpsimp"></a><a name="p13093mcpsimp"></a>描述</p>
@@ -3893,11 +5985,54 @@ td_s32 ss_mpi_ive_sad(ot_ive_handle *handle, const ot_svp_src_img *src1, const o
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13099mcpsimp"><a name="p13099mcpsimp"></a><a name="p13099mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row13100mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p13102mcpsimp"><a name="p13102mcpsimp"></a><a name="p13102mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 计算公式如下： ![](figures/zh-cn_formulaimage_0000002470931622.png)； ![](figures/zh-cn_formulaimage_0000002470931620.png) 其中，![](figures/zh-cn_formulaimage_0000002470931628.png)对应src1，![](figures/zh-cn_formulaimage_0000002470931624.png)对应src2，![](figures/zh-cn_formulaimage_0000002470931618.png)对应sad，![](figures/zh-cn_formulaimage_0000002470931626.png)与ctrl-\>mode相关，对应OT\_IVE\_SAD\_MODE\_MB\_4X4、OT\_IVE\_SAD\_MODE\_MB\_8X8、OT\_IVE\_SAD\_MODE\_MB\_16X16时分别取4、8、16； ![](figures/zh-cn_formulaimage_0000002503971555.png)对应thr，Thr、minVal和maxVal分别对应ctrl-\>threshold、ctrl-\>min\_val和ctrl-\>max\_val。 【举例】 无。 【相关主题】 无。 ## ss\_mpi\_ive\_resize<a name="ZH-CN_TOPIC_0000002503971235"></a> 【描述】 创建图像缩放任务，支持bilinear、area插值缩放，支持多张U8C1\\ U8C3\_PLANAR图像同时输入做一种类型的缩放。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+计算公式如下：
+
+![](figures/zh-cn_formulaimage_0000002470931622.png)；
+
+![](figures/zh-cn_formulaimage_0000002470931620.png)
+
+其中，![](figures/zh-cn_formulaimage_0000002470931628.png)对应src1，![](figures/zh-cn_formulaimage_0000002470931624.png)对应src2，![](figures/zh-cn_formulaimage_0000002470931618.png)对应sad，![](figures/zh-cn_formulaimage_0000002470931626.png)与ctrl-\>mode相关，对应OT\_IVE\_SAD\_MODE\_MB\_4X4、OT\_IVE\_SAD\_MODE\_MB\_8X8、OT\_IVE\_SAD\_MODE\_MB\_16X16时分别取4、8、16；
+
+![](figures/zh-cn_formulaimage_0000002503971555.png)对应thr，Thr、minVal和maxVal分别对应ctrl-\>threshold、ctrl-\>min\_val和ctrl-\>max\_val。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无。
+
+## ss\_mpi\_ive\_resize<a name="ZH-CN_TOPIC_0000002503971235"></a>
+
+【描述】
+
+创建图像缩放任务，支持bilinear、area插值缩放，支持多张U8C1\\ U8C3\_PLANAR图像同时输入做一种类型的缩放。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_resize(ot_ive_handle *handle, const ot_svp_src_img src[], const ot_svp_dst_img dst[], const ot_ive_resize_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table16328mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table16328mcpsimp"></a>
 <table><thead align="left"><tr id="row16334mcpsimp"><th class="cellrowborder" valign="top" width="17%" id="mcps1.1.4.1.1"><p id="p16336mcpsimp"><a name="p16336mcpsimp"></a><a name="p16336mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="64%" id="mcps1.1.4.1.2"><p id="p16338mcpsimp"><a name="p16338mcpsimp"></a><a name="p16338mcpsimp"></a>描述</p>
@@ -3947,7 +6082,9 @@ td_s32 ss_mpi_ive_resize(ot_ive_handle *handle, const ot_svp_src_img src[], cons
 </td>
 </tr>
 </tbody>
-</table> <a name="table16382mcpsimp"></a>
+</table>
+
+<a name="table16382mcpsimp"></a>
 <table><thead align="left"><tr id="row16389mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.5.1.1"><p id="p16391mcpsimp"><a name="p16391mcpsimp"></a><a name="p16391mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="31.313131313131308%" id="mcps1.1.5.1.2"><p id="p16393mcpsimp"><a name="p16393mcpsimp"></a><a name="p16393mcpsimp"></a>支持图像类型</p>
@@ -3977,7 +6114,11 @@ td_s32 ss_mpi_ive_resize(ot_ive_handle *handle, const ot_svp_src_img src[], cons
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table16418mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table16418mcpsimp"></a>
 <table><thead align="left"><tr id="row16423mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p16425mcpsimp"><a name="p16425mcpsimp"></a><a name="p16425mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p16427mcpsimp"><a name="p16427mcpsimp"></a><a name="p16427mcpsimp"></a>描述</p>
@@ -3989,14 +6130,49 @@ td_s32 ss_mpi_ive_resize(ot_ive_handle *handle, const ot_svp_src_img src[], cons
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p16433mcpsimp"><a name="p16433mcpsimp"></a><a name="p16433mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row16434mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p16436mcpsimp"><a name="p16436mcpsimp"></a><a name="p16436mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 基于OpenCV中resize实现，OT\_IVE\_RESIZE\_MODE\_LINEAR、OT\_IVE\_RESIZE\_MODE\_AREA分别对应OpenCV resize的INTER\_LINEAR、INTER\_AREA。
-- 支持U8C1、U8C3\_PLANAR混合图像数组输入，但所有图像的缩放模式相同。
-- 最大支持16倍缩放。
-- ctrl-\>mem内存至少需要25\*U8C1\_NUM + 49 \* \(ctrl-\>num – U8C1\_NUM\)字节，其中U8C1\_NUM为混合图像数组中U8C1图像的数目。 【举例】 无。 【相关主题】 无 ## ss\_mpi\_ive\_grad\_fg<a name="ZH-CN_TOPIC_0000002471091316"></a> 【描述】 根据背景图像和当前帧图像的梯度信息计算梯度前景图像。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   基于OpenCV中resize实现，OT\_IVE\_RESIZE\_MODE\_LINEAR、OT\_IVE\_RESIZE\_MODE\_AREA分别对应OpenCV resize的INTER\_LINEAR、INTER\_AREA。
+-   支持U8C1、U8C3\_PLANAR混合图像数组输入，但所有图像的缩放模式相同。
+-   最大支持16倍缩放。
+-   ctrl-\>mem内存至少需要25\*U8C1\_NUM + 49 \* \(ctrl-\>num – U8C1\_NUM\)字节，其中U8C1\_NUM为混合图像数组中U8C1图像的数目。
+
+【举例】
+
+无。
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_grad\_fg<a name="ZH-CN_TOPIC_0000002471091316"></a>
+
+【描述】
+
+根据背景图像和当前帧图像的梯度信息计算梯度前景图像。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_grad_fg(ot_ive_handle *handle, const ot_svp_src_img *bg_diff_fg, const ot_svp_src_img *cur_grad, const ot_svp_src_img *bg_grad, const ot_svp_dst_img *grad_fg, const ot_ive_grad_fg_ctrl *ctrl, td_bool is_instant );
-``` 【参数】 <a name="table5325mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table5325mcpsimp"></a>
 <table><thead align="left"><tr id="row5331mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p5333mcpsimp"><a name="p5333mcpsimp"></a><a name="p5333mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="63%" id="mcps1.1.4.1.2"><p id="p5335mcpsimp"><a name="p5335mcpsimp"></a><a name="p5335mcpsimp"></a>描述</p>
@@ -4064,7 +6240,11 @@ td_s32 ss_mpi_ive_grad_fg(ot_ive_handle *handle, const ot_svp_src_img *bg_diff_f
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table5398mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table5398mcpsimp"></a>
 <table><thead align="left"><tr id="row5403mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p5405mcpsimp"><a name="p5405mcpsimp"></a><a name="p5405mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p5407mcpsimp"><a name="p5407mcpsimp"></a><a name="p5407mcpsimp"></a>描述</p>
@@ -4076,8 +6256,17 @@ td_s32 ss_mpi_ive_grad_fg(ot_ive_handle *handle, const ot_svp_src_img *bg_diff_f
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5413mcpsimp"><a name="p5413mcpsimp"></a><a name="p5413mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row5414mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p5416mcpsimp"><a name="p5416mcpsimp"></a><a name="p5416mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5418mcpsimp"><a name="p5418mcpsimp"></a><a name="p5418mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table5423mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table5423mcpsimp"></a>
 <table><thead align="left"><tr id="row5428mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p5430mcpsimp"><a name="p5430mcpsimp"></a><a name="p5430mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p5432mcpsimp"><a name="p5432mcpsimp"></a><a name="p5432mcpsimp"></a>差异</p>
@@ -4089,13 +6278,48 @@ td_s32 ss_mpi_ive_grad_fg(ot_ive_handle *handle, const ot_svp_src_img *bg_diff_f
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p5458mcpsimp"><a name="p5458mcpsimp"></a><a name="p5458mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row76710483416"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 背景梯度图像和当前梯度图像的类型为S8C2\_PACKAGE，水平和竖直方向梯度按照![](figures/zh-cn_formulaimage_0000002503971545.png)格式存储。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
-- [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
-- [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm) ## ss\_mpi\_ive\_match\_bg\_model<a name="ZH-CN_TOPIC_0000002470931334"></a> 【描述】 基于Codebook演进的背景模型匹配。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+背景梯度图像和当前梯度图像的类型为S8C2\_PACKAGE，水平和竖直方向梯度按照![](figures/zh-cn_formulaimage_0000002503971545.png)格式存储。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
+-   [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
+-   [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm)
+
+## ss\_mpi\_ive\_match\_bg\_model<a name="ZH-CN_TOPIC_0000002470931334"></a>
+
+【描述】
+
+基于Codebook演进的背景模型匹配。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_match_bg_model(ot_ive_handle *handle, const ot_svp_src_img *cur_img, const ot_svp_data *bg_model, const ot_svp_img *fg_flag, const ot_svp_dst_img *bg_diff_fg, const ot_svp_dst_img *frm_diff_fg, const ot_svp_dst_mem_info *state_data, const ot_ive_match_bg_model_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table11018mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table11018mcpsimp"></a>
 <table><thead align="left"><tr id="row11024mcpsimp"><th class="cellrowborder" valign="top" width="28.28%" id="mcps1.1.4.1.1"><p id="p11026mcpsimp"><a name="p11026mcpsimp"></a><a name="p11026mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="50.51%" id="mcps1.1.4.1.2"><p id="p11028mcpsimp"><a name="p11028mcpsimp"></a><a name="p11028mcpsimp"></a>描述</p>
@@ -4181,7 +6405,11 @@ td_s32 ss_mpi_ive_match_bg_model(ot_ive_handle *handle, const ot_svp_src_img *cu
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table11112mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table11112mcpsimp"></a>
 <table><thead align="left"><tr id="row11117mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p11119mcpsimp"><a name="p11119mcpsimp"></a><a name="p11119mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p11121mcpsimp"><a name="p11121mcpsimp"></a><a name="p11121mcpsimp"></a>描述</p>
@@ -4193,8 +6421,17 @@ td_s32 ss_mpi_ive_match_bg_model(ot_ive_handle *handle, const ot_svp_src_img *cu
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11127mcpsimp"><a name="p11127mcpsimp"></a><a name="p11127mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row11128mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p11130mcpsimp"><a name="p11130mcpsimp"></a><a name="p11130mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11132mcpsimp"><a name="p11132mcpsimp"></a><a name="p11132mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table11137mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table11137mcpsimp"></a>
 <table><thead align="left"><tr id="row11142mcpsimp"><th class="cellrowborder" valign="top" width="32%" id="mcps1.1.3.1.1"><p id="p11144mcpsimp"><a name="p11144mcpsimp"></a><a name="p11144mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="68%" id="mcps1.1.3.1.2"><p id="p11146mcpsimp"><a name="p11146mcpsimp"></a><a name="p11146mcpsimp"></a>差异</p>
@@ -4206,18 +6443,64 @@ td_s32 ss_mpi_ive_match_bg_model(ot_ive_handle *handle, const ot_svp_src_img *cu
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p11172mcpsimp"><a name="p11172mcpsimp"></a><a name="p11172mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row137791063513"><td class="cellrowborder" valign="top" width="32%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 要求fg\_flag、bg\_diff\_fg、frm\_diff\_fg跨度一致。 背景模型数据bg\_model中每个像素以ot\_ive\_bg\_model\_pixel\(24字节\)表示，即model-\>width = sizeof\(ot\_ive\_bg\_model\_pixel\) \* src-\>width，model-\>height = src-\>height，至少需要分配内存大小为（sizeof\(ot\_ive\_bg\_model\_pixel\) \* src-\>width + \(16 - \(sizeof\(ot\_ive\_bg\_model\_pixel\) \* src-\>width % 16\) % 16）\* model-\>height。 - 前景状态图像fg\_flag为U8C1类型，其各比特位表示不同的状态信息，单个像素各比特位示意图如[图1](#fig186216130171)，按从右到左由低位到高位的顺序排布： **图 1** 前景状态标志图形单个像素各比特位示意图<a name="fig186216130171"></a> ![](figures/前景状态标志图形单个像素各比特位示意图.png "前景状态标志图形单个像素各比特位示意图") 其各个比特位表示的含义如下： - 比特位只用到bit0、bit1、bit2、bit5、bit6；其中bit0、bit1、bit2是由本算子计算作为输出，bit5、bit6是由外部函数计算作为输入。
-- bit1为1时表示像素为前景；
-- bit1为1且bit0为1时表示像素为运动前景；
-- bit1为1且bit0为0时表示像素为变化前景；
-- bit2为1时表示像素的背景模型处于工作状态；
-- bit5和bit6表示外部函数对前景状态的反馈，bit5为1时表示前景像素需要短时间保持，bit6为1时表示前景像素需要长时间保持。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
-- [ss\_mpi\_ive\_grad\_fg](#ss_mpi_ive_grad_fg)
-- [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm) ## ss\_mpi\_ive\_update\_bg\_model<a name="ZH-CN_TOPIC_0000002504091095"></a> 【描述】 基于Codebook演进的背景模型更新，对背景模型的内部状态进行更新。 【语法】 ```
-td_s32 ss_mpi_ive_update_bg_model(ot_ive_handle *handle, const ot_svp_data *bg_model, const ot_svp_img *fg_flag, const ot_svp_dst_img *bg_img, const ot_svp_dst_img *chg_status_img, const ot_svp_dst_img *chg_status_fg, const ot_svp_dst_img *chg_status_life, const ot_svp_dst_mem_info *state_data, const ot_ive_update_bg_model_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table502mcpsimp"></a>
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   要求fg\_flag、bg\_diff\_fg、frm\_diff\_fg跨度一致。
+
+    背景模型数据bg\_model中每个像素以ot\_ive\_bg\_model\_pixel\(24字节\)表示，即model-\>width = sizeof\(ot\_ive\_bg\_model\_pixel\) \* src-\>width，model-\>height = src-\>height，至少需要分配内存大小为（sizeof\(ot\_ive\_bg\_model\_pixel\) \* src-\>width + \(16 - \(sizeof\(ot\_ive\_bg\_model\_pixel\) \* src-\>width % 16\) % 16）\* model-\>height。
+
+-   前景状态图像fg\_flag为U8C1类型，其各比特位表示不同的状态信息，单个像素各比特位示意图如[图1](#fig186216130171)，按从右到左由低位到高位的顺序排布：
+
+**图 1**  前景状态标志图形单个像素各比特位示意图<a name="fig186216130171"></a>  
+![](figures/前景状态标志图形单个像素各比特位示意图.png "前景状态标志图形单个像素各比特位示意图")
+
+其各个比特位表示的含义如下：
+
+-   比特位只用到bit0、bit1、bit2、bit5、bit6；其中bit0、bit1、bit2是由本算子计算作为输出，bit5、bit6是由外部函数计算作为输入。
+-   bit1为1时表示像素为前景；
+-   bit1为1且bit0为1时表示像素为运动前景；
+-   bit1为1且bit0为0时表示像素为变化前景；
+-   bit2为1时表示像素的背景模型处于工作状态；
+-   bit5和bit6表示外部函数对前景状态的反馈，bit5为1时表示前景像素需要短时间保持，bit6为1时表示前景像素需要长时间保持。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_update\_bg\_model](#ss_mpi_ive_update_bg_model)
+-   [ss\_mpi\_ive\_grad\_fg](#ss_mpi_ive_grad_fg)
+-   [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm)
+
+## ss\_mpi\_ive\_update\_bg\_model<a name="ZH-CN_TOPIC_0000002504091095"></a>
+
+【描述】
+
+基于Codebook演进的背景模型更新，对背景模型的内部状态进行更新。
+
+【语法】
+
+```
+td_s32 ss_mpi_ive_update_bg_model(ot_ive_handle *handle, const ot_svp_data *bg_model, const ot_svp_img *fg_flag, const ot_svp_dst_img *bg_img, const ot_svp_dst_img *chg_status_img, const ot_svp_dst_img *chg_status_fg, const  ot_svp_dst_img *chg_status_life, const ot_svp_dst_mem_info *state_data, const ot_ive_update_bg_model_ctrl *ctrl, td_bool is_instant);
+```
+
+【参数】
+
+<a name="table502mcpsimp"></a>
 <table><thead align="left"><tr id="row508mcpsimp"><th class="cellrowborder" valign="top" width="31.313131313131308%" id="mcps1.1.4.1.1"><p id="p510mcpsimp"><a name="p510mcpsimp"></a><a name="p510mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="45.45454545454545%" id="mcps1.1.4.1.2"><p id="p512mcpsimp"><a name="p512mcpsimp"></a><a name="p512mcpsimp"></a>描述</p>
@@ -4312,7 +6595,11 @@ td_s32 ss_mpi_ive_update_bg_model(ot_ive_handle *handle, const ot_svp_data *bg_m
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table603mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table603mcpsimp"></a>
 <table><thead align="left"><tr id="row608mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p610mcpsimp"><a name="p610mcpsimp"></a><a name="p610mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p612mcpsimp"><a name="p612mcpsimp"></a><a name="p612mcpsimp"></a>描述</p>
@@ -4324,8 +6611,17 @@ td_s32 ss_mpi_ive_update_bg_model(ot_ive_handle *handle, const ot_svp_data *bg_m
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p618mcpsimp"><a name="p618mcpsimp"></a><a name="p618mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row619mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p621mcpsimp"><a name="p621mcpsimp"></a><a name="p621mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table628mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table628mcpsimp"></a>
 <table><thead align="left"><tr id="row633mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p635mcpsimp"><a name="p635mcpsimp"></a><a name="p635mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p637mcpsimp"><a name="p637mcpsimp"></a><a name="p637mcpsimp"></a>差异</p>
@@ -4337,17 +6633,52 @@ td_s32 ss_mpi_ive_update_bg_model(ot_ive_handle *handle, const ot_svp_data *bg_m
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p663mcpsimp"><a name="p663mcpsimp"></a><a name="p663mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row75415229359"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 要求fg\_flag、bg\_img、chg\_status\_img（不为空时）、chg\_status\_fg（不为空时）跨度一致。
-- 背景模型数据model参考[ss\_mpi\_ive\_match\_bg\_model](#ZH-CN_TOPIC_0000002470931334)中的说明。
-- chg\_status\_fg表示变化状态前景图像，其中像素非0表示前景，否则表示背景。
-- chg\_status\_life表示变化状态前景像素的生命时间图像，其像素值表示变化前景的持续时间。
-- 变化状态指像素值发生变化而成为前景，并且变化后的像素值较长时间都保持稳定的状态，这一般是由静止遗留物或者静止移走物在图像中产生。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
-- [ss\_mpi\_ive\_grad\_fg](#ss_mpi_ive_grad_fg)
-- [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm) ## ss\_mpi\_ive\_ann\_mlp\_load\_model<a name="ZH-CN_TOPIC_0000002504091075"></a> 【描述】 读取ann\_mlp模型文件，初始化模型数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   要求fg\_flag、bg\_img、chg\_status\_img（不为空时）、chg\_status\_fg（不为空时）跨度一致。
+-   背景模型数据model参考[ss\_mpi\_ive\_match\_bg\_model](#ZH-CN_TOPIC_0000002470931334)中的说明。
+-   chg\_status\_fg表示变化状态前景图像，其中像素非0表示前景，否则表示背景。
+-   chg\_status\_life表示变化状态前景像素的生命时间图像，其像素值表示变化前景的持续时间。
+-   变化状态指像素值发生变化而成为前景，并且变化后的像素值较长时间都保持稳定的状态，这一般是由静止遗留物或者静止移走物在图像中产生。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_match\_bg\_model](#ss_mpi_ive_match_bg_model)
+-   [ss\_mpi\_ive\_grad\_fg](#ss_mpi_ive_grad_fg)
+-   [ss\_mpi\_ive\_gmm](#ss_mpi_ive_gmm)
+
+## ss\_mpi\_ive\_ann\_mlp\_load\_model<a name="ZH-CN_TOPIC_0000002504091075"></a>
+
+【描述】
+
+读取ann\_mlp模型文件，初始化模型数据。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_ann_mlp_load_model(const td_char *file_name, ot_ive_ann_mlp_model *model)
-``` 【参数】 <a name="table11401mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table11401mcpsimp"></a>
 <table><thead align="left"><tr id="row11407mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p11409mcpsimp"><a name="p11409mcpsimp"></a><a name="p11409mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p11411mcpsimp"><a name="p11411mcpsimp"></a><a name="p11411mcpsimp"></a>描述</p>
@@ -4373,7 +6704,11 @@ td_s32 ss_mpi_ive_ann_mlp_load_model(const td_char *file_name, ot_ive_ann_mlp_mo
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table11432mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table11432mcpsimp"></a>
 <table><thead align="left"><tr id="row11437mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p11439mcpsimp"><a name="p11439mcpsimp"></a><a name="p11439mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p11441mcpsimp"><a name="p11441mcpsimp"></a><a name="p11441mcpsimp"></a>描述</p>
@@ -4385,8 +6720,17 @@ td_s32 ss_mpi_ive_ann_mlp_load_model(const td_char *file_name, ot_ive_ann_mlp_mo
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11447mcpsimp"><a name="p11447mcpsimp"></a><a name="p11447mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row11448mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p11450mcpsimp"><a name="p11450mcpsimp"></a><a name="p11450mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11452mcpsimp"><a name="p11452mcpsimp"></a><a name="p11452mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table11457mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table11457mcpsimp"></a>
 <table><thead align="left"><tr id="row11462mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p11464mcpsimp"><a name="p11464mcpsimp"></a><a name="p11464mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p11466mcpsimp"><a name="p11466mcpsimp"></a><a name="p11466mcpsimp"></a>差异</p>
@@ -4398,14 +6742,45 @@ td_s32 ss_mpi_ive_ann_mlp_load_model(const td_char *file_name, ot_ive_ann_mlp_mo
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p11492mcpsimp"><a name="p11492mcpsimp"></a><a name="p11492mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row6287143116354"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 文件名必须以.bin为后缀；.bin文件必须用配套工具ive\_tool\_xml2bin.exe生成。
-- 用户需保证.bin文件的完整性和正确性。
-- 该接口必须和[ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ZH-CN_TOPIC_0000002504091139)配套使用。 【相关主题】 - [ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ss_mpi_ive_ann_mlp_unload_model)
-- [ss\_mpi\_ive\_ann\_mlp\_predict](#ss_mpi_ive_ann_mlp_predict) ## ss\_mpi\_ive\_ann\_mlp\_unload\_model<a name="ZH-CN_TOPIC_0000002504091139"></a> 【描述】 去初始化ANN模型数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   文件名必须以.bin为后缀；.bin文件必须用配套工具ive\_tool\_xml2bin.exe生成。
+-   用户需保证.bin文件的完整性和正确性。
+-   该接口必须和[ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ZH-CN_TOPIC_0000002504091139)配套使用。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ss_mpi_ive_ann_mlp_unload_model)
+-   [ss\_mpi\_ive\_ann\_mlp\_predict](#ss_mpi_ive_ann_mlp_predict)
+
+## ss\_mpi\_ive\_ann\_mlp\_unload\_model<a name="ZH-CN_TOPIC_0000002504091139"></a>
+
+【描述】
+
+去初始化ANN模型数据。
+
+【语法】
+
+```
 td_void ss_mpi_ive_ann_mlp_unload_model(const ot_ive_ann_mlp_model *model)
-``` 【参数】 <a name="table4007mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table4007mcpsimp"></a>
 <table><thead align="left"><tr id="row4013mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p4015mcpsimp"><a name="p4015mcpsimp"></a><a name="p4015mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="52%" id="mcps1.1.4.1.2"><p id="p4017mcpsimp"><a name="p4017mcpsimp"></a><a name="p4017mcpsimp"></a>描述</p>
@@ -4423,7 +6798,11 @@ td_void ss_mpi_ive_ann_mlp_unload_model(const ot_ive_ann_mlp_model *model)
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table4030mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table4030mcpsimp"></a>
 <table><thead align="left"><tr id="row4035mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p4037mcpsimp"><a name="p4037mcpsimp"></a><a name="p4037mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p4039mcpsimp"><a name="p4039mcpsimp"></a><a name="p4039mcpsimp"></a>描述</p>
@@ -4436,7 +6815,11 @@ td_void ss_mpi_ive_ann_mlp_unload_model(const ot_ive_ann_mlp_model *model)
 </td>
 </tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table4047mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table4047mcpsimp"></a>
 <table><thead align="left"><tr id="row4052mcpsimp"><th class="cellrowborder" valign="top" width="30%" id="mcps1.1.3.1.1"><p id="p4054mcpsimp"><a name="p4054mcpsimp"></a><a name="p4054mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="70%" id="mcps1.1.3.1.2"><p id="p4056mcpsimp"><a name="p4056mcpsimp"></a><a name="p4056mcpsimp"></a>差异</p>
@@ -4448,12 +6831,47 @@ td_void ss_mpi_ive_ann_mlp_unload_model(const ot_ive_ann_mlp_model *model)
 <td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p4082mcpsimp"><a name="p4082mcpsimp"></a><a name="p4082mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row295916387356"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="70%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 该接口必须和[ss\_mpi\_ive\_ann\_mlp\_load\_model](#ZH-CN_TOPIC_0000002504091075)配套使用。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_ann\_mlp\_load\_model](#ss_mpi_ive_ann_mlp_load_model)
-- [ss\_mpi\_ive\_ann\_mlp\_predict](#ss_mpi_ive_ann_mlp_predict) ## ss\_mpi\_ive\_ann\_mlp\_predict<a name="ZH-CN_TOPIC_0000002471091294"></a> 【描述】 创建同一模型多个样本ann\_mlp预测任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+该接口必须和[ss\_mpi\_ive\_ann\_mlp\_load\_model](#ZH-CN_TOPIC_0000002504091075)配套使用。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_ann\_mlp\_load\_model](#ss_mpi_ive_ann_mlp_load_model)
+-   [ss\_mpi\_ive\_ann\_mlp\_predict](#ss_mpi_ive_ann_mlp_predict)
+
+## ss\_mpi\_ive\_ann\_mlp\_predict<a name="ZH-CN_TOPIC_0000002471091294"></a>
+
+【描述】
+
+创建同一模型多个样本ann\_mlp预测任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_ann_mlp_predict(ot_ive_handle *handle, const ot_svp_src_data *src, const ot_svp_lut *actv_func_table, const ot_ive_ann_mlp_model *model, const ot_svp_dst_data *dst, td_bool is_instant);
-``` 【参数】 <a name="table9862mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table9862mcpsimp"></a>
 <table><thead align="left"><tr id="row9868mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p9870mcpsimp"><a name="p9870mcpsimp"></a><a name="p9870mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p9872mcpsimp"><a name="p9872mcpsimp"></a><a name="p9872mcpsimp"></a>描述</p>
@@ -4515,7 +6933,9 @@ td_s32 ss_mpi_ive_ann_mlp_predict(ot_ive_handle *handle, const ot_svp_src_data *
 </td>
 </tr>
 </tbody>
-</table> <a name="table9928mcpsimp"></a>
+</table>
+
+<a name="table9928mcpsimp"></a>
 <table><thead align="left"><tr id="row9935mcpsimp"><th class="cellrowborder" valign="top" width="16.16161616161616%" id="mcps1.1.5.1.1"><p id="p9937mcpsimp"><a name="p9937mcpsimp"></a><a name="p9937mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.1.5.1.2"><p id="p9939mcpsimp"><a name="p9939mcpsimp"></a><a name="p9939mcpsimp"></a>支持类型</p>
@@ -4547,7 +6967,13 @@ td_s32 ss_mpi_ive_ann_mlp_predict(ot_ive_handle *handle, const ot_svp_src_data *
 </td>
 </tr>
 </tbody>
-</table> 注：SQ16.16、SQ8.16等定点表示说明参看“定点数据类型”。 【返回值】 <a name="table9967mcpsimp"></a>
+</table>
+
+注：SQ16.16、SQ8.16等定点表示说明参看“定点数据类型”。
+
+【返回值】
+
+<a name="table9967mcpsimp"></a>
 <table><thead align="left"><tr id="row9972mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p9974mcpsimp"><a name="p9974mcpsimp"></a><a name="p9974mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p9976mcpsimp"><a name="p9976mcpsimp"></a><a name="p9976mcpsimp"></a>描述</p>
@@ -4559,8 +6985,17 @@ td_s32 ss_mpi_ive_ann_mlp_predict(ot_ive_handle *handle, const ot_svp_src_data *
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p9982mcpsimp"><a name="p9982mcpsimp"></a><a name="p9982mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row9983mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p9985mcpsimp"><a name="p9985mcpsimp"></a><a name="p9985mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table9992mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table9992mcpsimp"></a>
 <table><thead align="left"><tr id="row9997mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p9999mcpsimp"><a name="p9999mcpsimp"></a><a name="p9999mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p10001mcpsimp"><a name="p10001mcpsimp"></a><a name="p10001mcpsimp"></a>差异</p>
@@ -4572,17 +7007,67 @@ td_s32 ss_mpi_ive_ann_mlp_predict(ot_ive_handle *handle, const ot_svp_src_data *
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p10027mcpsimp"><a name="p10027mcpsimp"></a><a name="p10027mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row19391154603518"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 原理与OpenCV中ann\_mlp类似。
-- 激活函数公式 Identity激活函数：![](figures/zh-cn_formulaimage_0000002503971493.png)。 Sigmoid对称激活函数：![](figures/zh-cn_formulaimage_0000002503971491.png)。 - Gaussian激活函数：![](figures/zh-cn_formulaimage_0000002471091552.png)。
-- 输入样本向量（输入层）维数最大1024维，输出预测结果向量（输出层）维数及各隐藏层神经元个数最大为256。
-- 支持2中数据精度类型，参考ot\_ive\_ann\_mlp\_accurate。
-- activ\_func\_table是用于激活函数![](figures/zh-cn_formulaimage_0000002470931550.png)计算的查找表，其数据均为S1Q15类型数据，最多4096个；鉴于当前ANN中支持的Identify、Sigmoid、Gaussian激活函数为奇或偶函数，查找表仅对输入![](figures/zh-cn_formulaimage_0000002503971495.png) \[0, actv\_func\_table-\>table\_in\_upper\]建表及查表；对ANN激活函数建立查找表时用于归一化的table\_out\_norm是表示移位的数目。
-- 以layer\_num = 4，layer\_cnt\[8\] = \{m0, m1, m2, m3, 0, 0, 0, 0\}，样本数量 = n，为例： - 输入n个样本向量（输入层），每个向量均是包含m0个src\_elem类型为SQ16.16或者SQ18.14的向量，实际计算时每个elem截断到SQ8.16或者SQ10.14： **图 1** ann\_mlp输入样本向量数组示意图<a name="fig1987840192317"></a> ![](figures/ann_mlp输入样本向量数组示意图.png "ann_mlp输入样本向量数组示意图") - 输出n个预测结果向量，每个向量均是包含m3个dst\_elem类型为SQ16.16或者SQ18.14的向量： **图 2** ann\_mlp输出预测结果示意图<a name="fig141686172511"></a> ![](figures/ann_mlp输出预测结果示意图.png "ann_mlp输出预测结果示意图") 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_ann\_mlp\_load\_model](#ss_mpi_ive_ann_mlp_load_model)
-- [ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ss_mpi_ive_ann_mlp_unload_model) ## ss\_mpi\_ive\_svm\_load\_model<a name="ZH-CN_TOPIC_0000002471091276"></a> 【描述】 读取SVM模型文件，初始化模型数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   原理与OpenCV中ann\_mlp类似。
+-   激活函数公式
+
+Identity激活函数：![](figures/zh-cn_formulaimage_0000002503971493.png)。
+
+Sigmoid对称激活函数：![](figures/zh-cn_formulaimage_0000002503971491.png)。
+
+-   Gaussian激活函数：![](figures/zh-cn_formulaimage_0000002471091552.png)。
+-   输入样本向量（输入层）维数最大1024维，输出预测结果向量（输出层）维数及各隐藏层神经元个数最大为256。
+-   支持2中数据精度类型，参考ot\_ive\_ann\_mlp\_accurate。
+-   activ\_func\_table是用于激活函数![](figures/zh-cn_formulaimage_0000002470931550.png)计算的查找表，其数据均为S1Q15类型数据，最多4096个；鉴于当前ANN中支持的Identify、Sigmoid、Gaussian激活函数为奇或偶函数，查找表仅对输入![](figures/zh-cn_formulaimage_0000002503971495.png)  \[0, actv\_func\_table-\>table\_in\_upper\]建表及查表；对ANN激活函数建立查找表时用于归一化的table\_out\_norm是表示移位的数目。
+-   以layer\_num = 4，layer\_cnt\[8\] = \{m0, m1, m2, m3, 0, 0, 0, 0\}，样本数量 = n，为例：
+
+    -   输入n个样本向量（输入层），每个向量均是包含m0个src\_elem类型为SQ16.16或者SQ18.14的向量，实际计算时每个elem截断到SQ8.16或者SQ10.14：
+
+    **图 1**  ann\_mlp输入样本向量数组示意图<a name="fig1987840192317"></a>  
+    ![](figures/ann_mlp输入样本向量数组示意图.png "ann_mlp输入样本向量数组示意图")
+    -   输出n个预测结果向量，每个向量均是包含m3个dst\_elem类型为SQ16.16或者SQ18.14的向量：
+
+    **图 2**  ann\_mlp输出预测结果示意图<a name="fig141686172511"></a>  
+    ![](figures/ann_mlp输出预测结果示意图.png "ann_mlp输出预测结果示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_ann\_mlp\_load\_model](#ss_mpi_ive_ann_mlp_load_model)
+-   [ss\_mpi\_ive\_ann\_mlp\_unload\_model](#ss_mpi_ive_ann_mlp_unload_model)
+
+## ss\_mpi\_ive\_svm\_load\_model<a name="ZH-CN_TOPIC_0000002471091276"></a>
+
+【描述】
+
+读取SVM模型文件，初始化模型数据。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_svm_load_model(const td_char *file_name, ot_ive_svm_model *svm_model);
-``` 【参数】 <a name="table12131mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table12131mcpsimp"></a>
 <table><thead align="left"><tr id="row12137mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p12139mcpsimp"><a name="p12139mcpsimp"></a><a name="p12139mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p12141mcpsimp"><a name="p12141mcpsimp"></a><a name="p12141mcpsimp"></a>描述</p>
@@ -4608,7 +7093,11 @@ td_s32 ss_mpi_ive_svm_load_model(const td_char *file_name, ot_ive_svm_model *svm
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table12162mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table12162mcpsimp"></a>
 <table><thead align="left"><tr id="row12167mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p12169mcpsimp"><a name="p12169mcpsimp"></a><a name="p12169mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p12171mcpsimp"><a name="p12171mcpsimp"></a><a name="p12171mcpsimp"></a>描述</p>
@@ -4620,8 +7109,17 @@ td_s32 ss_mpi_ive_svm_load_model(const td_char *file_name, ot_ive_svm_model *svm
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12177mcpsimp"><a name="p12177mcpsimp"></a><a name="p12177mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row12178mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p12180mcpsimp"><a name="p12180mcpsimp"></a><a name="p12180mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p12182mcpsimp"><a name="p12182mcpsimp"></a><a name="p12182mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table12187mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table12187mcpsimp"></a>
 <table><thead align="left"><tr id="row12192mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p12194mcpsimp"><a name="p12194mcpsimp"></a><a name="p12194mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p12196mcpsimp"><a name="p12196mcpsimp"></a><a name="p12196mcpsimp"></a>差异</p>
@@ -4633,14 +7131,49 @@ td_s32 ss_mpi_ive_svm_load_model(const td_char *file_name, ot_ive_svm_model *svm
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p12222mcpsimp"><a name="p12222mcpsimp"></a><a name="p12222mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row1662375319357"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 文件名必须以.bin为后缀；.bin文件必须用配套工具ive\_tool\_xml2bin.exe生成。
-- 用户必需保证.bin文件的完整性和正确性。
-- 该接口必须和[ss\_mpi\_ive\_svm\_unload\_model](#ZH-CN_TOPIC_0000002504091133)配套使用。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_svm\_unload\_model](#ss_mpi_ive_svm_unload_model)
-- [ss\_mpi\_ive\_svm\_predict](#ss_mpi_ive_svm_predict) ## ss\_mpi\_ive\_svm\_unload\_model<a name="ZH-CN_TOPIC_0000002504091133"></a> 【描述】 去初始化SVM模型数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   文件名必须以.bin为后缀；.bin文件必须用配套工具ive\_tool\_xml2bin.exe生成。
+-   用户必需保证.bin文件的完整性和正确性。
+-   该接口必须和[ss\_mpi\_ive\_svm\_unload\_model](#ZH-CN_TOPIC_0000002504091133)配套使用。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_svm\_unload\_model](#ss_mpi_ive_svm_unload_model)
+-   [ss\_mpi\_ive\_svm\_predict](#ss_mpi_ive_svm_predict)
+
+## ss\_mpi\_ive\_svm\_unload\_model<a name="ZH-CN_TOPIC_0000002504091133"></a>
+
+【描述】
+
+去初始化SVM模型数据。
+
+【语法】
+
+```
 td_void ss_mpi_ive_svm_unload_model(const ot_ive_svm_model *svm_model);
-``` 【参数】 <a name="table12850mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table12850mcpsimp"></a>
 <table><thead align="left"><tr id="row12856mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p12858mcpsimp"><a name="p12858mcpsimp"></a><a name="p12858mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p12860mcpsimp"><a name="p12860mcpsimp"></a><a name="p12860mcpsimp"></a>描述</p>
@@ -4658,7 +7191,11 @@ td_void ss_mpi_ive_svm_unload_model(const ot_ive_svm_model *svm_model);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table12873mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table12873mcpsimp"></a>
 <table><thead align="left"><tr id="row12878mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p12880mcpsimp"><a name="p12880mcpsimp"></a><a name="p12880mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p12882mcpsimp"><a name="p12882mcpsimp"></a><a name="p12882mcpsimp"></a>描述</p>
@@ -4671,7 +7208,11 @@ td_void ss_mpi_ive_svm_unload_model(const ot_ive_svm_model *svm_model);
 </td>
 </tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table12890mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table12890mcpsimp"></a>
 <table><thead align="left"><tr id="row12895mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.3.1.1"><p id="p12897mcpsimp"><a name="p12897mcpsimp"></a><a name="p12897mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="75%" id="mcps1.1.3.1.2"><p id="p12899mcpsimp"><a name="p12899mcpsimp"></a><a name="p12899mcpsimp"></a>差异</p>
@@ -4683,12 +7224,47 @@ td_void ss_mpi_ive_svm_unload_model(const ot_ive_svm_model *svm_model);
 <td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p12925mcpsimp"><a name="p12925mcpsimp"></a><a name="p12925mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row15457140193617"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 该接口必须和[ss\_mpi\_ive\_svm\_load\_model](#ZH-CN_TOPIC_0000002471091276)配套使用。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_svm\_load\_model](#ss_mpi_ive_svm_load_model)
-- [ss\_mpi\_ive\_svm\_predict](#ss_mpi_ive_svm_predict) ## ss\_mpi\_ive\_svm\_predict<a name="ZH-CN_TOPIC_0000002504091105"></a> 【描述】 创建同一模型的多个样本svm预测任务。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+该接口必须和[ss\_mpi\_ive\_svm\_load\_model](#ZH-CN_TOPIC_0000002471091276)配套使用。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_svm\_load\_model](#ss_mpi_ive_svm_load_model)
+-   [ss\_mpi\_ive\_svm\_predict](#ss_mpi_ive_svm_predict)
+
+## ss\_mpi\_ive\_svm\_predict<a name="ZH-CN_TOPIC_0000002504091105"></a>
+
+【描述】
+
+创建同一模型的多个样本svm预测任务。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_svm_predict(ot_ive_handle *handle, const ot_svp_src_data *src, const ot_svp_lut *kernel_table, const ot_ive_svm_model *svm_model, const ot_svp_dst_data *dst_vote, td_bool is_instant);
-``` 【参数】 <a name="table3267mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table3267mcpsimp"></a>
 <table><thead align="left"><tr id="row3273mcpsimp"><th class="cellrowborder" valign="top" width="22%" id="mcps1.1.4.1.1"><p id="p3275mcpsimp"><a name="p3275mcpsimp"></a><a name="p3275mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="60%" id="mcps1.1.4.1.2"><p id="p3277mcpsimp"><a name="p3277mcpsimp"></a><a name="p3277mcpsimp"></a>描述</p>
@@ -4749,7 +7325,9 @@ td_s32 ss_mpi_ive_svm_predict(ot_ive_handle *handle, const ot_svp_src_data *src,
 </td>
 </tr>
 </tbody>
-</table> <a name="table3332mcpsimp"></a>
+</table>
+
+<a name="table3332mcpsimp"></a>
 <table><thead align="left"><tr id="row3339mcpsimp"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.1.5.1.1"><p id="p3341mcpsimp"><a name="p3341mcpsimp"></a><a name="p3341mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="31.313131313131308%" id="mcps1.1.5.1.2"><p id="p3343mcpsimp"><a name="p3343mcpsimp"></a><a name="p3343mcpsimp"></a>支持类型</p>
@@ -4781,7 +7359,11 @@ td_s32 ss_mpi_ive_svm_predict(ot_ive_handle *handle, const ot_svp_src_data *src,
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table3370mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table3370mcpsimp"></a>
 <table><thead align="left"><tr id="row3375mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3377mcpsimp"><a name="p3377mcpsimp"></a><a name="p3377mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3379mcpsimp"><a name="p3379mcpsimp"></a><a name="p3379mcpsimp"></a>描述</p>
@@ -4793,8 +7375,17 @@ td_s32 ss_mpi_ive_svm_predict(ot_ive_handle *handle, const ot_svp_src_data *src,
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3385mcpsimp"><a name="p3385mcpsimp"></a><a name="p3385mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row3386mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p3388mcpsimp"><a name="p3388mcpsimp"></a><a name="p3388mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table3395mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table3395mcpsimp"></a>
 <table><thead align="left"><tr id="row3400mcpsimp"><th class="cellrowborder" valign="top" width="27%" id="mcps1.1.3.1.1"><p id="p3402mcpsimp"><a name="p3402mcpsimp"></a><a name="p3402mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="73%" id="mcps1.1.3.1.2"><p id="p3404mcpsimp"><a name="p3404mcpsimp"></a><a name="p3404mcpsimp"></a>差异</p>
@@ -4806,14 +7397,72 @@ td_s32 ss_mpi_ive_svm_predict(ot_ive_handle *handle, const ot_svp_src_data *src,
 <td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p3430mcpsimp"><a name="p3430mcpsimp"></a><a name="p3430mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row105107763610"><td class="cellrowborder" valign="top" width="27%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="73%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 原理与OpenCV中SVM\_Predict类似。
-- 核函数计算公式 线性核函数：![](figures/zh-cn_formulaimage_0000002504091289.png) 多项式核函数：![](figures/zh-cn_formulaimage_0000002503971367.png) 径向基核函数：![](figures/zh-cn_formulaimage_0000002471091416.png) Sigmoid核函数：![](figures/zh-cn_formulaimage_0000002471091418.png) - 判决函数计算公式： ![](figures/zh-cn_formulaimage_0000002504091285.png) - kernel\_tab是用于核函数![](figures/zh-cn_formulaimage_0000002503971351.png)计算的查找表，其数据均为S1Q15类型数据，查找表元素个数参考“解决方案差异”说明；对SVM核函数建立查找表时，查找表的输入是![](figures/zh-cn_formulaimage_0000002504091287.png)或者![](figures/zh-cn_formulaimage_0000002503971365.png)，table\_out\_norm可以表示除法的除数（不能为0，SvmDivisor = table\_out\_norm）或者移位的数目（可以为0，此时SvmDivisor = 1 << table\_out\_norm），同样使用工具ive\_tool\_xml2bin.exe时需要将SvmDivisor作为参数传入，SvmDivisor见ive\_tool\_xml2bin.exe的使用说明。
-- 以feature\_dim = n，class\_count = N，样本数量 = r，为例： - r个输入样本向量，每个都是SQ16.16类型的n维向量（最大1024维），实际上仅支持SQ8.16，超出部分会截断： **图 1** svm输入样本向量数组示意图<a name="fig10427125313279"></a> ![](figures/svm输入样本向量数组示意图.png "svm输入样本向量数组示意图") - 输出r个预测结果向量，每个均为td\_u16类型的N维向量： **图 2** svm预测结果示意图<a name="fig4259197112812"></a> ![](figures/svm预测结果示意图.png "svm预测结果示意图") 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_svm\_load\_model](#ss_mpi_ive_svm_load_model)
-- [ss\_mpi\_ive\_svm\_unload\_model](#ss_mpi_ive_svm_unload_model) ## ss\_mpi\_ive\_cnn\_load\_model<a name="ZH-CN_TOPIC_0000002471091312"></a> 【描述】 读取cnn模型文件，初始化cnn模型数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   原理与OpenCV中SVM\_Predict类似。
+-   核函数计算公式
+
+    线性核函数：![](figures/zh-cn_formulaimage_0000002504091289.png)
+
+    多项式核函数：![](figures/zh-cn_formulaimage_0000002503971367.png)
+
+    径向基核函数：![](figures/zh-cn_formulaimage_0000002471091416.png)
+
+    Sigmoid核函数：![](figures/zh-cn_formulaimage_0000002471091418.png)
+
+-   判决函数计算公式：
+
+    ![](figures/zh-cn_formulaimage_0000002504091285.png)
+
+-   kernel\_tab是用于核函数![](figures/zh-cn_formulaimage_0000002503971351.png)计算的查找表，其数据均为S1Q15类型数据，查找表元素个数参考“解决方案差异”说明；对SVM核函数建立查找表时，查找表的输入是![](figures/zh-cn_formulaimage_0000002504091287.png)或者![](figures/zh-cn_formulaimage_0000002503971365.png)，table\_out\_norm可以表示除法的除数（不能为0，SvmDivisor = table\_out\_norm）或者移位的数目（可以为0，此时SvmDivisor = 1 << table\_out\_norm），同样使用工具ive\_tool\_xml2bin.exe时需要将SvmDivisor作为参数传入，SvmDivisor见ive\_tool\_xml2bin.exe的使用说明。
+-   以feature\_dim = n，class\_count = N，样本数量 = r，为例：
+
+    -   r个输入样本向量，每个都是SQ16.16类型的n维向量（最大1024维），实际上仅支持SQ8.16，超出部分会截断：
+
+    **图 1**  svm输入样本向量数组示意图<a name="fig10427125313279"></a>  
+    ![](figures/svm输入样本向量数组示意图.png "svm输入样本向量数组示意图")
+    -   输出r个预测结果向量，每个均为td\_u16类型的N维向量：
+
+    **图 2**  svm预测结果示意图<a name="fig4259197112812"></a>  
+    ![](figures/svm预测结果示意图.png "svm预测结果示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_svm\_load\_model](#ss_mpi_ive_svm_load_model)
+-   [ss\_mpi\_ive\_svm\_unload\_model](#ss_mpi_ive_svm_unload_model)
+
+## ss\_mpi\_ive\_cnn\_load\_model<a name="ZH-CN_TOPIC_0000002471091312"></a>
+
+【描述】
+
+读取cnn模型文件，初始化cnn模型数据。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_cnn_load_model(const td_char *file_name, ot_ive_cnn_model *model );
-``` 【参数】 <a name="table698mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table698mcpsimp"></a>
 <table><thead align="left"><tr id="row704mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p706mcpsimp"><a name="p706mcpsimp"></a><a name="p706mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p708mcpsimp"><a name="p708mcpsimp"></a><a name="p708mcpsimp"></a>描述</p>
@@ -4839,7 +7488,11 @@ td_s32 ss_mpi_ive_cnn_load_model(const td_char *file_name, ot_ive_cnn_model *mod
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table729mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table729mcpsimp"></a>
 <table><thead align="left"><tr id="row734mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p736mcpsimp"><a name="p736mcpsimp"></a><a name="p736mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p738mcpsimp"><a name="p738mcpsimp"></a><a name="p738mcpsimp"></a>描述</p>
@@ -4851,8 +7504,17 @@ td_s32 ss_mpi_ive_cnn_load_model(const td_char *file_name, ot_ive_cnn_model *mod
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p744mcpsimp"><a name="p744mcpsimp"></a><a name="p744mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row745mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p747mcpsimp"><a name="p747mcpsimp"></a><a name="p747mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table754mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table754mcpsimp"></a>
 <table><thead align="left"><tr id="row759mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p761mcpsimp"><a name="p761mcpsimp"></a><a name="p761mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p763mcpsimp"><a name="p763mcpsimp"></a><a name="p763mcpsimp"></a>差异</p>
@@ -4864,15 +7526,50 @@ td_s32 ss_mpi_ive_cnn_load_model(const td_char *file_name, ot_ive_cnn_model *mod
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p789mcpsimp"><a name="p789mcpsimp"></a><a name="p789mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row181561412369"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 文件名必须以.bin为后缀；.bin文件必须用配套工具ive\_tool\_caffe（参考《IVE 工具使用指南》）生成。
-- 用户必需保证.bin文件的完整性和正确性。
-- 该接口必须和[ss\_mpi\_ive\_cnn\_unload\_model](#ZH-CN_TOPIC_0000002470931302)配套使用。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_cnn\_unload\_model](#ss_mpi_ive_cnn_unload_model)
-- [ss\_mpi\_ive\_cnn\_predict](#ss_mpi_ive_cnn_predict)
-- [ss\_mpi\_ive\_cnn\_get\_result](#ss_mpi_ive_cnn_get_result) ## ss\_mpi\_ive\_cnn\_unload\_model<a name="ZH-CN_TOPIC_0000002470931302"></a> 【描述】 去初始化cnn模型数据。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   文件名必须以.bin为后缀；.bin文件必须用配套工具ive\_tool\_caffe（参考《IVE 工具使用指南》）生成。
+-   用户必需保证.bin文件的完整性和正确性。
+-   该接口必须和[ss\_mpi\_ive\_cnn\_unload\_model](#ZH-CN_TOPIC_0000002470931302)配套使用。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_cnn\_unload\_model](#ss_mpi_ive_cnn_unload_model)
+-   [ss\_mpi\_ive\_cnn\_predict](#ss_mpi_ive_cnn_predict)
+-   [ss\_mpi\_ive\_cnn\_get\_result](#ss_mpi_ive_cnn_get_result)
+
+## ss\_mpi\_ive\_cnn\_unload\_model<a name="ZH-CN_TOPIC_0000002470931302"></a>
+
+【描述】
+
+去初始化cnn模型数据。
+
+【语法】
+
+```
 td_void ss_mpi_ive_cnn_unload_model(const ot_ive_cnn_model *model);
-``` 【参数】 <a name="table14599mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table14599mcpsimp"></a>
 <table><thead align="left"><tr id="row14605mcpsimp"><th class="cellrowborder" valign="top" width="25%" id="mcps1.1.4.1.1"><p id="p14607mcpsimp"><a name="p14607mcpsimp"></a><a name="p14607mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.1.4.1.2"><p id="p14609mcpsimp"><a name="p14609mcpsimp"></a><a name="p14609mcpsimp"></a>描述</p>
@@ -4890,7 +7587,11 @@ td_void ss_mpi_ive_cnn_unload_model(const ot_ive_cnn_model *model);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table14622mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table14622mcpsimp"></a>
 <table><thead align="left"><tr id="row14627mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p14629mcpsimp"><a name="p14629mcpsimp"></a><a name="p14629mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p14631mcpsimp"><a name="p14631mcpsimp"></a><a name="p14631mcpsimp"></a>描述</p>
@@ -4902,8 +7603,17 @@ td_void ss_mpi_ive_cnn_unload_model(const ot_ive_cnn_model *model);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14637mcpsimp"><a name="p14637mcpsimp"></a><a name="p14637mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row14638mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p14640mcpsimp"><a name="p14640mcpsimp"></a><a name="p14640mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14642mcpsimp"><a name="p14642mcpsimp"></a><a name="p14642mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table14647mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table14647mcpsimp"></a>
 <table><thead align="left"><tr id="row14652mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p14654mcpsimp"><a name="p14654mcpsimp"></a><a name="p14654mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p14656mcpsimp"><a name="p14656mcpsimp"></a><a name="p14656mcpsimp"></a>差异</p>
@@ -4915,13 +7625,48 @@ td_void ss_mpi_ive_cnn_unload_model(const ot_ive_cnn_model *model);
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p14682mcpsimp"><a name="p14682mcpsimp"></a><a name="p14682mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row784019222365"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 该接口必须和[ss\_mpi\_ive\_cnn\_load\_model](#ZH-CN_TOPIC_0000002471091312)配套使用。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_cnn\_load\_model](#ss_mpi_ive_cnn_load_model)
-- [ss\_mpi\_ive\_cnn\_predict](#ss_mpi_ive_cnn_predict)
-- [ss\_mpi\_ive\_cnn\_get\_result](#ss_mpi_ive_cnn_get_result) ## ss\_mpi\_ive\_cnn\_predict<a name="ZH-CN_TOPIC_0000002470931276"></a> 【描述】 创建一个CNN模型的单个或多个样本预测任务，并输出特征向量。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+该接口必须和[ss\_mpi\_ive\_cnn\_load\_model](#ZH-CN_TOPIC_0000002471091312)配套使用。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_cnn\_load\_model](#ss_mpi_ive_cnn_load_model)
+-   [ss\_mpi\_ive\_cnn\_predict](#ss_mpi_ive_cnn_predict)
+-   [ss\_mpi\_ive\_cnn\_get\_result](#ss_mpi_ive_cnn_get_result)
+
+## ss\_mpi\_ive\_cnn\_predict<a name="ZH-CN_TOPIC_0000002470931276"></a>
+
+【描述】
+
+创建一个CNN模型的单个或多个样本预测任务，并输出特征向量。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[], const ot_ive_cnn_model *model, const ot_svp_dst_data *dst, const ot_ive_cnn_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table9193mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table9193mcpsimp"></a>
 <table><thead align="left"><tr id="row9199mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p9201mcpsimp"><a name="p9201mcpsimp"></a><a name="p9201mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.1.4.1.2"><p id="p9203mcpsimp"><a name="p9203mcpsimp"></a><a name="p9203mcpsimp"></a>描述</p>
@@ -4979,7 +7724,9 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 </td>
 </tr>
 </tbody>
-</table> <a name="table9255mcpsimp"></a>
+</table>
+
+<a name="table9255mcpsimp"></a>
 <table><thead align="left"><tr id="row9262mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.5.1.1"><p id="p9264mcpsimp"><a name="p9264mcpsimp"></a><a name="p9264mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="27%" id="mcps1.1.5.1.2"><p id="p9266mcpsimp"><a name="p9266mcpsimp"></a><a name="p9266mcpsimp"></a>支持类型</p>
@@ -5001,7 +7748,9 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 </td>
 </tr>
 </tbody>
-</table> <a name="table9282mcpsimp"></a>
+</table>
+
+<a name="table9282mcpsimp"></a>
 <table><thead align="left"><tr id="row9289mcpsimp"><th class="cellrowborder" valign="top" width="16.831683168316832%" id="mcps1.1.5.1.1"><p id="p9291mcpsimp"><a name="p9291mcpsimp"></a><a name="p9291mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="31.683168316831683%" id="mcps1.1.5.1.2"><p id="p9293mcpsimp"><a name="p9293mcpsimp"></a><a name="p9293mcpsimp"></a>向量个数</p>
@@ -5025,7 +7774,13 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 </td>
 </tr>
 </tbody>
-</table> 注：SQ18.14定点表示说明参看“定点数据类型”。 【返回值】 <a name="table9313mcpsimp"></a>
+</table>
+
+注：SQ18.14定点表示说明参看“定点数据类型”。
+
+【返回值】
+
+<a name="table9313mcpsimp"></a>
 <table><thead align="left"><tr id="row9318mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p9320mcpsimp"><a name="p9320mcpsimp"></a><a name="p9320mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p9322mcpsimp"><a name="p9322mcpsimp"></a><a name="p9322mcpsimp"></a>描述</p>
@@ -5037,8 +7792,17 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p9328mcpsimp"><a name="p9328mcpsimp"></a><a name="p9328mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row9329mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p9331mcpsimp"><a name="p9331mcpsimp"></a><a name="p9331mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p9333mcpsimp"><a name="p9333mcpsimp"></a><a name="p9333mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table9338mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table9338mcpsimp"></a>
 <table><thead align="left"><tr id="row9343mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p9345mcpsimp"><a name="p9345mcpsimp"></a><a name="p9345mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p9347mcpsimp"><a name="p9347mcpsimp"></a><a name="p9347mcpsimp"></a>差异</p>
@@ -5050,14 +7814,42 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p9373mcpsimp"><a name="p9373mcpsimp"></a><a name="p9373mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row584033033619"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 若训练时对数据做了预处理（如减去均值），则需要输入数据在调用该接口前做同样的数据预处理（调用接口前减去均值）。
-- 训练要求对数据做\[0, 255\]到\[0, 1\]的归一化，即训练的.prototxt中对原始数据必须有“transform\_param\{scale: 0.00390625\}”；在调用该接口预测时不需要做归一化，硬件内部会自动处理。
-- ctrl-\>mem内存分配至少需分配： ive\_align\(m \* ctrl-\>num \* sizeof\(td\_u32\), 16\) + ive\_align\(model-\>fc\_info.layer\_cnt\[0\]\* sizeof\(td\_u32\), 16\)\* ctrl-\>num, 其中，model-\>type为U8C1时，m=1;为U8C3\_PLANAR时，m=3。 - 样本数组src\[\]的图像类型、宽、高必须与CNN网络模型中model中的type、width、height一致，数组元素个数为ctrl-\> num。
-- 特征向量数组dst的向量数目dst-\>height与图像数目ctrl-\>num相等。 输出的特征向量内存如[图1](#fig97981942303)所示，每个向量维数dim = model-\> fc\_info. layer\_cnt \[model-\> fc\_info. layer\_num-1\]，向量的元素elem类型为SQ18.14，向量个数height=ctrl-\>num。 **图 1** cnn输出特征向量数组示意图<a name="fig97981942303"></a> ![](figures/cnn输出特征向量数组示意图.png "cnn输出特征向量数组示意图")
-- 该接口和[ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)配套使用，特征向量数组dst是[ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)的输入。
-- CNN网络模型支持最多8层Conv-ReLU-Pooling和8层全连接层；Conv-ReLU-Pooling层的卷积核仅支持3x3，ReLU\(Rectified Linear Units\)和Pooling可配（见ot\_ive\_cnn\_actv\_func和ot\_ive\_cnn\_pooling），每层Conv-ReLU-Pooling最多输出50张feature map；全连接层仅支持ReLU激活函数，层数范围\[3, 8\]：全连接输入层（即Conv-ReLU-Pooling的最终输出）维数\[1, 1024\]，中间隐藏层神经元数目\[2,256\]，输出层维数\[1, 256\]。具体参数配置参见下列表格： **表 1** cnn模型中单层Conv-ReLU-Pooling运算包参数配置表 <a name="table9404mcpsimp"></a>
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   若训练时对数据做了预处理（如减去均值），则需要输入数据在调用该接口前做同样的数据预处理（调用接口前减去均值）。
+-   训练要求对数据做\[0, 255\]到\[0, 1\]的归一化，即训练的.prototxt中对原始数据必须有“transform\_param\{scale: 0.00390625\}”；在调用该接口预测时不需要做归一化，硬件内部会自动处理。
+-   ctrl-\>mem内存分配至少需分配：
+
+    ive\_align\(m \* ctrl-\>num \* sizeof\(td\_u32\), 16\) + ive\_align\(model-\>fc\_info.layer\_cnt\[0\]\* sizeof\(td\_u32\), 16\)\* ctrl-\>num,
+
+    其中，model-\>type为U8C1时，m=1;为U8C3\_PLANAR时，m=3。
+
+-   样本数组src\[\]的图像类型、宽、高必须与CNN网络模型中model中的type、width、height一致，数组元素个数为ctrl-\> num。
+-   特征向量数组dst的向量数目dst-\>height与图像数目ctrl-\>num相等。
+
+    输出的特征向量内存如[图1](#fig97981942303)所示，每个向量维数dim = model-\> fc\_info. layer\_cnt \[model-\> fc\_info. layer\_num-1\]，向量的元素elem类型为SQ18.14，向量个数height=ctrl-\>num。
+
+    **图 1**  cnn输出特征向量数组示意图<a name="fig97981942303"></a>  
+    ![](figures/cnn输出特征向量数组示意图.png "cnn输出特征向量数组示意图")
+-   该接口和[ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)配套使用，特征向量数组dst是[ss\_mpi\_ive\_cnn\_get\_result](#ZH-CN_TOPIC_0000002470931258)的输入。
+-   CNN网络模型支持最多8层Conv-ReLU-Pooling和8层全连接层；Conv-ReLU-Pooling层的卷积核仅支持3x3，ReLU\(Rectified Linear Units\)和Pooling可配（见ot\_ive\_cnn\_actv\_func和ot\_ive\_cnn\_pooling），每层Conv-ReLU-Pooling最多输出50张feature map；全连接层仅支持ReLU激活函数，层数范围\[3, 8\]：全连接输入层（即Conv-ReLU-Pooling的最终输出）维数\[1, 1024\]，中间隐藏层神经元数目\[2,256\]，输出层维数\[1, 256\]。具体参数配置参见下列表格：
+
+**表 1**  cnn模型中单层Conv-ReLU-Pooling运算包参数配置表
+
+<a name="table9404mcpsimp"></a>
 <table><thead align="left"><tr id="row9414mcpsimp"><th class="cellrowborder" valign="top" width="26.26262626262626%" id="mcps1.2.7.1.1"><p id="p9416mcpsimp"><a name="p9416mcpsimp"></a><a name="p9416mcpsimp"></a>Conv-ReLU-Pooling 运算包</p>
 </th>
 <th class="cellrowborder" valign="top" width="17.17171717171717%" id="mcps1.2.7.1.2"><p id="p9418mcpsimp"><a name="p9418mcpsimp"></a><a name="p9418mcpsimp"></a>模式</p>
@@ -5113,7 +7905,11 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 </td>
 </tr>
 </tbody>
-</table> **表 2** cnn模型中全连接运算包参数配置表 <a name="table9467mcpsimp"></a>
+</table>
+
+**表 2**  cnn模型中全连接运算包参数配置表
+
+<a name="table9467mcpsimp"></a>
 <table><thead align="left"><tr id="row9476mcpsimp"><th class="cellrowborder" valign="top" width="26%" id="mcps1.2.6.1.1"><p id="p9478mcpsimp"><a name="p9478mcpsimp"></a><a name="p9478mcpsimp"></a>层数（含输入层）</p>
 </th>
 <th class="cellrowborder" valign="top" width="15%" id="mcps1.2.6.1.2"><p id="p9480mcpsimp"><a name="p9480mcpsimp"></a><a name="p9480mcpsimp"></a>输入层维数</p>
@@ -5138,11 +7934,38 @@ td_s32 ss_mpi_ive_cnn_predict(ot_ive_handle *handle, const ot_svp_src_img src[],
 </td>
 </tr>
 </tbody>
-</table> - 以单个输入样本，n+1（1≤n+1≤8）层Conv-ReLU-Pooling和m+1（3≤m+1≤8）层全连接层为例，CNN网络模型如[图2](#fig20450122212328)所示。注意图示中，FCL-0是Pooling-n各图像数据拉成的列向量，实际计算过程中Pooling-n的结果会直接以FCL-0的形式输出。 **图 2** cnn网络模型示意图<a name="fig20450122212328"></a> ![](figures/cnn网络模型示意图.png "cnn网络模型示意图") 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_cnn\_load\_model](#ss_mpi_ive_cnn_load_model)
-- [ss\_mpi\_ive\_cnn\_unload\_model](#ss_mpi_ive_cnn_unload_model)
-- [ss\_mpi\_ive\_cnn\_get\_result](#ss_mpi_ive_cnn_get_result) ## ss\_mpi\_ive\_cnn\_get\_result<a name="ZH-CN_TOPIC_0000002470931258"></a> 【描述】 接收cnn\_predict结果，执行softmax运算来预测每个样本图像的类别，并输出置信度最高的类别\(Rank-1\)以及对应的置信度。 【语法】 ```
+</table>
+
+-   以单个输入样本，n+1（1≤n+1≤8）层Conv-ReLU-Pooling和m+1（3≤m+1≤8）层全连接层为例，CNN网络模型如[图2](#fig20450122212328)所示。注意图示中，FCL-0是Pooling-n各图像数据拉成的列向量，实际计算过程中Pooling-n的结果会直接以FCL-0的形式输出。
+
+    **图 2**  cnn网络模型示意图<a name="fig20450122212328"></a>  
+    ![](figures/cnn网络模型示意图.png "cnn网络模型示意图")
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_cnn\_load\_model](#ss_mpi_ive_cnn_load_model)
+-   [ss\_mpi\_ive\_cnn\_unload\_model](#ss_mpi_ive_cnn_unload_model)
+-   [ss\_mpi\_ive\_cnn\_get\_result](#ss_mpi_ive_cnn_get_result)
+
+## ss\_mpi\_ive\_cnn\_get\_result<a name="ZH-CN_TOPIC_0000002470931258"></a>
+
+【描述】
+
+接收cnn\_predict结果，执行softmax运算来预测每个样本图像的类别，并输出置信度最高的类别\(Rank-1\)以及对应的置信度。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_cnn_get_result(const ot_svp_src_data *src, const ot_svp_dst_mem_info *dst, const ot_ive_cnn_model *model, const ot_ive_cnn_ctrl *ctrl);
-``` 【参数】 <a name="table14147mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table14147mcpsimp"></a>
 <table><thead align="left"><tr id="row14153mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p14155mcpsimp"><a name="p14155mcpsimp"></a><a name="p14155mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p14157mcpsimp"><a name="p14157mcpsimp"></a><a name="p14157mcpsimp"></a>描述</p>
@@ -5183,7 +8006,11 @@ td_s32 ss_mpi_ive_cnn_get_result(const ot_svp_src_data *src, const ot_svp_dst_me
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table14195mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table14195mcpsimp"></a>
 <table><thead align="left"><tr id="row14200mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p14202mcpsimp"><a name="p14202mcpsimp"></a><a name="p14202mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p14204mcpsimp"><a name="p14204mcpsimp"></a><a name="p14204mcpsimp"></a>描述</p>
@@ -5195,8 +8022,17 @@ td_s32 ss_mpi_ive_cnn_get_result(const ot_svp_src_data *src, const ot_svp_dst_me
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14210mcpsimp"><a name="p14210mcpsimp"></a><a name="p14210mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row14211mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p14213mcpsimp"><a name="p14213mcpsimp"></a><a name="p14213mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14215mcpsimp"><a name="p14215mcpsimp"></a><a name="p14215mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【解决方案差异】 <a name="table14220mcpsimp"></a>
+</table>
+
+【解决方案差异】
+
+<a name="table14220mcpsimp"></a>
 <table><thead align="left"><tr id="row14225mcpsimp"><th class="cellrowborder" valign="top" width="28.999999999999996%" id="mcps1.1.3.1.1"><p id="p14227mcpsimp"><a name="p14227mcpsimp"></a><a name="p14227mcpsimp"></a>解决方案名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="71%" id="mcps1.1.3.1.2"><p id="p14229mcpsimp"><a name="p14229mcpsimp"></a><a name="p14229mcpsimp"></a>差异</p>
@@ -5208,15 +8044,56 @@ td_s32 ss_mpi_ive_cnn_get_result(const ot_svp_src_data *src, const ot_svp_dst_me
 <td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p14255mcpsimp"><a name="p14255mcpsimp"></a><a name="p14255mcpsimp"></a>不支持</p>
 </td>
 </tr>
+<tr id="row6928133793611"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.1.3.1.1 "><p id="p1823012815334"><a name="p1823012815334"></a><a name="p1823012815334"></a>Hi3519AV200</p>
+</td>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.1.3.1.2 "><p id="p192301028123318"><a name="p192301028123318"></a><a name="p192301028123318"></a>不支持</p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 源数据src必须为[ss\_mpi\_ive\_cnn\_predict](#ZH-CN_TOPIC_0000002470931276)的输出，model和ctrl必须与调用时的参数一致。
-- 预测结果dst指向ot\_ive\_cnn\_result的数组，数组元素数目n=ctrl-\>num，其内存排布如[图1](#fig174217383416)所示。 **图 1** cnn各样本预测结果示意图<a name="fig174217383416"></a> ![](figures/cnn各样本预测结果示意图.png "cnn各样本预测结果示意图")
-- 该接口实现的rank-1版本，用户可根据自己的需求实现rank-n（表示最可能的n类）版本，步骤如下： 1. 通过softmax计算出每个类别的置信度； 2. 对置信度进行排序； 3. 输出rank-n的结果。 【举例】 无。 【相关主题】 - [ss\_mpi\_ive\_cnn\_load\_model](#ss_mpi_ive_cnn_load_model)
-- [ss\_mpi\_ive\_cnn\_unload\_model](#ss_mpi_ive_cnn_unload_model)
-- [ss\_mpi\_ive\_cnn\_predict](#ss_mpi_ive_cnn_predict) ## ss\_mpi\_ive\_persp\_trans<a name="ZH-CN_TOPIC_0000002503971185"></a> 【描述】 根据输入源图的区域位置和点对信息做相应的透视变换。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   源数据src必须为[ss\_mpi\_ive\_cnn\_predict](#ZH-CN_TOPIC_0000002470931276)的输出，model和ctrl必须与调用时的参数一致。
+-   预测结果dst指向ot\_ive\_cnn\_result的数组，数组元素数目n=ctrl-\>num，其内存排布如[图1](#fig174217383416)所示。
+
+**图 1**  cnn各样本预测结果示意图<a name="fig174217383416"></a>  
+![](figures/cnn各样本预测结果示意图.png "cnn各样本预测结果示意图")
+-   该接口实现的rank-1版本，用户可根据自己的需求实现rank-n（表示最可能的n类）版本，步骤如下：
+    1.  通过softmax计算出每个类别的置信度；
+    2.  对置信度进行排序；
+    3.  输出rank-n的结果。
+
+【举例】
+
+无。
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_cnn\_load\_model](#ss_mpi_ive_cnn_load_model)
+-   [ss\_mpi\_ive\_cnn\_unload\_model](#ss_mpi_ive_cnn_unload_model)
+-   [ss\_mpi\_ive\_cnn\_predict](#ss_mpi_ive_cnn_predict)
+
+## ss\_mpi\_ive\_persp\_trans<a name="ZH-CN_TOPIC_0000002503971185"></a>
+
+【描述】
+
+根据输入源图的区域位置和点对信息做相应的透视变换。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_persp_trans(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_rect_u16 roi[], const ot_svp_src_mem_info point_pair[], const ot_svp_dst_img dst[], const ot_ive_persp_trans_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table8336mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table8336mcpsimp"></a>
 <table><thead align="left"><tr id="row8342mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p8344mcpsimp"><a name="p8344mcpsimp"></a><a name="p8344mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p8346mcpsimp"><a name="p8346mcpsimp"></a><a name="p8346mcpsimp"></a>描述</p>
@@ -5283,7 +8160,9 @@ td_s32 ss_mpi_ive_persp_trans(ot_ive_handle *handle, const ot_svp_src_img *src, 
 </td>
 </tr>
 </tbody>
-</table> <a name="table8409mcpsimp"></a>
+</table>
+
+<a name="table8409mcpsimp"></a>
 <table><thead align="left"><tr id="row8416mcpsimp"><th class="cellrowborder" valign="top" width="13%" id="mcps1.1.5.1.1"><p id="p8418mcpsimp"><a name="p8418mcpsimp"></a><a name="p8418mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="51%" id="mcps1.1.5.1.2"><p id="p8420mcpsimp"><a name="p8420mcpsimp"></a><a name="p8420mcpsimp"></a>支持图像类型</p>
@@ -5314,7 +8193,11 @@ td_s32 ss_mpi_ive_persp_trans(ot_ive_handle *handle, const ot_svp_src_img *src, 
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table8446mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table8446mcpsimp"></a>
 <table><thead align="left"><tr id="row8451mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p8453mcpsimp"><a name="p8453mcpsimp"></a><a name="p8453mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p8455mcpsimp"><a name="p8455mcpsimp"></a><a name="p8455mcpsimp"></a>描述</p>
@@ -5326,12 +8209,83 @@ td_s32 ss_mpi_ive_persp_trans(ot_ive_handle *handle, const ot_svp_src_img *src, 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p8461mcpsimp"><a name="p8461mcpsimp"></a><a name="p8461mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row8462mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p8464mcpsimp"><a name="p8464mcpsimp"></a><a name="p8464mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 所有区域的透视变换算法模式相同。
-- 点对point\_pair在内存的排布格式： ![](figures/---.png) SrcX\_PPN为第N个点对源X坐标，SrcY\_PPN为第N个点对源Y坐标，DstX\_PPN为第N个点对目的X坐标，DstY\_PPN为第N个点对目的Y坐标。坐标都是用u14q2表示。 - 算法原理描述： 仿射变换是投影变换的一种特殊形式，从数学的角度看，仿射变换就是向量经过一次线性变换加一次平移变换，用公式可以表示为： ![](figures/zh-cn_formulaimage_0000002504091299.png)其中，![](figures/zh-cn_formulaimage_0000002504091309.png)为变换前原始向量，![](figures/zh-cn_formulaimage_0000002471091430.png)为变换后目标向量，A为线性变换矩阵，![](figures/zh-cn_formulaimage_0000002504091311.png)为平移变换向量。公式可以统一描述成下面的矩阵的形式以方便计算和理解： ![](figures/zh-cn_formulaimage_0000002503971389.png) 在图像处理中，向量就是二维坐标（x, y），所以上面的矩阵可以改写成下面的坐标表达形式： ![](figures/zh-cn_formulaimage_0000002504091303.png) 对于一幅图像，如果我们知道变换矩阵T，便可对图像中任何一点进行仿射变换。由于T是一个3x3的矩阵，要求解该矩阵需要至少三组已知点对。根据不同的变换矩阵系数的组合，图像几何矫正就是在各种选定的图像变换（例如平移，缩放，旋转，斜切和透视等，如[图1](#fig126481982440)所示）方式下，利用标定的原图像和目标图像的基准点对，求解得到变换矩阵，然后用该变换矩阵对源图像做变化得到矫正后的目标图像： **图 1** 图像变换<a name="fig126481982440"></a> ![](figures/图像变换.png "图像变换") 图像透视变换应用广泛，下面以_图像分析_中的人脸矫正为例进行说明。典型的_图像分析_应用如[图2](#fig32111813490)所示，首先利用人脸的关键点检测算法将人脸的关键点Landmark（LMK）检测出来，不同的关键点检测算法检测到的关键点的个数各异，persp\_trans算子支持最大68个关键点基准点对，通过人脸的关键点点对，建立超定线性方程并求解得到变换矩阵，将检测到的人脸几何矫正后裁剪到标准图像大小。 **图 2** _图像分析_应用<a name="fig32111813490"></a> ![](figures/图像分析应用.png "图像分析应用") 本算子目前支持的变换方式包括平移、缩放、旋转和斜切，求解得到的变换矩阵系数是这些变换方式的融合，变换矩阵各参数对应的变换模式的物理意义分解如[图3](#fig1884586175320)所示。 **图 3** 变换矩阵各参数对应的变换模式<a name="fig1884586175320"></a> ![](figures/变换矩阵各参数对应的变换模式.png "变换矩阵各参数对应的变换模式") [图4](#fig572333910816)给出一个具体的利用5个基准点对，眼睛（2）、鼻子（1）、嘴（2）用例，利用图示的点对，求解得到图示的变换矩阵，将250x250的人脸图像变换到标准图像库96x112分辨率的图像进行_图像分析_。 **图 4** 人脸图像变换<a name="fig572333910816"></a> ![](figures/人脸图像变换.png "人脸图像变换") 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_kcf\_get\_mem\_size<a name="ZH-CN_TOPIC_0000002470931306"></a> 【描述】 获取需要创建目标对象数的内存大小。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   所有区域的透视变换算法模式相同。
+-   点对point\_pair在内存的排布格式：
+
+    ![](figures/---.png)
+
+    SrcX\_PPN为第N个点对源X坐标，SrcY\_PPN为第N个点对源Y坐标，DstX\_PPN为第N个点对目的X坐标，DstY\_PPN为第N个点对目的Y坐标。坐标都是用u14q2表示。
+
+-   算法原理描述：
+
+    仿射变换是投影变换的一种特殊形式，从数学的角度看，仿射变换就是向量经过一次线性变换加一次平移变换，用公式可以表示为：
+
+    ![](figures/zh-cn_formulaimage_0000002504091299.png)其中，![](figures/zh-cn_formulaimage_0000002504091309.png)为变换前原始向量，![](figures/zh-cn_formulaimage_0000002471091430.png)为变换后目标向量，A为线性变换矩阵，![](figures/zh-cn_formulaimage_0000002504091311.png)为平移变换向量。公式可以统一描述成下面的矩阵的形式以方便计算和理解：
+
+    ![](figures/zh-cn_formulaimage_0000002503971389.png)
+
+    在图像处理中，向量就是二维坐标（x, y），所以上面的矩阵可以改写成下面的坐标表达形式：
+
+    ![](figures/zh-cn_formulaimage_0000002504091303.png)
+
+    对于一幅图像，如果我们知道变换矩阵T，便可对图像中任何一点进行仿射变换。由于T是一个3x3的矩阵，要求解该矩阵需要至少三组已知点对。根据不同的变换矩阵系数的组合，图像几何矫正就是在各种选定的图像变换（例如平移，缩放，旋转，斜切和透视等，如[图1](#fig126481982440)所示）方式下，利用标定的原图像和目标图像的基准点对，求解得到变换矩阵，然后用该变换矩阵对源图像做变化得到矫正后的目标图像：
+
+    **图 1**  图像变换<a name="fig126481982440"></a>  
+    ![](figures/图像变换.png "图像变换")
+
+    图像透视变换应用广泛，下面以_图像分析_中的人脸矫正为例进行说明。典型的_图像分析_应用如[图2](#fig32111813490)所示，首先利用人脸的关键点检测算法将人脸的关键点Landmark（LMK）检测出来，不同的关键点检测算法检测到的关键点的个数各异，persp\_trans算子支持最大68个关键点基准点对，通过人脸的关键点点对，建立超定线性方程并求解得到变换矩阵，将检测到的人脸几何矫正后裁剪到标准图像大小。
+
+    **图 2** _图像分析_应用<a name="fig32111813490"></a>  
+    ![](figures/图像分析应用.png "图像分析应用")
+
+    本算子目前支持的变换方式包括平移、缩放、旋转和斜切，求解得到的变换矩阵系数是这些变换方式的融合，变换矩阵各参数对应的变换模式的物理意义分解如[图3](#fig1884586175320)所示。
+
+    **图 3**  变换矩阵各参数对应的变换模式<a name="fig1884586175320"></a>  
+    ![](figures/变换矩阵各参数对应的变换模式.png "变换矩阵各参数对应的变换模式")
+
+    [图4](#fig572333910816)给出一个具体的利用5个基准点对，眼睛（2）、鼻子（1）、嘴（2）用例，利用图示的点对，求解得到图示的变换矩阵，将250x250的人脸图像变换到标准图像库96x112分辨率的图像进行_图像分析_。
+
+    **图 4**  人脸图像变换<a name="fig572333910816"></a>  
+    ![](figures/人脸图像变换.png "人脸图像变换")
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_kcf\_get\_mem\_size<a name="ZH-CN_TOPIC_0000002470931306"></a>
+
+【描述】
+
+获取需要创建目标对象数的内存大小。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_get_mem_size(td_u32 max_obj_num, td_u32 *size);
-``` 【参数】 <a name="table15835mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table15835mcpsimp"></a>
 <table><thead align="left"><tr id="row15841mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p15843mcpsimp"><a name="p15843mcpsimp"></a><a name="p15843mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p15845mcpsimp"><a name="p15845mcpsimp"></a><a name="p15845mcpsimp"></a>描述</p>
@@ -5355,7 +8309,11 @@ td_s32 ss_mpi_ive_kcf_get_mem_size(td_u32 max_obj_num, td_u32 *size);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table15864mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table15864mcpsimp"></a>
 <table><thead align="left"><tr id="row15869mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p15871mcpsimp"><a name="p15871mcpsimp"></a><a name="p15871mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p15873mcpsimp"><a name="p15873mcpsimp"></a><a name="p15873mcpsimp"></a>描述</p>
@@ -5367,11 +8325,46 @@ td_s32 ss_mpi_ive_kcf_get_mem_size(td_u32 max_obj_num, td_u32 *size);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p15879mcpsimp"><a name="p15879mcpsimp"></a><a name="p15879mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row15880mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p15882mcpsimp"><a name="p15882mcpsimp"></a><a name="p15882mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 申请通过本接口获取到的内存大小的内存，作为[ss\_mpi\_ive\_kcf\_create\_obj\_list](#ZH-CN_TOPIC_0000002504091179)接口输入来创建目标链表。 【举例】 无 【相关主题】 [ss\_mpi\_ive\_kcf\_create\_obj\_list](#ss_mpi_ive_kcf_create_obj_list) ## ss\_mpi\_ive\_kcf\_create\_obj\_list<a name="ZH-CN_TOPIC_0000002504091179"></a> 【描述】 创建目标链表。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+申请通过本接口获取到的内存大小的内存，作为[ss\_mpi\_ive\_kcf\_create\_obj\_list](#ZH-CN_TOPIC_0000002504091179)接口输入来创建目标链表。
+
+【举例】
+
+无
+
+【相关主题】
+
+[ss\_mpi\_ive\_kcf\_create\_obj\_list](#ss_mpi_ive_kcf_create_obj_list)
+
+## ss\_mpi\_ive\_kcf\_create\_obj\_list<a name="ZH-CN_TOPIC_0000002504091179"></a>
+
+【描述】
+
+创建目标链表。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_create_obj_list(const ot_svp_mem_info *mem, td_u32 max_obj_num, ot_ive_kcf_obj_list *obj_list);
-``` 【参数】 <a name="table11794mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table11794mcpsimp"></a>
 <table><thead align="left"><tr id="row11800mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p11802mcpsimp"><a name="p11802mcpsimp"></a><a name="p11802mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p11804mcpsimp"><a name="p11804mcpsimp"></a><a name="p11804mcpsimp"></a>描述</p>
@@ -5403,7 +8396,11 @@ td_s32 ss_mpi_ive_kcf_create_obj_list(const ot_svp_mem_info *mem, td_u32 max_obj
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table11831mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table11831mcpsimp"></a>
 <table><thead align="left"><tr id="row11836mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p11838mcpsimp"><a name="p11838mcpsimp"></a><a name="p11838mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p11840mcpsimp"><a name="p11840mcpsimp"></a><a name="p11840mcpsimp"></a>描述</p>
@@ -5415,18 +8412,53 @@ td_s32 ss_mpi_ive_kcf_create_obj_list(const ot_svp_mem_info *mem, td_u32 max_obj
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11846mcpsimp"><a name="p11846mcpsimp"></a><a name="p11846mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row11847mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p11849mcpsimp"><a name="p11849mcpsimp"></a><a name="p11849mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p11851mcpsimp"><a name="p11851mcpsimp"></a><a name="p11851mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 创建的目标链表只能是单线程访问。
-- 多线程做跟踪不同目标，需要每个线程单独创建一个目标链表。
-- obj\_list只能通过调用接口操作，不能通过其他方式操作。
-- 必须使用[ss\_mpi\_ive\_kcf\_destroy\_obj\_list](#ZH-CN_TOPIC_0000002503971237)进行销毁，否则会造成内存泄露。
-- max\_obj\_num必须和[ss\_mpi\_ive\_kcf\_get\_mem\_size](#ZH-CN_TOPIC_0000002470931306)接口的max\_obj\_num保持一致。
-- 如果需要多线程操作obj\_list，则需要用户保证obj\_list操作的同步和正确性。
-- mem管理的内存和obj\_list是一一对应关系，不能对应多个obj\_list，否则会出现异常。 【举例】 无 【相关主题】 - [ss\_mpi\_ive\_kcf\_get\_mem\_size](#ss_mpi_ive_kcf_get_mem_size)
-- [ss\_mpi\_ive\_kcf\_destroy\_obj\_list](#ss_mpi_ive_kcf_destroy_obj_list) ## ss\_mpi\_ive\_kcf\_destroy\_obj\_list<a name="ZH-CN_TOPIC_0000002503971237"></a> 【描述】 销毁目标链表。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   创建的目标链表只能是单线程访问。
+-   多线程做跟踪不同目标，需要每个线程单独创建一个目标链表。
+-   obj\_list只能通过调用接口操作，不能通过其他方式操作。
+-   必须使用[ss\_mpi\_ive\_kcf\_destroy\_obj\_list](#ZH-CN_TOPIC_0000002503971237)进行销毁，否则会造成内存泄露。
+-   max\_obj\_num必须和[ss\_mpi\_ive\_kcf\_get\_mem\_size](#ZH-CN_TOPIC_0000002470931306)接口的max\_obj\_num保持一致。
+-   如果需要多线程操作obj\_list，则需要用户保证obj\_list操作的同步和正确性。
+-   mem管理的内存和obj\_list是一一对应关系，不能对应多个obj\_list，否则会出现异常。
+
+【举例】
+
+无
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_kcf\_get\_mem\_size](#ss_mpi_ive_kcf_get_mem_size)
+-   [ss\_mpi\_ive\_kcf\_destroy\_obj\_list](#ss_mpi_ive_kcf_destroy_obj_list)
+
+## ss\_mpi\_ive\_kcf\_destroy\_obj\_list<a name="ZH-CN_TOPIC_0000002503971237"></a>
+
+【描述】
+
+销毁目标链表。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_destroy_obj_list(ot_ive_kcf_obj_list *obj_list);
-``` 【参数】 <a name="table8517mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table8517mcpsimp"></a>
 <table><thead align="left"><tr id="row8523mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p8525mcpsimp"><a name="p8525mcpsimp"></a><a name="p8525mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p8527mcpsimp"><a name="p8527mcpsimp"></a><a name="p8527mcpsimp"></a>描述</p>
@@ -5443,7 +8475,11 @@ td_s32 ss_mpi_ive_kcf_destroy_obj_list(ot_ive_kcf_obj_list *obj_list);
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table8539mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table8539mcpsimp"></a>
 <table><thead align="left"><tr id="row8544mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p8546mcpsimp"><a name="p8546mcpsimp"></a><a name="p8546mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p8548mcpsimp"><a name="p8548mcpsimp"></a><a name="p8548mcpsimp"></a>描述</p>
@@ -5455,11 +8491,46 @@ td_s32 ss_mpi_ive_kcf_destroy_obj_list(ot_ive_kcf_obj_list *obj_list);
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p8554mcpsimp"><a name="p8554mcpsimp"></a><a name="p8554mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row8555mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p8557mcpsimp"><a name="p8557mcpsimp"></a><a name="p8557mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p8559mcpsimp"><a name="p8559mcpsimp"></a><a name="p8559mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 无 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_kcf\_create\_gauss\_peak<a name="ZH-CN_TOPIC_0000002504091153"></a> 【描述】 创建高斯峰值。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+无
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_kcf\_create\_gauss\_peak<a name="ZH-CN_TOPIC_0000002504091153"></a>
+
+【描述】
+
+创建高斯峰值。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_create_gauss_peak(td_u3q5 padding, const ot_svp_dst_mem_info *gauss_peak );
-``` 【参数】 <a name="table14016mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table14016mcpsimp"></a>
 <table><thead align="left"><tr id="row14022mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p14024mcpsimp"><a name="p14024mcpsimp"></a><a name="p14024mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p14026mcpsimp"><a name="p14026mcpsimp"></a><a name="p14026mcpsimp"></a>描述</p>
@@ -5485,7 +8556,11 @@ td_s32 ss_mpi_ive_kcf_create_gauss_peak(td_u3q5 padding, const ot_svp_dst_mem_in
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table14047mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table14047mcpsimp"></a>
 <table><thead align="left"><tr id="row14052mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p14054mcpsimp"><a name="p14054mcpsimp"></a><a name="p14054mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p14056mcpsimp"><a name="p14056mcpsimp"></a><a name="p14056mcpsimp"></a>描述</p>
@@ -5497,13 +8572,48 @@ td_s32 ss_mpi_ive_kcf_create_gauss_peak(td_u3q5 padding, const ot_svp_dst_mem_in
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14062mcpsimp"><a name="p14062mcpsimp"></a><a name="p14062mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row14063mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p14065mcpsimp"><a name="p14065mcpsimp"></a><a name="p14065mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p14067mcpsimp"><a name="p14067mcpsimp"></a><a name="p14067mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - gauss\_peak 需要用户申请内存。
-- 创建高斯峰值接口只需要执行一次。
-- 确保一个padding对应一个gauss\_peak。如果需要多个padding，则需要多个gauss\_peak。 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_kcf\_create\_cos\_win<a name="ZH-CN_TOPIC_0000002470931252"></a> 【描述】 创建汉宁窗。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   gauss\_peak 需要用户申请内存。
+-   创建高斯峰值接口只需要执行一次。
+-   确保一个padding对应一个gauss\_peak。如果需要多个padding，则需要多个gauss\_peak。
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_kcf\_create\_cos\_win<a name="ZH-CN_TOPIC_0000002470931252"></a>
+
+【描述】
+
+创建汉宁窗。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_create_cos_win(const ot_svp_dst_mem_info *cos_win_x, const ot_svp_dst_mem_info *cos_win_y)
-``` 【参数】 <a name="table1515mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table1515mcpsimp"></a>
 <table><thead align="left"><tr id="row1521mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p1523mcpsimp"><a name="p1523mcpsimp"></a><a name="p1523mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p1525mcpsimp"><a name="p1525mcpsimp"></a><a name="p1525mcpsimp"></a>描述</p>
@@ -5531,7 +8641,11 @@ td_s32 ss_mpi_ive_kcf_create_cos_win(const ot_svp_dst_mem_info *cos_win_x, const
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table1548mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table1548mcpsimp"></a>
 <table><thead align="left"><tr id="row1553mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1555mcpsimp"><a name="p1555mcpsimp"></a><a name="p1555mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1557mcpsimp"><a name="p1557mcpsimp"></a><a name="p1557mcpsimp"></a>描述</p>
@@ -5543,12 +8657,47 @@ td_s32 ss_mpi_ive_kcf_create_cos_win(const ot_svp_dst_mem_info *cos_win_x, const
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1563mcpsimp"><a name="p1563mcpsimp"></a><a name="p1563mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row1564mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1566mcpsimp"><a name="p1566mcpsimp"></a><a name="p1566mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - cos\_win\_x，cos\_win\_y需要用户申请内存。
-- 创建汉宁窗接口只需要执行一次。 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_kcf\_get\_train\_obj<a name="ZH-CN_TOPIC_0000002471091232"></a> 【描述】 获取需要训练的目标对象。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   cos\_win\_x，cos\_win\_y需要用户申请内存。
+-   创建汉宁窗接口只需要执行一次。
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_kcf\_get\_train\_obj<a name="ZH-CN_TOPIC_0000002471091232"></a>
+
+【描述】
+
+获取需要训练的目标对象。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_get_train_obj(td_u3q5 padding, const ot_ive_roi_info roi_info[], td_u32 obj_num, const ot_svp_mem_info *cos_win_x, const ot_svp_mem_info *cos_win_y, const ot_svp_mem_info *gauss_peak, ot_ive_kcf_obj_list *obj_list);
-``` 【参数】 <a name="table13894mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table13894mcpsimp"></a>
 <table><thead align="left"><tr id="row13900mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p13902mcpsimp"><a name="p13902mcpsimp"></a><a name="p13902mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p13904mcpsimp"><a name="p13904mcpsimp"></a><a name="p13904mcpsimp"></a>描述</p>
@@ -5610,7 +8759,11 @@ td_s32 ss_mpi_ive_kcf_get_train_obj(td_u3q5 padding, const ot_ive_roi_info roi_i
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table13961mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table13961mcpsimp"></a>
 <table><thead align="left"><tr id="row13966mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p13968mcpsimp"><a name="p13968mcpsimp"></a><a name="p13968mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p13970mcpsimp"><a name="p13970mcpsimp"></a><a name="p13970mcpsimp"></a>描述</p>
@@ -5622,14 +8775,54 @@ td_s32 ss_mpi_ive_kcf_get_train_obj(td_u3q5 padding, const ot_ive_roi_info roi_i
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13976mcpsimp"><a name="p13976mcpsimp"></a><a name="p13976mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row13977mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p13979mcpsimp"><a name="p13979mcpsimp"></a><a name="p13979mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p13981mcpsimp"><a name="p13981mcpsimp"></a><a name="p13981mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 本接口依赖[ss\_mpi\_ive\_kcf\_create\_obj\_list](#ZH-CN_TOPIC_0000002504091179)、[ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ZH-CN_TOPIC_0000002504091153)、[ss\_mpi\_ive\_kcf\_create\_cos\_win](#ZH-CN_TOPIC_0000002470931252)等接口创建的信息。
-- roi\_info的roi区域与padding需要满足下面的约束关系： - width \* padding / 32 必须小于等于1024，大于等于40； - height \* padding / 32 必须小于等于1024，大于等于40。 - width、height取值范围为\[8,684\]。 - 使用本接口前必须确保以下三个接口调用来初始化参数cos\_win\_x、cos\_win\_y、gauss\_peak和obj\_list。 【举例】 无 【相关主题】 - [ss\_mpi\_ive\_kcf\_create\_obj\_list](#ss_mpi_ive_kcf_create_obj_list)
-- [ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ss_mpi_ive_kcf_create_gauss_peak)
-- [ss\_mpi\_ive\_kcf\_create\_cos\_win](#ss_mpi_ive_kcf_create_cos_win) ## ss\_mpi\_ive\_kcf\_proc<a name="ZH-CN_TOPIC_0000002503971241"></a> 【描述】 提交目标给硬件处理。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   本接口依赖[ss\_mpi\_ive\_kcf\_create\_obj\_list](#ZH-CN_TOPIC_0000002504091179)、[ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ZH-CN_TOPIC_0000002504091153)、[ss\_mpi\_ive\_kcf\_create\_cos\_win](#ZH-CN_TOPIC_0000002470931252)等接口创建的信息。
+-   roi\_info的roi区域与padding需要满足下面的约束关系：
+    -   width \* padding / 32 必须小于等于1024，大于等于40；
+    -   height \* padding / 32 必须小于等于1024，大于等于40。
+    -   width、height取值范围为\[8,684\]。
+
+-   使用本接口前必须确保以下三个接口调用来初始化参数cos\_win\_x、cos\_win\_y、gauss\_peak和obj\_list。
+
+【举例】
+
+无
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_kcf\_create\_obj\_list](#ss_mpi_ive_kcf_create_obj_list)
+-   [ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ss_mpi_ive_kcf_create_gauss_peak)
+-   [ss\_mpi\_ive\_kcf\_create\_cos\_win](#ss_mpi_ive_kcf_create_cos_win)
+
+## ss\_mpi\_ive\_kcf\_proc<a name="ZH-CN_TOPIC_0000002503971241"></a>
+
+【描述】
+
+提交目标给硬件处理。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_proc(ot_ive_handle *handle, const ot_svp_src_img *src, ot_ive_kcf_obj_list *obj_list, const ot_ive_kcf_proc_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table15060mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table15060mcpsimp"></a>
 <table><thead align="left"><tr id="row15066mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p15068mcpsimp"><a name="p15068mcpsimp"></a><a name="p15068mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p15070mcpsimp"><a name="p15070mcpsimp"></a><a name="p15070mcpsimp"></a>描述</p>
@@ -5675,7 +8868,9 @@ td_s32 ss_mpi_ive_kcf_proc(ot_ive_handle *handle, const ot_svp_src_img *src, ot_
 </td>
 </tr>
 </tbody>
-</table> <a name="table15110mcpsimp"></a>
+</table>
+
+<a name="table15110mcpsimp"></a>
 <table><thead align="left"><tr id="row15117mcpsimp"><th class="cellrowborder" valign="top" width="15.841584158415841%" id="mcps1.1.5.1.1"><p id="p15119mcpsimp"><a name="p15119mcpsimp"></a><a name="p15119mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.57425742574257%" id="mcps1.1.5.1.2"><p id="p15121mcpsimp"><a name="p15121mcpsimp"></a><a name="p15121mcpsimp"></a>支持图像类型</p>
@@ -5696,7 +8891,11 @@ td_s32 ss_mpi_ive_kcf_proc(ot_ive_handle *handle, const ot_svp_src_img *src, ot_
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table15137mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table15137mcpsimp"></a>
 <table><thead align="left"><tr id="row15142mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p15144mcpsimp"><a name="p15144mcpsimp"></a><a name="p15144mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p15146mcpsimp"><a name="p15146mcpsimp"></a><a name="p15146mcpsimp"></a>描述</p>
@@ -5708,16 +8907,70 @@ td_s32 ss_mpi_ive_kcf_proc(ot_ive_handle *handle, const ot_svp_src_img *src, ot_
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p15152mcpsimp"><a name="p15152mcpsimp"></a><a name="p15152mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row15153mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p15155mcpsimp"><a name="p15155mcpsimp"></a><a name="p15155mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p15157mcpsimp"><a name="p15157mcpsimp"></a><a name="p15157mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 调用本接口前必须确保至少调用一次[ss\_mpi\_ive\_kcf\_get\_train\_obj](#ZH-CN_TOPIC_0000002471091232)获取到要训练的对象。
-- 软件调用流程如[图1](#fig13293144115712)所示，具体代码示例请参考sample实现。 **图 1** KCF软件调用流程<a name="fig13293144115712"></a> ![](figures/KCF软件调用流程.png "KCF软件调用流程")
-- 算法描述如下： KCF算法利用循环矩阵对角化等性质，将跟踪问题核化，使核化后跟踪比对的操作简化成易于并行加速的矩阵运算，提升跟踪解决方案的系统性能，KCF算法可以和HOG算子联合使用，典型的算法用例如[图2](#fig78578448113)所示。 **图 2** KCF典型的算法用例<a name="fig78578448113"></a> ![](figures/KCF典型的算法用例.png "KCF典型的算法用例") 跟踪问题核化、相关滤波器训练等数学推导参阅“High-speed tracking with kernelized correlation filters”，IEEE Trans. PAMI, vol.37, No. 3, March 2015. 算法的总体流程：在It帧中，在当前位置pt附近采样，训练一个回归器。来计算一个小窗口采样的响应。在It+1帧中，在前一帧位置pt附近采样，用已经训练的回归器来判断每个采样的响应。响应最强的采样作为本帧的位置pt+1。 用一个人脸跟踪图解一下上面的跟踪算法过程，如[图3](#fig896312217281)所示，首先对初始帧做初始化，框定一个待跟踪的ROI，对输入图像做特征提取用余弦函数窗对提取到的特征加权后, 将其用FFT变换到频域，与训练得到的相关滤波器在频域做点乘，反变换到空域后找到最强的响应位置，就是得到人脸在当前帧的预测。 **图 3** 跟踪算法过程示例<a name="fig896312217281"></a> ![](figures/跟踪算法过程示例.png "跟踪算法过程示例") [图3](#fig896312217281)的相关滤波器参数训练问题通过核函数和循环矩阵对角化的性质简化为矩阵运算操作，详细数学推导参阅上面里出的参考论文。 【举例】 无 【相关主题】 - [ss\_mpi\_ive\_kcf\_create\_obj\_list](#ss_mpi_ive_kcf_create_obj_list)
-- [ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ss_mpi_ive_kcf_create_gauss_peak)
-- [ss\_mpi\_ive\_kcf\_create\_cos\_win](#ss_mpi_ive_kcf_create_cos_win)
-- [ss\_mpi\_ive\_kcf\_get\_train\_obj](#ss_mpi_ive_kcf_get_train_obj) ## ss\_mpi\_ive\_kcf\_get\_obj\_bbox<a name="ZH-CN_TOPIC_0000002503971245"></a> 【描述】 获取目标区域跟踪结果信息。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   调用本接口前必须确保至少调用一次[ss\_mpi\_ive\_kcf\_get\_train\_obj](#ZH-CN_TOPIC_0000002471091232)获取到要训练的对象。
+-   软件调用流程如[图1](#fig13293144115712)所示，具体代码示例请参考sample实现。
+
+    **图 1**  KCF软件调用流程<a name="fig13293144115712"></a>  
+    ![](figures/KCF软件调用流程.png "KCF软件调用流程")
+-   算法描述如下：
+
+    KCF算法利用循环矩阵对角化等性质，将跟踪问题核化，使核化后跟踪比对的操作简化成易于并行加速的矩阵运算，提升跟踪解决方案的系统性能，KCF算法可以和HOG算子联合使用，典型的算法用例如[图2](#fig78578448113)所示。
+
+    **图 2**  KCF典型的算法用例<a name="fig78578448113"></a>  
+    ![](figures/KCF典型的算法用例.png "KCF典型的算法用例")
+
+跟踪问题核化、相关滤波器训练等数学推导参阅“High-speed tracking with kernelized correlation filters”，IEEE Trans. PAMI, vol.37, No. 3, March 2015.
+
+算法的总体流程：在It帧中，在当前位置pt附近采样，训练一个回归器。来计算一个小窗口采样的响应。在It+1帧中，在前一帧位置pt附近采样，用已经训练的回归器来判断每个采样的响应。响应最强的采样作为本帧的位置pt+1。
+
+用一个人脸跟踪图解一下上面的跟踪算法过程，如[图3](#fig896312217281)所示，首先对初始帧做初始化，框定一个待跟踪的ROI，对输入图像做特征提取用余弦函数窗对提取到的特征加权后, 将其用FFT变换到频域，与训练得到的相关滤波器在频域做点乘，反变换到空域后找到最强的响应位置，就是得到人脸在当前帧的预测。
+
+**图 3**  跟踪算法过程示例<a name="fig896312217281"></a>  
+![](figures/跟踪算法过程示例.png "跟踪算法过程示例")
+
+[图3](#fig896312217281)的相关滤波器参数训练问题通过核函数和循环矩阵对角化的性质简化为矩阵运算操作，详细数学推导参阅上面里出的参考论文。
+
+【举例】
+
+无
+
+【相关主题】
+
+-   [ss\_mpi\_ive\_kcf\_create\_obj\_list](#ss_mpi_ive_kcf_create_obj_list)
+-   [ss\_mpi\_ive\_kcf\_create\_gauss\_peak](#ss_mpi_ive_kcf_create_gauss_peak)
+-   [ss\_mpi\_ive\_kcf\_create\_cos\_win](#ss_mpi_ive_kcf_create_cos_win)
+-   [ss\_mpi\_ive\_kcf\_get\_train\_obj](#ss_mpi_ive_kcf_get_train_obj)
+
+## ss\_mpi\_ive\_kcf\_get\_obj\_bbox<a name="ZH-CN_TOPIC_0000002503971245"></a>
+
+【描述】
+
+获取目标区域跟踪结果信息。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_get_obj_bbox(ot_ive_kcf_obj_list *obj_list, ot_ive_kcf_bbox bbox[], td_u32 *bbox_obj_num, const ot_ive_kcf_bbox_ctrl *ctrl);
-``` 【参数】 <a name="table5555mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table5555mcpsimp"></a>
 <table><thead align="left"><tr id="row5561mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p5563mcpsimp"><a name="p5563mcpsimp"></a><a name="p5563mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p5565mcpsimp"><a name="p5565mcpsimp"></a><a name="p5565mcpsimp"></a>描述</p>
@@ -5755,7 +9008,11 @@ td_s32 ss_mpi_ive_kcf_get_obj_bbox(ot_ive_kcf_obj_list *obj_list, ot_ive_kcf_bbo
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table5598mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table5598mcpsimp"></a>
 <table><thead align="left"><tr id="row5603mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p5605mcpsimp"><a name="p5605mcpsimp"></a><a name="p5605mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p5607mcpsimp"><a name="p5607mcpsimp"></a><a name="p5607mcpsimp"></a>描述</p>
@@ -5767,11 +9024,46 @@ td_s32 ss_mpi_ive_kcf_get_obj_bbox(ot_ive_kcf_obj_list *obj_list, ot_ive_kcf_bbo
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5613mcpsimp"><a name="p5613mcpsimp"></a><a name="p5613mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row5614mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p5616mcpsimp"><a name="p5616mcpsimp"></a><a name="p5616mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p5618mcpsimp"><a name="p5618mcpsimp"></a><a name="p5618mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 无 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_kcf\_judge\_obj\_bbox\_track\_state<a name="ZH-CN_TOPIC_0000002471091288"></a> 【描述】 判断目标区域跟踪状态。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+无
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_kcf\_judge\_obj\_bbox\_track\_state<a name="ZH-CN_TOPIC_0000002471091288"></a>
+
+【描述】
+
+判断目标区域跟踪状态。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_judge_obj_bbox_track_state(const ot_ive_roi_info *roi_info, const ot_ive_kcf_bbox *bbox, td_bool *is_track_ok);
-``` 【参数】 <a name="table10774mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table10774mcpsimp"></a>
 <table><thead align="left"><tr id="row10780mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p10782mcpsimp"><a name="p10782mcpsimp"></a><a name="p10782mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p10784mcpsimp"><a name="p10784mcpsimp"></a><a name="p10784mcpsimp"></a>描述</p>
@@ -5802,7 +9094,11 @@ td_s32 ss_mpi_ive_kcf_judge_obj_bbox_track_state(const ot_ive_roi_info *roi_info
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table10810mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table10810mcpsimp"></a>
 <table><thead align="left"><tr id="row10815mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p10817mcpsimp"><a name="p10817mcpsimp"></a><a name="p10817mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p10819mcpsimp"><a name="p10819mcpsimp"></a><a name="p10819mcpsimp"></a>描述</p>
@@ -5814,11 +9110,46 @@ td_s32 ss_mpi_ive_kcf_judge_obj_bbox_track_state(const ot_ive_roi_info *roi_info
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p10825mcpsimp"><a name="p10825mcpsimp"></a><a name="p10825mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row10826mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p10828mcpsimp"><a name="p10828mcpsimp"></a><a name="p10828mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p7404mcpsimp"><a name="p7404mcpsimp"></a><a name="p7404mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 当新检测的目标区域与跟踪的目标区域是同一个目标时，本接口可以利用新检测目标区域信息来判断正在跟踪的目标区域是否已经跟踪失败。 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_kcf\_obj\_update<a name="ZH-CN_TOPIC_0000002470931270"></a> 【描述】 更新目标信息。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+当新检测的目标区域与跟踪的目标区域是同一个目标时，本接口可以利用新检测目标区域信息来判断正在跟踪的目标区域是否已经跟踪失败。
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_kcf\_obj\_update<a name="ZH-CN_TOPIC_0000002470931270"></a>
+
+【描述】
+
+更新目标信息。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_kcf_obj_update(ot_ive_kcf_obj_list *obj_list, const ot_ive_kcf_bbox bbox[], td_u32 bbox_obj_num);
-``` 【参数】 <a name="table3759mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table3759mcpsimp"></a>
 <table><thead align="left"><tr id="row3765mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p3767mcpsimp"><a name="p3767mcpsimp"></a><a name="p3767mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p3769mcpsimp"><a name="p3769mcpsimp"></a><a name="p3769mcpsimp"></a>描述</p>
@@ -5849,7 +9180,11 @@ td_s32 ss_mpi_ive_kcf_obj_update(ot_ive_kcf_obj_list *obj_list, const ot_ive_kcf
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table3795mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table3795mcpsimp"></a>
 <table><thead align="left"><tr id="row3800mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p3802mcpsimp"><a name="p3802mcpsimp"></a><a name="p3802mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p3804mcpsimp"><a name="p3804mcpsimp"></a><a name="p3804mcpsimp"></a>描述</p>
@@ -5861,11 +9196,46 @@ td_s32 ss_mpi_ive_kcf_obj_update(ot_ive_kcf_obj_list *obj_list, const ot_ive_kcf
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3810mcpsimp"><a name="p3810mcpsimp"></a><a name="p3810mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row3811mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p3813mcpsimp"><a name="p3813mcpsimp"></a><a name="p3813mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p3815mcpsimp"><a name="p3815mcpsimp"></a><a name="p3815mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 无 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_hog<a name="ZH-CN_TOPIC_0000002504091165"></a> 【描述】 计算给定区域的HOG\(Histogram of Oriented Gradient\)特征。 【语法】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+无
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_hog<a name="ZH-CN_TOPIC_0000002504091165"></a>
+
+【描述】
+
+计算给定区域的HOG\(Histogram of Oriented Gradient\)特征。
+
+【语法】
+
+```
 td_s32 ss_mpi_ive_hog(ot_ive_handle *handle, const ot_svp_src_img *src, const ot_svp_rect_u16 roi[],const ot_svp_dst_blob dst[], const ot_ive_hog_ctrl *ctrl, td_bool is_instant);
-``` 【参数】 <a name="table1155mcpsimp"></a>
+```
+
+【参数】
+
+<a name="table1155mcpsimp"></a>
 <table><thead align="left"><tr id="row1161mcpsimp"><th class="cellrowborder" valign="top" width="23%" id="mcps1.1.4.1.1"><p id="p1163mcpsimp"><a name="p1163mcpsimp"></a><a name="p1163mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="59%" id="mcps1.1.4.1.2"><p id="p1165mcpsimp"><a name="p1165mcpsimp"></a><a name="p1165mcpsimp"></a>描述</p>
@@ -5922,7 +9292,9 @@ td_s32 ss_mpi_ive_hog(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> <a name="table1218mcpsimp"></a>
+</table>
+
+<a name="table1218mcpsimp"></a>
 <table><thead align="left"><tr id="row1225mcpsimp"><th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.1.5.1.1"><p id="p1227mcpsimp"><a name="p1227mcpsimp"></a><a name="p1227mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.57425742574258%" id="mcps1.1.5.1.2"><p id="p1229mcpsimp"><a name="p1229mcpsimp"></a><a name="p1229mcpsimp"></a>支持图像类型</p>
@@ -5943,7 +9315,11 @@ td_s32 ss_mpi_ive_hog(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table1245mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table1245mcpsimp"></a>
 <table><thead align="left"><tr id="row1250mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p1252mcpsimp"><a name="p1252mcpsimp"></a><a name="p1252mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p1254mcpsimp"><a name="p1254mcpsimp"></a><a name="p1254mcpsimp"></a>描述</p>
@@ -5955,13 +9331,121 @@ td_s32 ss_mpi_ive_hog(ot_ive_handle *handle, const ot_svp_src_img *src, const ot
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1260mcpsimp"><a name="p1260mcpsimp"></a><a name="p1260mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row1261mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p1263mcpsimp"><a name="p1263mcpsimp"></a><a name="p1263mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p1265mcpsimp"><a name="p1265mcpsimp"></a><a name="p1265mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - HOG特征存储格式： 如[图1](#_Ref529951636)所示，HOG特征是由一个三维空间来存储： - C表示特征的channel（固定为31） - W表示特征的width - H表示特征的height，每个HOG特征需要2byte存储空间 - HOG特征的W/H 的计算公式如下： 假设ROI区域宽为RectW，高为RectH。则 W = min\(136, RectW\) / 4 – 2; H = min\(136, RectH\) / 4 – 2; **图 1** HOG特征的存储结构<a name="_Ref529951636"></a> ![](figures/HOG特征的存储结构.png "HOG特征的存储结构") 存储格式分别是垂直切面和水平切面两个格式。[图2](#fig2434181612326)表示垂直切面格式。[图3](#fig10196155743217)表示水平切面格式。 **图 2** HOG特征垂直切面存储格式<a name="fig2434181612326"></a> ![](figures/HOG特征垂直切面存储格式.png "HOG特征垂直切面存储格式") 垂直切面存储格式时，Stride是W做16byte对齐，需要分配的内存大小为2 \* Stride \* H\*C **图 3** HOG特征水平切面存储格式<a name="fig10196155743217"></a> ![](figures/HOG特征水平切面存储格式.png "HOG特征水平切面存储格式") 水平切面存储格式时，Stride是C \(固定为31\) 做16byte对齐，需要分配的内存大小为Stride \* 2 \* W \* H。 - ROI区域的宽度和高度必须在\[64, 1024\]范围内，而且是8的倍数。
-- HOG特征通过ot\_svp\_blob结构描述（具体请见《SVPx.0 API参考》1.4小节描述），类型为OT\_SVP\_BLOB\_TYPE\_U16，存储格式按照HOG特征描述的格式存储。
-- 算法描述如下： HOG是Histogram of Oriented Gridients的缩写为 HOG，是目前计算机视觉、模式识别领域很常用的一种描述图像局部纹理的特征，整体计算处理流程如[图4](#fig18559111016331)所示。 **图 4** HOG计算流程<a name="fig18559111016331"></a> ![](figures/HOG计算流程.png "HOG计算流程") 梯度计算可以有多种方法，IVE首先计算图像每个像素各颜色分量的水平梯度![](figures/zh-cn_formulaimage_0000002504091379.png)： ![](figures/zh-cn_formulaimage_0000002470931506.png) ![](figures/zh-cn_formulaimage_0000002471091508.png) ![](figures/zh-cn_formulaimage_0000002503971447.png) 和垂直梯度![](figures/zh-cn_formulaimage_0000002504091377.png)： ![](figures/zh-cn_formulaimage_0000002470931520.png) ![](figures/zh-cn_formulaimage_0000002471091504.png) ![](figures/zh-cn_formulaimage_0000002503971445.png) 其中![](figures/zh-cn_formulaimage_0000002470931502.png)为图像的像素值，计算每个像素点处各颜色分量的梯度幅值: ![](figures/zh-cn_formulaimage_0000002470931522.png) ![](figures/zh-cn_formulaimage_0000002471091492.png) ![](figures/zh-cn_formulaimage_0000002504091369.png) 每个图像像素的梯度幅值： ![](figures/zh-cn_formulaimage_0000002470931504.png) 梯度方向： ![](figures/zh-cn_formulaimage_0000002503971449.png) 本HOG算子把图像分成若干个cells，每个cell按照360度划分为9个bin（即9维特征向量），如[图5](#fig102361124142914)所示。 **图 5** 每个cell划分bin的角度范围<a name="fig102361124142914"></a> ![](figures/每个cell划分bin的角度范围.png "每个cell划分bin的角度范围") 【举例】 无 【相关主题】 无 ## ss\_mpi\_ive\_query<a name="ZH-CN_TOPIC_0000002470931246"></a> 【描述】 查询已创建任务完成情况。 【语法】 ```
-td_s32 ss_mpi_ive_query(ot_ive_handle handle, td_bool *is_finish, td_bool is_block) ;
-``` 【参数】 <a name="table9519mcpsimp"></a>
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   HOG特征存储格式：
+
+    如[图1](#_Ref529951636)所示，HOG特征是由一个三维空间来存储：
+
+    -   C表示特征的channel（固定为31）
+    -   W表示特征的width
+    -   H表示特征的height，每个HOG特征需要2byte存储空间
+
+-   HOG特征的W/H 的计算公式如下：
+
+    假设ROI区域宽为RectW，高为RectH。则
+
+    W = min\(136, RectW\) / 4 – 2;
+
+    H = min\(136, RectH\) / 4 – 2;
+
+**图 1**  HOG特征的存储结构<a name="_Ref529951636"></a>  
+![](figures/HOG特征的存储结构.png "HOG特征的存储结构")
+
+存储格式分别是垂直切面和水平切面两个格式。[图2](#fig2434181612326)表示垂直切面格式。[图3](#fig10196155743217)表示水平切面格式。
+
+**图 2**  HOG特征垂直切面存储格式<a name="fig2434181612326"></a>  
+![](figures/HOG特征垂直切面存储格式.png "HOG特征垂直切面存储格式")
+
+垂直切面存储格式时，Stride是W做16byte对齐，需要分配的内存大小为2 \* Stride \* H\*C
+
+**图 3**  HOG特征水平切面存储格式<a name="fig10196155743217"></a>  
+![](figures/HOG特征水平切面存储格式.png "HOG特征水平切面存储格式")
+
+水平切面存储格式时，Stride是C \(固定为31\) 做16byte对齐，需要分配的内存大小为Stride \* 2 \* W \* H。
+
+-   ROI区域的宽度和高度必须在\[64, 1024\]范围内，而且是8的倍数。
+-   HOG特征通过ot\_svp\_blob结构描述（具体请见《SVPx.0 API参考》1.4小节描述），类型为OT\_SVP\_BLOB\_TYPE\_U16，存储格式按照HOG特征描述的格式存储。
+-   算法描述如下：
+
+HOG是Histogram of Oriented Gridients的缩写为 HOG，是目前计算机视觉、模式识别领域很常用的一种描述图像局部纹理的特征，整体计算处理流程如[图4](#fig18559111016331)所示。
+
+**图 4**  HOG计算流程<a name="fig18559111016331"></a>  
+![](figures/HOG计算流程.png "HOG计算流程")
+
+梯度计算可以有多种方法，IVE首先计算图像每个像素各颜色分量的水平梯度![](figures/zh-cn_formulaimage_0000002504091379.png)：
+
+![](figures/zh-cn_formulaimage_0000002470931506.png)
+
+![](figures/zh-cn_formulaimage_0000002471091508.png)
+
+![](figures/zh-cn_formulaimage_0000002503971447.png)
+
+和垂直梯度![](figures/zh-cn_formulaimage_0000002504091377.png)：
+
+![](figures/zh-cn_formulaimage_0000002470931520.png)
+
+![](figures/zh-cn_formulaimage_0000002471091504.png)
+
+![](figures/zh-cn_formulaimage_0000002503971445.png)
+
+其中![](figures/zh-cn_formulaimage_0000002470931502.png)为图像的像素值，计算每个像素点处各颜色分量的梯度幅值:
+
+![](figures/zh-cn_formulaimage_0000002470931522.png)
+
+![](figures/zh-cn_formulaimage_0000002471091492.png)
+
+![](figures/zh-cn_formulaimage_0000002504091369.png)
+
+每个图像像素的梯度幅值：
+
+![](figures/zh-cn_formulaimage_0000002470931504.png)
+
+梯度方向：
+
+![](figures/zh-cn_formulaimage_0000002503971449.png)
+
+本HOG算子把图像分成若干个cells，每个cell按照360度划分为9个bin（即9维特征向量），如[图5](#fig102361124142914)所示。
+
+**图 5**  每个cell划分bin的角度范围<a name="fig102361124142914"></a>  
+![](figures/每个cell划分bin的角度范围.png "每个cell划分bin的角度范围")
+
+【举例】
+
+无
+
+【相关主题】
+
+无
+
+## ss\_mpi\_ive\_query<a name="ZH-CN_TOPIC_0000002470931246"></a>
+
+【描述】
+
+查询已创建任务完成情况。
+
+【语法】
+
+```
+td_s32  ss_mpi_ive_query(ot_ive_handle handle, td_bool *is_finish, td_bool is_block) ;
+```
+
+【参数】
+
+<a name="table9519mcpsimp"></a>
 <table><thead align="left"><tr id="row9525mcpsimp"><th class="cellrowborder" valign="top" width="21%" id="mcps1.1.4.1.1"><p id="p9527mcpsimp"><a name="p9527mcpsimp"></a><a name="p9527mcpsimp"></a>参数名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="62%" id="mcps1.1.4.1.2"><p id="p9529mcpsimp"><a name="p9529mcpsimp"></a><a name="p9529mcpsimp"></a>描述</p>
@@ -5994,7 +9478,11 @@ td_s32 ss_mpi_ive_query(ot_ive_handle handle, td_bool *is_finish, td_bool is_blo
 </td>
 </tr>
 </tbody>
-</table> 【返回值】 <a name="table9557mcpsimp"></a>
+</table>
+
+【返回值】
+
+<a name="table9557mcpsimp"></a>
 <table><thead align="left"><tr id="row9562mcpsimp"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="p9564mcpsimp"><a name="p9564mcpsimp"></a><a name="p9564mcpsimp"></a>返回值</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.2"><p id="p9566mcpsimp"><a name="p9566mcpsimp"></a><a name="p9566mcpsimp"></a>描述</p>
@@ -6006,45 +9494,83 @@ td_s32 ss_mpi_ive_query(ot_ive_handle handle, td_bool *is_finish, td_bool is_blo
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p9572mcpsimp"><a name="p9572mcpsimp"></a><a name="p9572mcpsimp"></a>成功。</p>
 </td>
 </tr>
+<tr id="row9573mcpsimp"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.1 "><p id="p9575mcpsimp"><a name="p9575mcpsimp"></a><a name="p9575mcpsimp"></a>非0</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.1.3.1.2 "><p id="p9577mcpsimp"><a name="p9577mcpsimp"></a><a name="p9577mcpsimp"></a>失败，参见<span xml:lang="fr-FR" id="ph136311818172213"><a name="ph136311818172213"></a><a name="ph136311818172213"></a>错误码</span><span xml:lang="fr-FR" id="ph5283mcpsimp"><a name="ph5283mcpsimp"></a><a name="ph5283mcpsimp"></a>。</span></p>
+</td>
+</tr>
 </tbody>
-</table> 【需求】 - 头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
-- 库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib） 【注意】 - 输入handle必须为调用的算子函数返回的handle。
-- 在用户使用IVE任务结果前，为确保IVE任务已完成，用户可以使用阻塞方式调用此接口查询。
-- IVE内部是按任务创建顺序依次执行任务的，所以用户不必每次都使用查询接口，如用户依次创建了A，B两个任务，那么如果B任务完成了，这个时候A任务肯定也完成了，此时使用A任务的结果时不必再次调用查询接口。
-- 返回值为OT\_ERR\_IVE\_QUERY\_TIMEOUT（查询超时）时，可以继续查询。
-- 返回值为OT\_ERR\_IVE\_SYS\_TIMEOUT（系统超时）时，用户的IVE任务必须全部重新提交。 【举例】 ```
+</table>
+
+【需求】
+
+-   头文件：ot\_common\_ive.h、ot\_common\_svp.h、ss\_mpi\_ive.h
+-   库文件：libss\_ive.a（PC上模拟用ss\_ive\_clib2.x.lib）
+
+【注意】
+
+-   输入handle必须为调用的算子函数返回的handle。
+-   在用户使用IVE任务结果前，为确保IVE任务已完成，用户可以使用阻塞方式调用此接口查询。
+-   IVE内部是按任务创建顺序依次执行任务的，所以用户不必每次都使用查询接口，如用户依次创建了A，B两个任务，那么如果B任务完成了，这个时候A任务肯定也完成了，此时使用A任务的结果时不必再次调用查询接口。
+-   返回值为OT\_ERR\_IVE\_QUERY\_TIMEOUT（查询超时）时，可以继续查询。
+-   返回值为OT\_ERR\_IVE\_SYS\_TIMEOUT（系统超时）时，用户的IVE任务必须全部重新提交。
+
+【举例】
+
+```
 td_s32 ret = TD_SUCCESS;
 ot_ive_handle handle;
 ot_svp_src_data src;
 ot_svp_dst_data dst;
-ot_ive_dma_ctrl ctrl = {OT_IVE_DMA_MODE_DIRECT_COPY, 0};
+ot_ive_dma_ctrl  ctrl = {OT_IVE_DMA_MODE_DIRECT_COPY, 0};
 td_bool is_instant;
-td_bool is_finish, is_block; src.phys_addr = 0;
-src.vir_addr = 0;
-src.stride = 352; src.height = 288;
-src.width = 352; dst.phys_addr = 0;
-dst.vir_addr = 0;
-dst.stride = 352; dst.height = 288;
-dst.width = 352; is_instant = TD_TRUE;
-ret = ss_mpi_sys_mmz_alloc_cached(&src.phys_addr, &((td_void*)(td_uintptr_t)src.virt_addr), "User", TD_NULL, src.height * src.stride);
+td_bool is_finish, is_block;
+    
+src.phys_addr           = 0;
+src.vir_addr                = 0;
+src.stride           = 352;    
+src.height                   = 288;
+src.width            = 352;
+ 
+dst.phys_addr           = 0;
+dst.vir_addr                = 0;
+dst.stride                    = 352;    
+dst.height                   = 288;
+dst.width            = 352;
+ 
+is_instant                     = TD_TRUE;
+ret = ss_mpi_sys_mmz_alloc_cached(&src.phys_addr, 
+&((td_void*)(td_uintptr_t)src.virt_addr), "User", TD_NULL, src.height  
+ * src.stride);
 if (ret != TD_SUCCESS) {
 return ret;
 }
-memset((td_void*)(td_uintptr_t)src.virt_addr, 1, src.height * src.stride); ret = ss_mpi_sys_mmz_alloc_cached(&dst.phys_addr, &((td_void*)(td_uintptr_t)dst.virt_addr), "User", TD_NULL, dst.height * dst.stride);
+memset((td_void*)(td_uintptr_t)src.virt_addr, 1, src.height * src.stride);
+ 
+ret = ss_mpi_sys_mmz_alloc_cached(&dst.phys_addr, 
+         &((td_void*)(td_uintptr_t)dst.virt_addr), "User", TD_NULL, 
+         dst.height * dst.stride);
 if(ret != TD_SUCCESS) {
-ss_mpi_sys_mmz_free(src.phys_addr, (td_void*)(td_uintptr_t)src.virt_addr));
+ss_mpi_sys_mmz_free(src.phys_addr, 
+         (td_void*)(td_uintptr_t)src.virt_addr));
 return ret;
 }
 memset((td_void*)(td_uintptr_t)dst.virt_addr, 0, dst.height * dst.stride);
 ret = ss_mpi_sys_mmz_flush_cache(0, NULL, 0);
 if(ret != TD_SUCCESS) {
-ss_mpi_sys_mmz_free(src.phys_addr, ((td_void*)(td_uintptr_t)src.virt_addr));
-ss_mpi_sys_mmz_free(dst.phys_addr, ((td_void*)(td_uintptr_t)dst.virt_addr)); return ret;
+ss_mpi_sys_mmz_free(src.phys_addr, 
+         ((td_void*)(td_uintptr_t)src.virt_addr));
+ss_mpi_sys_mmz_free(dst.phys_addr, 
+         ((td_void*)(td_uintptr_t)dst.virt_addr));
+    return ret;
 }
 ret = ss_mpi_ive_dma(&handle, &src, &dst, &ctrl, is_instant);
 if(ret != TD_SUCCESS) {
-ss_mpi_sys_mmz_free(src.phys_addr, ((td_void*)(td_uintptr_t)src.virt_addr));
-ss_mpi_sys_mmz_free(dst.phys_addr, ((td_void*)(td_uintptr_t)dst.virt_addr)); return ret;
+ss_mpi_sys_mmz_free(src.phys_addr, 
+         ((td_void*)(td_uintptr_t)src.virt_addr));
+ss_mpi_sys_mmz_free(dst.phys_addr, 
+         ((td_void*)(td_uintptr_t)dst.virt_addr));
+    return ret;
 }
 is_block = TD_FALSE;
 ret = ss_mpi_ive_query(handle, &is_finish, is_block);
@@ -6054,4 +9580,9 @@ printf("is_finish=%d\n", is_Finish);
 ss_mpi_sys_mmz_free(src.phys_addr, ((td_void*)(td_uintptr_t)src.virt_addr));
 ss_mpi_sys_mmz_free(dst.phys_addr, ((td_void*)(td_uintptr_t)dst.virt_addr));
 return ret;
-``` 【相关主题】 无。 
+```
+
+【相关主题】
+
+无。
+
