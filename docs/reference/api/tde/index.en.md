@@ -118,7 +118,7 @@ Data type descriptions use: Definition, Description, Members, Note, Reference, R
 The TDE module provides hardware-accelerated 2D graphics operations. All operations are submitted as jobs that can be processed synchronously or asynchronously.
 
 **Figure 1**  TDE Software Flow<a name="fig9262165107"></a>  
-![](figures/TDE软件流程图.png "TDE Software Flow Diagram")
+![](figures/智能角框属性.png "TDE Software Flow Diagram")
 
 **Function List:**
 

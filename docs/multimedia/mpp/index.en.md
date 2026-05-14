@@ -17,74 +17,74 @@ reference* are split out for chapter-by-chapter browsing.
 
 -   __00 · Foreword__
 
-    [:octicons-arrow-right-24: Open](00-Preface.md)
+    [:octicons-arrow-right-24: Open](00-前言.md)
 
 -   __01 · Overview__
 
-    [:octicons-arrow-right-24: Open](01-Overview.md)
+    [:octicons-arrow-right-24: Open](01-概述.md)
 
 -   __02 · System control__
 
-    [:octicons-arrow-right-24: Open](02-System control.md)
+    [:octicons-arrow-right-24: Open](02-系统控制.md)
 
 -   __03 · Video input (VI)__
 
-    [:octicons-arrow-right-24: Open](03-Video Input.md)
+    [:octicons-arrow-right-24: Open](03-视频输入.md)
 
 -   __04 · Video output (VO) 4.1–4.3__
 
-    [:octicons-arrow-right-24: Open](04-Video Output-41-43.md)
+    [:octicons-arrow-right-24: Open](04-视频输出-41-43.md)
 
 -   __04 · Video output (VO) 4.4–4.5__
 
-    [:octicons-arrow-right-24: Open](04-Video Output-44-45.md)
+    [:octicons-arrow-right-24: Open](04-视频输出-44-45.md)
 
 -   __05 · Video processing subsystem (VPSS)__
 
-    [:octicons-arrow-right-24: Open](05-Video Processing Subsystem.md)
+    [:octicons-arrow-right-24: Open](05-视频处理子系统.md)
 
 -   __06 · Video encoding (VENC) 6.1–6.3__
 
-    [:octicons-arrow-right-24: Open](06-video encoding-61-63.md)
+    [:octicons-arrow-right-24: Open](06-视频编码-61-63.md)
 
 -   __06 · Video encoding (VENC) 6.4–6.5__
 
-    [:octicons-arrow-right-24: Open](06-video encoding-64-65.md)
+    [:octicons-arrow-right-24: Open](06-视频编码-64-65.md)
 
 -   __07 · Video decoding (VDEC)__
 
-    [:octicons-arrow-right-24: Open](07-video-decoding.md)
+    [:octicons-arrow-right-24: Open](07-视频解码.md)
 
 -   __08 · Region management (RGN)__
 
-    [:octicons-arrow-right-24: Open](08-region-management.md)
+    [:octicons-arrow-right-24: Open](08-区域管理.md)
 
 -   __09 · Audio 9.1–9.3__
 
-    [:octicons-arrow-right-24: Open](09-audio-91-93.md)
+    [:octicons-arrow-right-24: Open](09-音频-91-93.md)
 
 -   __09 · Audio 9.4–9.5__
 
-    [:octicons-arrow-right-24: Open](09-audio-94-95.md)
+    [:octicons-arrow-right-24: Open](09-音频-94-95.md)
 
 -   __10 · Video graphics subsystem__
 
-    [:octicons-arrow-right-24: Open](10-video graphicssub-system .md)
+    [:octicons-arrow-right-24: Open](10-视频图形子系统.md)
 
 -   __11 · Geometric distortion correction subsystem__
 
-    [:octicons-arrow-right-24: Open](11-geometric-distortion-correction.md)
+    [:octicons-arrow-right-24: Open](11-几何畸变矫正子系统.md)
 
 -   __12 · Splice__
 
-    [:octicons-arrow-right-24: Open](12-stitching.md)
+    [:octicons-arrow-right-24: Open](12拼接.md)
 
 -   __13 · `proc` debug info 13.1–13.15__
 
-    [:octicons-arrow-right-24: Open](13-proc-debug-information-131-1315.md)
+    [:octicons-arrow-right-24: Open](13-proc调试信息-131-1315.md)
 
 -   __13 · `proc` debug info 13.16–13.29__
 
-    [:octicons-arrow-right-24: Open](13-proc-debug-information-1316-1329.md)
+    [:octicons-arrow-right-24: Open](13-proc调试信息-1316-1329.md)
 
 </div>

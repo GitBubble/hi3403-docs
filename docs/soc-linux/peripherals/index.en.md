@@ -132,7 +132,7 @@ Enter the following directory and configure the page options as shown in [Figure
 ```
 
 **Figure 1** IPv6 Protocol Configuration Diagram<a name="_Toc498609228"></a>  
-![](figures/IPv6-Protocol configuration diagram.png "IPv6-Protocol configuration diagram")
+![](figures/IPv6-Protocol配置示意图.png)
 
 IPv6 environment configuration:
 
@@ -164,7 +164,7 @@ IPv6 environment configuration:
     Under the kernel, you can configure the PHY address by modifying the dts configuration file Hi3403V100-demb.dts under arch/arm64/boot/dts/vendor. As shown in [Figure 1](#_Toc498609229), the value "1" in "reg = <1>" represents the PHY address.
 
 **Figure 1** PHY Address Configuration Node Diagram<a name="_Toc498609229"></a>  
-![](figures/PHY address configuration node diagram.png "PHY address configuration node diagram")
+![](figures/PHY地址配置节点示意图.png)
 
 ### IEEE 802.3x Flow Control Configuration<a name="ZH-CN_TOPIC_0000002480063688"></a>
 

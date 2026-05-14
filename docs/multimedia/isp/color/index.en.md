@@ -121,7 +121,7 @@ The saturation of all colors increases or decreases with the CCM. Conflicts may 
 The second is the advanced color tuning scheme. The system color is mainly controlled by AWB+CCM+CLUT+GAMMA+CA, and the color style can be adjusted as needed.
 
 **Figure 2** Advanced color tuning flow chart<a name="fig11753153218217"></a>
-![](figures/height级调色流程图.png "height级调色流程图")
+![](figures/高级调色流程图.png "height级调色流程图")
 
 Two mapping styles are described: gamut-edge inward mapping (reduces high saturation colors to avoid out-of-gamut) and outward mapping (increases saturation for more vivid colors).
 

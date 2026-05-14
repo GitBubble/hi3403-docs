@@ -75,7 +75,7 @@ The following symbols may appear in this document, with their meanings described
 The functional architecture of the ATC tool is shown in [Figure 1](#fig16910569311). As shown in [Figure 1](#fig16910569311), users can convert open-source framework network models into offline models suitable for the image analysis engine using the ATC tool. They can also convert the converted offline model into a json file for easy viewing. Users can also directly convert open-source framework network model files into json files through the ATC tool.
 
 **Figure 1** ATC Tool Functional Architecture<a name="fig16910569311"></a>  
-![](figures/ATC工具function架构.png "ATC Tool Functional Architecture")
+![](figures/ATC工具功能架构.png "ATC Tool Functional Architecture")
 
 ## Tool Running Flow<a name="ZH-CN_TOPIC_0000002408581678"></a>
 

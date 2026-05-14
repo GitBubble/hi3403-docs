@@ -1709,7 +1709,7 @@ td_s32 ss_mpi_isp_sensor_reg_callback(ot_vi_pipe vi_pipe, ot_isp_sns_attr_info *
 -   This interfacedoes not support multi-process operation.
 
 **Figure 1**  Interface between ISP library and sensor library<a name="fig19561149142511"></a>  
-![](figures/ISP库与sensor库间的interface.png "ISP库与sensor库间的interface")
+![](figures/ISP库与sensor库间的接口.png "ISP库与sensor库间的interface")
 
 **Example**
 
@@ -1909,7 +1909,7 @@ td_s32 ss_mpi_isp_ae_lib_reg_callback(ot_vi_pipe vi_pipe, const ot_isp_3a_alg_li
 -   A maximum of 2 AE libraries can be registered.
 
 **Figure 1**  Interface between ISP library and AE library<a name="fig7744142162816"></a>  
-![](figures/ISP库与AE库间的interface.png "ISP库与AE库间的interface")
+![](figures/ISP库与AE库间的接口.png "ISP库与AE库间的interface")
 
 **Example**
 
@@ -2098,7 +2098,7 @@ td_s32 ss_mpi_isp_awb_lib_reg_callback(ot_vi_pipe vi_pipe, ot_isp_3a_alg_lib *aw
 -   Supports a maximum of 2 AWB library registrations.
 
 **Figure 1**  Interface between ISP library and AWB library<a name="fig2137158318"></a>  
-![](figures/ISP库与AWB库间的interface.png "ISP库与AWB库间的interface")
+![](figures/ISP库与AWB库间的接口.png "ISP库与AWB库间的interface")
 
 **Example**
 
@@ -5667,13 +5667,13 @@ typedef struct {
 As shown in [Figure 1](#_Ref440016125) to [Figure 3](#_Ref440016130), the meaning of each configuration parameter for the sync signal generator module is illustrated.
 
 **Figure 1**  Sync signal configuration timing diagram<a name="_Ref440016125"></a>  
-![](figures/synchronize信号configuration时序图.png "synchronize信号configuration时序图")
+![](figures/同步信号配置时序图.png "synchronize信号configuration时序图")
 
 **Figure 2**  Sync signal polarity inversion<a name="fig4740mcpsimp"></a>  
-![](figures/synchronize信号极性翻转.png "synchronize信号极性翻转")
+![](figures/同步信号极性翻转.png "synchronize信号极性翻转")
 
 **Figure 3**  Sync signal enabled<a name="_Ref440016130"></a>  
-![](figures/synchronize信号enable.png "synchronize信号enable")
+![](figures/同步信号使能.png "synchronize信号enable")
 
 **Related Data Types and Interfaces**
 
@@ -9812,7 +9812,7 @@ typedef struct {
 </table>
 
 **Figure 1**  White region selection parameters<a name="fig645810198416"></a>  
-![](figures/白色region选择相关parameters.png "白色region选择相关parameters")
+![](figures/白色区域选择相关参数.png "白色region选择相关parameters")
 
 **Precautions**
 
@@ -10529,7 +10529,7 @@ typedef enum {
 2.  ot\_isp\_run\_wakeup\_select defaults to OT\_ISP\_RUN\_WAKEUP\_FE\_START and can be used with the ss\_mpi\_isp\_run interface. The recommended calling flow is shown in [Figure 1](#fig86541627175814).
 
     **Figure 1**  Interface call flow (1)<a name="fig86541627175814"></a>  
-    ![](figures/interface调用流程(1) "API Call Flow (1)")
+    ![](figures/接口调用流程(1) "API Call Flow (1)")
 
 1.  If frames need to be retrieved from VI and then raw data sent for processing, ot\_isp\_run\_wakeup\_select can be set to OT\_ISP\_RUN\_WAKEUP\_BE\_END and used with the ss\_mpi\_isp\_run interface. The recommended calling flow is shown in [Figure 2](#fig1140172181212). This configuration uses the run\_be software path. When calling ss\_mpi\_vi\_send\_pipe\_raw to send raw frames, ensure even frame intervals. Uneven raw frame delivery may affect image quality during exposure ratio switching, mode switching, and similar scenarios.
 
@@ -10539,7 +10539,7 @@ typedef enum {
     -   Both run\_be and runonce support manual frame submission. run\_be supports multi-channel stitch mode frame submission; runonce does not support multi-channel stitching. runonce uses serial processing between software and hardware; run\_be uses parallel processing, which optimizes logical performance. Therefore, run\_be is recommended for video processing scenarios where performance is critical; runonce is recommended for snapshot scenarios.
 
     **Figure 2**  Interface call flow (2)<a name="fig1140172181212"></a>  
-    ![](figures/interface调用流程(2) "API Call Flow (2)")
+    ![](figures/接口调用流程(2) "API Call Flow (2)")
 
 **Related Data Types and Interfaces**
 

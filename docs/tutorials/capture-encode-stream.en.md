@@ -217,6 +217,6 @@ A complete buildable example lives in
 
     ---
 
-    [:octicons-arrow-right-24: MPP 03 · Video Input](../multimedia/mpp/03-VideoInput.md)
+    [:octicons-arrow-right-24: MPP 03 · Video Input](../multimedia/mpp/03-视频输入.md)
 
 </div>

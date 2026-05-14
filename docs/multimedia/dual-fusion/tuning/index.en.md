@@ -114,7 +114,7 @@ Mono-Color Fusion (MCF) technology is used to fuse the above color image and IR 
 The basic principle diagram of the MCF module is shown in [Figure 1](#fig1275217156391).
 
 **Figure 1**  MCF module basic principle diagram<a name="fig1275217156391"></a>  
-![](figures/MCFmodule基本原理图.png "MCFmodule基本原理图")
+![](figures/MCF模块基本原理图.png "MCFmodule基本原理图")
 # Key Parameters
 <a name="table244mcpsimp"></a>
 <table><thead align="left"><tr id="row251mcpsimp"><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.5.1.1"><p id="p253mcpsimp"><a name="p253mcpsimp"></a><a name="p253mcpsimp"></a>Module</p>
@@ -386,7 +386,7 @@ Since fine textures and mid-to-high-frequency details are primarily supplemented
 Since the fused image must still maintain a certain level of color saturation while color noise is also significant, some processing is required. First, adjust AWB: if an accurate light source correction is needed, no special handling is required; otherwise, the light source color can be partially retained to reduce the pronounced color noise that occurs at low color temperatures. In the CCM, appropriately reduce the coefficients of the red and blue components — i.e., reduce the main R and B coefficients. The CA module should be enabled as much as possible to reduce saturation in dark areas and increase saturation in bright areas. CLUT can be used, following a principle similar to CA: preserve color in high-SNR areas and reduce saturation of low-SNR colors. The recommended tuning for chroma denoising in 3DNR is: for the nr_c0 level, set sfc to 31 and tfc to 31 to suppress flickering chroma noise; for the nr_c1 level, set both the foreground and background sfn to 7, with the difference being that the foreground's sf7 hybrid filter tends toward filter 5 while the background's sf7 hybrid filter tends toward filter 6. Note that filter 5 removes chroma noise but also causes some loss of normal color, which involves a trade-off. Specific parameters are shown in [Figure 1](#fig13993142443410).
 
 **Figure 1**  Recommended parameters for color channel 3DNR chroma noise tuning<a name="fig13993142443410"></a>  
-![](figures/彩色路3DNR色噪调试建议parameters图.png "彩色路3DNR色噪调试建议parameters图")
+![](figures/彩色路3DNR色噪调试建议参数图.png "彩色路3DNR色噪调试建议parameters图")
 
 After tuning the color channel, the overall result is shown in [Figure 2](#fig9166426103219).
 

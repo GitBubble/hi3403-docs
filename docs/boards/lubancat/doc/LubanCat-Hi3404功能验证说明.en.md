@@ -2,7 +2,7 @@
 
 This document provides a brief description of the usage and functional verification of some hardware peripherals on the LubanCat-Hi3404 board.
 
-This document uses a Buildroot image built based on the hispark/pegasus project. For the image build process, please refer to the document [Building Buildroot System Image Based on Pegasus](Based onHi3403构建BuildrootSystemMirroring.md).
+This document uses a Buildroot image built based on the hispark/pegasus project. For the image build process, please refer to the document [Building Buildroot System Image Based on Pegasus](基于Hi3403构建Buildroot系统镜像.md).
 
 ### Pin Multiplexing Description
 

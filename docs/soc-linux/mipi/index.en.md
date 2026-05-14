@@ -130,7 +130,7 @@ MIPI Rx supports serial video signal inputs such as MIPI D-PHY, LVDS (Low-Voltag
     -   Using SOF/EOF to indicate frame start and end, and SOL/EOL to indicate line start and end. The synchronization method is shown in [Figure 1](#fig9405124663417).
 
         **Figure 1** SOF/EOF/SOL/EOL Synchronization Method<a name="fig9405124663417"></a>  
-        ![](figures/SOF-EOF-SOL-EOL synchronization method.png "SOF-EOF-SOL-EOL synchronization method")
+        ![](figures/SOF-EOF-SOL-EOL同步方式.png)
     -   Using SAV(invalid) EAV(invalid) to indicate the start and end of invalid data in the blanking interval, and SAV(valid) EAV(valid) to indicate the start and end of valid pixel data.
 
         Each synchronization code consists of 4 fields, each with a bit width consistent with the pixel data bit width. The first 3 fields are fixed reference code words, and the 4th field is determined by the sensor manufacturer.
@@ -138,7 +138,7 @@ MIPI Rx supports serial video signal inputs such as MIPI D-PHY, LVDS (Low-Voltag
         Since different sensors may have different synchronization codes, the synchronization code must be configured according to the sensor. The synchronization method is shown in [Figure 2](#fig1737184853619).
 
         **Figure 2** SAV/EAV Synchronization Method<a name="fig1737184853619"></a>  
-        ![](figures/SAV-EAV synchronization method.png "SAV-EAV synchronization method")
+        ![](figures/SAV-EAV同步方式.png)
 
 ## Functional Description<a name="ZH-CN_TOPIC_0000002408262130"></a>
 

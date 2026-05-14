@@ -145,7 +145,7 @@ When running applications, SVP ACL calls the interfaces provided by the mdl mana
 The computing resource layer is the hardware computing foundation of the SoC. It mainly performs matrix-related computations for image analysis tools, completes general computations and execution control functions such as control operators, scalars, and vectors, and performs preprocessing of image and video data, providing execution assurance for image analysis tool computations.
 
 **Figure 1** Logical Architecture Diagram<a name="fig1754516145614"></a>  
-![](figures/Logical architecture diagram.png "Logical architecture diagram")
+![](figures/逻辑架构图.png)
 
 ## Basic Concepts<a name="ZH-CN_TOPIC_0000002441980857"></a>
 

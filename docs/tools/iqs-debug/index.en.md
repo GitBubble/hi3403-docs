@@ -79,7 +79,7 @@ PQ provides customers with a series of professional image quality debugging tool
 The tool architecture is shown in [Figure 1](#fig12895245195817).
 
 **Figure 1** Tool Architecture Diagram<a name="fig12895245195817"></a>  
-![](figures/Tool architecture diagram.png "Tool architecture diagram")
+![](figures/工具架构图.png)
 
 The tools are mainly divided by usage scenario into:
 
@@ -108,14 +108,14 @@ The tools are mainly divided by usage scenario into:
     [https://www.python.org/downloads/release/python-392/](https://www.python.org/downloads/release/python-392/). Windows users should select the option indicated by the red box in [Figure 1](#fig1216734547).
 
     **Figure 1** Download Prompt<a name="fig1216734547"></a>  
-    ![](figures/Download prompt.png "Download prompt")
+    ![](figures/下载提示.png)
 
     Install and configure the system path as shown in [Figure 2](#fig18802134119314).
 
     This path is only an example. Configure the environment variables according to the actual Python installation path.
 
     **Figure 2** System Path Configuration<a name="fig18802134119314"></a>  
-    ![](figures/System path configuration.png "System path configuration")
+    ![](figures/系统路径配置.png)
 
     After Python is installed successfully, use `pip install` to install the numpy, scipy, and csaps packages.
 
@@ -148,7 +148,7 @@ The PQTools tool is divided into a client side (PC software) and a server side (
 For this version, please refer to the "[Installation and Operation of Board-Side Software under Linux](#ZH-CN_TOPIC_0000002530221763)" chapter. The directory structure after decompression is shown in [Figure 1](#_ref513797864).
 
 **Figure 1** Directory Structure After Decompression<a name="_ref513797864"></a>  
-![](figures/Directory structure after decompression.png "Directory structure after decompression")
+![](figures/解压后的目录结构.png)
 
 -   The configs directory contains sensor configuration files for various business scenarios for ittb_stream (if ittb_stream is not needed, this directory can be deleted to save board space; if only specific scenarios are used, sensor configuration files for other scenarios in this directory can be deleted to save board space)
 -   The libs directory contains dynamic library files required for ittb_control and ittb_stream (by default, sensor libraries for all supported scenarios are provided; if only specific scenarios are used, sensor libraries for other scenarios in this directory can be deleted to save board space)
@@ -162,7 +162,7 @@ For this version, please refer to the "[Installation and Operation of Board-Side
 This release package is used for miniaturized scenarios where some PQTools tool functions are compiled into user applications. The directory structure after decompression is shown in [Figure 1](#_toc51692445).
 
 **Figure 1** Directory Structure After Decompression<a name="_toc51692445"></a>  
-![](figures/Directory structure after decompression-0.png "Directory structure after decompression-0")
+![](figures/解压后的目录结构-0.png)
 
 -   The libbin directory contains header files and library files for the BIN function, along with compiled sample code for user reference.
 -   The libcontrol directory contains header files and library files for the control function, along with compiled sample code for user reference.
@@ -189,7 +189,7 @@ The PQTools PC software is a green software. Simply use a decompression tool (su
 Each time the user launches the tool by running PQTools.exe, a welcome screen will pop up to guide the user in quickly creating a new debugging table and connecting to the board, as shown in [Figure 1](#fig1611913543).
 
 **Figure 1** Welcome Screen Example<a name="fig1611913543"></a>  
-![](figures/Welcome screen example.png "Welcome screen example")
+![](figures/欢迎界面图例.png)
 
 To quickly start image quality debugging from this screen, perform the following steps:
 
@@ -223,7 +223,7 @@ After performing the above operations, click the "OK" button. The tool will read
 The tool main interface is shown in [Figure 1](#fig4429101745518).
 
 **Figure 1** Tool Main Interface Example<a name="fig4429101745518"></a>  
-![](figures/Tool main interface example.png "Tool main interface example")
+![](figures/工具主界面图例.png)
 
 The PQTools tool main interface is divided into the following areas by function:
 
@@ -240,7 +240,7 @@ The PQTools tool main interface is divided into the following areas by function:
 Click the "New" button (![](figures/zh-cn_image_0000002498301892.png)) on the toolbar to create a debugging table for image quality debugging. Clicking the "New" button will bring up the "Create a new PQ table" dialog, as shown in [Figure 1](#fig10817881288).
 
 **Figure 1** Create Debugging Table Dialog<a name="fig10817881288"></a>  
-![](figures/Create debugging table dialog.png "Create debugging table dialog")
+![](figures/创建调试表格对话框.png)
 
 Select the corresponding debugging table template from the dropdown and click the "OK" button. The tool will create the debugging table. After creation, the tree structure of the current debugging table will be displayed in the debugging table panel area of the main interface (for a detailed description, please refer to "[Interface and Function Description](#ZH-CN_TOPIC_0000002498141848)").
 

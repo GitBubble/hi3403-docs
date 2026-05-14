@@ -124,7 +124,7 @@ For network model development, MindCmd integrates offline model conversion tools
 As shown in [Figure 1](#fig109661225380), the tool currently includes data preprocessing, open-source framework inference, model compression, model conversion, functional simulation, instruction simulation, on-board inference, performance analysis, accuracy comparison, and One-click inference.
 
 **Figure 1** MindCmd Functional Architecture<a name="fig109661225380"></a>  
-![](figures/MindCmd functional architecture.png "MindCmd functional architecture")
+![](figures/MindCmd功能框架.png)
 
 ## Tool Functions<a name="ZH-CN_TOPIC_0000002442020581"></a>
 
@@ -146,15 +146,15 @@ The main functional features of MindCmd are as follows.
 The MindCmd software package can be installed on a Linux server. It can be installed using the native desktop terminal gnome-terminal on the Linux server, or by SSHing into a Linux server from a Windows server.
 
 **Figure 1** Linux Distributed Deployment<a name="fig14199047421"></a>  
-![](figures/Linux distributed deployment.png "Linux distributed deployment")
+![](figures/Linux分部署.png)
 
 **Figure 2** Linux Co-deployment<a name="fig4886192317319"></a>  
-![](figures/Linux co-deployment.png "Linux co-deployment")
+![](figures/Linux共部署.png)
 
 The MindCmd installation process is shown in [Figure 3](#fig194332362414).
 
 **Figure 3** Installation Process<a name="fig194332362414"></a>  
-![](figures/Installation process.png "Installation process")
+![](figures/安装流程.png)
 
 ## Obtaining the Software Package<a name="ZH-CN_TOPIC_0000002442020661"></a>
 
@@ -457,7 +457,7 @@ mindcmd config --global base_config.cann_install_path
 ```
 
 **Figure 2** Viewing a Configuration Item Value<a name="fig163181430103"></a>  
-![](figures/Viewing a configuration item value.png "Viewing a configuration item value")
+![](figures/查看某一个配置项的值.png)
 
 Modify the value of a configuration item (using "base\_config.cann\_install\_path" as an example). The result is shown in [Figure 3](#fig52432531624).
 
@@ -466,7 +466,7 @@ mindcmd config --global base_config.cann_install_path=~/Ascend/ascend-toolkit/sv
 ```
 
 **Figure 3** Modifying a Configuration Item Value<a name="fig52432531624"></a>  
-![](figures/Modifying a configuration item value.png "Modifying a configuration item value")
+![](figures/修改某一个配置项的值.png)
 
 >![](public_sys-resources/icon-note.gif) **Note:** 
 >The mindcmd config subcommand does not display configuration parameters in the atc_args_append section, and does not support modifying atc_args_append configuration parameters from the command line.
@@ -659,7 +659,7 @@ Supports end-to-end one-click execution of model data preprocessing, AMCT (model
 The Caffe model one-click inference process is shown in [Figure 1](#fig15202155618339).
 
 **Figure 1** Caffe Model One-click Inference Flowchart<a name="fig15202155618339"></a>  
-![](figures/Caffe model one-click inference flowchart.png "Caffe model one-click inference flowchart")
+![](figures/Caffe模型一键推理流程图.png)
 
 ### Command Line Format Description<a name="ZH-CN_TOPIC_0000002442020649"></a>
 
@@ -819,4 +819,4 @@ The command line parameter description for Caffe model one-click inference is sh
 The PyTorch model one-click inference process is shown in [Figure 1](#fig204223548810).
 
 **Figure 1** PyTorch Model One-click Inference Flowchart<a name="fig204223548810"></a>  
-![](figures/PyTorch model one-click inference flowchart.png "PyTorch model one-click inference flowchart")
+![](figures/PyTorch模型一键推理流程图.png)

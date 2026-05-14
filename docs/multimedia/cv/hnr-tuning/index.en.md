@@ -121,17 +121,17 @@ Key characteristics of HNR:
 ## HNR Data Flow Diagram<a name="ZH-CN_TOPIC_0000002424202070"></a>
 
 **Figure 1** HNR advance mode data flow diagram<a name="fig1624263413361"></a>  
-![](figures/HNR-advanceMode数据流框图.png "HNR-advanceMode数据流框图")
+![](figures/HNR-advance模式数据流框图.png "HNR-advanceMode数据流框图")
 
 In advance mode, HNR is positioned in the ISP pipeline in parallel with BNR, sharing the same input. The outputs are blended through a MUX module, with the blending ratio configurable via parameters.
 
 **Figure 2** HNR normal mode data flow diagram<a name="fig1180614194257"></a>  
-![](figures/HNR-normalMode数据流框图.png "HNR-normalMode数据流框图")
+![](figures/HNR-normal模式数据流框图.png "HNR-normalMode数据流框图")
 
 In normal mode with `normal_blend` set to false, HNR is positioned between FE and BE in the ISP pipeline. There is no blending operation between HNR and BNR; they are completely independent modules.
 
 **Figure 3** HNR normal_blend mode data flow<a name="fig237492243814"></a>  
-![](figures/HNR-normal_blendMode数据流.png "HNR-normal_blendMode数据流")
+![](figures/HNR-normal_blend模式数据流.png "HNR-normal_blendMode数据流")
 
 In normal mode with `normal_blend` set to true, the data path retrieves a raw frame from FE and delivers it to BE, enabling blending of HNR and BNR. The blending tuning parameters in this mode are the same as in advance mode.
 
@@ -367,7 +367,7 @@ Key parameters in `scene_auto` related to HNR. `scene_auto` is a reference examp
 Because HNR is used at very high ISO values where the sensor operates at its maximum gain limit, most sensors exhibit some degree of dark shading. As shown in [Figure 1](#_Ref69199905), at ISO 200000, the left side of the sensor frame has a green cast and a bright band appears at the bottom. FPN correction is needed to remove this dark shading.
 
 **Figure 1** Dark shading on a sensor at high ISO<a name="_Ref69199905"></a>  
-![](figures/sensor在heightISO时的dark-shading现象.png "sensor在heightISO时的dark-shading现象")
+![](figures/sensor在高ISO时的dark-shading现象.png "sensor在heightISO时的dark-shading现象")
 
 As shown in [Figure 2](#_Ref69199888), the left image shows the result without FPN correction; the right image shows the result after FPN correction.
 
