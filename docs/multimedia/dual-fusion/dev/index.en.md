@@ -163,7 +163,7 @@ Mono-Color-Fusion technology (abbreviated as MCF technology) is used to fuse the
 
 - **Cover**
 
-    Video遮挡 area, fills solid color blocks on the MCF output image.
+    Video cover area: fills solid color blocks on the MCF output image.
 
     The occlusion area coordinate type is divided into absolute coordinate occlusion and relative coordinate ratio occlusion.
 
